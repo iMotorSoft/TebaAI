@@ -1,0 +1,28 @@
+{
+  "name": "tebaai-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.5.0",
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=11.5.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 3008",
+    "build": "astro build",
+    "check": "astro check",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^8.1.2",
+    "astro": "^6.4.2",
+    "svelte": "^5.56.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^26.0.0",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,18 @@
+[project]
+name = "tebaai-backend"
+version = "0.1.0"
+description = "TebaAi Litestar backend"
+requires-python = ">=3.12"
+dependencies = [
+  "litestar[standard]>=2.0.0",
+  "uvicorn[standard]>=0.30.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

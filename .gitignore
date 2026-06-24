@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# uv / virtualenvs
+.venv/
+venv/
+
+# Node / pnpm / Astro
+node_modules/
+.pnpm-store/
+dist/
+.astro/
+.vite/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Generated reports and heavy data
+data/source/*
+!data/source/README.md
+!data/source/.gitkeep
+data/processed/*
+!data/processed/README.md
+!data/processed/.gitkeep
+data/reports/*
+!data/reports/README.md
+!data/reports/.gitkeep
+
+# Large local artifacts
+*.sqlite
+*.db
+*.parquet
+*.arrow
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.pdf
+*.epub

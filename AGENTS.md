@@ -62,6 +62,16 @@ browser validation, diagrams or root cause policy, read:
 - `lat.md/status_actual.md`
 - `docs/adr/`
 
+## Git Branch Convention
+
+- `main`: estado estable validado / producción / snapshot estable. No trabajar directo salvo hotfix o consolidación final.
+- `feature/console-backend-core`: rama de desarrollo activo. backend, frontend, runtime, orquestación. Es la rama para `desarrollo`, `dev` o `backend`. Todo el trabajo productivo va aquí.
+- `feature/knowledge-ingestion-service`: knowledge ingestion / RAG / embeddings / chunking / retrieval. No usar para runtime productivo.
+- `docs/knowledge-documents-foundation`: documentación knowledge: estándares, paquetes, contenido curado.
+- `ux/team360-console-design-handoff`: diseño visual, frontend mock, handoff UX. Sin backend real ni integración productiva.
+
+Cuando una instrucción mencione `desarrollo`, `dev` o `backend`, la rama destino es `feature/console-backend-core`.
+
 ## Documentation Placement
 
 - Architecture invariants: `lat.md/`.

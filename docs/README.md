@@ -1,6 +1,6 @@
-# TebaAi Docs
+# TebaAI Docs
 
-Documentation root for TebaAi non-runtime material.
+Documentation root for TebaAI non-runtime material.
 
 ## Structure
 

@@ -1,4 +1,4 @@
-# TebaAi Data Policy
+# TebaAI Data Policy
 
 This directory is prepared for corpus inputs, processed outputs and generated
 reports.

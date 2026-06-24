@@ -1,7 +1,7 @@
-# TebaAi Architecture
+# TebaAI Architecture
 
 This directory contains living architecture and stable operating rules for
-TebaAi.
+TebaAI.
 
 ## Project Map
 

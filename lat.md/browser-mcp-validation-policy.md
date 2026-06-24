@@ -1,6 +1,6 @@
 # Browser Validation Policy
 
-Playwright + Chromium is the official browser E2E gate for TebaAi.
+Playwright + Chromium is the official browser E2E gate for TebaAI.
 
 Browser MCP is exploratory. It can help inspect layout, reproduce visual bugs
 or understand a flow, but it does not replace a reproducible Playwright test

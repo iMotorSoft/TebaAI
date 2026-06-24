@@ -1,6 +1,6 @@
 # PostgreSQL Driver Policy
 
-TebaAi does not implement PostgreSQL runtime access in the bootstrap phase.
+TebaAI does not implement PostgreSQL runtime access in the bootstrap phase.
 
 When PostgreSQL is introduced, the default iMotorSoft policy is:
 

@@ -1,6 +1,6 @@
 # Teba AI
 
-TebaAi is a generic content platform for iMotorSoft projects.
+TebaAI is a generic content platform for iMotorSoft projects.
 
 The visible brand is `Teba AI`; the internal technical identifier is
 `tebaai`. Breslov will be the first vertical project, but this repository

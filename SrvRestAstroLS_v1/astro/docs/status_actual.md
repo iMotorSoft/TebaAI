@@ -6,7 +6,7 @@ Ultima actualizacion: 2026-06-24
 
 ## Estado general
 
-Bootstrap inicial de Astro.js + Svelte 5 para TebaAi.
+Bootstrap inicial de Astro.js + Svelte 5 para TebaAI.
 
 ## Acciones realizadas
 

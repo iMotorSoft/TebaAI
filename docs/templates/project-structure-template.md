@@ -1,10 +1,10 @@
-# TebaAi Project Structure Template
+# TebaAI Project Structure Template
 
 Canonical bootstrap values:
 
 ```text
-Project directory: TebaAi
-GitHub repository: TebaAi
+Project directory: TebaAI
+GitHub repository: TebaAI
 Visible brand: Teba AI
 Technical identifier: tebaai
 Environment prefix: TEBAAI_

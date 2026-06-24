@@ -1,4 +1,4 @@
-# TebaAi Lab
+# TebaAI Lab
 
 Use this directory only for reproducible and isolated experiments.
 

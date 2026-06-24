@@ -6,13 +6,13 @@ Fecha: 2026-06-24.
 
 ## Contexto
 
-TebaAi inicia como plataforma generica de contenidos para iMotorSoft. Breslov
+TebaAI inicia como plataforma generica de contenidos para iMotorSoft. Breslov
 sera el primer proyecto vertical, pero el bootstrap debe mantener la base sin
 logica de dominio.
 
 ## Decision
 
-TebaAi adopta el bootstrap estandar de proyectos iMotorSoft:
+TebaAI adopta el bootstrap estandar de proyectos iMotorSoft:
 
 - Backend: Litestar.
 - Frontend: Astro.js + Svelte 5 runes.

@@ -23,4 +23,4 @@ Use this policy especially when:
 - duplicate requests or 5xx responses appear;
 - AI fallback or empty model responses are suspected.
 
-This policy is local to TebaAi and has no dependency on gstack `/investigate`.
+This policy is local to TebaAI and has no dependency on gstack `/investigate`.

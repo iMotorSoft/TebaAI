@@ -1,10 +1,10 @@
-# TebaAi - Instructions For Agents
+# TebaAI - Instructions For Agents
 
 Work from the project root:
 
-`/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAi`
+`/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI`
 
-TebaAi is a generic content platform. Breslov will be the first vertical
+TebaAI is a generic content platform. Breslov will be the first vertical
 project, but this bootstrap must not create Breslov-specific logic, ingestion,
 PostgreSQL, Milvus or LiteLLM integration yet.
 

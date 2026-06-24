@@ -1,19 +1,19 @@
 ---
 name: tebaai-project
-description: Rules and workflow for TebaAi, a generic iMotorSoft content platform using Litestar, Astro.js, Svelte 5 and reproducible browser validation.
+description: Rules and workflow for TebaAI, a generic iMotorSoft content platform using Litestar, Astro.js, Svelte 5 and reproducible browser validation.
 ---
 
-# TebaAi Project
+# TebaAI Project
 
 ## Scope
 
-TebaAi is a generic content platform. Breslov is planned as the first vertical
+TebaAI is a generic content platform. Breslov is planned as the first vertical
 project, but the base project must stay domain-neutral until a later phase.
 
 ## Naming
 
-- Directory: `TebaAi`.
-- GitHub repository: `TebaAi`.
+- Directory: `TebaAI`.
+- GitHub repository: `TebaAI`.
 - Visible brand: `Teba AI`.
 - Technical identifier: `tebaai`.
 - Environment variable prefix: `TEBAAI_`.

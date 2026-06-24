@@ -1,4 +1,4 @@
-# Status actual - TebaAi Runtime
+# Status actual - TebaAI Runtime
 
 Objetivo: `desarrollo`
 
@@ -6,7 +6,7 @@ Ultima actualizacion: 2026-06-24
 
 ## Estado general
 
-Bootstrap tecnico inicial del runtime TebaAi.
+Bootstrap tecnico inicial del runtime TebaAI.
 
 ## Acciones realizadas
 

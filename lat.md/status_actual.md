@@ -1,4 +1,4 @@
-# Status actual - TebaAi lat.md
+# Status actual - TebaAI lat.md
 
 Objetivo: `arquitectura-viva`
 
@@ -6,9 +6,15 @@ Ultima actualizacion: 2026-06-24
 
 ## Estado general
 
-Bootstrap inicial de arquitectura viva para TebaAi.
+Bootstrap inicial de arquitectura viva para TebaAI.
 
 ## Acciones realizadas
+
+### 2026-06-24 - Correccion de naming TebaAI
+
+- Se normalizaron referencias textuales del proyecto a `TebaAI`.
+- Se confirmo que el directorio de trabajo actual ya usa `TebaAI`.
+- Servicios externos PostgreSQL, Milvus y LiteLLM: no tocados.
 
 ### 2026-06-24 - Bootstrap inicial
 

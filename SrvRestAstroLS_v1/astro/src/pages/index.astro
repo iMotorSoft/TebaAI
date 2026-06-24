@@ -1,20 +1,13 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import HomePanel from "../components/HomePanel.svelte";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teba AI</title>
-  </head>
-  <body>
-    <main class="page-shell">
-      <HomePanel client:load />
-    </main>
-  </body>
-</html>
+<Layout>
+  <main class="page-shell">
+    <HomePanel client:load />
+  </main>
+</Layout>
 
 <style>
   :global(body) {

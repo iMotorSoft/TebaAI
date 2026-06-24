@@ -25,6 +25,35 @@ TebaAI.
 - E2E gate: Playwright + Chromium.
 - Diagrams: Mermaid source in Git.
 
+## Architecture
+
+```mermaid
+flowchart LR
+  subgraph Frontend["Frontend &#40;Astro 7 + Svelte 5&#41;"]
+    A1["Astro pages"]
+    A2["Svelte components"]
+    A3["Tailwind CSS 4 + DaisyUI 5"]
+  end
+
+  subgraph Backend["Backend &#40;Litestar&#41;"]
+    B1["Routes"]
+    B2["Services"]
+    B3["Repositories"]
+    B4["Schemas &#40;Pydantic v2&#41;"]
+  end
+
+  subgraph External["External Services"]
+    C1["PostgreSQL 18<br/>pgvector"]
+    C2["Milvus 2.6<br/>Vector store"]
+    C3["LiteLLM<br/>LLM proxy"]
+  end
+
+  Frontend -- "HTTP /api" --> Backend
+  Backend -- "psycopg 3 async" --> C1
+  Backend -- "pymilvus 2.6" --> C2
+  Backend -- "litellm SDK" --> C3
+```
+
 ## Conventions
 
 - Visible brand: `Teba AI`.

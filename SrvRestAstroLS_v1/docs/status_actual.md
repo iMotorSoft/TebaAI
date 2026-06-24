@@ -6,37 +6,57 @@ Ultima actualizacion: 2026-06-24
 
 ## Estado general
 
-Bootstrap tecnico inicial del runtime TebaAI.
+Bootstrap tecnico completado. Frontend actualizado a Astro 7 con Tailwind CSS 4
++ DaisyUI 5. Backend con psycopg 3, pymilvus 2.6.15 y litellm 1.89.3.
 
 ## Acciones realizadas
 
-### 2026-06-24 - Estructura inicial backend/frontend
+### 2026-06-24 - Upgrade frontend Astro 7 + Tailwind + DaisyUI
 
-- Se creo backend Litestar minimo con endpoint `GET /health`.
-- Se creo frontend Astro.js + Svelte 5 minimo en puerto `3008`.
-- Se preparo Playwright como gate E2E oficial.
-- Se preparo `lab/` para experimentos aislados.
-- No se agrego logica Breslov, ingestion, PostgreSQL, Milvus ni LiteLLM.
+- `astro`: 6.4.2 -> 7.0.2
+- `@astrojs/svelte`: 8.1.2 -> 9.0.0
+- `svelte`: 5.56.0 -> 5.56.4
+- `@playwright/test`: 1.60.0 -> 1.61.1
+- `@types/node`: 26.0.0 -> 26.0.1
+- Agregados: `tailwindcss` 4.3.1, `@tailwindcss/vite` 4.3.1, `daisyui` 5.5.23
+- Creado `src/layouts/Layout.astro` (importa `src/assets/app.css`).
+- Creado `src/assets/app.css` con `@import "tailwindcss"` y `@plugin "daisyui"`.
+- `astro.config.mjs`: agregado plugin `@tailwindcss/vite`.
+- `index.astro`: ahora usa `<Layout>` en vez de HTML directo.
+
+### 2026-06-24 - Upgrade backend Python + librerias
+
+- Python: 3.12.3 -> 3.12.13.
+- Agregados: `psycopg` 3.3.4, `psycopg-binary` 3.3.4, `psycopg-pool` 3.3.1.
+- Agregado: `pymilvus` 2.6.15 (compatible Milvus 2.6).
+- Agregado: `litellm` 1.89.3 (SDK LiteLLM).
+
+### 2026-06-24 - Agentes/Git
+
+- AGENTS.md actualizado con convencion de ramas Git.
+- Creadas y pusheadas ramas: `feature/console-backend-core`,
+  `feature/knowledge-ingestion-service`, `docs/knowledge-documents-foundation`,
+  `ux/team360-console-design-handoff`.
 
 ## Validacion
 
-- Sintaxis Python del backend: `python3 -m py_compile ls_iMotorSoft_Srv01.py`
+- `pnpm check`: 0 errors, 0 warnings.
+- `pnpm build`: 1 page, daisyUI 5.5.23, build 1.23s.
+- `uv sync`: 36 packages, PASS.
+- `uv run -- python -c "import psycopg; from psycopg import AsyncConnection"`:
   PASS.
-- Configuracion Astro: `node --check astro.config.mjs` PASS.
-- `package.json`: parse JSON PASS.
-- `app.py`: no existe en el arbol.
-- `pnpm check` y `pnpm build`: no ejecutados porque las dependencias frontend
-  todavia no estan instaladas.
-- Playwright: no ejecutado porque no se instalo ni lanzo Chromium en este
-  bootstrap.
+- `uv run -- python -c "import pymilvus; print(pymilvus.__version__)"`: 2.6.15.
+- `uv run -- python -c "from litellm import completion, acompletion"`: PASS.
 
 ## Pendientes recomendados
 
-- Instalar dependencias backend con `uv`.
-- Instalar dependencias frontend con `pnpm`.
-- Definir primera vertical Breslov en ADR y documentos propios.
+- Conectar backend con PostgreSQL via psycopg async pool.
+- Conectar backend con Milvus 2.6.
+- Integrar LiteLLM para llamadas a modelos LLM.
+- Definir primera vertical Breslov en fase posterior.
 
 ## Notas de seguridad
 
 - No se tocaron servicios externos.
-- No se cargaron corpus reales ni archivos pesados.
+- No se cargaron corpus reales.
+- No se imprimieron ni leyeron secretos.

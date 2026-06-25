@@ -66,6 +66,32 @@ and explicit user instruction is required for any action on those services.
 
 Do not duplicate the same decision across layers. Link instead.
 
+`status_actual.md` is a closing-state log, not a diary. Update it when closing
+a meaningful phase.
+
+- `SrvRestAstroLS_v1/docs/status_actual.md` is the main runtime technical log
+  for backend, Astro/Svelte frontend and frontend/backend integration.
+- `lat.md/status_actual.md` records architecture invariants, canonical policies
+  and LAT document changes.
+- `docs/**/status_actual.md` records local status for active documentation
+  directories.
+- `data/**/status_actual.md` records local status for corpus, generated data,
+  reports and evidence.
+
+Do not duplicate long decisions inside status files. Link to the canonical LAT,
+ADR or technical document instead. Empty auxiliary folders that only contain
+`.gitkeep` do not need a `status_actual.md`.
+
+Before modifying global configuration, environment variables, PostgreSQL,
+Milvus, LiteLLM, auth, `globalVar.py` or `global.js`, read
+`lat.md/global-configuration-facade-policy.md`.
+
+`globalVar.py` is the stable backend configuration facade backed by typed
+settings in `core/config.py`. Do not remove it, do not add connections or
+infrastructure side effects to it, and do not read environment variables
+outside `core/config.py`. `global.js` may contain only public frontend
+configuration and must never contain secrets.
+
 ## Testing Policy
 
 Playwright + Chromium is the official E2E gate. Browser MCP is exploratory and

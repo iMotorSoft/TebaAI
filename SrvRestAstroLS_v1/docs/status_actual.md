@@ -2,14 +2,70 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-06-24
+Ultima actualizacion: 2026-06-25
 
 ## Estado general
 
 Bootstrap tecnico completado. Frontend actualizado a Astro 7 con Tailwind CSS 4
 + DaisyUI 5. Backend con psycopg 3, pymilvus 2.6.15 y litellm 1.89.3.
 
+Esta es la bitacora tecnica principal del runtime TebaAI. Agrupa backend,
+frontend Astro/Svelte e integracion frontend/backend para evitar bitacoras
+paralelas prematuras.
+
+## Alcance de esta bitacora
+
+- Backend Litestar, dependencias Python, entrypoint, launchers y validaciones
+  tecnicas.
+- Frontend Astro/Svelte, build, check, rutas, UI y configuracion publica.
+- Integracion frontend/backend, URLs, puertos, contratos HTTP, proxy local y
+  validaciones Playwright.
+- No cubre decisiones largas de arquitectura, que viven en `lat.md/`, ni ADRs
+  resumidos, que viven en `docs/adr/`.
+
+## Backend
+
+- Entry point canonico:
+  `SrvRestAstroLS_v1/backend/ls_iMotorSoft_Srv01.py`.
+- ASGI object: `app`.
+- Puerto local backend: `7008`.
+- Dependencias instaladas para fases futuras: `psycopg`, `psycopg-pool`,
+  `pymilvus` y `litellm`.
+- PostgreSQL, Milvus y LiteLLM siguen como servicios externos permanentes; esta
+  fase no crea conexiones ni gestiona servicios.
+
+## Frontend Astro
+
+- Astro/Svelte vive en `SrvRestAstroLS_v1/astro/`.
+- Puerto local Astro: `3008`.
+- Stack actual: Astro 7, Svelte 5, Tailwind CSS 4 y DaisyUI 5.
+- La configuracion publica frontend debe mantenerse separada de secretos.
+- La fachada frontend comun debe ubicarse en
+  `SrvRestAstroLS_v1/astro/src/components/global.js`, siguiendo el uso real de
+  Team360.
+
+## Integracion frontend/backend
+
+- URL backend local esperada: `http://127.0.0.1:7008`.
+- URL Astro local esperada: `http://127.0.0.1:3008`.
+- Playwright + Chromium es el gate E2E oficial.
+- Browser MCP puede usarse para diagnostico visual, pero no reemplaza tests
+  Playwright reproducibles.
+
 ## Acciones realizadas
+
+### 2026-06-25 - Convencion de bitacora runtime backend + Astro
+
+- Se formalizo que este archivo es la bitacora tecnica principal del runtime.
+- Se agrego alcance explicito para backend, frontend Astro/Svelte e integracion
+  frontend/backend.
+- Se decidio no crear `backend/status_actual.md` ni `astro/status_actual.md`
+  por ahora; se evaluara solo si el volumen tecnico lo justifica.
+- Se actualizaron `AGENTS.md`, `.agents/skills/tebaai-project/SKILL.md` y
+  `docs/templates/status_actual_template.md` con la convencion general de
+  `status_actual.md`.
+- No se modifico codigo runtime, dependencias, Docker, `.env`, migraciones ni
+  servicios externos.
 
 ### 2026-06-24 - Upgrade frontend Astro 7 + Tailwind + DaisyUI
 
@@ -40,6 +96,7 @@ Bootstrap tecnico completado. Frontend actualizado a Astro 7 con Tailwind CSS 4
 
 ## Validacion
 
+- Para la convencion de `status_actual.md`: `git diff --check` PASS.
 - `pnpm check`: 0 errors, 0 warnings.
 - `pnpm build`: 1 page, daisyUI 5.5.23, build 1.23s.
 - `uv sync`: 36 packages, PASS.
@@ -50,6 +107,10 @@ Bootstrap tecnico completado. Frontend actualizado a Astro 7 con Tailwind CSS 4
 
 ## Pendientes recomendados
 
+- Usar este archivo como punto unico de cierre para cambios runtime backend,
+  Astro e integracion hasta que el volumen justifique bitacoras locales.
+- Implementar `SrvRestAstroLS_v1/astro/src/components/global.js` como fachada
+  publica frontend cuando llegue la fase de configuracion global.
 - Conectar backend con PostgreSQL via psycopg async pool.
 - Conectar backend con Milvus 2.6.
 - Integrar LiteLLM para llamadas a modelos LLM.

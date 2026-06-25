@@ -4,7 +4,7 @@ Documentation root for TebaAI non-runtime material.
 
 ## Structure
 
-- `adr/`: architecture decision records.
+- `adr/`: architecture decision records. See `adr/README.md` for the index.
 - `arquitectura/`: architecture narrative that is not a living invariant.
 - `estrategia/`: product and platform strategy.
 - `negocio/`: business context.

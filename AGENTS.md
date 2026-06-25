@@ -62,6 +62,17 @@ browser validation, diagrams or root cause policy, read:
 - `lat.md/status_actual.md`
 - `docs/adr/`
 
+Before modifying global configuration, environment variables, PostgreSQL,
+Milvus, LiteLLM, auth, `globalVar.py` or `global.js`, read:
+
+- `lat.md/global-configuration-facade-policy.md`
+
+`globalVar.py` is a stable configuration facade backed by typed settings in
+`core/config.py`. Do not remove it, do not add connections or infrastructure
+side effects to it, and do not read environment variables outside
+`core/config.py`. `global.js` may contain only public frontend configuration and
+must never contain secrets.
+
 ## Git Branch Convention
 
 - `main`: estado estable validado / producción / snapshot estable. No trabajar directo salvo hotfix o consolidación final.
@@ -79,4 +90,20 @@ Cuando una instrucción mencione `desarrollo`, `dev` o `backend`, la rama destin
 - Product, strategy, UX and ADRs: `docs/`.
 - Corpus, generated data and reports: `data/`.
 
-Update the relevant `status_actual.md` when closing meaningful phases.
+## `status_actual.md` Convention
+
+`status_actual.md` is a closing-state log, not a diary. Update the relevant
+file when closing a meaningful phase, not for every trivial edit.
+
+- `SrvRestAstroLS_v1/docs/status_actual.md`: main runtime technical log. It
+  covers backend, Astro/Svelte frontend and frontend/backend integration.
+- `lat.md/status_actual.md`: architecture-living log. Use it only for
+  architecture invariants, canonical policies and LAT documents.
+- `docs/**/status_actual.md`: local documentation status for active product,
+  strategy, UX, ADR or template directories.
+- `data/**/status_actual.md`: local status for corpus, generated data, reports
+  and evidence.
+
+Do not duplicate long decisions inside status files. Link to the canonical LAT,
+ADR or technical document instead. Empty auxiliary folders that only contain
+`.gitkeep` do not need a `status_actual.md`.

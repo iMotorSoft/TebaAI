@@ -72,10 +72,23 @@ be started, stopped or restarted automatically.
 
 - [[service-preflight-methodology]]
 - [[postgres-driver-policy]]
+- [[global-configuration-facade-policy]]
 - [[browser-mcp-validation-policy]]
 - [[mermaid-diagram-policy]]
 - [[root-cause-debugging-policy]]
 - `docs/adr/ADR-001-new-project-bootstrap-template.md`
+- `docs/adr/ADR-002-global-configuration-facade.md`
+
+## Configuration Guardrail
+
+Before modifying global configuration, environment variables, PostgreSQL,
+Milvus, LiteLLM, auth, `globalVar.py` or `global.js`, read
+[`global-configuration-facade-policy.md`](global-configuration-facade-policy.md).
+
+Only `core/config.py` should read environment variables directly. `globalVar.py`
+is a stable configuration facade and must not create connections, pools,
+clients, network calls or other infrastructure side effects. `global.js` is for
+public frontend configuration only and must never contain secrets.
 
 ## Development Flow
 
@@ -84,6 +97,16 @@ be started, stopped or restarted automatically.
 3. Read this index and `lat.md/status_actual.md` for architecture changes.
 4. Check `git status`.
 5. Keep changes small and update status files when phases close.
+
+## Status Actual Convention
+
+Use `status_actual.md` as a closing-state log, not as a diary. The main runtime
+technical log is `SrvRestAstroLS_v1/docs/status_actual.md` and it covers
+backend, Astro/Svelte frontend and frontend/backend integration together.
+
+`lat.md/status_actual.md` records architecture invariants, canonical policies
+and LAT document changes. Create local `status_actual.md` files under `docs/`
+or `data/` only for active directories with real content.
 
 ## Completion Criteria
 

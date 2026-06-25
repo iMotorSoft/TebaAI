@@ -2,7 +2,7 @@
 
 Objetivo: `arquitectura-viva`
 
-Ultima actualizacion: 2026-06-24
+Ultima actualizacion: 2026-06-25
 
 ## Estado general
 
@@ -10,6 +10,43 @@ Bootstrap inicial completado. Se replicaron las ramas Git desde Team360 y se
 actualizaron todas las dependencias frontend/backend a latest.
 
 ## Acciones realizadas
+
+### 2026-06-25 - Convencion de uso de `status_actual.md`
+
+- Se adopto el patron validado en Team360 para TebaAI: usar
+  `status_actual.md` como bitacora de cierre, no como diario.
+- Se definio `SrvRestAstroLS_v1/docs/status_actual.md` como bitacora tecnica
+  principal del runtime, agrupando backend, frontend Astro/Svelte e integracion
+  frontend/backend.
+- Se aclaro que `lat.md/status_actual.md` queda limitado a arquitectura viva,
+  invariantes, politicas canonicas y documentos LAT.
+- Se documento que `docs/**/status_actual.md` y `data/**/status_actual.md`
+  deben crearse solo para directorios activos con contenido real.
+- Se actualizaron `AGENTS.md`, `.agents/skills/tebaai-project/SKILL.md`,
+  `docs/templates/status_actual_template.md` y
+  `SrvRestAstroLS_v1/docs/status_actual.md`.
+- No se modifico codigo runtime, dependencias, servicios externos, Docker,
+  `.env`, migraciones ni integraciones.
+
+### 2026-06-25 - Politica de fachada de configuracion global
+
+- Creado `lat.md/global-configuration-facade-policy.md` como documento
+  canonico para la relacion entre `.env`, `core/config.py`, `globalVar.py` y
+  `global.js`.
+- Creado `docs/adr/ADR-002-global-configuration-facade.md` con estado
+  `Accepted`.
+- Documentado que `globalVar.py` se conserva como fachada estable de
+  configuracion comun, sin conexiones, pools, clientes, llamadas de red ni
+  side effects de infraestructura.
+- Documentado que solo `core/config.py` debe leer variables de entorno
+  directamente.
+- Documentado que `global.js` puede contener solo configuracion publica
+  frontend y nunca secretos.
+- Ajustada la ubicacion frontend aprobada a
+  `SrvRestAstroLS_v1/astro/src/components/global.js`, siguiendo el uso real de
+  Team360.
+- Agregados enlaces desde `lat.md/lat.md`, `AGENTS.md`,
+  `.agents/skills/tebaai-project/SKILL.md` y `docs/adr/README.md`.
 
 ### 2026-06-24 - Convencion de ramas Git y AGENTS.md
 
@@ -54,6 +91,8 @@ actualizaron todas las dependencias frontend/backend a latest.
 ## Pendientes recomendados
 
 - Definir la primera vertical Breslov en una fase posterior.
+- Implementar `core/config.py`, `globalVar.py` y `global.js` siguiendo
+  `lat.md/global-configuration-facade-policy.md`.
 - Conectar backend con PostgreSQL via psycopg pool y configurar DSN.
 - Conectar backend con Milvus y LiteLLM en fase de integracion.
 
@@ -62,3 +101,5 @@ actualizaron todas las dependencias frontend/backend a latest.
 - No se cargaron corpus reales ni archivos pesados.
 - No se imprimieron ni leyeron secretos.
 - No se iniciaron, detuvieron ni reiniciaron servicios externos.
+- La decision de configuracion global es documental; no implementa runtime ni
+  crea recursos vivos.

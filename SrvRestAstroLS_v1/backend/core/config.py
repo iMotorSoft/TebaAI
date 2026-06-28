@@ -61,6 +61,7 @@ class AppSettings(BaseSettings):
     milvus_uri: str = ""
     milvus_token: SecretStr = SecretStr("")
     milvus_connect_timeout_seconds: int = 10
+    milvus_collection_breslov: str = "tebaai_breslov_chunks_v1"
 
     # ── LiteLLM ─────────────────────────────────────────────────
     litellm_enabled: bool = False
@@ -68,6 +69,16 @@ class AppSettings(BaseSettings):
     litellm_api_key: SecretStr = SecretStr("")
     litellm_default_model_alias: str = ""
     litellm_timeout_seconds: int = 60
+
+    # ── Embeddings ───────────────────────────────────────────────
+    embeddings_enabled: bool = False
+    embeddings_provider: str = "litellm"
+    embeddings_base_url: str = "http://127.0.0.1:4000"
+    embeddings_api_key: SecretStr = SecretStr("")
+    embeddings_model_alias: str = "openai_text_embedding_3_small"
+    embeddings_dimension: int = 1536
+    embeddings_batch_size: int = 16
+    embeddings_timeout_seconds: int = 60
 
     # ── Auth ────────────────────────────────────────────────────
     auth_enabled: bool = False

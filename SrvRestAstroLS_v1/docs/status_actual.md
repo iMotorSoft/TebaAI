@@ -335,6 +335,20 @@ paralelas prematuras.
 - No se toco Milvus, LiteLLM, Astro, frontend, admin UI, dashboard.
 - Sin secretos en diff, sin Team360, sin Docker restart.
 
+### 2026-06-28 - Chunking documental + embeddings + Milvus real
+
+- Revisado Team360 como referencia de infraestructura: patron de chunking por
+  parrafos, embeddings via OpenAI/LiteLLM. REUTILIZAR CONCEPTUALMENTE.
+- Revisado JudaismoenVivo `markdown_milvus_v3.py` como referencia operativa
+  fuerte: pymilvus, schema Milvus, COSINE metric, text-embedding-3-small.
+  ADAPTAR: chunking propio, LiteLLM proxy, PostgreSQL como fuente de verdad.
+- NO COPIAR: ArangoDB, chonkie, OpenAI directo, IVF_FLAT.
+- Migracion 004 aplicada en `tebaai` (3 tablas).
+- Infraestructura Milvus + embeddings + chunking + indexing service + CLIs.
+- 3 PDFs Breslov cargados (1991 chunks, 1991 vectores indexados).
+- Busqueda real PASS con queries relevantes.
+- 83 tests PASS. Sin secretos.
+
 ## Pendientes recomendados
 
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).

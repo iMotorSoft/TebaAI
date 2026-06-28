@@ -50,6 +50,17 @@ MILVUS_HOST: str = SETTINGS.milvus_host
 MILVUS_PORT: int = SETTINGS.milvus_port
 MILVUS_URI: str = SETTINGS.milvus_uri
 MILVUS_CONNECT_TIMEOUT_SECONDS: int = SETTINGS.milvus_connect_timeout_seconds
+MILVUS_COLLECTION_BRESLOV: str = SETTINGS.milvus_collection_breslov
+
+# ── Embeddings ────────────────────────────────────────────────────
+EMBEDDINGS_ENABLED: bool = SETTINGS.embeddings_enabled
+EMBEDDINGS_PROVIDER: str = SETTINGS.embeddings_provider
+EMBEDDINGS_BASE_URL: str = SETTINGS.embeddings_base_url
+EMBEDDINGS_API_KEY: str = SETTINGS.embeddings_api_key.get_secret_value()
+EMBEDDINGS_MODEL_ALIAS: str = SETTINGS.embeddings_model_alias
+EMBEDDINGS_DIMENSION: int = SETTINGS.embeddings_dimension
+EMBEDDINGS_BATCH_SIZE: int = SETTINGS.embeddings_batch_size
+EMBEDDINGS_TIMEOUT_SECONDS: int = SETTINGS.embeddings_timeout_seconds
 
 # ── LiteLLM ──────────────────────────────────────────────────────
 LITELLM_ENABLED: bool = SETTINGS.litellm_enabled

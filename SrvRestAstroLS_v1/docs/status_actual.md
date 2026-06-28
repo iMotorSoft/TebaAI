@@ -349,6 +349,19 @@ paralelas prematuras.
 - Busqueda real PASS con queries relevantes.
 - 83 tests PASS. Sin secretos.
 
+### 2026-06-28 - Extensiones FTS PostgreSQL (unaccent + pg_trgm)
+
+- Creada migracion `db/migrations/005_enable_text_search_extensions.sql`.
+- Habilita `unaccent` (normalizacion de acentos) y `pg_trgm` (similitud trigram)
+  en schema `public` para busqueda textual en espanol.
+- Migracion 005 aplicada en `tebaai`. Extensiones verificadas: unaccent v1.1,
+  pg_trgm v1.6.
+- Smoke SQL real PASS: unaccent('Najmán plegaría emuná') → 'Najman plegaria emuna',
+  similarity('plegaria', 'plegária') → 0.5, FTS core sanity → true.
+- No se implemento busqueda FTS todavia, no se tocaron tablas, no se
+  modificaron `library_document_chunks`, no se crearon indices ni tsvector.
+- 140 tests PASS. Sin secretos, sin Team360, sin Milvus/LiteLLM.
+
 ## Pendientes recomendados
 
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).

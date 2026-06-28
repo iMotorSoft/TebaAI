@@ -8,6 +8,7 @@ from litestar.exceptions import HTTPException
 from core.dependencies import get_pg_pool
 from infrastructure.postgres.transaction import transaction
 from modules.auth.guards import require_auth
+from modules.library.hybrid_search import search_chunks_hybrid
 from modules.library.schemas import (
     LibrarySearchRequest,
     LibrarySearchResponse,
@@ -25,14 +26,23 @@ async def library_search(
 
     try:
         async with transaction(pool) as conn:
-            raw_results = await search_chunks_text(
-                conn,
-                collection_code=data.collection,
-                query=data.query,
-                top_k=data.top_k,
-                mode=data.mode,
-                language=data.language,
-            )
+            if data.mode == "hybrid":
+                raw_results = await search_chunks_hybrid(
+                    conn,
+                    collection_code=data.collection,
+                    query=data.query,
+                    top_k=data.top_k,
+                    language=data.language,
+                )
+            else:
+                raw_results = await search_chunks_text(
+                    conn,
+                    collection_code=data.collection,
+                    query=data.query,
+                    top_k=data.top_k,
+                    mode=data.mode,
+                    language=data.language,
+                )
     except Exception as exc:
         raise HTTPException(
             status_code=500, detail=f"Search failed: {exc}"
@@ -51,8 +61,12 @@ async def library_search(
             page_end=r.get("page_end"),
             chapter=r.get("chapter"),
             section=r.get("section"),
-            match_type=r.get("match_type", "fts"),
+            match_type=r.get("match_type", data.mode),
             rank=r.get("rank"),
+            fts_rank=r.get("fts_rank"),
+            vector_score=r.get("vector_score"),
+            hybrid_score=r.get("hybrid_score"),
+            source_signals=r.get("source_signals", []),
             plain_excerpt=r.get("plain_excerpt"),
             highlighted_excerpt=r.get("highlighted_excerpt", ""),
             content_length=r.get("content_length", 0),

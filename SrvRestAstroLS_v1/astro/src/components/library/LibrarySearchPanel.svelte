@@ -101,6 +101,7 @@
               <option value="fts">fts</option>
               <option value="phrase">phrase</option>
               <option value="trigram">trigram</option>
+              <option value="hybrid">hybrid</option>
             </select>
           </label>
           <label class="form-control w-24">

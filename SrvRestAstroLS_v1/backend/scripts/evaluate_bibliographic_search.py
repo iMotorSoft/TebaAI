@@ -25,7 +25,7 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--cases", required=True, help="Path to validation cases JSON")
     parser.add_argument("--collection", default="breslov", help="Collection code")
     parser.add_argument("--top-k", type=int, default=10, help="Top-K results to evaluate")
-    parser.add_argument("--mode", default="auto", choices=["auto", "fts", "phrase", "trigram"])
+    parser.add_argument("--mode", default="auto", choices=["auto", "fts", "phrase", "trigram", "hybrid"])
     parser.add_argument("--language", default="es", choices=["es", "en", "he"])
     parser.add_argument("--output-json", help="Path to write JSON report")
     parser.add_argument("--output-md", help="Path to write Markdown report")
@@ -149,6 +149,7 @@ async def _run(args: argparse.Namespace) -> int:
     from core.config import get_settings
     from infrastructure.postgres.pool import create_pool_from_settings, open_pool, close_pool
     from modules.library.text_search import search_chunks_text
+    from modules.library.hybrid_search import search_chunks_hybrid
     from psycopg.rows import dict_row
 
     settings = get_settings()
@@ -185,14 +186,23 @@ async def _run(args: argparse.Namespace) -> int:
 
                 for q in query_terms:
                     try:
-                        search_results = await search_chunks_text(
-                            conn,
-                            collection_code=args.collection,
-                            query=q,
-                            top_k=args.top_k,
-                            mode=args.mode,
-                            language=args.language,
-                        )
+                        if args.mode == "hybrid":
+                            search_results = await search_chunks_hybrid(
+                                conn,
+                                collection_code=args.collection,
+                                query=q,
+                                top_k=args.top_k,
+                                language=args.language,
+                            )
+                        else:
+                            search_results = await search_chunks_text(
+                                conn,
+                                collection_code=args.collection,
+                                query=q,
+                                top_k=args.top_k,
+                                mode=args.mode,
+                                language=args.language,
+                            )
                     except Exception:
                         search_results = []
 

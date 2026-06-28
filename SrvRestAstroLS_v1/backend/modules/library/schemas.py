@@ -45,7 +45,7 @@ class IngestDocumentResult(BaseModel):
 class LibrarySearchRequest(BaseModel):
     collection: str = Field(default="breslov", min_length=1, max_length=100)
     query: str = Field(..., min_length=1, max_length=300)
-    mode: Literal["auto", "fts", "phrase", "trigram"] = "auto"
+    mode: Literal["auto", "fts", "phrase", "trigram", "hybrid"] = "auto"
     top_k: int = Field(default=10, ge=1, le=50)
     language: Literal["es", "en", "he"] = "es"
 
@@ -64,6 +64,10 @@ class LibrarySearchResult(BaseModel):
     section: str | None = None
     match_type: str
     rank: float | None = None
+    fts_rank: float | None = None
+    vector_score: float | None = None
+    hybrid_score: float | None = None
+    source_signals: list[str] = []
     plain_excerpt: str | None = None
     highlighted_excerpt: str = ""
     content_length: int = 0

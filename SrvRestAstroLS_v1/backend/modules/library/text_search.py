@@ -11,7 +11,7 @@ from psycopg.rows import dict_row
 from infrastructure.postgres.transaction import fetch_all, fetch_one
 
 
-SEARCH_MODES = ("auto", "fts", "phrase", "trigram")
+SEARCH_MODES = ("auto", "fts", "phrase", "trigram", "hybrid")
 
 
 async def search_chunks_text(

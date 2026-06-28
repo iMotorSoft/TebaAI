@@ -5,7 +5,7 @@ const BASE = API_BASE_URL.replace(/\/+$/, "");
 export interface SearchRequest {
   collection: string;
   query: string;
-  mode: "auto" | "fts" | "phrase" | "trigram";
+  mode: "auto" | "fts" | "phrase" | "trigram" | "hybrid";
   top_k: number;
   language: "es" | "en" | "he";
 }

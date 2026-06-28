@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from litestar.connection import ASGIConnection
-from litestar.exceptions import NotAuthorizedException
+from litestar.exceptions import NotAuthorizedException, PermissionDeniedException
 from litestar.handlers.base import BaseRouteHandler
 
 from modules.auth.domain import UserRole
@@ -29,6 +29,6 @@ def require_roles(*roles: UserRole):
 
         user_role = payload.get("role", "")
         if user_role not in [r.value for r in roles]:
-            raise NotAuthorizedException("Insufficient permissions")
+            raise PermissionDeniedException("Insufficient permissions")
 
     return guard

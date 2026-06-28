@@ -220,12 +220,33 @@ paralelas prematuras.
 - `pnpm build`: 1 page, daisyUI 5.5.23 (no changes).
 - `uv sync`: PASS.
 
+### 2026-06-28 - Integracion real PostgreSQL 18 + smoke auth
+
+- PostgreSQL 18 Docker verificado: version 18.4, usuario `administrator`,
+  base `tebaai`.
+- Migracion 002 (`users` + `auth_sessions`) aplicada via runner del proyecto.
+- Schema verificado: columnas correctas, 11 indices (unicos, lower, parciales).
+- Bootstrap admin real via `scripts/create_admin_user.py`: Argon2id, role admin.
+- Backend real en puerto 7008: `/health` 200, `/ready` 200 con postgres up.
+- Smoke auth completo:
+  login, me, refresh, reuse detection, logout, refresh after logout.
+- Smoke users/roles:
+  admin crea viewer, admin lista usuarios, no token 401, viewer 403.
+- Bugs corregidos:
+  1. `scripts/create_admin_user.py`: `row[0]` -> `row["current_database"]`
+     (dict row vs tuple).
+  2. `repository.py` y `session_repository.py`: `%s` -> `%(name)s` placeholders
+     (psycopg 3 dict params require named placeholders).
+  3. `session_repository.py`: UUID doble wrap en `_row_to_session` (psycopg 3
+     devuelve UUID nativo, no string).
+  4. `guards.py`: `NotAuthorizedException` -> `PermissionDeniedException` para
+     role denial (401 -> 403).
+- 116 tests, todos PASS (sin cambios en tests existentes).
+- Sin secretos en repo, sin Docker restart, sin Team360, sin Milvus/LiteLLM.
+- Commits: auth persistence (1) + auth routes (2) + auth integration fixes (3).
+
 ## Pendientes recomendados
 
-- Aplicar migracion `002_create_auth_tables.sql` cuando PostgreSQL este
-  operativo.
-- Ejecutar `scripts/create_admin_user.py` para bootstrap admin.
-- Smoke backend con auth real (login, refresh, me).
 - Implementar `SrvRestAstroLS_v1/astro/src/components/global.js` como fachada
   publica frontend.
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).

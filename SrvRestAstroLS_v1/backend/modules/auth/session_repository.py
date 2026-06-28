@@ -19,7 +19,7 @@ class AuthSessionRepository:
             """
             INSERT INTO auth_sessions (id, user_id, refresh_token_hash, token_family_id,
                                        expires_at, user_agent, ip_address)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            VALUES (%(id)s, %(user_id)s, %(refresh_token_hash)s, %(token_family_id)s, %(expires_at)s, %(user_agent)s, %(ip_address)s)
             """,
             {
                 "id": str(session.id),
@@ -36,7 +36,7 @@ class AuthSessionRepository:
     async def get_by_refresh_hash(self, refresh_hash: str) -> AuthSession | None:
         row = await fetch_one(
             self._conn,
-            "SELECT * FROM auth_sessions WHERE refresh_token_hash = %s",
+            "SELECT * FROM auth_sessions WHERE refresh_token_hash = %(refresh_token_hash)s",
             {"refresh_token_hash": refresh_hash},
         )
         return _row_to_session(row) if row else None
@@ -47,8 +47,8 @@ class AuthSessionRepository:
             await execute(
                 self._conn,
                 """
-                UPDATE auth_sessions SET revoked_at = %s, replaced_by_session_id = %s
-                WHERE id = %s
+                UPDATE auth_sessions SET revoked_at = %(revoked_at)s, replaced_by_session_id = %(replaced_by_session_id)s
+                WHERE id = %(id)s
                 """,
                 {
                     "revoked_at": now,
@@ -59,7 +59,7 @@ class AuthSessionRepository:
         else:
             await execute(
                 self._conn,
-                "UPDATE auth_sessions SET revoked_at = %s WHERE id = %s",
+                "UPDATE auth_sessions SET revoked_at = %(revoked_at)s WHERE id = %(id)s",
                 {"revoked_at": now, "id": str(session_id)},
             )
 
@@ -67,7 +67,7 @@ class AuthSessionRepository:
         now = datetime.now(timezone.utc)
         await execute(
             self._conn,
-            "UPDATE auth_sessions SET revoked_at = %s WHERE token_family_id = %s AND revoked_at IS NULL",
+            "UPDATE auth_sessions SET revoked_at = %(revoked_at)s WHERE token_family_id = %(token_family_id)s AND revoked_at IS NULL",
             {"revoked_at": now, "token_family_id": str(token_family_id)},
         )
 
@@ -76,7 +76,7 @@ class AuthSessionRepository:
             self._conn,
             """
             SELECT * FROM auth_sessions
-            WHERE token_family_id = %s AND revoked_at IS NULL AND expires_at > now()
+            WHERE token_family_id = %(token_family_id)s AND revoked_at IS NULL AND expires_at > now()
             ORDER BY created_at DESC LIMIT 1
             """,
             {"token_family_id": str(token_family_id)},
@@ -87,20 +87,20 @@ class AuthSessionRepository:
         now = datetime.now(timezone.utc)
         await execute(
             self._conn,
-            "UPDATE auth_sessions SET last_used_at = %s WHERE id = %s",
+            "UPDATE auth_sessions SET last_used_at = %(last_used_at)s WHERE id = %(id)s",
             {"last_used_at": now, "id": str(session_id)},
         )
 
 
 def _row_to_session(row: dict) -> AuthSession:
     return AuthSession(
-        id=UUID(row["id"]) if isinstance(row["id"], str) else row["id"],
-        user_id=UUID(row["user_id"]) if isinstance(row["user_id"], str) else row["user_id"],
+        id=row["id"] if isinstance(row["id"], UUID) else UUID(row["id"]),
+        user_id=row["user_id"] if isinstance(row["user_id"], UUID) else UUID(row["user_id"]),
         refresh_token_hash=row["refresh_token_hash"],
-        token_family_id=UUID(row["token_family_id"]) if isinstance(row["token_family_id"], str) else row["token_family_id"],
+        token_family_id=row["token_family_id"] if isinstance(row["token_family_id"], UUID) else UUID(row["token_family_id"]),
         expires_at=row["expires_at"],
         revoked_at=row.get("revoked_at"),
-        replaced_by_session_id=UUID(row["replaced_by_session_id"]) if row.get("replaced_by_session_id") else None,
+        replaced_by_session_id=row["replaced_by_session_id"] if isinstance(row.get("replaced_by_session_id"), UUID) else UUID(row["replaced_by_session_id"]) if row.get("replaced_by_session_id") else None,
         created_at=row.get("created_at"),
         last_used_at=row.get("last_used_at"),
         user_agent=row.get("user_agent"),

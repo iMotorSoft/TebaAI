@@ -50,7 +50,7 @@ def main() -> None:
                 cur = conn.cursor()
                 await cur.execute("SELECT current_database()")
                 row = await cur.fetchone()
-                db_name = row[0] if row else "unknown"
+                db_name = row["current_database"] if row else "unknown"
                 if db_name != "tebaai":
                     print(f"ERROR: Connected to '{db_name}' but expected 'tebaai'. Aborting.", file=sys.stderr)
                     return 1

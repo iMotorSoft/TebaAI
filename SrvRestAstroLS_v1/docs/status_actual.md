@@ -297,6 +297,44 @@ paralelas prematuras.
 - `pytest`: 116 PASS.
 - Sin secretos en diff, sin Team360, sin Docker restart, sin Milvus/LiteLLM.
 
+### 2026-06-28 - Biblioteca/documentos base con CLI + PostgreSQL 18
+
+- Revisada referencia Team360: `sync_v360_catalog_to_team360.py` con patrones
+  de ingesta documental, CatalogDocument dataclass, chunking, argparse CLI.
+  REUTILIZAR CONCEPTUALMENTE: estructura de servicio + repositorio + CLI.
+  NO COPIAR: logica especifica de diagnostico Team360.
+- Creada migracion `db/migrations/003_create_library_documents.sql` con 4 tablas:
+  `library_collections`, `library_documents`, `library_document_texts`,
+  `library_document_references`. Indices, checks, unique constraints.
+- Migracion 003 aplicada en `tebaai`. Tablas verificadas con
+  `information_schema.tables`.
+- Creado `modules/library/domain.py`: enums (DocumentLanguage, DocumentSourceType,
+  DocumentStatus, TextFormat, ExtractionMethod, RefType) y dataclasses
+  (LibraryCollection, LibraryDocument, LibraryDocumentText,
+  LibraryDocumentReference) con factories `.create()`.
+- Creado `modules/library/schemas.py`: IngestDocumentRequest, IngestDocumentResult.
+- Creado `modules/library/errors.py`: LibraryError, DocumentNotFoundError,
+  DuplicateDocumentError, ExtractionError, UnsupportedFileTypeError, etc.
+- Creado `modules/library/repository.py`: get_or_create_collection,
+  get_document_by_sha256, get_document_by_id, create_document, list_documents,
+  create_document_text, create_document_reference. JSONB serializado con
+  `json.dumps()` para compatibilidad psycopg 3.
+- Creado `modules/library/extractors.py`: extract_text para .md (raw_markdown),
+  .txt (raw_text), .pdf (pymupdf4llm). compute_sha256, compute_file_sha256.
+- Creado `modules/library/service.py`: ingest_document orquesta extraccion,
+  hashing, creacion de coleccion, prevencion de duplicados, dry-run.
+- Creado `scripts/ingest_document.py`: CLI con argparse, 7 argumentos requeridos
+  + 9 opcionales, dry-run, resumen humano, deteccion de duplicados.
+- Agregado `get_user_by_email` standalone en `modules/auth/repository.py` para
+  uso cross-module desde library service.
+- Agregado `pytest-asyncio` como dependencia dev, configurado `asyncio_mode=auto`.
+- 24 tests unitarios para library (domain, extractors, schemas, repository,
+  service, CLI). Todos PASS.
+- Smoke CLI real contra PostgreSQL 18: carga `.md`, `.txt`, duplicate detection,
+  dry-run, verificacion de texto en DB.
+- No se toco Milvus, LiteLLM, Astro, frontend, admin UI, dashboard.
+- Sin secretos en diff, sin Team360, sin Docker restart.
+
 ## Pendientes recomendados
 
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).
@@ -304,10 +342,12 @@ paralelas prematuras.
 - Reemplazar localStorage con cookies httpOnly para tokens.
 - Agregar refresh automatico de tokens.
 - Implementar dashboard principal.
+- Chunking documental + preparacion Milvus.
+- API HTTP minima para documentos.
 - Definir primera vertical Breslov en fase posterior.
-- Hardening de global.js (validacion de entorno, tipos mas estrictos).
-- Agregar paginacion a tabla de usuarios.
-- Agregar busqueda/filtro en tabla de usuarios.
+- Hardening de global.js.
+- Agregar paginacion/busqueda a tabla de usuarios.
+- Implementar OCR para PDFs escaneados.
 
 ## Notas de seguridad
 

@@ -118,3 +118,16 @@ def _row_to_user(row: dict) -> User:
         created_at=row.get("created_at"),
         updated_at=row.get("updated_at"),
     )
+
+
+# ── Standalone helpers for cross-module use ─────────────────────────────
+
+
+async def get_user_by_email(conn: AsyncConnection, email: str) -> User | None:
+    """Look up a user by email (case-insensitive)."""
+    row = await fetch_one(
+        conn,
+        "SELECT * FROM users WHERE lower(email) = lower(%(email)s)",
+        {"email": email},
+    )
+    return _row_to_user(row) if row else None

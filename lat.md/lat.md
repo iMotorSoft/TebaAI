@@ -78,6 +78,7 @@ be started, stopped or restarted automatically.
 - [[root-cause-debugging-policy]]
 - [[library-retrieval-models-policy]]
 - [[bibliographic-metadata-audit]]
+- [[page-aware-metadata-mapping-audit]]
 - `docs/adr/ADR-001-new-project-bootstrap-template.md`
 - `docs/adr/ADR-002-global-configuration-facade.md`
 

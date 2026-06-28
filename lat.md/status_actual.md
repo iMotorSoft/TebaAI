@@ -96,6 +96,18 @@ actualizaron todas las dependencias frontend/backend a latest.
 - Conectar backend con PostgreSQL via psycopg pool y configurar DSN.
 - Conectar backend con Milvus y LiteLLM en fase de integracion.
 
+### 2026-06-28 - Politica de modelos de retrieval
+
+- Creado `lat.md/library-retrieval-models-policy.md` como documento canonico.
+- Documenta embedding model (`text-embedding-3-small`, 1536d, LiteLLM).
+- Documenta busqueda textual (PostgreSQL FTS + unaccent + pg_trgm).
+- Documenta busqueda semantica (Milvus 2.6, COSINE, HNSW).
+- Documenta busqueda hibrida (FTS + Milvus merge/dedup).
+- Documenta que modelo generativo y RAG no estan implementados.
+- Agregado enlace desde `lat.md/lat.md`.
+- Actualizados `lat.md/status_actual.md` y `SrvRestAstroLS_v1/docs/status_actual.md`.
+- Sin cambios de codigo runtime.
+
 ## Notas de seguridad
 
 - No se cargaron corpus reales ni archivos pesados.

@@ -76,6 +76,7 @@ be started, stopped or restarted automatically.
 - [[browser-mcp-validation-policy]]
 - [[mermaid-diagram-policy]]
 - [[root-cause-debugging-policy]]
+- [[library-retrieval-models-policy]]
 - `docs/adr/ADR-001-new-project-bootstrap-template.md`
 - `docs/adr/ADR-002-global-configuration-facade.md`
 

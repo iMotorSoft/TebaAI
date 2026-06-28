@@ -426,3 +426,15 @@ paralelas prematuras.
 - Sin cambios Milvus/LiteLLM.
 - Password oculto en DSN_DISPLAY via sanitize_dsn.
 - SecretStr usado para passwords, tokens, API keys en core/config.py.
+
+### 2026-06-28 - Documentacion de modelos de retrieval
+
+- Creado `lat.md/library-retrieval-models-policy.md` como politica canonica.
+- Embeddings: `text-embedding-3-small` via LiteLLM, dim 1536, collection
+  `tebaai_breslov_chunks_v1` (1991 vectores).
+- Text search: PostgreSQL 18 FTS con unaccent y pg_trgm.
+- Semantic search: Milvus 2.6 con COSINE/HNSW.
+- Hybrid: FTS + Milvus merge/dedup con scoring combinado.
+- Generative model: no implementado. RAG: no implementado.
+- Actualizados `lat.md/lat.md`, `lat.md/status_actual.md`.
+- Sin cambios de codigo runtime. Sin tocar infraestructura.

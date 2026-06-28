@@ -362,15 +362,37 @@ paralelas prematuras.
   modificaron `library_document_chunks`, no se crearon indices ni tsvector.
 - 140 tests PASS. Sin secretos, sin Team360, sin Milvus/LiteLLM.
 
+### 2026-06-28 - FTS sobre library_document_chunks + CLI con resaltado
+
+- Creada migracion `db/migrations/006_add_library_chunk_full_text_search.sql`:
+  agrega `search_text_normalized` (unaccent), `search_vector_es` (spanish FTS),
+  `search_vector_simple` (simple FTS), indices GIN (2 tsvector + 1 gin_trgm_ops).
+- Backfill aplicado a 1991 chunks existentes.
+- `create_chunks` actualizado para poblar FTS via SQL con unaccent + to_tsvector.
+- Creado `modules/library/text_search.py` con 4 modos de busqueda:
+  `fts` (tsvector + ranking), `phrase` (ILIKE sobre normalizado),
+  `trigram` (similarity > 0.1), `auto` (phrase + fts + merge).
+- Highlight implementado con `html.escape()` + position mapping para insertar
+  `<mark>` tags sin duplicar HTML entities.
+- Creado `scripts/search_library_text.py` con --collection, --query, --mode,
+  --top-k, --language, --json. Salida humana con titulo, referencia, score,
+  fragmento resaltado.
+- Smoke real Breslov PASS: "plegaria" (fts, score 1.6, <mark> tags correctos),
+  "Rebe Najman" (phrase, 2 resultados), "la potencia de la plegaria"
+  (phrase, highlighting exacto), "zzzz-no-existe" (sin resultados, sin error).
+- No se toco Milvus, API, UI, frontend, auth, admin.
+- 140 tests PASS. Sin secretos.
+
 ## Pendientes recomendados
 
+- API HTTP minima de busqueda documental.
+- Busqueda hibrida PostgreSQL FTS + Milvus.
+- UI minima de busqueda Breslov.
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).
 - Integrar LiteLLM para llamadas a modelos LLM.
 - Reemplazar localStorage con cookies httpOnly para tokens.
 - Agregar refresh automatico de tokens.
 - Implementar dashboard principal.
-- Chunking documental + preparacion Milvus.
-- API HTTP minima para documentos.
 - Definir primera vertical Breslov en fase posterior.
 - Hardening de global.js.
 - Agregar paginacion/busqueda a tabla de usuarios.

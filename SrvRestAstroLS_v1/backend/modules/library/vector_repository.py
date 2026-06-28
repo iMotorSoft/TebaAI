@@ -26,11 +26,15 @@ async def create_chunks(conn: AsyncConnection, chunks: list[dict]) -> int:
                 (id, document_id, document_text_id, collection_id, chunk_index, chunk_uid,
                  language, content, content_sha256, content_length, token_count_estimate,
                  char_start, char_end, page_start, page_end, chapter, section, metadata,
+                 search_text_normalized, search_vector_es, search_vector_simple,
                  created_at, updated_at)
             VALUES
                 (%(id)s, %(document_id)s, %(document_text_id)s, %(collection_id)s, %(chunk_index)s, %(chunk_uid)s,
                  %(language)s, %(content)s, %(content_sha256)s, %(content_length)s, %(token_count_estimate)s,
                  %(char_start)s, %(char_end)s, %(page_start)s, %(page_end)s, %(chapter)s, %(section)s, %(metadata)s,
+                 public.unaccent(%(content)s),
+                 to_tsvector('spanish', public.unaccent(%(content)s)),
+                 to_tsvector('simple', public.unaccent(%(content)s)),
                  %(created_at)s, %(updated_at)s)
             ON CONFLICT (chunk_uid) DO NOTHING
             """,

@@ -16,7 +16,7 @@ from modules.library.schemas import (
 from modules.library.text_search import search_chunks_text
 
 
-@post("/library/search", guards=[require_auth])
+@post("/library/search", status_code=200, guards=[require_auth])
 async def library_search(
     request: Request,
     data: LibrarySearchRequest,

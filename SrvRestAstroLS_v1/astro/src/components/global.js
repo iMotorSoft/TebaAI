@@ -29,6 +29,7 @@ export const BRAND = {
 export const ROUTES = {
   home: "/",
   login: "/login",
+  librarySearch: "/library/search",
 };
 
 export const API_ROUTES = {
@@ -39,4 +40,5 @@ export const API_ROUTES = {
   refresh: "/auth/refresh",
   logout: "/auth/logout",
   users: "/users",
+  librarySearch: "/library/search",
 };

@@ -72,13 +72,16 @@
       </div>
 
       <div class="card-actions mt-6 justify-between">
-        {#if user.role === "admin"}
-          <a href="/admin/users" class="btn btn-ghost btn-sm">
-            Admin usuarios
+        <div class="flex gap-2">
+          {#if user.role === "admin"}
+            <a href="/admin/users" class="btn btn-ghost btn-sm">
+              Admin usuarios
+            </a>
+          {/if}
+          <a href="/library/search" class="btn btn-ghost btn-sm">
+            Buscar biblioteca
           </a>
-        {:else}
-          <div></div>
-        {/if}
+        </div>
         <div class="flex gap-2">
           <button class="btn btn-ghost btn-sm" onclick={handleRefresh}>
             Verificar sesión

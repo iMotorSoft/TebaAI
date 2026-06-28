@@ -23,6 +23,7 @@ export const BRAND: Readonly<{
 export const ROUTES: Readonly<{
   home: "/";
   login: "/login";
+  librarySearch: "/library/search";
 }>;
 
 export const API_ROUTES: Readonly<{
@@ -33,4 +34,5 @@ export const API_ROUTES: Readonly<{
   refresh: "/auth/refresh";
   logout: "/auth/logout";
   users: "/users";
+  librarySearch: "/library/search";
 }>;

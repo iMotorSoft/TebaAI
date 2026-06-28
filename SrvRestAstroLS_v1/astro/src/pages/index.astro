@@ -7,12 +7,18 @@ import { ROUTES } from "../components/global.js";
 <Layout>
   <main class="page-shell">
     <HomePanel client:load />
-    <nav class="mt-6">
+    <nav class="mt-6 flex gap-2">
       <a
         href={ROUTES.login}
         class="btn btn-ghost btn-sm rounded-full px-5"
       >
         Iniciar sesión
+      </a>
+      <a
+        href={ROUTES.librarySearch}
+        class="btn btn-ghost btn-sm rounded-full px-5"
+      >
+        Buscar biblioteca
       </a>
     </nav>
   </main>

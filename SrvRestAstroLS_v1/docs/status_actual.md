@@ -2,12 +2,11 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-06-25
+Ultima actualizacion: 2026-06-27
 
 ## Estado general
 
-Bootstrap tecnico completado. Frontend actualizado a Astro 7 con Tailwind CSS 4
-+ DaisyUI 5. Backend con psycopg 3, pymilvus 2.6.15 y litellm 1.89.3.
+Configuracion global y PostgreSQL 18 implementados. Bootstrap tecnico completo.
 
 Esta es la bitacora tecnica principal del runtime TebaAI. Agrupa backend,
 frontend Astro/Svelte e integracion frontend/backend para evitar bitacoras
@@ -54,6 +53,72 @@ paralelas prematuras.
 
 ## Acciones realizadas
 
+### 2026-06-25 - Infraestructura PostgreSQL 18
+
+- Auditados todos los modulos PostgreSQL de Team360 (`modules/db/settings.py`,
+  `pool.py`, `transaction.py`, `errors.py`, entrypoint, health, preflight).
+- Identificados elementos reutilizables (pool lazy, dict_row, errores tipados,
+  transacciones explicitas, startup/shutdown via Litestar lifecycle).
+- Creado `infrastructure/postgres/errors.py` con jerarquia tipada.
+- Creado `infrastructure/postgres/pool.py` con `create_pool`, `open_pool`,
+  `close_pool`, `get_pool_from_state` (sin singleton global).
+- Creado `infrastructure/postgres/transaction.py` con `fetch_one`, `fetch_all`,
+  `execute`, `transaction` (async context manager).
+- Creado `infrastructure/postgres/health.py` con `check_postgres_health`.
+- Creado `infrastructure/postgres/migrations.py` con runner de SQL simples y
+  tabla `schema_migrations`.
+- Creado `core/lifespan.py` con `on_startup`/`on_shutdown`: crea pool, verifica
+  conectividad, corre migraciones, asigna `app.state.pg_pool`.
+- Creado `core/dependencies.py` con `get_pg_pool` para Litestar DI.
+- Creado `routes/ready.py` con `GET /ready` que valida PostgreSQL via `SELECT 1`.
+- Actualizado `routes/health.py` como liveness liviano (sin queries DB).
+- Actualizado `ls_iMotorSoft_Srv01.py` con lifecycle y rutas `/health`, `/ready`.
+- Creada migracion inicial `db/migrations/001_initialize_database.sql` con tabla
+  `schema_migrations`.
+- Creada base `tebaai` en PostgreSQL 18 Docker (encoding UTF8, template0).
+- Actualizado `.env.example` con `TEBAAI_POSTGRES_DB=tebaai`.
+- Creados `tests/test_infrastructure_postgres.py` (20 tests unitarios).
+- 69 tests total (56 config + 13 globalVar + 20 infra) todos PASS.
+- Smoke real: `/health` 200, `/ready` 200 con postgres up, pool creado y
+  migracion aplicada. Sin secretos expuestos.
+- No se modifico Team360. No se reinicio PostgreSQL. No se toco Milvus/LiteLLM.
+
+### 2026-06-25 - Fundacion de configuracion global (core/config.py + globalVar.py)
+
+- Creado `SrvRestAstroLS_v1/backend/core/__init__.py`.
+- Creado `SrvRestAstroLS_v1/backend/core/config.py` con `AppSettings` tipado
+  via `pydantic-settings`: grupos Runtime, PostgreSQL, Milvus, LiteLLM y Auth.
+- Creado `SrvRestAstroLS_v1/backend/globalVar.py` como fachada estable sin
+  side effects; no llama a `os.getenv()`.
+- Agregada dependencia `pydantic-settings>=2.14.0` en `pyproject.toml`.
+- Actualizado `.env.example` con todas las variables `TEBAAI_*`, secciones
+  comentarios y precedencias.
+- Creados `tests/conftest.py`, `tests/test_config.py` y
+  `tests/test_global_var.py` (56 tests, todos PASS).
+- `python -c "import globalVar; print(globalVar.SERVICE_NAME)"` PASS sin
+  secretos visibles.
+- `git diff --check`: PASS.
+- No se modifico el entrypoint, no se crearon conexiones, no se toco infraestructura.
+
+### 2026-06-27 - Auditoria de cierre (config + PostgreSQL)
+
+- Corregida responsabilidad de `schema_migrations`: ahora solo
+  `infrastructure/postgres/migrations.py` la crea y administra. El SQL
+  `001_initialize_database.sql` quedo como placeholder fundacional sin objetos
+  de aplicacion.
+- Agregado `TEBAAI_POSTGRES_AUTO_MIGRATE=true` a `.env.example`, `core/config.py`,
+  `globalVar.py` y `core/lifespan.py`. En desarrollo defaulta `true`; puede
+  desactivarse via variable de entorno.
+- Agregados 15 tests nuevos: `postgres_auto_migrate` (default + parsing),
+  `POSTGRES_AUTO_MIGRATE` export, `create_pool_from_settings`,
+  `ensure_schema_migrations_table`, `run_migrations` (aplica, skips, idempotente,
+  error), lifecycle (startup migra si flag true, salta si false, salta si
+  postgres disabled, shutdown cierra pool, shutdown sin pool no raisea).
+- 84 tests total (todos PASS).
+- Sin secretos expuestos, sin DSN real, sin TEAM360_, sin Team360 modificado,
+  sin Docker restart, sin cambios Milvus/LiteLLM.
+- Commits separados: config global (1) + PostgreSQL infra (2).
+
 ### 2026-06-25 - Convencion de bitacora runtime backend + Astro
 
 - Se formalizo que este archivo es la bitacora tecnica principal del runtime.
@@ -96,23 +161,24 @@ paralelas prematuras.
 
 ## Validacion
 
-- Para la convencion de `status_actual.md`: `git diff --check` PASS.
-- `pnpm check`: 0 errors, 0 warnings.
-- `pnpm build`: 1 page, daisyUI 5.5.23, build 1.23s.
-- `uv sync`: 36 packages, PASS.
-- `uv run -- python -c "import psycopg; from psycopg import AsyncConnection"`:
-  PASS.
-- `uv run -- python -c "import pymilvus; print(pymilvus.__version__)"`: 2.6.15.
-- `uv run -- python -c "from litellm import completion, acompletion"`: PASS.
+- `pytest`: 84 tests, todos PASS.
+- `git diff --check`: PASS.
+- `python -c "import globalVar"`: PASS sin side effects.
+- `python -c "from core.config import get_settings"`: PASS sin conexiones.
+- Dependencias: `pydantic-settings==2.14.2`, `psycopg==3.3.4`,
+  `psycopg-binary==3.3.4`, `psycopg-pool==3.3.1`. Sin SQLAlchemy, Alembic,
+  PyJWT, Argon2 no justificados.
+- `pnpm check`: 0 errors, 0 warnings (no changes).
+- `pnpm build`: 1 page, daisyUI 5.5.23 (no changes).
+- `uv sync`: PASS.
 
 ## Pendientes recomendados
 
-- Usar este archivo como punto unico de cierre para cambios runtime backend,
-  Astro e integracion hasta que el volumen justifique bitacoras locales.
+- Implementar `modules/auth/` con usuarios, auth_sessions, roles (admin, editor,
+  viewer) y JWT (config ya preparada en core/config.py).
 - Implementar `SrvRestAstroLS_v1/astro/src/components/global.js` como fachada
-  publica frontend cuando llegue la fase de configuracion global.
-- Conectar backend con PostgreSQL via psycopg async pool.
-- Conectar backend con Milvus 2.6.
+  publica frontend.
+- Conectar backend con Milvus 2.6 (infrastructure/milvus/).
 - Integrar LiteLLM para llamadas a modelos LLM.
 - Definir primera vertical Breslov en fase posterior.
 
@@ -121,3 +187,11 @@ paralelas prematuras.
 - No se tocaron servicios externos.
 - No se cargaron corpus reales.
 - No se imprimieron ni leyeron secretos.
+- Sin DSN real completo en diff.
+- Sin valores TEAM360_ en TebaAI.
+- Sin cambios a Team360.
+- Sin operaciones destructivas.
+- Sin Docker restart.
+- Sin cambios Milvus/LiteLLM.
+- Password oculto en DSN_DISPLAY via sanitize_dsn.
+- SecretStr usado para passwords, tokens, API keys en core/config.py.

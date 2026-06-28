@@ -1,0 +1,9 @@
+-- 001_initialize_database.sql
+-- TebaAI foundation migration (placeholder).
+--
+-- The schema_migrations tracking table is created by the migration runner
+-- (infrastructure/postgres/migrations.py) — NOT by SQL files — to avoid a
+-- circular dependency where the runner needs the table before migrations run.
+--
+-- This migration is intentionally empty of application objects. Add real
+-- schema objects (extensions, enums, tables) in subsequent migration files.

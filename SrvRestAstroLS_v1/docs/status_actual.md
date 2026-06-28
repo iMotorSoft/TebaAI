@@ -383,9 +383,24 @@ paralelas prematuras.
 - No se toco Milvus, API, UI, frontend, auth, admin.
 - 140 tests PASS. Sin secretos.
 
+### 2026-06-28 - API HTTP de búsqueda bibliográfica
+
+- Creado `modules/library/routes.py` con endpoint `POST /library/search`.
+- Protegido con `require_auth` (Bearer token valido, cualquier role).
+- Usa `search_chunks_text` de `text_search.py` sin duplicar logica.
+- Agregados schemas Pydantic: `LibrarySearchRequest`, `LibrarySearchResult`,
+  `LibrarySearchResponse`. Validaciones: query no vacio (max 300 chars),
+  mode enum, language enum, top_k entre 1 y 50.
+- Response no expone `search_vector_*`, `search_text_normalized`,
+  ni contenido completo de chunks.
+- Registrada route en `ls_iMotorSoft_Srv01.py`.
+- Smoke HTTP real PASS: plegaria (201, fts rank 1.6, <mark> correcto),
+  "Rebe Najman" (201, phrase), frase exacta (201, phrase), sin resultados
+  (201, total=0), query vacia (400), sin token (401).
+- No se toco Milvus, LiteLLM, frontend, UI, auth guards existentes.
+
 ## Pendientes recomendados
 
-- API HTTP minima de busqueda documental.
 - Busqueda hibrida PostgreSQL FTS + Milvus.
 - UI minima de busqueda Breslov.
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).

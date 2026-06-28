@@ -7,6 +7,7 @@ from litestar.handlers.base import BaseRouteHandler
 from modules.auth.domain import UserRole
 
 
+# @lat: [[authentication-security-policy#Authorization]]
 def require_auth(connection: ASGIConnection, _: BaseRouteHandler) -> None:
     auth_header = connection.headers.get("Authorization", "")
     if not auth_header.startswith("Bearer "):

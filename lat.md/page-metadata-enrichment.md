@@ -1,11 +1,15 @@
 # TebaAI — Page Metadata Enrichment
 
+This decision limits persisted page metadata to mappings supported by high-confidence audit evidence.
+
 ## Purpose
 
 This document records the enrichment of `library_document_chunks` with
 high-confidence page metadata derived from page-aware PDF auditing.
 
 ## Migration 007
+
+Migration 007 adds optional bibliographic fields without changing chunk identity or vector content.
 
 - File: `db/migrations/007_add_library_chunk_bibliographic_metadata.sql`
 - Columns added: `page_start`, `page_end`, `chapter`, `section`,
@@ -15,6 +19,8 @@ high-confidence page metadata derived from page-aware PDF auditing.
 
 ## Enrichment criteria
 
+Only unambiguous anchors meeting the documented confidence thresholds may populate page metadata.
+
 Only chunks with `confidence = high` from the page-aware mapping audit
 were enriched. High confidence requires:
 - Start and end anchors found on the same page with ≥60% hit rate, OR
@@ -22,6 +28,8 @@ were enriched. High confidence requires:
 - No ambiguity (anchors spread across non-adjacent pages)
 
 ## Results
+
+The first enrichment populated physical PDF pages for 284 of 1,990 chunks.
 
 | Document | High-confidence | Total chunks | Coverage |
 |----------|---------------:|------------:|---------:|
@@ -32,6 +40,8 @@ were enriched. High confidence requires:
 
 ## Notes
 
+The enrichment preserves retrieval content and distinguishes physical pages from printed pagination.
+
 - Pages are physical PDF page numbers, not printed book page numbers.
 - Medium/low/none confidence chunks were not enriched.
 - Chapter/section fields were NOT populated (deferred to future phase).
@@ -39,6 +49,8 @@ were enriched. High confidence requires:
 - Evaluation metrics unchanged after enrichment (26/30 PASS hybrid).
 
 ## Related files
+
+The enrichment and audit scripts are the implementation sources for this policy.
 
 - Enrichment script: `scripts/enrich_chunk_page_metadata.py`
 - Audit script: `scripts/audit_page_chunk_mapping.py`

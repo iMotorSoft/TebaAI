@@ -1,5 +1,7 @@
 # TebaAI — Library Retrieval Models Policy
 
+This policy separates authoritative content, textual search, semantic retrieval and any future generative stage.
+
 ## Purpose
 
 This document defines the embedding model, search strategies, query modes, and
@@ -12,6 +14,8 @@ It exists to prevent confusion between:
 - retrieval of evidence vs. interpretative answer generation.
 
 ## Embeddings
+
+Indexing and querying use one embedding contract so vectors remain comparable.
 
 | Attribute | Value |
 |-----------|-------|
@@ -29,6 +33,8 @@ embedding model is configured.
 
 ## Textual / Literal Search
 
+PostgreSQL provides authoritative lexical, phrase and fuzzy retrieval over persisted chunk text.
+
 | Attribute | Value |
 |-----------|-------|
 | Engine | PostgreSQL 18 Full Text Search |
@@ -42,6 +48,8 @@ embedding model is configured.
 FTS is used for modes `auto`, `fts`, `phrase`, and as the FTS branch of `hybrid`.
 
 ## Semantic / Vector Search
+
+Milvus provides semantic candidates that are always enriched and authorized from PostgreSQL.
 
 | Attribute | Value |
 |-----------|-------|
@@ -59,6 +67,8 @@ It is used as the vector branch of `hybrid` mode and independently via
 
 ## Hybrid Search
 
+Hybrid mode combines normalized PostgreSQL and Milvus signals while deduplicating by stable chunk identity.
+
 | Attribute | Value |
 |-----------|-------|
 | Mode name | `hybrid` |
@@ -73,6 +83,8 @@ It is used as the vector branch of `hybrid` mode and independently via
 
 ## Query Modes Summary
 
+Each public query mode maps to an explicit retrieval engine and use case.
+
 | Mode | Engine | Use case |
 |------|--------|----------|
 | `auto` | PostgreSQL FTS (phrase + fts merge) | General text search, default |
@@ -82,6 +94,8 @@ It is used as the vector branch of `hybrid` mode and independently via
 | `hybrid` | PostgreSQL FTS + Milvus | Combined textual + semantic |
 
 ## Generative Model
+
+Generation is outside the current retrieval contract and cannot be introduced implicitly.
 
 | Attribute | Value |
 |-----------|-------|
@@ -106,6 +120,8 @@ reranking must:
 
 ## Prohibitions
 
+These constraints protect source authority, citation integrity and embedding compatibility.
+
 - Do not replace PostgreSQL with Milvus as the source of truth.
 - Do not replace Milvus with PostgreSQL for vector search.
 - Do not call a generative LLM inside retrieval endpoints.
@@ -116,6 +132,8 @@ reranking must:
 - Do not hardcode API keys or model names in code — use `core/config.py`.
 
 ## Future directions (not implemented)
+
+The following capabilities require explicit design and validation before implementation.
 
 - Sparse vectors (Milvus hybrid search with BM25).
 - Cross-encoder reranking.

@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-const ADMIN_EMAIL = process.env.TEBAAI_E2E_ADMIN_EMAIL ?? "admin@tebaai.ai";
-const ADMIN_PASSWORD = process.env.TEBAAI_E2E_ADMIN_PASSWORD ?? "Admin123!";
+const ADMIN_EMAIL = process.env.TEBAAI_E2E_ADMIN_EMAIL ?? "";
+const ADMIN_PASSWORD = process.env.TEBAAI_E2E_ADMIN_PASSWORD ?? "";
 
 test.describe("Library search UI", () => {
   test("shows login required when not authenticated", async ({ page }) => {
@@ -11,6 +11,7 @@ test.describe("Library search UI", () => {
   });
 
   test("authenticated user can search and see results", async ({ page }) => {
+    test.skip(!ADMIN_EMAIL || !ADMIN_PASSWORD, "TEBAAI_E2E_ADMIN_EMAIL/PASSWORD not set");
     // Login first
     await page.goto("/login");
     await page.fill("#login-email", ADMIN_EMAIL);
@@ -32,6 +33,7 @@ test.describe("Library search UI", () => {
   });
 
   test("search with no results shows message", async ({ page }) => {
+    test.skip(!ADMIN_EMAIL || !ADMIN_PASSWORD, "TEBAAI_E2E_ADMIN_EMAIL/PASSWORD not set");
     await page.goto("/login");
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);

@@ -25,6 +25,7 @@ def sanitize_dsn(dsn: str) -> str:
         return "<invalid-dsn>"
 
 
+# @lat: [[global-configuration-facade-policy#8. Manejo De Secretos]]
 class AppSettings(BaseSettings):
     model_config = SettingsConfigDict(
         env_prefix="TEBAAI_",

@@ -14,6 +14,7 @@ from infrastructure.postgres.transaction import fetch_all, fetch_one
 SEARCH_MODES = ("auto", "fts", "phrase", "trigram", "hybrid")
 
 
+# @lat: [[library-retrieval-models-policy#Textual / Literal Search]]
 async def search_chunks_text(
     conn: AsyncConnection,
     collection_code: str,

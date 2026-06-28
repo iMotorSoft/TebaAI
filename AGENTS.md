@@ -1,109 +1,102 @@
-# TebaAI - Instructions For Agents
+# TebaAI - Instrucciones para agentes
 
-Work from the project root:
+Este archivo es la fuente operativa canonica para agentes que trabajen en TebaAI. Las politicas extensas se consultan solo cuando la tarea las necesita.
 
-`/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI`
+## Inicio obligatorio
 
-TebaAI is a generic content platform. Breslov will be the first vertical
-project, but this bootstrap must not create Breslov-specific logic, ingestion,
-PostgreSQL, Milvus or LiteLLM integration yet.
+1. Trabajar desde `/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI`.
+2. Ejecutar `git branch --show-current` y `git status --short`.
+3. Leer `SrvRestAstroLS_v1/docs/status_actual.md`.
+4. Para cambios de arquitectura, leer `lat.md/lat.md`, `lat.md/status_actual.md` y el documento canonico relevante.
+5. No cambiar de rama ni pisar cambios existentes.
+6. Un solo agente puede escribir sobre un worktree.
 
-## Canonical Decisions
+No hacer commit, push, merge, rebase, reset, clean, stash, checkout forzado ni borrar ramas salvo pedido explicito del usuario.
 
-- Visible brand: `Teba AI`.
-- Technical identifier: `tebaai`.
-- Environment variable prefix: `TEBAAI_`.
-- Backend standard: Litestar.
-- Frontend standard: Astro.js + Svelte 5 runes.
-- Backend port: `7008`.
-- Astro port: `3008`.
-- Backend entrypoint: `SrvRestAstroLS_v1/backend/ls_iMotorSoft_Srv01.py`.
-- ASGI object: `app`.
-- Launcher: `uvicorn ls_iMotorSoft_Srv01:app --host 127.0.0.1 --port 7008`.
-- Do not create `SrvRestAstroLS_v1/backend/app.py` unless a new ADR explicitly
-  approves the exception.
+## Identidad y stack
 
-## External Services
+- marca visible: `Teba AI`;
+- identificador tecnico: `tebaai`;
+- variables de entorno: prefijo `TEBAAI_`;
+- backend: Litestar en `127.0.0.1:7008`;
+- entrypoint: `SrvRestAstroLS_v1/backend/ls_iMotorSoft_Srv01.py`;
+- objeto ASGI: `app`;
+- frontend: Astro 7 + Svelte 5 en `127.0.0.1:3008`;
+- PostgreSQL 18: verdad persistente;
+- Milvus 2.6: indice vectorial derivado;
+- LiteLLM: gateway de embeddings y futuras llamadas generativas.
 
-PostgreSQL, Milvus and LiteLLM are permanent external services.
+No crear `SrvRestAstroLS_v1/backend/app.py` sin un ADR que apruebe la excepcion.
 
-Agents must not start, stop, restart, reconfigure or migrate those services
-automatically. Any action on those services requires explicit manual
-instruction.
+## Ramas
 
-## Browser And Testing Policy
+| Rama | Responsabilidad |
+| --- | --- |
+| `main` | Snapshot estable; no desarrollar directamente salvo hotfix explicito. |
+| `feature/console-backend-core` | Backend, frontend, auth, biblioteca, runtime e integracion. |
+| `feature/knowledge-ingestion-service` | Ingestion, chunking, embeddings, retrieval y evaluacion. |
+| `docs/knowledge-documents-foundation` | Estandares, contenido curado y documentacion de knowledge. |
 
-Playwright + Chromium is the official E2E gate.
+`desarrollo`, `dev` y `backend` corresponden a `feature/console-backend-core`.
 
-Browser MCP is exploratory and useful for visual diagnostics, reproduction and
-inspection. Browser MCP does not replace a reproducible Playwright test for
-closing a phase or regression.
+La rama heredada `ux/team360-console-design-handoff` tiene un nombre ajeno a TebaAI y no es canonica. No usarla ni replicar nombres `team360_*` en nuevas ramas.
 
-## Diagrams
+## Contexto por tarea
 
-Mermaid is the canonical source for diagrams and must be versioned in Git.
-SVG, PNG and Excalidraw files are optional derived artifacts.
+| Tarea | Referencia obligatoria |
+| --- | --- |
+| Arquitectura general | `lat.md/lat.md` y `lat.md/tebaai-knowledge-map.md` |
+| Configuracion, secretos o variables | `lat.md/global-configuration-facade-policy.md` |
+| PostgreSQL | `lat.md/postgres-driver-policy.md` |
+| Auth, tokens o roles | `lat.md/authentication-security-policy.md` |
+| Biblioteca y retrieval | `lat.md/library-retrieval-models-policy.md` |
+| Servicios reales o benchmarks | `lat.md/service-preflight-methodology.md` |
+| Browser QA o E2E | `lat.md/browser-mcp-validation-policy.md` |
+| Bugs no triviales | `lat.md/root-cause-debugging-policy.md` |
+| Diagramas | `lat.md/mermaid-diagram-policy.md` |
 
-Do not install the full gstack `/diagram` workflow and do not make this project
-depend on gstack.
+## Limites de implementacion
 
-## Root Cause
+- Hacer cambios pequenos y limitados al objetivo.
+- PostgreSQL es la fuente de verdad; Milvus es derivado.
+- No iniciar, detener, reiniciar, migrar ni reconfigurar PostgreSQL, Milvus o LiteLLM sin instruccion explicita.
+- Usar `psycopg 3 async`; mantener SQL en repositories.
+- No introducir ORM sin ADR.
+- Solo `core/config.py` puede leer variables de entorno del backend.
+- `globalVar.py` es una fachada sin conexiones ni efectos secundarios.
+- `global.js` contiene solo configuracion publica y nunca secretos.
+- No hardcodear credenciales, tokens, passwords, API keys ni credenciales E2E.
+- No introducir logica Breslov en modulos genericos cuando pueda expresarse como datos, colecciones o configuracion.
 
-Non-trivial investigations must follow the local root cause methodology:
-reproduce, state hypotheses, gather evidence, apply a minimal fix and add a
-regression test when reasonable.
+## Validacion
 
-## Required Context Before Architecture Changes
+Ejecutar siempre:
 
-Before modifying architecture, domain boundaries, external service policy,
-browser validation, diagrams or root cause policy, read:
+- `git diff --check`;
+- tests focalizados del modulo afectado;
+- revision del diff final;
+- `lat check` si cambia `lat.md/` o una referencia `@lat`.
 
-- `lat.md/lat.md`
-- `lat.md/status_actual.md`
-- `docs/adr/`
+Segun el cambio:
 
-Before modifying global configuration, environment variables, PostgreSQL,
-Milvus, LiteLLM, auth, `globalVar.py` or `global.js`, read:
+- backend: `cd SrvRestAstroLS_v1/backend && uv run pytest <paths>`;
+- frontend: `cd SrvRestAstroLS_v1/astro && pnpm check`;
+- build o paginas: agregar `pnpm build`;
+- E2E autenticado: proporcionar `TEBAAI_E2E_ADMIN_EMAIL` y `TEBAAI_E2E_ADMIN_PASSWORD` desde el entorno;
+- servicios reales: ejecutar preflight y comprobar que no exista fallback silencioso.
 
-- `lat.md/global-configuration-facade-policy.md`
+Playwright + Chromium es el gate E2E. Browser MCP es exploratorio y no reemplaza una regresion reproducible.
 
-`globalVar.py` is a stable configuration facade backed by typed settings in
-`core/config.py`. Do not remove it, do not add connections or infrastructure
-side effects to it, and do not read environment variables outside
-`core/config.py`. `global.js` may contain only public frontend configuration and
-must never contain secrets.
+## Documentacion
 
-## Git Branch Convention
+- `SrvRestAstroLS_v1/docs/status_actual.md`: estado tecnico vigente y compacto.
+- `SrvRestAstroLS_v1/docs/status_historico_hasta_2026-06-28.md`: historia tecnica congelada.
+- `lat.md/`: invariantes, contratos y decisiones estables.
+- `docs/adr/`: decisiones arquitectonicas con contexto y consecuencias.
+- `data/reports/`: evidencia y resultados generados.
 
-- `main`: estado estable validado / producción / snapshot estable. No trabajar directo salvo hotfix o consolidación final.
-- `feature/console-backend-core`: rama de desarrollo activo. backend, frontend, runtime, orquestación. Es la rama para `desarrollo`, `dev` o `backend`. Todo el trabajo productivo va aquí.
-- `feature/knowledge-ingestion-service`: knowledge ingestion / RAG / embeddings / chunking / retrieval. No usar para runtime productivo.
-- `docs/knowledge-documents-foundation`: documentación knowledge: estándares, paquetes, contenido curado.
-- `ux/team360-console-design-handoff`: diseño visual, frontend mock, handoff UX. Sin backend real ni integración productiva.
+No duplicar decisiones largas en status. Enlazar a la fuente canonica.
 
-Cuando una instrucción mencione `desarrollo`, `dev` o `backend`, la rama destino es `feature/console-backend-core`.
+## Cierre
 
-## Documentation Placement
-
-- Architecture invariants: `lat.md/`.
-- Runtime technical status: `SrvRestAstroLS_v1/docs/`.
-- Product, strategy, UX and ADRs: `docs/`.
-- Corpus, generated data and reports: `data/`.
-
-## `status_actual.md` Convention
-
-`status_actual.md` is a closing-state log, not a diary. Update the relevant
-file when closing a meaningful phase, not for every trivial edit.
-
-- `SrvRestAstroLS_v1/docs/status_actual.md`: main runtime technical log. It
-  covers backend, Astro/Svelte frontend and frontend/backend integration.
-- `lat.md/status_actual.md`: architecture-living log. Use it only for
-  architecture invariants, canonical policies and LAT documents.
-- `docs/**/status_actual.md`: local documentation status for active product,
-  strategy, UX, ADR or template directories.
-- `data/**/status_actual.md`: local status for corpus, generated data, reports
-  and evidence.
-
-Do not duplicate long decisions inside status files. Link to the canonical LAT,
-ADR or technical document instead. Empty auxiliary folders that only contain
-`.gitkeep` do not need a `status_actual.md`.
+Reportar rama, archivos modificados, validaciones, impacto, riesgos y proximo paso.

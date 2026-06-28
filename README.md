@@ -1,48 +1,56 @@
 # Teba AI
 
-TebaAI is a generic content platform for iMotorSoft projects.
+TebaAI is a generic content and bibliographic retrieval platform for iMotorSoft projects. Breslov is its first configured collection, while platform code remains domain-neutral.
 
-The visible brand is `Teba AI`; the internal technical identifier is
-`tebaai`. Breslov will be the first vertical project, but this repository
-starts as a generic platform without domain-specific ingestion, corpus or
-business logic.
+## Current stack
 
-## Stack
+- Litestar backend on `127.0.0.1:7008`;
+- Astro 7 + Svelte 5 frontend on `127.0.0.1:3008`;
+- PostgreSQL 18 as source of truth;
+- Milvus 2.6 as derived semantic index;
+- LiteLLM for `text-embedding-3-small` embeddings;
+- PostgreSQL FTS and hybrid PostgreSQL/Milvus retrieval;
+- Playwright + Chromium for browser E2E.
 
-- Backend: Litestar.
-- Backend entrypoint: `SrvRestAstroLS_v1/backend/ls_iMotorSoft_Srv01.py`.
-- ASGI object: `app`.
-- Backend local port: `7008`.
-- Frontend: Astro.js + Svelte 5 runes.
-- Astro local port: `3008`.
-- Package manager: pnpm.
-- Browser E2E gate: Playwright + Chromium.
-- Browser exploratory diagnostics: Browser MCP.
-- Diagrams: Mermaid source in Git.
+The platform currently retrieves bibliographic evidence. It does not generate RAG answers or interpretative LLM responses.
 
-## First local commands
+## Local validation
 
-Backend syntax check:
+Backend:
 
 ```bash
 cd SrvRestAstroLS_v1/backend
-python -m py_compile ls_iMotorSoft_Srv01.py
-```
-
-Backend dev launcher:
-
-```bash
-cd SrvRestAstroLS_v1/backend
-uv run uvicorn ls_iMotorSoft_Srv01:app --host 127.0.0.1 --port 7008
+uv run pytest
 ```
 
 Frontend:
 
 ```bash
 cd SrvRestAstroLS_v1/astro
-corepack pnpm install
-corepack pnpm dev
+pnpm check
+pnpm build
 ```
 
-No PostgreSQL, Milvus or LiteLLM process should be started, stopped or
-restarted automatically from this bootstrap.
+Authenticated E2E requires credentials supplied only through the environment:
+
+```bash
+TEBAAI_E2E_ADMIN_EMAIL='...' \
+TEBAAI_E2E_ADMIN_PASSWORD='...' \
+pnpm test:e2e
+```
+
+## Documentation
+
+- operating rules: `AGENTS.md`;
+- architecture index: `lat.md/lat.md`;
+- current runtime status: `SrvRestAstroLS_v1/docs/status_actual.md`;
+- frozen runtime history: `SrvRestAstroLS_v1/docs/status_historico_hasta_2026-06-28.md`;
+- architecture decisions: `docs/adr/`.
+
+Run `lat check` after changing LAT documents or `@lat` references.
+
+## External services
+
+PostgreSQL, Milvus and LiteLLM are permanent external services. Agents must not start, stop, restart, migrate or reconfigure them without explicit user instruction.
+
+No credentials, DSNs, tokens, API keys or real licensed corpus files belong in Git.

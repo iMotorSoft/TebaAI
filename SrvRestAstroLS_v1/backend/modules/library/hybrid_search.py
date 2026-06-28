@@ -24,6 +24,7 @@ FTS_LIMIT = 30
 VECTOR_LIMIT = 30
 
 
+# @lat: [[library-retrieval-models-policy#Hybrid Search]]
 async def search_chunks_hybrid(
     conn: AsyncConnection,
     collection_code: str,

@@ -8,6 +8,7 @@ from core.config import get_settings
 _hasher = PasswordHasher()
 
 
+# @lat: [[authentication-security-policy#Password Storage]]
 def hash_password(password: str) -> str:
     pepper = get_settings().auth_password_pepper.get_secret_value()
     secret = password + pepper if pepper else password

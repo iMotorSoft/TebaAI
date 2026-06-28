@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-const ADMIN_EMAIL = process.env.TEBAAI_E2E_ADMIN_EMAIL ?? "admin@tebaai.ai";
-const ADMIN_PASSWORD = process.env.TEBAAI_E2E_ADMIN_PASSWORD ?? "Admin123!";
+const ADMIN_EMAIL = process.env.TEBAAI_E2E_ADMIN_EMAIL ?? "";
+const ADMIN_PASSWORD = process.env.TEBAAI_E2E_ADMIN_PASSWORD ?? "";
 
 test.describe("Admin users UI", () => {
   test("redirects to login when not authenticated", async ({ page }) => {
@@ -11,6 +11,7 @@ test.describe("Admin users UI", () => {
   });
 
   test("admin can list users", async ({ page }) => {
+    test.skip(!ADMIN_EMAIL || !ADMIN_PASSWORD, "TEBAAI_E2E_ADMIN_EMAIL/PASSWORD not set");
     await page.goto("/login");
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);
@@ -23,6 +24,7 @@ test.describe("Admin users UI", () => {
   });
 
   test("admin can create a user", async ({ page }) => {
+    test.skip(!ADMIN_EMAIL || !ADMIN_PASSWORD, "TEBAAI_E2E_ADMIN_EMAIL/PASSWORD not set");
     await page.goto("/login");
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);
@@ -44,6 +46,7 @@ test.describe("Admin users UI", () => {
   });
 
   test("admin can deactivate and reactivate a user", async ({ page }) => {
+    test.skip(!ADMIN_EMAIL || !ADMIN_PASSWORD, "TEBAAI_E2E_ADMIN_EMAIL/PASSWORD not set");
     await page.goto("/login");
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);

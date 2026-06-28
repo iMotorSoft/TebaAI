@@ -8,6 +8,8 @@ for closing regressions or approving a phase.
 
 ## Local URLs
 
+Local browser validation targets the canonical backend and frontend ports.
+
 - Backend: `http://127.0.0.1:7008`
 - Astro: `http://127.0.0.1:3008`
 

@@ -7,6 +7,7 @@ export const APP_PUBLIC_NAME = "Teba AI";
 // Override via PUBLIC_TEBAAI_API_BASE_URL env for custom backend URLs.
 const BACKEND_DEV = "http://127.0.0.1:7008";
 const envUrl = typeof import.meta !== "undefined" && import.meta.env?.PUBLIC_TEBAAI_API_BASE_URL;
+// @lat: [[global-configuration-facade-policy]]
 export const API_BASE_URL = envUrl || BACKEND_DEV;
 
 export const DEFAULT_LOCALE = "es";

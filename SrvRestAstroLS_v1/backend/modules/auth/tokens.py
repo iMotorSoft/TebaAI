@@ -12,6 +12,7 @@ from core.config import get_settings
 
 # ── Access token (JWT) ────────────────────────────────────────────────────────
 
+# @lat: [[authentication-security-policy#Token Lifecycle]]
 def create_access_token(user_id: str, role: str) -> str:
     settings = get_settings()
     now = datetime.now(timezone.utc)

@@ -1,119 +1,107 @@
 # TebaAI Architecture
 
-This directory contains living architecture and stable operating rules for
-TebaAI.
+This directory defines TebaAI architecture, stable operating rules and domain boundaries that must remain aligned with implementation.
 
 ## Project Map
 
-- `AGENTS.md`: required operating instructions for agents.
-- `.agents/skills/tebaai-project/SKILL.md`: local project skill.
+The project separates runtime code, living architecture, decision records, technical status and generated evidence.
+
+- `AGENTS.md`: agent operating rules.
 - `lat.md/`: architecture invariants and canonical policies.
 - `SrvRestAstroLS_v1/backend/`: Litestar backend.
-- `SrvRestAstroLS_v1/astro/`: Astro.js + Svelte 5 frontend.
-- `SrvRestAstroLS_v1/docs/`: technical runtime status.
-- `SrvRestAstroLS_v1/lab/`: isolated experiments.
-- `docs/`: ADRs, strategy, business, UX and templates.
-- `data/`: corpus input, processed outputs and generated reports.
+- `SrvRestAstroLS_v1/astro/`: Astro and Svelte frontend.
+- `SrvRestAstroLS_v1/docs/`: current and historical runtime status.
+- `docs/adr/`: architecture decision records.
+- `data/`: approved inputs, derived data and reports.
 
 ## Stack
 
-- Backend: Litestar.
-- Backend entrypoint: `SrvRestAstroLS_v1/backend/ls_iMotorSoft_Srv01.py`.
-- ASGI object: `app`.
-- Frontend: Astro.js + Svelte 5 runes.
-- Package manager: pnpm.
-- E2E gate: Playwright + Chromium.
-- Diagrams: Mermaid source in Git.
+The stack uses explicit boundaries between the web application, persistent truth, vector retrieval and model routing.
+
+- Litestar with Python 3.12;
+- Astro 7 and Svelte 5;
+- PostgreSQL 18 with `psycopg 3 async`;
+- Milvus 2.6 as derived vector index;
+- LiteLLM for embeddings and future model routing;
+- Playwright + Chromium as browser gate.
 
 ## Architecture
 
+The runtime keeps PostgreSQL authoritative while Milvus accelerates semantic retrieval and LiteLLM hides provider-specific model access.
+
 ```mermaid
 flowchart LR
-  subgraph Frontend["Frontend &#40;Astro 7 + Svelte 5&#41;"]
-    A1["Astro pages"]
-    A2["Svelte components"]
-    A3["Tailwind CSS 4 + DaisyUI 5"]
-  end
-
-  subgraph Backend["Backend &#40;Litestar&#41;"]
-    B1["Routes"]
-    B2["Services"]
-    B3["Repositories"]
-    B4["Schemas &#40;Pydantic v2&#41;"]
-  end
-
-  subgraph External["External Services"]
-    C1["PostgreSQL 18<br/>pgvector"]
-    C2["Milvus 2.6<br/>Vector store"]
-    C3["LiteLLM<br/>LLM proxy"]
-  end
-
-  Frontend -- "HTTP /api" --> Backend
-  Backend -- "psycopg 3 async" --> C1
-  Backend -- "pymilvus 2.6" --> C2
-  Backend -- "litellm SDK" --> C3
+  Browser[Astro + Svelte] -->|HTTP| API[Litestar]
+  API -->|source of truth| PG[(PostgreSQL 18)]
+  API -->|semantic retrieval| Milvus[(Milvus 2.6)]
+  API -->|embeddings/models| LiteLLM[LiteLLM]
+  Milvus -. derived from .-> PG
 ```
+
+See [[tebaai-knowledge-map]] for the navigable knowledge tree.
 
 ## Conventions
 
-- Visible brand: `Teba AI`.
-- Technical identifier: `tebaai`.
-- Environment prefix: `TEBAAI_`.
-- Backend port: `7008`.
-- Astro port: `3008`.
-- No `backend/app.py` unless a future ADR approves the exception.
+Stable naming and entrypoint conventions prevent project identity from leaking across repositories.
+
+- visible brand: `Teba AI`;
+- technical identifier: `tebaai`;
+- environment prefix: `TEBAAI_`;
+- backend port: `7008`;
+- frontend port: `3008`;
+- ASGI entrypoint: `SrvRestAstroLS_v1/backend/ls_iMotorSoft_Srv01.py`;
+- no `backend/app.py` without ADR.
 
 ## External Services
 
-PostgreSQL, Milvus and LiteLLM are external permanent services. They must not
-be started, stopped or restarted automatically.
+PostgreSQL, Milvus and LiteLLM are permanent external services and are never managed automatically by agents.
+
+Service-dependent work follows [[service-preflight-methodology]].
 
 ## Canonical Documents
 
-- [[service-preflight-methodology]]
-- [[postgres-driver-policy]]
+Each architecture concern has one canonical LAT source and may be anchored from code with `@lat`.
+
 - [[global-configuration-facade-policy]]
-- [[browser-mcp-validation-policy]]
-- [[mermaid-diagram-policy]]
-- [[root-cause-debugging-policy]]
+- [[postgres-driver-policy]]
+- [[authentication-security-policy]]
 - [[library-retrieval-models-policy]]
 - [[bibliographic-metadata-audit]]
 - [[page-aware-metadata-mapping-audit]]
 - [[page-metadata-enrichment]]
-- `docs/adr/ADR-001-new-project-bootstrap-template.md`
-- `docs/adr/ADR-002-global-configuration-facade.md`
+- [[service-preflight-methodology]]
+- [[browser-mcp-validation-policy]]
+- [[root-cause-debugging-policy]]
+- [[mermaid-diagram-policy]]
+- [[tebaai-knowledge-map]]
+- [[status_actual]]
 
 ## Configuration Guardrail
 
-Before modifying global configuration, environment variables, PostgreSQL,
-Milvus, LiteLLM, auth, `globalVar.py` or `global.js`, read
-[`global-configuration-facade-policy.md`](global-configuration-facade-policy.md).
+Global configuration has a single backend reader and a public-only frontend facade.
 
-Only `core/config.py` should read environment variables directly. `globalVar.py`
-is a stable configuration facade and must not create connections, pools,
-clients, network calls or other infrastructure side effects. `global.js` is for
-public frontend configuration only and must never contain secrets.
+Before changing environment variables, auth settings, PostgreSQL, Milvus, LiteLLM, `globalVar.py` or `global.js`, read [[global-configuration-facade-policy]].
 
 ## Development Flow
 
-1. Read `AGENTS.md`.
-2. Read `.agents/skills/tebaai-project/SKILL.md`.
-3. Read this index and `lat.md/status_actual.md` for architecture changes.
-4. Check `git status`.
-5. Keep changes small and update status files when phases close.
+Development begins from current repository state and loads only the canonical context required by the task.
 
-## Status Actual Convention
+1. Read `AGENTS.md` and `SrvRestAstroLS_v1/docs/status_actual.md`.
+2. Check branch and worktree state.
+3. Read the relevant LAT or ADR source.
+4. Keep changes scoped and preserve unrelated work.
+5. Run focused validation, `git diff --check` and `lat check` when applicable.
 
-Use `status_actual.md` as a closing-state log, not as a diary. The main runtime
-technical log is `SrvRestAstroLS_v1/docs/status_actual.md` and it covers
-backend, Astro/Svelte frontend and frontend/backend integration together.
+## Status Convention
 
-`lat.md/status_actual.md` records architecture invariants, canonical policies
-and LAT document changes. Create local `status_actual.md` files under `docs/`
-or `data/` only for active directories with real content.
+Status files describe current closing state; they do not duplicate architecture or serve as an append-only diary.
+
+- runtime current state: `SrvRestAstroLS_v1/docs/status_actual.md`;
+- frozen runtime history: `SrvRestAstroLS_v1/docs/status_historico_hasta_2026-06-28.md`;
+- architecture current state: `lat.md/status_actual.md`.
 
 ## Completion Criteria
 
-A phase is not complete until the relevant code or documentation exists,
-validation was run or explicitly skipped with reason, and no external services
-were modified without explicit instruction.
+A phase closes only when implementation, documentation and validation agree and limitations are recorded explicitly.
+
+No HTTP 200, previous status entry or exploratory browser run is sufficient by itself to declare a functional PASS.

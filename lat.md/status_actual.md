@@ -1,117 +1,64 @@
 # Status actual - TebaAI lat.md
 
+Este tablero resume la arquitectura viva de TebaAI y evita repetir la historia técnica del runtime.
+
 Objetivo: `arquitectura-viva`
 
-Ultima actualizacion: 2026-06-25
+Ultima actualizacion: 2026-06-28 (saneamiento documental y trazabilidad LAT)
 
 ## Estado general
 
-Bootstrap inicial completado. Se replicaron las ramas Git desde Team360 y se
-actualizaron todas las dependencias frontend/backend a latest.
+LAT documenta configuración, persistencia, autenticación, retrieval, validación y límites operativos con un índice único y referencias desde código.
 
-## Acciones realizadas
+- PostgreSQL 18 es fuente de verdad.
+- Milvus 2.6 es un índice vectorial derivado.
+- LiteLLM provee embeddings y será el gateway de modelos futuros.
+- TebaAI recupera evidencia bibliográfica; todavía no genera respuestas RAG.
+- Breslov es la primera colección, no una dependencia de dominio del núcleo genérico.
 
-### 2026-06-25 - Convencion de uso de `status_actual.md`
+## Decisiones vigentes
 
-- Se adopto el patron validado en Team360 para TebaAI: usar
-  `status_actual.md` como bitacora de cierre, no como diario.
-- Se definio `SrvRestAstroLS_v1/docs/status_actual.md` como bitacora tecnica
-  principal del runtime, agrupando backend, frontend Astro/Svelte e integracion
-  frontend/backend.
-- Se aclaro que `lat.md/status_actual.md` queda limitado a arquitectura viva,
-  invariantes, politicas canonicas y documentos LAT.
-- Se documento que `docs/**/status_actual.md` y `data/**/status_actual.md`
-  deben crearse solo para directorios activos con contenido real.
-- Se actualizaron `AGENTS.md`, `.agents/skills/tebaai-project/SKILL.md`,
-  `docs/templates/status_actual_template.md` y
-  `SrvRestAstroLS_v1/docs/status_actual.md`.
-- No se modifico codigo runtime, dependencias, servicios externos, Docker,
-  `.env`, migraciones ni integraciones.
+Las decisiones estables se mantienen en documentos canónicos enlazados desde [[lat]].
 
-### 2026-06-25 - Politica de fachada de configuracion global
+- [[global-configuration-facade-policy]] concentra configuración y secretos.
+- [[postgres-driver-policy]] fija `psycopg 3 async` y repositories SQL.
+- [[authentication-security-policy]] define passwords, tokens, roles y sesión web.
+- [[library-retrieval-models-policy]] separa retrieval textual, vectorial, híbrido y generación futura.
+- [[service-preflight-methodology]] gobierna pruebas con servicios reales.
+- [[tebaai-knowledge-map]] ofrece el árbol de navegación.
 
-- Creado `lat.md/global-configuration-facade-policy.md` como documento
-  canonico para la relacion entre `.env`, `core/config.py`, `globalVar.py` y
-  `global.js`.
-- Creado `docs/adr/ADR-002-global-configuration-facade.md` con estado
-  `Accepted`.
-- Documentado que `globalVar.py` se conserva como fachada estable de
-  configuracion comun, sin conexiones, pools, clientes, llamadas de red ni
-  side effects de infraestructura.
-- Documentado que solo `core/config.py` debe leer variables de entorno
-  directamente.
-- Documentado que `global.js` puede contener solo configuracion publica
-  frontend y nunca secretos.
-- Ajustada la ubicacion frontend aprobada a
-  `SrvRestAstroLS_v1/astro/src/components/global.js`, siguiendo el uso real de
-  Team360.
-- Agregados enlaces desde `lat.md/lat.md`, `AGENTS.md`,
-  `.agents/skills/tebaai-project/SKILL.md` y `docs/adr/README.md`.
+## Consolidación 2026-06-28
 
-### 2026-06-24 - Convencion de ramas Git y AGENTS.md
+La limpieza corrigió contradicciones entre documentación operativa, arquitectura y código vigente.
 
-- Se agrego la seccion `Git Branch Convention` en `AGENTS.md` replicando el
-  modelo de Team360: `main` estable, `feature/console-backend-core` para
-  desarrollo activo, `feature/knowledge-ingestion-service` para knowledge,
-  `docs/knowledge-documents-foundation` para documentacion y
-  `ux/team360-console-design-handoff` para UX.
-- Se crearon y empujaron las 4 ramas desde `main`.
-- El proyecto queda en `feature/console-backend-core` como rama de trabajo
-  activo.
+- `AGENTS.md` dejó de tratar una rama Team360 como rama canónica de TebaAI.
+- El status runtime fue compactado y la historia quedó separada.
+- El status duplicado y obsoleto de Astro fue retirado.
+- Configuración y PostgreSQL dejaron de aparecer como pendientes.
+- Milvus quedó registrado como integración implementada, no como tarea futura.
+- Las credenciales E2E ya no tienen fallback versionado.
+- Se agregaron referencias `@lat` en configuración, auth y retrieval.
 
-### 2026-06-24 - Frontend Astro actualizado a v7
+## Validación
 
-- `astro`: 6.4.2 -> 7.0.2
-- `@astrojs/svelte`: 8.1.2 -> 9.0.0
-- `svelte`: 5.56.0 -> 5.56.4
-- `@playwright/test`: 1.60.0 -> 1.61.1
-- `@types/node`: 26.0.0 -> 26.0.1
-- Agregados: `tailwindcss` 4.3.1, `@tailwindcss/vite` 4.3.1, `daisyui` 5.5.23
-- Creado `src/layouts/Layout.astro` con import de `app.css` (tailwind + daisyui)
-- `astro.config.mjs`: agregado plugin `@tailwindcss/vite`
-- `pnpm build` y `pnpm check`: ambos PASS sin errores.
+La documentación debe aprobar validación estructural y mantener referencias resolubles.
 
-### 2026-06-24 - Backend Python actualizado
+- `lat check`: gate obligatorio y objetivo de cero errores.
+- `git diff --check`: obligatorio.
+- tests focalizados: obligatorios cuando cambian referencias dentro de código.
+- `lat search`: opcional mientras no exista clave LAT; usar `lat locate` como alternativa.
 
-- Python: 3.12.3 -> 3.12.13 (via `uv python install`)
-- Agregados: `psycopg` 3.3.4, `psycopg-binary` 3.3.4, `psycopg-pool` 3.3.1
-- Agregado: `pymilvus` 2.6.15 (compatible con Milvus 2.6 server)
-- Agregado: `litellm` 1.89.3 (SDK para LiteLLM proxy)
-- Todas las dependencias verificadas funcionales con `uv run -- python -c`.
+## Pendientes
 
-## Validacion
+La deuda arquitectónica restante requiere decisiones explícitas y no debe mezclarse con tareas ya cerradas.
 
-- `pnpm check`: 0 errors, 0 warnings.
-- `pnpm build`: 1 page built in 1.23s, daisyUI 5.5.23 activo.
-- `uv run -- python -c "import psycopg; ..."`: PASS con AsyncConnection.
-- `uv run -- python -c "import pymilvus; ..."`: PASS version 2.6.15.
-- `uv run -- python -c "from litellm import completion, acompletion"`: PASS.
-- `git diff --check`: PASS.
+1. ADR para cookies `httpOnly`, CSRF y refresh automático.
+2. ADR para el límite plataforma TebaAI / vertical Breslov.
+3. ADR previo a cualquier generación RAG o síntesis con LLM.
+4. Reconciliar conteos PostgreSQL/Milvus antes de reindexar.
 
-## Pendientes recomendados
+## Seguridad
 
-- Definir la primera vertical Breslov en una fase posterior.
-- Implementar `core/config.py`, `globalVar.py` y `global.js` siguiendo
-  `lat.md/global-configuration-facade-policy.md`.
-- Conectar backend con PostgreSQL via psycopg pool y configurar DSN.
-- Conectar backend con Milvus y LiteLLM en fase de integracion.
+Los documentos y ejemplos no deben contener credenciales funcionales ni fallbacks compartidos.
 
-### 2026-06-28 - Politica de modelos de retrieval
-
-- Creado `lat.md/library-retrieval-models-policy.md` como documento canonico.
-- Documenta embedding model (`text-embedding-3-small`, 1536d, LiteLLM).
-- Documenta busqueda textual (PostgreSQL FTS + unaccent + pg_trgm).
-- Documenta busqueda semantica (Milvus 2.6, COSINE, HNSW).
-- Documenta busqueda hibrida (FTS + Milvus merge/dedup).
-- Documenta que modelo generativo y RAG no estan implementados.
-- Agregado enlace desde `lat.md/lat.md`.
-- Actualizados `lat.md/status_actual.md` y `SrvRestAstroLS_v1/docs/status_actual.md`.
-- Sin cambios de codigo runtime.
-
-## Notas de seguridad
-
-- No se cargaron corpus reales ni archivos pesados.
-- No se imprimieron ni leyeron secretos.
-- No se iniciaron, detuvieron ni reiniciaron servicios externos.
-- La decision de configuracion global es documental; no implementa runtime ni
-  crea recursos vivos.
+Las pruebas autenticadas reciben email y password mediante variables de entorno y se omiten de forma explícita cuando faltan.

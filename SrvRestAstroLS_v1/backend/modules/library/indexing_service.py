@@ -31,6 +31,7 @@ from modules.library.vector_repository import (
 logger = logging.getLogger(__name__)
 
 
+# @lat: [[library-retrieval-models-policy#Semantic / Vector Search]]
 async def index_collection(
     conn: AsyncConnection,
     collection_id: UUID,

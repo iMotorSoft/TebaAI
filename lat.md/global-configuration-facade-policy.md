@@ -6,10 +6,11 @@ Fecha: 2026-06-25.
 
 ## 1. Contexto
 
-TebaAI esta en fase post-bootstrap como plataforma generica de contenidos para
-iMotorSoft. Breslov sera la primera vertical, pero esta politica no introduce
-logica Breslov, ingestion, migraciones ni integracion runtime con PostgreSQL,
-Milvus o LiteLLM.
+TebaAI centraliza su configuracion global sin mezclar dominio, secretos ni
+recursos vivos en modulos de acceso comun.
+
+Breslov es la primera vertical, pero esta politica mantiene configuracion de
+plataforma generica y separa las integraciones de sus fachadas.
 
 El proyecto conserva la convencion conceptual habitual de iMotorSoft:
 

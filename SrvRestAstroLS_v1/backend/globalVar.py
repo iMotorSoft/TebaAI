@@ -20,6 +20,7 @@ from __future__ import annotations
 
 from core.config import get_settings
 
+# @lat: [[global-configuration-facade-policy#3. Decision Adoptada]]
 SETTINGS = get_settings()
 
 # ── Runtime general ──────────────────────────────────────────────

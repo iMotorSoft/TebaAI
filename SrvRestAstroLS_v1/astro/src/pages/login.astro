@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LoginForm from "../components/auth/LoginForm.svelte";
+---
+
+<Layout>
+  <main class="flex min-h-screen items-center justify-center bg-base-200 px-4">
+    <div class="w-full max-w-sm">
+      <LoginForm client:load />
+    </div>
+  </main>
+</Layout>

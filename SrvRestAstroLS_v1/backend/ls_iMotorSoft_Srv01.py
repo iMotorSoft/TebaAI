@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from litestar import Litestar
+from litestar.config.cors import CORSConfig
 
 from core.lifespan import on_shutdown, on_startup
 from modules.auth.routes import (
@@ -17,6 +18,14 @@ from modules.auth.routes import (
 )
 from routes.health import health
 from routes.ready import ready
+
+cors_config = CORSConfig(
+    allow_origins=[
+        "http://127.0.0.1:3008",
+        "http://localhost:3008",
+    ],
+    allow_credentials=True,
+)
 
 app = Litestar(
     route_handlers=[
@@ -35,4 +44,5 @@ app = Litestar(
     ],
     on_startup=[on_startup],
     on_shutdown=[on_shutdown],
+    cors_config=cors_config,
 )

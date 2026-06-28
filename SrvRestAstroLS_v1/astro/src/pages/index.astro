@@ -1,11 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HomePanel from "../components/HomePanel.svelte";
+import { ROUTES } from "../components/global.js";
 ---
 
 <Layout>
   <main class="page-shell">
     <HomePanel client:load />
+    <nav class="mt-6">
+      <a
+        href={ROUTES.login}
+        class="btn btn-ghost btn-sm rounded-full px-5"
+      >
+        Iniciar sesión
+      </a>
+    </nav>
   </main>
 </Layout>
 

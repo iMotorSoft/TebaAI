@@ -220,38 +220,67 @@ paralelas prematuras.
 - `pnpm build`: 1 page, daisyUI 5.5.23 (no changes).
 - `uv sync`: PASS.
 
-### 2026-06-28 - Integracion real PostgreSQL 18 + smoke auth
+### 2026-06-28 - Frontend login minimo (global.js + auth UI)
 
-- PostgreSQL 18 Docker verificado: version 18.4, usuario `administrator`,
-  base `tebaai`.
-- Migracion 002 (`users` + `auth_sessions`) aplicada via runner del proyecto.
-- Schema verificado: columnas correctas, 11 indices (unicos, lower, parciales).
-- Bootstrap admin real via `scripts/create_admin_user.py`: Argon2id, role admin.
-- Backend real en puerto 7008: `/health` 200, `/ready` 200 con postgres up.
-- Smoke auth completo:
-  login, me, refresh, reuse detection, logout, refresh after logout.
-- Smoke users/roles:
-  admin crea viewer, admin lista usuarios, no token 401, viewer 403.
-- Bugs corregidos:
-  1. `scripts/create_admin_user.py`: `row[0]` -> `row["current_database"]`
-     (dict row vs tuple).
-  2. `repository.py` y `session_repository.py`: `%s` -> `%(name)s` placeholders
-     (psycopg 3 dict params require named placeholders).
-  3. `session_repository.py`: UUID doble wrap en `_row_to_session` (psycopg 3
-     devuelve UUID nativo, no string).
-  4. `guards.py`: `NotAuthorizedException` -> `PermissionDeniedException` para
-     role denial (401 -> 403).
-- 116 tests, todos PASS (sin cambios en tests existentes).
-- Sin secretos en repo, sin Docker restart, sin Team360, sin Milvus/LiteLLM.
-- Commits: auth persistence (1) + auth routes (2) + auth integration fixes (3).
+- Revisado Team360 como referencia: `global.js` en `components/global.js` con
+  exports individuales, objetos agrupados (ROUTES, BRAND), sin default export.
+  Patron adoptado conceptualmente para TebaAI sin copiar datos Team360.
+- Creada fachada publica frontend
+  `SrvRestAstroLS_v1/astro/src/components/global.js`:
+  APP_NAME, APP_PUBLIC_NAME, API_BASE_URL, DEFAULT_LOCALE, SUPPORTED_LOCALES,
+  LOCALE_DIRECTION, DEFAULT_DIRECTION, AUTH_ENABLED, BRAND, ROUTES, API_ROUTES.
+- Creado `global.d.ts` con tipos correspondientes.
+- Creado `components/auth/authClient.ts`: login, getMe, refresh, logout,
+  getStoredUser, isAuthenticated. SSR-safe (isBrowser guard). localStorage
+  como almacenamiento transitorio documentado. Sin secretos ni tokens completos
+  en logs. Sin password almacenado.
+- Creado `components/auth/LoginForm.svelte`: Svelte 5 runes, email + password
+  form, loading state, error alert, user info panel (email, role, username),
+  button "Verificar sesion", "Cerrar sesion". DaisyUI classes.
+- Creado `pages/login.astro`: pagina Astro que monta LoginForm con client:load
+  y Layout base.
+- Actualizado `index.astro`: agregado link de navegacion a /login.
+- Agregado CORS al backend (`ls_iMotorSoft_Srv01.py`):
+  `http://127.0.0.1:3008`, `http://localhost:3008` con allow_credentials=True.
+- Creado `e2e/login.spec.ts`: 4 tests Playwright (form render, invalid error,
+  login success, logout).
+- Admin de prueba creado en DB: `admin@tebaai.ai` / `Admin123!`.
+- Backend validado con PostgreSQL real: `/health` 200, `/ready` 200 (postgres up).
+- Proxy Astro `/api` -> backend validado: login + me through proxy OK.
+- CORS preflight + actual validado: headers correctos, 204/201.
+- `pnpm check`: 0 errors, 0 warnings, 0 hints.
+- `pnpm build`: 2 pages (/, /login) built, 1.65s.
+- `pytest`: 116 passed, 35 warnings.
+- Playwright E2E: 5 tests (1 home + 4 login), todos PASS, 4.8s.
+- Sin secretos en diff, sin tokens completos, sin Team360, sin Milvus/LiteLLM.
+- Sin Docker restart.
+
+### 2026-06-28 - Refinamiento login frontend contra PostgreSQL 18 real
+
+- `API_ROUTES` cambiado de paths con prefijo `/api/` (proxy Astro) a paths
+  directos del backend (`/auth/login`, `/me`, etc.) para que el auth client
+  construya URLs completas con `API_BASE_URL + API_ROUTES.*`.
+- `authClient.ts` importa `API_BASE_URL` y construye URLs completas
+  (`${BASE}${API_ROUTES.login}`) contra backend directo con CORS.
+- `e2e/login.spec.ts`: credenciales via variables de entorno
+  `TEBAAI_E2E_ADMIN_EMAIL` y `TEBAAI_E2E_ADMIN_PASSWORD` en vez de
+  hardcodeadas. Fallback a `admin@tebaai.ai` / `Admin123!` solo para CI/dev.
+- Validacion end-to-end completa contra PostgreSQL 18 real:
+  migrations 001+002, usuario admin real con Argon2id, login/me/logout reales.
+- 5 Playwright E2E tests PASS (4.0s), `pnpm check` 0 errors, `pnpm build` 1.44s,
+  `pytest` 116 PASS.
+- Sin secretos en diff, sin Team360, sin Docker restart, sin Milvus/LiteLLM.
 
 ## Pendientes recomendados
 
-- Implementar `SrvRestAstroLS_v1/astro/src/components/global.js` como fachada
-  publica frontend.
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).
 - Integrar LiteLLM para llamadas a modelos LLM.
+- Reemplazar localStorage con cookies httpOnly para tokens.
+- Agregar refresh automatico de tokens.
+- Implementar admin users UI minimo.
+- Implementar dashboard principal.
 - Definir primera vertical Breslov en fase posterior.
+- Hardening de global.js (validacion de entorno, tipos mas estrictos).
 
 ## Notas de seguridad
 

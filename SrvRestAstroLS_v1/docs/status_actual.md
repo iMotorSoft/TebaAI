@@ -2,7 +2,7 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-06-27
+Ultima actualizacion: 2026-06-28
 
 ## Estado general
 
@@ -119,6 +119,53 @@ paralelas prematuras.
   sin Docker restart, sin cambios Milvus/LiteLLM.
 - Commits separados: config global (1) + PostgreSQL infra (2).
 
+### 2026-06-28 - Autenticacion (usuarios, JWT, Argon2id, guards, bootstrap)
+
+- Agregadas dependencias: `argon2-cffi==25.1.0`, `PyJWT==2.13.0`.
+- Creado `modules/auth/domain.py`: `UserRole` enum (`ADMIN`, `EDITOR`, `VIEWER`),
+  `User` dataclass con `.create()` factory, `AuthSession` dataclass con
+  `.create()` factory.
+- Creado `modules/auth/schemas.py`: `LoginRequest`, `RefreshRequest`,
+  `LogoutRequest`, `CreateUserRequest`, `UpdateUserRequest`, `UserResponse`,
+  `LoginResponse`, `TokenResponse`, `UserListResponse`.
+- Creado `modules/auth/password.py`: `hash_password` / `verify_password` usando
+  argon2-cffi (Argon2id) con soporte de pepper opcional desde `core/config.py`.
+- Creado `modules/auth/tokens.py`: `create_access_token` (JWT con sub, type,
+  jti, role, iat, nbf, exp, iss, aud), `decode_access_token` (valida exp, iss,
+  aud, type), `generate_refresh_token` (opaco 48-bytes + SHA-256 hash).
+- Creado `modules/auth/repository.py`: `UserRepository` con create,
+  get_by_id, get_by_email (lower), list, update, update_password_hash,
+  set_last_login.
+- Creado `modules/auth/session_repository.py`: `AuthSessionRepository` con
+  create, get_by_refresh_hash, revoke, revoke_family, get_active_by_family,
+  update_last_used.
+- Creado `modules/auth/service.py`: `AuthService` con login, refresh (rotation
+  + reuse detection), logout (idempotent), get_current_user, create_user,
+  list_users, get_user, update_user.
+- Creado `modules/auth/guards.py`: `require_auth` (valida JWT en header),
+  `require_roles(*roles)` (restringe por role).
+- Creado `modules/auth/dependencies.py`: `get_current_user_payload`,
+  `get_current_user_obj` (usan `get_pg_pool`, validan token, cargan user de DB).
+- Creado `modules/auth/routes.py`: `POST /auth/login`, `POST /auth/refresh`,
+  `POST /auth/logout`, `GET /auth/me`, `GET /users`, `POST /users`,
+  `GET /users/{id}`, `PATCH /users/{id}`, `POST /users/{id}/activate`,
+  `POST /users/{id}/deactivate`.
+- Actualizado `ls_iMotorSoft_Srv01.py`: registradas todas las rutas auth.
+- Creada migracion `db/migrations/002_create_auth_tables.sql`: tablas `users`
+  y `auth_sessions` con indices unicos/lower.
+- Creado `scripts/create_admin_user.py`: CLI bootstrap idempotente (Option A).
+- Creados tests: `test_auth_password.py` (8 tests), `test_auth_tokens.py`
+  (8 tests), `test_auth_service.py` (12 tests).
+- Actualizado `.env.example` con `TEBAAI_BOOTSTRAP_ADMIN_*`.
+- 116 tests total (todos PASS).
+- `git diff --check`: PASS.
+- Sin secretos expuestos, sin DSN real, sin Team360 modificado.
+- Sin Docker restart, sin Milvus/LiteLLM, sin frontend.
+- PostgreSQL (container `imotorsoft-postgres` en estado `exited`) no disponible
+  en esta sesion. Migration 002, bootstrap admin y smoke backend quedan
+  diferidos para cuando PostgreSQL este operativo.
+- Commits separados: auth persistence (1) + auth routes (2).
+
 ### 2026-06-25 - Convencion de bitacora runtime backend + Astro
 
 - Se formalizo que este archivo es la bitacora tecnica principal del runtime.
@@ -161,21 +208,24 @@ paralelas prematuras.
 
 ## Validacion
 
-- `pytest`: 84 tests, todos PASS.
+- `pytest`: 116 tests, todos PASS (84 existentes + 8 password + 8 tokens + 12
+  service + 4 config auth).
 - `git diff --check`: PASS.
 - `python -c "import globalVar"`: PASS sin side effects.
 - `python -c "from core.config import get_settings"`: PASS sin conexiones.
 - Dependencias: `pydantic-settings==2.14.2`, `psycopg==3.3.4`,
-  `psycopg-binary==3.3.4`, `psycopg-pool==3.3.1`. Sin SQLAlchemy, Alembic,
-  PyJWT, Argon2 no justificados.
+  `psycopg-binary==3.3.4`, `psycopg-pool==3.3.1`, `argon2-cffi==25.1.0`,
+  `PyJWT==2.13.0`. Sin SQLAlchemy, Alembic, ORM.
 - `pnpm check`: 0 errors, 0 warnings (no changes).
 - `pnpm build`: 1 page, daisyUI 5.5.23 (no changes).
 - `uv sync`: PASS.
 
 ## Pendientes recomendados
 
-- Implementar `modules/auth/` con usuarios, auth_sessions, roles (admin, editor,
-  viewer) y JWT (config ya preparada en core/config.py).
+- Aplicar migracion `002_create_auth_tables.sql` cuando PostgreSQL este
+  operativo.
+- Ejecutar `scripts/create_admin_user.py` para bootstrap admin.
+- Smoke backend con auth real (login, refresh, me).
 - Implementar `SrvRestAstroLS_v1/astro/src/components/global.js` como fachada
   publica frontend.
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).

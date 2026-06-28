@@ -271,16 +271,43 @@ paralelas prematuras.
   `pytest` 116 PASS.
 - Sin secretos en diff, sin Team360, sin Docker restart, sin Milvus/LiteLLM.
 
+### 2026-06-28 - Admin users UI mínimo
+
+- Revisado Team360 como referencia de patrones: Svelte 5 runes, DaisyUI (table,
+  card, badge, btn), Loading/EmptyState reutilizables, tabla con thead/tbody,
+  status badges con variantes. Patron adoptado conceptualmente.
+- Creado `components/auth/usersClient.ts`: listUsers, createUser, updateUser,
+  activateUser, deactivateUser. Usa `API_BASE_URL + API_ROUTES.users` (ruta
+  directa sin proxy). Tipos alineados con backend schemas.
+- Creado `components/admin/UsersAdminPanel.svelte`: proteccion por sesion (login
+  requerido), proteccion por role (solo admin), tabla con email/username/rol/
+  estado/ultimo acceso/acciones, formulario crear usuario (email, username,
+  password, role, is_active), edicion inline (username, role, is_active),
+  activar/desactivar, loading/error/success feedback.
+- Creado `pages/admin/users.astro`: pagina Astro con Layout + UsersAdminPanel
+  con client:load.
+- `LoginForm.svelte`: agregado link "Admin usuarios" visible solo para role
+  admin.
+- `authClient.ts`: exportados `getStoredAccessToken()` y `getStoredRefreshToken()`.
+- Validacion contra PostgreSQL 18 real: list, create, activate, deactivate,
+  patch usuarios verificados via backend.
+- 9 Playwright E2E tests (5 login + 4 admin): todos PASS, 7.7s.
+- `pnpm check`: 0 errors, 0 warnings, 0 hints.
+- `pnpm build`: 3 pages (/, /login, /admin/users), 1.45s.
+- `pytest`: 116 PASS.
+- Sin secretos en diff, sin Team360, sin Docker restart, sin Milvus/LiteLLM.
+
 ## Pendientes recomendados
 
 - Conectar backend con Milvus 2.6 (infrastructure/milvus/).
 - Integrar LiteLLM para llamadas a modelos LLM.
 - Reemplazar localStorage con cookies httpOnly para tokens.
 - Agregar refresh automatico de tokens.
-- Implementar admin users UI minimo.
 - Implementar dashboard principal.
 - Definir primera vertical Breslov en fase posterior.
 - Hardening de global.js (validacion de entorno, tipos mas estrictos).
+- Agregar paginacion a tabla de usuarios.
+- Agregar busqueda/filtro en tabla de usuarios.
 
 ## Notas de seguridad
 

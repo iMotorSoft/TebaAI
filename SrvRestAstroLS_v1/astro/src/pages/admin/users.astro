@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import UsersAdminPanel from "../../components/admin/UsersAdminPanel.svelte";
+---
+
+<Layout>
+  <main class="flex min-h-screen items-start justify-center bg-base-200 px-4 py-8">
+    <UsersAdminPanel client:load />
+  </main>
+</Layout>

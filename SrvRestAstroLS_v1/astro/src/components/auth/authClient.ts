@@ -170,6 +170,15 @@ export function getStoredUser(): UserInfo | null {
   }
 }
 
+export function getStoredAccessToken(): string | null {
+  return getAccessToken();
+}
+
+export function getStoredRefreshToken(): string | null {
+  if (!isBrowser) return null;
+  return localStorage.getItem(STORAGE_KEYS.REFRESH_TOKEN);
+}
+
 export function isAuthenticated(): boolean {
   return !!getAccessToken();
 }

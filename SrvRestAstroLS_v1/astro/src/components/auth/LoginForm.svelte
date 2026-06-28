@@ -72,12 +72,21 @@
       </div>
 
       <div class="card-actions mt-6 justify-between">
-        <button class="btn btn-ghost btn-sm" onclick={handleRefresh}>
-          Verificar sesión
-        </button>
-        <button class="btn btn-outline btn-sm" onclick={handleLogout}>
-          Cerrar sesión
-        </button>
+        {#if user.role === "admin"}
+          <a href="/admin/users" class="btn btn-ghost btn-sm">
+            Admin usuarios
+          </a>
+        {:else}
+          <div></div>
+        {/if}
+        <div class="flex gap-2">
+          <button class="btn btn-ghost btn-sm" onclick={handleRefresh}>
+            Verificar sesión
+          </button>
+          <button class="btn btn-outline btn-sm" onclick={handleLogout}>
+            Cerrar sesión
+          </button>
+        </div>
       </div>
     </div>
   </div>

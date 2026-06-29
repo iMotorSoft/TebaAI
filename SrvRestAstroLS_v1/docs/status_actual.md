@@ -47,7 +47,7 @@ La diferencia 1.990/1.991 queda como deuda de reconciliacion: no debe normalizar
 
 ## Validacion actual
 
-- backend: `uv run pytest` = 221 PASS, 66 warnings de deuda conocida;
+- backend: `uv run pytest` = 259 PASS, 66 warnings de deuda conocida;
 - frontend: `pnpm check` = 0 errores, 0 warnings, 0 hints;
 - frontend: `pnpm build` = 4 paginas, PASS;
 - Playwright: 12 tests descubiertos correctamente; no se ejecutaron contra servicios reales en esta consolidacion;
@@ -55,7 +55,8 @@ La diferencia 1.990/1.991 queda como deuda de reconciliacion: no debe normalizar
 - Playwright autenticado requiere credenciales E2E cargadas por entorno;
 - evaluacion bibliografica hibrida: 26/30 PASS;
 - `lat check`: PASS, cero errores;
-- `git diff --check`: PASS.
+- `git diff --check`: PASS;
+- **scripts/compare_chunking_strategies.py**: CLI implementado, 38 tests unitarios PASS. Smoke real con PostgreSQL no ejecutado por falta de conexión en este entorno.
 
 La suite reporta deuda preexistente por `datetime.utcnow()` y claves JWT cortas usadas en tests; no afecta el PASS, pero debe corregirse.
 
@@ -77,7 +78,8 @@ La suite reporta deuda preexistente por `datetime.utcnow()` y claves JWT cortas 
 5. Completar paginacion y busqueda en administracion de usuarios.
 6. Definir el limite entre plataforma generica TebaAI y la vertical Breslov.
 7. Refinar `normalization_plus` con guard de rango exacto y ampliar el holdout antes de aplicar nueva metadata high-confidence.
-8. Ejecutar section-aware chunking dry-run para `El Alma del Rebe Najmán` antes de crear chunks en `breslov_test`.
+8. ~~Ejecutar section-aware chunking dry-run para `El Alma del Rebe Najmán` antes de crear chunks en `breslov_test`.~~
+    - **Completado**: scripts/compare_chunking_strategies.py implementado y testeado (38 tests). Smoke real pendiente de conexión PostgreSQL.
 9. Evaluar OCR para el residuo de extraccion de Likutey y metadata de confianza media.
 10. Diseñar cualquier RAG generativo mediante ADR, sin incorporarlo al endpoint de retrieval existente.
 11. Eliminar `datetime.utcnow()` y usar claves JWT de test de al menos 32 bytes.

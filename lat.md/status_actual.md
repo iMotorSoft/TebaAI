@@ -69,6 +69,12 @@ El corpus `breslov_test` permite validar documentos sin convertirlos en evidenci
 - `breslov` mantiene sus documentos `ready` y sus chunks sin cambios.
 - Milvus y LiteLLM no participaron en la ingesta del candidato.
 
+## El Alma chunking strategy audit 2026-06-29
+
+Dry-run comparativo de chunking genérico vs sijot-aware para el documento test_candidate. Sin escrituras, sin Milvus, sin LiteLLM.
+
+El script `scripts/compare_chunking_strategies.py` ejecutó ambas estrategias en memoria. Los 38 tests unitarios nuevos pasaron. PostgreSQL no estaba disponible en el entorno de ejecución; la validación real queda pendiente.
+
 ## Pendientes
 
 La deuda arquitectónica restante requiere decisiones explícitas y no debe mezclarse con tareas ya cerradas.

@@ -66,6 +66,7 @@ Each architecture concern has one canonical LAT source and may be anchored from 
 - [[postgres-driver-policy]]
 - [[authentication-security-policy]]
 - [[library-retrieval-models-policy]]
+- [[breslov-test-corpus-policy]]
 - [[bibliographic-metadata-audit]]
 - [[page-aware-metadata-mapping-audit]]
 - [[page-metadata-enrichment]]

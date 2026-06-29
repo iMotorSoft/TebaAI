@@ -250,10 +250,10 @@ class TestService:
             )
             conn = AsyncMock()
             with (
-                patch("modules.library.service.get_or_create_collection") as mock_gcc,
+                patch("modules.library.service.get_collection_by_code") as mock_get_collection,
                 patch("modules.library.service.get_document_by_sha256", return_value=None),
             ):
-                mock_gcc.return_value = (Lc.create("general", "General"), True)
+                mock_get_collection.return_value = Lc.create("general", "General")
                 result = await ingest_document(conn, req)
             assert result.dry_run is True
             assert result.title == "Dry Run"

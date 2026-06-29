@@ -25,6 +25,7 @@ async def get_or_create_collection(
     code: str,
     name: str,
     default_language: str | None = None,
+    metadata: dict | None = None,
 ) -> tuple[LibraryCollection, bool]:
     row = await fetch_one(
         conn,
@@ -38,6 +39,7 @@ async def get_or_create_collection(
         code=code,
         name=name,
         default_language=default_language,
+        metadata=metadata,
     )
     await execute(
         conn,
@@ -102,12 +104,14 @@ async def create_document(
             source_path, source_uri, source_filename, source_mime_type,
             source_size_bytes, source_sha256, bibliographic_ref, author,
             publisher, publication_year, version_label, status, metadata,
+            bibliographic_metadata,
             created_by, created_at, updated_at
         ) VALUES (
             %(id)s, %(collection_id)s, %(title)s, %(subtitle)s, %(language)s, %(source_type)s,
             %(source_path)s, %(source_uri)s, %(source_filename)s, %(source_mime_type)s,
             %(source_size_bytes)s, %(source_sha256)s, %(bibliographic_ref)s, %(author)s,
             %(publisher)s, %(publication_year)s, %(version_label)s, %(status)s, %(metadata)s,
+            %(bibliographic_metadata)s,
             %(created_by)s, %(created_at)s, %(updated_at)s
         )
         """,
@@ -131,6 +135,7 @@ async def create_document(
             "version_label": document.version_label,
             "status": document.status,
             "metadata": json.dumps(document.metadata),
+            "bibliographic_metadata": json.dumps(document.bibliographic_metadata),
             "created_by": str(document.created_by) if document.created_by else None,
             "created_at": document.created_at,
             "updated_at": document.updated_at,
@@ -275,6 +280,7 @@ def _row_to_document(row: dict) -> LibraryDocument:
         version_label=row.get("version_label"),
         status=row["status"],
         metadata=row.get("metadata") or {},
+        bibliographic_metadata=row.get("bibliographic_metadata") or {},
         created_by=row.get("created_by"),
         created_at=row.get("created_at"),
         updated_at=row.get("updated_at"),

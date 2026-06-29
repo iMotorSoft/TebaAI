@@ -10,6 +10,7 @@ from psycopg import AsyncConnection
 
 from modules.auth.repository import get_user_by_email
 from modules.library.domain import (
+    LibraryCollection,
     LibraryDocument,
     LibraryDocumentText,
     ExtractionMethod,
@@ -27,6 +28,7 @@ from modules.library.extractors import (
 from modules.library.repository import (
     create_document,
     create_document_text,
+    get_collection_by_code,
     get_document_by_sha256,
     get_or_create_collection,
 )
@@ -60,23 +62,44 @@ async def ingest_document(
         created_by = user.id
 
     # Parse metadata_json if given
-    metadata: dict = {}
+    bibliographic_metadata: dict = {}
     if req.metadata_json:
         try:
-            metadata = json.loads(req.metadata_json)
+            bibliographic_metadata = json.loads(req.metadata_json)
         except json.JSONDecodeError as exc:
             raise ValueError(f"Invalid metadata_json: {exc}") from exc
+        if not isinstance(bibliographic_metadata, dict):
+            raise ValueError("metadata_json must contain a JSON object")
 
-    # Get or create collection
-    collection, collection_created = await get_or_create_collection(
-        conn,
-        code=req.collection,
-        name=req.collection_name or req.collection,
-        default_language=req.language if req.collection_name else None,
-    )
+    collection_name = req.collection_name or _default_collection_name(req.collection)
+    is_test_collection = req.collection.strip().lower().endswith("_test")
+    collection_metadata = {"status": "test"} if is_test_collection else {}
+    if req.dry_run:
+        collection = await get_collection_by_code(conn, req.collection)
+        collection_exists = collection is not None
+        if collection is None:
+            collection = LibraryCollection.create(
+                code=req.collection,
+                name=collection_name,
+                default_language=req.language,
+                metadata=collection_metadata,
+            )
+    else:
+        collection, _ = await get_or_create_collection(
+            conn,
+            code=req.collection,
+            name=collection_name,
+            default_language=req.language if req.collection_name or is_test_collection else None,
+            metadata=collection_metadata,
+        )
+        collection_exists = True
 
     # Check duplicate by SHA-256 within collection
-    existing = await get_document_by_sha256(conn, collection.id, file_sha256)
+    existing = (
+        await get_document_by_sha256(conn, collection.id, file_sha256)
+        if collection_exists
+        else None
+    )
     is_new = True
     if existing:
         is_new = False
@@ -103,9 +126,10 @@ async def ingest_document(
         publisher=req.publisher,
         publication_year=req.publication_year,
         version_label=req.version_label,
+        status=req.status,
+        bibliographic_metadata=bibliographic_metadata,
         created_by=created_by,
     )
-    document.metadata = metadata
 
     # Build text
     doc_text = LibraryDocumentText.create(
@@ -144,3 +168,11 @@ def _guess_mime_type(extension: str) -> str | None:
         ".pdf": "application/pdf",
     }
     return mime_map.get(extension.lower())
+
+
+def _default_collection_name(code: str) -> str:
+    normalized = code.strip().lower()
+    if normalized.endswith("_test"):
+        base = normalized.removesuffix("_test").replace("_", " ").title()
+        return f"{base} Test Corpus"
+    return normalized

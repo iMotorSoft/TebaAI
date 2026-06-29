@@ -27,6 +27,7 @@ class DocumentSourceType(str, enum.Enum):
 class DocumentStatus(str, enum.Enum):
     DRAFT = "draft"
     READY = "ready"
+    TEST_CANDIDATE = "test_candidate"
     ARCHIVED = "archived"
     ERROR = "error"
 
@@ -65,13 +66,20 @@ class LibraryCollection:
     updated_at: datetime | None = None
 
     @classmethod
-    def create(cls, code: str, name: str, default_language: str | None = None) -> LibraryCollection:
+    def create(
+        cls,
+        code: str,
+        name: str,
+        default_language: str | None = None,
+        metadata: dict[str, Any] | None = None,
+    ) -> LibraryCollection:
         now = datetime.utcnow()
         return cls(
             id=uuid4(),
             code=code.strip().lower(),
             name=name.strip(),
             default_language=default_language,
+            metadata=metadata or {},
             created_at=now,
             updated_at=now,
         )
@@ -98,6 +106,7 @@ class LibraryDocument:
     version_label: str | None = None
     status: str = DocumentStatus.DRAFT.value
     metadata: dict[str, Any] = field(default_factory=dict)
+    bibliographic_metadata: dict[str, Any] = field(default_factory=dict)
     created_by: UUID | None = None
     created_at: datetime | None = None
     updated_at: datetime | None = None
@@ -121,8 +130,11 @@ class LibraryDocument:
         publisher: str | None = None,
         publication_year: int | None = None,
         version_label: str | None = None,
+        status: str = DocumentStatus.READY.value,
+        bibliographic_metadata: dict[str, Any] | None = None,
         created_by: UUID | None = None,
     ) -> LibraryDocument:
+        document_status = DocumentStatus(status).value
         now = datetime.utcnow()
         return cls(
             id=uuid4(),
@@ -142,7 +154,8 @@ class LibraryDocument:
             publisher=publisher,
             publication_year=publication_year,
             version_label=version_label,
-            status=DocumentStatus.READY.value,
+            status=document_status,
+            bibliographic_metadata=bibliographic_metadata or {},
             created_by=created_by,
             created_at=now,
             updated_at=now,

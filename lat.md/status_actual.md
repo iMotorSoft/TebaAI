@@ -4,7 +4,7 @@ Este tablero resume la arquitectura viva de TebaAI y evita repetir la historia t
 
 Objetivo: `arquitectura-viva`
 
-Ultima actualizacion: 2026-06-29 (diagnostico de fallos de page mapping)
+Ultima actualizacion: 2026-06-29 (aislamiento de corpus bibliografico de prueba)
 
 ## Estado general
 
@@ -24,6 +24,7 @@ Las decisiones estables se mantienen en documentos canónicos enlazados desde [[
 - [[postgres-driver-policy]] fija `psycopg 3 async` y repositories SQL.
 - [[authentication-security-policy]] define passwords, tokens, roles y sesión web.
 - [[library-retrieval-models-policy]] separa retrieval textual, vectorial, híbrido y generación futura.
+- [[breslov-test-corpus-policy]] separa candidatos experimentales del corpus `breslov` productivo.
 - [[page-mapping-failure-diagnosis]] explica la baja cobertura de páginas y limita las mejoras a dry-runs validados.
 - [[service-preflight-methodology]] gobierna pruebas con servicios reales.
 - [[tebaai-knowledge-map]] ofrece el árbol de navegación.
@@ -57,6 +58,16 @@ El diagnóstico read-only confirmó que los chunks siguen presentes en la extrac
 - Likutey: 50/50 anchors en extracción completa, 33/50 con evidencia baseline page-aware.
 - La normalización ampliada es la candidata de bajo riesgo; Potencia requiere refinar el guard porque obtuvo 96% de precisión high en holdout, mientras Likutey obtuvo 100%.
 - No se aplicó metadata ni se modificaron chunks, PostgreSQL, Milvus o embeddings.
+
+## Corpus de prueba 2026-06-29
+
+El corpus `breslov_test` permite validar documentos sin convertirlos en evidencia productiva.
+
+- `library_documents.status` acepta `test_candidate` mediante migración 008.
+- `bibliographic_metadata` conserva metadata documentaria separada de metadata operativa.
+- `El Alma del Rebe Najmán` quedó persistido como candidato con texto y cero chunks.
+- `breslov` mantiene sus documentos `ready` y sus chunks sin cambios.
+- Milvus y LiteLLM no participaron en la ingesta del candidato.
 
 ## Pendientes
 

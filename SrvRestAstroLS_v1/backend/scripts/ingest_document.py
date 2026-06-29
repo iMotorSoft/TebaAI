@@ -13,12 +13,14 @@ Usage:
 Requirements:
     - PostgreSQL must be running and accessible
     - Database must be 'tebaai' with migration 003 applied
+    - test_candidate ingestion requires migration 008
 """
 
 from __future__ import annotations
 
 import argparse
 import asyncio
+import pathlib
 import sys
 
 
@@ -38,7 +40,10 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         ),
     )
 
-    parser.add_argument("--file", required=True, help="Path to the source file")
+    parser.add_argument(
+        "--file", "--source-path", dest="file", required=True,
+        help="Path to the source file",
+    )
     parser.add_argument("--title", required=True, help="Document title")
     parser.add_argument(
         "--language", required=True, choices=["es", "en", "he"],
@@ -46,9 +51,9 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("--collection", required=True, help="Collection code (e.g. breslov, general)")
     parser.add_argument(
-        "--source-type", required=True,
+        "--source-type",
         choices=["book", "article", "pdf", "markdown", "text", "other"],
-        help="Source type",
+        help="Source type (inferred from extension when omitted)",
     )
 
     parser.add_argument("--collection-name", help="Display name for the collection (defaults to --collection)")
@@ -58,11 +63,29 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--publication-year", type=int, help="Publication year")
     parser.add_argument("--bibliographic-ref", help="Bibliographic reference string")
     parser.add_argument("--version-label", help="Version label (e.g. 1.0, draft-2)")
-    parser.add_argument("--metadata-json", help="JSON string with extra metadata")
+    parser.add_argument(
+        "--status", default="ready",
+        choices=["draft", "ready", "test_candidate", "archived", "error"],
+        help="Document lifecycle status",
+    )
+    parser.add_argument("--metadata-json", help="JSON object stored as bibliographic metadata")
     parser.add_argument("--created-by-email", help="Email of the creating user")
     parser.add_argument("--dry-run", action="store_true", help="Validate and extract but do not persist")
 
-    return parser.parse_args(argv)
+    args = parser.parse_args(argv)
+    if args.source_type is None:
+        args.source_type = _infer_source_type(args.file)
+    return args
+
+
+def _infer_source_type(file_path: str) -> str:
+    extension = pathlib.Path(file_path).suffix.lower()
+    return {
+        ".pdf": "pdf",
+        ".md": "markdown",
+        ".markdown": "markdown",
+        ".txt": "text",
+    }.get(extension, "other")
 
 
 async def _run(args: argparse.Namespace) -> int:
@@ -90,6 +113,7 @@ async def _run(args: argparse.Namespace) -> int:
         publication_year=args.publication_year,
         bibliographic_ref=args.bibliographic_ref,
         version_label=args.version_label,
+        status=args.status,
         metadata_json=args.metadata_json,
         created_by_email=args.created_by_email,
         dry_run=args.dry_run,
@@ -112,10 +136,13 @@ async def _run(args: argparse.Namespace) -> int:
             print("── Dry-run mode: validating without persisting ──")
 
         async with transaction(pool) as conn:
+            if args.dry_run:
+                await conn.execute("SET TRANSACTION READ ONLY")
             result = await ingest_document(conn, req)
 
         print()
-        print("── Document ingested successfully ──")
+        outcome = "validated" if result.dry_run else "persisted"
+        print(f"── Document ingestion {outcome} successfully ──")
         print(f"  Collection:     {result.collection_code}")
         print(f"  Document ID:    {result.document_id}")
         print(f"  Title:          {result.title}")

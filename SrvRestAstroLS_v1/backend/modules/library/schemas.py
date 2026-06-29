@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Literal
 from uuid import UUID
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 
 class IngestDocumentRequest(BaseModel):
@@ -21,9 +21,19 @@ class IngestDocumentRequest(BaseModel):
     publication_year: int | None = None
     bibliographic_ref: str | None = None
     version_label: str | None = None
+    status: Literal["draft", "ready", "test_candidate", "archived", "error"] = "ready"
     metadata_json: str | None = None
     created_by_email: str | None = None
     dry_run: bool = False
+
+    @model_validator(mode="after")
+    def validate_test_corpus_isolation(self) -> IngestDocumentRequest:
+        is_test_collection = self.collection.strip().lower().endswith("_test")
+        if self.status == "test_candidate" and not is_test_collection:
+            raise ValueError("test_candidate documents require a *_test collection")
+        if is_test_collection and self.status == "ready":
+            raise ValueError("test collections cannot ingest ready documents")
+        return self
 
 
 class IngestDocumentResult(BaseModel):

@@ -69,6 +69,7 @@ Each architecture concern has one canonical LAT source and may be anchored from 
 - [[bibliographic-metadata-audit]]
 - [[page-aware-metadata-mapping-audit]]
 - [[page-metadata-enrichment]]
+- [[page-mapping-failure-diagnosis]]
 - [[service-preflight-methodology]]
 - [[browser-mcp-validation-policy]]
 - [[root-cause-debugging-policy]]

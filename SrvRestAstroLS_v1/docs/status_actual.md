@@ -2,7 +2,7 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-06-28 (consolidacion documental y retrieval bibliografico)
+Ultima actualizacion: 2026-06-29 (diagnostico read-only de page mapping)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
 
@@ -10,7 +10,7 @@ Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta r
 
 - raiz: `/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI`;
 - rama funcional: `feature/console-backend-core`;
-- la rama local esta un commit por delante de `origin/feature/console-backend-core` al iniciar esta consolidacion.
+- la rama local estaba sincronizada con `origin/feature/console-backend-core` al iniciar esta fase.
 
 ## Estado general
 
@@ -27,13 +27,15 @@ Referencias canonicas:
 - `lat.md/authentication-security-policy.md`;
 - `lat.md/library-retrieval-models-policy.md`;
 - `lat.md/postgres-driver-policy.md`;
-- `lat.md/service-preflight-methodology.md`.
+- `lat.md/service-preflight-methodology.md`;
+- `lat.md/page-mapping-failure-diagnosis.md`.
 
 ## Runtime validado
 
 - migraciones `001` a `007` disponibles;
 - 1.990 chunks bibliograficos vigentes y 1.991 vectores registrados por la ejecucion historica inicial;
 - 284 chunks enriquecidos con metadata de pagina de alta confianza;
+- diagnostico reproducible de cobertura baja en Potencia y Likutey, ejecutado sin escrituras;
 - modos de busqueda textual: `auto`, `fts`, `phrase`, `trigram`;
 - modo `hybrid`: PostgreSQL FTS + Milvus, deduplicado por `chunk_id`;
 - endpoint `POST /library/search` protegido por autenticacion;
@@ -43,7 +45,7 @@ La diferencia 1.990/1.991 queda como deuda de reconciliacion: no debe normalizar
 
 ## Validacion actual
 
-- backend: `uv run pytest` = 197 PASS, 48 warnings preexistentes;
+- backend: `uv run pytest` = 209 PASS, 48 warnings preexistentes;
 - frontend: `pnpm check` = 0 errores, 0 warnings, 0 hints;
 - frontend: `pnpm build` = 4 paginas, PASS;
 - Playwright: 12 tests descubiertos correctamente; no se ejecutaron contra servicios reales en esta consolidacion;
@@ -72,9 +74,10 @@ La suite reporta deuda preexistente por `datetime.utcnow()` y claves JWT cortas 
 4. Implementar refresh automatico y expiracion de sesion visible.
 5. Completar paginacion y busqueda en administracion de usuarios.
 6. Definir el limite entre plataforma generica TebaAI y la vertical Breslov.
-7. Evaluar OCR para PDF escaneado y metadata de confianza media.
-8. Diseñar cualquier RAG generativo mediante ADR, sin incorporarlo al endpoint de retrieval existente.
-9. Eliminar `datetime.utcnow()` y usar claves JWT de test de al menos 32 bytes.
+7. Refinar `normalization_plus` con guard de rango exacto y ampliar el holdout antes de aplicar nueva metadata high-confidence.
+8. Evaluar OCR para el residuo de extraccion de Likutey y metadata de confianza media.
+9. Diseñar cualquier RAG generativo mediante ADR, sin incorporarlo al endpoint de retrieval existente.
+10. Eliminar `datetime.utcnow()` y usar claves JWT de test de al menos 32 bytes.
 
 ## Seguridad
 

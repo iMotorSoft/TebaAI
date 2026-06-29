@@ -4,7 +4,7 @@ Este tablero resume la arquitectura viva de TebaAI y evita repetir la historia t
 
 Objetivo: `arquitectura-viva`
 
-Ultima actualizacion: 2026-06-28 (saneamiento documental y trazabilidad LAT)
+Ultima actualizacion: 2026-06-29 (diagnostico de fallos de page mapping)
 
 ## Estado general
 
@@ -24,6 +24,7 @@ Las decisiones estables se mantienen en documentos canónicos enlazados desde [[
 - [[postgres-driver-policy]] fija `psycopg 3 async` y repositories SQL.
 - [[authentication-security-policy]] define passwords, tokens, roles y sesión web.
 - [[library-retrieval-models-policy]] separa retrieval textual, vectorial, híbrido y generación futura.
+- [[page-mapping-failure-diagnosis]] explica la baja cobertura de páginas y limita las mejoras a dry-runs validados.
 - [[service-preflight-methodology]] gobierna pruebas con servicios reales.
 - [[tebaai-knowledge-map]] ofrece el árbol de navegación.
 
@@ -47,6 +48,15 @@ La documentación debe aprobar validación estructural y mantener referencias re
 - `git diff --check`: obligatorio.
 - tests focalizados: obligatorios cuando cambian referencias dentro de código.
 - `lat search`: opcional mientras no exista clave LAT; usar `lat locate` como alternativa.
+
+## Diagnóstico de page mapping 2026-06-29
+
+El diagnóstico read-only confirmó que los chunks siguen presentes en la extracción completa, pero sus anchors se degradan al comparar contra extracción PyMuPDF página por página.
+
+- Potencia: 50/50 anchors en extracción completa, 36/50 con evidencia baseline page-aware.
+- Likutey: 50/50 anchors en extracción completa, 33/50 con evidencia baseline page-aware.
+- La normalización ampliada es la candidata de bajo riesgo; Potencia requiere refinar el guard porque obtuvo 96% de precisión high en holdout, mientras Likutey obtuvo 100%.
+- No se aplicó metadata ni se modificaron chunks, PostgreSQL, Milvus o embeddings.
 
 ## Pendientes
 

@@ -38,6 +38,7 @@ Do not create `backend/app.py` without an ADR.
 - PostgreSQL globalVar resolution: `lat.md/globalvar-postgres-config-policy.md`;
 - PostgreSQL: `lat.md/postgres-driver-policy.md`;
 - embeddings and LiteLLM: `lat.md/embeddings-configuration-policy.md`;
+- PDF ingestion (PyMuPDF4LLM → Markdown): `lat.md/pdf-markdown-extraction-policy.md`;
 - auth: `lat.md/authentication-security-policy.md`;
 - library and retrieval: `lat.md/library-retrieval-models-policy.md`;
 - services: `lat.md/service-preflight-methodology.md`;

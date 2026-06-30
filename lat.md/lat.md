@@ -79,6 +79,8 @@ Each architecture concern has one canonical LAT source and may be anchored from 
 - [[breslov-test-milvus-indexing]]
 - [[breslov-test-hybrid-search-validation]]
 - [[breslov-two-books-preflight]]
+- [[breslov-two-books-test-ingestion]]
+- [[pdf-markdown-extraction-policy]]
 - [[service-preflight-methodology]]
 - [[browser-mcp-validation-policy]]
 - [[root-cause-debugging-policy]]

@@ -87,6 +87,10 @@ Se aplicó chunking Sijot-aware en `breslov_test` para "El Alma del Rebe Najmán
 
 Page mapping real para 273/476 chunks Sijot-aware en `breslov_test` usando `normalization_plus` sobre PDF local (200 páginas). Reference labels con sección + páginas. Sin contaminación de `breslov`. Tests: 298 PASS.
 
+## Breslov test Milvus indexing 2026-06-30
+
+476 chunks Sijot-aware indexados en `tebaai_breslov_test_chunks_v1` (colección Milvus separada). Embeddings vía LiteLLM (`openai_text_embedding_3_small`, dim=1536). Safety guards test/productivo. `tebaai_breslov_chunks_v1` intacta (1991). Tests: 311 PASS.
+
 ## Pendientes
 
 La deuda arquitectónica restante requiere decisiones explícitas y no debe mezclarse con tareas ya cerradas.

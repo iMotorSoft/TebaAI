@@ -94,7 +94,19 @@ La suite reporta deuda preexistente por `datetime.utcnow()` y claves JWT cortas 
 - `bibliographic_metadata` mergeada preservando section + chunking + page_mapping.
 - Sin contaminación: breslov=1991/284, breslov_test=476/273.
 - Invalid ranges: 0.
-- 203 chunks sin mapping (42.6%) por markdown denso. Mejorable.`
+- 203 chunks sin mapping (42.6%) por markdown denso. Mejorable.
+
+## Breslov test Milvus indexing 2026-06-30
+
+- 476 chunks de `breslov_test` indexados en Milvus `tebaai_breslov_test_chunks_v1`.
+- Embeddings: LiteLLM + `openai_text_embedding_3_small` (dim=1536).
+- Safety guards: test → test collection, prod → prod collection. Rechaza contaminación cruzada.
+- `tebaai_breslov_chunks_v1` productiva: 1991 (intacta).
+- Search Milvus smoke: chunk 246 (Sija #25) top result para "La maravilla del cerebro".
+- Evaluación productiva sin regresión.
+- `test_milvus_test_indexing.py`: 13 tests.
+- `pytest`: 311 PASS.
+- Documento sigue `test_candidate`. Sin promoción.`
 
 ## Calidad documental y operativa
 

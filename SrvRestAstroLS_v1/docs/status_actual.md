@@ -68,7 +68,20 @@ La suite reporta deuda preexistente por `datetime.utcnow()` y claves JWT cortas 
 - Smoke real de chunking ejecutado: 52/52 Sijot detectadas, recomendación B.
 - Sin contaminación: `breslov`=1991 chunks, `breslov_test`=0 chunks.
 - `test_globalvar_postgres_config.py`: 12 tests PASS.
-- `pytest` total: 271 PASS.
+- `test_sijot_aware_chunk_apply.py`: 11 tests PASS.
+- `chunk_documents.py` extendido con `--strategy` (generic/sijot-aware) y `--apply`.
+- `chunking.py` agregó `convert_temporary_chunks_to_db_format()`.
+- `pytest` total: 282 PASS.
+
+## Sijot-aware chunking applied 2026-06-30
+
+- Documento "El Alma del Rebe Najmán" en `breslov_test` ahora tiene 476 chunks Sijot-aware.
+- 52/52 Sijot detectadas, 0 missing, 0 cross-section.
+- Metadata estructural por chunk (section_type, section_number, section_label).
+- FTS busca correctamente en `breslov_test`.
+- `breslov` productivo sigue con 1991 chunks (sin contaminación).
+- Milvus no indexado. LiteLLM no llamado.
+- Documento sigue `test_candidate`.
 
 ## Calidad documental y operativa
 

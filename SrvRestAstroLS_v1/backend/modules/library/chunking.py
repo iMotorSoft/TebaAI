@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 from uuid import UUID, uuid4
 
 
@@ -115,4 +116,56 @@ def chunk_text(
             "token_count_estimate": max(1, len(content) // 4),
         })
 
+    return result
+
+
+def convert_temporary_chunks_to_db_format(
+    tmp_chunks: list,
+    document_id: UUID,
+    text_id: UUID,
+    language: str = "es",
+) -> list[dict]:
+    """Convert TemporaryChunk objects (from compare_chunking_strategies) to DB dict format.
+
+    Each TemporaryChunk has: content, char_start, char_end, content_length,
+    section_type, section_number, section_title, section_label, chunk_index.
+    """
+    result: list[dict] = []
+    for tc in tmp_chunks:
+        content = tc.content
+        content_bytes = content.encode("utf-8")
+        sha256 = hashlib.sha256(content_bytes).hexdigest()
+
+        section_info: dict[str, str | int | None] = {
+            "section_type": tc.section_type,
+            "section_number": tc.section_number,
+            "section_label": tc.section_label,
+            "section_title": tc.section_title,
+        }
+
+        metadata = {
+            "chunking": {
+                "strategy": "sijot-aware",
+                "source": "compare_chunking_strategies.py",
+                "validated_by": "Loop 0 real",
+                "document_status": "test_candidate",
+            },
+            "section": {k: v for k, v in section_info.items() if v is not None},
+        }
+
+        result.append({
+            "id": uuid4(),
+            "document_id": document_id,
+            "document_text_id": text_id,
+            "chunk_index": tc.chunk_index,
+            "chunk_uid": make_chunk_uid(document_id, text_id, tc.chunk_index),
+            "language": language,
+            "content": content,
+            "content_sha256": sha256,
+            "content_length": len(content),
+            "char_start": tc.char_start,
+            "char_end": tc.char_end,
+            "token_count_estimate": max(1, len(content) // 4),
+            "metadata": metadata,
+        })
     return result

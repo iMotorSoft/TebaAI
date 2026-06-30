@@ -79,6 +79,10 @@ El script `scripts/compare_chunking_strategies.py` ejecutó ambas estrategias en
 
 Se implementó resolución PostgreSQL centralizada en `core/config.py` desde variables `DB_PG_*` estándar iMotorSoft + base `tebaai`. `globalVar.py` expone la configuración como fachada única. `TEBAAI_POSTGRES_*` queda como override opcional. Se crearon 12 tests unitarios. Smoke real ejecutado con resultado B (aplicar chunking Sijot-aware).
 
+## Sijot-aware apply 2026-06-30
+
+Se aplicó chunking Sijot-aware en `breslov_test` para "El Alma del Rebe Najmán": 476 chunks persistidos con metadata estructural, 52/52 Sijot detectadas, 0 cross-section. FTS funcional. `breslov` productivo intacto (1991 chunks). Tests: 282 PASS.
+
 ## Pendientes
 
 La deuda arquitectónica restante requiere decisiones explícitas y no debe mezclarse con tareas ya cerradas.

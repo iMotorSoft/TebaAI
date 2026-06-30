@@ -64,7 +64,8 @@ async def search_chunks_hybrid(
             query_embedding=query_vec,
             top_k=vector_limit,
             expr=f'collection_code == "{collection_code}"',
-            output_fields=["chunk_id", "document_id", "title", "content_preview", "chunk_index", "content_sha256"],
+            output_fields=["chunk_id", "document_id", "title", "content_preview", "chunk_index", "content_sha256",
+                           "page_start", "page_end"],
         )
     except Exception:
         milvus_hits = []
@@ -89,6 +90,7 @@ async def search_chunks_hybrid(
             "page_end": pg_data.get("page_end"),
             "chapter": pg_data.get("chapter"),
             "section": pg_data.get("section"),
+            "reference_label": pg_data.get("reference_label"),
             "content_length": pg_data.get("content_length", 0),
             "content": pg_data.get("content", ""),
             "_source": "vector",
@@ -150,6 +152,7 @@ async def search_chunks_hybrid(
             "page_end": r.get("page_end"),
             "chapter": r.get("chapter"),
             "section": r.get("section"),
+            "reference_label": r.get("reference_label"),
             "match_type": r.get("match_type", "hybrid"),
             "rank": round(r.get("_hybrid_score", 0) or 0, 4),
             "fts_rank": round(r["_fts_rank"], 4) if r.get("_fts_rank") is not None else None,
@@ -171,7 +174,7 @@ async def _enrich_chunk(conn: AsyncConnection, chunk_id: str, collection_code: s
         SELECT d.id AS document_id, d.title AS document_title, d.author,
                c.code AS collection_code, ch.chunk_index, ch.language,
                ch.page_start, ch.page_end, ch.chapter, ch.section,
-               ch.content, ch.content_length
+               ch.reference_label, ch.content, ch.content_length
         FROM library_document_chunks ch
         JOIN library_documents d ON d.id = ch.document_id
         JOIN library_collections c ON c.id = ch.collection_id

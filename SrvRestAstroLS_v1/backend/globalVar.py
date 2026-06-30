@@ -59,6 +59,7 @@ EMBEDDINGS_PROVIDER: str = SETTINGS.embeddings_provider
 EMBEDDINGS_BASE_URL: str = SETTINGS.embeddings_base_url
 EMBEDDINGS_API_KEY: str = SETTINGS.embeddings_api_key.get_secret_value()
 EMBEDDINGS_MODEL_ALIAS: str = SETTINGS.embeddings_model_alias
+EMBEDDINGS_MODEL_NAME: str = SETTINGS.embeddings_model_name
 EMBEDDINGS_DIMENSION: int = SETTINGS.embeddings_dimension
 EMBEDDINGS_BATCH_SIZE: int = SETTINGS.embeddings_batch_size
 EMBEDDINGS_TIMEOUT_SECONDS: int = SETTINGS.embeddings_timeout_seconds
@@ -66,6 +67,7 @@ EMBEDDINGS_TIMEOUT_SECONDS: int = SETTINGS.embeddings_timeout_seconds
 # ── LiteLLM ──────────────────────────────────────────────────────
 LITELLM_ENABLED: bool = SETTINGS.litellm_enabled
 LITELLM_BASE_URL: str = SETTINGS.litellm_base_url
+LITELLM_API_KEY: str = SETTINGS.litellm_api_key.get_secret_value()
 LITELLM_DEFAULT_MODEL_ALIAS: str = SETTINGS.litellm_default_model_alias
 LITELLM_TIMEOUT_SECONDS: int = SETTINGS.litellm_timeout_seconds
 

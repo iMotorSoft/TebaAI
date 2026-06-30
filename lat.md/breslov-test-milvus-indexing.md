@@ -21,7 +21,7 @@ Los 476 chunks Sijot-aware de "El Alma del Rebe Najmán" en `breslov_test` fuero
 | Proveedor | LiteLLM |
 | Modelo | `openai_text_embedding_3_small` |
 | Dimensión | 1536 |
-| API Key | `LITELLM_MASTER_KEY` (vía env) |
+| API Key | `TEBAAI_LITELLM_API_KEY` (LiteLLM master key) |
 | Batch size | 32 |
 
 ## Safety guards
@@ -55,10 +55,14 @@ Cada vector incluye: `pk`, `chunk_id`, `document_id`, `collection_code`, `langua
 | breslov | 1991 | 1991 |
 | breslov_test | 476 | 476 |
 
+## Política de embeddings
+
+TebaAI no gestiona claves directas de OpenAI. LiteLLM resuelve la upstream key (`OpenAI_Key_JAI_query`) en su `config.yaml`. TebaAI se autentica contra LiteLLM vía `TEBAAI_LITELLM_API_KEY`. Ver [[embeddings-configuration-policy]].
+
 ## Comando usado
 
 ```bash
-TEBAAI_EMBEDDINGS_API_KEY="\$LITELLM_MASTER_KEY" uv run python -m scripts.index_chunks_milvus \\
+TEBAAI_LITELLM_API_KEY="\$LITELLM_MASTER_KEY" uv run python -m scripts.index_chunks_milvus \\
   --collection breslov_test \\
   --document-title "El Alma del Rebe Najmán" \\
   --milvus-collection tebaai_breslov_test_chunks_v1 \\

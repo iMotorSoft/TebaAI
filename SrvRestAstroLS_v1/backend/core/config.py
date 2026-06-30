@@ -72,12 +72,16 @@ class AppSettings(BaseSettings):
     litellm_default_model_alias: str = ""
     litellm_timeout_seconds: int = 60
 
-    # ── Embeddings ───────────────────────────────────────────────
+    # ── Embeddings (via LiteLLM gateway) ────────────────────────
+    # TebaAI does NOT manage OpenAI keys directly.
+    # LiteLLM resolves the upstream key (OpenAI_Key_JAI_query) in its config.yaml.
+    # TebaAI authenticates to LiteLLM via LITELLM_API_KEY (TEBAAI_LITELLM_API_KEY).
     embeddings_enabled: bool = False
     embeddings_provider: str = "litellm"
     embeddings_base_url: str = "http://127.0.0.1:4000"
     embeddings_api_key: SecretStr = SecretStr("")
     embeddings_model_alias: str = "openai_text_embedding_3_small"
+    embeddings_model_name: str = "text-embedding-3-small"
     embeddings_dimension: int = 1536
     embeddings_batch_size: int = 16
     embeddings_timeout_seconds: int = 60

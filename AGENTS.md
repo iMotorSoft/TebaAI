@@ -47,6 +47,7 @@ La rama heredada `ux/team360-console-design-handoff` tiene un nombre ajeno a Teb
 | --- | --- |
 | Arquitectura general | `lat.md/lat.md` y `lat.md/tebaai-knowledge-map.md` |
 | Configuracion, secretos o variables | `lat.md/global-configuration-facade-policy.md` |
+| Embeddings / LiteLLM | `lat.md/embeddings-configuration-policy.md` |
 | PostgreSQL | `lat.md/postgres-driver-policy.md` |
 | Auth, tokens o roles | `lat.md/authentication-security-policy.md` |
 | Biblioteca y retrieval | `lat.md/library-retrieval-models-policy.md` |

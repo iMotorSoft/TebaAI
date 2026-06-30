@@ -8,12 +8,12 @@ from typing import Any
 import httpx
 
 from globalVar import (
-    EMBEDDINGS_API_KEY,
     EMBEDDINGS_BASE_URL,
     EMBEDDINGS_BATCH_SIZE,
     EMBEDDINGS_DIMENSION,
     EMBEDDINGS_MODEL_ALIAS,
     EMBEDDINGS_TIMEOUT_SECONDS,
+    LITELLM_API_KEY,
 )
 from modules.embeddings.errors import EmbeddingsBatchError, EmbeddingsProviderError
 
@@ -34,8 +34,8 @@ def embed_batch(texts: list[str], model: str | None = None) -> list[list[float]]
     headers: dict[str, str] = {
         "Content-Type": "application/json",
     }
-    if EMBEDDINGS_API_KEY:
-        headers["Authorization"] = f"Bearer {EMBEDDINGS_API_KEY}"
+    if LITELLM_API_KEY:
+        headers["Authorization"] = f"Bearer {LITELLM_API_KEY}"
 
     all_embeddings: list[list[float]] = []
     batch_size = EMBEDDINGS_BATCH_SIZE

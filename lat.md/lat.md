@@ -64,6 +64,7 @@ Each architecture concern has one canonical LAT source and may be anchored from 
 
 - [[global-configuration-facade-policy]]
 - [[globalvar-postgres-config-policy]]
+- [[embeddings-configuration-policy]]
 - [[postgres-driver-policy]]
 - [[authentication-security-policy]]
 - [[library-retrieval-models-policy]]

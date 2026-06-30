@@ -81,6 +81,7 @@ Each architecture concern has one canonical LAT source and may be anchored from 
 - [[breslov-two-books-preflight]]
 - [[breslov-two-books-test-ingestion]]
 - [[breslov-two-books-chunking-strategy]]
+- [[breslov-two-books-structural-chunking-apply]]
 - [[pdf-markdown-extraction-policy]]
 - [[service-preflight-methodology]]
 - [[browser-mcp-validation-policy]]

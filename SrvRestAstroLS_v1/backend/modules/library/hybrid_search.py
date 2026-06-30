@@ -57,6 +57,8 @@ async def search_chunks_hybrid(
 
     # 2. Vector search
     try:
+        from infrastructure.milvus.client import create_connection
+        create_connection()
         query_vec = embed_text(query)
         ensure_collection(milvus_collection, dimension=len(query_vec))
         milvus_hits = search_vectors(

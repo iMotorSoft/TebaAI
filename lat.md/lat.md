@@ -74,6 +74,7 @@ Each architecture concern has one canonical LAT source and may be anchored from 
 - [[page-mapping-failure-diagnosis]]
 - [[el-alma-chunking-strategy-audit]]
 - [[el-alma-sijot-aware-apply]]
+- [[el-alma-sijot-page-mapping]]
 - [[service-preflight-methodology]]
 - [[browser-mcp-validation-policy]]
 - [[root-cause-debugging-policy]]

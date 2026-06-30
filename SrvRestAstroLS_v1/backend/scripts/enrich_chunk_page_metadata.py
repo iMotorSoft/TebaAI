@@ -2,12 +2,20 @@
 """
 CLI: Enrich chunks with high-confidence page metadata from PDF audit.
 
-Reads PDFs page-by-page, matches chunks to pages, filters by confidence,
-and updates PostgreSQL. Dry-run by default.
+Supports collection breslov (ready docs) and breslov_test (test_candidate).
+For test_candidate chunks, preserves existing metadata.section and
+metadata.chunking in bibliographic_metadata when writing page_mapping.
 
 Usage:
-    uv run python -m scripts.enrich_chunk_page_metadata --collection breslov
-    uv run python -m scripts.enrich_chunk_page_metadata --collection breslov --apply
+    uv run python -m scripts.enrich_chunk_page_metadata \\
+        --collection breslov_test \\
+        --document-title "El Alma del Rebe Najmán" \\
+        --strategy normalization_plus --dry-run
+
+    uv run python -m scripts.enrich_chunk_page_metadata \\
+        --collection breslov_test \\
+        --document-title "El Alma del Rebe Najmán" \\
+        --strategy normalization_plus --apply
 """
 
 from __future__ import annotations
@@ -31,6 +39,7 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--collection", default="breslov")
     parser.add_argument("--pdf-root", default="/media/issajar/DEVELOP/Download/Tora/Breslov")
     parser.add_argument("--confidence", default="high", choices=["high"])
+    parser.add_argument("--strategy", default="anchor_match", choices=["anchor_match", "normalization_plus"])
     parser.add_argument("--document-title", help="Only process this document")
     parser.add_argument("--dry-run", action="store_true", default=True)
     parser.add_argument("--apply", action="store_true", help="Actually write to DB")
@@ -46,8 +55,42 @@ def _normalize(text: str) -> str:
     return t.strip()
 
 
-def _make_anchors(text: str, n: int = ANCHOR_CHARS) -> list[str]:
-    norm = _normalize(text)
+def _normalization_plus(text: str) -> str:
+    """Enhanced normalization for PDF anchor matching.
+
+    Applies unicode NFKC, lowercase, unaccent, space collapse,
+    line-break normalization, dash/hyphen normalization, quote
+    normalization, markdown heading stripping, and Sija heading
+    normalization.
+    """
+    import unicodedata
+    t = unicodedata.normalize("NFKC", text)
+    t = t.lower()
+    replacements = {
+        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+        'ü': 'u', 'ñ': 'n', 'Á': 'a', 'É': 'e', 'Í': 'i',
+        'Ó': 'o', 'Ú': 'u', 'Ü': 'u', 'Ñ': 'n',
+        '\u2010': '-', '\u2011': '-', '\u2012': '-', '\u2013': '-',
+        '\u2014': '-', '\u2015': '-',
+        '\u2018': "'", '\u2019': "'", '\u201c': '"', '\u201d': '"',
+        '\u00ab': '"', '\u00bb': '"',
+    }
+    for old, new in replacements.items():
+        t = t.replace(old, new)
+    # Strip markdown headings
+    t = re.sub(r'^#{1,6}\s+', '', t, flags=re.MULTILINE)
+    t = re.sub(r'\*+', '', t)
+    t = re.sub(r'_+', '', t)
+    # Normalize Sija headings
+    t = re.sub(r'sij[áa]\s+#?\s*(\d+)', r'sija \1', t)
+    # Collapse whitespace
+    t = re.sub(r'\s+', ' ', t)
+    return t.strip()
+
+
+def _make_anchors(text: str, n: int = ANCHOR_CHARS, strategy: str = "anchor_match") -> list[str]:
+    norm_fn = _normalization_plus if strategy == "normalization_plus" else _normalize
+    norm = norm_fn(text)
     anchors = []
     if len(norm) <= n * 3:
         anchors.append(norm)
@@ -69,13 +112,6 @@ def _match_anchor_in_pages(anchor: str, page_texts: list[str]) -> list[int]:
     return hits
 
 
-def _get_confidence(mappings: list[dict], chunk_index: int) -> dict | None:
-    for m in mappings:
-        if m["chunk_index"] == chunk_index:
-            return m
-    return None
-
-
 async def _run(args: argparse.Namespace) -> int:
     from core.config import get_settings
     from infrastructure.postgres.pool import create_pool_from_settings, open_pool, close_pool
@@ -84,7 +120,7 @@ async def _run(args: argparse.Namespace) -> int:
 
     settings = get_settings()
     if not settings.postgres_enabled:
-        print("ERROR: TEBAAI_POSTGRES_ENABLED is not true", file=sys.stderr)
+        print("ERROR: PostgreSQL not enabled via globalVar.py", file=sys.stderr)
         return 1
 
     pdf_root = pathlib.Path(args.pdf_root)
@@ -103,13 +139,19 @@ async def _run(args: argparse.Namespace) -> int:
             db = (await cur.fetchone())["current_database"]
             assert db == "tebaai"
 
+            # Allow test_candidate docs for *_test collections
+            if args.collection.endswith("_test"):
+                status_filter = "d.status IN ('ready', 'test_candidate')"
+            else:
+                status_filter = "d.status = 'ready'"
+
             docs = await fetch_all(
                 conn,
-                """
+                f"""
                 SELECT d.id, d.title, d.source_filename, d.author, c.code
                 FROM library_documents d
                 JOIN library_collections c ON c.id = d.collection_id
-                WHERE c.code = %(code)s AND d.status = 'ready'
+                WHERE c.code = %(code)s AND {status_filter}
                   AND d.title != 'Documento de prueba CLI'
                 ORDER BY d.title
                 """,
@@ -129,15 +171,17 @@ async def _run(args: argparse.Namespace) -> int:
                     print("  PDF not found, skipping")
                     continue
 
+                norm_fn = _normalization_plus if args.strategy == "normalization_plus" else _normalize
+
                 pdf_doc = fitz.open(str(pdf_path))
                 page_count = pdf_doc.page_count
-                page_texts = [_normalize(pdf_doc.load_page(p).get_text()) for p in range(page_count)]
+                page_texts = [norm_fn(pdf_doc.load_page(p).get_text()) for p in range(page_count)]
                 pdf_doc.close()
 
                 chunks = await fetch_all(
                     conn,
                     """
-                    SELECT id, chunk_index, content, content_length
+                    SELECT id, chunk_index, content, content_length, metadata
                     FROM library_document_chunks
                     WHERE document_id = %(id)s
                     ORDER BY chunk_index
@@ -150,7 +194,7 @@ async def _run(args: argparse.Namespace) -> int:
                     if not content.strip():
                         continue
 
-                    anchors = _make_anchors(content)
+                    anchors = _make_anchors(content, strategy=args.strategy)
                     page_hits: dict[int, int] = Counter()
                     for anchor in anchors:
                         for p in _match_anchor_in_pages(anchor, page_texts):
@@ -166,9 +210,8 @@ async def _run(args: argparse.Namespace) -> int:
                     total_anchors = len(anchors)
                     max_hits = max(page_hits.values())
 
-                    # Start/end anchor analysis for cross-page detection
-                    start_anchors = _make_anchors(content[:min(300, len(content))], n=80)
-                    end_anchors = _make_anchors(content[-min(300, len(content)):], n=80)
+                    start_anchors = _make_anchors(content[:min(300, len(content))], n=80, strategy=args.strategy)
+                    end_anchors = _make_anchors(content[-min(300, len(content)):], n=80, strategy=args.strategy)
                     start_pages = set()
                     end_pages = set()
                     for a in start_anchors:
@@ -194,26 +237,49 @@ async def _run(args: argparse.Namespace) -> int:
                             page_start = sp
                             page_end = sp
                             reason = f"single page p{sp} (hits={max_hits}/{total_anchors})"
-                        elif sp == ep and max_hits >= total_anchors * 0.4:
-                            # medium - skip
-                            pass
 
                     if not is_high:
                         continue
 
-                    ref_label = f"PDF page {page_start}" if page_start == page_end else f"PDF pages {page_start}-{page_end}"
-                    bib_meta = {
+                    # Build reference label with section awareness
+                    existing_meta = chunk.get("metadata") or {}
+                    section_info = existing_meta.get("section", {})
+                    section_label = section_info.get("section_label") or ""
+                    section_type = section_info.get("section_type") or ""
+
+                    page_str = f"PDF page {page_start}" if page_start == page_end else f"PDF pages {page_start}-{page_end}"
+                    if section_type == "sija" and section_label:
+                        ref_label = f"{section_label} · {page_str}"
+                    elif section_label:
+                        ref_label = f"{section_label} · {page_str}"
+                    else:
+                        ref_label = page_str
+
+                    # Build bibliographic_metadata preserving section and chunking
+                    chunking_info = existing_meta.get("chunking", {})
+                    page_mapping_entry = {
                         "page_mapping": {
                             "source": "local_pdf_page_aware_audit",
                             "confidence": "high",
+                            "strategy": args.strategy,
                             "pdf_page_start": page_start,
                             "pdf_page_end": page_end,
                             "page_number_type": "pdf_physical_page",
                             "method": "anchor_match",
-                            "audit_tool": "audit_page_chunk_mapping.py",
+                            "document_status": "test_candidate" if args.collection.endswith("_test") else "ready",
+                            "chunking_strategy": chunking_info.get("strategy", "generic"),
                             "applied_by": "enrich_chunk_page_metadata.py",
                         }
                     }
+
+                    # Merge: preserve existing bib_metadata but add page_mapping
+                    bib_base: dict = {}
+                    if chunking_info:
+                        bib_base["chunking"] = chunking_info
+                    if section_info:
+                        bib_base["section"] = section_info
+                    bib_base.update(page_mapping_entry)
+                    bib_meta = json.dumps(bib_base)
 
                     all_candidates.append({
                         "chunk_id": str(chunk["id"]),
@@ -229,34 +295,31 @@ async def _run(args: argparse.Namespace) -> int:
                         "page_start": page_start,
                         "page_end": page_end,
                         "reference_label": ref_label,
-                        "bibliographic_metadata": json.dumps(bib_meta),
+                        "bibliographic_metadata": bib_meta,
                     })
 
                 print(f"  pages={page_count} chunks={len(chunks)} high={len(all_candidates)}")
 
-            # Apply limit if set
             if args.limit and len(all_updates) > args.limit:
                 all_updates = all_updates[:args.limit]
                 all_candidates = all_candidates[:args.limit]
 
-            # Report
             report = {
                 "collection": args.collection,
+                "strategy": args.strategy,
                 "mode": "dry-run" if not args.apply else "apply",
                 "candidate_count": len(all_candidates),
-                "candidates": all_candidates[:20],  # Limit samples in report
+                "candidates": all_candidates[:20],
                 "updates": [],
             }
 
             if args.apply and all_updates:
-                # Execute in transaction
                 async with pool.connection() as write_conn:
                     write_conn.row_factory = dict_row
                     try:
                         updated = 0
                         skipped = 0
                         for u in all_updates:
-                            # Check if already has page_start
                             existing = await fetch_one(
                                 write_conn,
                                 "SELECT page_start FROM library_document_chunks WHERE id = %(id)s",
@@ -287,18 +350,11 @@ async def _run(args: argparse.Namespace) -> int:
                     except Exception as exc:
                         print(f"ERROR during apply (rolled back): {exc}")
                         return 1
-
             else:
                 report["updated_count"] = 0
                 report["skipped_existing_count"] = 0
 
-            report["unmapped_count"] = sum(d["chunk_count"] for d in
-                [{"chunk_count": await _count_chunks_by_doc(conn, d["id"])} for d in docs]
-            ) - len(all_candidates)
-
-            # Output
             if args.output_json:
-                # Remove full candidates from JSON if verbose
                 out = dict(report)
                 if not args.verbose and "candidates" in out:
                     out["candidates"] = out["candidates"][:5]
@@ -307,7 +363,7 @@ async def _run(args: argparse.Namespace) -> int:
                 print(f"JSON: {args.output_json}")
 
             print(f"\n{'='*60}")
-            print(f"Page Metadata Enrichment — {args.collection}")
+            print(f"Page Metadata Enrichment — {args.collection} [{args.strategy}]")
             print(f"{'='*60}")
             print(f"  Mode:         {'DRY-RUN' if not args.apply else 'APPLY'}")
             print(f"  Candidates:   {report['candidate_count']}")
@@ -318,12 +374,6 @@ async def _run(args: argparse.Namespace) -> int:
             return 0
     finally:
         await close_pool(pool)
-
-
-async def _count_chunks_by_doc(conn, doc_id: str) -> int:
-    from infrastructure.postgres.transaction import fetch_one
-    r = await fetch_one(conn, "SELECT COUNT(*) AS cnt FROM library_document_chunks WHERE document_id = %(id)s", {"id": doc_id})
-    return r["cnt"] if r else 0
 
 
 def _find_pdf(doc: dict, pdf_root: pathlib.Path) -> pathlib.Path | None:

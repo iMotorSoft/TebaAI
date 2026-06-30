@@ -83,10 +83,15 @@ async def _run(args: argparse.Namespace) -> int:
             if r.get("author"):
                 print(f"       Author: {r['author']}")
             ref = f"chunk {r['chunk_index']}"
+            if r.get("reference_label"):
+                ref += f", ref: {r['reference_label']}"
             if r.get("chapter"):
                 ref += f", chapter: {r['chapter']}"
             if r.get("page_start"):
-                ref += f", page: {r['page_start']}"
+                p = str(r['page_start'])
+                if r.get("page_end") and r['page_end'] != r['page_start']:
+                    p += f"-{r['page_end']}"
+                ref += f", page: {p}"
             print(f"       Reference: {ref}")
             print(f"       Match: {r['match_type']}  Score: {r['rank']}")
             print(f"       Fragment:")

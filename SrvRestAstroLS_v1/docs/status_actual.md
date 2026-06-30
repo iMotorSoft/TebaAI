@@ -71,7 +71,10 @@ La suite reporta deuda preexistente por `datetime.utcnow()` y claves JWT cortas 
 - `test_sijot_aware_chunk_apply.py`: 11 tests PASS.
 - `chunk_documents.py` extendido con `--strategy` (generic/sijot-aware) y `--apply`.
 - `chunking.py` agregó `convert_temporary_chunks_to_db_format()`.
-- `pytest` total: 282 PASS.
+- `test_sijot_page_mapping_enrichment.py`: 16 tests PASS.
+- `enrich_chunk_page_metadata.py` extendido con `--strategy normalization_plus` y soporte `test_candidate`.
+- `text_search.py` y `search_library_text.py`: ahora incluyen `reference_label` en resultados.
+- `pytest` total: 298 PASS.
 
 ## Sijot-aware chunking applied 2026-06-30
 
@@ -82,6 +85,16 @@ La suite reporta deuda preexistente por `datetime.utcnow()` y claves JWT cortas 
 - `breslov` productivo sigue con 1991 chunks (sin contaminación).
 - Milvus no indexado. LiteLLM no llamado.
 - Documento sigue `test_candidate`.
+
+## Sijot-aware page mapping 2026-06-30
+
+- 273/476 chunks de `breslov_test` enriquecidos con page_start, page_end, reference_label.
+- Estrategia `normalization_plus`: NFKC + unaccent + markdown/bold/italic stripping + Sija normalization.
+- Reference labels: `Sija N · PDF page(s) M` o `SectionName · PDF page(s) M`.
+- `bibliographic_metadata` mergeada preservando section + chunking + page_mapping.
+- Sin contaminación: breslov=1991/284, breslov_test=476/273.
+- Invalid ranges: 0.
+- 203 chunks sin mapping (42.6%) por markdown denso. Mejorable.`
 
 ## Calidad documental y operativa
 

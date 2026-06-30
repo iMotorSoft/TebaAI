@@ -83,6 +83,10 @@ Se implementó resolución PostgreSQL centralizada en `core/config.py` desde var
 
 Se aplicó chunking Sijot-aware en `breslov_test` para "El Alma del Rebe Najmán": 476 chunks persistidos con metadata estructural, 52/52 Sijot detectadas, 0 cross-section. FTS funcional. `breslov` productivo intacto (1991 chunks). Tests: 282 PASS.
 
+## Sijot-aware page mapping 2026-06-30
+
+Page mapping real para 273/476 chunks Sijot-aware en `breslov_test` usando `normalization_plus` sobre PDF local (200 páginas). Reference labels con sección + páginas. Sin contaminación de `breslov`. Tests: 298 PASS.
+
 ## Pendientes
 
 La deuda arquitectónica restante requiere decisiones explícitas y no debe mezclarse con tareas ya cerradas.

@@ -197,12 +197,43 @@ def _compute_generic_metrics(chunks: list[TemporaryChunk]) -> StrategyMetrics:
 
 # ── Sijot-aware strategy ────────────────────────────────────────────────
 
+# Real document formats from "El Alma del Rebe Najmán" PDF extraction:
+#   ## _**Sija**_ **# N**   (most common, 37/52)
+#   ## _**Sija**_ **#N**    (no space before number, 8/52)
+#   ## _Sija_ # **N**       (italic-only Sija, Sija 27)
+#   ## _**Sija #**_ **N**   (hash inside bold, Sija 42)
+#   ## _**Sija**_ #N        (hash without bold number, occasional)
+#   - Sija N:              (indice entries — NOT body, detected to be excluded)
+# Real document formats from "El Alma del Rebe Najmán" PDF extraction:
+#   ## _**Sija**_ **# N**   (most common, 37/52)
+#   ## _**Sija**_ **#N**    (no space before number, 8/52)
+#   ## _Sija_ # **N**       (italic-only Sija, Sija 27)
+#   ## _**Sija #**_ **N**   (hash inside bold, Sija 42)
+#   ## **Title**            (title-only for 9 missing Sijot)
 SIJA_PATTERNS = [
+    # Bold-italic markdown: ## _**Sija**_ **# N** or ## _**Sija**_ **#N**
+    re.compile(r"(?:^|\n)#{1,3}\s+_+\*?\*?Sij[áa]\*?\*?_+\s+\*?\*?#\s*(\d+)\*?\*?", re.IGNORECASE),
+    # Bold-italic without ##: \n_**Sija**_ **#N**
+    re.compile(r"(?:^|\n)_+\*?\*?Sij[áa]\*?\*?_+\s+\*?\*?#\s*(\d+)\*?\*?", re.IGNORECASE),
+    # Hash inside bold: ## _**Sija #**_ **N**
+    re.compile(r"(?:^|\n)#{1,3}\s+_+\*?\*?Sij[áa]\s*#\*?\*?_+\s+\*?\*?(\d+)\*?\*?", re.IGNORECASE),
+    # Italic only: ## _Sija_ # **N**
+    re.compile(r"(?:^|\n)#{1,3}\s+_+Sij[áa]_+\s+#\s+\*?\*?(\d+)\*?\*?", re.IGNORECASE),
+    # Plain markdown heading: ## Sija N
     re.compile(r"(?:^|\n)#{1,3}\s*Sij[áa]\s*(?:N[º°]\s*)?(\d+)", re.IGNORECASE),
-    re.compile(r"(?:^|\n)#{1,3}\s*Sij[aá]?\s*(?:N[º°]\s*)?(\d+)", re.IGNORECASE),
+    # Plain text (no markdown): Sijá N
     re.compile(r"(?:^|\n)Sij[áa]\s+(?:N[º°]\s*)?(\d+)", re.IGNORECASE),
     re.compile(r"(?:^|\n)SIJA\s+(?:N[º°]\s*)?(\d+)"),
+    # Indice format: - Sija N: (will be deduplicated by position)
+    re.compile(r"(?:^|\n)\s*-\s*Sij[áa]\s+(\d+)\s*:", re.IGNORECASE),
 ]
+
+# Known Sija titles from the indice for title-only detection
+# These 9 Sijot lack "Sija N" headers in the body — detected by matching their title.
+SIJA_TITLES: dict[int, str] = {
+    # Previously 9 Sijot w/out ## headers; now all detected by pattern.
+    # Kept as reference only.
+}
 
 SECTION_TYPES = {
     "portada": re.compile(r"(?i)^\s*#{1,3}\s*(portada|cover|tapa)\b"),
@@ -235,18 +266,33 @@ def _find_sija_headers(text: str) -> list[dict]:
                 "number": num,
                 "label": label,
                 "line": label,
+                "detected_by": "pattern",
             })
+
+    # Title-based fallback currently unused — all 52 Sijot detected by pattern.
+    # Kept for reference if new documents need it.
+    for num, title in SIJA_TITLES.items():
+        if title:
+            pass
+
+
+    # Deduplicate by position; discard indice entries (pos < 15000)
+    # when a body entry (pos >= 15000) exists for the same number.
+    body_numbers: set[int] = {h["number"] for h in headers if h["position"] >= 15000}
     seen_pos: set[int] = set()
     unique: list[dict] = []
     for h in sorted(headers, key=lambda x: x["position"]):
-        if h["position"] not in seen_pos:
-            seen_pos.add(h["position"])
-            unique.append(h)
+        if h["position"] in seen_pos:
+            continue
+        seen_pos.add(h["position"])
+        if h["position"] < 15000 and h["number"] in body_numbers:
+            continue
+        unique.append(h)
     return unique
 
 
 def _find_section_boundaries(text: str) -> list[dict]:
-    """Find all section boundaries (Sijot + other sections)."""
+    """Find all section boundaries (Sijot + other sections), excluding indice-range entries."""
     boundaries = []
 
     sija_headers = _find_sija_headers(text)
@@ -469,7 +515,7 @@ def _compute_sijot_metrics(chunks: list[TemporaryChunk]) -> StrategyMetrics:
     for i in range(len(chunks) - 1):
         if (chunks[i].section_type == "sija" and chunks[i + 1].section_type == "sija"
                 and chunks[i].section_number != chunks[i + 1].section_number
-                and chunks[i].char_end > chunks[i + 1].char_start // 2):
+                and chunks[i].char_end > chunks[i + 1].char_start):
             m.chunks_crossing_sections += 1
 
     all_expected = set(range(1, SIJOT_EXPECTED_COUNT + 1))

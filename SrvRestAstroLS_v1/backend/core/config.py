@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from functools import lru_cache
 from typing import Any
 from urllib.parse import urlparse, urlunparse
@@ -100,15 +101,28 @@ class AppSettings(BaseSettings):
     @model_validator(mode="after")
     def _validate_postgres(self) -> AppSettings:
         if not self.postgres_enabled:
-            return self
+            # Try to resolve from DB_PG_* (iMotorSoft standard local vars)
+            # when no TEBAAI_POSTGRES_* explicit config was provided.
+            if not self.postgres_user and not self.postgres_db:
+                pg_user = os.environ.get("DB_PG_USER", "").strip()
+                pg_pass = os.environ.get("DB_PG_PASS", "").strip()
+                if pg_user or pg_pass:
+                    self.postgres_host = os.environ.get("DB_PG_IP", "127.0.0.1").strip() or "127.0.0.1"
+                    port_str = os.environ.get("DB_PG_PORT", "5432").strip()
+                    self.postgres_port = int(port_str) if port_str.isdigit() else 5432
+                    self.postgres_db = "tebaai"
+                    self.postgres_user = pg_user
+                    self.postgres_password = SecretStr(pg_pass)
+                    self.postgres_enabled = True
+            if not self.postgres_enabled:
+                return self
         if self.postgres_dsn:
             return self
         if not self.postgres_db or not self.postgres_user:
             raise ValueError(
-                "PostgreSQL is enabled (TEBAAI_POSTGRES_ENABLED=true) but "
-                "missing required fields. Set TEBAAI_POSTGRES_DSN or provide "
-                "TEBAAI_POSTGRES_DB, TEBAAI_POSTGRES_USER and "
-                "TEBAAI_POSTGRES_PASSWORD."
+                "PostgreSQL is enabled but missing required fields. "
+                "Set TEBAAI_POSTGRES_DSN / TEBAAI_POSTGRES_{DB,USER,PASSWORD} "
+                "or ensure DB_PG_USER and DB_PG_PASS are available."
             )
         return self
 

@@ -35,6 +35,7 @@ Do not create `backend/app.py` without an ADR.
 ## Context routing
 
 - configuration and secrets: `lat.md/global-configuration-facade-policy.md`;
+- PostgreSQL globalVar resolution: `lat.md/globalvar-postgres-config-policy.md`;
 - PostgreSQL: `lat.md/postgres-driver-policy.md`;
 - auth: `lat.md/authentication-security-policy.md`;
 - library and retrieval: `lat.md/library-retrieval-models-policy.md`;

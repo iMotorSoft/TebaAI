@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import importlib
+import os
+from unittest.mock import patch
 
 import pytest
 
@@ -32,20 +34,26 @@ class TestExpectedExports:
         assert isinstance(globalVar.SUPPORTED_LANGUAGES, list)
         assert "es" in globalVar.SUPPORTED_LANGUAGES
 
-    def test_postgres_exports(self) -> None:
-        import globalVar
-        assert globalVar.POSTGRES_ENABLED is False
-        assert globalVar.POSTGRES_HOST == "127.0.0.1"
-        assert globalVar.POSTGRES_PORT == 5432
-        assert globalVar.POSTGRES_DB == ""
-        assert globalVar.POSTGRES_USER == ""
-        assert isinstance(globalVar.POSTGRES_DSN, str)
-        assert isinstance(globalVar.POSTGRES_DSN_DISPLAY, str)
-        assert globalVar.POSTGRES_MIN_POOL_SIZE == 1
-        assert globalVar.POSTGRES_MAX_POOL_SIZE == 10
-        assert globalVar.POSTGRES_CONNECT_TIMEOUT_SECONDS == 10
-        assert globalVar.POSTGRES_APPLICATION_NAME == "tebaai-backend"
-        assert globalVar.POSTGRES_AUTO_MIGRATE is True
+    def test_postgres_exports_disabled_defaults(self) -> None:
+        """When no DB_PG_* or TEBAAI_POSTGRES_* vars, postgres stays disabled with defaults."""
+        from core.config import get_settings
+        get_settings.cache_clear()
+        with patch.dict(os.environ, {}, clear=True):
+            import importlib
+            import globalVar
+            importlib.reload(globalVar)
+            assert globalVar.POSTGRES_ENABLED is False
+            assert globalVar.POSTGRES_HOST == "127.0.0.1"
+            assert globalVar.POSTGRES_PORT == 5432
+            assert globalVar.POSTGRES_DB == ""
+            assert globalVar.POSTGRES_USER == ""
+            assert isinstance(globalVar.POSTGRES_DSN, str)
+            assert isinstance(globalVar.POSTGRES_DSN_DISPLAY, str)
+            assert globalVar.POSTGRES_MIN_POOL_SIZE == 1
+            assert globalVar.POSTGRES_MAX_POOL_SIZE == 10
+            assert globalVar.POSTGRES_CONNECT_TIMEOUT_SECONDS == 10
+            assert globalVar.POSTGRES_APPLICATION_NAME == "tebaai-backend"
+            assert globalVar.POSTGRES_AUTO_MIGRATE is True
 
     def test_milvus_exports(self) -> None:
         import globalVar

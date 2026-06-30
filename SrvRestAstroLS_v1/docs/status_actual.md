@@ -60,6 +60,16 @@ La diferencia 1.990/1.991 queda como deuda de reconciliacion: no debe normalizar
 
 La suite reporta deuda preexistente por `datetime.utcnow()` y claves JWT cortas usadas en tests; no afecta el PASS, pero debe corregirse.
 
+## PostgreSQL config centralizada 2026-06-30
+
+- `core/config.py` ahora resuelve PostgreSQL desde `DB_PG_*` (estándar iMotorSoft) + base `tebaai`.
+- `globalVar.py` es la fachada oficial; no requiere exportar `TEBAAI_POSTGRES_*` localmente.
+- `TEBAAI_POSTGRES_*` queda como override opcional.
+- Smoke real de chunking ejecutado: 52/52 Sijot detectadas, recomendación B.
+- Sin contaminación: `breslov`=1991 chunks, `breslov_test`=0 chunks.
+- `test_globalvar_postgres_config.py`: 12 tests PASS.
+- `pytest` total: 271 PASS.
+
 ## Calidad documental y operativa
 
 - `AGENTS.md` es la fuente operativa canonica.

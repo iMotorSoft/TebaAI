@@ -64,6 +64,7 @@ La rama heredada `ux/team360-console-design-handoff` tiene un nombre ajeno a Teb
 - No introducir ORM sin ADR.
 - Solo `core/config.py` puede leer variables de entorno del backend.
 - `globalVar.py` es una fachada sin conexiones ni efectos secundarios.
+- Toda configuracion PostgreSQL se resuelve via `backend/globalVar.py` desde `DB_PG_*` + base `tebaai`. Los scripts no deben leer variables PostgreSQL de forma dispersa.
 - `global.js` contiene solo configuracion publica y nunca secretos.
 - No hardcodear credenciales, tokens, passwords, API keys ni credenciales E2E.
 - No introducir logica Breslov en modulos genericos cuando pueda expresarse como datos, colecciones o configuracion.

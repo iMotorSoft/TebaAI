@@ -75,6 +75,10 @@ Dry-run comparativo de chunking genérico vs sijot-aware para el documento test_
 
 El script `scripts/compare_chunking_strategies.py` ejecutó ambas estrategias en memoria. Los 38 tests unitarios nuevos pasaron. PostgreSQL no estaba disponible en el entorno de ejecución; la validación real queda pendiente.
 
+## globalVar PostgreSQL config 2026-06-30
+
+Se implementó resolución PostgreSQL centralizada en `core/config.py` desde variables `DB_PG_*` estándar iMotorSoft + base `tebaai`. `globalVar.py` expone la configuración como fachada única. `TEBAAI_POSTGRES_*` queda como override opcional. Se crearon 12 tests unitarios. Smoke real ejecutado con resultado B (aplicar chunking Sijot-aware).
+
 ## Pendientes
 
 La deuda arquitectónica restante requiere decisiones explícitas y no debe mezclarse con tareas ya cerradas.

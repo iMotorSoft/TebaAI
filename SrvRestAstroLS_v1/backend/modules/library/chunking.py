@@ -46,18 +46,17 @@ def paragraph_chunks(
 
         # If adding this paragraph exceeds chunk_size, save current and start new
         if current and len(current) + len(para) + 2 > chunk_size:
+            chunk_end = current_start + len(current)
             if len(current) >= min_chunk:
-                end = current_start + len(current)
                 chunks.append({
                     "content": current.strip(),
                     "char_start": current_start,
-                    "char_end": end,
+                    "char_end": chunk_end,
                 })
-            current_start = max(0, end - overlap) if chunks else 0
             # Carry overlap text from previous chunk
             overlap_text = current[-(overlap):] if overlap > 0 and len(current) > overlap else ""
             current = overlap_text
-            current_start = max(0, end - overlap) if overlap > 0 else end
+            current_start = max(0, chunk_end - overlap) if overlap > 0 and chunks else 0
 
         if current:
             current += "\n\n" + para
@@ -66,11 +65,11 @@ def paragraph_chunks(
 
     # Last chunk
     if current.strip() and len(current.strip()) >= min_chunk:
-        end = current_start + len(current)
+        chunk_end = current_start + len(current)
         chunks.append({
             "content": current.strip(),
             "char_start": current_start,
-            "char_end": end,
+            "char_end": chunk_end,
         })
 
     return chunks

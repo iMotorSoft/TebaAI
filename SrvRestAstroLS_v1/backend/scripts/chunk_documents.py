@@ -165,7 +165,7 @@ def _chunk_markdown_structure(
 
 def _build_db_chunks(
     raw_chunks: list[dict], doc_id: UUID, text_id: UUID,
-    doc_title: str, language: str, collection_id: UUID,
+    doc_title: str, language: str, knowledge_scope_id: UUID,
 ) -> list[dict]:
     """Convert raw chunk dicts to DB-ready format with FTS fields."""
     import datetime
@@ -211,7 +211,8 @@ def _build_db_chunks(
             "char_end": len(content),
             "token_count_estimate": max(1, len(content) // 4),
             "metadata": metadata,
-            "collection_id": collection_id,
+            "collection_id": knowledge_scope_id,
+            "knowledge_scope_id": knowledge_scope_id,
             "page_start": None,
             "page_end": None,
             "chapter": None,
@@ -249,20 +250,20 @@ async def _run(args: argparse.Namespace) -> int:
                 print(f"ERROR: Expected 'tebaai', got '{db}'", file=sys.stderr)
                 return 1
 
-            # Resolve collection
+            # Resolve knowledge scope
             await cur.execute(
-                "SELECT id, code FROM library_collections WHERE code = %(code)s",
+                "SELECT id, knowledge_scope_code FROM knowledge_scopes WHERE knowledge_scope_code = %(code)s",
                 {"code": args.collection},
             )
-            col = await cur.fetchone()
-            if not col:
-                print(f"ERROR: Collection '{args.collection}' not found", file=sys.stderr)
+            scope_row = await cur.fetchone()
+            if not scope_row:
+                print(f"ERROR: Knowledge scope '{args.collection}' not found", file=sys.stderr)
                 return 1
-            coll_id = col["id"]
-            print(f"Collection: {col['code']} ({coll_id})")
+            scope_id = scope_row["id"]
+            print(f"Knowledge scope: {scope_row['knowledge_scope_code']} ({scope_id})")
 
             # Build document query
-            doc_params: dict = {"coll_id": str(coll_id)}
+            doc_params: dict = {"scope_id": str(scope_id)}
             title_filter = ""
             if args.document_title:
                 title_filter = " AND d.title = %(title)s"
@@ -276,10 +277,10 @@ async def _run(args: argparse.Namespace) -> int:
 
             await cur.execute(f"""
                 SELECT d.id AS doc_id, t.id AS text_id, d.title, d.language,
-                       d.collection_id, t.content, d.status, d.bibliographic_metadata
+                       d.knowledge_scope_id, t.content, d.status, d.bibliographic_metadata
                 FROM library_documents d
                 JOIN library_document_texts t ON t.document_id = d.id
-                WHERE d.collection_id = %(coll_id)s
+                WHERE d.knowledge_scope_id = %(scope_id)s
                   AND {status_filter}
                   AND NOT EXISTS (
                       SELECT 1 FROM library_document_chunks ch WHERE ch.document_id = d.id
@@ -291,8 +292,8 @@ async def _run(args: argparse.Namespace) -> int:
             if not docs:
                 print("No unchunked documents found.")
                 from modules.library.vector_repository import count_chunks
-                existing = await count_chunks(conn, collection_id=coll_id)
-                print(f"Existing chunks in collection: {existing}")
+                existing = await count_chunks(conn, knowledge_scope_id=scope_id)
+                print(f"Existing chunks in scope: {existing}")
                 return 0
 
             print(f"Documents to chunk: {len(docs)}")
@@ -374,7 +375,7 @@ async def _run(args: argparse.Namespace) -> int:
                     )
                     result = _build_db_chunks(
                         raw, doc_id_inst, text_id,
-                        doc["title"], doc["language"], doc["collection_id"],
+                        doc["title"], doc["language"], doc["knowledge_scope_id"],
                     )
                 elif args.strategy == "sijot-aware":
                     from scripts.compare_chunking_strategies import _compute_sijot_aware_chunks
@@ -384,7 +385,8 @@ async def _run(args: argparse.Namespace) -> int:
                         tmp, doc_id_inst, text_id, language=doc["language"],
                     )
                     for c in result:
-                        c["collection_id"] = doc["collection_id"]
+                        c["collection_id"] = doc.get("collection_id")
+                        c["knowledge_scope_id"] = doc["knowledge_scope_id"]
                         c["page_start"] = None
                         c["page_end"] = None
                         c["chapter"] = None
@@ -401,7 +403,8 @@ async def _run(args: argparse.Namespace) -> int:
                         min_chunk=args.min_chunk_chars,
                     )
                     for c in result:
-                        c["collection_id"] = doc["collection_id"]
+                        c["collection_id"] = doc.get("collection_id")
+                        c["knowledge_scope_id"] = doc["knowledge_scope_id"]
                         c["page_start"] = None
                         c["page_end"] = None
                         c["chapter"] = None
@@ -430,9 +433,9 @@ async def _run(args: argparse.Namespace) -> int:
                 return 0
 
             from modules.library.vector_repository import count_chunks
-            final = await count_chunks(conn, collection_id=coll_id)
+            final = await count_chunks(conn, knowledge_scope_id=scope_id)
             print(f"\nChunks created: {total_chunks}")
-            print(f"Total chunks in collection: {final}")
+            print(f"Total chunks in scope: {final}")
             return 0
 
     finally:

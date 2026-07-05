@@ -55,6 +55,8 @@ class RefType(str, enum.Enum):
 
 @dataclass
 class LibraryCollection:
+    """DEPRECATED: pre-knowledge_scopes. Use KnowledgeScope instead.
+    Maps to library_collections_legacy table — read-only historical."""
     id: UUID
     code: str
     name: str
@@ -86,6 +88,23 @@ class LibraryCollection:
 
 
 @dataclass
+class KnowledgeScope:
+    id: UUID
+    organization_id: UUID
+    workspace_id: UUID
+    project_id: UUID
+    knowledge_scope_code: str
+    name: str
+    description: str | None = None
+    scope_type: str = "bibliographic_corpus"
+    language_policy: str | None = None
+    status: str = "draft"
+    metadata: dict[str, Any] = field(default_factory=dict)
+    created_at: datetime | None = None
+    updated_at: datetime | None = None
+
+
+@dataclass
 class LibraryDocument:
     id: UUID
     collection_id: UUID
@@ -93,6 +112,13 @@ class LibraryDocument:
     language: str
     source_type: str
     source_sha256: str
+    knowledge_scope_id: UUID | None = None
+    organization_id: UUID | None = None
+    workspace_id: UUID | None = None
+    project_id: UUID | None = None
+    document_code: str | None = None
+    content_sha256: str | None = None
+    canonical_text_role: str = "candidate"
     subtitle: str | None = None
     source_path: str | None = None
     source_uri: str | None = None
@@ -103,13 +129,18 @@ class LibraryDocument:
     author: str | None = None
     publisher: str | None = None
     publication_year: int | None = None
+    editor: str | None = None
+    translator: str | None = None
+    edition: str | None = None
     version_label: str | None = None
     status: str = DocumentStatus.DRAFT.value
     metadata: dict[str, Any] = field(default_factory=dict)
     bibliographic_metadata: dict[str, Any] = field(default_factory=dict)
+    chunk_set_version: int | None = None
     created_by: UUID | None = None
     created_at: datetime | None = None
     updated_at: datetime | None = None
+    archived_at: datetime | None = None
 
     @classmethod
     def create(
@@ -119,6 +150,10 @@ class LibraryDocument:
         language: str,
         source_type: str,
         source_sha256: str,
+        knowledge_scope_id: UUID | None = None,
+        organization_id: UUID | None = None,
+        workspace_id: UUID | None = None,
+        project_id: UUID | None = None,
         subtitle: str | None = None,
         source_path: str | None = None,
         source_uri: str | None = None,
@@ -129,9 +164,13 @@ class LibraryDocument:
         author: str | None = None,
         publisher: str | None = None,
         publication_year: int | None = None,
+        editor: str | None = None,
+        translator: str | None = None,
+        edition: str | None = None,
         version_label: str | None = None,
         status: str = DocumentStatus.READY.value,
         bibliographic_metadata: dict[str, Any] | None = None,
+        chunk_set_version: int | None = None,
         created_by: UUID | None = None,
     ) -> LibraryDocument:
         document_status = DocumentStatus(status).value
@@ -143,6 +182,10 @@ class LibraryDocument:
             language=language,
             source_type=source_type,
             source_sha256=source_sha256,
+            knowledge_scope_id=knowledge_scope_id,
+            organization_id=organization_id,
+            workspace_id=workspace_id,
+            project_id=project_id,
             subtitle=subtitle.strip() if subtitle else None,
             source_path=source_path,
             source_uri=source_uri,
@@ -153,9 +196,13 @@ class LibraryDocument:
             author=author,
             publisher=publisher,
             publication_year=publication_year,
+            editor=editor,
+            translator=translator,
+            edition=edition,
             version_label=version_label,
             status=document_status,
             bibliographic_metadata=bibliographic_metadata or {},
+            chunk_set_version=chunk_set_version,
             created_by=created_by,
             created_at=now,
             updated_at=now,
@@ -171,6 +218,10 @@ class LibraryDocumentText:
     content_sha256: str
     content_length: int
     extraction_method: str
+    text_role: str = "canonical"
+    knowledge_scope_id: UUID | None = None
+    page_markers_enabled: bool = False
+    page_count: int | None = None
     extraction_metadata: dict[str, Any] = field(default_factory=dict)
     created_at: datetime | None = None
 
@@ -182,6 +233,10 @@ class LibraryDocumentText:
         content: str,
         content_sha256: str,
         extraction_method: str,
+        text_role: str = "canonical",
+        knowledge_scope_id: UUID | None = None,
+        page_markers_enabled: bool = False,
+        page_count: int | None = None,
         extraction_metadata: dict[str, Any] | None = None,
     ) -> LibraryDocumentText:
         return cls(
@@ -192,6 +247,10 @@ class LibraryDocumentText:
             content_sha256=content_sha256,
             content_length=len(content),
             extraction_method=extraction_method,
+            text_role=text_role,
+            knowledge_scope_id=knowledge_scope_id,
+            page_markers_enabled=page_markers_enabled,
+            page_count=page_count,
             extraction_metadata=extraction_metadata or {},
             created_at=datetime.utcnow(),
         )

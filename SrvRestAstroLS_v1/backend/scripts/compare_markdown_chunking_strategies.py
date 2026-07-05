@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# DEPRECATED: Uses library_collections_legacy directly. Do not use for PG18 Product Schema v1.
+# Use knowledge_scopes instead for any new development.
 """
 CLI: Compare chunking strategies on persisted Markdown from library_document_texts.
 
@@ -90,7 +92,7 @@ async def _load_markdown(collection: str, title: str) -> str | None:
     await cur.execute("""
         SELECT t.content, d.bibliographic_metadata
         FROM library_documents d
-        JOIN library_collections c ON c.id = d.collection_id
+        JOIN library_collections_legacy c ON c.id = d.collection_id
         JOIN library_document_texts t ON t.document_id = d.id
         WHERE c.code = %s AND d.title = %s
     """, (collection, title))

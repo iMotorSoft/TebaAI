@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# DEPRECATED: Uses library_collections_legacy directly. Do not use for PG18 Product Schema v1.
+# Use knowledge_scopes instead for any new development.
 """
 CLI: Compare generic vs section-aware (sijot-aware) chunking strategies.
 
@@ -632,7 +634,7 @@ async def _fetch_document_text(collection: str, document_title: str) -> tuple[st
                 await cur.execute("""
                     SELECT t.content, d.bibliographic_metadata, d.id, d.title
                     FROM library_documents d
-                    JOIN library_collections c ON c.id = d.collection_id
+                    JOIN library_collections_legacy c ON c.id = d.collection_id
                     JOIN library_document_texts t ON t.document_id = d.id
                     WHERE c.code = %(code)s
                       AND d.title = %(title)s

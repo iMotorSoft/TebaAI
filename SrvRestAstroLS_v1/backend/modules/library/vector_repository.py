@@ -27,6 +27,9 @@ async def create_chunks(conn: AsyncConnection, chunks: list[dict]) -> int:
                  language, content, content_sha256, content_length, token_count_estimate,
                  char_start, char_end, page_start, page_end, chapter, section, metadata,
                  search_text_normalized, search_vector_es, search_vector_simple,
+                 knowledge_scope_id, organization_id, workspace_id, project_id,
+                 chunk_set_version, page_mapping_status, section_title, node_path,
+                 chunking_strategy, chunking_version, token_estimate,
                  created_at, updated_at)
             VALUES
                 (%(id)s, %(document_id)s, %(document_text_id)s, %(collection_id)s, %(chunk_index)s, %(chunk_uid)s,
@@ -35,6 +38,9 @@ async def create_chunks(conn: AsyncConnection, chunks: list[dict]) -> int:
                  public.unaccent(%(content)s),
                  to_tsvector('spanish', public.unaccent(%(content)s)),
                  to_tsvector('simple', public.unaccent(%(content)s)),
+                 %(knowledge_scope_id)s, %(organization_id)s, %(workspace_id)s, %(project_id)s,
+                 %(chunk_set_version)s, %(page_mapping_status)s, %(section_title)s, %(node_path)s,
+                 %(chunking_strategy)s, %(chunking_version)s, %(token_estimate)s,
                  %(created_at)s, %(updated_at)s)
             ON CONFLICT (chunk_uid) DO NOTHING
             """,
@@ -57,6 +63,17 @@ async def create_chunks(conn: AsyncConnection, chunks: list[dict]) -> int:
                 "chapter": c.get("chapter"),
                 "section": c.get("section"),
                 "metadata": json.dumps(c.get("metadata", {})),
+                "knowledge_scope_id": str(c["knowledge_scope_id"]) if c.get("knowledge_scope_id") else None,
+                "organization_id": str(c["organization_id"]) if c.get("organization_id") else None,
+                "workspace_id": str(c["workspace_id"]) if c.get("workspace_id") else None,
+                "project_id": str(c["project_id"]) if c.get("project_id") else None,
+                "chunk_set_version": c.get("chunk_set_version"),
+                "page_mapping_status": c.get("page_mapping_status"),
+                "section_title": c.get("section_title"),
+                "node_path": c.get("node_path"),
+                "chunking_strategy": c.get("chunking_strategy"),
+                "chunking_version": c.get("chunking_version"),
+                "token_estimate": c.get("token_estimate"),
                 "created_at": c.get("created_at", datetime.utcnow()),
                 "updated_at": c.get("updated_at", datetime.utcnow()),
             },
@@ -75,11 +92,12 @@ async def get_chunks_by_document(conn: AsyncConnection, document_id: UUID) -> li
 
 async def get_unindexed_chunks(
     conn: AsyncConnection,
-    collection_id: UUID | None = None,
+    knowledge_scope_id: UUID | None = None,
     limit: int = 5000,
 ) -> list[dict]:
-    """Get chunks that don't have an embedding record yet."""
-    if collection_id:
+    """Get chunks that don't have an embedding record yet.
+    Scoped by knowledge_scope_id. Uses knowledge_scopes, not library_collections_legacy."""
+    if knowledge_scope_id:
         rows = await fetch_all(
             conn,
             """
@@ -87,11 +105,11 @@ async def get_unindexed_chunks(
             FROM library_document_chunks c
             JOIN library_documents d ON d.id = c.document_id
             LEFT JOIN library_chunk_embeddings e ON e.chunk_id = c.id
-            WHERE c.collection_id = %(collection_id)s AND e.id IS NULL
+            WHERE c.knowledge_scope_id = %(scope_id)s AND e.id IS NULL
             ORDER BY c.chunk_index
             LIMIT %(limit)s
             """,
-            {"collection_id": str(collection_id), "limit": limit},
+            {"scope_id": str(knowledge_scope_id), "limit": limit},
         )
     else:
         rows = await fetch_all(
@@ -110,12 +128,12 @@ async def get_unindexed_chunks(
     return rows
 
 
-async def count_chunks(conn: AsyncConnection, collection_id: UUID | None = None) -> int:
-    if collection_id:
+async def count_chunks(conn: AsyncConnection, knowledge_scope_id: UUID | None = None) -> int:
+    if knowledge_scope_id:
         row = await fetch_one(
             conn,
-            "SELECT COUNT(*) AS cnt FROM library_document_chunks WHERE collection_id = %(collection_id)s",
-            {"collection_id": str(collection_id)},
+            "SELECT COUNT(*) AS cnt FROM library_document_chunks WHERE knowledge_scope_id = %(scope_id)s",
+            {"scope_id": str(knowledge_scope_id)},
         )
     else:
         row = await fetch_one(conn, "SELECT COUNT(*) AS cnt FROM library_document_chunks")
@@ -203,6 +221,14 @@ async def create_chunk_embedding(
     milvus_pk: str,
     content_sha256: str,
     status: str = "indexed",
+    embedding_model_alias: str | None = None,
+    embedding_version: int | None = None,
+    chunk_set_version: int | None = None,
+    knowledge_scope_id: UUID | None = None,
+    organization_id: UUID | None = None,
+    workspace_id: UUID | None = None,
+    project_id: UUID | None = None,
+    vector_status: str | None = None,
 ) -> None:
     from uuid import uuid4
     await execute(
@@ -211,12 +237,18 @@ async def create_chunk_embedding(
         INSERT INTO library_chunk_embeddings
             (id, chunk_id, embedding_run_id, embedding_provider, embedding_model,
              embedding_dimension, milvus_collection, milvus_primary_key, content_sha256,
-             status, created_at)
+             status, created_at,
+             embedding_model_alias, embedding_version, chunk_set_version,
+             knowledge_scope_id, organization_id, workspace_id, project_id,
+             vector_status)
         VALUES
             (%(id)s, %(chunk_id)s, %(embedding_run_id)s, %(embedding_provider)s,
              %(embedding_model)s, %(embedding_dimension)s, %(milvus_collection)s,
-             %(milvus_primary_key)s, %(content_sha256)s, %(status)s, %(created_at)s)
-        ON CONFLICT (chunk_id, embedding_provider, embedding_model, milvus_collection)
+             %(milvus_primary_key)s, %(content_sha256)s, %(status)s, %(created_at)s,
+             %(embedding_model_alias)s, %(embedding_version)s, %(chunk_set_version)s,
+             %(knowledge_scope_id)s, %(organization_id)s, %(workspace_id)s, %(project_id)s,
+             %(vector_status)s)
+        ON CONFLICT (chunk_id, embedding_model_alias, COALESCE(chunk_set_version, 0))
         DO UPDATE SET status = %(status)s, milvus_primary_key = %(milvus_primary_key)s
         """,
         {
@@ -231,5 +263,13 @@ async def create_chunk_embedding(
             "content_sha256": content_sha256,
             "status": status,
             "created_at": datetime.utcnow(),
+            "embedding_model_alias": embedding_model_alias or model,
+            "embedding_version": embedding_version,
+            "chunk_set_version": chunk_set_version,
+            "knowledge_scope_id": str(knowledge_scope_id) if knowledge_scope_id else None,
+            "organization_id": str(organization_id) if organization_id else None,
+            "workspace_id": str(workspace_id) if workspace_id else None,
+            "project_id": str(project_id) if project_id else None,
+            "vector_status": vector_status or ("indexed_production" if "production" in milvus_collection else "indexed_test"),
         },
     )

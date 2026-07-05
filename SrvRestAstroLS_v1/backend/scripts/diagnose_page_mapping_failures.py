@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# DEPRECATED: Uses library_collections_legacy directly. Do not use for PG18 Product Schema v1.
+# Use knowledge_scopes instead for any new development.
 """Diagnose low-coverage PDF page mapping without changing persisted data.
 
 The command reads current chunks from PostgreSQL in a read-only transaction,
@@ -696,7 +698,7 @@ async def _run(args: argparse.Namespace) -> int:
                     """
                     SELECT d.id, d.title, d.source_filename, d.author
                     FROM library_documents d
-                    JOIN library_collections c ON c.id = d.collection_id
+                    JOIN library_collections_legacy c ON c.id = d.collection_id
                     WHERE c.code = %(collection)s AND d.status = 'ready'
                       AND LOWER(d.title) LIKE %(title_pattern)s
                     ORDER BY d.title

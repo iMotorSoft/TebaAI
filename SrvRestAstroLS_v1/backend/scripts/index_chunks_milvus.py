@@ -99,18 +99,19 @@ async def _run(args: argparse.Namespace) -> int:
                 print(f"ERROR: Expected 'tebaai', got '{db}'", file=sys.stderr)
                 return 1
 
-            # Get collection
+            # Get knowledge scope
             await cur.execute(
-                "SELECT id, code FROM library_collections WHERE code = %(code)s",
+                "SELECT id, knowledge_scope_code FROM knowledge_scopes WHERE knowledge_scope_code = %(code)s",
                 {"code": args.collection},
             )
-            col = await cur.fetchone()
-            if not col:
-                print(f"ERROR: Collection '{args.collection}' not found", file=sys.stderr)
+            scope_row = await cur.fetchone()
+            if not scope_row:
+                print(f"ERROR: Knowledge scope '{args.collection}' not found", file=sys.stderr)
                 return 1
 
-            coll_id = col["id"]
-            print(f"Collection: {col['code']} ({coll_id})")
+            scope_id = scope_row["id"]
+            scope_code = scope_row["knowledge_scope_code"]
+            print(f"Knowledge scope: {scope_code} ({scope_id})")
             print(f"Milvus:     {args.milvus_collection}")
             print(f"Model:      {args.embedding_model} (dim={args.embedding_dimension})")
             print(f"Batch:      {args.batch_size}")
@@ -120,26 +121,25 @@ async def _run(args: argparse.Namespace) -> int:
             if is_test_collection:
                 from modules.library.indexing_service import index_existing_chunks
 
-                # Validate dimension
                 if args.embedding_dimension != 1536:
                     print(f"ERROR: Expected embedding dimension 1536, got {args.embedding_dimension}",
                           file=sys.stderr)
                     return 1
 
-                # Count chunks in collection
+                # Count chunks in scope
                 await cur.execute(
-                    "SELECT COUNT(*) AS cnt FROM library_document_chunks WHERE collection_id = %(id)s"
+                    "SELECT COUNT(*) AS cnt FROM library_document_chunks WHERE knowledge_scope_id = %(id)s"
                     " AND document_id IN (SELECT id FROM library_documents WHERE status = 'test_candidate')",
-                    {"id": str(coll_id)},
+                    {"id": str(scope_id)},
                 )
                 total = (await cur.fetchone())["cnt"]
-                print(f"Chunks in collection: {total}")
+                print(f"Chunks in scope: {total}")
                 if total == 0:
-                    print("ERROR: No chunks found in test collection", file=sys.stderr)
+                    print("ERROR: No chunks found in test scope", file=sys.stderr)
                     return 1
 
                 result = await index_existing_chunks(
-                    conn, coll_id, col["code"],
+                    conn, scope_id, scope_code,
                     milvus_collection_name=args.milvus_collection,
                     document_title=args.document_title,
                     embedding_model=args.embedding_model,
@@ -148,7 +148,6 @@ async def _run(args: argparse.Namespace) -> int:
                     dry_run=args.dry_run or not args.apply,
                 )
             else:
-                # Production path (original flow)
                 if args.dry_run:
                     print("Dry-run: would index production collection")
                     print(f"  Production Milvus: {args.milvus_collection}")
@@ -157,7 +156,7 @@ async def _run(args: argparse.Namespace) -> int:
 
                 from modules.library.indexing_service import index_collection
                 result = await index_collection(
-                    conn, coll_id, col["code"],
+                    conn, scope_id, scope_code,
                     milvus_collection_name=args.milvus_collection,
                     chunk_size=args.chunk_size_chars,
                     chunk_overlap=args.chunk_overlap_chars,
@@ -176,7 +175,7 @@ async def _run(args: argparse.Namespace) -> int:
         if args.output_md:
             with open(args.output_md, "w", encoding="utf-8") as f:
                 f.write(f"# Milvus indexing report\n\n"
-                        f"Collection: {col['code']} → {args.milvus_collection}\n"
+                        f"Scope: {scope_code} → {args.milvus_collection}\n"
                         f"Status: {result.get('status', 'unknown')}\n"
                         f"Embedded: {result.get('chunks_embedded', 0)}\n"
                         f"Indexed: {result.get('chunks_indexed', 0)}\n")

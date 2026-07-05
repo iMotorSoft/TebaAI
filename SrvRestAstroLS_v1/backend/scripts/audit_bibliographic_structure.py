@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# DEPRECATED: Uses library_collections_legacy directly. Do not use for PG18 Product Schema v1.
+# Use knowledge_scopes instead for any new development.
 """
 CLI: Audit bibliographic metadata structure of loaded documents.
 
@@ -134,7 +136,7 @@ async def _get_documents(conn, collection: str) -> list[dict]:
                d.source_filename,
                COUNT(ch.id) AS chunk_count
         FROM library_documents d
-        JOIN library_collections c ON c.id = d.collection_id
+        JOIN library_collections_legacy c ON c.id = d.collection_id
         LEFT JOIN library_document_chunks ch ON ch.document_id = d.id
         WHERE c.code = %(code)s AND d.status = 'ready'
         GROUP BY d.id, d.title, d.source_uri, d.language, d.author, d.source_filename

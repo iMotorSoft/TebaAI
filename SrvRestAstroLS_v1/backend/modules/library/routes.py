@@ -26,10 +26,11 @@ async def library_search(
 
     try:
         async with transaction(pool) as conn:
+            knowledge_scope_code = data.collection.strip().lower()
             if data.mode == "hybrid":
                 raw_results = await search_chunks_hybrid(
                     conn,
-                    collection_code=data.collection,
+                    knowledge_scope_code=knowledge_scope_code,
                     query=data.query,
                     top_k=data.top_k,
                     language=data.language,
@@ -37,7 +38,7 @@ async def library_search(
             else:
                 raw_results = await search_chunks_text(
                     conn,
-                    collection_code=data.collection,
+                    knowledge_scope_code=knowledge_scope_code,
                     query=data.query,
                     top_k=data.top_k,
                     mode=data.mode,
@@ -53,7 +54,7 @@ async def library_search(
             document_id=r["document_id"],
             document_title=r.get("document_title", ""),
             author=r.get("author"),
-            collection_code=r.get("collection_code", data.collection),
+            knowledge_scope_code=r.get("knowledge_scope_code", knowledge_scope_code),
             chunk_id=r["chunk_id"],
             chunk_index=r["chunk_index"],
             language=r.get("language"),

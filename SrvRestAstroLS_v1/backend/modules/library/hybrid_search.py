@@ -27,7 +27,7 @@ VECTOR_LIMIT = 30
 # @lat: [[library-retrieval-models-policy#Hybrid Search]]
 async def search_chunks_hybrid(
     conn: AsyncConnection,
-    collection_code: str,
+    knowledge_scope_code: str,
     query: str,
     top_k: int = 10,
     language: str = "es",
@@ -36,12 +36,14 @@ async def search_chunks_hybrid(
     milvus_collection: str = "tebaai_breslov_chunks_v1",
     weights: dict[str, float] | None = None,
 ) -> list[dict[str, Any]]:
+    """Hybrid search scoped by knowledge_scope_code.
+    Uses knowledge_scopes for PG FTS filter and Milvus collection_code filter."""
     w = weights or HYBRID_WEIGHTS
 
-    # 1. FTS search
+    # 1. FTS search via knowledge_scopes
     fts_results = await search_chunks_text(
         conn,
-        collection_code=collection_code,
+        knowledge_scope_code=knowledge_scope_code,
         query=query,
         top_k=fts_limit,
         mode="auto",
@@ -65,7 +67,7 @@ async def search_chunks_hybrid(
             collection_name=milvus_collection,
             query_embedding=query_vec,
             top_k=vector_limit,
-            expr=f'collection_code == "{collection_code}"',
+            expr=f'collection_code == "{knowledge_scope_code}"',
             output_fields=["chunk_id", "document_id", "title", "content_preview", "chunk_index", "content_sha256",
                            "page_start", "page_end"],
         )
@@ -79,13 +81,13 @@ async def search_chunks_hybrid(
         if not cid:
             continue
         vec_score = hit.get("distance", 0.0) or 0.0
-        pg_data = await _enrich_chunk(conn, cid, collection_code)
+        pg_data = await _enrich_chunk(conn, cid, knowledge_scope_code)
         entry: dict[str, Any] = {
             "chunk_id": cid,
             "document_id": pg_data.get("document_id") or hit.get("document_id", ""),
             "document_title": pg_data.get("document_title") or hit.get("title", ""),
             "author": pg_data.get("author"),
-            "collection_code": collection_code,
+            "knowledge_scope_code": knowledge_scope_code,
             "chunk_index": pg_data.get("chunk_index") or hit.get("chunk_index", 0),
             "language": pg_data.get("language", language),
             "page_start": pg_data.get("page_start"),
@@ -115,22 +117,18 @@ async def search_chunks_hybrid(
             existing = all_chunks[cid]
             existing["source_signals"] = ["fts", "vector"]
             existing["_vector_score"] = r["_vector_score"]
-            # Compute hybrid score
             n_fts = _normalize(existing["_fts_rank"])
             n_vec = _normalize(existing["_vector_score"])
             score = n_fts * w["fts_coeff"] + n_vec * w["vector_coeff"]
-            # Phrase bonus if highlighted_excerpt has <mark>
             if "<mark>" in (existing.get("highlighted_excerpt") or ""):
                 score += w["phrase_bonus"]
             existing["_hybrid_score"] = score
             existing["match_type"] = "hybrid"
-            # Preserve FTS highlight
         else:
             r["source_signals"] = ["vector"]
             r["match_type"] = "vector"
             r["_hybrid_score"] = r["_vector_score"] * w["vector_only_coeff"]
             r["_fts_rank"] = None
-            # Generate plain excerpt from content
             content = r.get("content", "")
             r["plain_excerpt"] = content[:300]
             r["highlighted_excerpt"] = _simple_highlight(content, query)
@@ -146,7 +144,7 @@ async def search_chunks_hybrid(
             "document_id": r.get("document_id", ""),
             "document_title": r.get("document_title", ""),
             "author": r.get("author"),
-            "collection_code": r.get("collection_code", collection_code),
+            "knowledge_scope_code": r.get("knowledge_scope_code", knowledge_scope_code),
             "chunk_id": r.get("chunk_id", ""),
             "chunk_index": r.get("chunk_index", 0),
             "language": r.get("language", language),
@@ -169,20 +167,21 @@ async def search_chunks_hybrid(
     return results
 
 
-async def _enrich_chunk(conn: AsyncConnection, chunk_id: str, collection_code: str) -> dict[str, Any]:
+async def _enrich_chunk(conn: AsyncConnection, chunk_id: str, knowledge_scope_code: str) -> dict[str, Any]:
+    """Enrich Milvus result with PG data, scoped by knowledge_scopes."""
     row = await fetch_one(
         conn,
         """
         SELECT d.id AS document_id, d.title AS document_title, d.author,
-               c.code AS collection_code, ch.chunk_index, ch.language,
+               ks.knowledge_scope_code, ch.chunk_index, ch.language,
                ch.page_start, ch.page_end, ch.chapter, ch.section,
                ch.reference_label, ch.content, ch.content_length
         FROM library_document_chunks ch
         JOIN library_documents d ON d.id = ch.document_id
-        JOIN library_collections c ON c.id = ch.collection_id
-        WHERE ch.id = %(chunk_id)s AND c.code = %(code)s
+        JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+        WHERE ch.id = %(chunk_id)s AND ks.knowledge_scope_code = %(code)s
         """,
-        {"chunk_id": chunk_id, "code": collection_code},
+        {"chunk_id": chunk_id, "code": knowledge_scope_code},
     )
     if row:
         return dict(row)

@@ -38,7 +38,7 @@ class IngestDocumentRequest(BaseModel):
 
 class IngestDocumentResult(BaseModel):
     document_id: UUID
-    collection_code: str
+    knowledge_scope_code: str
     title: str
     language: str
     source_sha256: str
@@ -47,6 +47,11 @@ class IngestDocumentResult(BaseModel):
     status: str
     is_new: bool
     dry_run: bool = False
+
+
+class DeprecatedIngestDocumentResult(IngestDocumentResult):
+    """DEPRECATED: use IngestDocumentResult with knowledge_scope_code instead."""
+    collection_code: str | None = None
 
 
 # ── Search ──────────────────────────────────────────────────────────────────
@@ -64,7 +69,7 @@ class LibrarySearchResult(BaseModel):
     document_id: UUID
     document_title: str
     author: str | None = None
-    collection_code: str
+    knowledge_scope_code: str
     chunk_id: UUID
     chunk_index: int
     language: str | None = None

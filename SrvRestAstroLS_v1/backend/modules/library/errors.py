@@ -23,8 +23,13 @@ class UnsupportedFileTypeError(LibraryError):
     """File extension is not supported for extraction."""
 
 
+class ScopeNotFoundError(LibraryError):
+    """Knowledge scope was not found."""
+
+
 class CollectionNotFoundError(LibraryError):
-    """Collection was not found."""
+    """DEPRECATED: pre-knowledge_scopes. Use ScopeNotFoundError instead.
+    Collection was not found in library_collections_legacy."""
 
 
 class UserNotFoundError(LibraryError):

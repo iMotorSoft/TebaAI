@@ -17,13 +17,16 @@ SEARCH_MODES = ("auto", "fts", "phrase", "trigram", "hybrid")
 # @lat: [[library-retrieval-models-policy#Textual / Literal Search]]
 async def search_chunks_text(
     conn: AsyncConnection,
-    collection_code: str,
+    knowledge_scope_code: str,
     query: str,
     top_k: int = 10,
     mode: str = "auto",
     language: str = "es",
 ) -> list[dict[str, Any]]:
-    """Search chunks by text across multiple modes."""
+    """Search chunks by text across multiple modes.
+    Uses knowledge_scopes as the primary filter.
+    knowledge_scope_code maps to knowledge_scopes.knowledge_scope_code.
+    """
     if mode not in SEARCH_MODES:
         raise ValueError(f"Invalid mode '{mode}'. Choose from: {', '.join(SEARCH_MODES)}")
 
@@ -39,36 +42,36 @@ async def search_chunks_text(
     if mode == "auto":
         if " " in norm_q.strip() and len(norm_q.strip()) > 3:
             # Multi-word: try phrase first, fall back to fts
-            results = await _search_phrase(conn, collection_code, norm_q, query, top_k)
+            results = await _search_phrase(conn, knowledge_scope_code, norm_q, query, top_k)
             if len(results) >= top_k:
                 return results
-            fts_results = await _search_fts(conn, collection_code, norm_q, query, top_k)
+            fts_results = await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k)
             return _merge(results, fts_results, top_k)
         else:
-            return await _search_fts(conn, collection_code, norm_q, query, top_k)
+            return await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k)
     elif mode == "fts":
-        return await _search_fts(conn, collection_code, norm_q, query, top_k)
+        return await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k)
     elif mode == "phrase":
-        return await _search_phrase(conn, collection_code, norm_q, query, top_k)
+        return await _search_phrase(conn, knowledge_scope_code, norm_q, query, top_k)
     elif mode == "trigram":
-        return await _search_trigram(conn, collection_code, norm_q, query, top_k)
+        return await _search_trigram(conn, knowledge_scope_code, norm_q, query, top_k)
     return []
 
 
 async def _search_fts(
     conn: AsyncConnection,
-    collection_code: str,
+    knowledge_scope_code: str,
     norm_q: str,
     raw_q: str,
     top_k: int,
 ) -> list[dict[str, Any]]:
-    """Full Text Search using tsvector."""
+    """Full Text Search using tsvector, scoped by knowledge_scope_code."""
     rows = await fetch_all(
         conn,
         """
         SELECT
             d.id AS document_id, d.title AS document_title, d.author,
-            c.code AS collection_code,
+            ks.knowledge_scope_code AS scope_code,
             ch.id AS chunk_id, ch.chunk_index, ch.language,
             ch.page_start, ch.page_end, ch.chapter, ch.section, ch.reference_label,
             'fts' AS match_type,
@@ -77,8 +80,8 @@ async def _search_fts(
             ch.content, ch.content_length
         FROM library_document_chunks ch
         JOIN library_documents d ON d.id = ch.document_id
-        JOIN library_collections c ON c.id = ch.collection_id
-        WHERE c.code = %(code)s
+        JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+        WHERE ks.knowledge_scope_code = %(code)s
           AND (
               ch.search_vector_es @@ plainto_tsquery('spanish', %(norm_q)s)
               OR ch.search_vector_simple @@ plainto_tsquery('simple', %(norm_q)s)
@@ -86,26 +89,26 @@ async def _search_fts(
         ORDER BY rank_es DESC, rank_simple DESC
         LIMIT %(limit)s
         """,
-        {"code": collection_code, "norm_q": norm_q, "limit": top_k},
+        {"code": knowledge_scope_code, "norm_q": norm_q, "limit": top_k},
     )
     return [_build_result(r, raw_q, "fts") for r in rows]
 
 
 async def _search_phrase(
     conn: AsyncConnection,
-    collection_code: str,
+    knowledge_scope_code: str,
     norm_q: str,
     raw_q: str,
     top_k: int,
 ) -> list[dict[str, Any]]:
-    """Exact phrase search using ILIKE on normalized text."""
+    """Exact phrase search using ILIKE on normalized text, scoped by knowledge_scope_code."""
     like_pattern = f"%{norm_q}%"
     rows = await fetch_all(
         conn,
         """
         SELECT
             d.id AS document_id, d.title AS document_title, d.author,
-            c.code AS collection_code,
+            ks.knowledge_scope_code AS scope_code,
             ch.id AS chunk_id, ch.chunk_index, ch.language,
             ch.page_start, ch.page_end, ch.chapter, ch.section, ch.reference_label,
             'phrase' AS match_type,
@@ -113,31 +116,31 @@ async def _search_phrase(
             ch.content, ch.content_length
         FROM library_document_chunks ch
         JOIN library_documents d ON d.id = ch.document_id
-        JOIN library_collections c ON c.id = ch.collection_id
-        WHERE c.code = %(code)s
+        JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+        WHERE ks.knowledge_scope_code = %(code)s
           AND ch.search_text_normalized ILIKE %(pattern)s
         ORDER BY POSITION(%(norm_q)s IN ch.search_text_normalized)
         LIMIT %(limit)s
         """,
-        {"code": collection_code, "norm_q": norm_q, "pattern": like_pattern, "limit": top_k},
+        {"code": knowledge_scope_code, "norm_q": norm_q, "pattern": like_pattern, "limit": top_k},
     )
     return [_build_result(r, raw_q, "phrase") for r in rows]
 
 
 async def _search_trigram(
     conn: AsyncConnection,
-    collection_code: str,
+    knowledge_scope_code: str,
     norm_q: str,
     raw_q: str,
     top_k: int,
 ) -> list[dict[str, Any]]:
-    """Trigram similarity search."""
+    """Trigram similarity search, scoped by knowledge_scope_code."""
     rows = await fetch_all(
         conn,
         """
         SELECT
             d.id AS document_id, d.title AS document_title, d.author,
-            c.code AS collection_code,
+            ks.knowledge_scope_code AS scope_code,
             ch.id AS chunk_id, ch.chunk_index, ch.language,
             ch.page_start, ch.page_end, ch.chapter, ch.section, ch.reference_label,
             'trigram' AS match_type,
@@ -145,13 +148,13 @@ async def _search_trigram(
             ch.content, ch.content_length
         FROM library_document_chunks ch
         JOIN library_documents d ON d.id = ch.document_id
-        JOIN library_collections c ON c.id = ch.collection_id
-        WHERE c.code = %(code)s
+        JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+        WHERE ks.knowledge_scope_code = %(code)s
           AND similarity(ch.search_text_normalized, %(norm_q)s) > 0.1
         ORDER BY sim DESC
         LIMIT %(limit)s
         """,
-        {"code": collection_code, "norm_q": norm_q, "limit": top_k},
+        {"code": knowledge_scope_code, "norm_q": norm_q, "limit": top_k},
     )
     return [_build_result(r, raw_q, "trigram") for r in rows]
 
@@ -169,7 +172,7 @@ def _build_result(row: dict, raw_q: str, match_type: str) -> dict[str, Any]:
         "document_id": str(row["document_id"]),
         "document_title": row.get("document_title") or "",
         "author": row.get("author"),
-        "collection_code": row["collection_code"],
+        "knowledge_scope_code": row.get("scope_code") or row.get("knowledge_scope_code", ""),
         "chunk_id": str(row["chunk_id"]),
         "chunk_index": row["chunk_index"],
         "language": row.get("language"),

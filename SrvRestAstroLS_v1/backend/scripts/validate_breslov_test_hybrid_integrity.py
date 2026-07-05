@@ -1,4 +1,6 @@
 #! /usr/bin/env python3
+# DEPRECATED: Uses library_collections_legacy directly. Do not use for PG18 Product Schema v1.
+# Use knowledge_scopes instead for any new development.
 """
 CLI: Validate hybrid search integrity for breslov_test.
 
@@ -117,7 +119,7 @@ async def _run(args: argparse.Namespace) -> int:
                     "SELECT ch.id, ch.document_id, d.title, ch.page_start, ch.page_end, ch.reference_label, "
                     "c.code FROM library_document_chunks ch "
                     "JOIN library_documents d ON d.id = ch.document_id "
-                    "JOIN library_collections c ON c.id = d.collection_id "
+                    "JOIN library_collections_legacy c ON c.id = d.collection_id "
                     "WHERE ch.id = %s", (cid,))
                 pg_row = await cur.fetchone()
                 await cur.close()

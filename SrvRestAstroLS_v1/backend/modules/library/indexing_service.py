@@ -34,8 +34,8 @@ logger = logging.getLogger(__name__)
 # @lat: [[library-retrieval-models-policy#Semantic / Vector Search]]
 async def index_collection(
     conn: AsyncConnection,
-    collection_id: UUID,
-    collection_code: str,
+    knowledge_scope_id: UUID,
+    knowledge_scope_code: str,
     milvus_collection_name: str,
     chunk_size: int = 1800,
     chunk_overlap: int = 250,
@@ -56,7 +56,7 @@ async def index_collection(
     run_id = uuid4()
     run_data = {
         "id": run_id,
-        "collection_code": collection_code,
+        "collection_code": knowledge_scope_code,
         "milvus_collection": milvus_collection_name,
         "embedding_provider": "litellm",
         "embedding_model": model,
@@ -66,24 +66,23 @@ async def index_collection(
     }
     await create_embedding_run(conn, run_data)
 
-    # 1. Get documents without chunks
+    # 1. Get documents without chunks — via knowledge_scopes
     from infrastructure.postgres.transaction import fetch_all as fa
     docs = await fa(
         conn,
         """
         SELECT d.id AS doc_id, t.id AS text_id, d.title, d.language,
-               d.collection_id, t.content, c.code AS collection_code
+               d.knowledge_scope_id, t.content
         FROM library_documents d
         JOIN library_document_texts t ON t.document_id = d.id
-        JOIN library_collections c ON c.id = d.collection_id
-        WHERE d.collection_id = %(collection_id)s
+        WHERE d.knowledge_scope_id = %(scope_id)s
           AND d.status = 'ready'
           AND NOT EXISTS (
               SELECT 1 FROM library_document_chunks ch
               WHERE ch.document_id = d.id
           )
         """,
-        {"collection_id": str(collection_id)},
+        {"scope_id": str(knowledge_scope_id)},
     )
 
     total_chunks = 0
@@ -98,7 +97,7 @@ async def index_collection(
             min_chunk=min_chunk,
         )
         for c in chunks:
-            c["collection_id"] = doc["collection_id"]
+            c["knowledge_scope_id"] = doc["knowledge_scope_id"]
             c["page_start"] = None
             c["page_end"] = None
             c["chapter"] = None
@@ -110,13 +109,13 @@ async def index_collection(
             await create_chunks(conn, chunks)
             total_chunks += len(chunks)
 
-    # 2. Get unindexed chunks
-    unindexed = await get_unindexed_chunks(conn, collection_id=collection_id)
+    # 2. Get unindexed chunks by knowledge_scope_id
+    unindexed = await get_unindexed_chunks(conn, knowledge_scope_id=knowledge_scope_id)
     if not unindexed:
         await update_embedding_run(conn, run_id, "completed")
         return {
             "run_id": str(run_id),
-            "collection_code": collection_code,
+            "knowledge_scope_code": knowledge_scope_code,
             "chunks_created": total_chunks,
             "chunks_embedded": 0,
             "chunks_indexed": 0,
@@ -146,7 +145,7 @@ async def index_collection(
                 "pk": chunk["chunk_uid"],
                 "chunk_id": str(chunk["id"]),
                 "document_id": str(chunk["document_id"]),
-                "collection_code": collection_code,
+                "collection_code": knowledge_scope_code,
                 "language": chunk["language"],
                 "title": chunk.get("doc_title", ""),
                 "source_type": "",
@@ -216,18 +215,18 @@ async def index_collection(
 
     return {
         "run_id": str(run_id),
-        "collection_code": collection_code,
+        "knowledge_scope_code": knowledge_scope_code,
         "chunks_created": total_chunks,
-        "chunks_embedded": chunks_embedded,
-        "chunks_indexed": chunks_indexed,
+        "chunks_embedded": 0,
+        "chunks_indexed": 0,
         "status": "completed",
     }
 
 
 async def index_existing_chunks(
     conn: AsyncConnection,
-    collection_id: UUID,
-    collection_code: str,
+    knowledge_scope_id: UUID,
+    knowledge_scope_code: str,
     milvus_collection_name: str,
     document_title: str | None = None,
     embedding_model: str | None = None,
@@ -250,7 +249,7 @@ async def index_existing_chunks(
     run_id = uuid4()
     run_data = {
         "id": run_id,
-        "collection_code": collection_code,
+        "collection_code": knowledge_scope_code,
         "milvus_collection": milvus_collection_name,
         "embedding_provider": "litellm",
         "embedding_model": model,
@@ -261,11 +260,11 @@ async def index_existing_chunks(
     if not dry_run:
         await create_embedding_run(conn, run_data)
 
-    # Get unindexed chunks (skip if already indexed)
+    # Get unindexed chunks by knowledge_scope_id
     from infrastructure.postgres.transaction import fetch_all as fa
 
     title_filter = ""
-    params: dict = {"coll_id": str(collection_id)}
+    params: dict = {"scope_id": str(knowledge_scope_id)}
     if document_title:
         title_filter = " AND d.title = %(title)s"
         params["title"] = document_title
@@ -279,7 +278,7 @@ async def index_existing_chunks(
                d.title AS doc_title, d.id AS document_id
         FROM library_document_chunks ch
         JOIN library_documents d ON d.id = ch.document_id
-        WHERE ch.collection_id = %(coll_id)s
+        WHERE d.knowledge_scope_id = %(scope_id)s
           AND d.status = 'test_candidate'
           AND NOT EXISTS (
               SELECT 1 FROM library_chunk_embeddings e
@@ -297,7 +296,7 @@ async def index_existing_chunks(
             await update_embedding_run(conn, run_id, "completed")
         return {
             "run_id": str(run_id),
-            "collection_code": collection_code,
+            "knowledge_scope_code": knowledge_scope_code,
             "chunks_embedded": 0,
             "chunks_indexed": 0,
             "status": "completed" if not dry_run else "dry-run",
@@ -307,7 +306,7 @@ async def index_existing_chunks(
     if dry_run:
         return {
             "run_id": str(run_id),
-            "collection_code": collection_code,
+            "knowledge_scope_code": knowledge_scope_code,
             "chunks_to_index": len(unindexed),
             "chunks_embedded": 0,
             "chunks_indexed": 0,
@@ -359,7 +358,7 @@ async def index_existing_chunks(
                 "pk": chunk["chunk_uid"],
                 "chunk_id": str(chunk["id"]),
                 "document_id": str(chunk["document_id"]),
-                "collection_code": collection_code,
+                "collection_code": knowledge_scope_code,
                 "language": chunk["language"],
                 "title": chunk.get("doc_title", ""),
                 "source_type": "",
@@ -425,7 +424,7 @@ async def index_existing_chunks(
 
     return {
         "run_id": str(run_id),
-        "collection_code": collection_code,
+        "knowledge_scope_code": knowledge_scope_code,
         "chunks_embedded": chunks_embedded,
         "chunks_indexed": chunks_indexed,
         "status": "completed",

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# DEPRECATED: Uses library_collections_legacy directly. Do not use for PG18 Product Schema v1.
+# Use knowledge_scopes instead for any new development.
 """Hebrew document test pipeline for TebaAI.
 
 Usage:
@@ -273,7 +275,7 @@ async def phase_chunk(args: argparse.Namespace) -> dict:
                 "c.id AS collection_id "
                 "FROM library_documents d "
                 "JOIN library_document_texts t ON t.document_id = d.id "
-                "JOIN library_collections c ON c.id = d.collection_id "
+                "JOIN library_collections_legacy c ON c.id = d.collection_id "
                 "WHERE c.code = 'breslov_test' AND d.title = %(title)s "
                 "ORDER BY d.created_at DESC LIMIT 1",
                 {"title": DOCUMENT_TITLE},
@@ -546,7 +548,7 @@ async def phase_embed(args: argparse.Namespace) -> dict:
     from globalVar import EMBEDDINGS_MODEL_ALIAS, EMBEDDINGS_DIMENSION
     from infrastructure.postgres.pool import create_pool_from_settings, open_pool, close_pool
     from infrastructure.postgres.transaction import fetch_all, fetch_one
-    from modules.library.vector_repository import create_chunk_embedding
+    from modules.library.vector_repository import create_chunk_embedding, create_embedding_run, update_embedding_run
     from uuid import uuid4
 
     print("embed: breslov_test chunks from PostgreSQL")
@@ -556,7 +558,7 @@ async def phase_embed(args: argparse.Namespace) -> dict:
         async with pool.connection() as conn:
             collection_row = await fetch_one(
                 conn,
-                "SELECT id FROM library_collections WHERE code = 'breslov_test'",
+                "SELECT id FROM library_collections_legacy WHERE code = 'breslov_test'",
             )
             if not collection_row:
                 return {"error": "breslov_test collection not found"}
@@ -610,6 +612,19 @@ async def phase_embed(args: argparse.Namespace) -> dict:
                 return result
 
             run_id = uuid4()
+            await create_embedding_run(
+                conn,
+                {
+                    "id": run_id,
+                    "collection_code": "breslov_test",
+                    "milvus_collection": "tebaai_breslov_test_chunks_v1",
+                    "embedding_provider": "litellm",
+                    "embedding_model": model,
+                    "embedding_dimension": actual_dim,
+                    "status": "running",
+                    "chunks_total": 0,
+                },
+            )
             for i, chunk in enumerate(sample):
                 await create_chunk_embedding(
                     conn,
@@ -621,8 +636,11 @@ async def phase_embed(args: argparse.Namespace) -> dict:
                     milvus_collection="tebaai_breslov_test_chunks_v1",
                     milvus_pk=chunk["chunk_uid"],
                     content_sha256=chunk["content_sha256"],
-                    status="embedded",
+                    status="indexed",
                 )
+            await update_embedding_run(conn, run_id, "completed",
+                chunks_embedded=len(sample), chunks_indexed=0,
+            )
 
             result = {
                 "model": model,
@@ -662,7 +680,7 @@ async def phase_milvus(args: argparse.Namespace) -> dict:
         async with pool.connection() as conn:
             collection_row = await fetch_one(
                 conn,
-                "SELECT id FROM library_collections WHERE code = 'breslov_test'",
+                "SELECT id FROM library_collections_legacy WHERE code = 'breslov_test'",
             )
             if not collection_row:
                 return {"error": "breslov_test collection not found"}
@@ -722,7 +740,7 @@ async def phase_roundtrip(args: argparse.Namespace) -> dict:
                 """
                 SELECT ch.id, ch.chunk_uid, ch.content, ch.content_sha256, ch.chunk_index
                 FROM library_document_chunks ch
-                JOIN library_collections c ON c.id = ch.collection_id
+                JOIN library_collections_legacy c ON c.id = ch.collection_id
                 WHERE c.code = 'breslov_test'
                   AND EXISTS (
                     SELECT 1 FROM library_chunk_embeddings e

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-07-05T22:57:56.618641",
+  "branch": "feature/console-backend-core",
+  "head_commit": "c27d986",
+  "phase": "pre_promotion_backup",
+  "postgresql": {
+    "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda": {
+      "title": "KITZUR",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "chunks": 817,
+      "embeddings": 817,
+      "has_bib_metadata": true,
+      "promotion_recommendation": "approved_candidate"
+    },
+    "0bad063c-f7a8-429c-a0ac-c01af224d5cb": {
+      "title": "Cruzando el Puente",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "chunks": 741,
+      "embeddings": 741,
+      "has_bib_metadata": true,
+      "promotion_recommendation": "approved_candidate"
+    },
+    "987bd9d3-bee7-4c1a-91d6-dd11aee8e856": {
+      "title": "El Alma del Rebe Najmán",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "chunks": 498,
+      "embeddings": 498,
+      "has_bib_metadata": true,
+      "promotion_recommendation": "approved_candidate"
+    },
+    "76f2adbc-b79a-4432-9ea5-521a337a5502": {
+      "title": "El Jardín de las Almas",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "chunks": 147,
+      "embeddings": 147,
+      "has_bib_metadata": true,
+      "promotion_recommendation": "approved_candidate"
+    },
+    "c7c10741-c324-4916-93a7-61070863e3f9": {
+      "title": "Kokhavey Ohr",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "chunks": 852,
+      "embeddings": 852,
+      "has_bib_metadata": true,
+      "promotion_recommendation": "approved_candidate"
+    },
+    "43ba4f4b-d3ee-49b6-8d09-dfa152379893": {
+      "title": "La Potencia de la Plegaria",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "chunks": 646,
+      "embeddings": 646,
+      "has_bib_metadata": true,
+      "promotion_recommendation": "approved_candidate"
+    },
+    "56ddcc3b-8296-4832-ac95-2bfe032cd4c6": {
+      "title": "Likutey Halajot LM II 8",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "chunks": 1205,
+      "embeddings": 1205,
+      "has_bib_metadata": true,
+      "promotion_recommendation": "approved_candidate"
+    },
+    "a852721d-ae41-4226-8cbb-b4419c0cabe9": {
+      "title": "Un Día en la Vida",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "chunks": 196,
+      "embeddings": 196,
+      "has_bib_metadata": true,
+      "promotion_recommendation": "approved_candidate"
+    }
+  },
+  "milvus_productive": {
+    "collection": "tebaai_breslov_chunks_v1",
+    "entities_before": 1991,
+    "overlapping_doc_counts": {
+      "43ba4f4b-d3e": 643,
+      "56ddcc3b-829": 1201,
+      "76f2adbc-b79": 146
+    },
+    "overlapping_total": 1990
+  }
+}

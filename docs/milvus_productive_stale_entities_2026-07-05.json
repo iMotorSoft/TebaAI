@@ -1,0 +1,1483 @@
+{
+  "exported_at": "2026-07-05T23:22:25.333446+00:00",
+  "branch": "feature/console-backend-core",
+  "collection": "tebaai_breslov_chunks_v1",
+  "pre_delete_total": 7023,
+  "pre_delete_breslov": 5195,
+  "canonical_entities": 5032,
+  "stale_entities": 163,
+  "categories": {
+    "old_pipeline_likutey": 162,
+    "document_not_in_scope": 1,
+    "unknown": 0
+  },
+  "stale_entities_list": [
+    {
+      "milvus_pk": "05595756e6132ad00ea6fa7e",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "a028515e-d120-4f63-95db-717ce6f55178",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "1c77c3c8e340a89a",
+      "content_preview": "s del pueblo judío (ver _Zohar_ III, 114a). En el contexto de nuestra lección, el Rebe explicó que “",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "05bc945fa16106b17175f7ec",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "1a948e69-99b3-4cac-a9d2-cf535c71dea1",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "580d2652dd3657ac",
+      "content_preview": "n tu riqueza” (Proverbios 3:9) - no leas “tu _honja_ (tu riqueza)”, sino “tu _gronja_ (tu garganta)”",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "07c67e401f2c4a086d683453",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "261c9864-ef99-4160-bcb7-41fbf3542a27",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9089380301254e20",
+      "content_preview": "iente. En el contexto de nuestra lección, es llamado “mes de los fuertes” porque en Tishrei la perso",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "0a426be568477ad37ce215bc",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "de08a238-d73e-4291-870a-a3d60bea40e7",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "729a84cb1624700b",
+      "content_preview": "esa canción, i.e., la voz de amonestación de aquel apto para hacerlo, se puede anular el talón del O",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "0c41991ee26d6bf98d8dd829",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "05e7a74f-7954-402a-8e71-dbfd0daff975",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "1c04391c3bb247d1",
+      "content_preview": "o de “eleva tu voz como un shofar”, como se mencionó más arriba.[319]\n\nEntonces [el versículo] expli",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "0cf559db572dc5a3ad4c7bf9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "54968ad9-fb21-4315-bb51-3e51e6bbaca6",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "74a1a1299c1fa48a",
+      "content_preview": "es él fue el maestro de todos los profetas.[302] “Diez codos” alude a los diez niveles de profecía.[",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "0cfb5be5f5b61e0376e78b6a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4ec15935-0e33-42cc-8360-daad2371e454",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "caa132fcdbe26577",
+      "content_preview": "al, es decir cada nueva alma, el número de casas cuando es agregada a la reunión de almas que existe",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "0faab737fc653de689fa54fd",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "79425db1-bad5-4c8a-9b58-bbdad3b0ffb2",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f016040792ef17ca",
+      "content_preview": "on nuestros Sabios, de bendita memoria: ¿Por qué es llamado _ReiAH_ (pulmón)? Porque _meiRAH_ (trae ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "1115aca2e9e7ca66c6678347",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "38790b29-9919-484a-9df2-78a40c51d03a",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "c78bb68dc948a419",
+      "content_preview": "o de toda esta región… Y cambié su nombre al de Abraham para significar que es el ‘padre de una mult",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "1166d9b3c848d6cd69cdab4f",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "86aedb60-766a-4492-b214-23abf35fc77f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "707ba12a44cdc422",
+      "content_preview": "te es el significado de Og levantando la montaña (i.e., las plegarias) sobre su cabeza. Ello alude a",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "1237277c95ce321b320469df",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "117f2ec5-3426-4074-b6e5-f5b657163765",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "2e009b0e1cd2215e",
+      "content_preview": "[238] _TeKíA_ significa la revelación de la gloria de Dios, como en “ _uTeKaTiv_ (Lo aseguraré) como",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "12555f35a1558207be883667",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "6c4bcb38-174b-4931-bb16-a18601633c86",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "6730d551073d246a",
+      "content_preview": "tiempo fresco es entonces un deleite inesperado, algo que restaura el espíritu. Lo mismo se aplica a",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "129fc186298c99ceac9aa961",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "5cf52d17-a3ad-4d35-a2f6-a72eed9ddef1",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "40d8cdf1e8ca1597",
+      "content_preview": "el daat y las mentalidades son producidos principalmente por las sustancias grasas del cuerpo.** La ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "1307d6b6df28222a41879913",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "f5cf02ad-a7fd-464e-9385-4320f4221f91",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f209febe7b9fabbe",
+      "content_preview": "cen un gran deleite arriba. Las nuevas permutaciones creadas por su retorno al ámbito de la santidad",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "13d0841fa2572f4993cf22b6",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "9afee890-a43a-4eb1-b102-3754882178b2",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "8016e64084902415",
+      "content_preview": "ba que, en su lectura simple, el “día festivo” ( _jag_ ) al cual hace referencia el versículo de ape",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "163e48c6785a4d4ac138174d",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4c7c18d5-dcdf-468b-a7a4-a07b424b9fc3",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "ed7da5699cff138a",
+      "content_preview": "pegan a la fe de Israel y ello aumenta y revela la gloria de Dios.\n\n**¿Cuán alto era Moshé? Diez cod",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "16f8c20067238efb64d44acb",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "5199d93e-ae0d-44d3-9e04-745b169fd5ef",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "2beeef1d013f1856",
+      "content_preview": "erajot_ 54b).[283]\n\nOg se aferraba al lado derecho, como es sabido ( _Zohar_ 184a).[284] Él se alime",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "17b7a620cf4236c51dfd1568",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "3e704305-47fb-496a-ab5d-02052d0d4c8e",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "d5e8576498a28cde",
+      "content_preview": "de la Tierra de Israel es la nueva canción que surgirá en el Futuro revelando la bondad de Dios y la",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "18ddff9f8a5fdf5042a6aa7c",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "0b855640-f32f-4440-a5b3-267e504ed686",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "a507131564a81bf7",
+      "content_preview": "se a la Torá y a la plegaria con sinceridad y verdad hasta que también él es agregado a la santa reu",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "1a66e0e8de3190135099b222",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "b02eeac2-4ef6-4735-8303-eab3157b93fc",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9cd400d7f158ee45",
+      "content_preview": "us ojos en ella continuamente”.\n\n**206. el mundo será gobernado sólo a través de la providencia Divi",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "1fbe90b46821e48bbe2b5d2e",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "96362e2c-04b7-43a3-9153-7cf6c7fc5106",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "1ad2dcf739d68c9c",
+      "content_preview": "Pues es a través de los mencionados conceptos que uno alcanza la melodía,[313] y esta melodía\n\nla se",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "202769cc97d9f2666122bce0",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "6e097f79-51a5-4c2e-abab-de2bd7838f9c",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "7f26de2e03121c96",
+      "content_preview": "ble-triple-cuádruple, la nueva canción que surgirá en el Futuro, glorificando a Dios como al Creador",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "2154a5b79e64d3e4327c8d38",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "e36e0e32-d40e-4681-98b6-40d6a93c10a9",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "1e6e3a533219b3ea",
+      "content_preview": "o habla de cómo el poder de Dios abrió el Mar Rojo, haciendo referencia en el contexto de nuestra le",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "21ae9569d9aa89b6404e2a79",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "5f634da8-5ba4-4107-88c3-dbdfe56fecc7",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "7c8d53a1aaa85075",
+      "content_preview": "ר־כָּ� שֶׁיַּעַקְ רֵ ם וְ יִבְ לְעֵם, חַ ס וְשָׁ לוֹם, הוּא רוֹצֶה לַחֲזֹר וּלְהַשְׁ לִיכָם לְיִשְׂ רָ אֵל, ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "22e07c947c8a72e5000bb06e",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "befa68f9-5792-4cc3-b607-2050380c87c5",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "4296c2f1a18eeb31",
+      "content_preview": "ים לְסַדֵּ ר שְׁ בָחִ ים וּתְאָרִ ים לוֹ יִתְבָּרַ�, כִּי כְּשֶׁ אֵין הַמְ דַמֶּ ה מְ תֻקָּ ן, אֲזַי אֵין יוֹד",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "2315dc538dd6e1805187c6c3",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "3c3eb157-d221-49a2-8698-576f77c0a452",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "e18d41b1f1a255e3",
+      "content_preview": "do” que crea al articular sus deseos trae la rectificación ( _tikún_ ) al mundo. Pero si expresa des",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "24b3820720f4335fb458839a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "61a87434-4f8a-4717-aa5f-6639d70e5d07",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "e3c02cd84e7d6714",
+      "content_preview": "ta _uNeKaVuha_ ( ,)ונקבוהcomo referencia a las hormigas haciendo un hueco a través de la montaña, co",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "24b4a3f2fecb79525c7e1a44",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "b93b364f-2783-40f1-8532-935e8fa90b58",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "4123137c94acc3e6",
+      "content_preview": "pto de “El aliento de nuestra nariz es _meshíaj_ (el ungido) de Dios” (Lamentaciones 4:20).[222] Y e",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "258238cc62be9fd115daf32e",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "61ae165b-293f-44c7-bb37-2e74f0507679",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "840326b7fd0748e5",
+      "content_preview": "a voz de amonestación (§10), que le da al alma un aroma agradable y hace que todos aquellos que la e",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "25941c2bd14418360d77a7a5",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "77814aff-d0f7-4e3c-8d2a-76025a25d2e6",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "90bccee3603cd959",
+      "content_preview": "2] = 10.718.357.055.360.000\n\nEsta última cifra tiene diecisiete dígitos, lo que la hace casi astronó",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "2659b9b94e2abf465e11c362",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "7b5e1e71-45ea-444f-9dc7-8178c46d6812",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "0fac0ef3350c5191",
+      "content_preview": "tar con las montañas y las colinas, el Rebe Najmán trae un segundo texto de prueba, también del Cant",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "27959e4c84006e78b4156667",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "0d0ef1f5-1003-486c-b4f2-ff283264a546",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "39377cd0fa8b7f84",
+      "content_preview": "mpleto el orden natural y gobiernen las maravillas, lo sobrenatural; cuando, en contradicción con lo",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "2b27c1bf244da41f44dce88f",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "c3f236ba-c93b-4f8f-b865-aecb6e26051b",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "fd3e30abc089ab17",
+      "content_preview": "hispas de santidad desde las entrañas del Otro Lado. Ver también la nota 96 más arriba, que cita _To",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "2c2c667e0308867ba2b712fb",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "cf67ebc2-6366-424e-92dd-c94ffb5d8c2d",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "592c7932f6ea413f",
+      "content_preview": "que se producen a través del realce de la plegaria cada vez que se agrega un vecino\n\n_LIKUTEY MOHARÁ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "2c6641ab500c28a772af9064",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "804f47c7-b05d-4d09-b038-ad0c2a14e254",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "02ab590c31e7cef1",
+      "content_preview": "rregir a Israel por sus pecados. La voz que  amonesta debe ser la “voz que riega el Jardín del Edén”",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "2d8ca71d24f3bd41f15de489",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4506eb42-ab21-4888-8f1d-885b759a3198",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "4a114442e0dd12ef",
+      "content_preview": "quien las Escrituras llaman en otra instancia un profeta (ver Génesis 20:7). Así, en el contexto de ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "3092dfee4ad255738350ea1a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4ee34af4-87e1-4628-8ac3-c406eae4efa2",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "bb8b7ed5361abdcc",
+      "content_preview": "incipalmente como consecuencia de la respiración. Esto es lo que permite que el intelecto exista y s",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "30e33d398596a809b1ffe714",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "2191bac3-c608-40a8-91d3-a50d5645ca7d",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "50acaf53eba4546b",
+      "content_preview": "z de amonestación; y ver la nota 318-319 más arriba.\n\n**335. Tikú.** Como se explicó anteriormente e",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "31b52639baf972f8cf5580c7",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "de7b7c2a-2e03-4b77-9397-8726b4feb307",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "3d9ad00af8f3da40",
+      "content_preview": "conocerlo durante su vida podrían también apoyarse en él, si viajaban a su santa tumba, ponían su co",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "31bdd682fdcc4d83828da82a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "0638e8c6-67d8-4bb5-8502-6fe5d13b7a7b",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "726b197356187974",
+      "content_preview": "úmero es imposible de concebir y de expresar. Porque encontramos en el _Sefer Ietzirá_ , “Dos piedra",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "3316b612ed6d7e89b60bf5fa",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "48be68ee-a201-4ccb-802f-634665edad2d",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "e8af1bb419339397",
+      "content_preview": "_500_\n\nsignificado de “tres _parsi_ ”, pues también la plegaria proviene de las tres mentalidades, d",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "33ff714ce7ac49d683a4234a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "5a598bf0-d650-4a0f-b7db-0c0240017b55",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "8cbdea5cd62b503d",
+      "content_preview": "bí Ioshúa: El mundo fue creado en el mes de Nisán… en el mes de Nisán fueron redimidos y en el mes d",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "350f56be1f8c35a93a31c527",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "8a4eae24-ee10-4f0c-b4b3-d53cd6492fec",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "317ddce27fccbdf7",
+      "content_preview": "הִ י לְמַ ס\n\n.)בראשית מט, טו(עֹבֵד\" : )ירמיה מה, ג(זֶה בְּ חִ ינַת נְבוּאָה, כְּמוֹ שֶׁכָּתוּב בְּ בָרוּ� בֶּן",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "359c93619553b326c10b0ad0",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "27275393-f8c0-49bc-a85b-43c9b490d25a",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "7f96a2d32a389ec9",
+      "content_preview": "tando este mal olor.\n\nLa distinción entre guía moral y amonestación está implícita en el comentario ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "360c63e0ff1279fd9dba9a14",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "e939d53a-0441-4e56-830c-7cb629263dca",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "bc5967c01e3e52d1",
+      "content_preview": "l Futuro, la canción simpledoble-triple-cuádruple.\n\n**deviniendo** _**lemas oved**_ **-** Esta nueva",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "36a57782523b1075fdb063f6",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "428872ef-49c9-439f-acfb-e3a2367f8147",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "eeb6289ed35c8324",
+      "content_preview": "ltiplicación de las permutaciones y de las casas, de modo que incluso las almas que “han sido despar",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "3a85a7164e8c9693f3dacf80",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "bb7a928a-9b56-4cf0-9ba5-2a7c4c71b865",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9ab98693add9bfb1",
+      "content_preview": "הַכָּבוֹד,  וְ עַל־יְדֵ י־זֶה  נִתְפַּשֵּׁט  הַנְּבוּאָה,  וְ עַל־יְדֵ י נְבוּאָה  זוֹכִין  לֶאֱמוּנָה,  וְ עַ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "3c826904c121dfaa94b00842",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "d6007123-7b79-4006-95bc-ecb02609dd18",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f4af0556b2ba965c",
+      "content_preview": "mencionó más arriba:[288]\n\n**Iré y desarraigaré una montaña de tres** _**parsi**_ **y la arrojaré so",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "3d48c7afaf7ad7ab9a2d77db",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "aed9a1e0-f456-42c4-96f9-423533687f7c",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9ce6d0f9b0b6d651",
+      "content_preview": "urge de los labios del maestro de fortaleza, ésta se atravesará en la garganta del Otro Lado y lo co",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "3d932447a0967f728c145f7e",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "999b2b77-7517-45b8-aaeb-9a3644a91046",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "df9cac014cb0c19a",
+      "content_preview": "el futuro redentor del pueblo judío. Con este texto de prueba el Rebe Najmán demuestra que el términ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "3e487275e04afd0932b199cc",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "1e5eb2b5-8904-48f3-9ac2-e457d61fcdbf",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "29ac0f7cff5d12ba",
+      "content_preview": "á escrito: “Pues es un _jok_ (estatuto) para Israel, un juicio para el Señor de Iaacov”. ¿Cómo sabem",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "3f5b44d93dbc60557b2bcc15",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "676b6296-8053-40c1-9882-608dc2d66254",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "a7edbaaa7979e04b",
+      "content_preview": "las” (ver §10 más arriba).\n\n**319. shofar…eleva tu voz…como se mencionó más arriba.** En la sección ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "40a65a05d0af495c796a027b",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "0cde592b-7122-4e13-8645-2e1bca3850e5",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "69fa15ee6a825844",
+      "content_preview": "r §10 y n. 201-205). Habiendo demostrado que los pulmones son llamados _reiah_ debido a que iluminan",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "4167f34e735d3dd86dd23cca",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "dc50b89e-7879-4bcb-8698-215872bef962",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "eef75a8972699755",
+      "content_preview": "reside dentro de cada judío (ver n. 96 más arriba). De modo que son nuestras plegarias a Dios, así s",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "428bb415b475b4b2f944e598",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "d0916823-d0a1-49b7-b058-0687f1337fbe",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f4cbb134921e8913",
+      "content_preview": "dito sea, colocó** _**kumtza**_ **(hormigas) en la montaña -** Pero Dios tuvo compasión de los judío",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "42ae0f94fc94aab158854053",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "3e46dfdf-6f6a-4584-8d94-13bf721bbd7d",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "a5f1a0eb32ec79ca",
+      "content_preview": "ימִ ין שֶׁבַּכִּנּוֹר. וְ זֶהוּ בְּ חִ ינַת 'וּשְׁ וַר עֲשַׂ ר אַמִּ ין', הַיְנוּ בְּ חִ ינַת הַנִּגּוּן הַנַּ\"ל, שֶׁ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "42e44a4796f7cb06be340d6c",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "bdd3e3e4-ccbe-4044-8b11-b3f026adfed8",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "b947d05bb38b6483",
+      "content_preview": "número se multiplica por veintidós... Y así en más. Deja de pensar en ello: quedarás asombrado y tem",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "442755be5e51781ecf08f635",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "66263d63-d897-4273-9d0b-b0e3c1543be7",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "920f0b57527599a6",
+      "content_preview": "a plegaria de juicio. Aquí, el Rebe equipara el descenso y el ascenso del alma del prosélito con el ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "4676792e98b770438e129dba",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "51f2bb99-30a1-4cd7-bd04-2aacc8c5029c",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "ff367dcd64b47dad",
+      "content_preview": "Sabiduría y Enseñanzas del Rabí Najmán de Breslov_ #157). Ver también _Likutey Moharán_ II, 2:1, ibi",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "4f0d4076e9ddbf8168b4d6fc",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "bdb179a9-8ece-4ca2-a2f7-aa83b5f9b917",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "e1bf395f9a179756",
+      "content_preview": "labanzas -i.e., las representaciones y atributos que Dios, en Su gran compasión, nos permite adscrib",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "50ad4fb187daefb3b61b6258",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "6766132b-3095-4c07-bbbb-fd38c9630bc3",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "794dab3b1b8b41c5",
+      "content_preview": "al todas las otras son secundarias - i.e., la Tierra de Israel. Explica que el carácter único de la ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "51e649f8edfaa6e90747e5d3",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "248369d3-7ea1-40ba-905d-f9b03a0962ec",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f61db161f9d55b68",
+      "content_preview": "l deseo sexual con la sangre caliente en el corazón. Aquí, enseña que al traer el aire para enfriar ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "56c55dd03ab1954a193ad641",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "504b6f66-f125-4399-805e-538e48be12dd",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "777f242a18261642",
+      "content_preview": "s tres toques del shofar son: _Tekía_ , la revelación de la gloria de Dios; _Terúa_ , que hace refer",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "56d30eb2d7f32ae585c8fc5a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "aac35757-c03b-408f-9bc7-23182670f9bc",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "c937df96b0a3e2f4",
+      "content_preview": "edras sagradas por las esquinas de cada calle!’ (ver §6 y n. 143). Pues ahora hay suficientes casas,",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "57c8e4e2c672a0c4a30dfaf7",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "802ccf91-f843-4421-9ff0-1cc67913c523",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f1aa4f9d741c268e",
+      "content_preview": "sin detenerte; eleva tu voz como un shofar”.[274] La garganta son los pulmones, como se mencionó más",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "5b1759314c0d8182f11dbb99",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "11f58b44-ec9c-48fc-bf45-ffa6eea7efa6",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "861344746bfbdc8e",
+      "content_preview": "ין וּמַ כְנִיעִ ין אוֹתוֹ כַּנַּ\"ל. כִּי הִ יא עוֹמֶ דֶ ת בְּ בֵית־הַבְּ לִיעָה שֶׁלּוֹ, בִּ בְ חִ ינַת: \"בְּ ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "5cf743dbeec0832278d2e0b6",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "e5dc0055-3281-4ad6-bc63-10e9019aa598",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "06e34955fcafa0b0",
+      "content_preview": "s 25:13).[250] El frío y lo fresco son representativos de los pulmones, que enfrían el calor del cue",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "5d95ee87d9ce564b54955047",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "3d0b0bc2-4455-4cdc-b096-95d9fd847bd1",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "6558e500a9c37764",
+      "content_preview": "tero se acercará a Dios (§10). Todos los conceptos más importantes tratados en la lección se relacio",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "5e4515eb9c7cb399aad7843c",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "54f07c4d-2092-41aa-97b5-6196dde62d23",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9e42cc517267793e",
+      "content_preview": "ִ ינַת: 'מְשָׁ כוּהָ שִׁנֵּהּ', , הַיְנוּ שֶׁמֻּכְרָ ח לְהוֹצִ יא )שיר השירים ה, יד( בְּ חִ ינַת: \"מֵ עָיו עֶ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "5f7d2306b55cacd763a95e74",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "000e6aea-9392-4f02-a72d-3d42c951199a",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9e03d65147c4c74b",
+      "content_preview": "). Le da forma humana, según la hermosura de un ser humano, para habitar en un santuario”. El foco d",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "616485fd269478222f457b18",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "5f7f22cc-499e-4e98-8945-19ab045e1b76",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "a8505878981914f5",
+      "content_preview": "“cercanía”. Ver la sección 5 en la nota 118, que la Presencia Divina, la _Shejiná_ , es el medio a t",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "627ecc3605bcc45055855d7d",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "17c1d2b1-e2a3-4f16-9628-d09d997e300f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "4f6f237ef42fe077",
+      "content_preview": "nsondable, inefable e inconcebible, miles sobre miles de casas en cada universo y trescientos diez u",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "67a0f4ee0e338fb81c559e08",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "9c3345dc-ffda-48d0-95b9-2afb65693d97",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "b2362984d453227c",
+      "content_preview": "rza y trataré”. Levantó sus manos como diciendo: “Estoy dispuesto a sacrificar mi misma alma para en",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "6bd726a5d5345c4f9daf53b8",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "852321e1-b5c1-4788-b25c-eb3206e471cd",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "539d5f6e00782c2a",
+      "content_preview": "e. El Rebe enseña aquí que éste es el significado profundo de la frase “en nuestro _jag_ ” en el ver",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "6ca3ba3689e73433e869302a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4df01cda-c5b0-461d-961b-0e803cdd7cb1",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "60f8fc4af7364fbb",
+      "content_preview": "ación de la gloria, el concepto de _Tikú_ .[335] Pues la revelación de la gloria de Dios asegurar la",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "6d5d26a10e034f44ab3f2a99",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "7485285e-1313-4372-a807-2b52950a9828",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "c82f9b1446633ae8",
+      "content_preview": "ultiplicación de las casas con claridad y comprender la grandeza de Dios y la grandeza de la reunión",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "6e01f27445aff49e79571e21",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "ee9cc7c2-13af-44ab-bff1-11e9a550f196",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "28e5f5dca3292b6c",
+      "content_preview": "estaba alabando y agradeciendo a Dios por haberles dado un redentor como ése para trabajar en la rec",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "6fd616a9f73fef16822c5730",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "c71a041c-9fe8-49a7-b368-e6487412427d",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "1538ea547d7a7ab1",
+      "content_preview": "342). El Talmud ( _loc. cit._ ) relata que Moshé venció a Og en batalla y conquistó su reino, el Bas",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "715bdbe86ab9e9e31f8dfa6d",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "a99b1222-8e11-4e4d-95d6-c5084f321330",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "4c7d85d64d3b47d3",
+      "content_preview": "sto alude a la profecía, como está escrito en conexión con Baruj el hijo de Neriá: “y no he tenido d",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "717a3a2054ec3b1786082334",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4a7cc7ec-9a37-4fe6-b034-423028a2e3e2",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "c830ce8593e5a92e",
+      "content_preview": "Creación. La fe lleva a creer en la creación del mundo; que Dios creó todo con Diez Expresiones, com",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "71e23cde476c2770e28ef1cc",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4dfef62a-0154-4a15-9136-f8f5de0e5680",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "99b57a996de60a9b",
+      "content_preview": "queda sin vida. Conceptualmente, esto es entregar la vida al orar; el autosacrificio que es la esenc",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "7229d064b6f209e8decf5d60",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "b8700ad7-80d1-40f8-82bc-24adcbd47102",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "35e4fea0858a9b14",
+      "content_preview": "resentación de Dios], se rectifica la fe,[329] que es el concepto de Rosh HaShaná. Pues la esencia d",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "7275660edb0c79173004891a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "974ef0b8-1588-4ede-95e8-b3ad20231220",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "cb40caf653e3f6f4",
+      "content_preview": "נָא )תהלים כג, א( **** ָ אֶחְ ס **** � **** ִ' רֹע **** דְּ נִשְׁ מְ תָא, וְ זֶהוּ: \"�א אֶחְ סָר\" –",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "72d9fbe702ac4c6298221aa4",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "dcab7d5e-e891-40bd-89a3-f5b555ab19c4",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "47053d41beb8ad25",
+      "content_preview": "as palabras y mentiras (ver la nota anterior). En el contexto de nuestra lección, el Rebe Najmán apl",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "74e30b9818ddf9cd51a33db9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "69f6653b-26c5-4ea4-a170-db1d8d4b6b5f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9832bdb5c9cece7c",
+      "content_preview": "o estuviese alabando y agradeciendo a Dios por haberles dado un redentor tal como éste, para trabaja",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "75e9fd8cf342297c014c56f4",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "96dfd02f-c9dd-4089-99aa-f3a6dd29b26d",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "43da9ac111de6c0c",
+      "content_preview": "de nuestra lección, el relato que hacen las Escrituras del Acto de la Creación es para enseñar que D",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "763146fbcba84566aab909b8",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "8875064c-a64e-452e-bc7e-9fb7674abcb5",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "37687983258bf2d0",
+      "content_preview": "tu sagrado sobre David y habló a través de él. Agrega que ésta es la experiencia de todo profeta: el",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "798e0adfc8cf3dada9832fd0",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "b1c9ac0a-03c5-471a-aadc-0bbf69fffc36",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "206c0c72a07c0691",
+      "content_preview": "lámpara encendida por medio de las sustancias grasas del cuerpo, que son mantenidas y elevadas a la ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "7a7346194d5a328c4a925a1a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "7752d635-252c-4172-bfe7-7beda0eb8b56",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "6f4362d428aa12ab",
+      "content_preview": "l pecador se arrepiente. Todo aquel que tenga la capacidad de protestar y de convencer a un pecador ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "7b20e46486398dc05e4c411c",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "54560a3d-49c3-4e14-be06-96e0b9ce846d",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "60bba3c37059b953",
+      "content_preview": "a_ (“ ,)פרוסהdesplegado” o “difundido”, el término en arameo para “división”, _PRaSah_ ( ;פרסאver _T",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "7c08b3cc6dd0426969e2d052",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "6fa26fb6-3484-4775-bb02-9a2bbc63eefd",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "174c03c26330071c",
+      "content_preview": "se juicio sobre Dios ( _loc. cit.; Rashi, Sanedrín_ 8a, _v.i. ki hamishpat_ ). En el contexto de nue",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "7f39dc3218cdc70595c2deb9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "8799d1d8-7aab-41c8-a978-c177af1a7f62",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "3a3e2ebc49450360",
+      "content_preview": "a sección 8 de la lección: Cuando la profecía se difunde en el mundo, se refina la imaginación y se ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "828440aafd7e81cd7a717094",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "3b84d106-1553-4b3f-bd30-07b993f27ca9",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "b47fe81499b079cc",
+      "content_preview": ": \"כְּצִנַּת שֶׁלֶג בְּ יוֹם קָ צִ יר כֵּן צִ יר נֶאֱמָ ן)משלי כה, יג( לְשֹׁלְחָ יו\"; וְ צִנָּה וּקְ רִ ירוּת",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "82cb9add6552433fcb549182",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "0e6f69b8-b45c-4a5b-8c13-3b69e629d3ae",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "37e9116afafd40d7",
+      "content_preview": "ִמַּחְתִּ ים בְּ בֵית תְּ פִלָּתִ י\n\npara resguardar del deseo inmoral. Aquí, el Rebe Najmán ha explicado",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "85bd01cbbae32a14d1d642ac",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4defd97a-b718-4dbe-8f10-5fe79d108b20",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "65c6478bec748dd2",
+      "content_preview": "estra cómo las tres rectificaciones centrales tratadas por el Rebe Najmán en la lección -la rectific",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "86adbeda9b8b3de678a59986",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "f6c658c2-34ea-4da0-bd03-7345b6939c5b",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "93380801820009ac",
+      "content_preview": "as y nuevas permutaciones que se llevan a cabo cada año en la reunión de Rosh HaShaná, en especial d",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "873c7ac19b5934767a40ed49",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "708b0498-c87d-409d-84db-33b12afd5bfc",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "6138f97c4b2d3559",
+      "content_preview": "voz de amonestación de aquel que es apto para amonestar “riega las aguas del jardín y hace que crezc",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "88eeb1a8e476bf6f17785c0a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "a7759afb-1711-4cd8-823d-3e73706cdbf3",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "72085cfae83397c6",
+      "content_preview": "onomio 8:3). Esto hace referencia al sagrado _hevel_ de las palabras de Torá ( _Tikún_ #69, pág. 111",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "8c40195737a1a1341542b57e",
+      "document_id": "5116cacb-fe17-4a37-967e-5cc4a389a9a2",
+      "chunk_id": "c75b2d4e-01f7-40d8-92b4-3e8ef56bbc83",
+      "title": "Documento de prueba CLI",
+      "content_sha256": "3804a464eefcb4ae",
+      "content_preview": "# Documento de prueba CLI de TebaAI\n\nEste es un documento de prueba para validar el flujo de ingesta",
+      "reason": "document_not_in_scope"
+    },
+    {
+      "milvus_pk": "8c9d3fb3f87b1d112df55d60",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "c672ec4a-9e88-4c6c-9b18-bf7f12ec7cb2",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "15b688025c84d611",
+      "content_preview": "aigar una montaña de tres _parsi_ ”. Esperaba dañar las tres clases de compasión/plegarias del puebl",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "8f9468887ac70f7a8ae046ff",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "e36dfade-ccaa-4354-8d98-13eefaf9a3c9",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "0bc526ff07c71f0e",
+      "content_preview": "4. vara de fortaleza…alcanza la profecía…** Ver la sección 5, que cuando la vara de fortaleza del ma",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "92531e3014cb91870a79cae9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "a674ef52-a9de-4dcf-a3cf-ca858f083a7e",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "c9b8fc6f94048117",
+      "content_preview": "68_\n\nY en el Futuro, el Santo, bendito sea, renovará el mundo entero a través de este atributo de la",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "94b8b98c7801d10d4c35f8f9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "20a2d977-841d-464c-be6a-826c37366312",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "54a2a6c80c808e6b",
+      "content_preview": "a, subyuga y vence [al Otro Lado], pues se atasca en su garganta, como en “La fortaleza reside en su",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "9a1afbaaaf2293e443206f9f",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "8d332199-bc16-4dbb-8a64-6ac2da69ae0f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "027bf645346b8834",
+      "content_preview": "y comenzar de nuevo, cada vez instilando un renovado esfuerzo en nuestras devociones espirituales. É",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "9b40cab663080a3a03bda4d6",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "1ec675d4-2158-4a61-9d10-7e5b5223c275",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f78560ba21b2bddf",
+      "content_preview": "on la frialdad y la humedad, las dos propiedades que promueven las fantasías que se presentan en la ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "9be6359f07eb1aecb614cfde",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "c12aface-2ca7-445b-9bff-fa31af122b7f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f2d2d9afccca0fa5",
+      "content_preview": ". כִּי יֵשׁ הֲבָלִים בָּעוֹלָם, שֶׁ הֵם בְּ חִ ינַת )בתיקוני זוהר תיקון סט דף צו, א(\n\nNajmán explica que ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "9d5beebc01c7599b9b7b00ca",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "b4dda49e-6957-4998-a90c-9b7077526de1",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "2f05420566c3ba66",
+      "content_preview": "de nuestra lección, “saltó diez codos” alude a ejecutar las notas de la canción de diez letras del F",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "9d6107531510aa53a354e065",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "c82229e3-5d44-4bb2-81c9-7de3d0436002",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "a9d836851df7e395",
+      "content_preview": "ַת חִדּוּשׁ הָעוֹלָם, בְּ חִ ינַת שִׁ יר חָ דָשׁ הַנַּ\"ל, שֶׁ הוּא בְּ חִ ינַת \"בַּחֹדֶשׁ שׁוֹפָר\". וְ כָל זֶה נִ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "a077b51d7c8cd23f4580c8e6",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "66b0bdf3-4359-442f-9917-02fc29dd5e16",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9f28d06b06289765",
+      "content_preview": "ompelido a vomitar todo por medio del concepto de “un juicio para el Señor de Iaacov” - i.e., por me",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "a08ad80089f114541cf46ca0",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "71dd4998-77ec-467f-a298-8ae7c484f612",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "1b9d03a0dd0b9f73",
+      "content_preview": "ellos se habrían arrepentido plenamente. (Esto ilustra los considerables esfuerzos del Rebe para red",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "a11ab1dd308f51cd6bc82f29",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "be0ff75c-73a2-46e8-8d88-2b7dc740c34f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "490d31cc75e8898e",
+      "content_preview": "Rebe Najmán ha demostrado la conexión entre la gloria de Dios y los pulmones.\n\n_LIKUTEY MOHARÁN II #",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "a4a551c2dffe70cdc77f7994",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "e15f8073-8204-4a50-9a9b-ee3ad83c50af",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "912fb2f3b661b86d",
+      "content_preview": "y los pulmones (§11 y §12). Un día después de Iom Kipur, cuando el Rabí Natán se sentó con el Rebe p",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "a78c5bf5e32854ffa161d577",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "0ad53dab-d8cc-497c-8a79-215c9d124594",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "af28f097bd4fd828",
+      "content_preview": "tapizado de piedras preciosas”. En el contexto de nuestra lección, el “brillante marfil” de las entr",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "aeec162671797543bab15b67",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "0548de69-2b58-4ebe-a41f-5b8799c6df42",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "94b0d62bfa36934d",
+      "content_preview": "enitud, como en “pues a aquellos que Le temen no les falta nada” ( _Zohar_ II, 79a). Un pulmón salud",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "aef51017f51d8736ac90e132",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "f22258f5-d044-489c-9045-0a69b182bd92",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f72f8c05ec98c927",
+      "content_preview": "a el Rebe Najmán (y ver n. 233). Así, en el contexto de la lección, este versículo enseña la conexió",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "affd8f4db641ba8b0998897a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "43f8082d-c438-4ef5-99cf-a036dc2e392c",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "a3ad1af5683dd7b0",
+      "content_preview": "e la plegaria hace prosélitos y revela la gloria de Dios, lo que hace que se difunda la profecía. Y ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "b03fab60c255755df2e7589a",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "7555ec21-831f-4ef3-956f-eb68b3f900e0",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "34ce0c205010b58e",
+      "content_preview": "ivel del ruido continuó elevándose. Varias personas corrieron verdadero peligro y tuvieron que salir",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "b2bf8b9d89c0e7d622fca1ce",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "ec73e8c5-2c47-46c4-a224-f2c0166f68db",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "af9bbf5e8b72c401",
+      "content_preview": "específicas precisamente cuando lo precise ( _Metzudat David_ ). En el contexto de nuestra lección, ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "b36a51e9f5c983d7639da9e3",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "3e9d3436-7f02-4027-89b9-8c160491ba18",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "27da2fda55c76a45",
+      "content_preview": "ה כַּנַּ\"ל. : \"כַּבֵּד אֶת ה' מֵ הוֹנֶ�\" – )משלי ג, ט(הִ תְגַּלּוּת הַכָּבוֹד הַנַּ\"ל זֶה בְּ חִ ינַת 'אַל תִּ ק",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "b3a80518f965bba10f9f537f",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "a6b4925c-7b94-42e3-8677-fe7878f47edd",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "d329feccb61d978d",
+      "content_preview": "- “Él estará imbuido de la fragancia del temor a Dios”. En el contexto de nuestra lección, esto demu",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "b3b9ebf9acc6771b0f6e3866",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "48758c5c-1296-4826-8673-af8674627dc7",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "b430a3cd022195b6",
+      "content_preview": "rincipalmente a los pulmones.[258]\n\nLos mencionados prosélitos son el concepto de “ _hevel_ desciend",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "b4bf583ffc5cd3ded713c350",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "7c187b2f-2033-43bb-b42e-1977bbcd1c81",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "b900cd0c6a2af289",
+      "content_preview": "e están cerca de ellos y rectificar su fe ( _Torat Natán_ #48). Por el contrario, careciendo de ese ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "b821e53d607f30860f4b6155",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "12ffb437-6254-429a-bc8d-7527fdc149fc",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "2409ec670709b6b2",
+      "content_preview": "ción de la gloria.** Habiendo demostrado que el maestro de fortaleza, el _daat_ perfeccionado y los ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "b9ed61f0b14ec3b36acb561d",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "802fb1e7-21fc-4e87-859f-bf56bebc0aa6",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "d6d519bca922ebd6",
+      "content_preview": "incipalmente del aroma agradable del temor a Dios - i.e., el sustento espiritual (ver también notas ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "baf50ffa84f365d9e8a6e579",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "60b8ca25-61c1-405f-9e13-8d33d1009695",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "21bb95ad399ad5a1",
+      "content_preview": "de juicio del maestro de fortaleza (ver §3). Cuando ese Tzadik eleva una plegaria de juicio, ésta se",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "bc232f96a6853e709ba255b6",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "619939cf-9890-4d96-ba8d-fb545bebbbe9",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "535c16f8c4178cca",
+      "content_preview": "e Najmán trae este texto de prueba para demostrar la conexión entre una existencia milagrosa goberna",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "bdd80cbf8cb57f0f4e39bcfd",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4a982d02-bbb5-431e-88a4-54a995dee58f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "ef40dee5bca5fbd4",
+      "content_preview": "alma un aroma agradable, el concepto del Mashíaj, a través de lo cual el mundo entero se acercará a ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "be6c7aa45e4a1370959bcce1",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "dcd09389-bcff-4e5a-a83e-0927757f0f52",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "137109714e1005a8",
+      "content_preview": "al orden natural, el concepto de “Los cielos declaran la gloria de Dios y el firmamento proclama Su ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "c2df9f66f301487b6d0274b5",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "f3a6fb0c-f023-4d0d-b0c8-882d7a082ed2",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "f7a607cbab8af3ba",
+      "content_preview": "nes que traerá están aludidas en este versículo. El _Parparaot LeJojmá_ cita la enseñanza del Midras",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "c6f27c802ce3c6bfe1923488",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "e4cec44e-b710-4281-ac3e-37a2f0312315",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "d6a095437e9756d2",
+      "content_preview": "las notas 86 y 103.\n\n**235. pues ustedes conocen el alma del prosélito, pues fueron extranjeros…** L",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "c6fe024630ea90de359aae62",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "c2e0e29e-55b9-4280-a338-6e368e159ecb",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "b27ac90ec561fbad",
+      "content_preview": "del pueblo judío y luego alimentarse de su caído _daat_ sagrado/mentalidades restringidas. Luego “ar",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "cb264b45eef893edf29c5e9d",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "fe30d122-35ef-47cf-a1d2-1572a40138c1",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "9274a72ecc3df5b1",
+      "content_preview": "r también _Likutey Moharán_ I, 29:9 y n. 126; ibid. 84 y n. 16). En el contexto de nuestra lección, ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "cbdd3f62e16df950de29d5dd",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "dbc71858-ffe6-4a37-affd-fc39b1b5045b",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "cec5904f26776c80",
+      "content_preview": "l contexto de nuestra lección, el Rebe Najmán conecta el versículo con los prosélitos y lee _et nefe",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "cf4098c83674c31953a709cb",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "7316aa9c-f879-4ed9-a912-48dcc6648727",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "bd593c173a74e04c",
+      "content_preview": "sección 2 más arriba (y las notas 64-65), que cada uno de los tres _mojín_ (mentalidades) de los cua",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "d1bdd4d388efba19337948fe",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "6d9dd621-cda5-4e6c-af2c-63f7ae391698",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "72ea23a0c0b6fe95",
+      "content_preview": "cuán débil podía haber estado físicamente, su fortaleza espiritual era firme y en verdad aumentaba. ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "d5203773d304320547d2079e",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "b1dca9eb-4a9a-4b74-8ae9-982a65921cb5",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "39ce07a897ab06c5",
+      "content_preview": "por el Breslov Research Institute).\n\n**==> picture [19 x 7] intentionally omitted <==**\n\n## **AGREGA",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "d6b39c0fd427ac0817bc8643",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "027ade78-3fe9-465b-a2a1-4589fb28e567",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "35efd4fa49c190d2",
+      "content_preview": "dañada, el Otro Lado se alimenta de su compasión y _daat_ , transformándolos en crueldad y en una co",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "d936f2a349e973cd03d6ebfb",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "887599ac-2b3a-4b7f-a80e-5e7dacf30d33",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "1630c4bd244cb485",
+      "content_preview": "(contempla) desde la cima ( _rosh_ ) de Amaná” (Cantar de los Cantares 4:8).[247]\n\n**12.** Y esto es",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "da454543aeb0b277113ac4dd",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "df5913d5-eb70-42a9-994e-256bcd87f2fa",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "87866a7fc64dbe6f",
+      "content_preview": "o [el Otro Lado] las desarraiga y las traga, Dios no lo permita, quiere más tarde devolvérselas y ar",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "daf1e3f84a9286cd32da959d",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "5d51a11c-fa2c-45d4-98ca-c48b75dc033d",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "772246dfdbf1872d",
+      "content_preview": "anos. La sangre caliente y carente de oxígeno retorna entonces al corazón y de allí es llevada hacia",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "dc80fd11a6711bcb250bac51",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "d5154a32-5dc9-4571-88ff-28053856fdb3",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "5ec5f544e37bd7c2",
+      "content_preview": "au_ ( )ישאוaquí no es otra cosa que la canción. Esto es como se afirmó, “ _Sau_ (Eleva,  )שאוuna can",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "e06640f2811103cfe076ee1d",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "2fc2a52d-7d42-455e-9a3d-8327f129e25f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "6c8834ae6ec11de6",
+      "content_preview": "e aquí de que la fragancia y el temor a Dios “se rectifican a través de todos los conceptos menciona",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "e13c8358506f0c42aa76d0ff",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4f2bfa94-5981-41e7-8180-ea117c4b101c",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "3f77ae2a78e2c19f",
+      "content_preview": "án (Esaú) tiene permiso para juzgar a la humanidad por sus pecados. Aquí, esto se relaciona con el O",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "e32d242ed67f510e264768e9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "ea9d726f-7510-401d-88af-141086e1df18",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "b2188533a0ba1273",
+      "content_preview": "tero/el temor del alma por Dios.\n\n**315. as mentioned above.** Ver la sección 1; y ver la nota 30, q",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "e38f11c55eb6c25c742a3d7b",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "5e5a5199-017c-462f-909e-e5d3bcaf5d0a",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "6ecd125005d3f704",
+      "content_preview": "gualmente conectados con la fe en el _jidush haolam_ (y ver notas 245 y 247).\n\n**331. como se mencio",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "e3c1c71352a89907875b3e58",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "60acbf01-ccc5-4b33-bddf-0b1f1017ac8f",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "6a4c53b00a62116d",
+      "content_preview": "rsículo “Éstas son las palabras que habló Moisés a todo Israel” (Deuteronomio 1:1; ver _Rashi_ sobre",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "e4de016d1e689afac6d60b2d",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "c79d0832-12f4-4f5d-8f4d-9b57cdadbe29",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "d60df2f6fa67decc",
+      "content_preview": "internas”. Cuando llegue el tiempo en que la persona deba ser juzgada delante de Dios, su alma revel",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "e65d5d2b0c22708af78ffcd5",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "a3a5246f-f751-437f-9a2f-904535630e12",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "04b7d69e79f7222e",
+      "content_preview": "gado. Y, desde sus entrañas, el Otro Lado regurgita también su misma esencia vital. Esto, explica el",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "e87383c47c59a484b47e0e84",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "2184c83c-3a95-4c9c-b409-18ff2db62f0e",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "2f9c2f569dd8ec99",
+      "content_preview": "ección tal como solía hacerlo en esa festividad. Sin embargo no lo hizo, diciendo, “Ustedes no son t",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "ed21a748c91e52511c2bc164",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4712b430-ceca-4e85-9baa-21c0ef028a36",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "e225386cb984ec17",
+      "content_preview": "inación y cuya fe aún deben ser rectificadas. Por otro lado, la nueva canción destinada a surgir cua",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "ed2a7c8531f1e3e607f0bfe9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "e6da012e-701b-4f01-91f5-3256235671f4",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "7464a2a22b749333",
+      "content_preview": "lo afirma por lo tanto “de seguro deberás amonestar” (literalmente: “amonestar, amonestarás”). Más a",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "ee312c518f4a645433a97ae0",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "9f18e60e-69be-420d-8e6c-0b56bd327cdc",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "ab111853e3b351e5",
+      "content_preview": "nte como un manantial. Era algo que debía ser visto para poder creerlo. Llenó varios recipientes con",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "eee74a7b4acc73642c1ba3a9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "4aff43ec-72df-4131-ad08-915670782427",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "2b343978973baeee",
+      "content_preview": "*shinei**_ **(sus dientes) se extendieron hacia abajo de este lado y del otro [y no pudo]. …¿Cuán al",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "f275ff008d2fdb66ffdfdfaf",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "ec85a3cb-718f-43b9-a1f1-b19674c747d9",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "8cb15256aea39d2d",
+      "content_preview": "ָ א )חולין מט, א(בִּ בְ חִ ינַת מַ ה שֶּׁאָמְ רוּ רַבּוֹתֵינוּ זִכְרוֹנָם לִבְ רָ כָה שְׁ מָהּ רֵאָה שֶׁמְּ אִ י",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "f32d29a73bd6e09b7dbf53c3",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "1a2ab5eb-b310-4294-88ef-1d97439c7ee8",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "7a3f9d85e99936ac",
+      "content_preview": "ado III, más arriba).\n\nEscribe el _Parparaot LeJojmá_ : Enseña el Rebe en la sección 2 de la lección",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "f788ce478ed54aec31e9e523",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "d95eedec-9a49-4a23-98c2-32411f3e868e",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "bcce4a3f4e13e08e",
+      "content_preview": "כִּי 'מִסִּ טְ רָ א דִּ ימִ ינָא מֹחָ א חִוָּרָ א כְּכַסְפָּא' , וְ עַל־כֵּן רָ צָה לְהִ תְגַּבֵּר עַל יִשְׂ ר",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "f91e73087e9aae1ada60fa97",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "d5bd5968-098d-4df3-995f-37df91676f5b",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "30cfdc69f033a225",
+      "content_preview": "23:24) - i.e., la eliminación de las falsas creencias y la rectificación de la fe sagrada,[241] el c",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "f98ad85577f5a261e543ade3",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "ec809afb-21bf-48a7-b53f-45a51eb432a5",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "fa53e352b1bd634d",
+      "content_preview": "idencia Divina/milagros y surgirá una nueva canción, la canción simple-doble-triple-cuádruple. Ésta ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "fac18d4867cd34426b0d9831",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "d93e3478-4891-44af-8a96-d243d5240061",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "b7cdf6e1d88d2ce1",
+      "content_preview": "ַע מִ ן הַדַּ עַת וּמִתְּ פִלּוֹת יִשְׂ רָ אֵל כַּנַּ\"ל. וְ זֶה בְּ חִ ינַת תִּשְׁ רֵ י, בְּ חִ ינַת: \"אַתָּה פו",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "fd42013d56b6806f2f0c6bb3",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "a4875e18-165a-4d95-8fb8-70a3abecd332",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "c1bebb2c28afe3b6",
+      "content_preview": "y el amor de Dios, al igual que el atributo de _jesed_ (bondad), que en general caracteriza el lado ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "fe3d90e2f3d59dca42b97ac5",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "b1c9009f-e211-494b-9737-3af3ae3ad7ba",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "404434ab680fe30b",
+      "content_preview": "esible a la mente humana- “Dios está completamente disociado de toda alabanza y representación”. En ",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "ff49545ff97290cb9dff2f2c",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "31410373-9ac5-4b98-90d8-f344259c0eff",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "44408722556b478d",
+      "content_preview": "través de los prosélitos…la gloria de Dios…la profecía…la fe sagrada…** El Rebe Najmán trata sobre l",
+      "reason": "old_pipeline_likutey"
+    },
+    {
+      "milvus_pk": "ffd1796a7c1f87c8c0d0f9c9",
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "chunk_id": "3bc779fe-6db9-427c-bd64-ff61eb6dfc30",
+      "title": "Likutey Halajot LM II 8",
+      "content_sha256": "2952735380c8ceb2",
+      "content_preview": ", ב(כִּי יֵשׁ נִגּוּן שֶׁ ל בְּ חִ ינַת דֶּ רֶ� הַטֶּ בַע, וְ זֶה בְּ חִ ינַת מְ סַפְּ רִ ים כְּבוֹד אֵל, וּמַ ע",
+      "reason": "old_pipeline_likutey"
+    }
+  ]
+}

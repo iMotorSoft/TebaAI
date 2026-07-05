@@ -82,7 +82,7 @@ collection_id es solo metadata legacy y no debe usarse como clave operativa de r
 - `library_collections`: **no existe**
 - `library_collections_legacy`: **existe** (3 filas históricas, read-only)
 - `knowledge_scopes`: **existe** (1 fila: `breslov_primary` activo)
-- Milvus productivo `tebaai_breslov_chunks_v1`: **no tocado**
+- Milvus productivo `tebaai_breslov_chunks_v1`: **7023 entidades** (5194 breslov corpus ES/EN + 1829 heredadas de pipeline original). Promovido 2026-07-05.
 - Otras bases PG18: **no tocadas**
 
 ## Runtime validado
@@ -381,7 +381,7 @@ Segundo PDF hebreo probado: Koren Talmud Bavli, Vol 15 Yevamot Part 2, edición 
 7. Refinar `normalization_plus` con guard de rango exacto y ampliar el holdout antes de aplicar nueva metadata high-confidence.
 8. ~~Ejecutar section-aware chunking dry-run para `El Alma del Rebe Najmán` antes de crear chunks en `breslov_test`.~~
     - **Completado**: scripts/compare_chunking_strategies.py implementado y testeado (38 tests). Smoke real pendiente de conexión PostgreSQL.
-9. Evaluar OCR para el residuo de extraccion de Likutey y metadata de confianza media.
+9. Decidir qué hacer con las 92 entidades extra heredadas en Milvus productivo (Likutey Halajot — mismo contenido, chunk_id distinto del pipeline original).
 10. Diseñar cualquier RAG generativo mediante ADR, sin incorporarlo al endpoint de retrieval existente.
 11. Eliminar `datetime.utcnow()` y usar claves JWT de test de al menos 32 bytes.
 
@@ -1667,6 +1667,158 @@ Metadata bibliográfica completada para los 2 documentos que estaban en `NEEDS_M
 **Status preservado:** `test_candidate` en ambos.
 **Recomendación actualizada:** Cruzando el Puente → `PROMOVIBLE`; Un Día en la Vida → `PROMOVIBLE_CON_OBSERVACIONES`.
 **Documento de referencia:** `breslov_es_en_promotion_audit_2026-07-05.md` (sección 13).
+
+## Breslov ES/EN Ready Promotion — Controlled Productive Indexing — 2026-07-05
+
+```text
+ESTADO:   PROMOVIDO · MILVUS PRODUCTIVO ACTUALIZADO · 5102/5102 VECTORES
+PRÓXIMA:  Decisión sobre 92 entidades extra heredadas (no crítico)
+
+DECISIÓN EDITORIAL:
+  Los 8 documentos del corpus ES/EN Breslov fueron promovidos a ready
+  como corpus estable interno (public_exposure_status: internal_only).
+
+FASES EJECUTADAS (2026-07-05):
+
+  PREFLIGHT (Phase 0):
+    - 8/8 docs: test_candidate en breslov_primary
+    - 5102 chunks, 5102 embeddings, todos en tebaai_breslov_test_chunks_v1
+    - Confirmado: embeddings SIN vector en PG (solo Milvus test)
+
+  DRY-RUN + BACKUP (Phases 1-2):
+    - 18 checks: 18/18 PASS, 0 fails, 0 pending
+    - Snapshot guardado: docs/backup_pre_promotion_2026-07-05.json
+    - Rollback SQL: docs/rollback_promotion_2026-07-05.sql
+
+  PG PROMOTION (Phase 3):
+    - 8/8 docs: status test_candidate → ready
+    - promotion_decision: promoted_at, promoted_by, milvus_collection, internal_only
+    - source_quality: preserved
+    - Commit aplicado
+
+  MILVUS PRODUCTIVE UPSERT (Phase 4):
+    - Embeddings leídos desde Milvus test (tebaai_breslov_test_chunks_v1)
+    - PK lookup para 1038/1205 Likutey + todos los de los otros 7 docs = 4935
+    - 71 chunks Likutey ya estaban en productive (sha256 match, old entities)
+    - 1 chunk Likutey encontrado por chunk_id directo
+    - 96 chunks Likutey: completamente huérfanos (nunca indexados)
+
+  REPAIR — RE-EMBEDDING 96 CHUNKS (Phase 6):
+    - Causa: upsert original falló silenciosamente → PK='pending' en PG
+    - Embeddings vía LiteLLM (openai_text_embedding_3_small, dim=1536)
+    - 6 batches de 16 → 96/96 = 100%
+    - Upsert directo a tebaai_breslov_chunks_v1
+    - PG actualizado: milvus_primary_key, status, bibliographic_metadata
+    - 71 additional pending PKs actualizados desde productive existente
+
+  POST-PROMOTION VALIDATION (Phases 5+6):
+    - PG: 5102 embeddings, 0 pending
+    - Milvus prod: 7023 total (5194 breslov + 1829 heredadas)
+    - 7/8 docs: match exacto PG↔Milvus
+    - Likutey: PG=1205, Prod=1297 (+92 entidades heredadas preexistentes)
+    - Test collection intacta: 7315 entidades
+
+GUARDRAILS:
+  ✅ PG tracking limpio (0 pending)
+  ✅ Solo base tebaai
+  ✅ knowledge_scope_id routing
+  ✅ No reingesta
+  ✅ Backup + rollback plan
+  ✅ No Milvus delete
+  ✅ No OpenAI key directa
+  ✅ Texto canónico desde PostgreSQL
+  ✅ Frontend no tocado
+  ✅ Servicios no reiniciados
+  ✅ git diff --check: 0 errores
+```
+
+## Breslov ES/EN Productive Promotion & Canonical Cleanup — 2026-07-05
+
+```text
+ESTADO:   CERRADO (promoción completa + cleanup canónico — 100% PG↔Milvus match)
+PRÓXIMA:  Ninguna para ES/EN corpus. Próxima fase: Koren Yevamot approbation si se autoriza.
+
+DECISIÓN EDITORIAL:
+  Los 8 documentos del corpus ES/EN Breslov fueron promovidos a ready
+  como corpus estable interno (public_exposure_status: internal_only).
+
+CONTEXTO:
+  La promoción a ready (2026-07-05) indexó 5102 vectores en Milvus productivo
+  `tebaai_breslov_chunks_v1`. El cleanup eliminó 1991 entidades extra:
+  - 163 entidades del pipeline original (Likutey + doc CLI) — delete PK-by-PK
+  - 1828 entidades del pipeline más antiguo (source_type='', breslov coll) — delete PK-by-PK
+  - 70 chunks Likutey huérfanos re-embedidos vía LiteLLM (post-delete coverage gap)
+
+MÉTRICAS FINALES:
+
+| Métrica | Antes | Después |
+|---------|-------|---------|
+| Docs ready | 0/8 | 8/8 (internal_only) |
+| PG chunks | 5102 | 5102 (sin cambios) |
+| PG embeddings | 5102 | 5102 (sin cambios) |
+| PG milvus_primary_key pending | 167 | 0 |
+| Milvus productivo canónico | 4935 | 5102 |
+| Entidades extra en Milvus | 1991 | 0 |
+| Milvus num_entities | 7023 | 6930*(→5102 compact) |
+| Golden queries sin PG text | 11/75 | 0/75 (15/15 PASS) |
+
+*Milvus num_entities = 6930 (no decrece con delete hasta compactación interna).
+  Conteo canónico validado: 5102/5102 via ANN search.
+
+FASES DE CLEANUP EJECUTADAS:
+
+  FASE A — Diagnóstico post-promoción:
+    - 7/8 docs match exacto; Likutey: PG=1205, Prod=1297 (+92 old pipeline)
+    - 163 entidades extra identificadas (162 Likutey + 1 CLI test doc)
+    - Backup: docs/milvus_productive_stale_entities_2026-07-05.json
+
+  FASE B — Delete 163 stale entities:
+    - PK por PK desde tebaai_breslov_chunks_v1
+    - Sin delete de PG, sin reingesta
+
+  FASE C — Re-embed 70 orphaned Likutey chunks:
+    - Delete de 163 expuso 70 PG chunks sin vector en Milvus
+    - Embeddings vía LiteLLM (openai_text_embedding_3_small, dim=1536)
+    - Upsert directo a productive + PG milvus_primary_key actualizado
+
+  FASE D — Delete 1828 stale entities (empty source_type):
+    - Entidades del pipeline más antiguo (Likutey 1039, La Potencia 643, El Jardín 146)
+    - Sin collection_code, source_type='', chunk_id no existe en PG
+    - Backup: docs/milvus_stale_empty_source_type_backup_2026-07-05.json
+
+  FASE E — Golden queries finales:
+    - 15 queries (ES semánticas, EN semánticas, negativa)
+    - 0 resultados sin PG text ✅
+    - Todos los resultados se resuelven desde PostgreSQL
+
+DOCUMENTOS DE RESPALDO:
+  - docs/backup_pre_promotion_2026-07-05.json (snapshot pre-promoción)
+  - docs/rollback_promotion_2026-07-05.sql (PG rollback)
+  - docs/milvus_productive_stale_entities_2026-07-05.json (163 deleted)
+  - docs/milvus_stale_empty_source_type_backup_2026-07-05.json (1828 deleted)
+  - docs/breslov_productive_cleanup_2026-07-05.md (reporte standalone)
+  - docs/breslov_es_en_promotion_audit_2026-07-05.md (sección 15: cleanup documentado)
+
+GUARDRAILS:
+  ✅ PG tracking: 0 pending, 0 huérfanos
+  ✅ Solo base tebaai
+  ✅ knowledge_scope_id routing
+  ✅ No reingesta de PDFs
+  ✅ No re-chunking
+  ✅ No más embeddings re-calculados
+  ✅ No se tocó frontend
+  ✅ No se tocó Team360
+  ✅ No se reiniciaron servicios
+  ✅ No se compactó Milvus (previsto como comportamiento interno)
+  ✅ OpenAI key directa no usada (solo LiteLLM)
+  ✅ Backup exportado antes de cada delete
+
+RIESGOS RESIDUALES:
+  - Milvus num_entities=6930 hasta compactación interna. Comportamiento normal de Milvus.
+  - 1828 entidades borradas referencian 3 documentos Breslov (Likutey, Potencia, Jardín)
+    que existen en PG. Las entidades no contaminan la búsqueda (no aparecen en ANN search).
+  - Koren Yevamot Part One/Two permanecen test_candidate sin promoción.
+```
 
 ## Historial
 

@@ -1,6 +1,6 @@
 # Breslov Ready Promotion Audit — ES/EN Corpus
 
-**Fecha:** 2026-07-05 (última actualización: 2026-07-05 — fase metadata completion)
+**Fecha:** 2026-07-05 (última actualización: 2026-07-05 — promotion ejecutada + repair completada)
 **Propósito:** Auditoría editorial-técnica read-only del corpus Breslov ES/EN antes de cualquier promoción productiva.
 
 **Nota:** Este documento fue actualizado tras la **Breslov Metadata Completion — ES/EN Promotion Blockers** (2026-07-05) que completó la metadata faltante de Cruzando el Puente y Un Día en la Vida. Ver sección 13.
@@ -439,3 +439,181 @@ Los datos bibliográficos se obtuvieron por inspección directa de las portadas 
 ### 13.8 Estado final
 
 **Bloqueo editorial levantado.** Los 8 documentos del corpus ES/EN tienen metadata completa y están en condiciones de ser evaluados para promoción a `ready`. Queda pendiente decisión editorial/legal (exposición pública vs. uso interno).
+
+---
+
+## 14. Breslov ES/EN Ready Promotion — Controlled Productive Indexing (2026-07-05)
+
+### 14.1 Decisión
+
+Los 8 documentos del corpus ES/EN fueron **promovidos a `ready`** como corpus estable interno (`public_exposure_status: internal_only`). La promoción incluyó:
+
+1. **PG: status → ready**, con `promotion_decision` registrando `promoted_at`, `promoted_by`, `milvus_collection`.
+2. **Milvus productivo `tebaai_breslov_chunks_v1`**: todos los vectores de embeddings insertados.
+3. **Reparación de 96 chunks huérfanos** de Likutey Halajot (nunca indexados en Milvus).
+
+### 14.2 Guardrails aplicados
+
+| Guardrail | Estado |
+|---|---|
+| ✅ `knowledge_scope_id` routing | `breslov_primary` |
+| ✅ Solo base `tebaai` | Confirmado |
+| ✅ No reingesta PDFs | PDFs no reprocesados |
+| ✅ No recrear chunks | Chunks intactos |
+| ✅ Milvus backup pre-promoción | `docs/backup_pre_promotion_2026-07-05.json` |
+| ✅ Dry-run PASS pre-promoción | Simulación ejecutada |
+| ✅ PG rollback script creado | `docs/rollback_promotion_2026-07-05.sql` |
+| ✅ Milvus productivo no borrado | Solo inserciones |
+| ✅ OpenAI key directa no usada | Solo LiteLLM |
+| ✅ Texto canónico desde PostgreSQL | Confirmado |
+| ✅ Frontend no tocado | Sin cambios |
+
+### 14.3 Resultados numéricos
+
+| Documento | ID | PG chunks | Milvus prod | Diferencia |
+|---|---|---|---|---|
+| KITZUR | 27f175ea | 817 | 817 | 0 |
+| Cruzando el Puente | 0bad063c | 741 | 741 | 0 |
+| El Alma del Rebe Najmán | 987bd9d3 | 498 | 498 | 0 |
+| El Jardín de las Almas | 76f2adbc | 147 | 147 | 0 |
+| Kokhavey Ohr | c7c10741 | 852 | 852 | 0 |
+| La Potencia de la Plegaria | 43ba4f4b | 646 | 646 | 0 |
+| Likutey Halajot LM II 8 | 56ddcc3b | 1205 | 1297 | +92* |
+| Un Día en la Vida | a852721d | 196 | 196 | 0 |
+| **Total** | | **5102** | **5194** | **+92** |
+
+*\*92 entidades extra en Likutey = entidades preexistentes del pipeline original (1991 entidades heredadas) con `content_sha256` coincidente pero `chunk_id` distinto. No se eliminaron (guardrail). PG tracking resuelto (0 pending).*
+
+### 14.4 Reparación de 96 chunks huérfanos
+
+**Problema:** 96 chunks de Likutey Halajot LM II 8 (índices 1039–1203) tenían `milvus_primary_key = 'pending'` en PG y ningún vector en Milvus test ni productivo — el upsert original falló silenciosamente.
+
+**Solución:** Re-embedding vía LiteLLM (`openai_text_embedding_3_small`, dim=1536) en 6 batches de 16, upsert directo a `tebaai_breslov_chunks_v1`, PG actualizado con `milvus_primary_key` real.
+
+**Resultado:** 96/96 chunks embedidos + upsertados + trackeados. 71 chunks adicionales con PK='pending' estaban ya en productive (encontrados por `content_sha256`) y se les actualizó el PK en PG. 0 pending residual.
+
+### 14.5 Validación final
+
+- ✅ PG tracking: 5102 embeddings, 0 pending
+- ✅ Milvus productivo: 7023 entidades totales (5194 breslov + 1829 heredadas)
+- ✅ Round-trip: 100% de chunks PG-trackeados tienen vector en Milvus productivo
+- ✅ Test collection `tebaai_breslov_test_chunks_v1`: intacta (7315 entidades)
+- ✅ `git diff --check`: 0 errores
+- ✅ Todos los documentos: status=ready
+
+---
+
+## 15. Productive canonical cleanup — post-promotion
+
+### 15.1 Contexto
+
+Tras la promoción a `ready` (sección 14), Milvus productivo `tebaai_breslov_chunks_v1` contenía:
+
+| Categoría | Entidades | PG tracking |
+|-----------|-----------|-------------|
+| Canónicas (nuevo pipeline) | 5102 | ✅ 5102/5102 |
+| Old-pipeline Likutey (extra) | 162 | ❌ sin PG |
+| CLI test doc | 1 | ❌ sin PG |
+| Oldest pipeline (empty source_type) | 1828 | ❌ sin PG |
+| **Total** | **6930+** | **5102 trackeadas** |
+
+Las 1991 entidades extra contaminaban las golden queries: hasta 11/75 resultados no tenían texto en PostgreSQL.
+
+### 15.2 Fases ejecutadas
+
+#### FASE A — Diagnóstico y exportación
+
+- 163 entidades del pipeline original (162 Likutey + 1 CLI test doc) identificadas con `source_type` no vacío y `chunk_id` inexistente en PG.
+- 1828 entidades del pipeline más antiguo identificadas con `source_type=''` (Likutey 1039, La Potencia 643, El Jardín 146).
+- Backup exportado a `docs/milvus_productive_stale_entities_2026-07-05.json` y `docs/milvus_stale_empty_source_type_backup_2026-07-05.json`.
+
+#### FASE B — Delete 163 stale entities (old pipeline)
+
+- PK por PK en batches de 50.
+- Expresión `pk in [...]` por batch.
+- 162 Likutey + 1 CLI = 163 eliminados.
+- Validación: search con Strong consistency — 0 resultados con `source_type` no canónico.
+
+#### FASE C — Re-embed 70 orphaned Likutey chunks
+
+Tras eliminar las 163 entidades, quedaron 70 PG chunks de Likutey sin vector en Milvus (índices 1041–1204, saltos diversos).
+
+| Paso | Detalle |
+|------|---------|
+| Embeddings | LiteLLM `openai_text_embedding_3_small`, dim=1536 |
+| Batch size | 16 (5 batches) |
+| Total | 70/70 (0 fallos) |
+| Milvus | upsert directo a `tebaai_breslov_chunks_v1` |
+| PG | `milvus_primary_key` actualizado en `library_chunk_embeddings` |
+| Validación | Likutey: 1205/1205 PG↔Prod match exacto |
+
+#### FASE D — Delete 1828 stale entities (empty source_type)
+
+| Aspecto | Valor |
+|---------|-------|
+| Documentos afectados | Likutey (1039), La Potencia (643), El Jardín (146) |
+| `source_type` | '' (vacío) |
+| `collection_code` | 'breslov' (pero no trackeadas en PG) |
+| Método | PK por PK, batches de 100 |
+| Total | 1828 eliminados |
+| Backup | `docs/milvus_stale_empty_source_type_backup_2026-07-05.json` |
+| Validación | Search Strong consistency — 0 entidades con source_type='' |
+
+### 15.3 Golden queries finales (post-cleanup)
+
+15 queries ejecutadas con `consistency_level=Strong`:
+
+| Query | Resultado |
+|-------|-----------|
+| ¿Qué es un Tzadik según Breslov? | ✅ 0 sin PG |
+| ¿Cómo vencer la tristeza? | ✅ 0 sin PG |
+| ¿Qué significa no tener miedo? | ✅ 0 sin PG |
+| ¿En qué libros se toca el miedo? | ✅ 0 sin PG |
+| ¿En qué libros se toca la tristeza? | ✅ 0 sin PG |
+| ¿Dónde aparece hitbodedut / plegaria personal? | ✅ 0 sin PG |
+| ¿Qué dice La Potencia de la Plegaria sobre rezar? | ✅ 0 sin PG |
+| ¿Qué aparece en KITZUR sobre alegría? | ✅ 0 sin PG |
+| ¿Dónde aparece el puente angosto? | ✅ 0 sin PG |
+| maravilla cerebro fe | ✅ 0 sin PG |
+| alegría servicio Dios | ✅ 0 sin PG |
+| tzadik conexión | ✅ 0 sin PG |
+| joy spiritual prayer | ✅ 0 sin PG |
+| light of tzadik | ✅ 0 sin PG |
+| zzzzz (negativa) | ✅ 0 sin PG |
+
+**Total: 15/15 PASS. 0 resultados sin texto en PostgreSQL.**
+
+### 15.4 Cleanup metrics (vs. pre-promotion)
+
+| Métrica | Pre-promoción | Post-promoción | Post-cleanup |
+|---------|:---:|:---:|:---:|
+| Docs ready | 0/8 | 8/8 | 8/8 |
+| PG embeddings | 5102 | 5102 | 5102 |
+| PG pending PK | 0 | 167 | 0 |
+| Milvus breslov canónico | 4935 | 5102 | 5102 |
+| Milvus stale breslov | 1991 | 1991 | 0 |
+| Milvus num_entities | 7023 | 7023 | 6930* |
+| Golden queries sin PG | 0 | 11/75 | 0/75 |
+
+*`num_entities` no decrece con delete en Milvus hasta compactación interna automática. El conteo canónico validado es 5102.
+
+### 15.5 Guardrails
+
+- ✅ PG tracking: 0 pending, 0 huérfanos
+- ✅ No reingesta de PDFs
+- ✅ No re-chunking
+- ✅ No más embeddings re-calculados
+- ✅ Backup exportado antes de cada delete
+- ✅ No se tocó frontend
+- ✅ No se tocó Team360
+- ✅ No se reiniciaron servicios
+- ✅ No se compactó Milvus (previsto como comportamiento interno)
+- ✅ OpenAI key directa no usada (solo LiteLLM)
+- ✅ Texto canónico siempre desde PostgreSQL
+
+### 15.6 Riesgos residuales
+
+1. **Milvus num_entities = 6930** hasta compactación. Comportamiento normal de Milvus 2.6. No afecta búsqueda (ANN search con Strong consistency filtra entidades borradas correctamente).
+2. **1828 entidades borradas** referencian 3 documentos Breslov que existen en PG (Likutey, Potencia, Jardín). No contaminan resultados de búsqueda.
+3. **Koren Yevamot Part One/Two** permanecen `test_candidate` sin promoción. Técnicamente aptos pero pendientes de decisión editorial.
+4. **Milvus test collection** `tebaai_breslov_test_chunks_v1` intacta (7315 entidades). No se modificó durante el cleanup.

@@ -1604,6 +1604,56 @@ SCRIPTS CREADOS:
   scripts/embed_cruzando_el_puente.py — embeddings + Milvus + golden queries
 ```
 
+## Acta de embeddings completos: Cruzando el Puente — 2026-07-05
+
+Embeddings completos (741/741) vía LiteLLM → Milvus test + golden queries + assistant retrieval.
+
+```text
+ESTADO:   full_embeddings_complete · milvus_test_validated · assistant_retrieval_initial_pass
+PRÓXIMA:  Decisión editorial — promover a ready o mantener test_candidate
+
+FECHA:        2026-07-05
+RAMA:         feature/console-backend-core
+HEAD:         851dcce3f74b1a4ccb2b7c2cf8ff79688c533a20
+DOCUMENT_ID:  0bad063c-f7a8-429c-a0ac-c01af224d5cb
+STATUS:       test_candidate (preservado)
+
+CHUNKS:       741
+EMBEDDINGS:   741/741 (721 nuevos + 20 preexistentes)
+DIMENSIÓN:    1536
+MODELO:       openai_text_embedding_3_small
+GATEWAY:      LiteLLM via LITELLM_MASTER_KEY
+MILVUS TEST:  tebaai_breslov_test_chunks_v1 — 741 vectores insertados/upserted
+ROUND-TRIP:   741/741 = 100% (sample 20/20 verificado)
+MILVUS PROD:  tebaai_breslov_chunks_v1 — INTACTO (no tocado)
+
+KNOWLEDGE SCOPE:  breslov_primary
+NULL SCOPE:        0 (corregidos 20 legacy)
+
+GOLDEN QUERIES: 16 queries
+  13/16 FTS OK · 13/16 hybrid OK · 1 negativa OK
+  3 WARN por FTS literal (sin stemming español)
+  Queries problemáticas previas (tzadik, tristeza) siguen WARN
+  → diagnóstico: son preguntas completas, FTS literal no las resuelve
+
+ASSISTANT RETRIEVAL:
+  4/5 respuestas con cita correcta (documento + página)
+  1/5 sin respuesta ("tristeza/desesperación" — contenido existe pero no empareja)
+  Texto canónico recuperado desde PostgreSQL en todos los casos
+  Milvus solo usado para ranking
+
+VALIDACIONES PG:
+  ✅ 741 chunks · 741 embeddings · 0 faltantes
+  ✅ 0 dimensión incorrecta · 0 alias incorrecto
+  ✅ 0 null knowledge_scope_id
+  ✅ 0 chunks vacíos · 741 page mapping
+  ✅ status: test_candidate (sin cambios)
+
+SCRIPTS CREADOS:
+  scripts/embed_cruzando_full.py — embeddings 721 nuevas + PG validación
+  scripts/embed_cruzando_milvus.py — Milvus upsert 741 + round-trip
+```
+
 ## Historial
 
 - resumen tecnico previo: `status_historico_hasta_2026-06-28.md`;

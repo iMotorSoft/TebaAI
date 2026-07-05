@@ -72,10 +72,17 @@ class AppSettings(BaseSettings):
     litellm_default_model_alias: str = ""
     litellm_timeout_seconds: int = 60
 
+    # The primary global convention for LiteLLM auth across iMotorSoft projects
+    # is LITELLM_MASTER_KEY (set in .bashrc / shell environment).
+    # TebaAI-specific override: TEBAAI_LITELLM_API_KEY.
+    # Resolution precedence (see _validate_litellm):
+    #   1. LITELLM_MASTER_KEY (shared global)
+    #   2. TEBAAI_LITELLM_API_KEY (TebaAI-specific override)
+
     # ── Embeddings (via LiteLLM gateway) ────────────────────────
     # TebaAI does NOT manage OpenAI keys directly.
     # LiteLLM resolves the upstream key (OpenAI_Key_JAI_query) in its config.yaml.
-    # TebaAI authenticates to LiteLLM via LITELLM_API_KEY (TEBAAI_LITELLM_API_KEY).
+    # TebaAI authenticates to LiteLLM via LITELLM_API_KEY (LITELLM_MASTER_KEY).
     embeddings_enabled: bool = False
     embeddings_provider: str = "litellm"
     embeddings_base_url: str = "http://127.0.0.1:4000"
@@ -139,6 +146,28 @@ class AppSettings(BaseSettings):
                 "Auth is enabled (TEBAAI_AUTH_ENABLED=true) but "
                 "TEBAAI_AUTH_JWT_SECRET is not set."
             )
+        return self
+
+    @model_validator(mode="after")
+    def _validate_litellm(self) -> AppSettings:
+        """Resolve LiteLLM API key from global conventions.
+
+        Precedence:
+          1. LITELLM_MASTER_KEY — shared global convention across iMotorSoft projects.
+          2. TEBAAI_LITELLM_API_KEY — TebaAI-specific override if explicitly set.
+
+        This mirrors the _validate_postgres pattern that resolves DB_PG_* vars.
+        """
+        if self.litellm_api_key.get_secret_value():
+            return self
+        master_key = os.environ.get("LITELLM_MASTER_KEY", "").strip()
+        if master_key:
+            self.litellm_api_key = SecretStr(master_key)
+            return self
+        tebaai_key = os.environ.get("TEBAAI_LITELLM_API_KEY", "").strip()
+        if tebaai_key:
+            self.litellm_api_key = SecretStr(tebaai_key)
+            return self
         return self
 
     # ── Derived accessors ───────────────────────────────────────

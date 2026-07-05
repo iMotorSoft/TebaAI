@@ -1,22 +1,29 @@
 """Global configuration facade for the TebaAI backend.
 
 This module is the stable, ergonomic entry point for common configuration
-values used across the backend. It does NOT read environment variables
-directly — that responsibility belongs exclusively to core/config.py.
+values used across the backend.
+
+Most values flow through core/config.py (Pydantic, env_prefix="TEBAAI_").
+The LiteLLM API key is an exception — it follows the shared global convention
+LITELLM_MASTER_KEY, so its resolution is handled directly here via
+resolve_litellm_api_key() with a fallback chain documented below.
 
 Usage:
 
     import globalVar
     host = globalVar.POSTGRES_HOST
 
-    from globalVar import SERVICE_NAME, LITELLM_BASE_URL
+    from globalVar import SERVICE_NAME, LITELLM_API_KEY
 
 Architecture:
 
     .env / env vars → core/config.py → globalVar.py → consumers
+    LITELLM_MASTER_KEY → globalVar.resolve_litellm_api_key() → consumers
 """
 
 from __future__ import annotations
+
+import os as _os
 
 from core.config import get_settings
 
@@ -64,10 +71,30 @@ EMBEDDINGS_DIMENSION: int = SETTINGS.embeddings_dimension
 EMBEDDINGS_BATCH_SIZE: int = SETTINGS.embeddings_batch_size
 EMBEDDINGS_TIMEOUT_SECONDS: int = SETTINGS.embeddings_timeout_seconds
 
-# ── LiteLLM ──────────────────────────────────────────────────────
+# ── LiteLLM key resolution ───────────────────────────────────────
+
+def resolve_litellm_api_key() -> str:
+    """Resolve the LiteLLM API key with documented precedence.
+
+    Precedence:
+      1. LITELLM_MASTER_KEY — shared global convention across iMotorSoft projects.
+      2. TEBAAI_LITELLM_API_KEY — TebaAI-specific override if explicitly set.
+      3. SETTINGS.litellm_api_key — Pydantic-resolved value (via TEBAAI_ prefix).
+
+    The first non-empty value wins. Returns empty string if none found.
+    """
+    master = _os.environ.get("LITELLM_MASTER_KEY", "").strip()
+    if master:
+        return master
+    tebaai = _os.environ.get("TEBAAI_LITELLM_API_KEY", "").strip()
+    if tebaai:
+        return tebaai
+    return SETTINGS.litellm_api_key.get_secret_value()
+
+
 LITELLM_ENABLED: bool = SETTINGS.litellm_enabled
 LITELLM_BASE_URL: str = SETTINGS.litellm_base_url
-LITELLM_API_KEY: str = SETTINGS.litellm_api_key.get_secret_value()
+LITELLM_API_KEY: str = resolve_litellm_api_key()
 LITELLM_DEFAULT_MODEL_ALIAS: str = SETTINGS.litellm_default_model_alias
 LITELLM_TIMEOUT_SECONDS: int = SETTINGS.litellm_timeout_seconds
 

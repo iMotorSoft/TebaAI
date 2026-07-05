@@ -1548,6 +1548,62 @@ GUARDRAILS:
   - ✅ Datos históricos preservados
 ```
 
+## Acta de incorporación candidata: Cruzando el Puente — 2026-07-05
+
+Primer PDF español-inglés (Breslov classic) incorporado como fuente definitiva candidata en `breslov_primary`.
+
+```text
+ESTADO: INCORPORADO (definitive_source_candidate)
+PRÓXIMA ACCIÓN: Decisión editorial — promover a ready o mantener test_candidate
+
+FECHA:       2026-07-05
+RAMA:        feature/console-backend-core
+HEAD:        1145492ed33214bcac8f9bc674b56683b3037228
+ARCHIVO:     CRUZANDO EL PUENTE (digital).pdf (1.1 MB, 485 páginas)
+KNOWLEDGE:   tebaai/breslov/breslov_library/breslov_primary
+
+DOCUMENT_ID: 0bad063c-f7a8-429c-a0ac-c01af224d5cb
+STATUS:      test_candidate (preservado, NO promovido a ready)
+SOURCE_KIND: pdf_modern_unicode
+PÁGINAS:     485
+CHARS:       938,472
+IDIOMA:      es (100% español)
+U+FFFD:      0
+
+EXTRACCIÓN:  extract_pdf_with_page_markers() (pymupdf4llm page-by-page)
+PAGE MAPPING: 741/741 chunks = 100%
+CHUNKS:      741 (0 vacíos)
+FTS:         OK (5 queries + OR + negativa)
+
+EMBEDDINGS:  20 vía LiteLLM (openai_text_embedding_3_small, dim=1536)
+MILVUS:      tebaai_breslov_test_chunks_v1 (test, productivo intacto)
+ROUND-TRIP:  20/20 = 100% PG↔Milvus
+
+GOLDEN QUERIES:
+  8/10 pass FTS, 8/10 pass hybrid, 1 negativa OK
+  Citas con página en todos los resultados positivos
+
+LIMITACIONES:
+  - Embeddings limitados a 20 (subset técnico)
+  - 2 golden queries WARN por FTS literal (sin stemming español)
+  - Manual/legal review pendiente
+  - No promovido a ready
+
+GUARDRAILS:
+  ✅ Solo base tebaai
+  ✅ knowledge_scope_id usado (no collection_id)
+  ✅ library_collections_legacy no usado para routing
+  ✅ Milvus productivo no tocado
+  ✅ OpenAI key directa no usada (solo LiteLLM)
+  ✅ No promovido a ready
+  ✅ No frontend modificado
+  ✅ No servicios reiniciados
+
+SCRIPTS CREADOS:
+  scripts/ingest_cruzando_el_puente.py — ingesta completa con page markers
+  scripts/embed_cruzando_el_puente.py — embeddings + Milvus + golden queries
+```
+
 ## Historial
 
 - resumen tecnico previo: `status_historico_hasta_2026-06-28.md`;

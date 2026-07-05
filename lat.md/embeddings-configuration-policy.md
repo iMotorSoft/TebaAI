@@ -26,10 +26,23 @@ Milvus recibe embeddings
 | Variable | Propósito | Default |
 |----------|-----------|---------|
 | `TEBAAI_LITELLM_BASE_URL` | URL del proxy LiteLLM | `http://127.0.0.1:4000` |
-| `TEBAAI_LITELLM_API_KEY` | Master key para autenticar contra LiteLLM | — |
+| `LITELLM_MASTER_KEY` | Variable primaria global (convención entre proyectos) | — |
+| `TEBAAI_LITELLM_API_KEY` | Fallback específico TebaAI (override local) | — |
 | `TEBAAI_EMBEDDINGS_MODEL_ALIAS` | Alias interno del modelo | `openai_text_embedding_3_small` |
 | `TEBAAI_EMBEDDINGS_DIMENSION` | Dimensión del vector | 1536 |
 | `TEBAAI_EMBEDDINGS_BATCH_SIZE` | Textos por batch | 16 |
+
+### Precedencia de resolución de API key
+
+```
+1. LITELLM_MASTER_KEY — fuente primaria global (convención iMotorSoft).
+2. TEBAAI_LITELLM_API_KEY — fallback específico TebaAI.
+```
+
+La resolución se centraliza en `core/config.py` (validador `_validate_litellm`).
+`globalVar.py` exporta `LITELLM_API_KEY` como string normalizado.
+El usuario solo necesita `LITELLM_MASTER_KEY` en su entorno (`.bashrc`).
+No requiere anteponer `TEBAAI_LITELLM_API_KEY="${LITELLM_MASTER_KEY}"` en comandos.
 
 `TEBAAI_EMBEDDINGS_API_KEY` no es requisito canónico. La clave upstream de OpenAI se resuelve dentro de LiteLLM.
 

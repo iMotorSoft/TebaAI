@@ -29,13 +29,18 @@ def embed_batch(texts: list[str], model: str | None = None) -> list[list[float]]
     if not texts:
         return []
 
+    if not LITELLM_API_KEY:
+        raise EmbeddingsProviderError(
+            "LiteLLM API key missing. Set LITELLM_MASTER_KEY in the shell environment "
+            "(or TEBAAI_LITELLM_API_KEY as a TebaAI-specific fallback)."
+        )
+
     model_name = model or EMBEDDINGS_MODEL_ALIAS
     url = f"{EMBEDDINGS_BASE_URL}/v1/embeddings"
     headers: dict[str, str] = {
         "Content-Type": "application/json",
     }
-    if LITELLM_API_KEY:
-        headers["Authorization"] = f"Bearer {LITELLM_API_KEY}"
+    headers["Authorization"] = f"Bearer {LITELLM_API_KEY}"
 
     all_embeddings: list[list[float]] = []
     batch_size = EMBEDDINGS_BATCH_SIZE

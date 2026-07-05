@@ -1654,6 +1654,20 @@ SCRIPTS CREADOS:
   scripts/embed_cruzando_milvus.py — Milvus upsert 741 + round-trip
 ```
 
+## Metadata Completion — ES/EN Promotion Blockers Resueltos — 2026-07-05
+
+Metadata bibliográfica completada para los 2 documentos que estaban en `NEEDS_MANUAL_REVIEW`:
+
+| Documento | document_id | Metadata agregada |
+|---|---|---|
+| Cruzando el Puente | `0bad063c` | author, editor, translator, publisher, year, ISBN, manual/legal/ready_review, promotion_recommendation |
+| Un Día en la Vida | `a852721d` | author, translator, publisher, year, edition, manual/legal/ready_review, embedding_validation, promotion_recommendation |
+
+**Sin reingesta, sin embeddings nuevos, sin Milvus, sin promoción.**
+**Status preservado:** `test_candidate` en ambos.
+**Recomendación actualizada:** Cruzando el Puente → `PROMOVIBLE`; Un Día en la Vida → `PROMOVIBLE_CON_OBSERVACIONES`.
+**Documento de referencia:** `breslov_es_en_promotion_audit_2026-07-05.md` (sección 13).
+
 ## Historial
 
 - resumen tecnico previo: `status_historico_hasta_2026-06-28.md`;

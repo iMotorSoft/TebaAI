@@ -93,6 +93,14 @@ class AppSettings(BaseSettings):
     embeddings_batch_size: int = 16
     embeddings_timeout_seconds: int = 60
 
+    # ── Research Conversation (LiteLLM generative model) ──────────
+    # Model: openai_gpt-5.4-nano (via LiteLLM gateway)
+    # LiteLLM params: openai/gpt-5.4-nano with OpenAI_Key_JAI_query
+    # Resolution: TEBAAI_RESEARCH_CONVERSATION_MODEL env var or default below
+    research_conversation_model: str = "openai_gpt-5.4-nano"
+    research_embedding_model_alias: str = "openai_text_embedding_3_small"
+    breslov_productive_collection: str = "tebaai_breslov_chunks_v1"
+
     # ── Auth ────────────────────────────────────────────────────
     auth_enabled: bool = False
     auth_jwt_secret: SecretStr = SecretStr("")

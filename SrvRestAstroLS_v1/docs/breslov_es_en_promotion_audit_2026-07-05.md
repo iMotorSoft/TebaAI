@@ -615,5 +615,5 @@ Tras eliminar las 163 entidades, quedaron 70 PG chunks de Likutey sin vector en 
 
 1. **Milvus num_entities = 6930** hasta compactación. Comportamiento normal de Milvus 2.6. No afecta búsqueda (ANN search con Strong consistency filtra entidades borradas correctamente).
 2. **1828 entidades borradas** referencian 3 documentos Breslov que existen en PG (Likutey, Potencia, Jardín). No contaminan resultados de búsqueda.
-3. **Koren Yevamot Part One/Two** permanecen `test_candidate` sin promoción. Técnicamente aptos pero pendientes de decisión editorial.
+3. **Koren/Yevamot** fue removido de `breslov_primary` y archivado como corpus de prueba técnica. Ya no contamina roadmap ni decisiones editoriales Breslov (ver `docs/koren_yevamot_cleanup_2026-07-05.md`).
 4. **Milvus test collection** `tebaai_breslov_test_chunks_v1` intacta (7315 entidades). No se modificó durante el cleanup.

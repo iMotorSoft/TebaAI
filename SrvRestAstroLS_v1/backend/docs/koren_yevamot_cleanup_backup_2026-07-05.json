@@ -1,0 +1,528 @@
+{
+  "created_at": "2026-07-06T00:08:02.229167",
+  "purpose": "Koren/Yevamot cleanup — pre-deletion backup",
+  "documents": [
+    {
+      "document_id": "cfd5a9f9-e47a-4319-a82f-5214e74c8bd2",
+      "chunk_count": 0,
+      "chunks_sample": [],
+      "embedding_count": 0,
+      "milvus_test_count": 0,
+      "milvus_test_entities_sample": []
+    },
+    {
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc",
+      "title": "Koren Talmud Bavli — Yevamot Part One",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "bibliographic_metadata": {
+        "extraction": {
+          "pages": 496,
+          "method": "pymupdf4llm_controlled_page_markers",
+          "sha256_md": "2cc113140a33765547f03b2bac2c902eb89862b64a66b7c982942eeef68536cd",
+          "sha256_pdf": "ac1e42fc5c018e706d5e7cb3908cdb7d4f78352431f0d5815de466112ff6e2ab",
+          "page_markers": true
+        },
+        "source_quality": {
+          "evidence": {
+            "chars": 3281327,
+            "pages": 496,
+            "chunks": 2559,
+            "empty_chunks": 0,
+            "hebrew_chars": 369550,
+            "pg_roundtrip": 1.0,
+            "embedding_count": 20,
+            "milvus_roundtrip": 1.0,
+            "page_mapping_coverage": 1.0
+          },
+          "fts_status": "pass",
+          "ocr_status": "not_ocr",
+          "limitations": [
+            "Legal/manual review pending. Not promoted to ready."
+          ],
+          "source_kind": "pdf_modern_unicode",
+          "layout_status": "pass",
+          "language_hints": [
+            "he",
+            "en"
+          ],
+          "policy_version": "2026-07-02",
+          "chunking_status": "pass",
+          "document_family": "Koren/Steinsaltz",
+          "roundtrip_sha256": "pass",
+          "canonical_text_role": "canonical_text",
+          "page_mapping_status": "pass",
+          "text_quality_status": "pass",
+          "canonical_text_allowed": true,
+          "embedding_smoke_status": "pass",
+          "milvus_roundtrip_status": "pass",
+          "facsimile_anchor_allowed": true,
+          "promotion_recommendation": "approved_candidate",
+          "promotion_status_virtual": "approved_candidate"
+        },
+        "promotion_decision_dry_run": {
+          "notes": "Dry-run only. Status remains test_candidate. All technical checks pass. Only manual/legal pending.",
+          "decision": "eligible_pending_manual_legal",
+          "checks_total": 18,
+          "evaluated_at": "2026-07-02T19:03:37.255349+00:00",
+          "checks_failed": 0,
+          "checks_passed": 16,
+          "target_status": "ready",
+          "checks_pending": [
+            "Manual review sample",
+            "Legal/copyright/public exposure decision"
+          ],
+          "decision_basis": "document_source_quality_policy_v1",
+          "would_change_status": false,
+          "automatic_rejections": []
+        }
+      },
+      "chunk_count": 2559,
+      "chunks_sample": [
+        {
+          "chunk_id": "66ce96d7-f5e6-4f3b-a64c-70fe1bcd759d",
+          "chunk_index": 0,
+          "content_sha256": "599e7338a21f48a700f4adcc86dcb34e49fab23f4e4db660cbb45abc11e32ec7",
+          "page_start": 1,
+          "page_end": 4,
+          "reference_label": null
+        },
+        {
+          "chunk_id": "474f7d0b-beac-495e-b119-c94b78bb0b87",
+          "chunk_index": 1,
+          "content_sha256": "aa3a6a55a7c089c44447bc66835edcd032281b27fe17e82905ec69b7ca8942e6",
+          "page_start": 4,
+          "page_end": 5,
+          "reference_label": null
+        },
+        {
+          "chunk_id": "a4b47c58-1082-4e2b-a2ff-55119b8156a8",
+          "chunk_index": 2,
+          "content_sha256": "6cc9781d27788e09dedd84c1289bb6e1d474f7d2ecf1db5c523b07b9bb750692",
+          "page_start": 5,
+          "page_end": 7,
+          "reference_label": null
+        },
+        {
+          "chunk_id": "e2625322-a31f-4669-bf20-c61753727e5c",
+          "chunk_index": 3,
+          "content_sha256": "5eb2c7de63b7d97104a2dcf3eccd8341ae11e8272285676ab05454b78d2c53a5",
+          "page_start": 6,
+          "page_end": 7,
+          "reference_label": null
+        },
+        {
+          "chunk_id": "a3b711ff-8486-4815-9212-2ed6a9dbdd68",
+          "chunk_index": 4,
+          "content_sha256": "0f292b16fd5034923842b706e384a3f97fb7b0ed338057111ae1d2ef466e441e",
+          "page_start": 7,
+          "page_end": 10,
+          "reference_label": null
+        }
+      ],
+      "embedding_count": 0,
+      "milvus_test_count": 20,
+      "milvus_test_entities_sample": [
+        {
+          "pk": "2bc1093adbc8",
+          "chunk_id": "474f7d0b-beac-49"
+        },
+        {
+          "pk": "362a3f7e661b",
+          "chunk_id": "31d72747-1e10-43"
+        },
+        {
+          "pk": "3a47b21c9b4d",
+          "chunk_id": "e61f713e-9354-4f"
+        },
+        {
+          "pk": "44250760dd04",
+          "chunk_id": "e2625322-a31f-46"
+        },
+        {
+          "pk": "4dea2050ea85",
+          "chunk_id": "7e6fe7cb-8f77-4c"
+        }
+      ]
+    },
+    {
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f",
+      "title": "Koren Talmud Bavli — Yevamot Part Two",
+      "status": "test_candidate",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "bibliographic_metadata": {
+        "extraction": {
+          "pages": 398,
+          "method": "pymupdf4llm_controlled_page_markers",
+          "sha256_md": "898b9cc4caa85ab59fff82fc127149b241405bddd9b29e47288aba404db52d90",
+          "sha256_pdf": "7d97439ad1918bfdc2e219dc8ad12d2cc736d9ab9bacd940b8abcc9a259695c0",
+          "page_markers": true
+        },
+        "source_quality": {
+          "evidence": {
+            "chars": 2534522,
+            "pages": 398,
+            "chunks": 1988,
+            "empty_chunks": 0,
+            "hebrew_chars": 313408,
+            "pg_roundtrip": 1.0,
+            "embedding_count": 20,
+            "milvus_roundtrip": 1.0,
+            "page_mapping_coverage": 1.0
+          },
+          "fts_status": "pass",
+          "ocr_status": "not_ocr",
+          "limitations": [
+            "Legal/manual review pending. Not promoted to ready."
+          ],
+          "source_kind": "pdf_modern_unicode",
+          "layout_status": "pass",
+          "language_hints": [
+            "he",
+            "en"
+          ],
+          "policy_version": "2026-07-02",
+          "chunking_status": "pass",
+          "document_family": "Koren/Steinsaltz",
+          "roundtrip_sha256": "pass",
+          "canonical_text_role": "canonical_text",
+          "page_mapping_status": "pass",
+          "text_quality_status": "pass",
+          "canonical_text_allowed": true,
+          "embedding_smoke_status": "pass",
+          "milvus_roundtrip_status": "pass",
+          "facsimile_anchor_allowed": true,
+          "promotion_recommendation": "approved_candidate",
+          "promotion_status_virtual": "approved_candidate"
+        },
+        "replaces_reason": "Full re-ingestion with controlled page markers; old smoke subset had 0% page mapping and inconsistent evidence.",
+        "replaces_document_id": "cfd5a9f9-e47d-4fc1-bc95-91734a59bdde",
+        "promotion_decision_dry_run": {
+          "notes": "Dry-run only. Status remains test_candidate. All technical checks pass. Only manual/legal pending.",
+          "decision": "eligible_pending_manual_legal",
+          "checks_total": 18,
+          "evaluated_at": "2026-07-02T19:03:37.327676+00:00",
+          "checks_failed": 0,
+          "checks_passed": 16,
+          "target_status": "ready",
+          "checks_pending": [
+            "Manual review sample",
+            "Legal/copyright/public exposure decision"
+          ],
+          "decision_basis": "document_source_quality_policy_v1",
+          "would_change_status": false,
+          "automatic_rejections": []
+        }
+      },
+      "chunk_count": 1988,
+      "chunks_sample": [
+        {
+          "chunk_id": "15c31715-bcf7-4181-b6e5-6f189cc66901",
+          "chunk_index": 0,
+          "content_sha256": "b53a6b2561535cf6526cafa6cb3e20413a40967807d7b45d665b6105ee002a2e",
+          "page_start": 1,
+          "page_end": 4,
+          "reference_label": null
+        },
+        {
+          "chunk_id": "dd5db478-a511-40c4-93ba-bb9e352b67b8",
+          "chunk_index": 1,
+          "content_sha256": "a3d4032b669fe579dc3d9c3004294e127357ab02ef0d460a305c2b369e343b5f",
+          "page_start": 4,
+          "page_end": 5,
+          "reference_label": null
+        },
+        {
+          "chunk_id": "d636333e-aca3-45f5-bf11-6ec2b9c06f44",
+          "chunk_index": 2,
+          "content_sha256": "6cc9781d27788e09dedd84c1289bb6e1d474f7d2ecf1db5c523b07b9bb750692",
+          "page_start": 5,
+          "page_end": 7,
+          "reference_label": null
+        },
+        {
+          "chunk_id": "99c26f7f-1acc-4888-9400-2f13c8f5e16c",
+          "chunk_index": 3,
+          "content_sha256": "5eb2c7de63b7d97104a2dcf3eccd8341ae11e8272285676ab05454b78d2c53a5",
+          "page_start": 6,
+          "page_end": 7,
+          "reference_label": null
+        },
+        {
+          "chunk_id": "e43fc266-16c3-4d68-b1e9-af18497ca0be",
+          "chunk_index": 4,
+          "content_sha256": "b3948f0d020939ac8e5c7f0f59e53a46a9ae642a61b2514a3745b84c68b6d02e",
+          "page_start": 7,
+          "page_end": 10,
+          "reference_label": null
+        }
+      ],
+      "embedding_count": 0,
+      "milvus_test_count": 20,
+      "milvus_test_entities_sample": [
+        {
+          "pk": "0be8055c49ca",
+          "chunk_id": "dc4bf329-801b-40"
+        },
+        {
+          "pk": "192fc50931c4",
+          "chunk_id": "2d34c83b-7227-44"
+        },
+        {
+          "pk": "1ffaae0e31ad",
+          "chunk_id": "3f031c96-6a82-4c"
+        },
+        {
+          "pk": "21143c48c51a",
+          "chunk_id": "e43fc266-16c3-4d"
+        },
+        {
+          "pk": "270eca71aebd",
+          "chunk_id": "eec89701-1bff-4d"
+        }
+      ]
+    }
+  ],
+  "milvus_test_entities": [
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "2bc1093adbc8347f10f76bb1",
+      "chunk_id": "474f7d0b-beac-495e-b119-c94b78bb0b87",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "362a3f7e661b688ff6432dd3",
+      "chunk_id": "31d72747-1e10-438c-bb9c-57a19289236f",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "3a47b21c9b4d96e42cd0cd6c",
+      "chunk_id": "e61f713e-9354-4fcf-8f01-c099bb782f99",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "44250760dd04c45c574ed447",
+      "chunk_id": "e2625322-a31f-4669-bf20-c61753727e5c",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "4dea2050ea85eb68cfcfd084",
+      "chunk_id": "7e6fe7cb-8f77-4cc1-830e-bd883ea75216",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "70dc88a20514385f220fb6d9",
+      "chunk_id": "a4b47c58-1082-4e2b-a2ff-55119b8156a8",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "7368f0123745c23ddde521f3",
+      "chunk_id": "b8fcf7df-22f5-4266-abc4-7c47acddb457",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "761f8b0f89644e2810fde285",
+      "chunk_id": "8211fa0b-bcf8-43c8-9094-548f7df723e8",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "7ded8c1f9a550e18f73167e1",
+      "chunk_id": "861e7f3c-16d7-4c9b-ad9b-c047363f7657",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "8a8ae1db5b7d7dfddd295732",
+      "chunk_id": "396f892d-d642-42c8-885e-c9ed1a189c7c",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "8eb5dcda6b1d66e16a4646c7",
+      "chunk_id": "c635c033-d5ef-4345-851c-405fd47c7a85",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "99c2b5f0baa37e5b8f5835f7",
+      "chunk_id": "2364a195-f848-4ec6-81f5-38dcdf3451a3",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "a644232fa4c7a0dd5fff907e",
+      "chunk_id": "66ce96d7-f5e6-4f3b-a64c-70fe1bcd759d",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "c25d6fcd84f82bc769529ebd",
+      "chunk_id": "4d53815b-0ab7-480e-9c84-ba6612b1280c",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "c5868a90e87501fb16c03c5d",
+      "chunk_id": "64366df4-d34e-4948-ab74-871a9855a1d3",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "c8db1f4b817c6c24ac607059",
+      "chunk_id": "93b1f231-176a-4356-8e9e-3f84a71763ac",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "e0151fd99c2ac44d22c22381",
+      "chunk_id": "de44a458-0911-4c40-b87a-c651bc01057c",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "e0e6af768273a5b7385b2f77",
+      "chunk_id": "927f5d57-9375-419a-ac33-ee91314eba4b",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "f53e37bee0498f5e2a63314a",
+      "chunk_id": "ad792ee8-f853-4822-a636-c654a107583e",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "f80f9a3a457c4326cbafa0cd",
+      "chunk_id": "a3b711ff-8486-4815-9212-2ed6a9dbdd68",
+      "document_id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "0be8055c49ca70bb9e8519e2",
+      "chunk_id": "dc4bf329-801b-4050-b713-af35a095e020",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "192fc50931c4af2900d37c62",
+      "chunk_id": "2d34c83b-7227-445f-a07d-b5ff0c38735e",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "1ffaae0e31add9103f427597",
+      "chunk_id": "3f031c96-6a82-4c99-b5e3-83bc41e6c0e0",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "21143c48c51af1ec39efd6e3",
+      "chunk_id": "e43fc266-16c3-4d68-b1e9-af18497ca0be",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "270eca71aebd84fdfd71dd69",
+      "chunk_id": "eec89701-1bff-4dfa-a62c-fdf6bd36751a",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "3057b1f4072ff957f40bae19",
+      "chunk_id": "236a8e90-ee98-4abc-92f9-d4ebb8cf5d55",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "404e5f177b2c307e3d504a44",
+      "chunk_id": "e560e783-7d20-415a-9a66-e86e262b8ac5",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "4a158b197d4e6b7f5435462f",
+      "chunk_id": "5271e669-5efd-4031-bcf1-262229913bd2",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "514ab999e7754a201c873721",
+      "chunk_id": "5f5ab6bc-8cd3-4720-984f-900abe57984c",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "68875dc2eaa8093435ddb958",
+      "chunk_id": "8c36bfb4-e14e-4448-9829-6a98ade98786",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "68ffc03d3786c3a442bbdabe",
+      "chunk_id": "dd5db478-a511-40c4-93ba-bb9e352b67b8",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "79b48a65e28dbafa363e6444",
+      "chunk_id": "8f8b8c42-3df5-4a01-ab21-df778a271bb1",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "8ad1e56a74583e3644045176",
+      "chunk_id": "15c31715-bcf7-4181-b6e5-6f189cc66901",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "a5aa5cdbf76c9fc18e129aa3",
+      "chunk_id": "4fe15f27-f9c9-47b2-92ed-a63606fab3b7",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "bc841cdd9e68eff944903612",
+      "chunk_id": "4f06df05-f329-402b-8c7e-32a797df262d",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "d79dedfa2746e0b58806d9fa",
+      "chunk_id": "d636333e-aca3-45f5-bf11-6ec2b9c06f44",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "dc076a25e74557675bdd1c36",
+      "chunk_id": "99c26f7f-1acc-4888-9400-2f13c8f5e16c",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "dc600dd3928167741aafb833",
+      "chunk_id": "54ad3906-bd2a-4bd5-9480-768331013131",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "dfb09338a51d869c4ceb8f2b",
+      "chunk_id": "ca6e10ac-02d6-4208-b128-a44a1f8cccb2",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "pk": "fbc8d3c3b34a0d18e4514296",
+      "chunk_id": "0b5ca784-6bf9-44c4-a8f3-7a7e77a0852e",
+      "document_id": "91e5829e-0fb3-4319-afe1-25413851ff7f"
+    }
+  ]
+}

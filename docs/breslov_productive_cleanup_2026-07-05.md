@@ -168,7 +168,7 @@ Tras la Fase 2, quitar 163 entidades expuso 70 PG chunks sin vector:
 
 2. **1828 entidades eliminadas** referencian 3 documentos Breslov que sí existen en PG (Likutey Halajot, La Potencia de la Plegaria, El Jardín de las Almas). No contaminan resultados — sus `chunk_id` no existen en PG y el ANN search no las retorna.
 
-3. **Koren Yevamot Part One y Part Two** permanecen `test_candidate`. Técnicamente aptos (100% page mapping, embeddings, Milvus test, golden queries) pero pendientes de decisión editorial para promoción a `ready`.
+3. **Koren/Yevamot** fue removido de `breslov_primary` y archivado como corpus de prueba técnica. Ver `docs/koren_yevamot_cleanup_2026-07-05.md`.
 
 4. **Colección Milvus test** `tebaai_breslov_test_chunks_v1` intacta con 7315 entidades. Acumula vectores de múltiples fases experimentales. No se modificó durante el cleanup.
 

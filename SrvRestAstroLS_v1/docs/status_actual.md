@@ -1736,7 +1736,8 @@ GUARDRAILS:
 
 ```text
 ESTADO:   CERRADO (promoción completa + cleanup canónico — 100% PG↔Milvus match)
-PRÓXIMA:  Ninguna para ES/EN corpus. Próxima fase: Koren Yevamot approbation si se autoriza.
+PRÓXIMA:  Breslov Research UX — Source Map, Evidence Badges & Citation Viewer.
+  Koren/Yevamot (corpus técnico de prueba) fue removido. No forma parte del roadmap Breslov.
 
 DECISIÓN EDITORIAL:
   Los 8 documentos del corpus ES/EN Breslov fueron promovidos a ready
@@ -1817,7 +1818,7 @@ RIESGOS RESIDUALES:
   - Milvus num_entities=6930 hasta compactación interna. Comportamiento normal de Milvus.
   - 1828 entidades borradas referencian 3 documentos Breslov (Likutey, Potencia, Jardín)
     que existen en PG. Las entidades no contaminan la búsqueda (no aparecen en ANN search).
-  - Koren Yevamot Part One/Two permanecen test_candidate sin promoción.
+  - Koren/Yevamot fue removido de breslov_primary y descartado como corpus de prueba técnica.
 ```
 
 ## Historial

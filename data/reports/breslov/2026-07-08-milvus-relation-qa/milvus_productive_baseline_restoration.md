@@ -66,9 +66,9 @@ El dry-run confirmó 1039 chunks de Likutey, 643 de Potencia y 146 de Jardín; v
 
 La evidencia previa a la mutación quedó registrada en estos artefactos:
 
-- `docs/backup_repair_pg_chunks_2026-07-08.json`: snapshot de chunks y metadata requeridos por la reparación;
-- `docs/backup_repair_milvus_snapshot_2026-07-08.json`: snapshot del estado Milvus con 3274 entidades y cero `source_type=''`;
-- `docs/backup_cleanup_duplicates_pks_2026-07-08.json`: manifiesto de las 1828 PK redundantes seleccionadas para cleanup.
+- `backups/repair_pg_chunks.json`: snapshot de chunks y metadata requeridos por la reparación;
+- `backups/repair_milvus_snapshot_before_repair.json`: snapshot del estado Milvus con 3274 entidades y cero `source_type=''`;
+- `backups/cleanup_duplicates_pks.json`: manifiesto de las 1828 PK redundantes seleccionadas para cleanup.
 
 ## Reparación productiva controlada
 
@@ -116,10 +116,10 @@ La siguiente fase puede apoyarse en un corpus productivo reconciliado y en un la
 
 Los documentos de fase conservan el detalle histórico; este informe posee el estado final consolidado.
 
-- `docs/breslov_milvus_productive_count_reconciliation_2026-07-08.md` — detección, reconciliación y causa raíz;
-- `docs/breslov_milvus_productive_repair_plan_2026-07-08.md` — estrategia, riesgos y validaciones del repair;
-- `docs/breslov_milvus_duplicate_cleanup_plan_2026-07-08.md` — selección y eliminación de duplicados;
-- `docs/breslov_concept_relation_qa_blood_speech_lab_2026-07-08.md` — laboratorio y resultado post-restauración;
+- `milvus_productive_count_reconciliation.md` — detección, reconciliación y causa raíz;
+- `milvus_productive_repair_plan.md` — estrategia, riesgos y validaciones del repair;
+- `milvus_duplicate_cleanup_plan.md` — selección y eliminación de duplicados;
+- `concept_relation_qa_blood_speech_lab.md` — laboratorio y resultado post-restauración;
 - `SrvRestAstroLS_v1/docs/status_actual.md` — resumen del estado runtime vigente.
 
 ## Guardrails de esta consolidación

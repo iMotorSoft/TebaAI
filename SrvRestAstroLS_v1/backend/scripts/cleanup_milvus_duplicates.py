@@ -252,7 +252,7 @@ async def main():
             return 0
 
         # Backup
-        backup_pks(to_delete, to_keep, "docs/backup_cleanup_duplicates_pks_2026-07-08.json")
+        backup_pks(to_delete, to_keep, "data/reports/breslov/2026-07-08-milvus-relation-qa/backups/cleanup_duplicates_pks.json")
 
         if is_apply:
             # Confirm
@@ -292,7 +292,7 @@ async def main():
             print(f"\n  📊 Summary:")
             print(f"  PKs to DELETE: {len(to_delete)}")
             print(f"  PKs to KEEP: {len(to_keep)}")
-            print(f"  Backup: docs/backup_cleanup_duplicates_pks_2026-07-08.json")
+            print(f"  Backup: data/reports/breslov/2026-07-08-milvus-relation-qa/backups/cleanup_duplicates_pks.json")
             print(f"  Expected final num_entities: 5102")
             print(f"  Expected final duplicates: 0")
             print(f"\n  To execute: uv run python -m scripts.cleanup_milvus_duplicates --apply")

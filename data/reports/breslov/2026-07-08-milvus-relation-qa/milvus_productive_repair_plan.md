@@ -3,7 +3,7 @@
 **Date:** 2026-07-08
 **Status:** EJECUTADO Y CERRADO
 
-> Este documento conserva el plan previo a la ejecución. La reparación fue autorizada, aplicada y seguida por un cleanup de duplicados. El resultado canónico está en `docs/breslov_milvus_productive_baseline_restoration_2026-07-08.md`.
+> Este documento conserva el plan previo a la ejecución. La reparación fue autorizada, aplicada y seguida por un cleanup de duplicados. El resultado canónico está en `milvus_productive_baseline_restoration.md`.
 
 ## 1. Resumen
 

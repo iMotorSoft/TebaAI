@@ -33,7 +33,7 @@ El PDF `LIKUTEY HALAJOT (Interior Final).pdf` (284 páginas, 4.4 MB) contiene la
 | Rama | `feature/console-backend-core` |
 | HEAD inicial | `1547bf05bd2f97968c3a7f40709e2a01a74267ba` |
 | HEAD final | `1547bf05bd2f97968c3a7f40709e2a01a74267ba` (sin cambios en código productivo) |
-| Commit final | Sin cambios en código productivo. Solo scripts/ouputs en `tmp/likutey_layout_probe/` y este reporte. |
+| Commit final | Sin cambios en código productivo. Solo scripts/ouputs en `data/reports/breslov/2026-07-05-likutey-layout/probe/` y este reporte. |
 
 ---
 
@@ -380,25 +380,25 @@ El probe da **PASS** con advertencias controladas. La ingesta layout-aware es vi
 
 | Archivo | Descripción |
 |---|---|
-| `tmp/likutey_layout_probe/probe_common.py` | Utilidades comunes: clasificación, detección de idioma, page mapping |
-| `tmp/likutey_layout_probe/run_probe.py` | Probe principal: extracción de bloques por página, clasificación, summary |
-| `tmp/likutey_layout_probe/refined_analysis.py` | Análisis refinado: node_path, sources, crossrefs, golden questions |
+| `data/reports/breslov/2026-07-05-likutey-layout/probe/probe_common.py` | Utilidades comunes: clasificación, detección de idioma, page mapping |
+| `data/reports/breslov/2026-07-05-likutey-layout/probe/run_probe.py` | Probe principal: extracción de bloques por página, clasificación, summary |
+| `data/reports/breslov/2026-07-05-likutey-layout/probe/refined_analysis.py` | Análisis refinado: node_path, sources, crossrefs, golden questions |
 
 ### Outputs generados
 
 | Archivo | Descripción |
 |---|---|
-| `tmp/likutey_layout_probe/page_mapping.json` | Mapeo página impresa → PDF index |
-| `tmp/likutey_layout_probe/compiled_probe_results.json` | Resultados compilados de 27 páginas |
-| `tmp/likutey_layout_probe/refined_analysis.json` | Análisis refinado con sources y crossrefs |
-| `tmp/likutey_layout_probe/page_*_blocks.json` | Bloques por página individual (27 archivos) |
-| `tmp/likutey_layout_probe/page_*_text.txt` | Texto plano por página (27 archivos) |
+| `data/reports/breslov/2026-07-05-likutey-layout/probe/page_mapping.json` | Mapeo página impresa → PDF index |
+| `data/reports/breslov/2026-07-05-likutey-layout/probe/compiled_probe_results.json` | Resultados compilados de 27 páginas |
+| `data/reports/breslov/2026-07-05-likutey-layout/probe/refined_analysis.json` | Análisis refinado con sources y crossrefs |
+| `data/reports/breslov/2026-07-05-likutey-layout/probe/page_*_blocks.json` | Bloques por página individual (27 archivos) |
+| `data/reports/breslov/2026-07-05-likutey-layout/probe/page_*_text.txt` | Texto plano por página (27 archivos) |
 
 ### Documentación
 
 | Archivo | Descripción |
 |---|---|
-| `docs/likutey_halajot_layout_probe_2026-07-05.md` | Este informe |
+| `data/reports/breslov/2026-07-05-likutey-layout/layout_probe.md` | Este informe |
 | `SrvRestAstroLS_v1/docs/status_actual.md` | Status actualizado (entrada compacta) |
 
 ---

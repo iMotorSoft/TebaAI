@@ -55,6 +55,11 @@ data/processed/*
 data/reports/*
 !data/reports/README.md
 !data/reports/.gitkeep
+!data/reports/breslov/
+!data/reports/breslov/**
+data/reports/breslov/**/__pycache__/
+data/reports/breslov/**/*.pyc
+tmp/
 
 # Large local artifacts
 *.sqlite

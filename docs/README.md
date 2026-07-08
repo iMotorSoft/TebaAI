@@ -18,10 +18,10 @@ Current cross-project adoption analyses:
 - `team360-adoption-implementation-2026-07-06.md`;
 - `paseto-v4-public-portability-assessment.md`.
 
-Current production baseline report:
+Current generated evidence:
 
-- `breslov_milvus_productive_baseline_restoration_2026-07-08.md` — reconciliación, reparación, cleanup y cierre del baseline Milvus Breslov.
-- `breslov_relation_qa_backend_endpoint_2026-07-08.md` — contrato, guardrails y validación del endpoint investigativo editorial.
+- `../data/reports/breslov/2026-07-08-milvus-relation-qa/milvus_productive_baseline_restoration.md` — reconciliación, reparación, cleanup y cierre del baseline Milvus Breslov.
+- `../data/reports/breslov/2026-07-08-milvus-relation-qa/relation_qa_backend_endpoint.md` — contrato, guardrails y validación del endpoint investigativo editorial.
 
 Runtime technical status lives in:
 

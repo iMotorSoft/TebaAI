@@ -497,7 +497,7 @@ def print_dry_run_report(
 
     print(f"\n🛡️ Rollback plan:")
     print(f"  1. PG milvus_primary_key solo se actualiza tras upsert exitoso")
-    print(f"  2. Backup pre-repair disponible en docs/backup_*.json")
+    print(f"  2. Backup pre-repair disponible en data/reports/breslov/2026-07-08-milvus-relation-qa/backups/*.json")
     print(f"  3. Si upsert falla parcial: re-ejecutar con --apply (idempotente)")
     print(f"  4. Si hay corrupción: restaurar desde backup + re-ejecutar")
 
@@ -592,8 +592,8 @@ async def main():
         # ── Backup mode ───────────────────────────────────────────────
         if is_backup:
             print("[3/4] Generando backups...")
-            await backup_pg_chunks(pool, missing, "docs/backup_repair_pg_chunks_2026-07-08.json")
-            await backup_milvus_snapshot("docs/backup_repair_milvus_snapshot_2026-07-08.json")
+            await backup_pg_chunks(pool, missing, "data/reports/breslov/2026-07-08-milvus-relation-qa/backups/repair_pg_chunks.json")
+            await backup_milvus_snapshot("data/reports/breslov/2026-07-08-milvus-relation-qa/backups/repair_milvus_snapshot_before_repair.json")
 
             print(f"\n  ✅ Backups generados. No se ejecutaron writes.")
             return 0
@@ -601,12 +601,12 @@ async def main():
         # ── Dry-run mode ──────────────────────────────────────────────
         if is_dry_run:
             print("[3/4] Generando backup pre-dry-run...")
-            await backup_pg_chunks(pool, missing, "docs/backup_repair_pg_chunks_2026-07-08.json")
-            await backup_milvus_snapshot("docs/backup_repair_milvus_snapshot_2026-07-08.json")
+            await backup_pg_chunks(pool, missing, "data/reports/breslov/2026-07-08-milvus-relation-qa/backups/repair_pg_chunks.json")
+            await backup_milvus_snapshot("data/reports/breslov/2026-07-08-milvus-relation-qa/backups/repair_milvus_snapshot_before_repair.json")
 
             print("[4/4] Construyendo reporte dry-run...")
-            backup_info = {"pg_backup": "docs/backup_repair_pg_chunks_2026-07-08.json",
-                           "milvus_snapshot": "docs/backup_repair_milvus_snapshot_2026-07-08.json"}
+            backup_info = {"pg_backup": "data/reports/breslov/2026-07-08-milvus-relation-qa/backups/repair_pg_chunks.json",
+                           "milvus_snapshot": "data/reports/breslov/2026-07-08-milvus-relation-qa/backups/repair_milvus_snapshot_before_repair.json"}
             print_dry_run_report(missing, sha_result, backup_info)
             return 0
 
@@ -623,8 +623,8 @@ async def main():
                 return 1
 
             print("[3/4] Generando backups pre-repair...")
-            await backup_pg_chunks(pool, missing, "docs/backup_repair_pg_chunks_2026-07-08.json")
-            await backup_milvus_snapshot("docs/backup_repair_milvus_snapshot_2026-07-08.json")
+            await backup_pg_chunks(pool, missing, "data/reports/breslov/2026-07-08-milvus-relation-qa/backups/repair_pg_chunks.json")
+            await backup_milvus_snapshot("data/reports/breslov/2026-07-08-milvus-relation-qa/backups/repair_milvus_snapshot_before_repair.json")
 
             print("[4/4] Embed + Upsert...")
             embed_result = embed_and_upsert(missing, dry_run=False, batch_size=args.batch_size)

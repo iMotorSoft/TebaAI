@@ -4,7 +4,7 @@
 **Rama:** `feature/console-backend-core`
 **HEAD:** `1547bf0`
 
-> **Resolución:** el `DRIFT_REAL` fue reparado y el baseline productivo quedó restaurado en 5102 chunks únicos. El cierre canónico está en `docs/breslov_milvus_productive_baseline_restoration_2026-07-08.md`; los conteos `3274/5102` de este informe describen el estado observado durante la reconciliación.
+> **Resolución:** el `DRIFT_REAL` fue reparado y el baseline productivo quedó restaurado en 5102 chunks únicos. El cierre canónico está en `milvus_productive_baseline_restoration.md`; los conteos `3274/5102` de este informe describen el estado observado durante la reconciliación.
 
 ## 1. Resumen ejecutivo
 
@@ -119,7 +119,7 @@ El lab del 2026-07-08 usó Milvus productivo como fuente vectorial y reportó co
 
 ## 12. Archivos creados/modificados
 
-- `docs/breslov_milvus_productive_count_reconciliation_2026-07-08.md` (nuevo — este informe)
+- `milvus_productive_count_reconciliation.md` (nuevo — este informe)
 
 ## 13. Fase recomendada en ese corte (completada)
 
@@ -135,4 +135,4 @@ Dado que es DRIFT_REAL con causa conocida y documentada, se requiere:
 6. Golden queries finales para confirmar match PG↔Milvus
 7. Dry-run + rollback plan antes de aplicar
 
-En ese corte, todo esto requería autorización explícita y quedaba fuera de la reconciliación read-only. La reparación y su cleanup posterior ya fueron completados; el cierre se documenta en `docs/breslov_milvus_productive_baseline_restoration_2026-07-08.md`.
+En ese corte, todo esto requería autorización explícita y quedaba fuera de la reconciliación read-only. La reparación y su cleanup posterior ya fueron completados; el cierre se documenta en `milvus_productive_baseline_restoration.md`.

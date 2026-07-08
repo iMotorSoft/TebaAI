@@ -1952,8 +1952,8 @@ Probe read-only del PDF complejo `LIKUTEY HALAJOT (Interior Final).pdf` (284 pá
 
 ### Outputs
 
-- `tmp/likutey_layout_probe/` — scripts de probe, blocks JSON, texto plano por página.
-- `docs/likutey_halajot_layout_probe_2026-07-05.md` — informe completo.
+- `../../data/reports/breslov/2026-07-05-likutey-layout/probe/` — scripts de probe, blocks JSON, texto plano por página.
+- `../../data/reports/breslov/2026-07-05-likutey-layout/layout_probe.md` — informe completo.
 
 ### Guardrails
 
@@ -2053,14 +2053,14 @@ Documento técnicamente y bibliográficamente listo para promoción a `ready` (c
 - `scripts/ingest_likutey_halajot_layout_aware.py`
 - `scripts/embed_likutey_full_batch.py`
 - `db/migrations/013_add_layout_aware_columns.sql`
-- `docs/likutey_halajot_layout_aware_ingestion_mvp_2026-07-05.md`
-- `docs/likutey_halajot_layout_aware_retrieval_audit_2026-07-05.md`
-- `docs/likutey_halajot_layout_aware_ingestion_audit_2026-07-05.md`
+- `../../data/reports/breslov/2026-07-05-likutey-layout/layout_aware_ingestion_mvp.md`
+- `../../data/reports/breslov/2026-07-05-likutey-layout/layout_aware_retrieval_audit.md`
+- `../../data/reports/breslov/2026-07-05-likutey-layout/layout_aware_ingestion_audit.md`
 - `scripts/audit_likutey_retrieval.py`
 
 ## Breslov Milvus Productive Baseline Restoration — 2026-07-08
 
-El desvío `3274/5102` fue diagnosticado como `DRIFT_REAL`, reparado y validado. El informe consolidado es `../../docs/breslov_milvus_productive_baseline_restoration_2026-07-08.md`.
+El desvío `3274/5102` fue diagnosticado como `DRIFT_REAL`, reparado y validado. El informe consolidado es `../../data/reports/breslov/2026-07-08-milvus-relation-qa/milvus_productive_baseline_restoration.md`.
 
 | Control vigente | Estado |
 |---|---:|
@@ -2123,7 +2123,7 @@ Wrapper `scripts/breslov_editorial_qa_acid_batch.py` + configuración `scripts/e
 
 ## Breslov Investigative Relation QA Backend Endpoint — 2026-07-08
 
-El endpoint backend autenticado está implementado; el informe canónico es `../../docs/breslov_relation_qa_backend_endpoint_2026-07-08.md`.
+El endpoint backend autenticado está implementado; el informe canónico es `../../data/reports/breslov/2026-07-08-milvus-relation-qa/relation_qa_backend_endpoint.md`.
 
 - ruta: `POST /library/relation-qa`;
 - scope: autorización server-side por `breslov_primary` y cadena tenant completa;

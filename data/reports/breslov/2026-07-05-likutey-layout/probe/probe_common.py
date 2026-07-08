@@ -5,7 +5,7 @@ Read-only analysis of PDF layout zones.
 import json, os, re
 from pathlib import Path
 
-OUT_DIR = Path("/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/tmp/likutey_layout_probe")
+OUT_DIR = Path(__file__).resolve().parent
 PDF_PATH = "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf"
 PAGE_W = 496
 PAGE_H = 694

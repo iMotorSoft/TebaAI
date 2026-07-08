@@ -3,7 +3,7 @@
 **Date:** 2026-07-08
 **Status:** EJECUTADO Y CERRADO
 
-> Este documento conserva el plan de cleanup. La operación eliminó las 1828 PK redundantes y cerró con 5102 chunks únicos, 0 duplicados y match PG↔Milvus 100%. El resultado canónico está en `docs/breslov_milvus_productive_baseline_restoration_2026-07-08.md`.
+> Este documento conserva el plan de cleanup. La operación eliminó las 1828 PK redundantes y cerró con 5102 chunks únicos, 0 duplicados y match PG↔Milvus 100%. El resultado canónico está en `milvus_productive_baseline_restoration.md`.
 
 ## 1. Problem
 

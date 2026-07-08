@@ -4,7 +4,7 @@
 **Rama:** `feature/console-backend-core`
 **HEAD inicial:** `1547bf0`
 
-> **Cierre post-restauración:** el lab se reejecutó después del repair y cleanup sobre 5102 chunks únicos. Obtuvo 56 hits vectoriales, 187 fragmentos y 0 evidencias sin PostgreSQL. La conclusión sigue válida y la limitación histórica de cobertura `3274/5102` queda resuelta. Véase `docs/breslov_milvus_productive_baseline_restoration_2026-07-08.md`.
+> **Cierre post-restauración:** el lab se reejecutó después del repair y cleanup sobre 5102 chunks únicos. Obtuvo 56 hits vectoriales, 187 fragmentos y 0 evidencias sin PostgreSQL. La conclusión sigue válida y la limitación histórica de cobertura `3274/5102` queda resuelta. Véase `milvus_productive_baseline_restoration.md`.
 
 ## 1. Objective
 
@@ -131,7 +131,7 @@ All five loops executed successfully:
 ## 9. Archivos creados
 
 - `SrvRestAstroLS_v1/backend/scripts/breslov_concept_relation_qa_lab.py` (nuevo)
-- `docs/breslov_concept_relation_qa_blood_speech_lab_2026-07-08.md` (este informe)
+- `concept_relation_qa_blood_speech_lab.md` (este informe)
 
 ## 10. Limitaciones
 

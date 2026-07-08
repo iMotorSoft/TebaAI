@@ -126,7 +126,7 @@ Justificación:
 ## 12. Archivos creados/modificados
 
 - `scripts/update_likutey_halajot_bibliographic_metadata.py` (nuevo)
-- `docs/likutey_halajot_metadata_reference_review_2026-07-05.md` (nuevo)
+- `data/reports/breslov/2026-07-05-likutey-layout/metadata_reference_review.md` (nuevo)
 
 ## 13. Próxima fase recomendada
 

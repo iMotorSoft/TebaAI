@@ -156,7 +156,7 @@ Página 23: "puntos buenos" no aparece textualmente (el texto usa "poco de bien"
 
 ## 12. Archivos modificados/creados en esta fase
 
-- `docs/likutey_halajot_layout_aware_ingestion_audit_2026-07-05.md`
+- `data/reports/breslov/2026-07-05-likutey-layout/layout_aware_ingestion_audit.md`
 
 ## 13. Próxima fase recomendada
 

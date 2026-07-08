@@ -32,6 +32,20 @@ TebaAI is a generic content platform. Breslov is the first configured collection
 
 Do not create `backend/app.py` without an ADR.
 
+## Development servers
+
+Use the repository launchers as the standard local development entrypoints.
+
+- backend: `./SrvRestAstroLS_v1/backend-dev.sh`;
+- frontend: `./SrvRestAstroLS_v1/astro-dev.sh`;
+- actions: `start`, `stop`, `restart`, `status`; no action defaults to `start`;
+- backend default: `uvicorn ls_iMotorSoft_Srv01:app` on `127.0.0.1:7008`;
+- frontend default: `astro dev` on `127.0.0.1:3008`;
+- optional local overrides: `TEBAAI_BACKEND_HOST`, `TEBAAI_BACKEND_PORT`, `TEBAAI_ASTRO_HOST`, `TEBAAI_ASTRO_PORT`;
+- backend-only local override file: `SrvRestAstroLS_v1/.env.backend-dev.local`.
+
+The launchers store PID files in `SrvRestAstroLS_v1/.dev-pids/` and logs in `SrvRestAstroLS_v1/.dev-logs/`. `stop` only signals a PID-file process after expected-command validation. Unknown listeners on the configured ports are reported and left untouched. The scripts must never start, stop, restart, migrate or reconfigure PostgreSQL, Milvus or LiteLLM.
+
 ## Context routing
 
 - configuration and secrets: `lat.md/global-configuration-facade-policy.md`;

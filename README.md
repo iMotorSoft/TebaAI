@@ -14,6 +14,30 @@ TebaAI is a generic content and bibliographic retrieval platform for iMotorSoft 
 
 The platform currently retrieves bibliographic evidence. It does not generate RAG answers or interpretative LLM responses.
 
+## Development servers
+
+Use the project launchers from `SrvRestAstroLS_v1/` as the standard way to run local development servers.
+
+Backend:
+
+```bash
+./SrvRestAstroLS_v1/backend-dev.sh start
+./SrvRestAstroLS_v1/backend-dev.sh status
+./SrvRestAstroLS_v1/backend-dev.sh stop
+```
+
+Frontend:
+
+```bash
+./SrvRestAstroLS_v1/astro-dev.sh start
+./SrvRestAstroLS_v1/astro-dev.sh status
+./SrvRestAstroLS_v1/astro-dev.sh stop
+```
+
+`restart` is also supported, and omitting the action defaults to `start`. `backend-dev.sh` starts `ls_iMotorSoft_Srv01:app` with `uvicorn` on `127.0.0.1:7008` by default. `astro-dev.sh` starts Astro on `127.0.0.1:3008` by default. The ports can be overridden with `TEBAAI_BACKEND_PORT` and `TEBAAI_ASTRO_PORT` only when an intentional local conflict requires it.
+
+The launchers write PID files under `SrvRestAstroLS_v1/.dev-pids/` and logs under `SrvRestAstroLS_v1/.dev-logs/`. `stop` only signals a PID file process after validating its command; unknown listeners on `7008` or `3008` are reported and left untouched. The scripts must not be used to manage PostgreSQL, Milvus or LiteLLM.
+
 ## Local validation
 
 Backend:

@@ -28,6 +28,20 @@ No hacer commit, push, merge, rebase, reset, clean, stash, checkout forzado ni b
 
 No crear `SrvRestAstroLS_v1/backend/app.py` sin un ADR que apruebe la excepcion.
 
+## Servidores de desarrollo
+
+Los launchers canonicos para desarrollo local viven en `SrvRestAstroLS_v1/`.
+
+- backend: `./SrvRestAstroLS_v1/backend-dev.sh`;
+- frontend: `./SrvRestAstroLS_v1/astro-dev.sh`;
+- acciones soportadas: `start`, `stop`, `restart`, `status`; sin accion equivale a `start`;
+- `backend-dev.sh` ejecuta `uvicorn ls_iMotorSoft_Srv01:app` sobre `127.0.0.1:7008` por defecto;
+- `astro-dev.sh` ejecuta `astro dev` sobre `127.0.0.1:3008` por defecto;
+- overrides permitidos solo para conflictos locales intencionales: `TEBAAI_BACKEND_HOST`, `TEBAAI_BACKEND_PORT`, `TEBAAI_ASTRO_HOST`, `TEBAAI_ASTRO_PORT`;
+- `backend-dev.sh` puede cargar `SrvRestAstroLS_v1/.env.backend-dev.local` como overrides locales no versionados.
+
+Estos scripts guardan PID files en `SrvRestAstroLS_v1/.dev-pids/` y logs en `SrvRestAstroLS_v1/.dev-logs/`. `stop` solo envia señales a un PID file validado por comando esperado; si el puerto esta ocupado por un proceso desconocido, lo reportan y no lo matan. No deben usarse para gestionar PostgreSQL, Milvus ni LiteLLM.
+
 ## Ramas
 
 | Rama | Responsabilidad |

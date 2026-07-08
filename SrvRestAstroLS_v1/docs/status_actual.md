@@ -2,7 +2,7 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-08 (restauración del baseline productivo Milvus Breslov)
+Ultima actualizacion: 2026-07-08 (estandar operativo de servidores dev)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
 
@@ -20,6 +20,7 @@ Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta r
 - Biblioteca con ingesta de Markdown, texto y PDF, chunking, PostgreSQL FTS y busqueda HTTP autenticada.
 - Milvus 2.6 funciona como indice vectorial derivado; PostgreSQL conserva texto y metadata como fuente de verdad.
 - LiteLLM se usa para embeddings `text-embedding-3-small`; no existe modelo generativo ni RAG conversacional.
+- Servidores dev canonicos: `SrvRestAstroLS_v1/backend-dev.sh` para Litestar en `127.0.0.1:7008` y `SrvRestAstroLS_v1/astro-dev.sh` para Astro en `127.0.0.1:3008`.
 
 Referencias canonicas:
 
@@ -30,6 +31,19 @@ Referencias canonicas:
 - `lat.md/service-preflight-methodology.md`;
 - `lat.md/page-mapping-failure-diagnosis.md`;
 - `lat.md/breslov-test-corpus-policy.md`.
+
+## Servidores dev operativos
+
+Los scripts de desarrollo estan documentados como entrypoints locales canonicos y no gestionan servicios permanentes.
+
+- `SrvRestAstroLS_v1/backend-dev.sh`: soporta `start`, `stop`, `restart`, `status` y ejecuta `.venv/bin/uvicorn ls_iMotorSoft_Srv01:app --host 127.0.0.1 --port 7008` por defecto.
+- `SrvRestAstroLS_v1/astro-dev.sh`: soporta `start`, `stop`, `restart`, `status` y ejecuta `astro dev --host 127.0.0.1 --port 3008` por defecto.
+- Overrides locales: `TEBAAI_BACKEND_HOST`, `TEBAAI_BACKEND_PORT`, `TEBAAI_ASTRO_HOST`, `TEBAAI_ASTRO_PORT`; backend tambien puede cargar `SrvRestAstroLS_v1/.env.backend-dev.local`.
+- PID files: `SrvRestAstroLS_v1/.dev-pids/`; logs: `SrvRestAstroLS_v1/.dev-logs/`.
+- No ejecutan `docker compose`, `systemctl`, `service`, `pkill`, `killall`, migraciones, ingesta, embeddings ni llamadas directas a OpenAI.
+- No inician, detienen, reinician ni reconfiguran PostgreSQL, Milvus o LiteLLM.
+- `stop` solo envia señales a un PID file propio despues de validar el comando esperado.
+- Si el puerto esta ocupado por un proceso desconocido, lo reportan y no lo matan.
 
 ## Corte runtime: `library_collections_legacy` → `knowledge_scopes` — 2026-07-04
 

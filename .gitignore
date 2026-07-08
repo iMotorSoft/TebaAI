@@ -42,6 +42,8 @@ blob-report/
 *.swo
 .DS_Store
 Thumbs.db
+SrvRestAstroLS_v1/.dev-pids/
+SrvRestAstroLS_v1/.dev-logs/
 
 # Generated reports and heavy data
 data/source/*

@@ -4,7 +4,7 @@ Este tablero resume la arquitectura viva de TebaAI y evita repetir la historia t
 
 Objetivo: `arquitectura-viva`
 
-Ultima actualizacion: 2026-06-29 (aislamiento de corpus bibliografico de prueba)
+Ultima actualizacion: 2026-07-08 (estandar operativo de servidores dev)
 
 ## Estado general
 
@@ -15,6 +15,7 @@ LAT documenta configuración, persistencia, autenticación, retrieval, validaci�
 - LiteLLM provee embeddings y será el gateway de modelos futuros.
 - TebaAI recupera evidencia bibliográfica; todavía no genera respuestas RAG.
 - Breslov es la primera colección, no una dependencia de dominio del núcleo genérico.
+- `SrvRestAstroLS_v1/backend-dev.sh` y `SrvRestAstroLS_v1/astro-dev.sh` son los entrypoints operativos locales para servidores dev.
 
 ## Decisiones vigentes
 

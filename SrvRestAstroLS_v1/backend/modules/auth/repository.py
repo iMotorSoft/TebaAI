@@ -9,6 +9,10 @@ from modules.auth.domain import User, UserRole
 from infrastructure.postgres.transaction import execute, fetch_all, fetch_one
 
 
+class TenantContextConfigurationError(RuntimeError):
+    """The data-configured default tenant context is missing or ambiguous."""
+
+
 class UserRepository:
     def __init__(self, conn: AsyncConnection) -> None:
         self._conn = conn
@@ -33,7 +37,74 @@ class UserRepository:
                 "updated_at": user.updated_at,
             },
         )
+        await self._assign_default_tenant_memberships(user)
         return user
+
+    async def _assign_default_tenant_memberships(self, user: User) -> None:
+        """Assign new users to the data-configured default tenant context."""
+        context = await fetch_one(
+            self._conn,
+            """
+            WITH candidates AS (
+                SELECT o.id AS organization_id, w.id AS workspace_id, p.id AS project_id
+                FROM organizations o
+                JOIN workspaces w
+                  ON w.organization_id = o.id
+                JOIN projects p
+                  ON p.workspace_id = w.id
+                 AND p.organization_id = o.id
+                WHERE p.metadata @> '{"default_user_context": true}'::jsonb
+                  AND o.status = 'active'
+                  AND w.status = 'active'
+                  AND p.status = 'active'
+            )
+            SELECT organization_id, workspace_id, project_id
+            FROM candidates
+            WHERE (SELECT count(*) FROM candidates) = 1
+            """,
+        )
+        if context is None:
+            raise TenantContextConfigurationError(
+                "Exactly one active default tenant context is required"
+            )
+
+        membership_role = {
+            UserRole.ADMIN: "admin",
+            UserRole.EDITOR: "member",
+            UserRole.VIEWER: "viewer",
+        }[user.role]
+        params = {
+            "user_id": str(user.id),
+            "membership_role": membership_role,
+            **context,
+        }
+        await execute(
+            self._conn,
+            """
+            INSERT INTO organization_members (organization_id, user_id, role, status)
+            VALUES (%(organization_id)s, %(user_id)s, %(membership_role)s::member_role, 'active')
+            ON CONFLICT (organization_id, user_id) DO NOTHING
+            """,
+            params,
+        )
+        await execute(
+            self._conn,
+            """
+            INSERT INTO workspace_members (workspace_id, user_id, role, status)
+            VALUES (%(workspace_id)s, %(user_id)s, %(membership_role)s::member_role, 'active')
+            ON CONFLICT (workspace_id, user_id) DO NOTHING
+            """,
+            params,
+        )
+        await execute(
+            self._conn,
+            """
+            INSERT INTO project_members (project_id, user_id, role, status)
+            VALUES (%(project_id)s, %(user_id)s, %(membership_role)s::member_role, 'active')
+            ON CONFLICT (project_id, user_id) DO NOTHING
+            """,
+            params,
+        )
 
     async def get_by_id(self, user_id: UUID) -> User | None:
         row = await fetch_one(

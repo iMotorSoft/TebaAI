@@ -2,7 +2,7 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-06-29 (corpus de prueba y status documental)
+Ultima actualizacion: 2026-07-08 (restauración del baseline productivo Milvus Breslov)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
 
@@ -1820,6 +1820,306 @@ RIESGOS RESIDUALES:
     que existen en PG. Las entidades no contaminan la búsqueda (no aparecen en ANN search).
   - Koren/Yevamot fue removido de breslov_primary y descartado como corpus de prueba técnica.
 ```
+
+## Breslov Research Conversation MVP — Phase 0–3 2026-07-05
+
+```text
+ESTADO:   IMPLEMENTADO (conversation analyzer + research schemas + research service + golden questions)
+PRÓXIMA:  Fase 6 (formato textual de respuesta) + Fase 7 (tests/golden full con DB real) + integración frontend
+
+CONTEXTO:
+  El MVP investigativo existente (scripts/research_assistant_source_map.py) contenía evidence
+  classification, source map, query expansion y retrieval FTS+vectorial, pero carecía de:
+  - Análisis conversacional estructurado (intención, idioma, modo de investigación)
+  - Modelos Pydantic para el contrato conversacional
+  - Integración LiteLLM generativa (solo embeddings)
+  - Servicio orquestador completo (query → análisis → retrieval → evidencia → respuesta)
+
+COMPONENTES CREADOS:
+
+  1. modules/library/research_schemas.py — Pydantic models:
+     - EvidenceLevel (literal, direct_quote, paraphrase, strong_thematic_reference,
+       remez_derash_inference, not_found)
+     - ResearchIntent (find_sources, explain_concept, compare_sources, locate_literal,
+       list_books, evidence_check, out_of_scope, unclear)
+     - ResearchMode (bibliographic, conceptual, comparative, literal, thematic, interpretive)
+     - RetrievalStrategy, SafetyFlags, ConversationAnalysisResult
+     - EvidenceClassification, SourceMapEntry, ResearchAnswer
+
+  2. modules/library/conversation_analyzer.py — ResearchConversationAnalyzer:
+     - LiteLLM-based structured analysis via model deseado gpt5.5-nano
+     - Output JSON validado contra ConversationAnalysisResult
+     - Fallback determinístico completo (idioma, intención, términos, modo, estrategia)
+     - Topic expansion vía tablas controladas (miedo, tristeza, tzadik, etc.)
+     - Detección de documentos solicitados en la query
+
+  3. modules/library/research_service.py — BreslovResearchService:
+     - Orquestación completa: query → conversation_analysis → retrieval → PG canonical → evidence
+     - FTS + vector search productivo (tebaai_breslov_chunks_v1)
+     - PG como fuente canónica (Milvus solo ranking)
+     - Evidence classification con los 6 niveles
+     - Source map estructurado con excerpt, notas, limitaciones
+
+  4. scripts/research_assistant_source_map.py — Actualizado:
+     - Nuevo flag --analyze (conversation analysis previa)
+     - Nuevo flag --research-answer (BreslovResearchService completo)
+
+  5. scripts/breslov_research_conversation_golden.py — Golden questions:
+     - 15 preguntas de investigación Breslov reales
+     - Validación de intención, retrieval, evidencia, source map
+     - Modo --dry-run (solo intención) y modo completo (con retrieval)
+     - Reporte PASS/WARN/FAIL
+
+CONFIGURACIÓN:
+
+  core/config.py — nuevos campos:
+    research_conversation_model: str = ""  → se espera TEBAAI_RESEARCH_CONVERSATION_MODEL=gpt5.5-nano
+    research_embedding_model_alias: str = "openai_text_embedding_3_small"
+    breslov_productive_collection: str = "tebaai_breslov_chunks_v1"
+
+  globalVar.py — nuevos exports:
+    RESEARCH_CONVERSATION_MODEL
+    RESEARCH_EMBEDDING_MODEL_ALIAS
+    BRESLOV_PRODUCTIVE_COLLECTION
+
+VALIDACIÓN:
+
+  - test_research_schemas.py: 29 tests, todos PASS
+  - test_conversation_analyzer.py: 16 tests, todos PASS
+  - Suite completa (excluyendo test_ingest_test_candidate): 552 PASS, 2 pre-existing FAIL
+  - Mis nuevos tests: 45/45 PASS
+
+GUARDRAILS:
+  ✅ Corpus Breslov intacto (8 docs ready, 5102 chunks, 5102 embeddings)
+  ✅ PG 5102/5102 intacto
+  ✅ Milvus productivo 5102 canónico intacto
+  ✅ Koren/Yevamot no reintroducido
+  ✅ No reingesta
+  ✅ No embeddings nuevos
+  ✅ No OpenAI key directa
+  ✅ LiteLLM como gateway único
+  ✅ Texto canónico desde PostgreSQL
+  ✅ Frontend no tocado
+  ✅ Team360 no tocado
+  ✅ Servicios no reiniciados
+
+LIMITACIONES:
+  - Conversación: modelo gpt5.5-nano no verificado contra LiteLLM real (depende de entorno)
+  - Retrieval: Milvus productivo usado (no test), ok para corpus ready
+  - Evidencia: classification basada en heuristicas (literal, direct_quote, thematic, remez)
+  - Metadata: falta integrar reference_label de PG en source map
+  - Golden questions: no ejecutadas con DB real aún (solo dry-run de intención)
+  - UX: sin frontend, solo CLI y respuesta estructurada JSON
+```
+
+## Breslov Layout Probe — Likutey Halajot Interior Final 2026-07-05
+
+Probe read-only del PDF complejo `LIKUTEY HALAJOT (Interior Final).pdf` (284 páginas, 4.4 MB). **No ingesta, No embeddings, No Milvus.**
+
+### Resultados
+
+| Métrica | Valor |
+|---|---|
+| PDF páginas | 284 |
+| Texto embebido | Sí (no OCR) |
+| Hebrew encoding | SI-960 (TeX) |
+| Páginas analizadas | 27 |
+| Printed→PDF mapping | 207/284 |
+| Golden questions | 15/15 respondibles |
+| Veredicto | PASS (layout-aware ingestion viable) |
+
+### Layout descubierto
+
+- **Páginas impares**: header hebreo SI-960 + fuente hebrea + "Likutey Halajot Explicado" + explicación española + marginal sources (x>350) + footnotes 2 columnas.
+- **Páginas pares**: header español + explicación española + footnotes.
+- Node path extraíble con patrones regex (header hebreo/español + halajá).
+- 5 tipos de source refs detectados: Salmos, Avot, Rosh HaShaná, Shuljan Aruj, Zohar.
+- 5 tipos de crossrefs: note_ref, backward_ref, forward_ref, ibid, section_ref.
+
+### Outputs
+
+- `tmp/likutey_layout_probe/` — scripts de probe, blocks JSON, texto plano por página.
+- `docs/likutey_halajot_layout_probe_2026-07-05.md` — informe completo.
+
+### Guardrails
+
+- ✅ No ingesta
+- ✅ No embeddings
+- ✅ No Milvus
+- ✅ Corpus Breslov ready intacto (8 docs, 5102 chunks, 5102 embeddings)
+- ✅ No Koren/Yevamot
+- ✅ No frontend
+- ✅ No Team360
+- ✅ Servicios no reiniciados
+
+### Recomendación
+
+Proceder a `Breslov Layout-Aware Ingestion MVP — LIKUTEY HALAJOT Interior Final` cuando corresponda.
+
+## Breslov Layout-Aware Ingestion MVP — LIKUTEY HALAJOT Interior Final 2026-07-07
+
+PDF complejo (SI-960 hebreo + español + margen + notas) ingerido mediante pipeline layout-aware dedicado.
+
+### Documento
+
+| Campo | Valor |
+|---|---|
+| Document ID | `47768aac-704e-4296-9649-53b9ea037096` |
+| Título | Likutey Halajot Explicado — Interior Final |
+| Status | `test_candidate` |
+| Ingestion profile | `layout_aware_likutey_halajot` |
+| Pipeline | layout-aware (NO simple) |
+| Productivo tocado | NO |
+
+### Conteos
+
+| Métrica | Valor |
+|---|---|
+| Páginas PDF analizadas | 284 (16 blank) |
+| Bloques totales | 2.652 |
+| source_hebrew | 461 |
+| main_explanation_es | 1.122 |
+| marginal_source | 181 |
+| footnote | 458 |
+| page_header | 249 |
+| section_marker | 181 |
+| Chunks citable | 2.222 |
+| Embeddings PG | 2.222 |
+| Milvus test entities | 2.222 |
+| Round-trip PG↔Milvus | 100% |
+| Breslov ready docs intactos | 8 |
+| Breslov ready chunks intactos | 5.102 |
+
+### Audit (2026-07-07)
+
+**Recomendación inicial: PROMOVIBLE_CON_OBSERVACIONES** (metadata incompleta).
+
+### Metadata/Reference Review (2026-07-07)
+
+Metadata completada desde PDF páginas 1-4. Referencias verificadas en páginas 23/32/37 — todas correctas.
+
+**Recomendación actualizada: PROMOVIBLE.**
+
+| Check | Estado |
+|---|---|
+| Metadata bibliográfica | ✅ Completa (autor, editor, traductor, editorial, año, edición) |
+| Referencias impresas | ✅ Verificadas, 0 dudosas |
+| Golden queries (híbridas) | 15/15 PASS |
+| PG chunks | 2.652 intactos |
+| Embeddings | 2.222 intactos |
+| Milvus test | 2.222 intacto |
+| Productivo | No tocado |
+| Ready docs | 8 intactos |
+| Documento | `test_candidate` (no promovido) |
+
+Documento técnicamente y bibliográficamente listo para promoción a `ready` (corpus estable interno, `internal_only`).
+
+### Golden queries
+
+7/15 PASS → **15/15 PASS** tras Retrieval Audit (2026-07-07). Fixes: COSINE metric, query variant normalization (jesed/jésed/chesed, Rema/Remá, Shuljan/Shulján, etc.), FTS search vectors backfill, page-specific verification, cross-reference metadata search, hybrid FTS+vector merge.
+
+### Migración aplicada
+
+`013_add_layout_aware_columns.sql` — columnas `block_type`, `block_subtype`, `evidence_role`, `citable`, `layout_confidence`, `ingestion_profile`, `printed_page_label`.
+
+### Results
+- Pipeline simple no usado
+- Productivo no tocado
+- No promovido a ready
+- Corpus Breslov ready intacto
+- Milvus productivo intacto
+- Solo LiteLLM (no OpenAI directa)
+- Frontend/Team360 no tocado
+- Servicios no reiniciados
+
+### Archivos creados
+
+- `scripts/likutey_layout_parser.py`
+- `scripts/validate_likutey_layout_blocks.py`
+- `scripts/ingest_likutey_halajot_layout_aware.py`
+- `scripts/embed_likutey_full_batch.py`
+- `db/migrations/013_add_layout_aware_columns.sql`
+- `docs/likutey_halajot_layout_aware_ingestion_mvp_2026-07-05.md`
+- `docs/likutey_halajot_layout_aware_retrieval_audit_2026-07-05.md`
+- `docs/likutey_halajot_layout_aware_ingestion_audit_2026-07-05.md`
+- `scripts/audit_likutey_retrieval.py`
+
+## Breslov Milvus Productive Baseline Restoration — 2026-07-08
+
+El desvío `3274/5102` fue diagnosticado como `DRIFT_REAL`, reparado y validado. El informe consolidado es `../../docs/breslov_milvus_productive_baseline_restoration_2026-07-08.md`.
+
+| Control vigente | Estado |
+|---|---:|
+| Colección productiva | `tebaai_breslov_chunks_v1` |
+| Baseline lógico | 5102 chunks únicos |
+| Duplicados por `chunk_id` | 0 |
+| Match PG↔Milvus | 100% |
+| `source_type=''` stale | 0 |
+| Likutey layout `test_candidate` en productivo | No |
+
+La diferencia de 1828 entidades se originó en el cleanup del 2026-07-05, que trató `source_type=''` como stale y eliminó entidades canónicas de tres documentos heredados. El repair restauró esos 1828 vectores; una reejecución generó 1828 duplicados, posteriormente eliminados conservando la PK referenciada por PostgreSQL.
+
+Relation QA fue reejecutado después del cleanup final: 56 hits vectoriales, 187 fragmentos y 0 evidencias sin PostgreSQL. El resultado es válido sobre cobertura productiva completa.
+
+### Refinamiento de retrieval 2026-07-08
+
+Mejoras aplicadas al script `scripts/breslov_concept_relation_qa_lab.py`:
+
+1. **FTS híbrido**: `websearch_to_tsquery` con ranking + ILIKE fallback. Detección automática de idioma (spanish→search_vector_es, english/hebrew→search_vector_simple).
+2. **Patrones relación explícita**: 12 patrones direccionales A→B y B→A, incluyendo hebreo (`קשר`, `חיבור`).
+3. **Prompt IA editorial**: estructura markdown con separación cita literal vs interpretación, nivel de certeza, fuentes exactas.
+
+Resultados:
+
+| Métrica | Antes | Después |
+|---|---|---|
+| FTS habla (ES) | 60 | **67** |
+| Total fragments (ES) | 181 | **192** |
+| Temática (ES) | 6 | **10** |
+| Total fragments (HE) | 256 | **268** |
+| Sin PG | 0 | 0 |
+
+### Editorial QA Test Batch 2026-07-08
+
+Tres casos investigativos ejecutados contra el flujo refinado:
+
+| Caso | Consulta | Hallazgo | Conexión |
+|---|---|---|---|
+| 1 | DIVIDIENDO LA NOCHE / Jatzot | Jatzot identificado como "El Lamento de Medianoche" en Cruzando el Puente (pp. 230-231). Frase exacta no aparece literal; la conexión es inferida. | INFERIDA (certeza media) |
+| 2 | Tzafón / Norte → Mal | Cita literal de Jeremías 1:14 en La Potencia de la Plegaria (p. 88): "Desde tzafón (norte) vendrá el mal". | **LITERAL** (certeza alta) |
+| 3 | Bereshit Rabah | 7+ citas explícitas en Likutey Halajot Explicado, Likutey Halajot LM II 8, El Jardín de las Almas, Cruzando el Puente. | **LITERAL** (certeza alta) |
+
+0 evidencias sin PostgreSQL en todos los casos. Respuesta IA editorial con separación cita literal vs interpretación.
+
+El flujo queda validado para implementación de endpoint `POST /library/relation-qa`.
+
+### Editorial QA Acid Batch — Likutey Halajot 2026-07-08
+
+Wrapper `scripts/breslov_editorial_qa_acid_batch.py` + configuración `scripts/editorial_qa_cases_likutey_5.json` para 5 casos críticos.
+
+| Caso | Fragments | Sin PG | Acid PASS |
+|---|---|---|---|
+| Azamra / Puntos Buenos / Poco de Bien | 162 | 0 | ✅ (0 FAIL) |
+| Dividiendo la Noche / Jatzot / Medianoche | 136 | 0 | ✅ (0 FAIL) |
+| Tzafón / Norte / Mal | 143 | 0 | ✅ (0 FAIL) |
+| Elevando el Habla / Dibur / Korbanot | 276 | 0 | ✅ (0 FAIL) |
+| Bereshit Rabah | 171 | 0 | ✅ (0 FAIL) |
+
+0 evidencias sin PostgreSQL. Toda fuente resuelve a PG. 8 ready docs intactos. Likutey layout test_candidate no tocado.
+
+## Breslov Investigative Relation QA Backend Endpoint — 2026-07-08
+
+El endpoint backend autenticado está implementado; el informe canónico es `../../docs/breslov_relation_qa_backend_endpoint_2026-07-08.md`.
+
+- ruta: `POST /library/relation-qa`;
+- scope: autorización server-side por `breslov_primary` y cadena tenant completa;
+- fuentes: snippets canónicos PostgreSQL, deduplicados por `chunk_id`;
+- retrieval: FTS, ILIKE, patrones, coocurrencia y Milvus read-only;
+- IA: `openai_gpt-5.4-nano` vía LiteLLM, JSON validado y fallback determinístico;
+- evidencia: tipos finos, source map, warnings, literalidad e inferencia separadas;
+- validación: 638 tests backend PASS y seis casos reales sin fuentes huérfanas;
+- migración 012 aplicada para memberships bootstrap; corpus intacto en 8 docs/5102 chunks ready;
+- pendiente operativo: curl 200 autenticado cuando el entorno provea credenciales E2E.
 
 ## Historial
 

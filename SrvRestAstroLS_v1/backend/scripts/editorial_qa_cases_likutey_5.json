@@ -1,0 +1,67 @@
+[
+  {
+    "case_id": "azamra_points_good",
+    "title": "Azamra / Puntos Buenos / Poco de Bien",
+    "question": "¿Dónde aparece la enseñanza de los puntos buenos en el corpus Breslov? ¿Es literal 'puntos buenos' o el texto usa 'poco de bien'? ¿Aparece Azamra?",
+    "concept_a": "bueno",
+    "concept_b": "punto",
+    "variants": ["puntos buenos", "punto bueno", "poco de bien", "Azamra", "Cantaré a mi Dios", "poco que me queda", "aún un poco de bien", "ועוד מעט", "בעודי", "Azamra LeElohai BeOdi"],
+    "expected_topics": ["Azamra", "Halajá 1", "Likutey Moharán 282", "Salmos 37:10", "Salmos 146:2", "Avot 1:6"],
+    "expected_evidence_types": ["literal_phrase", "biblical_citation", "rabbinic_source", "breslov_text", "footnote_reference"],
+    "editorial_risks": ["Confundir 'puntos buenos' (concepto editorial) con 'poco de bien' (frase literal)", "Atribuir Salmos como enseñanza Breslov", "No distinguir LM I 282 del desarrollo de Rabí Natán en Likutey Halajot"],
+    "must_not_claim": ["Afirmar que 'puntos buenos' aparece literalmente en todo fragmento si el texto usa 'poco de bien'", "Inventar fuente si no aparece", "Citar explicación editorial como texto hebreo original de Rabí Natán", "Omitir distinción entre LM I 282 y desarrollo de Rabí Natán"],
+    "allow_test_candidate_readonly": true
+  },
+  {
+    "case_id": "dividing_night_jatzot",
+    "title": "Dividiendo la Noche / Jatzot / Medianoche",
+    "question": "¿Dónde aparece 'dividiendo la noche' o la idea de jatzot/medianoche en el corpus Breslov? ¿Aparece Tikún Jatzot? ¿Hay conexión con el arpa de David y el viento del norte?",
+    "concept_a": "noche",
+    "concept_b": "jatzot",
+    "variants": ["dividiendo la noche", "dividir la noche", "división de la noche", "medianoche", "jatzot", "chatzot", "Tikún Jatzot", "Tikun Chatzot", "arpa de David", "arpa", "norte", "viento del norte", "rúaj tzafón", "ruaj tzafon", "חצות", "חצות לילה", "לילה", "רוח צפונית", "כנור דוד"],
+    "expected_topics": ["jatzot", "Tikún Jatzot", "medianoche", "arpa de David", "viento del norte"],
+    "expected_evidence_types": ["literal_phrase", "explicit_reference", "rabbinic_source", "footnote_reference", "marginal_source", "thematic_relation"],
+    "editorial_risks": ["Afirmar 'dividiendo la noche' es frase literal sin verificarlo", "Confundir jatzot con cualquier mención de noche", "Convertir arpa de David o viento del norte en doctrina Breslov si aparece como fuente talmúdica o nota", "Presentar explicación editorial como cita de Rabí Natán"],
+    "must_not_claim": ["Decir que 'dividiendo la noche' es frase literal si no aparece así", "Confundir jatzot con cualquier mención de noche", "Convertir arpa de David o viento del norte en doctrina Breslov si aparece como fuente talmúdica", "Presentar explicación editorial como cita del Rabí Natán"],
+    "allow_test_candidate_readonly": true
+  },
+  {
+    "case_id": "tzafon_north_evil",
+    "title": "Tzafón / Norte / Mal",
+    "question": "¿Dónde aparece 'desde tzafón / desde el norte vendrá el mal' y cómo lo usa el texto? ¿Es cita de Jeremías 1:14? ¿Hay explicación simbólica de tzafón?",
+    "concept_a": "norte",
+    "concept_b": "mal",
+    "variants": ["tzafón", "tzafon", "tzafun", "norte", "north", "desde el norte vendrá el mal", "del norte vendrá el mal", "mal desde el norte", "evil from the north", "מצפון תפתח הרעה", "מצפון", "צפון", "Jeremías", "Yirmiyahu", "ירמיהו", "Jeremiah 1:14", "Yirmiyahu 1:14"],
+    "expected_topics": ["Jeremías 1:14", "tzafón simbólico", "mal desde el norte", "viento del norte"],
+    "expected_evidence_types": ["biblical_citation", "literal_phrase", "derash_interpretation", "breslov_text", "explicit_reference"],
+    "editorial_risks": ["Afirmar que Jeremías enseña una doctrina Breslov", "Convertir cita bíblica en fuente directa para inferencia sin marcar derash", "Confundir norte físico, viento del norte, tzafón simbólico y mal del norte", "Usar 'tzafón' como sinónimo automático de mal si el texto no lo sostiene"],
+    "must_not_claim": ["Afirmar que Jeremías enseña directamente una doctrina Breslov", "Convertir una cita bíblica en fuente directa para una inferencia sin marcar derash", "Confundir norte físico, viento del norte, tzafón simbólico y mal del norte", "Usar tzafón como sinónimo automático de mal si el texto no lo sostiene"],
+    "allow_test_candidate_readonly": true
+  },
+  {
+    "case_id": "elevating_speech_dibur",
+    "title": "Elevando el Habla / Dibur / Korbanot",
+    "question": "¿Dónde aparece la enseñanza sobre elevar el habla / dibur en el corpus Breslov? ¿Cómo se relacionan dibur, Maljut, Shejiná, plegaria y korbanot?",
+    "concept_a": "habla",
+    "concept_b": "elevar",
+    "variants": ["habla", "dibur", "dibbur", "palabra hablada", "elevando el habla", "elevar el habla", "Maljut", "Shejiná", "plegaria", "korbanot", "ofrendas", "medaber", "hablante", "Dios mío abre mis labios", "abre mis labios", "דיבור", "דבור", "מדבר", "פה", "מלכות", "שכינה", "קרבנות"],
+    "expected_topics": ["dibur como habla", "Maljut/dibur", "plegaria y dibur", "korbanot y dibur", "puntos buenos → plegaria → dibur"],
+    "expected_evidence_types": ["literal_phrase", "thematic_relation", "derash_interpretation", "breslov_text", "footnote_reference", "ai_inference"],
+    "editorial_risks": ["Forzar conexión con sangre si el texto no la tiene", "Decir que todo uso de 'palabra' es dibur técnico", "Presentar nota kabalística como enseñanza literal de Rabí Natán", "Mezclar Maljut/Shejiná/dibur si solo aparecen en explicación editorial"],
+    "must_not_claim": ["No forzar conexión con sangre", "No decir que todo uso de 'palabra' es dibur técnico", "No presentar una nota kabalística como si fuera enseñanza literal de Rabí Natán", "No mezclar Maljut/Shejiná/dibur si solo aparecen en explicación editorial"],
+    "allow_test_candidate_readonly": true
+  },
+  {
+    "case_id": "bereshit_rabah",
+    "title": "Bereshit Rabah",
+    "question": "¿Dónde aparece Bereshit Rabah en el corpus Breslov y qué función cumple en la argumentación? ¿Hay cita desarrollada o solo referencia? ¿Qué enseñanza sostiene?",
+    "concept_a": "Bereshit",
+    "concept_b": "Rabah",
+    "variants": ["Bereshit Rabah", "Bereshit Rabbah", "Bereishit Rabbah", "Bereshit Rabba", "Midrash Rabah", "Midrash Rabbah", "בראשית רבה", "בר", "Bereshit Rabah 2:1", "Bereshit Rabah 6:4"],
+    "expected_topics": ["Midrash Rabah", "Creación", "Mashíaj", "luna", "Mishkán"],
+    "expected_evidence_types": ["explicit_reference", "rabbinic_source", "footnote_reference", "marginal_source", "biblical_citation"],
+    "editorial_risks": ["Presentar Bereshit Rabah como texto Breslov", "Confundir Midrash con Zohar", "Presentar nota como texto principal", "Decir que hay cita completa si solo hay referencia", "Mezclar Bereshit Rabah 2:1 con 6:4"],
+    "must_not_claim": ["No presentar Bereshit Rabah como texto Breslov", "No confundir Midrash con Zohar", "No presentar una nota como texto principal", "No decir que hay cita completa si solo hay referencia", "No mezclar Bereshit Rabah 2:1 con 6:4"],
+    "allow_test_candidate_readonly": true
+  }
+]

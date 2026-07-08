@@ -28,7 +28,9 @@ mindmap
       JWT access
       Opaque refresh
       Role guards
+      Tenant context
     Library
+      Knowledge scopes
       Documents
       Chunks
       Bibliographic metadata
@@ -37,7 +39,12 @@ mindmap
       PostgreSQL FTS
       Milvus vectors
       LiteLLM embeddings
+      AI gateway and aliases
       Hybrid merge
+    Frontend
+      Public configuration
+      UI wrappers
+      pnpm toolchain
     Validation
       Service preflight
       Playwright gate
@@ -50,10 +57,13 @@ mindmap
 Every branch resolves to one or more stable documents.
 
 - platform and conventions: [[lat]];
+- documentation: [[lat-documentation-policy]];
 - configuration: [[global-configuration-facade-policy]];
 - persistence: [[postgres-driver-policy]];
-- security: [[authentication-security-policy]];
-- library and retrieval: [[library-retrieval-models-policy]], [[bibliographic-metadata-audit]], [[page-aware-metadata-mapping-audit]], [[page-metadata-enrichment]];
+- security: [[authentication-security-policy]], [[tenant-context-authorization-policy]];
+- frontend: [[frontend-implementation-policy]];
+- AI gateway: [[ai-gateway-model-routing-policy]], [[embeddings-configuration-policy]];
+- library and retrieval: [[knowledge-scope-contract]], [[library-retrieval-models-policy]], [[bibliographic-metadata-audit]], [[page-aware-metadata-mapping-audit]], [[page-metadata-enrichment]];
 - validation: [[service-preflight-methodology]], [[browser-mcp-validation-policy]], [[root-cause-debugging-policy]];
 - diagrams: [[mermaid-diagram-policy]].
 

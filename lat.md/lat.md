@@ -63,10 +63,15 @@ Service-dependent work follows [[service-preflight-methodology]].
 Each architecture concern has one canonical LAT source and may be anchored from code with `@lat`.
 
 - [[global-configuration-facade-policy]]
+- [[lat-documentation-policy]]
 - [[globalvar-postgres-config-policy]]
 - [[embeddings-configuration-policy]]
+- [[ai-gateway-model-routing-policy]]
 - [[postgres-driver-policy]]
 - [[authentication-security-policy]]
+- [[tenant-context-authorization-policy]]
+- [[frontend-implementation-policy]]
+- [[knowledge-scope-contract]]
 - [[library-retrieval-models-policy]]
 - [[breslov-test-corpus-policy]]
 - [[bibliographic-metadata-audit]]

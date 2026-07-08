@@ -95,21 +95,37 @@ Each public query mode maps to an explicit retrieval engine and use case.
 
 ## Generative Model
 
-Generation is outside the current retrieval contract and cannot be introduced implicitly.
+Generation remains outside general search and is allowed only in the dedicated, evidence-first relation QA contract approved by ADR-005.
 
 | Attribute | Value |
 |-----------|-------|
-| Generative model in production | None |
-| RAG | Not implemented |
-| Interpretative answer generation | Not implemented |
+| Generative model in production | `openai_gpt-5.4-nano` via LiteLLM |
+| Generative surface | `POST /library/relation-qa` only |
+| RAG | Bounded evidence-first editorial synthesis; no open-domain chat |
+| Interpretative answer generation | Implemented only for Relation QA |
 | LLM reranking | Not implemented |
-| LLM synthesis | Not implemented |
+| LLM synthesis | Optional and downstream of canonical PG evidence |
 
-**TebaAI currently retrieves bibliographic evidence only. It does not generate
-interpretative answers, summaries, or conversational responses.**
+`POST /library/search` continues to retrieve bibliographic evidence only. It does not call a generative model or return interpretative synthesis.
 
-Any future phase that introduces a generative model, RAG pipeline, or LLM-based
-reranking must:
+## Investigative Relation QA
+
+Relation QA is an editorial research API, not a devotional chatbot or a replacement for source reading.
+
+The endpoint must:
+
+1. authorize and resolve `knowledge_scope_code` before retrieval;
+2. retrieve first and synthesize second;
+3. rehydrate every Milvus candidate from PostgreSQL;
+4. return structured sources, evidence types, warnings and method metadata;
+5. keep `literal_relation_found` deterministic;
+6. label model interpretation as `ai_inference` or `INFERIDA_POR_IA`;
+7. reject unknown model source IDs and fall back deterministically on invalid output;
+8. keep `content_preview` and `composite_page_context` out of final citations.
+
+The accepted design and consequences are documented in `docs/adr/ADR-005-breslov-investigative-relation-qa-endpoint.md`.
+
+Any future generative surface, open-domain RAG pipeline, or LLM-based reranking beyond ADR-005 must:
 
 1. Create a new ADR or update this policy.
 2. Keep retrieval separate from generation (retrieval first, generation second).
@@ -124,7 +140,7 @@ These constraints protect source authority, citation integrity and embedding com
 
 - Do not replace PostgreSQL with Milvus as the source of truth.
 - Do not replace Milvus with PostgreSQL for vector search.
-- Do not call a generative LLM inside retrieval endpoints.
+- Do not call a generative LLM inside `POST /library/search` or any surface not approved by ADR.
 - Do not invent bibliographic metadata (chapter, page, section).
 - Do not change the embedding model without updating this policy and running
   the evaluation harness.
@@ -137,6 +153,6 @@ The following capabilities require explicit design and validation before impleme
 
 - Sparse vectors (Milvus hybrid search with BM25).
 - Cross-encoder reranking.
-- RAG with cited evidence.
+- Open-domain or conversational RAG beyond the bounded Relation QA contract.
 - Conversational search with follow-up context.
 - Multi-hop retrieval for intertextual questions.

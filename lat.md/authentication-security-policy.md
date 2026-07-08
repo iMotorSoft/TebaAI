@@ -37,6 +37,14 @@ Authentication settings follow [[global-configuration-facade-policy]] and are lo
 
 Secrets use `SecretStr` or equivalent protected types and are never exposed by public frontend configuration.
 
+## PASETO Portability
+
+PASETO v4.public is preserved as a reusable Team360 capability and a future TebaAI candidate, not an active TebaAI token format.
+
+Any adoption requires an ADR covering the concrete token purpose, JWT coexistence or migration, Ed25519 key storage, multi-`kid` rotation, revocation, clock skew and complete session regressions.
+
+Refresh tokens remain opaque and PostgreSQL-backed unless that ADR proves a reason to change them. The portability assessment lives in `docs/paseto-v4-public-portability-assessment.md`.
+
 ## Validation
 
 Auth changes require focused backend tests and browser validation proportional to the changed contract.

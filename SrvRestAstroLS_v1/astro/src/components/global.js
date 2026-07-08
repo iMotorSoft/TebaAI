@@ -31,6 +31,7 @@ export const ROUTES = {
   home: "/",
   login: "/login",
   librarySearch: "/library/search",
+  relationQa: "/library/relation-qa",
 };
 
 export const API_ROUTES = {
@@ -42,4 +43,5 @@ export const API_ROUTES = {
   logout: "/auth/logout",
   users: "/users",
   librarySearch: "/library/search",
+  relationQa: "/library/relation-qa",
 };

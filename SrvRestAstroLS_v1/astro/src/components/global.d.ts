@@ -24,6 +24,7 @@ export const ROUTES: Readonly<{
   home: "/";
   login: "/login";
   librarySearch: "/library/search";
+  relationQa: "/library/relation-qa";
 }>;
 
 export const API_ROUTES: Readonly<{
@@ -35,4 +36,5 @@ export const API_ROUTES: Readonly<{
   logout: "/auth/logout";
   users: "/users";
   librarySearch: "/library/search";
+  relationQa: "/library/relation-qa";
 }>;

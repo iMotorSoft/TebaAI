@@ -14,7 +14,7 @@ export interface SearchResult {
   document_id: string;
   document_title: string;
   author: string | null;
-  collection_code: string;
+  knowledge_scope_code: string;
   chunk_id: string;
   chunk_index: number;
   language: string;

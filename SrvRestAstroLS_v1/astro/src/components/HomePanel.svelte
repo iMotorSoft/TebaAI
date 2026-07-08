@@ -1,7 +1,7 @@
 <script lang="ts">
-  let apiBase = $state(
-    import.meta.env.PUBLIC_TEBAAI_API_BASE_URL ?? "http://127.0.0.1:7008",
-  );
+  import { API_BASE_URL } from "./global.js";
+
+  const apiBase = API_BASE_URL;
 </script>
 
 <section class="home-panel" aria-labelledby="home-title">

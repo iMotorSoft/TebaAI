@@ -11,7 +11,7 @@
   let mode = $state<"auto" | "fts" | "phrase" | "trigram">("auto");
   let language = $state<"es" | "en" | "he">("es");
   let topK = $state(10);
-  let collection = $state("breslov");
+  let collection = $state("breslov_primary");
 
   let loading = $state(false);
   let error = $state<string | null>(null);

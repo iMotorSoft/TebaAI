@@ -98,6 +98,11 @@ LITELLM_API_KEY: str = resolve_litellm_api_key()
 LITELLM_DEFAULT_MODEL_ALIAS: str = SETTINGS.litellm_default_model_alias
 LITELLM_TIMEOUT_SECONDS: int = SETTINGS.litellm_timeout_seconds
 
+# ── Research Conversation ─────────────────────────────────────────
+RESEARCH_CONVERSATION_MODEL: str = SETTINGS.research_conversation_model
+RESEARCH_EMBEDDING_MODEL_ALIAS: str = SETTINGS.research_embedding_model_alias
+BRESLOV_PRODUCTIVE_COLLECTION: str = SETTINGS.breslov_productive_collection
+
 # ── Auth ─────────────────────────────────────────────────────────
 AUTH_ENABLED: bool = SETTINGS.auth_enabled
 AUTH_JWT_ALGORITHM: str = SETTINGS.auth_jwt_algorithm

@@ -6,6 +6,7 @@ import json
 import pathlib
 import tempfile
 from unittest.mock import AsyncMock, MagicMock, patch
+from uuid import uuid4
 
 import pytest
 
@@ -177,7 +178,7 @@ class TestSchemas:
         from uuid import UUID
         result = IngestDocumentResult(
             document_id=UUID("00000000-0000-0000-0000-000000000001"),
-            collection_code="general",
+            knowledge_scope_code="general",
             title="Test",
             language="es",
             source_sha256="abc",
@@ -186,7 +187,7 @@ class TestSchemas:
             status="ready",
             is_new=True,
         )
-        assert result.collection_code == "general"
+        assert result.knowledge_scope_code == "general"
 
 
 # ── Repository (mocked at function level) ──────────────────────────────────────
@@ -231,7 +232,7 @@ class TestRepository:
 
 class TestService:
     async def test_ingest_document_dry_run(self):
-        from modules.library.domain import LibraryCollection as Lc
+        from modules.library.domain import KnowledgeScope
 
         with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False) as f:
             f.write("# Dry run test")
@@ -249,11 +250,20 @@ class TestService:
                 dry_run=True,
             )
             conn = AsyncMock()
+            scope = KnowledgeScope(
+                id=uuid4(),
+                organization_id=uuid4(),
+                workspace_id=uuid4(),
+                project_id=uuid4(),
+                knowledge_scope_code="general",
+                name="General",
+                status="active",
+            )
             with (
-                patch("modules.library.service.get_collection_by_code") as mock_get_collection,
+                patch("modules.library.service._resolve_scope", return_value=scope),
+                patch("modules.library.service._resolve_legacy_collection_id", return_value=uuid4()),
                 patch("modules.library.service.get_document_by_sha256", return_value=None),
             ):
-                mock_get_collection.return_value = Lc.create("general", "General")
                 result = await ingest_document(conn, req)
             assert result.dry_run is True
             assert result.title == "Dry Run"
@@ -261,7 +271,7 @@ class TestService:
             pathlib.Path(p).unlink()
 
     async def test_ingest_duplicate_raises(self):
-        from modules.library.domain import LibraryDocument
+        from modules.library.domain import KnowledgeScope, LibraryDocument
 
         conn = AsyncMock()
         with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False) as f:
@@ -271,17 +281,22 @@ class TestService:
         try:
             from modules.library.service import ingest_document
 
-            # Mock get_or_create_collection so dry_run ingestion doesn't exercise repository
+            scope = KnowledgeScope(
+                id=uuid4(),
+                organization_id=uuid4(),
+                workspace_id=uuid4(),
+                project_id=uuid4(),
+                knowledge_scope_code="dup-coll",
+                name="Dup",
+                status="active",
+            )
             with (
-                patch("modules.library.service.get_or_create_collection") as mock_gcc,
+                patch("modules.library.service._resolve_scope", return_value=scope),
+                patch("modules.library.service._resolve_legacy_collection_id", return_value=uuid4()),
                 patch("modules.library.service.get_document_by_sha256", return_value=None),
                 patch("modules.library.service.create_document"),
                 patch("modules.library.service.create_document_text"),
             ):
-                mock_gcc.return_value = (
-                    LibraryCollection.create("dup-coll", "Dup"),
-                    True,
-                )
                 req1 = IngestDocumentRequest(
                     file_path=p, title="First", language="en",
                     collection="dup-coll", source_type="markdown",
@@ -299,14 +314,11 @@ class TestService:
             )
 
             with (
-                patch("modules.library.service.get_or_create_collection") as mock_gcc2,
+                patch("modules.library.service._resolve_scope", return_value=scope),
+                patch("modules.library.service._resolve_legacy_collection_id", return_value=uuid4()),
                 patch("modules.library.service.get_document_by_sha256", return_value=existing),
                 pytest.raises(DuplicateDocumentError),
             ):
-                mock_gcc2.return_value = (
-                    LibraryCollection.create("dup-coll", "Dup"),
-                    False,
-                )
                 req2 = IngestDocumentRequest(
                     file_path=p, title="Second", language="en",
                     collection="dup-coll", source_type="markdown",

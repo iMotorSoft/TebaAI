@@ -58,7 +58,7 @@ class DeprecatedIngestDocumentResult(IngestDocumentResult):
 
 
 class LibrarySearchRequest(BaseModel):
-    collection: str = Field(default="breslov", min_length=1, max_length=100)
+    collection: str = Field(default="breslov_primary", min_length=1, max_length=100)
     query: str = Field(..., min_length=1, max_length=300)
     mode: Literal["auto", "fts", "phrase", "trigram", "hybrid"] = "auto"
     top_k: int = Field(default=10, ge=1, le=50)

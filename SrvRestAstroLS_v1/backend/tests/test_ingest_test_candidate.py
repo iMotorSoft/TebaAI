@@ -4,11 +4,18 @@ from __future__ import annotations
 
 import pathlib
 from unittest.mock import AsyncMock, patch
+from uuid import uuid4
 
 import pytest
 from pydantic import ValidationError
 
-from modules.library.domain import DocumentStatus, LibraryCollection, LibraryDocument
+from modules.library.domain import (
+    DocumentStatus,
+    KnowledgeScope,
+    LibraryCollection,
+    LibraryDocument,
+)
+from modules.library.errors import ScopeNotFoundError
 from modules.library.schemas import IngestDocumentRequest
 
 
@@ -25,6 +32,18 @@ def _request(path: str, **overrides) -> IngestDocumentRequest:
     }
     values.update(overrides)
     return IngestDocumentRequest(**values)
+
+
+def _scope(code: str = "breslov_primary") -> KnowledgeScope:
+    return KnowledgeScope(
+        id=uuid4(),
+        organization_id=uuid4(),
+        workspace_id=uuid4(),
+        project_id=uuid4(),
+        knowledge_scope_code=code,
+        name="Breslov Primary Corpus",
+        status="active",
+    )
 
 
 @pytest.fixture
@@ -57,11 +76,12 @@ def test_ready_rejected_in_test_collection(source_file: str):
 async def test_metadata_json_parses_and_is_persisted(source_file: str):
     from modules.library.service import ingest_document
 
-    collection = LibraryCollection.create("breslov_test", "Breslov Test Corpus", "es")
+    scope = _scope()
     request = _request(source_file, source_type="text", dry_run=False)
     create_document = AsyncMock()
     with (
-        patch("modules.library.service.get_or_create_collection", return_value=(collection, True)),
+        patch("modules.library.service._resolve_scope", return_value=scope),
+        patch("modules.library.service._resolve_legacy_collection_id", return_value=uuid4()),
         patch("modules.library.service.get_document_by_sha256", return_value=None),
         patch("modules.library.service.create_document", create_document),
         patch("modules.library.service.create_document_text", new_callable=AsyncMock),
@@ -96,39 +116,36 @@ async def test_repository_serializes_bibliographic_metadata():
     assert params["bibliographic_metadata"] == '{"corpus": "breslov_test"}'
 
 
-async def test_dry_run_does_not_write_or_create_collection(source_file: str):
+async def test_dry_run_does_not_write(source_file: str):
     from modules.library.service import ingest_document
 
     request = _request(source_file, source_type="text")
-    create_collection = AsyncMock()
     create_document = AsyncMock()
     create_text = AsyncMock()
     with (
-        patch("modules.library.service.get_collection_by_code", return_value=None),
-        patch("modules.library.service.get_or_create_collection", create_collection),
+        patch("modules.library.service._resolve_scope", return_value=_scope()),
+        patch("modules.library.service._resolve_legacy_collection_id", return_value=uuid4()),
+        patch("modules.library.service.get_document_by_sha256", return_value=None),
         patch("modules.library.service.create_document", create_document),
         patch("modules.library.service.create_document_text", create_text),
     ):
         result = await ingest_document(AsyncMock(), request)
 
     assert result.dry_run is True
-    create_collection.assert_not_awaited()
     create_document.assert_not_awaited()
     create_text.assert_not_awaited()
 
 
-async def test_breslov_test_never_falls_back_to_breslov(source_file: str):
-    from modules.library.service import ingest_document
+async def test_missing_legacy_scope_mapping_fails_closed():
+    from modules.library.service import _resolve_scope
 
-    request = _request(source_file, source_type="text")
-    lookup = AsyncMock(return_value=None)
-    with patch("modules.library.service.get_collection_by_code", lookup):
-        result = await ingest_document(AsyncMock(), request)
-
-    assert result.collection_code == "breslov_test"
-    assert result.status == "test_candidate"
-    lookup.assert_awaited_once()
-    assert lookup.await_args.args[1] == "breslov_test"
+    legacy = LibraryCollection.create("breslov_test", "Breslov Test Corpus")
+    with (
+        patch("modules.library.service.get_scope_by_code", return_value=None),
+        patch("modules.library.service.get_collection_by_code", return_value=legacy),
+        pytest.raises(ScopeNotFoundError, match="breslov_test"),
+    ):
+        await _resolve_scope(AsyncMock(), "breslov_test")
 
 
 async def test_existing_ready_document_is_not_changed(source_file: str):
@@ -144,7 +161,8 @@ async def test_existing_ready_document_is_not_changed(source_file: str):
     )
     request = _request(source_file, source_type="text")
     with (
-        patch("modules.library.service.get_collection_by_code", return_value=collection),
+        patch("modules.library.service._resolve_scope", return_value=_scope()),
+        patch("modules.library.service._resolve_legacy_collection_id", return_value=collection.id),
         patch("modules.library.service.get_document_by_sha256", return_value=existing),
     ):
         result = await ingest_document(AsyncMock(), request)
@@ -177,20 +195,17 @@ def test_test_collection_default_name_is_isolated():
     assert _default_collection_name("breslov") == "breslov"
 
 
-async def test_apply_creates_test_collection_with_test_metadata(source_file: str):
+async def test_apply_uses_existing_scope_without_creating_legacy_collection(source_file: str):
     from modules.library.service import ingest_document
 
-    collection = LibraryCollection.create(
-        "breslov_test",
-        "Breslov Test Corpus",
-        "es",
-        metadata={"status": "test"},
-    )
-    create_collection = AsyncMock(return_value=(collection, True))
+    scope = _scope()
+    legacy_id = uuid4()
+    create_document = AsyncMock()
     with (
-        patch("modules.library.service.get_or_create_collection", create_collection),
+        patch("modules.library.service._resolve_scope", return_value=scope),
+        patch("modules.library.service._resolve_legacy_collection_id", return_value=legacy_id),
         patch("modules.library.service.get_document_by_sha256", return_value=None),
-        patch("modules.library.service.create_document", new_callable=AsyncMock),
+        patch("modules.library.service.create_document", create_document),
         patch("modules.library.service.create_document_text", new_callable=AsyncMock),
     ):
         await ingest_document(
@@ -198,4 +213,7 @@ async def test_apply_creates_test_collection_with_test_metadata(source_file: str
             _request(source_file, source_type="text", dry_run=False),
         )
 
-    assert create_collection.await_args.kwargs["metadata"] == {"status": "test"}
+    document = create_document.await_args.args[1]
+    assert document.collection_id == legacy_id
+    assert document.knowledge_scope_id == scope.id
+    assert document.status == "test_candidate"

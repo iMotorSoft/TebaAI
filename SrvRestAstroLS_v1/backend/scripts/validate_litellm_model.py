@@ -49,18 +49,19 @@ async def test_model_config() -> dict[str, Any]:
     """Display model configuration."""
     model = globalVar.RESEARCH_CONVERSATION_MODEL
     base_url = globalVar.LITELLM_BASE_URL
-    api_key = globalVar.LITELLM_API_KEY[:20] + "..." if globalVar.LITELLM_API_KEY else "(no key)"
+    api_key_configured = bool(globalVar.LITELLM_API_KEY)
     
     print(f"\n📋 Model Configuration:")
     print(f"  Model: {model}")
     print(f"  LiteLLM Base URL: {base_url}")
-    print(f"  LiteLLM API Key: {api_key}")
+    print(f"  LiteLLM API Key configured: {'yes' if api_key_configured else 'no'}")
     print(f"  LiteLLM Timeout: {globalVar.LITELLM_TIMEOUT_SECONDS}s")
     
     return {
         "model": model,
         "base_url": base_url,
         "timeout_seconds": globalVar.LITELLM_TIMEOUT_SECONDS,
+        "api_key_configured": api_key_configured,
     }
 
 

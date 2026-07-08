@@ -32,7 +32,6 @@ from modules.library.repository import (
     get_collection_by_code,
     get_scope_by_code,
     get_document_by_sha256,
-    resolve_scope_context,
 )
 from modules.library.schemas import IngestDocumentRequest, IngestDocumentResult
 
@@ -41,20 +40,24 @@ async def _resolve_scope(
     conn: AsyncConnection,
     collection_code: str,
 ) -> KnowledgeScope:
-    """Resolve a legacy collection_code to a KnowledgeScope.
-    Maps legacy codes to canonical knowledge_scope_code = 'breslov_primary'.
-    """
+    """Resolve a canonical scope code or a metadata-backed legacy alias."""
     code = collection_code.strip().lower()
     scope = await get_scope_by_code(conn, code)
     if scope:
         return scope
-    return await resolve_scope_context(
-        conn,
-        organization_code="tebaai",
-        workspace_code="breslov",
-        project_code="breslov_library",
-        knowledge_scope_code="breslov_primary",
+
+    legacy_collection = await get_collection_by_code(conn, code)
+    scope_code = (
+        legacy_collection.metadata.get("knowledge_scope_code")
+        if legacy_collection
+        else None
     )
+    if isinstance(scope_code, str) and scope_code.strip():
+        scope = await get_scope_by_code(conn, scope_code)
+        if scope:
+            return scope
+
+    raise ScopeNotFoundError(f"Knowledge scope not found for code: {code}")
 
 
 async def _resolve_legacy_collection_id(

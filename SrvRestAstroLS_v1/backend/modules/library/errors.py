@@ -27,6 +27,10 @@ class ScopeNotFoundError(LibraryError):
     """Knowledge scope was not found."""
 
 
+class ScopeAccessDeniedError(LibraryError):
+    """Authenticated user cannot access the requested knowledge scope."""
+
+
 class CollectionNotFoundError(LibraryError):
     """DEPRECATED: pre-knowledge_scopes. Use ScopeNotFoundError instead.
     Collection was not found in library_collections_legacy."""

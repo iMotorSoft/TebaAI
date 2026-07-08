@@ -14,7 +14,11 @@ from modules.library.domain import (
     LibraryDocumentText,
     KnowledgeScope,
 )
-from modules.library.errors import ScopeNotFoundError, DocumentNotFoundError
+from modules.library.errors import (
+    DocumentNotFoundError,
+    ScopeAccessDeniedError,
+    ScopeNotFoundError,
+)
 
 
 # ── Knowledge Scopes ───────────────────────────────────────────────────
@@ -48,6 +52,59 @@ async def get_scope_by_id(conn: AsyncConnection, scope_id: UUID) -> KnowledgeSco
         {"id": str(scope_id)},
     )
     return _row_to_scope(row) if row else None
+
+
+# @lat: [[tenant-context-authorization-policy#Scope Isolation]]
+async def get_authorized_scope_by_code(
+    conn: AsyncConnection,
+    *,
+    user_id: UUID,
+    knowledge_scope_code: str,
+) -> KnowledgeScope:
+    """Resolve an active scope through the user's complete tenant membership chain."""
+    row = await fetch_one(
+        conn,
+        """
+        SELECT ks.*
+        FROM knowledge_scopes ks
+        JOIN projects p
+          ON p.id = ks.project_id
+         AND p.organization_id = ks.organization_id
+         AND p.workspace_id = ks.workspace_id
+         AND p.status = 'active'
+        JOIN workspaces w
+          ON w.id = ks.workspace_id
+         AND w.organization_id = ks.organization_id
+         AND w.status = 'active'
+        JOIN organizations o
+          ON o.id = ks.organization_id
+         AND o.status = 'active'
+        JOIN users u
+          ON u.id = %(user_id)s
+         AND u.is_active = true
+        JOIN organization_members om
+          ON om.organization_id = o.id
+         AND om.user_id = u.id
+         AND om.status = 'active'
+        JOIN workspace_members wm
+          ON wm.workspace_id = w.id
+         AND wm.user_id = u.id
+         AND wm.status = 'active'
+        JOIN project_members pm
+          ON pm.project_id = p.id
+         AND pm.user_id = u.id
+         AND pm.status = 'active'
+        WHERE ks.knowledge_scope_code = %(scope_code)s
+          AND ks.status = 'active'
+        """,
+        {
+            "user_id": str(user_id),
+            "scope_code": knowledge_scope_code.strip().lower(),
+        },
+    )
+    if row is None:
+        raise ScopeAccessDeniedError("Knowledge scope is unavailable")
+    return _row_to_scope(row)
 
 
 async def resolve_scope_context(

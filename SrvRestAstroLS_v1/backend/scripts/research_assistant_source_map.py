@@ -564,13 +564,41 @@ async def main():
     parser.add_argument("--top-k", type=int, default=30, help="Resultados por búsqueda")
     parser.add_argument("--verbose", "-v", action="store_true", help="Output detallado")
     parser.add_argument("--json", action="store_true", help="Output como JSON")
+    parser.add_argument("--analyze", action="store_true",
+                        help="Usar ResearchConversationAnalyzer para análisis de intención")
+    parser.add_argument("--research-answer", action="store_true",
+                        help="Usar BreslovResearchService completo (answer + source map estructurado)")
     args = parser.parse_args()
 
+    # ── Mode: Full research answer via BreslovResearchService ─────────
+    if args.research_answer:
+        return await _run_research_answer(args)
+
+    # ── Legacy mode with optional conversation analysis ────────────────
     print(f"\n{'='*70}")
     print(f"  BRESLOV RESEARCH ASSISTANT — SOURCE MAP")
     print(f"  Query: {args.query}")
     print(f"  Scope: {args.scope}")
     print(f"{'='*70}")
+
+    # 0. Optional conversation analysis
+    if args.analyze:
+        print(f"\n[0/4] Análisis conversacional...")
+        from modules.library.conversation_analyzer import ResearchConversationAnalyzer
+        ca = ResearchConversationAnalyzer()
+        analysis = ca.analyze(args.query)
+        print(f"  Idioma: {analysis.language}")
+        print(f"  Intención: {analysis.intent.value}")
+        print(f"  Modo: {analysis.research_mode.value}")
+        print(f"  Términos: {', '.join(analysis.topic_terms)}")
+        if analysis.expanded_terms:
+            print(f"  Términos expandidos: {', '.join(analysis.expanded_terms[:8])}")
+        if analysis.requested_documents:
+            print(f"  Documentos solicitados: {', '.join(analysis.requested_documents)}")
+        if analysis.analysis_fallback:
+            print(f"  ⚠️ Análisis determinístico (fallback)")
+        else:
+            print(f"  ✅ Análisis vía {analysis.model_used}")
 
     # 1. Query expansion
     query_info = expand_query(args.query)
@@ -591,19 +619,17 @@ async def main():
     fts_results = []
     try:
         async with pool.connection() as conn:
-            # Search with expanded terms
-            for term in query_info["expanded_terms"][:5]:  # First 5 terms
+            for term in query_info["expanded_terms"][:5]:
                 r = await search_fts(conn, args.scope, term, top_k=args.top_k)
                 fts_results.extend(r)
-            # Also search original query
             r_orig = await search_fts(conn, args.scope, args.query, top_k=args.top_k)
             fts_results.extend(r_orig)
         print(f"  FTS: {len(fts_results)} resultados crudos")
     except Exception as exc:
         print(f"  [WARN] FTS search failed: {exc}")
 
-    # 3. Vector search (Milvus test)
-    print(f"\n[3/4] Búsqueda vectorial (Milvus test)...")
+    # 3. Vector search (Milvus productivo)
+    print(f"\n[3/4] Búsqueda vectorial (Milvus)...")
     vec_results = []
     for term in query_info["expanded_terms"][:5]:
         hits = search_vector(
@@ -640,7 +666,6 @@ async def main():
                 hit["section"] = pg_data.get("section")
                 enriched_vec.append(hit)
 
-        # Also enrich FTS results — they already have content from PG
         for r in fts_results:
             cid = r.get("chunk_id", "")
             if cid:
@@ -684,6 +709,75 @@ async def main():
         print(f"\n{'✅'*3} Respuesta útil: {total} resultados, "
               f"{'literal' if has_literal else 'temático'}")
 
+    return 0
+
+
+async def _run_research_answer(args) -> int:
+    """Run full research answer via BreslovResearchService."""
+    from modules.library.research_service import BreslovResearchService
+    service = BreslovResearchService(scope_code=args.scope)
+    answer = await service.research(
+        query=args.query,
+        top_k=args.top_k,
+        document_id=args.document_id,
+    )
+
+    if args.json:
+        print(answer.model_dump_json(indent=2))
+        return 0
+
+    print(f"\n{'='*70}")
+    print(f"  BRESLOV RESEARCH ANSWER")
+    print(f"{'='*70}")
+    print(f"\n🔍 Query: {answer.query}")
+    print(f"\n📋 Análisis conversacional:")
+    ca = answer.conversation_analysis
+    print(f"   Idioma: {ca.language}")
+    print(f"   Intención: {ca.intent}")
+    print(f"   Modo: {ca.research_mode}")
+    if ca.topic_terms:
+        print(f"   Términos: {', '.join(ca.topic_terms[:8])}")
+    if ca.model_used:
+        print(f"   Modelo: {ca.model_used}")
+    if ca.analysis_fallback:
+        print(f"   ⚠️ Fallback determinístico activo")
+
+    print(f"\n📝 Respuesta:")
+    print(f"   {answer.answer_summary}")
+
+    print(f"\n📊 Evidencia:")
+    for etype, count in sorted(
+        answer.evidence_counts.items(), key=lambda x: -x[1]
+    ):
+        label = etype.replace("_", " ").title()
+        print(f"   {label}: {count}")
+
+    print(f"\n📚 Mapa de fuentes:")
+    for i, entry in enumerate(answer.source_map[:10], 1):
+        ev = entry.evidence
+        ev_type = ev.evidence_type.value.replace("_", " ")
+        pages = f"pág. {entry.page_start}" if entry.page_start else "s/p"
+        print(f"\n   {i}. {entry.document_title[:60]}")
+        print(f"      {pages} | {ev_type.upper()} | chunk: {entry.chunk_id[:8]}")
+        if entry.canonical_excerpt:
+            print(f"      “{entry.canonical_excerpt[:180]}...”")
+        if ev.notes:
+            print(f"      Nota: {ev.notes[:120]}")
+
+    if len(answer.source_map) > 10:
+        print(f"\n   ... y {len(answer.source_map) - 10} fuente(s) más.")
+
+    print(f"\n⚠️ Limitaciones:")
+    for lim in answer.limitations:
+        print(f"   • {lim}")
+
+    print(f"\n{'='*70}")
+    print(f"  FIN DEL REPORTE")
+    print(f"{'='*70}")
+
+    total = sum(answer.evidence_counts.values())
+    if total == 0:
+        return 1
     return 0
 
 

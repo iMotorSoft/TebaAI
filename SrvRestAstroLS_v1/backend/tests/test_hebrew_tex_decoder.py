@@ -8,6 +8,7 @@ from modules.library.hebrew_tex_decoder import (
     decode_hebrew_text,
     decode_hebrew_text_selective,
     is_likely_si960_encoded,
+    scan_unknown_characters,
     SI960_TO_HEBREW,
 )
 
@@ -161,3 +162,124 @@ class TestSi960Reversals:
         result = decode_hebrew_text("Mybwtk My'ybn hrwt")
         words = result.split()
         assert len(words) >= 3
+
+
+class TestNewMappings:
+    """Tests for newly added SI-960 character mappings."""
+
+    def test_inverted_exclamation_maps_to_meteg(self):
+        """¡ (U+00A1) should decode to meteg (U+05BD)."""
+        result = decode_hebrew_text("word\xa1word")
+        assert "\u05bd" in result
+
+    def test_meteg_in_context(self):
+        """Actual Tiqwah content with ¡ should produce meteg."""
+        # Sample from page 29 raw text containing ¡
+        raw = "MyĂU¡ČhČ"
+        result = decode_hebrew_text(raw)
+        assert "\u05bd" in result
+        assert any("\u0590" <= c <= "\u05ff" for c in result)
+
+    def test_grave_i_maps_to_qamats_qatan(self):
+        """Ì (U+00CC) should decode to qamats qatan (U+05C7)."""
+        result = decode_hebrew_text("word\xccword")
+        assert "\u05c7" in result
+
+    def test_question_mark_preserved(self):
+        """¿ (U+00BF) should be preserved as-is (not yet mapped)."""
+        result = decode_hebrew_text("word\xbfword")
+        assert "\u00bf" in result
+        assert "¿" in result
+
+    def test_i_acute_preserved(self):
+        """Í (U+00CD) should be preserved as-is (not yet mapped)."""
+        result = decode_hebrew_text("word\xcdword")
+        assert "\u00cd" in result
+
+
+class TestArtifactDetection:
+    """Tests for scan_unknown_characters utility."""
+
+    def test_clean_hebrew_no_artifacts(self):
+        result = scan_unknown_characters("\u05d0\u05d1\u05d2 \u05d3\u05d4\u05d5")
+        assert len(result) == 0
+
+    def test_detects_unknown_characters(self):
+        result = scan_unknown_characters("\u05d0\xbf\u05d1\xcd\u05d2")
+        # ¿ and Í are outside Hebrew block and should be detected
+        assert len(result) >= 1
+
+    def test_detects_count(self):
+        result = scan_unknown_characters("\u05d0\xbf\u05d1\xbf\u05d2")
+        assert result.get("\u00bf", 0) == 2
+
+    def test_meteg_not_counted_as_artifact(self):
+        """Meteg (U+05BD) is a valid Hebrew mark, not an artifact."""
+        result = scan_unknown_characters("word\u05bdword")
+        assert "\u05bd" not in result
+
+    def test_qamats_qatan_not_counted(self):
+        """Qamats qatan (U+05C7) is a valid Hebrew mark."""
+        result = scan_unknown_characters("word\u05c7word")
+        assert "\u05c7" not in result
+
+    def test_english_not_counted(self):
+        result = scan_unknown_characters("Hello World 123!")
+        assert len(result) == 0
+
+    def test_final_letters_preserved(self):
+        """Final forms (sofit) must be preserved (C=final tsadi, not S)."""
+        result = decode_hebrew_text("KMNPC")
+        assert "\u05da" in result  # final kaf
+        assert "\u05dd" in result  # final mem
+        assert "\u05df" in result  # final nun
+        assert "\u05e3" in result  # final pe
+        assert "\u05e5" in result  # final tsadi
+
+    def test_dagesh_preserved(self):
+        """Dagesh marks must be present after decoding."""
+        result = decode_hebrew_text("BGD")
+        assert "\u05bc" in result  # dagesh
+
+
+class TestNiqqudPreservation:
+    """Niqqud (vowel marks) must survive decoding."""
+
+    def test_he8_niqqud_mapped(self):
+        """HE8 niqqud range (U+00C0-U+00CB) must map to Hebrew niqqud."""
+        for cp in range(0xC0, 0xCC):
+            result = decode_hebrew_text(chr(cp))
+            assert any(0x05B0 <= ord(c) <= 0x05BB for c in result), \
+                f"Position U+{cp:04X} did not produce niqqud"
+
+    def test_niqqud_in_full_word(self):
+        """A word with niqqud must preserve vowel marks."""
+        raw = "rBĎ hČ"  # Words with niqqud
+        result = decode_hebrew_text(raw)
+        # Should contain Hebrew consonants and at least one niqqud mark
+        he_chars = sum(1 for c in result if 0x0590 <= ord(c) <= 0x05FF)
+        niqqud_chars = sum(1 for c in result if 0x05B0 <= ord(c) <= 0x05BB)
+        assert he_chars > 0
+        assert niqqud_chars > 0
+
+
+class TestOrderPreservation:
+    """The decoder must not reverse logical RTL order."""
+
+    def test_hebrew_word_not_empty_after_reversal(self):
+        result = decode_hebrew_text("Mybwtk")
+        assert len(result) > 0
+        # The word should be the correct Hebrew, not just reversed garbage
+        assert result == "\u05db\u05ea\u05d5\u05d1\u05d9\u05dd"
+
+    def test_english_word_not_reversed(self):
+        """English words must remain in reading order."""
+        result = decode_hebrew_text_selective("Hello word")
+        assert result == "Hello word"
+
+    def test_mixed_content_not_corrupted(self):
+        """Numbers and punctuation in Hebrew context must survive."""
+        raw = "23. 29-24. 3"
+        result = decode_hebrew_text_selective(raw)
+        assert "23" in result
+        assert "29" in result

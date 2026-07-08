@@ -138,8 +138,24 @@ LATIN_EXT_A: dict[str, str] = {
 }
 
 
+import logging
 import re
 
+logger = logging.getLogger(__name__)
+
+# Characters that are intentionally NOT mapped by the decoder.
+# These appear in the Tiqwah TeX font encoding but:
+#   a) mapping is uncertain without font file inspection, or
+#   b) they represent typographic ligatures from LaTeX typesetting
+# They are preserved as-is rather than mapped incorrectly.
+# Revisit when font metrics become available.
+KNOWN_UNMAPPED: dict[str, str] = {
+    "\u00bf": "¿ — possibly rafe (U+05BF), but uncertain",
+    "\u00cd": "Í — unknown; context suggests vowel variant",
+    "\u00a7": "§ — section sign from original typesetting",
+    "\u00a3": "£ — pound sign from original typesetting",
+    "\u0151": "ő — Latin extended-A; unmapped",
+}
 _HEB_LETTER_PATTERN = re.compile(
     r"[\u05d0-\u05ea\u05f0-\u05f4\u0590-\u05ff"
     r"\u00c0-\u00ff\u0100-\u017f"
@@ -332,5 +348,38 @@ def _decode_char(ch: str) -> str:
     # Paseq
     if ch == "\u00b0":
         return "\u05c0"
+    # Meteg (U+00A1 → Unicode U+05BD)
+    # In the Tiqwah TeX font, position 0xA1 encodes meteg, a vertical bar
+    # used as secondary stress marker in Masoretic cantillation.
+    if ch == "\u00a1":
+        return "\u05bd"
+    # Ì (U+00CC) — context suggests qamats qatan (U+05C7) based on HE8 analysis
+    if ch == "\u00cc":
+        return "\u05c7"
+    # Í (U+00CD) — unmapped; unknown with current evidence
+    # ¿ (U+00BF) — unmapped; multiple TeX font families assign different glyphs
+    # Both preserved as-is pending font file analysis.
     # Fallback: keep original character
     return ch
+
+
+def scan_unknown_characters(text: str) -> dict[str, int]:
+    """Scan decoded text for characters that are not Hebrew, ASCII, or whitespace.
+
+    Returns {char: count} for all unexpected characters.
+    Useful for decoder quality audits.
+    """
+    from collections import Counter
+    result: Counter[str] = Counter()
+    for c in text:
+        cp = ord(c)
+        if 0x0590 <= cp <= 0x05FF:  # Hebrew
+            continue
+        if cp <= 0x20 or (0x21 <= cp <= 0x7E):  # ASCII controls + printable
+            continue
+        if c in "\n\r\t":
+            continue
+        if 0x05BD <= cp <= 0x05C7:  # Hebrew marks (meteg, rafe, qamats qatan, etc.)
+            continue
+        result[c] += 1
+    return dict(result)

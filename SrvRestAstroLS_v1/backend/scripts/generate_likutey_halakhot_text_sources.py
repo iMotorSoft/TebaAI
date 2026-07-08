@@ -27,7 +27,7 @@ from pathlib import Path
 from typing import Any
 
 
-# @lat: [[likutey-halakhot-local-text-sources#Workflow]]
+# @lat: [[likutey-halakhot-local-text-sources#Artifact Generation]]
 
 SEFARIA_INDEX = "Likutei_Halakhot"
 SEFARIA_WORK = "Likutei Halakhot"

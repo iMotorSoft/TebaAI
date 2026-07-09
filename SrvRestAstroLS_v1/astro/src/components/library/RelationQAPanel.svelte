@@ -127,6 +127,7 @@
           <span class="label-text">Pregunta</span>
           <textarea
             class="textarea textarea-bordered h-24"
+            data-testid="relation-qa-question"
             placeholder="Ej: ¿Dónde aparece la relación entre sangre y habla?"
             bind:value={question}
             disabled={loading}
@@ -165,7 +166,7 @@
             <input type="checkbox" class="toggle toggle-primary" bind:checked={useAi} disabled={loading} />
           </label>
 
-          <button class="btn btn-primary" type="submit" disabled={loading || !question.trim()}>
+          <button class="btn btn-primary" type="submit" data-testid="relation-qa-submit" disabled={loading || !question.trim()}>
             {#if loading}
               <span class="loading loading-spinner loading-sm"></span>
             {/if}
@@ -208,6 +209,51 @@
               </div>
             {/if}
           </div>
+
+          <!-- Modo de síntesis -->
+          {#if response.method}
+            <div class="rounded-box border p-4" data-testid="relation-qa-synthesis-mode">
+              <h3 class="font-semibold text-lg">Modo de síntesis</h3>
+              <div class="mt-2 flex flex-wrap items-center gap-2">
+                {#if response.method.synthesis_mode === "ai"}
+                  <span class="badge badge-success" data-testid="relation-qa-synthesis-label">Síntesis IA</span>
+                  <span class="badge badge-outline" data-testid="relation-qa-synthesis-status">
+                    Estado: {response.method.ai_synthesis_status ?? "ok"}
+                  </span>
+                  {#if response.method.ai_synthesis_attempts != null}
+                    <span class="badge badge-outline" data-testid="relation-qa-synthesis-attempts">
+                      Intentos: {response.method.ai_synthesis_attempts}
+                    </span>
+                  {/if}
+                  <p class="mt-2 w-full text-sm text-base-content/70">
+                    La conclusión editorial fue generada por el modelo de síntesis usando las fuentes recuperadas.
+                  </p>
+                {:else if response.method.fallback_used || response.method.synthesis_mode === "deterministic_fallback"}
+                  <span class="badge badge-warning" data-testid="relation-qa-synthesis-label">Fallback determinístico</span>
+                  <span class="badge badge-outline" data-testid="relation-qa-synthesis-status">
+                    Estado IA: {response.method.ai_synthesis_status ?? "failed"}
+                  </span>
+                  {#if response.method.ai_synthesis_attempts != null}
+                    <span class="badge badge-outline" data-testid="relation-qa-synthesis-attempts">
+                      Intentos: {response.method.ai_synthesis_attempts}
+                    </span>
+                  {/if}
+                  {#if response.method.fallback_reason}
+                    <span class="badge badge-ghost" data-testid="relation-qa-fallback-reason">
+                      Motivo: {response.method.fallback_reason}
+                    </span>
+                  {/if}
+                  <div class="alert alert-warning mt-2 p-3 text-sm">
+                    La síntesis editorial automática no pudo completarse. Se muestra una síntesis determinística basada en las fuentes recuperadas. Revisar editorialmente antes de citar como conclusión.
+                  </div>
+                {:else}
+                  <span class="badge badge-ghost" data-testid="relation-qa-synthesis-label">
+                    Modo de síntesis no informado
+                  </span>
+                {/if}
+              </div>
+            </div>
+          {/if}
 
           <!-- Conceptos detectados -->
           {#if response.concepts}

@@ -2,7 +2,7 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-09 (synthesis hardening)
+Ultima actualizacion: 2026-07-09 (synthesis hardening + UI indicator)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
 
@@ -2219,6 +2219,32 @@ Guardrails:
   - No OpenAI directo
   - Frontend no tocado
   - Tests: 51/51 PASS
+```
+
+## Relation QA UI Synthesis Mode Indicator — 2026-07-09
+
+```text
+ESTADO: CERRADO
+
+La UI de /library/relation-qa ahora muestra visualmente el modo de síntesis:
+- "Síntesis IA" (badge success) cuando synthesis_mode=ai
+- "Fallback determinístico" (badge warning) cuando fallback_used=true
+- "Modo de síntesis no informado" cuando faltan campos
+- Estado IA, intentos y motivo de fallback visibles sin abrir JSON crudo
+- Advertencia editorial en caso de fallback
+
+Archivos:
+  - RelationQAPanel.svelte — nuevo bloque "Modo de síntesis" con badges y alertas
+  - relationQaClient.ts — nuevos campos opcionales en RelationQAMethod
+  - relation-qa-synthesis-mode.spec.ts — 3 tests E2E con fixture interception
+
+Validación:
+  - pnpm check: 0 errors
+  - pnpm build: 5 pages PASS
+  - Playwright: 3/3 PASS (AI OK, fallback, campos ausentes)
+  - lat check: PASS
+  - Backend no tocado
+  - /library/search no tocado
 ```
 
 ## Historial

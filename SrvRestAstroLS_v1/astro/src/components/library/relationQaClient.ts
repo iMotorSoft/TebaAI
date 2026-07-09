@@ -63,6 +63,11 @@ export interface RelationQAMethod {
   used_pg_as_canonical: boolean;
   used_milvus: boolean;
   used_ai: boolean;
+  ai_synthesis_status?: string;
+  ai_synthesis_attempts?: number;
+  fallback_used?: boolean;
+  fallback_reason?: string | null;
+  synthesis_mode?: string;
 }
 
 export interface RelationQAResponse {

@@ -1,0 +1,1216 @@
+{
+  "total_score": 87,
+  "max_score": 100,
+  "percentage": 87,
+  "global_status": "PASS usable",
+  "results": [
+    {
+      "question": {
+        "id": 1,
+        "question": "¿Dónde aparece la alegría?",
+        "expected_route": "concept_lookup"
+      },
+      "result": {
+        "question": "¿Dónde aparece la alegría?",
+        "route": "concept_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "concept_lookup",
+        "short_conclusion": "Se encontraron 8 menciones de 'alegría' en 8 página(s): [3, 22, 25, 26, 27, 45, 51, 112]...",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 8,
+          "relation_matches": 0,
+          "source_references": 0,
+          "pages": [
+            3,
+            22,
+            25,
+            26,
+            27,
+            45,
+            51,
+            112
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 3,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "ante joya\nque iluminó a todos los que la conocieron\ncon el verdadero mensaje de alegría y amor al Creador.",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 22,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "sgos\nasociados y los deseos negativos [del cuerpo]. De esa manera\nse alcanza la alegría, el entusiasmo y la diligencia.\n9 Tishrei\n7. El segundo paso es la caridad que la persona le da al estudioso\nde Torá. Esto la rescata de los rasgos negativos asociados con\nel elemento “animal” y con el elemento “humano” - que son\nlas palabras vanas, la calumnia, el orgullo y los rasgos\nrelacionados.\n8. El tercer paso es que la persona se confiese delante del\nestudioso de Torá. Mediante ello, el estudioso la d",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 25,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "e falte y orar por él.\n2. Cada persona debe llevar a cabo las mitzvot con tanta alegría\ncomo para no desear ninguna recompensa por ello en el Mundo\nque Viene. Más bien, sólo debe desear que el Santo, bendito\nsea, le envíe otra mitzvá como recompensa por esa mitzvá -\ndado que su alegría proviene de la mitzvá misma. Mediante esa\nalegría, la persona puede llegar a saber lo decretado sobre el\nmundo, así sea antes de que el decreto se haya emitido como\ndespués de habérselo emitido y sobre quién recae",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 26,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "cabo las mitzvot por las mitzvot mismas, con una gran alegría.\nEntonces será capaz de investir sus plegarias en cuentos y anular\ntodos los decretos, incluso luego de haber sido emitidos.\n6. La persona que en Rosh HaShaná oye el shofar hecho sonar\npor un hombre piadoso y temeroso de Dios, ciertamente no\nnecesitará preocuparse por los “truenos” durante todo el año.\n12 tishrei\n7. Para lograr plenamente el “trueno” mencionado más arriba\nes necesario limpiar la mente de toda clase de saberes seculare",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 27,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "á oír, fuerte y claro, lo que sale de la boca,\ny mediante ello, se alcanzará la alegría - cumplir con todas las\nmitzvot por las mitzvot mismas, con una verdadera alegría. De\nesa manera, se merecerá saber cómo anular todos los decretos\nincluso luego de haber sido emitidos, Dios no lo permita.\n10. Para merecer lo antedicho es necesario también unir el amor\na Dios con el temor a Dios, dado que la mejor manera de vencer\n[a los enemigos] es mediante el amor. Sin embargo, el temor\ndebe estar primero.\n",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 45,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "eísmo y se alcanza el espíritu sagrado de profecía.\nSe siente a su vez una gran alegría, al punto en que uno llega a\naplaudir y a bailar en santidad. Esto entonces mitiga los juicios\nseveros y lo hace merecedor de la sabiduría, de la vida, de la\nlongevidad y de la comprensión de la Torá, tanto en sus niveles\nrevelados como ocultos.\n8. Regocijarse en Purim, aplaudiendo y bailando, hace que la\nTorá pueda ser recibida y aceptada tanto en sus niveles\nrevelados como ocultos - que son la tremenda luz ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 51,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "s espirituales (ver más en esta lección del Likutey Moharán).\n9. Conservando la alegría en medio del sufrimiento (Shabat 88b)\n Lección 12\n30 Tishrei\n                                                                                                                                                                      51",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 112,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "adikim de la generación.\n12 Kislev\n8. La audacia sagrada se alcanza mediante la alegría. Pues la\nalegría y el regocijo son la fuente principal de la audacia y del\narrojo para acercarse al servicio a Dios, como en el versículo,\n“¡El regocijo en Dios es nuestra fortaleza, nuestra audacia!”\n(Nehemías 8:10).\n9. La Torá y la plegaria son el medio para alcanzar la alegría,\npues corresponden respectivamente a “haremos” -que es el\nconcepto de lo revelado- y a “oiremos”- que es el concepto de\nlo oculto. ",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 9,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: {'concept'}; warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 2,
+        "question": "¿Dónde aparece la plegaria?",
+        "expected_route": "concept_lookup"
+      },
+      "result": {
+        "question": "¿Dónde aparece la plegaria?",
+        "route": "concept_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "concept_lookup",
+        "short_conclusion": "Se encontraron 8 menciones de 'plegaria' en 8 página(s): [13, 14, 15, 17, 18, 19, 23, 24]...",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 8,
+          "relation_matches": 0,
+          "source_references": 0,
+          "pages": [
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            23,
+            24
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 13,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "plegaria"
+            ],
+            "snippet": "119:1)\n(Salmos 119:1)\n1. Mediante el estudio de la Torá son aceptadas todas las\nplegarias y los pedidos, se realza y se eleva la gracia y la\nimportancia del pueblo judío ante la estima de todos aquellos\nde los cuales se pueda necesitar, así sea en temas espirituales\ncomo materiales.\n2. Al dedicarse al estudio de la Torá con energía y entusiasmo,\nla persona le da poder al Reinado de Santidad de modo que\néste se vuelve dominante y hace que prevalezca la buena\ninclinación  sobre la mala inclinación",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 14,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "plegaria"
+            ],
+            "snippet": " la persona merece una\nverdadera comprensión y ser salvada de todo ello.\n6. Las plegarias no son aceptadas cuando las palabras carecen\nde gracia. Por lo tanto, es necesario esforzarse para que las\npalabras tengan verdadera gracia. Y esto se logra mediante el\nestudio de la Torá, que hace que las plegarias sean aceptadas.\n2 Tishrei\n7. El judío debe siempre buscar el intelecto en cada cosa y\nconectarse con la sabiduría y el intelecto que se encuentran en\ncada cosa, para que el intelecto en cada ele",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 15,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "plegaria"
+            ],
+            "snippet": "como la luz del sol” (Isaías 30:26); y se alcanza la\ngracia. Entonces todas las plegarias y pedidos son aceptados.\n11.La mala inclinación desea volver loca a la persona,\nliteralmente, Dios no lo permita. Porque aquel que peca es un\ndemente, como dijeron nuestros Sabios, de bendita memoria,\n“La persona no comete una transgresión a no ser que esté\nposeída por un espíritu de locura” (Sotá 3a). Pero, ¿cómo es\nposible que la mala inclinación llegue a la persona y la vuelva\nsúbitamente loca, Dios no l",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 17,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "plegaria"
+            ],
+            "snippet": "ico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n1. La plegaria es el arma principal del judío. Todas las batallas\nque la persona deba librar -así sean las batallas en contra de la\nmala inclinación u otras batallas en contra de aquellos que\ndesean obstaculizarla u oponérsele- todas se combaten\nmediante la plegaria. Más aún, toda la vitalidad de la persona\nproviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar\nla verdadera santidad deberá dedicarse con frecuen",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 18,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "plegaria"
+            ],
+            "snippet": "renovación, también la luz de la plegaria se hace mucho más\nplena. Sin embargo la perfección de la plegaria se logra al unirla\nal Tzadik de la generación.\n5 Tishrei\n6. Si uno se ha dedicado durante muchos años a la plegaria y a\nla conversación con Dios y sin embargo siente que aún está\nmuy lejos de Él y le parece que Dios, por así decirlo, Le oculta\nSu Rostro, Dios no lo permita - no debe confundirse  y pensar\nque Dios no oye en absoluto sus plegarias y sus conversaciones\ncon Él. Más bien, debe ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 19,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "plegaria"
+            ],
+            "snippet": "está asociado con el\nconcepto de la “luminaria mayor”. Él brilla e ilumina a la\nplegaria, que es el concepto de la “luminaria menor”.\n6 Tishrei\n3 - “Yo mismo vi esa rana”\n3 - “Yo mismo vi esa rana”\n3 - “Yo mismo vi esa rana”\n3 - “Yo mismo vi esa rana”\n3 - “Yo mismo vi esa rana”\n(Bava Batra \nBava Batra \nBava Batra \nBava Batra \nBava Batra 73b)\n73b)\n73b)\n73b)\n73b)\n1. Mediante la canción sagrada, la persona realza y eleva el\nReino de Santidad y merece una posición de autoridad. También\nsucede lo opu",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 23,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "plegaria"
+            ],
+            "snippet": "ca\nporqué a veces la persona se siente súbitamente\nentusiasmada en medio de las plegarias y recita algunas\npalabras de la oración con gran fervor. Ello se debe a que\nDios, en Su compasión, le ha abierto la luz del Infinito y brilla\npara ella. Cuando la persona tiene esa vislumbre -“y aunque\nuno no vea, su mazal ve” (Meguilá 3a)- su alma se enciende\ncon anhelo por unirse a la luz del Infinito. Mientras dure la\nrevelación del Infinito en las palabras en las que [esa luz] se\nle ha abierto y brilla ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 24,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "plegaria"
+            ],
+            "snippet": "bido a que\nsiente alguna pequeña impureza espiritual que lo distrae durante\nsus plegarias y devociones, su arrepentimiento hace que\ntambién los judíos que son completamente malvados y que se\nhan alejado del pueblo judío debido a sus malas acciones, se\ntransformen en un trono para la santidad y vuelvan en\narrepentimiento. Entonces también ellos ayudarán, a aquellos\nque están sirviendo a Dios, a construir “edificios de santidad”.\nAmén, que así sea Su voluntad.\n Lección 4\n10 Tishrei\n24",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 9,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: {'concept'}; warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 3,
+        "question": "¿Dónde aparece hitbodedut?",
+        "expected_route": "concept_lookup"
+      },
+      "result": {
+        "question": "¿Dónde aparece hitbodedut?",
+        "route": "concept_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "concept_lookup",
+        "short_conclusion": "Se encontraron 8 menciones de 'hitbodedut' en 8 página(s): [65, 66, 67, 81, 97, 237, 246, 264]...",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 8,
+          "relation_matches": 0,
+          "source_references": 0,
+          "pages": [
+            65,
+            66,
+            67,
+            81,
+            97,
+            237,
+            246,
+            264
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 65,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "ta su raíz. Esa elevación\nse logra mediante el “juicio” - es decir, mediante el hitbodedut\ny la conversación con el Creador, en la cual la persona derrama\nsu corazón delante de Dios y se evalúa y se juzga a sí misma en\ntodas sus actividades. De esta manera, se eliminan todos los\ntemores y se eleva al temor desde donde esté sumido.\nPues si la persona no se evalúa ni se juzga a sí misma, es\nentonces evaluada y juzgada desde arriba. Subsecuentemente,\nsu juicio se “inviste” en [toda clase de] cosas ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 66,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "desee experimentar el sabor de la “luz oculta”\ndeberá dedicarle mucho tiempo al hitbodedut, a la conversación\ncon Su Creador. Deberá evaluarse y juzgarse en todo momento\n-en todas sus actividades y comportamientos- considerando si\nes adecuado y correcto actuar y comportarse de esa manera\ndelante de Dios, Quien constantemente la favorece. Deberá\n“ordenar sus asuntos mediante el juicio” (Salmos 102:5), juzgarse\na sí misma sobre todo lo que está haciendo, evaluándose y\njuzgándose en todas sus activ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 67,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "ón de Dios, y\nentonces sabrá a Quién debe temer. Todo ello se logra mediante\nel hitbodedut -al juzgarse a uno mismo- mediante ello, uno\nmerece la “luz oculta”. ¡Feliz de aquél que es digno de ello!\n12 Jeshvan\n4. Cuando clamamos a Dios con imágenes que se aplican a\ncarne y hueso [i.e. descripciones antropomórficas tales como\n“Con mano fuerte y brazo extendido” (Deuteronomio 26:8), con\nnombres tales como “Compasivo y Gracioso” (Éxodo 34:6)], y Él\nestá allí para nosotros cada vez que Lo llamamos, t",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 81,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "ica decir solamente\npalabras de Torá, de plegaria y hablar con nuestro Creador\n(hitbodedut). (Y aunque la persona hable con su Creador en su\nlengua natal, tal como lo hacen en nuestro país, ello también\nes llamado el Lenguaje Sagrado. En verdad, al expresarnos ante\nnuestro Creador, debemos hacerlo específicamente en el idioma\nen el cual acostumbramos a hablar [Likutey Moharán II, 25]. Lo\nmás importante es cuidar el lenguaje para santificarlo con\npalabras de santidad, que representan la perfecció",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 97,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "grado de profecía (rúaj\nhakodesh). Y cuando la persona adopta esa práctica [del\nHitbodedut] y se esfuerza y se prepara para hablar delante de\nDios, Él le envía entonces palabras a su boca, que son una forma\ndel espíritu sagrado de profecía. En verdad, éste fue\nprecisamente el fundamento que el rey David estableció en el\nLibro de los Salmos. Es necesario que la persona se renueve\nconstantemente y clame a Dios, en cada ocasión, con nuevas\nsúplicas y ruegos. Entonces merecerá un corazón puro (ver\nt",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 237,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "e logra mediante la autoanulación. La única\nmanera de alcanzarlo es mediante el hitbodedut (la plegaria\npersonal en reclusión). Al expresarse delante de Dios en\nhitbodedut, la persona puede anular todo; puede unirse a Dios\ny quedar incluida en su fuente.\n2. El momento ideal para el hitbodedut es durante la noche,\ncuando todos duermen; y el lugar ideal es fuera de las zonas\nhabitadas, donde se pueda caminar por un sendero apartado -\nen otras palabras, en un lugar por donde nadie camina ni\nsiquier",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 246,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "mo agua. Es necesario, por lo\ntanto, estar siempre alegres.\n15. Al practicar el hitbodedut durante la noche -que es el\nmomento indicado para esta práctica- al igual que al levantarse\na la medianoche para recitar el Tikún Jatzot, el Lamento de\nMedianoche, la persona logra todo lo antedicho [i.e., vencer el\npoder de la imaginación, tener un buen ojo, alcanzar la memoria\ny la alegría]. De ese modo se vuelve digna de pensar\nconstantemente en el propósito final y en el objetivo del Mundo\nque Viene, h",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 264,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "los que están  lejos\nse acercan a Él.\n3. Al acercar almas a Dios y al practicar hitbodedut -al recluirse\ny expresarse ante el Creador, evaluándose y juzgándose en todos\nsus actos- la persona merece observar el Shabat, que encarna\nla anulación del mal y de las fuerzas de la impureza. Dijo el\nprofeta sobre una persona así, “En Mi Casa y dentro de Mis\nmurallas les daré una mano y un nombre, mejor que hijos e\nhijas” (Isaías 56:5). “Una mano” alude al hecho de que esa persona\ntendrá el poder de gener",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 9,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: {'concept'}; warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 4,
+        "question": "¿Dónde aparece emuná?",
+        "expected_route": "concept_lookup"
+      },
+      "result": {
+        "question": "¿Dónde aparece emuná?",
+        "route": "concept_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "concept_lookup",
+        "short_conclusion": "Se encontraron 1 menciones de 'emuná' en 1 página(s): [142]...",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 1,
+          "relation_matches": 0,
+          "source_references": 0,
+          "pages": [
+            142
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 142,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "emuná"
+            ],
+            "snippet": "se rectifica a través del concepto de\n“gusano” (TOLA), que corresponde a la fe (EMuNá), como está\nescrito, “Todos aquellos que fueron criados (haEMuNim) en\nescarlata (TOLA)” (Lamentaciones 4:5). Éste es el aspecto de\nAbraham, quien personifica la bondad y la fe, tal cual está\nexpresado en el versículo, “No quitaré de él Mi bondad ni faltaré\na Mi fidelidad” (Salmos 89:34). Pues mediante la fe, la mano\nderecha vence a los enemigos, como en el versículo, “Su diestra\nsalvará con actos poderosos” (Sa",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 9,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 1 fuentes; página+snippet: útil; tipo evidencia: {'concept'}; warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 5,
+        "question": "¿Dónde aparece sangre?",
+        "expected_route": "concept_lookup"
+      },
+      "result": {
+        "question": "¿Dónde aparece sangre?",
+        "route": "concept_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "concept_lookup",
+        "short_conclusion": "Se encontraron 8 menciones de 'sangre' en 8 página(s): [29, 130, 144, 145, 146, 147, 192, 193]...",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 8,
+          "relation_matches": 0,
+          "source_references": 0,
+          "pages": [
+            29,
+            130,
+            144,
+            145,
+            146,
+            147,
+            192,
+            193
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 29,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "argo se mantiene firme y en\nsilencio. Sufre los insultos y el “derramamiento de sangre”,\naceptando su propia bajeza y pequeñez, reconociendo el gran\ndaño que ha hecho y comprendiendo que es adecuado que sufra\nesos insultos. De esa manera disminuye la sangre en el\nventrículo izquierdo del corazón y aniquila su mala inclinación,\nmereciendo así “el honor de Dios”.\n3. Antes de arrepentirse la persona aún no tiene “ser”; es como\nsi aún no existiese en el mundo, dado que “habría sido mejor si\nno hubie",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 130,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "as herramientas que podían ser usadas para la guerra y\npara el derramamiento de sangre no eran apropiadas para la construcción\nde una Casa de Paz. La Mishná en Sotá 48a afirma que cuando fue destruido\nel Santo Templo desaparecieron el shamir, el nofet tzufim (una extraordinaria\nclase de miel) y “los hombres de fe”]. Así como la piedra era vencida\ny quebrada por el shamir, lo mismo sucede cuando la persona\nquiebra su “corazón de piedra” y sigue tras su intelecto. Pues\nuno debe renunciar a la obst",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 144,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "es el\n“reinado del mal”- y hace que la Presencia Divina se impurifique\ncomo con sangre de menstruación, Dios no lo permita. Eso, a\nsu vez, le dificulta y le hace pesado ganarse el sustento.\n5. De acuerdo con las prohibiciones que los malvados\ntransgreden, Dios no lo permita, despiertan las fuerzas de la\ncontaminación espiritual, haciendo que la Presencia Divina se\nvuelva impura, como con sangre de menstruación, generando\nuna separación entre el Santo, bendito sea y la Presencia Divina,\nDios no l",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 145,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "stado imperfecto, la Presencia Divina está\nimpura, Dios no lo permita, como con sangre menstrual, y esa\nsangre (DaMim) se vuelve silencio (DuMiá). Pues el habla\ndepende principalmente de la pureza sexual (tikún haBRIT),\ncomo en, “Les habló de Su pacto (BRITo)” (Deuteronomio 4:13) -\nde modo que en ese estado imperfecto, es imposible hablar y\nrevelar enseñanzas de Torá. La persona que habla mientras se\n Lección 29                                                                                   6 ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 146,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "de robarle a su\nprójimo, hace que la Presencia Divina se vuelva impura como\ncon sangre menstrual, Dios no lo permita. Esa clase de conducta\nes análoga a la transgresión sexual y da como resultado la\npérdida del sustento, Dios no lo permita.\n12. Para rectificar los negocios y los tratos comerciales se debe\ntener la intención, con cada paso que uno dé en los negocios y\ncon cada palabra que uno diga, de que el dinero obtenido sea\npara caridad. Ésa es la Rectificación General del ámbito\ncomercial. P",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 147,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "l\nes denso y sus períodos irregulares -dado que el vino aumenta\nla fuerza de la sangre y de las características asociadas con ella\n(ver párrafo #10, más arriba)- sin embargo, la cura para ello es que\nbeba vino al cual miró un verdadero Tzadik. Pues los santos\nojos del Tzadik son como cabellos, que son materia excedente\nsurgida de su santa mente. Al mirar el vino, el Tzadik hace\n Lección 29                                                                                  8 Tevet\n                  ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 192,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": " explicación de esto es que\nel anhelo por el sexo deriva de las impurezas en la sangre -es\ndecir, del bazo- y el bazo está asociado con Lilit, la “esclava\nmalvada” y la madre de la multitud mezclada, que es el Reinado\ndel Mal. Lo opuesto de Lilit es el Reinado del Cielo, la “Dama\nReal”, “la mujer temerosa de Dios” (Proverbios 31:30), que es un\naspecto del Mar de Salomón que se encuentra sobre las doce\nvacas. Esas doce vacas representan las doce tribus (Zohar I, 241).\nCuando la persona acepta el ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 193,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "eja el cuerpo -es decir, el deseo por el sexo\nque deriva de las impurezas en la sangre, resultado de un exceso\nen el bazo- y el alma queda así incluida en el Reinado del Cielo.\nEsta persona deberá inspirarse hasta llegar a las lágrimas al\nrecitar el Shemá Israel y Baruj Shem Kevod Maljutó Leolam\nVaed.\n6. Cuando el Tzadik verdadero revela una enseñanza de Torá,\nhace descender nuevas almas para cada uno de los presentes\nque oyen esa enseñanza y que están conectados con ella. Cada\nuno de ellos reci",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 9,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: {'concept'}; warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 6,
+        "question": "¿Dónde aparece habla?",
+        "expected_route": "concept_lookup"
+      },
+      "result": {
+        "question": "¿Dónde aparece habla?",
+        "route": "concept_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "concept_lookup",
+        "short_conclusion": "Se encontraron 8 menciones de 'habla' en 8 página(s): [17, 29, 35, 42, 46, 49, 51, 63]...",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 8,
+          "relation_matches": 0,
+          "source_references": 0,
+          "pages": [
+            17,
+            29,
+            35,
+            42,
+            46,
+            49,
+            51,
+            63
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 17,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "habla"
+            ],
+            "snippet": "4 tishrei\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n1. La plegaria es el arma principal del judío. Todas las batallas\nque la persona deba librar -así sean las batallas en contra de la\nmala inclinación u otras batallas en contra de aquellos que\ndesean obstaculizarla u oponérsele- todas se combaten\nmediante la plegari",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 29,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "habla"
+            ],
+            "snippet": "que KeTeR es una expresión de “esperar”, como\nestá escrito, “Espérame (KaTaR) y hablaré contigo” (Job 36:2).\nLección 6\n14 Tishrei\n                                                                                                                                                                      29",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 35,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "habla"
+            ],
+            "snippet": "adikim], de aquellos que les impiden a los otros acercarse\na ellos y demás, que hablan con astucia para atraer y seducir a\nla gente, alejándola del punto de la verdad, representa un daño\nen la pureza sexual. Por lo tanto, aquél que haya dañado su\npureza sexual deberá cuidarse y ser muy vigilante frente al falso\nconsejo de aquellos que se oponen a la verdad, para no perder\ntoda su vida en un instante, Dios no lo permita.\n19 Tishrei\n10. Es necesario evitar cuidadosamente el consejo de la gente\nen ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 42,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "habla"
+            ],
+            "snippet": "n luz como una piedra\npreciosa, que ilumina con luz propia. Pero hay otras cuya habla\nes sólo como una ventana, que no tiene luz propia y que\nmeramente permite recibir la luz a través de ella; [ese tipo de\npersona] sólo puede ser iluminada por otra. Debes saber que\ntodo esto es de acuerdo al nivel de la verdad.\n6. Cuando la persona despierta verdaderamente a Dios, merece\ncon ello quebrar las barreras y los obstáculos que la separan de\nla santidad y encontrar las brechas para salir desde la oscur",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 46,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "habla"
+            ],
+            "snippet": "Isaías 42:8)\n(Isaías 42:8)\n1. Cuando la persona estudia la Torá en voz alta, el habla la\nesclarece con respecto a todas las áreas en las cuales necesita\narrepentirse, hasta que merece llevar a cabo el arrepentimiento\nexacto que le corresponde. De manera similar, en cada ocasión,\ncada vez que se arrepiente, la persona asciende de un nivel a\notro hasta que sale de su nivel inferior y llega a la comprensión\nde la Torá.\n2. Cuando uno es cuidadoso y se preocupa de que el honor a\nDios no sufra ningún ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 49,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "habla"
+            ],
+            "snippet": "-\nespecialmente la Ley Oral, es decir, el Talmud y los Códigos-\nson inducidos a hablar de manera arrogante en contra de los\nverdaderos Tzadikim. Ése es el motivo detrás de la oposición a\nlos verdaderos Tzadikim por parte de los eruditos.\n3. Cuando esos eruditos que se oponen a los Tzadikim atacan y\nhablan mal del Tzadik, están odiando y persiguiendo al mismo\ntiempo al Tzadik en el mundo superior - es decir, el Tzadik que\noriginó las enseñanzas de Torá que el Tzadik en este mundo\ninferior está ah",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 51,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "habla"
+            ],
+            "snippet": "grandes y elegidos\nde los Tzadikim saben cuáles leyes se han transformado en un\nhabla malvada en contra de los Tzadikim [por parte del erudito]\ny pueden elevar esas palabras y volver a reordenarlas en la\nforma de leyes, logrando así grandes y maravillosas\nunificaciones espirituales (ver más en esta lección del Likutey Moharán).\n9. Conservando la alegría en medio del sufrimiento (Shabat 88b)\n Lección 12\n30 Tishrei\n                                                                                   ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 63,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "habla"
+            ],
+            "snippet": " la armonía en\nsu hogar y de la plegaria. También se elimina el conflicto y las\nhabladurías y les llega a los mundos la “paz general”.\n20. Existen calumniadores y personas que promueven el\nconflicto. Estos están descritos en el versículo, “El calumniador\nsepara a un hombre de su amigo” (Proverbios 16:28). Tales\npersonas andan difundiendo habladurías y calumnias e incitan\na la disputa y al conflicto entre amigos y entre el esposo y la\nesposa. Todo esto sucede en el ámbito físico, en el nivel\nmund",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 9,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: {'concept'}; warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 7,
+        "question": "¿Qué relación hay entre alegría y plegaria?",
+        "expected_route": "relation_lookup"
+      },
+      "result": {
+        "question": "¿Qué relación hay entre alegría y plegaria?",
+        "route": "relation_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "relation_lookup",
+        "short_conclusion": "Se encontraron 17 coincidencias entre 'alegría' y 'plegaria' en 16 páginas.",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 16,
+          "relation_matches": 1,
+          "source_references": 0,
+          "pages": [
+            3,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            45,
+            51,
+            112
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 3,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "ante joya\nque iluminó a todos los que la conocieron\ncon el verdadero mensaje de alegría y amor al Creador.",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 22,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "sgos\nasociados y los deseos negativos [del cuerpo]. De esa manera\nse alcanza la alegría, el entusiasmo y la diligencia.\n9 Tishrei\n7. El segundo paso es la caridad que la persona le da al estudioso\nde Torá. Esto la rescata de los rasgos negativos asociados con\nel elemento “animal” y con el elemento “humano” - que son\nlas palabras vanas, la calumnia, el orgullo y los rasgos\nrelacionados.\n8. El tercer paso es que la persona se confiese delante del\nestudioso de Torá. Mediante ello, el estudioso la d",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 25,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "e falte y orar por él.\n2. Cada persona debe llevar a cabo las mitzvot con tanta alegría\ncomo para no desear ninguna recompensa por ello en el Mundo\nque Viene. Más bien, sólo debe desear que el Santo, bendito\nsea, le envíe otra mitzvá como recompensa por esa mitzvá -\ndado que su alegría proviene de la mitzvá misma. Mediante esa\nalegría, la persona puede llegar a saber lo decretado sobre el\nmundo, así sea antes de que el decreto se haya emitido como\ndespués de habérselo emitido y sobre quién recae",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 26,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "cabo las mitzvot por las mitzvot mismas, con una gran alegría.\nEntonces será capaz de investir sus plegarias en cuentos y anular\ntodos los decretos, incluso luego de haber sido emitidos.\n6. La persona que en Rosh HaShaná oye el shofar hecho sonar\npor un hombre piadoso y temeroso de Dios, ciertamente no\nnecesitará preocuparse por los “truenos” durante todo el año.\n12 tishrei\n7. Para lograr plenamente el “trueno” mencionado más arriba\nes necesario limpiar la mente de toda clase de saberes seculare",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 27,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "á oír, fuerte y claro, lo que sale de la boca,\ny mediante ello, se alcanzará la alegría - cumplir con todas las\nmitzvot por las mitzvot mismas, con una verdadera alegría. De\nesa manera, se merecerá saber cómo anular todos los decretos\nincluso luego de haber sido emitidos, Dios no lo permita.\n10. Para merecer lo antedicho es necesario también unir el amor\na Dios con el temor a Dios, dado que la mejor manera de vencer\n[a los enemigos] es mediante el amor. Sin embargo, el temor\ndebe estar primero.\n",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 45,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "eísmo y se alcanza el espíritu sagrado de profecía.\nSe siente a su vez una gran alegría, al punto en que uno llega a\naplaudir y a bailar en santidad. Esto entonces mitiga los juicios\nseveros y lo hace merecedor de la sabiduría, de la vida, de la\nlongevidad y de la comprensión de la Torá, tanto en sus niveles\nrevelados como ocultos.\n8. Regocijarse en Purim, aplaudiendo y bailando, hace que la\nTorá pueda ser recibida y aceptada tanto en sus niveles\nrevelados como ocultos - que son la tremenda luz ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 51,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "s espirituales (ver más en esta lección del Likutey Moharán).\n9. Conservando la alegría en medio del sufrimiento (Shabat 88b)\n Lección 12\n30 Tishrei\n                                                                                                                                                                      51",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 112,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "alegría"
+            ],
+            "snippet": "adikim de la generación.\n12 Kislev\n8. La audacia sagrada se alcanza mediante la alegría. Pues la\nalegría y el regocijo son la fuente principal de la audacia y del\narrojo para acercarse al servicio a Dios, como en el versículo,\n“¡El regocijo en Dios es nuestra fortaleza, nuestra audacia!”\n(Nehemías 8:10).\n9. La Torá y la plegaria son el medio para alcanzar la alegría,\npues corresponden respectivamente a “haremos” -que es el\nconcepto de lo revelado- y a “oiremos”- que es el concepto de\nlo oculto. ",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 8,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: parcial ({'concept'}); warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 8,
+        "question": "¿Qué relación hay entre sangre y habla?",
+        "expected_route": "relation_lookup"
+      },
+      "result": {
+        "question": "¿Qué relación hay entre sangre y habla?",
+        "route": "relation_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "relation_lookup",
+        "short_conclusion": "Se encontraron 17 coincidencias entre 'sangre' y 'habla' en 16 páginas.",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 16,
+          "relation_matches": 1,
+          "source_references": 0,
+          "pages": [
+            6,
+            17,
+            29,
+            35,
+            42,
+            46,
+            49,
+            51,
+            63,
+            130,
+            144,
+            145,
+            146,
+            147,
+            192,
+            193
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 29,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "argo se mantiene firme y en\nsilencio. Sufre los insultos y el “derramamiento de sangre”,\naceptando su propia bajeza y pequeñez, reconociendo el gran\ndaño que ha hecho y comprendiendo que es adecuado que sufra\nesos insultos. De esa manera disminuye la sangre en el\nventrículo izquierdo del corazón y aniquila su mala inclinación,\nmereciendo así “el honor de Dios”.\n3. Antes de arrepentirse la persona aún no tiene “ser”; es como\nsi aún no existiese en el mundo, dado que “habría sido mejor si\nno hubie",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 130,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "as herramientas que podían ser usadas para la guerra y\npara el derramamiento de sangre no eran apropiadas para la construcción\nde una Casa de Paz. La Mishná en Sotá 48a afirma que cuando fue destruido\nel Santo Templo desaparecieron el shamir, el nofet tzufim (una extraordinaria\nclase de miel) y “los hombres de fe”]. Así como la piedra era vencida\ny quebrada por el shamir, lo mismo sucede cuando la persona\nquiebra su “corazón de piedra” y sigue tras su intelecto. Pues\nuno debe renunciar a la obst",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 144,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "es el\n“reinado del mal”- y hace que la Presencia Divina se impurifique\ncomo con sangre de menstruación, Dios no lo permita. Eso, a\nsu vez, le dificulta y le hace pesado ganarse el sustento.\n5. De acuerdo con las prohibiciones que los malvados\ntransgreden, Dios no lo permita, despiertan las fuerzas de la\ncontaminación espiritual, haciendo que la Presencia Divina se\nvuelva impura, como con sangre de menstruación, generando\nuna separación entre el Santo, bendito sea y la Presencia Divina,\nDios no l",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 145,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "stado imperfecto, la Presencia Divina está\nimpura, Dios no lo permita, como con sangre menstrual, y esa\nsangre (DaMim) se vuelve silencio (DuMiá). Pues el habla\ndepende principalmente de la pureza sexual (tikún haBRIT),\ncomo en, “Les habló de Su pacto (BRITo)” (Deuteronomio 4:13) -\nde modo que en ese estado imperfecto, es imposible hablar y\nrevelar enseñanzas de Torá. La persona que habla mientras se\n Lección 29                                                                                   6 ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 146,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "de robarle a su\nprójimo, hace que la Presencia Divina se vuelva impura como\ncon sangre menstrual, Dios no lo permita. Esa clase de conducta\nes análoga a la transgresión sexual y da como resultado la\npérdida del sustento, Dios no lo permita.\n12. Para rectificar los negocios y los tratos comerciales se debe\ntener la intención, con cada paso que uno dé en los negocios y\ncon cada palabra que uno diga, de que el dinero obtenido sea\npara caridad. Ésa es la Rectificación General del ámbito\ncomercial. P",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 147,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "l\nes denso y sus períodos irregulares -dado que el vino aumenta\nla fuerza de la sangre y de las características asociadas con ella\n(ver párrafo #10, más arriba)- sin embargo, la cura para ello es que\nbeba vino al cual miró un verdadero Tzadik. Pues los santos\nojos del Tzadik son como cabellos, que son materia excedente\nsurgida de su santa mente. Al mirar el vino, el Tzadik hace\n Lección 29                                                                                  8 Tevet\n                  ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 192,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": " explicación de esto es que\nel anhelo por el sexo deriva de las impurezas en la sangre -es\ndecir, del bazo- y el bazo está asociado con Lilit, la “esclava\nmalvada” y la madre de la multitud mezclada, que es el Reinado\ndel Mal. Lo opuesto de Lilit es el Reinado del Cielo, la “Dama\nReal”, “la mujer temerosa de Dios” (Proverbios 31:30), que es un\naspecto del Mar de Salomón que se encuentra sobre las doce\nvacas. Esas doce vacas representan las doce tribus (Zohar I, 241).\nCuando la persona acepta el ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 193,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "sangre"
+            ],
+            "snippet": "eja el cuerpo -es decir, el deseo por el sexo\nque deriva de las impurezas en la sangre, resultado de un exceso\nen el bazo- y el alma queda así incluida en el Reinado del Cielo.\nEsta persona deberá inspirarse hasta llegar a las lágrimas al\nrecitar el Shemá Israel y Baruj Shem Kevod Maljutó Leolam\nVaed.\n6. Cuando el Tzadik verdadero revela una enseñanza de Torá,\nhace descender nuevas almas para cada uno de los presentes\nque oyen esa enseñanza y que están conectados con ella. Cada\nuno de ellos reci",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 8,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: parcial ({'concept'}); warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 9,
+        "question": "¿Qué relación hay entre hitbodedut y plegaria?",
+        "expected_route": "relation_lookup"
+      },
+      "result": {
+        "question": "¿Qué relación hay entre hitbodedut y plegaria?",
+        "route": "relation_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "relation_lookup",
+        "short_conclusion": "Se encontraron 17 coincidencias entre 'hitbodedut' y 'plegaria' en 16 páginas.",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 16,
+          "relation_matches": 1,
+          "source_references": 0,
+          "pages": [
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            23,
+            24,
+            65,
+            66,
+            67,
+            81,
+            97,
+            237,
+            246,
+            264
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 65,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "ta su raíz. Esa elevación\nse logra mediante el “juicio” - es decir, mediante el hitbodedut\ny la conversación con el Creador, en la cual la persona derrama\nsu corazón delante de Dios y se evalúa y se juzga a sí misma en\ntodas sus actividades. De esta manera, se eliminan todos los\ntemores y se eleva al temor desde donde esté sumido.\nPues si la persona no se evalúa ni se juzga a sí misma, es\nentonces evaluada y juzgada desde arriba. Subsecuentemente,\nsu juicio se “inviste” en [toda clase de] cosas ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 66,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "desee experimentar el sabor de la “luz oculta”\ndeberá dedicarle mucho tiempo al hitbodedut, a la conversación\ncon Su Creador. Deberá evaluarse y juzgarse en todo momento\n-en todas sus actividades y comportamientos- considerando si\nes adecuado y correcto actuar y comportarse de esa manera\ndelante de Dios, Quien constantemente la favorece. Deberá\n“ordenar sus asuntos mediante el juicio” (Salmos 102:5), juzgarse\na sí misma sobre todo lo que está haciendo, evaluándose y\njuzgándose en todas sus activ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 67,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "ón de Dios, y\nentonces sabrá a Quién debe temer. Todo ello se logra mediante\nel hitbodedut -al juzgarse a uno mismo- mediante ello, uno\nmerece la “luz oculta”. ¡Feliz de aquél que es digno de ello!\n12 Jeshvan\n4. Cuando clamamos a Dios con imágenes que se aplican a\ncarne y hueso [i.e. descripciones antropomórficas tales como\n“Con mano fuerte y brazo extendido” (Deuteronomio 26:8), con\nnombres tales como “Compasivo y Gracioso” (Éxodo 34:6)], y Él\nestá allí para nosotros cada vez que Lo llamamos, t",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 81,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "ica decir solamente\npalabras de Torá, de plegaria y hablar con nuestro Creador\n(hitbodedut). (Y aunque la persona hable con su Creador en su\nlengua natal, tal como lo hacen en nuestro país, ello también\nes llamado el Lenguaje Sagrado. En verdad, al expresarnos ante\nnuestro Creador, debemos hacerlo específicamente en el idioma\nen el cual acostumbramos a hablar [Likutey Moharán II, 25]. Lo\nmás importante es cuidar el lenguaje para santificarlo con\npalabras de santidad, que representan la perfecció",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 97,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "grado de profecía (rúaj\nhakodesh). Y cuando la persona adopta esa práctica [del\nHitbodedut] y se esfuerza y se prepara para hablar delante de\nDios, Él le envía entonces palabras a su boca, que son una forma\ndel espíritu sagrado de profecía. En verdad, éste fue\nprecisamente el fundamento que el rey David estableció en el\nLibro de los Salmos. Es necesario que la persona se renueve\nconstantemente y clame a Dios, en cada ocasión, con nuevas\nsúplicas y ruegos. Entonces merecerá un corazón puro (ver\nt",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 237,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "e logra mediante la autoanulación. La única\nmanera de alcanzarlo es mediante el hitbodedut (la plegaria\npersonal en reclusión). Al expresarse delante de Dios en\nhitbodedut, la persona puede anular todo; puede unirse a Dios\ny quedar incluida en su fuente.\n2. El momento ideal para el hitbodedut es durante la noche,\ncuando todos duermen; y el lugar ideal es fuera de las zonas\nhabitadas, donde se pueda caminar por un sendero apartado -\nen otras palabras, en un lugar por donde nadie camina ni\nsiquier",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 246,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "mo agua. Es necesario, por lo\ntanto, estar siempre alegres.\n15. Al practicar el hitbodedut durante la noche -que es el\nmomento indicado para esta práctica- al igual que al levantarse\na la medianoche para recitar el Tikún Jatzot, el Lamento de\nMedianoche, la persona logra todo lo antedicho [i.e., vencer el\npoder de la imaginación, tener un buen ojo, alcanzar la memoria\ny la alegría]. De ese modo se vuelve digna de pensar\nconstantemente en el propósito final y en el objetivo del Mundo\nque Viene, h",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 264,
+            "evidence_type": "concept",
+            "score": 0.9,
+            "matched_terms": [
+              "hitbodedut"
+            ],
+            "snippet": "los que están  lejos\nse acercan a Él.\n3. Al acercar almas a Dios y al practicar hitbodedut -al recluirse\ny expresarse ante el Creador, evaluándose y juzgándose en todos\nsus actos- la persona merece observar el Shabat, que encarna\nla anulación del mal y de las fuerzas de la impureza. Dijo el\nprofeta sobre una persona así, “En Mi Casa y dentro de Mis\nmurallas les daré una mano y un nombre, mejor que hijos e\nhijas” (Isaías 56:5). “Una mano” alude al hecho de que esa persona\ntendrá el poder de gener",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 8,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: parcial ({'concept'}); warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    },
+    {
+      "question": {
+        "id": 10,
+        "question": "Buscá la frase \"Rebe Najmán\"",
+        "expected_route": "phrase_lookup"
+      },
+      "result": {
+        "question": "Buscá la frase \"Rebe Najmán\"",
+        "route": "phrase_lookup",
+        "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+        "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+        "answer_type": "phrase_lookup",
+        "short_conclusion": "Se encontraron 10 ocurrencias de la frase en 9 páginas.",
+        "evidence_summary": {
+          "literal_matches": 0,
+          "concept_matches": 0,
+          "relation_matches": 0,
+          "source_references": 0,
+          "pages": [
+            4,
+            5,
+            6,
+            7,
+            53,
+            69,
+            84,
+            85,
+            87
+          ]
+        },
+        "sources": [
+          {
+            "page_number": 4,
+            "evidence_type": "token_match",
+            "score": 0.5,
+            "matched_terms": [
+              "frase"
+            ],
+            "snippet": "consejo en un formato similar al de la\nlección, pero que se centra en una o dos frases que contienen\nla conclusión lógica de toda la enseñanza del Rebe. Unos veinte\naños más tarde, el rabí Natán ordenó las mismas enseñanzas\nde acuerdo a sus temas; su resultado fue el libro Likutey Etzot,\ntraducido a",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 69,
+            "evidence_type": "token_match",
+            "score": 0.5,
+            "matched_terms": [
+              "frase"
+            ],
+            "snippet": " sabiduría superior, sus\nojos brillan como el sol. Ésta es la idea detrás de la frase: “Si\nnuestros ojos brillasen como el sol y como la luna” (Nishmat,\nPlegaria de la Mañana del Shabat). En otras palabras, a veces nuestros\nojos brillan como el sol - es decir, cuando estamos unidos a la\nsabiduría. Y",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 84,
+            "evidence_type": "token_match",
+            "score": 0.5,
+            "matched_terms": [
+              "frase"
+            ],
+            "snippet": "rado alcanza su estado\nde perfección y caen así las setenta lenguas, como en la frase\n“Un lenguaje cae sobre el otro” (Plegarias de las Festividades). Ése\nes el significado de “El Señor Dios hizo caer un sueño profundo\n(vaiapel tardema)” (Génesis 2:21). El Ari, de bendita memoria,\nindica que TaRdeMa",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 85,
+            "evidence_type": "token_match",
+            "score": 0.5,
+            "matched_terms": [
+              "frase"
+            ],
+            "snippet": "o enfrían con una emisión nocturna, que Dios nos\nsalve. Ello está aludido en la frase “que te enfrió en el camino”\n(Deuteronomio 25:18). “En el camino” alude a la impureza sexual,\ncomo en, “Éste es el camino de una mujer adúltera” (Proverbios\n30:20). El “viento tormentoso” entra por medio del Targúm",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 87,
+            "evidence_type": "token_match",
+            "score": 0.5,
+            "matched_terms": [
+              "frase"
+            ],
+            "snippet": "ontenidas en cada cosa.\nEsa persona merece entonces lo que está expresado en la frase\n“Él te sustentará desde Sión (Tzion),” (Salmos 20:3). El sustento\nde esa persona -es decir, su comer, beber y todos sus placeres-\nprovendrán de tzion, de la marca de las letras que están grabadas\ndentro de cada cos",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 4,
+            "evidence_type": "token_match",
+            "score": 0.5,
+            "matched_terms": [
+              "rebe"
+            ],
+            "snippet": "eviada”.\n(Pesajim 3b)\nIncluso antes de que se imprimiese el Likutey Moharán,\nel Rebe Najmán le pidió al rabí Natán que comenzase a recopilar\nlos consejos prácticos de cada una de sus lecciones y los\npresentase en un formato abreviado. Después de escribir\nalgunas páginas, el rabí Natán se las mostró ",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 5,
+            "evidence_type": "token_match",
+            "score": 0.5,
+            "matched_terms": [
+              "rebe"
+            ],
+            "snippet": "abreviado” -transmitido por el Rebe Najmán a través del rabí\nNatán- provea del necesario consejo para dirigir nuestras vidas.\nQue nuestros lugares en la historia puedan asentarse con el\nconocimiento de Dios y con nuestras subsiguientes buenas\nacciones y podamos así merecer ser testigos del momento f",
+            "source_refs_nearby": []
+          },
+          {
+            "page_number": 6,
+            "evidence_type": "token_match",
+            "score": 0.5,
+            "matched_terms": [
+              "rebe"
+            ],
+            "snippet": "as enseñanzas puras y santas de nuestro grande y santo\nRav, la “luz oculta”, el Rebe Najmán de Breslov, que su memoria\nsea para bendición.\nPues el Rebe mismo me ordenó compilar este volumen,\nsiendo que la esencia de sus santas intenciones, en todos sus\ndiscursos y en todas las asombrosas y tremendas",
+            "source_refs_nearby": []
+          }
+        ],
+        "warnings": [],
+        "method": {
+          "retrieval": "postgres_v2_sql_only",
+          "used_milvus": false,
+          "used_embeddings": false,
+          "used_ai": false
+        }
+      },
+      "scoring": {
+        "score": 9,
+        "max": 10,
+        "details": "clasificación: correcta; evidencia: 8 fuentes; página+snippet: útil; tipo evidencia: {'token_match'}; warnings: ninguno; método: SQL-only",
+        "status": "PASS"
+      }
+    }
+  ]
+}

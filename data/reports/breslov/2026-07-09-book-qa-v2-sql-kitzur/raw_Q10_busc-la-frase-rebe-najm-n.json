@@ -1,0 +1,114 @@
+{
+  "question": "Buscá la frase \"Rebe Najmán\"",
+  "route": "phrase_lookup",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "answer_type": "phrase_lookup",
+  "short_conclusion": "Se encontraron 10 ocurrencias de la frase en 9 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      4,
+      5,
+      6,
+      7,
+      53,
+      69,
+      84,
+      85,
+      87
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 4,
+      "evidence_type": "token_match",
+      "score": 0.5,
+      "matched_terms": [
+        "frase"
+      ],
+      "snippet": "consejo en un formato similar al de la\nlección, pero que se centra en una o dos frases que contienen\nla conclusión lógica de toda la enseñanza del Rebe. Unos veinte\naños más tarde, el rabí Natán ordenó las mismas enseñanzas\nde acuerdo a sus temas; su resultado fue el libro Likutey Etzot,\ntraducido a",
+      "source_refs_nearby": []
+    },
+    {
+      "page_number": 69,
+      "evidence_type": "token_match",
+      "score": 0.5,
+      "matched_terms": [
+        "frase"
+      ],
+      "snippet": " sabiduría superior, sus\nojos brillan como el sol. Ésta es la idea detrás de la frase: “Si\nnuestros ojos brillasen como el sol y como la luna” (Nishmat,\nPlegaria de la Mañana del Shabat). En otras palabras, a veces nuestros\nojos brillan como el sol - es decir, cuando estamos unidos a la\nsabiduría. Y",
+      "source_refs_nearby": []
+    },
+    {
+      "page_number": 84,
+      "evidence_type": "token_match",
+      "score": 0.5,
+      "matched_terms": [
+        "frase"
+      ],
+      "snippet": "rado alcanza su estado\nde perfección y caen así las setenta lenguas, como en la frase\n“Un lenguaje cae sobre el otro” (Plegarias de las Festividades). Ése\nes el significado de “El Señor Dios hizo caer un sueño profundo\n(vaiapel tardema)” (Génesis 2:21). El Ari, de bendita memoria,\nindica que TaRdeMa",
+      "source_refs_nearby": []
+    },
+    {
+      "page_number": 85,
+      "evidence_type": "token_match",
+      "score": 0.5,
+      "matched_terms": [
+        "frase"
+      ],
+      "snippet": "o enfrían con una emisión nocturna, que Dios nos\nsalve. Ello está aludido en la frase “que te enfrió en el camino”\n(Deuteronomio 25:18). “En el camino” alude a la impureza sexual,\ncomo en, “Éste es el camino de una mujer adúltera” (Proverbios\n30:20). El “viento tormentoso” entra por medio del Targúm",
+      "source_refs_nearby": []
+    },
+    {
+      "page_number": 87,
+      "evidence_type": "token_match",
+      "score": 0.5,
+      "matched_terms": [
+        "frase"
+      ],
+      "snippet": "ontenidas en cada cosa.\nEsa persona merece entonces lo que está expresado en la frase\n“Él te sustentará desde Sión (Tzion),” (Salmos 20:3). El sustento\nde esa persona -es decir, su comer, beber y todos sus placeres-\nprovendrán de tzion, de la marca de las letras que están grabadas\ndentro de cada cos",
+      "source_refs_nearby": []
+    },
+    {
+      "page_number": 4,
+      "evidence_type": "token_match",
+      "score": 0.5,
+      "matched_terms": [
+        "rebe"
+      ],
+      "snippet": "eviada”.\n(Pesajim 3b)\nIncluso antes de que se imprimiese el Likutey Moharán,\nel Rebe Najmán le pidió al rabí Natán que comenzase a recopilar\nlos consejos prácticos de cada una de sus lecciones y los\npresentase en un formato abreviado. Después de escribir\nalgunas páginas, el rabí Natán se las mostró ",
+      "source_refs_nearby": []
+    },
+    {
+      "page_number": 5,
+      "evidence_type": "token_match",
+      "score": 0.5,
+      "matched_terms": [
+        "rebe"
+      ],
+      "snippet": "abreviado” -transmitido por el Rebe Najmán a través del rabí\nNatán- provea del necesario consejo para dirigir nuestras vidas.\nQue nuestros lugares en la historia puedan asentarse con el\nconocimiento de Dios y con nuestras subsiguientes buenas\nacciones y podamos así merecer ser testigos del momento f",
+      "source_refs_nearby": []
+    },
+    {
+      "page_number": 6,
+      "evidence_type": "token_match",
+      "score": 0.5,
+      "matched_terms": [
+        "rebe"
+      ],
+      "snippet": "as enseñanzas puras y santas de nuestro grande y santo\nRav, la “luz oculta”, el Rebe Najmán de Breslov, que su memoria\nsea para bendición.\nPues el Rebe mismo me ordenó compilar este volumen,\nsiendo que la esencia de sus santas intenciones, en todos sus\ndiscursos y en todas las asombrosas y tremendas",
+      "source_refs_nearby": []
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "question": "¿Dónde aparece emuná?",
+  "route": "concept_lookup",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 1 menciones de 'emuná' en 1 página(s): [142]...",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 1,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      142
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 142,
+      "evidence_type": "concept",
+      "score": 0.9,
+      "matched_terms": [
+        "emuná"
+      ],
+      "snippet": "se rectifica a través del concepto de\n“gusano” (TOLA), que corresponde a la fe (EMuNá), como está\nescrito, “Todos aquellos que fueron criados (haEMuNim) en\nescarlata (TOLA)” (Lamentaciones 4:5). Éste es el aspecto de\nAbraham, quien personifica la bondad y la fe, tal cual está\nexpresado en el versículo, “No quitaré de él Mi bondad ni faltaré\na Mi fidelidad” (Salmos 89:34). Pues mediante la fe, la mano\nderecha vence a los enemigos, como en el versículo, “Su diestra\nsalvará con actos poderosos” (Sa",
+      "source_refs_nearby": []
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false
+  }
+}

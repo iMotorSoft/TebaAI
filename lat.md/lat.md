@@ -74,6 +74,7 @@ Each architecture concern has one canonical LAT source and may be anchored from 
 - [[knowledge-scope-contract]]
 - [[library-retrieval-models-policy]]
 - [[breslov-test-corpus-policy]]
+- [[breslov-ingestion-v2-architecture]]
 - [[bibliographic-metadata-audit]]
 - [[page-aware-metadata-mapping-audit]]
 - [[page-metadata-enrichment]]

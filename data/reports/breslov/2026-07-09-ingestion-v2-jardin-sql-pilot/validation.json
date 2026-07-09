@@ -1,0 +1,81 @@
+{
+  "table_library_ingestion_runs_v2": "exists",
+  "table_library_pages_v2": "exists",
+  "table_library_sections_v2": "exists",
+  "table_library_concept_mentions_v2": "exists",
+  "table_library_source_references_v2": "exists",
+  "table_library_internal_relations_v2": "exists",
+  "table_library_document_wiki_v2": "exists",
+  "runs_count": 1,
+  "last_run": {
+    "run_id": "7f48bf88-16a2-4b3e-93d8-44e674e9bcba",
+    "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+    "status": "partial",
+    "metrics": {
+      "wiki": 1,
+      "pages": 9,
+      "sections": 0,
+      "concept_mentions": 12,
+      "source_references": 6,
+      "internal_relations": 1
+    }
+  },
+  "pages_count": 9,
+  "pages_numbers": [
+    45,
+    49,
+    51,
+    52,
+    53,
+    63,
+    70,
+    81,
+    82
+  ],
+  "acid_pages_found": [],
+  "acid_pages_missing": [
+    36,
+    42,
+    280,
+    384,
+    389,
+    408,
+    437,
+    438
+  ],
+  "sections_count": 0,
+  "concepts_count": 12,
+  "concept_labels": [
+    "Adam",
+    "alma",
+    "bitul",
+    "dolor",
+    "emuná",
+    "jardín",
+    "plegaria",
+    "Señor del Campo",
+    "simjá",
+    "Tajlit",
+    "tikún",
+    "tzadik"
+  ],
+  "source_refs_count": 6,
+  "source_types": [
+    "Ketuvim",
+    "Likutey Moharán",
+    "Profetas",
+    "Talmud",
+    "Torá",
+    "Zohar"
+  ],
+  "relations_count": 1,
+  "relations": [
+    [
+      "Señor del Campo",
+      "plegaria",
+      "explicit_relation"
+    ]
+  ],
+  "wiki_count": 1,
+  "overall": "PASS"
+}

@@ -1,0 +1,38 @@
+{
+  "run_id": "7f48bf88-16a2-4b3e-93d8-44e674e9bcba",
+  "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+  "mode": "execute",
+  "status": "partial",
+  "metrics": {
+    "pages": 9,
+    "sections": 0,
+    "concept_mentions": 12,
+    "source_references": 6,
+    "internal_relations": 1,
+    "wiki": 1
+  },
+  "warnings": [
+    "low_relation_count: only 1/11 relation candidates found"
+  ],
+  "pages_found_count": 9,
+  "pages_range": [
+    45,
+    82
+  ],
+  "acid_pages_found": [],
+  "acid_pages_missing": [
+    36,
+    42,
+    280,
+    384,
+    389,
+    408,
+    437,
+    438
+  ],
+  "sections_count": 0,
+  "concepts_count": 12,
+  "source_refs_count": 6,
+  "relations_count": 1,
+  "relations_total_candidates": 11
+}

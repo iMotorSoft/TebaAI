@@ -1,7 +1,8 @@
-"""Book QA V2 SQL-only schemas — PostgreSQL V2 grounded answers."""
+"""Book QA V2 schemas — discovery + SQL-only answers."""
 
 from __future__ import annotations
 
+from datetime import datetime
 from typing import Any, Literal
 
 from pydantic import BaseModel, Field
@@ -16,7 +17,8 @@ class BookQAOptions(BaseModel):
 
 class BookQARequest(BaseModel):
     question: str = Field(..., min_length=3, max_length=500)
-    run_id: str = Field(..., min_length=1, max_length=64)
+    run_id: str | None = Field(default=None, min_length=1, max_length=64)
+    document_id: str | None = Field(default=None, min_length=1, max_length=64)
     scope_code: str = "breslov_test"
     top_k: int = Field(default=8, ge=1, le=20)
     language: Literal["es", "en", "he"] = "es"
@@ -54,12 +56,13 @@ class BookQAMethod(BaseModel):
     ai_synthesis_enabled: bool = False
     run_id: str = ""
     scope_code: str = ""
+    run_resolution: str = ""
 
 
 class BookQAResponse(BaseModel):
     question: str
     route: str = "book_qa_v2_sql"
-    run_id: str
+    run_id: str = ""
     document_id: str = ""
     scope_code: str = ""
     answer_type: Literal[
@@ -70,3 +73,34 @@ class BookQAResponse(BaseModel):
     sources: list[BookQASource] = Field(default_factory=list)
     warnings: list[str] = Field(default_factory=list)
     method: BookQAMethod = Field(default_factory=BookQAMethod)
+
+
+# ── Discovery ───────────────────────────────────────────────────────────────
+
+
+class BookQARunSummary(BaseModel):
+    run_id: str
+    document_id: str = ""
+    document_title: str = ""
+    scope_code: str = ""
+    pipeline_version: str = ""
+    status: str = ""
+    pages_count: int = 0
+    pages_with_text: int = 0
+    concept_mentions_count: int = 0
+    source_references_count: int = 0
+    internal_relations_count: int = 0
+    wiki_exists: bool = False
+    created_at: datetime | None = None
+    finished_at: datetime | None = None
+
+
+class BookQARunsResponse(BaseModel):
+    runs: list[BookQARunSummary] = Field(default_factory=list)
+    count: int = 0
+    method: BookQAMethod = Field(default_factory=BookQAMethod)
+
+
+class BookQALatestRunResponse(BaseModel):
+    run: BookQARunSummary | None = None
+    warnings: list[str] = Field(default_factory=list)

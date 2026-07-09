@@ -1,0 +1,43 @@
+{
+  "question": "¿Qué se debe hacer antes de comenzar cualquier mitzvá o devoción religiosa para ampliar los pasajes hacia la santidad?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 1 mención(es) de 'ra ampliar los pasajes hacia la santidad' en 1 página(s).",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 1,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      430
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 430,
+      "evidence_type": "concept",
+      "score": 0.9,
+      "snippet": "antes de comenzar cualquier mitzvá o devoción religiosa, es bueno dar caridad para ampliar los pasajes hacia la santidad que la persona debe realizar mediante sus devociones. De esa manera no le será tan difícil y oneroso el entrar. 29 Tamuz 4. El comienzo de la caridad es extremadamente difícil y costoso, pero los beneficios son muy grandes en verdad. La explicación de esto es que el cuerpo tiene",
+      "matched_terms": [
+        "ra ampliar los pasajes hacia la santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

@@ -35,17 +35,32 @@ def classify(question: str) -> tuple[str, str | None, str | None]:
             a, b = m.group(1).strip().lower(), m.group(2).strip().lower()
             if len(a) > 2 and len(b) > 2:
                 return "relation_lookup", a, b
+    # Lección/chapter pattern: search for "Lección N" in concept mode
+    lec_match = re.search(r"(?:Lecci[oó]n|Leccion|Halaj[áa])\s+(\d+)", q, re.I)
+    if lec_match:
+        lesson_term = f"Lección {lec_match.group(1)}"
+        return "concept_lookup", lesson_term, None
+
     for pat in [
         r"(?:d[oó]nde\s+(?:aparece|est[áa]|dice|habla))\s+(?:de\s+|del\s+|la\s+|el\s+)?(.+?)$",
         r"(?:qu[eé]\s+(?:dice|aparece|enseña))\s+(?:sobre\s+)?(.+?)$",
         r"(?:en\s+qu[eé]\s+(?:p[áa]ginas|secci[oó]n))\s+(?:aparece\s+)?(.+?)$",
+        r"(?:seg[uú]n\s+(?:la\s+|el\s+)?(?:Lecci[oó]n|Leccion|Halaj[áa])\s+\d+\s*,\s*)?(.{8,40}?)$",
     ]:
         m = re.search(pat, q, re.I)
         if m:
             c = m.group(1).strip().lower()
             if len(c) > 2:
                 return "concept_lookup", c, None
-    return "concept_lookup", q[:30], None
+    # Default: use first meaningful multi-word phrase
+    tokens = re.findall(r"\w+", q.lower())
+    stop = {"que", "para", "con", "por", "las", "los", "del", "como", "cada", "una",
+            "antes", "segun", "según", "sobre", "entre", "cual", "cuál", "cómo", "dónde",
+            "leccion", "lección", "qué", "quÉ", "el", "la", "de", "en", "un", "una"}
+    meaningful = [t for t in tokens if t not in stop and len(t) > 3]
+    if meaningful:
+        return "concept_lookup", meaningful[0], None
+    return "concept_lookup", q[:20], None
 
 
 def _v(row, idx=0):
@@ -258,23 +273,49 @@ async def run_book_qa(
 
         # Concept lookup
         if route == "concept_lookup" and a:
+            # Try the extracted concept first
             await cur.execute(
                 "SELECT p.page_number, substring(p.text, greatest(position(%s in lower(p.text)) - 80, 1), %s) "
                 "FROM library_pages_v2 p WHERE p.run_id = %s AND lower(p.text) LIKE %s "
                 "ORDER BY p.page_number LIMIT %s",
                 (a, SNIPPET_CHARS, rid, f"%{a}%", top_k),
             )
-            for r in await cur.fetchall():
-                pg = _v(r, 0)
-                if pg not in seen_pages:
-                    seen_pages.add(pg)
-                    sources.append(BookQASource(
-                        page_number=pg, evidence_type="concept", score=0.9,
-                        snippet=(_v(r, 1) or "")[:SNIPPET_CHARS].replace("\n", " ").strip(),
-                        matched_terms=[a],
-                    ))
-            if not sources:
-                warnings.append(f"concept_not_found: '{a}'")
+            rows = await cur.fetchall()
+            if rows:
+                for r in rows:
+                    pg = _v(r, 0)
+                    if pg not in seen_pages:
+                        seen_pages.add(pg)
+                        sources.append(BookQASource(
+                            page_number=pg, evidence_type="concept", score=0.9,
+                            snippet=(_v(r, 1) or "")[:SNIPPET_CHARS].replace("\n", " ").strip(),
+                            matched_terms=[a],
+                        ))
+            else:
+                # Fallback: extract meaningful keywords
+                keywords = [t for t in re.findall(r"\w{4,}", a) if t not in (
+                    "que", "para", "con", "por", "las", "los", "del", "como",
+                    "cada", "una", "antes", "según", "sobre", "entre", "cuál",
+                    "lección", "cómo", "dónde",
+                )]
+                for kw in keywords[:3]:
+                    await cur.execute(
+                        "SELECT p.page_number, substring(p.text, greatest(position(%s in lower(p.text)) - 80, 1), 200) "
+                        "FROM library_pages_v2 p WHERE p.run_id = %s AND lower(p.text) LIKE %s "
+                        "ORDER BY p.page_number LIMIT 5",
+                        (kw, rid, f"%{kw}%"),
+                    )
+                    for r in await cur.fetchall():
+                        pg = _v(r, 0)
+                        if pg not in seen_pages:
+                            seen_pages.add(pg)
+                            sources.append(BookQASource(
+                                page_number=pg, evidence_type="concept", score=0.6,
+                                snippet=(_v(r, 1) or "")[:200].replace("\n", " ").strip(),
+                                matched_terms=[kw],
+                            ))
+                if not sources:
+                    warnings.append(f"concept_not_found: '{a}'")
 
         # Phrase lookup
         if route == "phrase_lookup":

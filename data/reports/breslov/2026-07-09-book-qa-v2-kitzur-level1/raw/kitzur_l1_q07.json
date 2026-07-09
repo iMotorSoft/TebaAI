@@ -1,0 +1,153 @@
+{
+  "question": "¿Cuál es el remedio espiritual recomendado en el Kitzur para una emisión nocturna?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 12 mención(es) de 'o en el kitzur para una emisión nocturna' en 12 página(s).",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 12,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      1,
+      2,
+      4,
+      64,
+      85,
+      95,
+      326,
+      376,
+      377,
+      413,
+      436,
+      437
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 1,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "ikutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán (Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán) por",
+      "matched_terms": [
+        "kitzur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 2,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "ra, sin el consentimiento previo, por escrito, del editor. Título del original: Kitzur Likutey Moharan Kitzur Likutey Moharan Kitzur Likutey Moharan Kitzur Likutey Moharan Kitzur Likutey Moharan Para",
+      "matched_terms": [
+        "kitzur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 4,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "enfoque distinto y el resultado de sus esfuerzos formó la base de esta obra, el Kitzur Likutey Moharán. El Rebe Najmán quedó muy satisfecho con la nueva versión (A través del Fuego y del Agua, p.98).",
+      "matched_terms": [
+        "kitzur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 95,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "endita memoria, ordenó las lecciones en la antigua [i.e., original] versión del Kitzur Likutey Moharán, y no quise alterarlo. Lección 21",
+      "matched_terms": [
+        "kitzur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 413,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "el Aquí se ha finalizado y completado el Aquí se ha finalizado y completado el Kitzur Likutey Moharán - Parte I Kitzur Likutey Moharán - Parte I Kitzur Likutey Moharán - Parte I Kitzur Likutey Mohará",
+      "matched_terms": [
+        "kitzur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 85,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "que el Targúm. 25 Jeshvan 11. Esto también está conectado con el fenómeno de la emisión seminal nocturna, Dios nos salve, en donde el espíritu de locura encarnado en las lenguas de las setenta nacione",
+      "matched_terms": [
+        "emisión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 376,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "r la Torá”) forman la palabra MAOT (dinero). 23 Sivan 205 - El Remedio para una Emisión Nocturna 205 - El Remedio para una Emisión Nocturna 205 - El Remedio para una Emisión Nocturna 205 - El Remedio",
+      "matched_terms": [
+        "emisión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 377,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "Diez Salmos son un remedio extremadamente poderoso y una rectificación para la emisión nocturna. La persona que merezca recitarlos en el mismo día en que ocurra la emisión no tendrá nada que temer de",
+      "matched_terms": [
+        "emisión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 436,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "el mundo la inmoralidad sexual, Dios no lo permita. Esto lleva, a su vez, a la emisión en vano de simiente, Dios no lo permita, que es descrita por la frase “su carne estaba sellada (eJTiM) debido a",
+      "matched_terms": [
+        "emisión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 437,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "s asaltan furiosamente a la persona, quien se ve entonces pasible de caer en la emisión nocturna, Dios no lo permita, tal cual está descrito por la frase “su carne estaba sellada” - pero se impone con",
+      "matched_terms": [
+        "emisión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

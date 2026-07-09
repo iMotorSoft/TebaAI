@@ -1,0 +1,43 @@
+{
+  "question": "¿Qué le pidió el Rebe Najmán al rabí Natán que comenzase a recopilar antes de que se imprimiese el Likutey Moharán?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 1 mención(es) de 'de que se imprimiese el likutey moharán' en 1 página(s).",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 1,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      4
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 4,
+      "evidence_type": "concept",
+      "score": 0.9,
+      "snippet": "da”. una versión abreviada”. una versión abreviada”. (Pesajim 3b) Incluso antes de que se imprimiese el Likutey Moharán, el Rebe Najmán le pidió al rabí Natán que comenzase a recopilar los consejos prácticos de cada una de sus lecciones y los presentase en un formato abreviado. Después de escribir algunas páginas, el rabí Natán se las mostró al Rebe quien no estuvo satisfecho. El rabí Natán encaró",
+      "matched_terms": [
+        "de que se imprimiese el likutey moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

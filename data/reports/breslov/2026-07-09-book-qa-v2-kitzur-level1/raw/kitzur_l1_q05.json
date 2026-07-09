@@ -1,0 +1,152 @@
+{
+  "question": "¿Qué deben hacer los esposos antes de salir de viaje para evitar ser dañados por el camino?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 11 mención(es) de 'je para evitar ser dañados por el camino' en 11 página(s).",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 11,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      6,
+      16,
+      31,
+      35,
+      36,
+      41,
+      46,
+      121,
+      142,
+      146,
+      438
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 35,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "er toda su vida en un instante, Dios no lo permita. 19 Tishrei 10. Es necesario evitar cuidadosamente el consejo de la gente en general, dado que prácticamente todas sus propuestas son malasanas. Esto",
+      "matched_terms": [
+        "evitar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 36,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "sagrada fe e incapaz de llegar a la Tierra de Israel. Siendo así, es necesario evitar cuidadosamente el consejo de tales personas, Dios no lo permita. En su lugar, uno debe unirse a los verdaderos Tz",
+      "matched_terms": [
+        "evitar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 121,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "rio ser extremadamente cuidadosos al enfrentar la oposición de otras personas y evitar sucumbir al deseo de dinero, Dios no lo permita; [pues es posible que la persona que se nos oponga represente el",
+      "matched_terms": [
+        "evitar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 142,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "es la fuente de toda la oposición que sufren los justos. Por lo tanto, se debe evitar oír enseñanzas de Torá provenientes de eruditos que no son rectos (como afirmaron nuestros Sabios, de bendita mem",
+      "matched_terms": [
+        "evitar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 146,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "0. Mientras no se haya logrado la Rectificación General a la perfección se debe evitar beber vino - dado que con ello llegan todos los pecados, Dios no lo permita. Beber vino también es dañino para el",
+      "matched_terms": [
+        "evitar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 438,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "veces, como resultado de los alimentos que se ingieren, los sueños pueden estar dañados, como los sueños enviados por medio de un demonio, Dios no lo permita; y así se puede llegar a una polución noct",
+      "matched_terms": [
+        "dañados"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 6,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "a sombra de su santidad. Todo su anhelo y deseo era llevar a los hombres por el camino de la acción recta: para abrir los ojos de los ciegos y para liberar a aquellos que están atrapados, diciéndoles",
+      "matched_terms": [
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 16,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "modo que al menos no haga aquello que él mismo comprende y sabe que es malo y pecaminoso, Dios no lo permita. Más aún, se debe eliminar de él el espíritu malo, el espíritu de locura, que se disfraza d",
+      "matched_terms": [
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 31,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "s, la persona que desee retornar a Dios deberá prepararse y fortalecerse en los caminos de Dios, a cada momento, así sea que esté espiritualmente “arriba” o  Lección 6 16 Tishrei",
+      "matched_terms": [
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 41,
+      "evidence_type": "concept",
+      "score": 0.6,
+      "snippet": "rsona, en ese grado el Santo, bendito sea, morará con ella y le hará brillar un camino para salir de la oscuridad y de las fuerzas impuras que le impiden orar y dedicarse a sus devociones. Con este mé",
+      "matched_terms": [
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

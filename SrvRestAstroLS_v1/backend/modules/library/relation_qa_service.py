@@ -182,8 +182,9 @@ async def retrieve_relation_evidence(
                 if missing:
                     warnings.append(f"milvus_candidates_without_authorized_pg:{missing}")
                 methods.append("milvus_dense_cosine")
-        except Exception:
-            warnings.append("milvus_unavailable: lexical retrieval used")
+        except Exception as milvus_exc:
+            exc_type = type(milvus_exc).__name__
+            warnings.append(f"milvus_unavailable: {exc_type} — lexical retrieval used")
     else:
         warnings.append("milvus_not_routed_for_requested_scope")
 

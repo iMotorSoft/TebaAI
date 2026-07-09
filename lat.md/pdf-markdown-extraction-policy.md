@@ -11,6 +11,8 @@ El formato canónico persistido en `library_document_texts.content` es Markdown.
 
 ## Flujo
 
+El flujo convierte PDF a Markdown antes de chunking o persistencia textual.
+
 ```
 PDF original
    ↓
@@ -24,6 +26,8 @@ chunking (generic o structure-aware)
 ```
 
 ## Reglas
+
+Las reglas mantienen PyMuPDF4LLM y Markdown como contrato de ingesta PDF.
 
 - El extractor por defecto para `.pdf` es `pymupdf4llm`.
 - El formato por defecto es `markdown`.

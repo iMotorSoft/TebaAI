@@ -62,6 +62,8 @@ Markdown canónico extraído con PyMuPDF4LLM desde `library_document_texts.conte
 
 ## Comando usado
 
+Estos comandos reproducen la comparación de estrategias por documento.
+
 ```bash
 uv run python -m scripts.compare_markdown_chunking_strategies \\
   --collection breslov_test --document-title "Kokhavey Ohr" \\
@@ -73,6 +75,8 @@ uv run python -m scripts.compare_markdown_chunking_strategies \\
 ```
 
 ## Tests
+
+La validación cubre detección estructural, chunking, métricas y safety.
 
 - `test_markdown_chunking_strategy_comparison.py`: 14 tests (detection, chunking, metrics, safety).
 - `pytest`: 365 PASS.

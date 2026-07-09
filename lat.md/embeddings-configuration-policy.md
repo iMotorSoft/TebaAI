@@ -9,6 +9,8 @@ TebaAI usa embeddings a través de LiteLLM como gateway. La clave upstream de Op
 
 ## Arquitectura
 
+El flujo separa clave upstream, gateway LiteLLM y consumo desde TebaAI.
+
 ```
 OpenAI_Key_JAI_query
        ↓
@@ -23,6 +25,8 @@ Milvus recibe embeddings
 
 ## Configuración
 
+La configuración usa variables TebaAI y la master key global de LiteLLM.
+
 | Variable | Propósito | Default |
 |----------|-----------|---------|
 | `TEBAAI_LITELLM_BASE_URL` | URL del proxy LiteLLM | `http://127.0.0.1:4000` |
@@ -33,6 +37,8 @@ Milvus recibe embeddings
 | `TEBAAI_EMBEDDINGS_BATCH_SIZE` | Textos por batch | 16 |
 
 ### Precedencia de resolución de API key
+
+La resolución prioriza la convención global y deja un override local.
 
 ```
 1. LITELLM_MASTER_KEY — fuente primaria global (convención iMotorSoft).
@@ -64,6 +70,8 @@ No requiere embeddings:
 - Documentación.
 
 ## Seguridad
+
+La política evita exponer claves directas en código, logs o frontend.
 
 - `LITELLM_API_KEY` se expone en `globalVar.py` como string seguro.
 - No se imprime la clave en logs, errores ni respuestas HTTP.

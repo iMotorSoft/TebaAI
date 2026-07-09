@@ -21,6 +21,8 @@ La base de datos del proyecto TebaAI es siempre `tebaai`.
 
 ## Reglas de resolución
 
+Las reglas centralizan la resolución PostgreSQL en `core/config.py`.
+
 1. `globalVar.py` expone `POSTGRES_ENABLED`, `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_DSN`, `POSTGRES_DSN_DISPLAY` y demás constantes PostgreSQL.
 2. La resolución ocurre en `core/config.py` vía `AppSettings._validate_postgres()`.
 3. Si `TEBAAI_POSTGRES_*` están definidas, tienen prioridad (override explícito).
@@ -30,6 +32,8 @@ La base de datos del proyecto TebaAI es siempre `tebaai`.
 7. Ningún script de library lee variables de entorno directamente.
 
 ## Seguridad
+
+La configuración sanitiza secretos antes de exponer valores operativos.
 
 - `core/config.py` es la única fuente que lee variables de entorno.
 - `POSTGRES_DSN_DISPLAY` tiene el password sanitizado.
@@ -41,6 +45,8 @@ La base de datos del proyecto TebaAI es siempre `tebaai`.
 Todos los scripts de library usan `from core.config import get_settings` y resuelven el pool vía `infrastructure/postgres/pool.py` que importa `POSTGRES_DSN` desde `globalVar`.
 
 ## Tests
+
+Los tests cubren resolución, overrides y sanitización de configuración.
 
 - `test_globalvar_postgres_config.py` (12 tests) cubre DB_PG_* resolution, defaults, override y sanitización.
 - `test_global_var.py` cubre la fachada `globalVar.py`.

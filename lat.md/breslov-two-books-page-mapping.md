@@ -31,10 +31,14 @@ Reference labels incluyen `section_label` + `PDF page(s)`.
 
 ## Tests
 
+Los tests validan normalization_plus, anchors y guards de seguridad.
+
 - `test_page_mapping_markdown_chunks.py`: 10 tests (normalization_plus para Markdown, anchors, safety).
 - `pytest`: 386 PASS.
 
 ## Comandos
+
+Los comandos aplican enriquecimiento de páginas por documento test.
 
 ```bash
 uv run python -m scripts.enrich_chunk_page_metadata \\

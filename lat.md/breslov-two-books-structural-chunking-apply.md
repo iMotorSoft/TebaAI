@@ -16,6 +16,8 @@ Aplicar chunking estructural sobre Markdown persistido para Kokhavey Ohr y KITZU
 
 ## Metodología
 
+La metodología aplica estrategias estructurales sobre Markdown persistido.
+
 - Fuente: `library_document_texts.content` (Markdown persistido vía PyMuPDF4LLM).
 - Estrategias: `heading-aware` para Kokhavey Ohr (172 H2), `lesson-aware` para KITZUR (494 lessons).
 - Metadata: `metadata.chunking` + `metadata.section` por chunk.
@@ -39,15 +41,21 @@ Las búsquedas FTS retornan resultados de los nuevos libros con `section` visibl
 
 ## Tests
 
+Los tests validan conversión estructural y persistencia de metadata.
+
 - `test_apply_markdown_structural_chunks.py`: 11 tests.
 - `pytest`: 376 PASS.
 
 ## No contaminación
 
+La aplicación no modificó corpus productivo ni servicios vectoriales.
+
 - `breslov` productivo: 7964 chunks (sin cambios).
 - Milvus no tocado. LiteLLM no llamado. Embeddings no generados.
 
 ## Comandos
+
+Los comandos aplican chunking estructural por libro y estrategia.
 
 ```bash
 uv run python -m scripts.chunk_documents --collection breslov_test \\

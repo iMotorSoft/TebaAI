@@ -37,11 +37,15 @@ Todos los `chunk_id` devueltos por Milvus existen en PostgreSQL con `collection_
 
 ## Tests
 
+La validación combina tests unitarios y un script integral de integridad.
+
 - `test_breslov_test_hybrid_integrity.py`: 10 tests.
 - `validate_breslov_test_hybrid_integrity.py`: script de validación integral.
 - `pytest`: 404 PASS.
 
 ## Comando
+
+El comando requiere clave LiteLLM para validar la rama vectorial.
 
 ```bash
 TEBAAI_LITELLM_API_KEY="..." uv run python -m scripts.validate_breslov_test_hybrid_integrity

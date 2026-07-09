@@ -78,7 +78,9 @@ El script `scripts/compare_chunking_strategies.py` ejecutó ambas estrategias en
 
 ## globalVar PostgreSQL config 2026-06-30
 
-Se implementó resolución PostgreSQL centralizada en `core/config.py` desde variables `DB_PG_*` estándar iMotorSoft + base `tebaai`. `globalVar.py` expone la configuración como fachada única. `TEBAAI_POSTGRES_*` queda como override opcional. Se crearon 12 tests unitarios. Smoke real ejecutado con resultado B (aplicar chunking Sijot-aware).
+PostgreSQL quedó centralizado en `core/config.py` y expuesto por `globalVar.py`.
+
+La resolución usa variables `DB_PG_*` estándar iMotorSoft + base `tebaai`. `TEBAAI_POSTGRES_*` queda como override opcional. Se crearon 12 tests unitarios. Smoke real ejecutado con resultado B.
 
 ## Sijot-aware apply 2026-06-30
 
@@ -90,7 +92,9 @@ Page mapping real para 273/476 chunks Sijot-aware en `breslov_test` usando `norm
 
 ## Breslov test Milvus indexing 2026-06-30
 
-476 chunks Sijot-aware indexados en `tebaai_breslov_test_chunks_v1` (colección Milvus separada). Embeddings vía LiteLLM (`openai_text_embedding_3_small`, dim=1536). Safety guards test/productivo. `tebaai_breslov_chunks_v1` intacta (1991). Tests: 311 PASS.
+Los 476 chunks Sijot-aware quedaron indexados en una colección Milvus test separada.
+
+La colección usada fue `tebaai_breslov_test_chunks_v1`. Embeddings vía LiteLLM (`openai_text_embedding_3_small`, dim=1536). Safety guards test/productivo. `tebaai_breslov_chunks_v1` intacta (1991). Tests: 311 PASS.
 
 ## Pendientes
 

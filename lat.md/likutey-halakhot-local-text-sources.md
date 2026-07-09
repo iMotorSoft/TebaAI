@@ -18,10 +18,17 @@ Three tiers of sources were evaluated:
 
 ## HebrewBooks Download and Preflight
 
+Esta sección resume descarga y preflight local de fuentes HebrewBooks.
+
 ### Download
-Seven HebrewBooks records were identified for ליקוטי הלכות. Five were valid; two (`64972`, `20557`) were false positives discarded. Direct download via `downloadhandler.ashx` was blocked by Cloudflare, so PDFs were reconstructed from official 1200 px page PNGs.
+
+Seven HebrewBooks records were evaluated for ליקוטי הלכות.
+
+Five were valid; two (`64972`, `20557`) were false positives discarded. Direct download via `downloadhandler.ashx` was blocked by Cloudflare, so PDFs were reconstructed from official 1200 px page PNGs.
 
 ### Preflight Result: Image-Only
+
+The reconstructed HebrewBooks PDFs were image-only and unusable as text sources.
 
 | File | Pages | MB | Text chars | Hebrew | Images | Classification |
 |------|------:|----|----------:|------:|------:|---------------|
@@ -64,6 +71,8 @@ Base output directory: `/media/issajar/DEVELOP/Download/Tora/Breslov/LikuteyHala
 
 ### Artifact tree
 
+The generated artifact tree keeps source JSON, readable formats and manifests separate.
+
 ```
 TextSources/
 ├── sefaria_json/
@@ -95,6 +104,8 @@ TextSources/
 
 ### Validated coverage
 
+The generated Sefaria artifacts cover all four sections with selectable text.
+
 | Section | Refs | Segments | Hebrew chars | PDF pages | PDF MB | Versions | Licenses | Text selectable |
 |---------|:----:|:--------:|:------------:|:---------:|:------:|----------|----------|:---------------:|
 | Orach Chaim | 42 | 4,430 | 6,968,427 | 1,888 | 37.0 | 3 versions | CC-BY-NC, unknown | yes |
@@ -105,11 +116,15 @@ TextSources/
 
 ### Format priority for future ingestion
 
+Future ingestion should prefer structured sources over generated PDFs.
+
 1. **JSON** (canonical — preserves refs, versions, licenses, segments, hebrew)
 2. **Markdown** (readable intermediate, same information)
 3. **Generated PDF** (derivative, searchable, good for study, not canonical)
 
 ## Decision Framework
+
+The decision framework separates textual authority from visual backup material.
 
 | Source | Has text? | Use case |
 |--------|:---------:|----------|
@@ -134,11 +149,15 @@ This phase is artifact generation only and must not mutate production services o
 
 ## License Caveat
 
-Generated artifacts must preserve per-section `versionTitle` and `license` metadata. Sefaria serves mixed Hebrew versions: Orach Chaim resolves to `CC-BY-NC` (BRI 2019), while other sections resolve to `unknown` (Or Haganuz). Future ingestion must track this at the section level.
+Generated artifacts must preserve per-section version and license metadata.
+
+Sefaria serves mixed Hebrew versions: Orach Chaim resolves to `CC-BY-NC` (BRI 2019), while other sections resolve to `unknown` (Or Haganuz). Future ingestion must track this at the section level.
 
 Current `usage_scope`: `internal_study` — no public distribution.
 
 ## Next Steps (not executed, documented for future)
+
+These steps remain deferred until licensing and ingestion strategy are decided.
 
 1. **Close and commit this phase** in a dedicated window when time permits.
 2. **Before ingestion:**

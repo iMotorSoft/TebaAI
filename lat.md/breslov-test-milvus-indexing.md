@@ -26,6 +26,8 @@ Los 476 chunks Sijot-aware de "El Alma del Rebe Najmán" en `breslov_test` fuero
 
 ## Safety guards
 
+Los guards aseguran que cada corpus use solo su colección Milvus autorizada.
+
 - `breslov_test` solo permite Milvus test (`tebaai_breslov_test_chunks_v1`)
 - `breslov` solo permite Milvus productivo (`tebaai_breslov_chunks_v1`)
 - Rechaza colección productiva como destino para test
@@ -45,6 +47,8 @@ Cada vector incluye: `pk`, `chunk_id`, `document_id`, `collection_code`, `langua
 
 ## Tests
 
+La suite valida guards, payload vectorial y dimensión esperada.
+
 - `test_milvus_test_indexing.py`: 13 tests (safety guards, payload, dim).
 - `pytest` total: 311 PASS (antes 298).
 
@@ -60,6 +64,8 @@ Cada vector incluye: `pk`, `chunk_id`, `document_id`, `collection_code`, `langua
 TebaAI no gestiona claves directas de OpenAI. LiteLLM resuelve la upstream key (`OpenAI_Key_JAI_query`) en su `config.yaml`. TebaAI se autentica contra LiteLLM vía `TEBAAI_LITELLM_API_KEY`. Ver [[embeddings-configuration-policy]].
 
 ## Comando usado
+
+El comando de indexación requiere aplicar explícitamente la colección test.
 
 ```bash
 TEBAAI_LITELLM_API_KEY="\$LITELLM_MASTER_KEY" uv run python -m scripts.index_chunks_milvus \\

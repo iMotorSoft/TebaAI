@@ -9,6 +9,8 @@ Validar búsqueda híbrida aislada para `breslov_test` usando PostgreSQL FTS + M
 
 ## Colecciones usadas
 
+La validación compara explícitamente los destinos productivo y test.
+
 | Componente | Producción | Test |
 |-----------|-----------|------|
 | PostgreSQL | `breslov` | `breslov_test` |
@@ -16,6 +18,8 @@ Validar búsqueda híbrida aislada para `breslov_test` usando PostgreSQL FTS + M
 | Embeddings | LiteLLM (`openai_text_embedding_3_small`) | Mismo gateway |
 
 ## Safety guards
+
+Los guards impiden cruzar colecciones PostgreSQL y Milvus entre test y productivo.
 
 | Combinación | Resultado |
 |-------------|-----------|
@@ -33,6 +37,8 @@ Validar búsqueda híbrida aislada para `breslov_test` usando PostgreSQL FTS + M
 
 ## CLI
 
+El CLI permite reproducir búsquedas híbridas contra la colección test aislada.
+
 ```bash
 uv run python -m scripts.search_library_text \\
   --collection breslov_test \\
@@ -49,10 +55,14 @@ uv run python -m scripts.search_library_text \\
 
 ## Tests
 
+Los tests cubren guards, parámetros híbridos y ejecución CLI.
+
 - `test_hybrid_breslov_test_isolation.py`: 10 tests (guards, hybrid params, CLI).
 - `pytest` total: 332 PASS.
 
 ## Limitaciones
+
+Las limitaciones vigentes reflejan el estado experimental del documento y ranking.
 
 - Documento sigue `test_candidate`.
 - Sin RAG.

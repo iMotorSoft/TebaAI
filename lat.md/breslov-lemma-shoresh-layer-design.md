@@ -18,6 +18,8 @@ Diseñar capa experimental de lemas/raíces/shoresh artificial multilingüe para
 
 ## Conceptos analizados (10)
 
+La evaluación cubrió diez conceptos Breslov candidatos para expansión léxica multilingüe.
+
 | Concept ID | Query ES | Query EN | Confidence | Expansión estimada |
 |-----------|----------|----------|:----------:|:------------------:|
 | emunah | emuná | faith | curated | +54 chunks |
@@ -33,6 +35,8 @@ Diseñar capa experimental de lemas/raíces/shoresh artificial multilingüe para
 
 ## Hallazgos
 
+La expansión mejora cobertura sin reemplazar el retrieval base ni la query original.
+
 - El FTS existente encuentra resultados para todos los conceptos probados.
 - La expansión multilingüe agrega chunks relevantes que la query original no captura.
 - Ejemplo: "faith"/"fe" encuentran chunks en inglés (Kokhavey Ohr) que "emuná" no alcanza.
@@ -40,6 +44,8 @@ Diseñar capa experimental de lemas/raíces/shoresh artificial multilingüe para
 - Vector search puede ayudar a puentear diferencias de idioma sin expansión léxica.
 
 ## Riesgos
+
+Los riesgos principales son precisión semántica, ambigüedad lingüística y mezcla de corpus.
 
 | Riesgo | Mitigación |
 |--------|-----------|
@@ -50,6 +56,8 @@ Diseñar capa experimental de lemas/raíces/shoresh artificial multilingüe para
 | Shoresh ≠ concepto Breslov | Conceptos curados por domain expert |
 
 ## Guardrails propuestos
+
+Estos guardrails delimitan una capa experimental y reversible de expansión conceptual.
 
 1. Expansión nunca reemplaza query original
 2. Términos añadidos marcados con concept_id
@@ -82,10 +90,14 @@ Opcional: tabla `chunk_concepts` N:M para vinculación directa chunk→concepto.
 
 ## Tests
 
+La validación quedó cubierta por tests unitarios y suite general.
+
 - `test_breslov_lemma_layer_analysis.py`: 15 tests.
 - `pytest`: 419 PASS.
 
 ## Comando
+
+El análisis se ejecuta como script offline con salida JSON.
 
 ```bash
 uv run python -m scripts.analyze_breslov_lemma_layer --output-json /tmp/report.json

@@ -9,6 +9,8 @@ Los 476 chunks Sijot-aware de "El Alma del Rebe Najmán" en `breslov_test` fuero
 
 ## Estrategia
 
+La estrategia combina normalización textual y anchors múltiples por chunk.
+
 - **normalization_plus**: NFKC + lowercase + unaccent + markdown stripping + Sija heading normalization + dash/quote normalization.
 - Matching por anclas múltiples (inicio, medio, fin, saltos de tercio).
 - Solo confidente `high` (start/end anchors coinciden en misma página o adyacentes con `>= 60%` hits).
@@ -44,11 +46,15 @@ Los 476 chunks Sijot-aware de "El Alma del Rebe Najmán" en `breslov_test` fuero
 
 ## Metadata preservada
 
+El enrichment agregó page mapping sin perder metadata previa de chunking y sección.
+
 - `bibliographic_metadata.section` — preservada desde `ch.metadata.section`
 - `bibliographic_metadata.chunking` — preservada desde `ch.metadata.chunking`
 - `bibliographic_metadata.page_mapping` — agregada por el enrichment
 
 ## Reference labels
+
+Las etiquetas combinan sección y páginas PDF para mostrar citas navegables.
 
 - Secciones Sija: `Sija N · PDF page(s) M`
 - Otras secciones: `SectionName · PDF page(s) M`
@@ -60,10 +66,14 @@ Las búsquedas ahora muestran `reference_label` y `page_start/end` en los result
 
 ## Tests
 
+La suite cubre normalización, anchors y seguridad del enrichment.
+
 - `test_sijot_page_mapping_enrichment.py`: 16 tests (normalization_plus, anchors, safety).
 - `pytest` total: 298 PASS (antes 282).
 
 ## Limitaciones
+
+La cobertura parcial queda documentada como deuda de normalización.
 
 - 203/476 chunks sin page mapping (42.6%) — chunks con contenido markdown denso no superan threshold.
 - Cobertura mejorable con refinamiento de normalization_plus.
@@ -72,6 +82,8 @@ Las búsquedas ahora muestran `reference_label` y `page_start/end` en los result
 - Sin embeddings. Sin RAG.
 
 ## Comando usado
+
+El comando aplica page mapping real sobre el documento test_candidate.
 
 ```bash
 uv run python -m scripts.enrich_chunk_page_metadata \\

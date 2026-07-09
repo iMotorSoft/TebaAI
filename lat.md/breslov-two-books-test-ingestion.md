@@ -9,6 +9,8 @@ Ingestar dos nuevos PDFs como `test_candidate` en `breslov_test` usando PyMuPDF4
 
 ## Libros
 
+La ingesta incorporó dos PDFs test_candidate sin generar chunks ni embeddings.
+
 | Libro | Archivo | Idioma | Páginas | Chars Markdown |
 |-------|---------|--------|-------:|---------------:|
 | Kokhavey Ohr | Kokhavey Ohr layout BH_PRINT-4.pdf | en | 576 | 1,136,153 |
@@ -37,6 +39,8 @@ Ingestar dos nuevos PDFs como `test_candidate` en `breslov_test` usando PyMuPDF4
 | breslov_test | 3 | 476 (solo El Alma) |
 
 ## Comando
+
+El comando de ingesta exige `--apply` para persistir el documento.
 
 ```bash
 uv run python -m scripts.ingest_document \\

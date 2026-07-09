@@ -40,6 +40,8 @@ Hybrid search with `--milvus-collection tebaai_breslov_test_chunks_v1` works iso
 
 ## Comandos
 
+Los comandos indexan cada libro en la colección Milvus test aislada.
+
 ```bash
 TEBAAI_LITELLM_API_KEY="..." uv run python -m scripts.index_chunks_milvus \\
   --collection breslov_test --document-title "Kokhavey Ohr" \\

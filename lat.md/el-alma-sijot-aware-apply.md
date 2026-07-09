@@ -71,10 +71,14 @@ Las 7 búsquedas simuladas retornan resultados de `breslov_test`. FTS español y
 
 ## Tests
 
+Los tests validan la conversión de chunks temporales al formato persistible.
+
 - `test_sijot_aware_chunk_apply.py`: 11 tests para conversión TemporaryChunk → DB format.
 - `pytest` total: 282 PASS (antes 271).
 
 ## Limitaciones
+
+Las limitaciones reflejan que el documento sigue como candidato test.
 
 - Documento sigue `test_candidate`.
 - Milvus no indexado.
@@ -83,6 +87,8 @@ Las 7 búsquedas simuladas retornan resultados de `breslov_test`. FTS español y
 - Page mapping pendiente.
 
 ## Comando usado
+
+Los comandos reproducen dry-run y apply de chunking Sijot-aware.
 
 ```bash
 # Dry-run

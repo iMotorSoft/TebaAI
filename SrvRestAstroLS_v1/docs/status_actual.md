@@ -2,7 +2,7 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-08 (estandar operativo de servidores dev)
+Ultima actualizacion: 2026-07-09
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
 
@@ -19,7 +19,7 @@ Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta r
 - Autenticacion con Argon2id, access JWT, refresh token opaco, rotacion, deteccion de reutilizacion y roles `admin`, `editor`, `viewer`.
 - Biblioteca con ingesta de Markdown, texto y PDF, chunking, PostgreSQL FTS y busqueda HTTP autenticada.
 - Milvus 2.6 funciona como indice vectorial derivado; PostgreSQL conserva texto y metadata como fuente de verdad.
-- LiteLLM se usa para embeddings `text-embedding-3-small`; no existe modelo generativo ni RAG conversacional.
+- LiteLLM se usa para embeddings `openai_text_embedding_3_small` y para síntesis generativa (`openai_gpt-5.4-nano`) en el endpoint Relation QA.
 - Servidores dev canonicos: `SrvRestAstroLS_v1/backend-dev.sh` para Litestar en `127.0.0.1:7008` y `SrvRestAstroLS_v1/astro-dev.sh` para Astro en `127.0.0.1:3008`.
 
 Referencias canonicas:
@@ -2134,6 +2134,50 @@ El endpoint backend autenticado está implementado; el informe canónico es `../
 - validación: 638 tests backend PASS y seis casos reales sin fuentes huérfanas;
 - migración 012 aplicada para memberships bootstrap; corpus intacto en 8 docs/5102 chunks ready;
 - pendiente operativo: curl 200 autenticado cuando el entorno provea credenciales E2E.
+
+## Relation QA Editorial Acid Batch — 2026-07-09
+
+```text
+ESTADO: CERRADO (PASS usable)
+PRÓXIMA FASE: AI synthesis reliability + concept detection hardening
+
+Resultado: 17.3/24 promedio editorial
+  - PASS fuerte:  1 (Q7: ruaj-habla)
+  - PASS usable:  7 (Q1-Q4, Q6, Q8, Q9)
+  - WARN:         2 (Q5: alegría-plegaria, Q10: caída-renovación)
+  - FAIL:         0
+
+P0 identificado: confiabilidad de síntesis IA vía LiteLLM/fallback
+  - AI synthesis falla 30-50% con ai_response_parse_failed
+  - Deterministic fallback es genérico (solo lista fuentes)
+  - Q1, Q5, Q10 fallan consistentemente; Q3, Q9 transitorios
+
+P1 identificado: detección conceptual frágil
+  - extract_concepts_from_question() prioriza palabras de pregunta
+  - Q4 detectó "literalmente"/"tema" en vez de "hitbodedut"
+  - Faltan variantes hebreas para tristeza/atzevut, alegría/simjá, miedo/yirá
+
+Fortalezas:
+  - Fuentes siempre auditables (página/chunk/snippet en todas)
+  - Warnings metodológicos siempre presentes
+  - Retrieval: PG FTS + ILIKE + coocurrencia + Milvus vector en todas
+  - Evidencia diversa (literal, bíblica, rabínica, temática, coocurrencia)
+  - Cuando AI funciona, respuesta editorial es sustantiva
+
+Reporte canónico:
+  data/reports/breslov/2026-07-09-relation-qa-editorial-acid-batch/
+
+Guardrails:
+  - PostgreSQL no tocado
+  - Milvus no tocado
+  - LiteLLM no tocado
+  - Corpus no tocado (8 docs ready, 5102 chunks, 5102 embeddings)
+  - globalVar.py no tocado
+  - No OpenAI directo
+  - Backend detenido con backend-dev.sh
+  - Frontend no tocado
+  - Tests: 51/51 PASS
+```
 
 ## Historial
 

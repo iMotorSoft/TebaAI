@@ -4,7 +4,7 @@ Este tablero resume la arquitectura viva de TebaAI y evita repetir la historia t
 
 Objetivo: `arquitectura-viva`
 
-Ultima actualizacion: 2026-07-08 (estandar operativo de servidores dev)
+Ultima actualizacion: 2026-07-09
 
 ## Estado general
 
@@ -12,8 +12,8 @@ LAT documenta configuración, persistencia, autenticación, retrieval, validaci�
 
 - PostgreSQL 18 es fuente de verdad.
 - Milvus 2.6 es un índice vectorial derivado.
-- LiteLLM provee embeddings y será el gateway de modelos futuros.
-- TebaAI recupera evidencia bibliográfica; todavía no genera respuestas RAG.
+- LiteLLM provee embeddings (`openai_text_embedding_3_small`) y síntesis generativa (`openai_gpt-5.4-nano`) como gateway único.
+- El endpoint Relation QA (`POST /library/relation-qa`) genera respuestas editoriales con fuentes auditables, distinguiendo evidencia literal, temática e inferida.
 - Breslov es la primera colección, no una dependencia de dominio del núcleo genérico.
 - `SrvRestAstroLS_v1/backend-dev.sh` y `SrvRestAstroLS_v1/astro-dev.sh` son los entrypoints operativos locales para servidores dev.
 
@@ -104,6 +104,16 @@ La deuda arquitectónica restante requiere decisiones explícitas y no debe mezc
 2. ADR para el límite plataforma TebaAI / vertical Breslov.
 3. ADR previo a cualquier generación RAG o síntesis con LLM.
 4. Reconciliar conteos PostgreSQL/Milvus antes de reindexar.
+
+## Relation QA Editorial Acid Batch — 2026-07-09
+
+Cerrado: `PASS usable` (17.3/24). Reporte canónico en `data/reports/breslov/2026-07-09-relation-qa-editorial-acid-batch/`.
+
+- P0: confiabilidad de síntesis IA vía LiteLLM.
+- P1: detección conceptual frágil (conceptos extraídos de la pregunta, no del dominio).
+- Próxima fase: AI synthesis reliability + concept detection hardening.
+
+Servicios no tocados: PostgreSQL, Milvus, LiteLLM. Sin cambios de backend, frontend, corpus ni `globalVar.py`.
 
 ## Seguridad
 

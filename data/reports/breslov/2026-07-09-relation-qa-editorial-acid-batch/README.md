@@ -37,6 +37,14 @@ AI synthesis (`openai_gpt-5.4-nano` vía LiteLLM) falla 30-50% de las consultas 
 - Harness: `SrvRestAstroLS_v1/backend/scripts/relation_qa_editorial_acid_batch.py`
 - Preguntas: `data/reports/breslov/2026-07-09-relation-qa-editorial-acid-batch/batch_questions.json`
 
+## Cierre
+
+```text
+ESTADO: CERRADO (PASS usable)
+COMMIT: e50c058 test(breslov): add relation qa editorial acid batch
+PRÓXIMA FASE: AI synthesis reliability + concept detection hardening
+```
+
 ## Servicios verificados
 
 - PostgreSQL: OK (Docker, pgvector/pgvector:pg18-trixie)

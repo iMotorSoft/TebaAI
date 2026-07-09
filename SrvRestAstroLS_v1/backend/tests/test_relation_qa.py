@@ -6,6 +6,7 @@ from uuid import uuid4
 import pytest
 from pydantic import ValidationError
 
+from infrastructure.milvus.errors import MilvusConnectionError
 from modules.library.domain import KnowledgeScope
 from modules.library.relation_qa_ai import (
     EditorialAIResult,
@@ -290,3 +291,44 @@ async def test_ai_parse_failure_returns_deterministic_fallback() -> None:
     assert response.method.used_ai is False
     assert response.answer.ai_inference_used is False
     assert any("ai_response_parse_failed" in warning for warning in response.warnings)
+
+
+@pytest.mark.asyncio
+async def test_milvus_connection_error_falls_back_to_lexical_retrieval() -> None:
+    request = RelationQARequest(
+        question="¿Qué relación hay entre sangre y habla?",
+        concept_a="sangre",
+        concept_b="habla",
+        use_ai=False,
+    )
+    row = _row(chunk_id="test-lexical-0001")
+    with (
+        patch(
+            "modules.library.relation_qa_service.search_fts_chunks",
+            new=AsyncMock(return_value=[row]),
+        ),
+        patch(
+            "modules.library.relation_qa_service.search_ilike_chunks",
+            new=AsyncMock(return_value=[]),
+        ),
+        patch(
+            "modules.library.relation_qa_service.search_relation_pattern_chunks",
+            new=AsyncMock(return_value=[]),
+        ),
+        patch(
+            "modules.library.relation_qa_service.search_cooccurrence_chunks",
+            new=AsyncMock(return_value=[]),
+        ),
+        patch(
+            "modules.library.relation_qa_service._vector_search_sync",
+            side_effect=MilvusConnectionError("Milvus down"),
+        ),
+    ):
+        response = await run_relation_qa(AsyncMock(), request, _scope())
+
+    assert response.method.used_milvus is False
+    assert response.sources
+    assert any(
+        warning.startswith("milvus_unavailable: MilvusConnectionError")
+        for warning in response.warnings
+    )

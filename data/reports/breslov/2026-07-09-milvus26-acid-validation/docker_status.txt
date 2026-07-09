@@ -1,0 +1,7 @@
+CONTAINER ID   IMAGE                     COMMAND                  CREATED       STATUS                      PORTS     NAMES
+b9c764ef16bb   milvusdb/milvus:v2.6.14   "/tini -- milvus run…"   5 weeks ago   Exited (1) 15 minutes ago             milvus26-standalone
+
+---
+Status=exited Running=false ExitCode=1 OOMKilled=false Restarting=false Health=unhealthy StartedAt=2026-07-09T15:30:43.160409161Z FinishedAt=2026-07-09T15:32:14.937683687Z RestartCount=0 LogPath=/media/issajar/DEVELOP/docker-data/containers/b9c764ef16bba2f141847c1d610dafd1b7af1d8a6bc64a95db1094ea4fd386d7/b9c764ef16bba2f141847c1d610dafd1b7af1d8a6bc64a95db1094ea4fd386d7-json.log
+
+---

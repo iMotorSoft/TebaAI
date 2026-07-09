@@ -1,0 +1,596 @@
+{
+  "milvus": {
+    "host": "127.0.0.1",
+    "port": 19530,
+    "collection": "tebaai_breslov_chunks_v1",
+    "connected": false,
+    "collections": [],
+    "collection_exists": false,
+    "num_entities": null,
+    "schema_ok": false,
+    "schema": {
+      "fields": []
+    },
+    "indexes": [],
+    "loaded": false,
+    "load_state": null,
+    "latency_ms": {
+      "connect": 10120
+    },
+    "errors": [
+      {
+        "stage": "milvus.connect",
+        "kind": "MilvusConnectionError",
+        "message": "Failed to connect to Milvus at 127.0.0.1:19530: <MilvusException: (code=2, message=Fail connecting to server on 127.0.0.1:19530, illegal connection params or server unavailable)>"
+      }
+    ]
+  },
+  "pg": {
+    "enabled": true,
+    "connected": true,
+    "ready_chunks": 5102,
+    "sample_size": 20,
+    "sample_chunks": [
+      {
+        "chunk_id": "00096842-1514-4fc8-9fa1-96805df0d1db",
+        "chunk_uid": "82c1c453a76d6b4813dc6ae5",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "b3290501fdb01e37fa03f9714bce8fdea01e3892e45366e11f89b75efd95b7f7",
+        "chunk_index": 11,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0013ff4c-048c-4855-957e-743efbcfa4b6",
+        "chunk_uid": "0190e7a5e242b4cca10c2fc1",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "1e137d6fdeff25b2071d1ca7c82d12b8bb5b2a9811fa27aa2961f277a7d5e6d0",
+        "chunk_index": 536,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0015eac7-b980-4380-a95e-b52ecd41935c",
+        "chunk_uid": "3018201709a29770866edc03",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "84c38881976f7a53f97caeeef75d1edda685f4b82c449a55c2678268c691a3a0",
+        "chunk_index": 201,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00167426-d02c-4a13-88a1-1fe79a12560e",
+        "chunk_uid": "88003d52ac856b69ebf38097",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "d808f03ddc11d65ccfa3d959445599765c4b1b13d7decc838a2791c4ef3caad5",
+        "chunk_index": 406,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0046e9cd-7eb4-4ebd-8fd2-fbb545bc69a8",
+        "chunk_uid": "181dce9b3c82767970fd762e",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "2c168807d29d8959e3df820c30a715ed857dee569cf9fd4cd792e12efbb85cb1",
+        "chunk_index": 706,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0047d480-fec0-4548-a128-cfbae221e5b0",
+        "chunk_uid": "f6ec9a8fcfa7e23b86c64dee",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "6fde51013987d932f0aeb94e829f74a96ad76faaa3a3f18fd92a22e5aefab340",
+        "chunk_index": 404,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "004a75bf-6a2b-4d95-9459-f4e709e7803b",
+        "chunk_uid": "5cec6614381dec5c3beefb3e",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "5968ba00c0216ca42c118e962f2a0ba88ea6181beb8dbc770e9907a0f613db42",
+        "chunk_index": 489,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0057d402-e776-4499-a6f5-015dca0976b3",
+        "chunk_uid": "cc5be8fe0852e46607373c49",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "acfa064d55ffa4c4b0b84a41e2963035a3bd5a4a008ff4e00b95784dfd9d7131",
+        "chunk_index": 14,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "006354e8-6de8-4ef2-8d3f-40f729645603",
+        "chunk_uid": "d37151e188b53f4fb1278d22",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "4132f4d96920e6a0dd44f26e91861ab4a4ac1b420664279a6ceef53cce3de73d",
+        "chunk_index": 418,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00759e73-624c-4c06-b73a-4b31ba2a3df1",
+        "chunk_uid": "3c4b1ccd40c57453edd43891",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "92cff9c5cc6cc2590bf4656414a521bf89d80a8ac37efd544341ccba229b21a7",
+        "chunk_index": 424,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0076f642-ef54-41c4-99f6-832d95ce2092",
+        "chunk_uid": "4676792e98b770438e129dba",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "905fb131e5743d4ca2847af1783f932480c2267e235d60b2c8415b94c3788c0b",
+        "chunk_index": 1087,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00798162-5bbb-4da4-ad8f-9baf4e91a0b6",
+        "chunk_uid": "8db49277b038ac95a9cca7e0",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "82b6b63285c352bbf54b90748dea95a184cd27e1668a78e3560370be15b0faf9",
+        "chunk_index": 342,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0089db13-3fed-440c-b125-063061e8d97a",
+        "chunk_uid": "0673f0802146a523a598e020",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "5b20d583164fe811ca67d81f2cad1c8f9736786946a5a5d968a9d73e86bc0980",
+        "chunk_index": 847,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "009fccaf-3528-449e-8a55-d36eac2f8a6b",
+        "chunk_uid": "717af9b20a682bdadff78c28",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "749521b10af01aa86076fdd082e63f57e811cb8d62634bd0df51b12c92305fbc",
+        "chunk_index": 769,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00a472be-bf20-4eb0-8e6c-29071b368c31",
+        "chunk_uid": "f68fb6e86c5bc4096cc24f0c",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "295323a5934b28593302dcd2075a3441ea7b532d12a356d27fd9bd8f93915bb5",
+        "chunk_index": 766,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00a6bc08-13ed-46e8-abf8-12a984c62f38",
+        "chunk_uid": "782852bb7e2f13986ba40795",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "407f9787283af75fde771abb81416bf99d98cef5b559ca079a32b77c5e96bf81",
+        "chunk_index": 479,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00ac95d0-c973-43ed-b854-32c8f7550caa",
+        "chunk_uid": "8c685e188c8a7e4cd59050fc",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "f041c6c3c7275766fa4678fdd6c9f4202f4126fa2000a1e6c0c66627ad3fb0a1",
+        "chunk_index": 417,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00c4e521-b534-4dbe-901f-2428725b7ffb",
+        "chunk_uid": "1eabdd017c31986be10cd4be",
+        "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+        "content_sha256": "9d21c4a381f97433f68d4c2376019df165b1b0386d4baabc62dd411bf5a9ea8e",
+        "chunk_index": 61,
+        "document_title": "Un Día en la Vida de un Jasid de Breslov",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00d4926e-2caa-43fc-bfab-0571aa3242ac",
+        "chunk_uid": "99778fc8392cfba83950d46d",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "a1475ae410ac871fc5ae58739388098c243edc178324fd23bffb79ea2944cfaa",
+        "chunk_index": 198,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00d7faf9-f4de-4333-afc3-969cac4ddad0",
+        "chunk_uid": "fcdd289b385a599855938ee2",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "6fece6583295319074ea38871e7ef1c3e373d9b6560f14112223c2adf132d37f",
+        "chunk_index": 374,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      }
+    ],
+    "errors": [],
+    "latency_ms": {
+      "connect": 0,
+      "count_ready": 152,
+      "sample_fetch": 68
+    },
+    "scope_code": "breslov_primary"
+  },
+  "roundtrip": {
+    "status": "blocked",
+    "pg_count": 5102,
+    "milvus_count": null,
+    "sample_size": 20,
+    "sample_found": 0,
+    "sample_missing": 0,
+    "duplicates": 0,
+    "mismatches": [],
+    "latency_ms": {},
+    "errors": [
+      {
+        "stage": "roundtrip.milvus",
+        "kind": "MilvusUnavailable",
+        "message": "Milvus is not connected or the collection does not exist"
+      }
+    ]
+  },
+  "search_latency": {
+    "status": "warn",
+    "collection": "tebaai_breslov_chunks_v1",
+    "scope_code": "breslov_primary",
+    "embedding_model": "openai_text_embedding_3_small",
+    "runs": [
+      {
+        "query": "tristeza",
+        "top_k": 5,
+        "embedding_ms": 2577,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "tristeza",
+        "top_k": 10,
+        "embedding_ms": 2577,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "tristeza",
+        "top_k": 20,
+        "embedding_ms": 2577,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "tristeza",
+        "top_k": 50,
+        "embedding_ms": 2577,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "miedo",
+        "top_k": 5,
+        "embedding_ms": 586,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "miedo",
+        "top_k": 10,
+        "embedding_ms": 586,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "miedo",
+        "top_k": 20,
+        "embedding_ms": 586,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "miedo",
+        "top_k": 50,
+        "embedding_ms": 586,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "alegría plegaria",
+        "top_k": 5,
+        "embedding_ms": 642,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "alegría plegaria",
+        "top_k": 10,
+        "embedding_ms": 642,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "alegría plegaria",
+        "top_k": 20,
+        "embedding_ms": 642,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "alegría plegaria",
+        "top_k": 50,
+        "embedding_ms": 642,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "sangre habla",
+        "top_k": 5,
+        "embedding_ms": 493,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "sangre habla",
+        "top_k": 10,
+        "embedding_ms": 493,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "sangre habla",
+        "top_k": 20,
+        "embedding_ms": 493,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "sangre habla",
+        "top_k": 50,
+        "embedding_ms": 493,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "ruaj habla",
+        "top_k": 5,
+        "embedding_ms": 871,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "ruaj habla",
+        "top_k": 10,
+        "embedding_ms": 871,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "ruaj habla",
+        "top_k": 20,
+        "embedding_ms": 871,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "ruaj habla",
+        "top_k": 50,
+        "embedding_ms": 871,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "hitbodedut",
+        "top_k": 5,
+        "embedding_ms": 779,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "hitbodedut",
+        "top_k": 10,
+        "embedding_ms": 779,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "hitbodedut",
+        "top_k": 20,
+        "embedding_ms": 779,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "hitbodedut",
+        "top_k": 50,
+        "embedding_ms": 779,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "emuná",
+        "top_k": 5,
+        "embedding_ms": 586,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "emuná",
+        "top_k": 10,
+        "embedding_ms": 586,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "emuná",
+        "top_k": 20,
+        "embedding_ms": 586,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      },
+      {
+        "query": "emuná",
+        "top_k": 50,
+        "embedding_ms": 586,
+        "milvus_search_ms": null,
+        "total_ms": null,
+        "hits": 0,
+        "error": "Milvus unavailable"
+      }
+    ],
+    "errors": [],
+    "summary": {}
+  },
+  "relation_qa": {
+    "status": "warn",
+    "scope_code": "breslov_primary",
+    "runs": [
+      {
+        "question": "Qué relación hay entre alegría y plegaria",
+        "elapsed_ms": 35984,
+        "used_milvus": false,
+        "retrieval": [
+          "postgresql_fts_websearch",
+          "postgresql_ilike_fallback",
+          "postgresql_cooccurrence"
+        ],
+        "warnings": [
+          "milvus_unavailable: MilvusConnectionError — lexical retrieval used",
+          "no_literal_relation: no citar como doctrina literal",
+          "cooccurrence_only: coocurrencia no equivale a relación explícita",
+          "deterministic_fallback: la síntesis editorial automática no pudo completarse; se muestra una síntesis determinística basada en fuentes recuperadas. Revisar editorialmente antes de citar como conclusión."
+        ],
+        "fallback_used": true,
+        "fallback_reason": null,
+        "synthesis_mode": "deterministic_fallback",
+        "source_count": 20,
+        "source_titles": [
+          "La Potencia de la Plegaria",
+          "Un Día en la Vida de un Jasid de Breslov",
+          "Un Día en la Vida de un Jasid de Breslov",
+          "KITZUR",
+          "Likutey Halajot LM II 8"
+        ]
+      },
+      {
+        "question": "Qué relación hay entre sangre y habla",
+        "elapsed_ms": 18888,
+        "used_milvus": false,
+        "retrieval": [
+          "postgresql_fts_websearch",
+          "postgresql_ilike_fallback",
+          "postgresql_cooccurrence"
+        ],
+        "warnings": [
+          "milvus_unavailable: MilvusConnectionError — lexical retrieval used",
+          "no_literal_relation: no citar como doctrina literal",
+          "cooccurrence_only: coocurrencia no equivale a relación explícita",
+          "deterministic_fallback: la síntesis editorial automática no pudo completarse; se muestra una síntesis determinística basada en fuentes recuperadas. Revisar editorialmente antes de citar como conclusión."
+        ],
+        "fallback_used": true,
+        "fallback_reason": null,
+        "synthesis_mode": "deterministic_fallback",
+        "source_count": 20,
+        "source_titles": [
+          "Likutey Halajot LM II 8",
+          "KITZUR",
+          "KITZUR",
+          "KITZUR",
+          "Likutey Halajot LM II 8"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "errors": [
+    {
+      "stage": "milvus.connect",
+      "kind": "MilvusConnectionError",
+      "message": "Failed to connect to Milvus at 127.0.0.1:19530: <MilvusException: (code=2, message=Fail connecting to server on 127.0.0.1:19530, illegal connection params or server unavailable)>"
+    },
+    {
+      "stage": "roundtrip.milvus",
+      "kind": "MilvusUnavailable",
+      "message": "Milvus is not connected or the collection does not exist"
+    }
+  ]
+}

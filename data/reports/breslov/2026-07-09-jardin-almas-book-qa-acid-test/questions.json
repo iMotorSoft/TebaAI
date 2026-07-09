@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "level": 1,
+    "level_name": "trivial",
+    "book": "El Jardín de las Almas",
+    "question": "¿Cuál es el nombre del hijo del Rebe Najmán cuya trágica muerte inspiró la enseñanza central de \"El Jardín de las Almas\"?",
+    "expected_page": "36",
+    "expected_answer_excerpt": "Falleció el hijo del Rebe, Shlomo Efraim, quien había nacido sólo un año antes, y para quien él albergaba las más grandes esperanzas.",
+    "must_find": ["Shlomo Efraim", "hijo del Rebe", "falleció"],
+    "risk": "No encontrar el fragmento exacto o inventar otro nombre"
+  },
+  {
+    "id": 2,
+    "level": 1,
+    "level_name": "trivial",
+    "book": "El Jardín de las Almas",
+    "question": "Según el relato inicial del libro, ¿qué hace naturalmente una persona cuando siente un gran dolor, como al amputarle un miembro?",
+    "expected_page": "42",
+    "expected_answer_excerpt": "Cuando alguien siente un gran dolor, Dios no lo permita, como por ejemplo cuando se le amputa un miembro, cierra sus ojos y los aprieta con fuerza.",
+    "must_find": ["cierra sus ojos", "los aprieta con fuerza", "gran dolor"],
+    "risk": "Respuesta genérica sin el gesto físico específico"
+  },
+  {
+    "id": 3,
+    "level": 1,
+    "level_name": "trivial",
+    "book": "El Jardín de las Almas",
+    "question": "¿En qué festividad, según la introducción del libro, un Tzadik \"eleva la tefilá bibejinat din\" de una manera particular, llevando a cabo la rectificación del pecado de Adán?",
+    "expected_page": "280",
+    "expected_answer_excerpt": "En Rosh HaShaná, que es el Día del Juicio, el día en el que Adam fue creado y transgredió. Es por ello que constituye el principal momento para la reunión junto a los verdaderos Tzadikim.",
+    "must_find": ["Rosh HaShaná", "Día del Juicio", "Adam fue creado y transgredió", "verdaderos Tzadikim"],
+    "risk": "Confundir la festividad o no conectar con tefilá bibejinat din"
+  },
+  {
+    "id": 4,
+    "level": 2,
+    "level_name": "comprension",
+    "book": "El Jardín de las Almas",
+    "question": "¿Qué significa que \"No existe mal en el mundo\" según la enseñanza del Rebe Najmán, y cómo se relaciona esto con el concepto de Daat?",
+    "expected_page": "42",
+    "expected_answer_excerpt": "No existe mal en el mundo, en absoluto: todo es bueno. El dolor que la gente siente es porque su sufrimiento sólo se debe a que se les ha retirado su Daat, la comprensión divina.",
+    "must_find": ["no existe mal", "todo es bueno", "Daat", "comprensión divina", "dolor"],
+    "risk": "Interpretación filosófica sin citar la fuente textual exacta"
+  },
+  {
+    "id": 5,
+    "level": 2,
+    "level_name": "comprension",
+    "book": "El Jardín de las Almas",
+    "question": "¿Cuál es el papel del \"Señor del Campo\" y cómo se relaciona su tarea con la plegaria?",
+    "expected_page": "39",
+    "expected_answer_excerpt": "Todo aquel que quiera ceñir sus lomos y presentarse como el Señor del Campo debe ser fuerte y vigoroso, un poderoso guerrero. Cuando el Señor del Campo logra restaurar las almas y hacerlas entrar, la plegaria alcanza su perfección.",
+    "must_find": ["Señor del Campo", "fuerte y vigoroso", "poderoso guerrero", "restaurar las almas", "la plegaria alcanza su perfección"],
+    "risk": "No identificar el título exacto ni conectar con plegaria"
+  },
+  {
+    "id": 6,
+    "level": 2,
+    "level_name": "comprension",
+    "book": "El Jardín de las Almas",
+    "question": "¿Cómo se describe la naturaleza del \"talón del Otro Lado\" y cuál es la rectificación para ello a través de la voz?",
+    "expected_page": "384",
+    "expected_answer_excerpt": "Como resultado del fortalecimiento del ekev, talón, del Otro Lado, Dios no lo permita, se debilita el ekev de santidad. La rectificación para esto se produce a través del concepto de la voz. Pues la voz riega el jardín en el cual crecen todos los perfumes y los temores.",
+    "must_find": ["ekev", "talón del Otro Lado", "ekev de santidad", "rectificación", "voz", "riega el jardín", "perfumes y temores"],
+    "risk": "Confundir términos cabalísticos o perder la conexión con la voz"
+  },
+  {
+    "id": 7,
+    "level": 3,
+    "level_name": "sintesis",
+    "book": "El Jardín de las Almas",
+    "question": "¿Cómo se conecta la \"Canción del Futuro\" con la amonestación, la tojajá, y la \"Hebra de Bondad\", Jut shel Jesed?",
+    "expected_page": "389",
+    "expected_answer_excerpt": "La voz que riega el jardín corresponde a la voz de la melodía de la canción destinada a surgir en el Futuro. Una hebra de bondad hace referencia a la hebra hecha a partir de las cuerdas con las cuales será ejecutada esta canción cuando el mundo sea renovado. Con esa voz, aquel que es apto para ofrecer la guía moral les da a las almas un aroma placentero.",
+    "must_find": ["Canción del Futuro", "tojajá", "Hebra de Bondad", "Jut shel Jesed", "voz que riega el jardín", "aroma placentero"],
+    "risk": "Síntesis desconectada sin citar la fuente específica"
+  },
+  {
+    "id": 8,
+    "level": 3,
+    "level_name": "sintesis",
+    "book": "El Jardín de las Almas",
+    "question": "Explica el concepto de \"plegaria en el aspecto de juicio\", tefilá bibejinat din. ¿Qué problema resuelve y cómo actúa el Otro Lado frente a ella?",
+    "expected_page": "408",
+    "expected_answer_excerpt": "Allí en donde existe la falla del deseo inmoral, la plegaria se encuentra en la categoría de juicio y es tragada por el Otro Lado. Allí se necesita de un maestro de gran fortaleza para orar una plegaria en el aspecto de juicio. Cuando el Otro Lado trata de tragar la plegaria en el aspecto de juicio del maestro de fortaleza, esta plegaria se atasca en su garganta, forzándolo a vomitar.",
+    "must_find": ["tefilá bibejinat din", "deseo inmoral", "Otro Lado", "tragada", "maestro de gran fortaleza", "se atasca en su garganta", "vomitar"],
+    "risk": "Explicación genérica sin los detalles del mecanismo de atragantamiento"
+  },
+  {
+    "id": 9,
+    "level": 3,
+    "level_name": "sintesis",
+    "book": "El Jardín de las Almas",
+    "question": "Describe el proceso completo de curación y expiación del pecado a través del agregado de un nuevo miembro, o vecino, a la congregación de Israel.",
+    "expected_page": "437-438",
+    "expected_answer_excerpt": "Mediante la fe el mundo será renovado en el Futuro. La reunión de las bondades se produce a través de la fe. Ningún vecino dirá: Estoy enfermo. El agregado de un vecino salva a la gente de la enfermedad, pues la nación que reside en ella le habrá sido perdonado su pecado. Como resultado del vecino, la plegaria se multiplica y existe entonces el perdón del pecado. Esto trae curación y se elimina la enfermedad.",
+    "must_find": ["fe", "mundo será renovado", "Ningún vecino dirá Estoy enfermo", "agregado de un vecino", "plegaria se multiplica", "perdón del pecado", "curación"],
+    "risk": "Perder la secuencia causal completa o mezclar fuentes ajenas"
+  },
+  {
+    "id": 10,
+    "level": 4,
+    "level_name": "compleja",
+    "book": "El Jardín de las Almas",
+    "question": "Explica la interconexión entre la Rotura de los Recipientes, Shevirat HaKeilim, la Hebra de Bondad, la Canción del Futuro y el poder de unir todas las plegarias en una sola. ¿Cómo se relaciona este proceso con el objetivo final de la Creación, el Tajlit?",
+    "expected_page": "386, 390, 42",
+    "expected_answer_excerpt": "La voz riega el jardín en el cual crecen todos los perfumes y los temores. Esta voz subyuga al talón del Otro Lado. La única manera de alcanzar la mencionada voz es a través de la plegaria. La esencia de la plegaria es la compasión y el ruego, y la compasión depende principalmente del Daat. La Hebra de Bondad son las cuerdas sobre las cuales será ejecutada la melodía y la Canción del Futuro. La Canción del Futuro, cuando Dios renueve Su mundo, será ejecutada sobre esas cuerdas, como en \"El mundo será construido con bondad\". Esta voz corresponde a la melodía de la canción destinada a surgir en el Futuro. El objetivo final es completamente bueno, y finalmente se verá que todo fue para bien. Por eso la respuesta natural al dolor es cerrar los ojos para escapar del sufrimiento y anular el dolor mediante la contemplación del objetivo final, que es enteramente bueno.",
+    "must_find": ["Rotura de los Recipientes", "Shevirat HaKeilim", "Hebra de Bondad", "Canción del Futuro", "voz", "plegaria", "compasión", "Daat", "Tajlit", "todo fue para bien", "cerrar los ojos"],
+    "risk": "Síntesis sin fuentes o inventar conexiones que no están en el corpus"
+  }
+]

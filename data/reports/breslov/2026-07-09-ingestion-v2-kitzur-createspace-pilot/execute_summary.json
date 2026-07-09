@@ -1,0 +1,18 @@
+{
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "status": "completed",
+  "scope_code": "breslov_test",
+  "pipeline_version": "ingestion_v2_kitzur_createspace_001",
+  "metrics": {
+    "pages": 512,
+    "sections": 325,
+    "concept_mentions": 19,
+    "source_references": 11,
+    "internal_relations": 10,
+    "wiki": 1
+  },
+  "warnings": [],
+  "readiness_score": 25,
+  "readiness_class": "PASS fuerte"
+}

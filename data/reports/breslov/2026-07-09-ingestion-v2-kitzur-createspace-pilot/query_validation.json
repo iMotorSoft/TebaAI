@@ -1,0 +1,97 @@
+{
+  "run_status": "completed",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "metrics": {
+    "wiki": 1,
+    "pages": 512,
+    "sections": 325,
+    "concept_mentions": 19,
+    "source_references": 11,
+    "internal_relations": 10
+  },
+  "warnings": [],
+  "pages_total": 512,
+  "pages_with_text": 506,
+  "sections": 325,
+  "concept_mentions": 19,
+  "source_references": 11,
+  "internal_relations": 10,
+  "wiki_entries": 1,
+  "concept_queries": {
+    "alegría": {
+      "found": true,
+      "pages": [
+        3
+      ]
+    },
+    "plegaria": {
+      "found": true,
+      "pages": [
+        13
+      ]
+    },
+    "sangre": {
+      "found": true,
+      "pages": [
+        5
+      ]
+    },
+    "habla": {
+      "found": true,
+      "pages": [
+        3
+      ]
+    },
+    "hitbodedut": {
+      "found": true,
+      "pages": [
+        65
+      ]
+    },
+    "emuná": {
+      "found": true,
+      "pages": [
+        3
+      ]
+    }
+  },
+  "relation_queries": {
+    "alegría↔plegaria": {
+      "found": true,
+      "pages": [
+        [
+          25,
+          482
+        ]
+      ],
+      "snippets": [
+        "ebe llevar a cabo las mitzvot con tanta alegría\ncomo para no desear ninguna recompensa por ello en el Mundo\nque Viene. Más bien, sólo debe desear que "
+      ]
+    },
+    "sangre↔habla": {
+      "found": true,
+      "pages": [
+        [
+          6,
+          512
+        ]
+      ],
+      "snippets": [
+        "fre los insultos y el “derramamiento de sangre”,\naceptando su propia bajeza y pequeñez, reconociendo el gran\ndaño que ha hecho y comprendiendo que es "
+      ]
+    },
+    "hitbodedut↔plegaria": {
+      "found": true,
+      "pages": [
+        [
+          66,
+          466
+        ]
+      ],
+      "snippets": [
+        "culta”\ndeberá dedicarle mucho tiempo al hitbodedut, a la conversación\ncon Su Creador. Deberá evaluarse y juzgarse en todo momento\n-en todas sus activi"
+      ]
+    }
+  },
+  "overall": "PASS"
+}

@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1,
+    "slug": "sangre-habla",
+    "question": "Donde está la conexión entre sangre y habla",
+    "expected_focus": "Relación conceptual entre sangre/dam y habla/dibur; verificar si hay evidencia literal o solo coocurrencia/inferencia.",
+    "must_check": [
+      "conceptos detectados",
+      "conclusión corta",
+      "fuentes con página",
+      "warnings sobre inferencia",
+      "si existe o no conexión literal"
+    ],
+    "risk": "Sobreafirmar una relación doctrinal a partir de coocurrencia."
+  },
+  {
+    "id": 2,
+    "slug": "tristeza",
+    "question": "En qué puntos habla de la tristeza",
+    "expected_focus": "Localización de enseñanzas sobre tristeza/atzevut/melancolía en el corpus Breslov.",
+    "must_check": [
+      "conceptos detectados",
+      "fuentes con ubicación",
+      "si distingue tipos de tristeza",
+      "cobertura transversal"
+    ],
+    "risk": "Respuesta genérica sin fuentes localizadas."
+  },
+  {
+    "id": 3,
+    "slug": "miedo",
+    "question": "Sobre el miedo, es abarcado en algún punto del libro y en qué otros libros se toca",
+    "expected_focus": "Cobertura del tema miedo/yirá en Breslov: dónde aparece en el libro principal y referencias cruzadas a otros libros.",
+    "must_check": [
+      "cobertura dentro del libro",
+      "referencias a otros libros",
+      "variantes conceptuales (miedo, yirá, temor)",
+      "fuentes con página"
+    ],
+    "risk": "Afirmar que un libro 'trata' un tema cuando solo hay mención tangencial."
+  },
+  {
+    "id": 4,
+    "slug": "hitbodedut-literal-tematico",
+    "question": "Dónde aparece hitbodedut citado literalmente y dónde aparece como tema",
+    "expected_focus": "Distinción entre menciones literales de hitbodedut y referencias temáticas a la meditación/aislamiento.",
+    "must_check": [
+      "distinción literal vs temático",
+      "variantes (hitbodedut, hisbodedus, meditación, aislamiento)",
+      "fuentes con localización",
+      "warnings sobre inferencia"
+    ],
+    "risk": "No distinguir entre cita literal y tema inferido."
+  },
+  {
+    "id": 5,
+    "slug": "alegria-plegaria",
+    "question": "Qué fuentes relacionan alegría y plegaria",
+    "expected_focus": "Identificar fuentes donde alegría/simjá y plegaria/tefilá aparecen relacionadas conceptual o literalmente.",
+    "must_check": [
+      "conceptos con variantes multilingües",
+      "tipos de evidencia",
+      "fuentes con página",
+      "diferenciar relación literal de temática"
+    ],
+    "risk": "Afirmar relación doctrinal donde solo hay coocurrencia."
+  },
+  {
+    "id": 6,
+    "slug": "emuna-no-literal",
+    "question": "Qué libros tratan el concepto de emuná aunque no lo citen literalmente",
+    "expected_focus": "Detección de libros donde emuná/fe es tema central aunque la palabra no aparezca textualmente.",
+    "must_check": [
+      "detección conceptual no literal",
+      "variantes (emuná, fe, creencia)",
+      "warnings sobre inferencia",
+      "fuentes con libro y página"
+    ],
+    "risk": "Inferir demasiado: decir que un libro 'trata' emuná cuando el tema es periférico."
+  },
+  {
+    "id": 7,
+    "slug": "ruaj-habla-palabra",
+    "question": "Dónde se habla de ruaj y habla/palabra",
+    "expected_focus": "Relación entre espíritu/ruaj y habla/dibur/palabra en el corpus Breslov.",
+    "must_check": [
+      "conceptos con variantes",
+      "tipos de evidencia",
+      "fuentes con localización",
+      "diferencia literal de inferido"
+    ],
+    "risk": "Confundir ruaj (viento, espíritu, aliento) y sobreafirmar conexión con habla."
+  },
+  {
+    "id": 8,
+    "slug": "ojos-pulmones-luz",
+    "question": "Qué relación aparece entre ojos, pulmones y luz",
+    "expected_focus": "Conexión conceptual entre ojos/ayin, pulmones/reáj y luz/or en el corpus Breslov.",
+    "must_check": [
+      "conceptos con variantes",
+      "tipos de evidencia",
+      "fuentes con página",
+      "advertencias sobre especulación"
+    ],
+    "risk": "Alta: riesgo de inventar una conexión cabalística donde el corpus no la sostiene."
+  },
+  {
+    "id": 9,
+    "slug": "habla-respiracion-profecia",
+    "question": "Qué textos conectan habla, respiración y profecía",
+    "expected_focus": "Identificar textos donde habla/dibur, respiración/neshimá y profecía/nevuá aparecen relacionados.",
+    "must_check": [
+      "triple conexión conceptual",
+      "variantes multilingües",
+      "tipos de evidencia",
+      "fuentes con localización"
+    ],
+    "risk": "Sobreafirmar relación tripartita donde solo hay pares de conceptos."
+  },
+  {
+    "id": 10,
+    "slug": "caida-renovacion",
+    "question": "Qué fuentes hablan de caída espiritual y renovación",
+    "expected_focus": "Identificar fuentes sobre caída espiritual/yeridá y renovación/renovación/hitjadshut en el corpus Breslov.",
+    "must_check": [
+      "conceptos con variantes",
+      "tipos de evidencia",
+      "fuentes con libro y página",
+      "warnings sobre interpretación"
+    ],
+    "risk": "Respuesta genérica o teológica sin sustento en fuentes localizadas."
+  }
+]

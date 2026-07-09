@@ -20,6 +20,8 @@ from modules.library.hybrid_search import search_chunks_hybrid
 from modules.library.repository import get_authorized_scope_by_code
 from modules.library.relation_qa_schemas import RelationQARequest, RelationQAResponse
 from modules.library.relation_qa_service import run_relation_qa
+from modules.library.book_qa_schemas import BookQARequest, BookQAResponse
+from modules.library.book_qa_service import run_book_qa
 from modules.library.schemas import (
     LibrarySearchRequest,
     LibrarySearchResponse,
@@ -60,6 +62,34 @@ async def relation_qa(
         raise
     except Exception as exc:
         raise HTTPException(status_code=500, detail="Relation QA failed") from exc
+
+
+@post("/library/book-qa", status_code=200, guards=[require_auth])
+async def book_qa(
+    request: Request,
+    data: BookQARequest,
+) -> BookQAResponse:
+    """Authenticated Book QA V2 SQL-only endpoint — grounded in library_pages_v2."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    try:
+        user_id = UUID(payload["sub"])
+    except (KeyError, TypeError, ValueError) as exc:
+        raise NotAuthorizedException("Invalid authenticated subject") from exc
+
+    try:
+        async with transaction(pool) as conn:
+            return await run_book_qa(
+                conn=conn,
+                question=data.question,
+                run_id=data.run_id,
+                scope_code=data.scope_code,
+                top_k=data.top_k,
+            )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Book QA failed") from exc
 
 
 @post("/library/search", status_code=200, guards=[require_auth])

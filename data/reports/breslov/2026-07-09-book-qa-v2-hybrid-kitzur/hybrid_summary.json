@@ -1,0 +1,11 @@
+{
+  "collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "status": "completed",
+  "entities_indexed": 100,
+  "embedding_model": "openai_text_embedding_3_small",
+  "embedding_dim": 1536,
+  "hybrid_verified": true,
+  "sql_plus_milvus": true,
+  "all_grounded_in_postgres": true
+}

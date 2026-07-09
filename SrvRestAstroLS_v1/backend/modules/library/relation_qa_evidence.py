@@ -53,6 +53,21 @@ CONCEPT_EXPANSIONS: dict[str, list[str]] = {
         "Bereshit Rabba", "Midrash Rabah", "Midrash Rabbah", "בראשית רבה",
     ],
     "midrash": ["midrash", "Midrash Rabah", "Midrash Rabbah", "Bereshit Rabah", "מדרש"],
+    "tristeza": ["tristeza", "triste", "atzevut", "עצבות", "marah", "מרה", "sadness", "melancholy"],
+    "alegría": ["alegría", "alegre", "simjá", "simcha", "שמחה", "gilah", "גילה", "joy", "happiness", "regocijo"],
+    "plegaria": ["plegaria", "plegarías", "oración", "oraciones", "tefilá", "tefilah", "תפילה", "prayer", "rezar"],
+    "miedo": ["miedo", "temor", "yirá", "יראה", "pachad", "פחד", "fear", "awe", "terror"],
+    "emuná": ["emuná", "emuna", "fe", "creencia", "אמונה", "faith", "belief"],
+    "fe": ["fe", "emuná", "emuna", "creencia", "אמונה", "faith", "belief"],
+    "caída": ["caída", "caer", "descenso", "yeridá", "yerida", "ירידה", "fall", "downfall", "spiritual decline"],
+    "renovación": ["renovación", "renovar", "hitjadshut", "התחדשות", "renewal", "regeneration", "restauración"],
+    "ruaj": ["ruaj", "רוח", "espíritu", "aliento", "viento", "wind", "spirit", "breath"],
+    "espíritu": ["espíritu", "ruaj", "רוח", "aliento", "spirit", "breath"],
+    "profecía": ["profecía", "profético", "nevuá", "נבואה", "prophecy", "prophetic"],
+    "respiración": ["respiración", "respirar", "aliento", "neshimá", "נשימה", "breath", "breathing"],
+    "luz": ["luz", "or", "אור", "light", "lumbre", "iluminación"],
+    "ojos": ["ojos", "ojo", "ayin", "עין", "eyes", "eye"],
+    "pulmones": ["pulmones", "pulmón", "reáj", "ראה", "lungs", "lung"],
 }
 
 _RABBINIC_PATTERN = re.compile(
@@ -105,24 +120,59 @@ def expand_concept_variants(concept: str, language: str) -> list[str]:
     return list(dict.fromkeys(value.strip() for value in ordered if value.strip()))
 
 
+def _strip_prepositions(concept: str) -> str:
+    """Remove leading prepositions in Spanish/Hebrew/English."""
+    return re.sub(
+        r"^(?:de\s+|del?\s+|la\s+|el\s+|los\s+|las\s+)",
+        "",
+        concept.strip(),
+    ).strip()
+
+
+def _normalize_concept(concept: str) -> str:
+    return _strip_prepositions(concept)
+
+
 def extract_concepts_from_question(question: str) -> tuple[str, str]:
     """Extract two concepts with bounded deterministic relation patterns."""
-    value = question.strip().rstrip("?.!")
+    value = question.strip().rstrip("?!.")
     patterns = (
-        r"(?:conexi[oó]n|relaci[oó]n)\s+entre\s+(.+?)\s+y\s+(.+)$",
+        r"(?:conexi[oó]n|relaci[oó]n|neighborhood|concepto)\s+entre\s+(.+?)\s+y\s+(.+)$",
         r"(?:connection|relation)\s+between\s+(.+?)\s+and\s+(.+)$",
         r"(?:קשר|חיבור)\s+בין\s+(.+?)\s+(?:ו|לבין)\s*(.+)$",
+        r"(?:fuentes|textos|libros|documentos|qu[eé] fuentes)\s+(?:relacionan|conectan|hablan?|tocan?|tratan?)\s+(.+?)\s+(?:y|con)\s+(.+)$",
+        r"(?:dónde|donde)\s+(?:se habla|habla|aparece|está)\s+(?:de|la|el)?\s*(.+?)\s+(?:y|con)\s+(.+)$",
     )
     for pattern in patterns:
         match = re.search(pattern, value, re.IGNORECASE)
         if match:
-            return match.group(1).strip(), match.group(2).strip()
+            return (
+                _normalize_concept(match.group(1).strip()),
+                _normalize_concept(match.group(2).strip()),
+            )
+
+    # Single-concept patterns: "qué libros tratan A", "dónde habla de A", "En qué puntos habla de A"
+    single_patterns = (
+        r"(?:qu[eé]|cu[aá]les?)\s+(?:libros|fuentes|textos)\s+(?:tratan?|hablan?)\s+(?:del?|de la|de)\s+(.+)$",
+        r"(?:d[oó]nde|en qu[eé] puntos)\s+(?:se\s+)?habla\s+(?:de|del?)\s+(.+)$",
+        r"(?:d[oó]nde|en qu[eé])\s+aparece\s+(.+?)(?:\s+(?:citado|como).*)?$",
+        r"(?:sobre\s+)?(.+?)(?:,\s+)?es\s+(?:abarcado|tratado)\s+",
+    )
+    for pattern in single_patterns:
+        match = re.search(pattern, value, re.IGNORECASE)
+        if match:
+            concept = _normalize_concept(match.group(1).strip())
+            return concept, concept
 
     tokens = re.findall(r"[\w\u0590-\u05ffáéíóúüñÁÉÍÓÚÜÑ]+", value)
     stop = {
         "donde", "dónde", "aparece", "esta", "está", "que", "qué", "como",
         "cómo", "idea", "ensenanza", "enseñanza", "the", "where", "what",
         "is", "are", "and", "entre", "sobre", "corpus", "breslov",
+        "libro", "libros", "puntos", "punto", "fuentes", "textos",
+        "habla", "hablan", "trata", "tratan", "toca", "tocan",
+        "aunque", "cite", "citan", "citado", "literalmente", "tema",
+        "concepto",
     }
     meaningful = [token for token in tokens if token.casefold() not in stop and len(token) > 2]
     if len(meaningful) >= 2:

@@ -2,7 +2,7 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-09
+Ultima actualizacion: 2026-07-09 (synthesis hardening)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
 
@@ -2175,6 +2175,48 @@ Guardrails:
   - globalVar.py no tocado
   - No OpenAI directo
   - Backend detenido con backend-dev.sh
+  - Frontend no tocado
+  - Tests: 51/51 PASS
+```
+
+## Relation QA Synthesis Hardening — 2026-07-09
+
+```text
+ESTADO: CERRADO (AI synthesis reliability + concept detection hardening completado)
+PRÓXIMA FASE: Posible — 10-question full batch re-evaluation
+
+Mejoras:
+  - AI synthesis ahora funciona en 4/4 preguntas foco (antes: 2/4 en batch original)
+  - Guardrail IA menos restrictivo: permite "no se encontró relación literal directa"
+  - Prompt fortalecido: instrucciones explícitas contra afirmación de literales falsas
+  - max_tokens 1200→1600, sources 20→15 para mejorar tasa de éxito
+  - Reintento automático: 2 intentos con fallback si ambos fallan
+  - Fallback determinístico mejorado: incluye conceptos, conteos, warning explícito
+  - Diagnosis fields en method: ai_synthesis_status, fallback_reason, synthesis_mode
+
+  - Concept detection endurecida:
+    - Preposición stripping ("de caída espiritual" → "caída espiritual")
+    - Patrones: "fuentes relacionan A y B", "libros tratan A", "dónde habla de A"
+    - Stopwords expandidas: "libro", "fuentes", "textos", "literalmente", "tema"
+    - CONCEPT_EXPANSIONS: +13 nuevas entradas (tristeza, alegría, plegaria, miedo,
+      emuná, caída, renovación, ruaj, espíritu, profecía, respiración, luz, ojos)
+
+Delta:
+  Q1 sangre-habla: 17→20  (+3, AI ahora funciona)
+  Q5 alegría-plegaria: 15→19  (+4, AI ahora funciona)
+  Q10 caída-renovación: 15→19  (+4, AI ahora funciona)
+  Q7 ruaj-habla control: 21→21  (0, sin degradación)
+
+Reporte canónico:
+  data/reports/breslov/2026-07-09-relation-qa-synthesis-hardening/
+
+Guardrails:
+  - PostgreSQL no tocado
+  - Milvus no tocado
+  - LiteLLM no tocado
+  - Corpus no tocado (8 docs ready, 5102 chunks, 5102 embeddings)
+  - globalVar.py no tocado
+  - No OpenAI directo
   - Frontend no tocado
   - Tests: 51/51 PASS
 ```

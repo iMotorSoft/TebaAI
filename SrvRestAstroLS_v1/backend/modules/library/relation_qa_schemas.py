@@ -124,6 +124,11 @@ class RelationQAMethod(BaseModel):
     used_pg_as_canonical: bool = True
     used_milvus: bool = False
     used_ai: bool = False
+    ai_synthesis_status: str = "skipped"
+    ai_synthesis_attempts: int = 0
+    fallback_used: bool = False
+    fallback_reason: str | None = None
+    synthesis_mode: str = "deterministic_fallback"
 
 
 class RelationQAResponse(BaseModel):

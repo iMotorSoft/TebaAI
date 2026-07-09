@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "slug": "sangre-habla",
+    "question": "Donde está la conexión entre sangre y habla",
+    "expected_focus": "Relación conceptual entre sangre/dam y habla/dibur",
+    "must_check": ["conceptos", "conclusión", "fuentes", "warnings", "synthesis_status"],
+    "risk": "AI falla consistente"
+  },
+  {
+    "id": 5,
+    "slug": "alegria-plegaria",
+    "question": "Qué fuentes relacionan alegría y plegaria",
+    "expected_focus": "Identificar fuentes donde alegría/simjá y plegaria/tefilá aparecen relacionadas",
+    "must_check": ["conceptos", "conclusión", "fuentes", "synthesis_status"],
+    "risk": "AI falla consistente"
+  },
+  {
+    "id": 10,
+    "slug": "caida-renovacion",
+    "question": "Qué fuentes hablan de caída espiritual y renovación",
+    "expected_focus": "Identificar fuentes sobre caída espiritual/yeridá y renovación/hitjadshut",
+    "must_check": ["conceptos", "conclusión", "fuentes", "synthesis_status"],
+    "risk": "AI falla consistente"
+  },
+  {
+    "id": 7,
+    "slug": "ruaj-habla-control",
+    "question": "Dónde se habla de ruaj y habla/palabra",
+    "expected_focus": "Relación entre espíritu/ruaj y habla/dibur/palabra — control positivo",
+    "must_check": ["conceptos", "conclusión", "fuentes", "synthesis_status"],
+    "risk": "Control: no debe degradarse"
+  }
+]

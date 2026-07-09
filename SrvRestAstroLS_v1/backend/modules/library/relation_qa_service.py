@@ -241,37 +241,74 @@ def _evidence_summary(sources: list[RelationQASource]) -> EvidenceSummary:
 def _deterministic_answer(
     sources: list[RelationQASource],
     literal_relation_found: bool,
+    concept_a: str = "",
+    concept_b: str = "",
 ) -> RelationQAAnswer:
     has_cooccurrence = any(
         EvidenceType.cooccurrence_same_chunk in source.evidence_types
         for source in sources
     )
+    has_thematic = any(
+        EvidenceType.thematic_relation in source.evidence_types
+        or EvidenceType.derash_interpretation in source.evidence_types
+        for source in sources
+    )
+    lit_count = sum(
+        1 for s in sources if EvidenceType.literal_phrase in s.evidence_types
+    )
+    cooc_count = sum(
+        1 for s in sources if EvidenceType.cooccurrence_same_chunk in s.evidence_types
+    )
+
     if literal_relation_found:
         conclusion = "Se encontró una relación literal explícita en el corpus recuperado."
         certainty = "high"
     elif has_cooccurrence:
         conclusion = (
-            "No se encontró una relación literal directa; sí hay coocurrencia de "
-            "los conceptos y requiere lectura editorial."
+            f"No se encontró una relación literal directa entre \"{concept_a}\" y "
+            f"\"{concept_b}\"; hay coocurrencia en {cooc_count} fragmento(s) "
+            f"y {lit_count} mención(es) literal(es) de cada concepto por separado. "
+            "Requiere lectura editorial para determinar si la conexión es conceptual."
+        )
+        certainty = "low"
+    elif has_thematic:
+        conclusion = (
+            f"No se encontró una relación literal ni coocurrencia entre "
+            f"\"{concept_a}\" y \"{concept_b}\"; los resultados son temáticos "
+            "o referencias separadas. No citar como relación explícita."
         )
         certainty = "low"
     elif sources:
         conclusion = (
-            "No se encontró una relación literal ni coocurrencia concluyente; "
-            "los resultados son temáticos o referencias separadas."
+            f"No se encontró evidencia concluyente sobre \"{concept_a}\" y "
+            f"\"{concept_b}\" en el corpus recuperado. Hay {len(sources)} "
+            "fuente(s) con menciones de al menos un concepto."
         )
         certainty = "low"
     else:
         conclusion = "No se encontró evidencia suficiente en el corpus autorizado."
         certainty = "low"
 
-    lines = [conclusion, "", "Fuentes recuperadas:"]
-    for source in [value for value in sources if value.is_final_citation][:8]:
+    top = [s for s in sources if s.is_final_citation][:5]
+    lines = [
+        conclusion,
+        "",
+        "---",
+        "Síntesis determinística automática (no IA). Las fuentes deben revisarse editorialmente antes de citar como conclusión.",
+        "---",
+        "",
+        "Fuentes principales:",
+    ]
+    for source in top:
         page = f", p. {source.page_number}" if source.page_number is not None else ""
+        etype = source.evidence_type.value
         lines.append(
-            f"- [{source.source_id}] {source.document_title}{page} "
-            f"({source.evidence_type.value})."
+            f"- [{source.source_id}] {source.document_title}{page} ({etype})."
         )
+    if len(top) < len([s for s in sources if s.is_final_citation]):
+        remaining = sum(s.is_final_citation for s in sources) - len(top)
+        lines.append(f"- ... y {remaining} fuente(s) más en la respuesta completa.")
+
     return RelationQAAnswer(
         short_conclusion=conclusion,
         editorial_answer_markdown="\n".join(lines),
@@ -342,26 +379,46 @@ async def run_relation_qa(
     validate_sources_resolve_to_pg(sources)
     summary = _evidence_summary(sources)
     literal_relation_found = summary.literal_relation > 0
-    answer = _deterministic_answer(sources, literal_relation_found)
+    answer = _deterministic_answer(sources, literal_relation_found, concept_a, concept_b)
     ai_warning: str | None = None
     used_ai = False
+    ai_synthesis_status = "skipped"
+    ai_synthesis_attempts = 0
+    fallback_used = True
+    fallback_reason: str | None = None
+    synthesis_mode = "deterministic_fallback"
 
     if data.use_ai and sources:
-        try:
-            ai_result = await build_editorial_answer_with_ai(
-                question=data.question,
-                concept_a=concept_a,
-                concept_b=concept_b,
-                sources=sources,
-                literal_relation_found=literal_relation_found,
-            )
-            answer.short_conclusion = ai_result.short_conclusion
-            answer.editorial_answer_markdown = ai_result.editorial_answer_markdown
-            answer.editorial_certainty = ai_result.editorial_certainty
-            answer.ai_inference_used = ai_result.ai_inference_used
-            used_ai = True
-        except RelationQAAIError:
-            ai_warning = "ai_response_parse_failed: deterministic editorial fallback used"
+        max_retries = 2
+        for attempt in range(1, max_retries + 1):
+            ai_synthesis_attempts = attempt
+            try:
+                ai_result = await build_editorial_answer_with_ai(
+                    question=data.question,
+                    concept_a=concept_a,
+                    concept_b=concept_b,
+                    sources=sources,
+                    literal_relation_found=literal_relation_found,
+                )
+                answer.short_conclusion = ai_result.short_conclusion
+                answer.editorial_answer_markdown = ai_result.editorial_answer_markdown
+                answer.editorial_certainty = ai_result.editorial_certainty
+                answer.ai_inference_used = ai_result.ai_inference_used
+                used_ai = True
+                ai_synthesis_status = "ok"
+                fallback_used = False
+                fallback_reason = None
+                synthesis_mode = "ai"
+                break
+            except RelationQAAIError as exc:
+                fallback_reason = str(exc)
+                ai_synthesis_status = "failed"
+                if attempt < max_retries:
+                    continue
+                ai_warning = (
+                    "ai_response_parse_failed: deterministic editorial fallback used "
+                    f"(after {max_retries} attempt(s))"
+                )
 
     if not data.return_markdown:
         answer.editorial_answer_markdown = ""
@@ -377,6 +434,12 @@ async def run_relation_qa(
     ]
     if ai_warning:
         warnings.append(ai_warning)
+    if fallback_used and not used_ai:
+        warnings.append(
+            "deterministic_fallback: la síntesis editorial automática no pudo "
+            "completarse; se muestra una síntesis determinística basada en fuentes "
+            "recuperadas. Revisar editorialmente antes de citar como conclusión."
+        )
     if data.debug and not allow_debug:
         warnings.append("debug_omitted: requires admin role")
 
@@ -396,6 +459,11 @@ async def run_relation_qa(
         used_pg_as_canonical=True,
         used_milvus=used_milvus,
         used_ai=used_ai,
+        ai_synthesis_status=ai_synthesis_status,
+        ai_synthesis_attempts=ai_synthesis_attempts,
+        fallback_used=fallback_used,
+        fallback_reason=fallback_reason,
+        synthesis_mode=synthesis_mode,
     )
     concepts = RelationQAConcepts(
         concept_a=ConceptVariants(label=concept_a, variants=concept_a_variants),

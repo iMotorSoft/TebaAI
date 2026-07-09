@@ -268,6 +268,11 @@ def render_markdown(result: dict[str, Any]) -> str:
     lines.append(f"- used_pg_as_canonical: {method.get('used_pg_as_canonical', 'No informado')}")
     lines.append(f"- used_milvus: {method.get('used_milvus', 'No informado')}")
     lines.append(f"- used_ai: {method.get('used_ai', 'No informado')}")
+    lines.append(f"- ai_synthesis_status: {method.get('ai_synthesis_status', 'No informado')}")
+    lines.append(f"- ai_synthesis_attempts: {method.get('ai_synthesis_attempts', 'No informado')}")
+    lines.append(f"- fallback_used: {method.get('fallback_used', 'No informado')}")
+    lines.append(f"- fallback_reason: {method.get('fallback_reason', 'No informado')}")
+    lines.append(f"- synthesis_mode: {method.get('synthesis_mode', 'No informado')}")
     lines.append("")
 
     # Link to raw

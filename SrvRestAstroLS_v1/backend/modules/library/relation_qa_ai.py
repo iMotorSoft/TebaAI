@@ -50,15 +50,25 @@ def validate_editorial_ai_result(
         raise RelationQAAIError("AI markdown lacks valid source_id citations")
     if not literal_relation_found:
         combined = f"{result.short_conclusion}\n{result.editorial_answer_markdown}"
-        false_literal_claim = re.search(
-            r"\b(se encontr[oó]|existe|hay)\b.{0,40}"
-            r"\b(conexi[oó]n|relaci[oó]n)\b.{0,25}\bliteral\b|"
-            r"\bliteral\b.{0,25}\b(se encontr[oó]|existe|hay)\b",
+        # Allow negated patterns: "no se encontró una relación literal", "sin relación literal"
+        negated = re.search(
+            r"(no\s+se\s+encontr[oó]|sin\s+relaci[oó]n\s+literal|no\s+hay\s+relaci[oó]n\s+literal)",
             combined,
-            re.IGNORECASE | re.DOTALL,
+            re.IGNORECASE,
         )
-        if false_literal_claim:
-            raise RelationQAAIError("AI response promoted inference to literal evidence")
+        if negated:
+            # Already properly disclaimed; no false claim
+            pass
+        else:
+            false_literal_claim = re.search(
+                r"\b(se encontr[oó]|existe|hay)\b.{0,40}"
+                r"\b(conexi[oó]n|relaci[oó]n)\b.{0,25}\bliteral\b|"
+                r"\bliteral\b.{0,25}\b(se encontr[oó]|existe|hay)\b",
+                combined,
+                re.IGNORECASE | re.DOTALL,
+            )
+            if false_literal_claim:
+                raise RelationQAAIError("AI response promoted inference to literal evidence")
         result.ai_inference_used = True
         result.editorial_certainty = "low"
         if "no se encontró una relación literal" not in result.short_conclusion.casefold():
@@ -117,14 +127,24 @@ async def build_editorial_answer_with_ai(
             "is_final_citation": source.is_final_citation,
             "snippet": source.snippet,
         }
-        for source in sources[:20]
+        for source in sources[:15]
     ]
     system_prompt = """Respondé como editor/investigador bibliográfico de Breslov.
-Usá solamente la evidencia recuperada. No inventes fuentes ni completes con conocimiento externo.
-No presentes inferencia como literal. No mezcles texto principal, nota, fuente marginal y explicación editorial.
-Si no hay evidencia literal, decilo. Si hay solo coocurrencia, decilo.
-Si hay derash o remez, marcalo. Toda interpretación debe marcarse INFERIDA_POR_IA.
-Toda afirmación debe citar uno o más source_id entre corchetes. Tono sobrio, no devocional.
+
+REGLAS ESTRICTAS:
+1. Usá SOLAMENTE la evidencia recuperada. NO inventes fuentes ni completes con conocimiento externo.
+2. Si literal_relation_found es false, NO digas que existe una conexión literal. Decí explícitamente "No se encontró una relación literal directa" al inicio.
+3. Diferenciá siempre: relación literal, coocurrencia, relación temática, inferencia editorial.
+4. Si hay coocurrencia pero no relación explícita, decilo claramente.
+5. Respondé como investigador, tono sobrio y preciso, NO devocional.
+6. Citá cada afirmación con uno o más source_id entre corchetes [src_...].
+7. Marcá toda interpretación como INFERIDA_POR_IA.
+8. No afirmes conexiones que no estén respaldadas por las fuentes provistas.
+9. Si las fuentes son insuficientes para una conclusión, decilo honestamente.
+10. Preferí decir "no hay suficiente evidencia" antes que forzar una conexión.
+
+CRITICO: Cuando literal_relation_found=false, tu short_conclusion DEBE comenzar con "No se encontró una relación literal directa" o "Sin relación literal:". No uses "se encontró una conexión" sin calificar como "no literal".
+
 Devolvé solo JSON con: short_conclusion, editorial_answer_markdown,
 editorial_certainty (low|medium|high), ai_inference_used (boolean), source_ids (array)."""
     payload = {
@@ -146,7 +166,7 @@ editorial_certainty (low|medium|high), ai_inference_used (boolean), source_ids (
             },
         ],
         "temperature": 0.1,
-        "max_tokens": 1200,
+        "max_tokens": 1600,
         "response_format": {"type": "json_object"},
     }
     try:

@@ -4,7 +4,7 @@ Este tablero resume la arquitectura viva de TebaAI y evita repetir la historia t
 
 Objetivo: `arquitectura-viva`
 
-Ultima actualizacion: 2026-07-09
+Ultima actualizacion: 2026-07-09 (synthesis hardening)
 
 ## Estado general
 

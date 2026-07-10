@@ -90,6 +90,29 @@ def _v(row, idx=0):
     return row[idx]
 
 
+# ── Comprehension synonyms (deterministic) ─────────────────────────────────
+COMPREHENSION_SYNONYMS: dict[str, list[str]] = {
+    "suspiro sagrado": ["suspiro de santidad", "suspiro", "santidad"],
+    "suspiro": ["suspiro", "suspiro de santidad", "suspiro de santidad es algo muy valioso"],
+    "conocimiento": ["Daat", "comprensión", "falta de conocimiento", "nivel de comprensión", "conocimiento"],
+    "daat": ["Daat", "daat", "conocimiento", "comprensión", "nivel de comprensión"],
+    "tishrei": ["Tishrei", "TiSHReI", "Rosh HaShaná", "shofar", "sello", "sukot", "iom kipur"],
+    "rectificación": ["rectifican", "sellos de la santidad", "rectificación", "santidad"],
+    "sagrado": ["santidad", "sagrado", "santo"],
+    "alegría": ["alegría", "alegre", "regocijo", "simjá", "alegria"],
+    "baile": ["baile", "bailar", "baila", "fuerzas externas", "juicios severos", "baile anula"],
+    "honor": ["honor", "raíz del honor", "honrar", "honor a su raíz"],
+    "temor a dios": ["temor a Dios", "temerosas de Dios", "temor sagrado", "temeroso de dios"],
+    "paz": ["paz", "reinará la paz", "shalom"],
+    "códigos": ["Códigos", "Shuljan Aruj", "decisiones legales definitivas", "codigos"],
+    "tierra de israel": ["Tierra de Israel", "Eretz Israel", "tierra de israel"],
+    "fe": ["fe", "emuná", "emunah", "fe es esencial"],
+    "pureza sexual": ["pureza sexual", "pureza", "lenguaje sagrado", "brit", "pacto"],
+    "caridad": ["caridad", "dar caridad", "rectificación para la transgresión sexual"],
+    "humildad": ["humildad", "humilde", "orgullo", "quebrantando el orgullo", "dejarse pisotear"],
+    "arrepentimiento": ["arrepentimiento", "arrepentirse", "teshuvá", "arrepentimiento"],
+}
+
 # ── Helpers (avoiding circular imports) ────────────────────────────────────
 
 
@@ -289,12 +312,12 @@ async def run_book_qa(
             if rr and scope_code != _v(rr):
                 warnings.append(f"book_qa_scope_mismatch: requested {scope_code}, run has {_v(rr)}")
 
-        # Comprehension lookup: extract distinctive keywords with AND logic
+        # Comprehension lookup: extract distinctive keywords with synonym expansion + concept groups
         if route == "comprehension_lookup" and a:
             q_text = a.lower()
-            # Extract distinctive terms (nouns, verbs, concepts)
-            words = re.findall(r"\w{4,}", q_text)
-            STOP_BIG = {"que", "para", "con", "por", "las", "los", "del", "como",
+            # Extract terms from question, build concept groups
+            words_all = re.findall(r"\w{4,}", q_text)
+            stop_big = {"que", "para", "con", "por", "las", "los", "del", "como",
                         "cada", "una", "antes", "segun", "según", "sobre", "entre",
                         "cual", "cuál", "cómo", "dónde", "leccion", "lección",
                         "qué", "el", "la", "de", "en", "un", "una", "esta", "este",
@@ -304,53 +327,88 @@ async def run_book_qa(
                         "manera", "propósito", "ayuda", "manera", "importante",
                         "juega", "establece", "contribuye", "superación",
                         "obstáculos", "rectificación", "espiritual",
-                        "beneficia", "servicio", "recibe", "recibir", "recibiría",
-                        "mediante", "cuando", "hacia", "dentro", "fuera", "luego",
-                        "también", "poco", "mucho", "cosa", "cosas"}
-            keywords = [w for w in words if w not in STOP_BIG]
-            # Also extract compound phrases (2-3 words)
-            all_words = re.findall(r"\w+", q_text)
-            phrases = set()
-            for i in range(len(all_words) - 1):
-                if all_words[i] not in STOP_BIG and all_words[i+1] not in STOP_BIG:
-                    phrases.add(f"{all_words[i]} {all_words[i+1]}")
+                        "beneficia", "servicio", "recibe", "recibir"}
+            raw_keywords = [w for w in words_all if w not in stop_big]
 
-            # Score pages by multi-term hits using AND logic
-            all_terms = list(phrases)[:6] + keywords[:6]
-            # Deduplicate
-            all_terms = list(dict.fromkeys(all_terms))
+            # Build concept groups: expand each keyword via synonyms + related concepts
+            concept_groups: dict[str, set[str]] = {}
+            expanded_terms: set[str] = set()
+            for kw in raw_keywords:
+                group_key = kw
+                if group_key not in concept_groups:
+                    concept_groups[group_key] = {kw}
+                # Expand via synonym map
+                expanded = COMPREHENSION_SYNONYMS.get(kw, [])
+                for s in expanded:
+                    concept_groups[group_key].add(s)
+                    expanded_terms.add(s)
+                expanded_terms.add(kw)
+                # Also try partial matches in synonym map keys
+                for syn_key, syn_vals in COMPREHENSION_SYNONYMS.items():
+                    if kw in syn_key or syn_key in kw:
+                        for s in syn_vals:
+                            concept_groups[group_key].add(s)
+                            expanded_terms.add(s)
 
+            # Score pages by concept groups matched
             page_scores: dict[int, dict] = {}
-            for term in all_terms:
+            all_search_terms = list(expanded_terms) + raw_keywords[:10]
+            all_search_terms = list(dict.fromkeys(all_search_terms))
+
+            for term in all_search_terms:
+                if len(term) < 3: continue
                 await cur.execute(
-                    "SELECT p.page_number, substring(p.text, greatest(position(%s in lower(p.text)) - 80, 1), %s) "
-                    "FROM library_pages_v2 p WHERE p.run_id = %s AND lower(p.text) LIKE %s "
-                    "ORDER BY p.page_number LIMIT 20",
-                    (term, 400, rid, f"%{term}%"),
+                    "SELECT p.page_number FROM library_pages_v2 p WHERE p.run_id = %s "
+                    "AND lower(p.text) LIKE %s ORDER BY p.page_number LIMIT 20",
+                    (rid, f"%{term}%"),
                 )
                 for r in await cur.fetchall():
                     pg = _v(r, 0)
                     if pg not in page_scores:
-                        page_scores[pg] = {"score": 0, "terms": set(), "snippet": ""}
+                        page_scores[pg] = {"score": 0, "groups_matched": set(), "terms_found": set(), "snippet": ""}
+                    page_scores[pg]["terms_found"].add(term)
+                    # Track which concept groups this page covers
+                    for gk, gvals in concept_groups.items():
+                        for gv in gvals:
+                            if gv == term or term == gv:
+                                page_scores[pg]["groups_matched"].add(gk)
                     page_scores[pg]["score"] += 2 if " " in term else 1
-                    page_scores[pg]["terms"].add(term)
-                    if not page_scores[pg]["snippet"]:
-                        page_scores[pg]["snippet"] = (_v(r, 1) or "")[:500].replace("\n", " ").strip()
 
-            # Sort by term count first (pages with more distinct terms), then by score
-            sorted_pages = sorted(page_scores.items(), key=lambda x: (-len(x[1]["terms"]), -x[1]["score"]))
-            for pg, info in sorted_pages[:top_k]:
+            # Assign snippets
+            for pg in page_scores:
+                await cur.execute(
+                    "SELECT substring(text, greatest(position(%s in lower(text)) - 100, 1), %s) "
+                    "FROM library_pages_v2 WHERE run_id = %s AND page_number = %s",
+                    (list(page_scores[pg]["terms_found"])[0], 700, rid, pg),
+                )
+                row = await cur.fetchone()
+                if row:
+                    page_scores[pg]["snippet"] = (_v(row) or "")[:700].replace("\n", " ").strip()
+
+            # Sort: pages with more concept groups first, then more total terms, then score
+            sorted_pages = sorted(page_scores.items(),
+                                  key=lambda x: (-len(x[1]["groups_matched"]), -len(x[1]["terms_found"]), -x[1]["score"]))
+
+            # Multi-source diversity: don't take all from same page
+            for pg, info in sorted_pages[:top_k * 2]:
+                if len(sources) >= top_k: break
                 if pg not in seen_pages:
                     seen_pages.add(pg)
-                    evidence = "direct_factual_match" if len(info["terms"]) >= 2 else "compound_keyword_match"
+                    gcount = len(info["groups_matched"])
+                    evidence = "comprehension_match" if gcount >= 2 else "concept_group_match"
                     sources.append(BookQASource(
                         page_number=pg, evidence_type=evidence,
-                        score=min(len(info["terms"]) / 3, 1.0),
-                        snippet=info["snippet"][:500],
-                        matched_terms=list(info["terms"])[:5],
+                        score=min(gcount / 2, 1.0),
+                        snippet=info.get("snippet", "")[:700],
+                        matched_terms=list(info["terms_found"])[:5],
                     ))
+
             if not sources:
-                warnings.append("comprehension_no_sources: try more specific keywords")
+                warnings.append("comprehension_no_sources")
+            else:
+                warnings.append("multi_source_comprehension_requires_reader_synthesis")
+                if any(len(v) > 1 for v in concept_groups.values()):
+                    warnings.append("query_expansion_used")
 
         # Lesson lookup: resolve by section_v2
         if route == "lesson_lookup" and a:

@@ -277,8 +277,8 @@ async def run_book_qa(
             await cur.execute(
                 "SELECT page_start, page_end FROM library_sections_v2 "
                 "WHERE run_id = %s AND section_type = 'lesson' "
-                "AND (title ILIKE %s OR path ILIKE %s) LIMIT 1",
-                (rid, f"%{lesson_num}%", f"%{lesson_num}%"),
+                "AND (title ~ %s OR path ~ %s) ORDER BY page_start LIMIT 1",
+                (rid, f"\\m{lesson_num}\\M", f"\\m{lesson_num}\\M"),
             )
             row = await cur.fetchone()
             if row:
@@ -325,51 +325,65 @@ async def run_book_qa(
             else:
                 warnings.append(f"lesson_number_not_resolved: {lesson_num}")
 
-        # Concept lookup
+        # Concept lookup — enhanced with compound phrase/keyword scoring
         if route == "concept_lookup" and a:
-            # Try the extracted concept first
-            await cur.execute(
-                "SELECT p.page_number, substring(p.text, greatest(position(%s in lower(p.text)) - 80, 1), %s) "
-                "FROM library_pages_v2 p WHERE p.run_id = %s AND lower(p.text) LIKE %s "
-                "ORDER BY p.page_number LIMIT %s",
-                (a, SNIPPET_CHARS, rid, f"%{a}%", top_k),
-            )
-            rows = await cur.fetchall()
-            if rows:
-                for r in rows:
-                    pg = _v(r, 0)
-                    if pg not in seen_pages:
-                        seen_pages.add(pg)
-                        sources.append(BookQASource(
-                            page_number=pg, evidence_type="concept", score=0.9,
-                            snippet=(_v(r, 1) or "")[:SNIPPET_CHARS].replace("\n", " ").strip(),
-                            matched_terms=[a],
-                        ))
-            else:
-                # Fallback: extract meaningful keywords
-                keywords = [t for t in re.findall(r"\w{4,}", a) if t not in (
-                    "que", "para", "con", "por", "las", "los", "del", "como",
+            # Extract meaningful tokens + phrases from question text
+            q_lower = a.lower()
+            tokens_all = re.findall(r"\w{4,}", q_lower)
+            STOP = {"que", "para", "con", "por", "las", "los", "del", "como",
                     "cada", "una", "antes", "según", "sobre", "entre", "cuál",
-                    "lección", "cómo", "dónde",
-                )]
-                for kw in keywords[:3]:
+                    "lección", "cómo", "dónde", "qué", "quÉ", "más", "menos",
+                    "esta", "este", "esto", "esa", "ese", "eso", "tiene", "tienen",
+                    "hace", "hacen", "puede", "debe", "deben", "ser", "han",
+                    "después", "durante", "través", "partir", "medio", "sino",
+                    "favor", "tanto"}
+            keywords = [t for t in tokens_all if t not in STOP]
+            # Also extract compound phrases (2-3 word sequences)
+            words = re.findall(r"\w+", q_lower)
+            phrases = set()
+            for i in range(len(words) - 1):
+                if words[i] not in STOP and words[i + 1] not in STOP:
+                    phrases.add(f"{words[i]} {words[i+1]}")
+            for i in range(len(words) - 2):
+                if all(w not in STOP for w in words[i:i+3]) and len(words[i]) > 3:
+                    phrases.add(f"{words[i]} {words[i+1]} {words[i+2]}")
+
+            # Compound scoring query: search each phrase first, then keywords
+            all_terms = list(phrases)[:5] + keywords[:5]
+            if all_terms:
+                # Score each page by term hits using ILIKE
+                page_scores: dict[int, dict[str, Any]] = {}
+                for term in all_terms:
                     await cur.execute(
-                        "SELECT p.page_number, substring(p.text, greatest(position(%s in lower(p.text)) - 80, 1), 200) "
+                        "SELECT page_number, substring(text, greatest(position(%s in lower(text)) - 80, 1), %s) "
                         "FROM library_pages_v2 p WHERE p.run_id = %s AND lower(p.text) LIKE %s "
-                        "ORDER BY p.page_number LIMIT 5",
-                        (kw, rid, f"%{kw}%"),
+                        "ORDER BY p.page_number LIMIT 15",
+                        (term, SNIPPET_CHARS, rid, f"%{term}%"),
                     )
                     for r in await cur.fetchall():
                         pg = _v(r, 0)
-                        if pg not in seen_pages:
-                            seen_pages.add(pg)
-                            sources.append(BookQASource(
-                                page_number=pg, evidence_type="concept", score=0.6,
-                                snippet=(_v(r, 1) or "")[:200].replace("\n", " ").strip(),
-                                matched_terms=[kw],
-                            ))
-                if not sources:
-                    warnings.append(f"concept_not_found: '{a}'")
+                        if pg not in page_scores:
+                            page_scores[pg] = {"score": 0, "terms": [], "snippet": "", "hits": 0}
+                        page_scores[pg]["score"] += 3 if " " in term else 1  # phrase=3, word=1
+                        page_scores[pg]["terms"].append(term)
+                        page_scores[pg]["hits"] += 1
+                        if not page_scores[pg]["snippet"]:
+                            page_scores[pg]["snippet"] = (_v(r, 1) or "")[:SNIPPET_CHARS].replace("\n", " ").strip()
+
+                # Sort by score desc, take top_k
+                sorted_pages = sorted(page_scores.items(), key=lambda x: -x[1]["score"])
+                for pg, info in sorted_pages[:top_k]:
+                    if pg not in seen_pages:
+                        seen_pages.add(pg)
+                        evidence = "direct_factual_match" if info["hits"] >= 2 else "compound_keyword_match"
+                        sources.append(BookQASource(
+                            page_number=pg, evidence_type=evidence, score=min(info["score"] / 10, 1.0),
+                            snippet=info["snippet"][:SNIPPET_CHARS],
+                            matched_terms=list(dict.fromkeys(info["terms"]))[:5],
+                        ))
+
+            if not sources:
+                warnings.append(f"concept_not_found: '{a}'")
 
         # Phrase lookup
         if route == "phrase_lookup":
@@ -473,7 +487,7 @@ async def run_book_qa(
         answer_type=answer_type,
         short_conclusion=conclusion,
         evidence_summary=BookQAEvidenceSummary(
-            literal_matches=sum(1 for s in sources if s.evidence_type in ("literal", "partial_phrase", "section_match")),
+            literal_matches=sum(1 for s in sources if s.evidence_type in ("literal", "partial_phrase", "section_match", "direct_factual_match", "compound_keyword_match")),
             concept_matches=sum(1 for s in sources if s.evidence_type == "concept"),
             relation_matches=sum(1 for s in sources if s.evidence_type in ("relation_candidate", "cooccurrence_same_page")),
             source_references=sum(len(s.source_refs_nearby) for s in sources),

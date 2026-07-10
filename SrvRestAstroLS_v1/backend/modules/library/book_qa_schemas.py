@@ -31,7 +31,7 @@ class BookQASource(BaseModel):
         "literal", "partial_phrase", "concept", "relation_candidate",
         "cooccurrence_same_page", "cooccurrence_nearby_pages",
         "source_reference", "semantic_disabled", "no_evidence",
-        "section_match",
+        "section_match", "direct_factual_match", "compound_keyword_match",
     ]
     score: float = 0.0
     snippet: str = ""

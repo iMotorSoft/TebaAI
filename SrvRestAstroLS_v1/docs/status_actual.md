@@ -2247,6 +2247,43 @@ Validación:
   - /library/search no tocado
 ```
 
+## Library Search Hybrid Acid Batch — 2026-07-09
+
+```text
+ESTADO: CERRADO (PASS fuerte)
+COMMIT: e20cce6 test(breslov): add library search hybrid acid batch
+
+Endpoint: POST /library/search
+  - Modalidad híbrida: PostgreSQL FTS + Milvus vector search
+  - Score global: 189/200 = 94.5% (PASS fuerte)
+  - Hybrid queries: 8/8 con vector hits
+  - Response-visible vector hits: 7/8
+  - fts_q09: WARN (phrase exacta sin resultados)
+
+Alias confirmado para retrieval vectorial:
+  - Scope lógico: breslov_primary
+  - Milvus collection_code: breslov
+  - mapping: knowledge_scope → collection_code via alias en hybrid_search.py
+
+Guardrails:
+  - Milvus productivo no modificado
+  - No reindexado
+  - PostgreSQL productivo no tocado
+  - Corpus no tocado
+  - globalVar.py no tocado
+  - No OpenAI directo
+  - Solo LiteLLM para embeddings
+
+Documentación:
+  - data/reports/breslov/2026-07-09-milvus26-acid-validation/library_search_hybrid_acid.md
+
+Riesgo documentado:
+  - Otras rutas que filtren vectores por scope lógico deben verificar
+    el mapping breslov_primary → collection_code=breslov.
+  - Si no está resuelto, vector search contra productivo puede fallar
+    por expr filter incorrecta.
+```
+
 ## Historial
 
 - resumen tecnico previo: `status_historico_hasta_2026-06-28.md`;

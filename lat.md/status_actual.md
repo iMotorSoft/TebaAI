@@ -4,7 +4,7 @@ Este tablero resume la arquitectura viva de TebaAI y evita repetir la historia t
 
 Objetivo: `arquitectura-viva`
 
-Ultima actualizacion: 2026-07-09 (synthesis hardening)
+Ultima actualizacion: 2026-07-09 (hybrid acid batch)
 
 ## Estado general
 
@@ -104,6 +104,30 @@ La deuda arquitectónica restante requiere decisiones explícitas y no debe mezc
 2. ADR para el límite plataforma TebaAI / vertical Breslov.
 3. ADR previo a cualquier generación RAG o síntesis con LLM.
 4. Reconciliar conteos PostgreSQL/Milvus antes de reindexar.
+
+## Mapping lógico/productivo Milvus — 2026-07-09
+
+El retrieval vectorial usa un mapeo de alias entre el scope lógico y la collection/productivo:
+
+```text
+knowledge_scope_code = "breslov_primary"
+  → Milvus collection = "tebaai_breslov_chunks_v1"
+  → Milvus vector expr: collection_code = "breslov"
+```
+
+Este mapping se resuelve en `hybrid_search.py` via `BRESLOV_SCOPE_CODE` y `BRESLOV_COLLECTION_CODE`.
+Cualquier ruta nueva que filtre vectores por scope lógico debe replicar este mapping.
+Si no está resuelto, la expresión de filtro puede excluir todos los vectores productivos.
+
+## Library Search Hybrid Acid Batch — 2026-07-09
+
+Validación del endpoint `POST /library/search` en modo híbrido (FTS + Milvus vector).
+
+- Commit: `e20cce6`
+- Score: 189/200 — PASS fuerte (94.5%)
+- Todos los hits vectoriales recuperan texto canónico desde PostgreSQL
+- `/library/search` no reemplaza Book QA scoped ni Relation QA
+- Gap: `source_lookup` phrase exacta falla sin stemming/FTS flexible (WARN en fts_q09)
 
 ## Relation QA Editorial Acid Batch — 2026-07-09
 

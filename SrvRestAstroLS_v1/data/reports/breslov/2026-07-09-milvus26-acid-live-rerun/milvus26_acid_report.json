@@ -1,0 +1,1324 @@
+{
+  "milvus": {
+    "host": "127.0.0.1",
+    "port": 19530,
+    "collection": "tebaai_breslov_chunks_v1",
+    "connected": true,
+    "collections": [
+      "team360_diagnosis_debug_20260614_203636",
+      "team360_sales_diagnosis_knowledge_v1",
+      "team360_diagnosis_debug_20260614_210254",
+      "team360_diagnosis_debug_20260614_210515",
+      "tebaai_breslov_bm25_test_v2",
+      "JAI_document_embeddings",
+      "team360_lab_pgvector_benchmark_openai_small_1536",
+      "tebaai_breslov_test_chunks_v1",
+      "tebaai_breslov_bm25_test_v3",
+      "team360_diagnosis_debug_20260614_203658",
+      "team360_diagnosis_debug_20260614_224849",
+      "tebaai_breslov_chunks_v1",
+      "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+      "JAI_document_embeddings_lab_ingest"
+    ],
+    "collection_exists": true,
+    "num_entities": 5102,
+    "schema_ok": true,
+    "schema": {
+      "description": "TebaAI vector collection (dim=1536)",
+      "fields": [
+        {
+          "name": "pk",
+          "dtype": 21,
+          "is_primary": true,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 128
+        },
+        {
+          "name": "chunk_id",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 64
+        },
+        {
+          "name": "document_id",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 64
+        },
+        {
+          "name": "collection_code",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 64
+        },
+        {
+          "name": "language",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 8
+        },
+        {
+          "name": "title",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 512
+        },
+        {
+          "name": "source_type",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 32
+        },
+        {
+          "name": "source_sha256",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 64
+        },
+        {
+          "name": "content_sha256",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 64
+        },
+        {
+          "name": "chunk_index",
+          "dtype": 5,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": null
+        },
+        {
+          "name": "page_start",
+          "dtype": 5,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": null
+        },
+        {
+          "name": "page_end",
+          "dtype": 5,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": null
+        },
+        {
+          "name": "content_preview",
+          "dtype": 21,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": null,
+          "max_length": 1024
+        },
+        {
+          "name": "embedding",
+          "dtype": 101,
+          "is_primary": false,
+          "auto_id": false,
+          "dim": 1536,
+          "max_length": null
+        }
+      ]
+    },
+    "indexes": [
+      {
+        "field_name": "embedding",
+        "index_name": "embedding",
+        "index_type": "",
+        "metric_type": "",
+        "params": {
+          "index_type": "HNSW",
+          "metric_type": "COSINE",
+          "params": {
+            "M": 16,
+            "efConstruction": 200
+          }
+        }
+      }
+    ],
+    "loaded": true,
+    "load_state": 3,
+    "latency_ms": {
+      "connect": 426,
+      "list_collections": 4,
+      "load": 7,
+      "num_entities": 3,
+      "describe_collection": 0
+    },
+    "errors": []
+  },
+  "pg": {
+    "enabled": true,
+    "connected": true,
+    "ready_chunks": 5102,
+    "sample_size": 50,
+    "sample_chunks": [
+      {
+        "chunk_id": "00096842-1514-4fc8-9fa1-96805df0d1db",
+        "chunk_uid": "82c1c453a76d6b4813dc6ae5",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "b3290501fdb01e37fa03f9714bce8fdea01e3892e45366e11f89b75efd95b7f7",
+        "chunk_index": 11,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0013ff4c-048c-4855-957e-743efbcfa4b6",
+        "chunk_uid": "0190e7a5e242b4cca10c2fc1",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "1e137d6fdeff25b2071d1ca7c82d12b8bb5b2a9811fa27aa2961f277a7d5e6d0",
+        "chunk_index": 536,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0015eac7-b980-4380-a95e-b52ecd41935c",
+        "chunk_uid": "3018201709a29770866edc03",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "84c38881976f7a53f97caeeef75d1edda685f4b82c449a55c2678268c691a3a0",
+        "chunk_index": 201,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00167426-d02c-4a13-88a1-1fe79a12560e",
+        "chunk_uid": "88003d52ac856b69ebf38097",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "d808f03ddc11d65ccfa3d959445599765c4b1b13d7decc838a2791c4ef3caad5",
+        "chunk_index": 406,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0046e9cd-7eb4-4ebd-8fd2-fbb545bc69a8",
+        "chunk_uid": "181dce9b3c82767970fd762e",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "2c168807d29d8959e3df820c30a715ed857dee569cf9fd4cd792e12efbb85cb1",
+        "chunk_index": 706,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0047d480-fec0-4548-a128-cfbae221e5b0",
+        "chunk_uid": "f6ec9a8fcfa7e23b86c64dee",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "6fde51013987d932f0aeb94e829f74a96ad76faaa3a3f18fd92a22e5aefab340",
+        "chunk_index": 404,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "004a75bf-6a2b-4d95-9459-f4e709e7803b",
+        "chunk_uid": "5cec6614381dec5c3beefb3e",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "5968ba00c0216ca42c118e962f2a0ba88ea6181beb8dbc770e9907a0f613db42",
+        "chunk_index": 489,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0057d402-e776-4499-a6f5-015dca0976b3",
+        "chunk_uid": "cc5be8fe0852e46607373c49",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "acfa064d55ffa4c4b0b84a41e2963035a3bd5a4a008ff4e00b95784dfd9d7131",
+        "chunk_index": 14,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "006354e8-6de8-4ef2-8d3f-40f729645603",
+        "chunk_uid": "d37151e188b53f4fb1278d22",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "4132f4d96920e6a0dd44f26e91861ab4a4ac1b420664279a6ceef53cce3de73d",
+        "chunk_index": 418,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00759e73-624c-4c06-b73a-4b31ba2a3df1",
+        "chunk_uid": "3c4b1ccd40c57453edd43891",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "92cff9c5cc6cc2590bf4656414a521bf89d80a8ac37efd544341ccba229b21a7",
+        "chunk_index": 424,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0076f642-ef54-41c4-99f6-832d95ce2092",
+        "chunk_uid": "4676792e98b770438e129dba",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "905fb131e5743d4ca2847af1783f932480c2267e235d60b2c8415b94c3788c0b",
+        "chunk_index": 1087,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00798162-5bbb-4da4-ad8f-9baf4e91a0b6",
+        "chunk_uid": "8db49277b038ac95a9cca7e0",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "82b6b63285c352bbf54b90748dea95a184cd27e1668a78e3560370be15b0faf9",
+        "chunk_index": 342,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0089db13-3fed-440c-b125-063061e8d97a",
+        "chunk_uid": "0673f0802146a523a598e020",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "5b20d583164fe811ca67d81f2cad1c8f9736786946a5a5d968a9d73e86bc0980",
+        "chunk_index": 847,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "009fccaf-3528-449e-8a55-d36eac2f8a6b",
+        "chunk_uid": "717af9b20a682bdadff78c28",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "749521b10af01aa86076fdd082e63f57e811cb8d62634bd0df51b12c92305fbc",
+        "chunk_index": 769,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00a472be-bf20-4eb0-8e6c-29071b368c31",
+        "chunk_uid": "f68fb6e86c5bc4096cc24f0c",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "295323a5934b28593302dcd2075a3441ea7b532d12a356d27fd9bd8f93915bb5",
+        "chunk_index": 766,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00a6bc08-13ed-46e8-abf8-12a984c62f38",
+        "chunk_uid": "782852bb7e2f13986ba40795",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "407f9787283af75fde771abb81416bf99d98cef5b559ca079a32b77c5e96bf81",
+        "chunk_index": 479,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00ac95d0-c973-43ed-b854-32c8f7550caa",
+        "chunk_uid": "8c685e188c8a7e4cd59050fc",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "f041c6c3c7275766fa4678fdd6c9f4202f4126fa2000a1e6c0c66627ad3fb0a1",
+        "chunk_index": 417,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00c4e521-b534-4dbe-901f-2428725b7ffb",
+        "chunk_uid": "1eabdd017c31986be10cd4be",
+        "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+        "content_sha256": "9d21c4a381f97433f68d4c2376019df165b1b0386d4baabc62dd411bf5a9ea8e",
+        "chunk_index": 61,
+        "document_title": "Un Día en la Vida de un Jasid de Breslov",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00d4926e-2caa-43fc-bfab-0571aa3242ac",
+        "chunk_uid": "99778fc8392cfba83950d46d",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "a1475ae410ac871fc5ae58739388098c243edc178324fd23bffb79ea2944cfaa",
+        "chunk_index": 198,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00d7faf9-f4de-4333-afc3-969cac4ddad0",
+        "chunk_uid": "fcdd289b385a599855938ee2",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "6fece6583295319074ea38871e7ef1c3e373d9b6560f14112223c2adf132d37f",
+        "chunk_index": 374,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00ee762d-20f3-413e-afc1-daee0438de10",
+        "chunk_uid": "967e5533cb17a71860370ba8",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "a8d3f7aae64d9b29a1899d382de3296f2f4e20b0672c02027907f3dc1d247be5",
+        "chunk_index": 699,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00fdf914-c2df-4b4b-97a5-6304f6b6ed68",
+        "chunk_uid": "2de93a22c7dc10e93799aafc",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "8a0d0f125e60780679b316a82012b46909cb6a0addeed0b92cab0cdcf805afc4",
+        "chunk_index": 635,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "00fe5a32-9db2-4785-ae93-dd71deeb19bf",
+        "chunk_uid": "089fd3d3574dc2f10ebd769e",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "cff41c512918f734d4edec0ecd1074f40b10ba990d3b75d674812be39706269b",
+        "chunk_index": 288,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "010aa688-0135-4b49-8686-bcab88daf232",
+        "chunk_uid": "8b460a139bb72d46c6f611a7",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "b6aa47bc723648466bb943cdfff76a03a92f74764698f43514800abbb8f06674",
+        "chunk_index": 254,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "010b07b2-ecac-4e12-a858-83543a20e298",
+        "chunk_uid": "a05754a5a9cf40a9bb6db74d",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "2b7f5b589b39c4d04990a97d7531f5d8a61bef39efcc3c9c0feee380162b99ad",
+        "chunk_index": 321,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0114fe8e-51a6-40cd-88f9-edea01479911",
+        "chunk_uid": "2015ed9d39dd7f201379214e",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "b6006f8e71d89cdc0d156fdead96e77288f15d525371705b579944904cb0dfe3",
+        "chunk_index": 367,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0119ba75-b4d9-40bd-b73b-7ff3fbd82127",
+        "chunk_uid": "e122d88d45d83a0a7fae00da",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "261007ddfaf06c1433474e19f9a820c039620beb626c44d7bed54a9d0feafacf",
+        "chunk_index": 671,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "012cd096-c5df-4d6e-a761-59569e88bbd3",
+        "chunk_uid": "a1350836a7d04e98c8502afb",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "bac16e4be68130bd51fdc52b6ac856034f1208843d9ccec29d377dc0636e9f70",
+        "chunk_index": 262,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "013ed570-c678-4d2d-8872-bedecc65d9a0",
+        "chunk_uid": "11fbaadb01fd7cf74b753005",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "ca8fcba3216ad10779b0af67a5bbf930c13dab2e436d4bfce43e88fdd7a3718b",
+        "chunk_index": 613,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0148eee6-f42e-4b4a-a013-055b244edb50",
+        "chunk_uid": "88c88b25f2fbde00168bcaaa",
+        "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+        "content_sha256": "d2754d8feaba42d4b6be204a901cedcfded0af39d723b26b572f9bd137fedb6c",
+        "chunk_index": 57,
+        "document_title": "El Jardín de las Almas",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0171c576-a01a-4222-aa7e-94f417eceb90",
+        "chunk_uid": "92ab8f56bd19fdc14dd98e2d",
+        "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+        "content_sha256": "3b7ecadfa9470b8fd2f995402e2d2872a157161f5f8afcd849d003e55414966c",
+        "chunk_index": 84,
+        "document_title": "Un Día en la Vida de un Jasid de Breslov",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "01852997-cabd-44cd-823b-645ab3103684",
+        "chunk_uid": "b03a969ef8a95fb9f34b5a49",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "0aee784d1a7fed5a475f4f153b81d9c80fce6daa5b6dd776f9a91de32d7d9462",
+        "chunk_index": 644,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "018743c2-d6b6-4aa5-8763-7c37bdf8d283",
+        "chunk_uid": "4a83ccbeba779764259a0066",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "content_sha256": "c5e7ec6ae5d8f8887975680b459f573ce5269f994fd60f2d3c3d0b559f1f768b",
+        "chunk_index": 547,
+        "document_title": "Kokhavey Ohr",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "018b4afb-d685-4699-a52d-d524b301000c",
+        "chunk_uid": "be0f432a03289bf7ab86f163",
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "content_sha256": "c2ef7b5c0ab39ddbc7d7635849ca8492ab5196718a6fd347be95e0aaeed43662",
+        "chunk_index": 508,
+        "document_title": "La Potencia de la Plegaria",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "018f1bc8-ad61-4999-aa0f-7cd50f7c038a",
+        "chunk_uid": "e2f5d20c14806ef3a3b2c4b3",
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "content_sha256": "c86b4730ca32cc0173a1717f12cb892053cc585bd75f703a3654574a84df48c8",
+        "chunk_index": 534,
+        "document_title": "La Potencia de la Plegaria",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "0198f714-3c86-4be1-abd6-e2e0c4ff924e",
+        "chunk_uid": "46e7f0a94f3aa4c581a8df2e",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "21bc2ced63c3b10d14722b9b85c7bf7147681baa47e7a1faeb871400ede0c049",
+        "chunk_index": 727,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "019a6f5c-73d1-49ed-b6c1-9563bfe51de3",
+        "chunk_uid": "784eaba9b9f2c6729a61e78e",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "f6be8e2a88c6030f474b7aa0b9406e860636778fc155399a0963e099bdf60b1a",
+        "chunk_index": 408,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "01a69ef3-b0a2-455d-8c3d-10c5802f3238",
+        "chunk_uid": "d1764eaaefd910218e2ed003",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "1278a1a7aad3dca74c6da3dac3f0d9dcde4273c42d0e8902486b34d154c7251a",
+        "chunk_index": 472,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "01b1dd05-244d-416e-bceb-e2d4dfa3b8b6",
+        "chunk_uid": "7cc74091ac78adbd6e3a738c",
+        "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+        "content_sha256": "d1015fb02852e51d050ac8a729a4fa0c5d1cd5910eb66d4060c673b05d85f6dd",
+        "chunk_index": 58,
+        "document_title": "Un Día en la Vida de un Jasid de Breslov",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "01c0bc60-ba08-4fa3-8e5b-ee3b155db752",
+        "chunk_uid": "2fdabd957354fd93a167c4ec",
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "content_sha256": "a6c0411cbbe26d6584351885292abb625e2109a76105408f459a040bde910bb7",
+        "chunk_index": 423,
+        "document_title": "KITZUR",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "01c3aea2-cf56-4002-919e-e46d988bb171",
+        "chunk_uid": "7e68b6c1d198a97fd11b514f",
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "content_sha256": "717c3893431f7d9c636239dc3f536ab7ca82b92b771a88c13daf67c71fab8dcd",
+        "chunk_index": 579,
+        "document_title": "La Potencia de la Plegaria",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "01e32fcf-f718-4e69-90c7-f43b157ad9d3",
+        "chunk_uid": "229bc47361a4c23a43372de4",
+        "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+        "content_sha256": "33d24e6f713cd5b84ec993359786efdc1e5502ea23db65d8420f9ab1579adc45",
+        "chunk_index": 24,
+        "document_title": "Un Día en la Vida de un Jasid de Breslov",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "01ed49a0-e4b4-41c9-afdd-100a7dac62c6",
+        "chunk_uid": "24844268ea5a76248eed02a3",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "a55fa672ac8043796263c5f78039b96f4206fa9c737ea276b16acaa6d091b29b",
+        "chunk_index": 137,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "02080cc1-5b65-4c4e-968f-bc9df7b71155",
+        "chunk_uid": "f40eb8366c920c693527999a",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "74ab27fc4ad6024163990d1cafd04f914d4abffe6a9478f8ec26462c763bebe6",
+        "chunk_index": 596,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "02149a16-be9d-4718-a674-7c6a62dfa385",
+        "chunk_uid": "f3e6ad1f8fd478511598607d",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "content_sha256": "20c90a2b44aa4394aae77853d951666457133a76cbfd9463f92851ea8c81a2ab",
+        "chunk_index": 641,
+        "document_title": "Likutey Halajot LM II 8",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "021a3a71-d46a-4ff8-8215-aa2840809ea7",
+        "chunk_uid": "8cf06c425bbeddc2857d6709",
+        "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+        "content_sha256": "e281eb3bb9a762711a4cfdf97f3a83e59b1daf54cb37cdc3e45af0b2d803247b",
+        "chunk_index": 75,
+        "document_title": "El Jardín de las Almas",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "024737de-cf3f-4ec0-9027-abf8022a6a9a",
+        "chunk_uid": "9a972483987a4e8e7942cc6d",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "acad90c63b046f87532137c992f5489b39279e3cb6ae81e6f44bab280c660e7c",
+        "chunk_index": 264,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "025b8505-04ea-44b8-bd8b-a8c2d2deb2b6",
+        "chunk_uid": "0c99522db727a7448b7593b6",
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "content_sha256": "0b70372b425d26c135f74630874249d4f8f3cc921a06d79cb4d04c1538cd4958",
+        "chunk_index": 103,
+        "document_title": "La Potencia de la Plegaria",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "025bd514-be73-4426-ada9-bba5bfcd6d58",
+        "chunk_uid": "9dc213ac73c7013795d0e527",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "content_sha256": "6cc5936c9fe36dd347f0cf938abf241d1e6967ad13d3f42ad15422174b643fde",
+        "chunk_index": 349,
+        "document_title": "El Alma del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      {
+        "chunk_id": "025ef709-b94f-43ba-90a7-6a334748a43c",
+        "chunk_uid": "c18edbe413ad8b5aaabadd0d",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "content_sha256": "d967ff14f338f571a64b748b7a6b9f996facbc5379205dc4407afa90be721364",
+        "chunk_index": 689,
+        "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "document_status": "ready",
+        "knowledge_scope_code": "breslov_primary"
+      }
+    ],
+    "errors": [],
+    "latency_ms": {
+      "connect": 0,
+      "count_ready": 115,
+      "sample_fetch": 980
+    },
+    "scope_code": "breslov_primary"
+  },
+  "roundtrip": {
+    "status": "warn",
+    "pg_count": 5102,
+    "milvus_count": 5102,
+    "sample_size": 50,
+    "sample_found": 50,
+    "sample_missing": 0,
+    "duplicates": 0,
+    "mismatches": [
+      {
+        "chunk_id": "00096842-1514-4fc8-9fa1-96805df0d1db",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0013ff4c-048c-4855-957e-743efbcfa4b6",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0015eac7-b980-4380-a95e-b52ecd41935c",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00167426-d02c-4a13-88a1-1fe79a12560e",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0046e9cd-7eb4-4ebd-8fd2-fbb545bc69a8",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0047d480-fec0-4548-a128-cfbae221e5b0",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "004a75bf-6a2b-4d95-9459-f4e709e7803b",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0057d402-e776-4499-a6f5-015dca0976b3",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "006354e8-6de8-4ef2-8d3f-40f729645603",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00759e73-624c-4c06-b73a-4b31ba2a3df1",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0076f642-ef54-41c4-99f6-832d95ce2092",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00798162-5bbb-4da4-ad8f-9baf4e91a0b6",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0089db13-3fed-440c-b125-063061e8d97a",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "009fccaf-3528-449e-8a55-d36eac2f8a6b",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00a472be-bf20-4eb0-8e6c-29071b368c31",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00a6bc08-13ed-46e8-abf8-12a984c62f38",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00ac95d0-c973-43ed-b854-32c8f7550caa",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00c4e521-b534-4dbe-901f-2428725b7ffb",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00d4926e-2caa-43fc-bfab-0571aa3242ac",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00d7faf9-f4de-4333-afc3-969cac4ddad0",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00ee762d-20f3-413e-afc1-daee0438de10",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00fdf914-c2df-4b4b-97a5-6304f6b6ed68",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "00fe5a32-9db2-4785-ae93-dd71deeb19bf",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "010aa688-0135-4b49-8686-bcab88daf232",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "010b07b2-ecac-4e12-a858-83543a20e298",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0114fe8e-51a6-40cd-88f9-edea01479911",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0119ba75-b4d9-40bd-b73b-7ff3fbd82127",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "012cd096-c5df-4d6e-a761-59569e88bbd3",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "013ed570-c678-4d2d-8872-bedecc65d9a0",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0148eee6-f42e-4b4a-a013-055b244edb50",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0171c576-a01a-4222-aa7e-94f417eceb90",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "01852997-cabd-44cd-823b-645ab3103684",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "018743c2-d6b6-4aa5-8763-7c37bdf8d283",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "018b4afb-d685-4699-a52d-d524b301000c",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "018f1bc8-ad61-4999-aa0f-7cd50f7c038a",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "0198f714-3c86-4be1-abd6-e2e0c4ff924e",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "019a6f5c-73d1-49ed-b6c1-9563bfe51de3",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "01a69ef3-b0a2-455d-8c3d-10c5802f3238",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "01b1dd05-244d-416e-bceb-e2d4dfa3b8b6",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "01c0bc60-ba08-4fa3-8e5b-ee3b155db752",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "01c3aea2-cf56-4002-919e-e46d988bb171",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "01e32fcf-f718-4e69-90c7-f43b157ad9d3",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "01ed49a0-e4b4-41c9-afdd-100a7dac62c6",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "02080cc1-5b65-4c4e-968f-bc9df7b71155",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "02149a16-be9d-4718-a674-7c6a62dfa385",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "021a3a71-d46a-4ff8-8215-aa2840809ea7",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "024737de-cf3f-4ec0-9027-abf8022a6a9a",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "025b8505-04ea-44b8-bd8b-a8c2d2deb2b6",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "025bd514-be73-4426-ada9-bba5bfcd6d58",
+        "issues": [
+          "collection_code"
+        ]
+      },
+      {
+        "chunk_id": "025ef709-b94f-43ba-90a7-6a334748a43c",
+        "issues": [
+          "collection_code"
+        ]
+      }
+    ],
+    "latency_ms": {
+      "milvus_query": 2398
+    },
+    "errors": []
+  },
+  "search_latency": {
+    "status": "warn",
+    "collection": "tebaai_breslov_chunks_v1",
+    "scope_code": "breslov_primary",
+    "embedding_model": "openai_text_embedding_3_small",
+    "runs": [
+      {
+        "query": "tristeza",
+        "top_k": 5,
+        "embedding_ms": 1905,
+        "milvus_search_ms": 314,
+        "total_ms": 2219,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "tristeza",
+        "top_k": 10,
+        "embedding_ms": 1905,
+        "milvus_search_ms": 19,
+        "total_ms": 1924,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "tristeza",
+        "top_k": 20,
+        "embedding_ms": 1905,
+        "milvus_search_ms": 18,
+        "total_ms": 1923,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "tristeza",
+        "top_k": 50,
+        "embedding_ms": 1905,
+        "milvus_search_ms": 18,
+        "total_ms": 1923,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "miedo",
+        "top_k": 5,
+        "embedding_ms": 938,
+        "milvus_search_ms": 9,
+        "total_ms": 947,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "miedo",
+        "top_k": 10,
+        "embedding_ms": 938,
+        "milvus_search_ms": 9,
+        "total_ms": 947,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "miedo",
+        "top_k": 20,
+        "embedding_ms": 938,
+        "milvus_search_ms": 9,
+        "total_ms": 947,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "miedo",
+        "top_k": 50,
+        "embedding_ms": 938,
+        "milvus_search_ms": 70,
+        "total_ms": 1008,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "alegría plegaria",
+        "top_k": 5,
+        "embedding_ms": 1041,
+        "milvus_search_ms": 12,
+        "total_ms": 1053,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "alegría plegaria",
+        "top_k": 10,
+        "embedding_ms": 1041,
+        "milvus_search_ms": 14,
+        "total_ms": 1055,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "alegría plegaria",
+        "top_k": 20,
+        "embedding_ms": 1041,
+        "milvus_search_ms": 19,
+        "total_ms": 1060,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "alegría plegaria",
+        "top_k": 50,
+        "embedding_ms": 1041,
+        "milvus_search_ms": 12,
+        "total_ms": 1053,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "sangre habla",
+        "top_k": 5,
+        "embedding_ms": 937,
+        "milvus_search_ms": 9,
+        "total_ms": 946,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "sangre habla",
+        "top_k": 10,
+        "embedding_ms": 937,
+        "milvus_search_ms": 9,
+        "total_ms": 946,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "sangre habla",
+        "top_k": 20,
+        "embedding_ms": 937,
+        "milvus_search_ms": 8,
+        "total_ms": 945,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "sangre habla",
+        "top_k": 50,
+        "embedding_ms": 937,
+        "milvus_search_ms": 9,
+        "total_ms": 946,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "ruaj habla",
+        "top_k": 5,
+        "embedding_ms": 1121,
+        "milvus_search_ms": 11,
+        "total_ms": 1132,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "ruaj habla",
+        "top_k": 10,
+        "embedding_ms": 1121,
+        "milvus_search_ms": 8,
+        "total_ms": 1129,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "ruaj habla",
+        "top_k": 20,
+        "embedding_ms": 1121,
+        "milvus_search_ms": 10,
+        "total_ms": 1131,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "ruaj habla",
+        "top_k": 50,
+        "embedding_ms": 1121,
+        "milvus_search_ms": 8,
+        "total_ms": 1129,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "hitbodedut",
+        "top_k": 5,
+        "embedding_ms": 805,
+        "milvus_search_ms": 10,
+        "total_ms": 815,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "hitbodedut",
+        "top_k": 10,
+        "embedding_ms": 805,
+        "milvus_search_ms": 8,
+        "total_ms": 813,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "hitbodedut",
+        "top_k": 20,
+        "embedding_ms": 805,
+        "milvus_search_ms": 8,
+        "total_ms": 813,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "hitbodedut",
+        "top_k": 50,
+        "embedding_ms": 805,
+        "milvus_search_ms": 8,
+        "total_ms": 813,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "emuná",
+        "top_k": 5,
+        "embedding_ms": 870,
+        "milvus_search_ms": 9,
+        "total_ms": 879,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "emuná",
+        "top_k": 10,
+        "embedding_ms": 870,
+        "milvus_search_ms": 9,
+        "total_ms": 879,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "emuná",
+        "top_k": 20,
+        "embedding_ms": 870,
+        "milvus_search_ms": 26,
+        "total_ms": 896,
+        "hits": 0,
+        "error": null
+      },
+      {
+        "query": "emuná",
+        "top_k": 50,
+        "embedding_ms": 870,
+        "milvus_search_ms": 7,
+        "total_ms": 877,
+        "hits": 0,
+        "error": null
+      }
+    ],
+    "errors": [],
+    "summary": {}
+  },
+  "relation_qa": {
+    "status": "warn",
+    "scope_code": "breslov_primary",
+    "runs": [
+      {
+        "question": "Qué relación hay entre alegría y plegaria",
+        "elapsed_ms": 31104,
+        "used_milvus": true,
+        "retrieval": [
+          "postgresql_fts_websearch",
+          "postgresql_ilike_fallback",
+          "postgresql_cooccurrence",
+          "milvus_dense_cosine"
+        ],
+        "warnings": [
+          "no_literal_relation: no citar como doctrina literal",
+          "cooccurrence_only: coocurrencia no equivale a relación explícita",
+          "deterministic_fallback: la síntesis editorial automática no pudo completarse; se muestra una síntesis determinística basada en fuentes recuperadas. Revisar editorialmente antes de citar como conclusión."
+        ],
+        "fallback_used": true,
+        "fallback_reason": null,
+        "synthesis_mode": "deterministic_fallback",
+        "source_count": 20,
+        "source_titles": [
+          "La Potencia de la Plegaria",
+          "Un Día en la Vida de un Jasid de Breslov",
+          "Un Día en la Vida de un Jasid de Breslov",
+          "KITZUR",
+          "Likutey Halajot LM II 8"
+        ]
+      },
+      {
+        "question": "Qué relación hay entre sangre y habla",
+        "elapsed_ms": 11825,
+        "used_milvus": true,
+        "retrieval": [
+          "postgresql_fts_websearch",
+          "postgresql_ilike_fallback",
+          "postgresql_cooccurrence",
+          "milvus_dense_cosine"
+        ],
+        "warnings": [
+          "no_literal_relation: no citar como doctrina literal",
+          "cooccurrence_only: coocurrencia no equivale a relación explícita",
+          "deterministic_fallback: la síntesis editorial automática no pudo completarse; se muestra una síntesis determinística basada en fuentes recuperadas. Revisar editorialmente antes de citar como conclusión."
+        ],
+        "fallback_used": true,
+        "fallback_reason": null,
+        "synthesis_mode": "deterministic_fallback",
+        "source_count": 20,
+        "source_titles": [
+          "Likutey Halajot LM II 8",
+          "KITZUR",
+          "KITZUR",
+          "KITZUR",
+          "Likutey Halajot LM II 8"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "errors": []
+}

@@ -1,0 +1,147 @@
+{
+  "scope_code": "breslov_primary",
+  "milvus_collection": "tebaai_breslov_chunks_v1",
+  "milvus_collection_code": "breslov",
+  "alias_used": true,
+  "queries": [
+    {
+      "query": "alegría",
+      "fts_hits": 20,
+      "fts_elapsed_ms": 637,
+      "direct_vector_hits": 20,
+      "direct_vector_expr": "collection_code == \"breslov\"",
+      "direct_vector_elapsed_ms": 1104,
+      "direct_vector_error": null,
+      "hybrid_hits": 20,
+      "hybrid_vector_hits": 6,
+      "hybrid_elapsed_ms": 1342,
+      "hybrid_source_signals": [
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ]
+      ],
+      "top_titles": [
+        "KITZUR",
+        "KITZUR",
+        "La Potencia de la Plegaria"
+      ]
+    },
+    {
+      "query": "plegaria",
+      "fts_hits": 20,
+      "fts_elapsed_ms": 6154,
+      "direct_vector_hits": 20,
+      "direct_vector_expr": "collection_code == \"breslov\"",
+      "direct_vector_elapsed_ms": 538,
+      "direct_vector_error": null,
+      "hybrid_hits": 20,
+      "hybrid_vector_hits": 0,
+      "hybrid_elapsed_ms": 628,
+      "hybrid_source_signals": [
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ]
+      ],
+      "top_titles": [
+        "La Potencia de la Plegaria",
+        "Likutey Halajot LM II 8",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+      ]
+    },
+    {
+      "query": "hitbodedut",
+      "fts_hits": 20,
+      "fts_elapsed_ms": 10,
+      "direct_vector_hits": 20,
+      "direct_vector_expr": "collection_code == \"breslov\"",
+      "direct_vector_elapsed_ms": 860,
+      "direct_vector_error": null,
+      "hybrid_hits": 20,
+      "hybrid_vector_hits": 12,
+      "hybrid_elapsed_ms": 756,
+      "hybrid_source_signals": [
+        [
+          "fts"
+        ],
+        [
+          "fts",
+          "vector"
+        ],
+        [
+          "fts",
+          "vector"
+        ],
+        [
+          "fts"
+        ],
+        [
+          "fts"
+        ]
+      ],
+      "top_titles": [
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+      ]
+    },
+    {
+      "query": "sangre habla",
+      "fts_hits": 12,
+      "fts_elapsed_ms": 20,
+      "direct_vector_hits": 20,
+      "direct_vector_expr": "collection_code == \"breslov\"",
+      "direct_vector_elapsed_ms": 956,
+      "direct_vector_error": null,
+      "hybrid_hits": 20,
+      "hybrid_vector_hits": 20,
+      "hybrid_elapsed_ms": 667,
+      "hybrid_source_signals": [
+        [
+          "vector"
+        ],
+        [
+          "vector"
+        ],
+        [
+          "vector"
+        ],
+        [
+          "vector"
+        ],
+        [
+          "vector"
+        ]
+      ],
+      "top_titles": [
+        "Likutey Halajot LM II 8",
+        "KITZUR",
+        "KITZUR"
+      ]
+    }
+  ],
+  "warnings": []
+}

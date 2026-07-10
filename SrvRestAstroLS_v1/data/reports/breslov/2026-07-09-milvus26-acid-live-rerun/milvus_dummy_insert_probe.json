@@ -1,0 +1,29 @@
+{
+  "collection": "tebaai_milvus26_acid_temp_20260709",
+  "dim": 1536,
+  "requested_count": 100,
+  "batch_size": 20,
+  "inserted": 100,
+  "failures": 0,
+  "final_count": 100,
+  "latency_avg": 0.81,
+  "latency_min": 0.16,
+  "latency_max": 1.453,
+  "latencies": [
+    1.453,
+    0.16,
+    0.7,
+    1.039,
+    0.698
+  ],
+  "search_elapsed": 0.026,
+  "search_results": 5,
+  "search_distances": [
+    0.7637,
+    0.7634,
+    0.7632,
+    0.7604,
+    0.7601
+  ],
+  "dropped_after": true
+}

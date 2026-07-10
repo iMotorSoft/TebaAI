@@ -85,6 +85,13 @@ def main() -> int:
 
     final_count = col.num_entities
     col.release()
+
+    dropped_after = False
+    if args.drop_after:
+        utility.drop_collection(args.collection)
+        dropped_after = True
+        print("  Dropped collection")
+
     connections.disconnect("default")
 
     report = {
@@ -99,16 +106,13 @@ def main() -> int:
         "search_elapsed": search_elapsed,
         "search_results": len(results[0]) if results else 0,
         "search_distances": [round(h.distance, 4) for h in results[0]] if results and results[0] else [],
+        "dropped_after": dropped_after,
     }
     print(f"\n  Inserted: {total_inserted}/{args.count} in {batches} batches")
     print(f"  Failures: {failures}")
     print(f"  Avg insert latency: {report['latency_avg']}s")
     print(f"  Search latency: {search_elapsed}s")
     print(f"  Final count: {final_count}")
-
-    if args.drop_after:
-        utility.drop_collection(args.collection)
-        print("  Dropped collection")
 
     (report_dir / "milvus_dummy_insert_probe.json").write_text(json.dumps(report, indent=2))
     print(f"  Report: {report_dir / 'milvus_dummy_insert_probe.json'}")

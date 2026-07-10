@@ -1,0 +1,48 @@
+{
+  "collection": "tebaai_breslov_chunks_v1",
+  "collection_code_counts_sample": {
+    "breslov": 5102
+  },
+  "queries": [
+    {
+      "query": "alegría plegaria",
+      "breslov_primary_hits": 0,
+      "breslov_hits": 5,
+      "breslov_top_distances": [0.5715, 0.5444, 0.54],
+      "breslov_top_titles": [
+        "La Potencia de la Plegaria",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+      ]
+    },
+    {
+      "query": "sangre habla",
+      "breslov_primary_hits": 0,
+      "breslov_hits": 5,
+      "breslov_top_distances": [0.4007, 0.3932, 0.3902],
+      "breslov_top_titles": [
+        "Likutey Halajot LM II 8",
+        "KITZUR",
+        "KITZUR"
+      ]
+    },
+    {
+      "query": "hitbodedut",
+      "breslov_primary_hits": 0,
+      "breslov_hits": 5,
+      "breslov_top_distances": [0.456, 0.447, 0.4449],
+      "breslov_top_titles": [
+        "El Alma del Rebe Najmán",
+        "KITZUR",
+        "Kokhavey Ohr"
+      ]
+    },
+    {
+      "query": "zzzzzzzzzz",
+      "breslov_primary_hits": 0,
+      "breslov_hits": 5,
+      "breslov_top_distances": [0.3127, 0.2599, 0.2583],
+      "note": "Expected for dense-only retrieval: negative queries still return nearest neighbors and require a lexical/confidence gate."
+    }
+  ]
+}

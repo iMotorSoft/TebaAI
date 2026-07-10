@@ -23,6 +23,24 @@ HYBRID_WEIGHTS = {
 FTS_LIMIT = 30
 VECTOR_LIMIT = 30
 
+MILVUS_COLLECTION_CODE_ALIASES = {
+    "breslov_primary": "breslov",
+}
+
+
+def resolve_milvus_collection_code_for_scope(scope_code: str | None) -> str | None:
+    """Resolve logical knowledge scope to historical Milvus metadata code.
+
+    Productive Breslov vectors were inserted with collection_code="breslov"
+    before the runtime scope moved to knowledge_scope_code="breslov_primary".
+    This keeps PostgreSQL scoped by the logical code while querying Milvus with
+    the metadata code that actually exists in the vector collection.
+    """
+    if scope_code is None:
+        return None
+    normalized = scope_code.strip().lower()
+    return MILVUS_COLLECTION_CODE_ALIASES.get(normalized, normalized)
+
 
 # @lat: [[library-retrieval-models-policy#Hybrid Search]]
 async def search_chunks_hybrid(
@@ -63,11 +81,17 @@ async def search_chunks_hybrid(
         create_connection()
         query_vec = embed_text(query)
         ensure_collection(milvus_collection, dimension=len(query_vec))
+        milvus_collection_code = resolve_milvus_collection_code_for_scope(knowledge_scope_code)
+        milvus_expr = (
+            f'collection_code == "{milvus_collection_code}"'
+            if milvus_collection_code
+            else None
+        )
         milvus_hits = search_vectors(
             collection_name=milvus_collection,
             query_embedding=query_vec,
             top_k=vector_limit,
-            expr=f'collection_code == "{knowledge_scope_code}"',
+            expr=milvus_expr,
             output_fields=["chunk_id", "document_id", "title", "content_preview", "chunk_index", "content_sha256",
                            "page_start", "page_end"],
         )

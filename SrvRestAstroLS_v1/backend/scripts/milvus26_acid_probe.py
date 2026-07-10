@@ -97,6 +97,12 @@ def _query_expr_for_chunk_ids(chunk_ids: list[str]) -> str:
     return f'chunk_id in {json.dumps(chunk_ids, ensure_ascii=False)}'
 
 
+def _resolve_milvus_collection_code(scope_code: str) -> str:
+    from modules.library.hybrid_search import resolve_milvus_collection_code_for_scope
+
+    return resolve_milvus_collection_code_for_scope(scope_code) or scope_code
+
+
 def _collection_schema_summary(collection: Any) -> dict[str, Any]:
     schema = getattr(collection, "schema", None)
     if schema is None:
@@ -383,6 +389,8 @@ async def _collect_roundtrip(
         "status": "blocked",
         "pg_count": pg_probe.get("ready_chunks"),
         "milvus_count": None,
+        "logical_scope_code": scope_code,
+        "milvus_collection_code": _resolve_milvus_collection_code(scope_code),
         "sample_size": pg_probe.get("sample_size"),
         "sample_found": 0,
         "sample_missing": 0,
@@ -465,6 +473,7 @@ async def _collect_roundtrip(
     missing = 0
     mismatches: list[dict[str, Any]] = []
     duplicates = 0
+    milvus_collection_code = result["milvus_collection_code"]
     for row in sample:
         cid = row["chunk_id"]
         matches = by_chunk.get(cid, [])
@@ -479,7 +488,7 @@ async def _collect_roundtrip(
         row_mismatch: dict[str, Any] = {"chunk_id": cid, "issues": []}
         if str(hit.get("document_id") or "") != str(row.get("document_id") or ""):
             row_mismatch["issues"].append("document_id")
-        if str(hit.get("collection_code") or "") != scope_code:
+        if str(hit.get("collection_code") or "") != milvus_collection_code:
             row_mismatch["issues"].append("collection_code")
         if str(hit.get("content_sha256") or "") != str(row.get("content_sha256") or ""):
             row_mismatch["issues"].append("content_sha256")
@@ -515,6 +524,7 @@ def _search_latency_section(
         "status": "blocked",
         "collection": collection_name,
         "scope_code": scope_code,
+        "milvus_collection_code": _resolve_milvus_collection_code(scope_code),
         "embedding_model": embedding_model,
         "runs": [],
         "errors": [],
@@ -575,7 +585,7 @@ def _search_latency_section(
                     collection_name=collection_name,
                     query_embedding=vector,
                     top_k=top_k,
-                    expr=f'collection_code == "{scope_code}"',
+                    expr=f'collection_code == "{result["milvus_collection_code"]}"',
                     output_fields=["chunk_id", "document_id", "title", "chunk_index", "content_preview"],
                 )
                 run["milvus_search_ms"] = int(round((_now_ms() - start) * 1000))

@@ -31,6 +31,7 @@ class BookQASource(BaseModel):
         "literal", "partial_phrase", "concept", "relation_candidate",
         "cooccurrence_same_page", "cooccurrence_nearby_pages",
         "source_reference", "semantic_disabled", "no_evidence",
+        "section_match",
     ]
     score: float = 0.0
     snippet: str = ""
@@ -66,7 +67,8 @@ class BookQAResponse(BaseModel):
     document_id: str = ""
     scope_code: str = ""
     answer_type: Literal[
-        "concept_lookup", "phrase_lookup", "relation_lookup", "mixed", "no_evidence"
+        "concept_lookup", "phrase_lookup", "relation_lookup", "lesson_lookup",
+        "mixed", "no_evidence",
     ] = "no_evidence"
     short_conclusion: str = ""
     evidence_summary: BookQAEvidenceSummary = Field(default_factory=BookQAEvidenceSummary)

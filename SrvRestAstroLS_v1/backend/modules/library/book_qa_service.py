@@ -24,6 +24,11 @@ def classify(question: str) -> tuple[str, str | None, str | None]:
     if '"' in q or "'" in q or re.search(r"busc[áa] la frase|busca la frase|d[oó]nde dice|aparece la frase", q, re.I):
         m = re.search(r'["\']([^"\']+)["\']', q)
         return "phrase_lookup", (m.group(1) if m else q), None
+    # Lección/chapter pattern (must come before relation to avoid "Lección 1 y" being caught by "A y B")
+    lec_match = re.search(r"(?:(?:seg[uú]n\s+)?(?:la\s+|el\s+)?(?:Lecci[oó]n|Leccion|Halaj[áa])\s+(\d+)\s*,?\s*)?(.{3,80})?$", q, re.I)
+    m_lec = re.search(r"(?:Lecci[oó]n|Leccion|Halaj[áa])\s+(\d+)", q, re.I)
+    if m_lec:
+        return "lesson_lookup", m_lec.group(1), None
     for pat in [
         r"(?:relaci[oó]n|relacion)\s+entre\s+(.+?)\s+y\s+(.+)$",
         r"(?:c[oó]mo\s+se\s+(?:relacionan|conectan))\s+(.+?)\s+y\s+(.+)$",
@@ -35,11 +40,6 @@ def classify(question: str) -> tuple[str, str | None, str | None]:
             a, b = m.group(1).strip().lower(), m.group(2).strip().lower()
             if len(a) > 2 and len(b) > 2:
                 return "relation_lookup", a, b
-    # Lección/chapter pattern: search for "Lección N" in concept mode
-    lec_match = re.search(r"(?:Lecci[oó]n|Leccion|Halaj[áa])\s+(\d+)", q, re.I)
-    if lec_match:
-        lesson_term = f"Lección {lec_match.group(1)}"
-        return "concept_lookup", lesson_term, None
 
     for pat in [
         r"(?:d[oó]nde\s+(?:aparece|est[áa]|dice|habla))\s+(?:de\s+|del\s+|la\s+|el\s+)?(.+?)$",
@@ -271,6 +271,60 @@ async def run_book_qa(
             if rr and scope_code != _v(rr):
                 warnings.append(f"book_qa_scope_mismatch: requested {scope_code}, run has {_v(rr)}")
 
+        # Lesson lookup: resolve by section_v2
+        if route == "lesson_lookup" and a:
+            lesson_num = a
+            await cur.execute(
+                "SELECT page_start, page_end FROM library_sections_v2 "
+                "WHERE run_id = %s AND section_type = 'lesson' "
+                "AND (title ILIKE %s OR path ILIKE %s) LIMIT 1",
+                (rid, f"%{lesson_num}%", f"%{lesson_num}%"),
+            )
+            row = await cur.fetchone()
+            if row:
+                ps = _v(row, 0)
+                pe = _v(row, 1) or ps
+                warnings.append(f"section_resolved_from_lesson_index: Lección {lesson_num} → páginas {ps}-{pe}")
+                # Extract keywords from question (exclude lesson mention)
+                q_keywords = re.sub(r"(?:seg[uú]n\s+)?(?:la\s+|el\s+)?(?:Lecci[oó]n|Leccion|Halaj[áa])\s+\d+\s*,?\s*", "", question, flags=re.I)
+                q_keywords = q_keywords.strip().rstrip("¿?!,").lower()
+                # Search within page range
+                if q_keywords and len(q_keywords) > 5:
+                    tokens = [t for t in re.findall(r"\w{4,}", q_keywords) if t not in ("que", "para", "con", "por", "las", "los")]
+                    for token in tokens[:3]:
+                        await cur.execute(
+                            "SELECT p.page_number, substring(p.text, greatest(position(%s in lower(p.text)) - 80, 1), %s) "
+                            "FROM library_pages_v2 p WHERE p.run_id = %s AND p.page_number BETWEEN %s AND %s "
+                            "AND lower(p.text) LIKE %s ORDER BY p.page_number LIMIT 5",
+                            (token, SNIPPET_CHARS, rid, ps, pe, f"%{token}%"),
+                        )
+                        for r in await cur.fetchall():
+                            pg = _v(r, 0)
+                            if pg not in seen_pages:
+                                seen_pages.add(pg)
+                                sources.append(BookQASource(
+                                    page_number=pg, evidence_type="section_match", score=1.0,
+                                    snippet=(_v(r, 1) or "")[:SNIPPET_CHARS].replace("\n", " ").strip(),
+                                    matched_terms=[token],
+                                ))
+                # If no keyword match, show first page of lesson
+                if not sources:
+                    await cur.execute(
+                        "SELECT substring(text, 1, %s) FROM library_pages_v2 WHERE run_id = %s AND page_number = %s",
+                        (SNIPPET_CHARS, rid, ps),
+                    )
+                    row2 = await cur.fetchone()
+                    if row2:
+                        sources.append(BookQASource(
+                            page_number=ps, evidence_type="section_match", score=0.8,
+                            snippet=(_v(row2) or "")[:SNIPPET_CHARS].replace("\n", " ").strip(),
+                            matched_terms=[f"Lección {lesson_num}"],
+                        ))
+                if not sources:
+                    warnings.append(f"lesson_lookup_no_sources: lesson {lesson_num} pages {ps}-{pe}")
+            else:
+                warnings.append(f"lesson_number_not_resolved: {lesson_num}")
+
         # Concept lookup
         if route == "concept_lookup" and a:
             # Try the extracted concept first
@@ -399,8 +453,13 @@ async def run_book_qa(
         pages_sorted = sorted(seen_pages)
         if route == "relation_lookup":
             conclusion = f"Se encontraron {len(sources)} coincidencia(s) entre '{a}' y '{b}' en {len(pages_sorted)} páginas."
+        elif route == "lesson_lookup":
+            conclusion = f"Lección {a}: {len(sources)} fuente(s) en {len(pages_sorted)} página(s)."
         elif route == "concept_lookup":
-            conclusion = f"Se encontraron {len(sources)} mención(es) de '{a}' en {len(pages_sorted)} página(s)."
+            if a and len(a) < 30:
+                conclusion = f"Se encontraron {len(sources)} mención(es) de '{a}' en {len(pages_sorted)} página(s)."
+            else:
+                conclusion = f"Se encontraron {len(sources)} resultado(s) en {len(pages_sorted)} páginas."
         else:
             conclusion = f"Se encontraron {len(sources)} ocurrencia(s) en {len(pages_sorted)} páginas."
 
@@ -414,7 +473,7 @@ async def run_book_qa(
         answer_type=answer_type,
         short_conclusion=conclusion,
         evidence_summary=BookQAEvidenceSummary(
-            literal_matches=sum(1 for s in sources if s.evidence_type in ("literal", "partial_phrase")),
+            literal_matches=sum(1 for s in sources if s.evidence_type in ("literal", "partial_phrase", "section_match")),
             concept_matches=sum(1 for s in sources if s.evidence_type == "concept"),
             relation_matches=sum(1 for s in sources if s.evidence_type in ("relation_candidate", "cooccurrence_same_page")),
             source_references=sum(len(s.source_refs_nearby) for s in sources),

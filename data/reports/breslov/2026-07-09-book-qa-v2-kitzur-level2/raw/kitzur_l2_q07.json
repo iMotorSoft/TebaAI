@@ -1,0 +1,187 @@
+{
+  "question": "¿Cómo se relaciona la paz con el conocimiento (daat) según el texto?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 12,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      30,
+      52,
+      137,
+      181,
+      183,
+      187,
+      194,
+      195,
+      201,
+      229,
+      288,
+      327
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 137,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "ia (veHaDaRta PeNei) del anciano sabio” (Levítico 19:32). [Ese concepto también se relaciona con el patriarca Iaacov,] como en, “La belleza de Iaacov era como la belleza de Adán” (Bava Metzía 84a) [dado que Iaacov encarnaba el concepto del “rostro radiante”]. Al alcanzar el nivel de “anciano” que está asociado con Iaacov, la persona merece SHaLoM (paz), como está escrito, “Iaacov llegó intacto y c",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 181,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "s de mi corazón son comprensión”. De esa manera, la persona se une al punto que se relaciona con su corazón en ese momento en particular, anulando así la vergüenza que se encuentra en el corazón y lo quebranta. 4 Shvat 6. Cada uno debe conversar también con su compañero sobre el temor a Dios, para que su corazón reciba inspiración del “punto” en el cual su amigo es superior a él. Pues el “punto” d",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 183,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "mediante la cual la persona adquiere plenitud y perfección es la sabiduría que se relaciona con Dios. Todas las otras formas de sabiduría no son más que un conocimiento ocioso y no contienen de hecho sabiduría alguna. 2. Consecuentemente, cada persona debe cuidar su intelecto y su mente para no permitir la entrada de ningún pensamiento o ideología secular, ninguna idea externa a la Torá y ni habl",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 187,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "ra, indudablemente terminará transgrediéndolas. Pues todas las leyes monetarias se relacionan con la conducta en los negocios; así, en el momento en que la persona lleva a cabo sus asuntos comerciales se encuentra, en efecto, involucrada en el estudio de esas leyes. 9 Shvat 11. Al llevar a cabo los negocios de manera fidedigna, la persona debe cuidar su fe para que las fuerzas externas no prevalez",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 194,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "se relacionan con ambos lados del cerebro. De acuerdo a ello, [si la persona rectifica a Iesod - correspondiente al órgano de la reproducción] puede comprender las palabras del Tzadik y obtener una nueva alma a través de las revelaciones de Torá. Por otro lado, aquel que no se rectifica en esa área, Dios no lo permita, se encuentra en la categoría de “los pecadores en ellos tropezarán” - dado que",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 195,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "a los aspectos de lo material, lo animal, la insensatez y la oscuridad. También se relaciona con la muerte, el olvido y el saber secular como opuesto a la sabiduría de la Torá. Por otro lado, la sabiduría de la Torá está identificada con el hombre, como está escrito, “Ésta es la Torá - el hombre” (Números 19:14). Y también corresponde a la forma espiritual [en contraposición a lo material], a la l",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 201,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "erda”. Esos “cinco dedos” corresponden a las “cinco guevurot (severidades)” que se relacionan, a su vez, con los cinco grupos de sonidos de las letras consonantes producidos por la boca, dado que el habla deriva de las guevurot, como está escrito, “Ellos hablarán de Tu guevurá” (Salmos 145:11). Ahora bien, la elevación del habla comienza desde la “cabeza” del habla -es decir, desde su parte más se",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 229,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "e enseñó, “El vino y las fragancias me hacen sabio” (Ioma 76b). 5. Esto también se relaciona con la enseñanza de nuestros Sabios, “‘Para servirlo a Él con todo tu corazón’ (Deuteronomio 11:3) - ¿Cuál es el servicio del corazón? La plegaria” (Taanit 2a). Pues la plegaria depende principalmente del corazón - es decir, la persona debe poner todo su corazón en las plegarias y unir estrechamente sus pe",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 288,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "s seis sefirot inferiores, como es sabido. 2. Los verdaderos Tzadikim y líderes se relacionan con sus seguidores de diferentes maneras. A veces el Tzadik interactúa de manera íntima con la gente, mientras que otras se oculta de ellos y se aleja. No sólo toma distancia de sus seguidores al punto en que tampoco ellos pueden acercarse a él, sino que también éstos comienzan a experimentar cuestionamie",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 327,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "- es decir, los secretos de la Torá que se relacionan con ese día en particular. Sin embargo, cuando la persona desea reflexionar y pensar sobre las ideas de la Torá -es decir, sobre los secretos de la Torá- y no es digna de hacerlo, las serpientes y los escorpiones confunden sus pensamientos para que no pueda entrar al lugar al que no está capacitada. Esos son los pensamientos que le llegan para",
+      "matched_terms": [
+        "relaciona",
+        "se relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 30,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "“Esperar” está relacionado con la idea del arrepentimiento, como dijeron nuestros Sabios, de bendita memoria, “Aquel que viene a purificarse es ayudado... es como alguien que viene a comprar aceite perfumado de afarsimon y se le dice que espere” (Ioma 38b-39a). En otras palabras, la persona necesita saber que cuando viene a purificarse y a arrepentirse, “se le dice que espere”. Incluso aunque es n",
+      "matched_terms": [
+        "conocimiento",
+        "relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 52,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "trucción del Santo Templo. La anulación de la pasión por el dinero también está relacionada con la revelación del Mashíaj, dado que en ese Lección 13 1 Jeshvan 52",
+      "matched_terms": [
+        "conocimiento",
+        "relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

@@ -24,8 +24,23 @@ def classify(question: str) -> tuple[str, str | None, str | None]:
     if '"' in q or "'" in q or re.search(r"busc[áa] la frase|busca la frase|d[oó]nde dice|aparece la frase", q, re.I):
         m = re.search(r'["\']([^"\']+)["\']', q)
         return "phrase_lookup", (m.group(1) if m else q), None
-    # Lección/chapter pattern (must come before relation to avoid "Lección 1 y" being caught by "A y B")
-    lec_match = re.search(r"(?:(?:seg[uú]n\s+)?(?:la\s+|el\s+)?(?:Lecci[oó]n|Leccion|Halaj[áa])\s+(\d+)\s*,?\s*)?(.{3,80})?$", q, re.I)
+    # Comprehension patterns (must come before relation patterns to catch "cómo se relaciona" early)
+    comp_patterns = [
+        r"(?:c[oó]mo\s+se\s+(?:relaciona|conecta)).+",
+        r"(?:qu[eé]\s+papel\s+juega).+",
+        r"(?:de\s+qu[eé]\s+manera|en\s+qu[eé]\s+sentido).+",
+        r"(?:por\s+qu[eé]\s+es\s+importante).+",
+        r"(?:cu[aá]l\s+es\s+(?:el\s+)?(?:prop[oó]sito|relaci[oó]n|conexi[oó]n)).+",
+        r"(?:qu[eé]\s+conexi[oó]n\s+(?:establece|hay)).+",
+        r"(?:c[oó]mo\s+ayuda).+",
+        r"(?:cu[aá]l\s+es\s+la\s+relaci[oó]n\s+entre).+",
+        r"(?:explique|explica|describa|describe).+",
+    ]
+    for pat in comp_patterns:
+        if re.search(pat, q, re.I):
+            return "comprehension_lookup", q, None
+
+    # Lección/chapter pattern
     m_lec = re.search(r"(?:Lecci[oó]n|Leccion|Halaj[áa])\s+(\d+)", q, re.I)
     if m_lec:
         return "lesson_lookup", m_lec.group(1), None
@@ -52,7 +67,10 @@ def classify(question: str) -> tuple[str, str | None, str | None]:
             c = m.group(1).strip().lower()
             if len(c) > 2:
                 return "concept_lookup", c, None
-    # Default: use first meaningful multi-word phrase
+    # For long questions with no clear pattern, use comprehension_lookup
+    word_count = len(re.findall(r"\w+", q))
+    if word_count > 10:
+        return "comprehension_lookup", q, None
     tokens = re.findall(r"\w+", q.lower())
     stop = {"que", "para", "con", "por", "las", "los", "del", "como", "cada", "una",
             "antes", "segun", "según", "sobre", "entre", "cual", "cuál", "cómo", "dónde",
@@ -270,6 +288,69 @@ async def run_book_qa(
             rr = await cur.fetchone()
             if rr and scope_code != _v(rr):
                 warnings.append(f"book_qa_scope_mismatch: requested {scope_code}, run has {_v(rr)}")
+
+        # Comprehension lookup: extract distinctive keywords with AND logic
+        if route == "comprehension_lookup" and a:
+            q_text = a.lower()
+            # Extract distinctive terms (nouns, verbs, concepts)
+            words = re.findall(r"\w{4,}", q_text)
+            STOP_BIG = {"que", "para", "con", "por", "las", "los", "del", "como",
+                        "cada", "una", "antes", "segun", "según", "sobre", "entre",
+                        "cual", "cuál", "cómo", "dónde", "leccion", "lección",
+                        "qué", "el", "la", "de", "en", "un", "una", "esta", "este",
+                        "más", "menos", "tiene", "hace", "puede", "debe", "ser",
+                        "han", "despues", "después", "durante", "través", "partir",
+                        "sino", "favor", "tanto", "papel", "relación", "conexión",
+                        "manera", "propósito", "ayuda", "manera", "importante",
+                        "juega", "establece", "contribuye", "superación",
+                        "obstáculos", "rectificación", "espiritual",
+                        "beneficia", "servicio", "recibe", "recibir", "recibiría",
+                        "mediante", "cuando", "hacia", "dentro", "fuera", "luego",
+                        "también", "poco", "mucho", "cosa", "cosas"}
+            keywords = [w for w in words if w not in STOP_BIG]
+            # Also extract compound phrases (2-3 words)
+            all_words = re.findall(r"\w+", q_text)
+            phrases = set()
+            for i in range(len(all_words) - 1):
+                if all_words[i] not in STOP_BIG and all_words[i+1] not in STOP_BIG:
+                    phrases.add(f"{all_words[i]} {all_words[i+1]}")
+
+            # Score pages by multi-term hits using AND logic
+            all_terms = list(phrases)[:6] + keywords[:6]
+            # Deduplicate
+            all_terms = list(dict.fromkeys(all_terms))
+
+            page_scores: dict[int, dict] = {}
+            for term in all_terms:
+                await cur.execute(
+                    "SELECT p.page_number, substring(p.text, greatest(position(%s in lower(p.text)) - 80, 1), %s) "
+                    "FROM library_pages_v2 p WHERE p.run_id = %s AND lower(p.text) LIKE %s "
+                    "ORDER BY p.page_number LIMIT 20",
+                    (term, 400, rid, f"%{term}%"),
+                )
+                for r in await cur.fetchall():
+                    pg = _v(r, 0)
+                    if pg not in page_scores:
+                        page_scores[pg] = {"score": 0, "terms": set(), "snippet": ""}
+                    page_scores[pg]["score"] += 2 if " " in term else 1
+                    page_scores[pg]["terms"].add(term)
+                    if not page_scores[pg]["snippet"]:
+                        page_scores[pg]["snippet"] = (_v(r, 1) or "")[:500].replace("\n", " ").strip()
+
+            # Sort by term count first (pages with more distinct terms), then by score
+            sorted_pages = sorted(page_scores.items(), key=lambda x: (-len(x[1]["terms"]), -x[1]["score"]))
+            for pg, info in sorted_pages[:top_k]:
+                if pg not in seen_pages:
+                    seen_pages.add(pg)
+                    evidence = "direct_factual_match" if len(info["terms"]) >= 2 else "compound_keyword_match"
+                    sources.append(BookQASource(
+                        page_number=pg, evidence_type=evidence,
+                        score=min(len(info["terms"]) / 3, 1.0),
+                        snippet=info["snippet"][:500],
+                        matched_terms=list(info["terms"])[:5],
+                    ))
+            if not sources:
+                warnings.append("comprehension_no_sources: try more specific keywords")
 
         # Lesson lookup: resolve by section_v2
         if route == "lesson_lookup" and a:

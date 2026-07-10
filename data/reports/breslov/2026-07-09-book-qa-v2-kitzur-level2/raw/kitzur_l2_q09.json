@@ -1,0 +1,193 @@
+{
+  "question": "¿Cómo ayuda la humildad a la persona en su arrepentimiento y en la recepción de la Torá?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 12,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      21,
+      23,
+      24,
+      29,
+      30,
+      32,
+      33,
+      48,
+      57,
+      141,
+      155,
+      322
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 24,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "pequeña impureza espiritual que lo distrae durante sus plegarias y devociones, su arrepentimiento hace que también los judíos que son completamente malvados y que se han alejado del pueblo judío debido a sus malas acciones, se transformen en un trono para la santidad y vuelvan en arrepentimiento. Entonces también ellos ayudarán, a aquellos que están sirviendo a Dios, a construir “edificios de san",
+      "matched_terms": [
+        "persona",
+        "su arrepentimiento",
+        "arrepentimiento",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 33,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "que es “el honor de Dios”- y de una buena porción en el Mundo que Viene. Ése es su arrepentimiento esencial y la rectificación para todas sus transgresiones. Con ello merecerá quedar incluido en “el hombre que se sienta sobre el trono”, del cual surgen los juicios para juzgar a todos los habitantes del mundo. 12. Es necesario buscar siempre el mérito y el bien en el pueblo judío y juzgar a todo ju",
+      "matched_terms": [
+        "arrepentimiento",
+        "su arrepentimiento",
+        "humildad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 21,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "rsona extrae las letras grabadas en sus huesos y rectifica todo. 4. La tremenda humildad de los verdaderos Tzadikim -al punto  Lección 4 8 Tishrei                                                                                                                                                                       21",
+      "matched_terms": [
+        "persona",
+        "humildad",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 23,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "s cosas y ello es un “anticipo del Mundo que Viene”. 10 Tishrei 12. Mediante la humildad uno merece deshacerse de la materialidad y quedar incluido en el Infinito. También se llega a saber que todo lo que sucede es para el propio bien, lo que es un “anticipo del Mundo que Viene”. 13. Son muy pocos los Tzadikim que pueden otorgarles una vislumbre de la luz del Infinito a aquellos que se acercan a e",
+      "matched_terms": [
+        "persona",
+        "humildad",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 29,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "honrada?”. Ellos se le oponen diciendo que no merece tal honor. 2. Mediante la humildad, uno merece el arrepentimiento. Pues la esencia del arrepentimiento se manifiesta cuando la persona oye que la avergüenzan y sin embargo se mantiene firme y en silencio. Sufre los insultos y el “derramamiento de sangre”, aceptando su propia bajeza y pequeñez, reconociendo el gran daño que ha hecho y comprendie",
+      "matched_terms": [
+        "persona",
+        "arrepentimiento",
+        "humildad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 32,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "endero del arrepentimiento, la mano derecha de Dios se extiende para aceptar su arrepentimiento y uno merece “el honor de Dios”; y mediante ello se vuelve un “hombre” que se sienta sobre el trono (cf. Ezequiel 1:26). ¡Feliz de él! 10. El arrepentimiento debe tener tres componentes. La persona debe “ver con sus ojos, oír con sus oídos, comprender con su corazón y [entonces] se arrepentirá” (Isaías",
+      "matched_terms": [
+        "arrepentimiento y",
+        "arrepentimiento"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 141,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "del arrepentimiento y el medio principal para rectificar los daños sexuales cometidos en el pasado, sean cuales fueren (ver más arriba, Lección #26). Ello constituye un arrepentimiento completo. Por lo tanto, no hay que desanimarse si uno ve que lo asaltan pensamientos extremadamente malos. Por el contrario, ¡ése es precisamente el medio para la rectificación y el arrepentimiento! Pues cuando esos",
+      "matched_terms": [
+        "arrepentimiento y",
+        "arrepentimiento"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 155,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "efirá de Jojmá y a Itzjak. Beriá (Creación) corresponde a la sefirá de Biná, al arrepentimiento y a Ishmael, dado que “Ishmael se arrepintió”, como enseñaron nuestros Sabios, de bendita memoria, (Bava Batra 16b). Ietzirá (Formación) corresponde a Iaacov, que era un “hombre simple” y a la verdad, como en, “Verdad a Iaacov” (Mija 7:20) y a la letra Vav, como es sabido. Y Asiá (Acción) corresponde a",
+      "matched_terms": [
+        "arrepentimiento y",
+        "arrepentimiento"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 322,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "Dios y cuyo arrepentimiento no es aún completo. A veces tienen pensamientos de arrepentimiento y se embarcan en el servicio a Dios; más tarde caen, pero subsecuentemente vuelven a despertar una vez más. Tales personas están constantemente cambiando del mal al bien y del bien al mal - es decir, a veces están “impuras” y a veces están “puras”, a veces son “inválidas” y a veces son “válidas”, y así",
+      "matched_terms": [
+        "arrepentimiento y",
+        "humildad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 30,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "iga con un corazón puro y sin un motivo ulterior. Así, uno debe arrepentirse de su arrepentimiento anterior - es decir, del “He pecado, he transgredido, he actuado con desenfreno” que había dicho anteriormente. 6. Aunque la persona sepa que su arrepentimiento ha sido completo, sin embargo, necesitará arrepentirse de sus arrepentimientos anteriores. Pues originalmente, cuando se arrepintió, lo hizo",
+      "matched_terms": [
+        "su arrepentimiento",
+        "arrepentimiento"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 48,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "ta alcanzar profundos niveles de comprensión en la Torá. 8. Existe una clase de humildad cuya finalidad es en verdad la arrogancia. Esto hace referencia específicamente a la persona que es humilde porque sabe que el orgullo es un rasgo muy despreciable; por lo tanto, actúa con humildad para ser honrada y respetada. En efecto, se muestra humilde para alcanzar posiciones y honor. Por lo tanto, es ne",
+      "matched_terms": [
+        "humildad",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 57,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "a los prosélitos, llevándolos al arrepentimiento. Pero para ello hace falta la humildad más grande. Con esa cualidad, uno merece estudiar verdaderamente la Torá, llegando a ser capaz, mediante sus estudios, de iluminar y de despertar las raíces de las almas del pueblo judío - incluso las almas de aquellos que se encuentran a muchos kilómetros de distancia. Esto también se aplica a los pecadores j",
+      "matched_terms": [
+        "arrepentimiento",
+        "humildad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

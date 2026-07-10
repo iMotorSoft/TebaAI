@@ -68,6 +68,7 @@ class BookQAResponse(BaseModel):
     scope_code: str = ""
     answer_type: Literal[
         "concept_lookup", "phrase_lookup", "relation_lookup", "lesson_lookup",
+        "comprehension_lookup", "multi_source_comprehension",
         "mixed", "no_evidence",
     ] = "no_evidence"
     short_conclusion: str = ""

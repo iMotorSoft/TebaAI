@@ -1,0 +1,175 @@
+{
+  "question": "¿Qué conexión establece el texto entre el mes de Tishrei y la rectificación espiritual?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 12,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      4,
+      13,
+      14,
+      15,
+      16,
+      17,
+      281,
+      458,
+      463,
+      468,
+      469,
+      470
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 4,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "a nueva versión (A través del Fuego y del Agua, p.98). El Likutey Moharán es un texto muy intrincado. Contiene tanto ideas simples como esotéricas, generalmente en un mismo párrafo. El Rebe puede tomar un texto de la Biblia o del Midrash y luego conectar una enseñanza Talmúdica con una idea del Ari - pero a no ser que el lector se mantenga concentrado en el flujo de la lección, es posible que no p",
+      "matched_terms": [
+        "texto"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 281,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "l mundo necesita de todos ellos y está prohibido ridiculizar cualquiera de esos textos. Sin embargo, inicialmente, cuando la persona no tenía fe en los Sabios, todos esos libros carecían de sentido para ella, dado que, después de todo, se burlaba de ellos. Pero cuando, como resultado de la oposición que debe enfrentar, se ve llevada a arrepentirse de su falta de fe en los Sabios, los libros que an",
+      "matched_terms": [
+        "texto"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 458,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "alegría en Dios está íntimamente unida con el amor a Él, como se explica en los textos sagrados. Más aún, una gran unificación espiritual se lleva a cabo arriba cuando la persona une la alegría con la mente y con la comprensión; entonces su mente se libera y alcanza una “mente asentada”. Éste es el concepto de la alegría de la mente (Shabat 77b), que es algo muy grande en verdad. Dios nos permita",
+      "matched_terms": [
+        "texto"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 463,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "te su fe. En cuanto a la gente común, les está absolutamente prohibido estudiar textos filosóficos. Incluso está absolutamente prohibido mirar en los libros de origen judío que tratan sobre esas clases de especulaciones filosóficas, dado que son extremadamente dañinos para la fe - y la fe es el fundamento de todo. Pero y gracias a Dios, ahora hay una gran cantidad de libros sagrados repletos de in",
+      "matched_terms": [
+        "texto"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 468,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "o un nuevo libro llega al mundo, esas lágrimas de las cuales fue hecho el nuevo texto se levantan en contra de los decretos de las naciones y los anulan. 31 31 31 31 31 1. Mediante la melodía es posible reconocer si una persona ha aceptado el yugo de la Torá. 32 32 32 32 32 1. Todo judío, en la medida de su pureza y santidad, posee un aspecto de Mashíaj. La persona debe cuidarse en extremo para no",
+      "matched_terms": [
+        "texto"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 469,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "ebre, Dios no lo permita, la paz que existe en esa pareja recta. Ahora bien, un texto de Torá está identificado con el Nombre de Dios (Zohar I, 37b) y está asociado con “Mi Nombre que está escrito en santidad” (Shabat 106a). Cuando los Tzadikim ocultan o queman sus libros, Arriba se llega a la conclusión lógica siguiente: “Si la Torá dijo, ‘Mi Nombre que está escrito en    Lección 32",
+      "matched_terms": [
+        "texto"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 470,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "santidad (que en nuestro contexto se refiere a los libros sagrados de la Torá) puede ser borrado con el propósito de traer la paz entre el hombre y su esposa’ ¡cuánto más aún deberán ser borrados, destruidos y desarraigados del mundo los libros de los heréticos, que traen el odio y la disputa entre el pueblo judío y su Padre en el Cielo!”. Así, s",
+      "matched_terms": [
+        "texto"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 13,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "1 Tishrei 1 - 1 - 1 - 1 - 1 - “Felices de aquéllos cuya senda es de simpleza “Felices de aquéllos cuya senda es de simpleza “Felices de aquéllos cuya senda es de simpleza “Felices de aquéllos cuya senda es de simpleza “Felices de aquéllos cuya senda es de simpleza” (Salmos 119:1) (Salmos 119:1) (Salmos 119:1) (Salmos 119:1) (Salmos 119:1) 1. Mediante el estudio de la Torá son aceptadas todas las p",
+      "matched_terms": [
+        "tishrei"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 14,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "ra mediante el estudio de la Torá, que hace que las plegarias sean aceptadas. 2 Tishrei 7. El judío debe siempre buscar el intelecto en cada cosa y conectarse con la sabiduría y el intelecto que se encuentran en cada cosa, para que el intelecto en cada elemento lo ilumine y pueda acercarse a Dios a través de esa misma cosa. Pues la vitalidad esencial de cada cosa es el intelecto y la sabiduría que",
+      "matched_terms": [
+        "tishrei"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 15,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": ". Y esto se logra dedicándose al estudio de la Torá con energía y entusiasmo. 3 Tishrei 10. Cuando uno merece alcanzar todo lo anterior, se logra una gran unificación espiritual en todos los mundos; la “luz de la luna se vuelve como la luz del sol” (Isaías 30:26); y se alcanza la gracia. Entonces todas las plegarias y pedidos son aceptados. 11.La mala inclinación desea volver loca a la persona, li",
+      "matched_terms": [
+        "tishrei"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 16,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "- pues Iaacov mereció lograr a la perfección la luz del intelecto.  Lección 1 3 Tishrei 16",
+      "matched_terms": [
+        "tishrei"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 17,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "4 tishrei 2 - “Habla a los sacerdotes” 2 - “Habla a los sacerdotes” 2 - “Habla a los sacerdotes” 2 - “Habla a los sacerdotes” 2 - “Habla a los sacerdotes” (Levítico 21:1) (Levítico 21:1) (Levítico 21:1) (Levítico 21:1) (Levítico 21:1) 1. La plegaria es el arma principal del judío. Todas las batallas que la persona deba librar -así sean las batallas en contra de la mala inclinación u otras batallas",
+      "matched_terms": [
+        "tishrei"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

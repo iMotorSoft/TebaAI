@@ -1,0 +1,202 @@
+{
+  "question": "¿Qué papel juega la caridad en relación con la pureza sexual y cómo se conectan estos conceptos?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 12,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      17,
+      35,
+      36,
+      37,
+      47,
+      48,
+      81,
+      82,
+      83,
+      84,
+      85,
+      122
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 36,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "Tal relación [implicando dar y recibir un mal consejo] es equivalente a un daño sexual y hace que la persona se mantenga alejada de la verdad, de la sagrada fe e incapaz de llegar a la Tierra de Israel. Siendo así, es necesario evitar cuidadosamente el consejo de tales personas, Dios no lo permita. En su lugar, uno debe unirse a los verdaderos Tzadikim y a aquellos que siguen sus senderos, dado qu",
+      "matched_terms": [
+        "sexual y",
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 82,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "ude en el versículo, “El temor a Dios es su tesoro” (Isaías 33:6). 5. La pureza sexual y la perfección del Lenguaje Sagrado son interdependientes, pues ninguno puede existir sin el otro. En otras palabras, cuantas más palabras de santidad se digan -lo que está incluido en el concepto del Lenguaje Sagrado- más será la pureza sexual que se merezca. Por otro lado, en la medida en que la persona haya",
+      "matched_terms": [
+        "sexual y",
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 17,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar caridad también lo salvará de los pensamientos ajenos que suelen surgir durante la plegaria y podrá orar a",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "caridad",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 35,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "seducir a la gente, alejándola del punto de la verdad, representa un daño en la pureza sexual. Por lo tanto, aquél que haya dañado su pureza sexual deberá cuidarse y ser muy vigilante frente al falso consejo de aquellos que se oponen a la verdad, para no perder toda su vida en un instante, Dios no lo permita. 19 Tishrei 10. Es necesario evitar cuidadosamente el consejo de la gente en general, dado",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 37,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "y comprende la verdad y merece así el arrepentimiento. 14. Debido al daño en la pureza sexual se vuelve escaso el sustento. 15. Es muy beneficioso para un enfermo  mirar los tzitzit. 20 Tishrei 8 - “Miré y he aquí un candelabro de oro” 8 - “Miré y he aquí un candelabro de oro” 8 - “Miré y he aquí un candelabro de oro” 8 - “Miré y he aquí un candelabro de oro” 8 - “Miré y he aquí un candelabro de o",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 47,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "lve. 5. El orgullo y la inmoralidad sexual van juntos. Así, cuando uno cuida la pureza sexual se salva del orgullo y se hace digno de la luz que le iluminará el camino hacia el arrepentimiento, hasta que llegue a alcanzar profundos niveles de comprensión de la Torá. 27 Tishrei 6. La amargura experimentada en la lucha por el sustento es producto de un daño en la pureza sexual. Para la persona que c",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 48,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "comportarse con santidad, para poder ser contada entre aquellos que guardan la pureza sexual. En cuanto a las personas pequeñas, cuyas relaciones maritales también se llevan a cabo durante los días de la semana - ciertamente, ellas necesitan cuidarse mucho más para no dañar la pureza sexual, Dios no lo permita, y no transgredir al menos la ley de la Torá en esa área, Dios no lo quiera. Cuando se",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 81,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "ente de ese deseo y de quebrarlo; ésta es la esencia de nuestra santidad. 2. La pureza sexual es la esencia de la santidad. Uno merece alcanzar esa cualidad mediante el lenguaje sagrado y el habla sagrada, santificando el habla al decir palabras santas. Es por ese motivo que nuestra lengua es llamada el Lenguaje Sagrado, pues “Allí donde encuentres una barrera ante la inmoralidad sexual, allí enco",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 83,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "vitalidad de la persona, tentándola a dañar su pureza sexual. Pues ese deseo es la principal herramienta de la mala inclinación para hacer que la persona transgreda. 8. Ahora bien, debido a nuestros muchos pecados, el arte de la retórica en el Lenguaje Sagrado ha caído terriblemente - al punto en que, en general, el arte de la retórica sólo ha quedado en manos de la gente más baja que se encuentra",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 84,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "perfecciona así su Lenguaje Sagrado y merece guardar la pureza sexual. Todo ello es el significado profundo del hecho de que la serpiente tentó a Eva a través del Árbol del Conocimiento del Bien y del Mal]. Por el contrario, el principal medio para construir y perfeccionar el Lenguaje Sagrado es anular los componentes malos del Targúm y elevar hacia el Lenguaje Sagrado sus componentes buenos. De e",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 85,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "“que te enfrió en el camino” (Deuteronomio 25:18). “En el camino” alude a la impureza sexual, como en, “Éste es el camino de una mujer adúltera” (Proverbios 30:20). El “viento tormentoso” entra por medio del Targúm, que está asociado con la fuerza impura de noga [la interfase entre la santidad y las tres fuerzas completamente impuras] y por medio de ello, absorbe la vitalidad del jashmal, que est",
+      "matched_terms": [
+        "pureza sexual",
+        "pureza",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 122,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "ia de dinero y de sustento que resulta del hecho de que la persona ha dañado su pureza sexual, que Dios nos salve. Si no Lección 23                                                                                19 Kislev 122",
+      "matched_terms": [
+        "pureza sexual",
+        "caridad",
+        "sexual"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

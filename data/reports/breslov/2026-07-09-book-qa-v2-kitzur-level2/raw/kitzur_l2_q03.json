@@ -1,0 +1,179 @@
+{
+  "question": "¿De qué manera la alegría contribuye a la rectificación espiritual y a la superación de los obstáculos?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 12,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      3,
+      6,
+      13,
+      16,
+      17,
+      18,
+      20,
+      22,
+      23,
+      24,
+      25,
+      26
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 3,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "a que iluminó a todos los que la conocieron con el verdadero mensaje de alegría y amor al Creador.",
+      "matched_terms": [
+        "y a",
+        "alegría"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 22,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "dado caridad, no sabrá aún en qué sendero anda pues para ello deberá confesarse y abrir su corazón delante  Lección 4 9 Tishrei 22",
+      "matched_terms": [
+        "y a",
+        "alegría"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 25,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "e por medio del “trueno” - es decir, orando con energía y entusiasmo, con temor y amor a Dios y con una intensa concentración. 4. La alegría se logra orando con energía y entusiasmo y con gran temor y amor por Dios. 5. La persona debe orar con todas sus fuerzas y recitar las plegarias con gran energía. Esto hará que la voz golpee su mente y así podrá concentrarse. En otras palabras, su corazón oir",
+      "matched_terms": [
+        "y a",
+        "alegría"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 26,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6666666666666666,
+      "snippet": "con una gran alegría. Entonces será capaz de investir sus plegarias en cuentos y anular todos los decretos, incluso luego de haber sido emitidos. 6. La persona que en Rosh HaShaná oye el shofar hecho sonar por un hombre piadoso y temeroso de Dios, ciertamente no necesitará preocuparse por los “truenos” durante todo el año. 12 tishrei 7. Para lograr plenamente el “trueno” mencionado más arriba es",
+      "matched_terms": [
+        "y a",
+        "alegría"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 6,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "f. Isaías 43:6-8); para rescatar a aquellos que están prisioneros de sus deseos y atrapados en la red de las vanidades de este mundo, y para enseñarles el sendero por el cual deben andar y las acciones que deben realizar - “que, si el hombre las hace, vivirá en ellas” (Levítico 18:5)... ¡Vivirá la vida de la eternidad! Ésta fue la intención del Rebe en todas las enseñanzas y discursos que reveló,",
+      "matched_terms": [
+        "y a"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 13,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "er digno de comprender las alusiones provenientes de todas las cosas del mundo, y así unirse a Dios mediante ellas. Incluso en un lugar de oscuridad y de tinieblas, donde da la impresión de que es muy difícil acercarse a Dios - también allí, el verdadero intelecto brillará su luz para uno, de modo que incluso allí se podrá encontrar a Dios y acercarse a Él desde ese mismo lugar. 4. La persona no t",
+      "matched_terms": [
+        "y a"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 16,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "persona llama a lo malo, “bueno” y a lo bueno, “malo”. Sin embargo, aún mantiene alguna traza de intelecto y de sanidad, porque incluso en su demencia y en su insensatez, sigue comprendiendo y sabiendo que no debería hacer semejantes locuras. Aun así, continúa con su comportamiento. Debido a ello, se utilizan dos métodos para curar al demente. Primero, es necesario golpearlo para vencer el deseo d",
+      "matched_terms": [
+        "y a"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 17,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "ntidad deberá dedicarse con frecuencia e intensidad a la plegaria, a la súplica y a la conversación con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar",
+      "matched_terms": [
+        "y a"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 18,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "eneración. 5 Tishrei 6. Si uno se ha dedicado durante muchos años a la plegaria y a la conversación con Dios y sin embargo siente que aún está muy lejos de Él y le parece que Dios, por así decirlo, Le oculta Su Rostro, Dios no lo permita - no debe confundirse  y pensar que Dios no oye en absoluto sus plegarias y sus conversaciones con Él. Más bien, debe creer con una fe perfecta que Él escucha, oy",
+      "matched_terms": [
+        "y a"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 20,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "el aspecto de la profecía. 5. Cuando la persona rectifica la voz de la canción y alcanza el gobierno y el dominio, es capaz entonces de regir sobre lo que desee. Puede quitarle la vida a una persona y hacer que otra viva. Sin embargo debe ser muy cuidadosa y juzgar a todos de manera favorable, para no destruir el mundo. Pues Dios desea la bondad y quiere que el mundo exista. 7 Tishrei 6. Cuando l",
+      "matched_terms": [
+        "y a"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 23,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "de Torá, éste la dirige por el sendero correcto de acuerdo a la raíz de su alma y así todo se rectifica. 11. Cada vez que uno vaya a ver a un estudioso de Torá, deberá abrir su corazón delante de él. De esa manera uno se incluye en el Infinito y merece saber que todo lo que le sucede es para su propio bien. Entonces dirá la bendición “Quién es bueno y hace el bien” sobre todas las cosas y ello es",
+      "matched_terms": [
+        "y a"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 24,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3333333333333333,
+      "snippet": "tome Él Mismo su alma [cuando fallezca]. Entonces quedará completamente anulada y absorbida en el Infinito en el grado que haya merecido. 15. Mediante la unión de la persona con el Infinito en el aspecto de “correr y retornar” -de modo que no quede completamente anulada- y al volver, más tarde, a su propia conciencia en el estado de “separación de Dios”, permanecerá en ella un remanente de la mara",
+      "matched_terms": [
+        "y a"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

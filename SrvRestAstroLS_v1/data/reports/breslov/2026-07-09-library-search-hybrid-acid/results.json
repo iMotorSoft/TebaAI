@@ -1,0 +1,2910 @@
+{
+  "summary": {
+    "endpoint": "http://127.0.0.1:7008/library/search",
+    "head": "b2b0355c471cd9590b2f29cd3acb88b11349ab9e",
+    "scope_code": "breslov_primary",
+    "milvus_collection_code": "breslov",
+    "query_count": 10,
+    "global_score": 189,
+    "max_score": 200,
+    "percentage": 94.5,
+    "status": "PASS fuerte",
+    "hybrid_query_count": 8,
+    "hybrid_direct_vector_positive": 8,
+    "hybrid_response_vector_positive": 7,
+    "gaps": [
+      "hybrid_q02: missing_expected_terms:oración,rezar",
+      "hybrid_q03: missing_expected_terms:aislamiento",
+      "fts_q09: empty_results, missing_expected_terms:plegaria,arma principal,judío"
+    ]
+  },
+  "records": [
+    {
+      "query": {
+        "id": "hybrid_q01",
+        "query": "alegría",
+        "mode": "hybrid",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 10,
+        "expect_vector_branch": true,
+        "expected_terms": [
+          "alegría"
+        ],
+        "notes": "Debe devolver resultados por FTS y vector; puede estar dominada por FTS."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 721,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "alegría",
+          "mode": "hybrid",
+          "top_k": 10,
+          "language": "es"
+        },
+        "response": {
+          "query": "alegría",
+          "collection": "breslov_primary",
+          "mode": "hybrid",
+          "language": "es",
+          "total": 10,
+          "results": [
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "e16dbfc9-6721-4f9c-b6b7-ce65e4c4f87c",
+              "chunk_index": 27,
+              "language": "es",
+              "page_start": 24,
+              "page_end": 25,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.56,
+              "fts_rank": 0.8,
+              "vector_score": null,
+              "hybrid_score": 0.56,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...por él.\n\n2. Cada persona debe llevar a cabo las mitzvot con tanta alegría como para no desear ninguna recompensa por ello en el Mundo que Viene. Más bien, sólo debe desear que el Santo, bendito sea, le envíe otra mitzvá como recompensa...",
+              "highlighted_excerpt": "...por él.\n\n2. Cada persona debe llevar a cabo las mitzvot con tanta <mark>alegría</mark> como para no desear ninguna recompensa por ello en el Mundo que Viene. Más bien, sólo debe desear que el Santo, bendito sea, le envíe otra mitzvá como recompensa...",
+              "content_length": 1787
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "79d4891d-8d97-4d1f-89a2-67437c4d8e6c",
+              "chunk_index": 244,
+              "language": "es",
+              "page_start": 152,
+              "page_end": 152,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.56,
+              "fts_rank": 0.8,
+              "vector_score": null,
+              "hybrid_score": 0.56,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...y el Eterno, que Su Nombre sea bendecido por siempre.\n\nAhora bien, la alegría de todas las mitzvot realizadas durante el año se siente primordialmente en el corazón, como está escrito, “Tú pusiste alegría en mi corazón” (Salmos 4:8). Y las Tres Festividades...",
+              "highlighted_excerpt": "...y el Eterno, que Su Nombre sea bendecido por siempre.\n\nAhora bien, la <mark>alegría</mark> de todas las mitzvot realizadas durante el año se siente primordialmente en el corazón, como está escrito, “Tú pusiste <mark>alegría</mark> en mi corazón” (Salmos 4:8). Y las Tres Festividades...",
+              "content_length": 1434
+            },
+            {
+              "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+              "document_title": "La Potencia de la Plegaria",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "a717855e-a9f6-45f4-b160-33b7867b1cb0",
+              "chunk_index": 147,
+              "language": "es",
+              "page_start": 96,
+              "page_end": 97,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.56,
+              "fts_rank": 0.8,
+              "vector_score": null,
+              "hybrid_score": 0.56,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...once especias del _ketoret_ .\n\n## **El** _**Ketoret**_ **: Servir a Dios con Alegría**\n\nEl Rebe Najmán subraya la importancia de la alegría en la vida de la persona. Enseña que el estar alegre es una devoción muy difícil.[51] Al mismo tiempo,...",
+              "highlighted_excerpt": "...once especias del _ketoret_ .\n\n## **El** _**Ketoret**_ **: Servir a Dios con <mark>Alegría</mark>**\n\nEl Rebe Najmán subraya la importancia de la <mark>alegría</mark> en la vida de la persona. Enseña que el estar alegre es una devoción muy difícil.[51] Al mismo tiempo,...",
+              "content_length": 1726
+            },
+            {
+              "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+              "document_title": "El Jardín de las Almas",
+              "author": "Rebe Najman de Breslov",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "1314f71a-9af8-4d7f-9ecc-5e31054de9fc",
+              "chunk_index": 65,
+              "language": "es",
+              "page_start": 45,
+              "page_end": 45,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.49,
+              "fts_rank": 0.7,
+              "vector_score": null,
+              "hybrid_score": 0.49,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...sufrimiento son en verdad un beneficio muy grande. Como resultado uno se colma de alegría, y la alegría es el \"recipiente\" para retener nuevas ideas de Torá.\n\nLa idea de que recibimos percepciones de Torá a través de la alegría se deriva de...",
+              "highlighted_excerpt": "...sufrimiento son en verdad un beneficio muy grande. Como resultado uno se colma de <mark>alegría</mark>, y la <mark>alegría</mark> es el &quot;recipiente&quot; para retener nuevas ideas de Torá.\n\nLa idea de que recibimos percepciones de Torá a través de la <mark>alegría</mark> se deriva de...",
+              "content_length": 1702
+            },
+            {
+              "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+              "document_title": "La Potencia de la Plegaria",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "a146ab45-b9b6-4411-86f7-83a5d05e3152",
+              "chunk_index": 149,
+              "language": "es",
+              "page_start": 97,
+              "page_end": 98,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.42,
+              "fts_rank": 0.6,
+              "vector_score": null,
+              "hybrid_score": 0.42,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...**98**[■] _**Shajarit -**_ **La Plegaria de la Mañana**\n\ncabo la mitzvá con alegría, la _Shejiná_ deja su exilio en el ámbito de las _klipot_ . Esto es lo que significa que “ _Maljut_ del Mundo de _Asiá_ asciende desde las _klipot_ ”....",
+              "highlighted_excerpt": "...**98**[■] _**Shajarit -**_ **La Plegaria de la Mañana**\n\ncabo la mitzvá con <mark>alegría</mark>, la _Shejiná_ deja su exilio en el ámbito de las _klipot_ . Esto es lo que significa que “ _Maljut_ del Mundo de _Asiá_ asciende desde las _klipot_ ”....",
+              "content_length": 1774
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "72b092a0-b461-4548-b41a-0501cc3fe34f",
+              "chunk_index": 16,
+              "language": "es",
+              "page_start": 13,
+              "page_end": 15,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.42,
+              "fts_rank": 0.6,
+              "vector_score": null,
+              "hybrid_score": 0.42,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "hijos una larga y saludable vida plena de alegría y felicidad. Puedan ellos celebrar junto con todos los Judíos la Redención de Israel, en Jerusalem, la dorada, rápido y en nuestros días. Amén.\n\n_Jaim Kramer Menajem Av....",
+              "highlighted_excerpt": "hijos una larga y saludable vida plena de <mark>alegría</mark> y felicidad. Puedan ellos celebrar junto con todos los Judíos la Redención de Israel, en Jerusalem, la dorada, rápido y en nuestros días. Amén.\n\n_Jaim Kramer Menajem Av....",
+              "content_length": 2282
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "cc77f514-8428-4a9a-bb8a-61270dd91851",
+              "chunk_index": 706,
+              "language": "es",
+              "page_start": 440,
+              "page_end": 440,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.42,
+              "fts_rank": 0.6,
+              "vector_score": null,
+              "hybrid_score": 0.42,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...## 9 Av\n\n17. Al ayunar la persona se hace digna de la alegría. Y el nivel de alegría que alcance estará en relación con el número de días de su ayuno. Ahora bien, la principal rectificación de los sueños se produce a...",
+              "highlighted_excerpt": "...## 9 Av\n\n17. Al ayunar la persona se hace digna de la <mark>alegría</mark>. Y el nivel de <mark>alegría</mark> que alcance estará en relación con el número de días de su ayuno. Ahora bien, la principal rectificación de los sueños se produce a...",
+              "content_length": 1626
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "6e223725-f877-44ef-a41a-493b4d62fd8f",
+              "chunk_index": 199,
+              "language": "es",
+              "page_start": 127,
+              "page_end": 127,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.42,
+              "fts_rank": 0.6,
+              "vector_score": null,
+              "hybrid_score": 0.42,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "las mitzvot con alegría, la santidad alcanza su plenitud y se eleva la vitalidad y la santidad atrapada en las fuerzas de la impureza. Por lo tanto, al realizar una mitzvá con alegría,...",
+              "highlighted_excerpt": "las mitzvot con <mark>alegría</mark>, la santidad alcanza su plenitud y se eleva la vitalidad y la santidad atrapada en las fuerzas de la impureza. Por lo tanto, al realizar una mitzvá con <mark>alegría</mark>,...",
+              "content_length": 1407
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "4bf69fe2-666d-47c0-9177-8721e3be8223",
+              "chunk_index": 76,
+              "language": "es",
+              "page_start": 54,
+              "page_end": 55,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.393,
+              "fts_rank": 1.2,
+              "vector_score": 0.4867,
+              "hybrid_score": 0.393,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...y aprovecharla. Al fi nal, las cosas saldrán bien. Enseñó el Rebe Najmán: La alegría abre el corazón ( _El Libro de los Atributos, Alegría_ A:2).\n\n**==> picture [23 x 8] intentionally omitted <==**\n\n## **LAS RECOMPENSAS DE LA ALEGRÍA**\n\nUna...",
+              "highlighted_excerpt": "...y aprovecharla. Al fi nal, las cosas saldrán bien. Enseñó el Rebe Najmán: La <mark>alegría</mark> abre el corazón ( _El Libro de los Atributos, <mark>Alegría</mark>_ A:2).\n\n**==&gt; picture [23 x 8] intentionally omitted &lt;==**\n\n## **LAS RECOMPENSAS DE LA <mark>ALEGRÍA</mark>**\n\nUna...",
+              "content_length": 1639
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "a7557ef9-0692-44f6-9ad3-451f8fe830ba",
+              "chunk_index": 69,
+              "language": "es",
+              "page_start": 50,
+              "page_end": 51,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.3537,
+              "fts_rank": 1.0,
+              "vector_score": 0.4693,
+              "hybrid_score": 0.3537,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "rastrar a la misma depresión dentro del círculo de alegría y mantenerla allí ( _Likutey Moharan_ II, 23). Forzarse a estar alegre hará que al fi nal, el motivo de la tristeza\n\n## Page 51\n\n_ALEGRIA /...",
+              "highlighted_excerpt": "rastrar a la misma depresión dentro del círculo de <mark>alegría</mark> y mantenerla allí ( _Likutey Moharan_ II, 23). Forzarse a estar alegre hará que al fi nal, el motivo de la tristeza\n\n## Page 51\n\n_ALEGRIA /...",
+              "content_length": 1473
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 36,
+          "top_titles": [
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+          ]
+        },
+        "vector": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 766,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "top": [
+            {
+              "chunk_id": "4bf69fe2-666d-47c0-9177-8721e3be8223",
+              "distance": 0.4867,
+              "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "28586085-5b9a-4df1-a29f-71864e3a5425",
+              "distance": 0.4859,
+              "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "42065bff-7723-4f40-b709-69d09c304705",
+              "distance": 0.481,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            }
+          ]
+        }
+      },
+      "scoring": {
+        "score": 20,
+        "status": "PASS fuerte",
+        "http_200": true,
+        "result_count": 10,
+        "term_hits": {
+          "alegría": true
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "yes",
+        "response_vector_hits": 2,
+        "direct_vector_hits": 10,
+        "hybrid_vector_merged_hits": 2,
+        "fts_hits": 10,
+        "critical_warnings": [],
+        "quality_warnings": []
+      }
+    },
+    {
+      "query": {
+        "id": "hybrid_q02",
+        "query": "plegaria",
+        "mode": "hybrid",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 10,
+        "expect_vector_branch": true,
+        "expected_terms": [
+          "plegaria",
+          "oración",
+          "rezar"
+        ],
+        "notes": "Vector directo puede existir aunque hybrid final esté dominado por FTS."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 1051,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "plegaria",
+          "mode": "hybrid",
+          "top_k": 10,
+          "language": "es"
+        },
+        "response": {
+          "query": "plegaria",
+          "collection": "breslov_primary",
+          "mode": "hybrid",
+          "language": "es",
+          "total": 10,
+          "results": [
+            {
+              "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+              "document_title": "La Potencia de la Plegaria",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "ee0f27a9-c8c2-47cb-b07d-40db11dc4a11",
+              "chunk_index": 480,
+              "language": "es",
+              "page_start": 305,
+              "page_end": 306,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 1.12,
+              "fts_rank": 1.6,
+              "vector_score": null,
+              "hybrid_score": 1.12,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...Lado. Ello se debe a que el Otro Lado busca capturar y tragar toda plegaria que se encuentre en la forma de constricción, de _din_ . Pero, como el Rebe Najmán describe esto, las plegarias\n\n## Page 307\n\n_**Minja: La plegaria de...",
+              "highlighted_excerpt": "...Lado. Ello se debe a que el Otro Lado busca capturar y tragar toda <mark>plegaria</mark> que se encuentre en la forma de constricción, de _din_ . Pero, como el Rebe Najmán describe esto, las <mark>plegaria</mark>s\n\n## Page 307\n\n_**Minja: La <mark>plegaria</mark> de...",
+              "content_length": 1707
+            },
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "405f4b38-aee8-4070-9335-d93db0f0acbc",
+              "chunk_index": 872,
+              "language": "es",
+              "page_start": 409,
+              "page_end": 410,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 1.05,
+              "fts_rank": 1.5,
+              "vector_score": null,
+              "hybrid_score": 1.05,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "o. El maestro de fortaleza vuelca toda su concentración, energía y fuerza en su plegaria de juicio, transformándola en una “vara de fortaleza”. Cuando el Otro Lado trata de tragar la plegaria, se vuelve una “vara” o “barra” atravesada en su garganta.\n\nEl...",
+              "highlighted_excerpt": "o. El maestro de fortaleza vuelca toda su concentración, energía y fuerza en su <mark>plegaria</mark> de juicio, transformándola en una “vara de fortaleza”. Cuando el Otro Lado trata de tragar la <mark>plegaria</mark>, se vuelve una “vara” o “barra” atravesada en su garganta.\n\nEl...",
+              "content_length": 2369
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "75dd23f6-1500-49cc-836f-370c680fe414",
+              "chunk_index": 203,
+              "language": "es",
+              "page_start": 139,
+              "page_end": 140,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 1.05,
+              "fts_rank": 1.5,
+              "vector_score": null,
+              "hybrid_score": 1.05,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "HaNefesh,_ Introducción).\n\nHay tres clases de plegarias: la plegaria de David, (Salmo 86); la plegaria de Moshé (Salmo 90); Y la plegaria del hombre pobre (Salmo 102). De las tres, la más poderosa es la plegaria...",
+              "highlighted_excerpt": "HaNefesh,_ Introducción).\n\nHay tres clases de <mark>plegaria</mark>s: la <mark>plegaria</mark> de David, (Salmo 86); la <mark>plegaria</mark> de Moshé (Salmo 90); Y la <mark>plegaria</mark> del hombre pobre (Salmo 102). De las tres, la más poderosa es la <mark>plegaria</mark>...",
+              "content_length": 1745
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "46325462-a67f-4c8d-b693-06742b6b0cb6",
+              "chunk_index": 690,
+              "language": "es",
+              "page_start": 449,
+              "page_end": 450,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.98,
+              "fts_rank": 1.4,
+              "vector_score": null,
+              "hybrid_score": 0.98,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...Tsoar_ y _Maim_ .)\n\n**Likutey Tefi lot** - ( _El Portal de la Plegaria_ ). En respuesta al consejo del Rebe Najmán respecto a “transformar la Torá en plegaria,” Reb Noson compuso los dos volúmenes del _Likutey Tefi lot,_ “Colección de Plegarias.” Estas...",
+              "highlighted_excerpt": "...Tsoar_ y _Maim_ .)\n\n**Likutey Tefi lot** - ( _El Portal de la <mark>Plegaria</mark>_ ). En respuesta al consejo del Rebe Najmán respecto a “transformar la Torá en <mark>plegaria</mark>,” Reb Noson compuso los dos volúmenes del _Likutey Tefi lot,_ “Colección de <mark>Plegaria</mark>s.” Estas...",
+              "content_length": 1793
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "aa5a0b4b-8b6a-44af-92cd-4f87b35701e7",
+              "chunk_index": 165,
+              "language": "es",
+              "page_start": 114,
+              "page_end": 115,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.91,
+              "fts_rank": 1.3,
+              "vector_score": null,
+              "hybrid_score": 0.91,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...misnagdim. En general, los jasidim de esos días se volcaban con fervor a la plegaria, pero no se dedicaban con profundidad al estudio de la Torá. Los misnagdim, por otro lado, se dedicaban de lleno al estudio de la Torá, pero no eran devotos...",
+              "highlighted_excerpt": "...misnagdim. En general, los jasidim de esos días se volcaban con fervor a la <mark>plegaria</mark>, pero no se dedicaban con profundidad al estudio de la Torá. Los misnagdim, por otro lado, se dedicaban de lleno al estudio de la Torá, pero no eran devotos...",
+              "content_length": 1687
+            },
+            {
+              "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+              "document_title": "La Potencia de la Plegaria",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "c7782297-2ad5-46bf-ba6d-c88d461c47e4",
+              "chunk_index": 473,
+              "language": "es",
+              "page_start": 301,
+              "page_end": 301,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.84,
+              "fts_rank": 1.2,
+              "vector_score": null,
+              "hybrid_score": 0.84,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "**CAPÍTULO 40**\n\n## _**Minja: La plegaria de la Tarde**_\n\nijo el Rabí Jelbo en nombre de Rav Huna, “La persona debe ser muy cuidadosa con la plegaria de _Minja_ . Incluso el profeta Eliáhu...",
+              "highlighted_excerpt": "**CAPÍTULO 40**\n\n## _**Minja: La <mark>plegaria</mark> de la Tarde**_\n\nijo el Rabí Jelbo en nombre de Rav Huna, “La persona debe ser muy cuidadosa con la <mark>plegaria</mark> de _Minja_ . Incluso el profeta Eliáhu...",
+              "content_length": 1736
+            },
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "592ab284-4a68-41ed-a219-80846091a0d5",
+              "chunk_index": 863,
+              "language": "es",
+              "page_start": 406,
+              "page_end": 406,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.84,
+              "fts_rank": 1.2,
+              "vector_score": null,
+              "hybrid_score": 0.84,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "garia de compasión,  que Dios responde sea uno digno o no, la plegaria en el aspecto de juicio sólo es respondida cuando aquel que está orando es suficientemente recto y digno para dirigirse hacia Dios de esa manera, como el Rebe continúa...",
+              "highlighted_excerpt": "garia de compasión,  que Dios responde sea uno digno o no, la <mark>plegaria</mark> en el aspecto de juicio sólo es respondida cuando aquel que está orando es suficientemente recto y digno para dirigirse hacia Dios de esa manera, como el Rebe continúa...",
+              "content_length": 1748
+            },
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "dd916390-346b-45f5-b5f2-d288133aec9c",
+              "chunk_index": 941,
+              "language": "es",
+              "page_start": 433,
+              "page_end": 433,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.77,
+              "fts_rank": 1.1,
+              "vector_score": null,
+              "hybrid_score": 0.77,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...se une a ellos, el pecado es perdonado y la enfermedad es curada. Su plegaria -de esta manera grandemente multiplicada y expandida, como demostrará el Rebe- es igualmente una plegaria de juicio (ver el párrafo siguiente).\n\nEscribe el Rabí Natán: A partir de...",
+              "highlighted_excerpt": "...se une a ellos, el pecado es perdonado y la enfermedad es curada. Su <mark>plegaria</mark> -de esta manera grandemente multiplicada y expandida, como demostrará el Rebe- es igualmente una <mark>plegaria</mark> de juicio (ver el párrafo siguiente).\n\nEscribe el Rabí Natán: A partir de...",
+              "content_length": 1696
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "a3867bee-a02e-48e3-894a-97ec87f16ffc",
+              "chunk_index": 348,
+              "language": "es",
+              "page_start": 227,
+              "page_end": 228,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.77,
+              "fts_rank": 1.1,
+              "vector_score": null,
+              "hybrid_score": 0.77,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...y de Luz. Esto se puede observar con claridad al considerar el orden de plegarias diarias que realiza el Judío a lo largo del ciclo de veinticuatro horas.\n\nFueron los Patriarcas quienes establecieron las tres plegarias diarias. Avraham inició la Plegaria de la...",
+              "highlighted_excerpt": "...y de Luz. Esto se puede observar con claridad al considerar el orden de <mark>plegaria</mark>s diarias que realiza el Judío a lo largo del ciclo de veinticuatro horas.\n\nFueron los Patriarcas quienes establecieron las tres <mark>plegaria</mark>s diarias. Avraham inició la <mark>Plegaria</mark> de la...",
+              "content_length": 1405
+            },
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "6ad0999b-d4c0-48ec-9894-2991c856b440",
+              "chunk_index": 854,
+              "language": "es",
+              "page_start": 403,
+              "page_end": 403,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.77,
+              "fts_rank": 1.1,
+              "vector_score": null,
+              "hybrid_score": 0.77,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...permita.[70]\n\nY cuando la compasión y el _daat_ están defectuosos, es imposible ofrecer plegarias en la forma de compasión y de ruego. En ese momento, la plegaria se encuentra en la categoría de juicio.[71] Y cuando la plegaria\n\ndistinta de compasión, el...",
+              "highlighted_excerpt": "...permita.[70]\n\nY cuando la compasión y el _daat_ están defectuosos, es imposible ofrecer <mark>plegaria</mark>s en la forma de compasión y de ruego. En ese momento, la <mark>plegaria</mark> se encuentra en la categoría de juicio.[71] Y cuando la <mark>plegaria</mark>\n\ndistinta de compasión, el...",
+              "content_length": 2565
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 56,
+          "top_titles": [
+            "La Potencia de la Plegaria",
+            "Likutey Halajot LM II 8",
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+          ]
+        },
+        "vector": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 552,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "top": [
+            {
+              "chunk_id": "f55b0718-93fa-44a7-8df2-f82c2dff0f57",
+              "distance": 0.4802,
+              "title": "Likutey Halajot LM II 8",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "dd2e2da3-ed90-48a7-acdf-36214c8a68b6",
+              "distance": 0.445,
+              "title": "Likutey Halajot LM II 8",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "6465f6c5-e272-4182-907d-2f988daaf4a8",
+              "distance": 0.4426,
+              "title": "Likutey Halajot LM II 8",
+              "collection_code": "breslov"
+            }
+          ]
+        }
+      },
+      "scoring": {
+        "score": 17,
+        "status": "PASS usable",
+        "http_200": true,
+        "result_count": 10,
+        "term_hits": {
+          "plegaria": true,
+          "oración": false,
+          "rezar": false
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "no",
+        "response_vector_hits": 0,
+        "direct_vector_hits": 10,
+        "hybrid_vector_merged_hits": 0,
+        "fts_hits": 10,
+        "critical_warnings": [],
+        "quality_warnings": [
+          "missing_expected_terms:oración,rezar"
+        ]
+      }
+    },
+    {
+      "query": {
+        "id": "hybrid_q03",
+        "query": "hitbodedut",
+        "mode": "hybrid",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 10,
+        "expect_vector_branch": true,
+        "expected_terms": [
+          "hitbodedut",
+          "aislamiento",
+          "plegaria personal"
+        ],
+        "notes": "Debe activar rama vectorial."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 653,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "hitbodedut",
+          "mode": "hybrid",
+          "top_k": 10,
+          "language": "es"
+        },
+        "response": {
+          "query": "hitbodedut",
+          "collection": "breslov_primary",
+          "mode": "hybrid",
+          "language": "es",
+          "total": 10,
+          "results": [
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "538cf9ab-558b-4f9a-8ce9-27a6a51e8ad6",
+              "chunk_index": 20,
+              "language": "es",
+              "page_start": 16,
+              "page_end": 17,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.35,
+              "fts_rank": 0.5,
+              "vector_score": null,
+              "hybrid_score": 0.35,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "....   .   .   .   .|\n|9.|_HITBODEDUT_141|\n||La grandeza del hitbodedut...",
+              "highlighted_excerpt": "....   .   .   .   .|\n|9.|_<mark>HITBODEDUT</mark>_141|\n||La grandeza del <mark>hitbodedut</mark>...",
+              "content_length": 4104
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "8208dab7-1b9a-4b5d-b921-8b8ff6cd632f",
+              "chunk_index": 245,
+              "language": "es",
+              "page_start": 166,
+              "page_end": 167,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.3118,
+              "fts_rank": 0.8,
+              "vector_score": 0.4345,
+              "hybrid_score": 0.3118,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...individuos muy fuertes en su servicio a Dios pueden pasar más tiempo en el _hitbodedut_ ( _Likutey Moharan_ II, 96).\n\nLa noche es el momento ideal para el _hitbodedut,_ cuando el mundo que lo rodea está dormido. Durante el día, la gente está...",
+              "highlighted_excerpt": "...individuos muy fuertes en su servicio a Dios pueden pasar más tiempo en el _<mark>hitbodedut</mark>_ ( _Likutey Moharan_ II, 96).\n\nLa noche es el momento ideal para el _<mark>hitbodedut</mark>,_ cuando el mundo que lo rodea está dormido. Durante el día, la gente está...",
+              "content_length": 1632
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "8a719985-c953-434a-b021-5b51fe06ef17",
+              "chunk_index": 238,
+              "language": "es",
+              "page_start": 161,
+              "page_end": 163,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.2892,
+              "fts_rank": 0.7,
+              "vector_score": 0.4058,
+              "hybrid_score": 0.2892,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...* * *\n\n## Page 163\n\n_141_\n\n**9**\n\n## **HITBODEDUT**\n\nEl _Hitbodedut_ se encuentra en un nivel muy alto. De hecho, en un nivel por sobre todos los niveles ( _Likutey Moharan_ II, 25).\n\nUna de las...",
+              "highlighted_excerpt": "...* * *\n\n## Page 163\n\n_141_\n\n**9**\n\n## **<mark>HITBODEDUT</mark>**\n\nEl _<mark>Hitbodedut</mark>_ se encuentra en un nivel muy alto. De hecho, en un nivel por sobre todos los niveles ( _Likutey Moharan_ II, 25).\n\nUna de las...",
+              "content_length": 1795
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "cdecc19c-44a2-4a1f-96b4-e09711fc4757",
+              "chunk_index": 240,
+              "language": "es",
+              "page_start": 163,
+              "page_end": 164,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.28,
+              "fts_rank": 0.4,
+              "vector_score": null,
+              "hybrid_score": 0.28,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...para _siempre”_ ( _Likutey Moharan_ II, 95-101 etc.).\n\nSi ha estado practicando el _hitbodedut_ durante años y aún sigue pensando que no ha obtenido ninguna mejora, no se detenga, continúe. Al fi nal, alcanzará su objetivo, tal como lo hizo el Rey David....",
+              "highlighted_excerpt": "...para _siempre”_ ( _Likutey Moharan_ II, 95-101 etc.).\n\nSi ha estado practicando el _<mark>hitbodedut</mark>_ durante años y aún sigue pensando que no ha obtenido ninguna mejora, no se detenga, continúe. Al fi nal, alcanzará su objetivo, tal como lo hizo el Rey David....",
+              "content_length": 1705
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "14a15066-16bc-49c2-91b1-27c8620b3459",
+              "chunk_index": 254,
+              "language": "es",
+              "page_start": 172,
+              "page_end": 172,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.28,
+              "fts_rank": 0.4,
+              "vector_score": null,
+              "hybrid_score": 0.28,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "..._Aveneha Barzel,_ p.52 #12).\n\nUna vez que se acostumbre a la práctica del _hitbodedut_ verá cómo es posible llegar a orar por todo, desde los deseos espirituales más exaltados hasta las cuestiones materiales más triviales, pasando por toda la gama intermedia. No se...",
+              "highlighted_excerpt": "..._Aveneha Barzel,_ p.52 #12).\n\nUna vez que se acostumbre a la práctica del _<mark>hitbodedut</mark>_ verá cómo es posible llegar a orar por todo, desde los deseos espirituales más exaltados hasta las cuestiones materiales más triviales, pasando por toda la gama intermedia. No se...",
+              "content_length": 1522
+            },
+            {
+              "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+              "document_title": "Kokhavey Ohr",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "68a25700-b0f2-45f4-a38c-80f353f2717d",
+              "chunk_index": 130,
+              "language": "en",
+              "page_start": 91,
+              "page_end": 92,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.28,
+              "fts_rank": 0.4,
+              "vector_score": null,
+              "hybrid_score": 0.28,
+              "source_signals": [
+                "fts"
+              ],
+              "plain_excerpt": "...that HaShem helps him so much when he is old, because he often did _hitbodedut_ in his youth and enunciated his discussion between himself and his Maker. As a result, now he is not able to do anything without first expressing his dialogue before...",
+              "highlighted_excerpt": "...that HaShem helps him so much when he is old, because he often did _<mark>hitbodedut</mark>_ in his youth and enunciated his discussion between himself and his Maker. As a result, now he is not able to do anything without first expressing his dialogue before...",
+              "content_length": 1781
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "a6b35bbc-620c-4e49-8d8a-22fd675d71fe",
+              "chunk_index": 241,
+              "language": "es",
+              "page_start": 164,
+              "page_end": 165,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.2764,
+              "fts_rank": 0.6,
+              "vector_score": 0.4425,
+              "hybrid_score": 0.2764,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...elevarnos siempre hacia todos los grandes niveles que deseamos alcanzar y cumplir, es el _hitbodedut_ ( _Likutey Moharan_ II, 101).\n\n## Page 165\n\n_HITBODEDUT / 143_\n\n## **LA GRANDEZA DEL HITBODEDUT**\n\nLas plegarias personales ante Dios, durante el _hitbodedut,_ son...",
+              "highlighted_excerpt": "...elevarnos siempre hacia todos los grandes niveles que deseamos alcanzar y cumplir, es el _<mark>hitbodedut</mark>_ ( _Likutey Moharan_ II, 101).\n\n## Page 165\n\n_<mark>HITBODEDUT</mark> / 143_\n\n## **LA GRANDEZA DEL <mark>HITBODEDUT</mark>**\n\nLas plegarias personales ante Dios, durante el _<mark>hitbodedut</mark>,_ son...",
+              "content_length": 1658
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "6659f8d4-8af8-422b-9a2d-d303df2ec16d",
+              "chunk_index": 276,
+              "language": "es",
+              "page_start": 186,
+              "page_end": 186,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.255,
+              "fts_rank": 0.5,
+              "vector_score": 0.4222,
+              "hybrid_score": 0.255,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...**==> picture [7 x 6] intentionally omitted <==**\n\nEn resumen, los _cómo_ del _hitbodedut_ son prácticamente ilimitados. Hay muchas y diferentes maneras y técnicas de meditación y de expresión del corazón y del alma delante de Dios; de la misma manera en que...",
+              "highlighted_excerpt": "...**==&gt; picture [7 x 6] intentionally omitted &lt;==**\n\nEn resumen, los _cómo_ del _<mark>hitbodedut</mark>_ son prácticamente ilimitados. Hay muchas y diferentes maneras y técnicas de meditación y de expresión del corazón y del alma delante de Dios; de la misma manera en que...",
+              "content_length": 1378
+            },
+            {
+              "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+              "document_title": "El Alma del Rebe Najmán",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "89171cb1-97b0-42b7-938c-132e59edce0e",
+              "chunk_index": 355,
+              "language": "es",
+              "page_start": 136,
+              "page_end": 137,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.2417,
+              "fts_rank": 0.4,
+              "vector_score": 0.456,
+              "hybrid_score": 0.2417,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...mejorarlo con falsas declaraciones pensando que no hay un crimen en ello.\n\n## _**Hitbodedut, hitbodedut**_\n\n_Rabeinu zal_ testifica que las historias sobre el Baal Shem Tov son verdaderas. Antes de su revelación, el Baal Shem Tov practicaba la importante costumbre del _hitbodedut_...",
+              "highlighted_excerpt": "...mejorarlo con falsas declaraciones pensando que no hay un crimen en ello.\n\n## _**<mark>Hitbodedut</mark>, <mark>hitbodedut</mark>**_\n\n_Rabeinu zal_ testifica que las historias sobre el Baal Shem Tov son verdaderas. Antes de su revelación, el Baal Shem Tov practicaba la importante costumbre del _<mark>hitbodedut</mark>_...",
+              "content_length": 1523
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "fd6f7849-deb5-4644-9ed9-ef4244b68688",
+              "chunk_index": 401,
+              "language": "es",
+              "page_start": 236,
+              "page_end": 237,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.2404,
+              "fts_rank": 0.4,
+              "vector_score": 0.447,
+              "hybrid_score": 0.2404,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "gra mediante la autoanulación. La única manera de alcanzarlo es mediante el hitbodedut (la plegaria personal en reclusión). Al expresarse delante de Dios en hitbodedut, la persona puede anular todo; puede unirse a Dios y quedar incluida en su fuente.\n\n2....",
+              "highlighted_excerpt": "gra mediante la autoanulación. La única manera de alcanzarlo es mediante el <mark>hitbodedut</mark> (la plegaria personal en reclusión). Al expresarse delante de Dios en <mark>hitbodedut</mark>, la persona puede anular todo; puede unirse a Dios y quedar incluida en su fuente.\n\n2....",
+              "content_length": 1463
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 38,
+          "top_titles": [
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+          ]
+        },
+        "vector": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 599,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "top": [
+            {
+              "chunk_id": "89171cb1-97b0-42b7-938c-132e59edce0e",
+              "distance": 0.4561,
+              "title": "El Alma del Rebe Najmán",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "fd6f7849-deb5-4644-9ed9-ef4244b68688",
+              "distance": 0.4471,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "c74146cc-6f47-41fd-8c13-2f09d337afe9",
+              "distance": 0.4449,
+              "title": "Kokhavey Ohr",
+              "collection_code": "breslov"
+            }
+          ]
+        }
+      },
+      "scoring": {
+        "score": 19,
+        "status": "PASS fuerte",
+        "http_200": true,
+        "result_count": 10,
+        "term_hits": {
+          "hitbodedut": true,
+          "aislamiento": false,
+          "plegaria personal": true
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "yes",
+        "response_vector_hits": 6,
+        "direct_vector_hits": 10,
+        "hybrid_vector_merged_hits": 6,
+        "fts_hits": 10,
+        "critical_warnings": [],
+        "quality_warnings": [
+          "missing_expected_terms:aislamiento"
+        ]
+      }
+    },
+    {
+      "query": {
+        "id": "hybrid_q04",
+        "query": "sangre habla",
+        "mode": "hybrid",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 10,
+        "expect_vector_branch": true,
+        "expected_terms": [
+          "sangre",
+          "habla"
+        ],
+        "notes": "Query relacional corta; el probe previo mostró hybrid vector fuerte."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 751,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "sangre habla",
+          "mode": "hybrid",
+          "top_k": 10,
+          "language": "es"
+        },
+        "response": {
+          "query": "sangre habla",
+          "collection": "breslov_primary",
+          "mode": "hybrid",
+          "language": "es",
+          "total": 10,
+          "results": [
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "7124dbcc-5e98-4d70-b1d7-693056c60a3f",
+              "chunk_index": 1095,
+              "language": "es",
+              "page_start": 486,
+              "page_end": 486,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1803,
+              "fts_rank": null,
+              "vector_score": 0.4007,
+              "hybrid_score": 0.1803,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "anos. La sangre caliente y carente de oxígeno retorna entonces al corazón y de allí es llevada hacia la arteria pulmonar en camino de retorno a los pulmones. Una vez en los pulmones, la sangre puede ser oxigenada en los alveolos por el aire inhalado.\n\nEl _Tikuney Zohar_ ( _loc. cit_ .) describe la ú",
+              "highlighted_excerpt": "anos. La <mark>sangre calie</mark>nte y carente de oxígeno retorna entonces al corazón y de allí es llevada hacia la arteria pulmonar en camino de retorno a los pulmones. Una vez en lo...",
+              "content_length": 1742
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "d650723e-688d-48fb-9aa0-690573dac082",
+              "chunk_index": 334,
+              "language": "es",
+              "page_start": 200,
+              "page_end": 201,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.177,
+              "fts_rank": null,
+              "vector_score": 0.3932,
+              "hybrid_score": 0.177,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "habla dañada que ha caído allí debido al hecho de haber hablado de una manera no santa. Más aún, se debe elevar el habla hacia su fuente y rectificarla. Entonces se merecerá la verdadera unión con Dios, que se manifiesta en los tefilín.\n\n## 18 Shvat\n\n5. Es necesario elevar el habla a su fuente - est",
+              "highlighted_excerpt": "habla dañada que ha caído allí debido al hecho de haber hablado de una manera no santa. Más aún, se debe elevar el habla hacia su fuente y rectificarla. Entonces se merecerá la verdadera unión con Dios, que se manifiesta en los tefilín.\n\n## 18 Shvat\n\n5. Es necesario elevar el habla a su fuente - est",
+              "content_length": 1701
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "649921e1-2851-4d67-8f1d-8a13a85bfbbc",
+              "chunk_index": 234,
+              "language": "es",
+              "page_start": 147,
+              "page_end": 147,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.173,
+              "fts_rank": null,
+              "vector_score": 0.3845,
+              "hybrid_score": 0.173,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "en la frase “fluyendo del LeBaNon” (Cantar de los Cantares 4:15) -esto es, “desde la LiBuNa (blancura) del cerebro” (Zohar III, 235b)- todos los elementos particulares de esa área en especial también son rectificados de manera automática.\n\n## 8 Tevet\n\n15. Aunque el vino es dañino para la mujer cuyo ",
+              "highlighted_excerpt": "... cuyo flujo menstrual es denso y sus períodos irregulares -dado que el vino aumenta la fuerza de la <mark>sangre y de </mark>las características asociadas con ella (ver párrafo #10, más arriba)- sin embargo, la cura para ello es que beba vino al cual miró un verdadero Tzadik...",
+              "content_length": 942
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "c60c9f5a-6a6f-411b-afe7-01eda4ae1ad7",
+              "chunk_index": 140,
+              "language": "es",
+              "page_start": 96,
+              "page_end": 97,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1721,
+              "fts_rank": null,
+              "vector_score": 0.3823,
+              "hybrid_score": 0.1721,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "que cometeremos un pecado o que seremos malos, aunque no sea nuestra intención cumplir con nuestras palabras. El poder del habla es tan fuerte que puede llegar a hacer que la persona peque. Yeihu fue nombrado como rey de las\n\n## Page 97\n\n_LA FE / 75_\n\nDiez Tribus. Reemplazaría a Ajav, un gran idólat",
+              "highlighted_excerpt": "que cometeremos un pecado o que seremos malos, aunque no sea nuestra intención cumplir con nuestras palabras. El poder del habla es tan fuerte que puede llegar a hacer que la persona peque. Yeihu fue nombrado como rey de las\n\n## Page 97\n\n_LA FE / 75_\n\nDiez Tribus. Reemplazaría a Ajav, un gran idólat",
+              "content_length": 1762
+            },
+            {
+              "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+              "document_title": "El Jardín de las Almas",
+              "author": "Rebe Najman de Breslov",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "c17b667d-cdcb-4ce5-8e3f-7eeb1c4a2bb1",
+              "chunk_index": 143,
+              "language": "es",
+              "page_start": 90,
+              "page_end": 91,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1714,
+              "fts_rank": null,
+              "vector_score": 0.3809,
+              "hybrid_score": 0.1714,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "tro de cada alma.** Cf. _Iarot Dvash_ I:12: \"Dijeron los sabios, 'La mirada de un Tzadik trae bendición'. Los rayos de luz provenientes de los ojos de un Tzadik son una bendición\".\n\n9 **el habla** . La forma en que una persona habla es un\n\n## Page 91\n\nindicador de su estado espiritual. Las letras y ",
+              "highlighted_excerpt": "tro de cada alma.** Cf. _Iarot Dvash_ I:12: &quot;Dijeron los sabios, &#x27;La mirada de un Tzadik trae bendición&#x27;. Los rayos de luz provenientes de los ojos de un Tzadik son una bendición&quot;.\n\n9 **el habla** . La forma en que una persona habla es un\n\n## Page 91\n\nindicador de su estado espiritual. Las letras y ",
+              "content_length": 1778
+            },
+            {
+              "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+              "document_title": "El Jardín de las Almas",
+              "author": "Rebe Najman de Breslov",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "b814f2ff-31c4-4aff-b229-663612cd2e01",
+              "chunk_index": 79,
+              "language": "es",
+              "page_start": 52,
+              "page_end": 53,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1708,
+              "fts_rank": null,
+              "vector_score": 0.3796,
+              "hybrid_score": 0.1708,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "su vida son llamados \"muertos\" ( _Berajot_ 18b) y el campo es un \"campo de lágrimas\". Cuando las almas están lejos de Dios, el Tzadik también cae de su nivel de percepción (cf. _Likutey Moharán_ I, 49:7) y \"los ojos del Señor del Campo se oscurecen\".\n\n> 8 **mirar dentro de cada alma.** Cf. _Iarot Dv",
+              "highlighted_excerpt": "su vida son llamados &quot;muertos&quot; ( _Berajot_ 18b) y el campo es un &quot;campo de lágrimas&quot;. Cuando las almas están lejos de Dios, el Tzadik también cae de su nivel de percepción (cf. _Likutey Moharán_ I, 49:7) y &quot;los ojos del Señor del Campo se oscurecen&quot;.\n\n&gt; 8 **mirar dentro de cada alma.** Cf. _Iarot Dv",
+              "content_length": 1499
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "66962f0a-85bb-4225-916e-4d8d14e7a5bb",
+              "chunk_index": 397,
+              "language": "es",
+              "page_start": 233,
+              "page_end": 234,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1702,
+              "fts_rank": null,
+              "vector_score": 0.3781,
+              "hybrid_score": 0.1702,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "bras de las plegarias. Pues cuando la persona saborea esa dulzura y ora con todo su ser, ello es denominado “Todos mis huesos hablarán”. Pero es imposible que la persona saboree la dulzura en las plegarias a menos que se haya rectificado en esa área.\n\n2. La persona que ha impurificado el Pacto se en",
+              "highlighted_excerpt": "bras de las plegarias. Pues cuando la persona saborea esa dulzura y ora con todo su ser, ello es denominado “Todos mis huesos hablarán”. Pero es imposible que la persona saboree la dulzura en las plegarias a menos que se haya rectificado en esa área.\n\n2. La persona que ha impurificado el Pacto se en",
+              "content_length": 1682
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "7a638e2c-7f3a-4da1-82b2-2f05566a47dd",
+              "chunk_index": 271,
+              "language": "es",
+              "page_start": 166,
+              "page_end": 166,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1695,
+              "fts_rank": null,
+              "vector_score": 0.3767,
+              "hybrid_score": 0.1695,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "sus anhelos con la boca, pues de esa manera el alma alcanza su estado concreto. Pues el alma emana del habla, como hemos aprendido del versículo, “El hombre se volvió un alma viviente” (Génesis 2:7), que el Targúm traduce como “un espíritu hablante”.\n\n## 22 Tevet\n\n16. Esto explica el enorme benefici",
+              "highlighted_excerpt": "sus anhelos con la boca, pues de esa manera el alma alcanza su estado concreto. Pues el alma emana del habla, como hemos aprendido del versículo, “El hombre se volvió un alma viviente” (Génesis 2:7), que el Targúm traduce como “un espíritu hablante”.\n\n## 22 Tevet\n\n16. Esto explica el enorme benefici",
+              "content_length": 1427
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "564e3f5b-98fc-4da0-8091-98ba40be6ddf",
+              "chunk_index": 465,
+              "language": "es",
+              "page_start": 273,
+              "page_end": 273,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1684,
+              "fts_rank": null,
+              "vector_score": 0.3742,
+              "hybrid_score": 0.1684,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": ", dado que “El término ‘sordo’, a no ser que esté especificado, hace referencia a alguien que no oye ni habla” (Terumot 1:2). Pero\n\n273\n\n## Page 274\n\nLección 60                                                                                   8 Nisán\n\nahora, cuando el sabio despierta a la persona, é",
+              "highlighted_excerpt": ", dado que “El término ‘sordo’, a no ser que esté especificado, hace referencia a alguien que no oye ni habla” (Terumot 1:2). Pero\n\n273\n\n## Page 274\n\nLección 60                                                                                   8 Nisán\n\nahora, cuando el sabio despierta a la persona, é",
+              "content_length": 1616
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "4f911f9e-a98a-44d9-b27b-24183b4f3b82",
+              "chunk_index": 543,
+              "language": "es",
+              "page_start": 319,
+              "page_end": 320,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1683,
+              "fts_rank": null,
+              "vector_score": 0.3741,
+              "hybrid_score": 0.1683,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "y de la fe en Él. El habla sagrada también está identificada con el espíritu del Mashíaj, con el espíritu sagrado de la profecía (rúaj hakodesh), con la resurrección de los muertos y con la unificación del Santo, bendito sea y de la Presencia Divina.\n\n2. El habla también se identifica con la idea de",
+              "highlighted_excerpt": "y de la fe en Él. El habla sagrada también está identificada con el espíritu del Mashíaj, con el espíritu sagrado de la profecía (rúaj hakodesh), con la resurrección de los muertos y con la unificación del Santo, bendito sea y de la Presencia Divina.\n\n2. El habla también se identifica con la idea de",
+              "content_length": 1634
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 36,
+          "top_titles": [
+            "KITZUR",
+            "KITZUR",
+            "Un Día en la Vida de un Jasid de Breslov"
+          ]
+        },
+        "vector": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 664,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "top": [
+            {
+              "chunk_id": "7124dbcc-5e98-4d70-b1d7-693056c60a3f",
+              "distance": 0.4007,
+              "title": "Likutey Halajot LM II 8",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "d650723e-688d-48fb-9aa0-690573dac082",
+              "distance": 0.3932,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "b7a7728e-996d-46f3-8f32-7be7c7893bad",
+              "distance": 0.3902,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            }
+          ]
+        }
+      },
+      "scoring": {
+        "score": 20,
+        "status": "PASS fuerte",
+        "http_200": true,
+        "result_count": 10,
+        "term_hits": {
+          "sangre": true,
+          "habla": true
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "yes",
+        "response_vector_hits": 10,
+        "direct_vector_hits": 10,
+        "hybrid_vector_merged_hits": 10,
+        "fts_hits": 10,
+        "critical_warnings": [],
+        "quality_warnings": []
+      }
+    },
+    {
+      "query": {
+        "id": "hybrid_q05",
+        "query": "miedo y fe",
+        "mode": "hybrid",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 10,
+        "expect_vector_branch": true,
+        "expected_terms": [
+          "miedo",
+          "temor",
+          "fe",
+          "emuná"
+        ],
+        "notes": "Valida búsqueda conceptual mixta."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 701,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "miedo y fe",
+          "mode": "hybrid",
+          "top_k": 10,
+          "language": "es"
+        },
+        "response": {
+          "query": "miedo y fe",
+          "collection": "breslov_primary",
+          "mode": "hybrid",
+          "language": "es",
+          "total": 10,
+          "results": [
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "cf946415-80c9-4896-9602-287ef8d67575",
+              "chunk_index": 608,
+              "language": "es",
+              "page_start": 367,
+              "page_end": 368,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2253,
+              "fts_rank": null,
+              "vector_score": 0.5008,
+              "hybrid_score": 0.2253,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "es; por ejemplo, porque tiene miedo de un animal o de la autoridad o de alguna otra cosa que cree que puede hacerle daño y, como resultado, recuerda a Dios y llega a temerlo. Mediante esta segunda clase de temor se hace descender abundancia al mundo.\n\nSin embargo, es necesario crear un recipiente pa",
+              "highlighted_excerpt": "es; por ejemplo, porque tiene <mark>miedo de u</mark>n animal o de la autoridad o de alguna otra cosa que cree que puede hacerle daño y, como resultado, recuerda a Dios y llega a temerlo. Mediante esta s...",
+              "content_length": 1626
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "e90bfe94-f892-4b4a-9610-beb571658efa",
+              "chunk_index": 125,
+              "language": "es",
+              "page_start": 87,
+              "page_end": 88,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2226,
+              "fts_rank": null,
+              "vector_score": 0.4947,
+              "hybrid_score": 0.2226,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "nos piden corroborar esa fe. “¿Tengo fe en mi esposa, en mi vecino, en mi hijo? ¿Son ellos merecedores de mi confi anza? ¿Es que debo tener fe?” Bueno, ¿Y qué otra cosa nos queda? La fe es un atributo sin el cual no podemos sobrevivir en este mundo.\n\nPero, ¿qué es la fe? ¿qué es esta confi anza que ",
+              "highlighted_excerpt": "nos piden corroborar esa fe. “¿Tengo fe en mi esposa, en mi vecino, en mi hijo? ¿Son ellos merecedores de mi confi anza? ¿Es que debo tener fe?” Bueno, ¿Y qué otra cosa nos queda? La fe es un atributo sin el cual no podemos sobrevivir en este mundo.\n\nPero, ¿qué es la fe? ¿qué es esta confi anza que ",
+              "content_length": 1536
+            },
+            {
+              "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+              "document_title": "El Alma del Rebe Najmán",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "6ed3fd32-6d59-4ace-83a1-58951f53f1f5",
+              "chunk_index": 88,
+              "language": "es",
+              "page_start": 38,
+              "page_end": 38,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.221,
+              "fts_rank": null,
+              "vector_score": 0.491,
+              "hybrid_score": 0.221,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "esto es lo que le da vida a la persona. Una persona sin fe es considerada como sin vida - ni aquí ni, por supuesto, en la corte celestial; está perdida. ¿Cómo hará la persona para adquirir esta fe?\n\n## _**El temor al castigo es la base de la emuná**_\n\nDice _Rabeinu zal_ que el fundamento de la fe y ",
+              "highlighted_excerpt": "esto es lo que le da vida a la persona. Una persona sin fe es considerada como sin vida - ni aquí ni, por supuesto, en la corte celestial; está perdida. ¿Cómo hará la persona para adquirir esta fe?\n\n## _**El temor al castigo es la base de la emuná**_\n\nDice _Rabeinu zal_ que el fundamento de la fe y ",
+              "content_length": 1661
+            },
+            {
+              "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+              "document_title": "El Alma del Rebe Najmán",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "e330c743-4f39-429f-8cd7-1e8d423e09b7",
+              "chunk_index": 99,
+              "language": "es",
+              "page_start": 41,
+              "page_end": 41,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2156,
+              "fts_rank": null,
+              "vector_score": 0.4791,
+              "hybrid_score": 0.2156,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "de perder. ¿Por qué arriesgarse con algo que es una pérdida definitiva? La persona puede definitivamente perder su mente y de seguro perder su _Olam HaBa_ , su Gan Edén, por profundizar en ello. Como hemos dicho, es un pasaje de ida hacia lo opuesto.\n\n_Rabeinu zal_ dijo que debemos notar cuán afortu",
+              "highlighted_excerpt": "de perder. ¿Por qué arriesgarse con algo que es una pérdida definitiva? La persona puede definitivamente perder su mente y de seguro perder su _Olam HaBa_ , su Gan Edén, por profundizar en ello. Como hemos dicho, es un pasaje de ida hacia lo opuesto.\n\n_Rabeinu zal_ dijo que debemos notar cuán afortu",
+              "content_length": 1148
+            },
+            {
+              "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+              "document_title": "El Alma del Rebe Najmán",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "79b39b5e-024e-42ca-a8f3-400ba1ed7f7a",
+              "chunk_index": 316,
+              "language": "es",
+              "page_start": 122,
+              "page_end": 122,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2155,
+              "fts_rank": null,
+              "vector_score": 0.4788,
+              "hybrid_score": 0.2155,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "do cuestionamiento.\n\nExisten pecados que llevan a la persona hacia el escepticismo. Esto también puede suceder si la persona no fue concebida en santidad, en especial si ella misma es culpable de pecados similares. Todas estas cosas deterioran la fe.\n\nEs necesario por lo tanto, sentirse avergonzado ",
+              "highlighted_excerpt": "do cuestionamiento.\n\nExisten pecados que llevan a la persona hacia el escepticismo. Esto también puede suceder si la persona no fue concebida en santidad, en especial si ella misma es culpable de pecados similares. Todas estas cosas deterioran la fe.\n\nEs necesario por lo tanto, sentirse avergonzado ",
+              "content_length": 1752
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "dc513ee7-2dd1-432c-a3c3-2507a0898700",
+              "chunk_index": 494,
+              "language": "es",
+              "page_start": 322,
+              "page_end": 323,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2151,
+              "fts_rank": null,
+              "vector_score": 0.4781,
+              "hybrid_score": 0.2151,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "manera que la nariz alude al temor del Cielo. Como hemos visto, Reb Itzjak Breiter interpreta esto como: Santifi ca tu nariz tomando el respiro de la paciencia, sin importar lo que suceda, mostrando amor a la persona con la que estabas por enojarte.\n\nNuevamente, estas interpretaciones son análogas: ",
+              "highlighted_excerpt": "manera que la nariz alude al temor del Cielo. Como hemos visto, Reb Itzjak Breiter interpreta esto como: Santifi ca tu nariz tomando el respiro de la paciencia, sin importar lo que suceda, mostrando amor a la persona con la que estabas por enojarte.\n\nNuevamente, estas interpretaciones son análogas: ",
+              "content_length": 1642
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "4f15ff14-4c3c-4ca4-bd3f-ccdb5361f862",
+              "chunk_index": 607,
+              "language": "es",
+              "page_start": 366,
+              "page_end": 367,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2127,
+              "fts_rank": null,
+              "vector_score": 0.4726,
+              "hybrid_score": 0.2127,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "sienta inspirada por ellas- sin embargo, ella misma se ve inspirada debido a que las palabras le son devueltas en el aspecto de “impactar” - como cuando alguien arroja algo contra una pared, lo cual rebota y vuelve hacia quien lo arrojó.\n\n## **185**\n\n1. Lo esencial de la plenitud (shleimut) es el te",
+              "highlighted_excerpt": "...leta el Santo Nombre de Dios. También hay un temor inferior a ése. Esto es cuando la persona siente <mark>miedo debi</mark>do a temores inferiores; por ejemplo, porque tiene miedo de un animal o de la autoridad o de alguna otra cosa que cree que puede hacerle daño y, como ...",
+              "content_length": 899
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "13576188-f11e-48a1-b489-5b7ba189edea",
+              "chunk_index": 460,
+              "language": "es",
+              "page_start": 270,
+              "page_end": 271,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2106,
+              "fts_rank": null,
+              "vector_score": 0.468,
+              "hybrid_score": 0.2106,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "caridad para expiar por su alma, como se afirma en conexión con los shekalim, “para expiar por sus almas” (Éxodo 30:15), que está sugerido por el versículo, “En Cuya mano está el alma de todo ser vivo y el espíritu de todos los humanos” (Job 12:10).\n\n8. El temor se revela cuando las mujeres estérile",
+              "highlighted_excerpt": "caridad para expiar por su alma, como se afirma en conexión con los shekalim, “para expiar por sus almas” (Éxodo 30:15), que está sugerido por el versículo, “En Cuya mano está el alma de todo ser vivo y el espíritu de todos los humanos” (Job 12:10).\n\n8. El temor se revela cuando las mujeres estérile",
+              "content_length": 1787
+            },
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "542d2263-027f-45a6-af95-681350a3f650",
+              "chunk_index": 1150,
+              "language": "es",
+              "page_start": 507,
+              "page_end": 507,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2104,
+              "fts_rank": null,
+              "vector_score": 0.4676,
+              "hybrid_score": 0.2104,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "tero/el temor del alma por Dios.\n\n**315. as mentioned above.** Ver la sección 1; y ver la nota 30, que esto hace referencia al Mundo que Viene, cuando terminará definitivamente la batalla entre Iaacov/el sustento espiritual y Esaú/el sustento físico.\n\nAsí, en el contexto de nuestra lección, el relat",
+              "highlighted_excerpt": "tero/el temor del alma por Dios.\n\n**315. as mentioned above.** Ver la sección 1; y ver la nota 30, que esto hace referencia al Mundo que Viene, cuando terminará definitivamente la batalla entre Iaacov/el sustento espiritual y Esaú/el sustento físico.\n\nAsí, en el contexto de nuestra lección, el relat",
+              "content_length": 1793
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "a6323526-2c04-4862-9963-acf52269b3e6",
+              "chunk_index": 90,
+              "language": "es",
+              "page_start": 65,
+              "page_end": 66,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2097,
+              "fts_rank": null,
+              "vector_score": 0.466,
+              "hybrid_score": 0.2097,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "naría desarrollándose en una enfermedad o en un sufrimiento como ése, Dios no lo permita. Todo ello ocurre debido a que el veredicto emitido sobre la persona desde arriba se ha “investido” en esa cosa en particular, para ejecutar el juicio apropiado.\n\nTodo esto sucede si la persona no se evalúa ni s",
+              "highlighted_excerpt": "... juzga a sí misma, entonces se anula el juicio emitido desde arriba y ya no necesita temer ni tener <mark>miedo de n</mark>ada - dado que su juicio no está “investido” en ninguna cosa. Pues, al juzgarse a sí misma, ya ha anulado el juicio, y el temor no se “inviste” en nin...",
+              "content_length": 1509
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 2,
+          "error": null,
+          "elapsed_ms": 35,
+          "top_titles": [
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+            "KITZUR"
+          ]
+        },
+        "vector": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 556,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "top": [
+            {
+              "chunk_id": "cf946415-80c9-4896-9602-287ef8d67575",
+              "distance": 0.5008,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "e90bfe94-f892-4b4a-9610-beb571658efa",
+              "distance": 0.4947,
+              "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "6ed3fd32-6d59-4ace-83a1-58951f53f1f5",
+              "distance": 0.491,
+              "title": "El Alma del Rebe Najmán",
+              "collection_code": "breslov"
+            }
+          ]
+        }
+      },
+      "scoring": {
+        "score": 20,
+        "status": "PASS fuerte",
+        "http_200": true,
+        "result_count": 10,
+        "term_hits": {
+          "miedo": true,
+          "temor": true,
+          "fe": true,
+          "emuná": true
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "yes",
+        "response_vector_hits": 10,
+        "direct_vector_hits": 10,
+        "hybrid_vector_merged_hits": 10,
+        "fts_hits": 2,
+        "critical_warnings": [],
+        "quality_warnings": []
+      }
+    },
+    {
+      "query": {
+        "id": "hybrid_q06",
+        "query": "tristeza y alegría",
+        "mode": "hybrid",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 10,
+        "expect_vector_branch": true,
+        "expected_terms": [
+          "tristeza",
+          "alegría"
+        ],
+        "notes": "Query investigativa típica."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 631,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "tristeza y alegría",
+          "mode": "hybrid",
+          "top_k": 10,
+          "language": "es"
+        },
+        "response": {
+          "query": "tristeza y alegría",
+          "collection": "breslov_primary",
+          "mode": "hybrid",
+          "language": "es",
+          "total": 10,
+          "results": [
+            {
+              "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+              "document_title": "El Alma del Rebe Najmán",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "17c3c123-8bbc-456b-9aa6-a6fd142a4890",
+              "chunk_index": 403,
+              "language": "es",
+              "page_start": 154,
+              "page_end": 154,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2343,
+              "fts_rank": null,
+              "vector_score": 0.5206,
+              "hybrid_score": 0.2343,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "ido a la gran tristeza y a la profunda depresión que sienten al estar muertos.\n\nDebes estar siempre alegre, ¡seas quien fueres! Aun si te sientes lejos de HaShem, mantente alegre y agradéceLe a Él “por no hacerme pagano” ( _Bendición de la mañana_ ).\n\nRespecto a aquellas acciones cometidas en contra",
+              "highlighted_excerpt": "ido a la gran <mark>tristeza y a la pr</mark>ofunda depresión que sienten al estar muertos.\n\nDebes estar siempre alegre, ¡seas quien fueres! Aun si te sientes lejos de HaShem, mantente alegre y a...",
+              "content_length": 1178
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "c9060283-3307-490e-88b2-788633b3689b",
+              "chunk_index": 67,
+              "language": "es",
+              "page_start": 49,
+              "page_end": 50,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2341,
+              "fts_rank": null,
+              "vector_score": 0.5202,
+              "hybrid_score": 0.2341,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "nsa usted. ¿O\n\n## Page 50\n\n## _28 / CRUZANDO EL PUENTE ANGOSTO_\n\nno? De hecho, el Rebe Najmán no lo considera así: “La verdadera alegría es la cosa más difícil.” “Debes _forzarte_ a ti mismo a estar feliz todo el tiempo” ( _Consejo, Alegría 35_ ) _._\n\nMantenga un estado de ánimo alegre en todo momen",
+              "highlighted_excerpt": "nsa usted. ¿O\n\n## Page 50\n\n## _28 / CRUZANDO EL PUENTE ANGOSTO_\n\nno? De hecho, el Rebe Najmán no lo considera así: “La verdadera alegría es la cosa más difícil.” “Debes _forzarte_ a ti mismo a estar feliz todo el tiempo” ( _Consejo, Alegría 35_ ) _._\n\nMantenga un estado de ánimo alegre en todo momen",
+              "content_length": 1426
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "4592530b-5478-4abd-a77e-cb9f7e9676c7",
+              "chunk_index": 70,
+              "language": "es",
+              "page_start": 51,
+              "page_end": 51,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2269,
+              "fts_rank": null,
+              "vector_score": 0.5043,
+              "hybrid_score": 0.2269,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "s, alégrese y agradézcale por “no hacerlo un hereje.” Simplemente alégrese de que puede sentirse orgulloso y feliz de su herencia, que ni siquiera es obra suya, sino un regalo de Dios (Este tema se explica con mayor detalle en el capítulo siguiente).\n\n**Fingiéndolo.** Y aunque no se sienta alegre, a",
+              "highlighted_excerpt": "s, alégrese y agradézcale por “no hacerlo un hereje.” Simplemente alégrese de que puede sentirse orgulloso y feliz de su herencia, que ni siquiera es obra suya, sino un regalo de Dios (Este tema se explica con mayor detalle en el capítulo siguiente).\n\n**Fingiéndolo.** Y aunque no se sienta alegre, a",
+              "content_length": 1336
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "e4736e26-4964-4d18-b825-af1f285f40fc",
+              "chunk_index": 64,
+              "language": "es",
+              "page_start": 48,
+              "page_end": 48,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2229,
+              "fts_rank": null,
+              "vector_score": 0.4952,
+              "hybrid_score": 0.2229,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "almente hay algo por lo cual estar alegres? ¿No están nuestras vidas repletas de motivos de preocupación? ¿Cómo podremos pagar ese crédito? ¡¿Qué dijiste que le pasó al automóvil?! ¡¿A quién dijiste que invitaste a cenar?! Y la lista es interminable.\n\nEnseña el Rebe Najmán: “La depresión es la morde",
+              "highlighted_excerpt": "... gente piensa que las difi cultades son algo inesperado en la vida. Se sorprenden cuando aparece la <mark>tristeza. Pero aun</mark>que alguien llegase a vivir mil años, aún tendría una larga lista de problemas esperándolo. Cuando un problema se va, de seguro que otro lo sigue por ...",
+              "content_length": 1309
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "f1d20e46-b028-49bb-ab57-89c9c837c2a2",
+              "chunk_index": 74,
+              "language": "es",
+              "page_start": 53,
+              "page_end": 54,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2228,
+              "fts_rank": null,
+              "vector_score": 0.4951,
+              "hybrid_score": 0.2228,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "spondí: “¡Al menos quiero estar alegre!” Es decir, que aunque no sienta verdadera alegría, al menos _quiero_ sentirla. ( _Sabiduría y Enseñanzas del Rabí Najmán_ #155).\n\n**==> picture [23 x 8] intentionally omitted <==**\n\n## **SUPERANDO LA TRISTEZA**\n\nEnseña el Rebe Najmán: La gente dice que existen",
+              "highlighted_excerpt": "...nzas del Rabí Najmán_ #155).\n\n**==&gt; picture [23 x 8] intentionally omitted &lt;==**\n\n## **SUPERANDO LA <mark>TRISTEZA**\n\nEnseña</mark> el Rebe Najmán: La gente dice que existen dos mundos. Este mundo y el Mundo que Viene. Todos creemos que hay un Mundo que Viene. _Puede_ que este mun...",
+              "content_length": 1647
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "e6accd30-ce73-49e0-a97b-d414a6d720bf",
+              "chunk_index": 63,
+              "language": "es",
+              "page_start": 47,
+              "page_end": 48,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2196,
+              "fts_rank": null,
+              "vector_score": 0.4879,
+              "hybrid_score": 0.2196,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "r que hay motivo para estarlo! ( _Rabí Eliahu Jaim Rosen_ ) _._\n\n* * *\n\n## **LA IMPORTANCIA DE LA ALEGRÍA**\n\nUno de los motivos debido al cual nos hallamos distantes de Dios es la falta de concentración en nuestros objetivos. Con _Yishuv_\n\n## Page 48\n\n## _26 / CRUZANDO EL PUENTE ANGOSTO_\n\n_hadaat_ (",
+              "highlighted_excerpt": "r que hay motivo para estarlo! ( _Rabí Eliahu Jaim Rosen_ ) _._\n\n* * *\n\n## **LA IMPORTANCIA DE LA ALEGRÍA**\n\nUno de los motivos debido al cual nos hallamos distantes de Dios es la falta de concentración en nuestros objetivos. Con _Yishuv_\n\n## Page 48\n\n## _26 / CRUZANDO EL PUENTE ANGOSTO_\n\n_hadaat_ (",
+              "content_length": 1259
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "d782c8ae-dca2-4917-9412-8ea326dae80c",
+              "chunk_index": 71,
+              "language": "es",
+              "page_start": 51,
+              "page_end": 52,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2193,
+              "fts_rank": null,
+              "vector_score": 0.4874,
+              "hybrid_score": 0.2193,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "e la depresión y el decaimiento. [Desafortunadamente] no nos es muy\n\n## Page 52\n\n## _30 / CRUZANDO EL PUENTE ANGOSTO_\n\ndifícil actuar de manera tonta. ¿Quién sabe? Es posible que sea una mejora con respecto a muchas de las cosas “serias” que hacemos.\n\n**Canciones, música y danza.** La música clarifi",
+              "highlighted_excerpt": "e la depresión y el decaimiento. [Desafortunadamente] no nos es muy\n\n## Page 52\n\n## _30 / CRUZANDO EL PUENTE ANGOSTO_\n\ndifícil actuar de manera tonta. ¿Quién sabe? Es posible que sea una mejora con respecto a muchas de las cosas “serias” que hacemos.\n\n**Canciones, música y danza.** La música clarifi",
+              "content_length": 1721
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "832156de-ff0e-48cd-a601-5ea8ecfa7dbd",
+              "chunk_index": 72,
+              "language": "es",
+              "page_start": 52,
+              "page_end": 53,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2191,
+              "fts_rank": null,
+              "vector_score": 0.4868,
+              "hybrid_score": 0.2191,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "zel_ p.62).\n\n* * *\n\n## **LA ALEGRÍA EN SHABAT Y EN LAS FESTIVIDADES**\n\nCierta vez dijo el Rebe Najmán: “Hasta el más común de los Judíos siente alegría y felicidad al sentarse a la mesa del Shabat” ( _Sabiduría y Enseñanzas del Rabí Najmán_ #155) _._\n\nCierta vez, Reb Noson asistió al funeral de algu",
+              "highlighted_excerpt": "zel_ p.62).\n\n* * *\n\n## **LA ALEGRÍA EN SHABAT Y EN LAS FESTIVIDADES**\n\nCierta vez dijo el Rebe Najmán: “Hasta el más común de los Judíos siente alegría y felicidad al sentarse a la mesa del Shabat” ( _Sabiduría y Enseñanzas del Rabí Najmán_ #155) _._\n\nCierta vez, Reb Noson asistió al funeral de algu",
+              "content_length": 904
+            },
+            {
+              "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+              "document_title": "El Alma del Rebe Najmán",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "b6001648-e7ed-4fbe-bf2e-205e65d73f24",
+              "chunk_index": 402,
+              "language": "es",
+              "page_start": 153,
+              "page_end": 154,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2135,
+              "fts_rank": null,
+              "vector_score": 0.4744,
+              "hybrid_score": 0.2135,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "m por no satisfacer nuestros deseos.\n\nPero la persona con el corazón quebrantado es como un niño reclamando delante de su padre. Es como un niño llorando y gimiendo pues su padre se encuentra lejos.\n\n**==> picture [67 x 9] intentionally omitted <==**\n\n_Rabeinu zal_ dice que _atzvut_ y un corazón que",
+              "highlighted_excerpt": "... les pregunta sus nombres y no los pueden recordar. Nos dijo que olvidan su nombre debido a la gran <mark>tristeza y a la pr</mark>ofunda depresión que sienten al estar muertos.\n\nDebes estar siempre alegre, ¡seas quien fueres! Aun si te sientes lejos de HaShem, mantente alegre y a...",
+              "content_length": 1644
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "4bf69fe2-666d-47c0-9177-8721e3be8223",
+              "chunk_index": 76,
+              "language": "es",
+              "page_start": 54,
+              "page_end": 55,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2131,
+              "fts_rank": null,
+              "vector_score": 0.4736,
+              "hybrid_score": 0.2131,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "nos sobre ella y aprovecharla. Al fi nal, las cosas saldrán bien. Enseñó el Rebe Najmán: La alegría abre el corazón ( _El Libro de los Atributos, Alegría_ A:2).\n\n**==> picture [23 x 8] intentionally omitted <==**\n\n## **LAS RECOMPENSAS DE LA ALEGRÍA**\n\nUna persona que está siempre alegre, triunfa ( _",
+              "highlighted_excerpt": "nos sobre ella y aprovecharla. Al fi nal, las cosas saldrán bien. Enseñó el Rebe Najmán: La alegría abre el corazón ( _El Libro de los Atributos, Alegría_ A:2).\n\n**==&gt; picture [23 x 8] intentionally omitted &lt;==**\n\n## **LAS RECOMPENSAS DE LA ALEGRÍA**\n\nUna persona que está siempre alegre, triunfa ( _",
+              "content_length": 1639
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 49,
+          "top_titles": [
+            "Likutey Halajot LM II 8",
+            "La Potencia de la Plegaria",
+            "Likutey Halajot LM II 8"
+          ]
+        },
+        "vector": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 674,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "top": [
+            {
+              "chunk_id": "a7557ef9-0692-44f6-9ad3-451f8fe830ba",
+              "distance": 0.5912,
+              "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "42065bff-7723-4f40-b709-69d09c304705",
+              "distance": 0.5379,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "8e62ed82-ca3f-4c2c-941d-cb37a151a6ec",
+              "distance": 0.5367,
+              "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "collection_code": "breslov"
+            }
+          ]
+        }
+      },
+      "scoring": {
+        "score": 20,
+        "status": "PASS fuerte",
+        "http_200": true,
+        "result_count": 10,
+        "term_hits": {
+          "tristeza": true,
+          "alegría": true
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "yes",
+        "response_vector_hits": 10,
+        "direct_vector_hits": 10,
+        "hybrid_vector_merged_hits": 10,
+        "fts_hits": 10,
+        "critical_warnings": [],
+        "quality_warnings": []
+      }
+    },
+    {
+      "query": {
+        "id": "hybrid_q07",
+        "query": "Tierra de Israel fe plegaria milagros",
+        "mode": "hybrid",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 10,
+        "expect_vector_branch": true,
+        "expected_terms": [
+          "Tierra de Israel",
+          "fe",
+          "plegaria",
+          "milagros"
+        ],
+        "notes": "Debe recuperar conexiones conceptuales conocidas."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 730,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "Tierra de Israel fe plegaria milagros",
+          "mode": "hybrid",
+          "top_k": 10,
+          "language": "es"
+        },
+        "response": {
+          "query": "Tierra de Israel fe plegaria milagros",
+          "collection": "breslov_primary",
+          "mode": "hybrid",
+          "language": "es",
+          "total": 10,
+          "results": [
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "6f844f1c-73e7-49b4-b00a-8d4d9a5fa18d",
+              "chunk_index": 418,
+              "language": "es",
+              "page_start": 246,
+              "page_end": 247,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2711,
+              "fts_rank": null,
+              "vector_score": 0.6024,
+              "hybrid_score": 0.2711,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "poyo para tus pies” (Salmos 110:1). Pues la Tierra de Israel es llamada “derecha”, como dijeron nuestros Sabios, de bendita memoria (también esto está citado en el comentario de Rashi sobre el versículo, “Su padre lo llamó Benjamín” [Génesis 35:18]).\n\n2. Incluso ahora, durante el presente exilio, cu",
+              "highlighted_excerpt": "poyo para tus pies” (Salmos 110:1). Pues la <mark>Tierra de Israel es llamada “derecha”</mark>, como dijeron nuestros Sabios, de bendita memoria (también esto está citado en el comentario de Rashi sobre el versículo, “Su padre lo llamó Benjamín...",
+              "content_length": 1733
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "e13ad805-0efa-47d7-9d88-a9d3b7e8a25b",
+              "chunk_index": 364,
+              "language": "es",
+              "page_start": 216,
+              "page_end": 217,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2556,
+              "fts_rank": null,
+              "vector_score": 0.5681,
+              "hybrid_score": 0.2556,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "diarias constantes fueron establecidas; su rectificación se produce mediante la Tierra de Israel”. Y con ello se refina la mente de la persona -sus pensamientos- debido a que “El aire de la Tierra de Israel hace sabia a la persona” (Bava Batra 158b).\n\nÉsa misma idea [de que la caridad dada para la T",
+              "highlighted_excerpt": "diarias constantes fueron establecidas; su rectificación se produce mediante la <mark>Tierra de Israel”. Y con ello se refi</mark>na la mente de la persona -sus pensamientos- debido a que “El aire de la Tierra de Israel hace sabia a la persona” (Bava Batra 158b).\n\nÉsa misma idea ...",
+              "content_length": 1591
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "22ab01c6-5d8e-450f-a472-69f492b671c2",
+              "chunk_index": 628,
+              "language": "es",
+              "page_start": 406,
+              "page_end": 407,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2549,
+              "fts_rank": null,
+              "vector_score": 0.5665,
+              "hybrid_score": 0.2549,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "o, pídele a Dios que te dé el anhelo y el deseo de estar allí. También pídele que implante el deseo de Eretz Israel en el corazón de todos ( _Likutey Moharan_ I, 155).\n\n**==> picture [23 x 8] intentionally omitted <==**\n\n## **TIERRA DE LECHE Y MIEL**\n\n“Pues Dios os está llevando a una buena tierra, ",
+              "highlighted_excerpt": "...zón de todos ( _Likutey Moharan_ I, 155).\n\n**==&gt; picture [23 x 8] intentionally omitted &lt;==**\n\n## **<mark>TIERRA DE LECHE Y MIEL**\n\n“Pues Dios </mark>os está llevando a una buena tierra, una tierra de ríos fl uyentes, de fuentes y de arroyos subterráneos, surgentes en valles y montañas. Es una tierr...",
+              "content_length": 982
+            },
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "6e9f0c65-75b4-4c19-9739-46be31306da1",
+              "chunk_index": 1038,
+              "language": "es",
+              "page_start": 465,
+              "page_end": 465,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2516,
+              "fts_rank": null,
+              "vector_score": 0.5591,
+              "hybrid_score": 0.2516,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "el comienzo”, [para hacer saber] que Dios lo creó y evitar que las naciones del mundo digan, “Ustedes son ladrones…”. Se sigue que la Tierra de Israel es en esencia el producto de “Sus poderosas obras” - a través de saber que Dios creó el mundo.[203]\n\n**200. providencia Divina…de los milagros, de lo",
+              "highlighted_excerpt": "...ue Dios lo creó y evitar que las naciones del mundo digan, “Ustedes son ladrones…”. Se sigue que la <mark>Tierra de Israel es en esencia el pro</mark>ducto de “Sus poderosas obras” - a través de saber que Dios creó el mundo.[203]\n\n**200. providencia Divina…de los milagros, de lo sobrenatural.** El T...",
+              "content_length": 1422
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "cf4a00c7-ae72-4d57-a05e-7ccdc25aec5b",
+              "chunk_index": 632,
+              "language": "es",
+              "page_start": 409,
+              "page_end": 409,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2512,
+              "fts_rank": null,
+              "vector_score": 0.5582,
+              "hybrid_score": 0.2512,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "an a Eretz Israel. Como enseña el Talmud: En el futuro (cuando venga Mashíaj), la Tierra de Israel producirá hogazas de pan listas para ser comidas y vestidos de seda listos para ser usados. Hasta los árboles estériles darán frutos ( _Ketubot_ 111b).\n\nEnseña por lo tanto el Rebe: La santidad de la T",
+              "highlighted_excerpt": "an a Eretz Israel. Como enseña el Talmud: En el futuro (cuando venga Mashíaj), la <mark>Tierra de Israel producirá hogazas de</mark> pan listas para ser comidas y vestidos de seda listos para ser usados. Hasta los árboles estériles darán frutos ( _Ketubot_ 111b).\n\nEnseña por lo tan...",
+              "content_length": 1365
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "85b256ff-a9a9-4ea1-a231-20f0f72b260e",
+              "chunk_index": 362,
+              "language": "es",
+              "page_start": 215,
+              "page_end": 216,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2496,
+              "fts_rank": null,
+              "vector_score": 0.5547,
+              "hybrid_score": 0.2496,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "también ser vocalizado, ADAMaH (tierra). Así, el versículo puede comprenderse como significando que] mediante el aplaudir, el habla o las palabras de las plegarias son dichas sobre un suelo santo (cf. Rashi sobre Éxodo 7:1; Oraj Jaim 102 en Taz #3).\n\nAdicionalmente, al aplaudir durante la plegaria s",
+              "highlighted_excerpt": "también ser vocalizado, ADAMaH (<mark>tierra). Así, el versículo puede comp</mark>renderse como significando que] mediante el aplaudir, el habla o las palabras de las plegarias son dichas sobre un suelo santo (cf. Rashi sobre Éxodo ...",
+              "content_length": 1566
+            },
+            {
+              "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+              "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "author": "Jaim Kramer",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "873c1096-0e89-4176-9a44-2945bbd3ad1c",
+              "chunk_index": 641,
+              "language": "es",
+              "page_start": 415,
+              "page_end": 415,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2489,
+              "fts_rank": null,
+              "vector_score": 0.5532,
+              "hybrid_score": 0.2489,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "ebemos hacer, es buscar los “puntos buenos.” De la misma manera como juzgamos a la gente, así debemos buscar los puntos buenos de la Tierra Santa. Como escribió el Rey David: “Contempla el bien de Jerusalem, todos los días de tu vida” (Salmos 128:5).\n\nEsperemos y roguemos merecer ver el bien de Isra",
+              "highlighted_excerpt": "...os buenos.” De la misma manera como juzgamos a la gente, así debemos buscar los puntos buenos de la <mark>Tierra Santa. Como escribió el Rey Da</mark>vid: “Contempla el bien de Jerusalem, todos los días de tu vida” (Salmos 128:5).\n\nEsperemos y roguemos merecer ver el bien de Israel, tanto de la Naci...",
+              "content_length": 1640
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "cbcb4553-62c8-411a-aa8c-cd0dd691cb09",
+              "chunk_index": 377,
+              "language": "es",
+              "page_start": 224,
+              "page_end": 225,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2485,
+              "fts_rank": null,
+              "vector_score": 0.5523,
+              "hybrid_score": 0.2485,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "lo. Esas tres cosas -la suká, la plegaria con energía y la Tierra de Israelconforman un solo concepto y son interdependientes. Al orar\n\n## Page 225\n\nLección 49                                                                                     4 Adar\n\ncon todas sus fuerzas la persona merece alcanzar",
+              "highlighted_excerpt": "lo. Esas tres cosas -la suká, la plegaria con energía y la <mark>Tierra de Israelconforman un solo con</mark>cepto y son interdependientes. Al orar\n\n## Page 225\n\nLección 49                                                                                     4 ...",
+              "content_length": 1659
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "1341e235-b17d-4d8a-9b0d-2f6b08ef35aa",
+              "chunk_index": 371,
+              "language": "es",
+              "page_start": 221,
+              "page_end": 221,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2476,
+              "fts_rank": null,
+              "vector_score": 0.5502,
+              "hybrid_score": 0.2476,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "e ser un anuncio de pobreza.\n\n## 2 Adar\n\n5. El mundo entero se nutre del influjo de abundancia que emana de la Tierra de Israel, como es sabido (ver Zohar II, 156b); y la Tierra de Israel recibe ese influjo del atributo Divino de la\n\n221\n\n## Page 222\n\nLección 47                                      ",
+              "highlighted_excerpt": "...uncio de pobreza.\n\n## 2 Adar\n\n5. El mundo entero se nutre del influjo de abundancia que emana de la <mark>Tierra de Israel, como es sabido (ver</mark> Zohar II, 156b); y la Tierra de Israel recibe ese influjo del atributo Divino de la\n\n221\n\n## Page 222\n\nLección 47                                    ...",
+              "content_length": 1361
+            },
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "487ba0e9-6a44-421f-9f0f-6a7275ad0da8",
+              "chunk_index": 1059,
+              "language": "es",
+              "page_start": 473,
+              "page_end": 473,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2461,
+              "fts_rank": null,
+              "vector_score": 0.547,
+              "hybrid_score": 0.2461,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "pto de “El aliento de nuestra nariz es _meshíaj_ (el ungido) de Dios” (Lamentaciones 4:20).[222] Y esto es:\n\n**deviniendo** _**lemas oved**_ **-** Esto alude al Mashíaj, como está escrito “Bendito sea Dios, Quien no te ha negado un redentor… Ellos lo\n\nprofecía, como en Números 11:26, “Y el espíritu ",
+              "highlighted_excerpt": "...a se difunde en el mundo cuando los prosélitos se acercan y se revela la gloria de Dios.\n\n**217. la <mark>tierra…la Tierra de Israel.** El Talm</mark>ud enseña que Dios creó primero la Tierra de Israel y sólo después el resto del mundo, como está dicho (Proverbios 8:26): “Aún no había hecho la tierr...",
+              "content_length": 1578
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 40,
+          "top_titles": [
+            "KITZUR",
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+            "KITZUR"
+          ]
+        },
+        "vector": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 535,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "top": [
+            {
+              "chunk_id": "1e94eeba-9c9a-4981-985c-4687fac2673d",
+              "distance": 0.6175,
+              "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "6f844f1c-73e7-49b4-b00a-8d4d9a5fa18d",
+              "distance": 0.6024,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "25ac8a26-f74d-4eac-9da9-1f64db2ec369",
+              "distance": 0.5949,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            }
+          ]
+        }
+      },
+      "scoring": {
+        "score": 20,
+        "status": "PASS fuerte",
+        "http_200": true,
+        "result_count": 10,
+        "term_hits": {
+          "Tierra de Israel": true,
+          "fe": true,
+          "plegaria": true,
+          "milagros": true
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "yes",
+        "response_vector_hits": 10,
+        "direct_vector_hits": 10,
+        "hybrid_vector_merged_hits": 10,
+        "fts_hits": 10,
+        "critical_warnings": [],
+        "quality_warnings": []
+      }
+    },
+    {
+      "query": {
+        "id": "hybrid_q08",
+        "query": "suspiro de santidad",
+        "mode": "hybrid",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 10,
+        "expect_vector_branch": true,
+        "expected_terms": [
+          "suspiro",
+          "santidad"
+        ],
+        "notes": "Valida frase conceptual específica."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 647,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "suspiro de santidad",
+          "mode": "hybrid",
+          "top_k": 10,
+          "language": "es"
+        },
+        "response": {
+          "query": "suspiro de santidad",
+          "collection": "breslov_primary",
+          "mode": "hybrid",
+          "language": "es",
+          "total": 10,
+          "results": [
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "86b090a5-c997-48df-9438-19c2fd7fbf2d",
+              "chunk_index": 567,
+              "language": "es",
+              "page_start": 335,
+              "page_end": 336,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.7371,
+              "fts_rank": 775.0,
+              "vector_score": 0.5805,
+              "hybrid_score": 0.7371,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...suspiro retornará a su nivel.\n\n## 25 Iyar\n\n## **109 - El Suspiro de Santidad**\n\n1. El suspiro de santidad es algo muy valioso en verdad. Ello se debe a que cuando la persona suspira por el hecho de encontrarse lejos de la...",
+              "highlighted_excerpt": "...suspiro retornará a su nivel.\n\n## 25 Iyar\n\n## **109 - El <mark>Suspiro de Santidad</mark>**\n\n1. El <mark>suspiro de santidad</mark> es algo muy valioso en verdad. Ello se debe a que cuando la persona suspira por el hecho de encontrarse lejos de la...",
+              "content_length": 1564
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "c3723849-7c65-4d7b-9d4a-a779dc01a76a",
+              "chunk_index": 214,
+              "language": "es",
+              "page_start": 135,
+              "page_end": 136,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2292,
+              "fts_rank": null,
+              "vector_score": 0.5092,
+              "hybrid_score": 0.2292,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "los que debe elevar, como es sabido, ése es precisamente el momento que requiere del mayor autosacrificio de su parte. Mediante ese esfuerzo, podrá elevar las chispas de santidad.\n\n## **27 - “Un polluelo que muere en el cascarón” (II) (Bejorot 8b)**\n\n1. En la medida en que haya paz en la generación,",
+              "highlighted_excerpt": "los que debe elevar, como es sabido, ése es precisamente el momento que requiere del mayor autosacrificio de su parte. Mediante ese esfuerzo, podrá elevar las chispas de santidad.\n\n## **27 - “Un polluelo que muere en el cascarón” (II) (Bejorot 8b)**\n\n1. En la medida en que haya paz en la generación,",
+              "content_length": 1770
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "f6f0d5f2-8d31-4426-9068-d4d8e0e6e54b",
+              "chunk_index": 447,
+              "language": "es",
+              "page_start": 263,
+              "page_end": 264,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2266,
+              "fts_rank": null,
+              "vector_score": 0.5036,
+              "hybrid_score": 0.2266,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "juicio, su corazón se encenderá de entusiasmo y el fuego de ese fervor quemará las fuerzas de la impureza que ya no se le apegarán. De esa manera anulará esas fuerzas al punto en que tampoco podrán aferrarse a las almas que acercó al servicio a Dios.\n\n2. La persona que se ocupa de acercar a la gente",
+              "highlighted_excerpt": "juicio, su corazón se encenderá de entusiasmo y el fuego de ese fervor quemará las fuerzas de la impureza que ya no se le apegarán. De esa manera anulará esas fuerzas al punto en que tampoco podrán aferrarse a las almas que acercó al servicio a Dios.\n\n2. La persona que se ocupa de acercar a la gente",
+              "content_length": 1610
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "8ad5a6b7-702f-4c0d-bab0-8925da5d9a41",
+              "chunk_index": 200,
+              "language": "es",
+              "page_start": 127,
+              "page_end": 128,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2262,
+              "fts_rank": null,
+              "vector_score": 0.5026,
+              "hybrid_score": 0.2262,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "evar a todas las chispas de santidad desde las profundidades de las fuerzas\n\n127\n\n## Page 128\n\nLección 24                                                                                23 Kislev\n\nde la impureza, y mediante ello se alcanza la alegría.\n\n5. Cuando se realiza una mitzvá, ésta tiene el p",
+              "highlighted_excerpt": "evar a todas las chispas de santidad desde las profundidades de las fuerzas\n\n127\n\n## Page 128\n\nLección 24                                                                                23 Kislev\n\nde la impureza, y mediante ello se alcanza la alegría.\n\n5. Cuando se realiza una mitzvá, ésta tiene el p",
+              "content_length": 1453
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "db848738-e8d7-4433-a3bc-c992f76510ef",
+              "chunk_index": 380,
+              "language": "es",
+              "page_start": 225,
+              "page_end": 226,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2183,
+              "fts_rank": null,
+              "vector_score": 0.4851,
+              "hybrid_score": 0.2183,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "olar el fervor ilimitado de su corazón para poder servir a Dios de una manera gradual y mesurada. Pues Dios desea nuestro servicio -que Lo sirvamos con los buenos rasgos de carácter- dado que es a través de éstos como se revela Su Reinado.\n\n## 5 Adar\n\n2. Cuando la persona restringe el fervor por Dio",
+              "highlighted_excerpt": "olar el fervor ilimitado de su corazón para poder servir a Dios de una manera gradual y mesurada. Pues Dios desea nuestro servicio -que Lo sirvamos con los buenos rasgos de carácter- dado que es a través de éstos como se revela Su Reinado.\n\n## 5 Adar\n\n2. Cuando la persona restringe el fervor por Dio",
+              "content_length": 1122
+            },
+            {
+              "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+              "document_title": "Likutey Halajot LM II 8",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "0e1b836e-9517-4cea-892c-bbbdae9e9d9b",
+              "chunk_index": 1102,
+              "language": "es",
+              "page_start": 488,
+              "page_end": 488,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2119,
+              "fts_rank": null,
+              "vector_score": 0.4709,
+              "hybrid_score": 0.2119,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "l deseo sexual con la sangre caliente en el corazón. Aquí, enseña que al traer el aire para enfriar la sangre en el corazón, los pulmones saludables aseguran que el intelecto arda con pureza y así pueda ser capaz de vencer todos los deseos inmorales.\n\n**259. hevel desciende, hevel asciende…se dice d",
+              "highlighted_excerpt": "l deseo sexual con la sangre caliente en el corazón. Aquí, enseña que al traer el aire para enfriar la sangre en el corazón, los pulmones saludables aseguran que el intelecto arda con pureza y así pueda ser capaz de vencer todos los deseos inmorales.\n\n**259. hevel desciende, hevel asciende…se dice d",
+              "content_length": 1667
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "dd6b78c6-e995-4449-9220-6419f47699a4",
+              "chunk_index": 50,
+              "language": "es",
+              "page_start": 39,
+              "page_end": 40,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2113,
+              "fts_rank": null,
+              "vector_score": 0.4696,
+              "hybrid_score": 0.2113,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "ectificación total. Es capaz entonces de vencer completamente a quienes se le oponen.\n\n8. Los tzitzit encarnan el concepto del santo aliento de vida. Mediante la mitzvá de los tzitzit la persona puede completar,\n\n39\n\n## Page 40\n\n22 Tishrei\n\nLección 9\n\nsuspirando, todo aquello que le falta. También a",
+              "highlighted_excerpt": "...mente propicio para tomar el aliento de vida y completar aquello que  falta.]\n\n9. El Tzadik oye los <mark>suspiros de todos a</mark>quellos que están unidos a él, dado que de él surge la vida para cada uno de ellos. Él es “un hombre que posee aliento (rúaj)” (Números 27:18), sobre ...",
+              "content_length": 1752
+            },
+            {
+              "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+              "document_title": "Un Día en la Vida de un Jasid de Breslov",
+              "author": "Rabí Itzjak Breiter, Rabí Natán de Breslov",
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "2f32fd83-427f-4595-995e-a3a671be57a3",
+              "chunk_index": 127,
+              "language": "es",
+              "page_start": 141,
+              "page_end": 142,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2112,
+              "fts_rank": null,
+              "vector_score": 0.4693,
+              "hybrid_score": 0.2112,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": ". «Dame la alegría en Tu salvación, susténtame con un espíritu generoso». Satisfáceme con Tu bien, regocija mi alma con Tu salvación y purifica mi corazón para servirte en verdad. «Despierta, mi gloria, despierta, arpa y lira. Yo despertaré el alba».\n\nHazme digno de las diez clases de canciones sant",
+              "highlighted_excerpt": ". «Dame la alegría en Tu salvación, susténtame con un espíritu generoso». Satisfáceme con Tu bien, regocija mi alma con Tu salvación y purifica mi corazón para servirte en verdad. «Despierta, mi gloria, despierta, arpa y lira. Yo despertaré el alba».\n\nHazme digno de las diez clases de canciones sant",
+              "content_length": 1727
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "66962f0a-85bb-4225-916e-4d8d14e7a5bb",
+              "chunk_index": 397,
+              "language": "es",
+              "page_start": 233,
+              "page_end": 234,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2088,
+              "fts_rank": null,
+              "vector_score": 0.4641,
+              "hybrid_score": 0.2088,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "bras de las plegarias. Pues cuando la persona saborea esa dulzura y ora con todo su ser, ello es denominado “Todos mis huesos hablarán”. Pero es imposible que la persona saboree la dulzura en las plegarias a menos que se haya rectificado en esa área.\n\n2. La persona que ha impurificado el Pacto se en",
+              "highlighted_excerpt": "bras de las plegarias. Pues cuando la persona saborea esa dulzura y ora con todo su ser, ello es denominado “Todos mis huesos hablarán”. Pero es imposible que la persona saboree la dulzura en las plegarias a menos que se haya rectificado en esa área.\n\n2. La persona que ha impurificado el Pacto se en",
+              "content_length": 1682
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "294bfe1d-e2e1-40ec-a947-f58f5ffd34b9",
+              "chunk_index": 673,
+              "language": "es",
+              "page_start": 420,
+              "page_end": 420,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.2082,
+              "fts_rank": null,
+              "vector_score": 0.4627,
+              "hybrid_score": 0.2082,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "renciado Nombre de Dios y escapar de los celos de los ángeles -no sea que hagan caer a la persona en el pecado, Dios no lo permita- y hacer perdurar el dominio sobre ellos. Todo esto depende únicamente de la rectificación de esos tres deseos dañinos.\n\n10. Al alcanzar en el corazón un temor perfecto ",
+              "highlighted_excerpt": "renciado Nombre de Dios y escapar de los celos de los ángeles -no sea que hagan caer a la persona en el pecado, Dios no lo permita- y hacer perdurar el dominio sobre ellos. Todo esto depende únicamente de la rectificación de esos tres deseos dañinos.\n\n10. Al alcanzar en el corazón un temor perfecto ",
+              "content_length": 1189
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 8,
+          "error": null,
+          "elapsed_ms": 38,
+          "top_titles": [
+            "KITZUR",
+            "KITZUR",
+            "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+          ]
+        },
+        "vector": {
+          "hits": 10,
+          "error": null,
+          "elapsed_ms": 594,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "top": [
+            {
+              "chunk_id": "86b090a5-c997-48df-9438-19c2fd7fbf2d",
+              "distance": 0.5805,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "c3723849-7c65-4d7b-9d4a-a779dc01a76a",
+              "distance": 0.5092,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            },
+            {
+              "chunk_id": "f6f0d5f2-8d31-4426-9068-d4d8e0e6e54b",
+              "distance": 0.5036,
+              "title": "KITZUR",
+              "collection_code": "breslov"
+            }
+          ]
+        }
+      },
+      "scoring": {
+        "score": 20,
+        "status": "PASS fuerte",
+        "http_200": true,
+        "result_count": 10,
+        "term_hits": {
+          "suspiro": true,
+          "santidad": true
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "yes",
+        "response_vector_hits": 10,
+        "direct_vector_hits": 10,
+        "hybrid_vector_merged_hits": 10,
+        "fts_hits": 8,
+        "critical_warnings": [],
+        "quality_warnings": []
+      }
+    },
+    {
+      "query": {
+        "id": "fts_q09",
+        "query": "\"La plegaria es el arma principal del judío\"",
+        "mode": "phrase",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 5,
+        "expect_vector_branch": false,
+        "expected_terms": [
+          "plegaria",
+          "arma principal",
+          "judío"
+        ],
+        "notes": "Control phrase/FTS; no debe depender de Milvus."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 36,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "\"La plegaria es el arma principal del judío\"",
+          "mode": "phrase",
+          "top_k": 5,
+          "language": "es"
+        },
+        "response": {
+          "query": "\"La plegaria es el arma principal del judío\"",
+          "collection": "breslov_primary",
+          "mode": "phrase",
+          "language": "es",
+          "total": 0,
+          "results": []
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 0,
+          "error": null,
+          "elapsed_ms": 31,
+          "top_titles": []
+        },
+        "vector": {
+          "hits": 0,
+          "error": null,
+          "elapsed_ms": null,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "skipped": true
+        }
+      },
+      "scoring": {
+        "score": 13,
+        "status": "WARN",
+        "http_200": true,
+        "result_count": 0,
+        "term_hits": {
+          "plegaria": false,
+          "arma principal": false,
+          "judío": false
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "no",
+        "response_vector_hits": 0,
+        "direct_vector_hits": 0,
+        "hybrid_vector_merged_hits": 0,
+        "fts_hits": 0,
+        "critical_warnings": [],
+        "quality_warnings": [
+          "empty_results",
+          "missing_expected_terms:plegaria,arma principal,judío"
+        ]
+      }
+    },
+    {
+      "query": {
+        "id": "fts_q10",
+        "query": "El mes de Elul es el momento más propicio para el arrepentimiento",
+        "mode": "fts",
+        "language": "es",
+        "scope_code": "breslov_primary",
+        "top_k": 5,
+        "expect_vector_branch": false,
+        "expected_terms": [
+          "Elul",
+          "arrepentimiento"
+        ],
+        "notes": "Control FTS directo."
+      },
+      "http": {
+        "status_code": 200,
+        "elapsed_ms": 36,
+        "request": {
+          "collection": "breslov_primary",
+          "query": "El mes de Elul es el momento más propicio para el arrepentimiento",
+          "mode": "fts",
+          "top_k": 5,
+          "language": "es"
+        },
+        "response": {
+          "query": "El mes de Elul es el momento más propicio para el arrepentimiento",
+          "collection": "breslov_primary",
+          "mode": "fts",
+          "language": "es",
+          "total": 2,
+          "results": [
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "fb1e9e5a-56a0-4ce0-8224-cffc3e7e06df",
+              "chunk_index": 806,
+              "language": "es",
+              "page_start": 503,
+              "page_end": 504,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.0202,
+              "fts_rank": null,
+              "vector_score": null,
+              "hybrid_score": null,
+              "source_signals": [],
+              "plain_excerpt": "...“¿Qué soy yo?”]. Entonces las cosas volverán a suceder como lo desea.\n\n2. El mes de Elul es el momento más propicio para el arrepentimiento. Ello se debe a que esos son días de favor Divino, cuando Moisés ascendió para recibir el segundo juego de Tablas y cuando abrió un claro sendero por el...",
+              "highlighted_excerpt": "...“¿Qué soy yo?”]. Entonces las cosas volverán a suceder como lo desea.\n\n2. <mark>El mes de Elul es el momento más propicio para el arrepentimiento</mark>. Ello se debe a que esos son días de favor Divino, cuando Moisés ascendió para recibir el segundo juego de Tablas y cuando abrió un claro sendero por el...",
+              "content_length": 1742
+            },
+            {
+              "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+              "document_title": "KITZUR",
+              "author": null,
+              "knowledge_scope_code": "breslov_primary",
+              "chunk_id": "d8416f0d-d7ac-40e6-8f2f-4a6a2bad1e64",
+              "chunk_index": 585,
+              "language": "es",
+              "page_start": 349,
+              "page_end": 350,
+              "chapter": null,
+              "section": null,
+              "match_type": "fts",
+              "rank": 0.0139,
+              "fts_rank": null,
+              "vector_score": null,
+              "hybrid_score": null,
+              "source_signals": [],
+              "plain_excerpt": ". Sólo a través de ellos es posible concebir las virtudes del Tzadik - pues la gente no se siente tan alejada de ellos y le es más fácil comprenderlos.\n\n## 5 Sivan\n\n## **141 - “El Señor, tu Dios, circuncidará tu corazón”**\n\n## **(Deuteronomio 30:6)**\n\n1. Si uno llega realmente a ser digno de sentir ",
+              "highlighted_excerpt": ". Sólo a través de ellos es posible concebir las virtudes del Tzadik - pues la gente no se siente tan alejada de ellos y le es más fácil comprenderlos.\n\n## 5 Sivan\n\n## **141 - “El Señor, tu Dios, circuncidará tu corazón”**\n\n## **(Deuteronomio 30:6)**\n\n1. Si uno llega realmente a ser digno de sentir ",
+              "content_length": 1791
+            }
+          ]
+        }
+      },
+      "branch_probes": {
+        "fts": {
+          "hits": 2,
+          "error": null,
+          "elapsed_ms": 31,
+          "top_titles": [
+            "KITZUR",
+            "KITZUR"
+          ]
+        },
+        "vector": {
+          "hits": 0,
+          "error": null,
+          "elapsed_ms": null,
+          "milvus_collection_code": "breslov",
+          "expr": "collection_code == \"breslov\"",
+          "skipped": true
+        }
+      },
+      "scoring": {
+        "score": 20,
+        "status": "PASS fuerte",
+        "http_200": true,
+        "result_count": 2,
+        "term_hits": {
+          "Elul": true,
+          "arrepentimiento": true
+        },
+        "scope_ok": true,
+        "mode_ok": true,
+        "vector_branch_visible": "no",
+        "response_vector_hits": 0,
+        "direct_vector_hits": 0,
+        "hybrid_vector_merged_hits": 0,
+        "fts_hits": 2,
+        "critical_warnings": [],
+        "quality_warnings": []
+      }
+    }
+  ]
+}

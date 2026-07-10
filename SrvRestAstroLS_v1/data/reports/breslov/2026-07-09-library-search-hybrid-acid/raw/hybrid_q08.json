@@ -1,0 +1,335 @@
+{
+  "query": {
+    "id": "hybrid_q08",
+    "query": "suspiro de santidad",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": [
+      "suspiro",
+      "santidad"
+    ],
+    "notes": "Valida frase conceptual específica."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 647,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "suspiro de santidad",
+      "mode": "hybrid",
+      "top_k": 10,
+      "language": "es"
+    },
+    "response": {
+      "query": "suspiro de santidad",
+      "collection": "breslov_primary",
+      "mode": "hybrid",
+      "language": "es",
+      "total": 10,
+      "results": [
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "86b090a5-c997-48df-9438-19c2fd7fbf2d",
+          "chunk_index": 567,
+          "language": "es",
+          "page_start": 335,
+          "page_end": 336,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.7371,
+          "fts_rank": 775.0,
+          "vector_score": 0.5805,
+          "hybrid_score": 0.7371,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "...suspiro retornará a su nivel.\n\n## 25 Iyar\n\n## **109 - El Suspiro de Santidad**\n\n1. El suspiro de santidad es algo muy valioso en verdad. Ello se debe a que cuando la persona suspira por el hecho de encontrarse lejos de la...",
+          "highlighted_excerpt": "...suspiro retornará a su nivel.\n\n## 25 Iyar\n\n## **109 - El <mark>Suspiro de Santidad</mark>**\n\n1. El <mark>suspiro de santidad</mark> es algo muy valioso en verdad. Ello se debe a que cuando la persona suspira por el hecho de encontrarse lejos de la...",
+          "content_length": 1564
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "c3723849-7c65-4d7b-9d4a-a779dc01a76a",
+          "chunk_index": 214,
+          "language": "es",
+          "page_start": 135,
+          "page_end": 136,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2292,
+          "fts_rank": null,
+          "vector_score": 0.5092,
+          "hybrid_score": 0.2292,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "los que debe elevar, como es sabido, ése es precisamente el momento que requiere del mayor autosacrificio de su parte. Mediante ese esfuerzo, podrá elevar las chispas de santidad.\n\n## **27 - “Un polluelo que muere en el cascarón” (II) (Bejorot 8b)**\n\n1. En la medida en que haya paz en la generación,",
+          "highlighted_excerpt": "los que debe elevar, como es sabido, ése es precisamente el momento que requiere del mayor autosacrificio de su parte. Mediante ese esfuerzo, podrá elevar las chispas de santidad.\n\n## **27 - “Un polluelo que muere en el cascarón” (II) (Bejorot 8b)**\n\n1. En la medida en que haya paz en la generación,",
+          "content_length": 1770
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "f6f0d5f2-8d31-4426-9068-d4d8e0e6e54b",
+          "chunk_index": 447,
+          "language": "es",
+          "page_start": 263,
+          "page_end": 264,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2266,
+          "fts_rank": null,
+          "vector_score": 0.5036,
+          "hybrid_score": 0.2266,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "juicio, su corazón se encenderá de entusiasmo y el fuego de ese fervor quemará las fuerzas de la impureza que ya no se le apegarán. De esa manera anulará esas fuerzas al punto en que tampoco podrán aferrarse a las almas que acercó al servicio a Dios.\n\n2. La persona que se ocupa de acercar a la gente",
+          "highlighted_excerpt": "juicio, su corazón se encenderá de entusiasmo y el fuego de ese fervor quemará las fuerzas de la impureza que ya no se le apegarán. De esa manera anulará esas fuerzas al punto en que tampoco podrán aferrarse a las almas que acercó al servicio a Dios.\n\n2. La persona que se ocupa de acercar a la gente",
+          "content_length": 1610
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "8ad5a6b7-702f-4c0d-bab0-8925da5d9a41",
+          "chunk_index": 200,
+          "language": "es",
+          "page_start": 127,
+          "page_end": 128,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2262,
+          "fts_rank": null,
+          "vector_score": 0.5026,
+          "hybrid_score": 0.2262,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "evar a todas las chispas de santidad desde las profundidades de las fuerzas\n\n127\n\n## Page 128\n\nLección 24                                                                                23 Kislev\n\nde la impureza, y mediante ello se alcanza la alegría.\n\n5. Cuando se realiza una mitzvá, ésta tiene el p",
+          "highlighted_excerpt": "evar a todas las chispas de santidad desde las profundidades de las fuerzas\n\n127\n\n## Page 128\n\nLección 24                                                                                23 Kislev\n\nde la impureza, y mediante ello se alcanza la alegría.\n\n5. Cuando se realiza una mitzvá, ésta tiene el p",
+          "content_length": 1453
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "db848738-e8d7-4433-a3bc-c992f76510ef",
+          "chunk_index": 380,
+          "language": "es",
+          "page_start": 225,
+          "page_end": 226,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2183,
+          "fts_rank": null,
+          "vector_score": 0.4851,
+          "hybrid_score": 0.2183,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "olar el fervor ilimitado de su corazón para poder servir a Dios de una manera gradual y mesurada. Pues Dios desea nuestro servicio -que Lo sirvamos con los buenos rasgos de carácter- dado que es a través de éstos como se revela Su Reinado.\n\n## 5 Adar\n\n2. Cuando la persona restringe el fervor por Dio",
+          "highlighted_excerpt": "olar el fervor ilimitado de su corazón para poder servir a Dios de una manera gradual y mesurada. Pues Dios desea nuestro servicio -que Lo sirvamos con los buenos rasgos de carácter- dado que es a través de éstos como se revela Su Reinado.\n\n## 5 Adar\n\n2. Cuando la persona restringe el fervor por Dio",
+          "content_length": 1122
+        },
+        {
+          "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+          "document_title": "Likutey Halajot LM II 8",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "0e1b836e-9517-4cea-892c-bbbdae9e9d9b",
+          "chunk_index": 1102,
+          "language": "es",
+          "page_start": 488,
+          "page_end": 488,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2119,
+          "fts_rank": null,
+          "vector_score": 0.4709,
+          "hybrid_score": 0.2119,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "l deseo sexual con la sangre caliente en el corazón. Aquí, enseña que al traer el aire para enfriar la sangre en el corazón, los pulmones saludables aseguran que el intelecto arda con pureza y así pueda ser capaz de vencer todos los deseos inmorales.\n\n**259. hevel desciende, hevel asciende…se dice d",
+          "highlighted_excerpt": "l deseo sexual con la sangre caliente en el corazón. Aquí, enseña que al traer el aire para enfriar la sangre en el corazón, los pulmones saludables aseguran que el intelecto arda con pureza y así pueda ser capaz de vencer todos los deseos inmorales.\n\n**259. hevel desciende, hevel asciende…se dice d",
+          "content_length": 1667
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "dd6b78c6-e995-4449-9220-6419f47699a4",
+          "chunk_index": 50,
+          "language": "es",
+          "page_start": 39,
+          "page_end": 40,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2113,
+          "fts_rank": null,
+          "vector_score": 0.4696,
+          "hybrid_score": 0.2113,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "ectificación total. Es capaz entonces de vencer completamente a quienes se le oponen.\n\n8. Los tzitzit encarnan el concepto del santo aliento de vida. Mediante la mitzvá de los tzitzit la persona puede completar,\n\n39\n\n## Page 40\n\n22 Tishrei\n\nLección 9\n\nsuspirando, todo aquello que le falta. También a",
+          "highlighted_excerpt": "...mente propicio para tomar el aliento de vida y completar aquello que  falta.]\n\n9. El Tzadik oye los <mark>suspiros de todos a</mark>quellos que están unidos a él, dado que de él surge la vida para cada uno de ellos. Él es “un hombre que posee aliento (rúaj)” (Números 27:18), sobre ...",
+          "content_length": 1752
+        },
+        {
+          "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+          "document_title": "Un Día en la Vida de un Jasid de Breslov",
+          "author": "Rabí Itzjak Breiter, Rabí Natán de Breslov",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "2f32fd83-427f-4595-995e-a3a671be57a3",
+          "chunk_index": 127,
+          "language": "es",
+          "page_start": 141,
+          "page_end": 142,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2112,
+          "fts_rank": null,
+          "vector_score": 0.4693,
+          "hybrid_score": 0.2112,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": ". «Dame la alegría en Tu salvación, susténtame con un espíritu generoso». Satisfáceme con Tu bien, regocija mi alma con Tu salvación y purifica mi corazón para servirte en verdad. «Despierta, mi gloria, despierta, arpa y lira. Yo despertaré el alba».\n\nHazme digno de las diez clases de canciones sant",
+          "highlighted_excerpt": ". «Dame la alegría en Tu salvación, susténtame con un espíritu generoso». Satisfáceme con Tu bien, regocija mi alma con Tu salvación y purifica mi corazón para servirte en verdad. «Despierta, mi gloria, despierta, arpa y lira. Yo despertaré el alba».\n\nHazme digno de las diez clases de canciones sant",
+          "content_length": 1727
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "66962f0a-85bb-4225-916e-4d8d14e7a5bb",
+          "chunk_index": 397,
+          "language": "es",
+          "page_start": 233,
+          "page_end": 234,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2088,
+          "fts_rank": null,
+          "vector_score": 0.4641,
+          "hybrid_score": 0.2088,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "bras de las plegarias. Pues cuando la persona saborea esa dulzura y ora con todo su ser, ello es denominado “Todos mis huesos hablarán”. Pero es imposible que la persona saboree la dulzura en las plegarias a menos que se haya rectificado en esa área.\n\n2. La persona que ha impurificado el Pacto se en",
+          "highlighted_excerpt": "bras de las plegarias. Pues cuando la persona saborea esa dulzura y ora con todo su ser, ello es denominado “Todos mis huesos hablarán”. Pero es imposible que la persona saboree la dulzura en las plegarias a menos que se haya rectificado en esa área.\n\n2. La persona que ha impurificado el Pacto se en",
+          "content_length": 1682
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "294bfe1d-e2e1-40ec-a947-f58f5ffd34b9",
+          "chunk_index": 673,
+          "language": "es",
+          "page_start": 420,
+          "page_end": 420,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2082,
+          "fts_rank": null,
+          "vector_score": 0.4627,
+          "hybrid_score": 0.2082,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "renciado Nombre de Dios y escapar de los celos de los ángeles -no sea que hagan caer a la persona en el pecado, Dios no lo permita- y hacer perdurar el dominio sobre ellos. Todo esto depende únicamente de la rectificación de esos tres deseos dañinos.\n\n10. Al alcanzar en el corazón un temor perfecto ",
+          "highlighted_excerpt": "renciado Nombre de Dios y escapar de los celos de los ángeles -no sea que hagan caer a la persona en el pecado, Dios no lo permita- y hacer perdurar el dominio sobre ellos. Todo esto depende únicamente de la rectificación de esos tres deseos dañinos.\n\n10. Al alcanzar en el corazón un temor perfecto ",
+          "content_length": 1189
+        }
+      ]
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 8,
+      "error": null,
+      "elapsed_ms": 38,
+      "top_titles": [
+        "KITZUR",
+        "KITZUR",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+      ]
+    },
+    "vector": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 594,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "top": [
+        {
+          "chunk_id": "86b090a5-c997-48df-9438-19c2fd7fbf2d",
+          "distance": 0.5805,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "c3723849-7c65-4d7b-9d4a-a779dc01a76a",
+          "distance": 0.5092,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "f6f0d5f2-8d31-4426-9068-d4d8e0e6e54b",
+          "distance": 0.5036,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "score": 20,
+    "status": "PASS fuerte",
+    "http_200": true,
+    "result_count": 10,
+    "term_hits": {
+      "suspiro": true,
+      "santidad": true
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "yes",
+    "response_vector_hits": 10,
+    "direct_vector_hits": 10,
+    "hybrid_vector_merged_hits": 10,
+    "fts_hits": 8,
+    "critical_warnings": [],
+    "quality_warnings": []
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "query": {
+    "id": "hybrid_q05",
+    "query": "miedo y fe",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": [
+      "miedo",
+      "temor",
+      "fe",
+      "emuná"
+    ],
+    "notes": "Valida búsqueda conceptual mixta."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 701,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "miedo y fe",
+      "mode": "hybrid",
+      "top_k": 10,
+      "language": "es"
+    },
+    "response": {
+      "query": "miedo y fe",
+      "collection": "breslov_primary",
+      "mode": "hybrid",
+      "language": "es",
+      "total": 10,
+      "results": [
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "cf946415-80c9-4896-9602-287ef8d67575",
+          "chunk_index": 608,
+          "language": "es",
+          "page_start": 367,
+          "page_end": 368,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2253,
+          "fts_rank": null,
+          "vector_score": 0.5008,
+          "hybrid_score": 0.2253,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "es; por ejemplo, porque tiene miedo de un animal o de la autoridad o de alguna otra cosa que cree que puede hacerle daño y, como resultado, recuerda a Dios y llega a temerlo. Mediante esta segunda clase de temor se hace descender abundancia al mundo.\n\nSin embargo, es necesario crear un recipiente pa",
+          "highlighted_excerpt": "es; por ejemplo, porque tiene <mark>miedo de u</mark>n animal o de la autoridad o de alguna otra cosa que cree que puede hacerle daño y, como resultado, recuerda a Dios y llega a temerlo. Mediante esta s...",
+          "content_length": 1626
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "e90bfe94-f892-4b4a-9610-beb571658efa",
+          "chunk_index": 125,
+          "language": "es",
+          "page_start": 87,
+          "page_end": 88,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2226,
+          "fts_rank": null,
+          "vector_score": 0.4947,
+          "hybrid_score": 0.2226,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "nos piden corroborar esa fe. “¿Tengo fe en mi esposa, en mi vecino, en mi hijo? ¿Son ellos merecedores de mi confi anza? ¿Es que debo tener fe?” Bueno, ¿Y qué otra cosa nos queda? La fe es un atributo sin el cual no podemos sobrevivir en este mundo.\n\nPero, ¿qué es la fe? ¿qué es esta confi anza que ",
+          "highlighted_excerpt": "nos piden corroborar esa fe. “¿Tengo fe en mi esposa, en mi vecino, en mi hijo? ¿Son ellos merecedores de mi confi anza? ¿Es que debo tener fe?” Bueno, ¿Y qué otra cosa nos queda? La fe es un atributo sin el cual no podemos sobrevivir en este mundo.\n\nPero, ¿qué es la fe? ¿qué es esta confi anza que ",
+          "content_length": 1536
+        },
+        {
+          "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+          "document_title": "El Alma del Rebe Najmán",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "6ed3fd32-6d59-4ace-83a1-58951f53f1f5",
+          "chunk_index": 88,
+          "language": "es",
+          "page_start": 38,
+          "page_end": 38,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.221,
+          "fts_rank": null,
+          "vector_score": 0.491,
+          "hybrid_score": 0.221,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "esto es lo que le da vida a la persona. Una persona sin fe es considerada como sin vida - ni aquí ni, por supuesto, en la corte celestial; está perdida. ¿Cómo hará la persona para adquirir esta fe?\n\n## _**El temor al castigo es la base de la emuná**_\n\nDice _Rabeinu zal_ que el fundamento de la fe y ",
+          "highlighted_excerpt": "esto es lo que le da vida a la persona. Una persona sin fe es considerada como sin vida - ni aquí ni, por supuesto, en la corte celestial; está perdida. ¿Cómo hará la persona para adquirir esta fe?\n\n## _**El temor al castigo es la base de la emuná**_\n\nDice _Rabeinu zal_ que el fundamento de la fe y ",
+          "content_length": 1661
+        },
+        {
+          "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+          "document_title": "El Alma del Rebe Najmán",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "e330c743-4f39-429f-8cd7-1e8d423e09b7",
+          "chunk_index": 99,
+          "language": "es",
+          "page_start": 41,
+          "page_end": 41,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2156,
+          "fts_rank": null,
+          "vector_score": 0.4791,
+          "hybrid_score": 0.2156,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "de perder. ¿Por qué arriesgarse con algo que es una pérdida definitiva? La persona puede definitivamente perder su mente y de seguro perder su _Olam HaBa_ , su Gan Edén, por profundizar en ello. Como hemos dicho, es un pasaje de ida hacia lo opuesto.\n\n_Rabeinu zal_ dijo que debemos notar cuán afortu",
+          "highlighted_excerpt": "de perder. ¿Por qué arriesgarse con algo que es una pérdida definitiva? La persona puede definitivamente perder su mente y de seguro perder su _Olam HaBa_ , su Gan Edén, por profundizar en ello. Como hemos dicho, es un pasaje de ida hacia lo opuesto.\n\n_Rabeinu zal_ dijo que debemos notar cuán afortu",
+          "content_length": 1148
+        },
+        {
+          "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+          "document_title": "El Alma del Rebe Najmán",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "79b39b5e-024e-42ca-a8f3-400ba1ed7f7a",
+          "chunk_index": 316,
+          "language": "es",
+          "page_start": 122,
+          "page_end": 122,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2155,
+          "fts_rank": null,
+          "vector_score": 0.4788,
+          "hybrid_score": 0.2155,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "do cuestionamiento.\n\nExisten pecados que llevan a la persona hacia el escepticismo. Esto también puede suceder si la persona no fue concebida en santidad, en especial si ella misma es culpable de pecados similares. Todas estas cosas deterioran la fe.\n\nEs necesario por lo tanto, sentirse avergonzado ",
+          "highlighted_excerpt": "do cuestionamiento.\n\nExisten pecados que llevan a la persona hacia el escepticismo. Esto también puede suceder si la persona no fue concebida en santidad, en especial si ella misma es culpable de pecados similares. Todas estas cosas deterioran la fe.\n\nEs necesario por lo tanto, sentirse avergonzado ",
+          "content_length": 1752
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "dc513ee7-2dd1-432c-a3c3-2507a0898700",
+          "chunk_index": 494,
+          "language": "es",
+          "page_start": 322,
+          "page_end": 323,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2151,
+          "fts_rank": null,
+          "vector_score": 0.4781,
+          "hybrid_score": 0.2151,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "manera que la nariz alude al temor del Cielo. Como hemos visto, Reb Itzjak Breiter interpreta esto como: Santifi ca tu nariz tomando el respiro de la paciencia, sin importar lo que suceda, mostrando amor a la persona con la que estabas por enojarte.\n\nNuevamente, estas interpretaciones son análogas: ",
+          "highlighted_excerpt": "manera que la nariz alude al temor del Cielo. Como hemos visto, Reb Itzjak Breiter interpreta esto como: Santifi ca tu nariz tomando el respiro de la paciencia, sin importar lo que suceda, mostrando amor a la persona con la que estabas por enojarte.\n\nNuevamente, estas interpretaciones son análogas: ",
+          "content_length": 1642
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "4f15ff14-4c3c-4ca4-bd3f-ccdb5361f862",
+          "chunk_index": 607,
+          "language": "es",
+          "page_start": 366,
+          "page_end": 367,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2127,
+          "fts_rank": null,
+          "vector_score": 0.4726,
+          "hybrid_score": 0.2127,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "sienta inspirada por ellas- sin embargo, ella misma se ve inspirada debido a que las palabras le son devueltas en el aspecto de “impactar” - como cuando alguien arroja algo contra una pared, lo cual rebota y vuelve hacia quien lo arrojó.\n\n## **185**\n\n1. Lo esencial de la plenitud (shleimut) es el te",
+          "highlighted_excerpt": "...leta el Santo Nombre de Dios. También hay un temor inferior a ése. Esto es cuando la persona siente <mark>miedo debi</mark>do a temores inferiores; por ejemplo, porque tiene miedo de un animal o de la autoridad o de alguna otra cosa que cree que puede hacerle daño y, como ...",
+          "content_length": 899
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "13576188-f11e-48a1-b489-5b7ba189edea",
+          "chunk_index": 460,
+          "language": "es",
+          "page_start": 270,
+          "page_end": 271,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2106,
+          "fts_rank": null,
+          "vector_score": 0.468,
+          "hybrid_score": 0.2106,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "caridad para expiar por su alma, como se afirma en conexión con los shekalim, “para expiar por sus almas” (Éxodo 30:15), que está sugerido por el versículo, “En Cuya mano está el alma de todo ser vivo y el espíritu de todos los humanos” (Job 12:10).\n\n8. El temor se revela cuando las mujeres estérile",
+          "highlighted_excerpt": "caridad para expiar por su alma, como se afirma en conexión con los shekalim, “para expiar por sus almas” (Éxodo 30:15), que está sugerido por el versículo, “En Cuya mano está el alma de todo ser vivo y el espíritu de todos los humanos” (Job 12:10).\n\n8. El temor se revela cuando las mujeres estérile",
+          "content_length": 1787
+        },
+        {
+          "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+          "document_title": "Likutey Halajot LM II 8",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "542d2263-027f-45a6-af95-681350a3f650",
+          "chunk_index": 1150,
+          "language": "es",
+          "page_start": 507,
+          "page_end": 507,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2104,
+          "fts_rank": null,
+          "vector_score": 0.4676,
+          "hybrid_score": 0.2104,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "tero/el temor del alma por Dios.\n\n**315. as mentioned above.** Ver la sección 1; y ver la nota 30, que esto hace referencia al Mundo que Viene, cuando terminará definitivamente la batalla entre Iaacov/el sustento espiritual y Esaú/el sustento físico.\n\nAsí, en el contexto de nuestra lección, el relat",
+          "highlighted_excerpt": "tero/el temor del alma por Dios.\n\n**315. as mentioned above.** Ver la sección 1; y ver la nota 30, que esto hace referencia al Mundo que Viene, cuando terminará definitivamente la batalla entre Iaacov/el sustento espiritual y Esaú/el sustento físico.\n\nAsí, en el contexto de nuestra lección, el relat",
+          "content_length": 1793
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "a6323526-2c04-4862-9963-acf52269b3e6",
+          "chunk_index": 90,
+          "language": "es",
+          "page_start": 65,
+          "page_end": 66,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2097,
+          "fts_rank": null,
+          "vector_score": 0.466,
+          "hybrid_score": 0.2097,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "naría desarrollándose en una enfermedad o en un sufrimiento como ése, Dios no lo permita. Todo ello ocurre debido a que el veredicto emitido sobre la persona desde arriba se ha “investido” en esa cosa en particular, para ejecutar el juicio apropiado.\n\nTodo esto sucede si la persona no se evalúa ni s",
+          "highlighted_excerpt": "... juzga a sí misma, entonces se anula el juicio emitido desde arriba y ya no necesita temer ni tener <mark>miedo de n</mark>ada - dado que su juicio no está “investido” en ninguna cosa. Pues, al juzgarse a sí misma, ya ha anulado el juicio, y el temor no se “inviste” en nin...",
+          "content_length": 1509
+        }
+      ]
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 2,
+      "error": null,
+      "elapsed_ms": 35,
+      "top_titles": [
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "KITZUR"
+      ]
+    },
+    "vector": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 556,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "top": [
+        {
+          "chunk_id": "cf946415-80c9-4896-9602-287ef8d67575",
+          "distance": 0.5008,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "e90bfe94-f892-4b4a-9610-beb571658efa",
+          "distance": 0.4947,
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "6ed3fd32-6d59-4ace-83a1-58951f53f1f5",
+          "distance": 0.491,
+          "title": "El Alma del Rebe Najmán",
+          "collection_code": "breslov"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "score": 20,
+    "status": "PASS fuerte",
+    "http_200": true,
+    "result_count": 10,
+    "term_hits": {
+      "miedo": true,
+      "temor": true,
+      "fe": true,
+      "emuná": true
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "yes",
+    "response_vector_hits": 10,
+    "direct_vector_hits": 10,
+    "hybrid_vector_merged_hits": 10,
+    "fts_hits": 2,
+    "critical_warnings": [],
+    "quality_warnings": []
+  }
+}

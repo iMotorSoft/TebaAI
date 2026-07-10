@@ -1,0 +1,338 @@
+{
+  "query": {
+    "id": "hybrid_q07",
+    "query": "Tierra de Israel fe plegaria milagros",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": [
+      "Tierra de Israel",
+      "fe",
+      "plegaria",
+      "milagros"
+    ],
+    "notes": "Debe recuperar conexiones conceptuales conocidas."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 730,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "Tierra de Israel fe plegaria milagros",
+      "mode": "hybrid",
+      "top_k": 10,
+      "language": "es"
+    },
+    "response": {
+      "query": "Tierra de Israel fe plegaria milagros",
+      "collection": "breslov_primary",
+      "mode": "hybrid",
+      "language": "es",
+      "total": 10,
+      "results": [
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "6f844f1c-73e7-49b4-b00a-8d4d9a5fa18d",
+          "chunk_index": 418,
+          "language": "es",
+          "page_start": 246,
+          "page_end": 247,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2711,
+          "fts_rank": null,
+          "vector_score": 0.6024,
+          "hybrid_score": 0.2711,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "poyo para tus pies” (Salmos 110:1). Pues la Tierra de Israel es llamada “derecha”, como dijeron nuestros Sabios, de bendita memoria (también esto está citado en el comentario de Rashi sobre el versículo, “Su padre lo llamó Benjamín” [Génesis 35:18]).\n\n2. Incluso ahora, durante el presente exilio, cu",
+          "highlighted_excerpt": "poyo para tus pies” (Salmos 110:1). Pues la <mark>Tierra de Israel es llamada “derecha”</mark>, como dijeron nuestros Sabios, de bendita memoria (también esto está citado en el comentario de Rashi sobre el versículo, “Su padre lo llamó Benjamín...",
+          "content_length": 1733
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "e13ad805-0efa-47d7-9d88-a9d3b7e8a25b",
+          "chunk_index": 364,
+          "language": "es",
+          "page_start": 216,
+          "page_end": 217,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2556,
+          "fts_rank": null,
+          "vector_score": 0.5681,
+          "hybrid_score": 0.2556,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "diarias constantes fueron establecidas; su rectificación se produce mediante la Tierra de Israel”. Y con ello se refina la mente de la persona -sus pensamientos- debido a que “El aire de la Tierra de Israel hace sabia a la persona” (Bava Batra 158b).\n\nÉsa misma idea [de que la caridad dada para la T",
+          "highlighted_excerpt": "diarias constantes fueron establecidas; su rectificación se produce mediante la <mark>Tierra de Israel”. Y con ello se refi</mark>na la mente de la persona -sus pensamientos- debido a que “El aire de la Tierra de Israel hace sabia a la persona” (Bava Batra 158b).\n\nÉsa misma idea ...",
+          "content_length": 1591
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "22ab01c6-5d8e-450f-a472-69f492b671c2",
+          "chunk_index": 628,
+          "language": "es",
+          "page_start": 406,
+          "page_end": 407,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2549,
+          "fts_rank": null,
+          "vector_score": 0.5665,
+          "hybrid_score": 0.2549,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "o, pídele a Dios que te dé el anhelo y el deseo de estar allí. También pídele que implante el deseo de Eretz Israel en el corazón de todos ( _Likutey Moharan_ I, 155).\n\n**==> picture [23 x 8] intentionally omitted <==**\n\n## **TIERRA DE LECHE Y MIEL**\n\n“Pues Dios os está llevando a una buena tierra, ",
+          "highlighted_excerpt": "...zón de todos ( _Likutey Moharan_ I, 155).\n\n**==&gt; picture [23 x 8] intentionally omitted &lt;==**\n\n## **<mark>TIERRA DE LECHE Y MIEL**\n\n“Pues Dios </mark>os está llevando a una buena tierra, una tierra de ríos fl uyentes, de fuentes y de arroyos subterráneos, surgentes en valles y montañas. Es una tierr...",
+          "content_length": 982
+        },
+        {
+          "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+          "document_title": "Likutey Halajot LM II 8",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "6e9f0c65-75b4-4c19-9739-46be31306da1",
+          "chunk_index": 1038,
+          "language": "es",
+          "page_start": 465,
+          "page_end": 465,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2516,
+          "fts_rank": null,
+          "vector_score": 0.5591,
+          "hybrid_score": 0.2516,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "el comienzo”, [para hacer saber] que Dios lo creó y evitar que las naciones del mundo digan, “Ustedes son ladrones…”. Se sigue que la Tierra de Israel es en esencia el producto de “Sus poderosas obras” - a través de saber que Dios creó el mundo.[203]\n\n**200. providencia Divina…de los milagros, de lo",
+          "highlighted_excerpt": "...ue Dios lo creó y evitar que las naciones del mundo digan, “Ustedes son ladrones…”. Se sigue que la <mark>Tierra de Israel es en esencia el pro</mark>ducto de “Sus poderosas obras” - a través de saber que Dios creó el mundo.[203]\n\n**200. providencia Divina…de los milagros, de lo sobrenatural.** El T...",
+          "content_length": 1422
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "cf4a00c7-ae72-4d57-a05e-7ccdc25aec5b",
+          "chunk_index": 632,
+          "language": "es",
+          "page_start": 409,
+          "page_end": 409,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2512,
+          "fts_rank": null,
+          "vector_score": 0.5582,
+          "hybrid_score": 0.2512,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "an a Eretz Israel. Como enseña el Talmud: En el futuro (cuando venga Mashíaj), la Tierra de Israel producirá hogazas de pan listas para ser comidas y vestidos de seda listos para ser usados. Hasta los árboles estériles darán frutos ( _Ketubot_ 111b).\n\nEnseña por lo tanto el Rebe: La santidad de la T",
+          "highlighted_excerpt": "an a Eretz Israel. Como enseña el Talmud: En el futuro (cuando venga Mashíaj), la <mark>Tierra de Israel producirá hogazas de</mark> pan listas para ser comidas y vestidos de seda listos para ser usados. Hasta los árboles estériles darán frutos ( _Ketubot_ 111b).\n\nEnseña por lo tan...",
+          "content_length": 1365
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "85b256ff-a9a9-4ea1-a231-20f0f72b260e",
+          "chunk_index": 362,
+          "language": "es",
+          "page_start": 215,
+          "page_end": 216,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2496,
+          "fts_rank": null,
+          "vector_score": 0.5547,
+          "hybrid_score": 0.2496,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "también ser vocalizado, ADAMaH (tierra). Así, el versículo puede comprenderse como significando que] mediante el aplaudir, el habla o las palabras de las plegarias son dichas sobre un suelo santo (cf. Rashi sobre Éxodo 7:1; Oraj Jaim 102 en Taz #3).\n\nAdicionalmente, al aplaudir durante la plegaria s",
+          "highlighted_excerpt": "también ser vocalizado, ADAMaH (<mark>tierra). Así, el versículo puede comp</mark>renderse como significando que] mediante el aplaudir, el habla o las palabras de las plegarias son dichas sobre un suelo santo (cf. Rashi sobre Éxodo ...",
+          "content_length": 1566
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "873c1096-0e89-4176-9a44-2945bbd3ad1c",
+          "chunk_index": 641,
+          "language": "es",
+          "page_start": 415,
+          "page_end": 415,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2489,
+          "fts_rank": null,
+          "vector_score": 0.5532,
+          "hybrid_score": 0.2489,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "ebemos hacer, es buscar los “puntos buenos.” De la misma manera como juzgamos a la gente, así debemos buscar los puntos buenos de la Tierra Santa. Como escribió el Rey David: “Contempla el bien de Jerusalem, todos los días de tu vida” (Salmos 128:5).\n\nEsperemos y roguemos merecer ver el bien de Isra",
+          "highlighted_excerpt": "...os buenos.” De la misma manera como juzgamos a la gente, así debemos buscar los puntos buenos de la <mark>Tierra Santa. Como escribió el Rey Da</mark>vid: “Contempla el bien de Jerusalem, todos los días de tu vida” (Salmos 128:5).\n\nEsperemos y roguemos merecer ver el bien de Israel, tanto de la Naci...",
+          "content_length": 1640
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "cbcb4553-62c8-411a-aa8c-cd0dd691cb09",
+          "chunk_index": 377,
+          "language": "es",
+          "page_start": 224,
+          "page_end": 225,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2485,
+          "fts_rank": null,
+          "vector_score": 0.5523,
+          "hybrid_score": 0.2485,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "lo. Esas tres cosas -la suká, la plegaria con energía y la Tierra de Israelconforman un solo concepto y son interdependientes. Al orar\n\n## Page 225\n\nLección 49                                                                                     4 Adar\n\ncon todas sus fuerzas la persona merece alcanzar",
+          "highlighted_excerpt": "lo. Esas tres cosas -la suká, la plegaria con energía y la <mark>Tierra de Israelconforman un solo con</mark>cepto y son interdependientes. Al orar\n\n## Page 225\n\nLección 49                                                                                     4 ...",
+          "content_length": 1659
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "1341e235-b17d-4d8a-9b0d-2f6b08ef35aa",
+          "chunk_index": 371,
+          "language": "es",
+          "page_start": 221,
+          "page_end": 221,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2476,
+          "fts_rank": null,
+          "vector_score": 0.5502,
+          "hybrid_score": 0.2476,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "e ser un anuncio de pobreza.\n\n## 2 Adar\n\n5. El mundo entero se nutre del influjo de abundancia que emana de la Tierra de Israel, como es sabido (ver Zohar II, 156b); y la Tierra de Israel recibe ese influjo del atributo Divino de la\n\n221\n\n## Page 222\n\nLección 47                                      ",
+          "highlighted_excerpt": "...uncio de pobreza.\n\n## 2 Adar\n\n5. El mundo entero se nutre del influjo de abundancia que emana de la <mark>Tierra de Israel, como es sabido (ver</mark> Zohar II, 156b); y la Tierra de Israel recibe ese influjo del atributo Divino de la\n\n221\n\n## Page 222\n\nLección 47                                    ...",
+          "content_length": 1361
+        },
+        {
+          "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+          "document_title": "Likutey Halajot LM II 8",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "487ba0e9-6a44-421f-9f0f-6a7275ad0da8",
+          "chunk_index": 1059,
+          "language": "es",
+          "page_start": 473,
+          "page_end": 473,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2461,
+          "fts_rank": null,
+          "vector_score": 0.547,
+          "hybrid_score": 0.2461,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "pto de “El aliento de nuestra nariz es _meshíaj_ (el ungido) de Dios” (Lamentaciones 4:20).[222] Y esto es:\n\n**deviniendo** _**lemas oved**_ **-** Esto alude al Mashíaj, como está escrito “Bendito sea Dios, Quien no te ha negado un redentor… Ellos lo\n\nprofecía, como en Números 11:26, “Y el espíritu ",
+          "highlighted_excerpt": "...a se difunde en el mundo cuando los prosélitos se acercan y se revela la gloria de Dios.\n\n**217. la <mark>tierra…la Tierra de Israel.** El Talm</mark>ud enseña que Dios creó primero la Tierra de Israel y sólo después el resto del mundo, como está dicho (Proverbios 8:26): “Aún no había hecho la tierr...",
+          "content_length": 1578
+        }
+      ]
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 40,
+      "top_titles": [
+        "KITZUR",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "KITZUR"
+      ]
+    },
+    "vector": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 535,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "top": [
+        {
+          "chunk_id": "1e94eeba-9c9a-4981-985c-4687fac2673d",
+          "distance": 0.6175,
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "6f844f1c-73e7-49b4-b00a-8d4d9a5fa18d",
+          "distance": 0.6024,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "25ac8a26-f74d-4eac-9da9-1f64db2ec369",
+          "distance": 0.5949,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "score": 20,
+    "status": "PASS fuerte",
+    "http_200": true,
+    "result_count": 10,
+    "term_hits": {
+      "Tierra de Israel": true,
+      "fe": true,
+      "plegaria": true,
+      "milagros": true
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "yes",
+    "response_vector_hits": 10,
+    "direct_vector_hits": 10,
+    "hybrid_vector_merged_hits": 10,
+    "fts_hits": 10,
+    "critical_warnings": [],
+    "quality_warnings": []
+  }
+}

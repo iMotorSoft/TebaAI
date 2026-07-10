@@ -1,0 +1,334 @@
+{
+  "query": {
+    "id": "hybrid_q04",
+    "query": "sangre habla",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": [
+      "sangre",
+      "habla"
+    ],
+    "notes": "Query relacional corta; el probe previo mostró hybrid vector fuerte."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 751,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "sangre habla",
+      "mode": "hybrid",
+      "top_k": 10,
+      "language": "es"
+    },
+    "response": {
+      "query": "sangre habla",
+      "collection": "breslov_primary",
+      "mode": "hybrid",
+      "language": "es",
+      "total": 10,
+      "results": [
+        {
+          "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+          "document_title": "Likutey Halajot LM II 8",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "7124dbcc-5e98-4d70-b1d7-693056c60a3f",
+          "chunk_index": 1095,
+          "language": "es",
+          "page_start": 486,
+          "page_end": 486,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.1803,
+          "fts_rank": null,
+          "vector_score": 0.4007,
+          "hybrid_score": 0.1803,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "anos. La sangre caliente y carente de oxígeno retorna entonces al corazón y de allí es llevada hacia la arteria pulmonar en camino de retorno a los pulmones. Una vez en los pulmones, la sangre puede ser oxigenada en los alveolos por el aire inhalado.\n\nEl _Tikuney Zohar_ ( _loc. cit_ .) describe la ú",
+          "highlighted_excerpt": "anos. La <mark>sangre calie</mark>nte y carente de oxígeno retorna entonces al corazón y de allí es llevada hacia la arteria pulmonar en camino de retorno a los pulmones. Una vez en lo...",
+          "content_length": 1742
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "d650723e-688d-48fb-9aa0-690573dac082",
+          "chunk_index": 334,
+          "language": "es",
+          "page_start": 200,
+          "page_end": 201,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.177,
+          "fts_rank": null,
+          "vector_score": 0.3932,
+          "hybrid_score": 0.177,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "habla dañada que ha caído allí debido al hecho de haber hablado de una manera no santa. Más aún, se debe elevar el habla hacia su fuente y rectificarla. Entonces se merecerá la verdadera unión con Dios, que se manifiesta en los tefilín.\n\n## 18 Shvat\n\n5. Es necesario elevar el habla a su fuente - est",
+          "highlighted_excerpt": "habla dañada que ha caído allí debido al hecho de haber hablado de una manera no santa. Más aún, se debe elevar el habla hacia su fuente y rectificarla. Entonces se merecerá la verdadera unión con Dios, que se manifiesta en los tefilín.\n\n## 18 Shvat\n\n5. Es necesario elevar el habla a su fuente - est",
+          "content_length": 1701
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "649921e1-2851-4d67-8f1d-8a13a85bfbbc",
+          "chunk_index": 234,
+          "language": "es",
+          "page_start": 147,
+          "page_end": 147,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.173,
+          "fts_rank": null,
+          "vector_score": 0.3845,
+          "hybrid_score": 0.173,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "en la frase “fluyendo del LeBaNon” (Cantar de los Cantares 4:15) -esto es, “desde la LiBuNa (blancura) del cerebro” (Zohar III, 235b)- todos los elementos particulares de esa área en especial también son rectificados de manera automática.\n\n## 8 Tevet\n\n15. Aunque el vino es dañino para la mujer cuyo ",
+          "highlighted_excerpt": "... cuyo flujo menstrual es denso y sus períodos irregulares -dado que el vino aumenta la fuerza de la <mark>sangre y de </mark>las características asociadas con ella (ver párrafo #10, más arriba)- sin embargo, la cura para ello es que beba vino al cual miró un verdadero Tzadik...",
+          "content_length": 942
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "c60c9f5a-6a6f-411b-afe7-01eda4ae1ad7",
+          "chunk_index": 140,
+          "language": "es",
+          "page_start": 96,
+          "page_end": 97,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.1721,
+          "fts_rank": null,
+          "vector_score": 0.3823,
+          "hybrid_score": 0.1721,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "que cometeremos un pecado o que seremos malos, aunque no sea nuestra intención cumplir con nuestras palabras. El poder del habla es tan fuerte que puede llegar a hacer que la persona peque. Yeihu fue nombrado como rey de las\n\n## Page 97\n\n_LA FE / 75_\n\nDiez Tribus. Reemplazaría a Ajav, un gran idólat",
+          "highlighted_excerpt": "que cometeremos un pecado o que seremos malos, aunque no sea nuestra intención cumplir con nuestras palabras. El poder del habla es tan fuerte que puede llegar a hacer que la persona peque. Yeihu fue nombrado como rey de las\n\n## Page 97\n\n_LA FE / 75_\n\nDiez Tribus. Reemplazaría a Ajav, un gran idólat",
+          "content_length": 1762
+        },
+        {
+          "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+          "document_title": "El Jardín de las Almas",
+          "author": "Rebe Najman de Breslov",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "c17b667d-cdcb-4ce5-8e3f-7eeb1c4a2bb1",
+          "chunk_index": 143,
+          "language": "es",
+          "page_start": 90,
+          "page_end": 91,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.1714,
+          "fts_rank": null,
+          "vector_score": 0.3809,
+          "hybrid_score": 0.1714,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "tro de cada alma.** Cf. _Iarot Dvash_ I:12: \"Dijeron los sabios, 'La mirada de un Tzadik trae bendición'. Los rayos de luz provenientes de los ojos de un Tzadik son una bendición\".\n\n9 **el habla** . La forma en que una persona habla es un\n\n## Page 91\n\nindicador de su estado espiritual. Las letras y ",
+          "highlighted_excerpt": "tro de cada alma.** Cf. _Iarot Dvash_ I:12: &quot;Dijeron los sabios, &#x27;La mirada de un Tzadik trae bendición&#x27;. Los rayos de luz provenientes de los ojos de un Tzadik son una bendición&quot;.\n\n9 **el habla** . La forma en que una persona habla es un\n\n## Page 91\n\nindicador de su estado espiritual. Las letras y ",
+          "content_length": 1778
+        },
+        {
+          "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+          "document_title": "El Jardín de las Almas",
+          "author": "Rebe Najman de Breslov",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "b814f2ff-31c4-4aff-b229-663612cd2e01",
+          "chunk_index": 79,
+          "language": "es",
+          "page_start": 52,
+          "page_end": 53,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.1708,
+          "fts_rank": null,
+          "vector_score": 0.3796,
+          "hybrid_score": 0.1708,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "su vida son llamados \"muertos\" ( _Berajot_ 18b) y el campo es un \"campo de lágrimas\". Cuando las almas están lejos de Dios, el Tzadik también cae de su nivel de percepción (cf. _Likutey Moharán_ I, 49:7) y \"los ojos del Señor del Campo se oscurecen\".\n\n> 8 **mirar dentro de cada alma.** Cf. _Iarot Dv",
+          "highlighted_excerpt": "su vida son llamados &quot;muertos&quot; ( _Berajot_ 18b) y el campo es un &quot;campo de lágrimas&quot;. Cuando las almas están lejos de Dios, el Tzadik también cae de su nivel de percepción (cf. _Likutey Moharán_ I, 49:7) y &quot;los ojos del Señor del Campo se oscurecen&quot;.\n\n&gt; 8 **mirar dentro de cada alma.** Cf. _Iarot Dv",
+          "content_length": 1499
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "66962f0a-85bb-4225-916e-4d8d14e7a5bb",
+          "chunk_index": 397,
+          "language": "es",
+          "page_start": 233,
+          "page_end": 234,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.1702,
+          "fts_rank": null,
+          "vector_score": 0.3781,
+          "hybrid_score": 0.1702,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "bras de las plegarias. Pues cuando la persona saborea esa dulzura y ora con todo su ser, ello es denominado “Todos mis huesos hablarán”. Pero es imposible que la persona saboree la dulzura en las plegarias a menos que se haya rectificado en esa área.\n\n2. La persona que ha impurificado el Pacto se en",
+          "highlighted_excerpt": "bras de las plegarias. Pues cuando la persona saborea esa dulzura y ora con todo su ser, ello es denominado “Todos mis huesos hablarán”. Pero es imposible que la persona saboree la dulzura en las plegarias a menos que se haya rectificado en esa área.\n\n2. La persona que ha impurificado el Pacto se en",
+          "content_length": 1682
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "7a638e2c-7f3a-4da1-82b2-2f05566a47dd",
+          "chunk_index": 271,
+          "language": "es",
+          "page_start": 166,
+          "page_end": 166,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.1695,
+          "fts_rank": null,
+          "vector_score": 0.3767,
+          "hybrid_score": 0.1695,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "sus anhelos con la boca, pues de esa manera el alma alcanza su estado concreto. Pues el alma emana del habla, como hemos aprendido del versículo, “El hombre se volvió un alma viviente” (Génesis 2:7), que el Targúm traduce como “un espíritu hablante”.\n\n## 22 Tevet\n\n16. Esto explica el enorme benefici",
+          "highlighted_excerpt": "sus anhelos con la boca, pues de esa manera el alma alcanza su estado concreto. Pues el alma emana del habla, como hemos aprendido del versículo, “El hombre se volvió un alma viviente” (Génesis 2:7), que el Targúm traduce como “un espíritu hablante”.\n\n## 22 Tevet\n\n16. Esto explica el enorme benefici",
+          "content_length": 1427
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "564e3f5b-98fc-4da0-8091-98ba40be6ddf",
+          "chunk_index": 465,
+          "language": "es",
+          "page_start": 273,
+          "page_end": 273,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.1684,
+          "fts_rank": null,
+          "vector_score": 0.3742,
+          "hybrid_score": 0.1684,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": ", dado que “El término ‘sordo’, a no ser que esté especificado, hace referencia a alguien que no oye ni habla” (Terumot 1:2). Pero\n\n273\n\n## Page 274\n\nLección 60                                                                                   8 Nisán\n\nahora, cuando el sabio despierta a la persona, é",
+          "highlighted_excerpt": ", dado que “El término ‘sordo’, a no ser que esté especificado, hace referencia a alguien que no oye ni habla” (Terumot 1:2). Pero\n\n273\n\n## Page 274\n\nLección 60                                                                                   8 Nisán\n\nahora, cuando el sabio despierta a la persona, é",
+          "content_length": 1616
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "4f911f9e-a98a-44d9-b27b-24183b4f3b82",
+          "chunk_index": 543,
+          "language": "es",
+          "page_start": 319,
+          "page_end": 320,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.1683,
+          "fts_rank": null,
+          "vector_score": 0.3741,
+          "hybrid_score": 0.1683,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "y de la fe en Él. El habla sagrada también está identificada con el espíritu del Mashíaj, con el espíritu sagrado de la profecía (rúaj hakodesh), con la resurrección de los muertos y con la unificación del Santo, bendito sea y de la Presencia Divina.\n\n2. El habla también se identifica con la idea de",
+          "highlighted_excerpt": "y de la fe en Él. El habla sagrada también está identificada con el espíritu del Mashíaj, con el espíritu sagrado de la profecía (rúaj hakodesh), con la resurrección de los muertos y con la unificación del Santo, bendito sea y de la Presencia Divina.\n\n2. El habla también se identifica con la idea de",
+          "content_length": 1634
+        }
+      ]
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 36,
+      "top_titles": [
+        "KITZUR",
+        "KITZUR",
+        "Un Día en la Vida de un Jasid de Breslov"
+      ]
+    },
+    "vector": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 664,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "top": [
+        {
+          "chunk_id": "7124dbcc-5e98-4d70-b1d7-693056c60a3f",
+          "distance": 0.4007,
+          "title": "Likutey Halajot LM II 8",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "d650723e-688d-48fb-9aa0-690573dac082",
+          "distance": 0.3932,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "b7a7728e-996d-46f3-8f32-7be7c7893bad",
+          "distance": 0.3902,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "score": 20,
+    "status": "PASS fuerte",
+    "http_200": true,
+    "result_count": 10,
+    "term_hits": {
+      "sangre": true,
+      "habla": true
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "yes",
+    "response_vector_hits": 10,
+    "direct_vector_hits": 10,
+    "hybrid_vector_merged_hits": 10,
+    "fts_hits": 10,
+    "critical_warnings": [],
+    "quality_warnings": []
+  }
+}

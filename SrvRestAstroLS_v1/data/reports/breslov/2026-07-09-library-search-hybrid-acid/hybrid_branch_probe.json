@@ -1,0 +1,95 @@
+{
+  "milvus_collection_code": "breslov",
+  "queries": [
+    {
+      "id": "hybrid_q01",
+      "query": "alegría",
+      "mode": "hybrid",
+      "fts_hits": 10,
+      "direct_vector_hits": 10,
+      "response_vector_hits": 2,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "hybrid_q02",
+      "query": "plegaria",
+      "mode": "hybrid",
+      "fts_hits": 10,
+      "direct_vector_hits": 10,
+      "response_vector_hits": 0,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "hybrid_q03",
+      "query": "hitbodedut",
+      "mode": "hybrid",
+      "fts_hits": 10,
+      "direct_vector_hits": 10,
+      "response_vector_hits": 6,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "hybrid_q04",
+      "query": "sangre habla",
+      "mode": "hybrid",
+      "fts_hits": 10,
+      "direct_vector_hits": 10,
+      "response_vector_hits": 10,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "hybrid_q05",
+      "query": "miedo y fe",
+      "mode": "hybrid",
+      "fts_hits": 2,
+      "direct_vector_hits": 10,
+      "response_vector_hits": 10,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "hybrid_q06",
+      "query": "tristeza y alegría",
+      "mode": "hybrid",
+      "fts_hits": 10,
+      "direct_vector_hits": 10,
+      "response_vector_hits": 10,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "hybrid_q07",
+      "query": "Tierra de Israel fe plegaria milagros",
+      "mode": "hybrid",
+      "fts_hits": 10,
+      "direct_vector_hits": 10,
+      "response_vector_hits": 10,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "hybrid_q08",
+      "query": "suspiro de santidad",
+      "mode": "hybrid",
+      "fts_hits": 8,
+      "direct_vector_hits": 10,
+      "response_vector_hits": 10,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "fts_q09",
+      "query": "\"La plegaria es el arma principal del judío\"",
+      "mode": "phrase",
+      "fts_hits": 0,
+      "direct_vector_hits": 0,
+      "response_vector_hits": 0,
+      "vector_expr": "collection_code == \"breslov\""
+    },
+    {
+      "id": "fts_q10",
+      "query": "El mes de Elul es el momento más propicio para el arrepentimiento",
+      "mode": "fts",
+      "fts_hits": 2,
+      "direct_vector_hits": 0,
+      "response_vector_hits": 0,
+      "vector_expr": "collection_code == \"breslov\""
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "query": {
+    "id": "hybrid_q01",
+    "query": "alegría",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": [
+      "alegría"
+    ],
+    "notes": "Debe devolver resultados por FTS y vector; puede estar dominada por FTS."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 721,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "alegría",
+      "mode": "hybrid",
+      "top_k": 10,
+      "language": "es"
+    },
+    "response": {
+      "query": "alegría",
+      "collection": "breslov_primary",
+      "mode": "hybrid",
+      "language": "es",
+      "total": 10,
+      "results": [
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "e16dbfc9-6721-4f9c-b6b7-ce65e4c4f87c",
+          "chunk_index": 27,
+          "language": "es",
+          "page_start": 24,
+          "page_end": 25,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.56,
+          "fts_rank": 0.8,
+          "vector_score": null,
+          "hybrid_score": 0.56,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "...por él.\n\n2. Cada persona debe llevar a cabo las mitzvot con tanta alegría como para no desear ninguna recompensa por ello en el Mundo que Viene. Más bien, sólo debe desear que el Santo, bendito sea, le envíe otra mitzvá como recompensa...",
+          "highlighted_excerpt": "...por él.\n\n2. Cada persona debe llevar a cabo las mitzvot con tanta <mark>alegría</mark> como para no desear ninguna recompensa por ello en el Mundo que Viene. Más bien, sólo debe desear que el Santo, bendito sea, le envíe otra mitzvá como recompensa...",
+          "content_length": 1787
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "79d4891d-8d97-4d1f-89a2-67437c4d8e6c",
+          "chunk_index": 244,
+          "language": "es",
+          "page_start": 152,
+          "page_end": 152,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.56,
+          "fts_rank": 0.8,
+          "vector_score": null,
+          "hybrid_score": 0.56,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "...y el Eterno, que Su Nombre sea bendecido por siempre.\n\nAhora bien, la alegría de todas las mitzvot realizadas durante el año se siente primordialmente en el corazón, como está escrito, “Tú pusiste alegría en mi corazón” (Salmos 4:8). Y las Tres Festividades...",
+          "highlighted_excerpt": "...y el Eterno, que Su Nombre sea bendecido por siempre.\n\nAhora bien, la <mark>alegría</mark> de todas las mitzvot realizadas durante el año se siente primordialmente en el corazón, como está escrito, “Tú pusiste <mark>alegría</mark> en mi corazón” (Salmos 4:8). Y las Tres Festividades...",
+          "content_length": 1434
+        },
+        {
+          "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+          "document_title": "La Potencia de la Plegaria",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "a717855e-a9f6-45f4-b160-33b7867b1cb0",
+          "chunk_index": 147,
+          "language": "es",
+          "page_start": 96,
+          "page_end": 97,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.56,
+          "fts_rank": 0.8,
+          "vector_score": null,
+          "hybrid_score": 0.56,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "...once especias del _ketoret_ .\n\n## **El** _**Ketoret**_ **: Servir a Dios con Alegría**\n\nEl Rebe Najmán subraya la importancia de la alegría en la vida de la persona. Enseña que el estar alegre es una devoción muy difícil.[51] Al mismo tiempo,...",
+          "highlighted_excerpt": "...once especias del _ketoret_ .\n\n## **El** _**Ketoret**_ **: Servir a Dios con <mark>Alegría</mark>**\n\nEl Rebe Najmán subraya la importancia de la <mark>alegría</mark> en la vida de la persona. Enseña que el estar alegre es una devoción muy difícil.[51] Al mismo tiempo,...",
+          "content_length": 1726
+        },
+        {
+          "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+          "document_title": "El Jardín de las Almas",
+          "author": "Rebe Najman de Breslov",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "1314f71a-9af8-4d7f-9ecc-5e31054de9fc",
+          "chunk_index": 65,
+          "language": "es",
+          "page_start": 45,
+          "page_end": 45,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.49,
+          "fts_rank": 0.7,
+          "vector_score": null,
+          "hybrid_score": 0.49,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "...sufrimiento son en verdad un beneficio muy grande. Como resultado uno se colma de alegría, y la alegría es el \"recipiente\" para retener nuevas ideas de Torá.\n\nLa idea de que recibimos percepciones de Torá a través de la alegría se deriva de...",
+          "highlighted_excerpt": "...sufrimiento son en verdad un beneficio muy grande. Como resultado uno se colma de <mark>alegría</mark>, y la <mark>alegría</mark> es el &quot;recipiente&quot; para retener nuevas ideas de Torá.\n\nLa idea de que recibimos percepciones de Torá a través de la <mark>alegría</mark> se deriva de...",
+          "content_length": 1702
+        },
+        {
+          "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+          "document_title": "La Potencia de la Plegaria",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "a146ab45-b9b6-4411-86f7-83a5d05e3152",
+          "chunk_index": 149,
+          "language": "es",
+          "page_start": 97,
+          "page_end": 98,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.42,
+          "fts_rank": 0.6,
+          "vector_score": null,
+          "hybrid_score": 0.42,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "...**98**[■] _**Shajarit -**_ **La Plegaria de la Mañana**\n\ncabo la mitzvá con alegría, la _Shejiná_ deja su exilio en el ámbito de las _klipot_ . Esto es lo que significa que “ _Maljut_ del Mundo de _Asiá_ asciende desde las _klipot_ ”....",
+          "highlighted_excerpt": "...**98**[■] _**Shajarit -**_ **La Plegaria de la Mañana**\n\ncabo la mitzvá con <mark>alegría</mark>, la _Shejiná_ deja su exilio en el ámbito de las _klipot_ . Esto es lo que significa que “ _Maljut_ del Mundo de _Asiá_ asciende desde las _klipot_ ”....",
+          "content_length": 1774
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "72b092a0-b461-4548-b41a-0501cc3fe34f",
+          "chunk_index": 16,
+          "language": "es",
+          "page_start": 13,
+          "page_end": 15,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.42,
+          "fts_rank": 0.6,
+          "vector_score": null,
+          "hybrid_score": 0.42,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "hijos una larga y saludable vida plena de alegría y felicidad. Puedan ellos celebrar junto con todos los Judíos la Redención de Israel, en Jerusalem, la dorada, rápido y en nuestros días. Amén.\n\n_Jaim Kramer Menajem Av....",
+          "highlighted_excerpt": "hijos una larga y saludable vida plena de <mark>alegría</mark> y felicidad. Puedan ellos celebrar junto con todos los Judíos la Redención de Israel, en Jerusalem, la dorada, rápido y en nuestros días. Amén.\n\n_Jaim Kramer Menajem Av....",
+          "content_length": 2282
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "cc77f514-8428-4a9a-bb8a-61270dd91851",
+          "chunk_index": 706,
+          "language": "es",
+          "page_start": 440,
+          "page_end": 440,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.42,
+          "fts_rank": 0.6,
+          "vector_score": null,
+          "hybrid_score": 0.42,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "...## 9 Av\n\n17. Al ayunar la persona se hace digna de la alegría. Y el nivel de alegría que alcance estará en relación con el número de días de su ayuno. Ahora bien, la principal rectificación de los sueños se produce a...",
+          "highlighted_excerpt": "...## 9 Av\n\n17. Al ayunar la persona se hace digna de la <mark>alegría</mark>. Y el nivel de <mark>alegría</mark> que alcance estará en relación con el número de días de su ayuno. Ahora bien, la principal rectificación de los sueños se produce a...",
+          "content_length": 1626
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "6e223725-f877-44ef-a41a-493b4d62fd8f",
+          "chunk_index": 199,
+          "language": "es",
+          "page_start": 127,
+          "page_end": 127,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.42,
+          "fts_rank": 0.6,
+          "vector_score": null,
+          "hybrid_score": 0.42,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "las mitzvot con alegría, la santidad alcanza su plenitud y se eleva la vitalidad y la santidad atrapada en las fuerzas de la impureza. Por lo tanto, al realizar una mitzvá con alegría,...",
+          "highlighted_excerpt": "las mitzvot con <mark>alegría</mark>, la santidad alcanza su plenitud y se eleva la vitalidad y la santidad atrapada en las fuerzas de la impureza. Por lo tanto, al realizar una mitzvá con <mark>alegría</mark>,...",
+          "content_length": 1407
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "4bf69fe2-666d-47c0-9177-8721e3be8223",
+          "chunk_index": 76,
+          "language": "es",
+          "page_start": 54,
+          "page_end": 55,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.393,
+          "fts_rank": 1.2,
+          "vector_score": 0.4867,
+          "hybrid_score": 0.393,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "...y aprovecharla. Al fi nal, las cosas saldrán bien. Enseñó el Rebe Najmán: La alegría abre el corazón ( _El Libro de los Atributos, Alegría_ A:2).\n\n**==> picture [23 x 8] intentionally omitted <==**\n\n## **LAS RECOMPENSAS DE LA ALEGRÍA**\n\nUna...",
+          "highlighted_excerpt": "...y aprovecharla. Al fi nal, las cosas saldrán bien. Enseñó el Rebe Najmán: La <mark>alegría</mark> abre el corazón ( _El Libro de los Atributos, <mark>Alegría</mark>_ A:2).\n\n**==&gt; picture [23 x 8] intentionally omitted &lt;==**\n\n## **LAS RECOMPENSAS DE LA <mark>ALEGRÍA</mark>**\n\nUna...",
+          "content_length": 1639
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "a7557ef9-0692-44f6-9ad3-451f8fe830ba",
+          "chunk_index": 69,
+          "language": "es",
+          "page_start": 50,
+          "page_end": 51,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.3537,
+          "fts_rank": 1.0,
+          "vector_score": 0.4693,
+          "hybrid_score": 0.3537,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "rastrar a la misma depresión dentro del círculo de alegría y mantenerla allí ( _Likutey Moharan_ II, 23). Forzarse a estar alegre hará que al fi nal, el motivo de la tristeza\n\n## Page 51\n\n_ALEGRIA /...",
+          "highlighted_excerpt": "rastrar a la misma depresión dentro del círculo de <mark>alegría</mark> y mantenerla allí ( _Likutey Moharan_ II, 23). Forzarse a estar alegre hará que al fi nal, el motivo de la tristeza\n\n## Page 51\n\n_ALEGRIA /...",
+          "content_length": 1473
+        }
+      ]
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 36,
+      "top_titles": [
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+      ]
+    },
+    "vector": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 766,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "top": [
+        {
+          "chunk_id": "4bf69fe2-666d-47c0-9177-8721e3be8223",
+          "distance": 0.4867,
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "28586085-5b9a-4df1-a29f-71864e3a5425",
+          "distance": 0.4859,
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "42065bff-7723-4f40-b709-69d09c304705",
+          "distance": 0.481,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "score": 20,
+    "status": "PASS fuerte",
+    "http_200": true,
+    "result_count": 10,
+    "term_hits": {
+      "alegría": true
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "yes",
+    "response_vector_hits": 2,
+    "direct_vector_hits": 10,
+    "hybrid_vector_merged_hits": 2,
+    "fts_hits": 10,
+    "critical_warnings": [],
+    "quality_warnings": []
+  }
+}

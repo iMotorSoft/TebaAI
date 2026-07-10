@@ -1,0 +1,23 @@
+{
+  "endpoint": "http://127.0.0.1:7008/library/search",
+  "head": "b2b0355c471cd9590b2f29cd3acb88b11349ab9e",
+  "scope_code": "breslov_primary",
+  "milvus_collection_code": "breslov",
+  "query_count": 10,
+  "global_score": 145,
+  "max_score": 200,
+  "percentage": 72.5,
+  "status": "WARN",
+  "hybrid_query_count": 8,
+  "hybrid_direct_vector_positive": 8,
+  "hybrid_response_vector_positive": 0,
+  "gaps": [
+    "hybrid_q01: hybrid_response_vector_zero",
+    "hybrid_q03: hybrid_response_vector_zero",
+    "hybrid_q04: hybrid_response_vector_zero",
+    "hybrid_q05: hybrid_response_vector_zero",
+    "hybrid_q06: hybrid_response_vector_zero",
+    "hybrid_q07: hybrid_response_vector_zero",
+    "hybrid_q08: hybrid_response_vector_zero"
+  ]
+}

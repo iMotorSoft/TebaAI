@@ -1,0 +1,334 @@
+{
+  "query": {
+    "id": "hybrid_q06",
+    "query": "tristeza y alegría",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": [
+      "tristeza",
+      "alegría"
+    ],
+    "notes": "Query investigativa típica."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 631,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "tristeza y alegría",
+      "mode": "hybrid",
+      "top_k": 10,
+      "language": "es"
+    },
+    "response": {
+      "query": "tristeza y alegría",
+      "collection": "breslov_primary",
+      "mode": "hybrid",
+      "language": "es",
+      "total": 10,
+      "results": [
+        {
+          "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+          "document_title": "El Alma del Rebe Najmán",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "17c3c123-8bbc-456b-9aa6-a6fd142a4890",
+          "chunk_index": 403,
+          "language": "es",
+          "page_start": 154,
+          "page_end": 154,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2343,
+          "fts_rank": null,
+          "vector_score": 0.5206,
+          "hybrid_score": 0.2343,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "ido a la gran tristeza y a la profunda depresión que sienten al estar muertos.\n\nDebes estar siempre alegre, ¡seas quien fueres! Aun si te sientes lejos de HaShem, mantente alegre y agradéceLe a Él “por no hacerme pagano” ( _Bendición de la mañana_ ).\n\nRespecto a aquellas acciones cometidas en contra",
+          "highlighted_excerpt": "ido a la gran <mark>tristeza y a la pr</mark>ofunda depresión que sienten al estar muertos.\n\nDebes estar siempre alegre, ¡seas quien fueres! Aun si te sientes lejos de HaShem, mantente alegre y a...",
+          "content_length": 1178
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "c9060283-3307-490e-88b2-788633b3689b",
+          "chunk_index": 67,
+          "language": "es",
+          "page_start": 49,
+          "page_end": 50,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2341,
+          "fts_rank": null,
+          "vector_score": 0.5202,
+          "hybrid_score": 0.2341,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "nsa usted. ¿O\n\n## Page 50\n\n## _28 / CRUZANDO EL PUENTE ANGOSTO_\n\nno? De hecho, el Rebe Najmán no lo considera así: “La verdadera alegría es la cosa más difícil.” “Debes _forzarte_ a ti mismo a estar feliz todo el tiempo” ( _Consejo, Alegría 35_ ) _._\n\nMantenga un estado de ánimo alegre en todo momen",
+          "highlighted_excerpt": "nsa usted. ¿O\n\n## Page 50\n\n## _28 / CRUZANDO EL PUENTE ANGOSTO_\n\nno? De hecho, el Rebe Najmán no lo considera así: “La verdadera alegría es la cosa más difícil.” “Debes _forzarte_ a ti mismo a estar feliz todo el tiempo” ( _Consejo, Alegría 35_ ) _._\n\nMantenga un estado de ánimo alegre en todo momen",
+          "content_length": 1426
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "4592530b-5478-4abd-a77e-cb9f7e9676c7",
+          "chunk_index": 70,
+          "language": "es",
+          "page_start": 51,
+          "page_end": 51,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2269,
+          "fts_rank": null,
+          "vector_score": 0.5043,
+          "hybrid_score": 0.2269,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "s, alégrese y agradézcale por “no hacerlo un hereje.” Simplemente alégrese de que puede sentirse orgulloso y feliz de su herencia, que ni siquiera es obra suya, sino un regalo de Dios (Este tema se explica con mayor detalle en el capítulo siguiente).\n\n**Fingiéndolo.** Y aunque no se sienta alegre, a",
+          "highlighted_excerpt": "s, alégrese y agradézcale por “no hacerlo un hereje.” Simplemente alégrese de que puede sentirse orgulloso y feliz de su herencia, que ni siquiera es obra suya, sino un regalo de Dios (Este tema se explica con mayor detalle en el capítulo siguiente).\n\n**Fingiéndolo.** Y aunque no se sienta alegre, a",
+          "content_length": 1336
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "e4736e26-4964-4d18-b825-af1f285f40fc",
+          "chunk_index": 64,
+          "language": "es",
+          "page_start": 48,
+          "page_end": 48,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2229,
+          "fts_rank": null,
+          "vector_score": 0.4952,
+          "hybrid_score": 0.2229,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "almente hay algo por lo cual estar alegres? ¿No están nuestras vidas repletas de motivos de preocupación? ¿Cómo podremos pagar ese crédito? ¡¿Qué dijiste que le pasó al automóvil?! ¡¿A quién dijiste que invitaste a cenar?! Y la lista es interminable.\n\nEnseña el Rebe Najmán: “La depresión es la morde",
+          "highlighted_excerpt": "... gente piensa que las difi cultades son algo inesperado en la vida. Se sorprenden cuando aparece la <mark>tristeza. Pero aun</mark>que alguien llegase a vivir mil años, aún tendría una larga lista de problemas esperándolo. Cuando un problema se va, de seguro que otro lo sigue por ...",
+          "content_length": 1309
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "f1d20e46-b028-49bb-ab57-89c9c837c2a2",
+          "chunk_index": 74,
+          "language": "es",
+          "page_start": 53,
+          "page_end": 54,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2228,
+          "fts_rank": null,
+          "vector_score": 0.4951,
+          "hybrid_score": 0.2228,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "spondí: “¡Al menos quiero estar alegre!” Es decir, que aunque no sienta verdadera alegría, al menos _quiero_ sentirla. ( _Sabiduría y Enseñanzas del Rabí Najmán_ #155).\n\n**==> picture [23 x 8] intentionally omitted <==**\n\n## **SUPERANDO LA TRISTEZA**\n\nEnseña el Rebe Najmán: La gente dice que existen",
+          "highlighted_excerpt": "...nzas del Rabí Najmán_ #155).\n\n**==&gt; picture [23 x 8] intentionally omitted &lt;==**\n\n## **SUPERANDO LA <mark>TRISTEZA**\n\nEnseña</mark> el Rebe Najmán: La gente dice que existen dos mundos. Este mundo y el Mundo que Viene. Todos creemos que hay un Mundo que Viene. _Puede_ que este mun...",
+          "content_length": 1647
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "e6accd30-ce73-49e0-a97b-d414a6d720bf",
+          "chunk_index": 63,
+          "language": "es",
+          "page_start": 47,
+          "page_end": 48,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2196,
+          "fts_rank": null,
+          "vector_score": 0.4879,
+          "hybrid_score": 0.2196,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "r que hay motivo para estarlo! ( _Rabí Eliahu Jaim Rosen_ ) _._\n\n* * *\n\n## **LA IMPORTANCIA DE LA ALEGRÍA**\n\nUno de los motivos debido al cual nos hallamos distantes de Dios es la falta de concentración en nuestros objetivos. Con _Yishuv_\n\n## Page 48\n\n## _26 / CRUZANDO EL PUENTE ANGOSTO_\n\n_hadaat_ (",
+          "highlighted_excerpt": "r que hay motivo para estarlo! ( _Rabí Eliahu Jaim Rosen_ ) _._\n\n* * *\n\n## **LA IMPORTANCIA DE LA ALEGRÍA**\n\nUno de los motivos debido al cual nos hallamos distantes de Dios es la falta de concentración en nuestros objetivos. Con _Yishuv_\n\n## Page 48\n\n## _26 / CRUZANDO EL PUENTE ANGOSTO_\n\n_hadaat_ (",
+          "content_length": 1259
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "d782c8ae-dca2-4917-9412-8ea326dae80c",
+          "chunk_index": 71,
+          "language": "es",
+          "page_start": 51,
+          "page_end": 52,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2193,
+          "fts_rank": null,
+          "vector_score": 0.4874,
+          "hybrid_score": 0.2193,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "e la depresión y el decaimiento. [Desafortunadamente] no nos es muy\n\n## Page 52\n\n## _30 / CRUZANDO EL PUENTE ANGOSTO_\n\ndifícil actuar de manera tonta. ¿Quién sabe? Es posible que sea una mejora con respecto a muchas de las cosas “serias” que hacemos.\n\n**Canciones, música y danza.** La música clarifi",
+          "highlighted_excerpt": "e la depresión y el decaimiento. [Desafortunadamente] no nos es muy\n\n## Page 52\n\n## _30 / CRUZANDO EL PUENTE ANGOSTO_\n\ndifícil actuar de manera tonta. ¿Quién sabe? Es posible que sea una mejora con respecto a muchas de las cosas “serias” que hacemos.\n\n**Canciones, música y danza.** La música clarifi",
+          "content_length": 1721
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "832156de-ff0e-48cd-a601-5ea8ecfa7dbd",
+          "chunk_index": 72,
+          "language": "es",
+          "page_start": 52,
+          "page_end": 53,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2191,
+          "fts_rank": null,
+          "vector_score": 0.4868,
+          "hybrid_score": 0.2191,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "zel_ p.62).\n\n* * *\n\n## **LA ALEGRÍA EN SHABAT Y EN LAS FESTIVIDADES**\n\nCierta vez dijo el Rebe Najmán: “Hasta el más común de los Judíos siente alegría y felicidad al sentarse a la mesa del Shabat” ( _Sabiduría y Enseñanzas del Rabí Najmán_ #155) _._\n\nCierta vez, Reb Noson asistió al funeral de algu",
+          "highlighted_excerpt": "zel_ p.62).\n\n* * *\n\n## **LA ALEGRÍA EN SHABAT Y EN LAS FESTIVIDADES**\n\nCierta vez dijo el Rebe Najmán: “Hasta el más común de los Judíos siente alegría y felicidad al sentarse a la mesa del Shabat” ( _Sabiduría y Enseñanzas del Rabí Najmán_ #155) _._\n\nCierta vez, Reb Noson asistió al funeral de algu",
+          "content_length": 904
+        },
+        {
+          "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+          "document_title": "El Alma del Rebe Najmán",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "b6001648-e7ed-4fbe-bf2e-205e65d73f24",
+          "chunk_index": 402,
+          "language": "es",
+          "page_start": 153,
+          "page_end": 154,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2135,
+          "fts_rank": null,
+          "vector_score": 0.4744,
+          "hybrid_score": 0.2135,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "m por no satisfacer nuestros deseos.\n\nPero la persona con el corazón quebrantado es como un niño reclamando delante de su padre. Es como un niño llorando y gimiendo pues su padre se encuentra lejos.\n\n**==> picture [67 x 9] intentionally omitted <==**\n\n_Rabeinu zal_ dice que _atzvut_ y un corazón que",
+          "highlighted_excerpt": "... les pregunta sus nombres y no los pueden recordar. Nos dijo que olvidan su nombre debido a la gran <mark>tristeza y a la pr</mark>ofunda depresión que sienten al estar muertos.\n\nDebes estar siempre alegre, ¡seas quien fueres! Aun si te sientes lejos de HaShem, mantente alegre y a...",
+          "content_length": 1644
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "4bf69fe2-666d-47c0-9177-8721e3be8223",
+          "chunk_index": 76,
+          "language": "es",
+          "page_start": 54,
+          "page_end": 55,
+          "chapter": null,
+          "section": null,
+          "match_type": "vector",
+          "rank": 0.2131,
+          "fts_rank": null,
+          "vector_score": 0.4736,
+          "hybrid_score": 0.2131,
+          "source_signals": [
+            "vector"
+          ],
+          "plain_excerpt": "nos sobre ella y aprovecharla. Al fi nal, las cosas saldrán bien. Enseñó el Rebe Najmán: La alegría abre el corazón ( _El Libro de los Atributos, Alegría_ A:2).\n\n**==> picture [23 x 8] intentionally omitted <==**\n\n## **LAS RECOMPENSAS DE LA ALEGRÍA**\n\nUna persona que está siempre alegre, triunfa ( _",
+          "highlighted_excerpt": "nos sobre ella y aprovecharla. Al fi nal, las cosas saldrán bien. Enseñó el Rebe Najmán: La alegría abre el corazón ( _El Libro de los Atributos, Alegría_ A:2).\n\n**==&gt; picture [23 x 8] intentionally omitted &lt;==**\n\n## **LAS RECOMPENSAS DE LA ALEGRÍA**\n\nUna persona que está siempre alegre, triunfa ( _",
+          "content_length": 1639
+        }
+      ]
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 49,
+      "top_titles": [
+        "Likutey Halajot LM II 8",
+        "La Potencia de la Plegaria",
+        "Likutey Halajot LM II 8"
+      ]
+    },
+    "vector": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 674,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "top": [
+        {
+          "chunk_id": "a7557ef9-0692-44f6-9ad3-451f8fe830ba",
+          "distance": 0.5912,
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "42065bff-7723-4f40-b709-69d09c304705",
+          "distance": 0.5379,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "8e62ed82-ca3f-4c2c-941d-cb37a151a6ec",
+          "distance": 0.5367,
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "collection_code": "breslov"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "score": 20,
+    "status": "PASS fuerte",
+    "http_200": true,
+    "result_count": 10,
+    "term_hits": {
+      "tristeza": true,
+      "alegría": true
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "yes",
+    "response_vector_hits": 10,
+    "direct_vector_hits": 10,
+    "hybrid_vector_merged_hits": 10,
+    "fts_hits": 10,
+    "critical_warnings": [],
+    "quality_warnings": []
+  }
+}

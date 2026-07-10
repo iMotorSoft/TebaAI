@@ -1,0 +1,112 @@
+[
+  {
+    "id": "hybrid_q01",
+    "query": "alegría",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": ["alegría"],
+    "notes": "Debe devolver resultados por FTS y vector; puede estar dominada por FTS."
+  },
+  {
+    "id": "hybrid_q02",
+    "query": "plegaria",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": ["plegaria", "oración", "rezar"],
+    "notes": "Vector directo puede existir aunque hybrid final esté dominado por FTS."
+  },
+  {
+    "id": "hybrid_q03",
+    "query": "hitbodedut",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": ["hitbodedut", "aislamiento", "plegaria personal"],
+    "notes": "Debe activar rama vectorial."
+  },
+  {
+    "id": "hybrid_q04",
+    "query": "sangre habla",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": ["sangre", "habla"],
+    "notes": "Query relacional corta; el probe previo mostró hybrid vector fuerte."
+  },
+  {
+    "id": "hybrid_q05",
+    "query": "miedo y fe",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": ["miedo", "temor", "fe", "emuná"],
+    "notes": "Valida búsqueda conceptual mixta."
+  },
+  {
+    "id": "hybrid_q06",
+    "query": "tristeza y alegría",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": ["tristeza", "alegría"],
+    "notes": "Query investigativa típica."
+  },
+  {
+    "id": "hybrid_q07",
+    "query": "Tierra de Israel fe plegaria milagros",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": ["Tierra de Israel", "fe", "plegaria", "milagros"],
+    "notes": "Debe recuperar conexiones conceptuales conocidas."
+  },
+  {
+    "id": "hybrid_q08",
+    "query": "suspiro de santidad",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": ["suspiro", "santidad"],
+    "notes": "Valida frase conceptual específica."
+  },
+  {
+    "id": "fts_q09",
+    "query": "\"La plegaria es el arma principal del judío\"",
+    "mode": "phrase",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 5,
+    "expect_vector_branch": false,
+    "expected_terms": ["plegaria", "arma principal", "judío"],
+    "notes": "Control phrase/FTS; no debe depender de Milvus."
+  },
+  {
+    "id": "fts_q10",
+    "query": "El mes de Elul es el momento más propicio para el arrepentimiento",
+    "mode": "fts",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 5,
+    "expect_vector_branch": false,
+    "expected_terms": ["Elul", "arrepentimiento"],
+    "notes": "Control FTS directo."
+  }
+]

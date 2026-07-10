@@ -1,0 +1,75 @@
+{
+  "query": {
+    "id": "fts_q09",
+    "query": "\"La plegaria es el arma principal del judío\"",
+    "mode": "phrase",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 5,
+    "expect_vector_branch": false,
+    "expected_terms": [
+      "plegaria",
+      "arma principal",
+      "judío"
+    ],
+    "notes": "Control phrase/FTS; no debe depender de Milvus."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 36,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "\"La plegaria es el arma principal del judío\"",
+      "mode": "phrase",
+      "top_k": 5,
+      "language": "es"
+    },
+    "response": {
+      "query": "\"La plegaria es el arma principal del judío\"",
+      "collection": "breslov_primary",
+      "mode": "phrase",
+      "language": "es",
+      "total": 0,
+      "results": []
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 0,
+      "error": null,
+      "elapsed_ms": 31,
+      "top_titles": []
+    },
+    "vector": {
+      "hits": 0,
+      "error": null,
+      "elapsed_ms": null,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "skipped": true
+    }
+  },
+  "scoring": {
+    "score": 13,
+    "status": "WARN",
+    "http_200": true,
+    "result_count": 0,
+    "term_hits": {
+      "plegaria": false,
+      "arma principal": false,
+      "judío": false
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "no",
+    "response_vector_hits": 0,
+    "direct_vector_hits": 0,
+    "hybrid_vector_merged_hits": 0,
+    "fts_hits": 0,
+    "critical_warnings": [],
+    "quality_warnings": [
+      "empty_results",
+      "missing_expected_terms:plegaria,arma principal,judío"
+    ]
+  }
+}

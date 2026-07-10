@@ -1,0 +1,344 @@
+{
+  "query": {
+    "id": "hybrid_q03",
+    "query": "hitbodedut",
+    "mode": "hybrid",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 10,
+    "expect_vector_branch": true,
+    "expected_terms": [
+      "hitbodedut",
+      "aislamiento",
+      "plegaria personal"
+    ],
+    "notes": "Debe activar rama vectorial."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 653,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "hitbodedut",
+      "mode": "hybrid",
+      "top_k": 10,
+      "language": "es"
+    },
+    "response": {
+      "query": "hitbodedut",
+      "collection": "breslov_primary",
+      "mode": "hybrid",
+      "language": "es",
+      "total": 10,
+      "results": [
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "538cf9ab-558b-4f9a-8ce9-27a6a51e8ad6",
+          "chunk_index": 20,
+          "language": "es",
+          "page_start": 16,
+          "page_end": 17,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.35,
+          "fts_rank": 0.5,
+          "vector_score": null,
+          "hybrid_score": 0.35,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "....   .   .   .   .|\n|9.|_HITBODEDUT_141|\n||La grandeza del hitbodedut...",
+          "highlighted_excerpt": "....   .   .   .   .|\n|9.|_<mark>HITBODEDUT</mark>_141|\n||La grandeza del <mark>hitbodedut</mark>...",
+          "content_length": 4104
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "8208dab7-1b9a-4b5d-b921-8b8ff6cd632f",
+          "chunk_index": 245,
+          "language": "es",
+          "page_start": 166,
+          "page_end": 167,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.3118,
+          "fts_rank": 0.8,
+          "vector_score": 0.4345,
+          "hybrid_score": 0.3118,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "...individuos muy fuertes en su servicio a Dios pueden pasar más tiempo en el _hitbodedut_ ( _Likutey Moharan_ II, 96).\n\nLa noche es el momento ideal para el _hitbodedut,_ cuando el mundo que lo rodea está dormido. Durante el día, la gente está...",
+          "highlighted_excerpt": "...individuos muy fuertes en su servicio a Dios pueden pasar más tiempo en el _<mark>hitbodedut</mark>_ ( _Likutey Moharan_ II, 96).\n\nLa noche es el momento ideal para el _<mark>hitbodedut</mark>,_ cuando el mundo que lo rodea está dormido. Durante el día, la gente está...",
+          "content_length": 1632
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "8a719985-c953-434a-b021-5b51fe06ef17",
+          "chunk_index": 238,
+          "language": "es",
+          "page_start": 161,
+          "page_end": 163,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.2892,
+          "fts_rank": 0.7,
+          "vector_score": 0.4058,
+          "hybrid_score": 0.2892,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "...* * *\n\n## Page 163\n\n_141_\n\n**9**\n\n## **HITBODEDUT**\n\nEl _Hitbodedut_ se encuentra en un nivel muy alto. De hecho, en un nivel por sobre todos los niveles ( _Likutey Moharan_ II, 25).\n\nUna de las...",
+          "highlighted_excerpt": "...* * *\n\n## Page 163\n\n_141_\n\n**9**\n\n## **<mark>HITBODEDUT</mark>**\n\nEl _<mark>Hitbodedut</mark>_ se encuentra en un nivel muy alto. De hecho, en un nivel por sobre todos los niveles ( _Likutey Moharan_ II, 25).\n\nUna de las...",
+          "content_length": 1795
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "cdecc19c-44a2-4a1f-96b4-e09711fc4757",
+          "chunk_index": 240,
+          "language": "es",
+          "page_start": 163,
+          "page_end": 164,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.28,
+          "fts_rank": 0.4,
+          "vector_score": null,
+          "hybrid_score": 0.28,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "...para _siempre”_ ( _Likutey Moharan_ II, 95-101 etc.).\n\nSi ha estado practicando el _hitbodedut_ durante años y aún sigue pensando que no ha obtenido ninguna mejora, no se detenga, continúe. Al fi nal, alcanzará su objetivo, tal como lo hizo el Rey David....",
+          "highlighted_excerpt": "...para _siempre”_ ( _Likutey Moharan_ II, 95-101 etc.).\n\nSi ha estado practicando el _<mark>hitbodedut</mark>_ durante años y aún sigue pensando que no ha obtenido ninguna mejora, no se detenga, continúe. Al fi nal, alcanzará su objetivo, tal como lo hizo el Rey David....",
+          "content_length": 1705
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "14a15066-16bc-49c2-91b1-27c8620b3459",
+          "chunk_index": 254,
+          "language": "es",
+          "page_start": 172,
+          "page_end": 172,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.28,
+          "fts_rank": 0.4,
+          "vector_score": null,
+          "hybrid_score": 0.28,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "..._Aveneha Barzel,_ p.52 #12).\n\nUna vez que se acostumbre a la práctica del _hitbodedut_ verá cómo es posible llegar a orar por todo, desde los deseos espirituales más exaltados hasta las cuestiones materiales más triviales, pasando por toda la gama intermedia. No se...",
+          "highlighted_excerpt": "..._Aveneha Barzel,_ p.52 #12).\n\nUna vez que se acostumbre a la práctica del _<mark>hitbodedut</mark>_ verá cómo es posible llegar a orar por todo, desde los deseos espirituales más exaltados hasta las cuestiones materiales más triviales, pasando por toda la gama intermedia. No se...",
+          "content_length": 1522
+        },
+        {
+          "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+          "document_title": "Kokhavey Ohr",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "68a25700-b0f2-45f4-a38c-80f353f2717d",
+          "chunk_index": 130,
+          "language": "en",
+          "page_start": 91,
+          "page_end": 92,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.28,
+          "fts_rank": 0.4,
+          "vector_score": null,
+          "hybrid_score": 0.28,
+          "source_signals": [
+            "fts"
+          ],
+          "plain_excerpt": "...that HaShem helps him so much when he is old, because he often did _hitbodedut_ in his youth and enunciated his discussion between himself and his Maker. As a result, now he is not able to do anything without first expressing his dialogue before...",
+          "highlighted_excerpt": "...that HaShem helps him so much when he is old, because he often did _<mark>hitbodedut</mark>_ in his youth and enunciated his discussion between himself and his Maker. As a result, now he is not able to do anything without first expressing his dialogue before...",
+          "content_length": 1781
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "a6b35bbc-620c-4e49-8d8a-22fd675d71fe",
+          "chunk_index": 241,
+          "language": "es",
+          "page_start": 164,
+          "page_end": 165,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.2764,
+          "fts_rank": 0.6,
+          "vector_score": 0.4425,
+          "hybrid_score": 0.2764,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "...elevarnos siempre hacia todos los grandes niveles que deseamos alcanzar y cumplir, es el _hitbodedut_ ( _Likutey Moharan_ II, 101).\n\n## Page 165\n\n_HITBODEDUT / 143_\n\n## **LA GRANDEZA DEL HITBODEDUT**\n\nLas plegarias personales ante Dios, durante el _hitbodedut,_ son...",
+          "highlighted_excerpt": "...elevarnos siempre hacia todos los grandes niveles que deseamos alcanzar y cumplir, es el _<mark>hitbodedut</mark>_ ( _Likutey Moharan_ II, 101).\n\n## Page 165\n\n_<mark>HITBODEDUT</mark> / 143_\n\n## **LA GRANDEZA DEL <mark>HITBODEDUT</mark>**\n\nLas plegarias personales ante Dios, durante el _<mark>hitbodedut</mark>,_ son...",
+          "content_length": 1658
+        },
+        {
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "document_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "author": "Jaim Kramer",
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "6659f8d4-8af8-422b-9a2d-d303df2ec16d",
+          "chunk_index": 276,
+          "language": "es",
+          "page_start": 186,
+          "page_end": 186,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.255,
+          "fts_rank": 0.5,
+          "vector_score": 0.4222,
+          "hybrid_score": 0.255,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "...**==> picture [7 x 6] intentionally omitted <==**\n\nEn resumen, los _cómo_ del _hitbodedut_ son prácticamente ilimitados. Hay muchas y diferentes maneras y técnicas de meditación y de expresión del corazón y del alma delante de Dios; de la misma manera en que...",
+          "highlighted_excerpt": "...**==&gt; picture [7 x 6] intentionally omitted &lt;==**\n\nEn resumen, los _cómo_ del _<mark>hitbodedut</mark>_ son prácticamente ilimitados. Hay muchas y diferentes maneras y técnicas de meditación y de expresión del corazón y del alma delante de Dios; de la misma manera en que...",
+          "content_length": 1378
+        },
+        {
+          "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+          "document_title": "El Alma del Rebe Najmán",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "89171cb1-97b0-42b7-938c-132e59edce0e",
+          "chunk_index": 355,
+          "language": "es",
+          "page_start": 136,
+          "page_end": 137,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.2417,
+          "fts_rank": 0.4,
+          "vector_score": 0.456,
+          "hybrid_score": 0.2417,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "...mejorarlo con falsas declaraciones pensando que no hay un crimen en ello.\n\n## _**Hitbodedut, hitbodedut**_\n\n_Rabeinu zal_ testifica que las historias sobre el Baal Shem Tov son verdaderas. Antes de su revelación, el Baal Shem Tov practicaba la importante costumbre del _hitbodedut_...",
+          "highlighted_excerpt": "...mejorarlo con falsas declaraciones pensando que no hay un crimen en ello.\n\n## _**<mark>Hitbodedut</mark>, <mark>hitbodedut</mark>**_\n\n_Rabeinu zal_ testifica que las historias sobre el Baal Shem Tov son verdaderas. Antes de su revelación, el Baal Shem Tov practicaba la importante costumbre del _<mark>hitbodedut</mark>_...",
+          "content_length": 1523
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "fd6f7849-deb5-4644-9ed9-ef4244b68688",
+          "chunk_index": 401,
+          "language": "es",
+          "page_start": 236,
+          "page_end": 237,
+          "chapter": null,
+          "section": null,
+          "match_type": "hybrid",
+          "rank": 0.2404,
+          "fts_rank": 0.4,
+          "vector_score": 0.447,
+          "hybrid_score": 0.2404,
+          "source_signals": [
+            "fts",
+            "vector"
+          ],
+          "plain_excerpt": "gra mediante la autoanulación. La única manera de alcanzarlo es mediante el hitbodedut (la plegaria personal en reclusión). Al expresarse delante de Dios en hitbodedut, la persona puede anular todo; puede unirse a Dios y quedar incluida en su fuente.\n\n2....",
+          "highlighted_excerpt": "gra mediante la autoanulación. La única manera de alcanzarlo es mediante el <mark>hitbodedut</mark> (la plegaria personal en reclusión). Al expresarse delante de Dios en <mark>hitbodedut</mark>, la persona puede anular todo; puede unirse a Dios y quedar incluida en su fuente.\n\n2....",
+          "content_length": 1463
+        }
+      ]
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 38,
+      "top_titles": [
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán"
+      ]
+    },
+    "vector": {
+      "hits": 10,
+      "error": null,
+      "elapsed_ms": 599,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "top": [
+        {
+          "chunk_id": "89171cb1-97b0-42b7-938c-132e59edce0e",
+          "distance": 0.4561,
+          "title": "El Alma del Rebe Najmán",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "fd6f7849-deb5-4644-9ed9-ef4244b68688",
+          "distance": 0.4471,
+          "title": "KITZUR",
+          "collection_code": "breslov"
+        },
+        {
+          "chunk_id": "c74146cc-6f47-41fd-8c13-2f09d337afe9",
+          "distance": 0.4449,
+          "title": "Kokhavey Ohr",
+          "collection_code": "breslov"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "score": 19,
+    "status": "PASS fuerte",
+    "http_200": true,
+    "result_count": 10,
+    "term_hits": {
+      "hitbodedut": true,
+      "aislamiento": false,
+      "plegaria personal": true
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "yes",
+    "response_vector_hits": 6,
+    "direct_vector_hits": 10,
+    "hybrid_vector_merged_hits": 6,
+    "fts_hits": 10,
+    "critical_warnings": [],
+    "quality_warnings": [
+      "missing_expected_terms:aislamiento"
+    ]
+  }
+}

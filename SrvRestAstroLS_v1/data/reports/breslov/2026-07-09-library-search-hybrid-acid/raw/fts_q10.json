@@ -1,0 +1,118 @@
+{
+  "query": {
+    "id": "fts_q10",
+    "query": "El mes de Elul es el momento más propicio para el arrepentimiento",
+    "mode": "fts",
+    "language": "es",
+    "scope_code": "breslov_primary",
+    "top_k": 5,
+    "expect_vector_branch": false,
+    "expected_terms": [
+      "Elul",
+      "arrepentimiento"
+    ],
+    "notes": "Control FTS directo."
+  },
+  "http": {
+    "status_code": 200,
+    "elapsed_ms": 36,
+    "request": {
+      "collection": "breslov_primary",
+      "query": "El mes de Elul es el momento más propicio para el arrepentimiento",
+      "mode": "fts",
+      "top_k": 5,
+      "language": "es"
+    },
+    "response": {
+      "query": "El mes de Elul es el momento más propicio para el arrepentimiento",
+      "collection": "breslov_primary",
+      "mode": "fts",
+      "language": "es",
+      "total": 2,
+      "results": [
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "fb1e9e5a-56a0-4ce0-8224-cffc3e7e06df",
+          "chunk_index": 806,
+          "language": "es",
+          "page_start": 503,
+          "page_end": 504,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.0202,
+          "fts_rank": null,
+          "vector_score": null,
+          "hybrid_score": null,
+          "source_signals": [],
+          "plain_excerpt": "...“¿Qué soy yo?”]. Entonces las cosas volverán a suceder como lo desea.\n\n2. El mes de Elul es el momento más propicio para el arrepentimiento. Ello se debe a que esos son días de favor Divino, cuando Moisés ascendió para recibir el segundo juego de Tablas y cuando abrió un claro sendero por el...",
+          "highlighted_excerpt": "...“¿Qué soy yo?”]. Entonces las cosas volverán a suceder como lo desea.\n\n2. <mark>El mes de Elul es el momento más propicio para el arrepentimiento</mark>. Ello se debe a que esos son días de favor Divino, cuando Moisés ascendió para recibir el segundo juego de Tablas y cuando abrió un claro sendero por el...",
+          "content_length": 1742
+        },
+        {
+          "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+          "document_title": "KITZUR",
+          "author": null,
+          "knowledge_scope_code": "breslov_primary",
+          "chunk_id": "d8416f0d-d7ac-40e6-8f2f-4a6a2bad1e64",
+          "chunk_index": 585,
+          "language": "es",
+          "page_start": 349,
+          "page_end": 350,
+          "chapter": null,
+          "section": null,
+          "match_type": "fts",
+          "rank": 0.0139,
+          "fts_rank": null,
+          "vector_score": null,
+          "hybrid_score": null,
+          "source_signals": [],
+          "plain_excerpt": ". Sólo a través de ellos es posible concebir las virtudes del Tzadik - pues la gente no se siente tan alejada de ellos y le es más fácil comprenderlos.\n\n## 5 Sivan\n\n## **141 - “El Señor, tu Dios, circuncidará tu corazón”**\n\n## **(Deuteronomio 30:6)**\n\n1. Si uno llega realmente a ser digno de sentir ",
+          "highlighted_excerpt": ". Sólo a través de ellos es posible concebir las virtudes del Tzadik - pues la gente no se siente tan alejada de ellos y le es más fácil comprenderlos.\n\n## 5 Sivan\n\n## **141 - “El Señor, tu Dios, circuncidará tu corazón”**\n\n## **(Deuteronomio 30:6)**\n\n1. Si uno llega realmente a ser digno de sentir ",
+          "content_length": 1791
+        }
+      ]
+    }
+  },
+  "branch_probes": {
+    "fts": {
+      "hits": 2,
+      "error": null,
+      "elapsed_ms": 31,
+      "top_titles": [
+        "KITZUR",
+        "KITZUR"
+      ]
+    },
+    "vector": {
+      "hits": 0,
+      "error": null,
+      "elapsed_ms": null,
+      "milvus_collection_code": "breslov",
+      "expr": "collection_code == \"breslov\"",
+      "skipped": true
+    }
+  },
+  "scoring": {
+    "score": 20,
+    "status": "PASS fuerte",
+    "http_200": true,
+    "result_count": 2,
+    "term_hits": {
+      "Elul": true,
+      "arrepentimiento": true
+    },
+    "scope_ok": true,
+    "mode_ok": true,
+    "vector_branch_visible": "no",
+    "response_vector_hits": 0,
+    "direct_vector_hits": 0,
+    "hybrid_vector_merged_hits": 0,
+    "fts_hits": 2,
+    "critical_warnings": [],
+    "quality_warnings": []
+  }
+}

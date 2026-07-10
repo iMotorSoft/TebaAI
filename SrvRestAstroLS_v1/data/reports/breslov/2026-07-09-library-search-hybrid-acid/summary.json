@@ -1,0 +1,19 @@
+{
+  "endpoint": "http://127.0.0.1:7008/library/search",
+  "head": "b2b0355c471cd9590b2f29cd3acb88b11349ab9e",
+  "scope_code": "breslov_primary",
+  "milvus_collection_code": "breslov",
+  "query_count": 10,
+  "global_score": 189,
+  "max_score": 200,
+  "percentage": 94.5,
+  "status": "PASS fuerte",
+  "hybrid_query_count": 8,
+  "hybrid_direct_vector_positive": 8,
+  "hybrid_response_vector_positive": 7,
+  "gaps": [
+    "hybrid_q02: missing_expected_terms:oración,rezar",
+    "hybrid_q03: missing_expected_terms:aislamiento",
+    "fts_q09: empty_results, missing_expected_terms:plegaria,arma principal,judío"
+  ]
+}

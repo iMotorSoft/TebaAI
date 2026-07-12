@@ -1,0 +1,25 @@
+{
+  "total_pages_postgres": 512,
+  "pages_with_text": 506,
+  "pages_empty": 6,
+  "empty_page_numbers": [
+    8,
+    10,
+    12,
+    414,
+    416,
+    418
+  ],
+  "pgvector_rows": 506,
+  "milvus_entities": 506,
+  "milvus_collection": "tebaai_breslov_chunks_v2_dev",
+  "pgvector_table": "library_vector_embeddings_v2_dev",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "27f175ea-bc80-4161-b1fa-bf5c8b8a3f25",
+  "scope": "breslov_primary",
+  "collection_code": "breslov_primary",
+  "embedding_model": "openai_text_embedding_3_small",
+  "embedding_dimension": 1536,
+  "kitzur_title": "KITZUR",
+  "kitzur_status": "ready"
+}

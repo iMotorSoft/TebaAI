@@ -1,0 +1,28 @@
+{
+  "status": "BACKFILL_BOTH_OK",
+  "backend": "both",
+  "scope": "breslov_primary",
+  "collection_code": "breslov_primary",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "batch_size": 64,
+  "table": "library_vector_embeddings_v2_dev",
+  "collection": "tebaai_breslov_chunks_v2_dev",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "run_scope": "breslov_test",
+  "pages_total": 506,
+  "inserted_pg": 506,
+  "inserted_milvus": 506,
+  "expected": 506,
+  "errors": [],
+  "error_count": 0,
+  "args": {
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope": "breslov_primary",
+    "collection_code": "breslov_primary",
+    "backend": "both",
+    "batch_size": 64,
+    "drop_derived": true,
+    "dry_run": false,
+    "force": true
+  }
+}

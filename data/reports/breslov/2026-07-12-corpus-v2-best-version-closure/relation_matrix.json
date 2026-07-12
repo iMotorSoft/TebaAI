@@ -1,0 +1,284 @@
+[
+  {
+    "relation_id": "R1",
+    "from_claim_id": "B1",
+    "to_claim_id": "C1",
+    "description": "humildad → verdad",
+    "from_label": "humildad",
+    "to_label": "verdad",
+    "status": "INFERRED",
+    "evidence_type": "thematic",
+    "shared_pages": [],
+    "all_pages": [
+      22,
+      33,
+      236,
+      237
+    ],
+    "confidence": 0.3
+  },
+  {
+    "relation_id": "R2",
+    "from_claim_id": "B3",
+    "to_claim_id": "C1",
+    "description": "humildad → recibir luz divina",
+    "from_label": "humildad (nada)",
+    "to_label": "recibir luz divina",
+    "status": "INFERRED",
+    "evidence_type": "thematic",
+    "shared_pages": [],
+    "all_pages": [
+      13,
+      236,
+      237,
+      363
+    ],
+    "confidence": 0.3
+  },
+  {
+    "relation_id": "R3",
+    "from_claim_id": "C2",
+    "to_claim_id": "C2",
+    "description": "verdad → fe",
+    "from_label": "verdad",
+    "to_label": "fe",
+    "status": "PASS",
+    "evidence_type": "literal",
+    "shared_pages": [
+      236,
+      237
+    ],
+    "all_pages": [
+      236,
+      237
+    ],
+    "confidence": 0.9
+  },
+  {
+    "relation_id": "R4",
+    "from_claim_id": "C3",
+    "to_claim_id": "C3",
+    "description": "verdad → plegaria elevada",
+    "from_label": "verdad",
+    "to_label": "plegaria elevada",
+    "status": "PASS",
+    "evidence_type": "literal",
+    "shared_pages": [
+      7,
+      41
+    ],
+    "all_pages": [
+      7,
+      41
+    ],
+    "confidence": 0.9
+  },
+  {
+    "relation_id": "R5",
+    "from_claim_id": "D1",
+    "to_claim_id": "E1",
+    "description": "alegría → verdad/conocimiento",
+    "from_label": "alegría",
+    "to_label": "verdad / conocimiento",
+    "status": "INFERRED",
+    "evidence_type": "thematic",
+    "shared_pages": [],
+    "all_pages": [
+      3,
+      148,
+      149,
+      462
+    ],
+    "confidence": 0.3
+  },
+  {
+    "relation_id": "R6",
+    "from_claim_id": "D4",
+    "to_claim_id": "D4",
+    "description": "alegría → mitigación de juicios",
+    "from_label": "alegría",
+    "to_label": "mitigación de juicios",
+    "status": "PASS",
+    "evidence_type": "literal",
+    "shared_pages": [
+      3,
+      209
+    ],
+    "all_pages": [
+      3,
+      209
+    ],
+    "confidence": 0.9
+  },
+  {
+    "relation_id": "R7",
+    "from_claim_id": "F1",
+    "to_claim_id": "E3",
+    "description": "pureza sexual → rectificación de mente",
+    "from_label": "pureza sexual",
+    "to_label": "rectificación de mente",
+    "status": "INFERRED",
+    "evidence_type": "thematic",
+    "shared_pages": [],
+    "all_pages": [
+      145,
+      148,
+      149
+    ],
+    "confidence": 0.3
+  },
+  {
+    "relation_id": "R8",
+    "from_claim_id": "F3",
+    "to_claim_id": "E1",
+    "description": "pureza sexual → daat",
+    "from_label": "pureza sexual",
+    "to_label": "daat / conocimiento",
+    "status": "INFERRED",
+    "evidence_type": "thematic",
+    "shared_pages": [],
+    "all_pages": [
+      17,
+      145,
+      148,
+      149
+    ],
+    "confidence": 0.3
+  },
+  {
+    "relation_id": "R9",
+    "from_claim_id": "G3",
+    "to_claim_id": "C1",
+    "description": "Tzadik → verdad",
+    "from_label": "Tzadik",
+    "to_label": "verdad",
+    "status": "INFERRED",
+    "evidence_type": "thematic",
+    "shared_pages": [],
+    "all_pages": [
+      53,
+      54,
+      177,
+      178,
+      236,
+      237
+    ],
+    "confidence": 0.3
+  },
+  {
+    "relation_id": "R10",
+    "from_claim_id": "G4",
+    "to_claim_id": "G4",
+    "description": "Tzadik → arrepentimiento",
+    "from_label": "Tzadik",
+    "to_label": "arrepentimiento",
+    "status": "PASS",
+    "evidence_type": "literal",
+    "shared_pages": [
+      177,
+      178
+    ],
+    "all_pages": [
+      177,
+      178
+    ],
+    "confidence": 0.9
+  },
+  {
+    "relation_id": "R11",
+    "from_claim_id": "G5",
+    "to_claim_id": "G5",
+    "description": "Tzadik → Torá",
+    "from_label": "Tzadik",
+    "to_label": "Torá",
+    "status": "PASS",
+    "evidence_type": "literal",
+    "shared_pages": [
+      53,
+      54,
+      177,
+      178
+    ],
+    "all_pages": [
+      53,
+      54,
+      177,
+      178
+    ],
+    "confidence": 0.9
+  },
+  {
+    "relation_id": "R12",
+    "from_claim_id": "G6",
+    "to_claim_id": "G6",
+    "description": "Tzadik → acercar lejanos",
+    "from_label": "Tzadik",
+    "to_label": "acercar lejanos",
+    "status": "PASS",
+    "evidence_type": "literal",
+    "shared_pages": [
+      70,
+      71
+    ],
+    "all_pages": [
+      70,
+      71
+    ],
+    "confidence": 0.9
+  },
+  {
+    "relation_id": "R13",
+    "from_claim_id": "H1",
+    "to_claim_id": "H2",
+    "description": "humildad + verdad → reconocer verdadero Tzadik",
+    "from_label": "humildad + verdad",
+    "to_label": "reconocer verdadero Tzadik",
+    "status": "PASS",
+    "evidence_type": "same_page",
+    "shared_pages": [
+      312
+    ],
+    "all_pages": [
+      7,
+      21,
+      312
+    ],
+    "confidence": 0.9
+  },
+  {
+    "relation_id": "R14",
+    "from_claim_id": "E2",
+    "to_claim_id": "A2",
+    "description": "daat → propósito final de la vida",
+    "from_label": "daat",
+    "to_label": "propósito final de la vida",
+    "status": "PASS",
+    "evidence_type": "same_page",
+    "shared_pages": [
+      471
+    ],
+    "all_pages": [
+      3,
+      149,
+      471
+    ],
+    "confidence": 0.9
+  },
+  {
+    "relation_id": "R15",
+    "from_claim_id": "A3",
+    "to_claim_id": "A3",
+    "description": "red completa → conocimiento de Dios / Mundo que Viene",
+    "from_label": "red completa",
+    "to_label": "conocimiento de Dios / Mundo que Viene",
+    "status": "PASS",
+    "evidence_type": "same_page",
+    "shared_pages": [
+      103
+    ],
+    "all_pages": [
+      103
+    ],
+    "confidence": 0.9
+  }
+]

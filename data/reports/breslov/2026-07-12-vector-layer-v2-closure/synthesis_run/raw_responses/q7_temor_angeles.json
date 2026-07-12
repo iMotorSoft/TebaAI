@@ -1,0 +1,798 @@
+{
+  "question_id": "q7_temor_angeles",
+  "question": "Describe el temor perfecto a Dios y el dominio sobre los ángeles.",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_filter": "resolved by run",
+  "claims": [
+    {
+      "claim_id": "q7_temor_angeles_1",
+      "claim": "tres deseos",
+      "page_direct": [
+        {
+          "source_id": "tre_p420",
+          "page": 420,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "unida automáticamente a todas las almas de Israel y su dominio sobre los ángeles perdurará. 5. Mediante los deseos de dinero, de placer sexual y de comida -los cuales están enraizados en el corazón- se socava y se daña el temor a Dios que se encuentra en el corazón. 21 Tamuz 6. La intensidad del deseo sexual de la persona está determinada por la leche con la cual se nutrió en su infancia. Por lo tanto, es necesario tener extremo cuidado para que el niño sólo se alimente de una mujer modesta. Pues si se nutre de una mujer q",
+          "score": 1.0
+        },
+        {
+          "source_id": "tre_p421",
+          "page": 421,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "de los tres deseos. A saber: En Pesaj, se rectifica el deseo de dinero; en Shavuot, se rectifica el deseo de placer sexual; y en Sukot, se rectifica el anhelo de comida (de aquí que la palabra SUKáH tenga el mismo valor numérico que MaAJaL [comida]). De acuerdo a ello, la persona debe ser muy cuidadosa en cómo lleva a cabo las mitzvot asociadas con cada una de las Festividades y en honrar grandemente a cada una de ellas, para merecer quebrar esos tres dañinos deseos y liberarse de ellos. Pues la esencia toda del judaísmo es",
+          "score": 1.0
+        },
+        {
+          "source_id": "tre_p423",
+          "page": 423,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "rfecta -es decir, mediante la santidad de las Tres Festividades que rectifica los malos deseos de riqueza, de placer sexual y de comida, mereciendo entonces el temor a Dios, trayendo el influjo de inspiración profética, la plegaria perfecta y la curación- y cuando también elimina las tres características negativas que inhiben su capacidad de orar, entonces, todas las huestes del Cielo, todas las estrellas y las constelaciones y todos los ángeles superiores se subordinan a ella. Entonces, esa persona encuentra favor a los ojo",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q7_temor_angeles_1_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "683c43d4ad431e0307256c6632f1a5a061a0f0ea3268185fa6a6a178bef1cfc9",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 126,
+          "language": "es",
+          "distance": 0.40066322684288025,
+          "score": 0.40066322684288025,
+          "quote": "poseídos por el deseo de dinero que ello es como si tuvieran\nuna gran deuda. Son deudores a lo largo de toda la vida y mueren\nsiendo deudores - de su propio deseo. Pues todos sus días no\nson suficientes para pagar la deuda que tienen con su deseo,\ndado que el ansia de dinero no tiene límites, como en, “La\npersona fallece con sólo la mitad de sus deseos satisfechos”\n(Kohelet Rabah 1:34). Toda esta idea está expresada en el versículo,\n“Ellos no vivirán la mitad de sus días”, pero “yo confiaré en Ti”\n(Salmos 55:24). En otras palabras, la persona sumida en el deseo\nde dinero no confía en Dios, dado que adora a un ídolo; pero\n“yo confiaré en Ti”, que Tú me proveerás de mi sustento incluso\ncon un mínimo esfuerzo de mi parte, y yo estaré satisfecho\ncon mi porción y no caeré en el deseo de dinero.\n12. De hecho, hay otra manera de rectificar el deseo de dinero\ny es contemplar la fuente de la cual fluyen el dinero y el influjo\nde abundancia hacia el mundo. Al contemplar esto se anula e",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_1_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ee8d88a61eee31110d8b5db9b9f18f5f4b072105616bd0a28da131f03ba58426",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 421,
+          "language": "es",
+          "distance": 0.39939141273498535,
+          "score": 0.39939141273498535,
+          "quote": "de los tres malos deseos, volviéndonos dignos de alcanzar el\nperfecto temor a Dios, que depende del corazón. Esto es lo más\nimportante de todo, porque es lo que lleva al judío hacia su\nobjetivo final, que es el hecho de que perdure su dominio sobre\nlos ángeles.\n9. En cada una de las Tres Festividades se rectifica uno de los\ntres deseos. A saber: En Pesaj, se rectifica el deseo de dinero;\nen Shavuot, se rectifica el deseo de placer sexual; y en Sukot,\nse rectifica el anhelo de comida (de aquí que la palabra SUKáH tenga\nel mismo valor numérico que MaAJaL [comida]). De acuerdo a ello, la\npersona debe ser muy cuidadosa en cómo lleva a cabo las\nmitzvot asociadas con cada una de las Festividades y en honrar\ngrandemente a cada una de ellas, para merecer quebrar esos\ntres dañinos deseos y liberarse de ellos. Pues la esencia toda\ndel judaísmo es temer el Reverenciado Nombre de Dios y\nescapar de los celos de los ángeles -no sea que hagan caer a la\npersona en el pecado, Dios no lo permita- y hacer perdurar e",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_1_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "98f0f9a91c9bc42210137dc8fafb04c3facc4c9a9f281c979e22934ddea1bfbf",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 191,
+          "language": "es",
+          "distance": 0.39121881127357483,
+          "score": 0.39121881127357483,
+          "quote": "servicio Divino es similar a dar a luz. Uno se hace digno de esa\nrevelación clamando también “setenta veces”, hasta que Dios\nSe apiada y le permite prevalecer y quebrar todos los deseos\nfísicos.\n11 Shvat\n2. Debes saber que la prueba y el proceso de refinamiento más\nimportante que la persona debe atravesar implica el deseo\nsexual. Ese deseo engloba a todos los malos deseos y rasgos\nnegativos de las setenta naciones y de los setenta idiomas; la\npersona que quiebre esa pasión por el sexo podrá quebrar\ntambién con facilidad todos los otros deseos. Por lo tanto,\ncuando uno es puesto a prueba en el exilio de esa pasión, cada\npersona de acuerdo a su manera en particular, debe elevar la\nvoz y clamar a Dios no menos de setenta veces. En otras\npalabras, debe clamar a Dios profusamente hasta que Dios le\nmuestre Su compasión y merezca superar y quebrar ese deseo\njunto con todos los otros deseos. Pues quebrar esa pasión es la\nrectificación general (tikún haklalí) que incluye a todo lo demás.\n3. Cuanto m",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_1_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "02383a73cdad882bcf7bed836a128f5197ffa549c1d935ccd13f928a411f76ad",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 81,
+          "language": "es",
+          "distance": 0.38717421889305115,
+          "score": 0.38717421889305115,
+          "quote": "que incluye a todos los malos deseos. Esos males arden juntos,\ncreando una gran conflagración. Ese fuego es la ardiente pasión\npor el sexo que ruge dentro de la persona.\nPero Dios nos ha distinguido de entre todas las naciones y nos\nha elevado por sobre todas las lenguas. Debemos abstenernos\nde todos sus males - es decir, de todos los malos deseos que les\nson particulares y que no tienen nada que ver con nosotros, de\nmanera alguna. Esto es especialmente así en el caso de la pasión\nsexual, que es el mal que engloba el mal de todas las naciones.\nPues la diferencia y la distinción esencial entre nosotros y las\nnaciones es que nosotros nos abstenemos de la inmoralidad\nsexual, siendo ésta, en esencia, la santidad judía. Pues la persona\ntiene el poder de alejar su mente de ese deseo y de quebrarlo;\nésta es la esencia de nuestra santidad.\n2. La pureza sexual es la esencia de la santidad. Uno merece\nalcanzar esa cualidad mediante el lenguaje sagrado y el habla\nsagrada, santificando el habla al decir palabras ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_1_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "49ca3ca18d59cd4615d1221e0fce9f7d94d270b8c6dc4e32b85b3f296ee24aea",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 167,
+          "language": "es",
+          "distance": 0.37637969851493835,
+          "score": 0.37637969851493835,
+          "quote": "necesario hablar con sinceridad y simpleza; hablar sobre todo\naquello de lo que uno carece en el servicio a Dios y que anhela\ny desea que Dios le permita lograr. Mediante esa práctica la\npersona se hace digna de alcanzar las cosas que desea y de\nlograr lo que deba lograr. Así traerá el bien a este mundo, hará\ndescender el favor y la bendición sobre todos los mundos\nespirituales y despertará muchas almas en el retorno a Dios.\nTodos deben acostumbrarse a conversar con Nuestro Creador,\ndiariamente. Esta práctica es extremadamente valiosa en verdad\ny mediante ella es posible llevar el mundo entero hacia el bien.\n17. Cuando la persona merece guardar la pureza sexual en los\ndos niveles mencionados más arriba, se hace digna de sentir\namor y anhelo por Dios; de esa manera conforma las letras de\nla Torá de manera positiva, del lado de la “vida”. Entonces las\nletras mismas de la Torá buscan ser dichas por la boca de esa\npersona para que ella pueda darles una buena forma y, de esa\nmanera, la persona se vue",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_1_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3509d16debe9ac373ef57b4a856c9ad870dbdd17f6c8bc4553f2d5e124b9ac9d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 129,
+          "language": "es",
+          "distance": 0.3617662191390991,
+          "score": 0.3617662191390991,
+          "quote": "mediante las cuales es posible aferrar la luz del Infinito en la\nforma de «alcanzar y no alcanzar». En otras palabras, la persona\npersigue la luz del Infinito y se acerca para aferrarla, pero no\nse acerca ni la aferra. El motivo por el cual se forman\nespecíficamente Nueve Cámaras es que la combinación de\nperseguir y golpear la barrera produce los diferentes aspectos\nde la mente incluidos el uno en el otro. Pues hay tres aspectos\nde la mente y [como resultado de toda esa dinámica], cada uno\nde ellos llega a incluir a los tres. Tres veces tres da como\nresultado nueve - es decir, las Nueve Cámaras. Todo esto se\nmerece al llevar a cabo las mitzvot con alegría.\n8. La alegría es el principal factor en la elevación de la santidad.\nEn el futuro, las fuerzas de la impureza serán completamente\nanuladas debido a la enorme alegría que prevalecerá y el pueblo\njudío dejará el exilio con regocijo, como está escrito, «Pues con\nalegría saldrán» (Isaías 55:2). No sólo eso, sino que mediante los\ngentiles y",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_1_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "6b1e76542dbc572c76f5cce449a5c8061490c96a9943635b52e03bcae89098b5",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 55,
+          "language": "es",
+          "distance": 0.3593215048313141,
+          "score": 0.3593215048313141,
+          "quote": "esos malos deseos, junto con los buenos deseos que posee la\npersona. Al acudir al sabio se cumplirá el versículo, “Él ha\nsaciado de bien un alma hambrienta” (ibid.) y “Él aplacará la sed\nde tu alma” (Isaías 58:11). Más aún, la juventud de la persona se\n“renovará como un águila” - en otras palabras, los días de su\njuventud, pasados en la oscuridad, estarán plenos de una nueva\nvitalidad y serán rectificados. Entonces  podrá ser llamado “ser\nhumano”. Además de todo esto, al ir a ver al sabio, el cuerpo de\nla persona se eleva y rejuvenece.\n9. Aquellas personas que acuden al sabio de la generación, cuyas\nalmas -es decir, sus buenos deseos- son recolectadas por el\nsabio y elevadas “como el embrión en el vientre materno”,\nrenovándolas para bien y con las que el sabio retorna\nsubsecuentemente hacia este mundo haciendo descender\nrevelaciones de Torá - esas almas corresponden a los “animales\nde la carroza” (Ezequiel 1) y sus cuerpos corresponden a los\n“ángeles-ruedas”. El",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_1_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "7b4c268bc261d6a7fd13188e12f19fb8fdca787fbcacd491c90eb9b2a33a1fcb",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 163,
+          "language": "es",
+          "distance": 0.35724103450775146,
+          "score": 0.35724103450775146,
+          "quote": "uno merece alcanzar ambos niveles de pureza sexual es como\nun “ángel del Señor de las Huestes”, logra una fe completa y\nhace descender bendiciones y un influjo de abundancia hacia\nel mundo.\n10. Al mantener ambos niveles de pureza sexual de la manera\n descrita, “La bondad se revela en el órgano masculino” (Zohar\nIII, 142a). Esa bondad se manifiesta como amor y deseo por Dios\ny como un buen anhelo, que es algo muy precioso en verdad.\nEse anhelo es muy valioso debido a que mediante él la persona\ncrea almas - es decir, coloca puntos vocales, “puntos de plata”,\nen las letras de la Torá. [En hebreo, la palabra KeSeF (plata) es\nsimilar a la palabra KiSuF (anhelo); así, la frase “puntos de plata”\n(nekudot haKeSeF) también puede leerse como “puntos de\nanhelo” (nekudot haKiSuF).] En otras palabras, mediante el\nanhelo, se generan puntos vocales y esos puntos son\nconceptualmente como almas. Ese fenómeno está descrito en\nel versículo, “Mi alma anhela y desfallece” (Salmos 84:3) - es decir",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "tre_p420",
+          "page": 420,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "unida automáticamente a todas las almas de Israel y su dominio sobre los ángeles perdurará. 5. Mediante los deseos de dinero, de placer sexual y de comida -los cuales están enraizados en el corazón- se socava y se daña el temor a Dios que se encuentra en el corazón. 21 Tamuz 6. La intensidad del deseo sexual de la persona está determinada por la leche con la cual se nutrió en su infancia. Por lo tanto, es necesario tener extremo cuidado para que el niño sólo se alimente de una mujer modesta. Pues si se nutre de una mujer q",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q7_temor_angeles_2",
+      "claim": "Tres Festividades",
+      "page_direct": [
+        {
+          "source_id": "Tre_p421",
+          "page": 421,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "o sobre los ángeles. 9. En cada una de las Tres Festividades se rectifica uno de los tres deseos. A saber: En Pesaj, se rectifica el deseo de dinero; en Shavuot, se rectifica el deseo de placer sexual; y en Sukot, se rectifica el anhelo de comida (de aquí que la palabra SUKáH tenga el mismo valor numérico que MaAJaL [comida]). De acuerdo a ello, la persona debe ser muy cuidadosa en cómo lleva a cabo las mitzvot asociadas con cada una de las Festividades y en honrar grandemente a cada una de ellas, para merecer quebrar esos t",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q7_temor_angeles_2_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "5300ce1e66274898b5042ff1d32e78af2950539d23c0a7c7c55bc33eca0dbbb5",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 152,
+          "language": "es",
+          "distance": 0.5042505264282227,
+          "score": 0.5042505264282227,
+          "quote": "año, en Pesaj, Shavuot y Sukot, todo varón se presentará\ndelante del Rostro de Dios” (Deuteronomio 16:16) - es decir, para\nque podamos recibir la “Luz del Rostro” que irradia durante\nlas Tres Festividades. Ésa es la luz que le da vitalidad al\nintelecto, mediante el cual la persona alcanza percepciones\nde Divinidad. A través de la alegría de las Tres Festividades,\nla persona se hace digna de la “Luz del Rostro”, dado que la\nalegría es la esencia de la “Luz del Rostro”, como está escrito\n“Un corazón alegre produce un buen rostro” (Proverbios 15:13).\n6. Cuantas más mitzvot realice la persona durante el año, mayor\nserá la alegría que experimentará en las Tres Festividades. Para\nexplicar: Las mitzvot son la principal fuente de alegría y ésta se\nsiente primordialmente en el corazón. En el grado en que la\npersona comprenda en su corazón la grandeza del Creador, Su\nUnidad y Su Unicidad, así será apropiado que se regocije por\ncada una de las mitzvot que ha realizado, por el hecho ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_2_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ef8459dd7b305b9240c23e418eb6684e8871926b43d816e4275c1d6af5bd5989",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 431,
+          "language": "es",
+          "distance": 0.42854422330856323,
+          "score": 0.42854422330856323,
+          "quote": "5. Es imposible recibir mucha bondad pues la gente en general\nno puede recibir una abundancia de bien. Así, es necesario crear\nun recipiente y un conducto a través del cual poder recibir la\nbondad. Mediante el temor a Dios se crea el recipiente y el\nconducto con el cual es posible recibir la bondad.\n6. La revelación de que todo sucede de acuerdo a la voluntad de\nDios y que no hay tal cosa como fuerzas naturales\nindependientes, genera como resultado el temor a Dios. Ello se\ndebe a que en ese momento, la gente llega a saber que existe la\nrecompensa y el castigo y que, por lo tanto, hay motivos para\ntemer a Dios. Pero cuando la gente cae en la herejía, tal como\nen la creencia de que todo sucede de acuerdo a las leyes de la\nnaturaleza, el temor a Dios se vuelve entonces un concepto\nirrelevante, Dios no lo permita.*\n* Nota del Editor: Ver Job 15:4 donde Elifaz le dice a Job, quien atribuía todo\na los dictados de los cuerpos celestes, “En verdad, estás anulando el temor\na Dios”.\n1 Av\n7. Esa revelación de",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_2_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b6655edb3adfcce0b6e60c79ae8720fa913a7146913b597a9562d9cd7c8f9b5d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 349,
+          "language": "es",
+          "distance": 0.4199539124965668,
+          "score": 0.4199539124965668,
+          "quote": "apropiada, ello es como si estuviese visitando a su Rav en la\nfestividad, aunque el Rav pueda de hecho estar muy lejos de\nallí. Y a la inversa, si la persona está unida al Tzadik, podrá\nentonces sentir la santidad de las festividades. Con esto se eleva\nel Reinado de Santidad de entre las fuerzas de la impureza, se\nhace caer al Reinado del Mal y se anula el poder del reinado de\nlas naciones.\n5. En las festividades se debe retornar en arrepentimiento en\nmedio de la alegría, dado que en cada una de las festividades el\nmundo es sometido a juicio, como enseñaron nuestros Sabios,\nde bendita memoria, “En cuatro instancias el mundo es juzgado:\nen Pesaj... en Shavuot... en Rosh HaShaná... y en  Sukot” (Rosh\nHaShaná 16a). Por lo tanto, es necesario entonces retornar a Dios\nen arrepentimiento; con ello emerge el Reinado de Santidad de\nentre las fuerzas de la impureza y se acerca la Redención.\n4 Sivan\n136\n136\n136\n136\n136\n1. Es necesario juzgar a todos de manera favorable. Incluso\ndebemos buscar algún mérito",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_2_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "35229f1d9cc4a5923a5a51dc8fd6cbad30898a0a5c37fa47c1cf402be606049b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 26,
+          "language": "es",
+          "distance": 0.3979951739311218,
+          "score": 0.3979951739311218,
+          "quote": "cabo las mitzvot por las mitzvot mismas, con una gran alegría.\nEntonces será capaz de investir sus plegarias en cuentos y anular\ntodos los decretos, incluso luego de haber sido emitidos.\n6. La persona que en Rosh HaShaná oye el shofar hecho sonar\npor un hombre piadoso y temeroso de Dios, ciertamente no\nnecesitará preocuparse por los “truenos” durante todo el año.\n12 tishrei\n7. Para lograr plenamente el “trueno” mencionado más arriba\nes necesario limpiar la mente de toda clase de saberes seculares,\nde pensamientos indeseables y de malas cavilaciones.\n8. La persona debe ejercer el máximo cuidado y limpiar su\nmente del saber secular y de los pensamientos indeseables -\ndel “jametz” (levadura)- para no “fermentar” su propio intelecto\ncon ideologías que no son de la Torá y con deseos [físicos].\nPues ello embota y contamina la mente, haciendo imposible\nconcentrarse en las plegarias y alcanzar la alegría. También\ndebe cuidarse mucho de los temores externos - lo que significa\nno temerle a n",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_2_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "68299c5f30052e935b7b77cfba82e6af918cad42ca4dca9fdee4f08cfb358ef9",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 348,
+          "language": "es",
+          "distance": 0.3866347372531891,
+          "score": 0.3866347372531891,
+          "quote": "348                                                                                                                                                                     \nimpide ver las grandes luces”.\n134\n134\n134\n134\n134\n1. Es necesario ser extremadamente cuidadosos al dar un\ndiscurso de Torá en público, tomando la precaución de que las\npalabras puedan dividirse; de esa manera cada persona sólo\noirá aquello de lo cual tiene necesidad y nada más. De modo\nque aunque se hable en público y se digan las mismas palabras\nante todos, aun así, lo que entre en el corazón de cada persona\nserá sólo aquello que se aplique a ella y de lo cual tenga\nnecesidad.\n3 Sivan\n135 - “Cuando tome el momento designado”\n135 - “Cuando tome el momento designado”\n135 - “Cuando tome el momento designado”\n135 - “Cuando tome el momento designado”\n135 - “Cuando tome el momento designado”\n(Salmos 75:3)\n(Salmos 75:3)\n(Salmos 75:3)\n(Salmos 75:3)\n(Salmos 75:3)\n1. Un método muy eficaz para salvarse del rasgo del or",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_2_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "9d79d560a47430d778ba1d21c77d2e452fb8254676bc89ab32983720367fb525",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 425,
+          "language": "es",
+          "distance": 0.38308951258659363,
+          "score": 0.38308951258659363,
+          "quote": "así decirlo, experimenta arrepentimiento y pide perdón, como\nen, “Traigan una expiación para Mí por haber disminuido a la\nluna” (Julín 60b) - dado que la disminución de la luna es el origen\nde todos los pecados. Consecuentemente, no nos avergonzamos\nen el Día del Juicio por arrepentirnos de nuestras malas acciones\ny pedir expiación por ellas, dado que en ese día, también Dios\nsiente arrepentimiento y pide el perdón.\n20. El shofar representa el concepto del temor a Dios. Más aún,\nestá asociado con el influjo de inspiración profética, con la\nplegaria redimida de su exilio y con la manera en que toda la\nvegetación de los campos canaliza su poder hacia la plegaria\nde la persona - que es el requisito previo para poder celebrar\nRosh HaShaná de la manera antes descrita.\n25 Tamuz\n2 - Los Días de Jánuca\n2 - Los Días de Jánuca\n2 - Los Días de Jánuca\n2 - Los Días de Jánuca\n2 - Los Días de Jánuca\n1. Los días de Jánuca son días de agradecimiento y el\nagradecimiento es, en sí mismo, el d",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_2_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "68643f168f9e221153428244ca76e2cf45e7797a4712125e7926f0dc30ff83b0",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 155,
+          "language": "es",
+          "distance": 0.3700672388076782,
+          "score": 0.3700672388076782,
+          "quote": "Lección 30                                                                                 14 Tevet\ndebo ahora devolverlo” (Salmos 69:5). Todo ello está aludido en\nel concepto de “Abraham instituyó la Plegaria de la Mañana\n(Shajarit)”, dado que la palabra ShaJaRIT es un acróstico de\nSheeino Iodeia (Que no sabe), Jajam (Sabio), Rashá (Malvado) y\nTam (Simple) - y esos cuatro hijos corresponden a los Cuatro\nReinos.*\n* Nota del Copista: Atzilut (Cercanía) corresponde a la sefirá de Jojmá y a\nItzjak. Beriá (Creación) corresponde a la sefirá de Biná, al arrepentimiento y\na Ishmael, dado que “Ishmael se arrepintió”, como enseñaron nuestros\nSabios, de bendita memoria, (Bava Batra 16b). Ietzirá (Formación)\ncorresponde a Iaacov, que era un “hombre simple” y a la verdad, como en,\n“Verdad a Iaacov” (Mija 7:20) y a la letra Vav, como es sabido. Y Asiá (Acción)\ncorresponde a Esaú, dado que las fuerzas de la impureza y de la maldad\ndominan en la mayor parte de este mundo, que es el mund",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_2_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "061f7230b32210724399703d4d0033ed209ed32354c5b32f53ea5608f698022a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 233,
+          "language": "es",
+          "distance": 0.3646312654018402,
+          "score": 0.3646312654018402,
+          "quote": "2). Ello se debe a que los juicios están enraizados en Biná [que\ntambién es conocida como “madre”] y es en Biná que se mitigan\nlos juicios estrictos. Cuando esto ocurre, la Dalet se transforma\nen una Hei, y desde Biná fluye abundancia, riquezas y\nbendiciones sin límites. Esto se merece observando\nescrupulosamente la mitzvá de los tzitzit.\n9 Adar\n10. Ésta es la explicación del versículo, “Para el sol colocó un\npabellón en medio de ellos” (Salmos 19:5). El Tzadik es llamado\n“sol”, como está escrito, “El sol se eleva” (Eclesiastés 1:5; ver Kidushin\n72b). Sin embargo, el “elevarse” del Tzadik -es decir, sus\npercepciones- se produce sólo gracias al pueblo judío, como\nenseñaron nuestros Sabios, de bendita memoria, sobre el\nversículo, “Anda, desciende [del monte Sinaí,] pues tu pueblo\nse ha corrompido” (Éxodo 32:7); pues Dios le dijo a Moisés, “Yo\nte di grandeza sólo debido al pueblo judío” (Berajot 32a). Ésta es\nentonces la explicación de las palabras “un pabel",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "Tre_p421",
+          "page": 421,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "o sobre los ángeles. 9. En cada una de las Tres Festividades se rectifica uno de los tres deseos. A saber: En Pesaj, se rectifica el deseo de dinero; en Shavuot, se rectifica el deseo de placer sexual; y en Sukot, se rectifica el anhelo de comida (de aquí que la palabra SUKáH tenga el mismo valor numérico que MaAJaL [comida]). De acuerdo a ello, la persona debe ser muy cuidadosa en cómo lleva a cabo las mitzvot asociadas con cada una de las Festividades y en honrar grandemente a cada una de ellas, para merecer quebrar esos t",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q7_temor_angeles_3",
+      "claim": "temor y plegaria",
+      "page_direct": [
+        {
+          "source_id": "tem_p419",
+          "page": 419,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "líderes gracias al mérito de reconstruir a Jerusalén (IeRuShaLaIM), que está conceptualmente asociada con el temor perfecto a Dios (IRá ShaLeM). En otras palabras, la persona debe alcanzar un perfecto temor a Dios, lo que depende del corazón, como dijeron nuestros Sabios, de bendita memoria, “Con respecto a los temas que le Lección 1 20 Tamuz Parte II",
+          "score": 1.0
+        },
+        {
+          "source_id": "tem_p420",
+          "page": 420,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "dos al corazón, la Torá dice, ‘Temerás a tu Señor’” (Kidushin 32b). Una vez que la persona haya alcanzado ese temor perfecto a Dios, caerá ante ella la insolencia de esos líderes y podrá entonces unirse a los verdaderos líderes bajo los cuales se agrupan todas las almas de Israel. Entonces, quedará unida automáticamente a todas las almas de Israel y su dominio sobre los ángeles perdurará. 5. Mediante los deseos de dinero, de placer sexual y de comida -los cuales están enraizados en el corazón- se socava y se daña el temor a",
+          "score": 1.0
+        },
+        {
+          "source_id": "tem_p421",
+          "page": 421,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "odo esto depende únicamente de la rectificación de esos tres deseos dañinos. 10. Al alcanzar en el corazón un temor perfecto a Dios, la persona se vuelve digna de evocar un influjo de inspiración profética. Sin embargo deberá ser extremadamente cuidadosa y resistir el deseo de ser nombrada líder para gobernar sobre el pueblo judío (que es lo opuesto del dominio sagrado, con el cual se merece tener dominio sobre los ángeles). Ello se debe a que una posición de poder y de autoridad hace que cese el influjo profético. 22 Tamuz",
+          "score": 1.0
+        },
+        {
+          "source_id": "tem_p422",
+          "page": 422,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ni siquiera sabe que existe. Pero cuando la persona merece rectificar los tres malos deseos y alcanzar así el temor perfecto a Dios y la plegaria perfecta, puede entonces curarse aunque la enfermedad no se haya manifestado todavía. Se cura de la enfermedad incluso antes de que se manifieste y no es afectada en absoluto por ella. Lección 1 22 Tamuz Parte II",
+          "score": 1.0
+        },
+        {
+          "source_id": "tem_p423",
+          "page": 423,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "acterística es el daño sexual. Cuando uno merece liberarse de esas tres características negativas, alcanza la plegaria perfecta. Entonces, no requiere de ningún remedio, pues puede ser curado por todo aquello que ingiera - incluso por el pan y el agua. Éste es el significado profundo de lo que se dice sobre Ezequías, que “unió la redención con la plegaria” -pues él redimió la plegaria de su exilio- y consecuentemente, ocultó el Libro de los Remedios (Berajot 10b). 15. Cuando la persona merece redimir la plegaria de su exilio",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q7_temor_angeles_3_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8f52018b31a18ae9c2dfe006f18f28393eb071080ee48c8ccb3aa905bdc1ddd9",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 60,
+          "language": "es",
+          "distance": 0.5872825980186462,
+          "score": 0.5872825980186462,
+          "quote": "el temor sagrado, la persona merece tener “paz en sus huesos” y\norar. Por medio de la plegaria se hace digna [de una segunda clase\nde paz, que es] “la paz general” o la paz en todos los mundos. Uno\nllega a ese temor sagrado mediante la humildad y la Torá.\n7 Jeshvan\n12. El temor sagrado a Dios es el factor esencial en la plegaria.\nPues la plegaria sustituye a los sacrificios y está escrito con\nrespecto a los sacrificios, “Todo aquel que tenga un defecto no\npodrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la\npersona no tiene defecto alguno, ello corresponde al concepto\ndel temor sagrado, como está escrito, “Nada les falta a aquellos\nque Le temen” (Salmos 34:10). Mediante el temor sagrado, la\npersona merece plenitud y paz (Zohar II, 79) -es decir, tener “paz\nen los huesos”- y armonía entre su cuerpo y su alma. Entonces\npodrá acercarse al servicio puro e intachable a Dios y su plegaria\nestará completa. Mediante la plegaria, se hará digna de “la paz\ngeneral”, que es la pe",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_3_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "2d64dbe994153b4eb839c95370452ef19eb899de332b2b14c0ab3d52fb7d6896",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 408,
+          "language": "es",
+          "distance": 0.49331027269363403,
+          "score": 0.49331027269363403,
+          "quote": "408                                                                                                                                                                     \ny agradecerle a Dios. Pues, en la mayoría de los casos, cuando\nla persona se pone de pie para orar, su mente se ve invadida\npor todo lo malo que ha hecho y, como resultado de ello, se\ndesanima y es incapaz de orar con la vitalidad y el anhelo\napropiados. Por lo tanto, es necesario que se dé vida antes de\norar buscando, procurando y encontrando los puntos buenos\nen ella; de este modo llegará a orar como debe.\n2. Es necesario ser extremadamente cuidadosos y seguir el\nsendero descrito en esta lección, pues éste es un principio\nfundamental y un importante cimiento para todo aquel que\ndesee acercarse a Dios y no malgastar su vida por completo,\nDios no lo permita. Pues lo más importante es alejarse lo más\nposible de la depresión y de la melancolía - dado que la mayor\nparte de aquellos que están lejos de Dios lo están debido a la\nmelancol",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_3_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ece623d3a8775f9f2be40bb5abde62fef9734eeb79a6c8cace47b9f62bbcf407",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 157,
+          "language": "es",
+          "distance": 0.488809198141098,
+          "score": 0.488809198141098,
+          "quote": "está escrito ‘Bueno es agradecer a Dios’” (Salmos 92:2). Como también\nenseñaron nuestros Sabios, de bendita memoria, “Tov (Bueno) tiene el valor\nnumérico de diecisiete y la plegaria de la Amidá tiene diecinueve bendiciones.\nSi se resta la bendición concerniente a los herejes agregada en Iavne y la\nbendición ‘Haz que el vástago de David, Tu siervo, florezca’ que fue agregada\npor ‘Examíname, Dios y pruébame’ (Salmos 26:2), vemos que ambas se\ncorresponden numéricamente” (Midrash Tanjuma, Koraj).\n15 Tevet\n13. Esto explica porqué la confusión y las distracciones son\nllamadas TeHiLaH, como está escrito, “Aun en Sus ángeles\nencuentra TaHaLaH (locura [i.e, confusión])” (Job 4:18) - pues\ntodas ellas se presentan precisamente en el momento de la\nalabanza (TeHiLaH) y de la plegaria. [Esas distracciones atacan\na la persona durante sus plegarias] por uno de dos motivos. La\nprimera posibilidad es que vengan para ser rectificadas - dado\nque es el momento para ello [i.e., cuando la perso",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_3_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "615b13c1bf11c6236ca7fadc12785ca8c8262aea4ec0a12543cd90217c8a697f",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 114,
+          "language": "es",
+          "distance": 0.48836660385131836,
+          "score": 0.48836660385131836,
+          "quote": "de Dios” y “su plegaria” será literalmente la “plegaria de\nDios”.\nEn verdad existe la “Torá de Dios”, como afirmaron nuestros\nSabios, de bendita memoria, “Yo [dice Dios] la cumplí [i.e., la\nTorá] primero” (Ierushalmi, Bikurim 3:3). De la misma manera,\ntambién hay algo así como la “plegaria de Dios”, como\nafirmaron nuestros Sabios, de bendita memoria, “¿Cómo\nsabemos que el Santo, bendito sea, ora? Porque está escrito,\n‘Yo los haré alegrar en Mi casa de plegaria’” (Isaías 56:7; Berajot 6a).\nAl pasar de un nivel a otro, se alcanza la alegría.\n13 Kislev\n11. Sin embargo, la perfección de la alegría se logra mediante\nel temor a Dios, como está escrito, “Regocíjate con temor y\ntemblor” (Salmos 2:11). El temor a Dios está asociado, a su vez,\ncon la vergüenza, que hace que la persona sienta temor y\nembarazo de pecar delante de Dios, Dios no lo permita, como\nenseñaron nuestros Sabios, de bendita memoria (Nedarim 20a) -\npues la vergüenza es una cualidad realmente val",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_3_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8452f60ec200ae716ee3974452b721ec48a9b891d232fc6c343e58edaa2bc756",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 17,
+          "language": "es",
+          "distance": 0.48817819356918335,
+          "score": 0.48817819356918335,
+          "quote": "4 tishrei\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n1. La plegaria es el arma principal del judío. Todas las batallas\nque la persona deba librar -así sean las batallas en contra de la\nmala inclinación u otras batallas en contra de aquellos que\ndesean obstaculizarla u oponérsele- todas se combaten\nmediante la plegaria. Más aún, toda la vitalidad de la persona\nproviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar\nla verdadera santidad deberá dedicarse con frecuencia e\nintensidad a la plegaria, a la súplica y a la conversación con Su\nHacedor. Ésta es el arma principal para ganar la guerra.\n2. Aquel que cuida la pureza sexual se vuelve digno de orar.\nPor el contrario, la persona que daña su pureza sexual se ve\nprivada de la capacidad de orar.\n3. Uno debe dar caridad antes de orar. Ello",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_3_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "57a2a76482838c2e32e79b529a5b6886aebeccdaa7f08d55e1792290d4836144",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 41,
+          "language": "es",
+          "distance": 0.47589829564094543,
+          "score": 0.47589829564094543,
+          "quote": "4. Cuando uno está por orar, se hacen presentes pensamientos\nextraños y fuerzas impuras que lo rodean y lo dejan en la\noscuridad, quitándole la capacidad de orar. La mejor medida\ncontra ello es asegurarse de decir las palabras de la plegaria\ncon total honestidad. Entonces las palabras sinceras que salgan\nde tus labios harán una brecha en la oscuridad en la cual te\nencuentras atrapado y merecerás orar. Comprende muy bien\neste punto, pues es una regla fundamental y es el cimiento de\ntodas las facetas en el servicio a Dios, y todo depende de ello.\nAunque la persona se encuentre hundida en la oscuridad más\nprofunda y en la impureza espiritual, Dios no lo permita,\naprisionada  y  encerrada tras  muros  y obstáculos que la rodean\npor todos lados y que no la dejan acercarse a la santidad - lo\nesencial de su rectificación es simplemente orientarse hacia la\nverdad. Debe fijar su vista en la verdad absoluta y sólo buscar\nla verdad. Lo mismo se aplica a las plegarias, aunque uno no\npueda orar debido a la profun",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_3_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1f5d75d550ac61bc146099ef0aef957e5fe0e30515be174e68791ee73f5b58f0",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 316,
+          "language": "es",
+          "distance": 0.4756860136985779,
+          "score": 0.4756860136985779,
+          "quote": "316                                                                                                                                                                     \n9 Iyar\n7. La depresión es extremadamente dañina y le da poder a la\nmala inclinación para dominar a la persona. La depresión\ntambién fortalece los pensamientos perturbadores que se\nlevantan en contra de la persona, Dios no lo permita. Por lo\ntanto, uno no debe deprimirse por el hecho de experimentar\nsemejantes pensamientos confusos y no molestarse ni asustarse\npor ellos. Más bien, es necesario prevalecer con determinación,\npara poder estar alegres, utilizando todos los métodos tratados\nen otras instancias del Likutey Moharán. Pues la fuerza interior\ny la determinación en estas áreas proviene principalmente de\nla alegría y del regocijo, como en, “Pues la alegría en Dios es tu\nfortaleza” (Nehemías 8:10). Y cuando la persona se fortalece para\nestar alegre, los pensamientos confusos la dejan\nautomáticamente. Sin embargo, esto no ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_3_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d7758a2a82606b93b8509f559cd73c0b9e820ce7bb00da89457546fba7ab527c",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 42,
+          "language": "es",
+          "distance": 0.4743058681488037,
+          "score": 0.4743058681488037,
+          "quote": "23 Tishrei\n5. Hay personas que merecen decir las palabras de sus plegarias\ncon una honestidad tal que emiten luz como una piedra\npreciosa, que ilumina con luz propia. Pero hay otras cuya habla\nes sólo como una ventana, que no tiene luz propia y que\nmeramente permite recibir la luz a través de ella; [ese tipo de\npersona] sólo puede ser iluminada por otra. Debes saber que\ntodo esto es de acuerdo al nivel de la verdad.\n6. Cuando la persona despierta verdaderamente a Dios, merece\ncon ello quebrar las barreras y los obstáculos que la separan de\nla santidad y encontrar las brechas para salir desde la oscuridad\nhacia la luz. Mediante ello también merece despertar a otros e\ninspirar a otras personas hacia el arrepentimiento, sacarlas de\nla oscuridad y llevarlas de retorno a Dios.\n7. Es necesario que cada uno eleve sus plegarias a través del\nportal de su propia tribu [de entre las doce tribus de Israel]; sin\nembargo, hace falta un gran mérito para ello. Por lo tanto, cada\nuno debe unir sus plegarias al Tzadik d",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "tem_p419",
+          "page": 419,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "líderes gracias al mérito de reconstruir a Jerusalén (IeRuShaLaIM), que está conceptualmente asociada con el temor perfecto a Dios (IRá ShaLeM). En otras palabras, la persona debe alcanzar un perfecto temor a Dios, lo que depende del corazón, como dijeron nuestros Sabios, de bendita memoria, “Con respecto a los temas que le Lección 1 20 Tamuz Parte II",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q7_temor_angeles_4",
+      "claim": "ángeles",
+      "page_direct": [
+        {
+          "source_id": "áng_p419",
+          "page": 419,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "81:4) (Salmos 81:4) (Salmos 81:4); Dominio Dominio Dominio Dominio Dominio 1. El judío fue creado para tener dominio sobre los ángeles. Ése es el propósito final y el destino del pueblo judío y cada uno debe ocuparse de alcanzar ese objetivo. Sin embargo, los ángeles son extremadamente celosos de aquel que tiene dominio sobre ellos. Por lo tanto, es necesario cuidarse mucho y asegurarse de que se tiene el poder de mantener ese dominio, para que los ángeles, en su celo, no lo hagan caer, Dios no lo permita. 2. Para asegurars",
+          "score": 1.0
+        },
+        {
+          "source_id": "áng_p420",
+          "page": 420,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "e agrupan todas las almas de Israel. Entonces, quedará unida automáticamente a todas las almas de Israel y su dominio sobre los ángeles perdurará. 5. Mediante los deseos de dinero, de placer sexual y de comida -los cuales están enraizados en el corazón- se socava y se daña el temor a Dios que se encuentra en el corazón. 21 Tamuz 6. La intensidad del deseo sexual de la persona está determinada por la leche con la cual se nutrió en su infancia. Por lo tanto, es necesario tener extremo cuidado para que el niño sólo se alimente",
+          "score": 1.0
+        },
+        {
+          "source_id": "áng_p421",
+          "page": 421,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "líder para gobernar sobre el pueblo judío (que es lo opuesto del dominio sagrado, con el cual se merece tener dominio sobre los ángeles). Ello se debe a que una posición de poder y de autoridad hace que cese el influjo profético. 22 Tamuz 11. Mediante ese influjo de inspiración profética la persona alcanza una plegaria perfecta. Pues, debido a nuestros muchos pecados, la plegaria se encuentra actualmente en el exilio. La plegaria es algo extremadamente exaltado pero la gente la menosprecia; y cuando se ponen de pie para orar",
+          "score": 1.0
+        },
+        {
+          "source_id": "áng_p423",
+          "page": 423,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "apacidad de orar, entonces, todas las huestes del Cielo, todas las estrellas y las constelaciones y todos los ángeles superiores se subordinan a ella. Entonces, esa persona encuentra favor a los ojos de todos y todos son sus deudores - dado que todos toman prestado y Lección 1 23 Tamuz Parte II",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q7_temor_angeles_4_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3eda077c4f98e86a5f39a1201e1632b1b3b5df1bf0bcf7584e4a70ae8b123ab6",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 438,
+          "language": "es",
+          "distance": 0.40273046493530273,
+          "score": 0.40273046493530273,
+          "quote": "438                                                                                                                                                                     \n10. Al quebrar la pasión sexual, la persona merece decir palabras\ncorrectas y aptas para revivir y resucitar las almas de los que\nhan caído. Pues es necesario revivir y resucitar esas almas caídas\ncon toda clase de delicias vivificantes. Más aún, mediante la\npureza sexual -que efectúa la rectificación de los poderes de la\nmente- la persona se ve dotada de palabras correctas y aptas\npara revivir y resucitar a esas almas caídas.\n11. Aquel que quiebre los pensamientos inmorales merecerá\nrectificar su mente de la manera descrita, se hará digno de tener\nsueños enviados por medio de un ángel y será llamado un\n“hombre”. Por el contrario, cuando la mente no está pura, los\nsueños llegan a través de un demonio, Dios no lo permita; y\nentonces la persona se asemeja a un animal.\n12. Los alimentos también juegan un papel en los sueños ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_4_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "69fb724d324c86aad56f0482c79889e38f3f52b2a344844bbb806d0ef712cfba",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 386,
+          "language": "es",
+          "distance": 0.3640722334384918,
+          "score": 0.3640722334384918,
+          "quote": "386                                                                                                                                                                     \nordene a Sus huestes para que canalicen hacia ella todo aquello\nque necesite. Por ejemplo, si necesita curación, debe tener la\nintención, al decir esas palabras, de que Dios les ordene a Sus\nhuestes canalizar los poderes necesarios para su cura en el pan\nque coma y en el agua que beba. Lo mismo se aplica a todo lo\nque uno necesite (ver Likutey Moharán II, Lección #1).\n30 Sivan\n232\n232\n232\n232\n232\n1. En el momento en que la persona dice, “¡Alaben a Dios desde\nlos cielos!... ¡Alábenlo todos Sus ángeles!” (Pesukey deZimra,\nPlegarias de la Mañana) es apropiado que se inspire y ore con gran\nentusiasmo y fervor - dado que con sus plegarias está llamando\na todos los ángeles, a los Serafim, a los Ofanim, a los seres\nsagrados superiores y a todos los mundos, ordenándoles y\nuniéndose a ellos en alabanza y en exaltación de Dios.\n233\n233",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_4_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "337ab4ec8f5e271698dd270d57210571ff085536d8344cae6b334dbd2ddbd076",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 419,
+          "language": "es",
+          "distance": 0.3620668947696686,
+          "score": 0.3620668947696686,
+          "quote": "20 Tamuz\n1 - “Sonad el shofar” \n1 - “Sonad el shofar” \n1 - “Sonad el shofar” \n1 - “Sonad el shofar” \n1 - “Sonad el shofar” (Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4);\nDominio\nDominio\nDominio\nDominio\nDominio\n1. El judío fue creado para tener dominio sobre los ángeles. Ése\nes el propósito final y el destino del pueblo judío y cada uno\ndebe ocuparse de alcanzar ese objetivo. Sin embargo, los ángeles\nson extremadamente celosos de aquel que tiene dominio sobre\nellos. Por lo tanto, es necesario cuidarse mucho y asegurarse\nde que se tiene el poder de mantener ese dominio, para que los\nángeles, en su celo, no lo hagan caer, Dios no lo permita.\n2. Para asegurarse de ello es necesario unirse a todas las almas\njudías. Ahora bien, las almas judías están agrupadas bajo los\nlíderes de la generación, dado que cada líder de la generación\nes responsable de un cierto número de almas. Por lo tanto, la\npersona debe unirse a todos los líderes de la generación pues,\nd",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_4_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "0f6e28437a030f63a77538f879a1931c52ee2bc1f240173daa461fba411f6411",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 385,
+          "language": "es",
+          "distance": 0.35689422488212585,
+          "score": 0.35689422488212585,
+          "quote": "227\n227\n227\n227\n227\n1. Cuando la persona pasa junto a los que están cosechando en\nel campo y les dice, “¡Que Dios los ayude! ¡Que Dios los ayude!”,\nello produce la elevación espiritual de los malvados que están\nreencarnados en esos vegetales.\n228\n228\n228\n228\n228\n1. Cuando el Santo, bendito sea, mira en un alma y ve que es\ncapaz de llevar a la gente hacia el arrepentimiento y de hacer\nprosélitos, Él Mismo se ocupa, por así decirlo, de que tenga\nantagonistas.\n229\n229\n229\n229\n229\n1. Hay ciertas clases de maderas que, al construir camas con\nellas, son eficaces para concebir y criar a los niños, mientras\nque otras ejercen el efecto contrario.\n230\n230\n230\n230\n230\n1. La persona que tiene ojos para ver es capaz de percibir y de\nreconocer en el rostro de un estudiante quién es su Rav -\nsiempre y cuando haya visto alguna vez a ese Rav (ver más\narriba, Lección #153).\n231\n231\n231\n231\n231\n1. En el momento en que la persona dice, “Y todas las huestes\ndel Cielo se inclinan ante Ti” (Pesukey deZimra, Pleg",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_4_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "75368d1be049f2b9b6bde7d01f2874558edf9e2185a74c4ccc7b158400844ad3",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 164,
+          "language": "es",
+          "distance": 0.33630314469337463,
+          "score": 0.33630314469337463,
+          "quote": "las aguas femeninas”-  en sí mismos y por sí mismos, crean un\nalma; y esa alma entonces asciende, efectuándose así una\nconjunción y unificación espiritual. El alma se crea\nesencialmente mediante el anhelo que la persona siente por\nDios, cada uno de acuerdo a su propio nivel. Al anhelar y desear\nel siguiente nivel superior se crea un alma en potencia.\n20 Tevet\n12. Mediante esos anhelos sagrados se efectúa una unión. Para\nexplicar: Cuando la persona anhela por algo, se crea un alma y\nen respuesta a ese anhelo, la cosa [por la cual anhela la persona]\nanhela a su vez por ella. Ése segundo anhelo también crea un\nalma y las dos almas se unen. El anhelo original [que tuvo la\npersona] es denominado “el anhelo femenino” y crea un alma\nfemenina, como se enseñó en el santo Zohar (I, 85b). Y el anhelo\nque a su vez siente la cosa deseada es denominado “el anhelo\nmasculino” y crea un alma masculina. Subsecuentemente, esas\nalmas pasan a través de las etapas de la gestación y del\nnacimiento, como est",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_4_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3509d16debe9ac373ef57b4a856c9ad870dbdd17f6c8bc4553f2d5e124b9ac9d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 129,
+          "language": "es",
+          "distance": 0.32993608713150024,
+          "score": 0.32993608713150024,
+          "quote": "mediante las cuales es posible aferrar la luz del Infinito en la\nforma de «alcanzar y no alcanzar». En otras palabras, la persona\npersigue la luz del Infinito y se acerca para aferrarla, pero no\nse acerca ni la aferra. El motivo por el cual se forman\nespecíficamente Nueve Cámaras es que la combinación de\nperseguir y golpear la barrera produce los diferentes aspectos\nde la mente incluidos el uno en el otro. Pues hay tres aspectos\nde la mente y [como resultado de toda esa dinámica], cada uno\nde ellos llega a incluir a los tres. Tres veces tres da como\nresultado nueve - es decir, las Nueve Cámaras. Todo esto se\nmerece al llevar a cabo las mitzvot con alegría.\n8. La alegría es el principal factor en la elevación de la santidad.\nEn el futuro, las fuerzas de la impureza serán completamente\nanuladas debido a la enorme alegría que prevalecerá y el pueblo\njudío dejará el exilio con regocijo, como está escrito, «Pues con\nalegría saldrán» (Isaías 55:2). No sólo eso, sino que mediante los\ngentiles y",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_4_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "54404a0c4b004f30f664ee9a85ababfd6565d97311c0b4df6f1e2c22a8efa4df",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 264,
+          "language": "es",
+          "distance": 0.32014763355255127,
+          "score": 0.32014763355255127,
+          "quote": "264                                                                                                                                                                     \n  Lección 59                                                                                    2 Nisán\n2 Nisán\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n1. Aquél que se ocupa de acercar a los demás al servicio a Dios\ndebe cuidarse para que no se le peguen las fuerzas de la\nimpureza y del mal de esa gente. Esto se logra mediante el juicio.\nEsto quiere decir que la persona debe juzgarse constantemente\nen todos sus actos, evaluando si ha actuado de la manera\napropiada; y amonestarse y reprocharse por no haber actuado\ncomo debía. Como resultado de ese juicio, su corazón se\nencenderá de entusiasmo y el fuego de ese fervor quemará las\nfuerzas de la impureza que ya no se le apegarán. De esa manera\nanulará esas fuerzas al punto en que tampoco ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_4_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "7b4c268bc261d6a7fd13188e12f19fb8fdca787fbcacd491c90eb9b2a33a1fcb",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 163,
+          "language": "es",
+          "distance": 0.3192612826824188,
+          "score": 0.3192612826824188,
+          "quote": "uno merece alcanzar ambos niveles de pureza sexual es como\nun “ángel del Señor de las Huestes”, logra una fe completa y\nhace descender bendiciones y un influjo de abundancia hacia\nel mundo.\n10. Al mantener ambos niveles de pureza sexual de la manera\n descrita, “La bondad se revela en el órgano masculino” (Zohar\nIII, 142a). Esa bondad se manifiesta como amor y deseo por Dios\ny como un buen anhelo, que es algo muy precioso en verdad.\nEse anhelo es muy valioso debido a que mediante él la persona\ncrea almas - es decir, coloca puntos vocales, “puntos de plata”,\nen las letras de la Torá. [En hebreo, la palabra KeSeF (plata) es\nsimilar a la palabra KiSuF (anhelo); así, la frase “puntos de plata”\n(nekudot haKeSeF) también puede leerse como “puntos de\nanhelo” (nekudot haKiSuF).] En otras palabras, mediante el\nanhelo, se generan puntos vocales y esos puntos son\nconceptualmente como almas. Ese fenómeno está descrito en\nel versículo, “Mi alma anhela y desfallece” (Salmos 84:3) - es decir",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "áng_p419",
+          "page": 419,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "81:4) (Salmos 81:4) (Salmos 81:4); Dominio Dominio Dominio Dominio Dominio 1. El judío fue creado para tener dominio sobre los ángeles. Ése es el propósito final y el destino del pueblo judío y cada uno debe ocuparse de alcanzar ese objetivo. Sin embargo, los ángeles son extremadamente celosos de aquel que tiene dominio sobre ellos. Por lo tanto, es necesario cuidarse mucho y asegurarse de que se tiene el poder de mantener ese dominio, para que los ángeles, en su celo, no lo hagan caer, Dios no lo permita. 2. Para asegurars",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q7_temor_angeles_5",
+      "claim": "líderes y almas",
+      "page_direct": [
+        {
+          "source_id": "líd_p420",
+          "page": 420,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "anzado ese temor perfecto a Dios, caerá ante ella la insolencia de esos líderes y podrá entonces unirse a los verdaderos líderes bajo los cuales se agrupan todas las almas de Israel. Entonces, quedará unida automáticamente a todas las almas de Israel y su dominio sobre los ángeles perdurará. 5. Mediante los deseos de dinero, de placer sexual y de comida -los cuales están enraizados en el corazón- se socava y se daña el temor a Dios que se encuentra en el corazón. 21 Tamuz 6. La intensidad del deseo sexual de la persona está",
+          "score": 1.0
+        },
+        {
+          "source_id": "líd_p424",
+          "page": 424,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "persona no se comporta de manera insolente ante su acreedor” (Bava Metzía 3a). Entonces sabrá quiénes son los verdaderos líderes bajo quienes se agrupan todas las almas judías, podrá unirse a ellos y quedar automáticamente unida a todas las almas del pueblo judío. Escapará entonces de los celos de los ángeles y su dominio sobre ellos perdurará. 24 Tamuz 17. Cuando la persona se sienta y se pone a hablar sobre alguien, es como Rosh HaShaná, el Día del Juicio - dado que, en efecto, se sienta a juzgar a otra persona. Hay que se",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q7_temor_angeles_5_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "69dfd05ecf996221dba3417489035ac2d79b0b46915dbb59f425f15fd8effd10",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 443,
+          "language": "es",
+          "distance": 0.5396208763122559,
+          "score": 0.5396208763122559,
+          "quote": "puede sobrellevar la pesada carga del pecado, ni siquiera por\nun día. Ahora bien, el verdadero líder es extremadamente\ncompasivo y se apiada del pueblo judío, de la nación santa y\nbusca extraerla de sus pecados. Pero, ¿cómo es que una persona\nllega a pecar en primer lugar? Ello sólo sucede debido que no\nsabe que hay un Dios que controla el mundo - dado que “La\npersona no peca a no ser que haya entrado en ella un espíritu\nde locura” (Sotá 3a). Por lo tanto, toda la compasión del verdadero\nlíder del pueblo judío se expresa en sus esfuerzos para\ninfundirles conocimiento y temor al Cielo, para extraerlos del\npecado, que Dios nos salve. El líder se aboca por lo tanto al\nestablecimiento del mundo, para que el mundo pueda estar\nhabitado por seres humanos - es decir, por seres con\nconocimiento (daat). Pues el conocimiento es la esencia de los\nseres humanos; y aquel que no tiene conocimiento no es parte\nde la civilización y no es llamado un ser humano en absoluto;\nmás bien, es meramente un animal co",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_5_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "429d251a2ec052d8da8bac1927927deaaaea391a9a85733266ab01f1bcb2cc44",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 79,
+          "language": "es",
+          "distance": 0.4939107596874237,
+          "score": 0.4939107596874237,
+          "quote": "posiciones de liderazgo. Entonces la gente merece un líder\nverdadero que puede mostrarles compasión y guiarlos de la\nmanera apropiada, llevando a cada persona hacia el objetivo\nfinal.\n21 Jeshvan\n4. A veces existe una carencia en el mundo debida al hecho de\nque la fe de la gente no está completa, [aunque aún existe algo\nde fe]. Consecuentemente, la ira de Dios y el ocultamiento de\nSu rostro, Dios no lo permita, no son fácilmente discernibles,\ndado que la falta de fe no es total. Cuando esa falta de fe “se\nfiltra” y alcanza a los Tzadikim, estos “ocultan sus rostros” del\nmundo y no quieren guiarlo. Pero dado que la ira de Dios es\nentonces mínima -sólo dura una fracción de segundo- los\nTzadikim no piensan que es esa ira la que les hace ocultar sus\nrostros. En su lugar lo atribuyen a su propia insignificancia,\ndiciendo que no son aptos para liderar el mundo. La verdad es\nque no saben de esa traza infinitesimal de ira ni la sienten.\nPero cuando la furia y la ira Divina se atemperan mediante la\nmise",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_5_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "01315240f0b19d1b49e8ef9d533a439c583bb228e2bd559600ece149f9e3002f",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 451,
+          "language": "es",
+          "distance": 0.4813289940357208,
+          "score": 0.4813289940357208,
+          "quote": "entona la canción que será cantada en el futuro, que es idéntica\na la voz de la persona apta para amonestar. Entonces, mediante\nsu amonestación, podrá agregarles y darles una buena fragancia\na las almas.\n16 Av\n5. Cuando se agrega una persona a una reunión de Israel -por\nejemplo, cuando hay un grupo de judíos dedicados a la plegaria\ny se les suma un alma adicional- aumenta y se magnifica el\nnúmero de casas de plegaria. Ello se debe a que las santas\ncombinaciones aumentan en enormes proporciones y se\nconstruyen grandes cantidades de casas en un nivel exaltado\nde santidad, conformando sumas astronómicas que son\nimposibles de describir o de concebir. Ello produce, a su vez,\nun deleite muy grande y maravilloso arriba. Como resultado\nde todo ello, los pecados son perdonados, se evoca la curación\ny desaparecen todas las enfermedades.\n6. El líder verdadero de cada generación posee un espíritu de\nprofecía. También hoy en día, aún cuando haya cesado la\nprofecía y un líder así no pueda obtener litera",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_5_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "5a6b5e0ea619c07b9bf78b2475d939ce76cfe90ad70c0b647de5b3293f6784ed",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 111,
+          "language": "es",
+          "distance": 0.4671362340450287,
+          "score": 0.4671362340450287,
+          "quote": "carne las exaltadas concepciones que el alma está percibiendo\nconstantemente. Mediante el sonido del suspiro -que es audacia\nsagrada- se quiebra la osadía del cuerpo y la esencia (ETZeM)\nse acerca y se une a la carne - o, en otras palabras, el alma se\nune al cuerpo. Éste es el significado profundo del versículo,\n“Por el sonido de mis suspiros, mi hueso (ATZMi, que también\nsignifica ‘mi esencia’) se pegó a mi carne” (Salmos 102:6).\n7. De manera similar, también en la categoría general de los\nseres humanos existen los conceptos de “esencia” y de “carne”.\nPues el sabio verdadero es análogo al ETZeM (“hueso” o\n“esencia”) y es el alma de aquellos que están por debajo de él.\nAhora bien, cuando la gente es como “carne” frente al sabio\nque es el “hueso”, puede oir entonces el sonido del suspiro -es\ndecir, la voz del sabio- y ese sonido quiebra sus cuerpos. Como\nresultado, el sabio puede acercarse a ellos y, como se explicó\nen el versículo anterior, “Por el sonido de mis ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_5_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "337ab4ec8f5e271698dd270d57210571ff085536d8344cae6b334dbd2ddbd076",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 419,
+          "language": "es",
+          "distance": 0.46674883365631104,
+          "score": 0.46674883365631104,
+          "quote": "20 Tamuz\n1 - “Sonad el shofar” \n1 - “Sonad el shofar” \n1 - “Sonad el shofar” \n1 - “Sonad el shofar” \n1 - “Sonad el shofar” (Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4);\nDominio\nDominio\nDominio\nDominio\nDominio\n1. El judío fue creado para tener dominio sobre los ángeles. Ése\nes el propósito final y el destino del pueblo judío y cada uno\ndebe ocuparse de alcanzar ese objetivo. Sin embargo, los ángeles\nson extremadamente celosos de aquel que tiene dominio sobre\nellos. Por lo tanto, es necesario cuidarse mucho y asegurarse\nde que se tiene el poder de mantener ese dominio, para que los\nángeles, en su celo, no lo hagan caer, Dios no lo permita.\n2. Para asegurarse de ello es necesario unirse a todas las almas\njudías. Ahora bien, las almas judías están agrupadas bajo los\nlíderes de la generación, dado que cada líder de la generación\nes responsable de un cierto número de almas. Por lo tanto, la\npersona debe unirse a todos los líderes de la generación pues,\nd",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_5_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "179eff157e1ee270c8f3627e406870ae926bc3f848a0c54793bb7ab7bb043021",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 109,
+          "language": "es",
+          "distance": 0.45904842019081116,
+          "score": 0.45904842019081116,
+          "quote": "los Siete Pastores presentes en cada generación (ver Bava Metzía,\nPerek 7, Rabí Jia u-Banav).\n4. Sólo mediante la audacia es posible llegar hasta esos pastores\ny acercarse a la santidad, como afirmaron nuestros Sabios, de\nbendita memoria, “Sé audaz como un leopardo” (Avot 5:20), y\ncomo está escrito, “Con audacia los guiaste a Tu santa morada”\n(Éxodo 15:13). Pues existen pastores del Otro Lado que también\nson famosos y que fuerzan a la gente a someterse a su control.\nEl poder de esos pastores proviene esencialmente de la osadía,\ndado que “La osadía es un reinado sin corona” (Sanedrín 105a).\nSon como perros en su osadía y están descritos en la frase, “El\nrostro de la generación es como el de un perro” (Sotá 49b) y en el\nversículo, “Los perros son osados... ellos son pastores” (Isaías\n56:11). Consecuentemente, la única manera de escapar al\ndominio de esos pastores y enfrentar su osadía malvada es\nmediante una gran audacia; siendo muy audaces frente a su\nosadía. De manera s",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_5_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "54404a0c4b004f30f664ee9a85ababfd6565d97311c0b4df6f1e2c22a8efa4df",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 264,
+          "language": "es",
+          "distance": 0.458285927772522,
+          "score": 0.458285927772522,
+          "quote": "264                                                                                                                                                                     \n  Lección 59                                                                                    2 Nisán\n2 Nisán\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n1. Aquél que se ocupa de acercar a los demás al servicio a Dios\ndebe cuidarse para que no se le peguen las fuerzas de la\nimpureza y del mal de esa gente. Esto se logra mediante el juicio.\nEsto quiere decir que la persona debe juzgarse constantemente\nen todos sus actos, evaluando si ha actuado de la manera\napropiada; y amonestarse y reprocharse por no haber actuado\ncomo debía. Como resultado de ese juicio, su corazón se\nencenderá de entusiasmo y el fuego de ese fervor quemará las\nfuerzas de la impureza que ya no se le apegarán. De esa manera\nanulará esas fuerzas al punto en que tampoco ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q7_temor_angeles_5_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "26a5a44fc61453bf54124175eafea87386480a983e99633db4f59b5377ba1799",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 80,
+          "language": "es",
+          "distance": 0.4580095708370209,
+          "score": 0.4580095708370209,
+          "quote": "6. Uno no debe aceptar una posición de liderazgo y de autoridad\na no ser que su fe sea absolutamente perfecta. Pues la\ncompasión es la cualidad esencial para el liderazgo y ésta\ndepende principalmente de la anulación de la idolatría. Aun\nasí, si existe un mínimo rasgo de idolatría y se cree en alguna\nclase de augurio como en “un ciervo se me cruzó en el camino”\n(ver Shuljan Aruj, Iore Dea 179:3) o en alguna otra cosa que pueda\nser denominada “la costumbre de los Amorreos” [i.e.,\nsuperstición] -aunque también crea en Dios- su compasión no\nestará completa y no deberá aceptar una posición de autoridad.\nAunque crea que siente compasión por el mundo y que por eso\nquiere guiarlo, en verdad, de hecho está persiguiendo el honor\ny meramente lo atribuye a su compasión. Tal líder puede llevar\na la gente hacia la herejía y el ateísmo, Dios no lo permita, pero\nel Cielo es misericordioso y no le permite retener su posición\nde autoridad.\n7. Mediante el amor a los sabios se establece el reinado ",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "líd_p420",
+          "page": 420,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "anzado ese temor perfecto a Dios, caerá ante ella la insolencia de esos líderes y podrá entonces unirse a los verdaderos líderes bajo los cuales se agrupan todas las almas de Israel. Entonces, quedará unida automáticamente a todas las almas de Israel y su dominio sobre los ángeles perdurará. 5. Mediante los deseos de dinero, de placer sexual y de comida -los cuales están enraizados en el corazón- se socava y se daña el temor a Dios que se encuentra en el corazón. 21 Tamuz 6. La intensidad del deseo sexual de la persona está",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "diagnostics": {
+    "sql_hits": 15,
+    "fts_hits": 0,
+    "milvus_hits": 0,
+    "hybrid_hits": 0,
+    "vector_hits": 40,
+    "vector_backend_requested": "auto",
+    "vector_backend_used": "milvus",
+    "relation_qa_hits": 0,
+    "book_qa_hits": 24,
+    "page_direct_hits": 15,
+    "methods_unavailable": [
+      "FTS and Relation QA do not accept an Ingesta V2 run_id in current contracts"
+    ],
+    "semantic_error": null,
+    "backend_runtime_model": "openai_gpt-5.4-nano",
+    "embedding_model": "openai_text_embedding_3_small",
+    "ai_synthesis_used": false,
+    "fallback_used": true,
+    "ai_error": "ai_disabled",
+    "hybrid_collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1"
+  },
+  "answer": "Según las fuentes verificadas para: Describe el temor perfecto a Dios y el dominio sobre los ángeles.\n- tres deseos: unida automáticamente a todas las almas de Israel y su dominio sobre los ángeles perdurará. 5. Mediante los deseos de dinero, de placer sexual y de comida -los cuales están enraizados en el corazón- se socava y se daña el temor a Dios que s [p. 420]\n- Tres Festividades: o sobre los ángeles. 9. En cada una de las Tres Festividades se rectifica uno de los tres deseos. A saber: En Pesaj, se rectifica el deseo de dinero; en Shavuot, se rectifica el deseo de placer sexual; y en Sukot, se rectifica el anhelo de  [p. 421]\n- temor y plegaria: líderes gracias al mérito de reconstruir a Jerusalén (IeRuShaLaIM), que está conceptualmente asociada con el temor perfecto a Dios (IRá ShaLeM). En otras palabras, la persona debe alcanzar un perfecto temor a Dios, lo que depende del corazó [p. 419]\n- ángeles: 81:4) (Salmos 81:4) (Salmos 81:4); Dominio Dominio Dominio Dominio Dominio 1. El judío fue creado para tener dominio sobre los ángeles. Ése es el propósito final y el destino del pueblo judío y cada uno debe ocuparse de alcanzar ese objetiv [p. 419]\n- líderes y almas: anzado ese temor perfecto a Dios, caerá ante ella la insolencia de esos líderes y podrá entonces unirse a los verdaderos líderes bajo los cuales se agrupan todas las almas de Israel. Entonces, quedará unida automáticamente a todas las almas [p. 420]",
+  "final_status": "PASS"
+}

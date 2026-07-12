@@ -1,0 +1,2649 @@
+{
+  "collection": "tebaai_breslov_chunks_v2_dev",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "scope": "breslov_test",
+  "warmup": 2,
+  "iterations": 5,
+  "results": [
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "punto bueno",
+      "top_k": 5,
+      "latencies_ms": [
+        5.687794997356832,
+        5.739474003348732,
+        5.70913200135692,
+        5.855928000528365,
+        5.383315998187754
+      ],
+      "p50_latency_ms": 5.709,
+      "p95_latency_ms": 5.739,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "punto bueno",
+      "top_k": 5,
+      "latencies_ms": [
+        34.1372639995825,
+        31.48611599681317,
+        30.634541999461362,
+        36.56772900285432,
+        30.1883350002754
+      ],
+      "p50_latency_ms": 31.486,
+      "p95_latency_ms": 34.137,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "punto bueno",
+      "top_k": 5,
+      "latencies_ms": [
+        9.360267002193723,
+        10.979746002703905,
+        9.746480001922464,
+        9.77996300207451,
+        9.856720000243513
+      ],
+      "p50_latency_ms": 9.78,
+      "p95_latency_ms": 9.857,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "punto bueno",
+      "top_k": 5,
+      "latencies_ms": [
+        8.883477003109874,
+        9.02233799934038,
+        10.015570998803014,
+        9.918168998410692,
+        11.371625001629582
+      ],
+      "p50_latency_ms": 9.918,
+      "p95_latency_ms": 10.016,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "nekudá tová",
+      "top_k": 5,
+      "latencies_ms": [
+        28.77427100247587,
+        25.98831499926746,
+        23.912111999379704,
+        23.107925997464918,
+        25.622784000006504
+      ],
+      "p50_latency_ms": 25.623,
+      "p95_latency_ms": 25.988,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 0,
+      "unique_pages": 0,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "nekudá tová",
+      "top_k": 5,
+      "latencies_ms": [
+        12.170933998277178,
+        12.757266998960404,
+        13.520267002604669,
+        17.153388002043357,
+        17.340825997962384
+      ],
+      "p50_latency_ms": 13.52,
+      "p95_latency_ms": 17.153,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "nekudá tová",
+      "top_k": 5,
+      "latencies_ms": [
+        4.861041998083238,
+        4.925848999846494,
+        4.613796001649462,
+        5.028859999583801,
+        5.224249998718733
+      ],
+      "p50_latency_ms": 4.926,
+      "p95_latency_ms": 5.029,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "nekudá tová",
+      "top_k": 5,
+      "latencies_ms": [
+        5.504629996721633,
+        4.697553002188215,
+        5.124726001668023,
+        5.697897999198176,
+        4.823544000828406
+      ],
+      "p50_latency_ms": 5.125,
+      "p95_latency_ms": 5.505,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "teshuvá vergüenza",
+      "top_k": 5,
+      "latencies_ms": [
+        39.40601800059085,
+        23.858583001128864,
+        24.029170999710914,
+        24.33370599828777,
+        23.312614001042675
+      ],
+      "p50_latency_ms": 24.029,
+      "p95_latency_ms": 24.334,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 1,
+      "unique_pages": 1,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "teshuvá vergüenza",
+      "top_k": 5,
+      "latencies_ms": [
+        11.666067999613006,
+        11.500551998324227,
+        11.59610900140251,
+        11.400540999602526,
+        11.687434998748358
+      ],
+      "p50_latency_ms": 11.596,
+      "p95_latency_ms": 11.666,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 5,
+      "latencies_ms": [
+        4.242659997544251,
+        4.14217099751113,
+        4.013942998426501,
+        3.928443999029696,
+        4.022725999675458
+      ],
+      "p50_latency_ms": 4.023,
+      "p95_latency_ms": 4.142,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 5,
+      "latencies_ms": [
+        9.724786999868229,
+        9.452267000597203,
+        9.005707001051633,
+        9.104728997044731,
+        10.42459800009965
+      ],
+      "p50_latency_ms": 9.452,
+      "p95_latency_ms": 9.725,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 5,
+      "latencies_ms": [
+        24.57177099859109,
+        22.784489003242925,
+        22.35057500001858,
+        23.620422998646973,
+        25.19500700145727
+      ],
+      "p50_latency_ms": 23.62,
+      "p95_latency_ms": 24.572,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 2,
+      "unique_pages": 2,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 5,
+      "latencies_ms": [
+        12.542905998998322,
+        11.657816998194903,
+        11.888746998010902,
+        12.072827998053981,
+        12.984181001229445
+      ],
+      "p50_latency_ms": 12.073,
+      "p95_latency_ms": 12.543,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 5,
+      "latencies_ms": [
+        4.049654002301395,
+        4.832241000258364,
+        4.392480997921666,
+        4.540871999779483,
+        4.8459030003868975
+      ],
+      "p50_latency_ms": 4.541,
+      "p95_latency_ms": 4.832,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 5,
+      "latencies_ms": [
+        4.4305150004220195,
+        4.462761000468163,
+        4.856866002228344,
+        4.105117001017788,
+        4.5544370004790835
+      ],
+      "p50_latency_ms": 4.463,
+      "p95_latency_ms": 4.554,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 5,
+      "latencies_ms": [
+        5.700526999135036,
+        7.700348000071244,
+        5.4069859979790635,
+        5.840506997628836,
+        5.966229000478052
+      ],
+      "p50_latency_ms": 5.841,
+      "p95_latency_ms": 5.966,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 5,
+      "latencies_ms": [
+        14.94977099719108,
+        13.749605001066811,
+        14.149815000564558,
+        13.942666999355424,
+        13.669626998307649
+      ],
+      "p50_latency_ms": 13.943,
+      "p95_latency_ms": 14.15,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 5,
+      "latencies_ms": [
+        4.315905000112252,
+        4.141837001952808,
+        4.9803879992396105,
+        4.770947998622432,
+        4.327889000705909
+      ],
+      "p50_latency_ms": 4.328,
+      "p95_latency_ms": 4.771,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 5,
+      "latencies_ms": [
+        4.773043998284265,
+        4.542003000096884,
+        4.441094999492634,
+        4.8626740026520565,
+        4.14693299899227
+      ],
+      "p50_latency_ms": 4.542,
+      "p95_latency_ms": 4.773,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 5,
+      "latencies_ms": [
+        3.362408999237232,
+        4.085556996869855,
+        3.8121990000945516,
+        4.121411999221891,
+        3.342036001413362
+      ],
+      "p50_latency_ms": 3.812,
+      "p95_latency_ms": 4.086,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 5,
+      "latencies_ms": [
+        13.897526001528604,
+        13.626964999275515,
+        14.180352998664603,
+        17.845386999397306,
+        14.074120001168922
+      ],
+      "p50_latency_ms": 14.074,
+      "p95_latency_ms": 14.18,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 5,
+      "latencies_ms": [
+        4.635560999304289,
+        4.191356998489937,
+        4.186703998129815,
+        3.9535089999844786,
+        5.04965300206095
+      ],
+      "p50_latency_ms": 4.191,
+      "p95_latency_ms": 4.636,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 5,
+      "latencies_ms": [
+        4.031884000141872,
+        4.646497000067029,
+        4.99615199805703,
+        4.345706001913641,
+        4.424519000167493
+      ],
+      "p50_latency_ms": 4.425,
+      "p95_latency_ms": 4.646,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 5,
+      "latencies_ms": [
+        2.6365039993834216,
+        2.471122999850195,
+        2.338349997444311,
+        2.322213000297779,
+        3.527163000399014
+      ],
+      "p50_latency_ms": 2.471,
+      "p95_latency_ms": 2.637,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 5,
+      "latencies_ms": [
+        13.571889998274855,
+        13.920254001277499,
+        13.369947999308351,
+        15.646700998331653,
+        14.42003800184466
+      ],
+      "p50_latency_ms": 13.92,
+      "p95_latency_ms": 14.42,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 5,
+      "latencies_ms": [
+        4.186061003565555,
+        4.639680999389384,
+        4.771609001181787,
+        5.288505999487825,
+        4.774552999151638
+      ],
+      "p50_latency_ms": 4.772,
+      "p95_latency_ms": 4.775,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 5,
+      "latencies_ms": [
+        4.5113169981050305,
+        4.355541001132224,
+        4.411600999446819,
+        5.040075000579236,
+        4.872830999374855
+      ],
+      "p50_latency_ms": 4.511,
+      "p95_latency_ms": 4.873,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "temor perfecto ángeles",
+      "top_k": 5,
+      "latencies_ms": [
+        3.6079780002182815,
+        4.789782000443665,
+        3.709956999955466,
+        3.581311000743881,
+        3.532732000167016
+      ],
+      "p50_latency_ms": 3.608,
+      "p95_latency_ms": 3.71,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "temor perfecto ángeles",
+      "top_k": 5,
+      "latencies_ms": [
+        17.00757300204714,
+        15.13044999956037,
+        14.606359000026714,
+        14.457721998041961,
+        12.232664001203375
+      ],
+      "p50_latency_ms": 14.606,
+      "p95_latency_ms": 15.13,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 5,
+      "latencies_ms": [
+        5.008084001019597,
+        4.577431001962395,
+        3.765588997339364,
+        4.018359002657235,
+        4.400455996801611
+      ],
+      "p50_latency_ms": 4.4,
+      "p95_latency_ms": 4.577,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 5,
+      "latencies_ms": [
+        4.035516001749784,
+        4.678641002101358,
+        4.542533002677374,
+        4.676847998780431,
+        4.344822002167348
+      ],
+      "p50_latency_ms": 4.543,
+      "p95_latency_ms": 4.677,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 5,
+      "latencies_ms": [
+        2.050238999800058,
+        2.007110000704415,
+        2.0838810014538467,
+        2.0966279989806935,
+        1.9596710008045193
+      ],
+      "p50_latency_ms": 2.05,
+      "p95_latency_ms": 2.084,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 5,
+      "latencies_ms": [
+        15.650559002096998,
+        14.78786200095783,
+        14.441471997997724,
+        14.691379001305904,
+        14.30341299783322
+      ],
+      "p50_latency_ms": 14.691,
+      "p95_latency_ms": 14.788,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 5,
+      "latencies_ms": [
+        4.893028999504168,
+        5.349569000827614,
+        6.946483998035546,
+        9.563060997606954,
+        9.494656002061674
+      ],
+      "p50_latency_ms": 6.946,
+      "p95_latency_ms": 9.495,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 5,
+      "latencies_ms": [
+        11.876838998432504,
+        10.071723998407833,
+        9.589973000402097,
+        9.620119999453891,
+        10.44608300071559
+      ],
+      "p50_latency_ms": 10.072,
+      "p95_latency_ms": 10.446,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 5,
+      "latencies_ms": [
+        33.451439998316346,
+        31.918235999910394,
+        30.94734199839877,
+        23.396686003252398,
+        13.666189999639755
+      ],
+      "p50_latency_ms": 30.947,
+      "p95_latency_ms": 31.918,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 5,
+      "latencies_ms": [
+        12.75140200232272,
+        12.692538999544922,
+        12.33785000295029,
+        11.735887001123047,
+        11.248479000641964
+      ],
+      "p50_latency_ms": 12.338,
+      "p95_latency_ms": 12.693,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 5,
+      "latencies_ms": [
+        3.9860309989308007,
+        3.7980679990141653,
+        3.807991000940092,
+        4.602852997777518,
+        4.135880000831094
+      ],
+      "p50_latency_ms": 3.986,
+      "p95_latency_ms": 4.136,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 5,
+      "latencies_ms": [
+        4.430433000379708,
+        4.122245998587459,
+        3.8339879974955693,
+        4.132687001401791,
+        4.258798999217106
+      ],
+      "p50_latency_ms": 4.133,
+      "p95_latency_ms": 4.259,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 5,
+      "latencies_ms": [
+        31.2214910009061,
+        31.69744299884769,
+        28.001687001960818,
+        24.113260002195602,
+        24.639290997583885
+      ],
+      "p50_latency_ms": 28.002,
+      "p95_latency_ms": 31.221,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 4,
+      "unique_pages": 4,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 5,
+      "latencies_ms": [
+        12.158590998296859,
+        13.92643800136284,
+        11.537716000020737,
+        11.498284999106545,
+        12.486532999901101
+      ],
+      "p50_latency_ms": 12.159,
+      "p95_latency_ms": 12.487,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 5,
+      "latencies_ms": [
+        3.6921760001860093,
+        4.451913999218959,
+        3.8003549998393282,
+        4.3157469990546815,
+        4.550260000542039
+      ],
+      "p50_latency_ms": 4.316,
+      "p95_latency_ms": 4.452,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 5,
+      "latencies_ms": [
+        4.4873260012536775,
+        4.2420380013936665,
+        4.185566998785362,
+        5.007957999623613,
+        4.6242880016507115
+      ],
+      "p50_latency_ms": 4.487,
+      "p95_latency_ms": 4.624,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 5,
+      "unique_pages": 5,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "punto bueno",
+      "top_k": 10,
+      "latencies_ms": [
+        5.165482001757482,
+        5.073456999525661,
+        4.8259550021612085,
+        5.604938000033144,
+        4.415391998918494
+      ],
+      "p50_latency_ms": 5.073,
+      "p95_latency_ms": 5.165,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "punto bueno",
+      "top_k": 10,
+      "latencies_ms": [
+        22.61573499708902,
+        23.2825809980568,
+        29.330892997677438,
+        23.361702002148377,
+        24.85506599987275
+      ],
+      "p50_latency_ms": 23.362,
+      "p95_latency_ms": 24.855,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "punto bueno",
+      "top_k": 10,
+      "latencies_ms": [
+        7.62759799908963,
+        7.8059940024104435,
+        7.287954998901114,
+        8.467161002045032,
+        7.4786559998756275
+      ],
+      "p50_latency_ms": 7.628,
+      "p95_latency_ms": 7.806,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "punto bueno",
+      "top_k": 10,
+      "latencies_ms": [
+        13.330532998224953,
+        11.182440000993665,
+        8.976889999757987,
+        8.321242999954848,
+        8.637243998236954
+      ],
+      "p50_latency_ms": 8.977,
+      "p95_latency_ms": 11.182,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "nekudá tová",
+      "top_k": 10,
+      "latencies_ms": [
+        26.124932999664452,
+        23.655323002458317,
+        22.97637900119298,
+        23.63868099928368,
+        23.651407998841023
+      ],
+      "p50_latency_ms": 23.651,
+      "p95_latency_ms": 23.655,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 0,
+      "unique_pages": 0,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "nekudá tová",
+      "top_k": 10,
+      "latencies_ms": [
+        12.369730000500567,
+        11.558588001207681,
+        11.490934000903508,
+        12.1198920023744,
+        11.347340001520934
+      ],
+      "p50_latency_ms": 11.559,
+      "p95_latency_ms": 12.12,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "nekudá tová",
+      "top_k": 10,
+      "latencies_ms": [
+        4.0023569999902975,
+        3.816870997980004,
+        4.103605999262072,
+        5.110694997711107,
+        4.528105000645155
+      ],
+      "p50_latency_ms": 4.104,
+      "p95_latency_ms": 4.528,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "nekudá tová",
+      "top_k": 10,
+      "latencies_ms": [
+        4.25739799902658,
+        3.9871029985079076,
+        3.836315998341888,
+        4.358225000032689,
+        3.9346689991361927
+      ],
+      "p50_latency_ms": 3.987,
+      "p95_latency_ms": 4.257,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "teshuvá vergüenza",
+      "top_k": 10,
+      "latencies_ms": [
+        24.188056999264518,
+        24.026709001191193,
+        24.814334999973653,
+        22.57717300017248,
+        23.97543499682797
+      ],
+      "p50_latency_ms": 24.027,
+      "p95_latency_ms": 24.188,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 1,
+      "unique_pages": 1,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "teshuvá vergüenza",
+      "top_k": 10,
+      "latencies_ms": [
+        12.952717999723973,
+        12.205366001580842,
+        13.26997900105198,
+        18.10694099913235,
+        12.220242999319453
+      ],
+      "p50_latency_ms": 12.953,
+      "p95_latency_ms": 13.27,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 10,
+      "latencies_ms": [
+        3.988231001130771,
+        4.027554001368117,
+        4.170002001046669,
+        4.156467999564484,
+        4.101685000932775
+      ],
+      "p50_latency_ms": 4.102,
+      "p95_latency_ms": 4.156,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 10,
+      "latencies_ms": [
+        4.284075999748893,
+        4.160539003351005,
+        4.614354002114851,
+        4.872960998909548,
+        4.390771002363181
+      ],
+      "p50_latency_ms": 4.391,
+      "p95_latency_ms": 4.614,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 10,
+      "latencies_ms": [
+        26.911557997664204,
+        25.537970999721438,
+        23.042197000904707,
+        24.07890899849008,
+        26.997447999747237
+      ],
+      "p50_latency_ms": 25.538,
+      "p95_latency_ms": 26.912,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 2,
+      "unique_pages": 2,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 10,
+      "latencies_ms": [
+        10.926228998869192,
+        12.11697200051276,
+        11.62655500229448,
+        11.363454999809619,
+        11.615008999797283
+      ],
+      "p50_latency_ms": 11.615,
+      "p95_latency_ms": 11.627,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 10,
+      "latencies_ms": [
+        4.29175599856535,
+        3.896829999575857,
+        3.8258160020632204,
+        4.75246800124296,
+        4.208710000966676
+      ],
+      "p50_latency_ms": 4.209,
+      "p95_latency_ms": 4.292,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 10,
+      "latencies_ms": [
+        4.409583001688588,
+        4.570651999529218,
+        4.496794001170201,
+        4.343147997133201,
+        4.413193000800675
+      ],
+      "p50_latency_ms": 4.413,
+      "p95_latency_ms": 4.497,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 10,
+      "latencies_ms": [
+        18.91958799751592,
+        16.31821300179581,
+        16.38815000114846,
+        16.043744999478804,
+        15.758227000333136
+      ],
+      "p50_latency_ms": 16.318,
+      "p95_latency_ms": 16.388,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 10,
+      "latencies_ms": [
+        10.771969999041175,
+        10.709240999858594,
+        11.914704999071546,
+        13.169655001547653,
+        15.789765999215888
+      ],
+      "p50_latency_ms": 11.915,
+      "p95_latency_ms": 13.17,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 10,
+      "latencies_ms": [
+        4.8820129995874595,
+        5.235302000073716,
+        5.487125999934506,
+        4.935109001962701,
+        5.03488999675028
+      ],
+      "p50_latency_ms": 5.035,
+      "p95_latency_ms": 5.235,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 10,
+      "latencies_ms": [
+        5.389999998442363,
+        5.159770997124724,
+        5.479529998410726,
+        5.338626000593649,
+        5.47560999984853
+      ],
+      "p50_latency_ms": 5.39,
+      "p95_latency_ms": 5.476,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 10,
+      "latencies_ms": [
+        9.586904998286627,
+        8.080050996795762,
+        9.273727002437226,
+        8.887802003300749,
+        12.14937900294899
+      ],
+      "p50_latency_ms": 9.274,
+      "p95_latency_ms": 9.587,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 10,
+      "latencies_ms": [
+        15.531860997725744,
+        15.43364199824282,
+        15.110969001398189,
+        15.618624001945136,
+        14.8539299989352
+      ],
+      "p50_latency_ms": 15.434,
+      "p95_latency_ms": 15.532,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 10,
+      "latencies_ms": [
+        4.897765000350773,
+        4.684491999796592,
+        5.212219002714846,
+        4.638518999854568,
+        4.798916001163889
+      ],
+      "p50_latency_ms": 4.799,
+      "p95_latency_ms": 4.898,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 10,
+      "latencies_ms": [
+        4.618467999534914,
+        5.126470001414418,
+        5.676361000951147,
+        4.827889999432955,
+        4.612675002135802
+      ],
+      "p50_latency_ms": 4.828,
+      "p95_latency_ms": 5.126,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 10,
+      "latencies_ms": [
+        12.628432999918004,
+        7.515968998632161,
+        8.965974997408921,
+        9.322147998318542,
+        7.709875000728061
+      ],
+      "p50_latency_ms": 8.966,
+      "p95_latency_ms": 9.322,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 10,
+      "latencies_ms": [
+        19.181907002348453,
+        17.454442000598647,
+        16.470051003125263,
+        12.33017699996708,
+        11.523700999532593
+      ],
+      "p50_latency_ms": 16.47,
+      "p95_latency_ms": 17.454,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 10,
+      "latencies_ms": [
+        4.183304998150561,
+        4.208255999401445,
+        3.885770998749649,
+        4.16703000155394,
+        4.599929001415148
+      ],
+      "p50_latency_ms": 4.183,
+      "p95_latency_ms": 4.208,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 10,
+      "latencies_ms": [
+        4.388638997625094,
+        4.208364000078291,
+        4.244815001584357,
+        4.463105997274397,
+        4.887145998509368
+      ],
+      "p50_latency_ms": 4.389,
+      "p95_latency_ms": 4.463,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "temor perfecto ángeles",
+      "top_k": 10,
+      "latencies_ms": [
+        3.9745579997543246,
+        3.9210600007208996,
+        3.815954001765931,
+        3.8423510013672058,
+        3.856616996927187
+      ],
+      "p50_latency_ms": 3.857,
+      "p95_latency_ms": 3.921,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "temor perfecto ángeles",
+      "top_k": 10,
+      "latencies_ms": [
+        13.584288000856759,
+        15.234877002512803,
+        15.15473200197448,
+        26.43107300173142,
+        29.97719999984838
+      ],
+      "p50_latency_ms": 15.235,
+      "p95_latency_ms": 26.431,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 10,
+      "latencies_ms": [
+        10.684346001653466,
+        9.855521999270422,
+        9.999327998230001,
+        10.57206399855204,
+        10.906089999480173
+      ],
+      "p50_latency_ms": 10.572,
+      "p95_latency_ms": 10.684,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 10,
+      "latencies_ms": [
+        10.120038998138625,
+        9.471379002206959,
+        10.416746001283173,
+        9.4484060027753,
+        10.642296998412348
+      ],
+      "p50_latency_ms": 10.12,
+      "p95_latency_ms": 10.417,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 10,
+      "latencies_ms": [
+        5.098402001749491,
+        4.9003919993992895,
+        5.608636001852574,
+        4.92838100035442,
+        5.255748001218308
+      ],
+      "p50_latency_ms": 5.098,
+      "p95_latency_ms": 5.256,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 10,
+      "latencies_ms": [
+        29.73389700127882,
+        15.540926000539912,
+        11.93506599884131,
+        12.708631998975761,
+        12.872246999904746
+      ],
+      "p50_latency_ms": 12.872,
+      "p95_latency_ms": 15.541,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 10,
+      "latencies_ms": [
+        3.6136900016572326,
+        4.199826998956269,
+        4.41777100058971,
+        4.251481001119828,
+        3.900726998836035
+      ],
+      "p50_latency_ms": 4.2,
+      "p95_latency_ms": 4.251,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 10,
+      "latencies_ms": [
+        4.4161410005472135,
+        4.096898002899252,
+        4.33975999840186,
+        4.5039559990982525,
+        4.672716997447424
+      ],
+      "p50_latency_ms": 4.416,
+      "p95_latency_ms": 4.504,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 10,
+      "latencies_ms": [
+        30.792284000199288,
+        30.97506300036912,
+        26.815268000063952,
+        25.104415999521734,
+        23.670909999054857
+      ],
+      "p50_latency_ms": 26.815,
+      "p95_latency_ms": 30.792,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 6,
+      "unique_pages": 6,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 10,
+      "latencies_ms": [
+        11.161616999743273,
+        12.258569000550779,
+        15.36510300138616,
+        14.159100999677321,
+        12.924553000630112
+      ],
+      "p50_latency_ms": 12.925,
+      "p95_latency_ms": 14.159,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 10,
+      "latencies_ms": [
+        4.051831001561368,
+        4.179656996711856,
+        4.224647000228288,
+        3.7770740018459037,
+        3.8514769985340536
+      ],
+      "p50_latency_ms": 4.052,
+      "p95_latency_ms": 4.18,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 10,
+      "latencies_ms": [
+        4.5411329992930405,
+        4.321067997807404,
+        4.831600999750663,
+        4.534953997790581,
+        4.482416999962879
+      ],
+      "p50_latency_ms": 4.535,
+      "p95_latency_ms": 4.541,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 10,
+      "latencies_ms": [
+        30.623991002357798,
+        29.55170000132057,
+        29.39978200083715,
+        32.86185700198985,
+        28.990360999159748
+      ],
+      "p50_latency_ms": 29.552,
+      "p95_latency_ms": 30.624,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 4,
+      "unique_pages": 4,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 10,
+      "latencies_ms": [
+        13.890245998481987,
+        13.734987001953414,
+        14.221332003216958,
+        13.422512001852738,
+        14.720827999553876
+      ],
+      "p50_latency_ms": 13.89,
+      "p95_latency_ms": 14.221,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 10,
+      "latencies_ms": [
+        4.450395997992018,
+        4.3349679981474765,
+        4.271616999176331,
+        4.273086000466719,
+        4.406715001096018
+      ],
+      "p50_latency_ms": 4.335,
+      "p95_latency_ms": 4.407,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 10,
+      "latencies_ms": [
+        4.556124000373529,
+        4.475695001019631,
+        4.565391998767154,
+        4.8575670007267036,
+        4.685290001361864
+      ],
+      "p50_latency_ms": 4.565,
+      "p95_latency_ms": 4.685,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 10,
+      "unique_pages": 10,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "punto bueno",
+      "top_k": 20,
+      "latencies_ms": [
+        11.718933001247933,
+        9.264035998057807,
+        10.580000998743344,
+        8.876766998582752,
+        9.289305999118369
+      ],
+      "p50_latency_ms": 9.289,
+      "p95_latency_ms": 10.58,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "punto bueno",
+      "top_k": 20,
+      "latencies_ms": [
+        14.016699999046978,
+        12.339651999354828,
+        12.068174000887666,
+        11.990437997155823,
+        17.27414099877933
+      ],
+      "p50_latency_ms": 12.34,
+      "p95_latency_ms": 14.017,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "punto bueno",
+      "top_k": 20,
+      "latencies_ms": [
+        4.699552002421115,
+        4.509111000515986,
+        4.157872997893719,
+        4.305223003029823,
+        4.6727239969186485
+      ],
+      "p50_latency_ms": 4.509,
+      "p95_latency_ms": 4.673,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "punto bueno",
+      "top_k": 20,
+      "latencies_ms": [
+        4.891975000646198,
+        4.954255000484409,
+        4.979479999747127,
+        4.572653000650462,
+        4.613357999915024
+      ],
+      "p50_latency_ms": 4.892,
+      "p95_latency_ms": 4.954,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "nekudá tová",
+      "top_k": 20,
+      "latencies_ms": [
+        34.59228800056735,
+        28.59789000285673,
+        26.91383300043526,
+        24.789270999463042,
+        25.112519000686007
+      ],
+      "p50_latency_ms": 26.914,
+      "p95_latency_ms": 28.598,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 0,
+      "unique_pages": 0,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "nekudá tová",
+      "top_k": 20,
+      "latencies_ms": [
+        11.907036998309195,
+        11.694339002133347,
+        12.981022999156266,
+        11.241246997087728,
+        11.357565999787766
+      ],
+      "p50_latency_ms": 11.694,
+      "p95_latency_ms": 11.907,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "nekudá tová",
+      "top_k": 20,
+      "latencies_ms": [
+        4.492773001402384,
+        4.712936002761126,
+        4.846982999879401,
+        4.782522999448702,
+        4.47493100000429
+      ],
+      "p50_latency_ms": 4.713,
+      "p95_latency_ms": 4.783,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "nekudá tová",
+      "top_k": 20,
+      "latencies_ms": [
+        4.987977001292165,
+        4.761451000376837,
+        5.2817610012425575,
+        5.689593999704812,
+        5.339980001735967
+      ],
+      "p50_latency_ms": 5.282,
+      "p95_latency_ms": 5.34,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "teshuvá vergüenza",
+      "top_k": 20,
+      "latencies_ms": [
+        28.230258001713082,
+        22.86030200048117,
+        22.677445002045715,
+        22.485415000119247,
+        22.826823998912005
+      ],
+      "p50_latency_ms": 22.827,
+      "p95_latency_ms": 22.86,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 1,
+      "unique_pages": 1,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "teshuvá vergüenza",
+      "top_k": 20,
+      "latencies_ms": [
+        11.219952000828926,
+        11.470035002275836,
+        11.039876997529063,
+        11.445408999861684,
+        12.50302700282191
+      ],
+      "p50_latency_ms": 11.445,
+      "p95_latency_ms": 11.47,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 20,
+      "latencies_ms": [
+        4.0504019998479635,
+        4.332831002102466,
+        4.045274999953108,
+        4.475869001907995,
+        4.26027100184001
+      ],
+      "p50_latency_ms": 4.26,
+      "p95_latency_ms": 4.333,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 20,
+      "latencies_ms": [
+        4.808165002032183,
+        4.7197729982144665,
+        4.659376998461084,
+        5.392546998336911,
+        5.00911600101972
+      ],
+      "p50_latency_ms": 4.808,
+      "p95_latency_ms": 5.009,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 20,
+      "latencies_ms": [
+        24.58956800182932,
+        22.652085997833638,
+        22.845881001558155,
+        23.612179997144267,
+        25.712270999065368
+      ],
+      "p50_latency_ms": 23.612,
+      "p95_latency_ms": 24.59,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 2,
+      "unique_pages": 2,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 20,
+      "latencies_ms": [
+        10.825058998307213,
+        11.39031300044735,
+        10.865693999221548,
+        12.315042000409449,
+        12.656856000830885
+      ],
+      "p50_latency_ms": 11.39,
+      "p95_latency_ms": 12.315,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 20,
+      "latencies_ms": [
+        3.954296000301838,
+        4.031458000099519,
+        4.6824390010442585,
+        4.43896499928087,
+        4.283116999431513
+      ],
+      "p50_latency_ms": 4.283,
+      "p95_latency_ms": 4.439,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 20,
+      "latencies_ms": [
+        4.019916003016988,
+        4.001569999672938,
+        4.333289001806406,
+        4.583855999953812,
+        4.5528409973485395
+      ],
+      "p50_latency_ms": 4.333,
+      "p95_latency_ms": 4.553,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 20,
+      "latencies_ms": [
+        25.230770999769447,
+        22.03934299905086,
+        22.264447001361987,
+        23.417429998517036,
+        22.80970699939644
+      ],
+      "p50_latency_ms": 22.81,
+      "p95_latency_ms": 23.417,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 14,
+      "unique_pages": 14,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 20,
+      "latencies_ms": [
+        11.95287800146616,
+        12.560942999698455,
+        12.723974003165495,
+        13.6760499990487,
+        14.466721000644611
+      ],
+      "p50_latency_ms": 12.724,
+      "p95_latency_ms": 13.676,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 20,
+      "latencies_ms": [
+        3.701079000165919,
+        4.214861000946257,
+        4.603032000886742,
+        4.6024680013943,
+        4.385201002151007
+      ],
+      "p50_latency_ms": 4.385,
+      "p95_latency_ms": 4.602,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 20,
+      "latencies_ms": [
+        5.078849000710761,
+        5.315376998623833,
+        6.540168000356061,
+        8.253300002252217,
+        6.979222998779733
+      ],
+      "p50_latency_ms": 6.54,
+      "p95_latency_ms": 6.979,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 20,
+      "latencies_ms": [
+        19.13926899942453,
+        16.60891699793865,
+        16.385697999794502,
+        16.16218499839306,
+        15.537810999376234
+      ],
+      "p50_latency_ms": 16.386,
+      "p95_latency_ms": 16.609,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 20,
+      "latencies_ms": [
+        12.09774800008745,
+        12.119570001232205,
+        11.452627997641684,
+        12.563296997541329,
+        13.976681999338325
+      ],
+      "p50_latency_ms": 12.12,
+      "p95_latency_ms": 12.563,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 20,
+      "latencies_ms": [
+        4.350647002866026,
+        4.120019999390934,
+        4.493038999498822,
+        4.330163999838987,
+        4.4264789976296015
+      ],
+      "p50_latency_ms": 4.351,
+      "p95_latency_ms": 4.426,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 20,
+      "latencies_ms": [
+        4.419570999743883,
+        4.5438779998221435,
+        4.527668999799062,
+        4.047457001433941,
+        4.253413000697037
+      ],
+      "p50_latency_ms": 4.42,
+      "p95_latency_ms": 4.528,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 20,
+      "latencies_ms": [
+        9.636219998355955,
+        9.798758001124952,
+        9.507898001174908,
+        9.605018000002019,
+        10.603733000607463
+      ],
+      "p50_latency_ms": 9.636,
+      "p95_latency_ms": 9.799,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 20,
+      "latencies_ms": [
+        12.150267000833992,
+        11.907743999472586,
+        12.702044001343893,
+        12.413592998200329,
+        12.382056000205921
+      ],
+      "p50_latency_ms": 12.382,
+      "p95_latency_ms": 12.414,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 20,
+      "latencies_ms": [
+        4.667749999498483,
+        4.572654997900827,
+        4.240234000462806,
+        4.105349002202274,
+        4.730520999146393
+      ],
+      "p50_latency_ms": 4.573,
+      "p95_latency_ms": 4.668,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 20,
+      "latencies_ms": [
+        4.425933999300469,
+        4.945491000398761,
+        4.278583997802343,
+        4.920901999867056,
+        4.722672001662431
+      ],
+      "p50_latency_ms": 4.723,
+      "p95_latency_ms": 4.921,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "temor perfecto ángeles",
+      "top_k": 20,
+      "latencies_ms": [
+        5.785780002042884,
+        5.886000999453245,
+        5.51078399803373,
+        6.128279001131887,
+        6.641906998993363
+      ],
+      "p50_latency_ms": 5.886,
+      "p95_latency_ms": 6.128,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "temor perfecto ángeles",
+      "top_k": 20,
+      "latencies_ms": [
+        11.648036001133732,
+        11.792822999268537,
+        13.39060199825326,
+        13.226004000898683,
+        11.620315002801362
+      ],
+      "p50_latency_ms": 11.793,
+      "p95_latency_ms": 13.226,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 20,
+      "latencies_ms": [
+        4.295056998671498,
+        4.330362997279735,
+        4.350737999629928,
+        4.131271998630837,
+        4.453186997125158
+      ],
+      "p50_latency_ms": 4.33,
+      "p95_latency_ms": 4.351,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 20,
+      "latencies_ms": [
+        4.3650070001604035,
+        4.3563130020629615,
+        4.479348001041217,
+        4.50278599964804,
+        5.014934002247173
+      ],
+      "p50_latency_ms": 4.479,
+      "p95_latency_ms": 4.503,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 20,
+      "latencies_ms": [
+        5.0035290005325805,
+        4.775492998305708,
+        4.651482999179279,
+        4.54426299984334,
+        3.9098529996408615
+      ],
+      "p50_latency_ms": 4.651,
+      "p95_latency_ms": 4.775,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 20,
+      "latencies_ms": [
+        11.660821997793391,
+        13.57614900189219,
+        11.45717799954582,
+        12.138791000325,
+        11.99550399906002
+      ],
+      "p50_latency_ms": 11.996,
+      "p95_latency_ms": 12.139,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 20,
+      "latencies_ms": [
+        4.013395002402831,
+        4.52797299658414,
+        4.471695003303466,
+        4.360021001048153,
+        4.083685998921283
+      ],
+      "p50_latency_ms": 4.36,
+      "p95_latency_ms": 4.472,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 20,
+      "latencies_ms": [
+        4.187350998108741,
+        4.494581000471953,
+        4.027553000923945,
+        4.110156001843279,
+        4.368245998193743
+      ],
+      "p50_latency_ms": 4.187,
+      "p95_latency_ms": 4.368,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 20,
+      "latencies_ms": [
+        30.871074999595294,
+        25.776993999897968,
+        27.795997997600352,
+        25.303457001427887,
+        23.274298997421283
+      ],
+      "p50_latency_ms": 25.777,
+      "p95_latency_ms": 27.796,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 6,
+      "unique_pages": 6,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 20,
+      "latencies_ms": [
+        11.721261002094252,
+        11.728039997251472,
+        11.67924299807055,
+        12.062141999194864,
+        11.12347399975988
+      ],
+      "p50_latency_ms": 11.721,
+      "p95_latency_ms": 11.728,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 20,
+      "latencies_ms": [
+        3.8287450006464496,
+        4.028503000881756,
+        4.9087360021076165,
+        4.398793997097528,
+        4.009244999906514
+      ],
+      "p50_latency_ms": 4.029,
+      "p95_latency_ms": 4.399,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 20,
+      "latencies_ms": [
+        4.996925999876112,
+        4.685618998337304,
+        4.207679001410725,
+        4.741397999168839,
+        4.510110997216543
+      ],
+      "p50_latency_ms": 4.686,
+      "p95_latency_ms": 4.741,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "sql_page",
+      "backend_used": "sql_page",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 20,
+      "latencies_ms": [
+        22.47608000106993,
+        25.309525000920985,
+        22.454276000644313,
+        22.08768999844324,
+        23.77374199932092
+      ],
+      "p50_latency_ms": 22.476,
+      "p95_latency_ms": 23.774,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 4,
+      "unique_pages": 4,
+      "errors": []
+    },
+    {
+      "backend": "pgvector",
+      "backend_used": "pgvector",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 20,
+      "latencies_ms": [
+        11.410096998588415,
+        11.341690002154792,
+        14.531870001519565,
+        12.526227001217194,
+        12.55823499741382
+      ],
+      "p50_latency_ms": 12.526,
+      "p95_latency_ms": 12.558,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "milvus",
+      "backend_used": "milvus",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 20,
+      "latencies_ms": [
+        3.915669996786164,
+        3.8967350010352675,
+        4.349798000475857,
+        4.460079999262234,
+        54.08083099973737
+      ],
+      "p50_latency_ms": 4.35,
+      "p95_latency_ms": 4.46,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    },
+    {
+      "backend": "auto",
+      "backend_used": "milvus",
+      "query": "Keter EHIéH arrepentimiento",
+      "top_k": 20,
+      "latencies_ms": [
+        9.799596999073401,
+        9.911421999277081,
+        10.124686999915866,
+        11.510684998938814,
+        9.026993997395039
+      ],
+      "p50_latency_ms": 9.911,
+      "p95_latency_ms": 10.125,
+      "success_rate": 1.0,
+      "error_rate": 0.0,
+      "hit_count": 20,
+      "unique_pages": 20,
+      "errors": []
+    }
+  ]
+}

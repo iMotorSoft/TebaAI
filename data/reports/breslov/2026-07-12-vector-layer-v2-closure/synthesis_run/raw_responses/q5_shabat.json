@@ -1,0 +1,591 @@
+{
+  "question_id": "q5_shabat",
+  "question": "Cómo se relaciona la santidad del Shabat con rectificación espiritual y alegría.",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_filter": "resolved by run",
+  "claims": [
+    {
+      "claim_id": "q5_shabat_1",
+      "claim": "fe y bendiciones",
+      "page_direct": [
+        {
+          "source_id": "fe _p159",
+          "page": 159,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ndiciones llegan al mundo. Pero esas bendiciones sólo se completan en el Shabat, que es la manifestación y la encarnación de la fe. Por lo tanto, la luz de la caridad ilumina y brilla como el sol, principalmente y en su plenitud más grande en el Shabat, que es el aspecto de la fe; y la fe es la fuente de todas las bendiciones.* * Nota del copista: Para explicar: La clase de caridad que brilla como el sol es la caridad dada a las personas pobres y dignas para que puedan comprar lo que necesitan para el santo Shabat, como pued",
+          "score": 1.0
+        },
+        {
+          "source_id": "fe _p160",
+          "page": 160,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "efectúa exclusivamente a través de la fe, pues la fe es lo más importante. 3. Al guardar el Shabat -que es la encarnación de la fe- se perfecciona la caridad y la persona merece todas las bendiciones. Es por ello que el Taná comienza el tratado Shabat con un ejemplo que implica la mitzvá de la caridad, aludiendo a la relación entre el Shabat y la caridad. (Esto también se expresa en la canción “Leja Dodi” [que se canta al comienzo] del Shabat, “Porque él [el Shabat] es la fuente de la bendición”). El Shabat es la perfección",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q5_shabat_1_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "28db46a3cbdb30cc99b21821af3c6c787b385acdc19516029444b99fc0822276",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 458,
+          "language": "es",
+          "distance": 0.4115689992904663,
+          "score": 0.4115689992904663,
+          "quote": "458                                                                                                                                                                     \n    Lección 11                                                                                     21 Av\npodemos ver a partir del versículo, “Todos los que se cobijan en Ti se\nregocijarán y cantarán por siempre... y aquellos que aman Tu Nombre se\nregocijarán con alegría” (Salmos 5:12), que la alegría en Dios está\níntimamente unida con el amor a Él, como se explica en los textos sagrados.\nMás aún, una gran unificación espiritual se lleva a cabo arriba\ncuando la persona une la alegría con la mente y con la\ncomprensión; entonces su mente se libera y alcanza una “mente\nasentada”. Éste es el concepto de la alegría de la mente (Shabat\n77b), que es algo muy grande en verdad. Dios nos permita ser\nsiempre dignos de ello. Amén, que así sea Su voluntad.*\n* Ver Taanit 22a, donde Elías le comentó a Rav Broka sobre dos hermanos\n",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_1_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d81e26ee7612d50689502216f0c4a0c85fd6aa7c6374142db0643825a54a3541",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 318,
+          "language": "es",
+          "distance": 0.39263954758644104,
+          "score": 0.39263954758644104,
+          "quote": "318                                                                                                                                                                     \n5. Hoshana Raba y Simjat Torá corresponden, respectivamente,\nal habla carente de conocimiento - cuando la persona no es\ncapaz de comprender lo que está estudiando - y al habla con\nconocimiento - como cuando la persona merece saber y\ncomprender la sabiduría de la Torá. Este último tipo de habla\nconstituye una cura para el alma (ver más en la lección del Likutey\nMoharán).\n11 Iyar\n75 - “Que Dios nos bendiga”\n75 - “Que Dios nos bendiga”\n75 - “Que Dios nos bendiga”\n75 - “Que Dios nos bendiga”\n75 - “Que Dios nos bendiga”\n(Salmos 67:8)\n(Salmos 67:8)\n(Salmos 67:8)\n(Salmos 67:8)\n(Salmos 67:8)\n1. El deseo de imponerse y de disputar deriva de la sangre que\nla persona aún no ha utilizado para servir a Dios. Pues cada\nuno debe ocuparse de servir a Dios con cada gota de sangre -\ncon muchas palabras de Torá y de plegaria. Entonc",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_1_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "0f6e28437a030f63a77538f879a1931c52ee2bc1f240173daa461fba411f6411",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 385,
+          "language": "es",
+          "distance": 0.3921024799346924,
+          "score": 0.3921024799346924,
+          "quote": "227\n227\n227\n227\n227\n1. Cuando la persona pasa junto a los que están cosechando en\nel campo y les dice, “¡Que Dios los ayude! ¡Que Dios los ayude!”,\nello produce la elevación espiritual de los malvados que están\nreencarnados en esos vegetales.\n228\n228\n228\n228\n228\n1. Cuando el Santo, bendito sea, mira en un alma y ve que es\ncapaz de llevar a la gente hacia el arrepentimiento y de hacer\nprosélitos, Él Mismo se ocupa, por así decirlo, de que tenga\nantagonistas.\n229\n229\n229\n229\n229\n1. Hay ciertas clases de maderas que, al construir camas con\nellas, son eficaces para concebir y criar a los niños, mientras\nque otras ejercen el efecto contrario.\n230\n230\n230\n230\n230\n1. La persona que tiene ojos para ver es capaz de percibir y de\nreconocer en el rostro de un estudiante quién es su Rav -\nsiempre y cuando haya visto alguna vez a ese Rav (ver más\narriba, Lección #153).\n231\n231\n231\n231\n231\n1. En el momento en que la persona dice, “Y todas las huestes\ndel Cielo se inclinan ante Ti” (Pesukey deZimra, Pleg",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_1_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ece623d3a8775f9f2be40bb5abde62fef9734eeb79a6c8cace47b9f62bbcf407",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 157,
+          "language": "es",
+          "distance": 0.38463184237480164,
+          "score": 0.38463184237480164,
+          "quote": "está escrito ‘Bueno es agradecer a Dios’” (Salmos 92:2). Como también\nenseñaron nuestros Sabios, de bendita memoria, “Tov (Bueno) tiene el valor\nnumérico de diecisiete y la plegaria de la Amidá tiene diecinueve bendiciones.\nSi se resta la bendición concerniente a los herejes agregada en Iavne y la\nbendición ‘Haz que el vástago de David, Tu siervo, florezca’ que fue agregada\npor ‘Examíname, Dios y pruébame’ (Salmos 26:2), vemos que ambas se\ncorresponden numéricamente” (Midrash Tanjuma, Koraj).\n15 Tevet\n13. Esto explica porqué la confusión y las distracciones son\nllamadas TeHiLaH, como está escrito, “Aun en Sus ángeles\nencuentra TaHaLaH (locura [i.e, confusión])” (Job 4:18) - pues\ntodas ellas se presentan precisamente en el momento de la\nalabanza (TeHiLaH) y de la plegaria. [Esas distracciones atacan\na la persona durante sus plegarias] por uno de dos motivos. La\nprimera posibilidad es que vengan para ser rectificadas - dado\nque es el momento para ello [i.e., cuando la perso",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_1_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1f5d75d550ac61bc146099ef0aef957e5fe0e30515be174e68791ee73f5b58f0",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 316,
+          "language": "es",
+          "distance": 0.378856360912323,
+          "score": 0.378856360912323,
+          "quote": "316                                                                                                                                                                     \n9 Iyar\n7. La depresión es extremadamente dañina y le da poder a la\nmala inclinación para dominar a la persona. La depresión\ntambién fortalece los pensamientos perturbadores que se\nlevantan en contra de la persona, Dios no lo permita. Por lo\ntanto, uno no debe deprimirse por el hecho de experimentar\nsemejantes pensamientos confusos y no molestarse ni asustarse\npor ellos. Más bien, es necesario prevalecer con determinación,\npara poder estar alegres, utilizando todos los métodos tratados\nen otras instancias del Likutey Moharán. Pues la fuerza interior\ny la determinación en estas áreas proviene principalmente de\nla alegría y del regocijo, como en, “Pues la alegría en Dios es tu\nfortaleza” (Nehemías 8:10). Y cuando la persona se fortalece para\nestar alegre, los pensamientos confusos la dejan\nautomáticamente. Sin embargo, esto no ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_1_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "226879c075e49d3a46490b91c19286c0c8152f44cf82a9899294c40877fd35ef",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 61,
+          "language": "es",
+          "distance": 0.3771636188030243,
+          "score": 0.3771636188030243,
+          "quote": "su fuente]. Incluso al recitar aquellas partes del servicio de la\nplegaria que tratan explícitamente de las necesidades físicas,\ntales como “Cúranos” y “Bendícenos [en nuestro sustento]” [en\nla plegaria de la Amidá], y [en las plegarias que tratan de] otras\nnecesidades físicas, la intención no será para el cuerpo, sino\nmás bien para el “sustento” y la “salud” del alma. Pues en\nverdad, cuando uno se rectifica en el ámbito espiritual,\nautomáticamente se rectifica en el ámbito físico y Dios le provee\nde todas sus necesidades, graciosamente y en abundancia. Pero\nla intención de la persona al orar sólo debe ser en aras del alma.\n14. A veces vemos que hay Tzadikim que indudablemente han\nrectificado en ellos todo lo espiritual, pero que no reciben\nabundancia en el ámbito físico. Ese fenómeno se debe a los\nfactores conectados con la reencarnación de las almas, como\nse explica en el santo Zohar (II, 216) y en el Tikuney Zohar (#69).\n15. Las palabras de las plegarias rectifican el con",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_1_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ade3b04c85ae3280b97a6a04ab4d7d03f5592b97b2355564d0105db5a45a460b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 128,
+          "language": "es",
+          "distance": 0.37694597244262695,
+          "score": 0.37694597244262695,
+          "quote": "de la impureza, y mediante ello se alcanza la alegría.\n5. Cuando se realiza una mitzvá, ésta tiene el poder de ir y\ndespertar a todos los mundos al servicio a Dios.\nConsecuentemente, descienden bendiciones sobre todos los\nmundos - siendo el intelecto la principal bendición que fluye\nde arriba. Sin embargo, la forma que tome ese intelecto al\ndescender dependerá de la voluntad en particular de la persona.\nPor lo tanto, aquel que esté interesado en el bienestar de su\nalma deberá dirigir su voluntad de la manera apropiada para\natraer esa bendición de intelecto. También es necesario\nintroducir la fe en esa bendición de intelecto, dado que, como\nes sabido, no se debe recurrir exclusivamente al intelecto.\n23 Kislev\n6. Mediante la esencia interna de esas bendiciones hechas\ndescender por las mitzvot que la persona lleva a cabo con\nalegría, también recibe bendiciones la facultad de ordenar y de\norganizar de la mente. Esa facultad es el nivel de KeTeR, que\ndenota la idea de «esperar», como en, «Espérame ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_1_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "54404a0c4b004f30f664ee9a85ababfd6565d97311c0b4df6f1e2c22a8efa4df",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 264,
+          "language": "es",
+          "distance": 0.3735382854938507,
+          "score": 0.3735382854938507,
+          "quote": "264                                                                                                                                                                     \n  Lección 59                                                                                    2 Nisán\n2 Nisán\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n59 - La Cámara de Santidad\n1. Aquél que se ocupa de acercar a los demás al servicio a Dios\ndebe cuidarse para que no se le peguen las fuerzas de la\nimpureza y del mal de esa gente. Esto se logra mediante el juicio.\nEsto quiere decir que la persona debe juzgarse constantemente\nen todos sus actos, evaluando si ha actuado de la manera\napropiada; y amonestarse y reprocharse por no haber actuado\ncomo debía. Como resultado de ese juicio, su corazón se\nencenderá de entusiasmo y el fuego de ese fervor quemará las\nfuerzas de la impureza que ya no se le apegarán. De esa manera\nanulará esas fuerzas al punto en que tampoco ",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "fe _p159",
+          "page": 159,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ndiciones llegan al mundo. Pero esas bendiciones sólo se completan en el Shabat, que es la manifestación y la encarnación de la fe. Por lo tanto, la luz de la caridad ilumina y brilla como el sol, principalmente y en su plenitud más grande en el Shabat, que es el aspecto de la fe; y la fe es la fuente de todas las bendiciones.* * Nota del copista: Para explicar: La clase de caridad que brilla como el sol es la caridad dada a las personas pobres y dignas para que puedan comprar lo que necesitan para el santo Shabat, como pued",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q5_shabat_2",
+      "claim": "daat y compasión",
+      "page_direct": [
+        {
+          "source_id": "daa_p341",
+          "page": 341,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": ". En Shabat, cada persona se impregna de conocimiento sagrado (daat). Con ello se fortalece su atributo de la compasión, lo que hace que actúe compasivamente con los demás, pues la compasión depende del conocimiento. Y debido a que tiene compasión, desde el Cielo se compadecen de ella. Lección 118-119 28 Iyar",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q5_shabat_2_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e5d596bab386bcd19abb629a7c8fe5be6f5451a7cd0b300a9639da537a3ff85a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 489,
+          "language": "es",
+          "distance": 0.500664472579956,
+          "score": 0.500664472579956,
+          "quote": "compasión” (Génesis 43:14) - específicamente, “a ti”, en el hecho\nde que Dios nos otorgue la clase de compasión que nosotros\nentendemos como compasión (ver la lección en el Likutey Moharán\npara más explicaciones).\n63\n63\n63\n63\n63\n1. Debes saber que cuando Iaacov, nuestro padre, envió a sus\nhijos hacia Iosef en Egipto, los envió con la melodía de la Tierra\nde Israel (ver las asombrosas enseñanzas al respecto en la lección del\nLikutey Moharán).\n64\n64\n64\n64\n64\n1. El dinero es el estado caído de la riqueza de los profetas,\ndado que “Todos los profetas eran ricos” (Nedarim 38a). Ahora\nbien, cuando la profecía descendía sobre el profeta éste parecía\nenloquecer, dado que perdía el control de sus sentidos, como\nexplica Rashi: “‘Él profetizó’ (Samuel I, 18:10) - es decir, se volvió\nloco”. Es por ello que las personas extremadamente ricas se\ncomportan de una manera literalmente demente, pues el dinero\nlas vuelve completamente locas.\n65\n65\n65\n65\n65\n1. Cuando la persona actúa debi",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_2_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "62ea6ec8f318c4f93607e28b6d865240fb6ed8cba573df078787fd6d8b136926",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 375,
+          "language": "es",
+          "distance": 0.45206400752067566,
+          "score": 0.45206400752067566,
+          "quote": "(Lamentaciones 2:7), se alude a que en Pesaj la persona debe clamar\ndurante sus plegarias.\n2. El versículo, “La Caridad salva de la muerte (Tzedaka Tatzil\nMimavet)”, es un acróstico para la palabra MaTzoT.*\n* Parece ser, a partir de esta afirmación, que dar caridad es eficaz para que\nla persona se salve, en Pesaj, de caer en la prohibición de tener jametz\n(levadura) -algo asociado con el lado de la muerte- y para ayudarla a comer\nla matzá en perfecta santidad. Esta afirmación también nos permite\ncomprender parcialmente la costumbre basada en nuestras primeras\nautoridades y en las palabras de nuestros Sabios, de bendita memoria, de\ndarles a los pobres maot jitim (dinero para comprar trigo) antes de Pesaj.\n3. Dar caridad a los pobres es un remedio eficaz para curar la\nepilepsia (jali NoPheL), que Dios nos salve. Esto se encuentra\naludido en la frase, “Ha esparcido y ha dado caridad a los pobres\n(Pizar Natan Laevionim)” (Salmos 112:9), cuyas iniciales forman\nla palabra NoPheL.\n202\n202\n202\n202\n202\n",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_2_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3a2556797a5eb7776a3d8c2cc9e45014e142f4eb510b6c79040bfde9d47c178e",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 78,
+          "language": "es",
+          "distance": 0.4487728178501129,
+          "score": 0.4487728178501129,
+          "quote": "rectificación para crear un “aire calmo y tranquilo” es la caridad\ndada a los verdaderos Tzadikim y a la gente pobre y recta.\n20 Jeshvan\n18 - “Contó el rabí Ionatán - un canasto”\n18 - “Contó el rabí Ionatán - un canasto”\n18 - “Contó el rabí Ionatán - un canasto”\n18 - “Contó el rabí Ionatán - un canasto”\n18 - “Contó el rabí Ionatán - un canasto”\n(Bava Batra \nBava Batra \nBava Batra \nBava Batra \nBava Batra 74)\n74)\n74)\n74)\n74)\n1. Todo tiene un objetivo o propósito que debe alcanzar. El\npropósito de algo tiene otro propósito superior [y el propósito\nsuperior tiene otro propósito, más elevado aún,] y así en más.\nSin embargo, lo más importante es el objetivo final, que es el\ndeleite del Mundo que Viene. Ése es el propósito final y el\nobjetivo de toda la creación y la razón de la existencia de todo\nen el mundo. Pero nadie es capaz de comprender o de aferrar\nese objetivo con su pensamiento, salvo los Tzadikim. Y cada\njudío, de acuerdo a la raíz que tenga en el al",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_2_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "05788feba17133ef708937f68b407342be5a69de468e5de6a7d707c6626cda85",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 442,
+          "language": "es",
+          "distance": 0.4417082369327545,
+          "score": 0.4417082369327545,
+          "quote": "442                                                                                                                                                                     \ndedicarse al servicio a Dios con simpleza e inocencia. Es\nnecesario incluso, en aras del servicio a Dios, llegar a actuar y\na comportarse de una manera aparentemente tonta, pues a\nveces es necesario hacer cosas que parezcan dementes para\npoder llevar a cabo la voluntad de Dios. Se debe estar dispuesto\na rodar y a arrastrarse por el polvo y el barro en aras del servicio\na Dios y de Sus mitzvot. Y ello no sólo se aplica a las mitzvot\nexplícitas. Todo lo que Dios quiere que hagamos también es\nllamado una “mitzvá” y la persona tiene que estar dispuesta a\nrevolcarse en el barro y en el polvo para hacer la voluntad de\nDios y cumplir con ella. Cuando el amor por Dios es así de\ngrande, la persona es entonces como un hijo muy querido y\namado por Dios. Entonces Él se compadece de ella y le permite\ncontemplar los tesoros más profundos y oculto",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_2_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "f1abf5d403721232681fc4226dd03859b48d2c9452e3f67976ac7d39b03875b4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 341,
+          "language": "es",
+          "distance": 0.4390905797481537,
+          "score": 0.4390905797481537,
+          "quote": "Por lo tanto, es difícil dormirse, porque el sueño implica la falta\nde comprensión.\n118 - Sobre Explicar Lo Que Se Estudia\n118 - Sobre Explicar Lo Que Se Estudia\n118 - Sobre Explicar Lo Que Se Estudia\n118 - Sobre Explicar Lo Que Se Estudia\n118 - Sobre Explicar Lo Que Se Estudia\n1. Cuando la persona estudia algo en la Torá, es bueno que lo\nexplique en el idioma que comprenda - esta práctica también\nes beneficiosa para el mundo.\n2. El Tzadik más grande de la generación es un aspecto de\nMoisés-Mashíaj. Ahora bien, cuando ese Tzadik trae nuevas\nideas de Torá, ello equivale conceptualmente a “‘El espíritu de\nDios’ - es decir, el espíritu del Mashíaj - ‘sobrevolaba sobre la\nfaz de las aguas’ - agua es la Torá” (Zohar I, 192b). Y así como\nMashíaj sufre aflicciones para expiar por todo el pueblo judío,\nel Tzadik más grande de la generación también sufre aflicciones\nen aras del pueblo judío, para facilitarles la comprensión. Pues,\nel hecho de que seamos incapaces de comprender las\nen",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_2_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8b7c7673ec7b69e5678acae8c7158b13fe736821a2a4966e26a9bbac6e633326",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 394,
+          "language": "es",
+          "distance": 0.4361794590950012,
+          "score": 0.4361794590950012,
+          "quote": "394                                                                                                                                                                     \n248\n248\n248\n248\n248\n1. Al relatar historias sobre los Tzadikim el corazón se despierta\ny arde con una gran inspiración e intenso deseo por Dios.\nMuchos Tzadikim grandes y tremendos han contado que su\ndespertar inicial a Dios se produjo relatando historias de\nTzadikim. Esas historias encendieron por Dios sus corazones y\nluego de esforzarse en sus devociones religiosas llegaron a\nmerecer lo que merecieron. ¡Afortunados ellos! (ver Sabiduría y\nEnseñanzas del Rabí Najmán de Breslov #138).\n249\n249\n249\n249\n249\n1. La esencia de la fuerza y del valor se encuentra en el corazón.\nLa persona que posee un corazón valeroso no le teme a ningún\nhombre ni a cosa alguna y es capaz de realizar actos\ntremendamente valientes y ganar fieras batallas mediante la\nfortaleza y el temple de su corazón. No le teme a nada y corre\ndirectamente hacia el centro d",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_2_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "6e2c3b9412f9a2c994a942b4542114b28c30bdfab979d58ee39f33fec16206b6",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 384,
+          "language": "es",
+          "distance": 0.43170788884162903,
+          "score": 0.43170788884162903,
+          "quote": "384                                                                                                                                                                     \nmomento deberá sustentarse con el despertar espiritual y la\niluminación que experimentó anteriormente, hasta que Dios\nlo ayude y le vuelva a irradiar Su luz. Amén.\n223\n223\n223\n223\n223\n1. A veces puede suceder que el pedido de un Tzadik no sea\nrespondido, porque “A veces Él oye y a veces Él no oye” (Zohar\nI, 105b). Pero hay un Tzadik que puede de hecho pasar decretos\ny declarar, “¡Yo digo que esto sea así!”.\n224\n224\n224\n224\n224\n1. Incluso las personas que están lejos del Tzadik reciben de él\nvitalidad e iluminación.\n225\n225\n225\n225\n225\n1. Hay un infinito número de grados y de niveles de confianza\nen Dios y cuanto más intelecto se posea más grande será ese\nnivel de confianza. Y en la medida de la confianza que uno\ntenga, así será la caridad que se merezca dar. De esa manera,\nuno se hace digno de completar y de rectificar",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_2_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4a11f76a3456a5e7ec224806d55dd224579309f2b4a4a46e809798ec693e1baf",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 434,
+          "language": "es",
+          "distance": 0.42509275674819946,
+          "score": 0.42509275674819946,
+          "quote": "434                                                                                                                                                                     \n12. La caridad es una cura para todas las enfermedades.\n3 Av\n5 - “Sonad el shofar” \n5 - “Sonad el shofar” \n5 - “Sonad el shofar” \n5 - “Sonad el shofar” \n5 - “Sonad el shofar” (Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4);\nFe\nFe\nFe\nFe\nFe\n1. La fe es lo más importante de todo. Cada uno debe analizarse\npara comprobar si su fe es completa y fortalecerse\nconstantemente en ella. Pues debido a la falta de fe se presentan\nterribles aflicciones ante las cuales no es efectiva la medicina\nni las plegarias ni el mérito ancestral. Ello se debe a que la\nmedicina se basa en las hierbas y las hierbas sólo crecen gracias\na la fe. Más aún, el poder terapéutico de cada hierba depende\nde factores relacionados con el lugar y con el tiempo y la manera\nen que cada hierba y cada semilla reaccionan a esos dos\nfactores.",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "daa_p341",
+          "page": 341,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": ". En Shabat, cada persona se impregna de conocimiento sagrado (daat). Con ello se fortalece su atributo de la compasión, lo que hace que actúe compasivamente con los demás, pues la compasión depende del conocimiento. Y debido a que tiene compasión, desde el Cielo se compadecen de ella. Lección 118-119 28 Iyar",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q5_shabat_3",
+      "claim": "comida y alma",
+      "page_direct": [
+        {
+          "source_id": "com_p343",
+          "page": 343,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "eso” puedan vencer a Dios; pero Dios Mismo ayuda a la persona en ese esfuerzo. 29 Iyar 125 125 125 125 125 1. Comer en Shabat es extremadamente valioso y santo, y es una obligación positiva servir cantidad de variadas comidas en el Shabat - pues comer en Shabat es pura Divinidad y santidad. De acuerdo a ello, uno debe cuidarse de que los días de la semana no tengan parte alguna en el comer del Shabat. Es decir, Lección 124-125 29 Iyar",
+          "score": 1.0
+        },
+        {
+          "source_id": "com_p344",
+          "page": 344,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "a siguiente - dado que, de esa manera, los días de la semana tendrían una parte en su comer. Por lo tanto, al comer en Shabat la persona sólo debe hacerlo en aras de la santidad del Shabat. Éste es el motivo por el cual la palabra “hoy” aparece tres veces en el versículo de la Torá que hace referencia a la comida del Shabat - para aludir al hecho de que la persona debe comer exclusivamente en aras de la santidad y del honor de ese día. 126 126 126 126 126 1. Inmediatamente después de comenzar el Shabat y a causa del enorme p",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q5_shabat_3_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "09e784408a8a1b2c96f58d6359e104ca3a46f2cdc71ffbe32883d2d2fa7f2cfe",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 110,
+          "language": "es",
+          "distance": 0.46109479665756226,
+          "score": 0.46109479665756226,
+          "quote": "persona tenga una audacia sagrada para enfrentar la osadía del\ncuerpo. Esa audacia sagrada se manifiesta en sonidos sagrados\n- pues todos esos sonidos, así sea el sonido del clamar a Dios,\nel suspiro, el sonido del shofar, la canción, las voces de los\nverdaderos Tzadikim, o cualquier otro sonido sagrado, todos\nse encuentran en la categoría de audacia sagrada. Incluso el\ntintinear de las monedas para caridad es considerado audacia\nsagrada. Mediante todos esos sonidos se quiebra la osadía del\ncuerpo.\n11 Kislev\n6. La verdadera esencia de la persona -aquello a lo cual la\npersona hace referencia como “yo”- es el alma (neshamá), que\nes la esencia eterna de la persona. Sin embargo, el alma se\nencuentra extremadamente lejos de la carne y del cuerpo,\ndebido a la osadía de este último en sus deseos físicos. Pero si\nse quiebra la osadía del cuerpo, el alma puede acercarse al\ncuerpo, dado que ya no corre el riesgo de quedar atrapada allí,\nen los placeres físicos de este último. Entonces, a través de los",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_3_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "bb6512ae3aede91cd42dfd297c416c263ed2b1d7b8827cec2099600d3b062447",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 198,
+          "language": "es",
+          "distance": 0.44864127039909363,
+          "score": 0.44864127039909363,
+          "quote": "carnicero ritual que es digno y que “alimenta” al pueblo judío.\nPero cuando el carnicero no es digno -y en el momento en que\npronuncia la bendición tiene pensamientos inválidos y ni\nsiquiera piensa en lo que está haciendo- entonces, de pie con\nsu cuchillo en la mano dispuesto a faenar el animal, se asemeja\na un asesino de almas. Ello produce sufrimiento en el alma del\nanimal, que clama con amargura. Pues el cuchillo de ese\ncarnicero es “la espada del desierto” (Lamentaciones 5:9); no es la\n“espada de Dios” (Isaías 34:6) -que se identifica con la Presencia\nDivina y con el habla- dado que no eleva el alma encarnada en\nel animal. Por el contrario, el carnicero indigno hace descender\nel alma desde su nivel actual -el nivel del “animal”- y ahora no\ntiene un lugar para descansar ni protección. ¡Ay de un carnicero\nasí! ¡Ay del alma que ha asesinado y ha entregado a sus\nenemigos! Y así, la Presencia Divina no recibe las “aguas\nfemeninas” con las cuales traer sustento a su hogar. Entonces",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_3_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "17a278408333e93242e8fc2c69c8330d36ffc9aa44fd724e4c18fea5473d772c",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 166,
+          "language": "es",
+          "distance": 0.4478761851787567,
+          "score": 0.4478761851787567,
+          "quote": "concretas. A través de la articulación de las palabras, el alma\nalcanza un estado completo y pasa de lo potencial a lo concreto,\ncomo está escrito, “Mi alma salió cuando él habló” (Cantar de los\nCantares 5:6). Éste es el significado del versículo, “Él hará la\nvoluntad de aquellos que Le temen; Él oirá su clamor y los\nsalvará” (Salmos 145:19). En otras palabras, mediante la “voluntad”\n-que consiste en los anhelos de la persona- se crea un alma en\npotencia; y también se crea en potencia todo aquello que la\npersona busca y desea. Éste es el significado del versículo, “Él\nhará la voluntad de aquellos que Le temen”. Subsecuentemente,\n“Él oirá su clamor” -es decir, cuando ellos articulen sus anhelos\nen palabras- y con eso, “Él oirá su clamor y los salvará”. Pues\nmediante el habla, el alma pasa de la potencia al acto. Entonces\nlas letras de la Torá reciben una forma interna, un “alma”, y se\ntransforman en recipientes para captar el bien, y así se\nconcretiza lo que",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_3_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "5a6b5e0ea619c07b9bf78b2475d939ce76cfe90ad70c0b647de5b3293f6784ed",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 111,
+          "language": "es",
+          "distance": 0.43082675337791443,
+          "score": 0.43082675337791443,
+          "quote": "carne las exaltadas concepciones que el alma está percibiendo\nconstantemente. Mediante el sonido del suspiro -que es audacia\nsagrada- se quiebra la osadía del cuerpo y la esencia (ETZeM)\nse acerca y se une a la carne - o, en otras palabras, el alma se\nune al cuerpo. Éste es el significado profundo del versículo,\n“Por el sonido de mis suspiros, mi hueso (ATZMi, que también\nsignifica ‘mi esencia’) se pegó a mi carne” (Salmos 102:6).\n7. De manera similar, también en la categoría general de los\nseres humanos existen los conceptos de “esencia” y de “carne”.\nPues el sabio verdadero es análogo al ETZeM (“hueso” o\n“esencia”) y es el alma de aquellos que están por debajo de él.\nAhora bien, cuando la gente es como “carne” frente al sabio\nque es el “hueso”, puede oir entonces el sonido del suspiro -es\ndecir, la voz del sabio- y ese sonido quiebra sus cuerpos. Como\nresultado, el sabio puede acercarse a ellos y, como se explicó\nen el versículo anterior, “Por el sonido de mis ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_3_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "660d5ce7cb6473d560e100177f8765ce6ac363e9b782b17b70e72a88dff5ed9c",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 363,
+          "language": "es",
+          "distance": 0.4128462076187134,
+          "score": 0.4128462076187134,
+          "quote": "Lección 172-173                                                                       14 Sivan\n14 Sivan\n172 - Completando las Carencias\n172 - Completando las Carencias\n172 - Completando las Carencias\n172 - Completando las Carencias\n172 - Completando las Carencias\n1. Toda carencia que experimente la persona -así sea con\nrespecto a los hijos, al sustento o a la salud- todo proviene\nenteramente de la persona misma. Pues la luz de Dios fluye\ncontinuamente sobre ella, pero debido al hecho de estar sumida\nen la materialidad y a causa de sus malas acciones, la persona\nse genera una sombra. Es por ello que no le llega la luz de Dios;\ny esto, a su vez, es la causa de todo lo que le falta. Por lo tanto,\nsi la persona es digna de rectificar sus acciones y sus rasgos de\ncarácter, y purifica su naturaleza física al punto de anularse\ncompletamente y entrar en el concepto de la “nada”, sin\nconexión alguna con este mundo, cesará entonces de generarse\nuna sombra. Merecerá entonces recibir la luz de Dios en toda\nsu ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_3_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "aebde749fce911e71d10397a1e177dd22b495831c0e5511322900efcf59f588f",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 441,
+          "language": "es",
+          "distance": 0.40792790055274963,
+          "score": 0.40792790055274963,
+          "quote": "trabaje y se luche por ello- rectifica el sentido del olfato. Cuando\nla persona es digna de saborear y de vivenciar las agradables\npalabras del Rav, se rectifica su sentido del gusto. Finalmente,\nmediante las erogaciones que hace la persona para estar con el\nRav, cuando gasta del dinero producto del trabajo de sus manos,\nse rectifica el sentido del tacto. Rosh HaShaná es el momento\nmás importante para la reunión con el verdadero Rav, dado\nque es el tiempo en el cual los cinco sentidos alcanzan su\nrectificación. Entonces todas las rectificaciones espirituales se\nrealizan de una manera asombrosa. Pues la rectificación de los\ncinco sentidos a través del Rav  reunido con sus discípulos y la\nrectificación de los cinco sentidos por el mismo Rosh HaShaná,\nse iluminan y se fortalecen entre sí.\n9 Av\n17. Al ayunar la persona se hace digna de la alegría. Y el nivel\nde alegría que alcance estará en relación con el número de días\nde su ayuno. Ahora bien, la principal rectificación de los sueños\nse produc",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_3_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "49ca3ca18d59cd4615d1221e0fce9f7d94d270b8c6dc4e32b85b3f296ee24aea",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 167,
+          "language": "es",
+          "distance": 0.4074549376964569,
+          "score": 0.4074549376964569,
+          "quote": "necesario hablar con sinceridad y simpleza; hablar sobre todo\naquello de lo que uno carece en el servicio a Dios y que anhela\ny desea que Dios le permita lograr. Mediante esa práctica la\npersona se hace digna de alcanzar las cosas que desea y de\nlograr lo que deba lograr. Así traerá el bien a este mundo, hará\ndescender el favor y la bendición sobre todos los mundos\nespirituales y despertará muchas almas en el retorno a Dios.\nTodos deben acostumbrarse a conversar con Nuestro Creador,\ndiariamente. Esta práctica es extremadamente valiosa en verdad\ny mediante ella es posible llevar el mundo entero hacia el bien.\n17. Cuando la persona merece guardar la pureza sexual en los\ndos niveles mencionados más arriba, se hace digna de sentir\namor y anhelo por Dios; de esa manera conforma las letras de\nla Torá de manera positiva, del lado de la “vida”. Entonces las\nletras mismas de la Torá buscan ser dichas por la boca de esa\npersona para que ella pueda darles una buena forma y, de esa\nmanera, la persona se vue",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_3_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "86f132009a0dbc9326e69d418708509c8bb5c81ea143ff81d0b2518c886fd808",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 86,
+          "language": "es",
+          "distance": 0.4005316197872162,
+          "score": 0.4005316197872162,
+          "quote": "arameo] (ver Shuljan Aruj, Oraj Jaim 285:1) también está asociado\ncon la pureza sexual.\n13. Al elevar los componentes buenos del Targúm y\nperfeccionar el Lenguaje Sagrado con el cual fue creado el\nmundo -lo cual representa quebrar y anular la pasión sexual-\nse fortalece y se despierta el poder de las letras del Lenguaje\nSagrado que están presentes en cada cosa y que son el poder\nde Dios en toda la creación.\n14. La persona que alcanza esa perfección del Lenguaje Sagrado\nmerece entonces comer, beber y participar de los otros placeres\ncomo corresponde. Pues la esencia de lo que la persona disfruta\nen su comer, beber y en los otros placeres debe provenir de la\niluminación de las letras que están presentes en cada cosa y no\nde la materia física del alimento mismo. Ese nivel de santidad\nestá aludido en el versículo, “Él comió y bebió y estuvo bien su\ncorazón (lev)” (Ruth 3:7). En otras palabras, su comer y su beber\nprovenían del brillo y de la iluminación de las treinta y dos\nveces que aparece",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "com_p343",
+          "page": 343,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "eso” puedan vencer a Dios; pero Dios Mismo ayuda a la persona en ese esfuerzo. 29 Iyar 125 125 125 125 125 1. Comer en Shabat es extremadamente valioso y santo, y es una obligación positiva servir cantidad de variadas comidas en el Shabat - pues comer en Shabat es pura Divinidad y santidad. De acuerdo a ello, uno debe cuidarse de que los días de la semana no tengan parte alguna en el comer del Shabat. Es decir, Lección 124-125 29 Iyar",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q5_shabat_4",
+      "claim": "alegría y libertad",
+      "page_direct": [
+        {
+          "source_id": "ale_p461",
+          "page": 461,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "vez? Y ¿Por qué cada uno lo recibe mediante una causa o medio diferente? 24 Av 17 17 17 17 17 1. Mediante la alegría del Shabat la persona alcanza la libertad, su comprensión se vuelve completa y no se confunde ni se altera. Alcanza, a su vez, el temor con inteligencia, sin insensatez, elevando todos los temores caídos, al punto en que ya no siente miedo por nada, ni de los oficiales, ni de las autoridades y demás - sino que sólo tiene temor a Dios. 2. La persona debe ocuparse de estar muy contenta y alegre en el Shabat. El",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q5_shabat_4_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "9e070135cf489079044cec3a4795da970976fd6d818fa12bc0d21f62bbd23039",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 465,
+          "language": "es",
+          "distance": 0.4078645706176758,
+          "score": 0.4078645706176758,
+          "quote": "Se requiere de una gran comprensión para saber cómo ser\nhumilde y no todos pueden ser humildes de la manera\napropiada. Sólo Moisés, nuestro maestro, pudo ser “más\nhumilde que cualquier otro hombre” (Números 12:3). Y nuestros\nSabios, de bendita memoria, llamaron a la clase impropia de\nhumildad, “adulación” (Sotá 41b).\n23\n23\n23\n23\n23\n1. Cuando se está contento se dejan de lado la melancolía y\nel sufrimiento. Sin embargo, un nivel más grande es perseguir\nla melancolía y transformarla en alegría. Es como alguien\nque llega a una fiesta y debido a la gran alegría y regocijo\nque allí reinan, transforma todas sus preocupaciones, sus\ntristezas y melancolías en alegría. La persona inteligente\ncomprenderá con facilidad cómo encontrar alguna\n“expansión” o favor en medio de todos sus problemas,\nsufrimientos y preocupaciones - y con ello podrá transformar\nsu melancolía en alegría. ¡Ésta es la verdadera perfección de\nla alegría!\n27 Av\n24\n24\n24\n24\n24\n1. Es una gran mitzvá estar siempre",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_4_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "95aad4c3bee6f8429d8d1360a509a13a3bfbd8f8a5f5f2d9dc16e680cdc0e49d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 457,
+          "language": "es",
+          "distance": 0.38762202858924866,
+          "score": 0.38762202858924866,
+          "quote": "Lección 10                                                                                     21 Av\n5. Es necesario fortalecerse, de la manera que fuera, para estar\nconstantemente alegres, buscando siempre algún punto bueno\nen nosotros mismos, para llegar así a la alegría, como se enseñó\nsobre el versículo, “Cantaré a Dios con lo poco que me queda”\n(Salmos 146:2; Likutey Moharán I, 282). Siempre será posible\nencontrar la alegría al menos en el hecho de haber merecido\nser judíos y porque Dios no nos hizo gentiles. Éste solo hecho\nes por cierto motivo de una maravillosa e ilimitada alegría pues\nno hay nada en ello que pueda desmoralizar a la persona,\nporque ello es obra de Dios Mismo. Pues el Malo siempre intenta\nencontrar alguna manera de enturbiar las cosas mediante la\ndepresión y la tristeza. Pero la alegría generada por el hecho de\nque Dios no nos hizo gentiles no puede tener tal mezcla, pues\nes obra de Dios Mismo. Pues no importa lo que suceda, el hecho\nmismo de haber merecido ser un j",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_4_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "62d31a4b71d150ba19004b34c53a739bc48fb4f27b49945426d8dedc7581694d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 127,
+          "language": "es",
+          "distance": 0.36736881732940674,
+          "score": 0.36736881732940674,
+          "quote": "intelecto no puede aferrar esa luz, sin embargo, la mente corre\nconstantemente tras ella. Al llevar a cabo las mitzvot con alegría,\nla persona se hace digna de comprender esa luz a través de la\ncombinación de “perseguir y limitarse”, de modo que\nsimultáneamente “la alcanza y no la alcanza”. “De esa manera,\nse forman Nueve Cámaras que no son luces ni espíritus ni almas.\nNo hay nadie que pueda comprenderlas... no es posible\naferrarlas ni conocerlas” (Zohar I, 65a). ¡Feliz la persona digna de\nque su pensamiento corra detrás de esos conceptos, aunque el\nintelecto no pueda aprehenderlos debido a que no son\nalcanzables ni posibles de conocer! Esa percepción es el objetivo\nfinal de todo, tal cual está descrito en la enseñanza, “La\nculminación de todo conocimiento es saber que no sabemos\nnada”.\n2. Al cumplir con las mitzvot con alegría, la santidad alcanza su\nplenitud y se eleva la vitalidad y la santidad atrapada en las\nfuerzas de la impureza. Por lo tanto, al realizar una mitzvá con\nal",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_4_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b6f09ec8cdae391c8ef86ed9fb9b5c5184c1b27783393a3863f600508620185a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 112,
+          "language": "es",
+          "distance": 0.36153072118759155,
+          "score": 0.36153072118759155,
+          "quote": "despiertan y gritan sus acusaciones, Dios no lo permita. En ese\ncaso hace falta servir y atender a las necesidades del sabio.\nCon ello, uno se vuelve como “carne” del sabio, uniéndose a él\n- y, como resultado, merece oír la voz del sabio, anulando así la\naudacia del Otro Lado. De manera similar, cuando el cuerpo\nsirve y atiende a las necesidades del alma, mediante el\ncumplimiento de las mitzvot prácticas, se une entonces al alma\ncomo “carne al hueso”. A su vez, el cuerpo “oye” el sonido de\nsus suspiros y clamores y merece quebrar la osadía. Por medio\nde esto la persona se hace digna de llegar a una fe perfecta, que\nes la esencia de la santidad que recibe de los verdaderos\nTzadikim de la generación.\n12 Kislev\n8. La audacia sagrada se alcanza mediante la alegría. Pues la\nalegría y el regocijo son la fuente principal de la audacia y del\narrojo para acercarse al servicio a Dios, como en el versículo,\n“¡El regocijo en Dios es nuestra fortaleza, nuestra audacia!”\n(Nehemías 8:10).\n9. La T",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_4_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "6bd170976d03e032cf062d24e552c07757a4c383977ce6f5827d2247883f1998",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 209,
+          "language": "es",
+          "distance": 0.3546542227268219,
+          "score": 0.3546542227268219,
+          "quote": "No hay satisfacción ni paz y las personas no se ayudan entre sí.\nPor el contrario, cada uno debe viajar de un lugar a otro para\nganarse el sustento.\n3. La idolatría también produce la falta de lluvias y “Si no hay\nharina, no hay Torá” (Avot 3:17). Entonces, debido a la\ninterrupción del estudio de la Torá, se produce el exilio y la\ngente deambula por los caminos, como está escrito, “Mi pueblo\nha sido exilado, pues carece de entendimiento” (Isaías 5:13).\n24 Shvat\n41 – El Baile\n41 – El Baile\n41 – El Baile\n41 – El Baile\n41 – El Baile\n1. Cuando se baila como una mitzvá - por ejemplo, cuando se\nbebe vino en Shabat o en una festividad, o en una boda o en\nalguna comida donde ello es una mitzvá; y se bebe con\nmoderación en aras del Cielo para despertar la alegría por el\nhecho de ser judío, que es regocijarse en Dios, “Quien nos eligió\nde entre todas las naciones”; y cuando se bebe de esa manera,\ny uno se inspira con alegría al punto en que esa alegría se\nextiende hacia los pies y",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_4_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "28db46a3cbdb30cc99b21821af3c6c787b385acdc19516029444b99fc0822276",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 458,
+          "language": "es",
+          "distance": 0.35406312346458435,
+          "score": 0.35406312346458435,
+          "quote": "458                                                                                                                                                                     \n    Lección 11                                                                                     21 Av\npodemos ver a partir del versículo, “Todos los que se cobijan en Ti se\nregocijarán y cantarán por siempre... y aquellos que aman Tu Nombre se\nregocijarán con alegría” (Salmos 5:12), que la alegría en Dios está\níntimamente unida con el amor a Él, como se explica en los textos sagrados.\nMás aún, una gran unificación espiritual se lleva a cabo arriba\ncuando la persona une la alegría con la mente y con la\ncomprensión; entonces su mente se libera y alcanza una “mente\nasentada”. Éste es el concepto de la alegría de la mente (Shabat\n77b), que es algo muy grande en verdad. Dios nos permita ser\nsiempre dignos de ello. Amén, que así sea Su voluntad.*\n* Ver Taanit 22a, donde Elías le comentó a Rav Broka sobre dos hermanos\n",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_4_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "fcbd3c8d13c1062cd26839e9188317b27ed347a8992c1c165f7665aaecf55344",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 295,
+          "language": "es",
+          "distance": 0.3497645854949951,
+          "score": 0.3497645854949951,
+          "quote": "mente un destello de Divinidad, dulce y agradable, imposible\nde describir a otra persona. Ese destello genera una gran\nalegría. Mediante esa alegría se evocan nuevas ideas de Torá\ny nuevas percepciones mediante las cuales la persona puede\ndarse ánimo ante todo el sufrimiento y las tribulaciones que\ndeba enfrentar, Dios no lo permita; y merecerá experimentar\ny sentir en este mundo algo similar al Mundo que Viene.\n24 Nisán\n5. Durante el tiempo en que la persona se anula en el objetivo\nfinal, que es enteramente bueno, su sufrimiento desaparece\npor completo. Pero es imposible permanecer constantemente\nen ese estado de anulación, algo que debe ser llevado a cabo en\nla manera de “correr y retornar”. Ahora bien, después de su\nanulación, cuando el intelecto retorna a la mente conciente,\nlas facultades mentales no pueden recibir el nivel de\ncomprensión que el intelecto alcanzó durante su anulación,\ndado que esa comprensión se encuentra en el nivel del Infinito.\nDebido a ello, la mente vuelve a sentir ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q5_shabat_4_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "51f7fe4f6e1427642bca4f4edff5a1886c8a87d0951adeb62087366b4bd0cfcc",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 504,
+          "language": "es",
+          "distance": 0.3492935597896576,
+          "score": 0.3492935597896576,
+          "quote": "504                                                                                                                                                                     \nde anular el tiempo y todos los problemas, y mereceremos “oír\nla voz” de la santidad. Esta idea también se aplica a las mitzvot\nasociadas con el tiempo, mediante las cuales elevamos el tiempo\nal ámbito que está por sobre el tiempo.\n25 Elul\n80\n80\n80\n80\n80\n1. Las primeras generaciones, que eran Tzadikim, deseaban\nocupar cargos de autoridad en aras del Cielo; y todo aquel que\nquería tal posición llegaba a ser líder de la generación. Pero\nhoy en día, la gente desea esos cargos en aras de su propio\nhonor. Así, los Sabios han decretado que nadie deba buscar\ncargos de autoridad sino más bien huir de ellos.\n81\n81\n81\n81\n81\n1. Cuando uno estudia Torá o lleva a cabo una mitzvá con tal\nalegría que llega a bailar de felicidad, se elevan con ello todas\nlas personas que apoyan financieramente el estudio de la Torá.\nMás aún, ese bailar re",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "ale_p461",
+          "page": 461,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "vez? Y ¿Por qué cada uno lo recibe mediante una causa o medio diferente? 24 Av 17 17 17 17 17 1. Mediante la alegría del Shabat la persona alcanza la libertad, su comprensión se vuelve completa y no se confunde ni se altera. Alcanza, a su vez, el temor con inteligencia, sin insensatez, elevando todos los temores caídos, al punto en que ya no siente miedo por nada, ni de los oficiales, ni de las autoridades y demás - sino que sólo tiene temor a Dios. 2. La persona debe ocuparse de estar muy contenta y alegre en el Shabat. El",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "diagnostics": {
+    "sql_hits": 6,
+    "fts_hits": 0,
+    "milvus_hits": 0,
+    "hybrid_hits": 0,
+    "vector_hits": 32,
+    "vector_backend_requested": "auto",
+    "vector_backend_used": "milvus",
+    "relation_qa_hits": 0,
+    "book_qa_hits": 0,
+    "page_direct_hits": 6,
+    "methods_unavailable": [
+      "FTS and Relation QA do not accept an Ingesta V2 run_id in current contracts"
+    ],
+    "semantic_error": null,
+    "backend_runtime_model": "openai_gpt-5.4-nano",
+    "embedding_model": "openai_text_embedding_3_small",
+    "ai_synthesis_used": false,
+    "fallback_used": true,
+    "ai_error": "ai_disabled",
+    "hybrid_collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1"
+  },
+  "answer": "Según las fuentes verificadas para: Cómo se relaciona la santidad del Shabat con rectificación espiritual y alegría.\n- fe y bendiciones: ndiciones llegan al mundo. Pero esas bendiciones sólo se completan en el Shabat, que es la manifestación y la encarnación de la fe. Por lo tanto, la luz de la caridad ilumina y brilla como el sol, principalmente y en su plenitud más grande  [p. 159]\n- daat y compasión: . En Shabat, cada persona se impregna de conocimiento sagrado (daat). Con ello se fortalece su atributo de la compasión, lo que hace que actúe compasivamente con los demás, pues la compasión depende del conocimiento. Y debido a que tiene co [p. 341]\n- comida y alma: eso” puedan vencer a Dios; pero Dios Mismo ayuda a la persona en ese esfuerzo. 29 Iyar 125 125 125 125 125 1. Comer en Shabat es extremadamente valioso y santo, y es una obligación positiva servir cantidad de variadas comidas en el Shabat - [p. 343]\n- alegría y libertad: vez? Y ¿Por qué cada uno lo recibe mediante una causa o medio diferente? 24 Av 17 17 17 17 17 1. Mediante la alegría del Shabat la persona alcanza la libertad, su comprensión se vuelve completa y no se confunde ni se altera. Alcanza, a su v [p. 461]",
+  "final_status": "PASS"
+}

@@ -1,0 +1,726 @@
+{
+  "question_id": "q2_pureza",
+  "question": "Explica cómo alcanzar pureza sexual y sus beneficios espirituales.",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_filter": "resolved by run",
+  "claims": [
+    {
+      "claim_id": "q2_pureza_1",
+      "claim": "Lenguaje Sagrado",
+      "page_direct": [
+        {
+          "source_id": "Len_p81",
+          "page": 81,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "stra santidad. 2. La pureza sexual es la esencia de la santidad. Uno merece alcanzar esa cualidad mediante el lenguaje sagrado y el habla sagrada, santificando el habla al decir palabras santas. Es por ese motivo que nuestra lengua es llamada el Lenguaje Sagrado, pues “Allí donde encuentres una barrera ante la inmoralidad sexual, allí encontrarás la santidad” (Rashi sobre Levítico 19:2). La perfección del Lenguaje Sagrado significa decir solamente palabras de Torá, de plegaria y hablar con nuestro Creador (hitbodedut). (Y au",
+          "score": 1.0
+        },
+        {
+          "source_id": "Len_p82",
+          "page": 82,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "spíritu de locura que corresponde al daño sexual, que Dios nos salve. 4. La construcción y la perfección del Lenguaje Sagrado depende principalmente del temor a Dios, tal cual se alude en el versículo, “El temor a Dios es su tesoro” (Isaías 33:6). 5. La pureza sexual y la perfección del Lenguaje Sagrado son interdependientes, pues ninguno puede existir sin el otro. En otras palabras, cuantas más palabras de santidad se digan -lo que está incluido en el concepto del Lenguaje Sagrado- más será la pureza sexual que se merezca.",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q2_pureza_1_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "5baee897fd65c7d396ef3f9c655502f3ddcce48901a0147da2205bd0c0efa3dc",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 84,
+          "language": "es",
+          "distance": 0.5824311971664429,
+          "score": 0.5824311971664429,
+          "quote": "perfecciona así su Lenguaje Sagrado y merece guardar la pureza sexual.\nTodo ello es el significado profundo del hecho de que la serpiente tentó a\nEva a través del Árbol del Conocimiento del Bien y del Mal].\nPor el contrario, el principal medio para construir y perfeccionar\nel Lenguaje Sagrado es anular los componentes malos del\nTargúm y elevar hacia el Lenguaje Sagrado sus componentes\nbuenos. De esa manera, el Lenguaje Sagrado alcanza su estado\nde perfección y caen así las setenta lenguas, como en la frase\n“Un lenguaje cae sobre el otro” (Plegarias de las Festividades). Ése\nes el significado de “El Señor Dios hizo caer un sueño profundo\n(vaiapel tardema)” (Génesis 2:21). El Ari, de bendita memoria,\nindica que TaRdeMa (sueño) tiene el mismo valor numérico\nque TaRGUM y que VaIaPeL es un acrónimo para “Pe Lahem\nVelo Idaberu - Ellos tienen boca pero no hablarán” (Salmos 135:16).\nEllo alude al hecho de que mediante el sueño, que es el mismo\nconcepto que el lenguaje del Targúm -que es e",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_1_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "44f6789721c6aa0ff9f237d6e045764ae7cf8c8fd1a0a39062a8b639ae7f3627",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 83,
+          "language": "es",
+          "distance": 0.5296537280082703,
+          "score": 0.5296537280082703,
+          "quote": "vitalidad de la persona, tentándola a dañar su pureza sexual.\nPues ese deseo es la principal herramienta de la mala\ninclinación para hacer que la persona transgreda.\n8. Ahora bien, debido a nuestros muchos pecados, el arte de la\nretórica en el Lenguaje Sagrado ha caído terriblemente - al punto\nen que, en general, el arte de la retórica sólo ha quedado en\nmanos de la gente más baja que se encuentra profundamente\nhundida en el deseo sexual, que es el mal general y lo\ndiametralmente opuesto a la santidad del Lenguaje Sagrado.\nEsas personas están aludidas en el versículo, “Tus oradores han\npecado contra mí” (Isaías 43:27), que Dios nos salve. Usando su\nelocuencia, ellos arrastran los corazones de muchos jóvenes\njudíos llevándolos hacia un completo ateísmo, Dios no lo\npermita. Ello está expresado en los versículos, “Los labios de la\nextraña gotean miel” (Proverbios 5:3) y “Las palabras lisonjeras\nde la extraña” (ibid., 2:16). Todo ello está encarnado en la\nserpiente primordial que ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_1_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "86f132009a0dbc9326e69d418708509c8bb5c81ea143ff81d0b2518c886fd808",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 86,
+          "language": "es",
+          "distance": 0.5103743672370911,
+          "score": 0.5103743672370911,
+          "quote": "arameo] (ver Shuljan Aruj, Oraj Jaim 285:1) también está asociado\ncon la pureza sexual.\n13. Al elevar los componentes buenos del Targúm y\nperfeccionar el Lenguaje Sagrado con el cual fue creado el\nmundo -lo cual representa quebrar y anular la pasión sexual-\nse fortalece y se despierta el poder de las letras del Lenguaje\nSagrado que están presentes en cada cosa y que son el poder\nde Dios en toda la creación.\n14. La persona que alcanza esa perfección del Lenguaje Sagrado\nmerece entonces comer, beber y participar de los otros placeres\ncomo corresponde. Pues la esencia de lo que la persona disfruta\nen su comer, beber y en los otros placeres debe provenir de la\niluminación de las letras que están presentes en cada cosa y no\nde la materia física del alimento mismo. Ese nivel de santidad\nestá aludido en el versículo, “Él comió y bebió y estuvo bien su\ncorazón (lev)” (Ruth 3:7). En otras palabras, su comer y su beber\nprovenían del brillo y de la iluminación de las treinta y dos\nveces que aparece",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_1_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "6e25ef9f31e0701997f68b9786e93e002210bad10c26a5ea3de8e1ed8eebbdb8",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 82,
+          "language": "es",
+          "distance": 0.5081362128257751,
+          "score": 0.5081362128257751,
+          "quote": "23 Jeshvan\n3. La pureza sexual conlleva una conexión integral con el\nespíritu sagrado de profecía (rúaj hakodesh) y con el Lenguaje\nSagrado. Mediante la pureza sexual se anula el espíritu de locura\n que corresponde al daño sexual, que Dios nos salve.\n4. La construcción y la perfección del Lenguaje Sagrado depende\nprincipalmente del temor a Dios, tal cual se alude en el versículo,\n“El temor a Dios es su tesoro” (Isaías 33:6).\n5. La pureza sexual y la perfección del Lenguaje Sagrado son\ninterdependientes, pues ninguno puede existir sin el otro. En\notras palabras, cuantas más palabras de santidad se digan -lo\nque está incluido en el concepto del Lenguaje Sagrado- más\nserá la pureza sexual que se merezca. Por otro lado, en la medida\nen que la persona haya alcanzado la pureza sexual, así mismo\nmerecerá la perfección del Lenguaje Sagrado. La misma relación\nexiste también en conexión con los daños en esas áreas, Dios\nno lo permita. Pues la persona que daña su pureza sexual pierde\nel Lengu",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_1_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d9b2bcb3f6cc94ed623a5440504d195ee7dc9c944f9983669d0bc3b8a8fe695b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 85,
+          "language": "es",
+          "distance": 0.4833364486694336,
+          "score": 0.4833364486694336,
+          "quote": "sus componentes malos; por ello sabía cómo distinguir y separar\nel bien y la verdad en los sueños, dado que ellos son el mismo\nconcepto que el Targúm.\n25 Jeshvan\n11. Esto también está conectado con el fenómeno de la emisión\nseminal nocturna, Dios nos salve, en donde el espíritu de locura\nencarnado en las lenguas de las setenta naciones gentiles\nasciende a través del Targúm -mediante el sueño- y toma su\nvitalidad del Lenguaje Sagrado, del espíritu sagrado de profecía\ny del santo pacto. Ahora bien, aquel que posee la perfección\ndel Lenguaje Sagrado enfría los deseos ardientes del cuerpo\nmediante el habla sagrada. Sin embargo, cuando no se posee la\nperfección del Lenguaje Sagrado, entonces el “viento\ntormentoso” -es decir, el lenguaje de las setenta naciones\ngentiles- lo enfrían con una emisión nocturna, que Dios nos\nsalve. Ello está aludido en la frase “que te enfrió en el camino”\n(Deuteronomio 25:18). “En el camino” alude a la impureza sexual,\ncomo en, “Éste es el camino de ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_1_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "02383a73cdad882bcf7bed836a128f5197ffa549c1d935ccd13f928a411f76ad",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 81,
+          "language": "es",
+          "distance": 0.46655309200286865,
+          "score": 0.46655309200286865,
+          "quote": "que incluye a todos los malos deseos. Esos males arden juntos,\ncreando una gran conflagración. Ese fuego es la ardiente pasión\npor el sexo que ruge dentro de la persona.\nPero Dios nos ha distinguido de entre todas las naciones y nos\nha elevado por sobre todas las lenguas. Debemos abstenernos\nde todos sus males - es decir, de todos los malos deseos que les\nson particulares y que no tienen nada que ver con nosotros, de\nmanera alguna. Esto es especialmente así en el caso de la pasión\nsexual, que es el mal que engloba el mal de todas las naciones.\nPues la diferencia y la distinción esencial entre nosotros y las\nnaciones es que nosotros nos abstenemos de la inmoralidad\nsexual, siendo ésta, en esencia, la santidad judía. Pues la persona\ntiene el poder de alejar su mente de ese deseo y de quebrarlo;\nésta es la esencia de nuestra santidad.\n2. La pureza sexual es la esencia de la santidad. Uno merece\nalcanzar esa cualidad mediante el lenguaje sagrado y el habla\nsagrada, santificando el habla al decir palabras ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_1_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "7b4c268bc261d6a7fd13188e12f19fb8fdca787fbcacd491c90eb9b2a33a1fcb",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 163,
+          "language": "es",
+          "distance": 0.44598954916000366,
+          "score": 0.44598954916000366,
+          "quote": "uno merece alcanzar ambos niveles de pureza sexual es como\nun “ángel del Señor de las Huestes”, logra una fe completa y\nhace descender bendiciones y un influjo de abundancia hacia\nel mundo.\n10. Al mantener ambos niveles de pureza sexual de la manera\n descrita, “La bondad se revela en el órgano masculino” (Zohar\nIII, 142a). Esa bondad se manifiesta como amor y deseo por Dios\ny como un buen anhelo, que es algo muy precioso en verdad.\nEse anhelo es muy valioso debido a que mediante él la persona\ncrea almas - es decir, coloca puntos vocales, “puntos de plata”,\nen las letras de la Torá. [En hebreo, la palabra KeSeF (plata) es\nsimilar a la palabra KiSuF (anhelo); así, la frase “puntos de plata”\n(nekudot haKeSeF) también puede leerse como “puntos de\nanhelo” (nekudot haKiSuF).] En otras palabras, mediante el\nanhelo, se generan puntos vocales y esos puntos son\nconceptualmente como almas. Ese fenómeno está descrito en\nel versículo, “Mi alma anhela y desfallece” (Salmos 84:3) - es decir",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_1_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "2cc253a6f129ec12b5a1ec387e583e8cb26e6b7d3e22eecfce8c2389e1817810",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 89,
+          "language": "es",
+          "distance": 0.4459201395511627,
+          "score": 0.4459201395511627,
+          "quote": "19. Dios llevó a cabo toda la creación en aras del hombre, quien\nposee libertad de elección, específicamente para que éste\npudiera rectificar todas las cosas extrayendo y separando el\nbien en el Árbol del Conocimiento. De esa manera, el hombre\ncompleta y corrige todo. Por lo tanto, la persona debe llevar a\ncabo la rectificación de la circuncisión y su correspondiente\nrectificación [en el nivel espiritual] logrando la pureza sexual,\nprecisamente en este mundo. Conceptualmente, esa tarea es\nparalela al logro de la perfección del Lenguaje Sagrado,\nextrayendo el bien que está presente en el Targúm [pues este\nmundo, al igual que el Targúm, contiene una mezcla de bien y\nde mal]. Pues el Lenguaje Sagrado que proviene de arriba aún\ncarece de rectificación y sólo se perfecciona cuando lo\ncompletamos por medio de la separación del bien en el Targúm.\nSólo entonces perfeccionamos el Lenguaje Sagrado.\n20. La elevación del bien en el Targúm se logra por medio de la\ncorrección de todos los pecados no i",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "Len_p81",
+          "page": 81,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "stra santidad. 2. La pureza sexual es la esencia de la santidad. Uno merece alcanzar esa cualidad mediante el lenguaje sagrado y el habla sagrada, santificando el habla al decir palabras santas. Es por ese motivo que nuestra lengua es llamada el Lenguaje Sagrado, pues “Allí donde encuentres una barrera ante la inmoralidad sexual, allí encontrarás la santidad” (Rashi sobre Levítico 19:2). La perfección del Lenguaje Sagrado significa decir solamente palabras de Torá, de plegaria y hablar con nuestro Creador (hitbodedut). (Y au",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q2_pureza_2",
+      "claim": "tzitzit",
+      "page_direct": [
+        {
+          "source_id": "tzi_p36",
+          "page": 36,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "pacidad de realizar milagros. 11. La inmoralidad sexual depende principalmente de los ojos y la mitzvá de los tzitzit funciona como una rectificación y una protección contra ese tipo de pecado. Mediante el cumplimiento de esta mitzvá uno se salva del mal consejo y merece recibir el consejo verdadero de los verdaderos Tzadikim. Es necesario, por lo tanto, observarla escrupulosamente. Al envolverse con los santos tzitzit y recitar la bendición por ellos se deberá anhelar y tener la intención de cuidar la pureza sexual y de rec",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 6,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q2_pureza_2_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "106cc1872d906ffe83b2c6aaf969840bd9713aabd823779fafcda5d8b9d8751a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 232,
+          "language": "es",
+          "distance": 0.5161718130111694,
+          "score": 0.5161718130111694,
+          "quote": "entre Iaacov que se arrepientan del pecado” (Isaías 59:20). Es decir,\nen el futuro, y como resultado del arrepentimiento, se\nconocerán verdaderamente los secretos de la Torá - que son la\nsabiduría de la Kabalá.\n9. Éste es también el concepto de los tzitzit - o más\nespecíficamente, del tejelet [la tinta azul con la cual se teñían\nlos hilos de los tzitzit]. (Para explicar: La esencia de la mitzvá de los\ntzitzit es el tejelet, como se explica en el Likutey Halajot, Tzitzit 5:3. Ver\ntambién Sotá 17a, y Julín 89a, donde se enseña que los judíos “merecieron\nel hilo de tejelet”, y Rashi explica que ello significa que merecieron junto\ncon el tejelet toda la mitzvá de los tzitzit). El carácter profundo del\ntejelet es que “Devora todo y arrasa todo” (Zohar I, 51), pues el\ntejelet representa la revelación del Reinado de Santidad,\nmediante el cual se subyuga y se anula el Reinado del Otro\nLado. Pero pese a la capacidad de devastación manifestada por\nel Reinado de Santidad, el pueblo judío ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_2_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "5a8c8a39da96927e01841d9b451df9f459574932f13a54631fd99b39478b977b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 150,
+          "language": "es",
+          "distance": 0.46573811769485474,
+          "score": 0.46573811769485474,
+          "quote": "Tzadik? ¡Pueda al menos llegar a ser primero como ese\nhombre simple y digno!” (como piensa mucha gente de\nmanera errónea). Pues, por el contrario, en la medida en que\nla persona sabe que carece de valor y que se encuentra muy\nalejada de Dios, de la misma manera necesita acercarse al\nverdadero Rav, quien está en el nivel espiritual más elevado.\nNecesita del terapeuta espiritual más grande, de un maestro\nen su oficio, tan asombroso como para ser capaz de “investir”\nideas tan elevadas como las percepciones de Divinidad y\npresentárselas a alguien tan falto y distante como ella.\n10 Tevet\n3. Todo esto está conectado con la naturaleza espiritual del\ncabello - específicamente, con la manera en cómo las\niluminaciones de la mente salen a través de los cabellos. Pues\nel intelecto superior -que es la percepción de Divinidad- está\n“investido” en el intelecto inferior. Los cabellos (SeaRot) [que\ncorresponden al intelecto inferior, pues reciben del cerebro -\nes decir, del intelecto superior] son análo",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_2_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "abb5a9ad9014c18fd2fc74105423b26c6c041424570a64d90c372790b81c27da",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 37,
+          "language": "es",
+          "distance": 0.4554460644721985,
+          "score": 0.4554460644721985,
+          "quote": "la memoria y salva  del olvido, dado que el olvido es\nproducto de un daño en la fe.\n13. Antes de que la persona se acerque al Tzadik puede ser\ndescrita por el versículo, “Será embotado el corazón de este\npueblo y serán pesados sus oídos y cerrados sus ojos” (Isaías\n6:10). En otras palabras, su corazón está sellado, sus oídos están\ntapados y sus ojos ciegos frente a la verdad y el arrepentimiento.\nPero cuando se une a los Tzadikim y recibe el consejo de ellos,\nentonces se abren sus ojos, sus oídos y su corazón, como en,\n“El verá con sus ojos, oirá con sus oídos y comprenderá con su\ncorazón [aludiendo a las tres partes del intelecto] y se\narrepentirá y será curado” (Ibid.). En otras palabras, ve, oye y\ncomprende la verdad y merece así el arrepentimiento.\n14. Debido al daño en la pureza sexual se vuelve escaso el\nsustento.\n15. Es muy beneficioso para un enfermo  mirar los tzitzit.\n20 Tishrei\n8 - “Miré y he aquí un candelabro de oro”\n8 - “Miré y he aquí un candelabro de oro",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_2_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "061f7230b32210724399703d4d0033ed209ed32354c5b32f53ea5608f698022a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 233,
+          "language": "es",
+          "distance": 0.44412848353385925,
+          "score": 0.44412848353385925,
+          "quote": "2). Ello se debe a que los juicios están enraizados en Biná [que\ntambién es conocida como “madre”] y es en Biná que se mitigan\nlos juicios estrictos. Cuando esto ocurre, la Dalet se transforma\nen una Hei, y desde Biná fluye abundancia, riquezas y\nbendiciones sin límites. Esto se merece observando\nescrupulosamente la mitzvá de los tzitzit.\n9 Adar\n10. Ésta es la explicación del versículo, “Para el sol colocó un\npabellón en medio de ellos” (Salmos 19:5). El Tzadik es llamado\n“sol”, como está escrito, “El sol se eleva” (Eclesiastés 1:5; ver Kidushin\n72b). Sin embargo, el “elevarse” del Tzadik -es decir, sus\npercepciones- se produce sólo gracias al pueblo judío, como\nenseñaron nuestros Sabios, de bendita memoria, sobre el\nversículo, “Anda, desciende [del monte Sinaí,] pues tu pueblo\nse ha corrompido” (Éxodo 32:7); pues Dios le dijo a Moisés, “Yo\nte di grandeza sólo debido al pueblo judío” (Berajot 32a). Ésta es\nentonces la explicación de las palabras “un pabel",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_2_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "dd7c35e74484ffeabce91c49a213fa07a1e45df12fc8d4e153feb2ed6738b7b4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 241,
+          "language": "es",
+          "distance": 0.43573570251464844,
+          "score": 0.43573570251464844,
+          "quote": "como está escrito, “El vientre de los malvados padecerá\nnecesidad” (ibid., 13:25). Por otro lado, para los Tzadikim, que\nestán satisfechos con lo que Dios les da -como está escrito, “El\nTzadik come sólo para saciar su alma” (ibid.)- la luz de Dios está\nsiempre plena y a través de ellos se difunde un influjo de\nabundancia y de bien.\n4. Incluso si la persona se satisface con un mínimo, aun así\ndeberá dejar de lado algo de dinero para caridad. Con ello se\nefectúa una unificación entre el Tzadik y la Congregación de\nIsrael, tal cual se explica en detalle en esta lección del Likutey\nMoharán.\n15 Adar\n5. En cuanto a la gente común, aquellos que no tienen el\nintelecto para comprender las alusiones, todo esto se lleva a\ncabo de manera automática mediante el dormir, mediante el\ncumplimiento de las mitzvot de los tzitzit y de los tefilín, con el\nestudio de la Torá (o el recitado del Shemá para aquel que no\nsabe cómo estudiar), con la plegaria y a través de las actividades\ncomerciales. Dormi",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_2_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "51f7fe4f6e1427642bca4f4edff5a1886c8a87d0951adeb62087366b4bd0cfcc",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 504,
+          "language": "es",
+          "distance": 0.41668280959129333,
+          "score": 0.41668280959129333,
+          "quote": "504                                                                                                                                                                     \nde anular el tiempo y todos los problemas, y mereceremos “oír\nla voz” de la santidad. Esta idea también se aplica a las mitzvot\nasociadas con el tiempo, mediante las cuales elevamos el tiempo\nal ámbito que está por sobre el tiempo.\n25 Elul\n80\n80\n80\n80\n80\n1. Las primeras generaciones, que eran Tzadikim, deseaban\nocupar cargos de autoridad en aras del Cielo; y todo aquel que\nquería tal posición llegaba a ser líder de la generación. Pero\nhoy en día, la gente desea esos cargos en aras de su propio\nhonor. Así, los Sabios han decretado que nadie deba buscar\ncargos de autoridad sino más bien huir de ellos.\n81\n81\n81\n81\n81\n1. Cuando uno estudia Torá o lleva a cabo una mitzvá con tal\nalegría que llega a bailar de felicidad, se elevan con ello todas\nlas personas que apoyan financieramente el estudio de la Torá.\nMás aún, ese bailar re",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_2_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d056af0345720b763635878bc7c102ae94e8cb180ee4f327c1672acfc38104fb",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 311,
+          "language": "es",
+          "distance": 0.4120427072048187,
+          "score": 0.4120427072048187,
+          "quote": "que el mundo pueda recibir de él, para abrir para ellos las\npuertas de la sabiduría y del conocimiento  y acercarlos a Dios.\n11. La mente del Tzadik corresponde a los Tefilín. La manera\nen la cual el Tzadik desciende a veces hacia lo trivial e inferior\npara que el mundo pueda recibir de él -que es el concepto de la\nmateria de desecho superflua en la mente- corresponde a las\ncorreas de los Tefilín.\n6 Iyar\n70 - “En el octavo día”\n70 - “En el octavo día”\n70 - “En el octavo día”\n70 - “En el octavo día”\n70 - “En el octavo día”\n(Levítico 9:1)\n(Levítico 9:1)\n(Levítico 9:1)\n(Levítico 9:1)\n(Levítico 9:1)\n1. Hay un Tzadik verdadero que es el cimiento del mundo, como\nestá escrito, “El Tzadik es el cimiento del mundo” (Proverbios\n10:25). Sólo hay un Tzadik así en todo el mundo, dado que él es\nel fundamento del mundo y de él emanan todas las cosas.\nIncluso todos los otros Tzadikim son sólo ramas de él, cada\nuno de acuerdo a quién es. Por ejemplo, uno puede ser como la\nrama de",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_2_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3c86db0a18656d30d96502a04977fd0af26fd8b6bf1581e9dd6aecf4da1df364",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 39,
+          "language": "es",
+          "distance": 0.4077463448047638,
+          "score": 0.4077463448047638,
+          "quote": "ninguna transgresión. Sólo un Tzadik así, y también aquellos\nque están unidos a él, puede provocar a los malvados. Pero\naquel que no haya anulado por completo el mal en sí mismo -\ny aunque no cometa de hecho ninguna transgresión, todavía\nexiste la posibilidad de que lo haga- no es un Tzadik perfecto y\nle está prohibido desafiar a los malvados. Ello se debe a que tal\npersona puede ser dañada, Dios no lo permita, por el profundo\nsuspiro de los malvados, cuyo aliento proviene del Otro Lado y\nque, durante un momento, es extremadamente poderoso, que\nDios nos salve. Pero el Tzadik perfecto puede descender hacia\nel canal a través del cual los malvados reciben su aliento de\nvida, quebrarlo y anularlo, produciendo su total desaparición.\n6. Mediante el estudio de la Torá y por medio de la plegaria es\nposible separar el bien del mal en uno mismo. Más\nespecíficamente, es mediante el estudio de los Códigos y\naclarando la ley que la persona separa el bien del mal. También\nexpele y anula el mal asociado a ",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "tzi_p36",
+          "page": 36,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "pacidad de realizar milagros. 11. La inmoralidad sexual depende principalmente de los ojos y la mitzvá de los tzitzit funciona como una rectificación y una protección contra ese tipo de pecado. Mediante el cumplimiento de esta mitzvá uno se salva del mal consejo y merece recibir el consejo verdadero de los verdaderos Tzadikim. Es necesario, por lo tanto, observarla escrupulosamente. Al envolverse con los santos tzitzit y recitar la bendición por ellos se deberá anhelar y tener la intención de cuidar la pureza sexual y de rec",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q2_pureza_3",
+      "claim": "pensamientos",
+      "page_direct": [
+        {
+          "source_id": "pen_p140",
+          "page": 140,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "exual es posible llevar al mundo entero a “llamar en el Nombre de Dios”. Cuando uno se da cuenta de que tiene pensamientos lujuriosos y logra quebrar sus deseos y alejar la mente de ellos, esto constituye la esencia Lección 27 2 Tevet 140",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q2_pureza_3_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "a530431846ae272ce6d5b07bf95cf2965216bb292954eb552a34548eed4fbfac",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 387,
+          "language": "es",
+          "distance": 0.5007414221763611,
+          "score": 0.5007414221763611,
+          "quote": "En su lugar, se debe pensar en alguna otra cosa, en la Torá y en\nlas devociones o incluso en los negocios y demás. Simplemente\nse debe llevar a la mente hacia algún otro pensamiento y, de\nesa manera, automáticamente se eliminarán las cavilaciones y\nlos malos pensamientos. Porque es absolutamente imposible\nque dos pensamientos existan simultáneamente. Ya se ha\nexplicado que no es necesario sacudir la cabeza de un lado a\notro para eliminar los malos pensamientos, dado que ello\nrealmente no logra nada. En su lugar, sólo se debe pensar en\nalgo diferente y no mirar hacia atrás, en absoluto.\n1 Tamuz\n234 - Relatando Historias Sobre los Tzadikim\n234 - Relatando Historias Sobre los Tzadikim\n234 - Relatando Historias Sobre los Tzadikim\n234 - Relatando Historias Sobre los Tzadikim\n234 - Relatando Historias Sobre los Tzadikim\n1. El pensamiento es algo extremadamente exaltado. La persona\nque desee tener pensamientos sagrados y ascender así hacia el\nMundo del Pensamiento, deberá mantenerse en completo\nsilencio. P",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_3_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "979ed9b50aa7461e379f4a000f7b6807b45b490c323455e06dd200027077cd93",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 483,
+          "language": "es",
+          "distance": 0.47370097041130066,
+          "score": 0.47370097041130066,
+          "quote": "en el pensamiento y no prestarle atención a nada de lo que le\nsuceda.\n* Como en, “Quien dirige Su mundo con bondad y a Sus creaciones con\nmisericordia” (Plegaria de la Mañana del Shabat).\nDebes saber además que la esencia del arrepentimiento\ncompleto se produce cuando la persona pasa por los mismos\nlugares y situaciones en los que estuvo previamente y le vuelve\nla espalda a la tentación y no repite lo que hizo, ni con la palabra\nni con el pensamiento. Ésta es la esencia del arrepentimiento\ncompleto. De hecho, es muy beneficioso que la persona siga\nteniendo la mala inclinación, pues entonces podrá servir a Dios\nprecisamente mediante la mala inclinación, prevaleciendo en\nmedio de su fiera pasión y alejándose de ella para volcarse hacia\nalguna devoción en el servicio a Dios. En otras palabras, podrá\nservir a Dios con su mala inclinación, deteniendo y conteniendo\nsu pasión en el momento en el que sus deseos ardan pero\ndejándola salir en el momento de la plegaria y de la devoción,\npara orar con",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_3_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e657a7eb41ff2a3168c8806bb7ab0990f47ddd6f719aa67e7b2e6b3e290e8b89",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 227,
+          "language": "es",
+          "distance": 0.4507356286048889,
+          "score": 0.4507356286048889,
+          "quote": "que se encuentra en el corazón - es decir, los pensamientos de\nsu corazón. Los pensamientos son la esencia de la inclinación\nal bien y de la inclinación al mal, como está escrito, “Toda la\ninclinación (IeTZeR) de los pensamientos de su corazón” (Génesis\n6:5); y así, es el corazón -o más específicamente, la sabiduría\n[los pensamientos] en el corazón- el que conforma (TZaIaR)\nlos rasgos concretos y las acciones, como en la frase, “Roca\n(TZuR) de mi corazón” (Salmos 73,26; ver Berajot 10a). Más aún,\nestá dicho, “‘Él formó (vaIITZeR)’ (Génesis 2:7) - esta palabra está\nescrita con dos Iud, aludiendo a las dos inclinaciones del\nhombre, la buena inclinación y la inclinación al mal” (Berajot\n61a). Específicamente, los buenos pensamientos son la\ninclinación al bien y los malos pensamientos son la inclinación\nal mal. De acuerdo a ello, toda la rectificación espiritual de la\npersona -al igual que su destrucción, Dios no lo permita-\ndepende principalmente de cuidar los pensami",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_3_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "69fb724d324c86aad56f0482c79889e38f3f52b2a344844bbb806d0ef712cfba",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 386,
+          "language": "es",
+          "distance": 0.4472907781600952,
+          "score": 0.4472907781600952,
+          "quote": "386                                                                                                                                                                     \nordene a Sus huestes para que canalicen hacia ella todo aquello\nque necesite. Por ejemplo, si necesita curación, debe tener la\nintención, al decir esas palabras, de que Dios les ordene a Sus\nhuestes canalizar los poderes necesarios para su cura en el pan\nque coma y en el agua que beba. Lo mismo se aplica a todo lo\nque uno necesite (ver Likutey Moharán II, Lección #1).\n30 Sivan\n232\n232\n232\n232\n232\n1. En el momento en que la persona dice, “¡Alaben a Dios desde\nlos cielos!... ¡Alábenlo todos Sus ángeles!” (Pesukey deZimra,\nPlegarias de la Mañana) es apropiado que se inspire y ore con gran\nentusiasmo y fervor - dado que con sus plegarias está llamando\na todos los ángeles, a los Serafim, a los Ofanim, a los seres\nsagrados superiores y a todos los mundos, ordenándoles y\nuniéndose a ellos en alabanza y en exaltación de Dios.\n233\n233",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_3_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "5627ffa1c5269bce8fa92aca19688733e9703c8c6c1c84cb9a545fdb2753d294",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 315,
+          "language": "es",
+          "distance": 0.41821593046188354,
+          "score": 0.41821593046188354,
+          "quote": "se debe a que en ese momento la mala inclinación es\nespecialmente poderosa, dado que la raíz principal de toda mala\ninclinación se encuentra en las severidades (dinim) y los juicios\nestrictos.\n6. Hay personas que tienen pensamientos sexuales inmorales,\nDios no lo permita, que las asaltan más que nunca en el\nmomento de la plegaria. Hay otras personas a las que, al ponerse\nde pie para orar, se les presentan diferentes formas imaginarias\n-como imágenes de ídolos u otras imágenes negativas- cosa\nque las confunde terriblemente, produciéndoles un gran\ndesasosiego. Esas personas desean sobreponerse a esos\npensamientos y expulsarlos de sus mentes, por lo que sacuden\nla cabeza de un lado para el otro con la intención de lograrlo.\nDebes saber que cuanto más consternación sienta la persona y\ncuanto más trate de eliminar de la mente esos pensamientos,\nmás fuertes se harán las distracciones e imágenes negativas.\nPues está en su naturaleza el hecho de que cuanto más la\npersona piense en ellas para repelerl",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_3_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ca94cc303c206d08b22744317b3e9a65ad23cdd88a0eb592f75aa1fb9c27b596",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 437,
+          "language": "es",
+          "distance": 0.4145721197128296,
+          "score": 0.4145721197128296,
+          "quote": "persona quiebre su pasión sexual. Esto significa que cuando\nlos pensamientos sexuales asaltan furiosamente a la persona,\nquien se ve entonces pasible de caer en la emisión nocturna,\nDios no lo permita, tal cual está descrito por la frase “su carne\nestaba sellada” - pero se impone con determinación y quiebra\ny anula esos pensamientos, atrayendo pensamientos de\nsantidad - entonces se eleva desde el estado impuro de “su carne\nestaba sellada” al estado de los Tefilín, que es el “sello de\nsantidad” y el brillo de la mente [con lo cual la mente irradia\ncon el conocimiento y la percepción de la Divinidad]. Cada\npersona debe recibir de esos “defensores de la tierra” el poder\npara imponerse sobre los pensamientos sexuales y\ntransformarlos en intelecto de santidad. Más aún, cada uno debe\nsaber que cuando los pensamientos sexuales lo asaltan con furia\ny uno lucha con valentía en su contra, huyendo de ellos y\nquebrándolos, efectúa así una tremenda rectificación. Eleva de\nesa manera la santida",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_3_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3e279b3bedcce255fe61cbcd7172c630cb712cbc9b9ad47c4ed2794928bc8e5f",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 239,
+          "language": "es",
+          "distance": 0.40953245759010315,
+          "score": 0.40953245759010315,
+          "quote": "(Shuljan Aruj, Oraj Jaim 4,18). La explicación es que la persona “se sale de\nsu mente” en el sentido de que le es imposible comprender y profundizar\ncon la mente en la medida apropiada sin sobrepasar los límites de la santidad.\nAsí, es una práctica apropiada para el judío que, al despertar\npor la mañana, al abrir los ojos y antes de cualquier otra cosa,\nlo primero que haga sea recordar el Mundo que Viene. Y esto\nconstituye un “recuerdo general” [del Mundo que Viene].\nSubsecuentemente, deberá extender y aplicar esa misma\nconciencia a todos los detalles de su vida. Esto quiere decir que\ndeberá reflexionar sobre todos los pensamientos, palabras y\nacciones que se le presenten y examinar cuidadosamente todas\nlas circunstancias y situaciones que Dios dispone para ella cada\ndía - dado que cada día contiene su propio grupo de\npensamientos, palabras y acciones que son diferentes de los\nde los otros días. Debes saber que Dios constriñe Su Divinidad\ndesde el Absoluto Infinito hasta alcanzar el centro",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_3_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "9081897e1573f6fc3720ce1d48ae7fff72502bfca24a82a29e8473c7d2fede2b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 332,
+          "language": "es",
+          "distance": 0.40935567021369934,
+          "score": 0.40935567021369934,
+          "quote": "332                                                                                                                                                                     \nese pensamiento en particular y también debe saber cómo\nelevarlo al mundo y al atributo en el cual reside en ese momento.\nSin embargo, a veces el Tzadik desea elevar un pensamiento\nen particular pero es incapaz de hacerlo. Ello se debe a que ese\npensamiento se originó en un nivel que el Tzadik aún no ha\nalcanzado y por ello le es imposible elevarlo. ¿Cómo es posible\nentonces que un pensamiento le llegue a él antes de su tiempo?\nLa explicación es que cuando hay oposición en contra de un\nTzadik, los pensamientos extraños correspondientes a ese\nconflicto se levantan en la mente de otro Tzadik. Y debido a\nque el segundo Tzadik quiere elevar ese pensamiento, aunque\nes incapaz de ello, con el poder del deseo de hacerlo quiebra a\ntodos los oponentes del primer Tzadik.\n97\n97\n97\n97\n97\n1. Cada judío puede, con sus plegarias, alcanzar el domin",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "pen_p140",
+          "page": 140,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "exual es posible llevar al mundo entero a “llamar en el Nombre de Dios”. Cuando uno se da cuenta de que tiene pensamientos lujuriosos y logra quebrar sus deseos y alejar la mente de ellos, esto constituye la esencia Lección 27 2 Tevet 140",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q2_pureza_4",
+      "claim": "plegaria y voz",
+      "page_direct": [
+        {
+          "source_id": "ple_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar caridad también lo salvará de los pensamientos ajenos que suelen surgir durante la plegaria y podrá orar apropiadamente sin desviarse ni a la derecha ni a la izquierda. Sus palabras serán mesuradas. 4. Es imposible alcanzar una pl",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q2_pureza_4_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e5a1e96c34219fcd1bbd9492b7292eafb59665a81f6b60c4951c13b4e25cfffa",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 216,
+          "language": "es",
+          "distance": 0.460997074842453,
+          "score": 0.460997074842453,
+          "quote": "los profetas Yo mostraré Mi Semejanza” (Hoshea 12:11). [“Por\nmano” alude al aplaudir y “los profetas” alude al habla - como\ncuando Dios le dijo a Moisés que “Aarón, tu hermano, será tu\nprofeta” (Éxodo 7:1), significando que Aarón hablaría en su lugar.\nADAMeH (“Yo mostraré Mi Semejanza”) puede también ser\nvocalizado, ADAMaH (tierra). Así, el versículo puede\ncomprenderse como significando que] mediante el aplaudir, el\nhabla o las palabras de las plegarias son dichas sobre un suelo\nsanto (cf. Rashi sobre Éxodo 7:1; Oraj Jaim 102 en Taz #3).\nAdicionalmente, al aplaudir durante la plegaria se eliminan del\nmundo el asesinato y la destrucción (ver más adelante, Lección #46),\ntal cual se refleja en el versículo, “Yo pondré paz en tu Tierra...\ny la espada no pasará por tu Tierra” (Levítico 26:6). Al aplaudir,\nlas plegarias de la persona se encuentran “en el aire de la Tierra\nde Israel”, ella habita en la Tierra de Israel y tiene un Dios (ver\nKetuvot 110b). Aplaudir durante ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_4_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8f52018b31a18ae9c2dfe006f18f28393eb071080ee48c8ccb3aa905bdc1ddd9",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 60,
+          "language": "es",
+          "distance": 0.44455045461654663,
+          "score": 0.44455045461654663,
+          "quote": "el temor sagrado, la persona merece tener “paz en sus huesos” y\norar. Por medio de la plegaria se hace digna [de una segunda clase\nde paz, que es] “la paz general” o la paz en todos los mundos. Uno\nllega a ese temor sagrado mediante la humildad y la Torá.\n7 Jeshvan\n12. El temor sagrado a Dios es el factor esencial en la plegaria.\nPues la plegaria sustituye a los sacrificios y está escrito con\nrespecto a los sacrificios, “Todo aquel que tenga un defecto no\npodrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la\npersona no tiene defecto alguno, ello corresponde al concepto\ndel temor sagrado, como está escrito, “Nada les falta a aquellos\nque Le temen” (Salmos 34:10). Mediante el temor sagrado, la\npersona merece plenitud y paz (Zohar II, 79) -es decir, tener “paz\nen los huesos”- y armonía entre su cuerpo y su alma. Entonces\npodrá acercarse al servicio puro e intachable a Dios y su plegaria\nestará completa. Mediante la plegaria, se hará digna de “la paz\ngeneral”, que es la pe",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_4_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "012020297adb920c116bf369d6f04727ccc34f7a518234535a637f776ec88428",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 137,
+          "language": "es",
+          "distance": 0.41861069202423096,
+          "score": 0.41861069202423096,
+          "quote": "de Torá se refinará y que sabrá cómo aclararla e interpretarla\nutilizando los Trece Principios de Interpretación a través de los\ncuales se expone la Torá. Esa sabiduría altamente refinada,\nconocida como el “rostro majestuoso (HaDRat PaNim)” (Shabat\n152a), se encuentra aludida en el versículo, “Muestra reverencia\nante la presencia (veHaDaRta PeNei) del anciano sabio” (Levítico\n19:32). [Ese concepto también se relaciona con el patriarca\nIaacov,] como en, “La belleza de Iaacov era como la belleza de\nAdán” (Bava Metzía 84a) [dado que Iaacov encarnaba el concepto\ndel “rostro radiante”]. Al alcanzar el nivel de “anciano” que\nestá asociado con Iaacov, la persona merece SHaLoM (paz),\ncomo está escrito, “Iaacov llegó intacto y completo (SHaLeM)”\n(Génesis 33:18). Nuestros Sabios, de bendita memoria, explican\nel versículo, “Su cuerpo estaba intacto, su dinero estaba intacto\ny su conocimiento de Torá estaba completo” (Shabat 33b).\n3. En la medida en que la persona depure su ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_4_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "518ca31f9ae5e94f709286947affac16efdaaccb307ddb4174849618a21dab76",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 214,
+          "language": "es",
+          "distance": 0.41343048214912415,
+          "score": 0.41343048214912415,
+          "quote": "un gran nivel de inteligencia generan deseos sexuales en\nquienes las escuchan. Es necesario ser muy cuidadosos y no\nprestarle oídos a las palabras de una persona así, pues ellas\nestán contaminadas por la pasión sexual. Pues al hablar, el\nmalvado exhala el aliento y el aire envenenados por la lujuria,\ny aquel que oye sus palabras respira e introduce ese aire dentro\nde su cuerpo. Bilaam fue la encarnación definitiva de grandes\npoderes mentales y de percepciones extraordinariamente\nagudas del lado de la impureza; fue la imagen especular de la\nsabiduría sagrada, como dijeron nuestros Sabios, de bendita\nmemoria, sobre el versículo, “‘Nunca se levantó un profeta como\nMoisés entre los judíos’ (Deuteronomio 34:10) - ‘entre los judíos\nno se levantó’; pero entre las naciones [gentiles] se levantó un\nprofeta como Moisés, y ése fue Bilaam” (Sifri, 34; Zohar II, 21b).\nAhora bien, Bilaam generó en Midian ese aire envenenado de\nlujuria, como está escrito, “Ésas fueron las mismas mujeres\n[de M",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_4_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "45a17ceeccdc40d84c8383f10fe8f77e57b2dcc129505f31ac4d9db5db785ab2",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 285,
+          "language": "es",
+          "distance": 0.41109612584114075,
+          "score": 0.41109612584114075,
+          "quote": "Lección 62                                                                                 16 Nisán\nde las plegarias. Todo ello proviene de las dudas y de los\npensamientos heréticos en el corazón, que surgen del conflicto\nque involucra a la mala inclinación. Por lo tanto, al estudiar los\nCódigos -que anulan el conflicto con la mala inclinación en su\nraíz- la persona merece orar con todo el corazón y con total\nsinceridad, como corresponde. Ésta es la interpretación del\nversículo, “Te alabaré con rectitud de corazón (LeVaV)” (Salmos\n119:7) - LeVaV está escrito con dos VaV en lugar de una,\nimplicando las dos inclinaciones del corazón - “cuando estudio\nTus justas leyes” - es decir, mediante el estudio de los Códigos.\n7. La manera de perfeccionar y de embellecer la fe es\nacercando a aquellos que se encuentran lejos de Dios. Pero\npara perfeccionar la fe -es decir, para acercar a aquellos que\nestán lejos- es necesario primero elevar las chispas de las\nletras del habla. Ello se logra ayunand",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_4_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8452f60ec200ae716ee3974452b721ec48a9b891d232fc6c343e58edaa2bc756",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 17,
+          "language": "es",
+          "distance": 0.40635383129119873,
+          "score": 0.40635383129119873,
+          "quote": "4 tishrei\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n1. La plegaria es el arma principal del judío. Todas las batallas\nque la persona deba librar -así sean las batallas en contra de la\nmala inclinación u otras batallas en contra de aquellos que\ndesean obstaculizarla u oponérsele- todas se combaten\nmediante la plegaria. Más aún, toda la vitalidad de la persona\nproviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar\nla verdadera santidad deberá dedicarse con frecuencia e\nintensidad a la plegaria, a la súplica y a la conversación con Su\nHacedor. Ésta es el arma principal para ganar la guerra.\n2. Aquel que cuida la pureza sexual se vuelve digno de orar.\nPor el contrario, la persona que daña su pureza sexual se ve\nprivada de la capacidad de orar.\n3. Uno debe dar caridad antes de orar. Ello",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_4_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "913559d71c532dc51f2f1eafeb71d588a7f8ee66127d09172c3593e1370a3868",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 217,
+          "language": "es",
+          "distance": 0.40330082178115845,
+          "score": 0.40330082178115845,
+          "quote": "llamados un diluvio (MaBuL), pues ellos inundan y confunden\n(MeBaLBeLin) las plegarias. El remedio para esos pensamientos\nes dar caridad para la Tierra de Israel, gracias a lo cual uno se\nincluye “en el aire de la Tierra de Israel”. Sobre esto enseñaron\nnuestros Sabios, de bendita memoria, “El Diluvio no cayó sobre\nla Tierra de Israel” (Zevajim 113a). Así, [la manera en la cual está\nestructurada gramaticalmente la frase, “Ellos establecieron las\nplegarias diarias en contraposición a las ofrendas diarias\nconstantes”, también puede ser comprendida como] “Las\nofrendas diarias constantes fueron establecidas; su rectificación\nse produce mediante la Tierra de Israel”. Y con ello se refina la\nmente de la persona -sus pensamientos- debido a que “El aire\nde la Tierra de Israel hace sabia a la persona” (Bava Batra 158b).\nÉsa misma idea [de que la caridad dada para la Tierra de Israel\nrectifica las plegarias] también encuentra expresión en el\nversículo, “Lo veré para recordar el pacto e",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_4_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "38c1157d38cac0900e115f428cc841adf053d6cf885d34cca2832b9558e7ee4f",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 215,
+          "language": "es",
+          "distance": 0.3960888087749481,
+          "score": 0.3960888087749481,
+          "quote": "numérico de veintiocho) de Sus acciones”, como en el versículo,\n“Él le informó a Su pueblo del poder de Sus acciones al darles a\nellos la herencia de las naciones” (Salmos 111:6). [La idea aquí es\nque debido a que Dios creó el mundo entero, Él tenía el derecho de darle la\nTierra de Israel a quien quisiese. La frase “el poder de Sus acciones” engloba\neste concepto]. Cuando aplaudimos se despiertan las veintiocho\nletras con las cuales se llevó a cabo la creación y obtenemos el\npoder de purificar el aire de las tierras de las naciones [entre\nlas que nos encontramos] y de expulsar su aire impuro. Ello se\ndebe a que, al aplaudir, la tierra vuelve a estar bajo el dominio\ndel Santo, bendito sea, y Él tiene el poder de dársela a quien\nquiera. El aire del lugar en el cual ora un judío se purifica y el\njudío respira así el aire sagrado tal como si estuviese en la Tierra\nde Israel. De ese modo, al aplaudir durante la plegaria, las\noraciones de la persona están en “el aire de la Tierra de Isra",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "ple_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar caridad también lo salvará de los pensamientos ajenos que suelen surgir durante la plegaria y podrá orar apropiadamente sin desviarse ni a la derecha ni a la izquierda. Sus palabras serán mesuradas. 4. Es imposible alcanzar una pl",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q2_pureza_5",
+      "claim": "profecía y sustento",
+      "page_direct": [
+        {
+          "source_id": "pro_p82",
+          "page": 82,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "23 Jeshvan 3. La pureza sexual conlleva una conexión integral con el espíritu sagrado de profecía (rúaj hakodesh) y con el Lenguaje Sagrado. Mediante la pureza sexual se anula el espíritu de locura que corresponde al daño sexual, que Dios nos salve. 4. La construcción y la perfección del Lenguaje Sagrado depende principalmente del temor a Dios, tal cual se alude en el versículo, “El temor a Dios es su tesoro” (Isaías 33:6). 5. La pureza sexual y la perfección del Lenguaje Sagrado son",
+          "score": 1.0
+        },
+        {
+          "source_id": "pro_p145",
+          "page": 145,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "exual es el medio principal a través del cual el pueblo judío se acerca a su Padre en el Cielo. 7. Ganarse el sustento sin esfuerzo también depende de la pureza sexual. Pues mediante la pureza sexual la subsistencia le llega a la persona como Maná, como “pan del Cielo”. Pero cuando no se ha alcanzado la Rectificación General es difícil ganarse el sustento y éste sólo llega mediante un gran esfuerzo (ver Zohar III, 244). 8. Está prohibido hablar si no se ha alcanzado el Remedio General, tal cual se expresa en el versículo, “E",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q2_pureza_5_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "bb6512ae3aede91cd42dfd297c416c263ed2b1d7b8827cec2099600d3b062447",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 198,
+          "language": "es",
+          "distance": 0.4876710772514343,
+          "score": 0.4876710772514343,
+          "quote": "carnicero ritual que es digno y que “alimenta” al pueblo judío.\nPero cuando el carnicero no es digno -y en el momento en que\npronuncia la bendición tiene pensamientos inválidos y ni\nsiquiera piensa en lo que está haciendo- entonces, de pie con\nsu cuchillo en la mano dispuesto a faenar el animal, se asemeja\na un asesino de almas. Ello produce sufrimiento en el alma del\nanimal, que clama con amargura. Pues el cuchillo de ese\ncarnicero es “la espada del desierto” (Lamentaciones 5:9); no es la\n“espada de Dios” (Isaías 34:6) -que se identifica con la Presencia\nDivina y con el habla- dado que no eleva el alma encarnada en\nel animal. Por el contrario, el carnicero indigno hace descender\nel alma desde su nivel actual -el nivel del “animal”- y ahora no\ntiene un lugar para descansar ni protección. ¡Ay de un carnicero\nasí! ¡Ay del alma que ha asesinado y ha entregado a sus\nenemigos! Y así, la Presencia Divina no recibe las “aguas\nfemeninas” con las cuales traer sustento a su hogar. Entonces",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_5_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "01315240f0b19d1b49e8ef9d533a439c583bb228e2bd559600ece149f9e3002f",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 451,
+          "language": "es",
+          "distance": 0.47683385014533997,
+          "score": 0.47683385014533997,
+          "quote": "entona la canción que será cantada en el futuro, que es idéntica\na la voz de la persona apta para amonestar. Entonces, mediante\nsu amonestación, podrá agregarles y darles una buena fragancia\na las almas.\n16 Av\n5. Cuando se agrega una persona a una reunión de Israel -por\nejemplo, cuando hay un grupo de judíos dedicados a la plegaria\ny se les suma un alma adicional- aumenta y se magnifica el\nnúmero de casas de plegaria. Ello se debe a que las santas\ncombinaciones aumentan en enormes proporciones y se\nconstruyen grandes cantidades de casas en un nivel exaltado\nde santidad, conformando sumas astronómicas que son\nimposibles de describir o de concebir. Ello produce, a su vez,\nun deleite muy grande y maravilloso arriba. Como resultado\nde todo ello, los pecados son perdonados, se evoca la curación\ny desaparecen todas las enfermedades.\n6. El líder verdadero de cada generación posee un espíritu de\nprofecía. También hoy en día, aún cuando haya cesado la\nprofecía y un líder así no pueda obtener litera",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_5_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1de4cb942c600d4d7b7fc67c25ab0ce6943f80fcbc7b19443f7fc9e47dc2bfab",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 221,
+          "language": "es",
+          "distance": 0.47404050827026367,
+          "score": 0.47404050827026367,
+          "quote": "de la verdad y de la vida. La verdad es la fuente esencial de la\nriqueza y de todo influjo de bien en el mundo, como se ha dicho,\n“La verdad se sostiene” (Shabat 104a); y “se sostiene” alude a la\nriqueza, como enseñaron nuestros Sabios, de bendita memoria,\n“‘La riqueza que está a sus pies’ (Deuteronomio 11:6) - esto hace\nreferencia al dinero de la persona que la sostiene sobre sus\npies” (Pesajim 119a).\nCuando, Dios no lo permita, la persona daña los tefilín [y las\ncualidades espirituales y morales asociadas con ellos], cae en\nla pobreza y en la humillación y su vida pende de la balanza,\nDios nos salve (Berajot 24a). De manera similar, cuando la persona\ndaña la verdad, Dios no lo quiera, también se vuelve víctima de\nla pobreza y de la humillación. Pero aquel que posee el atributo\nde la verdad disfruta de un sustento fácil y pleno.\n4. Por lo tanto, aquel que está sumido en la gula se encuentra\nlejos de la verdad. Pues ese deseo da como resultado el\nocultamiento del Rostro Divino, que ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_5_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "6ab3aa82bf09dbf0acc81ab6e9ef7ce0e54e07a10b7aaa3fc74fbb65049aecfe",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 276,
+          "language": "es",
+          "distance": 0.4696701467037201,
+          "score": 0.4696701467037201,
+          "quote": "276                                                                                                                                                                     \n  Lección 60                                                                                  10 Nisán\nganarse el sustento. Más bien, deberá dedicarse al estudio de la\nTorá y a la devoción y confiar en que Dios la sustentará todos\nlos días de su vida. Si no posee el grado de confianza necesario\ncomo para separarse completamente de los asuntos mundanos\ny desea dedicarse al comercio o a un oficio, deberá igualmente\nestablecer momentos fijos para el estudio de la Torá, para la\noración y demás - y no inquietarse ni dejarse distraer por las\npreocupaciones que implican el ganarse la vida. En su lugar\ndeberá confiar en Dios.\nPor otro lado, cuando la persona se dedica a alguna clase de\nactividad dudosa, Dios no lo permita -y ni hablar de cuando\nroba o engaña o falsifica o miente o vende mercaderías de\ncontrabando y entonces confía en q",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_5_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "90428be1d892efa6f5da603da5dd771329e45f7810fb3c547100c944bff0582b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 446,
+          "language": "es",
+          "distance": 0.469531387090683,
+          "score": 0.469531387090683,
+          "quote": "446                                                                                                                                                                     \nla tierra”, en la fosa más profunda de la declinación espiritual-\nque Dios aún está con ellos, junto a ellos y cerca de ellos. Debe\nfortalecerlos para que no abandonen totalmente, Dios no lo\npermita, bajo ninguna circunstancia. El Tzadik verdadero sólo\nes llamado Tzadik cuando tiene el poder de enseñarles tanto a\n“aquellos que habitan arriba” como a “aquellos que habitan\nabajo”. Más aún, debe unir esas dos maneras, mostrándoles a\n“aquellos que habitan abajo” algo de lo que les enseña a\n“aquellos que habitan arriba”, y debe mostrarles a “aquellos\nque habitan arriba” algo de lo que les enseña a “aquellos que\nhabitan abajo”. De esa manera, él los sustenta a todos con la\nenormidad de su poder, para que puedan sentir temor a Dios\n(ver la lección en el Likutey Moharán para más explicación).\n8. Ese sabio de l",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_5_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "0a9ef8b7a9944ea8037902c5e33cde87debeeea1c06a7a509581247af30927da",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 53,
+          "language": "es",
+          "distance": 0.4679473340511322,
+          "score": 0.4679473340511322,
+          "quote": "tiempo dejará de existir el deseo por el dinero.\n3. Quebrando la pasión por el dinero mediante la caridad se\nmitigan los juicios severos, uno es rescatado de todos los\nproblemas y recibe el nombre de “sabio”. Como resultado de\ntodo ello, es posible elevar las almas judías, renovarlas y traer\nal mundo enseñanzas de Torá. Esas enseñanzas de Torá\nprovienen de la Torá que será revelada en el futuro, que es\nconocida como la Torá Oculta del Anciano. Al quebrar el deseo\nde dinero mediante la caridad, también se efectúa la unificación\ndel Santo, bendito sea con la Presencia Divina.\n4. Mediante ello el sabio recoge almas y asciende con ellas y\n“hace descender la fortaleza en la que ella confía” (Proverbios\n21:22) -es decir, genera las enseñanzas de Torá mencionadas\nmás arriba- y así se rectifican las “dos carrozas”. Esto es\ndenominado la “rectificación de la carroza superior y la\nrectificación de la carroza inferior”.\n2 Jeshvan\n5. Cada una de las personas que acude a ver al sabio de",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_5_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d94cad50d6c3eaff729afa6cf681714de2a1c7e0262af264a327f45456319a11",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 120,
+          "language": "es",
+          "distance": 0.4670068919658661,
+          "score": 0.4670068919658661,
+          "quote": "la persona se sostiene sobre sus pies mediante la verdad como\nen, “La verdad se mantiene”.\nPor otro lado, “La mentira no se sostiene” (Shabat 104a), dado\nque la mentira es idolatría, que es lo mismo que la pasión por\nel dinero, como han dicho nuestros Sabios, de bendita memoria,\n“Cuando la persona no cumple con su palabra, es como si\nhubiese adorado a un ídolo” (Sanedrín 92a). Así, mediante la\nmentira -que es la pasión por el dinero- la persona carece de\nsubsistencia y de sustento, pues la idolatría es “otro dios, un\neunuco, que no da frutos” (Zohar II, 103). En otras palabras, [todos\nlos “frutos” cosechados por la gente que está hundida en la\npasión por el dinero no son más que] una mentira - ellas se\nimaginan que están obteniendo ganancias, pero esas no son\nganancias y corren detrás del dinero con enorme energía. Más\naún, incluso si poseen temporalmente dinero, en verdad, su\ndinero no es dinero en absoluto. Porque no disfrutan para nada\nde él, dado que no pueden satisface",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q2_pureza_5_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "62ea6ec8f318c4f93607e28b6d865240fb6ed8cba573df078787fd6d8b136926",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 375,
+          "language": "es",
+          "distance": 0.4562947452068329,
+          "score": 0.4562947452068329,
+          "quote": "(Lamentaciones 2:7), se alude a que en Pesaj la persona debe clamar\ndurante sus plegarias.\n2. El versículo, “La Caridad salva de la muerte (Tzedaka Tatzil\nMimavet)”, es un acróstico para la palabra MaTzoT.*\n* Parece ser, a partir de esta afirmación, que dar caridad es eficaz para que\nla persona se salve, en Pesaj, de caer en la prohibición de tener jametz\n(levadura) -algo asociado con el lado de la muerte- y para ayudarla a comer\nla matzá en perfecta santidad. Esta afirmación también nos permite\ncomprender parcialmente la costumbre basada en nuestras primeras\nautoridades y en las palabras de nuestros Sabios, de bendita memoria, de\ndarles a los pobres maot jitim (dinero para comprar trigo) antes de Pesaj.\n3. Dar caridad a los pobres es un remedio eficaz para curar la\nepilepsia (jali NoPheL), que Dios nos salve. Esto se encuentra\naludido en la frase, “Ha esparcido y ha dado caridad a los pobres\n(Pizar Natan Laevionim)” (Salmos 112:9), cuyas iniciales forman\nla palabra NoPheL.\n202\n202\n202\n202\n202\n",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "pro_p82",
+          "page": 82,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "23 Jeshvan 3. La pureza sexual conlleva una conexión integral con el espíritu sagrado de profecía (rúaj hakodesh) y con el Lenguaje Sagrado. Mediante la pureza sexual se anula el espíritu de locura que corresponde al daño sexual, que Dios nos salve. 4. La construcción y la perfección del Lenguaje Sagrado depende principalmente del temor a Dios, tal cual se alude en el versículo, “El temor a Dios es su tesoro” (Isaías 33:6). 5. La pureza sexual y la perfección del Lenguaje Sagrado son",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "diagnostics": {
+    "sql_hits": 7,
+    "fts_hits": 0,
+    "milvus_hits": 0,
+    "hybrid_hits": 0,
+    "vector_hits": 40,
+    "vector_backend_requested": "auto",
+    "vector_backend_used": "milvus",
+    "relation_qa_hits": 0,
+    "book_qa_hits": 22,
+    "page_direct_hits": 7,
+    "methods_unavailable": [
+      "FTS and Relation QA do not accept an Ingesta V2 run_id in current contracts"
+    ],
+    "semantic_error": null,
+    "backend_runtime_model": "openai_gpt-5.4-nano",
+    "embedding_model": "openai_text_embedding_3_small",
+    "ai_synthesis_used": false,
+    "fallback_used": true,
+    "ai_error": "ai_disabled",
+    "hybrid_collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1"
+  },
+  "answer": "Según las fuentes verificadas para: Explica cómo alcanzar pureza sexual y sus beneficios espirituales.\n- Lenguaje Sagrado: stra santidad. 2. La pureza sexual es la esencia de la santidad. Uno merece alcanzar esa cualidad mediante el lenguaje sagrado y el habla sagrada, santificando el habla al decir palabras santas. Es por ese motivo que nuestra lengua es llama [p. 81]\n- tzitzit: pacidad de realizar milagros. 11. La inmoralidad sexual depende principalmente de los ojos y la mitzvá de los tzitzit funciona como una rectificación y una protección contra ese tipo de pecado. Mediante el cumplimiento de esta mitzvá uno se [p. 36]\n- pensamientos: exual es posible llevar al mundo entero a “llamar en el Nombre de Dios”. Cuando uno se da cuenta de que tiene pensamientos lujuriosos y logra quebrar sus deseos y alejar la mente de ellos, esto constituye la esencia Lección 27 2 Tevet 140 [p. 140]\n- plegaria y voz: con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar carid [p. 17]\n- profecía y sustento: 23 Jeshvan 3. La pureza sexual conlleva una conexión integral con el espíritu sagrado de profecía (rúaj hakodesh) y con el Lenguaje Sagrado. Mediante la pureza sexual se anula el espíritu de locura que corresponde al daño sexual, que Dios n [p. 82]",
+  "final_status": "PASS"
+}

@@ -1,0 +1,1028 @@
+{
+  "collection": "tebaai_breslov_chunks_v2_dev",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "warmup": 2,
+  "iterations": 5,
+  "results": [
+    {
+      "backend": "sql_page",
+      "query": "punto bueno",
+      "top_k": 5,
+      "latencies_ms": [
+        8.644887999253115,
+        6.10897600199678,
+        7.769646999804536,
+        9.375474997796118,
+        9.06760299767484
+      ],
+      "p50_latency_ms": 8.645,
+      "p95_latency_ms": 9.068,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "punto bueno",
+      "top_k": 5,
+      "latencies_ms": [
+        3.76124100148445,
+        3.5544710008252878,
+        3.7794060008309316,
+        3.9286239989451133,
+        3.612501001043711
+      ],
+      "p50_latency_ms": 3.761,
+      "p95_latency_ms": 3.779,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "nekudá tová",
+      "top_k": 5,
+      "latencies_ms": [
+        37.35816599873942,
+        35.79413800252951,
+        28.16841200183262,
+        23.030325999570778,
+        23.02008799961186
+      ],
+      "p50_latency_ms": 28.168,
+      "p95_latency_ms": 35.794,
+      "success_rate": 1.0,
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "nekudá tová",
+      "top_k": 5,
+      "latencies_ms": [
+        3.533456998411566,
+        3.3728220005286857,
+        3.434246998949675,
+        3.5539420023269486,
+        4.42912700236775
+      ],
+      "p50_latency_ms": 3.533,
+      "p95_latency_ms": 3.554,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "teshuvá vergüenza",
+      "top_k": 5,
+      "latencies_ms": [
+        27.93653999833623,
+        28.04440000181785,
+        22.96863500305335,
+        22.00746699963929,
+        22.138626001833472
+      ],
+      "p50_latency_ms": 22.969,
+      "p95_latency_ms": 27.937,
+      "success_rate": 1.0,
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 5,
+      "latencies_ms": [
+        3.5031229999731295,
+        3.7255269999150187,
+        3.507646997604752,
+        4.111587997613242,
+        3.747711998585146
+      ],
+      "p50_latency_ms": 3.726,
+      "p95_latency_ms": 3.748,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 5,
+      "latencies_ms": [
+        22.302899000351317,
+        22.305033999145962,
+        21.89837100013392,
+        20.570482000039192,
+        20.145910002611345
+      ],
+      "p50_latency_ms": 21.898,
+      "p95_latency_ms": 22.303,
+      "success_rate": 1.0,
+      "result_count": 2,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 5,
+      "latencies_ms": [
+        3.4755560009216424,
+        3.253701997891767,
+        3.0356110000866465,
+        3.1927130003168713,
+        3.1744779989821836
+      ],
+      "p50_latency_ms": 3.193,
+      "p95_latency_ms": 3.254,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 5,
+      "latencies_ms": [
+        4.7154639978543855,
+        5.167268998775398,
+        4.7206849994836375,
+        4.461316999368137,
+        4.4145009997009765
+      ],
+      "p50_latency_ms": 4.715,
+      "p95_latency_ms": 4.721,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 5,
+      "latencies_ms": [
+        3.059811999264639,
+        3.4273259989276994,
+        3.325187997688772,
+        3.1253699999069795,
+        3.1055110011948273
+      ],
+      "p50_latency_ms": 3.125,
+      "p95_latency_ms": 3.325,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 5,
+      "latencies_ms": [
+        2.540482000767952,
+        2.6795259982463904,
+        2.5071769996429794,
+        2.7638589999696705,
+        2.9076880018692464
+      ],
+      "p50_latency_ms": 2.68,
+      "p95_latency_ms": 2.764,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 5,
+      "latencies_ms": [
+        3.5811039997497573,
+        4.077513000083854,
+        3.6156120004307013,
+        3.6104610007896554,
+        3.722459998243721
+      ],
+      "p50_latency_ms": 3.616,
+      "p95_latency_ms": 3.722,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 5,
+      "latencies_ms": [
+        2.878384002542589,
+        2.8383680000843015,
+        3.0376319991773926,
+        3.020846997969784,
+        2.8634129994316027
+      ],
+      "p50_latency_ms": 2.878,
+      "p95_latency_ms": 3.021,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 5,
+      "latencies_ms": [
+        3.856879997329088,
+        3.5958420012320857,
+        3.3880939990922343,
+        3.674987001431873,
+        3.780306000408018
+      ],
+      "p50_latency_ms": 3.675,
+      "p95_latency_ms": 3.78,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "temor perfecto ángeles",
+      "top_k": 5,
+      "latencies_ms": [
+        3.1950640004652087,
+        3.0020170015632175,
+        3.0316470001707785,
+        3.0732769992027897,
+        3.056574998481665
+      ],
+      "p50_latency_ms": 3.057,
+      "p95_latency_ms": 3.073,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 5,
+      "latencies_ms": [
+        3.529826000885805,
+        3.7880730014876463,
+        83.09370599818067,
+        9.61156500125071,
+        8.989674999611452
+      ],
+      "p50_latency_ms": 8.99,
+      "p95_latency_ms": 9.612,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 5,
+      "latencies_ms": [
+        4.185517998848809,
+        4.2158869982813485,
+        4.37412799874437,
+        4.23984000008204,
+        4.326553000282729
+      ],
+      "p50_latency_ms": 4.24,
+      "p95_latency_ms": 4.327,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 5,
+      "latencies_ms": [
+        9.007987999211764,
+        9.35095200111391,
+        8.242661999247503,
+        8.62500900257146,
+        9.335389997431776
+      ],
+      "p50_latency_ms": 9.008,
+      "p95_latency_ms": 9.335,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 5,
+      "latencies_ms": [
+        17.533177000586875,
+        12.690215000475291,
+        11.391427000489784,
+        10.88281899865251,
+        15.885598000750178
+      ],
+      "p50_latency_ms": 12.69,
+      "p95_latency_ms": 15.886,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 5,
+      "latencies_ms": [
+        3.319668998301495,
+        3.432823999901302,
+        3.086232998612104,
+        3.3598409972910304,
+        3.5698890023923013
+      ],
+      "p50_latency_ms": 3.36,
+      "p95_latency_ms": 3.433,
+      "success_rate": 1.0,
+      "result_count": 5,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "punto bueno",
+      "top_k": 10,
+      "latencies_ms": [
+        4.032085002108943,
+        3.809858000749955,
+        3.777822999836644,
+        3.58183999924222,
+        4.549921999569051
+      ],
+      "p50_latency_ms": 3.81,
+      "p95_latency_ms": 4.032,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "punto bueno",
+      "top_k": 10,
+      "latencies_ms": [
+        3.773631000512978,
+        4.08543600133271,
+        4.127298001549207,
+        3.6847369992756285,
+        3.541912003129255
+      ],
+      "p50_latency_ms": 3.774,
+      "p95_latency_ms": 4.085,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "nekudá tová",
+      "top_k": 10,
+      "latencies_ms": [
+        21.862845998839475,
+        20.925049000652507,
+        25.88324200041825,
+        21.53376700152876,
+        20.474999000725802
+      ],
+      "p50_latency_ms": 21.534,
+      "p95_latency_ms": 21.863,
+      "success_rate": 1.0,
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "nekudá tová",
+      "top_k": 10,
+      "latencies_ms": [
+        3.4214439983770717,
+        3.1236909999279305,
+        3.152842000417877,
+        3.2435020002594683,
+        3.8491429986606818
+      ],
+      "p50_latency_ms": 3.244,
+      "p95_latency_ms": 3.421,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "teshuvá vergüenza",
+      "top_k": 10,
+      "latencies_ms": [
+        20.065518998308107,
+        21.213711002928903,
+        23.600548000104027,
+        21.860185002879007,
+        23.45693399911397
+      ],
+      "p50_latency_ms": 21.86,
+      "p95_latency_ms": 23.457,
+      "success_rate": 1.0,
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 10,
+      "latencies_ms": [
+        2.9177110009186435,
+        3.1203839971567504,
+        3.2800289991428144,
+        4.071963001479162,
+        3.739132000191603
+      ],
+      "p50_latency_ms": 3.28,
+      "p95_latency_ms": 3.739,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 10,
+      "latencies_ms": [
+        24.996599997393787,
+        24.514216001989553,
+        28.403371001331834,
+        21.67729299981147,
+        21.227997000096366
+      ],
+      "p50_latency_ms": 24.514,
+      "p95_latency_ms": 24.997,
+      "success_rate": 1.0,
+      "result_count": 2,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 10,
+      "latencies_ms": [
+        2.9721979990426917,
+        2.829534998454619,
+        3.2827760005602613,
+        3.409048997127684,
+        3.1622009992133826
+      ],
+      "p50_latency_ms": 3.162,
+      "p95_latency_ms": 3.283,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 10,
+      "latencies_ms": [
+        15.973035999195417,
+        16.007473997888155,
+        16.118889001518255,
+        16.730867999285692,
+        16.14194600188057
+      ],
+      "p50_latency_ms": 16.119,
+      "p95_latency_ms": 16.142,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 10,
+      "latencies_ms": [
+        3.3887570025399327,
+        3.225709999242099,
+        3.2934549999481533,
+        3.4587369991641026,
+        3.3935040009964723
+      ],
+      "p50_latency_ms": 3.389,
+      "p95_latency_ms": 3.394,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 10,
+      "latencies_ms": [
+        5.664994001563173,
+        5.900197000300977,
+        5.615329002466751,
+        5.483499997353647,
+        6.442322002840228
+      ],
+      "p50_latency_ms": 5.665,
+      "p95_latency_ms": 5.9,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 10,
+      "latencies_ms": [
+        3.5912810017180163,
+        3.364697000506567,
+        3.356612000061432,
+        3.1701420011813752,
+        3.3986140006163623
+      ],
+      "p50_latency_ms": 3.365,
+      "p95_latency_ms": 3.399,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 10,
+      "latencies_ms": [
+        6.853756000055,
+        5.550056001084158,
+        6.348822000290966,
+        6.668416997854365,
+        5.349491999368183
+      ],
+      "p50_latency_ms": 6.349,
+      "p95_latency_ms": 6.668,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 10,
+      "latencies_ms": [
+        3.341696999996202,
+        3.5663119997479953,
+        3.373201998329023,
+        3.3754679971025325,
+        3.2302999970852397
+      ],
+      "p50_latency_ms": 3.373,
+      "p95_latency_ms": 3.375,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "temor perfecto ángeles",
+      "top_k": 10,
+      "latencies_ms": [
+        3.5610010017990135,
+        4.095491000043694,
+        3.209167000022717,
+        3.520377998938784,
+        2.926803001173539
+      ],
+      "p50_latency_ms": 3.52,
+      "p95_latency_ms": 3.561,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 10,
+      "latencies_ms": [
+        3.547678999893833,
+        3.875786998833064,
+        3.4915300020657014,
+        3.750228999706451,
+        4.106427000806434
+      ],
+      "p50_latency_ms": 3.75,
+      "p95_latency_ms": 3.876,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 10,
+      "latencies_ms": [
+        1.9588550021580886,
+        1.9483070027490612,
+        2.0443229986994993,
+        2.0957929991709534,
+        1.993464000406675
+      ],
+      "p50_latency_ms": 1.993,
+      "p95_latency_ms": 2.044,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 10,
+      "latencies_ms": [
+        3.8482419986394234,
+        3.510087000904605,
+        3.4269019997736905,
+        3.338681999593973,
+        3.9609520026715472
+      ],
+      "p50_latency_ms": 3.51,
+      "p95_latency_ms": 3.848,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 10,
+      "latencies_ms": [
+        24.41944300153409,
+        22.51422599874786,
+        20.877538998320233,
+        20.96413199978997,
+        20.47967399994377
+      ],
+      "p50_latency_ms": 20.964,
+      "p95_latency_ms": 22.514,
+      "success_rate": 1.0,
+      "result_count": 6,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 10,
+      "latencies_ms": [
+        2.881999000237556,
+        2.941947997896932,
+        3.5735900019062683,
+        2.9198530028224923,
+        3.524949999700766
+      ],
+      "p50_latency_ms": 2.942,
+      "p95_latency_ms": 3.525,
+      "success_rate": 1.0,
+      "result_count": 10,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "punto bueno",
+      "top_k": 20,
+      "latencies_ms": [
+        6.4199439984804485,
+        6.361281000863528,
+        6.541837999975542,
+        6.62733900026069,
+        7.031023997114971
+      ],
+      "p50_latency_ms": 6.542,
+      "p95_latency_ms": 6.627,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "punto bueno",
+      "top_k": 20,
+      "latencies_ms": [
+        3.3211819973075762,
+        3.7764720000268426,
+        3.340982999361586,
+        3.771147999941604,
+        3.720592001627665
+      ],
+      "p50_latency_ms": 3.721,
+      "p95_latency_ms": 3.771,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "nekudá tová",
+      "top_k": 20,
+      "latencies_ms": [
+        23.67874099945766,
+        21.64233399889781,
+        21.69486499769846,
+        21.23551000113366,
+        21.126784002262866
+      ],
+      "p50_latency_ms": 21.642,
+      "p95_latency_ms": 21.695,
+      "success_rate": 1.0,
+      "result_count": 0,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "nekudá tová",
+      "top_k": 20,
+      "latencies_ms": [
+        3.1389869982376695,
+        3.319309002108639,
+        3.2839499981491826,
+        3.03372299822513,
+        3.5351189981156494
+      ],
+      "p50_latency_ms": 3.284,
+      "p95_latency_ms": 3.319,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "teshuvá vergüenza",
+      "top_k": 20,
+      "latencies_ms": [
+        30.407386999286246,
+        23.208257000078447,
+        23.81384600084857,
+        23.2705039998109,
+        22.900546002347255
+      ],
+      "p50_latency_ms": 23.271,
+      "p95_latency_ms": 23.814,
+      "success_rate": 1.0,
+      "result_count": 1,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "teshuvá vergüenza",
+      "top_k": 20,
+      "latencies_ms": [
+        3.5441869986243546,
+        3.336559999297606,
+        3.572797999368049,
+        4.528494999249233,
+        3.6849680000159424
+      ],
+      "p50_latency_ms": 3.573,
+      "p95_latency_ms": 3.685,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 20,
+      "latencies_ms": [
+        22.361479997925926,
+        38.1887799994729,
+        22.008543000993086,
+        22.111263999249786,
+        22.14417799768853
+      ],
+      "p50_latency_ms": 22.144,
+      "p95_latency_ms": 22.361,
+      "success_rate": 1.0,
+      "result_count": 2,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "confesión delante de un estudioso de Torá",
+      "top_k": 20,
+      "latencies_ms": [
+        3.7369700003182516,
+        3.6790569974982645,
+        3.151958000671584,
+        3.8367910019587725,
+        4.3368280021240935
+      ],
+      "p50_latency_ms": 3.737,
+      "p95_latency_ms": 3.837,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 20,
+      "latencies_ms": [
+        22.506877001433168,
+        22.252565999224316,
+        19.173115000739926,
+        19.288833002065076,
+        19.38581600188627
+      ],
+      "p50_latency_ms": 19.386,
+      "p95_latency_ms": 22.253,
+      "success_rate": 1.0,
+      "result_count": 14,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "hitbodedut noche lugar apartado",
+      "top_k": 20,
+      "latencies_ms": [
+        2.9154680014471523,
+        3.1518319992756005,
+        3.3047059987438843,
+        3.0868309986544773,
+        3.0995220004115254
+      ],
+      "p50_latency_ms": 3.1,
+      "p95_latency_ms": 3.152,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 20,
+      "latencies_ms": [
+        6.910698000865523,
+        7.047995000903029,
+        7.175853002991062,
+        7.185749000200303,
+        7.1309470004052855
+      ],
+      "p50_latency_ms": 7.131,
+      "p95_latency_ms": 7.176,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "Shabat alegría alma adicional",
+      "top_k": 20,
+      "latencies_ms": [
+        2.7880409979843535,
+        2.9915439990872983,
+        3.3370319979439955,
+        3.1819790019653738,
+        3.390971000044374
+      ],
+      "p50_latency_ms": 3.182,
+      "p95_latency_ms": 3.337,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 20,
+      "latencies_ms": [
+        6.7906010008300655,
+        7.18682099977741,
+        6.9498699995165225,
+        7.034882000880316,
+        6.862874997750623
+      ],
+      "p50_latency_ms": 6.95,
+      "p95_latency_ms": 7.035,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "pensamientos extraños plegaria",
+      "top_k": 20,
+      "latencies_ms": [
+        2.9722760009462945,
+        3.006265000294661,
+        3.307083999970928,
+        3.033124998182757,
+        3.311579999717651
+      ],
+      "p50_latency_ms": 3.033,
+      "p95_latency_ms": 3.307,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "temor perfecto ángeles",
+      "top_k": 20,
+      "latencies_ms": [
+        4.005582002719166,
+        4.1401939997740556,
+        4.305300000851275,
+        4.043389999424107,
+        3.649095000582747
+      ],
+      "p50_latency_ms": 4.043,
+      "p95_latency_ms": 4.14,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "temor perfecto ángeles",
+      "top_k": 20,
+      "latencies_ms": [
+        3.061793999222573,
+        3.2863870001165196,
+        2.8799619976780377,
+        3.015606002009008,
+        2.853483998478623
+      ],
+      "p50_latency_ms": 3.016,
+      "p95_latency_ms": 3.062,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 20,
+      "latencies_ms": [
+        3.3731809999153484,
+        5.051690000982489,
+        3.583984998840606,
+        5.301584998960607,
+        4.321550000895513
+      ],
+      "p50_latency_ms": 4.322,
+      "p95_latency_ms": 5.052,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "pureza sexual lenguaje sagrado",
+      "top_k": 20,
+      "latencies_ms": [
+        2.9989590002514888,
+        3.029458999662893,
+        3.311042000859743,
+        3.2011769981181715,
+        3.358665999257937
+      ],
+      "p50_latency_ms": 3.201,
+      "p95_latency_ms": 3.311,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    },
+    {
+      "backend": "sql_page",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 20,
+      "latencies_ms": [
+        23.23676200103364,
+        21.972978000121657,
+        20.164044999546604,
+        20.450866002647672,
+        19.981609999376815
+      ],
+      "p50_latency_ms": 20.451,
+      "p95_latency_ms": 21.973,
+      "success_rate": 1.0,
+      "result_count": 6,
+      "error": null
+    },
+    {
+      "backend": "milvus",
+      "query": "tzitzit protege pecado sexual",
+      "top_k": 20,
+      "latencies_ms": [
+        2.9939279993413948,
+        2.9503920013667084,
+        2.9132449999451637,
+        2.8880940008093603,
+        3.067959998588776
+      ],
+      "p50_latency_ms": 2.95,
+      "p95_latency_ms": 2.994,
+      "success_rate": 1.0,
+      "result_count": 20,
+      "error": null
+    }
+  ]
+}

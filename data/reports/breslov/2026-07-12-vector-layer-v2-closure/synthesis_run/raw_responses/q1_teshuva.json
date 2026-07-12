@@ -1,0 +1,1050 @@
+{
+  "question_id": "q1_teshuva",
+  "question": "Describe el proceso completo del arrepentimiento, teshuvá, según el Kitzur Likutey Moharán.",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_filter": "resolved by run",
+  "claims": [
+    {
+      "claim_id": "q1_teshuva_1",
+      "claim": "humildad y silencio",
+      "page_direct": [
+        {
+          "source_id": "hum_p29",
+          "page": 29,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "uno merece el arrepentimiento. Pues la esencia del arrepentimiento se manifiesta cuando la persona oye que la avergüenzan y sin embargo se mantiene firme y en silencio. Sufre los insultos y el “derramamiento de sangre”, aceptando su propia bajeza y pequeñez, reconociendo el gran daño que ha hecho y comprendiendo que es adecuado que sufra esos insultos. De esa manera disminuye la sangre en el ventrículo izquierdo del corazón y aniquila su mala inclinación, mereciendo así “el honor de Dios”. 3. Antes de arrepentirse la persona",
+          "score": 1.0
+        },
+        {
+          "source_id": "hum_p33",
+          "page": 33,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "tos que reciba. Más bien, deberá apoyarse en el atributo del silencio y ser “uno de aquellos que oyen que los avergüenzan y no responden” (Shabat 88b). Entonces será llamado verdaderamente “sabio” y merecerá el arrepentimiento, que es el concepto de Keter. Con ello se hará digno del honor verdadero y eterno -que es “el honor de Dios”- y de una buena porción en el Mundo que Viene. Ése es su arrepentimiento esencial y la rectificación para todas sus transgresiones. Con ello merecerá quedar incluido en “el hombre que se sienta",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q1_teshuva_1_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "f73957da4343ba72c46fdb4289ccf36ce416d782017df85d10aaa81372300180",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 497,
+          "language": "es",
+          "distance": 0.49279943108558655,
+          "score": 0.49279943108558655,
+          "quote": "20:17); y nuestros Sabios, de bendita memoria, enseñaron\nsobre ese versículo, “Esto hace referencia a la vergüenza”\n(Nedarim 20a).\n20 Elul\n4. Mediante la vergüenza la persona se vuelve digna del\narrepentimiento, dado que el arrepentimiento, tras lo cual\ndejamos de pecar, proviene principalmente de la vergüenza,\ncomo está escrito, “Para que sientan el temor a Él y no pequen”.\nAhora bien, el arrepentimiento está asociado con la vida eterna\ndel Mundo que Viene, como está escrito, “¡Retornen [a Dios en\narrepentimiento] y vivan!” (Ezequiel 18:32); aun así esa vida eterna\nsólo será experimentada por la humildad de cada persona. De\nacuerdo a ello, mediante el arrepentimiento es la humildad de\ncada uno la que vuelve a la vida y se levanta en la Resurrección\nde los Muertos. Pues cada uno de los 248 órganos de cada judío\nestá enraizado en la humildad de Moisés, nuestro maestro. Sin\nembargo, esa humildad está oculta en cada judío como si\nestuviese muerta y, como resultado, la persona mism",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_1_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3807c1f8382075df2cdba6314809442ba1308df77af846e17adfe1819fb61929",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 353,
+          "language": "es",
+          "distance": 0.48846200108528137,
+          "score": 0.48846200108528137,
+          "quote": "dijeron nuestros Sabios, de bendita memoria, “Se audaz como\nun leopardo” (Avot 5:20). Por otro lado, el rasgo de la humildad\nno es contradictorio con esto, aunque se pudiera haber pensado\nque la humildad y la audacia santa interferirían una con la otra.\nLa esencia del rasgo de la humildad es cuando la persona se\nencuentra en un nivel en el que puede vanagloriarse de ser\nhumilde, tal como Moisés, nuestro maestro, que escribió sobre\nsí mismo en la Torá, “Pero el hombre Moisés era\nextremadamente humilde” (Números 12:3). De manera similar,\nencontramos que el rabí Iosef dijo, “No incluyan la humildad\nporque yo estoy aquí” (Sotá 49b). Éste es el nivel más elevado de\nhumildad.\n148\n148\n148\n148\n148\n1. La cualidad del temor a Dios tiene infinitos niveles, uno más\nelevado que el otro (para más explicaciones ver la lección en el Likutey\nMoharán).\n7 Sivan\n149 - “En medio de la noche me levanto para agradecerte”\n149 - “En medio de la noche me levanto para agradecerte”\n149 - “En medio d",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_1_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "da9a2f05cd9463ae2545d714ff53bae49f5db64fa5bf0943f225dcbeddb2adbc",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 373,
+          "language": "es",
+          "distance": 0.4739905297756195,
+          "score": 0.4739905297756195,
+          "quote": "21 Sivan\n195 - “En mi angustia Tú me liberaste”\n195 - “En mi angustia Tú me liberaste”\n195 - “En mi angustia Tú me liberaste”\n195 - “En mi angustia Tú me liberaste”\n195 - “En mi angustia Tú me liberaste”\n(Salmos 4:2)\n(Salmos 4:2)\n(Salmos 4:2)\n(Salmos 4:2)\n(Salmos 4:2)\n1. Debes saber que todos los problemas y sufrimientos del\nmundo contienen en sí algún alivio. No sólo debes esperar que\nDios, en Su bondad, te salve y elimine el problema\ndefinitivamente, sino que debes comprender que incluso dentro\ndel problema mismo existe indudablemente un alivio. Es\nnecesario que mires con cuidado para poder encontrar el alivio\ndentro de tus problemas. De esa manera podrás superarlos y\naceptar todo lo que te suceda, sin disgustarte por nada. Así y a\ntravés de todo lo que te suceda, podrás siempre acercarte a\nDios y, como resultado, Dios te salvará.\n196\n196\n196\n196\n196\n1. Está prohibido que, al orar, la persona exija obstinadamente\nque Dios haga precisamente lo que ella Le pide, porque ello e",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_1_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d9ddac703ae1b64217854c9769c2cc0b2015c20b149c3910ad7e8f76950d9051",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 323,
+          "language": "es",
+          "distance": 0.470765620470047,
+          "score": 0.470765620470047,
+          "quote": "más abajo de su nivel; y al menos, “que no salga de su lugar” -\nmás arriba de su nivel [es decir, que no piense que está más\narriba de lo que en verdad está].\n6. Cuando la persona es humilde y de espíritu modesto, nadie\npuede sacarla o empujarla fuera de su lugar - en otras palabras,\nquitarle el sustento, Dios no lo permita.\n15 Iyar\n80 - “Dios le da fuerza a Su pueblo”\n80 - “Dios le da fuerza a Su pueblo”\n80 - “Dios le da fuerza a Su pueblo”\n80 - “Dios le da fuerza a Su pueblo”\n80 - “Dios le da fuerza a Su pueblo”\n(Salmos 29:11)\n(Salmos 29:11)\n(Salmos 29:11)\n(Salmos 29:11)\n(Salmos 29:11)\n1. La esencia de la paz es la unión de dos opuestos. Por lo tanto,\nno te preocupes si ves a una persona que tiene opiniones\ndiametralmente opuestas a las tuyas y te parece absolutamente\nimposible que puedas llegar a estar en paz con ella. De manera\nsimilar, cuando veas a dos personas que son completamente\ndisímiles, no digas que es imposible hacer la paz entre ellas.\nPor el contrario, la perfec",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_1_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b727993a7fafbee3639e4ce5e932bd97fa590aac1526a1ff0de2412113806ef2",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 202,
+          "language": "es",
+          "distance": 0.4604368209838867,
+          "score": 0.4604368209838867,
+          "quote": "de decir una palabra con genuina sinceridad. Pero al rectificar\nel habla no experimentará más confusión.\n6. El habla se rectifica mediante la Torá que uno estudia pese a\nsituaciones de pobreza y bajo presión, en momentos de\ndificultad y bajo todas las diversas formas de oscuridad y de\nsufrimientos, que Dios nos salve. Cuando la persona se\nsobrepone y logra estudiar Torá, una “hebra de bondad”\ndesciende sobre ella, como dijeron nuestros Sabios, de bendita\nmemoria, refiriéndose a aquel que estudia Torá por la noche\n(Jaguigá 12b). Pues en la noche predomina el “final de toda carne”;\ny al estudiar Torá de noche se produce la caída y la dispersión\nde todos los acusadores que reinan sobre el habla, anulando\ntambién las otras fuerzas del juicio severo y el lado de la\nimpureza. De esa manera se rectifica el habla y se la eleva hacia\nsu fuente. Entonces el habla estalla en canción, en alabanza y\nen agradecimiento al Santo, bendito sea, y uno se vuelve digno\nde orar, de agradecer y de alabar a Dio",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_1_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1fe281715fcdacc3b2200df6af1f0eb895a31ae1d212dde0f81e98126a3204f1",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 325,
+          "language": "es",
+          "distance": 0.45741724967956543,
+          "score": 0.45741724967956543,
+          "quote": "82\n82\n82\n82\n82\n1. La vergüenza está asociada con la orlá (el prepucio que cubre\nel órgano masculino), como está escrito, “No podemos darle\nnuestra hermana a un hombre que tiene la orlá porque es una\nvergüenza para nosotros” (Génesis 34:14). Ahora bien, la orlá está\ncompuesta por tres capas de piel, paralelas a las tres fuerzas de\nla impureza espiritual conocidas como el “viento tormentoso”,\nla “gran nube” y el “fuego centelleante” (Ezequiel 1:4). Cuando la\npersona se mantiene en silencio al ser avergonzada, repele esas\ntres fuerzas impuras - dado que no desea reñir y avergonzar al\notro. Debajo del prepucio hay una cuarta membrana fina de\npiel que es un paralelo de la fuerza impura de noga [la interfase\nentre la santidad y las tres fuerzas completamente malas de la\nimpureza]. Noga es un paralelo del jashmal (brillo) - es decir,\nJaSh MaL, dado que mantenerse en silencio (laJaShot) al ser\navergonzado es también el concepto de la circuncisión (MiLá),\ndonde se retiran las tres klipot ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_1_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "fc1acd0b6c51bf26db264c492f3252a76e9d61dae79bd0413b5b9401ea26ee0c",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 498,
+          "language": "es",
+          "distance": 0.45609766244888306,
+          "score": 0.45609766244888306,
+          "quote": "498                                                                                                                                                                     \na Dios para que la ayude a merecer la verdadera humildad,\nque es la esencia de la vida y del deleite del Mundo que Viene.\n6. El verdadero líder de la generación, a través del cual uno\nmerece todas las rectificaciones espirituales tratadas más arriba,\ndebe ser ascético y santo en extremo, grande en santidad y\ncompletamente separado de todo deseo sexual. Entonces será\napto para liderar al pueblo judío. Con sólo posar su mirada sobre\nlos integrantes del pueblo judío, hará que brillen sus mentes,\nque reciban la grandeza que les corresponde, que merezcan\nideas originales de Torá y que sean dignos de la vergüenza, del\narrepentimiento y de la humildad, que es un aspecto de la vida\neterna en el Mundo que Viene. Además y a través del verdadero\nlíder, descenderá sobre cada judío la santidad y el alejamiento\nde todo deseo sexual. Pero cu",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_1_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "aeb35e9d9151171eca714fdc140aee49c15113fca515706431b3c77cae1fc72a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 383,
+          "language": "es",
+          "distance": 0.4529958963394165,
+          "score": 0.4529958963394165,
+          "quote": "recato, entonces Dios también, por así decirlo, se relaciona con\nesa persona con humildad y recato. Él restringe Su majestad y\ngrandeza y Se disminuye, por así decirlo y habita con esa\npersona, como en, “Yo habito con el humilde” (Isaías 57:15). Pero\ncuando la persona es orgullosa y soberbia, Dios no lo permita,\nentonces también Dios muestra Su majestad y grandeza - y\n¿quién puede soportar y ser capaz de recibir la gloria y la\ngrandeza de Dios? Pues “He aquí, los cielos y los cielos de los\ncielos no Te pueden contener” (Reyes I, 8:27). Esto es lo que\nprodujo en verdad la destrucción del Santo Templo, debido a\nnuestros muchos pecados.\n220\n220\n220\n220\n220\n1. Si la persona experimenta alguna dificultad, Dios no lo\npermita, y puede hablar de ello con un sabio, con un hombre\npoderoso o con un hombre rico, logrando despertar su\ncompasión, se verá rescatada de ese problema.\n28 Sivan\n221\n221\n221\n221\n221\n1. Cuando la persona da el maaser (diezmo), Dios extiende Su\nmano y la cubre bajo la sombra de ",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "hum_p29",
+          "page": 29,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "uno merece el arrepentimiento. Pues la esencia del arrepentimiento se manifiesta cuando la persona oye que la avergüenzan y sin embargo se mantiene firme y en silencio. Sufre los insultos y el “derramamiento de sangre”, aceptando su propia bajeza y pequeñez, reconociendo el gran daño que ha hecho y comprendiendo que es adecuado que sufra esos insultos. De esa manera disminuye la sangre en el ventrículo izquierdo del corazón y aniquila su mala inclinación, mereciendo así “el honor de Dios”. 3. Antes de arrepentirse la persona",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q1_teshuva_2",
+      "claim": "confesión verbal",
+      "page_direct": [
+        {
+          "source_id": "con_p21",
+          "page": 21,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "e los sinsabores que pueda experimentar. En su lugar, debe tener fe en que todo es para su bien eterno. 2. Al confesarse delante de un verdadero estudioso de Torá, la persona eleva el Reinado de Santidad hacia su raíz; anula a su vez el gobierno de las naciones y merece entonces saber que todo lo que le sucede es para su propio bien. Entonces dirá la bendición “Quien es bueno y hace el bien” sobre todo lo que le suceda (ver Shuljan Aruj, Oraj Jaim 222:1) - y ello es un “anticipo del Mundo que Viene”. [Ver Tzelaj (Tzion LeNef",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 6,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q1_teshuva_2_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b727993a7fafbee3639e4ce5e932bd97fa590aac1526a1ff0de2412113806ef2",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 202,
+          "language": "es",
+          "distance": 0.453527569770813,
+          "score": 0.453527569770813,
+          "quote": "de decir una palabra con genuina sinceridad. Pero al rectificar\nel habla no experimentará más confusión.\n6. El habla se rectifica mediante la Torá que uno estudia pese a\nsituaciones de pobreza y bajo presión, en momentos de\ndificultad y bajo todas las diversas formas de oscuridad y de\nsufrimientos, que Dios nos salve. Cuando la persona se\nsobrepone y logra estudiar Torá, una “hebra de bondad”\ndesciende sobre ella, como dijeron nuestros Sabios, de bendita\nmemoria, refiriéndose a aquel que estudia Torá por la noche\n(Jaguigá 12b). Pues en la noche predomina el “final de toda carne”;\ny al estudiar Torá de noche se produce la caída y la dispersión\nde todos los acusadores que reinan sobre el habla, anulando\ntambién las otras fuerzas del juicio severo y el lado de la\nimpureza. De esa manera se rectifica el habla y se la eleva hacia\nsu fuente. Entonces el habla estalla en canción, en alabanza y\nen agradecimiento al Santo, bendito sea, y uno se vuelve digno\nde orar, de agradecer y de alabar a Dio",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_2_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "f841ec9fe79831e12d9cba4d58ed3d5d07be6008fc40e291da2fe9ac757a90b6",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 21,
+          "language": "es",
+          "distance": 0.4383951723575592,
+          "score": 0.4383951723575592,
+          "quote": "completo: que la persona no debe irritarse ni confundirse a\ncausa de los sinsabores que pueda experimentar. En su lugar,\ndebe tener fe en que todo es para su bien eterno.\n2. Al confesarse delante de un verdadero estudioso de Torá, la\npersona eleva el Reinado de Santidad hacia su raíz; anula a su\nvez el gobierno de las naciones y merece entonces saber que\ntodo lo que le sucede es para su propio bien. Entonces dirá la\nbendición “Quien es bueno y hace el bien” sobre todo lo que le\nsuceda (ver Shuljan Aruj, Oraj Jaim 222:1) - y ello es un “anticipo del\nMundo que Viene”. [Ver Tzelaj (Tzion LeNefesh Jaia), Pesajim 50a: “En\nel Mundo que Viene, la persona comprenderá que debía haber dicho la\nbendición ‘Quien es bueno y hace el bien’ incluso ante las así llamadas\nsituaciones ‘malas’; si es así, la persona que posee ese conocimiento en este\nmundo también debería decir esa misma bendición incluso ahora”.]\n8 Tishrei\n3. La rectificación principal de todos los pecados se lleva a cabo\ngracia",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_2_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "98f0f9a91c9bc42210137dc8fafb04c3facc4c9a9f281c979e22934ddea1bfbf",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 191,
+          "language": "es",
+          "distance": 0.4020457863807678,
+          "score": 0.4020457863807678,
+          "quote": "servicio Divino es similar a dar a luz. Uno se hace digno de esa\nrevelación clamando también “setenta veces”, hasta que Dios\nSe apiada y le permite prevalecer y quebrar todos los deseos\nfísicos.\n11 Shvat\n2. Debes saber que la prueba y el proceso de refinamiento más\nimportante que la persona debe atravesar implica el deseo\nsexual. Ese deseo engloba a todos los malos deseos y rasgos\nnegativos de las setenta naciones y de los setenta idiomas; la\npersona que quiebre esa pasión por el sexo podrá quebrar\ntambién con facilidad todos los otros deseos. Por lo tanto,\ncuando uno es puesto a prueba en el exilio de esa pasión, cada\npersona de acuerdo a su manera en particular, debe elevar la\nvoz y clamar a Dios no menos de setenta veces. En otras\npalabras, debe clamar a Dios profusamente hasta que Dios le\nmuestre Su compasión y merezca superar y quebrar ese deseo\njunto con todos los otros deseos. Pues quebrar esa pasión es la\nrectificación general (tikún haklalí) que incluye a todo lo demás.\n3. Cuanto m",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_2_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "68d71b14e2e6fc9da8a325c86e0f5c051a4f985fd9ea57769ff609e40989337e",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 223,
+          "language": "es",
+          "distance": 0.4015123248100281,
+          "score": 0.4015123248100281,
+          "quote": "Todo ello está aludido en el versículo, “Comerán y estarán\nsatisfechos y alabarán el Nombre del Señor, Tu Dios, por los\nmilagros que Él ha hecho con ustedes; y Mi pueblo nunca será\navergonzado” (Joel 2:26). “Comerán y estarán satisfechos” hace\nreferencia al hecho de comer sólo para satisfacer las\nnecesidades físicas del momento y no más. Subsecuentemente,\n“Alabarán el Nombre del Señor, Tu Dios”, y serán socios del\nSanto, bendito sea, en la creación del cielo y de la tierra, como\nestá aludido en la frase “Él ha hecho con ustedes”. Entonces,\n“por los milagros”, pues ustedes serán capaces de hacer\nmilagros. Finalmente, “y Mi pueblo nunca será avergonzado”\nsignifica que, dado que ustedes poseen el atributo de la verdad,\nque es un espectro de varios colores y el lado de la santidad, no\nnecesitarán experimentar la humillación, que es ese mismo\nespectro de colores en su estado caído, como en la afirmación,\n“Cuando uno necesita de los demás su rostro se torna de muc",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_2_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1f3e7da049b5365e110f6d2287ca01263cc7568f259e9b7e2338527f4544450c",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 237,
+          "language": "es",
+          "distance": 0.40108782052993774,
+          "score": 0.40108782052993774,
+          "quote": "que cuando sólo hay una entidad, todo el concepto del conflicto\ndeja de ser relevante. La verdad, que es una, ciertamente\npermanecerá por siempre, porque la verdad es la Unidad de\nDios. Sin embargo, todas las mentiras, que son la fuente del\nconflicto, perecerán; mientras que la verdad perdurará por\nsiempre. Pues “La verdad de Dios es eterna”.\n5. Si deseas quedar incluido en el uno, para que el “después de\nla creación” esté incluido en el “antes de la creación” y para\nque todo sea uno, bueno y santo, de la manera en que fue antes\nde la creación, deberás cuidarte de la mentira. Sólo debes decir\nla verdad y ser una persona absolutamente veraz y honesta. De\nesa manera estarás incluido en el uno, porque la verdad es una.\n12 Adar\n52 - “Aquel que permanece despierto durante la noche”\n52 - “Aquel que permanece despierto durante la noche”\n52 - “Aquel que permanece despierto durante la noche”\n52 - “Aquel que permanece despierto durante la noche”\n52 - “Aquel que permanece despie",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_2_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "c6dfcb123ac83f2eba2573f0a24436139accb0fc2fa9eca06356892c2fbf82b8",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 397,
+          "language": "es",
+          "distance": 0.39187052845954895,
+          "score": 0.39187052845954895,
+          "quote": "son mis perseguidores y muchos son quienes me atormentan”\n-pero sin embargo- “no me he apartado de Tus estatutos” (Salmos\n119:157).\n259\n259\n259\n259\n259\n1. Cuando la persona se recluye y expresa su dolor ante Dios,\nse confiesa y se arrepiente por la enormidad de los daños que\nha cometido, entonces, la Presencia Divina Se expresa y\nmanifiesta Su dolor frente a la persona. Pues con cada daño\nque uno le causa a su alma, también le causa un daño, por así\ndecirlo, a la Presencia Divina. Entonces la Presencia Divina\nreconforta a la persona, diciendo que Ella buscará estrategias\npara rectificar todos los daños.\n260\n260\n260\n260\n260\n1. La principal unificación del Santo, bendito sea, y de la\nPresencia Divina se efectúa a través de los santos mártires que\ndan sus vidas por la santificación del Nombre de Dios, como\nlos Diez Mártires que fueron ejecutados por los romanos. Ahora\nbien, el nombre de la persona es una y la misma cosa que su\nalma, como está escrito, “Un alma viviente es su nombre”\n(Gén",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_2_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b76ff2addd6cc15b27ed25cfc156f3214c0792ee9d21c0a281879de62e129f9a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 181,
+          "language": "es",
+          "distance": 0.38992103934288025,
+          "score": 0.38992103934288025,
+          "quote": "el corazón, pues de esa manera se anulan los amores y deseos\nnegativos, la vergüenza y la deshonra, pues “El amor cubre todas\nlas faltas”.\nDe acuerdo a ello, uno debe expresarse delante de Su Creador\npara irradiar el punto -la Iud, que está asociada con “Mi boca\nhablará sabiduría”- hacia la Vav, que está asociada con “Y las\nmeditaciones de mi corazón son comprensión”. De esa manera,\nla persona se une al punto que se relaciona con su corazón en\nese momento en particular, anulando así la vergüenza que se\nencuentra en el corazón y lo quebranta.\n4 Shvat\n6. Cada uno debe conversar también con su compañero sobre\nel temor a Dios, para que su corazón reciba inspiración del\n“punto” en el cual su amigo es superior a él. Pues el “punto” de\ncada persona es un aspecto del Tzadik con respecto a otra\npersona, y ese “punto” irradia en el corazón de su amigo, que\nes llamado Vav.\n7. Todos los puntos que posee la persona son extensiones del\nTzadik. El Tzadik es el “punto abarcador”,",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_2_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "45d280b5fb33bf0d69535c6f95781d83994ad18854846af3614d24bebf1d3ee8",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 203,
+          "language": "es",
+          "distance": 0.3887483775615692,
+          "score": 0.3887483775615692,
+          "quote": "el rostro de la persona debido a que sus pecados le habían\nembotado el intelecto y la mente con un espíritu de insensatez.\nPues antes de merecer arrepentirse por completo no poseía la\ncomprensión necesaria que le hubiese permitido sentir la propia\nvergüenza dada la enormidad de sus transgresiones y la\ngrandeza del Creador en contra de Quien pecó. Pero\nsubsecuentemente, una vez que se arrepiente y elimina la\ninsensatez, fortaleciendo su intelecto, experimenta entonces esa\nvergüenza mucho más plenamente y ésta se revela en su rostro.\nEsa vergüenza es un aspecto de la “luz de los tefilín”, que son la\nseñal de la verdadera unión con el Creador. Esa vergüenza es\ntambién el estado interior detrás del “brillo de la piel del rostro”,\nresultado de una profunda e intensa unión con Dios (ver Éxodo 34:29-\n30, donde se habla sobre el brillo del rostro de Moisés). Con esa vergüenza,\ntodos los pecados son perdonados y la persona se une al Árbol de\nla Vida.\n8. Con esto podemos discernir si la per",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "con_p21",
+          "page": 21,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "e los sinsabores que pueda experimentar. En su lugar, debe tener fe en que todo es para su bien eterno. 2. Al confesarse delante de un verdadero estudioso de Torá, la persona eleva el Reinado de Santidad hacia su raíz; anula a su vez el gobierno de las naciones y merece entonces saber que todo lo que le sucede es para su propio bien. Entonces dirá la bendición “Quien es bueno y hace el bien” sobre todo lo que le suceda (ver Shuljan Aruj, Oraj Jaim 222:1) - y ello es un “anticipo del Mundo que Viene”. [Ver Tzelaj (Tzion LeNef",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q1_teshuva_3",
+      "claim": "juicio y temores",
+      "page_direct": [
+        {
+          "source_id": "jui_p65",
+          "page": 65,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "t y la conversación con el Creador, en la cual la persona derrama su corazón delante de Dios y se evalúa y se juzga a sí misma en todas sus actividades. De esta manera, se eliminan todos los temores y se eleva al temor desde donde esté sumido. Pues si la persona no se evalúa ni se juzga a sí misma, es entonces evaluada y juzgada desde arriba. Subsecuentemente, su juicio se “inviste” en [toda clase de] cosas y todo en el mundo se vuelve un agente de Dios para ejecutar el juicio decretado contra ella. Consecuentemente, esa per",
+          "score": 1.0
+        },
+        {
+          "source_id": "jui_p66",
+          "page": 66,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "s sus actividades y comportamientos. De esta manera eliminará de sí todos los temores y se verá libre de los “temores caídos”. Es decir, no le temerá a ningún oficial, señor, animal salvaje, bandido o demás cosas del mundo, sino que sólo Le temerá a Dios. Así elevará el temor a su raíz, que es el conocimiento y merecerá un conocimiento completo en la medida en que llegue a saber qué debe temer en verdad, es decir, sólo el temor de la exaltación del honrado Nombre de Dios. Como resultado de ese conocimiento, alcanzará la comp",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q1_teshuva_3_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e61fc32fad7c18685b260ad8e2f43e99e55a9d6100ff2e348b712ff48673cd56",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 65,
+          "language": "es",
+          "distance": 0.5267572402954102,
+          "score": 0.5267572402954102,
+          "quote": "que KeRI y IaKaR tienen las mismas letras hebreas\n[ello indica una conexión conceptual].\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n1. Aquel que desee experimentar el sabor de la “luz oculta” -es\ndecir, los misterios de la Torá que serán revelados en el futuro-\ndeberá elevar el aspecto del temor hasta su raíz. Esa elevación\nse logra mediante el “juicio” - es decir, mediante el hitbodedut\ny la conversación con el Creador, en la cual la persona derrama\nsu corazón delante de Dios y se evalúa y se juzga a sí misma en\ntodas sus actividades. De esta manera, se eliminan todos los\ntemores y se eleva al temor desde donde esté sumido.\nPues si la persona no se evalúa ni se juzga a sí misma, es\nentonces evaluada y juzgada desde arriba. Subsecuentemente,\nsu juicio se “inviste” en [toda clase de] cosas y todo en el mundo\nse vuelve un agente de Dios para ejecutar el juicio decretado\ncontra ella. Consecuentemente, esa persona recibe su castigo\ny su ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_3_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "02058fdc0a9f1e4f222bed66c0feaa9f09fda73bb6156fc2768fe9ead1e8e4ee",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 271,
+          "language": "es",
+          "distance": 0.4865128695964813,
+          "score": 0.4865128695964813,
+          "quote": "Lección 60                                                                                   6 Nisán\nmisma manera, por el hecho de que su temor está incluido en el “tercio\ninvertido en tierras” la persona recordará que si no utiliza su riqueza para\nalcanzar la contemplación de la Torá, será alguien de “mente restringida y\nmujer”, como en, “La mujer en este respecto es como la tierra”. De manera\nsimilar, cuando el temor a Dios está incluido en “un tercio en su propia\nmano”, recordará que nuestros Sabios, de bendita memoria, dijeron que un\ntercio del dinero de la persona debe estar en su mano para poder realizar\nmuchos actos de caridad. Pues tal persona recordará que, aunque su dinero\nesté en su mano y la mala inclinación la lleve a no tener compasión por el\npobre, sin embargo, ¿acaso su alma no está en manos del Santo, bendito\nsea? (Pues el alma de la persona posee la misma raíz espiritual que su dinero,\ncomo en el versículo, “Por ese dinero… él pone en riesgo su vida”\n[",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_3_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "529a9daa58e35b48beb5437881b709b8ad245f492ff3074b774089d67ac30bab",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 449,
+          "language": "es",
+          "distance": 0.48514944314956665,
+          "score": 0.48514944314956665,
+          "quote": "idea de Torá, y es ese temor el que hace que sus palabras sean\noídas y perduren por generaciones. Consecuentemente, un gran\ntemor a Dios le sobreviene también a la persona que estudia\nlas ideas de Torá de ese sabio.\n8 - “Sonad el shofar” \n8 - “Sonad el shofar” \n8 - “Sonad el shofar” \n8 - “Sonad el shofar” \n8 - “Sonad el shofar” (Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4)\n(Salmos 81:4);\nAmonestar\nAmonestar\nAmonestar\nAmonestar\nAmonestar\n1. Si bien amonestar moralmente es algo muy grande y, de\nhecho, todo judío está obligado a corregir a su compañero\ncuando percibe que no está actuando de la manera correcta,\nsin embargo, no todos están capacitados para hacerlo. Pues\nla amonestación dada por aquél que no es apto para hacerlo,\nno sólo es inefectiva sino que puede hacer que las almas\nque reciban su reproche emitan un mal olor. Ello las\ndebilitará e interrumpirá el flujo de abundancia que les llega\na todos los mundos que dependen de esas almas. Pues la\núnica persona rea",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_3_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ee8d88a61eee31110d8b5db9b9f18f5f4b072105616bd0a28da131f03ba58426",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 421,
+          "language": "es",
+          "distance": 0.48199355602264404,
+          "score": 0.48199355602264404,
+          "quote": "de los tres malos deseos, volviéndonos dignos de alcanzar el\nperfecto temor a Dios, que depende del corazón. Esto es lo más\nimportante de todo, porque es lo que lleva al judío hacia su\nobjetivo final, que es el hecho de que perdure su dominio sobre\nlos ángeles.\n9. En cada una de las Tres Festividades se rectifica uno de los\ntres deseos. A saber: En Pesaj, se rectifica el deseo de dinero;\nen Shavuot, se rectifica el deseo de placer sexual; y en Sukot,\nse rectifica el anhelo de comida (de aquí que la palabra SUKáH tenga\nel mismo valor numérico que MaAJaL [comida]). De acuerdo a ello, la\npersona debe ser muy cuidadosa en cómo lleva a cabo las\nmitzvot asociadas con cada una de las Festividades y en honrar\ngrandemente a cada una de ellas, para merecer quebrar esos\ntres dañinos deseos y liberarse de ellos. Pues la esencia toda\ndel judaísmo es temer el Reverenciado Nombre de Dios y\nescapar de los celos de los ángeles -no sea que hagan caer a la\npersona en el pecado, Dios no lo permita- y hacer perdurar e",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_3_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "7dba61b8c58f91c5ed138eb1031bd7a384d4e5093f27c6f7676c37fae8c6d7bb",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 66,
+          "language": "es",
+          "distance": 0.48053476214408875,
+          "score": 0.48053476214408875,
+          "quote": "la persona eleva el temor a su raíz, de modo que sólo temerá a\nDios y a nada más, y así merecerá saborear la “luz oculta”.\n11 Jeshvan\n2. La persona que desee experimentar el sabor de la “luz oculta”\ndeberá dedicarle mucho tiempo al hitbodedut, a la conversación\ncon Su Creador. Deberá evaluarse y juzgarse en todo momento\n-en todas sus actividades y comportamientos- considerando si\nes adecuado y correcto actuar y comportarse de esa manera\ndelante de Dios, Quien constantemente la favorece. Deberá\n“ordenar sus asuntos mediante el juicio” (Salmos 102:5), juzgarse\na sí misma sobre todo lo que está haciendo, evaluándose y\njuzgándose en todas sus actividades y comportamientos.\nDe esta manera eliminará de sí todos los temores y se verá\nlibre de los “temores caídos”. Es decir, no le temerá a ningún\noficial, señor, animal salvaje, bandido o demás cosas del mundo,\nsino que sólo Le temerá a Dios. Así elevará el temor a su raíz,\nque es el conocimiento y merecerá un conocimiento c",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_3_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "45d280b5fb33bf0d69535c6f95781d83994ad18854846af3614d24bebf1d3ee8",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 203,
+          "language": "es",
+          "distance": 0.44601768255233765,
+          "score": 0.44601768255233765,
+          "quote": "el rostro de la persona debido a que sus pecados le habían\nembotado el intelecto y la mente con un espíritu de insensatez.\nPues antes de merecer arrepentirse por completo no poseía la\ncomprensión necesaria que le hubiese permitido sentir la propia\nvergüenza dada la enormidad de sus transgresiones y la\ngrandeza del Creador en contra de Quien pecó. Pero\nsubsecuentemente, una vez que se arrepiente y elimina la\ninsensatez, fortaleciendo su intelecto, experimenta entonces esa\nvergüenza mucho más plenamente y ésta se revela en su rostro.\nEsa vergüenza es un aspecto de la “luz de los tefilín”, que son la\nseñal de la verdadera unión con el Creador. Esa vergüenza es\ntambién el estado interior detrás del “brillo de la piel del rostro”,\nresultado de una profunda e intensa unión con Dios (ver Éxodo 34:29-\n30, donde se habla sobre el brillo del rostro de Moisés). Con esa vergüenza,\ntodos los pecados son perdonados y la persona se une al Árbol de\nla Vida.\n8. Con esto podemos discernir si la per",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_3_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "9d79d560a47430d778ba1d21c77d2e452fb8254676bc89ab32983720367fb525",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 425,
+          "language": "es",
+          "distance": 0.4341890215873718,
+          "score": 0.4341890215873718,
+          "quote": "así decirlo, experimenta arrepentimiento y pide perdón, como\nen, “Traigan una expiación para Mí por haber disminuido a la\nluna” (Julín 60b) - dado que la disminución de la luna es el origen\nde todos los pecados. Consecuentemente, no nos avergonzamos\nen el Día del Juicio por arrepentirnos de nuestras malas acciones\ny pedir expiación por ellas, dado que en ese día, también Dios\nsiente arrepentimiento y pide el perdón.\n20. El shofar representa el concepto del temor a Dios. Más aún,\nestá asociado con el influjo de inspiración profética, con la\nplegaria redimida de su exilio y con la manera en que toda la\nvegetación de los campos canaliza su poder hacia la plegaria\nde la persona - que es el requisito previo para poder celebrar\nRosh HaShaná de la manera antes descrita.\n25 Tamuz\n2 - Los Días de Jánuca\n2 - Los Días de Jánuca\n2 - Los Días de Jánuca\n2 - Los Días de Jánuca\n2 - Los Días de Jánuca\n1. Los días de Jánuca son días de agradecimiento y el\nagradecimiento es, en sí mismo, el d",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_3_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ef8459dd7b305b9240c23e418eb6684e8871926b43d816e4275c1d6af5bd5989",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 431,
+          "language": "es",
+          "distance": 0.43368303775787354,
+          "score": 0.43368303775787354,
+          "quote": "5. Es imposible recibir mucha bondad pues la gente en general\nno puede recibir una abundancia de bien. Así, es necesario crear\nun recipiente y un conducto a través del cual poder recibir la\nbondad. Mediante el temor a Dios se crea el recipiente y el\nconducto con el cual es posible recibir la bondad.\n6. La revelación de que todo sucede de acuerdo a la voluntad de\nDios y que no hay tal cosa como fuerzas naturales\nindependientes, genera como resultado el temor a Dios. Ello se\ndebe a que en ese momento, la gente llega a saber que existe la\nrecompensa y el castigo y que, por lo tanto, hay motivos para\ntemer a Dios. Pero cuando la gente cae en la herejía, tal como\nen la creencia de que todo sucede de acuerdo a las leyes de la\nnaturaleza, el temor a Dios se vuelve entonces un concepto\nirrelevante, Dios no lo permita.*\n* Nota del Editor: Ver Job 15:4 donde Elifaz le dice a Job, quien atribuía todo\na los dictados de los cuerpos celestes, “En verdad, estás anulando el temor\na Dios”.\n1 Av\n7. Esa revelación de",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "jui_p65",
+          "page": 65,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "t y la conversación con el Creador, en la cual la persona derrama su corazón delante de Dios y se evalúa y se juzga a sí misma en todas sus actividades. De esta manera, se eliminan todos los temores y se eleva al temor desde donde esté sumido. Pues si la persona no se evalúa ni se juzga a sí misma, es entonces evaluada y juzgada desde arriba. Subsecuentemente, su juicio se “inviste” en [toda clase de] cosas y todo en el mundo se vuelve un agente de Dios para ejecutar el juicio decretado contra ella. Consecuentemente, esa per",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q1_teshuva_4",
+      "claim": "vergüenza y perdón",
+      "page_direct": [
+        {
+          "source_id": "ver_p21",
+          "page": 21,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "o lo que hay en su corazón - es decir, deberá confesarse delante de él. De esa manera todos sus pecados serán perdonados. Pues los pecados de la persona están grabados en sus huesos. Dado que cada transgresión está compuesta por una combinación específica de letras [opuesta] a la prohibición de la Torá que se ha transgredido, cuando uno comete un pecado en particular una mala combinación de letras se graba en sus huesos. Eso hace que la expresión verbal de esa prohibición de la Torá que ha transgredido se hunda en el ámbito",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p29",
+          "page": 29,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "no merece el arrepentimiento. Pues la esencia del arrepentimiento se manifiesta cuando la persona oye que la avergüenzan y sin embargo se mantiene firme y en silencio. Sufre los insultos y el “derramamiento de sangre”, aceptando su propia bajeza y pequeñez, reconociendo el gran daño que ha hecho y comprendiendo que es adecuado que sufra esos insultos. De esa manera disminuye la sangre en el ventrículo izquierdo del corazón y aniquila su mala inclinación, mereciendo así “el honor de Dios”. 3. Antes de arrepentirse la persona",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p33",
+          "page": 33,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "os que reciba. Más bien, deberá apoyarse en el atributo del silencio y ser “uno de aquellos que oyen que los avergüenzan y no responden” (Shabat 88b). Entonces será llamado verdaderamente “sabio” y merecerá el arrepentimiento, que es el concepto de Keter. Con ello se hará digno del honor verdadero y eterno -que es “el honor de Dios”- y de una buena porción en el Mundo que Viene. Ése es su arrepentimiento esencial y la rectificación para todas sus transgresiones. Con ello merecerá quedar incluido en “el hombre que se sienta s",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p204",
+          "page": 204,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "tes clases de judíos] (ver Zohar II, 90b). Y esto es lo que vemos empíricamente, que cuando la persona siente vergüenza, se pone de diferentes colores. 20 Shvat 9. Por lo tanto, nuestros Sabios, de bendita memoria, dijeron, “Aquel que comete un pecado y se avergüenza de ello es perdonado en el momento” (Berajot 12b). Pues el pecado introduce un espíritu de insensatez en la persona, pero al avergonzarse le vuelven las facultades mentales, como está escrito, “Entonces comprenderás el temor a Dios” (Proverbios 2:5) - y el temor",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p205",
+          "page": 205,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "s son los tefilín” (Tikuney Zohar #69, 105b), correspondientes al “brillo de la piel del rostro”. Así, con la vergüenza -que es la luz de los tefilín- se perdonan todos los pecados y la persona se une al Árbol de Vida. Pero aquel que no tiene vergüenza delante de los verdaderos Tzadikim ni ante los rectos y temeroso de Dios, posee la osadía del Otro Lado y desciende al Gueinom. Sin embargo, si se arrepiente y siente vergüenza por sus pecados, éstos le son perdonados. También elimina el espíritu de insensatez y merece la luz",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q1_teshuva_4_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "45d280b5fb33bf0d69535c6f95781d83994ad18854846af3614d24bebf1d3ee8",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 203,
+          "language": "es",
+          "distance": 0.5410840511322021,
+          "score": 0.5410840511322021,
+          "quote": "el rostro de la persona debido a que sus pecados le habían\nembotado el intelecto y la mente con un espíritu de insensatez.\nPues antes de merecer arrepentirse por completo no poseía la\ncomprensión necesaria que le hubiese permitido sentir la propia\nvergüenza dada la enormidad de sus transgresiones y la\ngrandeza del Creador en contra de Quien pecó. Pero\nsubsecuentemente, una vez que se arrepiente y elimina la\ninsensatez, fortaleciendo su intelecto, experimenta entonces esa\nvergüenza mucho más plenamente y ésta se revela en su rostro.\nEsa vergüenza es un aspecto de la “luz de los tefilín”, que son la\nseñal de la verdadera unión con el Creador. Esa vergüenza es\ntambién el estado interior detrás del “brillo de la piel del rostro”,\nresultado de una profunda e intensa unión con Dios (ver Éxodo 34:29-\n30, donde se habla sobre el brillo del rostro de Moisés). Con esa vergüenza,\ntodos los pecados son perdonados y la persona se une al Árbol de\nla Vida.\n8. Con esto podemos discernir si la per",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_4_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1fe281715fcdacc3b2200df6af1f0eb895a31ae1d212dde0f81e98126a3204f1",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 325,
+          "language": "es",
+          "distance": 0.5400692224502563,
+          "score": 0.5400692224502563,
+          "quote": "82\n82\n82\n82\n82\n1. La vergüenza está asociada con la orlá (el prepucio que cubre\nel órgano masculino), como está escrito, “No podemos darle\nnuestra hermana a un hombre que tiene la orlá porque es una\nvergüenza para nosotros” (Génesis 34:14). Ahora bien, la orlá está\ncompuesta por tres capas de piel, paralelas a las tres fuerzas de\nla impureza espiritual conocidas como el “viento tormentoso”,\nla “gran nube” y el “fuego centelleante” (Ezequiel 1:4). Cuando la\npersona se mantiene en silencio al ser avergonzada, repele esas\ntres fuerzas impuras - dado que no desea reñir y avergonzar al\notro. Debajo del prepucio hay una cuarta membrana fina de\npiel que es un paralelo de la fuerza impura de noga [la interfase\nentre la santidad y las tres fuerzas completamente malas de la\nimpureza]. Noga es un paralelo del jashmal (brillo) - es decir,\nJaSh MaL, dado que mantenerse en silencio (laJaShot) al ser\navergonzado es también el concepto de la circuncisión (MiLá),\ndonde se retiran las tres klipot ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_4_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "686bb15714e87216820d829d945afd2def619493e58bb700254294ec15fcaaf3",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 204,
+          "language": "es",
+          "distance": 0.5358648896217346,
+          "score": 0.5358648896217346,
+          "quote": "enorgullezco (etPaAR)” (Isaías 49:3). [Dios se enorgullece de Su\npueblo Israel que] “consiste de muchos y diferentes colores”\n[i.e., muchas y diferentes clases de judíos] (ver Zohar II, 90b). Y\nesto es lo que vemos empíricamente, que cuando la persona\nsiente vergüenza, se pone de diferentes colores.\n20 Shvat\n9. Por lo tanto, nuestros Sabios, de bendita memoria, dijeron,\n“Aquel que comete un pecado y se avergüenza de ello es\nperdonado en el momento” (Berajot 12b). Pues el pecado\nintroduce un espíritu de insensatez en la persona, pero al\navergonzarse le vuelven las facultades mentales, como está\nescrito, “Entonces comprenderás el temor a Dios” (Proverbios\n2:5) - y el temor es equivalente a la vergüenza. La vergüenza es\nla esencia del arrepentimiento mediante lo cual la persona\nmerece la luz de los tefilín, que es el “brillo de la piel del rostro”.\nPor el contrario, “Si la persona es desvergonzada, puedes estar\nseguro de que los pies de sus ancestros no estuvieron en el\nmonte Sina",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_4_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "f73957da4343ba72c46fdb4289ccf36ce416d782017df85d10aaa81372300180",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 497,
+          "language": "es",
+          "distance": 0.5343176126480103,
+          "score": 0.5343176126480103,
+          "quote": "20:17); y nuestros Sabios, de bendita memoria, enseñaron\nsobre ese versículo, “Esto hace referencia a la vergüenza”\n(Nedarim 20a).\n20 Elul\n4. Mediante la vergüenza la persona se vuelve digna del\narrepentimiento, dado que el arrepentimiento, tras lo cual\ndejamos de pecar, proviene principalmente de la vergüenza,\ncomo está escrito, “Para que sientan el temor a Él y no pequen”.\nAhora bien, el arrepentimiento está asociado con la vida eterna\ndel Mundo que Viene, como está escrito, “¡Retornen [a Dios en\narrepentimiento] y vivan!” (Ezequiel 18:32); aun así esa vida eterna\nsólo será experimentada por la humildad de cada persona. De\nacuerdo a ello, mediante el arrepentimiento es la humildad de\ncada uno la que vuelve a la vida y se levanta en la Resurrección\nde los Muertos. Pues cada uno de los 248 órganos de cada judío\nestá enraizado en la humildad de Moisés, nuestro maestro. Sin\nembargo, esa humildad está oculta en cada judío como si\nestuviese muerta y, como resultado, la persona mism",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_4_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "a6ea1990e6ba6dffe92b1a3137ddeee628be5cd947da59fd0c188076734bd1cd",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 29,
+          "language": "es",
+          "distance": 0.5288404226303101,
+          "score": 0.5288404226303101,
+          "quote": "por la matzá. [La palabra hebrea matzá puede significar tanto “conflicto”\ncomo “pan sin levadura”.]\n14 Tishrei\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n1. Es necesario que cada persona minimice su propio honor y\nmaximice el honor dado a Dios. No debe perseguir el honor,\nsino huir de él. De esa manera merecerá “el honor de Dios”.\nEntonces la gente no indagará sobre el honor que se le\ndemuestra para comprobar si lo merece o no. Pero aquel que\npersigue el honor no obtiene “el honor de Dios”. Por lo tanto,\naunque tal persona disfrute del honor, todos la examinan e\ninquieren sobre ella, preguntando, “¿Quién es esa persona que\nes así honrada?”. Ellos se le oponen diciendo que no merece tal\nhonor.\n2. Mediante la humildad, uno merece el arrepentimiento. Pues\nla esencia del arrepentimiento se manifie",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_4_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "9a3ae47701526ebf85bc2f1ad26f42ce835f5470e2cf6f3c52897e279d5cdcf3",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 46,
+          "language": "es",
+          "distance": 0.5125909447669983,
+          "score": 0.5125909447669983,
+          "quote": "avergüenzan. Pues aunque los tormentos del Gueinom se\nsuspenden durante el Rosh Jodesh (Zohar II, 150a), esa misma\nvergüenza y pesar son su Gueinom. (Está escrito en el Likutey\nMoharán I, 22 que la vergüenza que la persona siente por sus pecados es\nincluso más dolorosa que los castigos en el Gueinom, que Dios nos salve.)\n26 Tishrei\n11 - “Yo soy Dios, ése es Mi nombre”\n11 - “Yo soy Dios, ése es Mi nombre”\n11 - “Yo soy Dios, ése es Mi nombre”\n11 - “Yo soy Dios, ése es Mi nombre”\n11 - “Yo soy Dios, ése es Mi nombre”\n(Isaías 42:8)\n(Isaías 42:8)\n(Isaías 42:8)\n(Isaías 42:8)\n(Isaías 42:8)\n1. Cuando la persona estudia la Torá en voz alta, el habla la\nesclarece con respecto a todas las áreas en las cuales necesita\narrepentirse, hasta que merece llevar a cabo el arrepentimiento\nexacto que le corresponde. De manera similar, en cada ocasión,\ncada vez que se arrepiente, la persona asciende de un nivel a\notro hasta que sale de su nivel inferior y llega a la comprensión\nde la Torá.\n2",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_4_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "11ba9cf9aab1932db1e9559c8e3672a94ea3ed1b4ad23a39ef70fb038e37e285",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 33,
+          "language": "es",
+          "distance": 0.5061965584754944,
+          "score": 0.5061965584754944,
+          "quote": "Lección 7\n17 Tishrei\nreflexionar profundamente y escuchar con atención todas las\npalabras de nuestros santos Sabios. Entonces merecerá el\ngenuino arrepentimiento.\n17 Tishrei\n11. La humildad es el elemento crucial del arrepentimiento. En\notras palabras, uno debe “dejarse pisotear como un desierto”\n(Eruvin 54a) y no prestarle la mínima atención a la oposición y a\nlos insultos que reciba. Más bien, deberá apoyarse en el atributo\ndel silencio y ser “uno de aquellos que oyen que los avergüenzan\ny no responden” (Shabat 88b). Entonces será llamado\nverdaderamente “sabio” y merecerá el arrepentimiento, que\nes el concepto de Keter. Con ello se hará digno del honor\nverdadero y eterno -que es “el honor de Dios”- y de una buena\nporción en el Mundo que Viene. Ése es su arrepentimiento\nesencial y la rectificación para todas sus transgresiones. Con\nello merecerá quedar incluido en “el hombre que se sienta sobre\nel trono”, del cual surgen los juicios para juzgar a todos los\nhabitantes del m",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_4_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "04564158e5610922c844e7f60f9e6598f863eeb6b1192bd036ea5b8c1037e72b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 30,
+          "language": "es",
+          "distance": 0.5044752359390259,
+          "score": 0.5044752359390259,
+          "quote": "“Esperar” está relacionado con la idea del arrepentimiento,\ncomo dijeron nuestros Sabios, de bendita memoria, “Aquel que\nviene a purificarse es ayudado... es como alguien que viene a\ncomprar aceite perfumado de afarsimon y se le dice que espere”\n(Ioma 38b-39a). En otras palabras, la persona necesita saber que\ncuando viene a purificarse y a arrepentirse, “se le dice que\nespere”. Incluso aunque es necesario que actúe rápidamente\npara salvar su vida y huir de la oscuridad, sin embargo, no\ndeberá desanimarse cuando vea cuán lejos está de la plegaria y\nde todas las prácticas sagradas. Pues es necesario esperar antes\nde alcanzar una completa rectificación y proceder paso a paso,\nde acuerdo a las instrucciones del verdadero Tzadik, dado que\nes imposible llegar a la santidad de manera inmediata.\n15 Tishrei\n5. Es necesario trabajar constantemente en el arrepentimiento.\nPues incluso en el momento en que la persona está diciendo,\n“He pecado, he transgredido, he actuado con desenfreno”\n(plegaria ",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "ver_p21",
+          "page": 21,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "o lo que hay en su corazón - es decir, deberá confesarse delante de él. De esa manera todos sus pecados serán perdonados. Pues los pecados de la persona están grabados en sus huesos. Dado que cada transgresión está compuesta por una combinación específica de letras [opuesta] a la prohibición de la Torá que se ha transgredido, cuando uno comete un pecado en particular una mala combinación de letras se graba en sus huesos. Eso hace que la expresión verbal de esa prohibición de la Torá que ha transgredido se hunda en el ámbito",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q1_teshuva_5",
+      "claim": "arrepentimiento continuo",
+      "page_direct": [
+        {
+          "source_id": "arr_p30",
+          "page": 30,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "confesional del Vidui), es imposible que lo diga con un corazón puro y sin un motivo ulterior. Así, uno debe arrepentirse de su arrepentimiento anterior - es decir, del “He pecado, he transgredido, he actuado con desenfreno” que había dicho anteriormente. 6. Aunque la persona sepa que su arrepentimiento ha sido completo, sin embargo, necesitará arrepentirse de sus arrepentimientos anteriores. Pues originalmente, cuando se arrepintió, lo hizo de acuerdo a la concepción [de Dios] que tenía en ese momento. Subsecuentemente y l",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q1_teshuva_5_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "04564158e5610922c844e7f60f9e6598f863eeb6b1192bd036ea5b8c1037e72b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 30,
+          "language": "es",
+          "distance": 0.5898082852363586,
+          "score": 0.5898082852363586,
+          "quote": "“Esperar” está relacionado con la idea del arrepentimiento,\ncomo dijeron nuestros Sabios, de bendita memoria, “Aquel que\nviene a purificarse es ayudado... es como alguien que viene a\ncomprar aceite perfumado de afarsimon y se le dice que espere”\n(Ioma 38b-39a). En otras palabras, la persona necesita saber que\ncuando viene a purificarse y a arrepentirse, “se le dice que\nespere”. Incluso aunque es necesario que actúe rápidamente\npara salvar su vida y huir de la oscuridad, sin embargo, no\ndeberá desanimarse cuando vea cuán lejos está de la plegaria y\nde todas las prácticas sagradas. Pues es necesario esperar antes\nde alcanzar una completa rectificación y proceder paso a paso,\nde acuerdo a las instrucciones del verdadero Tzadik, dado que\nes imposible llegar a la santidad de manera inmediata.\n15 Tishrei\n5. Es necesario trabajar constantemente en el arrepentimiento.\nPues incluso en el momento en que la persona está diciendo,\n“He pecado, he transgredido, he actuado con desenfreno”\n(plegaria ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_5_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "979ed9b50aa7461e379f4a000f7b6807b45b490c323455e06dd200027077cd93",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 483,
+          "language": "es",
+          "distance": 0.5659164786338806,
+          "score": 0.5659164786338806,
+          "quote": "en el pensamiento y no prestarle atención a nada de lo que le\nsuceda.\n* Como en, “Quien dirige Su mundo con bondad y a Sus creaciones con\nmisericordia” (Plegaria de la Mañana del Shabat).\nDebes saber además que la esencia del arrepentimiento\ncompleto se produce cuando la persona pasa por los mismos\nlugares y situaciones en los que estuvo previamente y le vuelve\nla espalda a la tentación y no repite lo que hizo, ni con la palabra\nni con el pensamiento. Ésta es la esencia del arrepentimiento\ncompleto. De hecho, es muy beneficioso que la persona siga\nteniendo la mala inclinación, pues entonces podrá servir a Dios\nprecisamente mediante la mala inclinación, prevaleciendo en\nmedio de su fiera pasión y alejándose de ella para volcarse hacia\nalguna devoción en el servicio a Dios. En otras palabras, podrá\nservir a Dios con su mala inclinación, deteniendo y conteniendo\nsu pasión en el momento en el que sus deseos ardan pero\ndejándola salir en el momento de la plegaria y de la devoción,\npara orar con",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_5_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "422da7405f1345cc094ce33dff7cc35ce6b059e0c3ebed5df6804ab2246b42b4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 32,
+          "language": "es",
+          "distance": 0.551531195640564,
+          "score": 0.551531195640564,
+          "quote": "“abajo”. Ésa es la idea de “Si asciendo al Cielo, Tú estás allí; si\nhago mi lecho en el Infierno, aquí estás Tú”. Esto quiere decir\nque si la persona llega a merecer un ascenso espiritual hacia\notro nivel, así sea grande o pequeño, no deberá permanecer\nallí y quedar satisfecha con ello. Es necesario ser muy experto\nen esto, sabiendo y creyendo que siempre se debe avanzar más\ny más. Esto es lo que significa “saber cómo correr”.\nPor otro lado, aunque uno caiga allí donde caiga, Dios no lo\npermita -incluso al infierno más profundo- tampoco allí deberá\nrenunciar, Dios no lo permita, no importa lo que le suceda.\nMás bien, deberá buscar a Dios y fortalecerse allí donde esté y\nde la manera en que pueda. Pues Dios se encuentra incluso en\nel pozo más profundo del infierno y también allí es posible\nunirse a Él. Ésta es la idea de “si hago mi lecho en el Infierno,\naquí estás Tú”, y esto es lo que quiere decir “saber cómo\nretornar”.\nEs imposible alcanzar el arrepentimien",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_5_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4eb7edf194b3882820c8c67218043a758c3acb1b5fe7f480d9b581bf162cb6ee",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 141,
+          "language": "es",
+          "distance": 0.5179585218429565,
+          "score": 0.5179585218429565,
+          "quote": "del arrepentimiento y el medio principal para rectificar los\ndaños sexuales cometidos en el pasado, sean cuales fueren (ver\nmás arriba, Lección #26). Ello constituye un arrepentimiento\ncompleto. Por lo tanto, no hay que desanimarse si uno ve que\nlo asaltan pensamientos extremadamente malos. Por el\ncontrario, ¡ése es precisamente el medio para la rectificación y\nel arrepentimiento! Pues cuando esos pensamientos se abaten\nsobre la persona y ella los supera, ése es precisamente el camino\nhacia la rectificación y el arrepentimiento. De esa manera se\nextraen las chispas de santidad caídas como resultado de su\ndaño a la pureza sexual, mereciendo entonces la rectificación\nsexual y el refinamiento de su sabiduría y de su voz. A su vez,\nse hace digna de la paz, y mediante la paz es posible llevar al\nmundo entero hacia el servicio a Dios.\n3 Tevet\n28 - “Constrúyenos una casa”\n28 - “Constrúyenos una casa”\n28 - “Constrúyenos una casa”\n28 - “Constrúyenos una casa”\n28 - “Constrúyenos una c",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_5_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "a6ea1990e6ba6dffe92b1a3137ddeee628be5cd947da59fd0c188076734bd1cd",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 29,
+          "language": "es",
+          "distance": 0.5071106553077698,
+          "score": 0.5071106553077698,
+          "quote": "por la matzá. [La palabra hebrea matzá puede significar tanto “conflicto”\ncomo “pan sin levadura”.]\n14 Tishrei\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n1. Es necesario que cada persona minimice su propio honor y\nmaximice el honor dado a Dios. No debe perseguir el honor,\nsino huir de él. De esa manera merecerá “el honor de Dios”.\nEntonces la gente no indagará sobre el honor que se le\ndemuestra para comprobar si lo merece o no. Pero aquel que\npersigue el honor no obtiene “el honor de Dios”. Por lo tanto,\naunque tal persona disfrute del honor, todos la examinan e\ninquieren sobre ella, preguntando, “¿Quién es esa persona que\nes así honrada?”. Ellos se le oponen diciendo que no merece tal\nhonor.\n2. Mediante la humildad, uno merece el arrepentimiento. Pues\nla esencia del arrepentimiento se manifie",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_5_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "781f6e39b5cfdd336c024bc770cd6f559e20493d47ab285a3ef3887a599993ed",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 336,
+          "language": "es",
+          "distance": 0.506144642829895,
+          "score": 0.506144642829895,
+          "quote": "336                                                                                                                                                                     \n105\n105\n105\n105\n105\n1. El arrepentimiento depende principalmente de la Torá.\nEspecíficamente, cuando la persona estudia Torá, esforzándose\nen ello hasta merecer deducir una cosa a partir de otra y\ndesarrollando nuevas ideas de Torá en aras del Cielo - eso es el\narrepentimiento completo. Entonces hace retornar y une todas\nlas letras y las combinaciones de letras que se encuentran en\nsu porción de la totalidad de los mundos, uniéndolas con su\nraíz y con su lugar, haciéndolas retornar de los lugares a los\ncuales fueron expulsadas y diseminadas; se transforma en una\nnueva persona y su mente realmente se asienta. De esa manera\nse vuelve digna de despertar la compasión de Dios hasta llegar\na merecer que Dios Mismo ore por ella - en otras palabras, que\nDios, mediante Su nivel inferior de “compasión simple”,\ndespierte a Su Propio y elev",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_5_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "11ba9cf9aab1932db1e9559c8e3672a94ea3ed1b4ad23a39ef70fb038e37e285",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 33,
+          "language": "es",
+          "distance": 0.5059571266174316,
+          "score": 0.5059571266174316,
+          "quote": "Lección 7\n17 Tishrei\nreflexionar profundamente y escuchar con atención todas las\npalabras de nuestros santos Sabios. Entonces merecerá el\ngenuino arrepentimiento.\n17 Tishrei\n11. La humildad es el elemento crucial del arrepentimiento. En\notras palabras, uno debe “dejarse pisotear como un desierto”\n(Eruvin 54a) y no prestarle la mínima atención a la oposición y a\nlos insultos que reciba. Más bien, deberá apoyarse en el atributo\ndel silencio y ser “uno de aquellos que oyen que los avergüenzan\ny no responden” (Shabat 88b). Entonces será llamado\nverdaderamente “sabio” y merecerá el arrepentimiento, que\nes el concepto de Keter. Con ello se hará digno del honor\nverdadero y eterno -que es “el honor de Dios”- y de una buena\nporción en el Mundo que Viene. Ése es su arrepentimiento\nesencial y la rectificación para todas sus transgresiones. Con\nello merecerá quedar incluido en “el hombre que se sienta sobre\nel trono”, del cual surgen los juicios para juzgar a todos los\nhabitantes del m",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_5_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b12060cf944f8bc210c41fdf8a42a24431752eb9e0cdd6ff4f84b10ee5a5814d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 31,
+          "language": "es",
+          "distance": 0.49485284090042114,
+          "score": 0.49485284090042114,
+          "quote": "7. El verdadero Tzadik se dedica al arrepentimiento durante\ntoda su vida. Pues incluso aunque sabe que se ha arrepentido\npor completo, continúa arrepintiéndose de sus previas\nconcepciones de Dios, que ahora considera rudimentarias\ncomparadas con su presente percepción de la grandeza de Dios.\nY así continúa toda su vida, pasando de un nivel de comprensión\nal siguiente y arrepintiéndose de sus anteriores niveles de\nentendimiento. Ésa es la idea del Mundo que Viene, que será\n“enteramente Shabat”, enteramente arrepentimiento. Pues la\nesencia del Mundo que Viene es la percepción de la Divinidad\n[que se experimenta allí]; y cada vez que la persona alcance un\nnivel adicional de percepción se arrepentirá del nivel anterior\nde entendimiento. Todo aquel que tenga un cerebro en la cabeza\npodrá comprender a partir de esto la grandeza del Creador y la\ngrandeza de los Tzadikim. ¡Felices de ellos y felices de aquellos\nque los siguen!\n8. La persona que desee retornar a Dios deberá ser muy experta\nen la le",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "arr_p30",
+          "page": 30,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "confesional del Vidui), es imposible que lo diga con un corazón puro y sin un motivo ulterior. Así, uno debe arrepentirse de su arrepentimiento anterior - es decir, del “He pecado, he transgredido, he actuado con desenfreno” que había dicho anteriormente. 6. Aunque la persona sepa que su arrepentimiento ha sido completo, sin embargo, necesitará arrepentirse de sus arrepentimientos anteriores. Pues originalmente, cuando se arrepintió, lo hizo de acuerdo a la concepción [de Dios] que tenía en ese momento. Subsecuentemente y l",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q1_teshuva_6",
+      "claim": "correr y retornar",
+      "page_direct": [
+        {
+          "source_id": "cor_p31",
+          "page": 31,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "la grandeza de los Tzadikim. ¡Felices de ellos y felices de aquellos que los siguen! 8. La persona que desee retornar a Dios deberá ser muy experta en la ley judía, para que nada en el mundo la aleje ni la distancie de su búsqueda, sin importar si se está “elevando” espiritualmente o si está “cayendo” espiritualmente. No importa lo que le suceda, se fortalecerá y se “mantendrá firme”. De esa manera cumplirá con el versículo, “Si asciendo al Cielo, Tú estás allí; si hago mi lecho en el Infierno, aquí estás Tú” (Salmos 139:8)",
+          "score": 1.0
+        },
+        {
+          "source_id": "cor_p32",
+          "page": 32,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "sta es la idea de “si hago mi lecho en el Infierno, aquí estás Tú”, y esto es lo que quiere decir “saber cómo retornar”. Es imposible alcanzar el arrepentimiento si no se poseen estas dos clases de pericias. Y en verdad, es algo extremadamente grande ser experto en ello y saber que uno debe esforzarse y luchar constantemente en el servicio a Dios, anhelando continuamente alcanzar niveles superiores y no dejándose caer por motivo alguno. Pues, no importa lo que suceda, Dios no lo permita, la persona nunca debe desanimarse en",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q1_teshuva_6_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "422da7405f1345cc094ce33dff7cc35ce6b059e0c3ebed5df6804ab2246b42b4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 32,
+          "language": "es",
+          "distance": 0.27727875113487244,
+          "score": 0.27727875113487244,
+          "quote": "“abajo”. Ésa es la idea de “Si asciendo al Cielo, Tú estás allí; si\nhago mi lecho en el Infierno, aquí estás Tú”. Esto quiere decir\nque si la persona llega a merecer un ascenso espiritual hacia\notro nivel, así sea grande o pequeño, no deberá permanecer\nallí y quedar satisfecha con ello. Es necesario ser muy experto\nen esto, sabiendo y creyendo que siempre se debe avanzar más\ny más. Esto es lo que significa “saber cómo correr”.\nPor otro lado, aunque uno caiga allí donde caiga, Dios no lo\npermita -incluso al infierno más profundo- tampoco allí deberá\nrenunciar, Dios no lo permita, no importa lo que le suceda.\nMás bien, deberá buscar a Dios y fortalecerse allí donde esté y\nde la manera en que pueda. Pues Dios se encuentra incluso en\nel pozo más profundo del infierno y también allí es posible\nunirse a Él. Ésta es la idea de “si hago mi lecho en el Infierno,\naquí estás Tú”, y esto es lo que quiere decir “saber cómo\nretornar”.\nEs imposible alcanzar el arrepentimien",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_6_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "f9f2f7e562cfa51a273f12dae1e2260b0be01ffe889b6f7b175dc2ba0446cf68",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 487,
+          "language": "es",
+          "distance": 0.25963181257247925,
+          "score": 0.25963181257247925,
+          "quote": "que es recta desde su juventud y que anduvo por el sendero\ncorrecto durante toda su vida, actúa con demasiada prisa, pierde\ndebido a ello. Pues si esa persona pasara de mitzvá en mitzvá\ncon un paso más lento y medido, podría percibir la santidad\nque se encuentra también entre las mitzvot. Pero cuando corre\nhacia la mitzvá, entonces pasa por alto y salta por sobre la\npercepción de santidad (ver la lección en el Likutey Moharán para más\nexplicaciones). Por otro lado, la persona que necesita arrepentirse\ndebe actuar con gran celeridad y correr por su vida. Para esa\npersona está prohibido demorarse o detenerse. En su lugar,\ndebe correr y saltar por sobre todo lo que deba saltar y brincar\nhacia la santidad con gran velocidad. Una persona así actúa\ncon presteza y es recompensada por ello.\n60\n60\n60\n60\n60\n1. Las guerras y el derramamiento de sangre traen aparejada la\nsequía, Dios no lo permita, al igual que la inflación, Dios no lo\nquiera.\n2. También trae sequía el hecho de que la persona enseñe To",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_6_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "df2e24c0a4b20e9a239a20bf5aceeb53833d17b09d93e3105b6f6bc0a9a4f3f0",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 234,
+          "language": "es",
+          "distance": 0.2560030221939087,
+          "score": 0.2560030221939087,
+          "quote": "novio, el discurso de Torá del novio y las interrupciones en el medio, los\nregalos al novio por su discurso y las contorsiones de los cómicos. Todas\nesas costumbres provienen de Dios. Allí se dan maravillosas explicaciones\npara todo esto; sin embargo éste no es el lugar para explayarse sobre ello).\n12. Es necesario ser como “un guerrero corriendo una carrera”\n(Salmos 19:6). Porque incluso cuando la persona se hace digna\nde arrepentirse y de rectificar el daño espiritual que ha hecho,\naun así debe trabajar para completar el servicio Divino que\npodría haber realizado durante el tiempo en que estuvo fuera\ndel favor de Dios. Por lo tanto, es necesario correr rápidamente\ny trabajar con mucho celo en el servicio a Dios, para poder\ncompensar el servicio que uno podría haber realizado durante\nel tiempo en que estuvo comportándose de manera incorrecta.\n10 Adar\n50 - “Rescata mi vida de la espada”\n50 - “Rescata mi vida de la espada”\n50 - “Rescata mi vida de la espada”\n50 - “Rescata mi vida de",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_6_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b12060cf944f8bc210c41fdf8a42a24431752eb9e0cdd6ff4f84b10ee5a5814d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 31,
+          "language": "es",
+          "distance": 0.25058817863464355,
+          "score": 0.25058817863464355,
+          "quote": "7. El verdadero Tzadik se dedica al arrepentimiento durante\ntoda su vida. Pues incluso aunque sabe que se ha arrepentido\npor completo, continúa arrepintiéndose de sus previas\nconcepciones de Dios, que ahora considera rudimentarias\ncomparadas con su presente percepción de la grandeza de Dios.\nY así continúa toda su vida, pasando de un nivel de comprensión\nal siguiente y arrepintiéndose de sus anteriores niveles de\nentendimiento. Ésa es la idea del Mundo que Viene, que será\n“enteramente Shabat”, enteramente arrepentimiento. Pues la\nesencia del Mundo que Viene es la percepción de la Divinidad\n[que se experimenta allí]; y cada vez que la persona alcance un\nnivel adicional de percepción se arrepentirá del nivel anterior\nde entendimiento. Todo aquel que tenga un cerebro en la cabeza\npodrá comprender a partir de esto la grandeza del Creador y la\ngrandeza de los Tzadikim. ¡Felices de ellos y felices de aquellos\nque los siguen!\n8. La persona que desee retornar a Dios deberá ser muy experta\nen la le",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_6_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b19456e192f0bf53c51b4fded70ac4b846a9f4a93910575f755b88b7f47a040a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 382,
+          "language": "es",
+          "distance": 0.23502406477928162,
+          "score": 0.23502406477928162,
+          "quote": "382                                                                                                                                                                     \n216\n216\n216\n216\n216\n1. La plegaria de la Amidá contiene JaI (dieciocho) bendiciones\n[JaI significa literalmente “vida”; sus letras tienen el valor\nnumérico de dieciocho], además de la bendición concerniente\na los herejes. Esto alude al hecho de que mediante la plegaria\nanulamos a la “naturaleza”, a la que los filósofos llaman “la\nmadre de todo lo vivo (JaI)”, y de esa manera también\nsubyugamos y anulamos a los herejes.\n27 Sivan\n217\n217\n217\n217\n217\n1. Las iniciales de la frase “Recuerda la Torá de Moisés (Zijru\nTorat Moshé)” (Malaji 3:22) forman la palabra TaMuZ, escrita sin\nla letra Vav. Ello alude al hecho de que en el mes de Tamuz es\nnecesario reforzar la memoria para rectificar el olvido que se\nprodujo como resultado de la Rotura de las Tablas ocurrida en\nese mes. Cuando se rompieron las Tablas, la Vav se fue de la\n",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_6_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "a763e5ea0a2a590b7b67ddfea2e3b88e8e060d4c82824db3f04a36148fc28fc7",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 413,
+          "language": "es",
+          "distance": 0.22754700481891632,
+          "score": 0.22754700481891632,
+          "quote": "Aquí se ha finalizado y completado el\nAquí se ha finalizado y completado el\nAquí se ha finalizado y completado el\nAquí se ha finalizado y completado el\nAquí se ha finalizado y completado el\nKitzur Likutey Moharán - Parte I\nKitzur Likutey Moharán - Parte I\nKitzur Likutey Moharán - Parte I\nKitzur Likutey Moharán - Parte I\nKitzur Likutey Moharán - Parte I",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_6_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "133bedc60f213fa9b0f213806de76bce58a1581e37b978cd5bcf02515bbbedb4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 471,
+          "language": "es",
+          "distance": 0.22711363434791565,
+          "score": 0.22711363434791565,
+          "quote": "36\n36\n36\n36\n36\n1. Tan pronto como se hace un libro, se le dan coberturas y\nocultamientos, y su luz pura y tremenda es tapada y encubierta.\nLas páginas de la encuadernación son de hecho aquello que lo\noculta.\n37\n37\n37\n37\n37\n1. El propósito de la vida es servir a Dios y andar en Sus caminos\nsólo en aras del Nombre de Dios, para ser dignos de conocerlo\n- pues eso es lo que Dios desea. Pues se dice de la persona que\nsirve a Dios para alcanzar la recompensa en el Mundo que Viene\nque está “llenando su vientre”, dado que desea llenar su propio\nvientre, por así decir, con la recompensa del Mundo que Viene.\nAunque es ciertamente mucho mejor servir a Dios en aras de la\nrecompensa del Mundo que Viene antes que correr detrás de\neste mundo, Dios no lo permita, y la persona que sirve a Dios\nincluso por la recompensa del Mundo que Viene es ciertamente\nmucho más sabia que aquélla que batalla todos sus días por\neste mundo -dado que la primera elige para sí un mundo que\nperdura- sin embargo, el propósito real y",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_6_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "97efed6aae7d36abae198a096b1ea997619879c965bc2bfd04c1242368a35e8b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 455,
+          "language": "es",
+          "distance": 0.22414736449718475,
+          "score": 0.22414736449718475,
+          "quote": "Lección 10                                                                                     19 Av\nbien, se ocupan de que el corazón de cada judío arda por Dios\nen el grado apropiado y equilibrado.\n19 Av\n3. También existen malvados que se identifican conceptualmente\ncon “la multitud mezclada”. Cuando esas personas asaltan el\ncorazón -es decir, el pueblo judío- también son como “polvo”.\nPues cuando el polvo y el hollín se acumulan en una vela y las\npartes del fuego provenientes del elemento “fuego” se separan y\nno pueden arder, la vela se extingue. Es por ello que cuando uno\nsopla suavemente sobre una vela, el soplido limpia a la mecha\ndel polvo y del hollín, permitiendo que las partes del fuego se\nvuelvan a conectar y la vela pueda arder nuevamente. Otras veces,\nal soplar sobre la vela, ésta se extingue, dado que el viento arrastra\nal fuego y lo separa de la mecha. Así como es posible extinguir\nuna vela soplando sobre ella y separando el fuego de la mecha,\nde la misma manera los líde",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "cor_p31",
+          "page": 31,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "la grandeza de los Tzadikim. ¡Felices de ellos y felices de aquellos que los siguen! 8. La persona que desee retornar a Dios deberá ser muy experta en la ley judía, para que nada en el mundo la aleje ni la distancie de su búsqueda, sin importar si se está “elevando” espiritualmente o si está “cayendo” espiritualmente. No importa lo que le suceda, se fortalecerá y se “mantendrá firme”. De esa manera cumplirá con el versículo, “Si asciendo al Cielo, Tú estás allí; si hago mi lecho en el Infierno, aquí estás Tú” (Salmos 139:8)",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q1_teshuva_7",
+      "claim": "Keter / EHIéH",
+      "page_direct": [
+        {
+          "source_id": "Ket_p29",
+          "page": 29,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "é) - es decir, “estoy preparado para existir”. 4. El arrepentimiento también está asociado con el concepto de Keter, dado que KeTeR es una expresión de “esperar”, como está escrito, “Espérame (KaTaR) y hablaré contigo” (Job 36:2). Lección 6 14 Tishrei 29",
+          "score": 1.0
+        },
+        {
+          "source_id": "Ket_p33",
+          "page": 33,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "habat 88b). Entonces será llamado verdaderamente “sabio” y merecerá el arrepentimiento, que es el concepto de Keter. Con ello se hará digno del honor verdadero y eterno -que es “el honor de Dios”- y de una buena porción en el Mundo que Viene. Ése es su arrepentimiento esencial y la rectificación para todas sus transgresiones. Con ello merecerá quedar incluido en “el hombre que se sienta sobre el trono”, del cual surgen los juicios para juzgar a todos los habitantes del mundo. 12. Es necesario buscar siempre el mérito y el bi",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 5,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q1_teshuva_7_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ade3b04c85ae3280b97a6a04ab4d7d03f5592b97b2355564d0105db5a45a460b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 128,
+          "language": "es",
+          "distance": 0.3356061577796936,
+          "score": 0.3356061577796936,
+          "quote": "de la impureza, y mediante ello se alcanza la alegría.\n5. Cuando se realiza una mitzvá, ésta tiene el poder de ir y\ndespertar a todos los mundos al servicio a Dios.\nConsecuentemente, descienden bendiciones sobre todos los\nmundos - siendo el intelecto la principal bendición que fluye\nde arriba. Sin embargo, la forma que tome ese intelecto al\ndescender dependerá de la voluntad en particular de la persona.\nPor lo tanto, aquel que esté interesado en el bienestar de su\nalma deberá dirigir su voluntad de la manera apropiada para\natraer esa bendición de intelecto. También es necesario\nintroducir la fe en esa bendición de intelecto, dado que, como\nes sabido, no se debe recurrir exclusivamente al intelecto.\n23 Kislev\n6. Mediante la esencia interna de esas bendiciones hechas\ndescender por las mitzvot que la persona lleva a cabo con\nalegría, también recibe bendiciones la facultad de ordenar y de\norganizar de la mente. Esa facultad es el nivel de KeTeR, que\ndenota la idea de «esperar», como en, «Espérame ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_7_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e61fc32fad7c18685b260ad8e2f43e99e55a9d6100ff2e348b712ff48673cd56",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 65,
+          "language": "es",
+          "distance": 0.334995299577713,
+          "score": 0.334995299577713,
+          "quote": "que KeRI y IaKaR tienen las mismas letras hebreas\n[ello indica una conexión conceptual].\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n1. Aquel que desee experimentar el sabor de la “luz oculta” -es\ndecir, los misterios de la Torá que serán revelados en el futuro-\ndeberá elevar el aspecto del temor hasta su raíz. Esa elevación\nse logra mediante el “juicio” - es decir, mediante el hitbodedut\ny la conversación con el Creador, en la cual la persona derrama\nsu corazón delante de Dios y se evalúa y se juzga a sí misma en\ntodas sus actividades. De esta manera, se eliminan todos los\ntemores y se eleva al temor desde donde esté sumido.\nPues si la persona no se evalúa ni se juzga a sí misma, es\nentonces evaluada y juzgada desde arriba. Subsecuentemente,\nsu juicio se “inviste” en [toda clase de] cosas y todo en el mundo\nse vuelve un agente de Dios para ejecutar el juicio decretado\ncontra ella. Consecuentemente, esa persona recibe su castigo\ny su ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_7_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "a763e5ea0a2a590b7b67ddfea2e3b88e8e060d4c82824db3f04a36148fc28fc7",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 413,
+          "language": "es",
+          "distance": 0.3198551535606384,
+          "score": 0.3198551535606384,
+          "quote": "Aquí se ha finalizado y completado el\nAquí se ha finalizado y completado el\nAquí se ha finalizado y completado el\nAquí se ha finalizado y completado el\nAquí se ha finalizado y completado el\nKitzur Likutey Moharán - Parte I\nKitzur Likutey Moharán - Parte I\nKitzur Likutey Moharán - Parte I\nKitzur Likutey Moharán - Parte I\nKitzur Likutey Moharán - Parte I",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_7_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "60a09282ad6a4b89ae0919a7eb31a0447ce92f83b4a11452900a4863e3480cab",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 415,
+          "language": "es",
+          "distance": 0.31682705879211426,
+          "score": 0.31682705879211426,
+          "quote": "SÍNTESIS\nSÍNTESIS\nSÍNTESIS\nSÍNTESIS\nSÍNTESIS\nDEL\nDEL\nDEL\nDEL\nDEL\nLIKUTEY MOHARÁN\nLIKUTEY MOHARÁN\nLIKUTEY MOHARÁN\nLIKUTEY MOHARÁN\nLIKUTEY MOHARÁN\nParte II\nParte II\nParte II\nParte II\nParte II",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_7_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "cf9fef0a5fd93c79862d30c4d39c0d0bab879eecab3e71a6753707f0e71fbfce",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 11,
+          "language": "es",
+          "distance": 0.31419673562049866,
+          "score": 0.31419673562049866,
+          "quote": "SÍNTESIS\nSÍNTESIS\nSÍNTESIS\nSÍNTESIS\nSÍNTESIS\nDEL\nDEL\nDEL\nDEL\nDEL\nLIKUTEY MOHARÁN\nLIKUTEY MOHARÁN\nLIKUTEY MOHARÁN\nLIKUTEY MOHARÁN\nLIKUTEY MOHARÁN\nParte I\nParte I\nParte I\nParte I\nParte I",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_7_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "32f7dd4d4de030dde50de99e52bcb72e680b03c48dbc932d7232309f1999cc71",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 2,
+          "language": "es",
+          "distance": 0.29886874556541443,
+          "score": 0.29886874556541443,
+          "quote": "Copyright © 2011 Breslov Research Institute\nISBN  978-1-928822-61-5\nNinguna parte de esta publicación podrá ser traducida,\nreproducida o archivada en ningún sistema o transmitida\nde ninguna forma y de ninguna manera, electrónica,\nmecánica, fotocopiada o grabada o de cualquier otra\nmanera, sin el consentimiento previo, por escrito, del\neditor.\nTítulo del original:\nKitzur Likutey Moharan\nKitzur Likutey Moharan\nKitzur Likutey Moharan\nKitzur Likutey Moharan\nKitzur Likutey Moharan\nPara más información:\nBreslov Research Institute\nPOB 5370\nJerusalem, Israel.\nBreslov Research Institute\nPOB 587\nMonsey, NY 10952-0587\nEstados Unidos.\nBreslov Research Institute\nc\\o G.Beilinson\ncalle 493 bis # 2548\nGonnet (1897)\nArgentina.\ne-mail: abei2ar@Yahoo.com.ar\nImpreso en Argentina\nDiseño de cubierta: Ben Gasner\nRevisión del original: Betzalel Retyk",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_7_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "9bfd2ddb4782f4e06deb74bc444738b96699b9fd06cc1e3ee0734a7fe2d78e76",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 135,
+          "language": "es",
+          "distance": 0.2951447069644928,
+          "score": 0.2951447069644928,
+          "quote": "Esos colores superiores son las luces coloreadas del Nombre\nde Dios IHVH, tal cual está expresado en el versículo, “Una\ncanción de David. Dios (IHVH) es mi luz y mi salvación” (Salmos\n27:1). “Mi luz” hace referencia a esas Luces Coloreadas que\nirradian de este Nombre, y “mi salvación (ISHI)” corresponde a\nlas “ropas de salvación (IeSHA)”. [IeSHA (salvación) también\nconnota la idea de “mirar” algo,] como en el versículo, “Ellos\nmiraron (ISHo) a Dios” (Samuel II, 22:42; ver Zohar II, 90). Todo esto\nestá conectado con las letras Jaf-Vav [que tienen el valor\nnumérico de veintiséis], que es el valor numérico del Nombre\nde Dios IHVH, y con las letras Tav-Lamed [que deletrean la\npalabra TaL (monte)] al que todos se vuelven a mirar con anhelo.\nCuando se combinan los dos pares de letras [Jaf-Vav y Tav-\nLamed] componen la palabra KOTeL (muro). (Algunos dicen que\nésta es una alusión al Kotel Hamaaraví [el Muro Occidental] que es el único\nremanente del Santo Templo y el lugar en d",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q1_teshuva_7_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "a6ea1990e6ba6dffe92b1a3137ddeee628be5cd947da59fd0c188076734bd1cd",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 29,
+          "language": "es",
+          "distance": 0.2912820875644684,
+          "score": 0.2912820875644684,
+          "quote": "por la matzá. [La palabra hebrea matzá puede significar tanto “conflicto”\ncomo “pan sin levadura”.]\n14 Tishrei\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n6 - “Llama a Ioshúa”\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n(Deuteronomio 31:14)\n1. Es necesario que cada persona minimice su propio honor y\nmaximice el honor dado a Dios. No debe perseguir el honor,\nsino huir de él. De esa manera merecerá “el honor de Dios”.\nEntonces la gente no indagará sobre el honor que se le\ndemuestra para comprobar si lo merece o no. Pero aquel que\npersigue el honor no obtiene “el honor de Dios”. Por lo tanto,\naunque tal persona disfrute del honor, todos la examinan e\ninquieren sobre ella, preguntando, “¿Quién es esa persona que\nes así honrada?”. Ellos se le oponen diciendo que no merece tal\nhonor.\n2. Mediante la humildad, uno merece el arrepentimiento. Pues\nla esencia del arrepentimiento se manifie",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "Ket_p29",
+          "page": 29,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "é) - es decir, “estoy preparado para existir”. 4. El arrepentimiento también está asociado con el concepto de Keter, dado que KeTeR es una expresión de “esperar”, como está escrito, “Espérame (KaTaR) y hablaré contigo” (Job 36:2). Lección 6 14 Tishrei 29",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "diagnostics": {
+    "sql_hits": 15,
+    "fts_hits": 0,
+    "milvus_hits": 0,
+    "hybrid_hits": 0,
+    "vector_hits": 56,
+    "vector_backend_requested": "auto",
+    "vector_backend_used": "milvus",
+    "relation_qa_hits": 0,
+    "book_qa_hits": 19,
+    "page_direct_hits": 15,
+    "methods_unavailable": [
+      "FTS and Relation QA do not accept an Ingesta V2 run_id in current contracts"
+    ],
+    "semantic_error": null,
+    "backend_runtime_model": "openai_gpt-5.4-nano",
+    "embedding_model": "openai_text_embedding_3_small",
+    "ai_synthesis_used": false,
+    "fallback_used": true,
+    "ai_error": "ai_disabled",
+    "hybrid_collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1"
+  },
+  "answer": "Según las fuentes verificadas para: Describe el proceso completo del arrepentimiento, teshuvá, según el Kitzur Likutey Moharán.\n- humildad y silencio: uno merece el arrepentimiento. Pues la esencia del arrepentimiento se manifiesta cuando la persona oye que la avergüenzan y sin embargo se mantiene firme y en silencio. Sufre los insultos y el “derramamiento de sangre”, aceptando su propia  [p. 29]\n- confesión verbal: e los sinsabores que pueda experimentar. En su lugar, debe tener fe en que todo es para su bien eterno. 2. Al confesarse delante de un verdadero estudioso de Torá, la persona eleva el Reinado de Santidad hacia su raíz; anula a su vez el gob [p. 21]\n- juicio y temores: t y la conversación con el Creador, en la cual la persona derrama su corazón delante de Dios y se evalúa y se juzga a sí misma en todas sus actividades. De esta manera, se eliminan todos los temores y se eleva al temor desde donde esté sumi [p. 65]\n- vergüenza y perdón: o lo que hay en su corazón - es decir, deberá confesarse delante de él. De esa manera todos sus pecados serán perdonados. Pues los pecados de la persona están grabados en sus huesos. Dado que cada transgresión está compuesta por una combina [p. 21]\n- arrepentimiento continuo: confesional del Vidui), es imposible que lo diga con un corazón puro y sin un motivo ulterior. Así, uno debe arrepentirse de su arrepentimiento anterior - es decir, del “He pecado, he transgredido, he actuado con desenfreno” que había dicho [p. 30]\n- correr y retornar: la grandeza de los Tzadikim. ¡Felices de ellos y felices de aquellos que los siguen! 8. La persona que desee retornar a Dios deberá ser muy experta en la ley judía, para que nada en el mundo la aleje ni la distancie de su búsqueda, sin impo [p. 31]\n- Keter / EHIéH: é) - es decir, “estoy preparado para existir”. 4. El arrepentimiento también está asociado con el concepto de Keter, dado que KeTeR es una expresión de “esperar”, como está escrito, “Espérame (KaTaR) y hablaré contigo” (Job 36:2). Lección 6 [p. 29]",
+  "final_status": "PASS"
+}

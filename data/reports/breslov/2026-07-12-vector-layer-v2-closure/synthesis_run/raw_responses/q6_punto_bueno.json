@@ -1,0 +1,753 @@
+{
+  "question_id": "q6_punto_bueno",
+  "question": "Explica el punto bueno, nekudá tová, y su importancia en el servicio a Dios.",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_filter": "resolved by run",
+  "claims": [
+    {
+      "claim_id": "q6_punto_bueno_1",
+      "claim": "buscar el bien",
+      "page_direct": [
+        {
+          "source_id": "bus_p407",
+          "page": 407,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "tivos ulteriores y con muchas impurezas- sin embargo, ¿cómo es posible que ese pequeño bien no contenga algún punto bueno? La persona deberá continuar buscando en ella hasta encontrar algún otro bien. Y aunque ese bien también esté mezclado con mucha impureza, en definitiva, también tendrá en sí algún punto bueno. Y así deberá continuar buscando, hasta encontrar más puntos buenos. De ese modo, al hallar algún mérito y bien en ella, se trasladará en verdad desde el lado de la culpa hacia el lado del mérito y podrá retornar a",
+          "score": 1.0
+        },
+        {
+          "source_id": "bus_p411",
+          "page": 411,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "hundida en la impureza de la serpiente primordial, aun así es posible tomar algún punto bueno y, como resultado, la serpiente volverá a ser un bastón; ver esta lección en el Likutey Halajot. Se explica además en el Likutey Halajot, Hashkamat HaBoker 5, que la rectificación final y la redención por parte de nuestro recto Mashíaj también vendrán principalmente gracias al camino enseñado en esta lección. Pues Mashíaj encontrará mérito en cada judío hasta que todos se eleven y pasen hacia el lado del",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q6_punto_bueno_1_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "226879c075e49d3a46490b91c19286c0c8152f44cf82a9899294c40877fd35ef",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 61,
+          "language": "es",
+          "distance": 0.40255528688430786,
+          "score": 0.40255528688430786,
+          "quote": "su fuente]. Incluso al recitar aquellas partes del servicio de la\nplegaria que tratan explícitamente de las necesidades físicas,\ntales como “Cúranos” y “Bendícenos [en nuestro sustento]” [en\nla plegaria de la Amidá], y [en las plegarias que tratan de] otras\nnecesidades físicas, la intención no será para el cuerpo, sino\nmás bien para el “sustento” y la “salud” del alma. Pues en\nverdad, cuando uno se rectifica en el ámbito espiritual,\nautomáticamente se rectifica en el ámbito físico y Dios le provee\nde todas sus necesidades, graciosamente y en abundancia. Pero\nla intención de la persona al orar sólo debe ser en aras del alma.\n14. A veces vemos que hay Tzadikim que indudablemente han\nrectificado en ellos todo lo espiritual, pero que no reciben\nabundancia en el ámbito físico. Ese fenómeno se debe a los\nfactores conectados con la reencarnación de las almas, como\nse explica en el santo Zohar (II, 216) y en el Tikuney Zohar (#69).\n15. Las palabras de las plegarias rectifican el con",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_1_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4caf28726c112f2cea5881e7caed0f5d7aeee0e09b4b243ccbb09caf87bc41ee",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 76,
+          "language": "es",
+          "distance": 0.39409610629081726,
+          "score": 0.39409610629081726,
+          "quote": "14. Sin embargo, debes saber que a veces cuando el mal ve que\nel bien está añorando y deseando retornar a su lugar, los gentiles\nlo abruman aún más y lo llevan hacia un ocultamiento todavía\nmayor - más específicamente, lo llevan hacia los ámbitos más\ninternos de sus pensamientos. En otras palabras, comienzan a\npensar sobre ese bien, lo que lo lleva hacia un ocultamiento\nmás profundo dentro de los ámbitos más internos de sus\nmentes. Más tarde, ese bien emerge en la forma de los hijos o\ndescendientes de esos gentiles. Pues ese bien está encerrado y\noculto en los ámbitos más internos de sus pensamientos y de\nsus mentes, origen del proceso de la reproducción. [La simiente\nse origina en el cerebro y luego desciende hacia los órganos de la\nreproducción (Zohar Jadash 15a; ver también más arriba, Lección #7).] Ese\nbien emerge consecuentemente en la simiente pues el mal en\nsus descendientes no tiene ya la fuerza como para vencer al\nbien dentro de ellos. Así, el bien emerge a través de esos\ndesc",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_1_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "81bf9ed07efd2ad9bfa7b3ab6a465f93883b3397219dee55f2b07973dc74efc1",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 459,
+          "language": "es",
+          "distance": 0.37628453969955444,
+          "score": 0.37628453969955444,
+          "quote": "Lección 12                                                                                     22 Av\n1. Si la persona sigue su propio intelecto y sabiduría puede\ncaer en muchos errores y trampas y llegar a un gran mal, Dios\nno lo permita. En verdad, mucha gente ha tropezado y caído de\nuna manera terrible al seguir su propia sabiduría, pecando y\nhaciendo que muchos otros pecasen, que Dios nos salve - y\ntodo debido a su mala “sabiduría”. En verdad, la esencia del\njudaísmo es actuar con sencillez y simplicidad, sin ninguna\nclase de sofisticación. Uno debe asegurarse de que Dios esté\npresente en todo aquello que haga, sin preocuparse por su\npropio honor personal. Si ello acrecienta el honor de Dios,\ndeberá hacerlo, si no, no. Entonces ciertamente, nunca\ntropezará.\n2. Cuando alguien cae de su nivel, a veces ese descenso y caída\npueden ser en verdad muy severos, que Dios nos salve. Pues\nhay gente que cae en lugares extremadamente degradados -\nllamados “lugares inmundos”- hundiéndose en las dudas",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_1_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1cdf12260cd1006883f86e66d096447159e872464ada3f913f624fa42ede2680",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 407,
+          "language": "es",
+          "distance": 0.37530896067619324,
+          "score": 0.37530896067619324,
+          "quote": "esa manera, merecerá separar y elevar muchas chispas y\nelementos de santidad. Mediante sus actividades comerciales\nascenderán los mundos espirituales y se producirán grandes\nrectificaciones, al igual que con la plegaria.\n281\n281\n281\n281\n281\n1. Incluso la persona común, si se sienta ante un libro sagrado\ny observa cuidadosamente las letras de la Torá, podrá ver cosas\nnuevas y asombrosas. Sin embargo uno no debe hacer la prueba\nde esto (ver más en la lección del Likutey Moharán).\n16 Tamuz\n282 - “Cantaré a Dios con lo poco que me queda”\n282 - “Cantaré a Dios con lo poco que me queda”\n282 - “Cantaré a Dios con lo poco que me queda”\n282 - “Cantaré a Dios con lo poco que me queda”\n282 - “Cantaré a Dios con lo poco que me queda”\n(Salmos 146:2)\n(Salmos 146:2)\n(Salmos 146:2)\n(Salmos 146:2)\n(Salmos 146:2)\n1. Si la persona comienza a observarse y percibe que se\nencuentra lejos de Dios y llena de pecados, puede llegar a perder\nel ánimo y volverse totalmente incapaz de orar. Por ello est",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_1_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "49ca3ca18d59cd4615d1221e0fce9f7d94d270b8c6dc4e32b85b3f296ee24aea",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 167,
+          "language": "es",
+          "distance": 0.3722287714481354,
+          "score": 0.3722287714481354,
+          "quote": "necesario hablar con sinceridad y simpleza; hablar sobre todo\naquello de lo que uno carece en el servicio a Dios y que anhela\ny desea que Dios le permita lograr. Mediante esa práctica la\npersona se hace digna de alcanzar las cosas que desea y de\nlograr lo que deba lograr. Así traerá el bien a este mundo, hará\ndescender el favor y la bendición sobre todos los mundos\nespirituales y despertará muchas almas en el retorno a Dios.\nTodos deben acostumbrarse a conversar con Nuestro Creador,\ndiariamente. Esta práctica es extremadamente valiosa en verdad\ny mediante ella es posible llevar el mundo entero hacia el bien.\n17. Cuando la persona merece guardar la pureza sexual en los\ndos niveles mencionados más arriba, se hace digna de sentir\namor y anhelo por Dios; de esa manera conforma las letras de\nla Torá de manera positiva, del lado de la “vida”. Entonces las\nletras mismas de la Torá buscan ser dichas por la boca de esa\npersona para que ella pueda darles una buena forma y, de esa\nmanera, la persona se vue",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_1_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4ae68df0f6e5643f131e63419998dfc7ac5b5882382bd3d3a6fe8335794717e4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 243,
+          "language": "es",
+          "distance": 0.36830800771713257,
+          "score": 0.36830800771713257,
+          "quote": "determinado únicamente por las chispas de Divinidad\ncontenidas en cada cosa. A veces un objeto necesita dejar el\námbito de una persona y entrar en el ámbito de otra, para\nsubsecuentemente retornar al ámbito de la primera. Todo ello\ndepende de las chispas de Divinidad en ese objeto y de las partes\ndel alma, del espíritu y del alma superior (Nefesh, Rúaj y\nNeshamá) que posea cada persona en un momento\ndeterminado. Por lo tanto, no se debe nunca forzar una situación\nni ser demasiado insistentes en vender o comprar algo\nprecisamente cuando uno lo desea. Pues todo tiene su tiempo\napropiado de acuerdo a la manera en la cual las chispas de\nDivinidad están siendo recogidas del objeto y de acuerdo a la\nconstitución espiritual de la persona en ese momento. Al llevar\na cabo los negocios de manera fidedigna, la persona eleva y\nrectifica esas chispas y completa e ilumina su alma, su espíritu\ny su alma superior. Más aún, de esa manera se unifica el Tzadik\ncon la Congregación de Israel, correspondientes al “",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_1_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "6b1e76542dbc572c76f5cce449a5c8061490c96a9943635b52e03bcae89098b5",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 55,
+          "language": "es",
+          "distance": 0.36820340156555176,
+          "score": 0.36820340156555176,
+          "quote": "esos malos deseos, junto con los buenos deseos que posee la\npersona. Al acudir al sabio se cumplirá el versículo, “Él ha\nsaciado de bien un alma hambrienta” (ibid.) y “Él aplacará la sed\nde tu alma” (Isaías 58:11). Más aún, la juventud de la persona se\n“renovará como un águila” - en otras palabras, los días de su\njuventud, pasados en la oscuridad, estarán plenos de una nueva\nvitalidad y serán rectificados. Entonces  podrá ser llamado “ser\nhumano”. Además de todo esto, al ir a ver al sabio, el cuerpo de\nla persona se eleva y rejuvenece.\n9. Aquellas personas que acuden al sabio de la generación, cuyas\nalmas -es decir, sus buenos deseos- son recolectadas por el\nsabio y elevadas “como el embrión en el vientre materno”,\nrenovándolas para bien y con las que el sabio retorna\nsubsecuentemente hacia este mundo haciendo descender\nrevelaciones de Torá - esas almas corresponden a los “animales\nde la carroza” (Ezequiel 1) y sus cuerpos corresponden a los\n“ángeles-ruedas”. El",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_1_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "da20c71a0b0d9d2f943534da08c6ad2e317028b1861ca06b75ce22039d47e844",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 294,
+          "language": "es",
+          "distance": 0.36424577236175537,
+          "score": 0.36424577236175537,
+          "quote": "294                                                                                                                                                                     \n23 Nisán\n3. Cuando, gracias al Señor del Campo, la persona llega a\ncontemplar el objetivo final, no siente dolor ni sufrimiento por\nnada en el mundo. Y la verdad es que no hay mal alguno en el\nmundo - más bien, todo es enteramente bueno. El motivo por\nel cual la gente siente dolor al experimentar alguna clase de\nsufrimiento, Dios no lo permita, se debe solamente al hecho de\nque se ve privada de conocimiento (daat), al punto en que es\nincapaz de contemplar el objetivo final o el propósito de su\nsufrimiento, que es enteramente bueno. Pues si fuese capaz de\npercibir el objetivo final no sentiría dolor alguno en su\nsufrimiento, dado que la intención de Dios al darle ese\nsufrimiento es ciertamente buena - así sea para hacerle recordar\nque debe retornar a Él en arrepentimiento o para limpiarla de\nsus pecados y hacer que merezca la vida etern",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "bus_p407",
+          "page": 407,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "tivos ulteriores y con muchas impurezas- sin embargo, ¿cómo es posible que ese pequeño bien no contenga algún punto bueno? La persona deberá continuar buscando en ella hasta encontrar algún otro bien. Y aunque ese bien también esté mezclado con mucha impureza, en definitiva, también tendrá en sí algún punto bueno. Y así deberá continuar buscando, hasta encontrar más puntos buenos. De ese modo, al hallar algún mérito y bien en ella, se trasladará en verdad desde el lado de la culpa hacia el lado del mérito y podrá retornar a",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q6_punto_bueno_2",
+      "claim": "impureza y retorno",
+      "page_direct": [
+        {
+          "source_id": "imp_p407",
+          "page": 407,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "gún mérito y bien en ella, se trasladará en verdad desde el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lección 281-282 16 Tamuz 407",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q6_punto_bueno_2_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b1f585ebc437830191c38910f29dcbf8e91f15a7fe452209467873a0909fcda4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 146,
+          "language": "es",
+          "distance": 0.452127069234848,
+          "score": 0.452127069234848,
+          "quote": "encuentra en ese estado de impureza es culpable de transgredir\nla prohibición de la Torá, “No andarás murmurando entre tu\npueblo” (Levítico 19:16) - dado que es uno “que anda murmurando\ny revelando el secreto” (Proverbios 11:13) [i.e., los secretos de la\nTorá que no está capacitado para revelar]. Pero mediante la\nRectificación General, la persona tiene permiso para hablar y\npuede abrir la boca con palabras luminosas de Torá.\n9. La transgresión sexual produce epilepsia, Dios nos salve. Pero\nmediante la pureza sexual se cura.\n10. Mientras no se haya logrado la Rectificación General a la\nperfección se debe evitar beber vino - dado que con ello llegan\ntodos los pecados, Dios no lo permita. Beber vino también es\ndañino para el sustento y trae pobreza. Por el contrario, aquel\nque ha merecido la Rectificación General, eleva sus facultades\nmentales al beber vino y lleva así su propia Rectificación General\na un nivel aún más elevado.\n7 Tevet\n11. Aquel que no lleva a cabo sus negocios con fide",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_2_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "57e5c86febf177992f8340a818909d6da563d5b13459ed45c47f4e34cd0351d3",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 134,
+          "language": "es",
+          "distance": 0.42720597982406616,
+          "score": 0.42720597982406616,
+          "quote": "la impureza y elevarse de un nivel a otro.\n27 Kislev\n7. Al dar dinero para caridad, se rectifica todo el dinero de la\npersona, se revelan los colores superiores que contiene y se\nirradia su luz. De esa manera, todo nuestro dinero adquiere la\ncualidad de “Mía es la plata, Mío es el oro”, y se transforma en\n“ropas de salvación, un manto de caridad” (Isaías 61:10). Incluso el\ndinero que los gentiles toman de nosotros es considerado caridad,\ncomo dijeron nuestros Sabios, de bendita memoria, sobre el\nversículo, “Tus opresores son caridad” (ibid., 60:17; Bava Batra 9a).\nSin embargo, debes saber que la belleza y el esplendor (PeER)\nde los colores superiores sólo se revela cuando el dinero se\nencuentra en posesión de un judío, como en, “Israel, en quien\nYo me enorgullezco (etPaAR)” (Isaías 49:3). Consecuentemente,\ncuando brillan esos luminosos colores, todos desean contemplar\nese dinero. Éste es el motivo por el cual los gentiles ansían el\ndinero y el dinar (una pequeña moneda) del judío,",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_2_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "83e212fc759f943c49b9ace8df37f28ac529cdec2aa82dec7f720c28052cf685",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 47,
+          "language": "es",
+          "distance": 0.4211539626121521,
+          "score": 0.4211539626121521,
+          "quote": "a su boca, las palabras de Torá no sólo no le iluminan el camino\npara retornar hacia el bien, sino que ella misma se vuelve\nmaterial y oscura al salir de su boca, que Dios nos salve.\n5. El orgullo y la inmoralidad sexual van juntos. Así, cuando\nuno cuida la pureza sexual se salva del orgullo y se hace digno\nde la luz que le iluminará el camino hacia el arrepentimiento,\nhasta que llegue a alcanzar profundos niveles de comprensión\nde la Torá.\n27 Tishrei\n6. La amargura experimentada en la lucha por el sustento es\nproducto de un daño en la pureza sexual. Para la persona que\ncuida la pureza sexual -aunque esté ocupada con las treinta y\nnueve clases de tareas y el comercio- su trabajo se encuentra\nen el nivel de las treinta y nueve clases de tareas realizadas en\nla construcción del Tabernáculo y es como “un rocío de luces”\n(Isaías 26:19). [La palabra hebrea para “rocío”, tal, tiene el valor numérico\nde treinta y nueve. El rocío también connota la idea de sustento, dado que\nel sustento de los",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_2_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "5ea382d156135b945744a3caaeece0b78fb6758b133a053da4898af3216d868c",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 145,
+          "language": "es",
+          "distance": 0.42095914483070374,
+          "score": 0.42095914483070374,
+          "quote": "pecado individualmente, dado que son muy numerosos. De\nhecho, es imposible rectificarlos a todos, en la medida en que\ncada prohibición de la Torá contiene muchos puntos finos y\ndetalles y no es posible identificarlos y corregirlos a todos. Por\nlo tanto, es necesario efectuar una Rectificación General (Tikún\nHaKlalí) para todos esos pecados - esta rectificación es la pureza\nsexual. Mediante ello, se rectifican automáticamente todas las\nprohibiciones de la Torá transgredidas por la persona. La\nRectificación General puede corregir hasta los sitios angostos\ny estrechos, a los cuales ninguna otra rectificación podría llegar,\npues también envía la rectificación hacia esos lugares.\n6 Tevet\n6. Mediante la Rectificación General -es decir, la pureza sexual-\nse elevan las facultades mentales. Pues el grado de rectificación\ny de perfección de la mente está siempre en proporción directa\nal nivel de purificación sexual de la persona. Más aún, alcanzar\ny mantener la pureza sexual es el medio principal ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_2_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "cd1a36d0e30c6288e8c2df1ebba311735a754ef6ceddc5063ba16c6fb6106aec",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 391,
+          "language": "es",
+          "distance": 0.41293278336524963,
+          "score": 0.41293278336524963,
+          "quote": "4 Tamuz\n242\n242\n242\n242\n242\n1. Los pensamientos de lujuria son la fuente más poderosa de\nimpureza espiritual, correspondiente al nivel de impureza\ngenerada por un cadáver. La caridad rescata de esos\npensamientos. Sin embargo está prohibido que el hombre se\napoye en esa protección y converse en exceso con las mujeres,\nDios no lo permita. Pero en la medida en que necesite hablar\ncon ellas, ello no lo dañará, debido al mérito y al poder de su\ncaridad.\n2. Existen ciertos pensamientos de lujuria que derivan de una\nfuerza de impureza tan poderosa que es extremadamente difícil\nescapar de ellos. Aunque la persona cierre sus ojos, los\npensamientos seguirán allí. Sin embargo, la caridad rescata\ntambién de esos pensamientos.\n243\n243\n243\n243\n243\n1. Existe un Tzadik que es tan grande que el mundo no puede\ntolerar su santidad. Por ello se encuentra extremadamente\noculto y la gente no percibe en él ninguna santidad ni ascetismo\nfuera de lo común.\n244\n244\n244\n244\n244\n1. Aquel que deba andar entre los gentiles -e",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_2_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1bfa385da76450d2629a320656b51437f5697bef07bfe0f881269153ddccd419",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 280,
+          "language": "es",
+          "distance": 0.4120066165924072,
+          "score": 0.4120066165924072,
+          "quote": "280                                                                                                                                                                     \n  Lección 61                                                                                 13 Nisán\ndesecho superfluo- su corazón se vuelve repugnante como un\nexcusado, que es “donde las mujeres intercambian consejos”,\ncomo dijo Rav Ilish (Guitin 45a). Así, todos sus planes y decisiones\nson mera tontería y no puede resolver en su corazón cómo\nactuar.\n5. Todo aquel que se burle de los libros sagrados que siguen las\nenseñanzas de nuestra santa Torá también será castigado con\nexcremento hirviente. Tal persona será incapaz de derivar y de\nrecibir de sus estudios una instrucción práctica y correcta y\nestará constantemente indecisa. Pero si se arrepiente por\ncompleto de sus faltas, podrá rectificar todo lo anterior.\n6. Hay “aguas” que purifican de la suciedad a aquellos que están\nsumidos en la materia de desecho superflua,",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_2_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "f13f825547bd67f04152b97c50d135199760d27d501b3194163d1e0abef2f3eb",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 362,
+          "language": "es",
+          "distance": 0.41081738471984863,
+          "score": 0.41081738471984863,
+          "quote": "362                                                                                                                                                                     \n    Lección 169-171                                                                        13 Sivan\n169\n169\n169\n169\n169\n1. Mediante el hitbodedut -cuando la persona evalúa y juzga su\ncomportamiento, considerando si es correcto el estar actuando\ncomo lo hace y corrigiendo en concordancia sus acciones, para\nactuar de acuerdo con la ley y las ordenanzas de la Torá- se\nrectifican así los juicios estrictos. Consecuentemente, la persona\nalcanza la alegría y llega a bailar de puro regocijo.\n2. La tristeza y la melancolía son las causas fundamentales de\nla impurificación sexual y de la transgresión. Por el contrario,\ncuando la persona está alegre, Dios Mismo cuida su pureza\nsexual - es decir, Dios Mismo la ayuda a mantener su santidad.\n170\n170\n170\n170\n170\n1. Por medio del sufrimiento y de los problemas que aquejan a\nla persona se anulan su ma",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_2_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "304a9c3081014460ebd4dc85f0eda4a5b7a1f86b4865dab1979b94a3cfc48479",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 36,
+          "language": "es",
+          "distance": 0.41000014543533325,
+          "score": 0.41000014543533325,
+          "quote": "sedujo a Eva. Cuando uno acepta el consejo de esas personas\nmalvadas, Dios no lo permita, ellas le inyectan su repugnante\nveneno, lo que es análogo a una relación ilegítima y a un\nmatrimonio impuro. Este concepto se encuentra aludido en el\nversículo [donde Eva dice], “La serpiente me engañó (hiShiAni)”\n(Génesis 3:13) [en hebreo, las letras de la raíz de esta palabra, N,\nSh, A, forman vocablos que significan tanto “casarse” como\n“engañar”]. Tal relación [implicando dar y recibir un mal\nconsejo] es equivalente a un daño sexual y hace que la persona\nse mantenga alejada de la verdad, de la sagrada fe e incapaz de\nllegar a la Tierra de Israel. Siendo así, es necesario evitar\ncuidadosamente el consejo de tales personas, Dios no lo\npermita. En su lugar, uno debe unirse a los verdaderos Tzadikim\ny a aquellos que siguen sus senderos, dado que todos sus\nconsejos son la “simiente de una verdad inalterada” (Jeremías\n2:21). Esta relación implica la rectificación de la pureza sexual y\nmediant",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "imp_p407",
+          "page": 407,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "gún mérito y bien en ella, se trasladará en verdad desde el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lección 281-282 16 Tamuz 407",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q6_punto_bueno_3",
+      "claim": "vida, alegría y plegaria",
+      "page_direct": [
+        {
+          "source_id": "vid_p407",
+          "page": 407,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "e el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lección 281-282 16 Tamuz 407",
+          "score": 1.0
+        },
+        {
+          "source_id": "vid_p408",
+          "page": 408,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "se dé vida antes de orar buscando, procurando y encontrando los puntos buenos en ella; de este modo llegará a orar como debe. 2. Es necesario ser extremadamente cuidadosos y seguir el sendero descrito en esta lección, pues éste es un principio fundamental y un importante cimiento para todo aquel que desee acercarse a Dios y no malgastar su vida por completo, Dios no lo permita. Pues lo más importante es alejarse lo más posible de la depresión y de la melancolía - dado que la mayor parte de aquellos que están lejos de Dios lo",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q6_punto_bueno_3_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "28db46a3cbdb30cc99b21821af3c6c787b385acdc19516029444b99fc0822276",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 458,
+          "language": "es",
+          "distance": 0.5297791361808777,
+          "score": 0.5297791361808777,
+          "quote": "458                                                                                                                                                                     \n    Lección 11                                                                                     21 Av\npodemos ver a partir del versículo, “Todos los que se cobijan en Ti se\nregocijarán y cantarán por siempre... y aquellos que aman Tu Nombre se\nregocijarán con alegría” (Salmos 5:12), que la alegría en Dios está\níntimamente unida con el amor a Él, como se explica en los textos sagrados.\nMás aún, una gran unificación espiritual se lleva a cabo arriba\ncuando la persona une la alegría con la mente y con la\ncomprensión; entonces su mente se libera y alcanza una “mente\nasentada”. Éste es el concepto de la alegría de la mente (Shabat\n77b), que es algo muy grande en verdad. Dios nos permita ser\nsiempre dignos de ello. Amén, que así sea Su voluntad.*\n* Ver Taanit 22a, donde Elías le comentó a Rav Broka sobre dos hermanos\n",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_3_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8f52018b31a18ae9c2dfe006f18f28393eb071080ee48c8ccb3aa905bdc1ddd9",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 60,
+          "language": "es",
+          "distance": 0.5231022238731384,
+          "score": 0.5231022238731384,
+          "quote": "el temor sagrado, la persona merece tener “paz en sus huesos” y\norar. Por medio de la plegaria se hace digna [de una segunda clase\nde paz, que es] “la paz general” o la paz en todos los mundos. Uno\nllega a ese temor sagrado mediante la humildad y la Torá.\n7 Jeshvan\n12. El temor sagrado a Dios es el factor esencial en la plegaria.\nPues la plegaria sustituye a los sacrificios y está escrito con\nrespecto a los sacrificios, “Todo aquel que tenga un defecto no\npodrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la\npersona no tiene defecto alguno, ello corresponde al concepto\ndel temor sagrado, como está escrito, “Nada les falta a aquellos\nque Le temen” (Salmos 34:10). Mediante el temor sagrado, la\npersona merece plenitud y paz (Zohar II, 79) -es decir, tener “paz\nen los huesos”- y armonía entre su cuerpo y su alma. Entonces\npodrá acercarse al servicio puro e intachable a Dios y su plegaria\nestará completa. Mediante la plegaria, se hará digna de “la paz\ngeneral”, que es la pe",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_3_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "913559d71c532dc51f2f1eafeb71d588a7f8ee66127d09172c3593e1370a3868",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 217,
+          "language": "es",
+          "distance": 0.5101918578147888,
+          "score": 0.5101918578147888,
+          "quote": "llamados un diluvio (MaBuL), pues ellos inundan y confunden\n(MeBaLBeLin) las plegarias. El remedio para esos pensamientos\nes dar caridad para la Tierra de Israel, gracias a lo cual uno se\nincluye “en el aire de la Tierra de Israel”. Sobre esto enseñaron\nnuestros Sabios, de bendita memoria, “El Diluvio no cayó sobre\nla Tierra de Israel” (Zevajim 113a). Así, [la manera en la cual está\nestructurada gramaticalmente la frase, “Ellos establecieron las\nplegarias diarias en contraposición a las ofrendas diarias\nconstantes”, también puede ser comprendida como] “Las\nofrendas diarias constantes fueron establecidas; su rectificación\nse produce mediante la Tierra de Israel”. Y con ello se refina la\nmente de la persona -sus pensamientos- debido a que “El aire\nde la Tierra de Israel hace sabia a la persona” (Bava Batra 158b).\nÉsa misma idea [de que la caridad dada para la Tierra de Israel\nrectifica las plegarias] también encuentra expresión en el\nversículo, “Lo veré para recordar el pacto e",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_3_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "9e070135cf489079044cec3a4795da970976fd6d818fa12bc0d21f62bbd23039",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 465,
+          "language": "es",
+          "distance": 0.5030680298805237,
+          "score": 0.5030680298805237,
+          "quote": "Se requiere de una gran comprensión para saber cómo ser\nhumilde y no todos pueden ser humildes de la manera\napropiada. Sólo Moisés, nuestro maestro, pudo ser “más\nhumilde que cualquier otro hombre” (Números 12:3). Y nuestros\nSabios, de bendita memoria, llamaron a la clase impropia de\nhumildad, “adulación” (Sotá 41b).\n23\n23\n23\n23\n23\n1. Cuando se está contento se dejan de lado la melancolía y\nel sufrimiento. Sin embargo, un nivel más grande es perseguir\nla melancolía y transformarla en alegría. Es como alguien\nque llega a una fiesta y debido a la gran alegría y regocijo\nque allí reinan, transforma todas sus preocupaciones, sus\ntristezas y melancolías en alegría. La persona inteligente\ncomprenderá con facilidad cómo encontrar alguna\n“expansión” o favor en medio de todos sus problemas,\nsufrimientos y preocupaciones - y con ello podrá transformar\nsu melancolía en alegría. ¡Ésta es la verdadera perfección de\nla alegría!\n27 Av\n24\n24\n24\n24\n24\n1. Es una gran mitzvá estar siempre",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_3_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "615b13c1bf11c6236ca7fadc12785ca8c8262aea4ec0a12543cd90217c8a697f",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 114,
+          "language": "es",
+          "distance": 0.499365895986557,
+          "score": 0.499365895986557,
+          "quote": "de Dios” y “su plegaria” será literalmente la “plegaria de\nDios”.\nEn verdad existe la “Torá de Dios”, como afirmaron nuestros\nSabios, de bendita memoria, “Yo [dice Dios] la cumplí [i.e., la\nTorá] primero” (Ierushalmi, Bikurim 3:3). De la misma manera,\ntambién hay algo así como la “plegaria de Dios”, como\nafirmaron nuestros Sabios, de bendita memoria, “¿Cómo\nsabemos que el Santo, bendito sea, ora? Porque está escrito,\n‘Yo los haré alegrar en Mi casa de plegaria’” (Isaías 56:7; Berajot 6a).\nAl pasar de un nivel a otro, se alcanza la alegría.\n13 Kislev\n11. Sin embargo, la perfección de la alegría se logra mediante\nel temor a Dios, como está escrito, “Regocíjate con temor y\ntemblor” (Salmos 2:11). El temor a Dios está asociado, a su vez,\ncon la vergüenza, que hace que la persona sienta temor y\nembarazo de pecar delante de Dios, Dios no lo permita, como\nenseñaron nuestros Sabios, de bendita memoria (Nedarim 20a) -\npues la vergüenza es una cualidad realmente val",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_3_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "2d64dbe994153b4eb839c95370452ef19eb899de332b2b14c0ab3d52fb7d6896",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 408,
+          "language": "es",
+          "distance": 0.49594804644584656,
+          "score": 0.49594804644584656,
+          "quote": "408                                                                                                                                                                     \ny agradecerle a Dios. Pues, en la mayoría de los casos, cuando\nla persona se pone de pie para orar, su mente se ve invadida\npor todo lo malo que ha hecho y, como resultado de ello, se\ndesanima y es incapaz de orar con la vitalidad y el anhelo\napropiados. Por lo tanto, es necesario que se dé vida antes de\norar buscando, procurando y encontrando los puntos buenos\nen ella; de este modo llegará a orar como debe.\n2. Es necesario ser extremadamente cuidadosos y seguir el\nsendero descrito en esta lección, pues éste es un principio\nfundamental y un importante cimiento para todo aquel que\ndesee acercarse a Dios y no malgastar su vida por completo,\nDios no lo permita. Pues lo más importante es alejarse lo más\nposible de la depresión y de la melancolía - dado que la mayor\nparte de aquellos que están lejos de Dios lo están debido a la\nmelancol",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_3_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4ff353f2901b07ca8ec6fbb69f8880116bd651654f8c5c604475d786967b27a5",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 292,
+          "language": "es",
+          "distance": 0.4948616623878479,
+          "score": 0.4948616623878479,
+          "quote": "292                                                                                                                                                                     \ndel Dios Vivo” - y que es algo imposible de entender. Sólo\ndebemos fortalecernos en la fe.\n22 Nisán\n65 - “Boaz le dijo a Ruth”\n65 - “Boaz le dijo a Ruth”\n65 - “Boaz le dijo a Ruth”\n65 - “Boaz le dijo a Ruth”\n65 - “Boaz le dijo a Ruth”\n(Ruth 2:8)\n(Ruth 2:8)\n(Ruth 2:8)\n(Ruth 2:8)\n(Ruth 2:8)\n1. Existe un campo superior donde crecen todas las almas - y\nesas almas necesitan del Señor del Campo para lograr su\nrectificación. La persona que se compadezca de su alma, para\nque no quede desnuda y vagando fuera del campo, deberá orar\ny rogar mucho delante de Dios, toda su vida, para llegar a ser\ndigna de acercarse al Tzadik que es el Señor del Campo. Ese\nTzadik mira en cada persona y la lleva hacia el objetivo final,\nque es enteramente uno y enteramente bueno, como se explica\nmás adelante en los párrafos #2 y #3. Pues es impo",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_3_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "62d31a4b71d150ba19004b34c53a739bc48fb4f27b49945426d8dedc7581694d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 127,
+          "language": "es",
+          "distance": 0.49329614639282227,
+          "score": 0.49329614639282227,
+          "quote": "intelecto no puede aferrar esa luz, sin embargo, la mente corre\nconstantemente tras ella. Al llevar a cabo las mitzvot con alegría,\nla persona se hace digna de comprender esa luz a través de la\ncombinación de “perseguir y limitarse”, de modo que\nsimultáneamente “la alcanza y no la alcanza”. “De esa manera,\nse forman Nueve Cámaras que no son luces ni espíritus ni almas.\nNo hay nadie que pueda comprenderlas... no es posible\naferrarlas ni conocerlas” (Zohar I, 65a). ¡Feliz la persona digna de\nque su pensamiento corra detrás de esos conceptos, aunque el\nintelecto no pueda aprehenderlos debido a que no son\nalcanzables ni posibles de conocer! Esa percepción es el objetivo\nfinal de todo, tal cual está descrito en la enseñanza, “La\nculminación de todo conocimiento es saber que no sabemos\nnada”.\n2. Al cumplir con las mitzvot con alegría, la santidad alcanza su\nplenitud y se eleva la vitalidad y la santidad atrapada en las\nfuerzas de la impureza. Por lo tanto, al realizar una mitzvá con\nal",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "vid_p407",
+          "page": 407,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "e el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lección 281-282 16 Tamuz 407",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q6_punto_bueno_4",
+      "claim": "líder de plegaria",
+      "page_direct": [
+        {
+          "source_id": "líd_p408",
+          "page": 408,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "era, siempre podrá orar con entusiasmo, vitalidad y alegría, y retornar verdaderamente a Dios. 17 Tamuz 3. El líder de la plegaria (sheliaj tzibur), que ora al frente de la congregación, debe poseer la exaltada cualidad de ser capaz de Lección 282 17 Tamuz",
+          "score": 1.0
+        },
+        {
+          "source_id": "líd_p409",
+          "page": 409,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "recolectar todos los puntos buenos presentes en cada uno de los que allí están orando. Todos esos puntos buenos deberán estar entonces incluidos en él y con todo ese bien, se pondrá de pie y orará. ¡Afortunada la congregación que merece un líder así! 4. En cada generación existe un pastor del pueblo judío que es un aspecto de Moisés, el “pastor fiel”. Ese pastor construye un tabernáculo. A partir de ese tabernáculo l",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q6_punto_bueno_4_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e5a1e96c34219fcd1bbd9492b7292eafb59665a81f6b60c4951c13b4e25cfffa",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 216,
+          "language": "es",
+          "distance": 0.4793858528137207,
+          "score": 0.4793858528137207,
+          "quote": "los profetas Yo mostraré Mi Semejanza” (Hoshea 12:11). [“Por\nmano” alude al aplaudir y “los profetas” alude al habla - como\ncuando Dios le dijo a Moisés que “Aarón, tu hermano, será tu\nprofeta” (Éxodo 7:1), significando que Aarón hablaría en su lugar.\nADAMeH (“Yo mostraré Mi Semejanza”) puede también ser\nvocalizado, ADAMaH (tierra). Así, el versículo puede\ncomprenderse como significando que] mediante el aplaudir, el\nhabla o las palabras de las plegarias son dichas sobre un suelo\nsanto (cf. Rashi sobre Éxodo 7:1; Oraj Jaim 102 en Taz #3).\nAdicionalmente, al aplaudir durante la plegaria se eliminan del\nmundo el asesinato y la destrucción (ver más adelante, Lección #46),\ntal cual se refleja en el versículo, “Yo pondré paz en tu Tierra...\ny la espada no pasará por tu Tierra” (Levítico 26:6). Al aplaudir,\nlas plegarias de la persona se encuentran “en el aire de la Tierra\nde Israel”, ella habita en la Tierra de Israel y tiene un Dios (ver\nKetuvot 110b). Aplaudir durante ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_4_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8f52018b31a18ae9c2dfe006f18f28393eb071080ee48c8ccb3aa905bdc1ddd9",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 60,
+          "language": "es",
+          "distance": 0.47460949420928955,
+          "score": 0.47460949420928955,
+          "quote": "el temor sagrado, la persona merece tener “paz en sus huesos” y\norar. Por medio de la plegaria se hace digna [de una segunda clase\nde paz, que es] “la paz general” o la paz en todos los mundos. Uno\nllega a ese temor sagrado mediante la humildad y la Torá.\n7 Jeshvan\n12. El temor sagrado a Dios es el factor esencial en la plegaria.\nPues la plegaria sustituye a los sacrificios y está escrito con\nrespecto a los sacrificios, “Todo aquel que tenga un defecto no\npodrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la\npersona no tiene defecto alguno, ello corresponde al concepto\ndel temor sagrado, como está escrito, “Nada les falta a aquellos\nque Le temen” (Salmos 34:10). Mediante el temor sagrado, la\npersona merece plenitud y paz (Zohar II, 79) -es decir, tener “paz\nen los huesos”- y armonía entre su cuerpo y su alma. Entonces\npodrá acercarse al servicio puro e intachable a Dios y su plegaria\nestará completa. Mediante la plegaria, se hará digna de “la paz\ngeneral”, que es la pe",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_4_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4ff353f2901b07ca8ec6fbb69f8880116bd651654f8c5c604475d786967b27a5",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 292,
+          "language": "es",
+          "distance": 0.46334555745124817,
+          "score": 0.46334555745124817,
+          "quote": "292                                                                                                                                                                     \ndel Dios Vivo” - y que es algo imposible de entender. Sólo\ndebemos fortalecernos en la fe.\n22 Nisán\n65 - “Boaz le dijo a Ruth”\n65 - “Boaz le dijo a Ruth”\n65 - “Boaz le dijo a Ruth”\n65 - “Boaz le dijo a Ruth”\n65 - “Boaz le dijo a Ruth”\n(Ruth 2:8)\n(Ruth 2:8)\n(Ruth 2:8)\n(Ruth 2:8)\n(Ruth 2:8)\n1. Existe un campo superior donde crecen todas las almas - y\nesas almas necesitan del Señor del Campo para lograr su\nrectificación. La persona que se compadezca de su alma, para\nque no quede desnuda y vagando fuera del campo, deberá orar\ny rogar mucho delante de Dios, toda su vida, para llegar a ser\ndigna de acercarse al Tzadik que es el Señor del Campo. Ese\nTzadik mira en cada persona y la lleva hacia el objetivo final,\nque es enteramente uno y enteramente bueno, como se explica\nmás adelante en los párrafos #2 y #3. Pues es impo",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_4_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "69dfd05ecf996221dba3417489035ac2d79b0b46915dbb59f425f15fd8effd10",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 443,
+          "language": "es",
+          "distance": 0.45475924015045166,
+          "score": 0.45475924015045166,
+          "quote": "puede sobrellevar la pesada carga del pecado, ni siquiera por\nun día. Ahora bien, el verdadero líder es extremadamente\ncompasivo y se apiada del pueblo judío, de la nación santa y\nbusca extraerla de sus pecados. Pero, ¿cómo es que una persona\nllega a pecar en primer lugar? Ello sólo sucede debido que no\nsabe que hay un Dios que controla el mundo - dado que “La\npersona no peca a no ser que haya entrado en ella un espíritu\nde locura” (Sotá 3a). Por lo tanto, toda la compasión del verdadero\nlíder del pueblo judío se expresa en sus esfuerzos para\ninfundirles conocimiento y temor al Cielo, para extraerlos del\npecado, que Dios nos salve. El líder se aboca por lo tanto al\nestablecimiento del mundo, para que el mundo pueda estar\nhabitado por seres humanos - es decir, por seres con\nconocimiento (daat). Pues el conocimiento es la esencia de los\nseres humanos; y aquel que no tiene conocimiento no es parte\nde la civilización y no es llamado un ser humano en absoluto;\nmás bien, es meramente un animal co",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_4_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b14789f1d9efaf3bbdff8b90faab42ab9fc567f9d7b00725a5352eacc9920758",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 293,
+          "language": "es",
+          "distance": 0.4489542841911316,
+          "score": 0.4489542841911316,
+          "quote": "ramo, que une con el primero. Y así continúa recolectando y\njuntando muchos ramilletes de hermosas flores. De la misma\nmanera, la persona que ora va de letra en letra hasta reunir\nvarias letras y formar una palabra. Luego junta algunas otras\nletras formando una segunda palabra y más tarde une las dos\npalabras entre sí. Así continúa recogiendo hasta que completa\nuna bendición. Entonces continúa juntando más y más y sigue\ndesde Avot, la primera bendición de la plegaria de la Amidá\ncitando a los Patriarcas, hacia Guevurot, la segunda bendición,\nalabando el Poder de Dios, y desde Guevurot a Kedushot, la\ntercera bendición, alabando la Santidad de Dios - y así continúa\ncada vez más adelante. ¿Quién es capaz de alabar\nadecuadamente el gran esplendor de los racimos y ramilletes\nque la persona forma con las palabras de la plegaria?\nY cuando el habla que emana del alma deja la boca de la persona\ny es oída por sus oídos, cada una de las palabras le ruega al\nalma y no le permite proseguir, abrazándo",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_4_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8452f60ec200ae716ee3974452b721ec48a9b891d232fc6c343e58edaa2bc756",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 17,
+          "language": "es",
+          "distance": 0.44142699241638184,
+          "score": 0.44142699241638184,
+          "quote": "4 tishrei\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n2 - “Habla a los sacerdotes”\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n(Levítico 21:1)\n1. La plegaria es el arma principal del judío. Todas las batallas\nque la persona deba librar -así sean las batallas en contra de la\nmala inclinación u otras batallas en contra de aquellos que\ndesean obstaculizarla u oponérsele- todas se combaten\nmediante la plegaria. Más aún, toda la vitalidad de la persona\nproviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar\nla verdadera santidad deberá dedicarse con frecuencia e\nintensidad a la plegaria, a la súplica y a la conversación con Su\nHacedor. Ésta es el arma principal para ganar la guerra.\n2. Aquel que cuida la pureza sexual se vuelve digno de orar.\nPor el contrario, la persona que daña su pureza sexual se ve\nprivada de la capacidad de orar.\n3. Uno debe dar caridad antes de orar. Ello",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_4_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "c41b8774cc3c905c793499ab3920f3d0c5f5e3eb3c2a5bce4f85e1aba04ea11c",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 423,
+          "language": "es",
+          "distance": 0.4356345534324646,
+          "score": 0.4356345534324646,
+          "quote": "23 Tamuz\n14. Sin embargo, hay tres características negativas que impiden\nla plegaria. La primera es “No desprecies a ninguna persona”\n(Avot 4:3) (es decir, nunca se debe despreciar a otra persona, ni siquiera en\nel pensamiento) - y si no se es cuidadoso en esto se menoscaba la\nplegaria. La segunda característica es una fe dañada, es decir,\ncuando la persona tiene una fe imperfecta e incompleta, algo\nque está asociado con la idolatría. La tercera característica es el\ndaño sexual. Cuando uno merece liberarse de esas tres\ncaracterísticas negativas, alcanza la plegaria perfecta. Entonces,\nno requiere de ningún remedio, pues puede ser curado por todo\naquello que ingiera - incluso por el pan y el agua. Éste es el\nsignificado profundo de lo que se dice sobre Ezequías, que “unió\nla redención con la plegaria” -pues él redimió la plegaria de su\nexilio- y consecuentemente, ocultó el Libro de los Remedios\n(Berajot 10b).\n15. Cuando la persona merece redimir la plegaria de su exilio -\nque es el conc",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_4_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "681b419c3c683c61f507f2082c9efc02240272967aa57f83ea9565aa7870542b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 450,
+          "language": "es",
+          "distance": 0.42722341418266296,
+          "score": 0.42722341418266296,
+          "quote": "450                                                                                                                                                                     \ndeseo domina a la persona cuando ésta es poseída por un\nespíritu de locura. Por lo tanto, cada persona debe saber y\nrecordar que toda vez que los pensamientos de lujuria intenten\nabrumarla, Dios no lo permita, deberá huir de esa fatuidad de\nuna vez por todas y levantar las barreras de la mente ante ese\ndeseo - dado que la verdadera inteligencia protege contra el\ndeseo al igual que un muro. Comprende bien esto, pues es\nimposible explicarlo plenamente. Aun así, cada uno entenderá\npor sí mismo cómo huir y alejar la mente de ese espíritu de\nlocura y volcarse hacia el intelecto y la comprensión que sirven\ncomo una barrera ante el deseo.\n4. Las súplicas y los ruegos de compasión constituyen lo esencial\nde la plegaria; y la compasión depende principalmente del\nconocimiento y de la comprensión. Pero cuando el Otro Lado\nse alimenta de la ",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "líd_p408",
+          "page": 408,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "era, siempre podrá orar con entusiasmo, vitalidad y alegría, y retornar verdaderamente a Dios. 17 Tamuz 3. El líder de la plegaria (sheliaj tzibur), que ora al frente de la congregación, debe poseer la exaltada cualidad de ser capaz de Lección 282 17 Tamuz",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q6_punto_bueno_5",
+      "claim": "juicio favorable",
+      "page_direct": [
+        {
+          "source_id": "jui_p407",
+          "page": 407,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "e ese modo, al hallar algún mérito y bien en ella, se trasladará en verdad desde el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lección 281-282 16 Tamuz 407",
+          "score": 1.0
+        },
+        {
+          "source_id": "jui_p410",
+          "page": 410,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "37:10) - significando que ya no estará en su lugar original, porque se habrá elevado y habrá pasado hacia el lado del mérito. De la misma manera, la persona debe hacer lo mismo consigo misma, de modo que aunque vea que se encuentra muy lejos de Dios, también deberá buscar algo de bien en ella misma, en donde no es malvada y de esa manera se trasladará genuinamente hacia el lado del mérito.* * Nota del Editor: Ver Likutey Halajot, Hiljot Eruvey Tejumin 6, donde se explica que la redención de Egipto se logró principalmente me",
+          "score": 1.0
+        },
+        {
+          "source_id": "jui_p411",
+          "page": 411,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ñado en esta lección. Pues Mashíaj encontrará mérito en cada judío hasta que todos se eleven y pasen hacia el lado del mérito; y esto, a su vez, traerá la Redención. Que venga pronto y en nuestros días. Amén. 19 Tamuz 283 283 283 283 283 1. A veces puede haber conflictos entre dos Tzadikim, aunque ambos provengan de la misma raíz espiritual y aunque ambos hayan alcanzado niveles espirituales extremadamente elevados. La única razón del conflicto es que uno de ellos es el aspecto de “la bondad que fluye hacia afuera” -pues él",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q6_punto_bueno_5_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d93be460cf52a5d9ba83de3f41f06696661764b56b7256b27a165c6b654abcf0",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 247,
+          "language": "es",
+          "distance": 0.36060747504234314,
+          "score": 0.36060747504234314,
+          "quote": "19 Adar\n55 - “Dice Aba Shaúl”\n55 - “Dice Aba Shaúl”\n55 - “Dice Aba Shaúl”\n55 - “Dice Aba Shaúl”\n55 - “Dice Aba Shaúl”\n(Nidá \nNidá \nNidá \nNidá \nNidá 24b)\n24b)\n24b)\n24b)\n24b)\n1. Sólo es posible ver la caída de los malvados mediante el\nconcepto de la Tierra de Israel, como está escrito, “Siéntate a\nMi derecha hasta que Yo haga de tus enemigos un apoyo para\ntus pies” (Salmos 110:1). Pues la Tierra de Israel es llamada\n“derecha”, como dijeron nuestros Sabios, de bendita memoria\n(también esto está citado en el comentario de Rashi sobre el versículo, “Su\npadre lo llamó Benjamín” [Génesis 35:18]).\n2. Incluso ahora, durante el presente exilio, cuando la Tierra\nde Israel se encuentra bajo el control del Otro Lado y su santidad\nno puede ser revelada, sin embargo es posible revelar y evocar\nsu santidad mediante el resplandor del mérito de los Patriarcas,\ncomo está escrito, “Yo recordaré Mi pacto con Iaacov y también\nMi pacto con Itzjak y también Mi pacto con Abra",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_5_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "39820e286b4540351c1cefc23cd12b83d97b59cc0fdd149d43ac07a9dc733794",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 390,
+          "language": "es",
+          "distance": 0.34932973980903625,
+          "score": 0.34932973980903625,
+          "quote": "390                                                                                                                                                                     \n240\n240\n240\n240\n240\n1. Los influjos de abundancia sólo se canalizan a través del\nTzadik verdadero. Por lo tanto, aquel que esté lejos del Tzadik\nrecibirá su parte con gran dificultad. Hay gente que, aunque\nlogra hacer descender un cierto grado de riqueza, fallece como\nresultado de ello. Lo que es más, en algunos casos también esa\nriqueza se pierde y no queda siquiera para sus hijos. Todo ello\ncomo resultado de estar lejos del Tzadik.\nPero a veces vemos que alguien se acerca al Tzadik verdadero\ny subsecuentemente pierde su riqueza. Ello se debe a que\npercibe algo extremadamente valiosos - es decir, la luz del\nTzadik, que es más valiosa que el oro fino y las perlas. “Y aunque\nél no ve, su mazal ve” (Meguilá 3a) y es su mazal el que se despoja\nde la riqueza. ¡Cuánto más aún cuando la persona merece\ntambién sentir a nivel conscie",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_5_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "596f575c632d8dd542801b148433d1b0d814b3cbf161ab2ac88e4e2ffa3ced39",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 210,
+          "language": "es",
+          "distance": 0.3479975759983063,
+          "score": 0.3479975759983063,
+          "quote": "aspecto del juicio estricto, dado que la palabra EKeV (talón) tiene\nel mismo valor numérico que dos veces ELoHIM [el Nombre de\nDios asociado con el juicio severo]. Al colocar las manos sobre\nel dinero, el Tzadik hace descender hacia éste la raíz del juicio\nsevero, que es el Nombre de Dios de Cuarenta y dos Letras en\nBiná, para mitigar así el juicio estricto del dinero. Pues tres veces\nel valor numérico de IaD (mano) da cuarenta y dos, y la mano\ndel Tzadik encarna y hace descender el poder de las tres\n“manos”: la “mano grande”, la “mano poderosa” y la “mano\nlevantada”. El Nombre de Cuarenta y dos Letras está compuesto\npor siete Nombres separados, cada uno de los cuales consiste\nde seis letras, y el Tzadik, al tomar el dinero, se concentra en\nhacer que descienda hacia los “pilares” las vavim [que significan\ntanto “ganchos” como “seis”, haciendo referencia aquí a ese\nNombre de seis letras]. El resultado es entonces conocido como\n“Los ganchos de los pilares y sus molduras de",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_5_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3d8d9b177dd605abaab7a0a831313468e0c1ddc8c4710485122b471cc9ff4dd5",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 410,
+          "language": "es",
+          "distance": 0.34693974256515503,
+          "score": 0.34693974256515503,
+          "quote": "410                                                                                                                                                                     \n18 Tamuz\n5. Es necesario juzgar a toda persona de manera favorable.\nIncluso con respecto a aquel que es un completo malvado, Dios\nno lo permita, es necesario buscar hasta encontrar algún poco\nde bien en donde no es un malvado. Al encontrar ese poco de\nbien en él, en el cual no es un malvado y al juzgarlo\nfavorablemente, uno lo eleva y lo traslada hacia el lado del\nmérito. De esa manera, puede hacer que retorne a Dios en\narrepentimiento. Ésta es la interpretación del versículo, “Un\npoco más y el malvado no existirá” es decir, al encontrar en él\n“un poco” en donde no es malvado - “observarás su lugar y él\nya no estará” (Salmos 37:10) - significando que ya no estará en su\nlugar original, porque se habrá elevado y habrá pasado hacia el\nlado del mérito. De la misma manera, la persona debe hacer lo\nmismo consigo misma, de",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_5_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "25ad6b0887db56d8222a88da55d6c2b0aed790086c171a8ed814bbac25b74564",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 424,
+          "language": "es",
+          "distance": 0.33122923970222473,
+          "score": 0.33122923970222473,
+          "quote": "424                                                                                                                                                                     \nreciben su poder de ella quien es el Gran Acreedor. Por lo tanto,\nserá capaz entonces de reconocer a los líderes cuyo dominio\nproviene enteramente de la insolencia. Esto se debe a que su\ninsolencia caerá ante ella, dado que “La persona no se comporta\nde manera insolente ante su acreedor” (Bava Metzía 3a). Entonces\nsabrá quiénes son los verdaderos líderes bajo quienes se\nagrupan todas las almas judías, podrá unirse a ellos y quedar\nautomáticamente unida a todas las almas del pueblo judío.\nEscapará entonces de los celos de los ángeles y su dominio\nsobre ellos perdurará.\n24 Tamuz\n17. Cuando la persona se sienta y se pone a hablar sobre alguien,\nes como Rosh HaShaná, el Día del Juicio - dado que, en efecto,\nse sienta a juzgar a otra persona. Hay que ser muy cautelosos\nen esto y analizarse con mucho cuidado para ver si se es apt",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_5_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e61fc32fad7c18685b260ad8e2f43e99e55a9d6100ff2e348b712ff48673cd56",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 65,
+          "language": "es",
+          "distance": 0.32743677496910095,
+          "score": 0.32743677496910095,
+          "quote": "que KeRI y IaKaR tienen las mismas letras hebreas\n[ello indica una conexión conceptual].\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n15 - La Luz Oculta\n1. Aquel que desee experimentar el sabor de la “luz oculta” -es\ndecir, los misterios de la Torá que serán revelados en el futuro-\ndeberá elevar el aspecto del temor hasta su raíz. Esa elevación\nse logra mediante el “juicio” - es decir, mediante el hitbodedut\ny la conversación con el Creador, en la cual la persona derrama\nsu corazón delante de Dios y se evalúa y se juzga a sí misma en\ntodas sus actividades. De esta manera, se eliminan todos los\ntemores y se eleva al temor desde donde esté sumido.\nPues si la persona no se evalúa ni se juzga a sí misma, es\nentonces evaluada y juzgada desde arriba. Subsecuentemente,\nsu juicio se “inviste” en [toda clase de] cosas y todo en el mundo\nse vuelve un agente de Dios para ejecutar el juicio decretado\ncontra ella. Consecuentemente, esa persona recibe su castigo\ny su ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_5_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b6655edb3adfcce0b6e60c79ae8720fa913a7146913b597a9562d9cd7c8f9b5d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 349,
+          "language": "es",
+          "distance": 0.3208574652671814,
+          "score": 0.3208574652671814,
+          "quote": "apropiada, ello es como si estuviese visitando a su Rav en la\nfestividad, aunque el Rav pueda de hecho estar muy lejos de\nallí. Y a la inversa, si la persona está unida al Tzadik, podrá\nentonces sentir la santidad de las festividades. Con esto se eleva\nel Reinado de Santidad de entre las fuerzas de la impureza, se\nhace caer al Reinado del Mal y se anula el poder del reinado de\nlas naciones.\n5. En las festividades se debe retornar en arrepentimiento en\nmedio de la alegría, dado que en cada una de las festividades el\nmundo es sometido a juicio, como enseñaron nuestros Sabios,\nde bendita memoria, “En cuatro instancias el mundo es juzgado:\nen Pesaj... en Shavuot... en Rosh HaShaná... y en  Sukot” (Rosh\nHaShaná 16a). Por lo tanto, es necesario entonces retornar a Dios\nen arrepentimiento; con ello emerge el Reinado de Santidad de\nentre las fuerzas de la impureza y se acerca la Redención.\n4 Sivan\n136\n136\n136\n136\n136\n1. Es necesario juzgar a todos de manera favorable. Incluso\ndebemos buscar algún mérito",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q6_punto_bueno_5_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ef82ae3db4a7ed96f598b7f50bb4e3158ccaee7adc10eead2f6672bac03feac5",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 219,
+          "language": "es",
+          "distance": 0.3153246343135834,
+          "score": 0.3153246343135834,
+          "quote": "compone] de diez letras, y si se agregan cuatro unidades por\nlas cuatro letras originales, se obtiene catorce. Las catorce letras\nde ese Nombre corresponden a las catorce articulaciones de\ncada mano. Mediante esas tres “manos” -es decir, las tres\nrepeticiones del Nombre IHVH- se mitigan los tres ELoHIM, el\nNombre de Dios asociado con el juicio estricto. El Nombre\nELoHIM repetido tres veces corresponde a las palabras que\nemergen de la garganta (GaRON); la palabra GaRON es tres veces\nel valor numérico del Nombre ELoHIM.\n30 Shvat\n3. Al aplaudir durante la plegaria uno se salva también del olvido\ny merece una buena memoria. Pues al aplaudir, al entrechocar\nlas manos, la persona mitiga los juicios severos que están\nenraizados en el Nombre ELoHIM. Toda esta dinámica está\naludida en el versículo, “Mi alma está constantemente en mi\nmano” (Salmos 119:109). “Mi alma” alude a la plegaria y más\ngeneralmente al habla, como en, “Mi alma salió cuando él\nhabló” (Cantar de los Cantares 5:6). [Así, ",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "jui_p407",
+          "page": 407,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "e ese modo, al hallar algún mérito y bien en ella, se trasladará en verdad desde el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lección 281-282 16 Tamuz 407",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "diagnostics": {
+    "sql_hits": 10,
+    "fts_hits": 0,
+    "milvus_hits": 0,
+    "hybrid_hits": 0,
+    "vector_hits": 40,
+    "vector_backend_requested": "auto",
+    "vector_backend_used": "milvus",
+    "relation_qa_hits": 0,
+    "book_qa_hits": 24,
+    "page_direct_hits": 10,
+    "methods_unavailable": [
+      "FTS and Relation QA do not accept an Ingesta V2 run_id in current contracts"
+    ],
+    "semantic_error": null,
+    "backend_runtime_model": "openai_gpt-5.4-nano",
+    "embedding_model": "openai_text_embedding_3_small",
+    "ai_synthesis_used": false,
+    "fallback_used": true,
+    "ai_error": "ai_disabled",
+    "hybrid_collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1"
+  },
+  "answer": "Según las fuentes verificadas para: Explica el punto bueno, nekudá tová, y su importancia en el servicio a Dios.\n- buscar el bien: tivos ulteriores y con muchas impurezas- sin embargo, ¿cómo es posible que ese pequeño bien no contenga algún punto bueno? La persona deberá continuar buscando en ella hasta encontrar algún otro bien. Y aunque ese bien también esté mezclado [p. 407]\n- impureza y retorno: gún mérito y bien en ella, se trasladará en verdad desde el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lección 281-282 16 Tamuz 407 [p. 407]\n- vida, alegría y plegaria: e el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lección 281-282 16 Tamuz 407 [p. 407]\n- líder de plegaria: era, siempre podrá orar con entusiasmo, vitalidad y alegría, y retornar verdaderamente a Dios. 17 Tamuz 3. El líder de la plegaria (sheliaj tzibur), que ora al frente de la congregación, debe poseer la exaltada cualidad de ser capaz de Lecc [p. 408]\n- juicio favorable: e ese modo, al hallar algún mérito y bien en ella, se trasladará en verdad desde el lado de la culpa hacia el lado del mérito y podrá retornar a Dios. De esta manera la persona podrá darse vida y alegría, sea quien fuere y orar, cantar Lecc [p. 407]",
+  "final_status": "PASS"
+}

@@ -1,0 +1,780 @@
+{
+  "question_id": "q3_plegaria",
+  "question": "Describe el proceso para alcanzar una plegaria perfecta.",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_filter": "resolved by run",
+  "claims": [
+    {
+      "claim_id": "q3_plegaria_1",
+      "claim": "verdad",
+      "page_direct": [
+        {
+          "source_id": "ver_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ás aún, toda la vitalidad de la persona proviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar la verdadera santidad deberá dedicarse con frecuencia e intensidad a la plegaria, a la súplica y a la conversación con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar caridad",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p18",
+          "page": 18,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "a la persona y le hará brillar Su rostro, cumpliendo con su deseo y con su voluntad, mediante el poder de los verdaderos Tzadikim, acercándola a Él con una gran compasión y misericordia. 7. No es apropiado pensar en recibir una recompensa por cosa alguna, pues todas nuestras buenas acciones y todas las plegarias nos son dadas por Dios. Por lo tanto, aunque la persona merezca ocasionalmente alguna salvación y aunque logre acercarse un poco más a la santidad, etcétera, no debe pensar que lo ha merecido como resultado de su est",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p41",
+          "page": 41,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": ", aunque uno no pueda orar debido a la profunda oscuridad que lo rodea, debe asegurarse de decir las palabras con honestidad, por más bajo que sea su nivel. Por ejemplo, deberá decir con sinceridad, “¡Dios, sálvame!”. Y aunque no pueda decir algo así con el entusiasmo y la inspiración apropiada, deberá forzarse al menos a decir las palabras con sinceridad y simpleza, de acuerdo a quién es. Entonces merecerá ver las brechas en la oscuridad. Pues si uno desea sinceramente la verdad, no habrá oscuridad en el mundo que se la pue",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p60",
+          "page": 60,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "deben asegurarse de lograr esa “paz en los huesos” de la manera más completa - en otras palabras, debe haber verdadera paz entre el cuerpo y el alma. Entonces ciertamente no se querrá tener ninguna conexión con los asuntos de este mundo y sólo se aspirará a actuar en aras del alma. Más aún, todas las plegarias serán sólo en aras de conectar el alma [con Lección 14 7 Jeshvan 60",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p61",
+          "page": 61,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "físicas, la intención no será para el cuerpo, sino más bien para el “sustento” y la “salud” del alma. Pues en verdad, cuando uno se rectifica en el ámbito espiritual, automáticamente se rectifica en el ámbito físico y Dios le provee de todas sus necesidades, graciosamente y en abundancia. Pero la intención de la persona al orar sólo debe ser en aras del alma. 14. A veces vemos que hay Tzadikim que indudablemente han rectificado en ellos todo lo espiritual, pero que no reciben abundancia en el ámbito físico. Ese fenómeno se d",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p293",
+          "page": 293,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "la primera. Entonces la plegaria habrá alcanzado la perfección. Sólo es posible ser digno de ello mediante el verdadero Tzadik que es el Señor del Campo. Él es capaz de llevar a cada persona hacia el objetivo verdadero y final, que es enteramente bueno y enteramente uno. Con ello, la persona se vuelve digna de hacer que la plegaria sea una unidad, lo cual constituye su perfección. Lección 65 22 Nisán",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q3_plegaria_1_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1de4cb942c600d4d7b7fc67c25ab0ce6943f80fcbc7b19443f7fc9e47dc2bfab",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 221,
+          "language": "es",
+          "distance": 0.389692485332489,
+          "score": 0.389692485332489,
+          "quote": "de la verdad y de la vida. La verdad es la fuente esencial de la\nriqueza y de todo influjo de bien en el mundo, como se ha dicho,\n“La verdad se sostiene” (Shabat 104a); y “se sostiene” alude a la\nriqueza, como enseñaron nuestros Sabios, de bendita memoria,\n“‘La riqueza que está a sus pies’ (Deuteronomio 11:6) - esto hace\nreferencia al dinero de la persona que la sostiene sobre sus\npies” (Pesajim 119a).\nCuando, Dios no lo permita, la persona daña los tefilín [y las\ncualidades espirituales y morales asociadas con ellos], cae en\nla pobreza y en la humillación y su vida pende de la balanza,\nDios nos salve (Berajot 24a). De manera similar, cuando la persona\ndaña la verdad, Dios no lo quiera, también se vuelve víctima de\nla pobreza y de la humillación. Pero aquel que posee el atributo\nde la verdad disfruta de un sustento fácil y pleno.\n4. Por lo tanto, aquel que está sumido en la gula se encuentra\nlejos de la verdad. Pues ese deseo da como resultado el\nocultamiento del Rostro Divino, que ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_1_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "384e46c550ce311e8b835c2837ac11c8008b0bb471fd11270f84e9ddc1382450",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 236,
+          "language": "es",
+          "distance": 0.3883858025074005,
+          "score": 0.3883858025074005,
+          "quote": "7. El comer del Tzadik es algo muy valioso, dado que trae\ncontento a su alma santa. Consecuentemente, le está prohibido\nayunar. Pero la persona que necesite ayunar ciertamente deberá\nhacerlo, y en verdad es una mitzvá el que lo haga.\n8. La enfermedad caracterizada por la quebradura y el deterioro\nde los huesos, que Dios nos salve, se debe a la lujuria.\n11 Adar\n51 - “Dijo el rabí Akiba”\n51 - “Dijo el rabí Akiba”\n51 - “Dijo el rabí Akiba”\n51 - “Dijo el rabí Akiba”\n51 - “Dijo el rabí Akiba”\n(Jaguigá \nJaguigá \nJaguigá \nJaguigá \nJaguigá 14b)\n14b)\n14b)\n14b)\n14b)\n1. La mentira es dañina para los ojos, tanto en sentido físico\ncomo espiritual.\n2. Cuando la persona miente, su sangre se contamina. Esto da\norigen, a su vez, a la depresión y a las lágrimas que dañan los\nojos. Pues es imposible decir una mentira si no se ha\ncontaminado antes la sangre. Y es imposible decir la verdad si\nno se ha purificado primero la sangre.\n3. La mentira es el mal y la contaminación; y con la mentira ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_1_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d94cad50d6c3eaff729afa6cf681714de2a1c7e0262af264a327f45456319a11",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 120,
+          "language": "es",
+          "distance": 0.3786761462688446,
+          "score": 0.3786761462688446,
+          "quote": "la persona se sostiene sobre sus pies mediante la verdad como\nen, “La verdad se mantiene”.\nPor otro lado, “La mentira no se sostiene” (Shabat 104a), dado\nque la mentira es idolatría, que es lo mismo que la pasión por\nel dinero, como han dicho nuestros Sabios, de bendita memoria,\n“Cuando la persona no cumple con su palabra, es como si\nhubiese adorado a un ídolo” (Sanedrín 92a). Así, mediante la\nmentira -que es la pasión por el dinero- la persona carece de\nsubsistencia y de sustento, pues la idolatría es “otro dios, un\neunuco, que no da frutos” (Zohar II, 103). En otras palabras, [todos\nlos “frutos” cosechados por la gente que está hundida en la\npasión por el dinero no son más que] una mentira - ellas se\nimaginan que están obteniendo ganancias, pero esas no son\nganancias y corren detrás del dinero con enorme energía. Más\naún, incluso si poseen temporalmente dinero, en verdad, su\ndinero no es dinero en absoluto. Porque no disfrutan para nada\nde él, dado que no pueden satisface",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_1_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e2e0aa682faf1dbc8018bcd24809a5bfdf9c275fc9365dd72ad3bb0d5d723bdc",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 426,
+          "language": "es",
+          "distance": 0.3785821795463562,
+          "score": 0.3785821795463562,
+          "quote": "426                                                                                                                                                                     \n5. Cuando uno se encuentra sumido en algún problema, Dios\nno lo permita, la verdad se oculta. Por lo tanto, en ese momento,\nes necesario cuidarse con una medida extra de precaución para\nno caer en algún error o mentira debido a esos problemas, Dios\nno lo permita.\n6. Cuando la persona obliga a los estudiosos de Torá a\ninterrumpir sus estudios, enferma de los pies.\n7. Cuando la persona es digna de elevar plegarias y\nagradecimientos a Dios, en todo momento y por todo lo que le\nsuceda, especialmente cuando se ve liberada de algún problema,\nDios no lo permita -y también cuando se dedica regularmente\nal estudio de los Códigos de la Ley Judía- merece entonces las\ntres columnas de la verdad. Esto significa que será capaz de\norar con verdad, que es el factor esencial en la perfección de la\nplegaria. Será digna también de recibir enseñanzas",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_1_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "1f3e7da049b5365e110f6d2287ca01263cc7568f259e9b7e2338527f4544450c",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 237,
+          "language": "es",
+          "distance": 0.3738713264465332,
+          "score": 0.3738713264465332,
+          "quote": "que cuando sólo hay una entidad, todo el concepto del conflicto\ndeja de ser relevante. La verdad, que es una, ciertamente\npermanecerá por siempre, porque la verdad es la Unidad de\nDios. Sin embargo, todas las mentiras, que son la fuente del\nconflicto, perecerán; mientras que la verdad perdurará por\nsiempre. Pues “La verdad de Dios es eterna”.\n5. Si deseas quedar incluido en el uno, para que el “después de\nla creación” esté incluido en el “antes de la creación” y para\nque todo sea uno, bueno y santo, de la manera en que fue antes\nde la creación, deberás cuidarte de la mentira. Sólo debes decir\nla verdad y ser una persona absolutamente veraz y honesta. De\nesa manera estarás incluido en el uno, porque la verdad es una.\n12 Adar\n52 - “Aquel que permanece despierto durante la noche”\n52 - “Aquel que permanece despierto durante la noche”\n52 - “Aquel que permanece despierto durante la noche”\n52 - “Aquel que permanece despierto durante la noche”\n52 - “Aquel que permanece despie",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_1_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "51135252977f62e24db5d19e7b491661c2a17661e0468065d128cd2e9abd6c8d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 339,
+          "language": "es",
+          "distance": 0.3708098828792572,
+          "score": 0.3708098828792572,
+          "quote": "- dado que la verdad es la luz de Dios Mismo pues, “Las tinieblas\nnada encubren de Ti” (Salmos 139:12). Porque no hay impureza\nni fuerza del mal en el mundo que no contenga aberturas a\ntravés de las cuales se pueda salir - lo que sucede es que la\npersona no puede percibirlas debido a la gran oscuridad que\nallí reina. Pero mediante la verdad, Dios Mismo le irradia luz a\nla persona, e incluso en las profundidades de su caída llega a\nmerecer poder ver y encontrar una abertura de esperanza a\ntravés de la cual salir de la oscuridad hacia la luz y acercarse\nverdaderamente a Dios, en todo momento. Amén.\n26 Iyar\n113\n113\n113\n113\n113\n1. Dijo el santo Baal Shem Tov, “Antes de que se emita un decreto\nCelestial en contra de una persona se la consulta sobre el\nveredicto que le concierne. Si está de acuerdo con ello entonces\nla sentencia se ejecuta, Dios no lo permita. Es decir, primero se\nla consulta sobre una situación comparable a la suya, sobre la\ncual emite un veredicto y entonces el edicto se pasa en su\nc",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_1_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "ce6c7c9e008458705783c08d9da237ea3c8dc3553ad5ce88e87e39a4fc7df522",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 222,
+          "language": "es",
+          "distance": 0.37053632736206055,
+          "score": 0.37053632736206055,
+          "quote": "verdad. La verdad es la cualidad asociada con Iaacov y también\nestá identificada con los cielos -que son fuego y agua- con el\nespectro de varios colores y con los tefilín, que son llamados\n“vida” (Menajot 44a). Es por ello que la Tierra de Israel es llamada\n“la Tierra de los Vivos”, y es por ello también por lo cual se dice\nde la Tierra de Israel, “Los ojos de Dios están constantemente\nsobre ella” (Deuteronomio 11:12). Pues “Aquel que dice mentiras\nno permanecerá delante de Mis ojos” (Salmos 101:7); pero la Tierra\nde Israel corresponde al atributo de la verdad y por lo tanto,\n“Los ojos de Dios están constantemente sobre ella”. Es por eso\nque una de las alabanzas a la Tierra de Israel es “Allí no comerás\npan en la pobreza” (Deuteronomio 8:9). Es decir, no será debido a\nla pobreza que allí comerás sólo pan y nada más, sino debido a\nque habrás quebrado y anulado la pasión por la comida. Pues\nla persona que posee la cualidad de la verdad y que se ha\nseparado de la gula elig",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_1_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "290dc68f07fc6dc408a2cc0b50f612b165286ac6d49592a79456322344e0110b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 35,
+          "language": "es",
+          "distance": 0.35504236817359924,
+          "score": 0.35504236817359924,
+          "quote": "correcto creer en la sagrada fe en Dios, en los verdaderos\nTzadikim y en Su santa Torá - aunque ello sea imposible de\nentender de manera apropiada con nuestras mentes, apegadas\ncomo están a lo material. Pues si se contempla sinceramente\nla verdad, se comprenderá indudablemente que ésta es de hecho\nla verdad. Lo que sucede es que se trata de algo imposible de\ncomprender intelectualmente. Uno debe fortalecerse sólo con\nuna fe perfecta. ¡Comprende bien esto!).\n8. Sólo es posible llegar a la verdad acercándose a los verdaderos\nTzadikim y siguiendo sus consejos, sin desviarse de sus palabras\nni a la derecha ni a la izquierda. De esa manera la verdad\nquedará grabada en la persona y merecerá entonces la fe, la\nplegaria, la Tierra de Israel y los milagros. Mediante ello, llegará\nla Redención.\n9. El consejo que la persona recibe de los Tzadikim es análogo\na una relación marital y a una unión sagrada. Pues uno acoge\nlas “gotas” del intelecto del Tzadik junto con el consejo que\nrecibe de él. Ello imp",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "ver_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ás aún, toda la vitalidad de la persona proviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar la verdadera santidad deberá dedicarse con frecuencia e intensidad a la plegaria, a la súplica y a la conversación con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar caridad",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q3_plegaria_2",
+      "claim": "Tzadikim",
+      "page_direct": [
+        {
+          "source_id": "Tza_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ante el cuidado de la pureza sexual a la perfección. Por lo tanto, toda persona debe unir sus plegarias a los verdaderos Tzadikim de la generación, dado que ellos saben cómo elevar cada plegaria a su lugar apropiado. Más aún, esos Tzadikim edifican con esas palabras la estructura de la Presencia Divina, acelerando así la venida del Mashíaj. 5. El estudio de la Torá y la plegaria se fortalecen y se iluminan mutuamente, de modo que es necesario dedicarse a ambas actividades. Toda la Torá que la persona estudia con la intención",
+          "score": 1.0
+        },
+        {
+          "source_id": "Tza_p18",
+          "page": 18,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "a la persona y le hará brillar Su rostro, cumpliendo con su deseo y con su voluntad, mediante el poder de los verdaderos Tzadikim, acercándola a Él con una gran compasión y misericordia. 7. No es apropiado pensar en recibir una recompensa por cosa alguna, pues todas nuestras buenas acciones y todas las plegarias nos son dadas por Dios. Por lo tanto, aunque la persona merezca ocasionalmente alguna salvación y aunque logre acercarse un poco más a la santidad, etcétera, no debe pensar que lo ha merecido como resultado de su est",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q3_plegaria_2_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "6af8ef042396891dbb47da38382e94e3425d4349d0e43a4523ee2c47be86497a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 178,
+          "language": "es",
+          "distance": 0.5708260536193848,
+          "score": 0.5708260536193848,
+          "quote": "a los verdaderos Tzadikim y que converse con ellos sobre el\nservicio a Dios; de ellos recibirá fuerza, iluminación y un\ndespertar hacia Dios, hasta que finalmente retorne a Él.\n2. Éste es el significado de “Iosef es el gobernante” (Génesis 42:6).\n Iosef, el Tzadik, es la raíz de todas las almas judías, que son las\nramas que reciben de él. Además, Iosef está asociado con la\nvocal hebrea melapum, pues el Tzadik guarda la pureza sexual,\ncomo corresponde, y la pureza sexual es una carroza para la\nsefirá de Iesod. La forma del Tetragrámaton identificada con\nIesod está vocalizada con el MeLAPUM, que tiene las mismas\nletras que MaLÆ PUM (“una boca llena”), para indicar que la\nboca del Tzadik está “plena” de Divinidad y que sus palabras,\nsin lugar a dudas, están completas y “llenas”.\nConsecuentemente, el Tzadik es capaz de hacer descender un\ninflujo de abundancia para todo el pueblo judío, como está\nescrito, “Él los bendecirá como Él se los ha dicho” (Deuteronomio\n1:11). Espec",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_2_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d056af0345720b763635878bc7c102ae94e8cb180ee4f327c1672acfc38104fb",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 311,
+          "language": "es",
+          "distance": 0.5651307106018066,
+          "score": 0.5651307106018066,
+          "quote": "que el mundo pueda recibir de él, para abrir para ellos las\npuertas de la sabiduría y del conocimiento  y acercarlos a Dios.\n11. La mente del Tzadik corresponde a los Tefilín. La manera\nen la cual el Tzadik desciende a veces hacia lo trivial e inferior\npara que el mundo pueda recibir de él -que es el concepto de la\nmateria de desecho superflua en la mente- corresponde a las\ncorreas de los Tefilín.\n6 Iyar\n70 - “En el octavo día”\n70 - “En el octavo día”\n70 - “En el octavo día”\n70 - “En el octavo día”\n70 - “En el octavo día”\n(Levítico 9:1)\n(Levítico 9:1)\n(Levítico 9:1)\n(Levítico 9:1)\n(Levítico 9:1)\n1. Hay un Tzadik verdadero que es el cimiento del mundo, como\nestá escrito, “El Tzadik es el cimiento del mundo” (Proverbios\n10:25). Sólo hay un Tzadik así en todo el mundo, dado que él es\nel fundamento del mundo y de él emanan todas las cosas.\nIncluso todos los otros Tzadikim son sólo ramas de él, cada\nuno de acuerdo a quién es. Por ejemplo, uno puede ser como la\nrama de",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_2_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "73e95781b88c34ef0a9f9db0e459efaf1316cc6a6dc7f8197d60f3baf3c7f413",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 510,
+          "language": "es",
+          "distance": 0.5347594618797302,
+          "score": 0.5347594618797302,
+          "quote": "Tzadikim elevan y unen a todas las cosas con Dios mediante\nsus conversaciones casuales relativas a temas mundanos.\nPorque incluso las conversaciones mundanas de los verdaderos\nTzadikim son extremadamente valiosas, dado que es\nprecisamente a través de esas conversaciones que ellos\nconectan con Dios incluso a aquellos que están muy lejos.\nEntonces, “Se eliminan todos los juicios estrictos, se anulan\ntodos los malvados y se encuentra toda la luz y la perfección”\n(Zohar I, 206b).\n2. Al unirse a los verdaderos Tzadikim, la persona se hace digna\nde un completo arrepentimiento y de la expiación de sus\npecados, merece entonces mitigar y anular todos los juicios\nestrictos. Ello efectúa, a su vez, la unificación del Santo, bendito\nsea y de la Presencia Divina.\n29 Elul\n92\n92\n92\n92\n92\n1. Una poderosa rectificación para la emisión nocturna, Dios\nno lo permita, es recitar los diez Salmos en el mismo día en el\nque ello ocurra. Estos Salmos son: 16 - “Himno de David”; 32 -\n“Una canción de David, para ense",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_2_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "bfc30e4626f7c6dde01ff54f7202f6ea2ca8d5f05341759413de0ef6fb1d6190",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 49,
+          "language": "es",
+          "distance": 0.5281693339347839,
+          "score": 0.5281693339347839,
+          "quote": "28 Tishrei\n12 - “Un salmo de David”\n12 - “Un salmo de David”\n12 - “Un salmo de David”\n12 - “Un salmo de David”\n12 - “Un salmo de David”\n(Salmos 145:1)\n(Salmos 145:1)\n(Salmos 145:1)\n(Salmos 145:1)\n(Salmos 145:1)\n1. El motivo por el cual la mayor parte de los eruditos se opone\na los Tzadikim es porque estudian con gran arrogancia la Ley\nOral - es decir el Talmud y los códigos. Consecuentemente, la\nLey Oral [así llamada por que era transmitida de manera oral]\nles da a sus bocas el poder de “decir palabras arrogantes contra\nel justo, con soberbia y desprecio” (cf. Salmos 31:19). Sin embargo,\nlos verdaderos Tzadikim elevan y rectifican todas esas malvadas\npalabras y reordenan sus letras transformándolas en leyes. Es\nprecisamente mediante ello que los Tzadikim producen grandes\ndeleites que se elevan hacia Dios.\n2. Aquellos que estudian la Torá por motivos ulteriores -\nespecialmente la Ley Oral, es decir, el Talmud y los Códigos-\nson inducidos a hablar de manera arrogante en contra de lo",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_2_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "7bcba0058283941ebf299c758220cbf1c9eca637694f46144aa0a0130fabc8ef",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 156,
+          "language": "es",
+          "distance": 0.5240240693092346,
+          "score": 0.5240240693092346,
+          "quote": "Lección 30                                                                                 14 Tevet\na la letra Dalet [que tiene el valor numérico de cuatro] -\nrepresentando el Reinado de Santidad. En Pesaj, son las Cuatro\nCopas de Vino; en Shavuot, son “el orden de la Mishná”, con el\ncual se estudiaba originalmente la Torá, cuatro veces cada\npersona, como dijeron nuestros Sabios, de bendita memoria\n(Eruvin 54b); y en Sukot, son las Cuatro Especies. Todo esto\ncorresponde a los Cuatro Reinos de Santidad que deben ser\nelevados hacia la “Luz del Rostro” mediante la alegría de las\nmitzvot que se acumula en las Tres Festividades. Para lograrlo,\nuno debe retornar a Dios con sincero arrepentimiento en medio\nde la alegría de las Festividades, acelerando así la redención.\n11. La esencia de la revelación de la bondad se produce al recibir\nla amonestación y la instrucción moral por parte de los\nverdaderos Tzadikim, aunque su reproche a veces implique la\nhumillación. De esa manera uno merece llevar a c",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_2_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4337865e11b68238cd49f27190e5cc8dc16b9a4621f53a1bf751723473b16ef2",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 288,
+          "language": "es",
+          "distance": 0.5171278715133667,
+          "score": 0.5171278715133667,
+          "quote": "288                                                                                                                                                                     \n   Lección 63                                                                                 19 Nisán\nVemos así que la fe depende principalmente de la paz.\n14. Para merecer la paz es necesario estudiar los Códigos de la\nLey Judía.\n19 Nisán\n63 - El Significado Místico de las Meditaciones de la\n63 - El Significado Místico de las Meditaciones de la\n63 - El Significado Místico de las Meditaciones de la\n63 - El Significado Místico de las Meditaciones de la\n63 - El Significado Místico de las Meditaciones de la\nCircuncisión\nCircuncisión\nCircuncisión\nCircuncisión\nCircuncisión\n1. En el lenguaje del Targúm [i.e., el arameo], el brit u órgano\nde reproducción masculino es denominado AMaH,\ncorrespondiente a la medida lineal equivalente a seis palmos.\nEl brit incluye los seis palmos, tal cual está aludido en el\nversículo, “Los serafi",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_2_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "528226e918d28fd5e638aa2d42d7adb8db5351faefcc570c9c7ffea810cca8d3",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 460,
+          "language": "es",
+          "distance": 0.5103806853294373,
+          "score": 0.5103806853294373,
+          "quote": "460                                                                                                                                                                     \n    Lección 13-15                                                                                23 Av\n“¿Dónde está el lugar de Su gloria?”. Porque mediante ello, su\ndescenso se transformará en un gran ascenso. Ésta es la idea\nde “el descenso en aras del ascenso”, tratada en los libros\nsagrados. Estudia esta lección en el Likutey Moharán y\ncompréndela bien, porque es en verdad muy profunda.\n23 Av\n13\n13\n13\n13\n13\n1. Si la persona tiene enemigos y es perseguida por los demás,\npuede usar eso mismo para acercarse a Dios. Pues cada vez\nque la persigan podrá huir hacia Dios, dado que Dios está\npresente en todo lugar. Y cuanto más se le opongan, más cerca\nde Dios la llevarán.\n14\n14\n14\n14\n14\n1. Así como la persona puede tener enemigos abajo [en el\nmundo físico], también puede tener enemigos arriba.\n15\n15\n15\n15\n15\n1. Existen ve",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_2_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3a2556797a5eb7776a3d8c2cc9e45014e142f4eb510b6c79040bfde9d47c178e",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 78,
+          "language": "es",
+          "distance": 0.5099700689315796,
+          "score": 0.5099700689315796,
+          "quote": "rectificación para crear un “aire calmo y tranquilo” es la caridad\ndada a los verdaderos Tzadikim y a la gente pobre y recta.\n20 Jeshvan\n18 - “Contó el rabí Ionatán - un canasto”\n18 - “Contó el rabí Ionatán - un canasto”\n18 - “Contó el rabí Ionatán - un canasto”\n18 - “Contó el rabí Ionatán - un canasto”\n18 - “Contó el rabí Ionatán - un canasto”\n(Bava Batra \nBava Batra \nBava Batra \nBava Batra \nBava Batra 74)\n74)\n74)\n74)\n74)\n1. Todo tiene un objetivo o propósito que debe alcanzar. El\npropósito de algo tiene otro propósito superior [y el propósito\nsuperior tiene otro propósito, más elevado aún,] y así en más.\nSin embargo, lo más importante es el objetivo final, que es el\ndeleite del Mundo que Viene. Ése es el propósito final y el\nobjetivo de toda la creación y la razón de la existencia de todo\nen el mundo. Pero nadie es capaz de comprender o de aferrar\nese objetivo con su pensamiento, salvo los Tzadikim. Y cada\njudío, de acuerdo a la raíz que tenga en el al",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "Tza_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ante el cuidado de la pureza sexual a la perfección. Por lo tanto, toda persona debe unir sus plegarias a los verdaderos Tzadikim de la generación, dado que ellos saben cómo elevar cada plegaria a su lugar apropiado. Más aún, esos Tzadikim edifican con esas palabras la estructura de la Presencia Divina, acelerando así la venida del Mashíaj. 5. El estudio de la Torá y la plegaria se fortalecen y se iluminan mutuamente, de modo que es necesario dedicarse a ambas actividades. Toda la Torá que la persona estudia con la intención",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q3_plegaria_3",
+      "claim": "alegría",
+      "page_direct": [
+        {
+          "source_id": "ale_p25",
+          "page": 25,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "nvestir sus plegarias dentro de cuentos. Todo esto se logra realizando la mitzvá por la mitzvá misma, con una gran alegría. 3. La esencia de la alegría está en el corazón. Pero es imposible que el corazón se regocije a menos que la persona enderece su “corazón torcido” y logre un “corazón recto”. Entonces merecerá la alegría. El “corazón torcido” se corrige por medio del “trueno” - es decir, orando con energía y entusiasmo, con temor y amor a Dios y con una intensa concentración. 4. La alegría se logra orando con energía y e",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q3_plegaria_3_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "9e070135cf489079044cec3a4795da970976fd6d818fa12bc0d21f62bbd23039",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 465,
+          "language": "es",
+          "distance": 0.42470163106918335,
+          "score": 0.42470163106918335,
+          "quote": "Se requiere de una gran comprensión para saber cómo ser\nhumilde y no todos pueden ser humildes de la manera\napropiada. Sólo Moisés, nuestro maestro, pudo ser “más\nhumilde que cualquier otro hombre” (Números 12:3). Y nuestros\nSabios, de bendita memoria, llamaron a la clase impropia de\nhumildad, “adulación” (Sotá 41b).\n23\n23\n23\n23\n23\n1. Cuando se está contento se dejan de lado la melancolía y\nel sufrimiento. Sin embargo, un nivel más grande es perseguir\nla melancolía y transformarla en alegría. Es como alguien\nque llega a una fiesta y debido a la gran alegría y regocijo\nque allí reinan, transforma todas sus preocupaciones, sus\ntristezas y melancolías en alegría. La persona inteligente\ncomprenderá con facilidad cómo encontrar alguna\n“expansión” o favor en medio de todos sus problemas,\nsufrimientos y preocupaciones - y con ello podrá transformar\nsu melancolía en alegría. ¡Ésta es la verdadera perfección de\nla alegría!\n27 Av\n24\n24\n24\n24\n24\n1. Es una gran mitzvá estar siempre",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_3_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "95aad4c3bee6f8429d8d1360a509a13a3bfbd8f8a5f5f2d9dc16e680cdc0e49d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 457,
+          "language": "es",
+          "distance": 0.4206618070602417,
+          "score": 0.4206618070602417,
+          "quote": "Lección 10                                                                                     21 Av\n5. Es necesario fortalecerse, de la manera que fuera, para estar\nconstantemente alegres, buscando siempre algún punto bueno\nen nosotros mismos, para llegar así a la alegría, como se enseñó\nsobre el versículo, “Cantaré a Dios con lo poco que me queda”\n(Salmos 146:2; Likutey Moharán I, 282). Siempre será posible\nencontrar la alegría al menos en el hecho de haber merecido\nser judíos y porque Dios no nos hizo gentiles. Éste solo hecho\nes por cierto motivo de una maravillosa e ilimitada alegría pues\nno hay nada en ello que pueda desmoralizar a la persona,\nporque ello es obra de Dios Mismo. Pues el Malo siempre intenta\nencontrar alguna manera de enturbiar las cosas mediante la\ndepresión y la tristeza. Pero la alegría generada por el hecho de\nque Dios no nos hizo gentiles no puede tener tal mezcla, pues\nes obra de Dios Mismo. Pues no importa lo que suceda, el hecho\nmismo de haber merecido ser un j",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_3_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "28db46a3cbdb30cc99b21821af3c6c787b385acdc19516029444b99fc0822276",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 458,
+          "language": "es",
+          "distance": 0.3488302230834961,
+          "score": 0.3488302230834961,
+          "quote": "458                                                                                                                                                                     \n    Lección 11                                                                                     21 Av\npodemos ver a partir del versículo, “Todos los que se cobijan en Ti se\nregocijarán y cantarán por siempre... y aquellos que aman Tu Nombre se\nregocijarán con alegría” (Salmos 5:12), que la alegría en Dios está\níntimamente unida con el amor a Él, como se explica en los textos sagrados.\nMás aún, una gran unificación espiritual se lleva a cabo arriba\ncuando la persona une la alegría con la mente y con la\ncomprensión; entonces su mente se libera y alcanza una “mente\nasentada”. Éste es el concepto de la alegría de la mente (Shabat\n77b), que es algo muy grande en verdad. Dios nos permita ser\nsiempre dignos de ello. Amén, que así sea Su voluntad.*\n* Ver Taanit 22a, donde Elías le comentó a Rav Broka sobre dos hermanos\n",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_3_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "fcbd3c8d13c1062cd26839e9188317b27ed347a8992c1c165f7665aaecf55344",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 295,
+          "language": "es",
+          "distance": 0.34141403436660767,
+          "score": 0.34141403436660767,
+          "quote": "mente un destello de Divinidad, dulce y agradable, imposible\nde describir a otra persona. Ese destello genera una gran\nalegría. Mediante esa alegría se evocan nuevas ideas de Torá\ny nuevas percepciones mediante las cuales la persona puede\ndarse ánimo ante todo el sufrimiento y las tribulaciones que\ndeba enfrentar, Dios no lo permita; y merecerá experimentar\ny sentir en este mundo algo similar al Mundo que Viene.\n24 Nisán\n5. Durante el tiempo en que la persona se anula en el objetivo\nfinal, que es enteramente bueno, su sufrimiento desaparece\npor completo. Pero es imposible permanecer constantemente\nen ese estado de anulación, algo que debe ser llevado a cabo en\nla manera de “correr y retornar”. Ahora bien, después de su\nanulación, cuando el intelecto retorna a la mente conciente,\nlas facultades mentales no pueden recibir el nivel de\ncomprensión que el intelecto alcanzó durante su anulación,\ndado que esa comprensión se encuentra en el nivel del Infinito.\nDebido a ello, la mente vuelve a sentir ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_3_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "5300ce1e66274898b5042ff1d32e78af2950539d23c0a7c7c55bc33eca0dbbb5",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 152,
+          "language": "es",
+          "distance": 0.3368627727031708,
+          "score": 0.3368627727031708,
+          "quote": "año, en Pesaj, Shavuot y Sukot, todo varón se presentará\ndelante del Rostro de Dios” (Deuteronomio 16:16) - es decir, para\nque podamos recibir la “Luz del Rostro” que irradia durante\nlas Tres Festividades. Ésa es la luz que le da vitalidad al\nintelecto, mediante el cual la persona alcanza percepciones\nde Divinidad. A través de la alegría de las Tres Festividades,\nla persona se hace digna de la “Luz del Rostro”, dado que la\nalegría es la esencia de la “Luz del Rostro”, como está escrito\n“Un corazón alegre produce un buen rostro” (Proverbios 15:13).\n6. Cuantas más mitzvot realice la persona durante el año, mayor\nserá la alegría que experimentará en las Tres Festividades. Para\nexplicar: Las mitzvot son la principal fuente de alegría y ésta se\nsiente primordialmente en el corazón. En el grado en que la\npersona comprenda en su corazón la grandeza del Creador, Su\nUnidad y Su Unicidad, así será apropiado que se regocije por\ncada una de las mitzvot que ha realizado, por el hecho ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_3_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "62d31a4b71d150ba19004b34c53a739bc48fb4f27b49945426d8dedc7581694d",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 127,
+          "language": "es",
+          "distance": 0.33502572774887085,
+          "score": 0.33502572774887085,
+          "quote": "intelecto no puede aferrar esa luz, sin embargo, la mente corre\nconstantemente tras ella. Al llevar a cabo las mitzvot con alegría,\nla persona se hace digna de comprender esa luz a través de la\ncombinación de “perseguir y limitarse”, de modo que\nsimultáneamente “la alcanza y no la alcanza”. “De esa manera,\nse forman Nueve Cámaras que no son luces ni espíritus ni almas.\nNo hay nadie que pueda comprenderlas... no es posible\naferrarlas ni conocerlas” (Zohar I, 65a). ¡Feliz la persona digna de\nque su pensamiento corra detrás de esos conceptos, aunque el\nintelecto no pueda aprehenderlos debido a que no son\nalcanzables ni posibles de conocer! Esa percepción es el objetivo\nfinal de todo, tal cual está descrito en la enseñanza, “La\nculminación de todo conocimiento es saber que no sabemos\nnada”.\n2. Al cumplir con las mitzvot con alegría, la santidad alcanza su\nplenitud y se eleva la vitalidad y la santidad atrapada en las\nfuerzas de la impureza. Por lo tanto, al realizar una mitzvá con\nal",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_3_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "68d71b14e2e6fc9da8a325c86e0f5c051a4f985fd9ea57769ff609e40989337e",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 223,
+          "language": "es",
+          "distance": 0.3250703513622284,
+          "score": 0.3250703513622284,
+          "quote": "Todo ello está aludido en el versículo, “Comerán y estarán\nsatisfechos y alabarán el Nombre del Señor, Tu Dios, por los\nmilagros que Él ha hecho con ustedes; y Mi pueblo nunca será\navergonzado” (Joel 2:26). “Comerán y estarán satisfechos” hace\nreferencia al hecho de comer sólo para satisfacer las\nnecesidades físicas del momento y no más. Subsecuentemente,\n“Alabarán el Nombre del Señor, Tu Dios”, y serán socios del\nSanto, bendito sea, en la creación del cielo y de la tierra, como\nestá aludido en la frase “Él ha hecho con ustedes”. Entonces,\n“por los milagros”, pues ustedes serán capaces de hacer\nmilagros. Finalmente, “y Mi pueblo nunca será avergonzado”\nsignifica que, dado que ustedes poseen el atributo de la verdad,\nque es un espectro de varios colores y el lado de la santidad, no\nnecesitarán experimentar la humillación, que es ese mismo\nespectro de colores en su estado caído, como en la afirmación,\n“Cuando uno necesita de los demás su rostro se torna de muc",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_3_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "6bd170976d03e032cf062d24e552c07757a4c383977ce6f5827d2247883f1998",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 209,
+          "language": "es",
+          "distance": 0.32335829734802246,
+          "score": 0.32335829734802246,
+          "quote": "No hay satisfacción ni paz y las personas no se ayudan entre sí.\nPor el contrario, cada uno debe viajar de un lugar a otro para\nganarse el sustento.\n3. La idolatría también produce la falta de lluvias y “Si no hay\nharina, no hay Torá” (Avot 3:17). Entonces, debido a la\ninterrupción del estudio de la Torá, se produce el exilio y la\ngente deambula por los caminos, como está escrito, “Mi pueblo\nha sido exilado, pues carece de entendimiento” (Isaías 5:13).\n24 Shvat\n41 – El Baile\n41 – El Baile\n41 – El Baile\n41 – El Baile\n41 – El Baile\n1. Cuando se baila como una mitzvá - por ejemplo, cuando se\nbebe vino en Shabat o en una festividad, o en una boda o en\nalguna comida donde ello es una mitzvá; y se bebe con\nmoderación en aras del Cielo para despertar la alegría por el\nhecho de ser judío, que es regocijarse en Dios, “Quien nos eligió\nde entre todas las naciones”; y cuando se bebe de esa manera,\ny uno se inspira con alegría al punto en que esa alegría se\nextiende hacia los pies y",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "ale_p25",
+          "page": 25,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "nvestir sus plegarias dentro de cuentos. Todo esto se logra realizando la mitzvá por la mitzvá misma, con una gran alegría. 3. La esencia de la alegría está en el corazón. Pero es imposible que el corazón se regocije a menos que la persona enderece su “corazón torcido” y logre un “corazón recto”. Entonces merecerá la alegría. El “corazón torcido” se corrige por medio del “trueno” - es decir, orando con energía y entusiasmo, con temor y amor a Dios y con una intensa concentración. 4. La alegría se logra orando con energía y e",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q3_plegaria_4",
+      "claim": "obstáculos",
+      "page_direct": [
+        {
+          "source_id": "obs_p331",
+          "page": 331,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "s el deleite más grande de Dios. 95 95 95 95 95 1. Cuando los líderes y los guías de la generación se vuelven orgullosos, el Santo, bendito sea, les envía gente para que se les oponga y hable en contra de ellos, para que no se vuelvan autoritarios. 21 Iyar 96 96 96 96 96 1. Los pensamientos externos que le llegan a la persona cuando está orando -y particularmente al Tzadik que desea orar con un gran apego a Dios- derivan de las chispas de santidad que cayeron en el momento de la Rotura de los Recipientes. Esos pensamientos e",
+          "score": 1.0
+        },
+        {
+          "source_id": "obs_p332",
+          "page": 332,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "as, alcanzar el dominio y llevar a cabo lo que desee. Sin embargo, el mayor impedimento para ello es el falso orgullo y los pensamientos externos que se experimentan durante la oración. Pues hay personas que se sienten orgullosas de su linaje distinguido o del hecho de que han trabajado muy duro en el servicio al Creador; en tal caso, les es ciertamente imposible alcanzar el dominio mediante las plegarias. Por lo tanto, al ponerse de pie para orar, deberán prevalecer y quebrar todo eso y olvidar por completo su linaje distin",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q3_plegaria_4_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "92edcad83d5f651be541ea2c7a3b68c6947e1ff24b00e795ec7aef7f04a1887b",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 478,
+          "language": "es",
+          "distance": 0.4535778760910034,
+          "score": 0.4535778760910034,
+          "quote": "478                                                                                                                                                                     \n2. Aunque la persona tenga la impresión de que los obstáculos\nque la confrontan en su servicio a Dios son muy grandes y que\nle es imposible superarlos, en verdad, ello no es así. Porque no\nhay obstáculo que uno no pueda quebrar si realmente lo desea.\nMás aún, Dios sólo le envía a la persona obstáculos en la medida\nde su propia capacidad y fuerza para superarlos si realmente\nlo desea, como corresponde. Más todavía, si uno presta atención\nserá capaz de comprender que Dios está oculto incluso dentro\ndel obstáculo mismo, como se explica en otra instancia (ver\nLikutey Moharán I, 115). Por lo tanto, la verdad es que no existe tal\ncosa como un obstáculo, en absoluto, dado que todos los\nobstáculos no son más que una ilusión.\n7 Elul\n3. El obstáculo más grande es la mente de la persona - es decir,\ncuando su corazón está dividido ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_4_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "e2b4341473695e11db2274094f1dc9d51c0f99afb2f7c5d190fba2e88361892a",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 302,
+          "language": "es",
+          "distance": 0.3533637821674347,
+          "score": 0.3533637821674347,
+          "quote": "302                                                                                                                                                                     \nhacerla pasar de la potencia al acto, genera puntos vocales para\nlas letras del habla. Esto le permite emitir el habla en su forma\nperfecta, haciéndola surgir de la estrechez de la garganta, para\npoder llamar y clamar a Dios - y así llevar los actos sagrados\nque anhela realizar desde la potencia al acto. Esta idea está\nimplícita en la frase “puntos de plata (haKeSeF)” (Cantar de los\nCantares 1:11). Es decir, por medio del deseo y del anhelo\n(KiSuFim) de la persona se crean puntos vocales para las letras\ndel habla, para que ésta pueda surgir en toda su perfección y\npueda concretar en la acción el acto sagrado que desea cumplir.\n29 Nisán\n10. Todos los obstáculos que la persona enfrenta sólo existen\nen aras del deseo - es decir, para que sienta un mayor deseo de\nrealizar el acto sagrado que anhela llevar a cabo. Pues es parte\nde la ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_4_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8ae428498100cbc29db79f6aba25376652551eb3e5fb4c28782af6919b66db3f",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 479,
+          "language": "es",
+          "distance": 0.31409311294555664,
+          "score": 0.31409311294555664,
+          "quote": "superarlos y comenzar a orar, aun así su corazón continúa\ndividido y se ve abrumada por dudas y cuestionamientos sobre\nDios, que el Cielo no lo permita, ello constituye de hecho la\nbarrera más grande. Si la persona llega a tener cuestionamientos\ny dudas sobre Dios y sobre los verdaderos Tzadikim, el remedio\nserá clamar a Dios con una voz poderosa desde las\nprofundidades del corazón.\n4. Lo más importante es tener un corazón firme y fuerte;\nentonces no existirá barrera alguna. Ello es particularmente\nasí cuando se trata de los impedimentos materiales, tales como\nla falta de dinero o la oposición por parte de la esposa, de los\nhijos, de los suegros o de los propios padres - y ni hablar de\notra gente que intenta impedir con sus palabras y sus burlas\nacercarnos a la verdad. Ciertamente, todos esos impedimentos\nse anulan y desaparecen por completo para la persona que\nfortalece y fortifica su corazón en Dios.\n47\n47\n47\n47\n47\n1. Es muy peligroso enseñar Torá. Ello requiere de un gran\nesfuerzo y de una gr",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_4_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4578a9ba51a21339235596e820e91f4a78e552f7f43e35d81c2bc596b38f96b2",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 303,
+          "language": "es",
+          "distance": 0.311816930770874,
+          "score": 0.311816930770874,
+          "quote": "el deseo está determinado por el grado en el cual se ve\nobstaculizado. Por lo tanto, es apropiado que la persona\ncomprenda que cuando experimenta enormes barreras que le\nimpiden acercarse al Tzadik, al punto en que esos obstáculos\nse levantan por todos lados para impedírselo - de ello mismo,\npodrá inferir la tremenda consecuencia de aquello que desea,\ndado que es ése el motivo por el cual son tan grandes las\ndificultades. Pues todas las cosas pertenecientes a la santidad\nestán cargadas de impedimentos, particularmente cuando la\npersona desea viajar para estar con los verdaderos Tzadikim,\nsobre lo cual depende todo lo demás - entonces,\ninevitablemente, las barreras se harán mucho más poderosas.\nExiste también un “punto de verdad” en los Tzadikim [i.e., el\nverdadero Tzadik entre los otros Tzadikim]; y cuando la persona\ndesea acercarse a ese “punto”, de lo cual depende todo lo demás,\nlas barreras se yerguen entonces con mucha mayor intensidad.\nDe lo cual es posible inferir la tremenda consecue",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_4_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "b61526b5b4ff8d3ba180b0008523de7e3f55acaf8751555d048ce8b3a5cd6841",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 132,
+          "language": "es",
+          "distance": 0.3003561198711395,
+          "score": 0.3003561198711395,
+          "quote": "extremadamente bajo, Dios no lo permita -incluso si está\nliteralmente “en la tierra”- deberá ciertamente ascender de un\nnivel por vez, desde el lugar en el cual se encuentra. Y cada vez\nque pase de un nivel a otro, las fuerzas de la impureza volverán\na ponerse nuevamente en su contra en la forma de deseos\nfísicos, ilusiones, pensamientos negativos, confusiones e\nimpedimentos; y en cada ocasión, lo enfrentarán y no le\npermitirán pasar por la puerta de la santidad y ascender al\nsiguiente nivel.\nMuchas personas rectas y piadosas se equivocan a este respecto\ncuando ven que de pronto son asaltadas por deseos físicos, por\nconfusiones y obstáculos. Imaginan que han caído de su nivel,\ndado que anteriormente, esos deseos, confusiones y obstáculos\nno las habían atacado de una manera tan furiosa y, de alguna\nmanera, estaban inactivos. Por tanto, suponen que han debido\ncaer de su nivel, Dios no lo permita. Sin embargo, la verdad es\nque ello no es una caída en absoluto. Más bien, es el resultado\ndel hech",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_4_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "3c8c4e7f596f5b65d4dab54a94a485022345f8aba3efa85bdad98ba123f06642",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 481,
+          "language": "es",
+          "distance": 0.28784412145614624,
+          "score": 0.28784412145614624,
+          "quote": "9 Elul\n4. Es necesario ser extremadamente tenaces en el servicio a\nDios, para no abandonar el poco trabajo espiritual que uno haya\ncomenzado, no importa lo que suceda. Recuerda bien estas\npalabras, pues las necesitarás cuando comiences en el servicio\na Dios - dado que la persona debe inevitablemente experimentar\ninnumerable subidas y bajadas. Más aún, a veces también\nsucede que el Cielo a propósito hace caer a una persona de su\nservicio a Dios. Por todas esas razones es necesario fortalecerse\ncon una gran determinación y mantenerse firmes en el servicio\na Dios, en base a la pura obstinación - y en verdad ello requiere\nde una muy grande tenacidad.\n5. A veces uno se encuentra frente a la entrada misma de la\nsantidad pero retrocede debido que el Otro Lado y el Malo se\nhan levantado en su contra con un ataque grande y terrible\ncerrándole el paso, que Dios nos salve. Consecuentemente, la\npersona se desalienta y vuelve atrás, Dios no lo permita. Porque\nésa es la manera del Malo y del Otro Lado: cuando ven",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_4_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "60b4464c1b37fe8a985eddb519707129a1b055dee9dbbaa3d3e25eb2cc3df0e4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 140,
+          "language": "es",
+          "distance": 0.28694236278533936,
+          "score": 0.28694236278533936,
+          "quote": "y obstáculos - y hay personas que han caído debido a ello y que\nsubsecuentemente se alejaron, Dios nos salve. Pero aquel que\ndesee la verdad debe saber y creer que toda la amargura, el\nsufrimiento y los obstáculos que lo asaltan, todos le llegan con\nuna gran bondad. Pues, considerando sus muchos pecados, en\nverdad necesitaría sufrir una gran amargura para poder curarse;\ny dado que ello estaría más allá de su posibilidad de tolerarlo,\nperdería la esperanza, Dios no lo permita. Pero Dios Se\ncompadece de una persona así y no le envía más amarguras o\nsufrimientos de los que puede soportar. De ése modo, sea cual\nfuere la aflicción que la persona deba experimentar, ciertamente\npodrá tolerarla y ciertamente la resistirá. Pues Dios no le envía\na nadie amarguras y obstáculos que estén más allá de su\ncapacidad de tolerar y de superar, aunque, de acuerdo a sus\nacciones, merecería sufrir mucho más.\n2 Tevet\n8. La paz o la plenitud que la persona debe alcanzar en el ámbito\nfísico implica un equilibr",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_4_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "179eff157e1ee270c8f3627e406870ae926bc3f848a0c54793bb7ab7bb043021",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 109,
+          "language": "es",
+          "distance": 0.2714117467403412,
+          "score": 0.2714117467403412,
+          "quote": "los Siete Pastores presentes en cada generación (ver Bava Metzía,\nPerek 7, Rabí Jia u-Banav).\n4. Sólo mediante la audacia es posible llegar hasta esos pastores\ny acercarse a la santidad, como afirmaron nuestros Sabios, de\nbendita memoria, “Sé audaz como un leopardo” (Avot 5:20), y\ncomo está escrito, “Con audacia los guiaste a Tu santa morada”\n(Éxodo 15:13). Pues existen pastores del Otro Lado que también\nson famosos y que fuerzan a la gente a someterse a su control.\nEl poder de esos pastores proviene esencialmente de la osadía,\ndado que “La osadía es un reinado sin corona” (Sanedrín 105a).\nSon como perros en su osadía y están descritos en la frase, “El\nrostro de la generación es como el de un perro” (Sotá 49b) y en el\nversículo, “Los perros son osados... ellos son pastores” (Isaías\n56:11). Consecuentemente, la única manera de escapar al\ndominio de esos pastores y enfrentar su osadía malvada es\nmediante una gran audacia; siendo muy audaces frente a su\nosadía. De manera s",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "obs_p331",
+          "page": 331,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "s el deleite más grande de Dios. 95 95 95 95 95 1. Cuando los líderes y los guías de la generación se vuelven orgullosos, el Santo, bendito sea, les envía gente para que se les oponga y hable en contra de ellos, para que no se vuelvan autoritarios. 21 Iyar 96 96 96 96 96 1. Los pensamientos externos que le llegan a la persona cuando está orando -y particularmente al Tzadik que desea orar con un gran apego a Dios- derivan de las chispas de santidad que cayeron en el momento de la Rotura de los Recipientes. Esos pensamientos e",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q3_plegaria_5",
+      "claim": "paz",
+      "page_direct": [
+        {
+          "source_id": "paz_p60",
+          "page": 60,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "“paz en sus huesos” y orar. Por medio de la plegaria se hace digna [de una segunda clase de paz, que es] “la paz general” o la paz en todos los mundos. Uno llega a ese temor sagrado mediante la humildad y la Torá. 7 Jeshvan 12. El temor sagrado a Dios es el factor esencial en la plegaria. Pues la plegaria sustituye a los sacrificios y está escrito con respecto a los sacrificios, “Todo aquel que tenga un defecto no podrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la persona no tiene defecto alguno, ello corresponde",
+          "score": 1.0
+        },
+        {
+          "source_id": "paz_p61",
+          "page": 61,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "(II, 216) y en el Tikuney Zohar (#69). 15. Las palabras de las plegarias rectifican el conflicto y traen la “paz general” o la paz en todos los mundos. 16. La persona debe acostumbrarse a orar por todo aquello que le falte - así sea el sustento o los hijos o por alguien enfermo en su hogar, Dios no lo permita. En todos esos casos, la estrategia esencial debe ser solamente orarle a Dios. La persona debe tener fe en Dios, en que el Santo, bendito sea, es bueno para todo -así sea para curación, sustento o alguna otra cosa- y l",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "vector_evidence": [
+        {
+          "source_id": "vec_q3_plegaria_5_1",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "d9ddac703ae1b64217854c9769c2cc0b2015c20b149c3910ad7e8f76950d9051",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 323,
+          "language": "es",
+          "distance": 0.37634679675102234,
+          "score": 0.37634679675102234,
+          "quote": "más abajo de su nivel; y al menos, “que no salga de su lugar” -\nmás arriba de su nivel [es decir, que no piense que está más\narriba de lo que en verdad está].\n6. Cuando la persona es humilde y de espíritu modesto, nadie\npuede sacarla o empujarla fuera de su lugar - en otras palabras,\nquitarle el sustento, Dios no lo permita.\n15 Iyar\n80 - “Dios le da fuerza a Su pueblo”\n80 - “Dios le da fuerza a Su pueblo”\n80 - “Dios le da fuerza a Su pueblo”\n80 - “Dios le da fuerza a Su pueblo”\n80 - “Dios le da fuerza a Su pueblo”\n(Salmos 29:11)\n(Salmos 29:11)\n(Salmos 29:11)\n(Salmos 29:11)\n(Salmos 29:11)\n1. La esencia de la paz es la unión de dos opuestos. Por lo tanto,\nno te preocupes si ves a una persona que tiene opiniones\ndiametralmente opuestas a las tuyas y te parece absolutamente\nimposible que puedas llegar a estar en paz con ella. De manera\nsimilar, cuando veas a dos personas que son completamente\ndisímiles, no digas que es imposible hacer la paz entre ellas.\nPor el contrario, la perfec",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_5_2",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "60b4464c1b37fe8a985eddb519707129a1b055dee9dbbaa3d3e25eb2cc3df0e4",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 140,
+          "language": "es",
+          "distance": 0.3719865083694458,
+          "score": 0.3719865083694458,
+          "quote": "y obstáculos - y hay personas que han caído debido a ello y que\nsubsecuentemente se alejaron, Dios nos salve. Pero aquel que\ndesee la verdad debe saber y creer que toda la amargura, el\nsufrimiento y los obstáculos que lo asaltan, todos le llegan con\nuna gran bondad. Pues, considerando sus muchos pecados, en\nverdad necesitaría sufrir una gran amargura para poder curarse;\ny dado que ello estaría más allá de su posibilidad de tolerarlo,\nperdería la esperanza, Dios no lo permita. Pero Dios Se\ncompadece de una persona así y no le envía más amarguras o\nsufrimientos de los que puede soportar. De ése modo, sea cual\nfuere la aflicción que la persona deba experimentar, ciertamente\npodrá tolerarla y ciertamente la resistirá. Pues Dios no le envía\na nadie amarguras y obstáculos que estén más allá de su\ncapacidad de tolerar y de superar, aunque, de acuerdo a sus\nacciones, merecería sufrir mucho más.\n2 Tevet\n8. La paz o la plenitud que la persona debe alcanzar en el ámbito\nfísico implica un equilibr",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_5_3",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8f52018b31a18ae9c2dfe006f18f28393eb071080ee48c8ccb3aa905bdc1ddd9",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 60,
+          "language": "es",
+          "distance": 0.3671570122241974,
+          "score": 0.3671570122241974,
+          "quote": "el temor sagrado, la persona merece tener “paz en sus huesos” y\norar. Por medio de la plegaria se hace digna [de una segunda clase\nde paz, que es] “la paz general” o la paz en todos los mundos. Uno\nllega a ese temor sagrado mediante la humildad y la Torá.\n7 Jeshvan\n12. El temor sagrado a Dios es el factor esencial en la plegaria.\nPues la plegaria sustituye a los sacrificios y está escrito con\nrespecto a los sacrificios, “Todo aquel que tenga un defecto no\npodrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la\npersona no tiene defecto alguno, ello corresponde al concepto\ndel temor sagrado, como está escrito, “Nada les falta a aquellos\nque Le temen” (Salmos 34:10). Mediante el temor sagrado, la\npersona merece plenitud y paz (Zohar II, 79) -es decir, tener “paz\nen los huesos”- y armonía entre su cuerpo y su alma. Entonces\npodrá acercarse al servicio puro e intachable a Dios y su plegaria\nestará completa. Mediante la plegaria, se hará digna de “la paz\ngeneral”, que es la pe",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_5_4",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "4188ad59e026a5d0db3b61cbce62c83bb5147a3f549701f72b83a28f56d53156",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 389,
+          "language": "es",
+          "distance": 0.3634661138057709,
+          "score": 0.3634661138057709,
+          "quote": "famoso, tal persona merecerá en sus últimos años ser\nconsiderada como alguien de renombre. Aunque ello no sea\nrealmente el caso -aunque sea un simple judío piadoso-\nigualmente le darán esa recompensa por sus buenas acciones,\nantes de dejar este mundo. Y después...\n237\n237\n237\n237\n237\n1. La melodía y los instrumentos musicales sirven para conectar\ndos cosas separadas (ver más en la lección del Likutey Moharán). Ésta\nes una de las razones profundas por la cual se ejecutan\ninstrumentos musicales durante las bodas.\n238\n238\n238\n238\n238\n1. Cuando dos están en desacuerdo sobre algo y llega una tercera\npersona y concuerda con uno de ellos más que con el otro, ello\nse debe a que aquél con el cual está de acuerdo está más cerca\nde su raíz espiritual que el otro con el cual no concuerda.\n3 Tamuz\n239 - Sobre la Gran Importancia de la Paz\n239 - Sobre la Gran Importancia de la Paz\n239 - Sobre la Gran Importancia de la Paz\n239 - Sobre la Gran Importancia de la Paz\n239 - Sobre la Gran Importancia de la Paz\n",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_5_5",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "fd5dbca998fcf2b7bd7a22c261390d30268f6c7fc1dc38655ceb6438b2217f24",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 172,
+          "language": "es",
+          "distance": 0.3589826226234436,
+          "score": 0.3589826226234436,
+          "quote": "llamados “paz”. Mediante la Torá y los Tzadikim la persona\nmerece amar a Dios en todo lugar y situación, buena o mala, y\nse hace digna también de amar a sus congéneres. De esa manera\nla paz reinará entre todos los judíos y habrá amor entre ellos.\nPues cuando la persona alcanza un estado tal de paz interior,\nnada en el mundo la perturba. Más bien, sea lo que fuere que le\nsuceda -así sea algo bueno o, por el contrario, se trate de\nsufrimientos, tribulaciones, preocupaciones y pruebas, Dios no\nlo permita- siempre sabrá y tendrá fe en que todo es para su\nbeneficio eterno. Precisamente, será a través de esas cosas que\npodrá acercarse a Dios, si realmente lo desea. En concordancia\ncon ello, será paciente con las otras personas aunque le causen\nsufrimientos, y tratará de juzgarlas de manera favorable, para\nencontrar el bien en ellas y transformar la situación en algo\npositivo. Se dirá a sí misma que esa persona realmente no tiene\nlas malas intenciones que ella imagina; y de muchas otras\nmanera",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_5_6",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "c2b5bbee79d0ec53e2aad90e6c38540a7bb088e9ea27f2c96ab9ac94167f9562",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 62,
+          "language": "es",
+          "distance": 0.3522701561450958,
+          "score": 0.3522701561450958,
+          "quote": "8 Jeshvan\n17. Es muy bueno sólo apoyarse en Dios. Pues si uno no se\nafirma en Dios debe luchar y buscar toda clase de estratagemas.\nPor ejemplo, si necesita una cura, debe correr detrás de toda\nclase de hierbas medicinales. Pero a veces las hierbas que\nnecesita no pueden conseguirse en su país, mientras que\naquellas que sí son accesibles no son buenas para esa\nenfermedad en particular. Pero el Santo, bendito sea, es bueno\npara curar todas las aflicciones, como está escrito, “Dios es\nbueno para todo” (Salmos 145:9). Más aún, Dios es siempre\naccesible para cada persona, como está escrito, “Pues ¿qué gran\nnación tiene a Dios tan cerca como el Señor nuestro Dios cada\nvez que Lo llamamos?” (Deuteronomio 4:7; ver Devarim Rabah, Parashat\nVeEtjanan, sobre el versículo, “Pues qué gran nación” y Ierushalmi, Berajot 9).\nPor lo tanto, si alguien tiene a un enfermo [en su hogar], Dios\nno lo permita, debe apoyarse completamente en la plegaria y\nen las súplicas. Esto es algo que es muy fácil de ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_5_7",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "2293b75414281cf5662978bbeabd99e6b1ed3e224ab66da79a970492cb0eaf03",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 59,
+          "language": "es",
+          "distance": 0.3500596284866333,
+          "score": 0.3500596284866333,
+          "quote": "el honor de Dios se exaltará y ascenderá, elevando así el honor\nhacia su raíz. De esa manera merecerá el temor sagrado, que lo\nllevará a alcanzar la paz en su hogar o “la paz en los huesos”\n(como en Salmos 38:4). La paz en el hogar le permitirá orar y así\nmerecer la paz completa, que es la paz en todos los mundos.\n[Con respecto al concepto de “paz en los huesos”, ver el párrafo #12, más\nadelante. Esto describe la situación en la cual el cuerpo sigue los deseos del\nalma. Esta lección en el Likutey Moharán implica que en la medida en que\nla persona merece liberarse de sus “vestimentas sucias”, de la misma manera\nse hace digna de la santidad de la Tierra de Israel.]\n9. Incluso después de haber sido iluminados y despertados hacia\nel arrepentimiento, los pecadores siguen muy lejos de la\nsantidad y pueden experimentar grandes obstáculos. Esas\npersonas deben esforzarse tremendamente para liberarse de\nlas “vestimentas sucias” que han estado llevando (cf. Zacarías 3:4),\ndado que esas ",
+          "evidence_type": "thematic"
+        },
+        {
+          "source_id": "vec_q3_plegaria_5_8",
+          "source_method": "vector",
+          "vector_backend_used": "milvus",
+          "chunk_id": "8fb4231538317758db575686bc3266d9de8659b340fbdbbb0c707e3a58184dbc",
+          "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+          "page": 261,
+          "language": "es",
+          "distance": 0.34924444556236267,
+          "score": 0.34924444556236267,
+          "quote": "Mediante el deleite del Shabat, alcanza todo lo que hemos\ntratado más arriba.\n29 Adar\n7. Comer en Shabat es extremadamente valioso y santo. Ello se\ndebe a que la comida ingerida en Shabat se vuelve absoluta\nsantidad y Divinidad, sin mezcla de impureza alguna. El Otro\nLado no tiene parte en la comida del Shabat, en absoluto; ese\ncomer es totalmente santo. A través de la comida del Shabat se\nanula la cólera y “todas las fuerzas de ira huyen y se desvanecen\npor completo” (del pasaje del Zohar recitado durante el servicio de la\nnoche del viernes). Entonces todo es amor y paz.\n8. Ayunar durante la semana y comer durante el Shabat son\nsuficientes para anular y eliminar a los enemigos. Pero para\nque exista una abundancia de paz también es necesario dar\nmucha caridad. Es por ello que en un día de ayuno es necesario\ndar caridad, como dijeron nuestros Sabios, de bendita memoria,\n“La recompensa del ayuno es la caridad que uno da” (Berajot 6b).\nDe manera similar, uno debe dar caridad a la gente pobre para\ncu",
+          "evidence_type": "thematic"
+        }
+      ],
+      "vector_error": null,
+      "accepted": [
+        {
+          "source_id": "paz_p60",
+          "page": 60,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "“paz en sus huesos” y orar. Por medio de la plegaria se hace digna [de una segunda clase de paz, que es] “la paz general” o la paz en todos los mundos. Uno llega a ese temor sagrado mediante la humildad y la Torá. 7 Jeshvan 12. El temor sagrado a Dios es el factor esencial en la plegaria. Pues la plegaria sustituye a los sacrificios y está escrito con respecto a los sacrificios, “Todo aquel que tenga un defecto no podrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la persona no tiene defecto alguno, ello corresponde",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "diagnostics": {
+    "sql_hits": 13,
+    "fts_hits": 0,
+    "milvus_hits": 0,
+    "hybrid_hits": 0,
+    "vector_hits": 40,
+    "vector_backend_requested": "auto",
+    "vector_backend_used": "milvus",
+    "relation_qa_hits": 0,
+    "book_qa_hits": 32,
+    "page_direct_hits": 13,
+    "methods_unavailable": [
+      "FTS and Relation QA do not accept an Ingesta V2 run_id in current contracts"
+    ],
+    "semantic_error": null,
+    "backend_runtime_model": "openai_gpt-5.4-nano",
+    "embedding_model": "openai_text_embedding_3_small",
+    "ai_synthesis_used": false,
+    "fallback_used": true,
+    "ai_error": "ai_disabled",
+    "hybrid_collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1"
+  },
+  "answer": "Según las fuentes verificadas para: Describe el proceso para alcanzar una plegaria perfecta.\n- verdad: ás aún, toda la vitalidad de la persona proviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar la verdadera santidad deberá dedicarse con frecuencia e intensidad a la plegaria, a la súplica y a la conversación con Su Hacedor. És [p. 17]\n- Tzadikim: ante el cuidado de la pureza sexual a la perfección. Por lo tanto, toda persona debe unir sus plegarias a los verdaderos Tzadikim de la generación, dado que ellos saben cómo elevar cada plegaria a su lugar apropiado. Más aún, esos Tzadikim  [p. 17]\n- alegría: nvestir sus plegarias dentro de cuentos. Todo esto se logra realizando la mitzvá por la mitzvá misma, con una gran alegría. 3. La esencia de la alegría está en el corazón. Pero es imposible que el corazón se regocije a menos que la persona  [p. 25]\n- obstáculos: s el deleite más grande de Dios. 95 95 95 95 95 1. Cuando los líderes y los guías de la generación se vuelven orgullosos, el Santo, bendito sea, les envía gente para que se les oponga y hable en contra de ellos, para que no se vuelvan autor [p. 331]\n- paz: “paz en sus huesos” y orar. Por medio de la plegaria se hace digna [de una segunda clase de paz, que es] “la paz general” o la paz en todos los mundos. Uno llega a ese temor sagrado mediante la humildad y la Torá. 7 Jeshvan 12. El temor sag [p. 60]",
+  "final_status": "PASS"
+}

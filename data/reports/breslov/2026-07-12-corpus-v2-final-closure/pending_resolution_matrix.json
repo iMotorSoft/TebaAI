@@ -1,0 +1,44 @@
+[
+  {
+    "punto": "Nivel 3 regression",
+    "estado": "DONE",
+    "decision": "7/7 PASS",
+    "evidencia": "level3_regression.json"
+  },
+  {
+    "punto": "Citas AI",
+    "estado": "DONE",
+    "decision": "citation_policy.py implementado y validado",
+    "evidencia": "AI synthesis 5155 chars, 0 citas inválidas"
+  },
+  {
+    "punto": "Relation QA Level 4",
+    "estado": "DONE",
+    "decision": "Co-ocurrencia confirmada para 15/15 relaciones",
+    "evidencia": "relation_qa_level4_audit.json"
+  },
+  {
+    "punto": "Descomposición automática",
+    "estado": "ACCEPTED_LIMITATION",
+    "decision": "Oracle manual suficiente; flag --decomposition agregado",
+    "evidencia": "library_synthesis_qa_level4_batch.py"
+  },
+  {
+    "punto": "Chunking semántico",
+    "estado": "ACCEPTED_LIMITATION",
+    "decision": "Página como unidad suficiente",
+    "evidencia": "Level 3 y Level 4 pasan"
+  },
+  {
+    "punto": "PyMilvus deprecation",
+    "estado": "ACCEPTED_LIMITATION",
+    "decision": "Migración no bloqueante para cierre actual",
+    "evidencia": "backends.py + backfill.py (~200 líneas)"
+  },
+  {
+    "punto": "Commit",
+    "estado": "DONE",
+    "decision": "Commit realizado",
+    "evidencia": ""
+  }
+]

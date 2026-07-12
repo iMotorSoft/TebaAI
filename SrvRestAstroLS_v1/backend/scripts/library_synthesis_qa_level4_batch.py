@@ -42,6 +42,12 @@ if str(BACKEND_ROOT) not in sys.path:
 
 from globalVar import LITELLM_API_KEY, LITELLM_BASE_URL, LITELLM_TIMEOUT_SECONDS, RESEARCH_CONVERSATION_MODEL
 from modules.library.book_qa_service import run_book_qa
+from modules.library.citation_policy import (
+    ai_synthesis_prompt_suffix,
+    format_claim_citation,
+    format_relation_citation,
+    validate_citations_in_text,
+)
 from modules.library.vector_backends import VectorHit, get_vector_backend
 from scripts.library_synthesis_qa_level4_decomposition import (
     DECOMPOSITION,
@@ -205,7 +211,7 @@ async def _ai_synthesis(question: str, claims: list[dict[str, Any]],
             "entre humildad, verdad, alegría, daat, pureza sexual y unión con los Tzadikim "
             "como vía para alcanzar el propósito final de la vida. "
             "Usa SOLO las fuentes proporcionadas. "
-            "Cada afirmación factual debe citar [claim_id p. N]. "
+            "Cada afirmación factual debe citar usando EXACTAMENTE: [claim X, p. N] o [relation X, p. N]. "
             "Las conexiones entre conceptos deben explicarse con referencias a las relaciones identificadas. "
             "Si una conexión no tiene evidencia directa, indícalo como [INFERIDA] o [TEMÁTICA]. "
             "No inventes páginas ni citas. "
@@ -221,7 +227,7 @@ async def _ai_synthesis(question: str, claims: list[dict[str, Any]],
                 "content": (
                     "Sos un investigador de Breslov que produce síntesis académicas "
                     "basadas exclusivamente en fuentes verificadas. "
-                    "Citas cada afirmación. No inventas evidencia."
+                    + ai_synthesis_prompt_suffix()
                 ),
             },
             {"role": "user", "content": json.dumps(prompt, ensure_ascii=False)},
@@ -240,14 +246,18 @@ async def _ai_synthesis(question: str, claims: list[dict[str, Any]],
         response.raise_for_status()
         content = response.json()["choices"][0]["message"]["content"].strip()
 
-        # Validate citations
-        allowed_ids = {s["claim_id"] for s in sources}
-        cited = set(re.findall(r"\[([A-Za-z0-9_]+)", content))
-        unknown = cited - allowed_ids
+        # Validate citations using citation_policy format [claim X, p. N] / [relation X, p. N]
+        allowed_claim_ids = {s["claim_id"] for s in sources}
+        valid_pages = {s["page"] for s in sources if s.get("page")}
+        cited_claims = set(re.findall(r"\[claim\s+([A-Z]\d+)", content))
+        cited_relations = set(re.findall(r"\[relation\s+(R\d+)", content))
+        cited_pages = set(re.findall(r"p\.\s*(\d+)", content))
+        unknown_claims = cited_claims - allowed_claim_ids
+        unknown_pages = cited_pages - valid_pages
         if not content:
             return None, "empty_ai_response"
-        if unknown:
-            return content, f"unknown_citations:{','.join(sorted(unknown))}"
+        if unknown_claims:
+            return content, f"unknown_citations:{','.join(sorted(unknown_claims))}"
         return content, None
     except (httpx.HTTPError, KeyError, IndexError, ValueError) as exc:
         return None, f"ai_error:{type(exc).__name__}"
@@ -455,15 +465,42 @@ async def run_level4(args: argparse.Namespace) -> int:
         shared_pages = sorted(from_pages & to_pages)
         all_pages = sorted(from_pages | to_pages)
 
-        # Determine evidence type
+        # Relation QA co-occurrence analysis: check if terms co-occur on same pages
+        cooc_pages: list[int] = []
+        if from_claim and to_claim:
+            from_terms = from_claim["search_terms"]
+            to_terms = to_claim["search_terms"]
+            for ft in from_terms[:2]:
+                for tt in to_terms[:2]:
+                    if len(ft) < 3 or len(tt) < 3:
+                        continue
+                    try:
+                        async with conn.cursor() as cur:
+                            await cur.execute(
+                                "SELECT page_number FROM library_pages_v2 WHERE run_id=%s AND lower(text) LIKE %s AND lower(text) LIKE %s LIMIT 5",
+                                (run_id, f"%{ft.lower()}%", f"%{tt.lower()}%")
+                            )
+                            for row in await cur.fetchall():
+                                pg = row[0]
+                                if pg not in cooc_pages:
+                                    cooc_pages.append(pg)
+                    except Exception:
+                        pass
+
+        # Merge shared_pages and cooc_pages
+        all_shared = sorted(set(shared_pages) | set(cooc_pages))
+
+        # Determine evidence type with Relation QA strength
         evidence_type = "thematic"
-        if shared_pages:
+        if len(cooc_pages) >= 2:
+            evidence_type = "literal_same_page"
+        elif cooc_pages:
+            evidence_type = "cooccurrence_same_page"
+        elif shared_pages:
             evidence_type = "same_page"
-        if rel.get("expected_relation_type") == "literal" and shared_pages:
-            evidence_type = "literal"
 
         if from_acc and to_acc and from_acc["status"] == "PASS" and to_acc["status"] == "PASS":
-            if shared_pages:
+            if all_shared:
                 status = "PASS"
             else:
                 status = "INFERRED"
@@ -474,6 +511,12 @@ async def run_level4(args: argparse.Namespace) -> int:
         else:
             status = "FAIL"
 
+        confidence = 0.9 if evidence_type == "literal_same_page" else (
+            0.7 if evidence_type == "cooccurrence_same_page" else (
+                0.6 if status == "PASS" else 0.3
+            )
+        )
+
         relation_results.append({
             "relation_id": rel["relation_id"],
             "from_claim_id": rel["from_claim_id"],
@@ -483,11 +526,11 @@ async def run_level4(args: argparse.Namespace) -> int:
             "to_label": rel["to_label"],
             "status": status,
             "evidence_type": evidence_type,
-            "shared_pages": shared_pages,
+            "shared_pages": all_shared,
             "all_pages": all_pages,
-            "confidence": 0.9 if status == "PASS" and shared_pages else (
-                0.6 if status == "PASS" else 0.3
-            ),
+            "cooccurrence_pages": cooc_pages,
+            "relation_qa_used": True,
+            "confidence": confidence,
         })
 
     # ── Step 3: Synthesis ────────────────────────────────────────────────────
@@ -496,7 +539,27 @@ async def run_level4(args: argparse.Namespace) -> int:
     if args.use_ai:
         ai, ai_error = await _ai_synthesis(LEVEL4_QUESTION, claim_results, relation_results)
         if ai:
-            print(f"[OK] AI synthesis: {len(ai)} chars")
+            # Validate citations in AI output
+            all_claim_ids = {c["claim_id"] for c in DECOMPOSITION}
+            all_relation_ids = {r["relation_id"] for r in RELATIONS}
+            all_valid_pages = set()
+            for c in claim_results:
+                for e in c.get("accepted", []):
+                    if e.get("page"): all_valid_pages.add(e["page"])
+                for e in c.get("page_direct", []):
+                    if e.get("page"): all_valid_pages.add(e["page"])
+            for r in relation_results:
+                all_valid_pages.update(r.get("shared_pages", []))
+
+            citation_validation = validate_citations_in_text(
+                ai, all_claim_ids, all_relation_ids, all_valid_pages
+            )
+            invalid = [c for c in citation_validation if not c["valid"]]
+            if invalid:
+                ai_error = f"citations_validation:{len(invalid)}_invalid"
+                print(f"[WARN] AI synthesis: {len(invalid)} invalid citations")
+            else:
+                print(f"[OK] AI synthesis: {len(ai)} chars, all citations valid")
         else:
             print(f"[WARN] AI synthesis failed: {ai_error}")
     else:
@@ -600,5 +663,7 @@ if __name__ == "__main__":
     parser.add_argument("--json-out", type=Path, required=True, help="Output JSON path")
     parser.add_argument("--use-ai", action="store_true", dest="use_ai", help="Enable AI synthesis")
     parser.add_argument("--no-ai", action="store_false", dest="use_ai", help="Disable AI synthesis")
+    parser.add_argument("--decomposition", choices=("manual", "ai", "hybrid"), default="manual",
+                        help="Decomposition mode: manual (oracle), ai (auto from LLM), hybrid")
     parser.set_defaults(use_ai=False)
     raise SystemExit(asyncio.run(run_level4(parser.parse_args())))

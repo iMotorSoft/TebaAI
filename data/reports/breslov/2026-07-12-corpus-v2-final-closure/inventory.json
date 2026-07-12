@@ -1,0 +1,18 @@
+{
+  "total_pages": 512,
+  "pages_with_text": 506,
+  "pages_empty": 6,
+  "pgvector_rows": 506,
+  "milvus_entities": 506,
+  "scope": "breslov_primary",
+  "collection_code": "breslov_primary",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "27f175ea-bc80-4161-b1fa-bf5c8b8a3f25",
+  "embedding_model": "openai_text_embedding_3_small",
+  "embedding_dimension": 1536,
+  "level3_pass": true,
+  "level3_count": 7,
+  "level4_claims_pass": 29,
+  "level4_relations_pass": 15,
+  "ai_synthesis_citations_valid": true
+}

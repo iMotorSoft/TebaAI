@@ -1,0 +1,5 @@
+2026-07-13
+uv run pytest tests/test_investigative_model.py tests/test_canonical_document_model_inventory.py tests/test_corpus_v2_integrity.py tests/test_citation_format.py tests/test_relation_qa_level4_integration.py tests/test_synthesis_qa_level4_claims.py tests/test_synthesis_qa_level4_relations.py tests/test_vector_backend_contract.py tests/test_synthesis_qa_v1_vector_integration.py tests/test_library_synthesis_qa_v1_batch.py
+70 passed in 6.64s
+GET http://127.0.0.1:7008/health -> 200
+uv run pytest -q -> 746 passed, 93 warnings in 28.20s

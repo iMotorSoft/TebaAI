@@ -1,0 +1,1 @@
+Las 12 preguntas se resuelven contra nodos con página, idioma, rol y autoridad. Conceptos no localizados literalmente quedan explícitamente semánticos/no encontrados; no se inventan citas. Hebreo↔español usa 16 relaciones fuertes; notas se etiquetan secundarias.

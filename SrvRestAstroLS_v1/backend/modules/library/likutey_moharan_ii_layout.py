@@ -43,7 +43,7 @@ def classify_page(blocks: list[tuple[float, float, float, float, str]], pdf_page
         hebrew = hebrew_chars(body_text)
         if hebrew >= 100:
             pieces.append(LayoutPiece("hebrew_main_text", body_text, 0.98))
-        elif hebrew == 0 and pdf_page >= 13:
+        elif hebrew < 100 and pdf_page >= 13:
             pieces.append(LayoutPiece("spanish_translation", body_text, 0.95))
         else:
             pieces.append(LayoutPiece("unknown", body_text, 0.30))

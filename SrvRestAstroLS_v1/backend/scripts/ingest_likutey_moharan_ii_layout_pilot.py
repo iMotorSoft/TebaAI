@@ -68,5 +68,5 @@ async def ingest(apply: bool, pages: list[int]) -> dict[str, object]:
         await conn.commit(); return result
 
 def main():
- p=argparse.ArgumentParser(); p.add_argument('--apply',action='store_true'); p.add_argument('--pages',default='12,13,14,15,16,17'); a=p.parse_args(); print(json.dumps(asyncio.run(ingest(a.apply,[int(v) for v in a.pages.split(',')])),ensure_ascii=False,indent=2))
+ p=argparse.ArgumentParser(); p.add_argument('--apply',action='store_true'); p.add_argument('--pages',default='12-43'); a=p.parse_args(); raw=a.pages; pages=list(range(*[int(v) for v in raw.split('-')])) if '-' in raw else [int(v) for v in raw.split(',')]; pages = pages + ([int(raw.split('-')[1])] if '-' in raw else []); print(json.dumps(asyncio.run(ingest(a.apply,pages)),ensure_ascii=False,indent=2))
 if __name__=='__main__': main()

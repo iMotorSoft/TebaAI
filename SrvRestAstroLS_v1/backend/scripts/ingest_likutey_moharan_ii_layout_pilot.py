@@ -36,7 +36,12 @@ async def ingest(apply: bool, pages: list[int]) -> dict[str, object]:
         work=(await cur.fetchone())['content_unit_id']; section_units={}; primaries={}
         for pdf_page in pages:
           page=doc[pdf_page-1]; blocks=[(b[0],b[1],b[2],b[3],b[4]) for b in page.get_text('blocks')]; pieces=classify_page(blocks,pdf_page)
-          page_text=page.get_text('text'); ref=lesson_ref(page_text) or (7,1); key=f'LMII {ref[0]}:{ref[1]}'
+          page_text=page.get_text('text'); ref=lesson_ref(page_text)
+          # Structural detection is enrichment only.  Never contaminate an
+          # unknown page by assigning the historic LMII 7:1 fallback.
+          if ref is None:
+            raise RuntimeError(f'UNKNOWN_STRUCTURAL_SCOPE: PDF page {pdf_page}; use the page-first ingester')
+          key=f'LMII {ref[0]}:{ref[1]}'
           if key not in section_units:
             await cur.execute("""INSERT INTO library_content_units_v2 (parent_content_unit_id,document_id,unit_type,canonical_ref,title,order_index,language_original,is_breslov_primary_source,is_direct_rebbe_nachman,metadata_json)
               VALUES (%s,%s,'lesson',%s,%s,%s,'he',true,true,jsonb_build_object('profile',%s::text)) ON CONFLICT (document_id,canonical_ref) WHERE canonical_ref IS NOT NULL DO UPDATE SET title=EXCLUDED.title RETURNING content_unit_id""",(work,document_id,f'LMII {ref[0]}',f'Lección {ref[0]}',ref[0],PROFILE_NAME)); lesson=(await cur.fetchone())['content_unit_id']

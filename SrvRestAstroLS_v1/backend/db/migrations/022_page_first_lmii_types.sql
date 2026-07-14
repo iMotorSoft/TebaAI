@@ -1,0 +1,2 @@
+ALTER TABLE library_content_nodes_v2 DROP CONSTRAINT IF EXISTS library_content_nodes_v2_content_type_check;
+ALTER TABLE library_content_nodes_v2 ADD CONSTRAINT library_content_nodes_v2_content_type_check CHECK (content_type IN ('hebrew_main_text','spanish_main_text','english_main_text','spanish_translation','english_translation','numbered_footnote','citable_page_text','unclassified_page_material','blank','page_header','unknown_textual_satellite','citable_unlinked_note','probable_footnote_continuation','marginal_rabbinic_commentary','source_commentary','rashbam_commentary'));

@@ -1,0 +1,11 @@
+{
+  "all_satellites_recoverable": true,
+  "filters": [
+    "link_status",
+    "review_status",
+    "physical_page",
+    "lesson",
+    "node_role",
+    "language"
+  ]
+}

@@ -1,0 +1,1 @@
+READY_FOR_STANDARD_LESSON_MASS_INGESTION: contrato LiteLLM validado y fallback auditable.

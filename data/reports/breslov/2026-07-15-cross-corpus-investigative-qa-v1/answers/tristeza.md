@@ -1,0 +1,26 @@
+# Tristeza
+
+## Resumen breve
+Hallazgos locales: 12. Relación: `same_topic_parallel`; toda conexión temática es contextual.
+
+## Kitzur
+- PDF 22; evidencia `literal_same_document_page`; quote: 'a su rectificación. El primer paso es cuando uno ve al Tzadik. Al hacerlo se anulan los rasgos negativos que derivan del elemento “mineral” y del elemento “vegetal” - es decir, la tristeza, la indolencia con sus rasgos asociados y los deseos negativos [del cuerpo]. De esa manera se alcanza la alegría, el entusiasmo y la diligencia.\n\n## 9 Tishrei\n\n7'
+- PDF 119; evidencia `literal_same_document_page`; quote: 'e la mentira está identificada con el rostro oscurecido, el rostro del Otro Lado, con la depresión, la idolatría y con otros dioses - todo lo cual está asociado con la muerte y la tristeza, que Dios nos salve.\n\n## 16 Kislev\n\n2. La gente que sucumbe a la pasión por el dinero; que no cree que el Santo, bendito sea, puede sustentarla con sólo un mínim'
+- PDF None; evidencia `literal_same_document_page`; quote: 'upaciones” (Avot 2:7). Es así que el dinero acorta y consume los días de esas personas y, en verdad, toda su vida, dado que nada desgasta más la vitalidad que la preocupación y la tristeza, como es bien sabido por los estudiosos de la salud. De esa manera, la persona está unida al “rostro del Otro Lado”, a otros dioses, a la muerte, a la depresión '
+- PDF 267; evidencia `literal_same_document_page`; quote: ', el trabajo espiritual que se debe llevar a cabo parece extremadamente difícil. Por lo tanto, es necesaria una enorme fuerza interior y una gran determinación, para no caer en el desánimo ante la carga del servicio que se debe realizar. Más bien, es necesario tomar fuerzas para comenzar cada día a partir de la gran restricción, opresión y carga qu'
+- PDF None; evidencia `literal_same_document_page`; quote: 'e de la depresión y de la melancolía - dado que la mayor parte de aquellos que están lejos de Dios lo están debido a la melancolía y a la depresión. La causa de su depresión es el desánimo que sienten al ver la enormidad de sus imperfecciones y el hecho de que la mayor parte de sus acciones carecen de bien - pues cada persona, en lo más íntimo, con'
+## Likutey Moharán II
+- PDF 130; evidencia `same_topic_same_work`; quote: 'os, si así pudiera decirse. \nCuando Él se aparta, las fuerzas del mal tienen libertad para reinar (ver Zohar I, 68b). Cuando \nesto sucede, Dios no lo permita, el mundo se llena de tristeza y de sufrimiento. (En esencia, \nesto es en sí mismo el sufrimiento más grande: que debido a que Él está oculto, no podemos \nconocerlo ni experimentarlo en absolu'
+## Likutey Halajot
+- PDF 26; evidencia `same_topic_same_work`; quote: 'ot, expresadas en una sola enseñanza revelada \npor el Rebe. Por ejemplo, la lección Sasón Vesimja Iasigu VeNasu Iagon VaAnajá (LM \nII, 23) consiste de un solo concepto: aferrar la tristeza y la melancolía y llevarlas hacia \nla alegría, como se explica allí. HaShem me ayudó e iluminó mis ojos para encontrar \nmuchas y asombrosas ideas en base a ésta '
+- PDF 108; evidencia `same_topic_same_work`; quote: 'dinero se equipara con el \ndescreimiento,31 con la noche, cuya oscuridad es simbólica del ocultamiento de \nla emuná. Esto lleva a anpin jashujin, a los “rostros oscurecidos” de la tristeza y \n“Y estas palabras \nque te ordeno \neste día, han de \npermanecer en tu \ncorazón”.\n(Devarim 6:6)'
+- PDF 225; evidencia `same_topic_same_work`; quote: 'mo \nesto conecta con la revelación del daat.\n73 Los cortesanos de Shaúl HaMelej le aconsejaron buscar a \nun músico hábil que pudiera ejecutar una melodía para librar \nal rey de su tristeza. El versículo implica que la música se \nproduce a través del poder de las manos el cual, de acuerdo \nal Rebe Najmán, implica seleccionar el buen viento (los tono'
+- PDF 259; evidencia `same_topic_same_work`; quote: 'estaba inspirado. Dijo que había veces en que tenía que “exprimir una idea” de \nsu dedo meñique. Cada día trae sus propios estados de ánimo y sentimientos, sus \npropias alegrías o tristezas. Y como muchas otras personas, el Rabí Natán también \nolvidaba a veces sus ideas.\nCuando el Rabí Natán llegaba a un grupo de leyes y no sentía inspiración o \nno'
+- PDF 225; evidencia `note_source_context`; quote: '73 Los cortesanos de Shaúl HaMelej le aconsejaron buscar a \nun músico hábil que pudiera ejecutar una melodía para librar \nal rey de su tristeza. El versículo implica que la música se \nproduce a través del poder de las manos el cual, de acuerdo \nal Rebe Najmán, implica seleccionar el buen viento (los tonos \ncorrectos) de los vientos de la depresión '
+- PDF 45; evidencia `same_topic_same_work`; quote: 'a la engaña haciéndole pensar que \ntodo está perdido. Entonces la persona está conceptualmente dormida, como en \n“Me recuesto y me duermo”. Esto alude a la falta de esperanza y al desánimo del \nsueño espiritual.\nSin embargo, la verdad es que la persona tiene prohibido perder la \nesperanza. Debe superar todo sentimiento de desesperanza y despertar d'
+
+## Qué se puede afirmar
+- Medio/débil: `same_topic_parallel` sólo según los quotes listados.
+
+## Vacíos
+- No se afirma relación doctrinal, autoría ni fuente fuera del corpus cargado.

@@ -1,0 +1,14 @@
+[
+ {"id":"tristeza","title":"Tristeza","query_terms_es":["tristeza","desánimo"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["literal_same_document_page"],"allow_thematic_parallel":true},
+ {"id":"miedo","title":"Miedo / temor","query_terms_es":["miedo","temor"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["literal_same_document_page"],"allow_thematic_parallel":true},
+ {"id":"alegria","title":"Alegría","query_terms_es":["alegría","alegria"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["literal_same_document_page"],"allow_thematic_parallel":true},
+ {"id":"plegaria","title":"Plegaria","query_terms_es":["plegaria","oración"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["validated_numbered_note"],"allow_thematic_parallel":true},
+ {"id":"hitbodedut","title":"Hitbodedut","query_terms_es":["hitbodedut"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["explicit_nominal_reference"],"allow_thematic_parallel":true},
+ {"id":"tzadik","title":"Tzadik","query_terms_es":["tzadik"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["literal_same_document_page"],"allow_thematic_parallel":true},
+ {"id":"daat","title":"Daat / conocimiento","query_terms_es":["daat","conocimiento"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["literal_same_document_page"],"allow_thematic_parallel":true},
+ {"id":"verdad","title":"Verdad","query_terms_es":["verdad"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["literal_same_document_page"],"allow_thematic_parallel":true},
+ {"id":"humildad","title":"Humildad","query_terms_es":["humildad"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["literal_same_document_page"],"allow_thematic_parallel":true},
+ {"id":"brit","title":"Pureza sexual / brit","query_terms_es":["pureza sexual","brit"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["note_source_context"],"allow_thematic_parallel":true},
+ {"id":"mundo_venidero","title":"Propósito final / Mundo Venidero","query_terms_es":["Mundo Venidero","propósito"],"expected_primary_work":"Kitzur","cross_works":["lmii","lh"],"expected_evidence_types":["literal_same_document_page"],"allow_thematic_parallel":true},
+ {"id":"likutey_moharan","title":"Referencias a Likutey Moharán","query_terms_es":["Likutey Moharán","LM I","LM II"],"expected_primary_work":"Likutey Halajot","cross_works":["kitzur","lmii"],"expected_evidence_types":["explicit_nominal_reference","resolved_reference"],"allow_thematic_parallel":false}
+]

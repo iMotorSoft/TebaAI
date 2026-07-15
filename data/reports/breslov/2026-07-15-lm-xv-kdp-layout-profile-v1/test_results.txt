@@ -1,0 +1,6 @@
+preflight_likutey_moharan_xv_kdp.py: PASS
+likutey_moharan_xv_kdp_layout_profile.py: PASS
+likutey_moharan_xv_kdp_layout_profile_qa.py: PASS
+pytest tests/test_likutey_moharan_xv_kdp_layout_profile.py: 1 PASS
+git diff --check: PASS
+backend health: not confirmed in this read-only phase; no service restart attempted.

@@ -1,0 +1,9 @@
+{
+  "db_writes": false,
+  "embeddings": false,
+  "milvus_writes": false,
+  "relations": false,
+  "ocr": false,
+  "ai": false,
+  "reason": "scripts use only local PyMuPDF and report files"
+}

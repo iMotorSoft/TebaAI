@@ -1,0 +1,8 @@
+branch: feature/console-backend-core
+head: 6a977fa
+pdf_sha256: 440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a
+database: reachable through globalVar POSTGRES_DSN
+nominal baseline: total=420; validated=284; ambiguous_surface_form=136; generic_source=136
+generic integrity: all 136 have surface_form, quote, pdf_page, parent and validation status.
+LM II page-first remains accessible; Kitzur is outside this phase.
+pre-existing unrelated untracked paths were observed and preserved.

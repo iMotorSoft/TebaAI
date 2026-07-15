@@ -37,6 +37,18 @@ from modules.library.schemas import (
     LibrarySearchResult,
 )
 from modules.library.text_search import search_chunks_text
+from modules.library.investigative_qa_v1 import QaRequest, run as run_investigative_qa_v1
+
+
+@post("/library/investigative-qa/v1", status_code=200)
+async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
+    """Grounded bibliographic QA. Corpus retrieval is SQL-only and audit is excluded."""
+    pool = await get_pg_pool(request)
+    try:
+        async with transaction(pool) as conn:
+            return await run_investigative_qa_v1(conn, data)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Investigative QA failed") from exc
 
 
 @post("/library/relation-qa", status_code=200, guards=[require_auth])

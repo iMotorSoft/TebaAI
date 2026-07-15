@@ -1,0 +1,9 @@
+{
+  "question": "¿Dónde aparece brit?",
+  "ai": {
+    "enabled": true
+  },
+  "max_hits_per_work": 3,
+  "return_markdown": true,
+  "return_json": true
+}

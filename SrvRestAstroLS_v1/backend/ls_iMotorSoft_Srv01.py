@@ -16,7 +16,7 @@ from modules.auth.routes import (
     patch_user,
     refresh,
 )
-from modules.library.routes import book_qa, book_qa_runs, book_qa_runs_latest, library_search, relation_qa
+from modules.library.routes import book_qa, book_qa_runs, book_qa_runs_latest, library_search, relation_qa, investigative_qa_v1
 from routes.health import health
 from routes.ready import ready
 
@@ -47,6 +47,7 @@ app = Litestar(
         book_qa_runs_latest,
         library_search,
         relation_qa,
+        investigative_qa_v1,
     ],
     on_startup=[on_startup],
     on_shutdown=[on_shutdown],

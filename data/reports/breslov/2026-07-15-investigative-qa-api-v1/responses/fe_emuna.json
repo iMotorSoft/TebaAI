@@ -1,0 +1,167 @@
+{
+  "question": "¿Dónde aparece fe?",
+  "status": "ok",
+  "answer_text": "En el material proporcionado, **“Fe”** aparece en **Kitzur**, en el fragmento donde se explica la reversión **“AF (Alef Fei) en Fe (Fei Alef)”** (cita: “del lado de la impureza, revirtiendo así AF (Alef Fei) en Fe (Fei Alef).”).\n\n**Evidencia:** kitzur-1-153309.",
+  "answer_markdown": "En el material proporcionado, **“Fe”** aparece en **Kitzur**, en el fragmento donde se explica la reversión **“AF (Alef Fei) en Fe (Fei Alef)”** (cita: “del lado de la impureza, revirtiendo así AF (Alef Fei) en Fe (Fei Alef).”).\n\n**Evidencia:** kitzur-1-153309.",
+  "summary": "2 evidencias literales recuperadas",
+  "conversation": {
+    "conversation_id": null,
+    "turn_id": null,
+    "resolved_context": []
+  },
+  "interpretation": {
+    "detected_language": "es",
+    "normalized_question": "¿Dónde aparece la letra \"fe\"?",
+    "concepts": [
+      "dónde aparece fe",
+      "letra fe",
+      "aparición de \"fe\""
+    ],
+    "requires_cross_corpus": false
+  },
+  "search_plan": {
+    "queries": [
+      "dónde aparece fe",
+      "letra fe",
+      "aparición de \"fe\""
+    ],
+    "works": [
+      "kitzur",
+      "lh",
+      "lm_xv",
+      "lmii",
+      "potencia_plegaria"
+    ],
+    "languages": [
+      "es",
+      "he",
+      "en"
+    ],
+    "layers": [
+      "page_literal",
+      "fine_zone",
+      "note_source_unit",
+      "nominal_reference"
+    ],
+    "include_audit": false,
+    "retrieval_mode": "sql_literal"
+  },
+  "works_consulted": [
+    "kitzur",
+    "lh",
+    "lm_xv",
+    "lmii",
+    "potencia_plegaria"
+  ],
+  "hits": [
+    {
+      "hit_id": "kitzur-0-629466",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "s también desean ascender y aferrarse a la santidad. Pero en ese momento una “llama de Dios” desciende y quema a las fuerzas impuras\n\n325\n\n## Page 326\n\nLección 83-84                                                                              17 Iyar\n\npara que no puedan aferrarse a la santidad; ver la lección. Por lo tanto, nuestros Sabios, de bendita memoria, dijeron que aquellos que se mantienen en silencio por amor están descritos en el versículo, “Aquellos que Lo aman son como el sol que sale con toda su fuerza” (Jueces 5:31; Shabat 88b). En otras palabras, son como la “llama de Dios” mediante la cual noga está incluida en el lado de la santidad, como en el concepto del JaSh MaL - dado que esa clase de silencio representa la anulación de la orlá y de la vergüenza.\n\n17 Iyar\n\n## **83**\n\n1. Las emisiones nocturnas son causadas por la fuerza impura llamada Lilit, que se nutre de las seis",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "letra fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1-153309",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "del lado de la impureza, revirtiendo así AF (Alef Fei) en Fe (Fei Alef). Éste es el significado del versículo, “La caridad dada en secreto anula la ira” (Proverbios 21:14). Es decir, anula y revierte la AF y la vuelve a transformar en una letra Fei.\n\n**==> picture [13 x 8] intentionally omitted <==**\n\n1. Está escrito en el santo Zohar (III, 123a), “No hay día que no contenga algo de bien” y (Avodá Zará 19b) “No hay otro bien más que la Torá”. Esto significa que en cada día hay un bien oculto\n\n## Page 327\n\nLección 85                                                                                   17 Iyar\n\n- es decir, los secretos de la Torá que se relacionan con ese día en particular. Sin embargo, cuando la persona desea reflexionar y pensar sobre las ideas de la Torá -es decir, sobre los secretos de la Torá- y no es digna de hacerlo, las serpientes y los escorpiones confunden sus pensam",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "letra fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 2
+    },
+    {
+      "work_code": "lh",
+      "hits": 0
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 0
+    },
+    {
+      "work_code": "lmii",
+      "hits": 0
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 0
+    }
+  ],
+  "cross_corpus_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 2
+    },
+    {
+      "work_code": "lh",
+      "hits": 0
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 0
+    },
+    {
+      "work_code": "lmii",
+      "hits": 0
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 0
+    }
+  ],
+  "not_found": [],
+  "warnings": [
+    "pdf_page_null_for_kitzur_chunk"
+  ],
+  "execution": {
+    "pipeline_version": "investigative_qa_v1",
+    "model": "openai_gpt-5.4-nano",
+    "used_ai_interpretation": true,
+    "used_ai_rendering": true,
+    "ai_render_validated": true,
+    "used_deterministic_fallback": false,
+    "used_vector": false,
+    "used_external_sources": false,
+    "used_ocr": false,
+    "database": "postgresql",
+    "duration_ms": 4490.06
+  }
+}

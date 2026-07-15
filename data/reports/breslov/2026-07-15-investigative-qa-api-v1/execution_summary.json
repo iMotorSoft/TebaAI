@@ -1,0 +1,1 @@
+{"status":"FULL_PASS","endpoint":"POST /library/investigative-qa/v1","model_alias":"openai_gpt-5.4-nano","golden_http":{"questions":17,"processed":17,"valid_status":17,"grounded":17},"ai":{"litellm_enabled":false,"fallback":"deterministic"},"invariants":{"corpus_writes":0,"relations":0,"embeddings":0,"milvus":0,"ocr":false,"external_sources":false}}

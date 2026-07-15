@@ -1,0 +1,477 @@
+{
+  "question": "¿Dónde aparece Tzadik?",
+  "status": "ok",
+  "answer_text": "En los fragmentos provistos, **“Tzadik” aparece** en:\n\n- **Kitzur**, en la explicación sobre la Rotura de los Recipientes: “...identificado con el **‘Tzadik, cimiento del mundo’**.” (evidence id: **kitzur-1-563923**)\n- **Likutey Moharán XV**, donde se menciona que “...estamos sustentados y recibimos la fuerza vital a través del verdadero **Tzadik**.” (evidence id: **lm_xv-6-227403**)\n- **Likutey Moharán XV**, en el contexto de una lección sobre arrogancia: “...el **Tzadik** determina la medida del mérito...” (evidence id: **lm_xv-8-994484**)\n\n**Límite:** solo puedo responder con base en las evidencias incluidas; no tengo acceso al resto del texto ni a un índice para ubicar “Tzadik” en toda la obra.",
+  "answer_markdown": "En los fragmentos provistos, **“Tzadik” aparece** en:\n\n- **Kitzur**, en la explicación sobre la Rotura de los Recipientes: “...identificado con el **‘Tzadik, cimiento del mundo’**.” (evidence id: **kitzur-1-563923**)\n- **Likutey Moharán XV**, donde se menciona que “...estamos sustentados y recibimos la fuerza vital a través del verdadero **Tzadik**.” (evidence id: **lm_xv-6-227403**)\n- **Likutey Moharán XV**, en el contexto de una lección sobre arrogancia: “...el **Tzadik** determina la medida del mérito...” (evidence id: **lm_xv-8-994484**)\n\n**Límite:** solo puedo responder con base en las evidencias incluidas; no tengo acceso al resto del texto ni a un índice para ubicar “Tzadik” en toda la obra.",
+  "summary": "16 evidencias literales recuperadas",
+  "conversation": {
+    "conversation_id": null,
+    "turn_id": null,
+    "resolved_context": []
+  },
+  "interpretation": {
+    "detected_language": "es",
+    "normalized_question": "¿Dónde aparece Tzadik?",
+    "concepts": [
+      "Tzadik",
+      "dónde aparece",
+      "ubicación de Tzadik"
+    ],
+    "requires_cross_corpus": false
+  },
+  "search_plan": {
+    "queries": [
+      "Tzadik",
+      "dónde aparece",
+      "ubicación de Tzadik"
+    ],
+    "works": [
+      "kitzur",
+      "lh",
+      "lm_xv",
+      "lmii",
+      "potencia_plegaria"
+    ],
+    "languages": [
+      "es",
+      "he",
+      "en"
+    ],
+    "layers": [
+      "page_literal",
+      "fine_zone",
+      "note_source_unit",
+      "nominal_reference"
+    ],
+    "include_audit": false,
+    "retrieval_mode": "sql_literal"
+  },
+  "works_consulted": [
+    "kitzur",
+    "lh",
+    "lm_xv",
+    "lmii",
+    "potencia_plegaria"
+  ],
+  "hits": [
+    {
+      "hit_id": "kitzur-0-663727",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "de la Torá en esa área, Dios no lo quiera. Cuando se cuida la pureza sexual en esos dos niveles, el honor de Dios se completa y uno merece todos los atributos y los logros antes mencionados, hasta alcanzar profundos niveles de comprensión en la Torá.\n\n8. Existe una clase de humildad cuya finalidad es en verdad la arrogancia. Esto hace referencia específicamente a la persona que es humilde porque sabe que el orgullo es un rasgo muy despreciable; por lo tanto, actúa con humildad para ser honrada y respetada. En efecto, se muestra humilde para alcanzar posiciones y honor. Por lo tanto, es necesario vigilar cuidadosamente nuestro comportamiento y alejarse totalmente del orgullo, ubicándose en el extremo opuesto, como dijeron nuestros Sabios, de bendita memoria, “Sé muy, muy humilde” (Avot 4:4). Pues el orgullo corresponde a las siete casas de idolatría, debido a las cuales el pueblo judío fu",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1-563923",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "Page 180\n\nLección 34                                                                                   3 Shvat\n\nlos Sabios, “Las Tablas tenían seis palmos de largo y seis palmos de ancho” (Bava Batra 14a) y “La tabla de tu corazón” (Proverbios 3:3).\n\n5. Cuando el corazón está hundido en los malos amores y deseos, ello es llamado un amor “caído” y “quebrado”. Ello se debe a que la mala inclinación y las fuerzas de la impureza existen como resultado de la Rotura de los Recipientes primordiales. Se explica además en el Etz Jaim (Heijal HaNekudot, Shaar Shevirat HaKeilim) que los fragmentos de los recipientes de Jesed cayeron a Biná del mundo de Beriá; y “Biná es el corazón”. La luz de Jesed, por otro lado, quedó en la sefirá de Iesod del mundo de Atzilut; y ello está identificado con el “Tzadik, cimiento del mundo”. Así, esos amores y deseos negativos se originaron en la Rotura de los Recip",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-2-715210",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "la Luz del Rostro”. El número 370 es también dos veces el valor de las letras Alef y Lamed [cuando esas letras se deletrean como ALeF y LaMeD], dado que el Nombre Divino EL [que se deletrea Alef-Lamed] corresponde a la “Luz del Rostro”.\n\n## 5 Kislev\n\n10. Éste es el motivo por el cual se saliva en la ceremonia del levirato, como está escrito, “Ella deberá salivar hacia su rostro” (Deuteronomio 25:9). Con esa saliva el hombre es avergonzado y la vergüenza se muestra principalmente en el rostro. Esto es en verdad perfectamente apropiado, dado que él no quiso desposarse con la mujer de su hermano fallecido [sin tener hijos] mediante el matrimonio de levirato, para hacer descender al mundo el alma de su hermano y rectificar así la “Luz del Rostro”. Pues ésta es la insuficiencia de la persona que fallece sin tener hijos, que Dios nos salve - no dejar tras de sí una bendición, para traer al mun",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "lh-3-123459",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 12,
+      "printed_page": null,
+      "quote": "XII   LIKUTEY HALAJOT\nmanera oral en los Shabatot y en las festividades. El Likutey Moharán, conteniendo 411 \nlecciones, fue resultado de su colaboración. Aunque sólo era ocho años más joven que \nel Rebe, el Rabí Natán se impregnó sediento de las enseñanzas de su maestro y siguió su \nguía en todos los aspectos de la vida. Con el pasar del tiempo, la familia del Rabí Natán \nreconoció los cambios positivos que podían percibirse en las midot y en la erudición de \nTorá del Rabí Natán y se aplacó su oposición a la Jasidut.\nLuego del fallecimiento del Rebe en el año 1810, se le pidió al Rabí Natán que se \nvolviese el nuevo líder de los jasidim de Breslov, cosa que rechazó. “Sólo hay un Rebe”, \ninsistió. Con su característica humildad, el Rabí Natán introdujo un nuevo concepto en \nla historia de la Jasidut. En lugar de tener una sucesión de Rebes, los jasidim de Breslov \nsólo tienen un Rebe: el",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-4-867080",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 13,
+      "printed_page": null,
+      "quote": "SOBRE EL LIKUTEY HALAJOT\nSOBRE EL LIKUTEY HALAJOT\n1\nE\nl Likutey Halajot (Colección de Discursos), presenta las exposiciones de Torá \ndel Rabí Natán de Breslov (1780-1844), el principal discípulo y escriba del Rebe \nNajmán de Breslov. Una obra en ocho volúmenes en hebreo en el original, el Likutey \nHalajot explora la ley judía a través del prisma de las enseñanzas del Rebe Najmán. \nAl mismo tiempo, la obra del Rabí Natán es un comentario sobre las enseñanzas de su \nmaestro y, no menos importante, una guía para su estudio.\nEl Rabí Natán se encontró con el Rebe Najmán por primera vez a ﬁ nales del \nverano del año 1802 y pronto comenzó a transcribir las lecciones orales de Torá del \nRebe. El Rebe Najmán elogió su capacidad y rápidamente reconoció que el Rabí Natán \nsería quien iría a preservar y a transmitir para las generaciones futuras los senderos de su \nmaestro en el servicio a HaShem.2\n",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-5-648896",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 15,
+      "printed_page": null,
+      "quote": "la mayor parte de los discursos), el Rabí Natán introduce sus propias ideas originales. \nEs aquí donde aprendemos cuál es el objetivo del Rabí Natán y por qué ha conectado \nesta halajá del Shuljan Aruj con esa enseñanza del Rebe. En las secciones siguientes \nse va desarrollando el cuerpo del discurso cuando el Rabí Natán demuestra cómo los \nconceptos del Rebe iluminan el signiﬁ cado profundo de la halajá.7\nAl construir sus discursos, el Rabí Natán hace un uso considerable del mismo \nproceso de asociación empleado copiosamente por el Rebe Najmán en sus lecciones.8 \nEn el centro de esta interpretación-analogía-y-comparación se encuentra el mecanismo \nexegético conocido como bejiná.9 En el pensamiento de Breslov, el término bejiná es \nusado para conectar palabras o ideas aparentemente disímiles, estableciendo una relación \nentre ellas de modo que “A” esté asociada con “B”. En términos más e",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-6-227403",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 103,
+      "printed_page": null,
+      "quote": "de Israel, es el conducto para traer Torá/vida a toda la creación (§3). El prototipo de esto fue \nel mundo antes de la Entrega de la Torá, cuando todos estaban ocupados con el derej eretz, \nestableciendo el mundo. Dios entonces sustentó al mundo y le dio vida solamente a través del \njesed jinam (bondad gratuita), el concepto del Tesoro de Dones Inmerecidos. También ahora, \ncada vez que nos separamos de la Torá, estamos sustentados y recibimos la fuerza vital a través \ndel verdadero Tzadik. En ese momento el Tzadik mismo es un prustik y así, aparentemente sin \nmérito, ese Tzadik trae rúaj de vida del Tesoro de Dones Inmerecidos para difundir la bondad \nde Dios y darles vida incluso a la gente y a los lugares más alejados de la santidad (§4A). Antes \ndel Sinaí la Torá estuvo oculta dentro del establecimiento del mundo, que fue creado a través de \nlas Diez Expresiones, “el poder de Sus acto",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-7-574801",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 162,
+      "printed_page": null,
+      "quote": "24. la arrogancia…El descaro es un reinado sin corona. En el Likutey Moharán I, 30:8-9,\nel Rebe Najmán trata sobre los dos aspectos del rasgo de carácter que en hebreo es llamado \nazut (traducido aquí como “arrogancia”). En su aspecto positivo, azut es audacia - “la audacia \nsagrada sin la cual es imposible recibir la Torá”. Su aspecto negativo es la arrogancia y la \nimpudicia, que el Talmud (loc. cit.) equipara al “reinado sin corona”. Rashi explica que aunque \nla osadía puede otorgarle a la persona considerable autoridad y prominencia, no le puede \nproveer de aquello que la conﬁrmaría como un líder adecuado - i.e., una corona (Rashi, loc. cit., \nv.i. maljuta). En el contexto de nuestra lección, esto hace referencia a la gente cuya prominencia \ny renombre no son obtenidos de manera lícita, sino como resultado de haberse impuesto a través \ndel azut (ver también Likutey Moharán I, 22:4 y ",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-8-994484",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 308,
+      "printed_page": null,
+      "quote": "La halajá requiere que antes de devolver un objeto perdido a aquel que lo reclama como \nsu dueño, el que lo encontró tiene la obligación de investigar cuidadosamente al reclamante \npara veriﬁcar que no mienta (Iad HaJazaká, Hiljot Guezelá VeAvedá 13:3). El Rebe Najmán \nenseña que incluso si la persona viene para estar con el Tzadik y para tomar posesión de lo que \nha perdido, no se le cree de manera inmediata. Puede que sea aprovechadora, buscando tomar \naquello que no le pertenece. Quizás quiere la gloria o la sabiduría, de las cuales no es digna y \nasí ciertamente podría usarlas para mal. El Tzadik determina la medida del mérito de cada uno \na partir del estudio de Torá de la persona, de la plegaria y de su anhelo y deseo de Dios (Torat \nNatán, op. cit.). Por su parte, la persona no debe engañarse a sí misma. Debe enfrentar sus malas \nacciones que han hecho que perdiese lo que extravió",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-9-218351",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 6,
+      "printed_page": -4,
+      "quote": "Prefacio del Editor \n“Bueno es alabar a Dios y cantar a Tu Exaltado Nombre” (Salmos 92:2).\nEl Rabí Natán escribe en su Introducción al Likutey Moharán: “Es \nsuperﬂuo hablar de la profundidad de este libro, pues todo aquél que desee \nmirarlo de manera honesta comprenderá por sí mismo su grandeza. Cada \nlección habla sobre las características del hombre, de cómo desarrollar los \nbuenos atributos y mantenerse lejos de los malos. Habla de la Torá, de la \nplegaria y demás mitzvot; y de cómo cada individuo puede alcanzar niveles \nextremadamente elevados”. El Parparaot LeJojmá, en su Introducción, dirige \nal lector hacia otro ámbito dentro de éste: cómo cada uno puede lograr, a partir \nde su posición aparentemente insigniﬁcante en este mundo, niveles que ni \nsiquiera los ángeles pueden alcanzar. Muchos otros Tzadikim han alabado el \nLikutey Moharán de manera similar.\nPor lo tanto, muy agradecid",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-10-166910",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 7,
+      "printed_page": -3,
+      "quote": "Introducción del Traductor al Inglés\n En lugar de un prefacio más tradicional del traductor, se le pide al lector \nque considere lo siguiente:\nLuego de la primera edición del Likutey Moharán, el Rebe Najmán \nhabló de los grandes beneﬁcios que traía el estudio de sus enseñanzas, y \nen especial para aquéllos merecedores de desarrollar alguna idea basada \nen sus lecciones. Cuando un seguidor del Rebe le hizo conocer una de \nestas interpretaciones propias, el Rebe sonrió y le dijo, “Puedes doblar \nmi libro de la manera que quieras, mientras no te alejes ni un ápice \ndel Shuljan Aruj” (Tradición oral; cf. Sabiduría y Enseñanzas del Rabí \nNajmán de Breslov 267).\n“Uno no debe nunca enorgullecerse de sus capacidades intelectuales o \nde sus buenas acciones, pues todas nos llegan a través del Tzadik de la \ngeneración. La persona es al Tzadik lo que una pluma es a las manos del \nescriba” (El Libro ",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-11-987064",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 13,
+      "printed_page": 3,
+      "quote": "3 \nLIKUTEY MOHARÁN #7\n1\n“VeEile HaMishpatim (Y éstas son las leyes) que pondrás \ndelante de ellos”. \n (Éxodo 21:1)\nEnseñan nuestros Sabios: [Las palabras “delante de ellos” nos \nenseñan que con respecto a todas las leyes de la Torá], la mujer \nse equipara al hombre (Kidushin 35a). Comenta la Mejilta (21:1): “Es \nposible que los alumnos estudien pero no comprendan. [El \nversículo] enseña por lo tanto: “que pondrás delante de ellos” \n- disponlo delante de ellos como una mesa servida.\n¡D\nebes saber! El motivo esencial del exilio es la falta de ÆMuNá \n(fe);2 como está escrito (Cantar de los Cantares 4:8), “Ven, mira desde \nla cumbre de AMaNá”.3 Y emuná es sinónimo de plegaria; como en \n(Éxodo 17:12), “Sus manos estaban emuná”, que Onkelos traduce como, \n“[Sus manos] estaban extendidas en plegaria”.4\n1. Likutey Moharán 7. El Rebe Najmán tuvo una visión en la cual su bisabuelo, el Baal Shem \nT",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-12-647096",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 156,
+      "printed_page": 146,
+      "quote": "146\n זָרָ ה, כִּ י הוּא קִ בֵּ ל הַ תּ וֹרָ ה, שׁ ֶ הוּא בְּ חִ ינַ ת יָדַ יִן וְ רַ גְ לַ יִן כַּ נַּ \"ל, שׁ ֶ עַ ל\nיְדֵ יהֶ ם נִ תְ בַּ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים כַּ נַּ \"ל. \nוְ עַ ל כֵּ ן הִ פִּ יל פּ וּר בַּ יֶּרַ ח שׁ ֶ מֵּ ת בּ וֹ משׁ ֶ ה, כִּ י חָ שׁ ַ ב כִּ י כְּ בָ ר מֵ ת \nמשׁ ֶ ה הַ מְ בַ טֵּ ל כּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים, וְ אֵ ין עוֹד מִ י שׁ ֶ יּוּכַ ל לְ בַ טֵּ ל \nכּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים.\nאֲ בָ ל מָ רְ דֳּ כַ י וְ אֶ סְ תֵּ ר הָ יָה לָ הֶ ם כּ ֹחַ לְ בַ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים שׁ ֶ ל \nהָ מָ ן, וּבִ שׁ ְ בִ יל זֶה בִּ ימֵ יהֶ ם קִ בְּ לוּ יִשְׂ רָ אֵ ל הַ תּ וֹרָ ה מֵ חָ דָ שׁ , כְּ מַ אֲ מַ ר \nחֲ כָ מֵ ינוּ, זִכְ רוֹנָ ם לִ בְ רָ כָ ה )שבת פח.(: \"קִ יְּמוּ וְ קִ בְּ לוּ\" – 'קִ יְּמוּ מַ ה \nשּ ׁ ֶ קִּ בְּ לוּ כְּ בָ ר'. \nוְ זֶה: קִ יְּמוּ וְ קִ בְּ לוּ. קִ יְּמוּ – זֶה בְּ חִ ינַ ת רַ גְ לַ יִן, וְ קִ בְּ לוּ – זֶה בְּ חִ ינַ ת \nיָדַ יִן, וְ ה",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "dónde aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-13-836462",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 32,
+      "printed_page": null,
+      "quote": "El hombre del bosque representa al verdadero Tzadik que posee una \nvisión clara. Es aquel que busca la verdadera y duradera rectiﬁcación de cada \npersona. El auténtico Tzadik nos dice, “Deja de correr tras tus pecados. Eres \nun príncipe y tienes un maravilloso futuro delante de ti. Elévate a nuevas \nalturas, a grandes alturas. Reconoce la potencia de tus plegarias. Tú puedes \nascender más allá de tus bajas pasiones. Puedes hacerte digno de escuchar \nla canción del bosque, la armonía y la belleza de las melodías y canciones \npresentadas a HaShem. Puedes elevar tu intelecto para reconocer los milagros \nque abundan en este mundo. Mediante tus plegarias puedes elevarte a las \nalturas más grandes y obtener el control de tu destino”.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-14-793086",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 44,
+      "printed_page": null,
+      "quote": "Apego a los Tzadikim",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-15-525201",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 44,
+      "printed_page": null,
+      "quote": "El Rebe Najmán sugiere que uno debe apegarse a los verdaderos \nTzadikim. Todos sienten cierto apego a alguien, como a la familia, a los",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Tzadik"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 3
+    },
+    {
+      "work_code": "lh",
+      "hits": 3
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 3
+    },
+    {
+      "work_code": "lmii",
+      "hits": 4
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 3
+    }
+  ],
+  "cross_corpus_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 3
+    },
+    {
+      "work_code": "lh",
+      "hits": 3
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 3
+    },
+    {
+      "work_code": "lmii",
+      "hits": 4
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 3
+    }
+  ],
+  "not_found": [],
+  "warnings": [
+    "pdf_page_null_for_kitzur_chunk"
+  ],
+  "execution": {
+    "pipeline_version": "investigative_qa_v1",
+    "model": "openai_gpt-5.4-nano",
+    "used_ai_interpretation": true,
+    "used_ai_rendering": true,
+    "ai_render_validated": true,
+    "used_deterministic_fallback": false,
+    "used_vector": false,
+    "used_external_sources": false,
+    "used_ocr": false,
+    "database": "postgresql",
+    "duration_ms": 4595.96
+  }
+}

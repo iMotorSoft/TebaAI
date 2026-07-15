@@ -1,0 +1,179 @@
+{
+  "questions": 17,
+  "processed": 17,
+  "valid_status": 17,
+  "grounded": 17,
+  "results": [
+    {
+      "id": "plegaria",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 24,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "hitbodedut",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 15,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk",
+        "ai_render_rejected_grounding_validation"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "fe_emuna",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 2,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "rebe_najman",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 42,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "likutey_moharan",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 46,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "rabi_natan",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 46,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk",
+        "ai_render_rejected_grounding_validation"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "zohar",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 45,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "tzadik",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 16,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "alegria",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 16,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "tristeza",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 43,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "miedo",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 57,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "daat",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 45,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "verdad",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 1,
+      "warnings": [],
+      "grounded": true
+    },
+    {
+      "id": "brit",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 45,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "mundo_venidero",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 63,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk",
+        "ai_render_rejected_grounding_validation"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "notas_fuentes",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 53,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    },
+    {
+      "id": "referencias_nominales_potencia",
+      "http_status": 200,
+      "status": "ok",
+      "hit_count": 35,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true
+    }
+  ]
+}

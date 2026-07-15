@@ -1,0 +1,141 @@
+{
+  "question": "¿Dónde aparece verdad?",
+  "status": "ok",
+  "answer_text": "En **Likutey Moharán II**, p. **111**: allí se afirma que “**Todo depende del grado de verdad [que tenga la persona]**” y que “**es a través de la verdad que, desde Arriba, Dios desea morar con el hombre**”.",
+  "answer_markdown": "En **Likutey Moharán II**, p. **111**: allí se afirma que “**Todo depende del grado de verdad [que tenga la persona]**” y que “**es a través de la verdad que, desde Arriba, Dios desea morar con el hombre**”.",
+  "summary": "1 evidencias literales recuperadas",
+  "conversation": {
+    "conversation_id": null,
+    "turn_id": null,
+    "resolved_context": []
+  },
+  "interpretation": {
+    "detected_language": "es",
+    "normalized_question": "¿Dónde aparece la palabra “verdad”?",
+    "concepts": [
+      "dónde aparece verdad",
+      "palabra verdad",
+      "aparición de verdad",
+      "texto donde aparece verdad"
+    ],
+    "requires_cross_corpus": false
+  },
+  "search_plan": {
+    "queries": [
+      "dónde aparece verdad",
+      "palabra verdad",
+      "aparición de verdad",
+      "texto donde aparece verdad"
+    ],
+    "works": [
+      "kitzur",
+      "lh",
+      "lm_xv",
+      "lmii",
+      "potencia_plegaria"
+    ],
+    "languages": [
+      "es",
+      "he",
+      "en"
+    ],
+    "layers": [
+      "page_literal",
+      "fine_zone",
+      "note_source_unit",
+      "nominal_reference"
+    ],
+    "include_audit": false,
+    "retrieval_mode": "sql_literal"
+  },
+  "works_consulted": [
+    "kitzur",
+    "lh",
+    "lm_xv",
+    "lmii",
+    "potencia_plegaria"
+  ],
+  "hits": [
+    {
+      "hit_id": "lmii-0-187748",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 111,
+      "printed_page": 101,
+      "quote": "101 \n¡Y debes saber! Todo depende del grado de verdad [que tenga la \npersona]. Pues lo primordial de la luz es Dios, y Dios es la esencia de la \nverdad. El anhelo fundamental de Dios es sólo la verdad.\n“...tejalená (acabada) a un amáh (un codo) milemalá (de arriba)”. \n[La palabra TeJaLená] tiene la misma connotación que “Y el alma de \nDavid TeJaL (anhelaba)” (cf. Samuel 2, 13:39). [Y las letras de la palabra] \nAMáH aluden a las Hei (5) articulantes,41 que consisten de Esh (fuego) \ny Maim (agua).42\nEn otras palabras: fíjate que las palabras salgan de tu boca con \nverdad. Entonces, desde Arriba, Dios anhelará morar contigo. Y cuando \nÉl more contigo, Él brillará para ti. Así, las letras iniciales de “Amáh \nTejalena Milemalá” deletrean Æmet (verdad).43 Porque es a través de la \nverdad que, desde Arriba, Dios desea morar con el hombre, como en, \n“Dios está cerca de todos aquéllos que Lo llam",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 0
+    },
+    {
+      "work_code": "lh",
+      "hits": 0
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 0
+    },
+    {
+      "work_code": "lmii",
+      "hits": 1
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 0
+    }
+  ],
+  "cross_corpus_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 0
+    },
+    {
+      "work_code": "lh",
+      "hits": 0
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 0
+    },
+    {
+      "work_code": "lmii",
+      "hits": 1
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 0
+    }
+  ],
+  "not_found": [],
+  "warnings": [],
+  "execution": {
+    "pipeline_version": "investigative_qa_v1",
+    "model": "openai_gpt-5.4-nano",
+    "used_ai_interpretation": true,
+    "used_ai_rendering": true,
+    "ai_render_validated": true,
+    "used_deterministic_fallback": false,
+    "used_vector": false,
+    "used_external_sources": false,
+    "used_ocr": false,
+    "database": "postgresql",
+    "duration_ms": 3576.21
+  }
+}

@@ -1,0 +1,909 @@
+{
+  "question": "¿Qué referencias nominales principales aparecen en La Potencia y cuáles también aparecen en Likutey Halajot?",
+  "status": "ok",
+  "answer_text": "Con la evidencia provista, las **referencias nominales principales** que aparecen en **La Potencia** (Kitzur) y que **también aparecen** en **Likutey Halajot** son:\n\n1) **Likutey Halajot** (como obra citada)\n- En Kitzur aparece explícitamente: “ver **Likutey Halajot** …” (p. ej., “Likutey Halajot, Hiljot Jezkat Mitaltelin 5”).\n- En Likutey Halajot aparece como el propio título/obra (“LIKUTEY HALAJOT”).\n\n2) **Hashkamat HaBoker** (como sección/tema dentro de Likutey Halajot)\n- En Kitzur se menciona: “ver esta lección en el **Likutey Halajot. Hashkamat HaBoker 5**”.\n- En Likutey Halajot aparece como sección: “**Hashkamat HaBoker - Levantándose por la Mañana**”.\n\n3) **Hiljot Jezkat Mitaltelin** (como halajá/tema dentro de Likutey Halajot)\n- En Kitzur se menciona: “**Likutey Halajot, Hiljot Jezkat Mitaltelin 5**”.\n- En la evidencia de Likutey Halajot provista no aparece el rótulo exacto “Hiljot Jezkat Mitaltelin”, pero sí aparece la obra y su estructura de halajot; por lo tanto, con lo suministrado solo puedo afirmar la coincidencia nominal de “Likutey Halajot” y no confirmar el rótulo específico dentro del texto de Likutey Halajot.\n\n4) **Hiljot Eruvey Tejumin** (como halajá/tema dentro de Likutey Halajot)\n- En Kitzur se menciona: “**Likutey Halajot, Hiljot Eruvey Tejumin 6**”.\n- En la evidencia de Likutey Halajot provista no aparece el rótulo exacto “Hiljot Eruvey Tejumin”, así que no puedo confirmarlo nominalmente dentro del material de Likutey Halajot incluido.\n\n**Límite de la respuesta:** solo puedo comparar lo que aparece literalmente en los fragmentos suministrados. En los extractos de **Likutey Halajot** incluidos aquí, se ve con claridad el título “LIKUTEY HALAJOT” y la sección “Hashkamat HaBoker - Levantándose por la Mañana”, pero no se ven los rótulos “Hiljot Jezkat Mitaltelin” ni “Hiljot Eruvey Tejumin”.",
+  "answer_markdown": "Con la evidencia provista, las **referencias nominales principales** que aparecen en **La Potencia** (Kitzur) y que **también aparecen** en **Likutey Halajot** son:\n\n1) **Likutey Halajot** (como obra citada)\n- En Kitzur aparece explícitamente: “ver **Likutey Halajot** …” (p. ej., “Likutey Halajot, Hiljot Jezkat Mitaltelin 5”).\n- En Likutey Halajot aparece como el propio título/obra (“LIKUTEY HALAJOT”).\n\n2) **Hashkamat HaBoker** (como sección/tema dentro de Likutey Halajot)\n- En Kitzur se menciona: “ver esta lección en el **Likutey Halajot. Hashkamat HaBoker 5**”.\n- En Likutey Halajot aparece como sección: “**Hashkamat HaBoker - Levantándose por la Mañana**”.\n\n3) **Hiljot Jezkat Mitaltelin** (como halajá/tema dentro de Likutey Halajot)\n- En Kitzur se menciona: “**Likutey Halajot, Hiljot Jezkat Mitaltelin 5**”.\n- En la evidencia de Likutey Halajot provista no aparece el rótulo exacto “Hiljot Jezkat Mitaltelin”, pero sí aparece la obra y su estructura de halajot; por lo tanto, con lo suministrado solo puedo afirmar la coincidencia nominal de “Likutey Halajot” y no confirmar el rótulo específico dentro del texto de Likutey Halajot.\n\n4) **Hiljot Eruvey Tejumin** (como halajá/tema dentro de Likutey Halajot)\n- En Kitzur se menciona: “**Likutey Halajot, Hiljot Eruvey Tejumin 6**”.\n- En la evidencia de Likutey Halajot provista no aparece el rótulo exacto “Hiljot Eruvey Tejumin”, así que no puedo confirmarlo nominalmente dentro del material de Likutey Halajot incluido.\n\n**Límite de la respuesta:** solo puedo comparar lo que aparece literalmente en los fragmentos suministrados. En los extractos de **Likutey Halajot** incluidos aquí, se ve con claridad el título “LIKUTEY HALAJOT” y la sección “Hashkamat HaBoker - Levantándose por la Mañana”, pero no se ven los rótulos “Hiljot Jezkat Mitaltelin” ni “Hiljot Eruvey Tejumin”.",
+  "summary": "35 evidencias literales recuperadas",
+  "conversation": {
+    "conversation_id": null,
+    "turn_id": null,
+    "resolved_context": []
+  },
+  "interpretation": {
+    "detected_language": "es",
+    "normalized_question": "¿Qué referencias nominales principales aparecen en La Potencia y cuáles también aparecen en Likutey Halajot?",
+    "concepts": [
+      "La Potencia",
+      "Likutey Halajot",
+      "referencias nominales",
+      "referencias",
+      "nominales principales",
+      "coincidencias",
+      "comparación de textos"
+    ],
+    "requires_cross_corpus": true
+  },
+  "search_plan": {
+    "queries": [
+      "La Potencia",
+      "Likutey Halajot",
+      "referencias nominales",
+      "referencias",
+      "nominales principales",
+      "coincidencias",
+      "comparación de textos"
+    ],
+    "works": [
+      "kitzur",
+      "lh",
+      "lm_xv",
+      "lmii",
+      "potencia_plegaria"
+    ],
+    "languages": [
+      "es",
+      "he",
+      "en"
+    ],
+    "layers": [
+      "page_literal",
+      "fine_zone",
+      "note_source_unit",
+      "nominal_reference"
+    ],
+    "include_audit": false,
+    "retrieval_mode": "sql_literal"
+  },
+  "works_consulted": [
+    "kitzur",
+    "lh",
+    "lm_xv",
+    "lmii",
+    "potencia_plegaria"
+  ],
+  "hits": [
+    {
+      "hit_id": "kitzur-0-873071",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "s del intelecto.\n\n2. Existe un intelecto en potencia, un intelecto en acto y un intelecto adquirido. Cuando se quiebra la facultad de la\n\n## Page 131\n\nLección 25                                                                                25 Kislev\n\nimaginación asciende la facultad del intelecto, dado que “Cuando uno se eleva el otro cae”. Sin embargo, ese intelecto aún se encuentra en estado potencial. Es necesario utilizar el intelecto - es decir, utilizarlo para buscar a Dios y pensar en Su servicio. Cuando la persona busca con el intelecto y lo utiliza, éste se vuelve un intelecto en acto. Ello corresponde a “la miel de Tzufim (nofet tzufim)” que existió en la época del Santo Templo (ibid.), como en, “Tus labios gotean miel (nofet)” (Cantar de los Cantares 4:11) - aludiendo al proceso mediante el cual la persona lleva la dulzura de su intelecto de la potencia al acto mediante la fa",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1-444105",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "Lado y que, durante un momento, es extremadamente poderoso, que Dios nos salve. Pero el Tzadik perfecto puede descender hacia el canal a través del cual los malvados reciben su aliento de vida, quebrarlo y anularlo, produciendo su total desaparición.\n\n6. Mediante el estudio de la Torá y por medio de la plegaria es posible separar el bien del mal en uno mismo. Más específicamente, es mediante el estudio de los Códigos y aclarando la ley que la persona separa el bien del mal. También expele y anula el mal asociado a los cuatro elementos que engloban todos los rasgos de carácter. Esto es lo principal para el perfeccionamiento de la persona. Pero es mediante la plegaria que se merece [el intelecto necesario] para aclarar la ley. Cuando la persona ora por algo, aunque la plegaria vaya a colmar  su pedido, aquello que ha solicitado aún existe en potencia. Mediante el estudio de la Torá, ese pe",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-2-154616",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "el alma adicional del Shabat y en anticipación comienza a anhelar por ella. Entonces, como resultado de ese mismo anhelo, se crea el alma adicional del Shabat. Pues las almas sagradas se crean principalmente mediante los buenos anhelos.\n\n## 21 Tevet\n\n14. Cada persona, de acuerdo a sus propios anhelos -que a su vez crean almas- genera puntos vocales para las letras de la Torá. Inicialmente, las letras de la Torá son una luz indiferenciada (como se explica más adelante, Lección #36), dado que “de la Boca del Altísimo” sólo proviene una luz indiferenciada. Sin embargo, cada uno, dependiendo de lo que anhele, les hace una forma a las letras que anteriormente eran como cuerpos inertes y, a partir de los puntos vocales creados por sus deseos se forman recipientes. Si la persona anhela y desea el bien, conforma y explica las letras de la Torá de manera positiva y éstas se transforman en recipie",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-3-452979",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "estrictos, “estará contigo en tu aflicción”] (ver Zohar III, 230b-231a, y Likutey Halajot, Hiljot Jezkat Mitaltelin 5).\n\n## **43 - Alejándose de las Palabras del Malvado**\n\n1. Debes saber que las palabras de una persona malvada con\n\n213\n\n## Page 214\n\nLección 44                                                                                27  Shvat",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-4-916018",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "mostró que la serpiente podía fácilmente volver a ser un bastón, como está escrito, “Extiende tu mano y toma su cola... y volvió a ser un bastón en su mano” (Éxodo 4:4). De esa manera Dios le insinuó a Moisés que aunque la persona esté profundamente\n\n## Page 411\n\nLección 283-285                                                                     19 Tamuz\n\nhundida en la impureza de la serpiente primordial, aun así es posible tomar algún punto bueno y, como resultado, la serpiente volverá a ser un bastón; ver esta lección en el Likutey Halajot. Se explica además en el Likutey Halajot, Hashkamat HaBoker 5, que la rectificación final y la redención por parte de nuestro recto Mashíaj también vendrán principalmente gracias al camino enseñado en esta lección. Pues Mashíaj encontrará mérito en cada judío hasta que todos se eleven y pasen hacia el lado del mérito; y esto, a su vez, traerá la Rede",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-5-521629",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "a, la persona debe hacer lo mismo consigo misma, de modo que aunque vea que se encuentra muy lejos de Dios, también deberá buscar algo de bien en ella misma, en donde no es malvada y de esa manera se trasladará genuinamente hacia el lado del mérito.*\n\n* Nota del Editor: Ver Likutey Halajot, Hiljot Eruvey Tejumin 6, donde se explica que la redención de Egipto se logró principalmente mediante el sendero tratado en esta lección, tal como se expresa en el versículo, “En verdad, He visto el sufrimiento de Mi pueblo” (Éxodo 3:7). Nuestros Sabios, de bendita de memoria, explican el versículo como sigue: “Yo veo dos cosas. Veo que al final pecarán; y sin embargo,  ‘He visto el sufrimiento de Mi pueblo’”. La explicación de nuestros Sabios concuerda con la enseñanza de esta lección, en que incluso aunque “Veo que al final pecarán, sin embargo, Yo sólo contemplo el bien en ellos y no miro el mal. D",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "lh-6-378079",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 7,
+      "printed_page": null,
+      "quote": "ÍNDICE\nPrefacio del Editor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . IX\nSobre el Rabí Natán . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . XI\nSobre el Likutey Halajot . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  XIII\nConvenciones Utilizadas en Esta Traducción . . . . . . . . . . . . . . . . . . .  XVI\nLIKUTEY HALAJOT\nIntroducción del Rabí Natán  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  2\nHashkamat HaBoker - Levantándose por la Mañana\nLas Leyes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18\nHalajá 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  19\nHalajá 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  83\nHalajá 3 . . . . .",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-7-813031",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 9,
+      "printed_page": null,
+      "quote": "PREFACIO DEL EDITOR\nEl Rebe Najmán era muy insistente en el hecho de que debíamos estudiar \ndiariamente el Shuljan Aruj. “Nunca dejen pasar un día sin estudiar al \nmenos una ley”, dijo (Sabiduría y Enseñanzas del Rabí Najmán de Breslov #29).\nE\nl Rabí Natán, el discípulo más cercano del Rebe, aceptó el mandato del Rebe y se \nadhirió a él asiduamente a lo largo de toda su vida. Finalmente llegó a repasar varias \nveces todo el Shuljan Aruj con sus comentarios.\nPero el Rebe Najmán tenía otro motivo para alentar al Rabí Natán a estudiar \nel Shuljan Aruj - quería que se familiarizara con sus leyes al punto de poder elaborar \njidushim, ideas originales, sobre ellas, basándose en las enseñanzas del Rebe Najmán en \nel Likutey Moharán. El Rabí Natán debía entretejer las leyes y las lecciones de manera \nque demostrasen cómo cada halajá mejora y fortalece la vida de cada individuo, en \ntodo momento ",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-8-833787",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 10,
+      "printed_page": null,
+      "quote": "Institute, llevamos adelante nuestro esfuerzo de 30 años para traducir y anotar el Likutey \nMoharán, siempre pensamos sobre muchas formas y maneras para traducir también \nel magnum opus del Rabí Natán. Se imprimieron pequeños volúmenes tomando de \ndiscursos especíﬁ cos, pero el proyecto mayor se mantuvo siempre muy lejos de nuestro \nalcance. Finalmente, al acercarnos a nuestro cuadragésimo año, logramos una solución \nfactible y el primer volumen de los discursos originales del Rabí Natán, cubriendo \nlos cinco primeros tópicos de Oraj Jaim - Hashkamat HaBoker (Levantándose por la \nMañana) - está ahora en sus manos.\nA nuestros muchos donantes que han hecho grandes sacriﬁ cios para ayudarnos a \ncomenzar este proyecto y que continuaron apoyándonos a través de nuestras diﬁ cultades \ny afanes, no podemos expresar suﬁ ciente gratitud. ¡Que todos ellos sean bendecidos por \nHaShem con todo lo bue",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-9-552317",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 16,
+      "printed_page": null,
+      "quote": "CONVENCIONES USADAS \nEN ESTA TRADUCCIÓN\nE\nsta traducción del Likutey Halajot al español incluye varios elementos para ayudar \nal lector en el estudio y en la comprensión del texto y de las ideas del Rabí Natán. \nA continuación presentamos las convenciones y las guías que hemos establecido para \nfacilitar este esfuerzo:\nHalajá\nLa palabra hebrea halajá hace referencia en general a una regla de conducta en \nla Ley Judía. Los jasidim de Breslov utilizan el mismo término para hacer referencia a \nuno de los discursos del Rabí Natán en el Likutey Halajot. Para distinguir entre ambos, \nhemos utilizado la palabra halajá (pl. halajot) en minúscula y en cursiva para indicar una \nley del Shuljan Aruj, y con mayúscula y sin cursiva el término Halajá para identiﬁ car el \ndiscurso del Rabí Natán.\nTraducción\nEl discurso en hebreo original del Rabí Natán se encuentra al comienzo de cada \npágina del texto",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-10-600750",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 18,
+      "printed_page": null,
+      "quote": "Rabí Natán provenientes de la Guemará, del Midrash, del Zohar, etcétera (excluyendo \nel Tanaj, cuyas fuentes se presentan junto con los versículos). En sus discursos, el \nRabí Natán suele hacer referencia a un cierto tema de manera sintética y confía en la \nfamiliaridad del lector con ese tema a partir de alguno de los otros textos de Breslov. Así, \nla segunda categoría de fuentes que se encuentra en las notas comprende referencias a \notros discursos del Likutey Halajot o a alguna de las obras básicas de las enseñanzas del \nRebe Najmán (principalmente el Likutey Moharán) donde el mismo tema es tratado con \nmayor detalle. Las notas también proveen de información explicativa o adicional para \nconceptos con los cuales el lector puede no estar familiarizado, pero que son esenciales \npara comprender el discurso. Usualmente, aunque no de manera exclusiva, estos son \nconceptos y principios de l",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-11-413637",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 215,
+      "printed_page": null,
+      "quote": "  197\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ה ב\n/LNXWH\\\u0003+DODNKRW\u0003(OXFLGDWHG\nLikutey Halajot Explicado\n1RWHV\u0003\t\u00036RXUFHV\nNotas y Fuentes\n :(Ēĕ-đĔ ,Ďĝ ĐĕĞĥĕ) ęĕ üĤ øĚŖČ þĺ ŖĚ øŊ ,Ŝ ÿĤ ĀŁ øĦ üĕ ŖŌ üĞ ĦŖĘĕ üĘ øŐ ęĕ üĻŖĞ øđ ,Ŝ ÿĤ ĀŁ øĦ üĕąę ýĈŔ ÿĐ ę üĞ Đ ýŁ øĤ ÿĐ ę Āĺ\n ŝĕ þĚ úē ÿĤ øđ ŝĕ þĞ ýĚ ěŖĚ úĐ ,ŝĕ þĦāĤŅč øĎŅ ŝ øĦ ĀČ øĜ üģ Đ ýň ÿČ ,'Ņė øđ ŝ þĦ ĀČ øĤ üň üĚ ŅĜ ýŁ üĘ ÿēĕ üĺ øģ ÿŕ ,ŝĕ þė ĀĤ øŃ üĚ 'Đ ŅĜ ýĞ øĦ ÿĦ Đ ĀŌ ĀĘ\"\n.Đ ýŁ øĤ ÿĐ ě ýė øđ ,\"Ņģ ĀŐ ÿČ øĦ üĐ ĕ ÿĘ ýČ\n ,Ę\" ÿō ÿĐ ěĕ üŃ Ħ ÿĜĕ üē øŁ Đ Āŋ üĠ øŕ ÿĐ ĕ ýďøĕąĘ ÿĞ ĕ üŊ .\" 'Ņė øđ ďŖč ĀŊ ÿĐ Ŝ þĘ þĚ ČāčĀĕ øđ\" :(Ē ,ďė ęĕĘĐĦ) Ŝ ĀŊąĤ ÿē ÿČ ęĕ üĤ øĚŖČ þĺ Đ þĒ øđ\n Ħ ÿĞ ÿŃ ÿĐ Ę ĀŊ Č ĀĤ úē ÿČ Č ĀĤ øĔ üŎ ÿĐ ýĚ ěĕ üČĕ üĢŖĚ Đ þĒąĕ ýďøĕąĘ ÿĞ ,Ę\" ÿō ÿŊ Đ ĀĜ ýĈŔ ÿĐ ĦŅĤ øĤŖĞ øĦ üĐ Ħ ÿĜĕ üē øŁ , ÿēāŌ ÿĐ ěŅŒ üŕ ČŅĐ þĺ\n.'Ņė øđ ęĕ üĤ ýĎ øđ Đ ĀčŅĺ øĦ ĕ ýĘ úĞ ÿŁ ěĕ üĻŖĞ þĺ ď ÿĞ ,'Ņė øđ Ğ ÿĘ ĀŁ þĺ ĦŖĢŖő üō ÿĐ øđ ĦŖĺ ĀĠ øō ÿĐ Ę Āė øđ ĦŅĜ ĀĚ úē ÿĤ ĀĐ Ę Āė øđ",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-12-970757",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 320,
+      "printed_page": null,
+      "quote": "(Proverbios 2:6).9 Y entonces, cuando daat emerge de la potencia al acto, \npuede entonces unirlas, aunque sean grandes opuestos.10",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-13-341058",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 321,
+      "printed_page": null,
+      "quote": "10. puede entonces unirlas, aunque sean grandes opuestos. Cuando el daat emerge y se\nactualiza, hace de mediador entre los dos elementos opuestos. Los reune, de modo que aunque \nsean opuestos extremos, efectúa un shiduj entre ambos. Para la persona que no puede encontrar \nsu zivug, el hecho de escuchar el daat emergiendo de la potencia al acto elimina los obstáculos \npara efectuar un shiduj entre ella y su pareja que hasta ahora le había estado oculta.",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-14-735536",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 322,
+      "printed_page": null,
+      "quote": "Esto [está aludido en] las letras que conforman ShIDUJ (una \npareja), que son las iniciales de “ki Siftei Kohen Ishmeru Daat Vetorá”.12 \nY éste es el signiﬁcado de “buscarán de su boca”. Uno tiene que buscar \nla Torá especíﬁcamente de su boca, para llevar el daat de la potencia al \nacto, como se mencionó más arriba.13",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-15-778247",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 121,
+      "printed_page": null,
+      "quote": "Cada día, cada hora, cada minuto, cada momento es una nueva creación. Hablamos de esto \nen nuestras plegarias diarias: “Quien en Su bondad renueva cada día, constantemente, la Obra \nde la Creación” (ver notas 184 y 185 allí). Por lo tanto, la persona no puede retroceder a ese \ntiempo y lugar anteriores pues ya no existen. La única manera de deshacer el daño en un \ntiempo y lugar pasado es a través de la teshuvá, que trasciende lo temporal y espacial. Éste es \nel signiﬁcado del versículo: “y en Tu libro están registrados todos ellos, los días que fueron \nformados; y Él ha [elegido] uno de ellos” (Salmos 139:16; Rashi explica que el día elegido \npor Dios es Iom Kipur). Es decir, para Dios, Quien trasciende lo temporal, todo el tiempo es \ncomo un solo día (ver Likutey Halajot, Tzitzit 3:15; ver también ibid., Netilat Iadaim, Shajarit \n3:5). Y así, para efectuar un genuino arrepentimiento, l",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-16-994484",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 308,
+      "printed_page": null,
+      "quote": "La halajá requiere que antes de devolver un objeto perdido a aquel que lo reclama como \nsu dueño, el que lo encontró tiene la obligación de investigar cuidadosamente al reclamante \npara veriﬁcar que no mienta (Iad HaJazaká, Hiljot Guezelá VeAvedá 13:3). El Rebe Najmán \nenseña que incluso si la persona viene para estar con el Tzadik y para tomar posesión de lo que \nha perdido, no se le cree de manera inmediata. Puede que sea aprovechadora, buscando tomar \naquello que no le pertenece. Quizás quiere la gloria o la sabiduría, de las cuales no es digna y \nasí ciertamente podría usarlas para mal. El Tzadik determina la medida del mérito de cada uno \na partir del estudio de Torá de la persona, de la plegaria y de su anhelo y deseo de Dios (Torat \nNatán, op. cit.). Por su parte, la persona no debe engañarse a sí misma. Debe enfrentar sus malas \nacciones que han hecho que perdiese lo que extravió",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-17-439953",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 17,
+      "printed_page": null,
+      "quote": "4. Retornen a Mí y Yo retornaré a ustedes. El signiﬁcado simple de las palabras del profeta\nes que si nosotros nos arrepentimos y retornamos a Dios, Él entonces retornará a entregarnos \nSu bien y abundancia (Metzudat David). El Rebe Najmán lee el versículo como enseñando que \nel concepto de teshuvá se aplica también a Dios (ver también Julín 60a; Likutey Moharán II, \n1:14). Las cuarenta y nueve puertas de Biná accesibles al hombre son los ámbitos en los cuales \nlos seres humanos pueden efectuar su arrepentimiento, cada uno en su nivel. Sin embargo, la \npuerta cincuenta pertenece solamente a Dios. El Rabí Natán explica que esta puerta número \ncincuenta es cuando Dios “retorna” al hombre, cuando Él demuestra compasión y amor y se \nacerca al mundo (Likutey Teﬁlot II, 36).\nRetornar a Dios no es un acto único sino un proceso constante. Cuanto más nos dedicamos \nal arrepentimiento, más alto po",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-18-611657",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 369,
+      "printed_page": null,
+      "quote": "18. éstos son los Diez Salmos… Los motivos por los cuales el Rebe Najmán elige\nespecíﬁcamente estos Diez Salmos son profundos e insondables (ver el segundo párrafo de la \nnota 28 más adelante). Dicho lo cual, algunas ideas pueden obtenerse al estudiar las palabras del \nsalmista buscando referencias a la rectiﬁcación y a la reparación del daño de la emisión en vano. \nNuevamente, las notas que siguen se basan principalmente en el comentario del Parparaot \nLeJojmá.",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-19-935419",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 370,
+      "printed_page": null,
+      "quote": "y en otra instancia (III, 223b) enseña que mijtam corresponde a iesod, i.e., la seﬁrá identiﬁcada \ncon el brit (ver Apéndice: Las Seﬁrot y el Hombre). Rashi cita a Sotá 10b que interpreta las \npalabras “Mijtam leDavid” como una alusión al hecho de que el rey David nació circuncidado \n- al leer MiJTaM ( )מכתםcomo compuesto de MaKato TaM ( ,)מכתו תםi.e., que su [miembro, \nque debería haber requerido una] herida (maká,  ,)מכהestaba pleno (tam,  .)תםEn el contexto \nde nuestra lección, esto hace referencia a la plenitud espiritual, al concepto de un brit cuidado \n(ver también Lección #83:1, n. 12). Un segundo tipo de canción, berajá, es mencionado en el \nversículo 7 de Mijtam leDavid - “Avarej (Bendigo) a Dios por haberme aconsejado; incluso en \nla noche” (ver n. 7 más arriba). Además, ambos versículos, el 9 y el 11, contienen referencias \na la alegría. Como se mencionó previamente, la klipá ",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-20-788719",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 433,
+      "printed_page": null,
+      "quote": "5. Dijo esto en idish. El Rebe Najmán enseñaba en idish, la lingua franca de los judíos de la\nEuropa Oriental. Esto era así no sólo en las conversaciones informales con sus seguidores y en \nlas trece historias que relató (hasta hoy en día Sipurey Ma'asiot se imprime en hebreo y en idish, \nun formato originado por el Rabí Natán), sino también en las lecciones del Likutey Moharán. \nAquellos sensibles a las sutilezas del idish saben que el traducir sus expresiones a otro idioma \nno captura, en general, con exactitud el sentido o las referencias del original, quitándole su \nriqueza. El Rabí Natán le agrega por lo tanto ocasionalmente a su traducción al hebreo de las \npalabras del Rebe una cita exacta, sin traducir, del idish. Ver, por ejemplo, Likutey Moharán I, \n49:ﬁnal; Lección: 78:7 anteriormente en este volumen; y la Lección #114 más adelante. Hay \nmuchas más citas del Rebe en idish prov",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-21-451978",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 59,
+      "printed_page": 49,
+      "quote": "49 \nPor lo tanto, [Dios] “perdona el pecado y la rebelión”. Porque \ncomo resultado del suspirar para traer el rúaj-de-vida de los Tzadikim y \nasí proveer plenitud [en lugar] de carencia, se expían los pecados. Éste \nes el signiﬁcado de “...pero un hombre sabio la podrá paciﬁcar”; esto es, \n“perdonando el pecado y la rebelión”.36\n5.  Ahora bien, al suspirar, la persona trae el rúaj-de-vida hacia la \ncarencia por la cual está suspirando, lo que la hace plena. Pero uno no \ndebe intentar provocar a los malvados.37 Cuando la persona provoca \na un malvado, éste suspira y trae rúaj de su rav de las klipot, siendo \nentonces capaz de hacerle daño, dado que momentáneamente su rúaj es \npoderoso, de modo que “sopla y derriba a todos sus enemigos” - Dios \nno lo permita.\nPor lo tanto, no todos pueden oponerse a los malvados. Sólo el \nTzadik perfecto38 puede hacerlo. El Tzadik perfecto es alguien que e",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-22-192566",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 71,
+      "printed_page": 61,
+      "quote": "61 \nla naturaleza puede ser modiﬁcada a través de la plegaria. {Edén es \n“ningún ojo lo ha visto” porque no podemos comprender aquello que \ntrasciende a la naturaleza.}\nY esto es: “Un río salía del Edén”, es decir, de la plegaria, como \nse mencionó más arriba, “Una fuente brotará de la casa de Dios”. “...\npara regar el jardín”, esto es la Torá, como se mencionó, la “fuente de \njardines”.\nY cuando la fuente de sabiduría proveniente de la plegaria es \nllevada hacia el jardín -la Torá- hace entonces que crezcan las hierbas, \nlas almas judías. En otras palabras, [las almas judías] crecen en el \njardín, obteniendo comprensión e inteligencia de la Torá. Entonces \nmerecen “investigar las profundidades de la ley”, para determinar la ley \n<correcta>: <lo permitido, lo kosher y lo puro frente a lo impuro, lo no \nkosher y lo prohibido>. Al hacerlo, separan el bien del mal.\nÉste es el signiﬁcado de,",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-23-187748",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 111,
+      "printed_page": 101,
+      "quote": "101 \n¡Y debes saber! Todo depende del grado de verdad [que tenga la \npersona]. Pues lo primordial de la luz es Dios, y Dios es la esencia de la \nverdad. El anhelo fundamental de Dios es sólo la verdad.\n“...tejalená (acabada) a un amáh (un codo) milemalá (de arriba)”. \n[La palabra TeJaLená] tiene la misma connotación que “Y el alma de \nDavid TeJaL (anhelaba)” (cf. Samuel 2, 13:39). [Y las letras de la palabra] \nAMáH aluden a las Hei (5) articulantes,41 que consisten de Esh (fuego) \ny Maim (agua).42\nEn otras palabras: fíjate que las palabras salgan de tu boca con \nverdad. Entonces, desde Arriba, Dios anhelará morar contigo. Y cuando \nÉl more contigo, Él brillará para ti. Así, las letras iniciales de “Amáh \nTejalena Milemalá” deletrean Æmet (verdad).43 Porque es a través de la \nverdad que, desde Arriba, Dios desea morar con el hombre, como en, \n“Dios está cerca de todos aquéllos que Lo llam",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-24-218640",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 46,
+      "printed_page": 36,
+      "quote": "36\n \"כּ ֹל אֲ שׁ ֶ ר נִשׁ ְ מַ ת רוּחַ חַ יִּים בְּ אַ פָּ יו\". וּכְ מוֹ שׁ ֶ אָ מְ רוּ חֲ כָ מִ ים: 'אִ ם\nתֶּ חְ סַ ר הַ נְּשׁ ִ ימָ ה – תֶּ חְ סַ ר הַ חַ יִּים'.\nנִ מְ צָ א,  כִּ י  עִ קַּ ר  חִ יּוּת  כָּ ל  הַ דְּ בָ רִ ים  הוּא  בִּ בְ חִ ינַ ת  רוּחַ ;  וּכְ שׁ ֶ יֵּשׁ \nחִ סָּ רוֹן בְּ אֵ יזֶה דָּ בָ ר, עִ קַּ ר הַ חִ סָּ רוֹן הוּא בִּ בְ חִ ינַ ת הַ חִ יּוּת שׁ ֶ ל אוֹתוֹ \nחַ יִּים שׁ ֶ ל אוֹתוֹ הַ דָּ בָ ר, לַ אֲ שׁ ֶ ר הָ רוּחַ - ַהַ דָּ בָ ר, שׁ ֶ הוּא בְּ חִ ינַ ת הָ רוּח\nהוּא הַ מְ קַ יֵּם הַ דָּ בָ ר. \nוְ הָ אֲ נָ חָ ה הוּא אֲ רִ יכַ ת הַ נְּשׁ ִ ימָ ה, וְ הוּא בִּ בְ חִ ינַ ת \"אֶ רֶ ךְ אַ פַּ יִם\", דְּ הַ יְנוּ \nמַ אֲ רִ יךְ רוּחֵ הּ . וְ עַ ל כֵּ ן כְּ שׁ ֶ מִּ תְ אַ נֵּ חַ עַ ל הַ חִ סָּ רוֹן וּמַ אֲ רִ יךְ רוּחֵ הּ , הוּא \nהַ חַ יִּים לְ הַ חִ סָּ רוֹן, כִּ י עִ קַּ ר הַ חִ סָּ רוֹן הוּא הִ סְ תַּ לְּ קוּת - ַמַ מְ שׁ ִ יךְ רוּח\nיְדֵ י הָ אֲ נָ חָ ה מַ שׁ ְ לִ ים הַ חִ ס",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-25-6129",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 113,
+      "printed_page": 103,
+      "quote": "103 \ndecir, el mundo más bajo, el mundo de las estrellas y el mundo del \nintelecto.46\n{Sin embargo, es imposible orar sin estudiar la Torá.47 Porque un \nignorante no puede ser piadoso (Avot 2:6). Y, como está escrito (Proverbios \n28:9), “Cuando la persona aparta su oído de escuchar Torá, su plegaria \ntambién es una abominación”.48}\n4.  Y cada persona debe unir sus plegarias a los <Tzadikim> de la \ngeneración.49 <Porque el> Tzadik conoce cómo correlacionar los \nportales [con las plegarias] y elevar cada plegaria a su portal apropiado.50 \nPues cada Tzadik es un aspecto de Moshé-Mashíaj. Como <dirían los \nEl Rebe Najmán enfatizó particularmente la importancia de aplaudir mientras se está \norando (ver Likutey Moharán I, 44; Tzadik #204). Aun así, están aquellos a los que les resulta \ndifícil concentrarse cuando el vecino está aplaudiendo. Sin embargo, se dice en nombre del \nRabí Eliahu Jaim ",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-26-157062",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 303,
+      "printed_page": 293,
+      "quote": "293 \nentre una ola y otra - Éstos son los sabios, quienes están entre una ola \ny otra. Es decir, ellos unen todas las almas, como en, “Aquél que toma \nalmas es sabio”.\ntrescientas parsei - Esto corresponde a una shin.117\ny la altura de cada ola es de trescientas parsei - En otras palabras, \npara elevar las almas. Esto corresponde a la otra shin.118\nCierta vez, estábamos navegando por el orja (camino) – Vale decir, \nentramos para despertar una uniﬁcación, que es llamada ORaJ, como en \n(Salmos 139:3), “…ORJi (mi andar por el camino) y mi yacer”.119\ncuando nos levantó una ola - En otras palabras, ellos elevaron las \nalmas Arriba, correspondiente a, “El sabio asciende a la ciudad de los \nfuertes”. \nhasta que vimos el marvata (lugar de descanso) de una pequeña \nestrella - Esto es, hicimos una uniﬁcación superior. [La palabra] \nmaRVata alude a la uniﬁcación, como en, “mi andar por el camino y ",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-27-119542",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 5,
+      "printed_page": null,
+      "quote": "PARTE I ■ La Potencia de la Plegaria ....................................15",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-28-214739",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 22,
+      "printed_page": null,
+      "quote": "22 ■ La Potencia de la Plegaria",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "header",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-29-809687",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 10,
+      "printed_page": null,
+      "quote": "10 ■ La Potencia de la Plegaria",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "header",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "La Potencia"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-30-122565",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 13,
+      "printed_page": null,
+      "quote": "las enfermedades, las diﬁcultades ﬁnancieras y otras clases de sufrimientos \n(tales como inundaciones, terremotos o tornados). Si es así, pregunta el \nRabí Natán, ¿cómo podemos orar para que HaShem retire de nosotros ese \nsufrimiento, dado que es Su voluntad la que ha dictado nuestra angustia? El \nRabí Natán responde que HaShem no está buscando que Sus criaturas sufran. \nLo que desea es que nos volvamos a Él. Quiere que miremos hacia arriba y \nLe roguemos para que cancele Sus decretos y hacernos el bien (Likutey Halajot, \nJelev veDam).",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-31-44823",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 30,
+      "printed_page": null,
+      "quote": "El Rabí Natán trata sobre la historia de Los Niños Cambiados en un \nincreíble discurso que se encuentra en su Likutey Halajot, Birkot HaShajar 3. \nA continuación presentamos algunos extractos que se aplican a la plegaria de \nla mañana.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-32-994815",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 49,
+      "printed_page": null,
+      "quote": "uego del Mode Ani, recitamos “Reshit Jojmá”. El Rabí Natán explica \nque la seﬁrá de Jojmá (Sabiduría) se encuentra en el más elevado de los \nniveles, al cual no es posible acceder a no ser que primero demostremos \ntemor a Dios. El temor a Dios es el primer paso para adquirir la verdadera \nsabiduría (Likutey Halajot, Seﬁrá 1).",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "Likutey Halajot"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-33-585047",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 241,
+      "printed_page": null,
+      "quote": "Al hablar sobre las alabanzas que ofrecemos a Dios, el Rebe Najmán \nexplica que esas alabanzas y descripciones son producto de nuestra \nimaginación. (Pues, ¿qué palabras pueden llegar a ser suﬁcientes para alabar \na Dios de Quien no sabemos nada?). Pues esas alabanzas, de hecho, son \nseñales del amor de Dios hacia nosotros. Pues si no fuese por Su bondad, sería \nabsolutamente inapropiado clamar y hacer referencias a Dios con imágenes y \nalabanzas, con palabras y letras (Likutey Moharán I, 15:5; ibid. II, 8:14). Éste es el \npoder de la plegaria, dado que expresa el amor de Dios hacia nosotros.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "nominal_reference",
+      "source_layer": "nominal_reference",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": "Likutey Moharán",
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "validated_nominal_reference",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-34-585047",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 241,
+      "printed_page": null,
+      "quote": "Al hablar sobre las alabanzas que ofrecemos a Dios, el Rebe Najmán \nexplica que esas alabanzas y descripciones son producto de nuestra \nimaginación. (Pues, ¿qué palabras pueden llegar a ser suﬁcientes para alabar \na Dios de Quien no sabemos nada?). Pues esas alabanzas, de hecho, son \nseñales del amor de Dios hacia nosotros. Pues si no fuese por Su bondad, sería \nabsolutamente inapropiado clamar y hacer referencias a Dios con imágenes y \nalabanzas, con palabras y letras (Likutey Moharán I, 15:5; ibid. II, 8:14). Éste es el \npoder de la plegaria, dado que expresa el amor de Dios hacia nosotros.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "nominal_reference",
+      "source_layer": "nominal_reference",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": "Rebe Najmán",
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "referencias"
+      ],
+      "evidence_type": "validated_nominal_reference",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 6
+    },
+    {
+      "work_code": "lh",
+      "hits": 6
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 9
+    },
+    {
+      "work_code": "lmii",
+      "hits": 6
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 8
+    }
+  ],
+  "cross_corpus_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 6
+    },
+    {
+      "work_code": "lh",
+      "hits": 6
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 9
+    },
+    {
+      "work_code": "lmii",
+      "hits": 6
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 8
+    }
+  ],
+  "not_found": [],
+  "warnings": [
+    "pdf_page_null_for_kitzur_chunk"
+  ],
+  "execution": {
+    "pipeline_version": "investigative_qa_v1",
+    "model": "openai_gpt-5.4-nano",
+    "used_ai_interpretation": true,
+    "used_ai_rendering": true,
+    "ai_render_validated": true,
+    "used_deterministic_fallback": false,
+    "used_vector": false,
+    "used_external_sources": false,
+    "used_ocr": false,
+    "database": "postgresql",
+    "duration_ms": 9066.29
+  }
+}

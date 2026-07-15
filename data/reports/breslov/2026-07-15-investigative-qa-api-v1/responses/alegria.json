@@ -1,0 +1,479 @@
+{
+  "question": "¿Dónde aparece alegría?",
+  "status": "ok",
+  "answer_text": "Aparece **“alegría”** en:\n- **Likutey Moharán XV KDP (p. 100)**: “Podrá entonces alcanzar una gran alegría a través de su simpleza y de su fe.”\n- **Likutey Moharán XV KDP (p. 100)**: “78. Podrá entonces alcanzar una gran alegría…” (nota que indica que es la única mención a la alegría en esta lección).\n- **La Potencia de la Plegaria (p. 11)**: “...de los dolores y de las alegrías.”\n- **La Potencia de la Plegaria (p. 29)**: “Todas las alegrías del mundo…”\n- **La Potencia de la Plegaria (p. 41)**: “Alegría” (como título/entrada).",
+  "answer_markdown": "Aparece **“alegría”** en:\n- **Likutey Moharán XV KDP (p. 100)**: “Podrá entonces alcanzar una gran alegría a través de su simpleza y de su fe.”\n- **Likutey Moharán XV KDP (p. 100)**: “78. Podrá entonces alcanzar una gran alegría…” (nota que indica que es la única mención a la alegría en esta lección).\n- **La Potencia de la Plegaria (p. 11)**: “...de los dolores y de las alegrías.”\n- **La Potencia de la Plegaria (p. 29)**: “Todas las alegrías del mundo…”\n- **La Potencia de la Plegaria (p. 41)**: “Alegría” (como título/entrada).",
+  "summary": "16 evidencias literales recuperadas",
+  "conversation": {
+    "conversation_id": null,
+    "turn_id": null,
+    "resolved_context": []
+  },
+  "interpretation": {
+    "detected_language": "es",
+    "normalized_question": "¿Dónde aparece la palabra \"alegría\"?",
+    "concepts": [
+      "alegría",
+      "dónde aparece",
+      "ubicación de la palabra",
+      "aparición de \"alegría\""
+    ],
+    "requires_cross_corpus": false
+  },
+  "search_plan": {
+    "queries": [
+      "alegría",
+      "dónde aparece",
+      "ubicación de la palabra",
+      "aparición de \"alegría\""
+    ],
+    "works": [
+      "kitzur",
+      "lh",
+      "lm_xv",
+      "lmii",
+      "potencia_plegaria"
+    ],
+    "languages": [
+      "es",
+      "he",
+      "en"
+    ],
+    "layers": [
+      "page_literal",
+      "fine_zone",
+      "note_source_unit",
+      "nominal_reference"
+    ],
+    "include_audit": false,
+    "retrieval_mode": "sql_literal"
+  },
+  "works_consulted": [
+    "kitzur",
+    "lh",
+    "lm_xv",
+    "lmii",
+    "potencia_plegaria"
+  ],
+  "hits": [
+    {
+      "hit_id": "kitzur-0-159575",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "es se eliminarán del mundo la discordia y el conflicto, habrá paz entre el pueblo judío y su Padre en el Cielo, y la santidad será sellada con un “sello dentro de un sello”. Todo esto se logra mediante la plegaria, pues la plegaria “incluye a todo”].\n\n12. Se enseñó, “Bereshit (En el comienzo) - ésta es una declaración” (Zohar II, 177) - significando una “declaración completa”. Esto explica por qué la fe es llamada Ierushalaim (Jerusalén), dado que la fe se construye principalmente a través de BeRESHIT [que tiene las mismas letras que] IaRE BoSHeT (temor-vergüenza); y éste último es el concepto de IRa SHaLeM (temor completo), [que contiene las mismas letras que IeRuSHaLaiM], una “declaración completa”. Surge entonces que la principal construcción de la fe se efectúa a través del temor a Dios, que está asociado con el concepto de una “declaración completa” y con el concepto de la plegaria.",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1-740110",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "la luz. Entonces puede relatar historias sobre los verdaderos Tzadikim, dado que sabe cómo distinguir entre ellos y su opuesto. Consecuentemente, merece la pureza del pensamiento, mitigar los juicios estrictos y ser rescatada de todos los problemas.\n\n4. Existe un Nombre Santo que es usado Arriba cuando desean designar a un rey. Ese nombre es K-M-H, un acróstico de la frase “mira desde Tu santa morada (Hashkifa Mimeon Kodsheja)” (Deuteronomio 26:15). Ese Santo Nombre K-M-H también está presente en el versículo, “Él depone reyes y establece (umHaKim) reyes” (Daniel 2:21), al igual que en el versículo relativo a Iosef, “He aquí, mi gavilla estaba de pie (KaMaH)” (Génesis 37:7; describiendo el sueño profético sobre el ascenso futuro de Iosef a la realeza y al dominio).\n\n2 Tamuz\n\n## **235**\n\n1. Si la persona está caminando, tropieza y se cae, y la gente se ríe de ella, cosa que la avergüenza ",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-2-298849",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "erudito de Torá, la persona extrae las letras grabadas en sus huesos y rectifica todo.\n\n4. La tremenda humildad de los verdaderos Tzadikim -al punto\n\n21\n\n## Page 22\n\n9 Tishrei\n\nLección 4\n\nen que ellos son como “nada”- les permite expiar los pecados.\n\n5. La persona que desee andar en la senda de la santidad deberá quebrar todos los rasgos negativos que derivan de los cuatro elementos, tal cual ha sido enseñado. También deberá abrir su corazón ante un estudioso de Torá -es decir, deberá confesarse ante él- y éste le explicará y le aclarará el sendero que debe seguir de acuerdo a la raíz de su alma.\n\n6. Existen tres pasos en la unión con los Tzadikim por medio de los cuales todo alcanza su rectificación. El primer paso es cuando uno ve al Tzadik. Al hacerlo se anulan los rasgos negativos que derivan del elemento “mineral” y del elemento “vegetal” - es decir, la tristeza, la indolencia con s",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "lh-3-833787",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 10,
+      "printed_page": null,
+      "quote": "Institute, llevamos adelante nuestro esfuerzo de 30 años para traducir y anotar el Likutey \nMoharán, siempre pensamos sobre muchas formas y maneras para traducir también \nel magnum opus del Rabí Natán. Se imprimieron pequeños volúmenes tomando de \ndiscursos especíﬁ cos, pero el proyecto mayor se mantuvo siempre muy lejos de nuestro \nalcance. Finalmente, al acercarnos a nuestro cuadragésimo año, logramos una solución \nfactible y el primer volumen de los discursos originales del Rabí Natán, cubriendo \nlos cinco primeros tópicos de Oraj Jaim - Hashkamat HaBoker (Levantándose por la \nMañana) - está ahora en sus manos.\nA nuestros muchos donantes que han hecho grandes sacriﬁ cios para ayudarnos a \ncomenzar este proyecto y que continuaron apoyándonos a través de nuestras diﬁ cultades \ny afanes, no podemos expresar suﬁ ciente gratitud. ¡Que todos ellos sean bendecidos por \nHaShem con todo lo bue",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-4-744118",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 26,
+      "printed_page": 8,
+      "quote": "8   LIKUTEY HALAJOT\nINTRODUCCIÓN DEL RABÍ NATÁN\nTodo aquel que disponga su corazón para estudiar verdaderamente las \nincomparables enseñanzas del Rebe, que son más profundas que los más hondos abismos \ny más anchas que el mar, y que se avoque a estas nuevas ideas y explicaciones de las \nenseñanzas que HaShem con gracia me ha otorgado revelar, comprenderá muy bien \nque, considerando su asombrosa profundidad, aún no las he llegado a aclarar de manera \nadecuada. Éste es el caso, incluso allí, en donde he explicado el tema extendiéndome \nconsiderablemente y por cierto en aquellas instancias en que hube de ser conciso. Debes \nsaber que todas las enseñanzas que el Rebe reveló son enteramente nuevas hakdamot \n(sin embargo y aunque todas se basan en las mitzvot de la Torá recibidas de antaño, \nson principios introductorios completamente originales). Todas presentan un asombroso \nconsejo y guía s",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-5-40686",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 41,
+      "printed_page": null,
+      "quote": "  23\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n \n23\nen sí al menos algún punto bueno. Y de manera similar deberá seguir buscando \ny encontrando más puntos buenos dentro de sí misma.\nAl juzgarse a sí misma de manera favorable2 y al encontrar aún más puntos \nbuenos dentro de sí -aunque haya hecho lo que haya hecho y haya dañado lo \nque haya dañado- la persona pasa genuinamente desde el lado de la culpa al \nlado del mérito. Y a través de esto puede merecer el hacer teshuvá. En la medida \nen que crea que no posee ningún bien y se sienta así alejada de HaShem, le será en \nverdad muy difícil el retornar sinceramente a Él en arrepentimiento. Pero después \nde encontrar sus puntos buenos y de sentirse genuinamente cerca de HaShem, le \nserá más fácil hacer una verdadera teshuvá.\nDavid HaMelej alude a este poder de juzgarse favorablemente en los Tehilim. \nÉste es el signifi cado del versículo “Ha",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-6-227403",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 103,
+      "printed_page": null,
+      "quote": "de Israel, es el conducto para traer Torá/vida a toda la creación (§3). El prototipo de esto fue \nel mundo antes de la Entrega de la Torá, cuando todos estaban ocupados con el derej eretz, \nestableciendo el mundo. Dios entonces sustentó al mundo y le dio vida solamente a través del \njesed jinam (bondad gratuita), el concepto del Tesoro de Dones Inmerecidos. También ahora, \ncada vez que nos separamos de la Torá, estamos sustentados y recibimos la fuerza vital a través \ndel verdadero Tzadik. En ese momento el Tzadik mismo es un prustik y así, aparentemente sin \nmérito, ese Tzadik trae rúaj de vida del Tesoro de Dones Inmerecidos para difundir la bondad \nde Dios y darles vida incluso a la gente y a los lugares más alejados de la santidad (§4A). Antes \ndel Sinaí la Torá estuvo oculta dentro del establecimiento del mundo, que fue creado a través de \nlas Diez Expresiones, “el poder de Sus acto",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-7-38311",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 100,
+      "printed_page": null,
+      "quote": "Y, de la manera que sea, también debe alentarse con el temor al \nCielo mientras se encuentra en un estado de simpleza.77 Podrá entonces \nalcanzar una gran alegría a través de su simpleza y de su fe.78 Pues la \nsoﬁsticación es absolutamente innecesaria; sólo fe, sencillez y simpleza, \nsin ninguna soﬁsticación.79 Esto se debe a que la soﬁsticación es muy",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-8-494982",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 100,
+      "printed_page": null,
+      "quote": "78. Podrá entonces alcanzar una gran alegría a través de su simpleza y de su fe. Ésta es la\núnica mención a la alegría en esta lección. Este párrafo es también el único que habla de la fe \nque, como se indicó en la nota 25 más arriba, está identiﬁcada por el Rabí Natán como la clave \npara traer la bondad de Dios. Él explica que con fe la persona sabe que Dios creó todas las cosas \nque existen y que también la Torá se encuentra fundada en la fe. Por lo tanto, la persona con una \nfe perfecta puede entrar en el Tesoro de Dones Inmerecidos y tomar de la bondad que sustentó \nal mundo antes de la Entrega de la Torá. El gran valor de tal fe es que, no importa cuán lejos \nde la santidad haya caído la persona, siempre podrá encontrar a Dios, pues cree y acepta que \nDios está en todas partes, que es inmanente en todo lo que Él ha creado. Por lo tanto, la fe de la \npersona y su simpleza -el dejar d",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-9-392131",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 148,
+      "printed_page": 138,
+      "quote": "138\n ,(תְּ רוּעָ ה, לְ שׁ וֹן )תהלים ב(: \"תְּ רֹעֵ ם בְּ שׁ ֵ בֶ ט בַּ רְ זֶל\" )תקון י\"ח ותקון כ\"א\nכִּ י הוּא מְ שׁ ַ בֵּ ר רוּחַ גָּ בוֹהַּ , אֵ ל אַ חֵ ר, כְּ פִ ירוֹת.\nוְ זֶה בְּ חִ ינַ ת רִ קּ וּדִ ין וְ הַ מְ חָ אַ ת כַּ ף. כִּ י רִ קּ וּדִ ין וְ הַ מְ חָ אַ ת כַּ ף \nו \nיְדֵ י שִׂ מְ חַ ת -נִ מְ שׁ ָ כִ ין מִ בְּ חִ ינַ ת הָ רוּחַ שׁ ֶ בַּ לֵּ ב, כַּ נִּ רְ אֶ ה בְּ חוּשׁ , כִּ י עַ ל\nהַ לֵּ ב הוּא מְ רַ קֵּ ד וּמַ כֶּ ה כַּ ף אֶ ל כַּ ף; וְ כַ מּ וּבָ א בַּ תִּ קּ וּנִים )תקון כא נ\"א:(: \n'וְ הַ אי רוּחָ א נָשׁ ִ ב בְּ שׁ ִ ית פִּ רְ קִ ין דִּ דְ רוֹעָ א וּבְ שׁ ִ ית פִּ רְ קִ ין דְּ שׁ וֹקִ ין', \nוְ הִ יא בְּ חִ ינַ ת הַ מְ חָ אַ ת כַּ ף וּבְ חִ ינַ ת רִ קּ וּדִ ין. וְ זֶהוּ בְּ חִ ינַ ת: \"לִ בּ וֹ נָשָׂ א \nיְדֵ י הָ רוּחַ שׁ ֶ בַּ לֵּ ב -רבה, ויצא, פרשה ע(, הַ יְנוּ עַ ל-אֶ ת רַ גְ לָ יו\" )בראשית\nבָּ אִ ים הָ רִ קּ וּדִ ין. \nיְדֵ י  הַ צַּ דִּ יק  שׁ ֶ הוּא  בְּ חִ ינַ ת  רוּחַ  כ",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-10-68795",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 149,
+      "printed_page": 139,
+      "quote": "139 \nquebrarás) con una barra de hierro” (Tikuney Zohar #18, p.36a), porque ello \nquiebra el espíritu arrogante/“otro dios”/ateísmo.56\n6.  Y éste es el aspecto de bailar y aplaudir, pues bailar y aplaudir \nprovienen del espíritu del corazón. Tal como se aprecia con facilidad, \ncuando el corazón de la persona está contento, ella baila y aplaude.57 \nY, como dice en el Tikuney Zohar (#21, p.51b): “Este rúaj58 sopla en las \nseis secciones de los brazos y en las seis secciones de las piernas”59 \n- el aspecto de aplaudir y de bailar.60 Esto corresponde a “su corazón \nllevaba a sus pies” (Bereshit Rabah 70:8).61 En otras palabras, el espíritu del \ncorazón produce el baile.\nAsí, y tal como se explicó, mediante el Tzadik/el rúaj, se elimina la \narrogancia. Como está escrito (Salmos 36:12), “Que no venga sobre mí el pie \nde la soberbia”.62 También se elimina la idolatría. Como está escrito (Génesi",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-11-191478",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 150,
+      "printed_page": 140,
+      "quote": "140\n ,יְדֵ י הָ רִ קּ וּדִ ין, בְּ חִ ינַ ת נָשָׂ א לִ בּ וֹ אֶ ת רַ גְ לָ יו-וּכְ שׁ ֶ נִּ תְ עַ לֶּ ה הָ רַ גְ לִ ין עַ ל\nזֶה נִ מְ תָּ קִ ין הַ דִּ ינִים; -יְדֵ י-וְ נִ תְ בַּ טֵּ ל הַ גַּ אֲ וָ ה, הַ יְנוּ הָ עֲ בוֹדָ ה זָרָ ה, עַ ל\nאַ ף בָּ עוֹלָ ם' )ספרי, -כִּ י 'כָּ ל זְמַ ן שׁ ֶ יֵּשׁ עֲ בוֹדָ ה זָרָ ה בָּ עוֹלָ ם, חֲ רוֹן\nאַ ף  וְ נִ מְ שׁ ָ כִ ין -ראה(,  וּכְ שׁ ֶ נִּ תְ עַ בֵּ ר  הָ עֲ בוֹדָ ה  זָרָ ה,  נִ תְ עַ בֵּ ר  הַ חֲ רוֹן\nא ב(, הַ יְנוּ -חֲ סָ דִ ים, וְ אָ ז הָ רַ גְ לִ ין הֵ ם בִּ בְ חִ ינַ ת רַ גְ לֵ י חֲ סִ ידָ יו )שמואל\nבִּ בְ חִ ינַ ת חֲ סָ דִ ים, הַ יְנוּ בְּ חִ ינַ ת \"חַ סְ דֵּ י דָ וִ ד הַ נֶּ אֱ מָ נִים\" )ישעיהו נ\"ה( \n– 'הַ נֶּ אֱ מָ נִים' דַּ יְקָ א, כִּ י נִ תְ בַּ טְּ לוּ הַ מִּ ינוּת וְ הַ כְּ פִ ירוֹת.\nיְדֵ י הָ רוּחַ נִ תְ גַּ לֶּ ה הֶ אָ רַ ת הַ יָּדַ יִם, -וְ גַ ם זֶה בְּ חִ ינַ ת הַ מְ חָ אַ ת כַּ ף, כִּ י עַ ל\nהשירים ה(: \"קוֹל דּ וֹדִ י דּ וֹפֵ ק\"; '",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-12-647096",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 156,
+      "printed_page": 146,
+      "quote": "146\n זָרָ ה, כִּ י הוּא קִ בֵּ ל הַ תּ וֹרָ ה, שׁ ֶ הוּא בְּ חִ ינַ ת יָדַ יִן וְ רַ גְ לַ יִן כַּ נַּ \"ל, שׁ ֶ עַ ל\nיְדֵ יהֶ ם נִ תְ בַּ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים כַּ נַּ \"ל. \nוְ עַ ל כֵּ ן הִ פִּ יל פּ וּר בַּ יֶּרַ ח שׁ ֶ מֵּ ת בּ וֹ משׁ ֶ ה, כִּ י חָ שׁ ַ ב כִּ י כְּ בָ ר מֵ ת \nמשׁ ֶ ה הַ מְ בַ טֵּ ל כּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים, וְ אֵ ין עוֹד מִ י שׁ ֶ יּוּכַ ל לְ בַ טֵּ ל \nכּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים.\nאֲ בָ ל מָ רְ דֳּ כַ י וְ אֶ סְ תֵּ ר הָ יָה לָ הֶ ם כּ ֹחַ לְ בַ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים שׁ ֶ ל \nהָ מָ ן, וּבִ שׁ ְ בִ יל זֶה בִּ ימֵ יהֶ ם קִ בְּ לוּ יִשְׂ רָ אֵ ל הַ תּ וֹרָ ה מֵ חָ דָ שׁ , כְּ מַ אֲ מַ ר \nחֲ כָ מֵ ינוּ, זִכְ רוֹנָ ם לִ בְ רָ כָ ה )שבת פח.(: \"קִ יְּמוּ וְ קִ בְּ לוּ\" – 'קִ יְּמוּ מַ ה \nשּ ׁ ֶ קִּ בְּ לוּ כְּ בָ ר'. \nוְ זֶה: קִ יְּמוּ וְ קִ בְּ לוּ. קִ יְּמוּ – זֶה בְּ חִ ינַ ת רַ גְ לַ יִן, וְ קִ בְּ לוּ – זֶה בְּ חִ ינַ ת \nיָדַ יִן, וְ ה",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "dónde aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-13-517156",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 11,
+      "printed_page": null,
+      "quote": "a plegaria\nUna medida del anhelo y del deseo del corazón.\nLa liberación de las emociones.\nUna expresión de los conﬂictos internos, de los dolores y de las    \n               alegrías.\n               La plegaria. Es todo esto y, aun así, mucho más.\nPuede mover montañas - puede mover el Cielo - ¡y puede movernos \na nosotros!",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-14-420549",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 29,
+      "printed_page": null,
+      "quote": "El hombre del bosque les llevó esa noche más comida y \nbebida. Nuevamente oyeron el rugir de los animales salvajes por \nla noche, pero al escuchar atentamente, comprendieron que era \nmúsica, un canto bello y asombroso. Todas las alegrías del mundo \neran insigniﬁcantes comparadas con el asombroso regocijo de oír \nesa canción.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-15-147307",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 41,
+      "printed_page": null,
+      "quote": "Alegría",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "alegría"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 3
+    },
+    {
+      "work_code": "lh",
+      "hits": 3
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 3
+    },
+    {
+      "work_code": "lmii",
+      "hits": 4
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 3
+    }
+  ],
+  "cross_corpus_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 3
+    },
+    {
+      "work_code": "lh",
+      "hits": 3
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 3
+    },
+    {
+      "work_code": "lmii",
+      "hits": 4
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 3
+    }
+  ],
+  "not_found": [],
+  "warnings": [
+    "pdf_page_null_for_kitzur_chunk"
+  ],
+  "execution": {
+    "pipeline_version": "investigative_qa_v1",
+    "model": "openai_gpt-5.4-nano",
+    "used_ai_interpretation": true,
+    "used_ai_rendering": true,
+    "ai_render_validated": true,
+    "used_deterministic_fallback": false,
+    "used_vector": false,
+    "used_external_sources": false,
+    "used_ocr": false,
+    "database": "postgresql",
+    "duration_ms": 5310.02
+  }
+}

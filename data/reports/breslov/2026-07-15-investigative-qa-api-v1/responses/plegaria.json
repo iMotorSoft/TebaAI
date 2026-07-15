@@ -1,0 +1,665 @@
+{
+  "question": "¿Dónde aparece plegaria?",
+  "status": "ok",
+  "answer_text": "Aparece en **Kitzur**:\n- **Kitzur (fragmento “24 Jeshvan”)**: menciona “Plegarias de las Festividades” en la frase “Un lenguaje cae sobre el otro”. (evidence id: kitzur-0-799918)\n- **Kitzur (fragmento “12.”)**: dice que “Todo esto se logra mediante la plegaria”. (evidence id: kitzur-1-159575)\n- **Kitzur (fragmento “4-5”)**: habla de “cantar y para orar” y menciona “plegaria”. (evidence id: kitzur-2-166766)\n- **Kitzur (fragmento “Page 422… 22 Tamuz”)**: menciona “la plegaria” y “antes de comenzar la plegaria de la Amidá”. (evidence id: kitzur-5-894308)\n\nTambién aparece en **Likutey Moharán II**:\n- **Likutey Moharán II, p. 13**: “emuná es sinónimo de plegaria”. (evidence id: lmii-19-987064)\n\n**Límite:** con la evidencia provista no puedo indicar “dónde” con número de página exacto para los fragmentos de *Kitzur* porque su campo `page` es `null` en esos extractos.",
+  "answer_markdown": "Aparece en **Kitzur**:\n- **Kitzur (fragmento “24 Jeshvan”)**: menciona “Plegarias de las Festividades” en la frase “Un lenguaje cae sobre el otro”. (evidence id: kitzur-0-799918)\n- **Kitzur (fragmento “12.”)**: dice que “Todo esto se logra mediante la plegaria”. (evidence id: kitzur-1-159575)\n- **Kitzur (fragmento “4-5”)**: habla de “cantar y para orar” y menciona “plegaria”. (evidence id: kitzur-2-166766)\n- **Kitzur (fragmento “Page 422… 22 Tamuz”)**: menciona “la plegaria” y “antes de comenzar la plegaria de la Amidá”. (evidence id: kitzur-5-894308)\n\nTambién aparece en **Likutey Moharán II**:\n- **Likutey Moharán II, p. 13**: “emuná es sinónimo de plegaria”. (evidence id: lmii-19-987064)\n\n**Límite:** con la evidencia provista no puedo indicar “dónde” con número de página exacto para los fragmentos de *Kitzur* porque su campo `page` es `null` en esos extractos.",
+  "summary": "24 evidencias literales recuperadas",
+  "conversation": {
+    "conversation_id": null,
+    "turn_id": null,
+    "resolved_context": []
+  },
+  "interpretation": {
+    "detected_language": "es",
+    "normalized_question": "¿Dónde aparece la palabra \"plegaria\"?",
+    "concepts": [
+      "plegaria",
+      "dónde aparece",
+      "definición",
+      "uso de la palabra",
+      "significado"
+    ],
+    "requires_cross_corpus": false
+  },
+  "search_plan": {
+    "queries": [
+      "plegaria",
+      "dónde aparece",
+      "definición",
+      "uso de la palabra",
+      "significado"
+    ],
+    "works": [
+      "kitzur",
+      "lh",
+      "lm_xv",
+      "lmii",
+      "potencia_plegaria"
+    ],
+    "languages": [
+      "es",
+      "he",
+      "en"
+    ],
+    "layers": [
+      "page_literal",
+      "fine_zone",
+      "note_source_unit",
+      "nominal_reference"
+    ],
+    "include_audit": false,
+    "retrieval_mode": "sql_literal"
+  },
+  "works_consulted": [
+    "kitzur",
+    "lh",
+    "lm_xv",
+    "lmii",
+    "potencia_plegaria"
+  ],
+  "hits": [
+    {
+      "hit_id": "kitzur-0-799918",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "24 Jeshvan\n\nperfecciona así su Lenguaje Sagrado y merece guardar la pureza sexual. Todo ello es el significado profundo del hecho de que la serpiente tentó a Eva a través del Árbol del Conocimiento del Bien y del Mal].\n\nPor el contrario, el principal medio para construir y perfeccionar el Lenguaje Sagrado es anular los componentes malos del Targúm y elevar hacia el Lenguaje Sagrado sus componentes buenos. De esa manera, el Lenguaje Sagrado alcanza su estado de perfección y caen así las setenta lenguas, como en la frase “Un lenguaje cae sobre el otro” (Plegarias de las Festividades). Ése es el significado de “El Señor Dios hizo caer un sueño profundo (vaiapel tardema)” (Génesis 2:21). El Ari, de bendita memoria, indica que TaRdeMa (sueño) tiene el mismo valor numérico que TaRGUM y que VaIaPeL es un acrónimo para “Pe Lahem Velo Idaberu - Ellos tienen boca pero no hablarán” (Salmos 135:16).",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1-159575",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "es se eliminarán del mundo la discordia y el conflicto, habrá paz entre el pueblo judío y su Padre en el Cielo, y la santidad será sellada con un “sello dentro de un sello”. Todo esto se logra mediante la plegaria, pues la plegaria “incluye a todo”].\n\n12. Se enseñó, “Bereshit (En el comienzo) - ésta es una declaración” (Zohar II, 177) - significando una “declaración completa”. Esto explica por qué la fe es llamada Ierushalaim (Jerusalén), dado que la fe se construye principalmente a través de BeRESHIT [que tiene las mismas letras que] IaRE BoSHeT (temor-vergüenza); y éste último es el concepto de IRa SHaLeM (temor completo), [que contiene las mismas letras que IeRuSHaLaiM], una “declaración completa”. Surge entonces que la principal construcción de la fe se efectúa a través del temor a Dios, que está asociado con el concepto de una “declaración completa” y con el concepto de la plegaria.",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-2-166766",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "na, a través de ello, de refinar la voz de su canto y de su plegaria. Pues la cualidad de la voz de la persona corresponde a la sabiduría contenida en sus exposiciones de Torá y al intelecto de los Trece Principios mediante los cuales expone la Torá.\n\n4. Cuando se refina la voz de la persona entonces, mediante su solo cantar -sin necesidad de hablar- el Santo, bendito sea, la salva en momentos de aflicción. Así alcanza la paz y es capaz de llevar al mundo entero hacia el servicio a Dios.\n\n5. Mediante la pureza sexual, la persona obtiene una “voz”. En otras palabras, se hace digna de que se purifique y se refine su voz para cantar y para orar. Iaacov, quien cuidó la pureza sexual -como está escrito, “El primogénito de mi vigor” (Génesis 49:3; haciendo referencia al hecho de haber cuidado la moralidad sexual antes del matrimonio)- obtuvo una voz, como está escrito, “La voz es la voz de Iaa",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-3-448130",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "ía haber sucedido, Dios no lo permita, para generar la unificación del Santo, bendito sea, y de la Presencia Divina.\n\n397\n\n## Page 398\n\nLección 261-264                                                                       9 Tamuz\n\n9 Tamuz\n\n## **261**\n\n1. Si uno cae de su nivel espiritual, debe saber que eso fue ordenado desde el Cielo. Pues el único motivo por el cual la persona se aleja de Dios es para que, en última instancia, pueda acercarse mucho más. Es por ello que cayó - para que pueda inspirarse mucho más y acercarse más aún a Dios. Lo que se debe hacer al caer es comenzar a servir a Dios nuevamente, como si nunca se lo hubiera hecho antes. Ésta es una regla esencial en el servicio a Dios, el hecho de que es necesario comenzar de nuevo, literalmente, cada día.\n\n## **262**\n\n1. Aquel que merezca tener nuevas ideas de Torá que sean verdaderamente sustanciales, deberá llorar antes de",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "definición"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-4-799918",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "24 Jeshvan\n\nperfecciona así su Lenguaje Sagrado y merece guardar la pureza sexual. Todo ello es el significado profundo del hecho de que la serpiente tentó a Eva a través del Árbol del Conocimiento del Bien y del Mal].\n\nPor el contrario, el principal medio para construir y perfeccionar el Lenguaje Sagrado es anular los componentes malos del Targúm y elevar hacia el Lenguaje Sagrado sus componentes buenos. De esa manera, el Lenguaje Sagrado alcanza su estado de perfección y caen así las setenta lenguas, como en la frase “Un lenguaje cae sobre el otro” (Plegarias de las Festividades). Ése es el significado de “El Señor Dios hizo caer un sueño profundo (vaiapel tardema)” (Génesis 2:21). El Ari, de bendita memoria, indica que TaRdeMa (sueño) tiene el mismo valor numérico que TaRGUM y que VaIaPeL es un acrónimo para “Pe Lahem Velo Idaberu - Ellos tienen boca pero no hablarán” (Salmos 135:16).",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "significado"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-5-894308",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "ro la gente la menosprecia; y cuando se ponen de pie para orar lo único que desean es terminar de una vez. Sin embargo, mediante el temor\n\n421\n\n## Page 422\n\nLección 1                                                                   Parte II 22 Tamuz\n\nperfecto a Dios, que se alcanza rectificando los tres deseos, la persona merece traer un influjo de inspiración profética -y aunque hoy en día no haya nadie que pueda de hecho profetizarla plegaria es redimida de su exilio. Entonces la plegaria alcanza su total perfección y es como la profecía - que es la Palabra de Dios. Pues Dios Mismo abre entonces los labios de la persona y le envía palabras sagradas para orar ante Él. Este fenómeno está expresado en la frase “Dios, abre mis labios”, que se dice antes de comenzar la plegaria de la Amidá. Éste es también el significado profundo del concepto de “unir la redención con la plegaria” [que hac",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "significado"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-6-629466",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "s también desean ascender y aferrarse a la santidad. Pero en ese momento una “llama de Dios” desciende y quema a las fuerzas impuras\n\n325\n\n## Page 326\n\nLección 83-84                                                                              17 Iyar\n\npara que no puedan aferrarse a la santidad; ver la lección. Por lo tanto, nuestros Sabios, de bendita memoria, dijeron que aquellos que se mantienen en silencio por amor están descritos en el versículo, “Aquellos que Lo aman son como el sol que sale con toda su fuerza” (Jueces 5:31; Shabat 88b). En otras palabras, son como la “llama de Dios” mediante la cual noga está incluida en el lado de la santidad, como en el concepto del JaSh MaL - dado que esa clase de silencio representa la anulación de la orlá y de la vergüenza.\n\n17 Iyar\n\n## **83**\n\n1. Las emisiones nocturnas son causadas por la fuerza impura llamada Lilit, que se nutre de las seis",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "significado"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "lh-7-123459",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 12,
+      "printed_page": null,
+      "quote": "XII   LIKUTEY HALAJOT\nmanera oral en los Shabatot y en las festividades. El Likutey Moharán, conteniendo 411 \nlecciones, fue resultado de su colaboración. Aunque sólo era ocho años más joven que \nel Rebe, el Rabí Natán se impregnó sediento de las enseñanzas de su maestro y siguió su \nguía en todos los aspectos de la vida. Con el pasar del tiempo, la familia del Rabí Natán \nreconoció los cambios positivos que podían percibirse en las midot y en la erudición de \nTorá del Rabí Natán y se aplacó su oposición a la Jasidut.\nLuego del fallecimiento del Rebe en el año 1810, se le pidió al Rabí Natán que se \nvolviese el nuevo líder de los jasidim de Breslov, cosa que rechazó. “Sólo hay un Rebe”, \ninsistió. Con su característica humildad, el Rabí Natán introdujo un nuevo concepto en \nla historia de la Jasidut. En lugar de tener una sucesión de Rebes, los jasidim de Breslov \nsólo tienen un Rebe: el",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-8-132395",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 36,
+      "printed_page": 18,
+      "quote": "18    LIKUTEY HALAJOT\nLEYES DEL SHULJAN ARUJ\nLAS LEYES\nLos discursos del Rabí Natán en Hashkamat HaBoker – “Levantándose \npor la Mañana”, se basan en las siguientes leyes que se encuentran en el \nShuljan Aruj:\nLa persona debe fortalecerse como un león para levantarse por la mañana \nen el servicio a su Creador, de modo que sea ella quien despierte el alba. \nGlosa: “He puesto a HaShem siempre delante de mí” (Tehilim 16:8) - éste es un \nprincipio muy importante en el cumplimiento de la Torá.*\n(Oraj Jaim 1:1)\nEs apropiado que toda persona temerosa de HaShem sienta dolor y angustia \npor la destrucción del Beit HaMikdash.\n(ibid. 1:3).\nLa persona debe colocarse el zapato derecho primero pero no atarlo. Luego \ndebe colocarse el zapato izquierdo y atarlo. Luego de ello debe atar el \nzapato derecho.\n(ibid 2:4)\nLa persona no debe limpiarse utilizando la mano derecha.\n(ibid. 3:10)\nLa persona debe la",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-9-161063",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 39,
+      "printed_page": null,
+      "quote": "INTRODUCCIÓN\nE\nl Rabí Natán basa este primer discurso en la enseñanza fundacional \ndel Rebe Najmán sobre el juzgarse a uno mismo y a los demás de \nmanera favorable. Conocida popularmente como Azamra (Cantaré), \nla lección del Rebe enseña que el hecho de buscar el bien en los \ndemás -encontrando la nekudá tová, el punto bueno, que todos tienen \nen su interior- es la clave para acercarse a HaShem. El Rabí Natán \ndemuestra que el despertar esos puntos buenos es el medio principal \npara despertar del sueño espiritual en el cual cae la gente debido a \nsus pecados - es decir, la clave para “levantarse por la mañana”.\nEn el curso de este extenso discurso el Rabí Natán conectará \nel descubrir los propios puntos buenos -y el descubrir los ocultos \npuntos buenos en los demás, incluso en los pecadores judíos- con un \nconjunto de temas adicionales. Éstos incluyen: construir un mishkán, \nun espacio s",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-10-137417",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 243,
+      "printed_page": null,
+      "quote": "APÉNDICE A\nUNA RESEÑA KABALÍSTICA \nDE LA CREACIÓN\nLas fuentes principales para este Apéndice son el Etz Jaim del Ari zal, La \nDimensión Interna del Rabí Aryeh Kaplan (Editorial Jerusalem de México) \ny Maftejei Jojmat HaEmet.  El objetivo de este Apéndice no es ser un texto \nde Kabalá, sino una reseña de los principales conceptos kabalísticos que se \npresentan en el Likutey Halajot.\nEin Sof (El Infi nito)\nEl Ein Sof, “Sin límite ni final”, hace referencia a la Esencia de HaShem, HaShem \ntal cual es en Sí Mismo. Nada puede decirse de HaShem tal cual es en Sí Mismo. \nComo el Dios Infinito no manifestado, cuya esencia está más allá del conocimiento \ny de la comprensión, no hay definición ni categoría que pueda circunscribirlo, \nningún pensamiento ni concepto que pueda de manera alguna incluirlo. Esta idea \nbásica de las enseñanzas kabalísticas está expresada en el Zohar (II, 42b), que afirma",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "definición"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-11-744036",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 44,
+      "printed_page": 26,
+      "quote": "26 LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA      HALAJÁ 1: 2\nEl Rabí Natán ha sintetizado algunos de los temas más importantes de Azamra, \nla lección del Rebe Najmán sobre buscar y centrarse en el bien en uno \nmismo y en los demás. Este simple acto eleva a la persona espiritualmente y \nle permite experimentar una verdadera cercanía con HaShem.\n2 ■ DESPERTÁNDOSE DEL SUEÑO ESPIRITUAL\nEl Rabí Natán comienza su discurso sobre el significado profundo de \nlevantarse por la mañana conectando el hecho de encontrar los puntos \nbuenos con el despertar del sueño espiritual.\nEste buscar los propios puntos buenos es el concepto de despertar del sueño. \nCuando una persona reconoce que se encuentra lejos de HaShem suele \ndesanimarse y sentirse totalmente desganada tanto física como espiritualmente; \nesto es equivalente al hecho de estar durmiendo, lo cual enseñan Jazal, es “una \nsexagé",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "significado"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-12-945709",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 46,
+      "printed_page": 28,
+      "quote": "28 LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA      HALAJÁ 1: 2\ncomo afi rma el versículo, “Prueba y mira que HaShem es bueno”. Todo bien, \nno importa en dónde se encuentre o qué forma tome, sólo emana de Él. Éste es \nel significado de “pues HaShem me sustenta”. En otras palabras, David HaMelej \ndijo, el punto bueno que encuentro en mí -siendo en sí mismo un aspecto de \nDivinidad, como en “HaShem es bueno para todo”- es lo que me sustenta y \ntambién me despierta del sueño.\nY entonces, fortalecida por el sustento de ese punto bueno, la persona \npuede declarar, “No temo a los muchos miles que se han levantado por todas \npartes en mi contra”. Pues nuevamente estoy segura, sin temor de aquellos que \nme perseguirían. Aunque los daños espirituales y los pecados que amenazan \nvencerme son muchos miles, jas ve-shalom, no me amedrento. Viendo que he \nencontrado al menos algún remane",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "significado"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-13-785540",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 53,
+      "printed_page": null,
+      "quote": "  35\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ה\nDe la misma manera, se comprende a partir de las palabras del Rebe en su \nlección, que a través del bien que se encuentra en cada judío, se construye un \nmishkán. Y así, ese Tzadik -quien conceptualmente es el jazán, como se explicó \nmás arriba- que es capaz de encontrar todo el bien que existe en el pueblo judío \npuede incluir todos los conceptos relacionados con el mishkán de cada uno de \nlos Tzadikim de la generación. Estudia las palabras del Rebe allí, que este mishkán \nse construye principalmente a partir de ese mencionado bien.\nCon esto las palabras del Rebe en la sección de apertura de su lección, donde \ntrata sobre encontrar los puntos buenos, están bien conectadas con lo que enseña \nal final sobre construir un mishkán. Estudia bien allí.\nEl Rabí Natán ha demostrado que el “alba” representa el punto bueno de la \npersona que, una",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "significado"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-14-862973",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 242,
+      "printed_page": null,
+      "quote": "Najmán extrajo muchos de los temas tratados en la lección (especialmente comenzando con §6) \ndel Tikún #21 del Tikuney Zohar, páginas 49a-51a. Extractos de ello aparecen más arriba, en las \nnotas 28, 33, 38, 43, 45, 55, 68 y 82.\nEl Rebe comenzó su lección explicando el gran valor e importancia de cuidar el brit de \ntoda impureza. El hecho de alcanzar un elevado nivel de pureza moral le permite a la persona \norar con fuerza y así hacer que brille en el mundo el rayo del Mashíaj. Mediante tal plegaria la \npersona merece bendiciones y la santidad del Shabat -i.e., el tajlit del conocimiento- de modo \nque se ve libre para servir a Dios y no tener que trabajar para ganarse el sustento. También \nmerece un cuerpo santo proveniente del Jardín del Edén debido al cual su mazal asciende y es \ncapaz de hacer que su buena inclinación domine a su mala inclinación. Esto le da el poder para \nelevar a aq",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-15-778247",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 121,
+      "printed_page": null,
+      "quote": "Cada día, cada hora, cada minuto, cada momento es una nueva creación. Hablamos de esto \nen nuestras plegarias diarias: “Quien en Su bondad renueva cada día, constantemente, la Obra \nde la Creación” (ver notas 184 y 185 allí). Por lo tanto, la persona no puede retroceder a ese \ntiempo y lugar anteriores pues ya no existen. La única manera de deshacer el daño en un \ntiempo y lugar pasado es a través de la teshuvá, que trasciende lo temporal y espacial. Éste es \nel signiﬁcado del versículo: “y en Tu libro están registrados todos ellos, los días que fueron \nformados; y Él ha [elegido] uno de ellos” (Salmos 139:16; Rashi explica que el día elegido \npor Dios es Iom Kipur). Es decir, para Dios, Quien trasciende lo temporal, todo el tiempo es \ncomo un solo día (ver Likutey Halajot, Tzitzit 3:15; ver también ibid., Netilat Iadaim, Shajarit \n3:5). Y así, para efectuar un genuino arrepentimiento, l",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-16-376772",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 251,
+      "printed_page": null,
+      "quote": "uniﬁcación inferior paradigmática de este mundo es la unión del esposo y la esposa. La \nimportancia de sus relaciones santiﬁcadas no puede ser subestimada pues, al igual que cualquier \nuniﬁcación en santidad, su ijud es un espejo de la uniﬁcación superior, en particular del ijud \nentre la persona Divina Zeir Anpin, el principio masculino y Maljut, el principio femenino, cuya \nunión e interacción facilita el ﬂujo de la shefa de Dios hacia el mundo. (Para un tratamiento \nmás extenso del concepto kabalístico de ijud ver las notas 6 y 12 del Likutey Moharán I, 260).\nDios está constantemente enviando un inﬂujo de bendiciones y abundancia. La Kabalá \nexplica que esta shefa es canalizada sistemáticamente a través de las seﬁrot y de las personas \nDivinas, cada una recibiendo el inﬂujo y transmitiéndolo luego hacia abajo, hasta que alcanza \na Maljut, representativa de este mundo. Debido a la natu",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-17-218351",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 6,
+      "printed_page": -4,
+      "quote": "Prefacio del Editor \n“Bueno es alabar a Dios y cantar a Tu Exaltado Nombre” (Salmos 92:2).\nEl Rabí Natán escribe en su Introducción al Likutey Moharán: “Es \nsuperﬂuo hablar de la profundidad de este libro, pues todo aquél que desee \nmirarlo de manera honesta comprenderá por sí mismo su grandeza. Cada \nlección habla sobre las características del hombre, de cómo desarrollar los \nbuenos atributos y mantenerse lejos de los malos. Habla de la Torá, de la \nplegaria y demás mitzvot; y de cómo cada individuo puede alcanzar niveles \nextremadamente elevados”. El Parparaot LeJojmá, en su Introducción, dirige \nal lector hacia otro ámbito dentro de éste: cómo cada uno puede lograr, a partir \nde su posición aparentemente insigniﬁcante en este mundo, niveles que ni \nsiquiera los ángeles pueden alcanzar. Muchos otros Tzadikim han alabado el \nLikutey Moharán de manera similar.\nPor lo tanto, muy agradecid",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-18-512294",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 12,
+      "printed_page": 2,
+      "quote": "2\n'ליקוטי מוהר\"ן סימן ז\nלְ שׁ וֹן רַ בֵּ נוּ, זִכְ רוֹנוֹ לִ בְ רָ כָ ה\nוְ אֵ לֶּ ה הַ מִּ שׁ ְ פָּ טִ ים אֲ שׁ ֶ ר תָּ שִׂ ים לִ פְ נֵיהֶ ם )שמות כא(:\nאָ מְ רוּ חֲ כָ מֵ ינוּ, זִכְ רוֹנָ ם לִ בְ רָ כָ ה: הֻ שׁ ְ ווּ אִ שּ ׁ ָ ה לְ אִ ישׁ )קדושין לה: \nבבא קמא טו.(. וְ אִ יתָ א בִּ מְ כִ ילְ תָּ א: 'יָכוֹל יִהְ יוּ הַ תַּ לְ מִ ידִ ים לוֹמְ דִ ין \nוְ אֵ ינָ ם מְ בִ ינִים – תַּ לְ מוּד לוֹמַ ר: \"אֲ שׁ ֶ ר תָּ שִׂ ים לִ פְ נֵיהֶ ם\" – \nעָ רְ כֵ ם לִ פְ נֵיהֶ ם כְּ שׁ ֻ לְ חָ ן עָ רוּךְ '. \nדַּ ע, כִּ י עִ קַּ ר הַ גָּ לוּת אֵ ינוֹ אֶ לָּ א בִּ שׁ ְ בִ יל חֶ סְ רוֹן אֱ מוּנָ ה, כְּ מוֹ \nא \nהשירים ד(: \"תָּ בוֹאִ י, תָּ שׁ וּרִ י מֵ רֹאשׁ אֲ מָ נָ ה\"; וֶ אֱ מוּנָ ה -שׁ ֶ כָּ תוּב )שיר\nהוּא בְּ חִ ינַ ת תְּ פִ לָּ ה, כְּ מוֹ שׁ ֶ כָּ תוּב )שמות י\"ז(: \"וַ יְהִ י יָדָ יו אֱ מוּנָ ה\", \nוְ תַ רְ גּוּמוֹ: 'פְּ רִ ישָׂ ן בִּ צְ לוֹ'.\n2. ÆMuNá, fe. Enseñaron nuestros Sabios: Jerusalén sólo fue destruid",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-19-987064",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 13,
+      "printed_page": 3,
+      "quote": "3 \nLIKUTEY MOHARÁN #7\n1\n“VeEile HaMishpatim (Y éstas son las leyes) que pondrás \ndelante de ellos”. \n (Éxodo 21:1)\nEnseñan nuestros Sabios: [Las palabras “delante de ellos” nos \nenseñan que con respecto a todas las leyes de la Torá], la mujer \nse equipara al hombre (Kidushin 35a). Comenta la Mejilta (21:1): “Es \nposible que los alumnos estudien pero no comprendan. [El \nversículo] enseña por lo tanto: “que pondrás delante de ellos” \n- disponlo delante de ellos como una mesa servida.\n¡D\nebes saber! El motivo esencial del exilio es la falta de ÆMuNá \n(fe);2 como está escrito (Cantar de los Cantares 4:8), “Ven, mira desde \nla cumbre de AMaNá”.3 Y emuná es sinónimo de plegaria; como en \n(Éxodo 17:12), “Sus manos estaban emuná”, que Onkelos traduce como, \n“[Sus manos] estaban extendidas en plegaria”.4\n1. Likutey Moharán 7. El Rebe Najmán tuvo una visión en la cual su bisabuelo, el Baal Shem \nT",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-20-647096",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 156,
+      "printed_page": 146,
+      "quote": "146\n זָרָ ה, כִּ י הוּא קִ בֵּ ל הַ תּ וֹרָ ה, שׁ ֶ הוּא בְּ חִ ינַ ת יָדַ יִן וְ רַ גְ לַ יִן כַּ נַּ \"ל, שׁ ֶ עַ ל\nיְדֵ יהֶ ם נִ תְ בַּ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים כַּ נַּ \"ל. \nוְ עַ ל כֵּ ן הִ פִּ יל פּ וּר בַּ יֶּרַ ח שׁ ֶ מֵּ ת בּ וֹ משׁ ֶ ה, כִּ י חָ שׁ ַ ב כִּ י כְּ בָ ר מֵ ת \nמשׁ ֶ ה הַ מְ בַ טֵּ ל כּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים, וְ אֵ ין עוֹד מִ י שׁ ֶ יּוּכַ ל לְ בַ טֵּ ל \nכּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים.\nאֲ בָ ל מָ רְ דֳּ כַ י וְ אֶ סְ תֵּ ר הָ יָה לָ הֶ ם כּ ֹחַ לְ בַ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים שׁ ֶ ל \nהָ מָ ן, וּבִ שׁ ְ בִ יל זֶה בִּ ימֵ יהֶ ם קִ בְּ לוּ יִשְׂ רָ אֵ ל הַ תּ וֹרָ ה מֵ חָ דָ שׁ , כְּ מַ אֲ מַ ר \nחֲ כָ מֵ ינוּ, זִכְ רוֹנָ ם לִ בְ רָ כָ ה )שבת פח.(: \"קִ יְּמוּ וְ קִ בְּ לוּ\" – 'קִ יְּמוּ מַ ה \nשּ ׁ ֶ קִּ בְּ לוּ כְּ בָ ר'. \nוְ זֶה: קִ יְּמוּ וְ קִ בְּ לוּ. קִ יְּמוּ – זֶה בְּ חִ ינַ ת רַ גְ לַ יִן, וְ קִ בְּ לוּ – זֶה בְּ חִ ינַ ת \nיָדַ יִן, וְ ה",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "dónde aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-21-733452",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 1,
+      "printed_page": null,
+      "quote": "Rebe Najmán\nLa\nPotencia\nde laPlegaria",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-22-562808",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 1,
+      "printed_page": null,
+      "quote": "Cómo comprender \nel poder que subyace \ntras las palabras \nde la plegaria",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-23-119542",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 5,
+      "printed_page": null,
+      "quote": "PARTE I ■ La Potencia de la Plegaria ....................................15",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "plegaria"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 7
+    },
+    {
+      "work_code": "lh",
+      "hits": 7
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 3
+    },
+    {
+      "work_code": "lmii",
+      "hits": 4
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 3
+    }
+  ],
+  "cross_corpus_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 7
+    },
+    {
+      "work_code": "lh",
+      "hits": 7
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 3
+    },
+    {
+      "work_code": "lmii",
+      "hits": 4
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 3
+    }
+  ],
+  "not_found": [],
+  "warnings": [
+    "pdf_page_null_for_kitzur_chunk"
+  ],
+  "execution": {
+    "pipeline_version": "investigative_qa_v1",
+    "model": "openai_gpt-5.4-nano",
+    "used_ai_interpretation": true,
+    "used_ai_rendering": true,
+    "ai_render_validated": true,
+    "used_deterministic_fallback": false,
+    "used_vector": false,
+    "used_external_sources": false,
+    "used_ocr": false,
+    "database": "postgresql",
+    "duration_ms": 7233.76
+  }
+}

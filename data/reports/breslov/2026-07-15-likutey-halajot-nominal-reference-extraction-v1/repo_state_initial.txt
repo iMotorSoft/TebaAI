@@ -1,0 +1,13 @@
+Likutey Halajot Nominal Reference Extraction V1 — initial repository state
+date: 2026-07-15
+branch: feature/console-backend-core
+head: f9bbe1b
+pdf: /media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf
+pdf_sha256: 440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a
+database: reachable through backend/globalVar.py POSTGRES_DSN
+required runs: page-first, structural, fine-zone and note-source confirmed
+required views/tables: confirmed before this phase
+baseline counts: anchors=284; citable_content_nodes=268; literal_spans=268; semantic_units=268; fine_zones=506; notes_sources_block=203; numbered_note=406; unsegmented_notes_block=68
+baseline integrity: existing page-first literal quote checks were 0 invalid in the prior closure.
+contamination control: LM II page-first run remains accessible; no LM II or Kitzur writes are planned.
+pre-existing unrelated untracked paths observed (preserved): SrvRestAstroLS_v1/backend/data/, two Milvus probe scripts, and several historical report directories listed by git status --short.

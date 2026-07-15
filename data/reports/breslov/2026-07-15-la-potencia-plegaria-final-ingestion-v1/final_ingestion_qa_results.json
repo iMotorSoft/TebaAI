@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "metrics": {
+    "pages": 416,
+    "textual": 412,
+    "blanks": 4,
+    "blocks": 3503,
+    "structural": 416,
+    "zones": 3503,
+    "bad_quotes": 0,
+    "search_rows": 3576
+  },
+  "no_contamination": {
+    "relations": 0,
+    "embeddings": 0,
+    "milvus_writes": 0,
+    "ocr": false,
+    "ai": false
+  }
+}

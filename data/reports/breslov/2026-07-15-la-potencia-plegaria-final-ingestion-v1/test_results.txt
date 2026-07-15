@@ -1,0 +1,7 @@
+PASS source guard and preflight: 416 pages, 412 textual, 4 blanks
+PASS migrations 037 and 038
+PASS final pipeline
+PASS final QA
+PASS investigative probes
+PASS pytest focal
+PASS git diff --check

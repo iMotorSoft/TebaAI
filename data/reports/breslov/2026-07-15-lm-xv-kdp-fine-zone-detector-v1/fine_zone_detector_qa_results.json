@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checks": {
+    "zones_present": true,
+    "all_3208_blocks_covered": true,
+    "quotes_in_page": true,
+    "quotes_nonempty": true,
+    "search_v3_present": true,
+    "no_ocr": true,
+    "no_ai": true,
+    "no_embeddings": true,
+    "no_milvus": true,
+    "no_relations": true
+  },
+  "metrics": {
+    "zones": 3208,
+    "bad_quotes": 0,
+    "empty_quotes": 0,
+    "view_rows": 3213
+  }
+}

@@ -1,0 +1,7 @@
+PASS fine zone profile: 514 pages, 3208 evaluated blocks
+PASS migration 036
+PASS fine zone detector apply: 3208 zones
+PASS quotes present in parent page: 0 failures
+PASS fine-zone search probes
+PASS pytest tests/test_lm_xv_kdp_fine_zone_detector.py
+PASS git diff --check

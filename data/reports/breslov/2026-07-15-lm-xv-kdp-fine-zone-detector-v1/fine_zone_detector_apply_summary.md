@@ -1,0 +1,13 @@
+# Fine zones
+
+{
+  "run": "likutey_moharan_xv_kdp_fine_zone_detector_v1_20260715",
+  "applied": true,
+  "zones": 3208,
+  "inserted_or_updated": 3208,
+  "ocr_used": false,
+  "ai_used": false,
+  "embeddings": false,
+  "milvus": false,
+  "relations": false
+}

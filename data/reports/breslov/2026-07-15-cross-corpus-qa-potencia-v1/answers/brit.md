@@ -1,0 +1,35 @@
+# Brit
+
+## Resumen breve
+19 hallazgos literales; clasificación cruzada: `cross_work_literal_parallel`.
+
+## Kitzur
+- Página None; `literal_same_page`; 'escrito, “[Dios] oyó nuestra voz” (Números 20:16). Y es por ese motivo que es llamada HaGaDá, para aludir a su conexión con la pureza sexual (tikún haBRIT), como en, “Él les habló (vaiaGueD) sobre Su pacto (BRIT)” (Deuteronomio 4:13). La manera más apropiada de cumplir con la mitzvá de recitar la Hagadá es sobre una copa de vino'
+- Página None; `literal_same_page`; 'norme revelación del conocimiento que tendrá lugar en esos tiempos, como está escrito, “El lobo habitará con la oveja y el leopardo yacerá junto al cabrito... pues el mundo estará lleno del conocimiento de Dios” (Isaías 11:6-9). Entonces bendeciremos “Quien es bueno y hace el bien” por todo lo que suceda (Pesajim 50a), pues todo'
+- Página None; `literal_same_page`; 'de la Torá en esa área, Dios no lo quiera. Cuando se cuida la pureza sexual en esos dos niveles, el honor de Dios se completa y uno merece todos los atributos y los logros antes mencionados, hasta alcanzar profundos niveles de comprensión en la Torá.\n\n8. Existe una clase de humildad cuya finalidad es en verdad la arrogancia. Est'
+- Página None; `literal_same_page`; 'idad sexual van juntos. Así, cuando uno cuida la pureza sexual se salva del orgullo y se hace digno de la luz que le iluminará el camino hacia el arrepentimiento, hasta que llegue a alcanzar profundos niveles de comprensión de la Torá.\n\n## 27 Tishrei\n\n6. La amargura experimentada en la lucha por el sustento es producto de un dañ'
+## LM II
+- Página 38; `literal_same_page`; 'que se protegiese del pecado. La palabra hebrea que signiﬁca \n“sierva”, amá, también se utiliza como una referencia al órgano de la reproducción, el brit. Ella \nle estaba diciendo que se comportase de manera recatada cubriendo, si así pudiera decirse, el \namá con la vestimenta de la mitzvá. Ésta, en esencia, es la conexión con g'
+- Página 178; `literal_same_page`; 'hemá que \nrecitamos por lo menos dos veces al día. Pronto quedará en claro que al recitar el Shemá con \nconcentración uno puede lograr el cuidado del brit (la señal del Pacto; ver n.29), estudiar la \nTorá y eliminar su propia arrogancia, elevando al mismo tiempo la gloria de Dios. Pues cuando \nuno aprecia plenamente que Dios es '
+- Página 30; `literal_same_page`; 'o; ver \nApéndice: Las Personas Divinas; Los Siete Pastores Superiores).\n58. Pacto. Iosef es llamado “el tzadik” porque cuidó el Pacto, manteniendo su pureza sexual, al \nno sucumbir a los avances de la esposa de Potifar (Zohar II, 23a). Ver también Likutey Moharán \nI, 2:2.\n59. Tzitzit. Ver el comienzo de la sección 4: La mitzvá d'
+- Página 40; `literal_same_page`; 'dar el Pacto, \ncomo enseña el Zohar (I, 71b): “Su arco”, éste es Iosef, porque el arco hace referencia al signo \nde la circuncisión y Iosef guardó su pureza sexual. Y “el even” alude a Iaacov y a sus hijos, las \ndoce versiones de la plegaria mencionadas anteriormente. (La ortografía de even como æven se \nbasa en el principio exp'
+## LH
+- Página 28; `literal_same_page`; 'obras que emplean los cuatro métodos de \ninterpretación de la Torá (ver la nota 18 más arriba), \nun prominente ejemplo del cual es el Shnei Lujot \nHaBrit.\n1RWHV\x03\t\x036RXUFHV\nNotas y Fuentes'
+- Página 87; `literal_same_page`; 'os \ntestiﬁ caban de su crecimiento - i.e., la aparición de un mero \npunto de la luna.\n124 Zohar Jadash, Itró: Lamá Nizkar. Ver también Shnei Lujot \nHaBrit (Masejet Pesajim: Matzá Ashirá 33), que explica, al \nigual que lo hacen muchas obras de las enseñanzas jasídicas, \nque contamos 49 días de la ofrenda del omer para elevarnos d'
+## LM XV
+- Página 242; `literal_same_page`; 'lo aparecen más arriba, en las \nnotas 28, 33, 38, 43, 45, 55, 68 y 82.\nEl Rebe comenzó su lección explicando el gran valor e importancia de cuidar el brit de \ntoda impureza. El hecho de alcanzar un elevado nivel de pureza moral le permite a la persona \norar con fuerza y así hacer que brille en el mundo el rayo del Mashíaj. Media'
+- Página 74; `literal_same_page`; ', el Rebe Najmán alude a ella al ﬁnal de la lección, en sus notas manuscritas \n(§9), donde su lista de temas incluye la abstinencia, i.e., guardar el brit (pacto). Pues sólo a través \nde la pureza moral es posible ascender hacia la simpleza para revelar el jesed jinam que anima a \ntodas las cosas cuando éstas están separadas de '
+- Página 202; `literal_same_page`; '(brit) de Dios con\nAbraham y sus descendientes fue sellado a través de la circuncisión. Como tal, el pacto del \npueblo judío con Dios se centra en la pureza sexual. Cuidar el brit -tanto el Pacto como el \nórgano de procreación- de la impureza implica un elevado nivel de comportamiento moral en \npensamiento, palabra y acción (ver'
+- Página 203; `literal_same_page`; 'el Rabí Natán explica que la lección del Rebe se relaciona con dos niveles del cuidado \ndel brit. El primero hace referencia al hecho de alcanzar la pureza sexual no dejándose llevar \npor las pasiones. Cuanto más grande sea la medida de pureza moral de la persona, mayor será \nsu medida de daat. El segundo nivel de guardar el bri'
+## La Potencia
+- Página 54; `literal_same_page`; 'dos con toda la Torá” (Kidushin 35a) y se los \nconsidera como una de las tres señales de constante devoción a Dios (las otras \ndos son el Shabat y el brit milá/circuncisión). El Rebe Najmán enseña que \nlos teﬁlín representan nuestro apego a Dios (Likutey Moharán I, 38:1). Es posible \nacceder a las intenciones de los teﬁlín, tal '
+- Página 71; `literal_same_page`; 'Además, el Ari enseña que la seﬁrá de Iesod, el brit, corresponde a Jai \nOlamim, la Vida de los Mundos (dado que Iesod recolecta todas las energías \nsuperiores provenientes de las seﬁrot que se encuentran por encima y envía \nentonces la fuerza vital hacia los mundos de más abajo). El objetivo de nuestras \nplegarias es atraer las'
+- Página 122; `literal_same_page`; 'De acuerdo a la Kabalá, Iosef está asociado con la seﬁrá de Iesod y con \nel brit (el órgano sexual). El Rebe Najmán enseña que sólo cuando uno cuida el \nbrit es llamado un Tzadik. Hemos visto más arriba que la persona que merece \nel nivel del Tzadik se vuelve un gobernante. Así, Iosef, quien desechó los \navances de la esposa de '
+- Página 208; `literal_same_page`; 'Cuando la persona daña su pureza sexual, su mente se opaca al punto en \nque no puede comprender las palabras del Tzadik ni de la Torá, en absoluto. \nConsecuentemente, si continúa y sigue tras lo tortuoso de su propio corazón \ny les presta atención a las absurdas dudas y cuestionamientos que atraviesan \nsu mente, es muy probable '
+- Página 208; `literal_same_page`; 'la categoría de “los pecadores en ellas tropezarán”, \ndado que su comprensión y entendimiento están en relación al grado en el que \nha rectiﬁcado su pureza sexual.'
+
+## Qué se puede afirmar
+- Sólo se reportan apariciones literales y paralelos entre obras; no relaciones doctrinales.
+
+## Vacíos
+- Un vacío de búsqueda no prueba ausencia en el corpus.

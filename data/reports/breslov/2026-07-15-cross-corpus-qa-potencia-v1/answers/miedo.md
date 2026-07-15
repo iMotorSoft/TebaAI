@@ -1,0 +1,36 @@
+# Miedo / temor
+
+## Resumen breve
+20 hallazgos literales; clasificación cruzada: `cross_work_literal_parallel`.
+
+## Kitzur
+- Página None; `literal_same_page`; 'e de todo. Por medio de esa clase de temor se completa el Santo Nombre de Dios. También hay un temor inferior a ése. Esto es cuando la persona siente miedo debido a temores inferiores; por ejemplo, porque tiene miedo de un animal o de la autoridad o de alguna otra cosa que cree que puede hacerle daño y, como resultado, recuerda '
+- Página None; `literal_same_page`; 'es; por ejemplo, porque tiene miedo de un animal o de la autoridad o de alguna otra cosa que cree que puede hacerle daño y, como resultado, recuerda a Dios y llega a temerlo. Mediante esta segunda clase de temor se hace descender abundancia al mundo.\n\nSin embargo, es necesario crear un recipiente para contener esa abundancia. Es'
+- Página None; `literal_same_page`; 'abajo”. El honor se eleva entonces a su raíz, que es el temor sagrado y ello, a su vez, trae paz al mundo.\n\n3. Mediante la Torá es posible acercar a los prosélitos y a todos aquellos que retornan a la fe y hacerles conocer el sendero que deben tomar.\n\n4. Al estudiar la Torá en santidad, la persona despierta a los pecadores judío'
+- Página None; `literal_same_page`; 'fe es llamada Ierushalaim (Jerusalén), dado que la fe se construye principalmente a través de BeRESHIT [que tiene las mismas letras que] IaRE BoSHeT (temor-vergüenza); y éste último es el concepto de IRa SHaLeM (temor completo), [que contiene las mismas letras que IeRuSHaLaiM], una “declaración completa”. Surge entonces que la p'
+## LM II
+- Página 93; `literal_same_page`; 'endo vestido con bigdei shesh (vestimentas de lino ﬁno) (Ibid., \n41:42). Rashi comenta (Ibid., 37:1): “Cuando Iaacov vio todos los alufei Esaú sintió miedo. \n‘¿Cómo es posible que uno pueda vencer a todos éstos?’ dijo…. Sin embargo, una chispa saldrá \nde Iosef [el Tzadik] que los destruirá a todos”. Pues el Tzadik tiene “vestime'
+- Página 185; `literal_same_page`; 'explica que Abraham les \nhabló a sus siervos, sobornándolos para que se unieran a él en la guerra contra los Cuatro Reyes \n(Génesis 14). Ellos tenían miedo y arguyeron que temían morir en batalla. Abraham les respondió: \n“Incluso si perdemos la vida, será santiﬁcando el nombre de Dios”. (Esto está conectado con el \nrecitado del '
+- Página 52; `literal_same_page`; 'us inocentes “rebaños”. En rigor de verdad, engañan a cientos de miles. Ver Tzadik \n#109, #212, #455, #537. El Rebe Najmán comentó cierta vez, “Tengo temor de los falsos líderes \ndebido a la terrible destrucción que son capaces de producir” (Avenea Barzel, p.44, n.64).\nLIKUTEY MOHARÁN #8:3'
+- Página 114; `literal_same_page`; 'donde esto se explica en gran detalle junto con sus conexiones con el poder del \nolfato/la nariz).\n54. poder del olfato. “[El Mashíaj] respirará del temor a Dios; no juzgará por la vista ni por \naquello que oye” (Isaías 11:3). El Talmud (loc. cit.) explica que Mashíaj tendrá el poder de \njuzgar mediante su sentido del olfato.\n55'
+## LH
+- Página 13; `literal_same_page`; 'm \nen una lección. Tomar la lección y buscar su consejo práctico. Seguirlo durante dos o tres meses, utilizándolo \npara fortalecer nuestra devoción y temor a HaShem. Debemos orar a HaShem y rogarle para que nos ayude \na ser dignos de alcanzar el ideal establecido en esa lección. Cuando se ha completado una lección, se debe \ntrab'
+- Página 36; `literal_same_page`; 'va sus acciones como está escrito, “‘¿Acaso podrá ocultarse el hombre en lugares secretos \npara que Yo no lo vea?’, dice HaShem” (Jeremías 23:24). El temor a HaShem que experimenta \nla persona la imbuye instantáneamente de reverencia, pero también de humildad, de modo que \nsiempre siente que está en Su presencia. Nunca debe sent'
+## LM XV
+- Página 98; `literal_same_page`; 'ios debido a Su \ngrandeza y exaltación, ‘pues Él es grande y un Rey’ (Zohar I, 11b); y hay un temor más bajo \nque éste, i.e., cuando la persona tiene miedo debido a los temores caídos - teme a un animal o a \nla autoridad o siente algún otro temor, y a través de esto recuerda y se acerca al temor a Dios”. \nEl Rebe explica que cua'
+- Página 151; `literal_same_page`; 'e al Mar Rojo. “Y el faraón hikriv (se acercó) y los israelitas \nlevantaron sus ojos y, he aquí, Egipto estaba marchando hacia ellos y ellos tuvieron miedo \ny los israelitas clamaron a Dios”. El Midrash (Shmot Rabah 21:5) pregunta por el uso que \nhacen las Escrituras de la palabra hiKRiV ( .)הקריבAunque traducida aquí en base a '
+- Página 242; `literal_same_page`; 'capaz de hacer que su buena inclinación domine a su mala inclinación. Esto le da el poder para \nelevar a aquellos que han caído en los malos amores y temores (ver §7) y, al expeler la oscuridad \nque cubre sus ojos, les permite ver las maravillas de Dios. Merece entonces decir palabras de \nla Torá de verdad. A través de la luz de'
+- Página 251; `literal_same_page`; 'ea y la Shejiná a través de la mitzvá que estamos por llevar a cabo. (“En aras de la \nuniﬁcación del Santo, bendito sea y de Su Divina Presencia, con temor y amor, para uniﬁcar el \nNombre -Iud Hei con Vav Hei- en perfecta unidad, en aras de todo Israel”). A través de esto, la \npersona también crea un grado de unión y de unicidad'
+## La Potencia
+- Página 398; `literal_same_page`; 'su caballo, con ira y \narrogancia y trataba al joven de manera más cruel aún.\n  El joven se sentía atemorizado ante la crueldad del mercader. Tenía \nmiedo de que el mercader lo golpease con su látigo pues se sentía tan delicado \nque un golpe tal de seguro lo mataría. Y así llevaba a los animales junto al \nmercader.\n  Finalmente '
+- Página 401; `literal_same_page`; '(onesh). \nAhora puedes dejar de perseguirlos. Ven conmigo y alcanzarás lo que te está \nesperando”.\n  El verdadero hijo del rey fue con él, pero tenía miedo de hablarle y \nde hacerle alguna pregunta. Se daba cuenta que el otro no era un ser humano. \nQuizás abriera su boca y terminara tragándolo.\n  Mientras caminaba tras el hombre'
+- Página 402; `literal_same_page`; 'Siguieron al hombre del bosque hasta que llegaron a un lugar de \nserpientes y escorpiones. El hijo del rey tenía mucho miedo y llevado por \nel temor se animó a preguntarle al hombre del bosque, “¿Cómo podremos \ncruzar?”.\n  “¿Piensan que esto es difícil?”, le respondió. “¿Cómo podrán entonces \nllegar a mi casa?”.\n  Diciendo esto '
+- Página 49; `literal_same_page`; 'El comienzo de la sabiduría es el temor a Dios. Un buen \nintelecto se les otorga a todos aquellos que las llevan a \ncabo. Su alabanza perdurará por siempre.\nL'
+- Página 49; `literal_same_page`; 'ca \nque la seﬁrá de Jojmá (Sabiduría) se encuentra en el más elevado de los \nniveles, al cual no es posible acceder a no ser que primero demostremos \ntemor a Dios. El temor a Dios es el primer paso para adquirir la verdadera \nsabiduría (Likutey Halajot, Seﬁrá 1).'
+- Página 57; `literal_same_page`; 'cuanto a mí, es sólo gracias a Tu gran bondad que \nsoy capaz de entrar en Tu casa. Por lo tanto, me inclino \ndelante del santuario de Tu santidad con temor a Ti.\nE'
+
+## Qué se puede afirmar
+- Sólo se reportan apariciones literales y paralelos entre obras; no relaciones doctrinales.
+
+## Vacíos
+- Un vacío de búsqueda no prueba ausencia en el corpus.

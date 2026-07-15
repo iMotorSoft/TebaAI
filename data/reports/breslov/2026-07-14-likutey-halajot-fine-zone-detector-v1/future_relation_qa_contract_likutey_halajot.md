@@ -1,0 +1,1 @@
+Evidencia fuerte futura: mismo literal/página y zonas validadas (`halakhah_header`, `notes_sources_block`, `glossary_entry`, `diagram_caption`). Contextual: `page_literal_only` y citas hebreas. Nunca usar candidato IA archivado, número inferido o quote no verificado como evidencia relacional.

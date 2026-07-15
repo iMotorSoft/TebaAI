@@ -27,4 +27,5 @@ async def main():
     lines+=['','## Qué se puede afirmar', '- Sólo se reportan apariciones literales y paralelos entre obras; no relaciones doctrinales.','','## Vacíos','- Un vacío de búsqueda no prueba ausencia en el corpus.']
     (D/'answers'/f"{x['id']}.md").write_text('\n'.join(lines)+'\n')
  (D/'cross_corpus_qa_results.json').write_text(json.dumps(out,ensure_ascii=False,indent=2));print(json.dumps({'questions':len(out),'with_hits':sum(bool(x['hits']) for x in out)}))
-asyncio.run(main())
+if __name__=='__main__':
+ asyncio.run(main())

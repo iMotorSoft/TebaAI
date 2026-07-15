@@ -1,0 +1,7 @@
+PASS structural profile: 514 pages, 3208 blocks
+PASS migration 035
+PASS detector apply: 514 classifications
+PASS structural search probe page/blank/hebrew
+PASS structural detector QA
+PASS pytest tests/test_lm_xv_kdp_structural_detector.py
+PASS git diff --check

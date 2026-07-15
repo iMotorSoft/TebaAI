@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checks": {
+    "classifications_514": true,
+    "blanks_5": true,
+    "nonblank_has_quote": true,
+    "no_invented_units": true,
+    "search_ready_v2_514": true,
+    "ocr_not_used": true,
+    "no_embeddings": true,
+    "no_milvus": true,
+    "no_relations": true
+  },
+  "metrics": {
+    "pages": 514,
+    "blanks": 5,
+    "missing_evidence": 0,
+    "invented_units": 0,
+    "view_rows": 514
+  }
+}

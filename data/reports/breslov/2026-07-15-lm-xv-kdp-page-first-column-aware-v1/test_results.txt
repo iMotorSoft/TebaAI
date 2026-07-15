@@ -1,0 +1,8 @@
+PASS preflight_likutey_moharan_xv_kdp.py
+PASS likutey_moharan_xv_kdp_column_rules.py
+PASS ingest_likutey_moharan_xv_kdp_page_first_column_aware.py
+PASS library_lm_xv_kdp_search_probe.py --pdf-page 119 --json
+PASS library_lm_xv_kdp_search_probe.py --page-status blank --json
+PASS library_lm_xv_kdp_page_first_column_aware_qa.py
+PASS pytest tests/test_lm_xv_kdp_page_first_column_aware.py
+PASS git diff --check

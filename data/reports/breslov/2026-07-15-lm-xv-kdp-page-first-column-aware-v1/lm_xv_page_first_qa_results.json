@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source_exists": true,
+    "correct_sha": true,
+    "not_likutey_halajot": true,
+    "page_count": true,
+    "pages_514": true,
+    "textual_509": true,
+    "blanks_5": true,
+    "blocks_present": true,
+    "bbox_present": true,
+    "text_hashes_present": true,
+    "no_lm_xv_relations": true,
+    "search_view": true,
+    "no_ocr_text_replacement": true,
+    "no_embeddings_created": true,
+    "no_milvus_writes": true,
+    "all_critical_pass": true
+  },
+  "metrics": {
+    "pages": 514,
+    "textual": 509,
+    "blanks": 5,
+    "blocks": 3208,
+    "relations": 0
+  },
+  "no_contamination": {
+    "kitzur_lmii_lh_writes": false,
+    "embeddings": false,
+    "milvus": false,
+    "ocr_layout_used": false
+  }
+}

@@ -1,0 +1,6 @@
+PASS: Python compilation for ingest_likutey_halajot_page_first.py and library_likutey_halajot_final_search_probe.py.
+PASS: controlled ingestion: 284 pages, 268 text pages, 16 blanks.
+PASS: persistent verification: 284 PageAnchors, 268 ContentNodes, 268 LiteralSpans, 268 SemanticUnits for likutey_halajot_page_first_v1.
+PASS: focal pytest: 9 passed (investigative model, AI routing, zone-candidate validator, AI note continuity).
+PASS: git diff --check.
+NOT RUN: Litestar /health; no process was listening on 127.0.0.1:7008 and this change did not restart it.

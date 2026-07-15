@@ -1,0 +1,7 @@
+PASS: migration 027 and 028 applied.
+PASS: detector dry-run and write: 284 evaluated; 268 textual enrichments; 16 blanks.
+PASS: structural QA: coverage 284/268/16; 0 promotions without evidence or below 0.85.
+PASS: search probes: appendix=24 pages; Hashkamat HaBoker=197 pages.
+PASS: focal pytest: 9 passed.
+PASS: git diff --check.
+NOT RUN: /health; backend was not listening on 127.0.0.1:7008 and no service was restarted.

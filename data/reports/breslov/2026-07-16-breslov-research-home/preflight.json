@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-07-16",
+  "repository": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI",
+  "branch": "feature/console-backend-core",
+  "initial_head": "7f830475aa6ad9e69fcd12cfbe88453e587ef7b4",
+  "frontend": "SrvRestAstroLS_v1/astro",
+  "stack": { "astro": "7.0.2", "svelte": "5.56.4", "frontend_port": 3008 },
+  "working_tree_unrelated_at_start": [
+    "SrvRestAstroLS_v1/backend/data/",
+    "SrvRestAstroLS_v1/backend/scripts/milvus_operational_closure_probe.py",
+    "SrvRestAstroLS_v1/backend/scripts/milvus_v2_isolated_status_probe.py",
+    "data/reports/breslov/2026-07-09-* through 2026-07-13-*"
+  ],
+  "assets_inventory": "No approved BRI logo, visual brand asset, font, or landscape asset was found in the repository.",
+  "auth_inventory": "Existing real login surface remains at /login; no authentication simulation was added."
+}

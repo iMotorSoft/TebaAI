@@ -1,0 +1,12 @@
+---
+import FloralMark from "./FloralMark.astro";
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<div class:list={["rebbe-identity", { "rebbe-identity--compact": compact }]}>
+  <FloralMark size={compact ? 23 : 28} />
+  <div>
+    <span class="hebrew-name" lang="he" dir="rtl">רבי נחמן</span>
+    <span class="latin-name">REBE NAJMÁN</span>
+  </div>
+</div>

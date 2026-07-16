@@ -7,6 +7,7 @@ const backendTarget =
 
 export default defineConfig({
   integrations: [svelte()],
+  devToolbar: { enabled: false },
   server: {
     host: "127.0.0.1",
     port: 3008,

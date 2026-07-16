@@ -1,0 +1,20 @@
+---
+const capabilities = [
+  ["◌", "Conversación investigativa", "Hacé preguntas en lenguaje natural y obtené respuestas con evidencia precisa y trazable."],
+  ["⌕", "Búsqueda avanzada", "Encontramos lo que buscás explorando sinónimos, conceptos y referencias."],
+  ["⌘", "Relaciones y paralelos", "Descubrí cómo las enseñanzas se conectan a lo largo del corpus Breslov."],
+  ["◎", "Multilingüe", "Investigá en español, hebreo e inglés en una experiencia integrada."],
+  ["◇", "Privado y seguro", "Acceso restringido para investigadores y estudiosos. Tu investigación está protegida."],
+];
+---
+<section class="capability-wrap" id="corpus" aria-label="Capacidades de investigación">
+  <div class="capability-grid">
+    {capabilities.map(([icon, title, description]) => (
+      <article class="capability-card">
+        <span class="capability-icon" aria-hidden="true">{icon}</span>
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </article>
+    ))}
+  </div>
+</section>

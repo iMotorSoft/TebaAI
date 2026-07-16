@@ -1,0 +1,10 @@
+{
+  "pnpm_check": { "status": "PASS", "errors": 0, "warnings": 0, "hints": 0 },
+  "pnpm_build": { "status": "PASS", "static_pages": 6 },
+  "git_diff_check": { "status": "PASS" },
+  "playwright_breslov": { "status": "PASS", "tests": 5, "browser": "Chromium", "base_url": "http://127.0.0.1:3008" },
+  "existing_full_playwright_suite": {
+    "status": "ENVIRONMENT_LIMITED",
+    "observed": "The existing authenticated admin test fails without a reachable authenticated backend/credentials. The public Breslov suite is green; no backend was started or reconfigured."
+  }
+}

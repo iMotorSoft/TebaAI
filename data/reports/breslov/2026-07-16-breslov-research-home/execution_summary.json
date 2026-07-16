@@ -1,0 +1,14 @@
+{
+  "status": "IMPLEMENTATION_PASS_WITH_EXISTING_AUTH_E2E_LIMITATION",
+  "initial_head": "7f830475aa6ad9e69fcd12cfbe88453e587ef7b4",
+  "routes": ["/", "/login", "/request-access"],
+  "assets": [
+    "SrvRestAstroLS_v1/astro/public/breslov/contemplative-valley-768.webp",
+    "SrvRestAstroLS_v1/astro/public/breslov/contemplative-valley-1200.webp",
+    "SrvRestAstroLS_v1/astro/public/breslov/contemplative-valley-1600.webp"
+  ],
+  "limitations": [
+    "No approved BRI logo existed, so the collaboration card uses only a generic institutional icon.",
+    "The full pre-existing authenticated E2E suite requires live backend authentication context and was not made green by this public-home-only change."
+  ]
+}

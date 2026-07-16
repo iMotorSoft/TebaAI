@@ -1,0 +1,22 @@
+---
+import RebbeNajmanIdentity from "./RebbeNajmanIdentity.astro";
+import MobileMenu from "./MobileMenu.svelte";
+import LanguageSelector from "./LanguageSelector.svelte";
+
+const links = [
+  ["Acerca de", "#acerca"], ["Corpus", "#corpus"], ["Metodología", "#metodologia"],
+  ["Para quién", "#para-quien"], ["Idiomas", "#idiomas"], ["Acceso", "#acceso"],
+];
+---
+
+<header class="home-header">
+  <a class="header-identity" href="#acerca" aria-label="Breslov Research, inicio"><RebbeNajmanIdentity compact /></a>
+  <nav class="desktop-nav" aria-label="Navegación principal">
+    {links.map(([label, href]) => <a href={href}>{label}</a>)}
+  </nav>
+  <div class="header-actions">
+    <LanguageSelector client:load />
+    <a class="login-button header-login" href="/login"><span aria-hidden="true">⌁</span>Iniciar sesión</a>
+  </div>
+  <MobileMenu client:load links={links} />
+</header>

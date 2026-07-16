@@ -1,0 +1,36 @@
+---
+import "../assets/app.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Breslov Research — Investigación basada en fuentes",
+  description = "Plataforma privada de investigación conversacional sobre las enseñanzas de Rebe Najmán de Breslov, con citas verificables y fuentes en español, hebreo e inglés.",
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, "https://breslov.tebaai.live");
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#061f3b" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,8 +1,8 @@
 {
   "question": "¿Dónde aparece alegría?",
   "status": "ok",
-  "answer_text": "Aparece **“alegría”** en:\n- **Likutey Moharán XV KDP (p. 100)**: “Podrá entonces alcanzar una gran alegría a través de su simpleza y de su fe.”\n- **Likutey Moharán XV KDP (p. 100)**: “78. Podrá entonces alcanzar una gran alegría…” (nota que indica que es la única mención a la alegría en esta lección).\n- **La Potencia de la Plegaria (p. 11)**: “...de los dolores y de las alegrías.”\n- **La Potencia de la Plegaria (p. 29)**: “Todas las alegrías del mundo…”\n- **La Potencia de la Plegaria (p. 41)**: “Alegría” (como título/entrada).",
-  "answer_markdown": "Aparece **“alegría”** en:\n- **Likutey Moharán XV KDP (p. 100)**: “Podrá entonces alcanzar una gran alegría a través de su simpleza y de su fe.”\n- **Likutey Moharán XV KDP (p. 100)**: “78. Podrá entonces alcanzar una gran alegría…” (nota que indica que es la única mención a la alegría en esta lección).\n- **La Potencia de la Plegaria (p. 11)**: “...de los dolores y de las alegrías.”\n- **La Potencia de la Plegaria (p. 29)**: “Todas las alegrías del mundo…”\n- **La Potencia de la Plegaria (p. 41)**: “Alegría” (como título/entrada).",
+  "answer_text": "Aparece **alegría** en:\n\n- **Likutey Moharán XV KDP (p. 100)**: “Podrá entonces alcanzar una gran alegría a través de su simpleza y de su fe.”\n- **Likutey Moharán XV KDP (p. 100)**: “78. Podrá entonces alcanzar una gran alegría…” (nota que indica que es la única mención a la alegría en esa lección).\n- **La Potencia de la Plegaria (p. 29)**: “Todas las alegrías del mundo…”\n- **La Potencia de la Plegaria (p. 41)**: “Alegría”.\n\n**Límite:** con la evidencia provista, no puedo ubicar “alegría” en otros textos/páginas fuera de estos fragmentos.",
+  "answer_markdown": "Aparece **alegría** en:\n\n- **Likutey Moharán XV KDP (p. 100)**: “Podrá entonces alcanzar una gran alegría a través de su simpleza y de su fe.”\n- **Likutey Moharán XV KDP (p. 100)**: “78. Podrá entonces alcanzar una gran alegría…” (nota que indica que es la única mención a la alegría en esa lección).\n- **La Potencia de la Plegaria (p. 29)**: “Todas las alegrías del mundo…”\n- **La Potencia de la Plegaria (p. 41)**: “Alegría”.\n\n**Límite:** con la evidencia provista, no puedo ubicar “alegría” en otros textos/páginas fuera de estos fragmentos.",
   "summary": "16 evidencias literales recuperadas",
   "conversation": {
     "conversation_id": null,
@@ -15,8 +15,8 @@
     "concepts": [
       "alegría",
       "dónde aparece",
-      "ubicación de la palabra",
-      "aparición de \"alegría\""
+      "búsqueda de palabra",
+      "aparición de término"
     ],
     "requires_cross_corpus": false
   },
@@ -24,8 +24,8 @@
     "queries": [
       "alegría",
       "dónde aparece",
-      "ubicación de la palabra",
-      "aparición de \"alegría\""
+      "búsqueda de palabra",
+      "aparición de término"
     ],
     "works": [
       "kitzur",
@@ -57,7 +57,7 @@
   ],
   "hits": [
     {
-      "hit_id": "kitzur-0-159575",
+      "hit_id": "kitzur-0-259221",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-1-740110",
+      "hit_id": "kitzur-1-40340",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-2-298849",
+      "hit_id": "kitzur-2-249768",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "hit_id": "lh-3-833787",
+      "hit_id": "lh-3-70751",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 10,
@@ -151,7 +151,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-4-744118",
+      "hit_id": "lh-4-690105",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 26,
@@ -173,7 +173,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-5-40686",
+      "hit_id": "lh-5-990114",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 41,
@@ -195,7 +195,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-6-227403",
+      "hit_id": "lm_xv-6-104762",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 103,
@@ -217,7 +217,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-7-38311",
+      "hit_id": "lm_xv-7-217143",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 100,
@@ -239,7 +239,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-8-494982",
+      "hit_id": "lm_xv-8-302115",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 100,
@@ -261,7 +261,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-9-392131",
+      "hit_id": "lmii-9-620480",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 148,
@@ -283,7 +283,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-10-68795",
+      "hit_id": "lmii-10-149001",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 149,
@@ -305,7 +305,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-11-191478",
+      "hit_id": "lmii-11-958362",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 150,
@@ -327,7 +327,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-12-647096",
+      "hit_id": "lmii-12-667876",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 156,
@@ -349,7 +349,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-13-517156",
+      "hit_id": "potencia_plegaria-13-97185",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 11,
@@ -371,7 +371,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-14-420549",
+      "hit_id": "potencia_plegaria-14-303857",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 29,
@@ -393,7 +393,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-15-147307",
+      "hit_id": "potencia_plegaria-15-461712",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 41,
@@ -459,6 +459,32 @@
       "hits": 3
     }
   ],
+  "claims": [
+    {
+      "claim": "En Likutey Moharán XV KDP (p. 100) se menciona “alegría” en la frase sobre alcanzar una gran alegría mediante la simpleza y la fe.",
+      "evidence_ids": [
+        "lm_xv-7-217143"
+      ]
+    },
+    {
+      "claim": "En Likutey Moharán XV KDP (p. 100) hay una nota que vuelve a mencionar “gran alegría” y dice que es la única mención a la alegría en esa lección.",
+      "evidence_ids": [
+        "lm_xv-8-302115"
+      ]
+    },
+    {
+      "claim": "En La Potencia de la Plegaria (p. 29) aparece “alegrías” en la expresión “Todas las alegrías del mundo…”.",
+      "evidence_ids": [
+        "potencia_plegaria-14-303857"
+      ]
+    },
+    {
+      "claim": "En La Potencia de la Plegaria (p. 41) aparece la palabra “Alegría”.",
+      "evidence_ids": [
+        "potencia_plegaria-15-461712"
+      ]
+    }
+  ],
   "not_found": [],
   "warnings": [
     "pdf_page_null_for_kitzur_chunk"
@@ -474,6 +500,6 @@
     "used_external_sources": false,
     "used_ocr": false,
     "database": "postgresql",
-    "duration_ms": 5310.02
+    "duration_ms": 5955.28
   }
 }

@@ -1,9 +1,9 @@
 {
   "question": "¿Dónde aparece Rebe Najmán?",
   "status": "ok",
-  "answer_text": "En las evidencias provistas, **Rebe Najmán** aparece mencionado en el **Kitzur** (Prefacio del editor), donde se dice que **“el Rebe Najmán le pidió al rabí Natán…”** y que **“el Rebe Najmán quedó muy satisfecho…”**.\n\n- **Kitzur**, *Prefacio del Editor* (sección “Prefacio del Editor / IV” y “Prefacio del Editor / V”). (evidence: kitzur-0-328425, kitzur-1-300167)\n\nTambién aparece en **Likutey Halajot** en el **Prefacio del editor**, donde se menciona que **“El Rebe Najmán era muy insistente…”**. (evidence: lh-7-813031)",
-  "answer_markdown": "En las evidencias provistas, **Rebe Najmán** aparece mencionado en el **Kitzur** (Prefacio del editor), donde se dice que **“el Rebe Najmán le pidió al rabí Natán…”** y que **“el Rebe Najmán quedó muy satisfecho…”**.\n\n- **Kitzur**, *Prefacio del Editor* (sección “Prefacio del Editor / IV” y “Prefacio del Editor / V”). (evidence: kitzur-0-328425, kitzur-1-300167)\n\nTambién aparece en **Likutey Halajot** en el **Prefacio del editor**, donde se menciona que **“El Rebe Najmán era muy insistente…”**. (evidence: lh-7-813031)",
-  "summary": "42 evidencias literales recuperadas",
+  "answer_text": "Rebe Najmán aparece mencionado en el **Prefacio del Editor** de *Kitzur Likutey Moharán* (secciones “Prefacio del Editor / IV” y “Prefacio del Editor / V”). En ese prefacio se dice que **“el Rebe Najmán le pidió al rabí Natán…”** y que **“el Rebe Najmán quedó muy satisfecho…”**.",
+  "answer_markdown": "Rebe Najmán aparece mencionado en el **Prefacio del Editor** de *Kitzur Likutey Moharán* (secciones “Prefacio del Editor / IV” y “Prefacio del Editor / V”). En ese prefacio se dice que **“el Rebe Najmán le pidió al rabí Natán…”** y que **“el Rebe Najmán quedó muy satisfecho…”**.",
+  "summary": "27 evidencias literales recuperadas",
   "conversation": {
     "conversation_id": null,
     "turn_id": null,
@@ -15,9 +15,7 @@
     "concepts": [
       "Rebe Najmán",
       "Rebbe Nachman",
-      "Najmán",
-      "Nachman",
-      "¿Dónde aparece?",
+      "¿dónde aparece?",
       "ubicación",
       "mención"
     ],
@@ -27,9 +25,7 @@
     "queries": [
       "Rebe Najmán",
       "Rebbe Nachman",
-      "Najmán",
-      "Nachman",
-      "¿Dónde aparece?",
+      "¿dónde aparece?",
       "ubicación",
       "mención"
     ],
@@ -63,7 +59,7 @@
   ],
   "hits": [
     {
-      "hit_id": "kitzur-0-328425",
+      "hit_id": "kitzur-0-483635",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -87,7 +83,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-1-300167",
+      "hit_id": "kitzur-1-79206",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -111,7 +107,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-2-206727",
+      "hit_id": "kitzur-2-596986",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -135,79 +131,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-3-133322",
-      "work_code": "kitzur",
-      "work_title": "Kitzur",
-      "pdf_page": null,
-      "printed_page": null,
-      "quote": "uto. Por lo tanto, ello requiere de una gran habilidad. La persona debe “enorgullecerse” sólo para olvidar la sabiduría que tenía previamente, algo que evidentemente debe hacer - y pese a ello, debe ser verdaderamente humilde.\n\n## 6 Tamuz\n\n## **247**\n\n1. Está escrito en el santo Zohar: “La palabra teiku tal como es usada en el Talmud [significando ‘indeciso’ con respecto al dictamen final de una ley en particular], expresa la idea de la falta de tikún (rectificación)” (Zohar III, 27b). En otras palabras, falta la letra Nun de TiKUN, de modo que se vuelve TeIKU. Debes saber que cuando esa Nun final [la letra Nun tiene una forma alargada cuando se encuentra al final de una palabra] falta de la palabra TiKUN [i.e., del concepto de rectificación], esa Nun es entonces disminuida y doblada [cambiando así su forma hacia la forma más corta de la Nun cuando la letra no está al final de la palabra",
-      "source_view": "library_document_chunks",
-      "search_record_type": "chunk",
-      "source_layer": "chunk",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": [
-        "pdf_page_null_for_kitzur_chunk"
-      ]
-    },
-    {
-      "hit_id": "kitzur-4-699892",
-      "work_code": "kitzur",
-      "work_title": "Kitzur",
-      "pdf_page": null,
-      "printed_page": null,
-      "quote": "rias de Tzadikim. Esas historias encendieron por Dios sus corazones y luego de esforzarse en sus devociones religiosas llegaron a merecer lo que merecieron. ¡Afortunados ellos! (ver Sabiduría y Enseñanzas del Rabí Najmán de Breslov #138).\n\n## **249**\n\n1. La esencia de la fuerza y del valor se encuentra en el corazón. La persona que posee un corazón valeroso no le teme a ningún hombre ni a cosa alguna y es capaz de realizar actos tremendamente valientes y ganar fieras batallas mediante la fortaleza y el temple de su corazón. No le teme a nada y corre directamente hacia el centro de la batalla. Lo mismo sucede en el servicio a Dios. Comprende bien esto.\n\n## **250**\n\n1. El dolor y el sufrimiento sólo se deben a una falta de conocimiento, en el hecho de que la persona no sabe realmente ni percibe con claridad que todo sucede bajo la supervisión directa de Dios y que todo es para su propio bi",
-      "source_view": "library_document_chunks",
-      "search_record_type": "chunk",
-      "source_layer": "chunk",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": [
-        "pdf_page_null_for_kitzur_chunk"
-      ]
-    },
-    {
-      "hit_id": "kitzur-5-546487",
-      "work_code": "kitzur",
-      "work_title": "Kitzur",
-      "pdf_page": null,
-      "printed_page": null,
-      "quote": "on la noche y la oscuridad, queriendo decir que se ve subsecuentemente impedida de volver a acercarse al Tzadik- sin embargo, la luz de las enseñanzas de Torá que saboreó cuando estuvo con el Tzadik verdadero siempre irradiará sobre ella.\n\n## **286**\n\n1. Al estudiar los Codificadores y el Shuljan Aruj, uno merece ser “señor de la casa” y “gobernador de la tierra”. A su vez, se vuelve digno de elevar las puertas del Jardín del Edén y de comprender la Sabiduría Superior y la Sabiduría Inferior, que es el deleite esencial del Jardín del Edén. Ver Sabiduría y Enseñanzas del Rabí Najmán de Breslov (#29), donde está escrito que es extremadamente importante que cada judío estudie los Códigos de la Ley Judía todos los días, sin falta. Aunque se encuentre en dificultades -como cuando la persona no tiene un momento libre o está viajando- igualmente deberá estudiar al menos un párrafo de alguna sec",
-      "source_view": "library_document_chunks",
-      "search_record_type": "chunk",
-      "source_layer": "chunk",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": [
-        "pdf_page_null_for_kitzur_chunk"
-      ]
-    },
-    {
-      "hit_id": "kitzur-6-419057",
+      "hit_id": "kitzur-3-484240",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -231,7 +155,7 @@
       ]
     },
     {
-      "hit_id": "lh-7-813031",
+      "hit_id": "lh-4-946976",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 9,
@@ -253,7 +177,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-8-250423",
+      "hit_id": "lh-5-303185",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 11,
@@ -275,7 +199,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-9-123459",
+      "hit_id": "lh-6-823104",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 12,
@@ -297,73 +221,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-10-813031",
-      "work_code": "lh",
-      "work_title": "Likutey Halajot",
-      "pdf_page": 9,
-      "printed_page": null,
-      "quote": "PREFACIO DEL EDITOR\nEl Rebe Najmán era muy insistente en el hecho de que debíamos estudiar \ndiariamente el Shuljan Aruj. “Nunca dejen pasar un día sin estudiar al \nmenos una ley”, dijo (Sabiduría y Enseñanzas del Rabí Najmán de Breslov #29).\nE\nl Rabí Natán, el discípulo más cercano del Rebe, aceptó el mandato del Rebe y se \nadhirió a él asiduamente a lo largo de toda su vida. Finalmente llegó a repasar varias \nveces todo el Shuljan Aruj con sus comentarios.\nPero el Rebe Najmán tenía otro motivo para alentar al Rabí Natán a estudiar \nel Shuljan Aruj - quería que se familiarizara con sus leyes al punto de poder elaborar \njidushim, ideas originales, sobre ellas, basándose en las enseñanzas del Rebe Najmán en \nel Likutey Moharán. El Rabí Natán debía entretejer las leyes y las lecciones de manera \nque demostrasen cómo cada halajá mejora y fortalece la vida de cada individuo, en \ntodo momento ",
-      "source_view": "library_likutey_halajot_investigative_search_v1",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lh-11-250423",
-      "work_code": "lh",
-      "work_title": "Likutey Halajot",
-      "pdf_page": 11,
-      "printed_page": null,
-      "quote": "SOBRE EL RABÍ NATÁN\n“Si no fuera por el Rabí Natán, ni una página de mis escritos habría \nsobrevivido” (Rebe Najmán).\nA\nunque menos conocido que su famoso mentor, la contribución del Rabí Natán \nSternhartz a la Jasidut de Breslov fue de importancia capital. Siendo el principal \ndiscípulo y escriba del Rebe Najmán, el Rabí Natán registró todas las lecciones dadas por \nsu maestro, publicó sus escritos y también compiló para las futuras generaciones muchas \nanécdotas personales y conversaciones del Rebe. Cuando, luego del fallecimiento del \nRebe, la Jasidut corrió el peligro de disolverse, el Rabí Natán, por sí solo, la mantuvo \nviva y permitió que creciera uniﬁ cando a los jasidim, volviendo a establecer la reunión \nde Rosh HaShaná en Umán y construyendo allí un gran kloiz (sinagoga). Fue maestro \nde muchos discípulos, visitó y ayudó a los jasidim que vivían a lo largo de Ucrania y \nescrib",
-      "source_view": "library_likutey_halajot_investigative_search_v1",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lh-12-123459",
-      "work_code": "lh",
-      "work_title": "Likutey Halajot",
-      "pdf_page": 12,
-      "printed_page": null,
-      "quote": "XII   LIKUTEY HALAJOT\nmanera oral en los Shabatot y en las festividades. El Likutey Moharán, conteniendo 411 \nlecciones, fue resultado de su colaboración. Aunque sólo era ocho años más joven que \nel Rebe, el Rabí Natán se impregnó sediento de las enseñanzas de su maestro y siguió su \nguía en todos los aspectos de la vida. Con el pasar del tiempo, la familia del Rabí Natán \nreconoció los cambios positivos que podían percibirse en las midot y en la erudición de \nTorá del Rabí Natán y se aplacó su oposición a la Jasidut.\nLuego del fallecimiento del Rebe en el año 1810, se le pidió al Rabí Natán que se \nvolviese el nuevo líder de los jasidim de Breslov, cosa que rechazó. “Sólo hay un Rebe”, \ninsistió. Con su característica humildad, el Rabí Natán introdujo un nuevo concepto en \nla historia de la Jasidut. En lugar de tener una sucesión de Rebes, los jasidim de Breslov \nsólo tienen un Rebe: el",
-      "source_view": "library_likutey_halajot_investigative_search_v1",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lh-13-97859",
+      "hit_id": "lh-7-600733",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 174,
@@ -385,7 +243,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-14-934403",
+      "hit_id": "lh-8-636068",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 174,
@@ -407,7 +265,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-15-600336",
+      "hit_id": "lm_xv-9-886330",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 283,
@@ -429,7 +287,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-16-778247",
+      "hit_id": "lm_xv-10-756827",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 121,
@@ -451,7 +309,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-17-593290",
+      "hit_id": "lm_xv-11-200161",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 127,
@@ -473,73 +331,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-18-862973",
-      "work_code": "lm_xv",
-      "work_title": "Likutey Moharán XV KDP",
-      "pdf_page": 242,
-      "printed_page": null,
-      "quote": "Najmán extrajo muchos de los temas tratados en la lección (especialmente comenzando con §6) \ndel Tikún #21 del Tikuney Zohar, páginas 49a-51a. Extractos de ello aparecen más arriba, en las \nnotas 28, 33, 38, 43, 45, 55, 68 y 82.\nEl Rebe comenzó su lección explicando el gran valor e importancia de cuidar el brit de \ntoda impureza. El hecho de alcanzar un elevado nivel de pureza moral le permite a la persona \norar con fuerza y así hacer que brille en el mundo el rayo del Mashíaj. Mediante tal plegaria la \npersona merece bendiciones y la santidad del Shabat -i.e., el tajlit del conocimiento- de modo \nque se ve libre para servir a Dios y no tener que trabajar para ganarse el sustento. También \nmerece un cuerpo santo proveniente del Jardín del Edén debido al cual su mazal asciende y es \ncapaz de hacer que su buena inclinación domine a su mala inclinación. Esto le da el poder para \nelevar a aq",
-      "source_view": "library_lm_xv_kdp_search_ready_v3",
-      "search_record_type": "note_or_source_candidate",
-      "source_layer": "note_or_source_candidate",
-      "zone_type": "note_or_source_candidate",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lm_xv-19-600336",
-      "work_code": "lm_xv",
-      "work_title": "Likutey Moharán XV KDP",
-      "pdf_page": 283,
-      "printed_page": null,
-      "quote": "palabra clave en estas meditaciones. Su valor numérico es el mismo que el del Santo Nombre \nIHVH en su expansión como Iud HH VV HH (52 =  .)יוד הה וו ההEste Nombre, en general \nreferido por su nemotecnia de valor numérico BaN (52 =  ,)בןestá asociado con Maljut-Nukva \n(ver Apéndice: Expansiones de los Santos Nombres de Dios).\nLa persona Divina Maljut-Nukva (de aquí en más Maljut) es el aspecto femenino de \nDios, la Shejiná (ver Tikuney Zohar #21, p. 60a; Zohar III, 276a). Maljut es también el medio a \ntravés del cual las seﬁrot inferiores se relacionan con este mundo y a través del cual se efectúa \ny ejerce el gobierno de Dios. Enseña el Rebe Najmán en el Likutey Moharán I, 33:9: Y todo \nesto es para iluminar a Maljut… para revelar Su Reinado al mundo entero, para encontrar Su \nDivinidad en todas las lenguas de las naciones, en todo lo corpóreo y en todos los ámbitos de las \nfuerzas del ",
-      "source_view": "library_lm_xv_kdp_search_ready_v3",
-      "search_record_type": "note_or_source_candidate",
-      "source_layer": "note_or_source_candidate",
-      "zone_type": "note_or_source_candidate",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lm_xv-20-778247",
-      "work_code": "lm_xv",
-      "work_title": "Likutey Moharán XV KDP",
-      "pdf_page": 121,
-      "printed_page": null,
-      "quote": "Cada día, cada hora, cada minuto, cada momento es una nueva creación. Hablamos de esto \nen nuestras plegarias diarias: “Quien en Su bondad renueva cada día, constantemente, la Obra \nde la Creación” (ver notas 184 y 185 allí). Por lo tanto, la persona no puede retroceder a ese \ntiempo y lugar anteriores pues ya no existen. La única manera de deshacer el daño en un \ntiempo y lugar pasado es a través de la teshuvá, que trasciende lo temporal y espacial. Éste es \nel signiﬁcado del versículo: “y en Tu libro están registrados todos ellos, los días que fueron \nformados; y Él ha [elegido] uno de ellos” (Salmos 139:16; Rashi explica que el día elegido \npor Dios es Iom Kipur). Es decir, para Dios, Quien trasciende lo temporal, todo el tiempo es \ncomo un solo día (ver Likutey Halajot, Tzitzit 3:15; ver también ibid., Netilat Iadaim, Shajarit \n3:5). Y así, para efectuar un genuino arrepentimiento, l",
-      "source_view": "library_lm_xv_kdp_search_ready_v3",
-      "search_record_type": "note_or_source_candidate",
-      "source_layer": "note_or_source_candidate",
-      "zone_type": "note_or_source_candidate",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lm_xv-21-488466",
+      "hit_id": "lm_xv-12-306912",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 260,
@@ -561,7 +353,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-22-494982",
+      "hit_id": "lm_xv-13-302115",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 100,
@@ -583,7 +375,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-23-637403",
+      "hit_id": "lm_xv-14-129852",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 144,
@@ -605,7 +397,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-24-80077",
+      "hit_id": "lm_xv-15-190533",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 217,
@@ -627,7 +419,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-25-218351",
+      "hit_id": "lmii-16-188905",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 6,
@@ -649,7 +441,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-26-166910",
+      "hit_id": "lmii-17-951636",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 7,
@@ -671,7 +463,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-27-987064",
+      "hit_id": "lmii-18-262874",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 13,
@@ -693,73 +485,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-28-625268",
-      "work_code": "lmii",
-      "work_title": "Likutey Moharán II",
-      "pdf_page": 3,
-      "printed_page": -7,
-      "quote": "ליקוטי מוהר׳׳ן\nLIKUTEY MOHARÁN\nVolumen 2 (Lecciones 7-16)\nPor el\nRabí Najmán de Breslov \nTraducción al Inglés del \ntexto original en Hebreo\ny Edición\nMoshé Mykoff\nNotas\nJaim Kramer\nTraducción al Español \nGuillermo Beilinson\nPublicado por\nBRESLOV RESEARCH INSTITUTE\nJerusalem/New York",
-      "source_view": "library_lmii_search_ready_v2",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lmii-29-229490",
-      "work_code": "lmii",
-      "work_title": "Likutey Moharán II",
-      "pdf_page": 5,
-      "printed_page": -5,
-      "quote": "A mis Padres\nAarón ben Sara\ny\nBerta bat Pola\nPor su incondicional amor,\nentusiasmo y apoyo en esta tarea\nde traducir los textos de\nnuestro Maestro,\nRabí Najmán ben Feiga\n\u0002",
-      "source_view": "library_lmii_search_ready_v2",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lmii-30-218351",
-      "work_code": "lmii",
-      "work_title": "Likutey Moharán II",
-      "pdf_page": 6,
-      "printed_page": -4,
-      "quote": "Prefacio del Editor \n“Bueno es alabar a Dios y cantar a Tu Exaltado Nombre” (Salmos 92:2).\nEl Rabí Natán escribe en su Introducción al Likutey Moharán: “Es \nsuperﬂuo hablar de la profundidad de este libro, pues todo aquél que desee \nmirarlo de manera honesta comprenderá por sí mismo su grandeza. Cada \nlección habla sobre las características del hombre, de cómo desarrollar los \nbuenos atributos y mantenerse lejos de los malos. Habla de la Torá, de la \nplegaria y demás mitzvot; y de cómo cada individuo puede alcanzar niveles \nextremadamente elevados”. El Parparaot LeJojmá, en su Introducción, dirige \nal lector hacia otro ámbito dentro de éste: cómo cada uno puede lograr, a partir \nde su posición aparentemente insigniﬁcante en este mundo, niveles que ni \nsiquiera los ángeles pueden alcanzar. Muchos otros Tzadikim han alabado el \nLikutey Moharán de manera similar.\nPor lo tanto, muy agradecid",
-      "source_view": "library_lmii_search_ready_v2",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lmii-31-512659",
+      "hit_id": "lmii-19-861231",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 250,
@@ -781,7 +507,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-32-888914",
+      "hit_id": "lmii-20-921898",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 264,
@@ -803,7 +529,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-33-733452",
+      "hit_id": "potencia_plegaria-21-531822",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 1,
@@ -825,7 +551,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-34-239024",
+      "hit_id": "potencia_plegaria-22-184071",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 19,
@@ -847,7 +573,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-35-352451",
+      "hit_id": "potencia_plegaria-23-379853",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 22,
@@ -869,73 +595,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-36-733452",
-      "work_code": "potencia_plegaria",
-      "work_title": "La Potencia de la Plegaria",
-      "pdf_page": 1,
-      "printed_page": null,
-      "quote": "Rebe Najmán\nLa\nPotencia\nde laPlegaria",
-      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
-      "search_record_type": "fine_zone",
-      "source_layer": "fine_zone",
-      "zone_type": "main_text_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "validated_fine_zone_quote",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "potencia_plegaria-37-239024",
-      "work_code": "potencia_plegaria",
-      "work_title": "La Potencia de la Plegaria",
-      "pdf_page": 19,
-      "printed_page": null,
-      "quote": "Más aún, el Rebe Najmán dice que nuestras palabras de Torá y de \nplegaria crean la unidad y la paz en los mundos. Explica lo siguiente:",
-      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
-      "search_record_type": "fine_zone",
-      "source_layer": "fine_zone",
-      "zone_type": "main_text_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "validated_fine_zone_quote",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "potencia_plegaria-38-352451",
-      "work_code": "potencia_plegaria",
-      "work_title": "La Potencia de la Plegaria",
-      "pdf_page": 22,
-      "printed_page": null,
-      "quote": "Pregunta el Rebe Najmán (al igual que muchos otros), “¿Por qué \nnecesitamos orar? HaShem, después de todo, conoce nuestros pensamientos. \n¿Por qué debemos articular nuestras plegarias?”. El Rebe explica que HaShem \ndesea derramar bendiciones sobre cada persona, a cada momento. Pero, de \nrecibir la abundancia de HaShem, ¿tienes acaso un lugar en el cual ubicarla? \nNo es posible escanciar una deliciosa bebida sin una copa para recibirla. \nSi se la sirve, al igual que HaShem hace con Sus bendiciones, ¿dónde se la \npondrá? Es necesario alguna clase de recipiente para captar la bendición de \nHaShem. Hemos mencionado anteriormente8 que, al orar, unimos las letras y \nlas palabras. Esas plegarias reparan los Recipientes Quebrados, lo que crea \nlos necesarios recipientes con los cuales es posible captar la bendición de \nHaShem (Likutey Moharán I, 34); de aquí la necesidad de la plegaria.",
-      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
-      "search_record_type": "fine_zone",
-      "source_layer": "fine_zone",
-      "zone_type": "main_text_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "Najmán"
-      ],
-      "evidence_type": "validated_fine_zone_quote",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "potencia_plegaria-39-734840",
+      "hit_id": "potencia_plegaria-24-676460",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 38,
@@ -957,7 +617,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-40-652388",
+      "hit_id": "potencia_plegaria-25-38045",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 117,
@@ -979,7 +639,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-41-631840",
+      "hit_id": "potencia_plegaria-26-140768",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 243,
@@ -1004,45 +664,54 @@
   "evidence_matrix": [
     {
       "work_code": "kitzur",
-      "hits": 7
+      "hits": 4
     },
     {
       "work_code": "lh",
-      "hits": 8
+      "hits": 5
     },
     {
       "work_code": "lm_xv",
-      "hits": 10
+      "hits": 7
     },
     {
       "work_code": "lmii",
-      "hits": 8
+      "hits": 5
     },
     {
       "work_code": "potencia_plegaria",
-      "hits": 9
+      "hits": 6
     }
   ],
   "cross_corpus_matrix": [
     {
       "work_code": "kitzur",
-      "hits": 7
+      "hits": 4
     },
     {
       "work_code": "lh",
-      "hits": 8
+      "hits": 5
     },
     {
       "work_code": "lm_xv",
-      "hits": 10
+      "hits": 7
     },
     {
       "work_code": "lmii",
-      "hits": 8
+      "hits": 5
     },
     {
       "work_code": "potencia_plegaria",
-      "hits": 9
+      "hits": 6
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Rebe Najmán aparece mencionado en el Prefacio del Editor de *Kitzur Likutey Moharán* (IV y V), donde se relata que le pidió al rabí Natán recopilar consejos y que quedó satisfecho con la versión resultante.",
+      "evidence_ids": [
+        "kitzur-0-483635",
+        "kitzur-1-79206"
+      ]
     }
   ],
   "not_found": [],
@@ -1060,6 +729,6 @@
     "used_external_sources": false,
     "used_ocr": false,
     "database": "postgresql",
-    "duration_ms": 4999.12
+    "duration_ms": 4367.92
   }
 }

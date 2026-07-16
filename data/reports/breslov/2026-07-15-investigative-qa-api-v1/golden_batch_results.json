@@ -8,63 +8,79 @@
       "id": "plegaria",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 24,
+      "hit_count": 16,
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 6088.18
     },
     {
       "id": "hitbodedut",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 15,
+      "hit_count": 67,
       "warnings": [
-        "pdf_page_null_for_kitzur_chunk",
-        "ai_render_rejected_grounding_validation"
+        "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 6266.6
     },
     {
       "id": "fe_emuna",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 2,
+      "hit_count": 33,
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 3873.2
     },
     {
       "id": "rebe_najman",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 42,
+      "hit_count": 27,
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 4367.92
     },
     {
       "id": "likutey_moharan",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 46,
+      "hit_count": 51,
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 7153.29
     },
     {
       "id": "rabi_natan",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 46,
+      "hit_count": 43,
       "warnings": [
-        "pdf_page_null_for_kitzur_chunk",
-        "ai_render_rejected_grounding_validation"
+        "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 5929.85
     },
     {
       "id": "zohar",
@@ -74,17 +90,23 @@
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 6380.24
     },
     {
       "id": "tzadik",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 16,
+      "hit_count": 45,
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 3241.45
     },
     {
       "id": "alegria",
@@ -94,7 +116,10 @@
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 5955.28
     },
     {
       "id": "tristeza",
@@ -104,7 +129,10 @@
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 4911.62
     },
     {
       "id": "miedo",
@@ -114,25 +142,36 @@
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 6198.53
     },
     {
       "id": "daat",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 45,
+      "hit_count": 30,
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 4240.31
     },
     {
       "id": "verdad",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 1,
-      "warnings": [],
-      "grounded": true
+      "hit_count": 16,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ],
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 3733.29
     },
     {
       "id": "brit",
@@ -142,18 +181,24 @@
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 3901.45
     },
     {
       "id": "mundo_venidero",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 63,
+      "hit_count": 92,
       "warnings": [
         "pdf_page_null_for_kitzur_chunk",
         "ai_render_rejected_grounding_validation"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": false,
+      "fallback": true,
+      "duration_ms": 3878.85
     },
     {
       "id": "notas_fuentes",
@@ -163,17 +208,24 @@
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": true,
+      "fallback": false,
+      "duration_ms": 4391.18
     },
     {
       "id": "referencias_nominales_potencia",
       "http_status": 200,
       "status": "ok",
-      "hit_count": 35,
+      "hit_count": 45,
       "warnings": [
-        "pdf_page_null_for_kitzur_chunk"
+        "pdf_page_null_for_kitzur_chunk",
+        "ai_render_rejected_grounding_validation"
       ],
-      "grounded": true
+      "grounded": true,
+      "ai_render_accepted": false,
+      "fallback": true,
+      "duration_ms": 8585.96
     }
   ]
 }

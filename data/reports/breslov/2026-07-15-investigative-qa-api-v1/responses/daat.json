@@ -1,9 +1,9 @@
 {
   "question": "¿Dónde aparece conocimiento?",
   "status": "ok",
-  "answer_text": "En los textos provistos, **“conocimiento” aparece asociado al “Árbol del Conocimiento del Bien y del Mal”** (mencionado en *Kitzur*, 24 Jeshvan): “...la serpiente tentó a Eva a través del Árbol del Conocimiento del Bien y del Mal”.\n\nAdemás, en *Likutey Halajot* se menciona “transmitir mi conocimiento” en la **Introducción del Rabí Natán** (pág. 22): “...yo sé que no he alcanzado... esta capacidad de transmitir mi conocimiento...”.\n\n**Límite:** con la evidencia suministrada no puedo indicar otras apariciones de “conocimiento” fuera de estos fragmentos.",
-  "answer_markdown": "En los textos provistos, **“conocimiento” aparece asociado al “Árbol del Conocimiento del Bien y del Mal”** (mencionado en *Kitzur*, 24 Jeshvan): “...la serpiente tentó a Eva a través del Árbol del Conocimiento del Bien y del Mal”.\n\nAdemás, en *Likutey Halajot* se menciona “transmitir mi conocimiento” en la **Introducción del Rabí Natán** (pág. 22): “...yo sé que no he alcanzado... esta capacidad de transmitir mi conocimiento...”.\n\n**Límite:** con la evidencia suministrada no puedo indicar otras apariciones de “conocimiento” fuera de estos fragmentos.",
-  "summary": "45 evidencias literales recuperadas",
+  "answer_text": "En las fuentes provistas, **“conocimiento” aparece asociado a la “tierra” que estará llena de conocimiento** (Isaías 11:9) en *Likutey Moharán II* (p. 33): “la tierra estará llena de conocimiento”.\n\nTambién aparece como **“tajlit del conocimiento”** en *Likutey Moharán XV* (p. 242), al describir la santidad del Shabat: “la santidad del Shabat - i.e., el tajlit del conocimiento”.\n\n**Límite:** con el material suministrado no puedo determinar “dónde aparece” en un sentido exhaustivo (todas las ocurrencias en toda la obra); solo puedo señalar los lugares donde el término aparece en los extractos dados.",
+  "answer_markdown": "En las fuentes provistas, **“conocimiento” aparece asociado a la “tierra” que estará llena de conocimiento** (Isaías 11:9) en *Likutey Moharán II* (p. 33): “la tierra estará llena de conocimiento”.\n\nTambién aparece como **“tajlit del conocimiento”** en *Likutey Moharán XV* (p. 242), al describir la santidad del Shabat: “la santidad del Shabat - i.e., el tajlit del conocimiento”.\n\n**Límite:** con el material suministrado no puedo determinar “dónde aparece” en un sentido exhaustivo (todas las ocurrencias en toda la obra); solo puedo señalar los lugares donde el término aparece en los extractos dados.",
+  "summary": "30 evidencias literales recuperadas",
   "conversation": {
     "conversation_id": null,
     "turn_id": null,
@@ -15,9 +15,8 @@
     "concepts": [
       "conocimiento",
       "aparece",
-      "dónde",
       "ubicación del conocimiento",
-      "fuentes del conocimiento"
+      "dónde aparece el conocimiento"
     ],
     "requires_cross_corpus": false
   },
@@ -25,9 +24,8 @@
     "queries": [
       "conocimiento",
       "aparece",
-      "dónde",
       "ubicación del conocimiento",
-      "fuentes del conocimiento"
+      "dónde aparece el conocimiento"
     ],
     "works": [
       "kitzur",
@@ -59,7 +57,7 @@
   ],
   "hits": [
     {
-      "hit_id": "kitzur-0-715210",
+      "hit_id": "kitzur-0-212439",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -83,7 +81,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-1-799918",
+      "hit_id": "kitzur-1-584806",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -107,7 +105,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-2-50582",
+      "hit_id": "kitzur-2-577265",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -131,7 +129,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-3-747293",
+      "hit_id": "kitzur-3-714174",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -155,7 +153,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-4-733035",
+      "hit_id": "kitzur-4-383808",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -179,7 +177,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-5-703401",
+      "hit_id": "kitzur-5-589041",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -203,79 +201,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-6-693992",
-      "work_code": "kitzur",
-      "work_title": "Kitzur",
-      "pdf_page": null,
-      "printed_page": null,
-      "quote": "que son interdependientes; y uno no sabe por dónde empezar, dado que cada una de ellas comienza a partir de la otra.\n\n401\n\n## Page 402\n\nLección 272-274                                                                     12 Tamuz\n\n12 Tamuz\n\n## **272**\n\n1. Es una regla esencial en el servicio a Dios que la persona sólo tome en cuenta el día presente. Ello se aplica a la manera en la cual se ocupa del sustento y de las necesidades materiales, no debiendo pensar de un día para el otro, tal como se enseña en la literatura sagrada; y también se aplica al servicio a Dios, donde sólo hay que considerar el día y la hora presentes. Ello se debe a que cuando la persona desea entrar en el servicio a Dios, siente que es como una carga muy pesada, como si le fuese imposible sobrellevar semejante peso. Pero si piensa que sólo tiene el día de hoy, no le será una carga en absoluto. Más aún, uno nunca deb",
-      "source_view": "library_document_chunks",
-      "search_record_type": "chunk",
-      "source_layer": "chunk",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": [
-        "pdf_page_null_for_kitzur_chunk"
-      ]
-    },
-    {
-      "hit_id": "kitzur-7-694878",
-      "work_code": "kitzur",
-      "work_title": "Kitzur",
-      "pdf_page": null,
-      "printed_page": null,
-      "quote": "ignificado profundo de la afirmación de nuestros Sabios, de bendita memoria, “El cantor ve dónde están leyendo los niños”.\n\n409\n\n## Page 410\n\nLección 282                                                                            18 Tamuz\n\n## 18 Tamuz\n\n5. Es necesario juzgar a toda persona de manera favorable. Incluso con respecto a aquel que es un completo malvado, Dios no lo permita, es necesario buscar hasta encontrar algún poco de bien en donde no es un malvado. Al encontrar ese poco de bien en él, en el cual no es un malvado y al juzgarlo favorablemente, uno lo eleva y lo traslada hacia el lado del mérito. De esa manera, puede hacer que retorne a Dios en arrepentimiento. Ésta es la interpretación del versículo, “Un poco más y el malvado no existirá” es decir, al encontrar en él “un poco” en donde no es malvado - “observarás su lugar y él ya no estará” (Salmos 37:10) - significando qu",
-      "source_view": "library_document_chunks",
-      "search_record_type": "chunk",
-      "source_layer": "chunk",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": [
-        "pdf_page_null_for_kitzur_chunk"
-      ]
-    },
-    {
-      "hit_id": "kitzur-8-970421",
-      "work_code": "kitzur",
-      "work_title": "Kitzur",
-      "pdf_page": null,
-      "printed_page": null,
-      "quote": "umida en el deseo de dinero no confía en Dios, dado que adora a un ídolo; pero “yo confiaré en Ti”, que Tú me proveerás de mi sustento incluso con un mínimo esfuerzo de mi parte, y yo estaré satisfecho con mi porción y no caeré en el deseo de dinero.\n\n12. De hecho, hay otra manera de rectificar el deseo de dinero y es contemplar la fuente de la cual fluyen el dinero y el influjo de abundancia hacia el mundo. Al contemplar esto se anula el deseo. Ello se debe a que allí, en su fuente, ese influjo es enteramente puro, una luz etérea y un placer espiritual; sólo se vuelve corpóreo más abajo, en este mundo. Y, ¿quién será tan tonto como para dejar tal lugar y arrojar a un lado los deleites espirituales en favor del placer material? Sin embargo es imposible contemplar ese lugar sin haber logrado antes la pureza sexual, como está escrito, “Desde mi carne veré a Dios” (Job 19:26). En otras pala",
-      "source_view": "library_document_chunks",
-      "search_record_type": "chunk",
-      "source_layer": "chunk",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": [
-        "pdf_page_null_for_kitzur_chunk"
-      ]
-    },
-    {
-      "hit_id": "lh-9-335713",
+      "hit_id": "lh-6-994520",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 14,
@@ -297,7 +223,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-10-100843",
+      "hit_id": "lh-7-284247",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 22,
@@ -319,7 +245,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-11-917455",
+      "hit_id": "lh-8-594835",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 92,
@@ -341,7 +267,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-12-552317",
+      "hit_id": "lh-9-780359",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 16,
@@ -363,7 +289,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-13-864440",
+      "hit_id": "lh-10-693903",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 17,
@@ -385,7 +311,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-14-305129",
+      "hit_id": "lh-11-710643",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 30,
@@ -407,73 +333,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-15-945709",
-      "work_code": "lh",
-      "work_title": "Likutey Halajot",
-      "pdf_page": 46,
-      "printed_page": 28,
-      "quote": "28 LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA      HALAJÁ 1: 2\ncomo afi rma el versículo, “Prueba y mira que HaShem es bueno”. Todo bien, \nno importa en dónde se encuentre o qué forma tome, sólo emana de Él. Éste es \nel significado de “pues HaShem me sustenta”. En otras palabras, David HaMelej \ndijo, el punto bueno que encuentro en mí -siendo en sí mismo un aspecto de \nDivinidad, como en “HaShem es bueno para todo”- es lo que me sustenta y \ntambién me despierta del sueño.\nY entonces, fortalecida por el sustento de ese punto bueno, la persona \npuede declarar, “No temo a los muchos miles que se han levantado por todas \npartes en mi contra”. Pues nuevamente estoy segura, sin temor de aquellos que \nme perseguirían. Aunque los daños espirituales y los pecados que amenazan \nvencerme son muchos miles, jas ve-shalom, no me amedrento. Viendo que he \nencontrado al menos algún remane",
-      "source_view": "library_likutey_halajot_investigative_search_v1",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lh-16-383964",
-      "work_code": "lh",
-      "work_title": "Likutey Halajot",
-      "pdf_page": 91,
-      "printed_page": null,
-      "quote": "  73\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n   יד\nen los malvados se aniquila a Sitra Ájara. Porque, como se explicó más arriba, \nel mal se disipa con un poco de bien.\n14 ■ DESDE LOS NIVELES MÁS BAJOS\nEl Rabí Natán vuelve al segundo de los dos versículos de Shir HaShirim que citó en \n§7 más arriba. Aquí demostrará cómo esto alude a la medianoche.\nÉste es el significado de lo que está escrito en el Zohar, \nconectando el versículo “Oh tú que habitas ba-ganim” con \nla idea de levantarse a la medianoche. Estudia allí, donde \nel Zohar interpreta “Oh tú que habitas ba-ganim” como “tú \nque habitas be-guenuta, en vergüenza” - aludiendo al alma del \nhombre que reside “en la vergüenza y en la inmundicia de este bajo mundo”.138 \nPese a la bajeza de su situación, cuando la persona se despierta y se levanta a mitad \nde la noche para dedicarse al estudio la Torá, sus palabras son oídas arriba.\nEs",
-      "source_view": "library_likutey_halajot_investigative_search_v1",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lh-17-179077",
-      "work_code": "lh",
-      "work_title": "Likutey Halajot",
-      "pdf_page": 96,
-      "printed_page": 78,
-      "quote": "78 LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA      HALAJÁ 1: 15\nSin embargo, David HaMelej sí sabía cuál era el momento exacto de la \nmedianoche debido al arpa que colgaba sobre su lecho. Como se trae en las \nenseñanzas del Rebe Najmán, el arpa tomaba su poder de la Torá, dado que el \narpa de David tenía cinco cuerdas, paralelas a los Cinco Libros de la Torá.149 \nY ésta lo despertaba de su sueño, de modo que él sabía cómo determinar el \nmomento y el punto exacto de jatzot. Pues David es representativo de Mashíaj, \nquien está constantemente dedicado a la rectifi cación de las almas judías, \ndespertándolas del sueño a través del mencionado concepto - a través de los \npuntos buenos que encuentra en cada uno. Mashíaj también le enseña a cada \npersona cómo hacer esto por sí misma, iluminando el corazón \nde la persona para que siempre sea capaz de buscar y de \nencontrar los punt",
-      "source_view": "library_likutey_halajot_investigative_search_v1",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lm_xv-18-862973",
+      "hit_id": "lm_xv-12-990294",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 242,
@@ -495,7 +355,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-19-778247",
+      "hit_id": "lm_xv-13-756827",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 121,
@@ -517,7 +377,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-20-161477",
+      "hit_id": "lm_xv-14-98856",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 9,
@@ -539,7 +399,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-21-862973",
+      "hit_id": "lm_xv-15-990294",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 242,
@@ -561,7 +421,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-22-52130",
+      "hit_id": "lm_xv-16-766619",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 259,
@@ -583,7 +443,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-23-994484",
+      "hit_id": "lm_xv-17-913183",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 308,
@@ -605,73 +465,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-24-181322",
-      "work_code": "lm_xv",
-      "work_title": "Likutey Moharán XV KDP",
-      "pdf_page": 30,
-      "printed_page": null,
-      "quote": "11. mirra…MoRDeJaI - MoR Dror. Mor es mirra, una resina de perfume dulzón. Los Sabios\nenseñan (Julín, loc. cit.): ¿En dónde encontramos una alusión a Mordejai en los Cinco Libros \nde la Torá? Ello está en el versículo “Tomarás las fragancias más ﬁnas… mor dror (mirra, libre \n[de impureza])” (Éxodo 30:23). Onkelos traduce mor dror al arameo como MeiRa DaJIa ( דכיא\n ,)מיראque fonéticamente se asemeja a MoRDeJaI (.)מרדכי",
-      "source_view": "library_lm_xv_kdp_search_ready_v3",
-      "search_record_type": "mixed_hebrew_spanish",
-      "source_layer": "mixed_hebrew_spanish",
-      "zone_type": "mixed_hebrew_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lm_xv-25-419475",
-      "work_code": "lm_xv",
-      "work_title": "Likutey Moharán XV KDP",
-      "pdf_page": 49,
-      "printed_page": null,
-      "quote": "24. Con respecto a este comer en santidad que mitiga el sufrimiento. El Rebe Najmán\nretorna ahora a su tema de apertura y explica: a) por qué cada persona experimenta algún \nsufrimiento cada día; b) en dónde se origina ese sufrimiento; c) y cómo el comer en santidad \nmitiga ese sufrimiento.",
-      "source_view": "library_lm_xv_kdp_search_ready_v3",
-      "search_record_type": "main_text_spanish",
-      "source_layer": "main_text_spanish",
-      "zone_type": "main_text_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "validated_fine_zone_quote",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lm_xv-26-506879",
-      "work_code": "lm_xv",
-      "work_title": "Likutey Moharán XV KDP",
-      "pdf_page": 66,
-      "printed_page": null,
-      "quote": "ni siquiera durante un corto momento? En particular alguien que es tan \nafortunado como para amar la Torá, que es extremadamente diligente \nen la Torá y se encuentra muy apegado a ella. Más aún alguien que \nha merecido sentir alguna dulzura en la Torá, generando alguna idea, \nincluso una explicación simple del Talmud y de sus comentarios. Y más \naún un místico, en particular aquel que ha merecido entrar en el tesoro \ndel Rey,13 un privilegio que la mente no puede comprender. Así, ¿cómo \nquerría separarse de la Torá ni siquiera durante un corto tiempo?\nEn verdad, como se mencionó más arriba, es imposible estar \ncontinuamente apegado al estudio de la Torá, pues necesariamente uno \ndebe separarse y detenerse durante un tiempo. Si es así, ¿de dónde toma \nsu vitalidad la gente durante el tiempo en que está ausente de la Torá? \nDado que la esencia de la vida proviene de la Torá, como se mencio",
-      "source_view": "library_lm_xv_kdp_search_ready_v3",
-      "search_record_type": "main_text_spanish",
-      "source_layer": "main_text_spanish",
-      "zone_type": "main_text_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "validated_fine_zone_quote",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lmii-27-45529",
+      "hit_id": "lmii-18-625831",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 33,
@@ -693,7 +487,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-28-864571",
+      "hit_id": "lmii-19-489454",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 36,
@@ -715,7 +509,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-29-447030",
+      "hit_id": "lmii-20-862881",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 37,
@@ -737,7 +531,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-30-166910",
+      "hit_id": "lmii-21-951636",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 7,
@@ -759,7 +553,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-31-204178",
+      "hit_id": "lmii-22-826715",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 17,
@@ -781,7 +575,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-32-292384",
+      "hit_id": "lmii-23-594598",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 24,
@@ -803,73 +597,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-33-977720",
-      "work_code": "lmii",
-      "work_title": "Likutey Moharán II",
-      "pdf_page": 20,
-      "printed_page": 10,
-      "quote": "10\n י\"א( – הַ יְנוּ צֶ דֶ ק, הַ יְנוּ אֱ מוּנָ ה. וְ אָ מְ רוּ שׁ ָ ם: 'אֱ מוּנָ ה אִ תְ קְ רִ יאַ ת, כַּ ד\nאִ תְ חַ בַּ ר בַּ הּ אֱ מֶ ת'. \nיְדֵ י הִ תְ קָ רְ בוּת לְ צַ דִּ יקִ ים -אֶ פְ שׁ ָ ר לָ בוֹא לֶ אֱ מֶ ת אֶ לָּ א עַ ל-וְ אִ י\nג \nיְדֵ י שׁ ֶ מְּ קַ בֵּ ל מֵ הֶ ם עֲ צָ תָ ם, נֶ חְ קָ ק בּ וֹ אֱ מֶ ת; -וְ יֵלֵ ךְ בְּ דֶ רֶ ךְ עֲ צָ תָ ם; וְ עַ ל\nכְּ מוֹ שׁ ֶ כָּ תוּב )תהלים נ\"א(: \"הֵ ן אֱ מֶ ת חָ פַ צְ תָּ \" – כְּ שׁ ֶ אַ תָּ ה חָ פֵ ץ אֱ מֶ ת; \n\"בַ טֻּ חוֹת וּבְ סָ תֻ ם חָ כְ מָ ה תוֹדִ יעֵ נִי\"; כִּ י הָ עֵ צוֹת שׁ ֶ מְּ קַ בֵּ ל מֵ הֶ ן הוּא \nבְּ חִ ינַ ת נִשּ ֹׂוּאִ ין וְ זִוּוּג. \nוּכְ שׁ ֶ מְּ קַ בְּ לִ ין עֵ צוֹת מֵ רְ שׁ ָ עִ ים, הוּא בְּ חִ ינַ ת נִשּ ֹׂוּאִ ין בַּ קְּ לִ פָּ ה. \"הַ נָּ חָ שׁ \nהִ שּ ׁ ִ יאַ נִי\" )בראשית ג( – לְ שׁ וֹן נִשּ ֹׂוּאִ ין, עֲ צוֹת הַ נָּ חָ שׁ שׁ ֶ קִּ בְּ לָ ה הוּא \n-יְדֵ י נִשּ ֹׂוּאִ ין הֵ טִ יל בָּ הּ זֻהֲ מָ א. וּבְ מַ עֲ מַ ד הַ ר-בְּ חִ",
-      "source_view": "library_lmii_search_ready_v2",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lmii-34-857278",
-      "work_code": "lmii",
-      "work_title": "Likutey Moharán II",
-      "pdf_page": 47,
-      "printed_page": 37,
-      "quote": "37 \ny (Ibid., 7:22), “Todo lo que tenía en sus narices nishmat (un aliento de) \nrúaj-de-vida”.8 Con respecto a esto dicen los sabios: “Si falta el aliento, \nfalta la vida” (Maasé Tuviá, Bait Jadash 2; cf. Zohar II, 24b).9\nVemos entonces que lo principal de la fuerza de vida de todo es su \nrúaj. Siempre que hay una carencia, ésta se encuentra esencialmente en \nla fuerza de vida, que corresponde al rúaj-de-vida de esa cosa. Esto se \ndebe a que es el rúaj el que le da la existencia a esa cosa.\nY suspirar es la prolongación del aliento. Corresponde a erej apaim \n(paciencia), es decir, un rúaj prolongado. Por tanto, cuando la persona \nsuspira debido a la carencia, y prolonga su rúaj, lleva el rúaj-de-vida \nhacia aquello que le falta. Porque la carencia es en esencia una partida del \nrúaj-de-vida. Por lo tanto, a través del suspiro, se completa la carencia.10\n2.  La pregunta es, ¿de dónde toma",
-      "source_view": "library_lmii_search_ready_v2",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "lmii-35-394752",
-      "work_code": "lmii",
-      "work_title": "Likutey Moharán II",
-      "pdf_page": 50,
-      "printed_page": 40,
-      "quote": "40\n \" ָ)תהלים ל\"ז(: \"וְ יִתֶּ ן לְ ךָ מִ שׁ ְ אֲ לֹת לִ בֶּ ךָ \"; \"יְמַ לֵּ א ה' כָּ ל מִ שׁ ְ אֲ לוֹתֶ יך\nזֹהַ ר -חַ יִּים הוּא בַּ לֵּ ב, וּכְ מוֹ שׁ ֶ כָּ תוּב בְּ תִ קּ וּנֵי- ַ)שם כ(. וְ עִ קַּ ר הָ רוּח\n)תקון יג(: 'כֻּ לְּ הוֹ שׁ ַ יְפִ ין מִ תְ נַ הֲ גִ ין בָּ תַ ר לִ בָּ א כְּ מַ לְ כָּ א' כוּ', כְּ מָ א דְּ אַ תְּ \nאָ מַ ר )יחזקאל א(: \"אֶ ל אֲ שׁ ֶ ר יִהְ יֶה שׁ ָ מָּ ה הָ רוּחַ לָ לֶ כֶ ת\" כוּ'. \nכִּ י הָ רוּחַ הוּא בַּ לֵּ ב, וְ הַ חִ סָּ רוֹן הוּא הִ סְ תַּ לְּ קוּת הָ רוּחַ שׁ ֶ מְּ קוֹמוֹ בַּ לֵּ ב, \nוְ עַ ל כֵּ ן נִ רְ גָּ שׁ הַ חִ סָּ רוֹן בַּ לֵּ ב. וְ עַ ל כֵּ ן כְּ שׁ ֶ נִּ תְ מַ לֵּ א הַ חִ סָּ רוֹן שׁ ֶ הוּא \nבִּ בְ חִ ינַ ת  הָ רוּחַ  כַּ נַּ \"ל  –  נֶ אֱ מַ ר:  \"וְ יִתֶּ ן  לְ ךָ  מִ שׁ ְ אֲ לֹת  לִ בֶּ ךָ ,  יְמַ לֵּ א \nחַ יִּים - ַה'\" וְ כוּ', הַ יְנוּ כַּ נַּ \"ל. וְ עַ ל כֵּ ן יִשְׂ רָ אֵ ל, שׁ ֶ הֵ ם מְ קַ בְּ לִ ין הָ רוּח\nמֵ הַ תּ וֹרָ ה, נִ קְ רָ אִ ים עַ ל ",
-      "source_view": "library_lmii_search_ready_v2",
-      "search_record_type": "page_literal",
-      "source_layer": "page_literal",
-      "zone_type": null,
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "literal_same_page",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "potencia_plegaria-36-268829",
+      "hit_id": "potencia_plegaria-24-528225",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 50,
@@ -891,7 +619,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-37-713696",
+      "hit_id": "potencia_plegaria-25-715726",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 63,
@@ -913,7 +641,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-38-671763",
+      "hit_id": "potencia_plegaria-26-107449",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 73,
@@ -935,7 +663,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-39-303817",
+      "hit_id": "potencia_plegaria-27-815744",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 104,
@@ -957,7 +685,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-40-651659",
+      "hit_id": "potencia_plegaria-28-690093",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 163,
@@ -979,7 +707,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-41-999194",
+      "hit_id": "potencia_plegaria-29-155670",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 220,
@@ -999,116 +727,64 @@
       "evidence_strength": "strong",
       "relation_level": "literal",
       "warnings": []
-    },
-    {
-      "hit_id": "potencia_plegaria-42-544943",
-      "work_code": "potencia_plegaria",
-      "work_title": "La Potencia de la Plegaria",
-      "pdf_page": 13,
-      "printed_page": null,
-      "quote": "En las páginas siguientes, echaremos un vistazo al poder de la plegaria, \nhacia dónde asciende, cuánto puede lograr y cómo podemos involucrarnos \nen ella al punto en que también nosotros seamos testigos de las respuestas a \nnuestras oraciones. Utilizando el sidur como nuestra guía, llevaremos al lector \ndesde una vista general de las plegarias diarias a una increíble comprensión \nde lo que nosotros, como seres humanos corpóreos, podemos lograr con la \noración. Nada está más allá de nosotros; ¡nada está fuera de nuestro alcance! \nTodo está en nuestras bocas y corazones, como aﬁrma la Torá, “Está muy \ncerca de ti; con tu boca y con tu corazón puedes hacerlo” (Deuteronomio 30:14).",
-      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
-      "search_record_type": "fine_zone",
-      "source_layer": "fine_zone",
-      "zone_type": "main_text_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "validated_fine_zone_quote",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "potencia_plegaria-43-621038",
-      "work_code": "potencia_plegaria",
-      "work_title": "La Potencia de la Plegaria",
-      "pdf_page": 17,
-      "printed_page": null,
-      "quote": "Como explica el Rambam,3 cuando los judíos retornaron del exilio \nen Babilonia, estaban conformados por una mezcla de naciones. Hablaban \nvarias lenguas y ya no eran capaces de conversar ni de expresarse en el idioma \nhebreo. Al consagrar el segundo Beit HaMikdash, se estableció una asamblea \nde 120 líderes de la nación. Entre ellos había profetas (i.e., Ezra, Nehemías, \nJagai, Zejaria, Malají) y los eruditos más importantes de la generación. Cuando \nestos miembros de la Gran Asamblea vieron la mezcla de gentes quedaron \nasombrados y descorazonados: ¿Cómo serían capaces alguna vez de orar a \nHaShem como un solo pueblo? Allí fue cuando establecieron el sidur, el libro \nde plegarias que mantuvo a la nación judía sobre una base común durante \nmiles de años, sin importar dónde estuvieran en el exilio. El sidur fue escrito \nen hebreo y, aunque es un texto establecido, contiene asombrosamente ",
-      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
-      "search_record_type": "fine_zone",
-      "source_layer": "fine_zone",
-      "zone_type": "main_text_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "validated_fine_zone_quote",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
-    },
-    {
-      "hit_id": "potencia_plegaria-44-352451",
-      "work_code": "potencia_plegaria",
-      "work_title": "La Potencia de la Plegaria",
-      "pdf_page": 22,
-      "printed_page": null,
-      "quote": "Pregunta el Rebe Najmán (al igual que muchos otros), “¿Por qué \nnecesitamos orar? HaShem, después de todo, conoce nuestros pensamientos. \n¿Por qué debemos articular nuestras plegarias?”. El Rebe explica que HaShem \ndesea derramar bendiciones sobre cada persona, a cada momento. Pero, de \nrecibir la abundancia de HaShem, ¿tienes acaso un lugar en el cual ubicarla? \nNo es posible escanciar una deliciosa bebida sin una copa para recibirla. \nSi se la sirve, al igual que HaShem hace con Sus bendiciones, ¿dónde se la \npondrá? Es necesario alguna clase de recipiente para captar la bendición de \nHaShem. Hemos mencionado anteriormente8 que, al orar, unimos las letras y \nlas palabras. Esas plegarias reparan los Recipientes Quebrados, lo que crea \nlos necesarios recipientes con los cuales es posible captar la bendición de \nHaShem (Likutey Moharán I, 34); de aquí la necesidad de la plegaria.",
-      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
-      "search_record_type": "fine_zone",
-      "source_layer": "fine_zone",
-      "zone_type": "main_text_spanish",
-      "note_number": null,
-      "surface_form": null,
-      "normalized_reference_name": null,
-      "matched_terms": [
-        "dónde"
-      ],
-      "evidence_type": "validated_fine_zone_quote",
-      "evidence_strength": "strong",
-      "relation_level": "literal",
-      "warnings": []
     }
   ],
   "evidence_matrix": [
     {
       "work_code": "kitzur",
-      "hits": 9
+      "hits": 6
     },
     {
       "work_code": "lh",
-      "hits": 9
+      "hits": 6
     },
     {
       "work_code": "lm_xv",
-      "hits": 9
+      "hits": 6
     },
     {
       "work_code": "lmii",
-      "hits": 9
+      "hits": 6
     },
     {
       "work_code": "potencia_plegaria",
-      "hits": 9
+      "hits": 6
     }
   ],
   "cross_corpus_matrix": [
     {
       "work_code": "kitzur",
-      "hits": 9
+      "hits": 6
     },
     {
       "work_code": "lh",
-      "hits": 9
+      "hits": 6
     },
     {
       "work_code": "lm_xv",
-      "hits": 9
+      "hits": 6
     },
     {
       "work_code": "lmii",
-      "hits": 9
+      "hits": 6
     },
     {
       "work_code": "potencia_plegaria",
-      "hits": 9
+      "hits": 6
+    }
+  ],
+  "claims": [
+    {
+      "claim": "En *Likutey Moharán II* (p. 33) el conocimiento aparece como algo que llenará la tierra: “la tierra estará llena de conocimiento”.",
+      "evidence_ids": [
+        "lmii-18-625831"
+      ]
+    },
+    {
+      "claim": "En *Likutey Moharán XV* (p. 242) el Shabat se describe como “el tajlit del conocimiento”.",
+      "evidence_ids": [
+        "lm_xv-15-990294"
+      ]
     }
   ],
   "not_found": [],
@@ -1126,6 +802,6 @@
     "used_external_sources": false,
     "used_ocr": false,
     "database": "postgresql",
-    "duration_ms": 4589.76
+    "duration_ms": 4240.31
   }
 }

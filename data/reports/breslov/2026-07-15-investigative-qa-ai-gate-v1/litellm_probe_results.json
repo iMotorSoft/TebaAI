@@ -1,0 +1,112 @@
+[
+  {
+    "case": "simple",
+    "status": 200,
+    "model": "openai_gpt-5.4-nano",
+    "request_id": "chatcmpl-E24BQ9dohEni3axx3riv8l0FAeNG4",
+    "content": "OK",
+    "usage": {
+      "completion_tokens": 4,
+      "prompt_tokens": 14,
+      "total_tokens": 18,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  {
+    "case": "json",
+    "status": 200,
+    "model": "openai_gpt-5.4-nano",
+    "request_id": "chatcmpl-E24BRlluMeZUSZQMnMnOGqxGaNhvx",
+    "content": "{\"detected_language\":\"es\",\"concepts\":[\"plegaria\"]}",
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 26,
+      "total_tokens": 47,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  {
+    "case": "es",
+    "status": 200,
+    "model": "openai_gpt-5.4-nano",
+    "request_id": "chatcmpl-E24BS4lPiqwT15Cv33E47rN8xaRmp",
+    "content": "¿A qué “plegaria” te refieres exactamente?  \nSi me dices **el título del texto**, **el autor** o **de qué libro/película/canción** es, puedo decirte **dónde aparece** (por ejemplo, en qué capítulo, escena o verso).",
+    "usage": {
+      "completion_tokens": 64,
+      "prompt_tokens": 13,
+      "total_tokens": 77,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  {
+    "case": "en",
+    "status": 200,
+    "model": "openai_gpt-5.4-nano",
+    "request_id": "chatcmpl-E24BUIJfa7e0PnblKYq79gNMiuHlN",
+    "content": "Prayer is discussed in many places in the Bible, but the most direct and well-known discussions are:\n\n- **The Gospels (especially Jesus’ teaching):**\n  - **Matthew 6:5–13** — *The Lord’s Prayer* and guidance on how to pray.\n  - **Mark 1:35** — Jesus praying privately.\n  - **Luke 11:1–13** — Jesus teaches about prayer (including the Lord’s Prayer).\n\n- **Paul’s letters:**\n  - **1 Thessalonians 5:17** — “pray without",
+    "usage": {
+      "completion_tokens": 120,
+      "prompt_tokens": 11,
+      "total_tokens": 131,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  },
+  {
+    "case": "he",
+    "status": 200,
+    "model": "openai_gpt-5.4-nano",
+    "request_id": "chatcmpl-E24BV6JfoALRpIx4DPsQ2dEGRdBcd",
+    "content": "השאלה “היכן מופיעה התפילה?” יכולה להתפרש בכמה דרכים—באיזה הקשר מדובר?\n\nכדי שאענה בדיוק, אשמח שתבהיר/י:\n1) על איזו תפילה מדובר? (למשל: **עמידה/שמונה עשרה**, **קריאת שמע**, **תפילת הדרך**, **קדיש**, וכו’)  \n2) “היכן” הכוונה ל־**איפה בתפילה/בסידור**? או **איפה בתורה/בתלמוד**",
+    "usage": {
+      "completion_tokens": 120,
+      "prompt_tokens": 15,
+      "total_tokens": 135,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+]

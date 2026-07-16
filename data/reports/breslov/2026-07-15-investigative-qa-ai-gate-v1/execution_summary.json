@@ -1,0 +1,1 @@
+{"status":"FULL_PASS","alias":"openai_gpt-5.4-nano","gateway":"http://127.0.0.1:4000","litellm_probe_success":5,"golden_batch":{"questions":17,"http_200":17,"grounded":17,"ai_accepted":15,"deterministic_fallbacks":2},"corpus_writes":0,"embeddings":0,"milvus":0,"ocr":false,"external_sources":false}

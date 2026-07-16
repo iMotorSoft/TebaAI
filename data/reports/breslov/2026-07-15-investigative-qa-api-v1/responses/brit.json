@@ -1,8 +1,8 @@
 {
   "question": "¿Dónde aparece brit?",
   "status": "ok",
-  "answer_text": "En el material provisto, **“brit”** aparece en **Likutey Moharán XV** (KDP), en la página **242**: “El Rebe comenzó su lección explicando el gran valor e importancia de cuidar el **brit** de toda impureza.”\n\nTambién aparece en **Kitzur**, donde se menciona **“tikún haBRIT”** (rectificación del brit) en el fragmento: “...el habla depende principalmente de la pureza sexual (**tikún haBRIT**)...” (Kitzur, fragmento con “Page 146 / Lección 29”).\n\n**Límite:** con la evidencia suministrada no puedo localizar otras apariciones de “brit” fuera de estos fragmentos.",
-  "answer_markdown": "En el material provisto, **“brit”** aparece en **Likutey Moharán XV** (KDP), en la página **242**: “El Rebe comenzó su lección explicando el gran valor e importancia de cuidar el **brit** de toda impureza.”\n\nTambién aparece en **Kitzur**, donde se menciona **“tikún haBRIT”** (rectificación del brit) en el fragmento: “...el habla depende principalmente de la pureza sexual (**tikún haBRIT**)...” (Kitzur, fragmento con “Page 146 / Lección 29”).\n\n**Límite:** con la evidencia suministrada no puedo localizar otras apariciones de “brit” fuera de estos fragmentos.",
+  "answer_text": "En los fragmentos provistos, **“brit” aparece en Likutey Moharán XV** (KDP):\n- **página 242**: “...cuidar el **brit** de toda impureza.” (lm_xv-18-990294)\n\nTambién aparece en **Kitzur** como parte de la expresión **“tikún haBRIT”**:\n- **Kitzur (fragmento con “tikún haBRIT”)**: “...el habla depende principalmente de la pureza sexual (**tikún haBRIT**)...” (kitzur-2-761800)\n\n**Límite:** con la evidencia suministrada no puedo ubicar otras apariciones de “brit” fuera de estos fragmentos.",
+  "answer_markdown": "En los fragmentos provistos, **“brit” aparece en Likutey Moharán XV** (KDP):\n- **página 242**: “...cuidar el **brit** de toda impureza.” (lm_xv-18-990294)\n\nTambién aparece en **Kitzur** como parte de la expresión **“tikún haBRIT”**:\n- **Kitzur (fragmento con “tikún haBRIT”)**: “...el habla depende principalmente de la pureza sexual (**tikún haBRIT**)...” (kitzur-2-761800)\n\n**Límite:** con la evidencia suministrada no puedo ubicar otras apariciones de “brit” fuera de estos fragmentos.",
   "summary": "45 evidencias literales recuperadas",
   "conversation": {
     "conversation_id": null,
@@ -55,7 +55,7 @@
   ],
   "hits": [
     {
-      "hit_id": "kitzur-0-616253",
+      "hit_id": "kitzur-0-84011",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-1-376113",
+      "hit_id": "kitzur-1-618441",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -103,7 +103,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-2-793012",
+      "hit_id": "kitzur-2-761800",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-3-747293",
+      "hit_id": "kitzur-3-714174",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-4-733035",
+      "hit_id": "kitzur-4-383808",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-5-703401",
+      "hit_id": "kitzur-5-589041",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -199,7 +199,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-6-693992",
+      "hit_id": "kitzur-6-139557",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -223,7 +223,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-7-694878",
+      "hit_id": "kitzur-7-56655",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -247,7 +247,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-8-970421",
+      "hit_id": "kitzur-8-873225",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -271,7 +271,7 @@
       ]
     },
     {
-      "hit_id": "lh-9-296170",
+      "hit_id": "lh-9-620070",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 28,
@@ -293,7 +293,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-10-892327",
+      "hit_id": "lh-10-113526",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 87,
@@ -315,7 +315,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-11-290947",
+      "hit_id": "lh-11-923748",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 164,
@@ -337,7 +337,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-12-552317",
+      "hit_id": "lh-12-780359",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 16,
@@ -359,7 +359,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-13-864440",
+      "hit_id": "lh-13-693903",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 17,
@@ -381,7 +381,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-14-305129",
+      "hit_id": "lh-14-710643",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 30,
@@ -403,7 +403,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-15-945709",
+      "hit_id": "lh-15-304716",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 46,
@@ -425,7 +425,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-16-383964",
+      "hit_id": "lh-16-896903",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 91,
@@ -447,7 +447,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-17-179077",
+      "hit_id": "lh-17-318955",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 96,
@@ -469,7 +469,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-18-862973",
+      "hit_id": "lm_xv-18-990294",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 242,
@@ -491,7 +491,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-19-517501",
+      "hit_id": "lm_xv-19-562938",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 74,
@@ -513,7 +513,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-20-445883",
+      "hit_id": "lm_xv-20-643861",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 139,
@@ -535,7 +535,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-21-862973",
+      "hit_id": "lm_xv-21-990294",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 242,
@@ -557,7 +557,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-22-52130",
+      "hit_id": "lm_xv-22-766619",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 259,
@@ -579,7 +579,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-23-994484",
+      "hit_id": "lm_xv-23-913183",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 308,
@@ -601,7 +601,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-24-181322",
+      "hit_id": "lm_xv-24-103940",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 30,
@@ -623,7 +623,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-25-419475",
+      "hit_id": "lm_xv-25-83080",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 49,
@@ -645,7 +645,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-26-506879",
+      "hit_id": "lm_xv-26-116090",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 66,
@@ -667,7 +667,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-27-585403",
+      "hit_id": "lmii-27-777926",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 38,
@@ -689,7 +689,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-28-42481",
+      "hit_id": "lmii-28-925722",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 178,
@@ -711,7 +711,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-29-466437",
+      "hit_id": "lmii-29-180682",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 185,
@@ -733,7 +733,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-30-166910",
+      "hit_id": "lmii-30-951636",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 7,
@@ -755,7 +755,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-31-204178",
+      "hit_id": "lmii-31-826715",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 17,
@@ -777,7 +777,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-32-292384",
+      "hit_id": "lmii-32-594598",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 24,
@@ -799,7 +799,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-33-977720",
+      "hit_id": "lmii-33-510961",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 20,
@@ -821,7 +821,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-34-857278",
+      "hit_id": "lmii-34-885511",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 47,
@@ -843,7 +843,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-35-394752",
+      "hit_id": "lmii-35-494733",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 50,
@@ -865,7 +865,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-36-714124",
+      "hit_id": "potencia_plegaria-36-474364",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 54,
@@ -887,7 +887,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-37-139666",
+      "hit_id": "potencia_plegaria-37-614541",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 71,
@@ -909,7 +909,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-38-536467",
+      "hit_id": "potencia_plegaria-38-95274",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 122,
@@ -931,7 +931,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-39-303817",
+      "hit_id": "potencia_plegaria-39-815744",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 104,
@@ -953,7 +953,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-40-651659",
+      "hit_id": "potencia_plegaria-40-690093",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 163,
@@ -975,7 +975,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-41-999194",
+      "hit_id": "potencia_plegaria-41-155670",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 220,
@@ -997,7 +997,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-42-544943",
+      "hit_id": "potencia_plegaria-42-154048",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 13,
@@ -1019,7 +1019,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-43-621038",
+      "hit_id": "potencia_plegaria-43-871893",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 17,
@@ -1041,7 +1041,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-44-352451",
+      "hit_id": "potencia_plegaria-44-379853",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 22,
@@ -1107,6 +1107,20 @@
       "hits": 9
     }
   ],
+  "claims": [
+    {
+      "claim": "“brit” aparece en Likutey Moharán XV en la página 242, en la frase sobre cuidar el brit de toda impureza.",
+      "evidence_ids": [
+        "lm_xv-18-990294"
+      ]
+    },
+    {
+      "claim": "En Kitzur, “brit” aparece dentro de la expresión “tikún haBRIT” (rectificación del brit) relacionada con la pureza sexual y el habla.",
+      "evidence_ids": [
+        "kitzur-2-761800"
+      ]
+    }
+  ],
   "not_found": [],
   "warnings": [
     "pdf_page_null_for_kitzur_chunk"
@@ -1122,6 +1136,6 @@
     "used_external_sources": false,
     "used_ocr": false,
     "database": "postgresql",
-    "duration_ms": 3367.37
+    "duration_ms": 3901.45
   }
 }

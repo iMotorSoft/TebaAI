@@ -1,9 +1,9 @@
 {
   "question": "¿Dónde aparece fe?",
   "status": "ok",
-  "answer_text": "En el material proporcionado, **“Fe”** aparece en **Kitzur**, en el fragmento donde se explica la reversión **“AF (Alef Fei) en Fe (Fei Alef)”** (cita: “del lado de la impureza, revirtiendo así AF (Alef Fei) en Fe (Fei Alef).”).\n\n**Evidencia:** kitzur-1-153309.",
-  "answer_markdown": "En el material proporcionado, **“Fe”** aparece en **Kitzur**, en el fragmento donde se explica la reversión **“AF (Alef Fei) en Fe (Fei Alef)”** (cita: “del lado de la impureza, revirtiendo así AF (Alef Fei) en Fe (Fei Alef).”).\n\n**Evidencia:** kitzur-1-153309.",
-  "summary": "2 evidencias literales recuperadas",
+  "answer_text": "En los fragmentos provistos, **“fe” aparece en Kitzur** en el pasaje donde se dice: **“revirtiendo así AF (Alef Fei) en Fe (Fei Alef)”** (kitzur-7-341481).",
+  "answer_markdown": "En los fragmentos provistos, **“fe” aparece en Kitzur** en el pasaje donde se dice: **“revirtiendo así AF (Alef Fei) en Fe (Fei Alef)”** (kitzur-7-341481).",
+  "summary": "33 evidencias literales recuperadas",
   "conversation": {
     "conversation_id": null,
     "turn_id": null,
@@ -13,17 +13,19 @@
     "detected_language": "es",
     "normalized_question": "¿Dónde aparece la letra \"fe\"?",
     "concepts": [
-      "dónde aparece fe",
+      "fe",
+      "aparece",
       "letra fe",
-      "aparición de \"fe\""
+      "dónde aparece"
     ],
     "requires_cross_corpus": false
   },
   "search_plan": {
     "queries": [
-      "dónde aparece fe",
+      "fe",
+      "aparece",
       "letra fe",
-      "aparición de \"fe\""
+      "dónde aparece"
     ],
     "works": [
       "kitzur",
@@ -55,7 +57,151 @@
   ],
   "hits": [
     {
-      "hit_id": "kitzur-0-629466",
+      "hit_id": "kitzur-0-568912",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "de la Torá en esa área, Dios no lo quiera. Cuando se cuida la pureza sexual en esos dos niveles, el honor de Dios se completa y uno merece todos los atributos y los logros antes mencionados, hasta alcanzar profundos niveles de comprensión en la Torá.\n\n8. Existe una clase de humildad cuya finalidad es en verdad la arrogancia. Esto hace referencia específicamente a la persona que es humilde porque sabe que el orgullo es un rasgo muy despreciable; por lo tanto, actúa con humildad para ser honrada y respetada. En efecto, se muestra humilde para alcanzar posiciones y honor. Por lo tanto, es necesario vigilar cuidadosamente nuestro comportamiento y alejarse totalmente del orgullo, ubicándose en el extremo opuesto, como dijeron nuestros Sabios, de bendita memoria, “Sé muy, muy humilde” (Avot 4:4). Pues el orgullo corresponde a las siete casas de idolatría, debido a las cuales el pueblo judío fu",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1-393070",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "abajo”. El honor se eleva entonces a su raíz, que es el temor sagrado y ello, a su vez, trae paz al mundo.\n\n3. Mediante la Torá es posible acercar a los prosélitos y a todos aquellos que retornan a la fe y hacerles conocer el sendero que deben tomar.\n\n4. Al estudiar la Torá en santidad, la persona despierta a los pecadores judíos y a los prosélitos, llevándolos al arrepentimiento. Pero para ello hace falta la humildad más grande. Con esa cualidad, uno merece estudiar verdaderamente la Torá, llegando a ser capaz, mediante sus estudios, de iluminar y de despertar las raíces de las almas del pueblo judío - incluso las almas de aquellos que se encuentran a muchos kilómetros de distancia. Esto también se aplica a los pecadores judíos, “mientras sigan siendo llamados ‘judíos’ - pues aunque han pecado, aún siguen siendo judíos” (Sanedrín 44a). Mediante el\n\n57\n\n## Page 58\n\nLección 14            ",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-2-212439",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "la Luz del Rostro”. El número 370 es también dos veces el valor de las letras Alef y Lamed [cuando esas letras se deletrean como ALeF y LaMeD], dado que el Nombre Divino EL [que se deletrea Alef-Lamed] corresponde a la “Luz del Rostro”.\n\n## 5 Kislev\n\n10. Éste es el motivo por el cual se saliva en la ceremonia del levirato, como está escrito, “Ella deberá salivar hacia su rostro” (Deuteronomio 25:9). Con esa saliva el hombre es avergonzado y la vergüenza se muestra principalmente en el rostro. Esto es en verdad perfectamente apropiado, dado que él no quiso desposarse con la mujer de su hermano fallecido [sin tener hijos] mediante el matrimonio de levirato, para hacer descender al mundo el alma de su hermano y rectificar así la “Luz del Rostro”. Pues ésta es la insuficiencia de la persona que fallece sin tener hijos, que Dios nos salve - no dejar tras de sí una bendición, para traer al mun",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-3-714174",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "vación, un manto de caridad” (Isaías 61:10). Incluso el dinero que los gentiles toman de nosotros es considerado caridad, como dijeron nuestros Sabios, de bendita memoria, sobre el versículo, “Tus opresores son caridad” (ibid., 60:17; Bava Batra 9a).\n\nSin embargo, debes saber que la belleza y el esplendor (PeER) de los colores superiores sólo se revela cuando el dinero se encuentra en posesión de un judío, como en, “Israel, en quien Yo me enorgullezco (etPaAR)” (Isaías 49:3). Consecuentemente, cuando brillan esos luminosos colores, todos desean contemplar ese dinero. Éste es el motivo por el cual los gentiles ansían el dinero y el dinar (una pequeña moneda) del judío, como si nunca antes hubiesen visto dinero, en toda su vida - dado que esos colores superiores no irradian su esplendor en el dinero no judío. Por lo tanto, los gentiles son llamados RaSHim (pobres), como dijeron nuestros Sa",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-4-383808",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "” y a “aquel que se sienta sobre el trono”. De manera similar, dentro de las enseñanzas de Torá que hace descender también hay cuatro partes - correspondientes a “los animales”, “los ángeles-ruedas”, “el trono” y “aquel que se sienta sobre el trono”.\n\n10. Es necesario buscar y esforzarse por encontrar un Tzadik así. Es necesario pedirle a Dios que nos haga dignos de encontrar un sabio así, quien recolecta las almas, las eleva y las renueva “como el embrión en el vientre materno”, haciendo descender de esa manera enseñanzas de Torá. Porque sólo un sabio así es capaz de rectificar a la persona y de sacarla de todos los daños espirituales que le han causado los deseos físicos. El Tzadik lo logra utilizando dos clases de intelectos, representados por la letra Shin con tres cabezas y por la letra Shin con cuatro cabezas [tal cual aparecen en los dos lados de los tefilín de la cabeza].\n\n55\n\n##",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-5-589041",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "acia su raíz. De esa manera merecerá el temor sagrado, que lo llevará a alcanzar la paz en su hogar o “la paz en los huesos” (como en Salmos 38:4). La paz en el hogar le permitirá orar y así merecer la paz completa, que es la paz en todos los mundos.\n\n[Con respecto al concepto de “paz en los huesos”, ver el párrafo #12, más adelante. Esto describe la situación en la cual el cuerpo sigue los deseos del alma. Esta lección en el Likutey Moharán implica que en la medida en que la persona merece liberarse de sus “vestimentas sucias”, de la misma manera se hace digna de la santidad de la Tierra de Israel.]\n\n9. Incluso después de haber sido iluminados y despertados hacia el arrepentimiento, los pecadores siguen muy lejos de la santidad y pueden experimentar grandes obstáculos. Esas personas deben esforzarse tremendamente para liberarse de las “vestimentas sucias” que han estado llevando (cf. Za",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-6-892785",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -79,7 +225,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-1-153309",
+      "hit_id": "kitzur-7-341481",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -101,50 +247,608 @@
       "warnings": [
         "pdf_page_null_for_kitzur_chunk"
       ]
+    },
+    {
+      "hit_id": "lh-8-70751",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 10,
+      "printed_page": null,
+      "quote": "Institute, llevamos adelante nuestro esfuerzo de 30 años para traducir y anotar el Likutey \nMoharán, siempre pensamos sobre muchas formas y maneras para traducir también \nel magnum opus del Rabí Natán. Se imprimieron pequeños volúmenes tomando de \ndiscursos especíﬁ cos, pero el proyecto mayor se mantuvo siempre muy lejos de nuestro \nalcance. Finalmente, al acercarnos a nuestro cuadragésimo año, logramos una solución \nfactible y el primer volumen de los discursos originales del Rabí Natán, cubriendo \nlos cinco primeros tópicos de Oraj Jaim - Hashkamat HaBoker (Levantándose por la \nMañana) - está ahora en sus manos.\nA nuestros muchos donantes que han hecho grandes sacriﬁ cios para ayudarnos a \ncomenzar este proyecto y que continuaron apoyándonos a través de nuestras diﬁ cultades \ny afanes, no podemos expresar suﬁ ciente gratitud. ¡Que todos ellos sean bendecidos por \nHaShem con todo lo bue",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-9-303185",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 11,
+      "printed_page": null,
+      "quote": "SOBRE EL RABÍ NATÁN\n“Si no fuera por el Rabí Natán, ni una página de mis escritos habría \nsobrevivido” (Rebe Najmán).\nA\nunque menos conocido que su famoso mentor, la contribución del Rabí Natán \nSternhartz a la Jasidut de Breslov fue de importancia capital. Siendo el principal \ndiscípulo y escriba del Rebe Najmán, el Rabí Natán registró todas las lecciones dadas por \nsu maestro, publicó sus escritos y también compiló para las futuras generaciones muchas \nanécdotas personales y conversaciones del Rebe. Cuando, luego del fallecimiento del \nRebe, la Jasidut corrió el peligro de disolverse, el Rabí Natán, por sí solo, la mantuvo \nviva y permitió que creciera uniﬁ cando a los jasidim, volviendo a establecer la reunión \nde Rosh HaShaná en Umán y construyendo allí un gran kloiz (sinagoga). Fue maestro \nde muchos discípulos, visitó y ayudó a los jasidim que vivían a lo largo de Ucrania y \nescrib",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-10-823104",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 12,
+      "printed_page": null,
+      "quote": "XII   LIKUTEY HALAJOT\nmanera oral en los Shabatot y en las festividades. El Likutey Moharán, conteniendo 411 \nlecciones, fue resultado de su colaboración. Aunque sólo era ocho años más joven que \nel Rebe, el Rabí Natán se impregnó sediento de las enseñanzas de su maestro y siguió su \nguía en todos los aspectos de la vida. Con el pasar del tiempo, la familia del Rabí Natán \nreconoció los cambios positivos que podían percibirse en las midot y en la erudición de \nTorá del Rabí Natán y se aplacó su oposición a la Jasidut.\nLuego del fallecimiento del Rebe en el año 1810, se le pidió al Rabí Natán que se \nvolviese el nuevo líder de los jasidim de Breslov, cosa que rechazó. “Sólo hay un Rebe”, \ninsistió. Con su característica humildad, el Rabí Natán introdujo un nuevo concepto en \nla historia de la Jasidut. En lugar de tener una sucesión de Rebes, los jasidim de Breslov \nsólo tienen un Rebe: el",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-11-780359",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 16,
+      "printed_page": null,
+      "quote": "CONVENCIONES USADAS \nEN ESTA TRADUCCIÓN\nE\nsta traducción del Likutey Halajot al español incluye varios elementos para ayudar \nal lector en el estudio y en la comprensión del texto y de las ideas del Rabí Natán. \nA continuación presentamos las convenciones y las guías que hemos establecido para \nfacilitar este esfuerzo:\nHalajá\nLa palabra hebrea halajá hace referencia en general a una regla de conducta en \nla Ley Judía. Los jasidim de Breslov utilizan el mismo término para hacer referencia a \nuno de los discursos del Rabí Natán en el Likutey Halajot. Para distinguir entre ambos, \nhemos utilizado la palabra halajá (pl. halajot) en minúscula y en cursiva para indicar una \nley del Shuljan Aruj, y con mayúscula y sin cursiva el término Halajá para identiﬁ car el \ndiscurso del Rabí Natán.\nTraducción\nEl discurso en hebreo original del Rabí Natán se encuentra al comienzo de cada \npágina del texto",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-12-693903",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 17,
+      "printed_page": null,
+      "quote": "haciendo referencia.1 La traducción del texto del Rabí Natán se presenta en “negritas” y \nla explicación en una fuente regular.\nTérminos hebreos\nLos términos hebreos, aparte de aquellos más comunes, han sido traducidos allí \nen donde se presentan por primera vez (en el texto o en los versículos que acompañan). \nLos términos usados con frecuencia aparecen en el Glosario.\nExplicación\nLa interpolación de texto en la traducción tiene la intención principal de aclarar \npara el lector lo que el Rabí Natán supone que éste conoce pero quizás no. Esto puede \ntener la forma de una explicación tomada de la lección del Rebe Najmán o de alguna otra \nfuente citada en el discurso. Alternativamente, la explicación puede ser el agregado de \nalgunas palabras para conectar dos ideas adyacentes o dos párrafos. Esto se presenta con \nfrecuencia, pues el Rabí Natán comienza en general un párrafo con “Ve-ze” (“",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-13-710643",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 30,
+      "printed_page": 12,
+      "quote": "12   LIKUTEY HALAJOT\nINTRODUCCIÓN DEL RABÍ NATÁN\ndel Shaj sobre Joshen Mishpat o en una respuesta extremadamente amplia en la literatura \nde las responsas. Ello ciertamente ocurre en las obras del Ari zal, en las cuales cada \nexplicación se expande en muchas direcciones y, en general, la homilía mencionada al \nﬁ nal está ﬁ rmemente conectada con otra mencionada en páginas anteriores. Todo aquel \nque esté bien versado en los escritos del Ari zal comprenderá que virtualmente todo el \nEtz Jaim y el Pri Etz Jaim son una única y larga homilía. Allí en donde se presentan \n[en esta obra] amplias exposiciones, el lector no deberá intimidarse ni preocuparse \nante la imposibilidad de aferrar alguna vez con la mente y el intelecto un discurso tan \nextremadamente largo. Con respecto a esto, el versículo dice, “Los ojos del tonto están \nen los conﬁ nes de la tierra”,25 como explica Rashi; ver allí. P",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-14-886330",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 283,
+      "printed_page": null,
+      "quote": "palabra clave en estas meditaciones. Su valor numérico es el mismo que el del Santo Nombre \nIHVH en su expansión como Iud HH VV HH (52 =  .)יוד הה וו ההEste Nombre, en general \nreferido por su nemotecnia de valor numérico BaN (52 =  ,)בןestá asociado con Maljut-Nukva \n(ver Apéndice: Expansiones de los Santos Nombres de Dios).\nLa persona Divina Maljut-Nukva (de aquí en más Maljut) es el aspecto femenino de \nDios, la Shejiná (ver Tikuney Zohar #21, p. 60a; Zohar III, 276a). Maljut es también el medio a \ntravés del cual las seﬁrot inferiores se relacionan con este mundo y a través del cual se efectúa \ny ejerce el gobierno de Dios. Enseña el Rebe Najmán en el Likutey Moharán I, 33:9: Y todo \nesto es para iluminar a Maljut… para revelar Su Reinado al mundo entero, para encontrar Su \nDivinidad en todas las lenguas de las naciones, en todo lo corpóreo y en todos los ámbitos de las \nfuerzas del ",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-15-104762",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 103,
+      "printed_page": null,
+      "quote": "de Israel, es el conducto para traer Torá/vida a toda la creación (§3). El prototipo de esto fue \nel mundo antes de la Entrega de la Torá, cuando todos estaban ocupados con el derej eretz, \nestableciendo el mundo. Dios entonces sustentó al mundo y le dio vida solamente a través del \njesed jinam (bondad gratuita), el concepto del Tesoro de Dones Inmerecidos. También ahora, \ncada vez que nos separamos de la Torá, estamos sustentados y recibimos la fuerza vital a través \ndel verdadero Tzadik. En ese momento el Tzadik mismo es un prustik y así, aparentemente sin \nmérito, ese Tzadik trae rúaj de vida del Tesoro de Dones Inmerecidos para difundir la bondad \nde Dios y darles vida incluso a la gente y a los lugares más alejados de la santidad (§4A). Antes \ndel Sinaí la Torá estuvo oculta dentro del establecimiento del mundo, que fue creado a través de \nlas Diez Expresiones, “el poder de Sus acto",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-16-756827",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 121,
+      "printed_page": null,
+      "quote": "Cada día, cada hora, cada minuto, cada momento es una nueva creación. Hablamos de esto \nen nuestras plegarias diarias: “Quien en Su bondad renueva cada día, constantemente, la Obra \nde la Creación” (ver notas 184 y 185 allí). Por lo tanto, la persona no puede retroceder a ese \ntiempo y lugar anteriores pues ya no existen. La única manera de deshacer el daño en un \ntiempo y lugar pasado es a través de la teshuvá, que trasciende lo temporal y espacial. Éste es \nel signiﬁcado del versículo: “y en Tu libro están registrados todos ellos, los días que fueron \nformados; y Él ha [elegido] uno de ellos” (Salmos 139:16; Rashi explica que el día elegido \npor Dios es Iom Kipur). Es decir, para Dios, Quien trasciende lo temporal, todo el tiempo es \ncomo un solo día (ver Likutey Halajot, Tzitzit 3:15; ver también ibid., Netilat Iadaim, Shajarit \n3:5). Y así, para efectuar un genuino arrepentimiento, l",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-17-990294",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 242,
+      "printed_page": null,
+      "quote": "Najmán extrajo muchos de los temas tratados en la lección (especialmente comenzando con §6) \ndel Tikún #21 del Tikuney Zohar, páginas 49a-51a. Extractos de ello aparecen más arriba, en las \nnotas 28, 33, 38, 43, 45, 55, 68 y 82.\nEl Rebe comenzó su lección explicando el gran valor e importancia de cuidar el brit de \ntoda impureza. El hecho de alcanzar un elevado nivel de pureza moral le permite a la persona \norar con fuerza y así hacer que brille en el mundo el rayo del Mashíaj. Mediante tal plegaria la \npersona merece bendiciones y la santidad del Shabat -i.e., el tajlit del conocimiento- de modo \nque se ve libre para servir a Dios y no tener que trabajar para ganarse el sustento. También \nmerece un cuerpo santo proveniente del Jardín del Edén debido al cual su mazal asciende y es \ncapaz de hacer que su buena inclinación domine a su mala inclinación. Esto le da el poder para \nelevar a aq",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-18-766619",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 259,
+      "printed_page": null,
+      "quote": "7. a través de luz uno entra en Bet-El. Esta referencia a luz aparece en el primer capítulo del\nLibro de los Jueces, donde se registra la campaña montada por las tribus israelitas de Efraim \ny de Menashé en contra de la ciudad cananea de Bet-El, cuya entrada estaba oculta: “Y en \ncuanto a los de la casa de Iosef, ellos también subieron contra Bet-El y estuvo Dios con ellos. \nY envió la casa de Iosef hombres para reconocer a Bet-El, pero el nombre de la ciudad había \nsido Luz al comienzo. Y los vigías vieron a un hombre que salía de la ciudad y le dijeron, \n‘Muéstranos, te rogamos, el acceso a la ciudad y usaremos de misericordia contigo’” (Jueces \n1:22-24). Comentando sobre las palabras “el acceso a la ciudad”, Rashi (v. 24) explica que la \nentrada a Bet-El era por medio de una cueva, que tenía un árbol luz en la entrada. Se debía pasar \npor el luz para entrar a la cueva que llevaba a la",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-19-913183",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 308,
+      "printed_page": null,
+      "quote": "La halajá requiere que antes de devolver un objeto perdido a aquel que lo reclama como \nsu dueño, el que lo encontró tiene la obligación de investigar cuidadosamente al reclamante \npara veriﬁcar que no mienta (Iad HaJazaká, Hiljot Guezelá VeAvedá 13:3). El Rebe Najmán \nenseña que incluso si la persona viene para estar con el Tzadik y para tomar posesión de lo que \nha perdido, no se le cree de manera inmediata. Puede que sea aprovechadora, buscando tomar \naquello que no le pertenece. Quizás quiere la gloria o la sabiduría, de las cuales no es digna y \nasí ciertamente podría usarlas para mal. El Tzadik determina la medida del mérito de cada uno \na partir del estudio de Torá de la persona, de la plegaria y de su anhelo y deseo de Dios (Torat \nNatán, op. cit.). Por su parte, la persona no debe engañarse a sí misma. Debe enfrentar sus malas \nacciones que han hecho que perdiese lo que extravió",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-20-946232",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 5,
+      "printed_page": -5,
+      "quote": "A mis Padres\nAarón ben Sara\ny\nBerta bat Pola\nPor su incondicional amor,\nentusiasmo y apoyo en esta tarea\nde traducir los textos de\nnuestro Maestro,\nRabí Najmán ben Feiga\n\u0002",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-21-258629",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 12,
+      "printed_page": 2,
+      "quote": "2\n'ליקוטי מוהר\"ן סימן ז\nלְ שׁ וֹן רַ בֵּ נוּ, זִכְ רוֹנוֹ לִ בְ רָ כָ ה\nוְ אֵ לֶּ ה הַ מִּ שׁ ְ פָּ טִ ים אֲ שׁ ֶ ר תָּ שִׂ ים לִ פְ נֵיהֶ ם )שמות כא(:\nאָ מְ רוּ חֲ כָ מֵ ינוּ, זִכְ רוֹנָ ם לִ בְ רָ כָ ה: הֻ שׁ ְ ווּ אִ שּ ׁ ָ ה לְ אִ ישׁ )קדושין לה: \nבבא קמא טו.(. וְ אִ יתָ א בִּ מְ כִ ילְ תָּ א: 'יָכוֹל יִהְ יוּ הַ תַּ לְ מִ ידִ ים לוֹמְ דִ ין \nוְ אֵ ינָ ם מְ בִ ינִים – תַּ לְ מוּד לוֹמַ ר: \"אֲ שׁ ֶ ר תָּ שִׂ ים לִ פְ נֵיהֶ ם\" – \nעָ רְ כֵ ם לִ פְ נֵיהֶ ם כְּ שׁ ֻ לְ חָ ן עָ רוּךְ '. \nדַּ ע, כִּ י עִ קַּ ר הַ גָּ לוּת אֵ ינוֹ אֶ לָּ א בִּ שׁ ְ בִ יל חֶ סְ רוֹן אֱ מוּנָ ה, כְּ מוֹ \nא \nהשירים ד(: \"תָּ בוֹאִ י, תָּ שׁ וּרִ י מֵ רֹאשׁ אֲ מָ נָ ה\"; וֶ אֱ מוּנָ ה -שׁ ֶ כָּ תוּב )שיר\nהוּא בְּ חִ ינַ ת תְּ פִ לָּ ה, כְּ מוֹ שׁ ֶ כָּ תוּב )שמות י\"ז(: \"וַ יְהִ י יָדָ יו אֱ מוּנָ ה\", \nוְ תַ רְ גּוּמוֹ: 'פְּ רִ ישָׂ ן בִּ צְ לוֹ'.\n2. ÆMuNá, fe. Enseñaron nuestros Sabios: Jerusalén sólo fue destruid",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-22-262874",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 13,
+      "printed_page": 3,
+      "quote": "3 \nLIKUTEY MOHARÁN #7\n1\n“VeEile HaMishpatim (Y éstas son las leyes) que pondrás \ndelante de ellos”. \n (Éxodo 21:1)\nEnseñan nuestros Sabios: [Las palabras “delante de ellos” nos \nenseñan que con respecto a todas las leyes de la Torá], la mujer \nse equipara al hombre (Kidushin 35a). Comenta la Mejilta (21:1): “Es \nposible que los alumnos estudien pero no comprendan. [El \nversículo] enseña por lo tanto: “que pondrás delante de ellos” \n- disponlo delante de ellos como una mesa servida.\n¡D\nebes saber! El motivo esencial del exilio es la falta de ÆMuNá \n(fe);2 como está escrito (Cantar de los Cantares 4:8), “Ven, mira desde \nla cumbre de AMaNá”.3 Y emuná es sinónimo de plegaria; como en \n(Éxodo 17:12), “Sus manos estaban emuná”, que Onkelos traduce como, \n“[Sus manos] estaban extendidas en plegaria”.4\n1. Likutey Moharán 7. El Rebe Najmán tuvo una visión en la cual su bisabuelo, el Baal Shem \nT",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-23-951636",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 7,
+      "printed_page": -3,
+      "quote": "Introducción del Traductor al Inglés\n En lugar de un prefacio más tradicional del traductor, se le pide al lector \nque considere lo siguiente:\nLuego de la primera edición del Likutey Moharán, el Rebe Najmán \nhabló de los grandes beneﬁcios que traía el estudio de sus enseñanzas, y \nen especial para aquéllos merecedores de desarrollar alguna idea basada \nen sus lecciones. Cuando un seguidor del Rebe le hizo conocer una de \nestas interpretaciones propias, el Rebe sonrió y le dijo, “Puedes doblar \nmi libro de la manera que quieras, mientras no te alejes ni un ápice \ndel Shuljan Aruj” (Tradición oral; cf. Sabiduría y Enseñanzas del Rabí \nNajmán de Breslov 267).\n“Uno no debe nunca enorgullecerse de sus capacidades intelectuales o \nde sus buenas acciones, pues todas nos llegan a través del Tzadik de la \ngeneración. La persona es al Tzadik lo que una pluma es a las manos del \nescriba” (El Libro ",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-24-826715",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 17,
+      "printed_page": 7,
+      "quote": "7 \nPorque [Egipto] no es el lugar de los milagros. Tampoco es el lugar de \nla plegaria, [motivo por el cual Moshé dijo,] “Cuando salga fuera de la \nciudad extenderé mis manos [en plegaria]” (Éxodo 9:29).13\n[Enseñan nuestros Sabios:] “Todos los exilios son denominados \nMiTZRaiM (Egipto), porque ellos MeTZeRiM (les causan angustia \ny sufrimiento) a los judíos” (Bereshit Rabah 16:4). Así, cuando uno daña \nla fe/<los milagros>/la plegaria/la Tierra de Israel, desciende <a las \nprofundidades> del exilio.\nÉste es el signiﬁcado de lo que enseñaron nuestros Sabios (Sanedrín \n97a): “Mashíaj, el hijo de David, no vendrá hasta que tijlé prutá min \nhakis (se haya acabado el [último] centavo en el bolsillo)”.14 Es decir, \nse acaben los ateos que no tienen fe en los milagros y que los explican \ncomo fenómenos naturales.15 Y la quintaesencia de los milagros tiene \nlugar en la Tierra de Israel, pues “La",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-25-594598",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 24,
+      "printed_page": 14,
+      "quote": "14\n ;יְדֵ י עֵ צָ ה שׁ ֶ אֲ קַ בֵּ ל מֵ הֶ ם-שׁ ֶ אֶ זְכֶּ ה לְ קַ בֵּ ל טִ פֵּ י הַ מּ ֹחַ , טִ פֵּ י הַ שּ ֵׂ כֶ ל, עַ ל\nוְ אָ ז אֶ זְכֶּ ה לֶ אֱ מֶ ת, כִּ י הַ טִּ פֵּ י הַ שֵׂ כֶ ל נִ קְ רָ א \"כֻּ לּ וֹ זֶרַ ע אֱ מֶ ת\".\nיְדֵ י מִ צְ וַ ת צִ יצִ ית הָ אָ דָ ם נִ צּ וֹל מֵ עֲ צַ ת הַ נָּ חָ שׁ , -וְ דַ ע, שׁ ֶ עַ ל\nד \nמִ נִּשּ ֹׂוּאִ ין שׁ ֶ ל רָ שׁ ָ ע, מִ בְּ חִ ינַ ת נִ אוּף, כִּ י צִ יצִ ית שׁ ְ מִ ירָ ה לְ נִ אוּף; \nכַּ מּ וּבָ א בַּ תִּ קּ וּנִים )תקון יח(: \"וַ יִּקַּ ח שׁ ֵ ם וָ יֶפֶ ת אֶ ת הַ שּ ִׂ מְ לָ ה וַ יָּשִׂ ימוּ \nעַ ל שׁ ְ כֶ ם שׁ ְ נֵיהֶ ם\" )בראשית ט( – זֶה בְּ חִ ינַ ת צִ יצִ ית. \"וְ עֶ רְ וַ ת אֲ בִ יהֶ ם \nלֹא רָ אוּ\" – כִּ י צִ יצִ ית מְ כַ סָּ ה עַ ל עֲ רָ יִין. אֲ בָ ל חָ ם, דְּ הוּא יֵצֶ ר הָ רָ ע, \nנָשׁ בַּ עֲ בֵ רָ ה, הוּא אָ רוּר, כְּ מוֹ שׁ ֶ כָּ תוּב )שם(: -דִּ מְ חַ מֵּ ם גּוּפֵ הּ דְּ בַ ר\n\"אָ רוּר כְּ נָ עַ ן\", כְּ מוֹ שׁ ֶ כָּ תוּב )שם ג(: \"אָ רוּר אַ ת",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-26-667876",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 156,
+      "printed_page": 146,
+      "quote": "146\n זָרָ ה, כִּ י הוּא קִ בֵּ ל הַ תּ וֹרָ ה, שׁ ֶ הוּא בְּ חִ ינַ ת יָדַ יִן וְ רַ גְ לַ יִן כַּ נַּ \"ל, שׁ ֶ עַ ל\nיְדֵ יהֶ ם נִ תְ בַּ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים כַּ נַּ \"ל. \nוְ עַ ל כֵּ ן הִ פִּ יל פּ וּר בַּ יֶּרַ ח שׁ ֶ מֵּ ת בּ וֹ משׁ ֶ ה, כִּ י חָ שׁ ַ ב כִּ י כְּ בָ ר מֵ ת \nמשׁ ֶ ה הַ מְ בַ טֵּ ל כּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים, וְ אֵ ין עוֹד מִ י שׁ ֶ יּוּכַ ל לְ בַ טֵּ ל \nכּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים.\nאֲ בָ ל מָ רְ דֳּ כַ י וְ אֶ סְ תֵּ ר הָ יָה לָ הֶ ם כּ ֹחַ לְ בַ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים שׁ ֶ ל \nהָ מָ ן, וּבִ שׁ ְ בִ יל זֶה בִּ ימֵ יהֶ ם קִ בְּ לוּ יִשְׂ רָ אֵ ל הַ תּ וֹרָ ה מֵ חָ דָ שׁ , כְּ מַ אֲ מַ ר \nחֲ כָ מֵ ינוּ, זִכְ רוֹנָ ם לִ בְ רָ כָ ה )שבת פח.(: \"קִ יְּמוּ וְ קִ בְּ לוּ\" – 'קִ יְּמוּ מַ ה \nשּ ׁ ֶ קִּ בְּ לוּ כְּ בָ ר'. \nוְ זֶה: קִ יְּמוּ וְ קִ בְּ לוּ. קִ יְּמוּ – זֶה בְּ חִ ינַ ת רַ גְ לַ יִן, וְ קִ בְּ לוּ – זֶה בְּ חִ ינַ ת \nיָדַ יִן, וְ ה",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "dónde aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-27-256936",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 6,
+      "printed_page": null,
+      "quote": "Capítulo 20 - Fe y Plegaria ................................................................... 186",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-28-421997",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 6,
+      "printed_page": null,
+      "quote": "Capítulo 22 - El Shemá: Una Declaración de Fe .................................. 194",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-29-302041",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 6,
+      "printed_page": null,
+      "quote": "Capítulo 33 - Tajanun: Confesión y Súplica ......................................... 262",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-30-815744",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 104,
+      "printed_page": null,
+      "quote": "ay Trece Principios básicos de Interpretación de la Torá. Éstos aparecen \nen la Baraita deRabí Ishmael y se encuentran en la introducción al Safra \ndeBei Rav (Las enseñanzas de la ieshivá de Rav, también conocida \ncomo Torat Kohanim, que son Midrashim) sobre el Libro del Levítico. Dado \nque este pasaje de apertura del Safra comienza las discusiones sobre los \nsacriﬁcios, está yuxtapuesto con las mishnaiot de Eizéhu Mekomán.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-31-690093",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 163,
+      "printed_page": null,
+      "quote": "e las bendiciones de Itzjak, Esaú eligió como su porción este mundo \n(temporal), mientras que Iaacov eligió el eterno Mundo que Viene. \nCuando llegue el Mashíaj, este mundo temporal, tal cual lo conocemos, \ndejará de existir. Entonces Iaacov heredará las bendiciones de arriba y de \nabajo, mientras que la porción de Esaú desaparecerá por completo (Zohar I, \n143b) y Dios será reconocido como Rey en el mundo entero.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-32-155670",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 220,
+      "printed_page": null,
+      "quote": "Continúa elaborando el Rabí Natán: Hay muchos tipos de consejos; \ntodos tienen algo de verdad, de otra manera no serían tomados en cuenta. Sin \nembargo, si hay fallas en ese consejo, aunque sean menores, existe la posibilidad \ndel error que puede ﬁnalmente extraviar a la persona. Por ejemplo, uno puede \nelegir el ser un rabino debido a que es una manera de ganarse el sustento. Todo \nsu estudio es shelo lishmá (no es en aras de Dios), sino en aras de ganarse la \nvida. Otros también se dedican a correr tras el sustento, hasta que ya no tienen \ntiempo para servir a Dios. Todos tienen buenas intenciones - ¡tienen familias \nque deben mantener! Pero no están tomando en consideración su deber para \ncon ellos mismos, su obligación hacia Dios y su eterna recompensa. ¿Acaso \nesto no importa? El Rabí Natán explica por qué la palabra Emet aparece ocho \nveces en estas bendiciones. Ya hemos recitado e",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "aparece"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
     }
   ],
   "evidence_matrix": [
     {
       "work_code": "kitzur",
-      "hits": 2
+      "hits": 8
     },
     {
       "work_code": "lh",
-      "hits": 0
+      "hits": 6
     },
     {
       "work_code": "lm_xv",
-      "hits": 0
+      "hits": 6
     },
     {
       "work_code": "lmii",
-      "hits": 0
+      "hits": 7
     },
     {
       "work_code": "potencia_plegaria",
-      "hits": 0
+      "hits": 6
     }
   ],
   "cross_corpus_matrix": [
     {
       "work_code": "kitzur",
-      "hits": 2
+      "hits": 8
     },
     {
       "work_code": "lh",
-      "hits": 0
+      "hits": 6
     },
     {
       "work_code": "lm_xv",
-      "hits": 0
+      "hits": 6
     },
     {
       "work_code": "lmii",
-      "hits": 0
+      "hits": 7
     },
     {
       "work_code": "potencia_plegaria",
-      "hits": 0
+      "hits": 6
+    }
+  ],
+  "claims": [
+    {
+      "claim": "“Fe” aparece en Kitzur en el pasaje que menciona “AF (Alef Fei) en Fe (Fei Alef)”.",
+      "evidence_ids": [
+        "kitzur-7-341481"
+      ]
     }
   ],
   "not_found": [],
@@ -162,6 +866,6 @@
     "used_external_sources": false,
     "used_ocr": false,
     "database": "postgresql",
-    "duration_ms": 4490.06
+    "duration_ms": 3873.2
   }
 }

@@ -1,9 +1,9 @@
 {
   "question": "¿Dónde aparece verdad?",
   "status": "ok",
-  "answer_text": "En **Likutey Moharán II**, p. **111**: allí se afirma que “**Todo depende del grado de verdad [que tenga la persona]**” y que “**es a través de la verdad que, desde Arriba, Dios desea morar con el hombre**”.",
-  "answer_markdown": "En **Likutey Moharán II**, p. **111**: allí se afirma que “**Todo depende del grado de verdad [que tenga la persona]**” y que “**es a través de la verdad que, desde Arriba, Dios desea morar con el hombre**”.",
-  "summary": "1 evidencias literales recuperadas",
+  "answer_text": "En las fuentes provistas, **“verdad” aparece asociada a la plegaria**: en *La Potencia de la Plegaria* se cita “**respóndeme en la verdad de Tu salvación**” (Salmos 69:14).",
+  "answer_markdown": "En las fuentes provistas, **“verdad” aparece asociada a la plegaria**: en *La Potencia de la Plegaria* se cita “**respóndeme en la verdad de Tu salvación**” (Salmos 69:14).",
+  "summary": "16 evidencias literales recuperadas",
   "conversation": {
     "conversation_id": null,
     "turn_id": null,
@@ -11,21 +11,21 @@
   },
   "interpretation": {
     "detected_language": "es",
-    "normalized_question": "¿Dónde aparece la palabra “verdad”?",
+    "normalized_question": "¿Dónde aparece la palabra \"verdad\"?",
     "concepts": [
-      "dónde aparece verdad",
-      "palabra verdad",
-      "aparición de verdad",
-      "texto donde aparece verdad"
+      "verdad",
+      "dónde aparece",
+      "ubicación de la palabra verdad",
+      "aparición de verdad"
     ],
     "requires_cross_corpus": false
   },
   "search_plan": {
     "queries": [
-      "dónde aparece verdad",
-      "palabra verdad",
-      "aparición de verdad",
-      "texto donde aparece verdad"
+      "verdad",
+      "dónde aparece",
+      "ubicación de la palabra verdad",
+      "aparición de verdad"
     ],
     "works": [
       "kitzur",
@@ -57,12 +57,216 @@
   ],
   "hits": [
     {
-      "hit_id": "lmii-0-187748",
+      "hit_id": "kitzur-0-568912",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "de la Torá en esa área, Dios no lo quiera. Cuando se cuida la pureza sexual en esos dos niveles, el honor de Dios se completa y uno merece todos los atributos y los logros antes mencionados, hasta alcanzar profundos niveles de comprensión en la Torá.\n\n8. Existe una clase de humildad cuya finalidad es en verdad la arrogancia. Esto hace referencia específicamente a la persona que es humilde porque sabe que el orgullo es un rasgo muy despreciable; por lo tanto, actúa con humildad para ser honrada y respetada. En efecto, se muestra humilde para alcanzar posiciones y honor. Por lo tanto, es necesario vigilar cuidadosamente nuestro comportamiento y alejarse totalmente del orgullo, ubicándose en el extremo opuesto, como dijeron nuestros Sabios, de bendita memoria, “Sé muy, muy humilde” (Avot 4:4). Pues el orgullo corresponde a las siete casas de idolatría, debido a las cuales el pueblo judío fu",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1-393070",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "abajo”. El honor se eleva entonces a su raíz, que es el temor sagrado y ello, a su vez, trae paz al mundo.\n\n3. Mediante la Torá es posible acercar a los prosélitos y a todos aquellos que retornan a la fe y hacerles conocer el sendero que deben tomar.\n\n4. Al estudiar la Torá en santidad, la persona despierta a los pecadores judíos y a los prosélitos, llevándolos al arrepentimiento. Pero para ello hace falta la humildad más grande. Con esa cualidad, uno merece estudiar verdaderamente la Torá, llegando a ser capaz, mediante sus estudios, de iluminar y de despertar las raíces de las almas del pueblo judío - incluso las almas de aquellos que se encuentran a muchos kilómetros de distancia. Esto también se aplica a los pecadores judíos, “mientras sigan siendo llamados ‘judíos’ - pues aunque han pecado, aún siguen siendo judíos” (Sanedrín 44a). Mediante el\n\n57\n\n## Page 58\n\nLección 14            ",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-2-212439",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "la Luz del Rostro”. El número 370 es también dos veces el valor de las letras Alef y Lamed [cuando esas letras se deletrean como ALeF y LaMeD], dado que el Nombre Divino EL [que se deletrea Alef-Lamed] corresponde a la “Luz del Rostro”.\n\n## 5 Kislev\n\n10. Éste es el motivo por el cual se saliva en la ceremonia del levirato, como está escrito, “Ella deberá salivar hacia su rostro” (Deuteronomio 25:9). Con esa saliva el hombre es avergonzado y la vergüenza se muestra principalmente en el rostro. Esto es en verdad perfectamente apropiado, dado que él no quiso desposarse con la mujer de su hermano fallecido [sin tener hijos] mediante el matrimonio de levirato, para hacer descender al mundo el alma de su hermano y rectificar así la “Luz del Rostro”. Pues ésta es la insuficiencia de la persona que fallece sin tener hijos, que Dios nos salve - no dejar tras de sí una bendición, para traer al mun",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "lh-3-946976",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 9,
+      "printed_page": null,
+      "quote": "PREFACIO DEL EDITOR\nEl Rebe Najmán era muy insistente en el hecho de que debíamos estudiar \ndiariamente el Shuljan Aruj. “Nunca dejen pasar un día sin estudiar al \nmenos una ley”, dijo (Sabiduría y Enseñanzas del Rabí Najmán de Breslov #29).\nE\nl Rabí Natán, el discípulo más cercano del Rebe, aceptó el mandato del Rebe y se \nadhirió a él asiduamente a lo largo de toda su vida. Finalmente llegó a repasar varias \nveces todo el Shuljan Aruj con sus comentarios.\nPero el Rebe Najmán tenía otro motivo para alentar al Rabí Natán a estudiar \nel Shuljan Aruj - quería que se familiarizara con sus leyes al punto de poder elaborar \njidushim, ideas originales, sobre ellas, basándose en las enseñanzas del Rebe Najmán en \nel Likutey Moharán. El Rabí Natán debía entretejer las leyes y las lecciones de manera \nque demostrasen cómo cada halajá mejora y fortalece la vida de cada individuo, en \ntodo momento ",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-4-965737",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 20,
+      "printed_page": 2,
+      "quote": "2   LIKUTEY HALAJOT\nINTRODUCCIÓN DEL RABÍ NATÁN\nINTRODUCCIÓN \nDEL RABÍ NATÁN\n1\n \nE\nsta vez daré gracias a HaShem”,2 “pues Él me ha ayudado abundantemente”.3 \n“¿Qué puedo decir cuando es Él Quien habla, Él Quien ha creado?”.4 “¿Quién es \ncomo HaShem, nuestro Dios? Él levanta del polvo al necesitado… Él eleva al indigente \ndel montículo de residuos”5 - a una persona como yo, para haberme acercado al [Rebe \nNajmán, quien es] una luz tan radiante, la luz de las luces, el brillo de los brillos. ¿Quién \npuede relatar la alabanza del Rebe, quién puede expresar su elogio? Y aunque es sabido \nque la gente en general escribe alabanzas y elogios sobre otros, aquel que profundice \nen las sagradas obras del Rebe con un ojo hacia la verdad, quien “provechosamente \nejerza su discernimiento”6 para ponderar profundamente estas enseñanzas que HaShem \nen Su poder me ha permitido exponer en estos volúmenes,",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-5-284247",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 22,
+      "printed_page": 4,
+      "quote": "4   LIKUTEY HALAJOT\nINTRODUCCIÓN DEL RABÍ NATÁN\nViviente! Pero éste no es el lugar para adentrarnos en esto). En deﬁ nitiva, el escribir \nlibros, no es considerado en absoluto algo grande ni importante en estas épocas.\nSin embargo, hay gente piadosa y recta en cada generación, incluso en ésta, “que \ncamina con sinceridad, con seguridad”,8 “y no se sienta en compañía de los cínicos”;9 \nsobre quienes las palabras de verdad gotean “como agua fresca en un alma cansada”.10 \n“Como a la plata y a los tesoros ocultos, ellos buscan”11 palabras de verdad y de rectitud \nque están “puestas en un engarce de oro ﬁ no”12 - es decir, en las enseñanzas de nuestros \nsantos sabios. \nPero en mi pobreza, yo sé que no he alcanzado ni siquiera, mínimamente, esta \ncapacidad de transmitir mi conocimiento, ni aún a aquellos que se encuentran en el nivel \nmás bajo. Pero conﬁ eso esto sin vergüenza. Proclamo la ver",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-6-990294",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 242,
+      "printed_page": null,
+      "quote": "Najmán extrajo muchos de los temas tratados en la lección (especialmente comenzando con §6) \ndel Tikún #21 del Tikuney Zohar, páginas 49a-51a. Extractos de ello aparecen más arriba, en las \nnotas 28, 33, 38, 43, 45, 55, 68 y 82.\nEl Rebe comenzó su lección explicando el gran valor e importancia de cuidar el brit de \ntoda impureza. El hecho de alcanzar un elevado nivel de pureza moral le permite a la persona \norar con fuerza y así hacer que brille en el mundo el rayo del Mashíaj. Mediante tal plegaria la \npersona merece bendiciones y la santidad del Shabat -i.e., el tajlit del conocimiento- de modo \nque se ve libre para servir a Dios y no tener que trabajar para ganarse el sustento. También \nmerece un cuerpo santo proveniente del Jardín del Edén debido al cual su mazal asciende y es \ncapaz de hacer que su buena inclinación domine a su mala inclinación. Esto le da el poder para \nelevar a aq",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-7-104762",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 103,
+      "printed_page": null,
+      "quote": "de Israel, es el conducto para traer Torá/vida a toda la creación (§3). El prototipo de esto fue \nel mundo antes de la Entrega de la Torá, cuando todos estaban ocupados con el derej eretz, \nestableciendo el mundo. Dios entonces sustentó al mundo y le dio vida solamente a través del \njesed jinam (bondad gratuita), el concepto del Tesoro de Dones Inmerecidos. También ahora, \ncada vez que nos separamos de la Torá, estamos sustentados y recibimos la fuerza vital a través \ndel verdadero Tzadik. En ese momento el Tzadik mismo es un prustik y así, aparentemente sin \nmérito, ese Tzadik trae rúaj de vida del Tesoro de Dones Inmerecidos para difundir la bondad \nde Dios y darles vida incluso a la gente y a los lugares más alejados de la santidad (§4A). Antes \ndel Sinaí la Torá estuvo oculta dentro del establecimiento del mundo, que fue creado a través de \nlas Diez Expresiones, “el poder de Sus acto",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-8-335155",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 162,
+      "printed_page": null,
+      "quote": "24. la arrogancia…El descaro es un reinado sin corona. En el Likutey Moharán I, 30:8-9,\nel Rebe Najmán trata sobre los dos aspectos del rasgo de carácter que en hebreo es llamado \nazut (traducido aquí como “arrogancia”). En su aspecto positivo, azut es audacia - “la audacia \nsagrada sin la cual es imposible recibir la Torá”. Su aspecto negativo es la arrogancia y la \nimpudicia, que el Talmud (loc. cit.) equipara al “reinado sin corona”. Rashi explica que aunque \nla osadía puede otorgarle a la persona considerable autoridad y prominencia, no le puede \nproveer de aquello que la conﬁrmaría como un líder adecuado - i.e., una corona (Rashi, loc. cit., \nv.i. maljuta). En el contexto de nuestra lección, esto hace referencia a la gente cuya prominencia \ny renombre no son obtenidos de manera lícita, sino como resultado de haberse impuesto a través \ndel azut (ver también Likutey Moharán I, 22:4 y ",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-9-698172",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
-      "pdf_page": 111,
-      "printed_page": 101,
-      "quote": "101 \n¡Y debes saber! Todo depende del grado de verdad [que tenga la \npersona]. Pues lo primordial de la luz es Dios, y Dios es la esencia de la \nverdad. El anhelo fundamental de Dios es sólo la verdad.\n“...tejalená (acabada) a un amáh (un codo) milemalá (de arriba)”. \n[La palabra TeJaLená] tiene la misma connotación que “Y el alma de \nDavid TeJaL (anhelaba)” (cf. Samuel 2, 13:39). [Y las letras de la palabra] \nAMáH aluden a las Hei (5) articulantes,41 que consisten de Esh (fuego) \ny Maim (agua).42\nEn otras palabras: fíjate que las palabras salgan de tu boca con \nverdad. Entonces, desde Arriba, Dios anhelará morar contigo. Y cuando \nÉl more contigo, Él brillará para ti. Así, las letras iniciales de “Amáh \nTejalena Milemalá” deletrean Æmet (verdad).43 Porque es a través de la \nverdad que, desde Arriba, Dios desea morar con el hombre, como en, \n“Dios está cerca de todos aquéllos que Lo llam",
+      "pdf_page": 14,
+      "printed_page": 4,
+      "quote": "4\n וְ זֶה בְּ חִ ינַ ת נִ סִּ ים לְ מַ עְ לָ ה מֵ הַ טֶּ בַ ע, כִּ י הַ תְּ פִ לָּ ה לְ מַ עְ לָ ה מֵ הַ טֶּ בַ ע, כִּ י\nהַ טֶּ בַ ע מְ חַ יֵּב כֵּ ן, וְ הַ תְּ פִ לָּ ה מְ שׁ ַ נָּ ה הַ טֶּ בַ ע, וְ זֶה דְּ בַ ר נֵ ס, וְ לָ זֶה צָ רִ יךְ \nאֱ מוּנָ ה, שׁ ֶ יַּאֲ מִ ין שׁ ֶ יֵּשׁ מְ חַ דֵּ שׁ וּבְ יָדוֹ לְ חַ דֵּ שׁ דָּ בָ ר כִּ רְ צוֹנוֹ. \n-וְ עִ קַּ ר  אֱ מוּנָ ה,  בְּ חִ ינַ ת  תְּ פִ לָּ ה,  בְּ חִ ינַ ת  נִ סִּ ים,  אֵ ינוֹ  אֶ לָּ א  בְּ אֶ רֶ ץ\nיִשְׂ רָ אֵ ל,  כְּ מוֹ  שׁ ֶ כָּ תוּב  )תהלים  ל\"ז(:  \"שׁ ְ כָ ן  אֶ רֶ ץ  וּרְ עֵ ה  אֱ מוּנָ ה\". \nוְ שׁ ָ ם עִ קַּ ר עֲ לִ יּוֹת הַ תְּ פִ לּ וֹת, כְּ מוֹ שׁ ֶ כָּ תוּב )בראשית כ\"ח(: \"וְ זֶה שׁ ַ עַ ר \nהַ שּ ׁ ָ מָ יִם\". \nוּבִ שׁ ְ בִ יל זֶה, כְּ שׁ ֶ פָּ גַ ם אַ בְ רָ הָ ם \"בַּ מָּ ה אֵ דַ ע\" )שם ט\"ו(, וּבָ זֶה פָּ גַ ם \nבִּ ירֻ שּ ׁ ַ ת  אֶ רֶ ץ,  שׁ ֶ הִ יא  בְּ חִ ינַ ת  אֱ מוּנָ ה,  בְּ חִ ינַ ת  תְּ פִ לָּ ה,  הָ יָה  גָּ לוּת \n-מִ ",
       "source_view": "library_lmii_search_ready_v2",
       "search_record_type": "page_literal",
       "source_layer": "page_literal",
@@ -71,9 +275,141 @@
       "surface_form": null,
       "normalized_reference_name": null,
       "matched_terms": [
-        "palabra verdad"
+        "verdad"
       ],
       "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-10-921992",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 15,
+      "printed_page": 5,
+      "quote": "5 \nLa [plegaria] corresponde a los milagros, que son sobrenaturales. \nPues la plegaria es sobrenatural. Porque el curso natural de los eventos \nindica una cosa y la plegaria puede cambiar el curso de la naturaleza. \nEsto es un milagro. Y para esto uno necesita la fe. Es decir, la persona \ndebe creer que existe un Mejadesh (un Originador) en Cuyas manos \nestá el poder de renovar de acuerdo con Su voluntad.5\nLa esencia de la fe, de la plegaria y de los milagros, sólo se encuentra \nen la Tierra de Israel; como está escrito (Salmos 37:3), “Habita en la Tierra \ny cultiva la emuná”.6 Allí se produce la elevación de las plegarias; como \nen (Génesis 28:17), “Éste es el portal del cielo”.7\nDebido a esto, cuando Abraham cometió un error al decir (Génesis \n15:8), “¿Cómo sabré [que la he de heredar]?”,8 dañando así su herencia de \nla Tierra que corresponde a la fe y a la plegaria, <él causó> el exil",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-11-39755",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 16,
+      "printed_page": 6,
+      "quote": "6\n וְ אֵ ין שׁ ָ ם מְ קוֹם הַ תְּ פִ לָּ ה, כְּ מוֹ שׁ ֶ כָּ תוּב )שם ט(: \"וְ הָ יָה כְּ צֵ אתִ י אֶ ת\nהָ עִ יר אֶ פְ רֹשׂ אֶ ת כַּ פַּ י\".\nוְ כָ ל הַ גָּ לֻ יּוֹת מְ כֻ נִּים בְּ שׁ ֵ ם מִ צְ רַ יִם, עַ ל שׁ ֵ ם שׁ ֶ הֵ ם מְ צֵ רִ ים לְ יִשְׂ רָ אֵ ל. \nיִשְׂ רָ אֵ ל, הוּא יוֹרֵ ד לְ גָ לוּת. -וּכְ שׁ ֶ פּ וֹגְ מִ ין בֶּ אֱ מוּנָ ה, בִּ תְ פִ לָּ ה, בְּ אֶ רֶ ץ\nוְ זֶה  שׁ ֶ אָ מְ רוּ  חֲ כָ מֵ ינוּ,  זִכְ רוֹנָ ם  לִ בְ רָ כָ ה  )סנהדרין  צז.(:  'אֵ ין  מָ שׁ ִ יחַ \nדָּ וִ ד בָּ א, אֶ לָּ א עַ ד שׁ ֶ תִּ כְ לֶ ה פְּ רוּטָ ה מִ ן הַ כִּ יס'; הַ יְנוּ, שׁ ֶ יִּכְ לוּ -בֶּ ן\nהָ אֶ פִּ יקוֹרְ סִ ים שׁ ֶ אֵ ין לָ הֶ ם אֱ מוּנָ ה בְּ נִ סִּ ים, וּמְ כַ סִּ ים כָּ ל הַ נִּ סִּ ים בְּ דֶ רֶ ךְ \nיִשְׂ רָ אֵ ל -יִשְׂ רָ אֵ ל, כִּ י )תענית י.( 'אֶ רֶ ץ-הַ טֶּ בַ ע. כִּ י עִ קַּ ר הַ נִּ סִּ ים בְּ אֶ רֶ ץ\nשׁ וֹתָ ה  תְּ חִ לָּ ה',  וּשׁ ְ תִ יָּתָ הּ  מֵ הַ תְּ הוֹמוֹת,  שׁ ֶ הֵ ם  לְ שׁ וֹן:  \"וַ ",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-12-667876",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 156,
+      "printed_page": 146,
+      "quote": "146\n זָרָ ה, כִּ י הוּא קִ בֵּ ל הַ תּ וֹרָ ה, שׁ ֶ הוּא בְּ חִ ינַ ת יָדַ יִן וְ רַ גְ לַ יִן כַּ נַּ \"ל, שׁ ֶ עַ ל\nיְדֵ יהֶ ם נִ תְ בַּ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים כַּ נַּ \"ל. \nוְ עַ ל כֵּ ן הִ פִּ יל פּ וּר בַּ יֶּרַ ח שׁ ֶ מֵּ ת בּ וֹ משׁ ֶ ה, כִּ י חָ שׁ ַ ב כִּ י כְּ בָ ר מֵ ת \nמשׁ ֶ ה הַ מְ בַ טֵּ ל כּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים, וְ אֵ ין עוֹד מִ י שׁ ֶ יּוּכַ ל לְ בַ טֵּ ל \nכּ ֹחַ הָ עֲ בוֹדַ ת אֱ לִ ילִ ים.\nאֲ בָ ל מָ רְ דֳּ כַ י וְ אֶ סְ תֵּ ר הָ יָה לָ הֶ ם כּ ֹחַ לְ בַ טֵּ ל הָ עֲ בוֹדַ ת אֱ לִ ילִ ים שׁ ֶ ל \nהָ מָ ן, וּבִ שׁ ְ בִ יל זֶה בִּ ימֵ יהֶ ם קִ בְּ לוּ יִשְׂ רָ אֵ ל הַ תּ וֹרָ ה מֵ חָ דָ שׁ , כְּ מַ אֲ מַ ר \nחֲ כָ מֵ ינוּ, זִכְ רוֹנָ ם לִ בְ רָ כָ ה )שבת פח.(: \"קִ יְּמוּ וְ קִ בְּ לוּ\" – 'קִ יְּמוּ מַ ה \nשּ ׁ ֶ קִּ בְּ לוּ כְּ בָ ר'. \nוְ זֶה: קִ יְּמוּ וְ קִ בְּ לוּ. קִ יְּמוּ – זֶה בְּ חִ ינַ ת רַ גְ לַ יִן, וְ קִ בְּ לוּ – זֶה בְּ חִ ינַ ת \nיָדַ יִן, וְ ה",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "dónde aparece"
+      ],
+      "evidence_type": "literal_same_page",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-13-800683",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 9,
+      "printed_page": null,
+      "quote": "ero en cuanto a mí, dirijo mi plegaria a Ti, HaShem; sea en \ntiempo de Tu favor; Elohim, en la abundancia de Tu misericordia, \nrespóndeme en la verdad de Tu salvación” (Salmos 69:14).",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-14-559322",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 11,
+      "printed_page": null,
+      "quote": "La plegaria ha estado con nosotros desde los días de nuestros patriarcas. \nEn verdad, es anterior a los patriarcas, desde la época de Adán y de la \nCreación. Sin embargo, fue Abraham quien estableció Shajarit (la plegaria de \nla mañana); Itzjak quien estableció Minja (la plegaria de la tarde); y Iaacov \nquien estableció Maariv (la plegaria de la noche).",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "evidence_strength": "strong",
+      "relation_level": "literal",
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-15-602178",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 12,
+      "printed_page": null,
+      "quote": "Luego del Éxodo, los judíos pudieron ﬁnalmente orar. Y cuando fueron \nperseguidos por el faraón y su ejército, en verdad se volvieron a HaShem \ny clamaron en plegaria. Cuando se encontraron atrapados por el mar, con \nacantilados infranqueables por un lado, una selva con animales salvajes por el \notro y los egipcios en persecución por atrás y, por supuesto, el Mar Rojo delante \nde ellos- sintieron que no tenían posibilidad alguna de sobrevivir. Aun así, \noraron y HaShem hizo que el mar se abriera delante de ellos. Como explican \nlos comentaristas, ellos “tomaron el oﬁcio de sus ancestros” y oraron.2",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "verdad"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
       "evidence_strength": "strong",
       "relation_level": "literal",
       "warnings": []
@@ -82,49 +418,59 @@
   "evidence_matrix": [
     {
       "work_code": "kitzur",
-      "hits": 0
+      "hits": 3
     },
     {
       "work_code": "lh",
-      "hits": 0
+      "hits": 3
     },
     {
       "work_code": "lm_xv",
-      "hits": 0
+      "hits": 3
     },
     {
       "work_code": "lmii",
-      "hits": 1
+      "hits": 4
     },
     {
       "work_code": "potencia_plegaria",
-      "hits": 0
+      "hits": 3
     }
   ],
   "cross_corpus_matrix": [
     {
       "work_code": "kitzur",
-      "hits": 0
+      "hits": 3
     },
     {
       "work_code": "lh",
-      "hits": 0
+      "hits": 3
     },
     {
       "work_code": "lm_xv",
-      "hits": 0
+      "hits": 3
     },
     {
       "work_code": "lmii",
-      "hits": 1
+      "hits": 4
     },
     {
       "work_code": "potencia_plegaria",
-      "hits": 0
+      "hits": 3
+    }
+  ],
+  "claims": [
+    {
+      "claim": "“Verdad” aparece en la cita de Salmos 69:14 como “la verdad de Tu salvación”.",
+      "evidence_ids": [
+        "potencia_plegaria-13-800683"
+      ]
     }
   ],
   "not_found": [],
-  "warnings": [],
+  "warnings": [
+    "pdf_page_null_for_kitzur_chunk"
+  ],
   "execution": {
     "pipeline_version": "investigative_qa_v1",
     "model": "openai_gpt-5.4-nano",
@@ -136,6 +482,6 @@
     "used_external_sources": false,
     "used_ocr": false,
     "database": "postgresql",
-    "duration_ms": 3576.21
+    "duration_ms": 3733.29
   }
 }

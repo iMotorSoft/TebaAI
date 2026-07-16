@@ -1,7 +1,8 @@
 {
   "question": "¿Dónde aparece plegaria?",
   "ai": {
-    "enabled": true
+    "enabled": true,
+    "model": "openai_gpt-5.4-nano"
   },
   "max_hits_per_work": 3,
   "return_markdown": true,

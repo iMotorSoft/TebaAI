@@ -1,8 +1,8 @@
 {
   "question": "¿Dónde aparecen notas o fuentes?",
   "status": "ok",
-  "answer_text": "En los fragmentos provistos, las **notas o fuentes** aparecen en la sección editorial de **“Notas y Fuentes”** dentro de *Likutey Halajot Explicado*.\n\n- **p. 105**: aparece el encabezado **“Notas y Fuentes”** (se ve como “Likutey Halajot Explicado — Notas y Fuentes”).\n- **p. 110**: aparece el encabezado **“Notas y Fuentes”** bajo el título del discurso.\n\nAdemás, en el material de *Likutey Halajot* se indica que la traducción incluye **“negritas”** para el texto y una **“fuente regular”** para la explicación, y que la explicación puede provenir de una **fuente citada** en el discurso (esto describe el sistema de notas/explicaciones, aunque no muestra un listado de “Notas y Fuentes” en ese fragmento).\n\n**Límite:** con la evidencia suministrada no puedo ubicar todas las páginas donde haya notas; solo puedo señalar las que aparecen explícitamente en los fragmentos entregados.",
-  "answer_markdown": "En los fragmentos provistos, las **notas o fuentes** aparecen en la sección editorial de **“Notas y Fuentes”** dentro de *Likutey Halajot Explicado*.\n\n- **p. 105**: aparece el encabezado **“Notas y Fuentes”** (se ve como “Likutey Halajot Explicado — Notas y Fuentes”).\n- **p. 110**: aparece el encabezado **“Notas y Fuentes”** bajo el título del discurso.\n\nAdemás, en el material de *Likutey Halajot* se indica que la traducción incluye **“negritas”** para el texto y una **“fuente regular”** para la explicación, y que la explicación puede provenir de una **fuente citada** en el discurso (esto describe el sistema de notas/explicaciones, aunque no muestra un listado de “Notas y Fuentes” en ese fragmento).\n\n**Límite:** con la evidencia suministrada no puedo ubicar todas las páginas donde haya notas; solo puedo señalar las que aparecen explícitamente en los fragmentos entregados.",
+  "answer_text": "En los fragmentos provistos, las **notas o fuentes** aparecen explícitamente en la sección titulada **“Notas y Fuentes”** dentro de *Likutey Halajot Explicado*.\n\n- En la **página 105** se ve el encabezado **“Notas y Fuentes”** (junto con “Likutey Halajot Explicado”).\n- En la **página 110** también aparece **“Notas y Fuentes”** (bajo “92 LIKUTEY HALAJOT” y “DISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA”).\n\nAdemás, en la **página 2** del material de *Likutey Halajot* se indica que la edición incluye **“UNA TRADUCCIÓN … CON NOTAS Y FUENTES”** (descripción editorial, no el lugar exacto dentro del texto).",
+  "answer_markdown": "En los fragmentos provistos, las **notas o fuentes** aparecen explícitamente en la sección titulada **“Notas y Fuentes”** dentro de *Likutey Halajot Explicado*.\n\n- En la **página 105** se ve el encabezado **“Notas y Fuentes”** (junto con “Likutey Halajot Explicado”).\n- En la **página 110** también aparece **“Notas y Fuentes”** (bajo “92 LIKUTEY HALAJOT” y “DISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA”).\n\nAdemás, en la **página 2** del material de *Likutey Halajot* se indica que la edición incluye **“UNA TRADUCCIÓN … CON NOTAS Y FUENTES”** (descripción editorial, no el lugar exacto dentro del texto).",
   "summary": "53 evidencias literales recuperadas",
   "conversation": {
     "conversation_id": null,
@@ -11,7 +11,7 @@
   },
   "interpretation": {
     "detected_language": "es",
-    "normalized_question": "¿Dónde aparecen notas o fuentes?",
+    "normalized_question": "¿Dónde aparecen las notas o las fuentes?",
     "concepts": [
       "notas",
       "fuentes",
@@ -57,7 +57,7 @@
   ],
   "hits": [
     {
-      "hit_id": "kitzur-0-138382",
+      "hit_id": "kitzur-0-493856",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-1-138382",
+      "hit_id": "kitzur-1-493856",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-2-733035",
+      "hit_id": "kitzur-2-383808",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-3-163725",
+      "hit_id": "kitzur-3-979386",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -153,7 +153,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-4-611884",
+      "hit_id": "kitzur-4-479557",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -177,7 +177,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-5-693992",
+      "hit_id": "kitzur-5-139557",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -201,7 +201,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-6-694878",
+      "hit_id": "kitzur-6-56655",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -225,7 +225,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-7-970421",
+      "hit_id": "kitzur-7-873225",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -249,7 +249,7 @@
       ]
     },
     {
-      "hit_id": "lh-8-559016",
+      "hit_id": "lh-8-958425",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 2,
@@ -271,7 +271,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-9-867080",
+      "hit_id": "lh-9-165913",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 13,
@@ -293,7 +293,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-10-335713",
+      "hit_id": "lh-10-994520",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 14,
@@ -315,7 +315,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-11-559016",
+      "hit_id": "lh-11-958425",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 2,
@@ -337,7 +337,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-12-867080",
+      "hit_id": "lh-12-165913",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 13,
@@ -359,7 +359,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-13-335713",
+      "hit_id": "lh-13-994520",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 14,
@@ -381,7 +381,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-14-864440",
+      "hit_id": "lh-14-693903",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 17,
@@ -403,7 +403,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-15-105085",
+      "hit_id": "lh-15-647586",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 105,
@@ -425,7 +425,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-16-98038",
+      "hit_id": "lh-16-885392",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 110,
@@ -447,7 +447,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-17-945709",
+      "hit_id": "lh-17-304716",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 46,
@@ -469,7 +469,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-18-383964",
+      "hit_id": "lh-18-896903",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 91,
@@ -491,7 +491,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-19-179077",
+      "hit_id": "lh-19-318955",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 96,
@@ -513,7 +513,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-20-862973",
+      "hit_id": "lm_xv-20-990294",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 242,
@@ -535,7 +535,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-21-778247",
+      "hit_id": "lm_xv-21-756827",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 121,
@@ -557,7 +557,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-22-376772",
+      "hit_id": "lm_xv-22-815461",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 251,
@@ -579,7 +579,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-23-588651",
+      "hit_id": "lm_xv-23-186652",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 43,
@@ -601,7 +601,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-24-920859",
+      "hit_id": "lm_xv-24-31432",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 113,
@@ -623,7 +623,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-25-601372",
+      "hit_id": "lm_xv-25-86730",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 120,
@@ -645,7 +645,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-26-862973",
+      "hit_id": "lm_xv-26-990294",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 242,
@@ -667,7 +667,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-27-994484",
+      "hit_id": "lm_xv-27-913183",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 308,
@@ -689,7 +689,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-28-303522",
+      "hit_id": "lm_xv-28-223646",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 14,
@@ -711,7 +711,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-29-181322",
+      "hit_id": "lm_xv-29-103940",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 30,
@@ -733,7 +733,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-30-419475",
+      "hit_id": "lm_xv-30-83080",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 49,
@@ -755,7 +755,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-31-506879",
+      "hit_id": "lm_xv-31-116090",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 66,
@@ -777,7 +777,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-32-625268",
+      "hit_id": "lmii-32-530647",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 3,
@@ -799,7 +799,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-33-218351",
+      "hit_id": "lmii-33-188905",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 6,
@@ -821,7 +821,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-34-204178",
+      "hit_id": "lmii-34-826715",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 17,
@@ -843,7 +843,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-35-141151",
+      "hit_id": "lmii-35-342575",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 165,
@@ -865,7 +865,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-36-633939",
+      "hit_id": "lmii-36-738567",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 226,
@@ -887,7 +887,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-37-597595",
+      "hit_id": "lmii-37-288174",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 231,
@@ -909,7 +909,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-38-166910",
+      "hit_id": "lmii-38-951636",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 7,
@@ -931,7 +931,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-39-8150",
+      "hit_id": "lmii-39-493055",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 45,
@@ -953,7 +953,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-40-99714",
+      "hit_id": "lmii-40-984237",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 174,
@@ -975,7 +975,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-41-977720",
+      "hit_id": "lmii-41-510961",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 20,
@@ -997,7 +997,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-42-857278",
+      "hit_id": "lmii-42-885511",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 47,
@@ -1019,7 +1019,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-43-394752",
+      "hit_id": "lmii-43-494733",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 50,
@@ -1041,7 +1041,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-44-875028",
+      "hit_id": "potencia_plegaria-44-891930",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 10,
@@ -1063,7 +1063,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-45-875028",
+      "hit_id": "potencia_plegaria-45-891930",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 10,
@@ -1085,7 +1085,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-46-875028",
+      "hit_id": "potencia_plegaria-46-891930",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 10,
@@ -1107,7 +1107,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-47-303817",
+      "hit_id": "potencia_plegaria-47-815744",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 104,
@@ -1129,7 +1129,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-48-303817",
+      "hit_id": "potencia_plegaria-48-815744",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 104,
@@ -1151,7 +1151,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-49-303817",
+      "hit_id": "potencia_plegaria-49-815744",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 104,
@@ -1173,7 +1173,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-50-544943",
+      "hit_id": "potencia_plegaria-50-154048",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 13,
@@ -1195,7 +1195,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-51-621038",
+      "hit_id": "potencia_plegaria-51-871893",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 17,
@@ -1217,7 +1217,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-52-352451",
+      "hit_id": "potencia_plegaria-52-379853",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 22,
@@ -1283,6 +1283,33 @@
       "hits": 9
     }
   ],
+  "claims": [
+    {
+      "claim": "En *Likutey Halajot Explicado* las notas o fuentes aparecen bajo el encabezado “Notas y Fuentes”.",
+      "evidence_ids": [
+        "lh-15-647586",
+        "lh-16-885392"
+      ]
+    },
+    {
+      "claim": "El encabezado “Notas y Fuentes” aparece en la página 105.",
+      "evidence_ids": [
+        "lh-15-647586"
+      ]
+    },
+    {
+      "claim": "El encabezado “Notas y Fuentes” aparece en la página 110.",
+      "evidence_ids": [
+        "lh-16-885392"
+      ]
+    },
+    {
+      "claim": "En la página 2 se describe que la traducción incluye “CON NOTAS Y FUENTES”.",
+      "evidence_ids": [
+        "lh-8-958425"
+      ]
+    }
+  ],
   "not_found": [],
   "warnings": [
     "pdf_page_null_for_kitzur_chunk"
@@ -1298,6 +1325,6 @@
     "used_external_sources": false,
     "used_ocr": false,
     "database": "postgresql",
-    "duration_ms": 4527.27
+    "duration_ms": 4391.18
   }
 }

@@ -46,19 +46,25 @@ def render(question:str,hits:list[Hit],warnings:list[str])->str:
  lines += ['## Límites','- Los paralelos entre obras no demuestran una relación doctrinal.','- Una referencia nominal sólo acredita la aparición literal de esa forma.']
  if warnings:lines+=['','## Advertencias']+[f'- {w}' for w in sorted(set(warnings))]
  return '\n'.join(lines)
-async def _ai_render(question:str,hits:list[Hit])->tuple[str|None,list[str]]:
+async def _ai_render(question:str,hits:list[Hit])->tuple[str|None,list[str],list[dict]]:
  """Closed-context renderer; unknown evidence IDs are rejected before response."""
- if not LITELLM_API_KEY:return None,['ai_render_fallback:litellm_key_missing']
+ if not LITELLM_API_KEY:return None,['ai_render_fallback:litellm_key_missing'],[]
  context=[{'id':h.hit_id,'work':h.work_title,'page':h.pdf_page,'quote':h.quote,'type':h.evidence_type,'strength':h.evidence_strength,'warnings':h.warnings} for h in hits[:20]]
  try:
   async with httpx.AsyncClient(timeout=LITELLM_TIMEOUT_SECONDS) as c:
-   r=await c.post(f'{LITELLM_BASE_URL}/v1/chat/completions',headers={'Authorization':f'Bearer {LITELLM_API_KEY}'},json={'model':RESEARCH_CONVERSATION_MODEL,'messages':[{'role':'system','content':'Return JSON only: answer_markdown, used_evidence_ids. Use only supplied evidence. Never invent quotes/pages/works. Nominal references are literal appearances, never doctrine. State limits.'},{'role':'user','content':json.dumps({'question':question,'evidence':context},ensure_ascii=False)}],'temperature':0,'max_tokens':1200,'response_format':{'type':'json_object'}})
-  v=json.loads(r.json()['choices'][0]['message']['content']);used=set(v.get('used_evidence_ids',[]));allowed={h.hit_id for h in hits};text=str(v.get('answer_markdown',''))
-  if not used or not used.issubset(allowed) or not text:return None,['ai_render_rejected_grounding_validation']
-  pages={str(h.pdf_page) for h in hits if h.pdf_page is not None}
-  if any(x not in pages for x in re.findall(r'(?i)(?:página|pdf p\.)\s*(\d+)',text)):return None,['ai_render_rejected_grounding_validation']
-  return text,[]
- except Exception as e:return None,[f'ai_render_fallback:{type(e).__name__}']
+   r=await c.post(f'{LITELLM_BASE_URL}/v1/chat/completions',headers={'Authorization':f'Bearer {LITELLM_API_KEY}'},json={'model':RESEARCH_CONVERSATION_MODEL,'messages':[{'role':'system','content':'Return JSON only: answer_markdown, used_evidence_ids, claims. claims is an array of {claim,evidence_ids}. Use only supplied evidence. Never invent quotes/pages/works. Nominal references are literal appearances, never doctrine. State limits.'},{'role':'user','content':json.dumps({'question':question,'evidence':context},ensure_ascii=False)}],'temperature':0,'max_tokens':1200,'response_format':{'type':'json_object'}})
+  v=json.loads(r.json()['choices'][0]['message']['content']);text,claims=validate_grounded_render(v,hits)
+  if text is None:return None,['ai_render_rejected_grounding_validation'],[]
+  return text,[],claims
+ except Exception as e:return None,[f'ai_render_fallback:{type(e).__name__}'],[]
+def validate_grounded_render(value:dict,hits:list[Hit])->tuple[str|None,list[dict]]:
+ """Pure validator used by live renderer and adversarial regression tests."""
+ used=set(value.get('used_evidence_ids',[]));allowed={h.hit_id for h in hits};text=str(value.get('answer_markdown',''));claims=value.get('claims',[])
+ if not used or not used.issubset(allowed) or not text or not isinstance(claims,list) or any(not isinstance(x,dict) or not x.get('claim') or not set(x.get('evidence_ids',[])).issubset(allowed) or not x.get('evidence_ids') for x in claims):return None,[]
+ pages={str(h.pdf_page) for h in hits if h.pdf_page is not None}
+ if any(x not in pages for x in re.findall(r'(?i)(?:página|pdf p\.)\s*(\d+)',text)):return None,[]
+ if re.search(r'(?i)(demuestra|dependencia doctrinal|prueba doctrinal)',text):return None,[]
+ return text,claims
 async def run(conn,data:QaRequest)->dict:
  started=time.perf_counter();warnings=[];interp,iw=await _ai_interpret(data.question) if data.ai.enabled else ({'detected_language':language(data.question),'normalized_question':data.question,'concepts':terms(data.question),'requires_cross_corpus':True},['ai_disabled']);warnings+=iw;plan={'queries':interp['concepts'] or terms(data.question),'works':[w for w in data.works if w in WORKS],'languages':data.languages,'layers':['page_literal','fine_zone','note_source_unit','nominal_reference'],'include_audit':False,'retrieval_mode':'sql_literal'};hits=[]
  for w in plan['works']:
@@ -66,6 +72,6 @@ async def run(conn,data:QaRequest)->dict:
    for row,title,view in await _fetch(conn,w,term,data.max_hits_per_work):
     h=classify(w,row,term,len(hits));h.source_view=view
     if h.hit_id not in {x.hit_id for x in hits}:hits.append(h)
- warnings += [z for h in hits for z in h.warnings];status='ok' if hits else 'no_evidence';markdown=render(data.question,hits,warnings);ai_markdown,aw=await _ai_render(data.question,hits) if data.ai.enabled and hits else (None,[]);warnings+=aw
+ warnings += [z for h in hits for z in h.warnings];status='ok' if hits else 'no_evidence';markdown=render(data.question,hits,warnings);ai_markdown,aw,claims=await _ai_render(data.question,hits) if data.ai.enabled and hits else (None,[],[]);warnings+=aw
  if ai_markdown:markdown=ai_markdown
- matrix=[{'work_code':w,'hits':sum(h.work_code==w for h in hits)} for w in plan['works']];return {'question':data.question,'status':status,'answer_text':markdown,'answer_markdown':markdown,'summary':f'{len(hits)} evidencias literales recuperadas','conversation':{'conversation_id':data.conversation.get('conversation_id'),'turn_id':data.conversation.get('turn_id'),'resolved_context':[]},'interpretation':interp,'search_plan':plan,'works_consulted':plan['works'],'hits':[h.model_dump() for h in hits],'evidence_matrix':matrix,'cross_corpus_matrix':matrix,'not_found':[] if hits else plan['queries'],'warnings':list(dict.fromkeys(warnings)),'execution':{'pipeline_version':'investigative_qa_v1','model':RESEARCH_CONVERSATION_MODEL,'used_ai_interpretation':data.ai.enabled and not iw,'used_ai_rendering':bool(ai_markdown),'ai_render_validated':bool(ai_markdown),'used_deterministic_fallback':not bool(ai_markdown),'used_vector':False,'used_external_sources':False,'used_ocr':False,'database':'postgresql','duration_ms':round((time.perf_counter()-started)*1000,2)}}
+ matrix=[{'work_code':w,'hits':sum(h.work_code==w for h in hits)} for w in plan['works']];return {'question':data.question,'status':status,'answer_text':markdown,'answer_markdown':markdown,'summary':f'{len(hits)} evidencias literales recuperadas','conversation':{'conversation_id':data.conversation.get('conversation_id'),'turn_id':data.conversation.get('turn_id'),'resolved_context':[]},'interpretation':interp,'search_plan':plan,'works_consulted':plan['works'],'hits':[h.model_dump() for h in hits],'evidence_matrix':matrix,'cross_corpus_matrix':matrix,'claims':claims,'not_found':[] if hits else plan['queries'],'warnings':list(dict.fromkeys(warnings)),'execution':{'pipeline_version':'investigative_qa_v1','model':RESEARCH_CONVERSATION_MODEL,'used_ai_interpretation':data.ai.enabled and not iw,'used_ai_rendering':bool(ai_markdown),'ai_render_validated':bool(ai_markdown),'used_deterministic_fallback':not bool(ai_markdown),'used_vector':False,'used_external_sources':False,'used_ocr':False,'database':'postgresql','duration_ms':round((time.perf_counter()-started)*1000,2)}}

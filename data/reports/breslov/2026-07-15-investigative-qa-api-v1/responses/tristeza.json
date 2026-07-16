@@ -1,8 +1,8 @@
 {
   "question": "¿Dónde aparece tristeza?",
   "status": "ok",
-  "answer_text": "En los fragmentos provistos de **Kitzur** aparece la tristeza asociada a:\n\n- **“el elemento ‘mineral’ y del elemento ‘vegetal’ — es decir, la tristeza”** (Kitzur, fragmento que incluye “Lección 4”, alrededor de “9 Tishrei”).\n- **“la depresión y … la tristeza”** (Kitzur, sección “Has ordenado juicios justos” (Salmos 119:138), donde se menciona “depresión… y la tristeza”).\n- **“la preocupación y la tristeza”** (Kitzur, sección “21 Kislev”, donde dice que la preocupación y la tristeza desgastan la vitalidad).\n\n**Límite:** no se indica número de página en los extractos (page = null), así que no puedo ubicarla con precisión por página; solo por los fragmentos citados.",
-  "answer_markdown": "En los fragmentos provistos de **Kitzur** aparece la tristeza asociada a:\n\n- **“el elemento ‘mineral’ y del elemento ‘vegetal’ — es decir, la tristeza”** (Kitzur, fragmento que incluye “Lección 4”, alrededor de “9 Tishrei”).\n- **“la depresión y … la tristeza”** (Kitzur, sección “Has ordenado juicios justos” (Salmos 119:138), donde se menciona “depresión… y la tristeza”).\n- **“la preocupación y la tristeza”** (Kitzur, sección “21 Kislev”, donde dice que la preocupación y la tristeza desgastan la vitalidad).\n\n**Límite:** no se indica número de página en los extractos (page = null), así que no puedo ubicarla con precisión por página; solo por los fragmentos citados.",
+  "answer_text": "En los fragmentos provistos, **“tristeza” aparece asociada al elemento “mineral” y al elemento “vegetal”** (mencionando explícitamente “es decir, la tristeza”). Esto está en **Kitzur**, en el fragmento que comienza con “La tremenda humildad de los verdaderos Tzadikim…”.\n\nTambién aparece **asociada a la depresión y a la muerte** en **Kitzur**, en el fragmento que comenta “Has ordenado juicios justos” (Salmos 119:138), donde dice que la mentira está asociada con “la depresión… y con la muerte y la tristeza”.\n\nAdemás, se menciona **“preocupaciones y tristeza”** en **Kitzur**, en el fragmento sobre el deseo de dinero: “nada desgasta más la vitalidad que la preocupación y la tristeza…”.",
+  "answer_markdown": "En los fragmentos provistos, **“tristeza” aparece asociada al elemento “mineral” y al elemento “vegetal”** (mencionando explícitamente “es decir, la tristeza”). Esto está en **Kitzur**, en el fragmento que comienza con “La tremenda humildad de los verdaderos Tzadikim…”.\n\nTambién aparece **asociada a la depresión y a la muerte** en **Kitzur**, en el fragmento que comenta “Has ordenado juicios justos” (Salmos 119:138), donde dice que la mentira está asociada con “la depresión… y con la muerte y la tristeza”.\n\nAdemás, se menciona **“preocupaciones y tristeza”** en **Kitzur**, en el fragmento sobre el deseo de dinero: “nada desgasta más la vitalidad que la preocupación y la tristeza…”.",
   "summary": "43 evidencias literales recuperadas",
   "conversation": {
     "conversation_id": null,
@@ -55,7 +55,7 @@
   ],
   "hits": [
     {
-      "hit_id": "kitzur-0-298849",
+      "hit_id": "kitzur-0-249768",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-1-589869",
+      "hit_id": "kitzur-1-385468",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -103,7 +103,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-2-887494",
+      "hit_id": "kitzur-2-834714",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-3-747293",
+      "hit_id": "kitzur-3-714174",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-4-733035",
+      "hit_id": "kitzur-4-383808",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-5-703401",
+      "hit_id": "kitzur-5-589041",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -199,7 +199,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-6-693992",
+      "hit_id": "kitzur-6-139557",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -223,7 +223,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-7-694878",
+      "hit_id": "kitzur-7-56655",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -247,7 +247,7 @@
       ]
     },
     {
-      "hit_id": "kitzur-8-970421",
+      "hit_id": "kitzur-8-873225",
       "work_code": "kitzur",
       "work_title": "Kitzur",
       "pdf_page": null,
@@ -271,7 +271,7 @@
       ]
     },
     {
-      "hit_id": "lh-9-744118",
+      "hit_id": "lh-9-690105",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 26,
@@ -293,7 +293,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-10-107739",
+      "hit_id": "lh-10-868289",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 108,
@@ -315,7 +315,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-11-109481",
+      "hit_id": "lh-11-88644",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 225,
@@ -337,7 +337,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-12-552317",
+      "hit_id": "lh-12-780359",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 16,
@@ -359,7 +359,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-13-864440",
+      "hit_id": "lh-13-693903",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 17,
@@ -381,7 +381,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-14-305129",
+      "hit_id": "lh-14-710643",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 30,
@@ -403,7 +403,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-15-945709",
+      "hit_id": "lh-15-304716",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 46,
@@ -425,7 +425,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-16-383964",
+      "hit_id": "lh-16-896903",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 91,
@@ -447,7 +447,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lh-17-179077",
+      "hit_id": "lh-17-318955",
       "work_code": "lh",
       "work_title": "Likutey Halajot",
       "pdf_page": 96,
@@ -469,7 +469,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-18-63068",
+      "hit_id": "lm_xv-18-149841",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 166,
@@ -491,7 +491,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-19-935419",
+      "hit_id": "lm_xv-19-455230",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 370,
@@ -513,7 +513,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-20-205165",
+      "hit_id": "lm_xv-20-684328",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 470,
@@ -535,7 +535,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-21-862973",
+      "hit_id": "lm_xv-21-990294",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 242,
@@ -557,7 +557,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-22-52130",
+      "hit_id": "lm_xv-22-766619",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 259,
@@ -579,7 +579,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-23-994484",
+      "hit_id": "lm_xv-23-913183",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 308,
@@ -601,7 +601,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-24-181322",
+      "hit_id": "lm_xv-24-103940",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 30,
@@ -623,7 +623,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-25-419475",
+      "hit_id": "lm_xv-25-83080",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 49,
@@ -645,7 +645,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lm_xv-26-506879",
+      "hit_id": "lm_xv-26-116090",
       "work_code": "lm_xv",
       "work_title": "Likutey Moharán XV KDP",
       "pdf_page": 66,
@@ -667,7 +667,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-27-656392",
+      "hit_id": "lmii-27-385323",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 130,
@@ -689,7 +689,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-28-166910",
+      "hit_id": "lmii-28-951636",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 7,
@@ -711,7 +711,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-29-204178",
+      "hit_id": "lmii-29-826715",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 17,
@@ -733,7 +733,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-30-292384",
+      "hit_id": "lmii-30-594598",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 24,
@@ -755,7 +755,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-31-977720",
+      "hit_id": "lmii-31-510961",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 20,
@@ -777,7 +777,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-32-857278",
+      "hit_id": "lmii-32-885511",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 47,
@@ -799,7 +799,7 @@
       "warnings": []
     },
     {
-      "hit_id": "lmii-33-394752",
+      "hit_id": "lmii-33-494733",
       "work_code": "lmii",
       "work_title": "Likutey Moharán II",
       "pdf_page": 50,
@@ -821,7 +821,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-34-527617",
+      "hit_id": "potencia_plegaria-34-575068",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 97,
@@ -843,7 +843,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-35-882417",
+      "hit_id": "potencia_plegaria-35-458033",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 248,
@@ -865,7 +865,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-36-527617",
+      "hit_id": "potencia_plegaria-36-575068",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 97,
@@ -887,7 +887,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-37-303817",
+      "hit_id": "potencia_plegaria-37-815744",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 104,
@@ -909,7 +909,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-38-651659",
+      "hit_id": "potencia_plegaria-38-690093",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 163,
@@ -931,7 +931,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-39-999194",
+      "hit_id": "potencia_plegaria-39-155670",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 220,
@@ -953,7 +953,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-40-544943",
+      "hit_id": "potencia_plegaria-40-154048",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 13,
@@ -975,7 +975,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-41-621038",
+      "hit_id": "potencia_plegaria-41-871893",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 17,
@@ -997,7 +997,7 @@
       "warnings": []
     },
     {
-      "hit_id": "potencia_plegaria-42-352451",
+      "hit_id": "potencia_plegaria-42-379853",
       "work_code": "potencia_plegaria",
       "work_title": "La Potencia de la Plegaria",
       "pdf_page": 22,
@@ -1063,6 +1063,26 @@
       "hits": 9
     }
   ],
+  "claims": [
+    {
+      "claim": "En Kitzur, “tristeza” aparece como parte de los rasgos negativos que se anulan al ver al Tzadik, expresado como “es decir, la tristeza…”.",
+      "evidence_ids": [
+        "kitzur-0-249768"
+      ]
+    },
+    {
+      "claim": "En Kitzur, “tristeza” aparece asociada a la depresión y a la muerte en el contexto de la mentira (“…depresión… y con la muerte y la tristeza…”).",
+      "evidence_ids": [
+        "kitzur-1-385468"
+      ]
+    },
+    {
+      "claim": "En Kitzur, “tristeza” aparece junto con “preocupación” como algo que desgasta la vitalidad en quienes están hundidos en el deseo de dinero.",
+      "evidence_ids": [
+        "kitzur-2-834714"
+      ]
+    }
+  ],
   "not_found": [],
   "warnings": [
     "pdf_page_null_for_kitzur_chunk"
@@ -1078,6 +1098,6 @@
     "used_external_sources": false,
     "used_ocr": false,
     "database": "postgresql",
-    "duration_ms": 5394.23
+    "duration_ms": 4911.62
   }
 }

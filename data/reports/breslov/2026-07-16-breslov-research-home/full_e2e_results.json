@@ -1,0 +1,18 @@
+{
+  "command": "source ~/.bashrc; PLAYWRIGHT_SKIP_WEBSERVER=1 corepack pnpm exec playwright test --reporter=list",
+  "base_url": "http://127.0.0.1:3008",
+  "backend": "http://127.0.0.1:7008",
+  "project": "chromium",
+  "result": "PASS",
+  "passed": 21,
+  "failed": 0,
+  "suites": {
+    "admin": 4,
+    "breslov_home": 6,
+    "authenticated_capture": 1,
+    "library_search": 3,
+    "login": 4,
+    "relation_qa": 3
+  },
+  "credentials": "present and consumed only through environment variables; values omitted"
+}

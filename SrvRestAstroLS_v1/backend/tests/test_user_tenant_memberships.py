@@ -51,6 +51,8 @@ async def test_create_assigns_complete_default_tenant_chain(
         await UserRepository(AsyncMock()).create(user)
 
     assert execute.await_count == 4
+    create_params = execute.await_args_list[0].args[2]
+    assert create_params["email_normalized"] == user.email
     context_sql = fetch.await_args.args[1]
     assert "default_user_context" in context_sql
     assert "breslov" not in context_sql.lower()

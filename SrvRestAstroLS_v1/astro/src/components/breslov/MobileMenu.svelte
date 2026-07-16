@@ -1,11 +1,25 @@
 <script lang="ts">
   let { links }: { links: string[][] } = $props();
   let open = $state(false);
-  function close() { open = false; }
+  let menuButton: HTMLButtonElement;
+
+  function close(restoreFocus = false) {
+    open = false;
+    if (restoreFocus) queueMicrotask(() => menuButton?.focus());
+  }
+
+  function handleKeydown(event: KeyboardEvent) {
+    if (event.key === "Escape" && open) {
+      event.preventDefault();
+      close(true);
+    }
+  }
 </script>
 
+<svelte:window onkeydown={handleKeydown} />
+
 <div class="mobile-menu">
-  <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded={open} onclick={() => open = !open}>
+  <button bind:this={menuButton} class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-navigation" aria-expanded={open} onclick={() => open = !open}>
     <span></span><span></span><span></span>
   </button>
   {#if open}

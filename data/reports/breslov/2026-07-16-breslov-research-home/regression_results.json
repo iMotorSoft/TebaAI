@@ -1,0 +1,7 @@
+{
+  "backend_unit": { "command": "uv run pytest tests/test_user_tenant_memberships.py", "passed": 4, "failed": 0 },
+  "frontend_check": "PASS: 0 errors, 0 warnings, 0 hints",
+  "frontend_build": "PASS: 6 static pages",
+  "breslov_required_viewports": ["1280x720", "1366x768", "1440x900", "1536x1024", "1920x1080", "768x1024", "820x1180", "1024x768", "320x568", "360x800", "375x812", "390x844", "412x915", "430x932"],
+  "viewport_contract": "PASS: heading visible and body scrollWidth equals clientWidth at every viewport; no console errors or >=400 response on the public home"
+}

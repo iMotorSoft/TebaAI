@@ -21,13 +21,14 @@ class UserRepository:
         await execute(
             self._conn,
             """
-            INSERT INTO users (id, email, username, password_hash, role, is_active,
+            INSERT INTO users (id, email, email_normalized, username, password_hash, role, is_active,
                                password_changed_at, created_at, updated_at)
-            VALUES (%(id)s, %(email)s, %(username)s, %(password_hash)s, %(role)s, %(is_active)s, %(password_changed_at)s, %(created_at)s, %(updated_at)s)
+            VALUES (%(id)s, %(email)s, %(email_normalized)s, %(username)s, %(password_hash)s, %(role)s, %(is_active)s, %(password_changed_at)s, %(created_at)s, %(updated_at)s)
             """,
             {
                 "id": str(user.id),
                 "email": user.email,
+                "email_normalized": user.email.strip().lower(),
                 "username": user.username,
                 "password_hash": user.password_hash,
                 "role": user.role.value,

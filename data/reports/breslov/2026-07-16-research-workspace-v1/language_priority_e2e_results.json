@@ -6,8 +6,8 @@
   "all_hebrew": "pass",
   "english_plus_hebrew": "pass",
   "multiturn_source_identity": "pass",
-  "source_layer_followup_direct_answer": "blocked",
-  "checkpoint_status": "SOURCE_LAYER_FOLLOWUP_ANSWER_BLOCKED",
+  "source_layer_followup_direct_answer": "pass",
+  "checkpoint_status": "LANGUAGE_PRIORITY_AND_SOURCE_LAYER_FULL_PASS",
   "mobile_rtl": "pass",
   "axe_critical_violations": 0,
   "screenshots_created": true

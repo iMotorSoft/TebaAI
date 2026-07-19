@@ -29,10 +29,14 @@ test("blood-speech claims open their explicit primary evidence", async ({ page }
   expect(payload.primary_evidence_ids.every((id: string) => payload.hits.some((hit: { hit_id: string }) => hit.hit_id === id))).toBe(true);
 
   const active = page.locator(".source-detail");
+  const firstClaim = payload.claims.find((claim: { primary_evidence_id: string }) => claim.primary_evidence_id === payload.primary_evidence_ids[0]);
+  const firstPrimary = payload.hits.find((hit: { hit_id: string }) => hit.hit_id === payload.primary_evidence_ids[0]);
+  const strengthLabels: Record<string, string> = { strong: "Fuerte", medium: "Media", weak: "Débil", insufficient: "Insuficiente" };
+  expect(firstPrimary.evidence_strength).toBe(firstClaim.strength);
   await expect(active).toHaveAttribute("data-evidence-id", payload.primary_evidence_ids[0], { timeout: 30_000 });
   await expect(active).not.toContainText(/shamir|herramientas de hierro/i);
   await expect(active).toContainText("Respaldo directo del claim");
-  await expect(active).toContainText("Fuerte");
+  await expect(active).toContainText(strengthLabels[firstClaim.strength]);
   await expect(page.getByText("pdf page null for kitzur chunk", { exact: false })).toHaveCount(0);
   await expect(page.getByText("La página no está disponible en el registro fuente", { exact: true }).first()).toBeVisible();
   expect(payload.hits[0].matched_concepts.map((value: string) => value.normalize("NFD").replace(/\p{Diacritic}/gu, ""))).toEqual(expect.arrayContaining(["sangre", "habla"]));

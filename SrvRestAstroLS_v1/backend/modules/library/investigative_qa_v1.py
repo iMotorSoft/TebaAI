@@ -1179,12 +1179,21 @@ def _deterministic_claims(
 def _apply_claim_traceability(hits: list[Hit], claims: list[dict]) -> list[str]:
     primary_ids = list(dict.fromkeys(claim["primary_evidence_id"] for claim in claims))
     primary_order = {evidence_id: index for index, evidence_id in enumerate(primary_ids)}
-    claim_ids = {item for claim in claims for item in claim["evidence_ids"]}
     by_id = {hit.hit_id: hit for hit in hits}
-    for evidence_id in claim_ids:
+    strength_order = {"insufficient": 0, "weak": 1, "medium": 2, "strong": 3}
+    claim_strengths: dict[str, str] = {}
+    for claim in claims:
+        strength = str(claim.get("strength", "strong"))
+        if strength not in strength_order:
+            strength = "weak"
+        for evidence_id in claim["evidence_ids"]:
+            current = claim_strengths.get(evidence_id, "insufficient")
+            if evidence_id not in claim_strengths or strength_order[strength] > strength_order[current]:
+                claim_strengths[evidence_id] = strength
+    for evidence_id, strength in claim_strengths.items():
         hit = by_id[evidence_id]
         hit.relation_relevance = "direct_relation"
-        hit.evidence_strength = "strong"
+        hit.evidence_strength = strength
         hit.relation_level = "literal"
         hit.is_primary = evidence_id in primary_ids
     hits.sort(key=lambda hit: (0, primary_order[hit.hit_id]) if hit.hit_id in primary_order else (1, _sort_key(hit)))
@@ -1201,7 +1210,113 @@ def _counts(hits: list[Hit], primary_ids: list[str]) -> dict[str, int]:
     }
 
 
-def render(question: str, claims: list[dict], hits: list[Hit], warnings: list[str], intent: str = "concept_lookup") -> str:
+def _is_source_layer_followup(question: str) -> bool:
+    folded = _fold(question)
+    spanish = bool(
+        re.search(r"\bes\b.*\b(?:texto|parte|cita|comentario|nota|traduccion|original)\b", folded)
+        or re.search(r"\b(?:que|cual)\s+(?:es\s+la\s+)?(?:capa|naturaleza|tipo\s+de\s+fuente)\b", folded)
+    )
+    english = bool(
+        re.search(r"\bis\b.*\b(?:lesson|quote|quotation|commentary|note|translation|original)\b", folded)
+        or re.search(r"\bwhat\s+(?:source\s+)?(?:layer|kind\s+of\s+source)\b", folded)
+    )
+    hebrew = bool(
+        re.search(r"(?:האם|זה).*(?:שיעור|ציטוט|הערה|פירוש|תרגום|מקור)", question)
+        or re.search(r"(?:איזו|מהי).*(?:שכבה|מקור)", question)
+    )
+    return spanish or english or hebrew
+
+
+def _source_layer_followup_claims(hits: list[Hit], instruction_language: str) -> list[dict]:
+    if not hits:
+        return []
+    primary = next((
+        hit for hit in hits
+        if hit.is_primary_language_match
+        and hit.literal_match_kind in {"exact_phrase", "normalized", "no_niqqud"}
+    ), hits[0])
+    locale = instruction_language if instruction_language in {"es", "en", "he"} else "es"
+    messages = {
+        "rebbe_lesson_text": {
+            "es": "Sí. Es texto original de la lección del Rebe. No es una cita ni una nota editorial.",
+            "en": "Yes. It is original text from the Rebbe's lesson. It is not a quotation or an editorial note.",
+            "he": "כן. זהו הטקסט המקורי של שיעור הרבי, ולא ציטוט או הערת עורך.",
+        },
+        "biblical_quote_in_lesson": {
+            "es": "Sí. Es una cita bíblica incluida dentro de la lección del Rebe. No es una nota editorial.",
+            "en": "Yes. It is a biblical quotation included in the Rebbe's lesson. It is not an editorial note.",
+            "he": "כן. זהו ציטוט מקראי המשולב בשיעורו של הרבי, ולא הערת עורך.",
+        },
+        "rabbinic_quote_in_lesson": {
+            "es": "Sí. Es una cita rabínica incluida dentro de la lección del Rebe. No es una nota editorial.",
+            "en": "Yes. It is a rabbinic quotation included in the Rebbe's lesson. It is not an editorial note.",
+            "he": "כן. זהו ציטוט חז״לי המשולב בשיעורו של הרבי, ולא הערת עורך.",
+        },
+        "editorial_translation": {
+            "es": "No. Es una traducción editorial; no es el texto original de la lección.",
+            "en": "No. It is an editorial translation, not the original lesson text.",
+            "he": "לא. זהו תרגום עריכתי, ולא הטקסט המקורי של השיעור.",
+        },
+        "editorial_commentary": {
+            "es": "No. Es un comentario editorial; no es el texto original de la lección.",
+            "en": "No. It is editorial commentary, not the original lesson text.",
+            "he": "לא. זהו פירוש עריכתי, ולא הטקסט המקורי של השיעור.",
+        },
+        "editorial_note": {
+            "es": "No. Es una nota editorial; no es el texto original de la lección.",
+            "en": "No. It is an editorial note, not the original lesson text.",
+            "he": "לא. זוהי הערת עורך, ולא הטקסט המקורי של השיעור.",
+        },
+        "footnote": {
+            "es": "No. Es una nota al pie editorial; no es el texto original de la lección.",
+            "en": "No. It is an editorial footnote, not the original lesson text.",
+            "he": "לא. זוהי הערת שוליים עריכתית, ולא הטקסט המקורי של השיעור.",
+        },
+        "source_reference": {
+            "es": "No. Es una referencia de fuente; no es el cuerpo original de la lección.",
+            "en": "No. It is a source reference, not the original body of the lesson.",
+            "he": "לא. זוהי הפניית מקור, ולא גוף השיעור המקורי.",
+        },
+        "section_heading": {
+            "es": "No. Es un encabezado de sección; no es el cuerpo original de la lección.",
+            "en": "No. It is a section heading, not the original body of the lesson.",
+            "he": "לא. זוהי כותרת סעיף, ולא גוף השיעור המקורי.",
+        },
+        "page_heading": {
+            "es": "No. Es un encabezado de página; no es el cuerpo original de la lección.",
+            "en": "No. It is a page heading, not the original body of the lesson.",
+            "he": "לא. זוהי כותרת עמוד, ולא גוף השיעור המקורי.",
+        },
+        "introduction": {
+            "es": "No. Pertenece a la introducción; no es el cuerpo original de la lección.",
+            "en": "No. It belongs to the introduction, not the original body of the lesson.",
+            "he": "לא. זהו חלק מן המבוא, ולא גוף השיעור המקורי.",
+        },
+        "unknown": {
+            "es": "No confirmado. La capa editorial de este fragmento requiere revisión.",
+            "en": "Not confirmed. The editorial layer of this fragment requires review.",
+            "he": "לא אושר. השכבה העריכתית של הקטע דורשת בדיקה.",
+        },
+    }
+    confidence_strength = {"high": "strong", "medium": "medium", "low": "insufficient"}
+    return [{
+        "claim_id": "source_layer_followup",
+        "text": messages[primary.source_layer][locale],
+        "strength": confidence_strength[primary.source_layer_confidence],
+        "evidence_ids": [primary.hit_id],
+        "primary_evidence_id": primary.hit_id,
+    }]
+
+
+def render(
+    question: str,
+    claims: list[dict],
+    hits: list[Hit],
+    warnings: list[str],
+    intent: str = "concept_lookup",
+    *,
+    source_layer_followup: bool = False,
+) -> str:
     lines = ["## Síntesis investigativa"]
     if claims:
         lines.extend(f"- {claim['text']}" for claim in claims)
@@ -1216,13 +1331,28 @@ def render(question: str, claims: list[dict], hits: list[Hit], warnings: list[st
         lang_label = {"exact": "", "primary": "", "secondary": " [Traducción]", "fallback": " [Otro idioma]"}.get(hit.language_match, "")
         literal_label = {"exact_phrase": "Coincidencia exacta", "normalized": "Coincidencia normalizada", "no_niqqud": "Sin niqqud", "single_term": "Término individual", "semantic": "Semántica", "none": ""}.get(hit.literal_match_kind, "")
         labels = " · ".join(filter(None, [lang_label, literal_label]))
+        relevance_label = {
+            "direct_relation": "Respaldo directo",
+            "same_fragment_both_terms": "Mismo fragmento",
+            "same_page_both_terms": "Misma página",
+            "same_section_relation": "Misma sección",
+            "single_term_literal": "Coincidencia de un término",
+            "thematic_parallel": "Paralelo temático",
+            "inferred_relation": "Relación inferida",
+            "unrelated_literal_noise": "Coincidencia no relacionada",
+        }[hit.relation_relevance]
+        strength_label = {
+            "strong": "Fuerte", "medium": "Media", "weak": "Débil", "insufficient": "Insuficiente",
+        }[hit.evidence_strength]
         lines.extend([
             f"### {hit.work_title}{' — PDF p. ' + str(hit.pdf_page) if hit.pdf_page is not None else ''}",
             f"> {hit.snippet}",
-            f"**Relevancia:** `{hit.relation_relevance}` · **Fuerza relacional:** {hit.evidence_strength}{' · ' + labels if labels else ''}",
+            f"**Relevancia:** {relevance_label} · **Fuerza relacional:** {strength_label}{' · ' + labels if labels else ''}",
             "",
         ])
-    if intent in {"literal_lookup", "translation_or_explanation"}:
+    if source_layer_followup:
+        lines.extend(["## Alcance", "- La clasificación responde a la capa editorial estructurada de la evidencia seleccionada."])
+    elif intent in {"literal_lookup", "translation_or_explanation"}:
         lines.extend(["## Límites", "- La coincidencia se informa como literal o normalizada; no se sustituye por una traducción."])
     else:
         lines.extend(["## Límites", "- Una coincidencia literal de un solo término no establece la relación consultada.", "- Los paralelos entre obras no demuestran dependencia o equivalencia doctrinal."])
@@ -1418,19 +1548,30 @@ async def run(conn, data: QaRequest) -> dict:
     generative_intents = {"relation_query", "comparison_query", "translation_or_explanation"}
     ai_markdown, render_warnings, claims = await _ai_render(resolved_question, hits) if data.ai.enabled and hits and intent in generative_intents else (None, [], [])
     warnings.extend(render_warnings)
-    claims = claims or _deterministic_claims(
-        resolved_question,
-        hits,
-        intent,
-        resolved_literal_query,
-        len(concepts),
-        structured.instruction_language,
+    source_layer_followup = intent == "follow_up" and _is_source_layer_followup(data.question)
+    claims = _source_layer_followup_claims(hits, structured.instruction_language) if source_layer_followup else (
+        claims or _deterministic_claims(
+            resolved_question,
+            hits,
+            intent,
+            resolved_literal_query,
+            len(concepts),
+            structured.instruction_language,
+        )
     )
     primary_ids = _apply_claim_traceability(hits, claims)
     counts = _counts(hits, primary_ids)
     warnings.extend(warning for hit in hits for warning in hit.warnings)
     status = "ok" if primary_ids else "no_evidence"
-    markdown = ai_markdown or render(resolved_question, claims, hits, warnings, intent)
+    narrative_question = data.question if source_layer_followup else resolved_question
+    markdown = ai_markdown or render(
+        narrative_question,
+        claims,
+        hits,
+        warnings,
+        intent,
+        source_layer_followup=source_layer_followup,
+    )
     summary = f"{counts['primary']} evidencias principales · {counts['contextual']} relaciones contextuales · {counts['additional_literal']} coincidencias literales adicionales"
     matrix = [{
         "work_code": work,

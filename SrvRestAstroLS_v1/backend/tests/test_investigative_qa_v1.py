@@ -12,9 +12,11 @@ from modules.library.investigative_qa_v1 import (
     QaRequest,
     _apply_claim_traceability,
     _cap_hits_with_language_coverage,
+    _is_source_layer_followup,
     _mentioned_works,
     _normalize_claims,
     _retrieval_inputs,
+    _source_layer_followup_claims,
     display_snippet,
     literal_context_snippet,
     relation_concepts,
@@ -61,6 +63,32 @@ def test_request_allowlist_and_defaults() -> None:
 def test_request_rejects_bad_limit() -> None:
     with pytest.raises(Exception):
         QaRequest(question="ok", max_hits_per_work=99)
+
+
+@pytest.mark.parametrize("question", [
+    "¿Es parte de la lección del Rebe, una cita o una nota?",
+    "¿Es texto de la lección o comentario?",
+    "Is this part of the lesson, a quotation, or a note?",
+    "האם זה חלק מן השיעור, ציטוט או הערה?",
+])
+def test_source_layer_followup_detection_is_multilingual(question: str) -> None:
+    assert _is_source_layer_followup(question)
+
+
+@pytest.mark.parametrize("question", [
+    "¿Existe traducción al español?",
+    "Mostrame el párrafo completo en hebreo.",
+    "¿En qué página física está?",
+])
+def test_other_followups_are_not_misclassified_as_source_layer_questions(question: str) -> None:
+    assert not _is_source_layer_followup(question)
+
+
+def test_unknown_source_layer_followup_is_prudent_and_not_promoted() -> None:
+    hit = make_hit("unknown", ["texto"])
+    claims = _source_layer_followup_claims([hit], "es")
+    assert claims[0]["text"].startswith("No confirmado.")
+    assert claims[0]["strength"] == "insufficient"
 
 
 def test_where_term_question_keeps_only_the_requested_concept() -> None:
@@ -147,6 +175,18 @@ def test_primary_evidence_is_sorted_first_and_strength_is_relational() -> None:
     assert hits[0].hit_id == "direct"
     assert hits[0].is_primary and hits[0].evidence_strength == "strong"
     assert hits[1].evidence_strength == "insufficient"
+
+
+def test_primary_evidence_strength_matches_a_medium_claim() -> None:
+    direct = make_hit("direct", ["sangre", "habla"])
+    _apply_claim_traceability(direct_hits := [direct], [{
+        "strength": "medium",
+        "evidence_ids": ["direct"],
+        "primary_evidence_id": "direct",
+    }])
+    assert direct_hits[0].is_primary
+    assert direct_hits[0].relation_relevance == "direct_relation"
+    assert direct_hits[0].evidence_strength == "medium"
 
 
 def test_grounding_rejects_unknown_page_and_doctrinal_overclaim() -> None:
@@ -498,6 +538,27 @@ def test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order() -> N
     assert "תְּהִלָּתִי אֶחְטָם לָךְ" in primary["quote"]
     assert "ךל םטחא יתלהת" not in primary["quote"]
     assert primary["literal_match_kind"] == "no_niqqud"
+
+
+def test_real_source_layer_followup_answers_the_current_question_directly() -> None:
+    response = run_real(QaRequest(
+        question="¿Es parte de la lección del Rebe, una cita o una nota?",
+        conversation={"history": [{"question": "איפה מופיע הפסוק והיו עיני ולבי שם"}]},
+        ai={"enabled": False},
+    ))
+    primary = next(hit for hit in response["hits"] if hit["hit_id"] in response["primary_evidence_ids"])
+    expected = "Sí. Es una cita bíblica incluida dentro de la lección del Rebe. No es una nota editorial."
+    assert response["intent"] == "follow_up"
+    assert response["claims"][0]["text"] == expected
+    assert response["answer_markdown"].startswith(f"## Síntesis investigativa\n- {expected}")
+    assert primary["source_layer"] == "biblical_quote_in_lesson"
+    assert primary["source_layer_confidence"] == "high"
+    assert primary["evidence_strength"] == "strong"
+    assert primary["evidence_id"] == "lm_xv-0b18b552-3953-41fe-94e1-c7ccefd384d2"
+    assert "Se encontró evidencia contextual para la consulta" not in response["answer_markdown"]
+    assert "dependencia doctrinal" not in response["answer_markdown"]
+    assert "`direct_relation`" not in response["answer_markdown"]
+    assert "Fuerza relacional:** strong" not in response["answer_markdown"]
 
 
 def test_real_hebrew_changed_letter_is_not_forced_to_literal_evidence() -> None:

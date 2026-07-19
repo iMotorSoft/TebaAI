@@ -1,6 +1,6 @@
-# Follow-up de naturaleza de fuente pendiente
+# Follow-up de naturaleza de fuente resuelto
 
-Estado: `SOURCE_LAYER_FOLLOWUP_ANSWER_BLOCKED`.
+Estado: `SOURCE_LAYER_FOLLOWUP_DIRECT_ANSWER_PASS`.
 
 ## Caso reproducible
 
@@ -8,22 +8,22 @@ Después de recuperar la frase hebrea de `LIKUTEY MOHARÁN XV KDP.pdf`, pregunta
 
 `¿Es parte de la lección del Rebe, una cita o una nota?`
 
-## Resultado actual
+## Resultado anterior
 
 El backend conserva la evidencia, su identidad y `source_layer=biblical_quote_in_lesson`, pero `answer_markdown` reutiliza una síntesis del turno anterior. La respuesta no contesta de forma directa la disyuntiva del investigador.
 
-## Resultado esperado
+## Resultado implementado
 
-La narración debe comenzar con una respuesta basada en la capa del turno actual:
+La narración comienza con una respuesta basada en la capa del turno actual:
 
 `Sí. Es una cita bíblica incluida dentro de la lección del Rebe. No es una nota editorial.`
 
-Si la capa no está confirmada, debe responder `No confirmado` y mantener la confianza prudente.
+Si la capa no está confirmada, responde `No confirmado` y mantiene la confianza prudente.
 
-## Alcance del checkpoint
+## Alcance de la corrección
 
-Los gates existentes validan prioridad hebrea, clasificación estructurada, trazabilidad, estabilidad del evidence ID y presentación original → traducción. El E2E multi-turno actual no afirma todavía la formulación narrativa directa.
+Los gates validan prioridad hebrea, clasificación estructurada, trazabilidad, estabilidad del evidence ID, presentación original → traducción y formulación narrativa directa.
 
-La corrección queda fuera de estos commits de preservación y debe realizarse después como:
+La corrección se preserva en:
 
 `fix(breslov): answer source-layer follow-ups directly`

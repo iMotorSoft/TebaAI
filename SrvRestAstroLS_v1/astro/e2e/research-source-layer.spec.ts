@@ -92,8 +92,17 @@ test("real source-layer follow-ups preserve the same evidence identity", async (
   test.setTimeout(300_000); await page.setViewportSize({ width: 1366, height: 768 }); await login(page);
   const first = await ask(page, "איפה מופיע הפסוק והיו עיני ולבי שם");
   const primary = assertGolden(first, "he");
+  const layerQuestion = "¿Es parte de la lección del Rebe, una cita o una nota?";
+  const layer = await ask(page, layerQuestion);
+  const expected = "Sí. Es una cita bíblica incluida dentro de la lección del Rebe. No es una nota editorial.";
+  expect(layer.status).toBe("ok");
+  expect(layer.claims[0]).toMatchObject({ text: expected, strength: "strong", primary_evidence_id: primary.evidence_id });
+  expect(layer.answer_markdown).toContain(`- ${expected}`);
+  expect(layer.answer_markdown).not.toContain("dependencia doctrinal");
+  expect(layer.answer_markdown).not.toContain("`direct_relation`");
+  expect(layer.hits.find((hit: any) => layer.primary_evidence_ids.includes(hit.hit_id))?.evidence_id).toBe(primary.evidence_id);
+  await expect(page.locator(".claim-list li").first()).toContainText(expected);
   for (const question of [
-    "¿Es texto de la lección o comentario?",
     "Mostrame el párrafo completo en hebreo.",
     "¿Existe traducción al español?",
     "¿En qué página física está?",

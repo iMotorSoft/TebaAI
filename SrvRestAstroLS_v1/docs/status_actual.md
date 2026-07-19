@@ -10,7 +10,7 @@ Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta r
 
 Estado técnico de recuperación: `LANGUAGE_PRIORITY_AND_SOURCE_LAYER_FULL_PASS` y `READY_FOR_MANUAL_SOURCE_LAYER_REVIEW`.
 
-Estado general del flujo: bloqueado por `SOURCE_LAYER_FOLLOWUP_ANSWER_BLOCKED`. La recuperación, trazabilidad y clasificación conservan correctamente `source_layer=biblical_quote_in_lesson`, pero el follow-up «¿Es parte de la lección del Rebe, una cita o una nota?» reutiliza una síntesis anterior en vez de responder directamente «Sí. Es una cita bíblica incluida dentro de la lección del Rebe. No es una nota editorial.». Por este motivo no se declara `FULL_PASS` general.
+Estado general del flujo: `SOURCE_LAYER_FOLLOWUP_DIRECT_ANSWER_PASS`. El follow-up «¿Es parte de la lección del Rebe, una cita o una nota?» responde directamente desde `source_layer=biblical_quote_in_lesson`, mantiene la misma evidencia y ya no reutiliza la síntesis literal anterior.
 
 - El término hebreo determina `primary_retrieval_language=he`, mientras el idioma de instrucción controla la narración ES/EN/HE.
 - LM XV recupera una proyección Unicode NFKC/NFC desde la geometría del PDF sin reescribir PostgreSQL ni reingerir el corpus.
@@ -24,18 +24,18 @@ Estado general del flujo: bloqueado por `SOURCE_LAYER_FOLLOWUP_ANSWER_BLOCKED`. 
 
 Gates:
 
-- backend focalizado: 190/190;
+- backend focalizado: 200/200;
 - frontend Vitest: 48/48;
 - batch de idioma: 18/18 idioma primario, 18/18 evidencia principal hebrea cuando existe, cero traducciones/comentarios adelantados;
 - batch de capas: 12/12 correcto o prudente, cero promociones editoriales falsas;
-- Playwright Chromium real: 42/42, incluida hidratación 10/10, golden ES+HE/HE/EN+HE, identidad de evidencia multi-turno, escorpión, sangre-habla, responsive y Axe sin violaciones críticas; la aserción conversacional directa de capa queda pendiente;
+- Playwright Chromium real: 42/42, incluida hidratación 10/10, golden ES+HE/HE/EN+HE, respuesta directa e identidad de evidencia multi-turno, escorpión, sangre-habla, responsive y Axe sin violaciones críticas;
 - `pnpm check`: cero diagnósticos; `pnpm build`: 7 páginas; `lat check` y `git diff --check`: PASS.
 
 Evidencia y checklist: `data/reports/breslov/2026-07-16-research-workspace-v1/`.
 
 ## Cierre automatizado multilingue `/research` — 2026-07-19
 
-Estado técnico de los gates ejecutados: `MULTILINGUAL_RESEARCH_AUTOMATED_FULL_PASS`. El cierre general permanece bloqueado por `SOURCE_LAYER_FOLLOWUP_ANSWER_BLOCKED` hasta que el follow-up de naturaleza de fuente responda directamente desde la capa del turno actual.
+Estado técnico de los gates ejecutados: `MULTILINGUAL_RESEARCH_AUTOMATED_FULL_PASS`. El follow-up de naturaleza de fuente usa la capa del turno actual y quedó cubierto por backend y Playwright real.
 
 - rama: `feature/console-backend-core`;
 - HEAD de la fase: `7e9066186318a3323a2df0f66bb9e95ffa61ba07`;
@@ -58,7 +58,7 @@ Gates finales completos:
 - credenciales E2E presentes sólo por entorno, sin valores impresos ni hardcodeados;
 - backend `127.0.0.1:7008/health`: 200; Astro `127.0.0.1:3008/`: 200; ambos launchers validan PID y listener.
 
-Los gates técnicos quedan preservados como checkpoint. La fase conversacional no está cerrada: además de la revisión humana de naturalidad lingüística y pronunciación de lector de pantalla en hebreo, resta corregir la respuesta narrativa del follow-up de capa editorial.
+Los gates técnicos y conversacionales quedan cerrados. Permanece la revisión humana de naturalidad lingüística y pronunciación de lector de pantalla en hebreo.
 
 ## Directorio y rama
 

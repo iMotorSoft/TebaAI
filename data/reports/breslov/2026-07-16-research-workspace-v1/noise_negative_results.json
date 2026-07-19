@@ -1,0 +1,292 @@
+[
+  {
+    "index": 1,
+    "question": "sangre y piedra",
+    "status": "ok",
+    "claims": [
+      {
+        "claim_id": "claim-1",
+        "text": "En las evidencias proporcionadas no se muestra una conexión explícita entre “sangre” y “piedra” en una misma relación argumental (p. ej., en el mismo fragmento).",
+        "strength": "medium",
+        "evidence_ids": [
+          "kitzur-d8f54a85e94d"
+        ],
+        "primary_evidence_id": "kitzur-d8f54a85e94d"
+      }
+    ],
+    "primary_evidence_ids": [
+      "kitzur-d8f54a85e94d"
+    ],
+    "evidence_counts": {
+      "primary": 1,
+      "contextual": 2,
+      "additional_literal": 21
+    },
+    "first_selected_evidence": {
+      "hit_id": "kitzur-d8f54a85e94d",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "iduría - dado que uno se hace digno de la sabiduría precisamente al quebrar la imaginación. Cuando se reconstruya el Santo Templo, se cumplirá el versículo, “Una fuente surgirá de la Casa de Dios” (Ioel 4:18). Que sea pronto y en nuestros días. Amén.\n\nTodo esto también corresponde al shamir, que desapareció con la destrucción del Santo Templo (Sotá 48a). [El shamir era una especie de gusano capaz de horadar las rocas. Fue utilizado en la construcción del Santo Templo para cortar las piedras en lugar de utilizar implementos dehierro, dado que las herramientas que podían ser usadas para la guerra y para el derramamiento de sangre no eran apropiadas para la construcción de una Casa de Paz. La Mishná en Sotá 48a afirma que cuando fue destruido el Santo Templo desaparecieron el shamir, el nofet tzufim (una extraordinaria clase de miel) y “los hombres de fe”]. Así como la piedra era vencida y quebrada por el shamir, lo mismo sucede cuando la persona quiebra su “corazón de piedra” y sigue tras su intelecto. Pues uno debe renunciar a la obstinación del corazón -que corresponde a la facultad de la imaginación en el corazón y a lo que es literalmente el comportamiento de un animal- y quebrar su “corazón de piedra”, para ir detrás del intelecto.\n\n2. Existe un intelecto en potencia, un intelecto en acto y un intelecto adquirido. Cuando se quiebra la facultad de la\n\n## Page 131\n\nLección 25                                                                                25 Kislev",
+      "snippet": "…iduría - dado que uno se hace digno de la sabiduría precisamente al quebrar la imaginación. Cuando se reconstruya el Santo Templo, se cumplirá el versículo, “Una fuente surgirá de la Casa de Dios” (Ioel 4:18). Que sea pronto y en nuestros días. Amén.\n\nTodo esto también corresponde al shamir, que desapareció con la destrucción del Santo Templo (Sotá 48a). [El shamir era una especie de gusano capaz de horadar las rocas. Fue utilizado en la construcción del Santo Templo para cortar las piedras en lugar de utilizar implementos dehierro, dado que las herramientas que podían ser usadas para la guerra y para el derramamiento de sangre no eran apropiadas para la construcción de una Casa de Paz. La Mishná en Sotá 48a afirma que cuando fue destruido el Santo Templo desaparecieron el shamir, el nofet tzufim (una extraordinaria clase de miel) y “los hombres de fe”]…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre",
+        "piedra"
+      ],
+      "matched_concepts": [
+        "sangre",
+        "piedra"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "strong",
+      "relation_relevance": "direct_relation",
+      "relation_level": "literal",
+      "is_primary": true,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    "warnings": [
+      "pdf_page_null_for_kitzur_chunk"
+    ],
+    "valid_ids": true,
+    "no_single_term_primary": true
+  },
+  {
+    "index": 2,
+    "question": "habla y construcción",
+    "status": "ok",
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "En Likutey Moharán XV se afirma que al conversar y hablar con la gente común se reconstruyen los mundos destruidos.",
+        "strength": "strong",
+        "evidence_ids": [
+          "lm_xv-e49b3107ae66"
+        ],
+        "primary_evidence_id": "lm_xv-e49b3107ae66"
+      },
+      {
+        "claim_id": "c4",
+        "text": "Con la evidencia provista no se puede establecer una relación explícita entre “habla” y “construcción” (entendida literalmente como “construcción”) en un mismo pasaje.",
+        "strength": "medium",
+        "evidence_ids": [
+          "lm_xv-e49b3107ae66"
+        ],
+        "primary_evidence_id": "lm_xv-e49b3107ae66"
+      }
+    ],
+    "primary_evidence_ids": [
+      "lm_xv-e49b3107ae66"
+    ],
+    "evidence_counts": {
+      "primary": 1,
+      "contextual": 8,
+      "additional_literal": 16
+    },
+    "first_selected_evidence": {
+      "hit_id": "lm_xv-e49b3107ae66",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 342,
+      "printed_page": null,
+      "quote": "26. al conversar y hablar con la gente común, reconstruye los mundos destruidos… La\nreconstrucción de los mundos destruidos hace referencia a la doctrina kabalística de la Ruptura \nde los Recipientes y de la subsecuente rectiﬁcación de los trozos resultantes. La explicación \nque sigue contiene sólo los elementos básicos de esa enseñanza, suﬁcientes para comprender la \nreferencia del Rebe Najmán aquí. Ver también Lección #88, Agregado 1, anteriormente en este \nvolumen. Para una explicación más completa de estos conceptos, se remite al lector al Capítulo \n10 de La Dimensión Interna, por el Rabí Aryeh Kaplan (2013, Editorial Jerusalem de México).\nCuando Dios creó los mundos superiores, especíﬁcamente el Mundo de Atzilut con sus \nDiez Emanaciones Divinas (seﬁrot), diseñó las seﬁrot originales con lo que para la comprensión \nhumana parece ser una falla intrínseca. Una seﬁrá consiste tanto de luz como de un recipiente \n(que es una luz menor que actúa como receptáculo con respecto a la luz mayor). Dios diseñó \nlas seﬁrot-recipientes originales como entidades separadas, incapaces de sustentarse unas a las \notras. Como resultado, cuando Él llenó los recipientes originales con Su Luz, éstos no pudieron \nsoportar la intensidad y se quebraron. Sus trozos se transformaron entonces en la “sustancia” de \ntoda la materia física y de la existencia individual, incluyendo el ámbito del Otro Lado, donde \nla presencia de Dios está casi totalmente oculta (ver Likutey Moharán I, 34:7, n. 64). Sólo con \nla rectiﬁcación de los trozos, la reconstrucción de los mundos destruidos, la Presencia Divina, \nla Shejiná, será reconocida verdaderamente en la creación.\nEl Midrash enseña que las letras del alfabeto hebreo son los “ladrillos” de la creación \n(Bereshit Rabah 18:4). Concordante con esto es el relato alternativo del Ari sobre la Ruptura de \nlos Recipientes, en el cual las letras-recipientes que debían retener la Luz de Dios se quebraron \ny cayeron a los niveles inferiores, donde conformaron los “mundos destruidos” de la creación \n(ver Etz Jaim, Heijal Adam Kadmón 5:5, páginas 68-69). Anteriormente vimos que Dios “creó \ntodo con Jojmá”, con la sabiduría superior (ver n. 7). Esto incluye las letras-recipientes, que",
+      "snippet": "26. al conversar y hablar con la gente común, reconstruye los mundos destruidos… La\nreconstrucción de los mundos destruidos hace referencia a la doctrina kabalística de la Ruptura \nde los Recipientes y de la subsecuente rectiﬁcación de los trozos resultantes. La explicación \nque sigue contiene sólo los elementos básicos de esa enseñanza, suﬁcientes para comprender la \nreferencia del Rebe Najmán aquí. Ver también Lección #88, Agregado 1, anteriormente en este \nvolumen. Para una explicación más completa de estos conceptos, se remite al lector al Capítulo \n10 de La Dimensión Interna, por el Rabí Aryeh Kaplan (2013, Editorial Jerusalem de México).\nCuando Dios creó los mundos superiores, especíﬁcamente el Mundo de Atzilut con sus \nDiez Emanaciones Divinas (seﬁrot), diseñó las seﬁrot originales con lo que para la comprensión \nhumana parece ser una falla intrínseca…",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "hablar",
+        "construcción"
+      ],
+      "matched_concepts": [
+        "habla",
+        "construcción"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "strong",
+      "relation_relevance": "direct_relation",
+      "relation_level": "literal",
+      "is_primary": true,
+      "warnings": []
+    },
+    "warnings": [
+      "pdf_page_null_for_kitzur_chunk"
+    ],
+    "valid_ids": true,
+    "no_single_term_primary": true
+  },
+  {
+    "index": 3,
+    "question": "fe y hierro",
+    "status": "no_evidence",
+    "claims": [],
+    "primary_evidence_ids": [],
+    "evidence_counts": {
+      "primary": 0,
+      "contextual": 0,
+      "additional_literal": 25
+    },
+    "first_selected_evidence": {
+      "hit_id": "kitzur-0b7bf0a89dba",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "na, a través de ello, de refinar la voz de su canto y de su plegaria. Pues la cualidad de la voz de la persona corresponde a la sabiduría contenida en sus exposiciones de Torá y al intelecto de los Trece Principios mediante los cuales expone la Torá.\n\n4. Cuando se refina la voz de la persona entonces, mediante su solo cantar -sin necesidad de hablar- el Santo, bendito sea, la salva en momentos de aflicción. Así alcanza la paz y es capaz de llevar al mundo entero hacia el servicio a Dios.\n\n5. Mediante la pureza sexual, la persona obtiene una “voz”. En otras palabras, se hace digna de que se purifique y se refine su voz para cantar y para orar. Iaacov, quien cuidó la pureza sexual -como está escrito, “El primogénito de mi vigor” (Génesis 49:3; haciendo referencia al hecho de haber cuidado la moralidad sexual antes del matrimonio)- obtuvo una voz, como está escrito, “La voz es la voz de Iaacov” (ibid., 27:22). Cuando el Santo, bendito sea, oye el sonido del clamor o de la canción de esa persona, Él observa para ver quién nos está afligiendo y cuáles de los gentiles de\n\n137\n\n## Page 138\n\nLección 27                                                                                  1 Tevet",
+      "snippet": "…na, a través de ello, de refinar la voz de su canto y de su plegaria. Pues la cualidad de la voz de la persona corresponde a la sabiduría contenida en sus exposiciones de Torá y al intelecto de los Trece Principios mediante los cuales expone la Torá.\n\n4. Cuando se refina la voz de la persona entonces, mediante su solo cantar -sin necesidad de hablar- el Santo, bendito sea, la salva en momentos de aflicción. Así alcanza la paz y es capaz de llevar al mundo entero hacia el servicio a Dios.\n\n5. Mediante la pureza sexual, la persona obtiene una “voz”. En otras palabras, se hace digna de que se purifique y se refine su voz para cantar y para orar…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "fe"
+      ],
+      "matched_concepts": [
+        "fe"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    "warnings": [
+      "ai_render_rejected_grounding_validation",
+      "pdf_page_null_for_kitzur_chunk"
+    ],
+    "valid_ids": true,
+    "no_single_term_primary": true
+  },
+  {
+    "index": 4,
+    "question": "alma y página",
+    "status": "no_evidence",
+    "claims": [],
+    "primary_evidence_ids": [],
+    "evidence_counts": {
+      "primary": 0,
+      "contextual": 0,
+      "additional_literal": 25
+    },
+    "first_selected_evidence": {
+      "hit_id": "kitzur-0e8120997ef7",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "el Nefesh, el Rúaj y la Neshamá (el alma inferior, el espíritu y el alma superior). Ésa es la luz del Infinito, bendito sea. Y aunque el\n\n## Page 127\n\nLección 24                                                                                22 Kislev\n\nintelecto no puede aferrar esa luz, sin embargo, la mente corre constantemente tras ella. Al llevar a cabo las mitzvot con alegría, la persona se hace digna de comprender esa luz a través de la combinación de “perseguir y limitarse”, de modo que simultáneamente “la alcanza y no la alcanza”. “De esa manera, se forman Nueve Cámaras que no son luces ni espíritus ni almas. No hay nadie que pueda comprenderlas... no es posible aferrarlas ni conocerlas” (Zohar I, 65a). ¡Feliz la persona digna de que su pensamiento corra detrás de esos conceptos, aunque el intelecto no pueda aprehenderlos debido a que no son alcanzables ni posibles de conocer! Esa percepción es el objetivo final de todo, tal cual está descrito en la enseñanza, “La culminación de todo conocimiento es saber que no sabemos nada”.\n\n2. Al cumplir con las mitzvot con alegría, la santidad alcanza su plenitud y se eleva la vitalidad y la santidad atrapada en las fuerzas de la impureza. Por lo tanto, al realizar una mitzvá con alegría, se eleva a la Presencia Divina desde las fuerzas de la impureza.",
+      "snippet": "…el Nefesh, el Rúaj y la Neshamá (el alma inferior, el espíritu y el alma superior). Ésa es la luz del Infinito, bendito sea. Y aunque el\n\n## Page 127\n\nLección 24                                                                                22 Kislev\n\nintelecto no puede aferrar esa luz, sin embargo, la mente corre constantemente tras ella. Al llevar a cabo las mitzvot con alegría, la persona se hace digna de comprender esa luz a través de la combinación de “perseguir y limitarse”, de modo que simultáneamente “la alcanza y no la alcanza”. “De esa manera, se forman Nueve Cámaras que no son luces ni espíritus ni almas. No hay nadie que pueda comprenderlas... no es posible aferrarlas ni conocerlas” (Zohar I, 65a). ¡Feliz la persona digna de que su pensamiento corra detrás de esos conceptos, aunque el intelecto no pueda aprehenderlos debido a que no son alcanzables ni posibles de conocer…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "neshamá"
+      ],
+      "matched_concepts": [
+        "alma"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    "warnings": [
+      "ai_render_rejected_grounding_validation",
+      "pdf_page_null_for_kitzur_chunk"
+    ],
+    "valid_ids": true,
+    "no_single_term_primary": true
+  },
+  {
+    "index": 5,
+    "question": "temor y herramienta",
+    "status": "ok",
+    "claims": [
+      {
+        "claim_id": "claim-1",
+        "text": "Con las evidencias provistas no se puede establecer una relación explícita entre “temor” y “herramienta”, porque “herramienta” no aparece en los fragmentos y “temor” aparece sin vinculación directa a “herramienta”.",
+        "strength": "high",
+        "evidence_ids": [
+          "lmii-13bb24bcbdf9"
+        ],
+        "primary_evidence_id": "lmii-13bb24bcbdf9"
+      }
+    ],
+    "primary_evidence_ids": [
+      "lmii-13bb24bcbdf9"
+    ],
+    "evidence_counts": {
+      "primary": 1,
+      "contextual": 0,
+      "additional_literal": 24
+    },
+    "first_selected_evidence": {
+      "hit_id": "lmii-13bb24bcbdf9",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 367,
+      "printed_page": 357,
+      "quote": "357 \n(Salmos 112:5), “Él conduce sus asuntos con juicio” - es decir, debe juzgar \ny evaluar todas sus acciones.6\nY mediante esto, se le quitan todos los miedos, emergiendo así \nun aspecto de temor claro y puro. Queda solamente el temor a Dios, y \nningún otro temor.7 Porque cuando la persona no se evalúa ni se juzga \na sí misma, entonces la evalúan y la juzgan desde Arriba. Pues “cuando \nno hay juicio abajo, hay juicio Arriba” (Devarim Rabah 5:4).8 Y cuando la \npersona es juzgada mediante el juicio del cielo, la justicia se enviste \nen todas las cosas, y todas las cosas se vuelven mensajeras de Dios \npara ejecutar “el juicio escrito” sobre ella (Salmos 149:9). Como enseñaron \nnuestros Sabios: “Por Tus juicios persisten...”, y así “todos son Tus \nservidores” (Salmos 119:91) - para ejecutar justicia sobre esta persona \n(Nedarim 41a).9\n{“Y [al que] ponga en orden el camino, le mostraré la salvación del Señor” (Salmos \n50:23).}\nSin embargo, cuando la persona se juzga a sí misma, cuando hay \njuicio debajo [de modo que] no hay juicio Arriba, entonces el temor \nno se enviste en ninguna cosa para despertar a la persona. Pues ella se \nha despertado a sí misma.10 Éste es el signiﬁcado de “Y sam (ponga en \n6. evaluar todas sus acciones. Éste es el consejo del Rebe Najmán sobre hitbodedut, la plegaria \npersonal a Dios, que es necesario practicar a diario. A lo largo de los escritos del Rebe es posible \nobservar la importancia del hitbodedut. El texto Expansión del alma (en el libro Meditación, \nFuerza interior y Fe, Breslov Research Institute) del Reb Alter de Teplik (autor del Mei HaNajal; \nm.1919) está dedicado enteramente a esta herramienta indispensable para el desarrollo espiritual. \nAquí, el Rebe Najmán dice que la persona debe juzgar cada una de sus acciones. Esto incluye \nevaluar las relaciones con la familia y los amigos, las prácticas comerciales, y especialmente \nel servicio y dedicación a Dios. Debe examinar sus acciones pasadas para determinar si fueron \nllevadas a cabo de la manera apropiada, con verdad y sinceridad, o si faltó en ellas algo que \nnecesita corregirse. Es necesario evaluar también nuestros planes e intenciones para veriﬁcar si \nson en verdad apropiados. Al juzgarse a sí misma, la persona eleva su temor al Cielo, como el \nRebe Najmán continúa explicando.\n7. temor a Dios…ningún otro…. Como el Rebe Najmán explica más adelante (ver §3: ﬁnal \ny n.21), todo temor surge del temor más elevado -la verdadera raíz del temor- el temor a Dios \nMismo. Cuando la cualidad del temor desciende a este mundo, puede manifestarse de muchas \ny diferentes maneras. Debido a esto, el ser humano cree que sus sentimientos de miedo y de \nansiedad están relacionados con el objeto de su temor, así sea, por ejemplo, el jefe, un pariente \ndominante, el mostrarse en público, etc. Sin embargo, cuando se eleva el temor a su raíz, entonces \nlo único que queda es el temor a Dios. Todos los otros temores desaparecen. Enseña el Zohar \n(III, 67b): Todo aquél que se deleita en la Torá no le tendrá miedo a nada. Esto se conecta con lo \nque el Rebe Najmán trata más adelante en la lección en relación con la Torá revelada y oculta.\nLIKUTEY MOHARAN #15:2",
+      "snippet": "357 \n(Salmos 112:5), “Él conduce sus asuntos con juicio” - es decir, debe juzgar \ny evaluar todas sus acciones.6\nY mediante esto, se le quitan todos los miedos, emergiendo así \nun aspecto de temor claro y puro. Queda solamente el temor a Dios, y \nningún otro temor.7 Porque cuando la persona no se evalúa ni se juzga \na sí misma, entonces la evalúan y la juzgan desde Arriba. Pues “cuando \nno hay juicio abajo, hay juicio Arriba” (Devarim Rabah 5:4).8 Y cuando la \npersona es juzgada mediante el juicio del cielo, la justicia se enviste \nen todas las cosas, y todas las cosas se vuelven mensajeras de Dios \npara ejecutar “el juicio escrito” sobre ella (Salmos 149:9). Como enseñaron \nnuestros Sabios: “Por Tus juicios persisten...”, y así “todos son Tus \nservidores” (Salmos 119:91) - para ejecutar justicia sobre esta persona \n(Nedarim 41a).9…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "miedo",
+        "herramienta"
+      ],
+      "matched_concepts": [
+        "temor",
+        "herramienta"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "strong",
+      "relation_relevance": "direct_relation",
+      "relation_level": "literal",
+      "is_primary": true,
+      "warnings": []
+    },
+    "warnings": [
+      "pdf_page_null_for_kitzur_chunk"
+    ],
+    "valid_ids": true,
+    "no_single_term_primary": true
+  }
+]

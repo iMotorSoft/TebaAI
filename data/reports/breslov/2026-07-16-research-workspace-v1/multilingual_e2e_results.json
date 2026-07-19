@@ -1,0 +1,23 @@
+{
+  "date": "2026-07-18",
+  "runner": "Playwright Chromium",
+  "backend": "real",
+  "principal_endpoint_mocked": false,
+  "principal": {
+    "query": "אתה מחפש איפה נמצא מושג העקרב.",
+    "intent": "concept_lookup",
+    "subject_raw": "העקרב",
+    "subject_normalized": "עקרב",
+    "status": "PASS",
+    "primary_evidence": true
+  },
+  "follow_up": { "query": "ומה בליקוטי הלכות", "work": "lh", "status": "PASS" },
+  "source_request": { "query": "תראה לי את המקור העיקרי", "status": "PASS" },
+  "mixed": { "es_he": "PASS", "en_he": "PASS", "he_es": "PASS" },
+  "intent_matrix": { "concept": "PASS", "literal": "PASS", "relation": "PASS", "translation_or_explanation": "PASS" },
+  "pdf_copypaste_regression": { "pdf_page": 96, "printed_page": 76, "status": "PASS" },
+  "responsive": { "820x1180": "PASS", "390x844": "PASS", "320x568": "PASS" },
+  "axe_critical": 0,
+  "critical_console_errors": 0,
+  "controlled_visual_fixtures": ["hebrew-concept-before", "ai-fallback"]
+}

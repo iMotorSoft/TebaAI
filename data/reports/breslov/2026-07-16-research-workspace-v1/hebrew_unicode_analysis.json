@@ -1,0 +1,23 @@
+{
+  "source_form": "not_nfc_due_to_pdf_extraction_order",
+  "display_form": "NFC",
+  "bidi_controls_found": [],
+  "controls_checked": ["LRM", "RLM", "LRE", "RLE", "LRO", "RLO", "PDF", "LRI", "RLI", "PDI"],
+  "niqqud_preserved": true,
+  "artificial_space_before_combining_mark_before": true,
+  "artificial_space_before_combining_mark_after": false,
+  "logical_order_preserved": true,
+  "sample_code_points": [
+    { "char": "ע", "code_point": "U+05E2" },
+    { "char": "ַ", "code_point": "U+05B7" },
+    { "char": "ק", "code_point": "U+05E7" },
+    { "char": "ְ", "code_point": "U+05B0" },
+    { "char": "ר", "code_point": "U+05E8" },
+    { "char": "ַ", "code_point": "U+05B7" },
+    { "char": "ב", "code_point": "U+05D1" },
+    { "char": "ֵ", "code_point": "U+05B5" },
+    { "char": "ּ", "code_point": "U+05BC" },
+    { "char": "י", "code_point": "U+05D9" }
+  ],
+  "decision": "NFC is applied only to the presentation projection; canonical quote and stable IDs are unchanged."
+}

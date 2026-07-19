@@ -1,0 +1,7 @@
+{
+  "backend_command": "uv run pytest tests/test_investigative_qa_v1.py tests/test_investigative_model.py -q",
+  "backend_result": "22 passed",
+  "frontend_command": "pnpm test",
+  "frontend_result": "23 passed",
+  "covered": ["stable primary ordering", "valid claim IDs", "single-term noise exclusion", "separate literal and relational strength", "final per-work limit", "deduplication", "snippet boundary", "translated warnings", "safe normalization"]
+}

@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "base_url": "http://127.0.0.1:3008",
+  "backend": "http://127.0.0.1:7008",
+  "browser": "Chromium via Playwright",
+  "focused_hebrew": { "tests": 4, "failed": 0 },
+  "real_batch_stability": { "cases_per_run": 10, "consecutive_runs": 2, "passed": 20, "failed": 0 },
+  "full_playwright": { "tests": 35, "failed": 0, "duration": "2.6m" },
+  "hydration": { "attempts": 10, "passed": 10 },
+  "traceability_blood_speech": "PASS",
+  "real_endpoint_intercepted_in_main_flow": false,
+  "console_critical_errors": 0,
+  "effective_font_cdp": { "primary": "Noto Serif Hebrew", "primary_glyphs": 781, "auxiliary": "Liberation Serif", "auxiliary_glyphs": 33 },
+  "screenshots": [
+    "hebrew-before.png", "hebrew-after.png", "hebrew-card-desktop.png", "hebrew-source-panel.png",
+    "hebrew-tablet-drawer.png", "hebrew-mobile-drawer.png", "hebrew-page-numbers.png",
+    "hebrew-mixed-text.png", "hebrew-composer.png", "hebrew-long-evidence.png",
+    "hebrew-batch-01.png through hebrew-batch-10.png"
+  ]
+}

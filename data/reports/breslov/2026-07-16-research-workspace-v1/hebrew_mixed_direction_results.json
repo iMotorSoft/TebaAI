@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "cases": [
+    "Spanish followed by Hebrew", "Spanish title with Hebrew evidence", "Hebrew title with Spanish metadata",
+    "Hebrew with Génesis 2:7", "Hebrew with Likutey Moharán II", "Hebrew with parentheses",
+    "Hebrew with quotes", "Hebrew with niqqud", "Hebrew without niqqud", "Hebrew and English",
+    "Hebrew with link", "Hebrew blockquote Markdown", "Bava Batra 74a", "§ 19"
+  ],
+  "contract": { "dominant_hebrew": "he/rtl", "latin": "ltr", "genuinely_mixed": "auto plus bdi", "metadata": "ltr" },
+  "text_content_preserved": true,
+  "horizontal_overflow": false
+}

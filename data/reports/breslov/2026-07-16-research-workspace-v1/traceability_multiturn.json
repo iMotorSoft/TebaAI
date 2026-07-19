@@ -1,0 +1,165 @@
+[
+  {
+    "question": "¿Cuál es la relación entre sangre y habla?",
+    "status": "ok",
+    "resolved_context": [],
+    "claims": [
+      {
+        "claim_id": "claim-1",
+        "text": "En *Likutey Halajot*, el habla sagrada puede verse impedida (incapacidad de pronunciar palabras ante HaShem) y el texto propone que el **ayuno** funciona como remedio para permitir que la persona vuelva a **hablar y clamar a HaShem**.",
+        "strength": "medium",
+        "evidence_ids": [
+          "lh-d8946cc49fec"
+        ],
+        "primary_evidence_id": "lh-d8946cc49fec"
+      },
+      {
+        "claim_id": "claim-2",
+        "text": "En *La Potencia de la Plegaria*, se establece una correspondencia donde el “cuello” (relacionado con las cuerdas vocales y el habla) está bajo control del faraón, y ese mismo esquema vincula el sistema de **sangre** (arterias/venas que llevan sangre al cerebro) con el área corporal asociada al habla.",
+        "strength": "strong",
+        "evidence_ids": [
+          "potencia_plegaria-64f6b0e1ee8e"
+        ],
+        "primary_evidence_id": "potencia_plegaria-64f6b0e1ee8e"
+      }
+    ],
+    "primary_evidence_ids": [
+      "lh-d8946cc49fec",
+      "potencia_plegaria-64f6b0e1ee8e"
+    ],
+    "valid_ids": true,
+    "primary_first": true
+  },
+  {
+    "question": "Mostrame la fuente principal.",
+    "status": "ok",
+    "resolved_context": [
+      "¿Cuál es la relación entre sangre y habla?"
+    ],
+    "claims": [
+      {
+        "claim_id": "c2",
+        "text": "En La Potencia de la Plegaria, se establece una conexión fisiológica entre el cuello (vinculado a las cuerdas vocales que emiten el habla) y el sistema que lleva la sangre al cerebro, sugiriendo una relación entre sangre y habla a través del control del cuello.",
+        "strength": "strong",
+        "evidence_ids": [
+          "potencia_plegaria-64f6b0e1ee8e"
+        ],
+        "primary_evidence_id": "potencia_plegaria-64f6b0e1ee8e"
+      },
+      {
+        "claim_id": "c3",
+        "text": "En Likutey Halajot, el habla sagrada puede verse impedida por una “sequedad de la garganta”, y el ayuno se presenta como remedio para que la persona pueda hablar y clamar a HaShem.",
+        "strength": "medium",
+        "evidence_ids": [
+          "lh-d8946cc49fec"
+        ],
+        "primary_evidence_id": "lh-d8946cc49fec"
+      }
+    ],
+    "primary_evidence_ids": [
+      "potencia_plegaria-64f6b0e1ee8e",
+      "lh-d8946cc49fec"
+    ],
+    "valid_ids": true,
+    "primary_first": true
+  },
+  {
+    "question": "¿Qué parte habla de la impureza?",
+    "status": "ok",
+    "resolved_context": [
+      "¿Cuál es la relación entre sangre y habla?"
+    ],
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "En *Likutey Halajot*, el habla sagrada puede verse impedida cuando el habla desciende hacia el exilio asociado a la garganta; el remedio indicado es el ayuno, que permite que la persona vuelva a poder hablar y clamar a HaShem.",
+        "strength": "medium",
+        "evidence_ids": [
+          "lh-d8946cc49fec"
+        ],
+        "primary_evidence_id": "lh-d8946cc49fec"
+      },
+      {
+        "claim_id": "c2",
+        "text": "En *La Potencia de la Plegaria*, se establece una conexión entre el habla (cuello/cuerdas vocales) y el sistema que transporta sangre (arterias carótidas y venas), al describir el control del faraón sobre esos “ministros”.",
+        "strength": "strong",
+        "evidence_ids": [
+          "potencia_plegaria-64f6b0e1ee8e"
+        ],
+        "primary_evidence_id": "potencia_plegaria-64f6b0e1ee8e"
+      }
+    ],
+    "primary_evidence_ids": [
+      "lh-d8946cc49fec",
+      "potencia_plegaria-64f6b0e1ee8e"
+    ],
+    "valid_ids": true,
+    "primary_first": true
+  },
+  {
+    "question": "¿Eso aparece también en Likutey Halajot?",
+    "status": "ok",
+    "resolved_context": [
+      "¿Cuál es la relación entre sangre y habla?"
+    ],
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "En *Likutey Halajot* se describe que el habla sagrada puede verse impedida (relacionada con la garganta) y que el ayuno funciona como remedio para recuperar la capacidad de hablar y clamar a HaShem.",
+        "strength": "medium",
+        "evidence_ids": [
+          "lh-d8946cc49fec"
+        ],
+        "primary_evidence_id": "lh-d8946cc49fec"
+      },
+      {
+        "claim_id": "c3",
+        "text": "En *La Potencia de la Plegaria* se establece una correspondencia donde el cuello (relacionado con las cuerdas vocales que emiten el habla) está bajo control, y se menciona que las arterias/venas llevan la sangre al cerebro, conectando así sangre y habla en el marco del control del faraón y sus ministros.",
+        "strength": "medium",
+        "evidence_ids": [
+          "potencia_plegaria-64f6b0e1ee8e"
+        ],
+        "primary_evidence_id": "potencia_plegaria-64f6b0e1ee8e"
+      }
+    ],
+    "primary_evidence_ids": [
+      "lh-d8946cc49fec",
+      "potencia_plegaria-64f6b0e1ee8e"
+    ],
+    "valid_ids": true,
+    "primary_first": true
+  },
+  {
+    "question": "¿Es literal o una interpretación?",
+    "status": "ok",
+    "resolved_context": [
+      "¿Cuál es la relación entre sangre y habla?"
+    ],
+    "claims": [
+      {
+        "claim_id": "c1",
+        "text": "En *Likutey Halajot*, el texto relaciona la capacidad de emitir “habla sagrada” con una condición corporal/espiritual vinculada a la garganta, y propone el ayuno como remedio para poder hablar y clamar a HaShem.",
+        "strength": "medium",
+        "evidence_ids": [
+          "lh-d8946cc49fec"
+        ],
+        "primary_evidence_id": "lh-d8946cc49fec"
+      },
+      {
+        "claim_id": "c3",
+        "text": "En *La Potencia de la Plegaria*, se establece una analogía donde el cuello (relacionado con las cuerdas vocales y el habla) queda bajo control junto con ministros que incluyen vasos que llevan sangre al cerebro, conectando así sangre y habla en el marco de esa analogía.",
+        "strength": "medium",
+        "evidence_ids": [
+          "potencia_plegaria-64f6b0e1ee8e"
+        ],
+        "primary_evidence_id": "potencia_plegaria-64f6b0e1ee8e"
+      }
+    ],
+    "primary_evidence_ids": [
+      "lh-d8946cc49fec",
+      "potencia_plegaria-64f6b0e1ee8e"
+    ],
+    "valid_ids": true,
+    "primary_first": true
+  }
+]

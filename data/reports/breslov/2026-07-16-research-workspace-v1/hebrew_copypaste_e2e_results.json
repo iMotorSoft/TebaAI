@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "focused_test": "astro/e2e/research-hebrew.spec.ts: real Hebrew literal lookup traces niqqud variants to physical page 96",
+  "focused_result": "PASS",
+  "focused_passed": 2,
+  "playwright_full": "37/37 PASS",
+  "hydration": "10/10 PASS",
+  "blood_speech_traceability": "PASS",
+  "scorpion_rtl": "PASS",
+  "accessibility": "critical Axe violations: 0",
+  "responsive_widths": [1536, 1366, 820, 390, 320],
+  "console_errors": 0,
+  "notes": "The complete real Chromium suite passed after making the blood-speech regression assertion tolerate the valid one-claim deterministic response."
+}

@@ -1,0 +1,15 @@
+{
+  "normalized_query": "תהלתי אחטם לך",
+  "sql_literal": {
+    "literal_hits": 5
+  },
+  "fts": {
+    "fts_hits": 3
+  },
+  "trigram": {
+    "trigram_hits": 6,
+    "max_similarity": 1.0
+  },
+  "vector_required": false,
+  "vector_used": false
+}

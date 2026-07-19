@@ -1,0 +1,73 @@
+{
+  "gate": "PASS",
+  "passed": 5,
+  "total": 5,
+  "results": [
+    {
+      "query": "dónde aparece עקרב",
+      "intent": "concept_lookup",
+      "subjects": [
+        "עקרב"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "model_alias": "openai_gpt-5.4-nano",
+      "duration_ms": 2291.66,
+      "warnings": [],
+      "pass": true
+    },
+    {
+      "query": "where is עקרב mentioned",
+      "intent": "concept_lookup",
+      "subjects": [
+        "עקרב"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "model_alias": "openai_gpt-5.4-nano",
+      "duration_ms": 1970.45,
+      "warnings": [],
+      "pass": true
+    },
+    {
+      "query": "איפה נמצא המושג עקרב",
+      "intent": "concept_lookup",
+      "subjects": [
+        "עקרב"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "model_alias": "openai_gpt-5.4-nano",
+      "duration_ms": 2631.47,
+      "warnings": [],
+      "pass": true
+    },
+    {
+      "query": "איפה מופיע תהלתי אחטם לך",
+      "intent": "literal_lookup",
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "model_alias": "openai_gpt-5.4-nano",
+      "duration_ms": 1617.8,
+      "warnings": [],
+      "pass": true
+    },
+    {
+      "query": "מה הקשר בין דם לדיבור",
+      "intent": "relation_query",
+      "subjects": [
+        "דם",
+        "דיבור"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "model_alias": "openai_gpt-5.4-nano",
+      "duration_ms": 3047.2,
+      "warnings": [],
+      "pass": true
+    }
+  ]
+}

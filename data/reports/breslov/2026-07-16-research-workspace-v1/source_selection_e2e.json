@@ -1,0 +1,8 @@
+{
+  "test": "e2e/research-traceability.spec.ts",
+  "backend": "real",
+  "authentication": "real environment credentials",
+  "endpoint_intercepted": false,
+  "result": "PASS",
+  "assertions": ["active source equals primary_evidence_ids[0]", "active source is not shamir", "claim selects associated source", "raw warning absent", "translated warning visible", "mobile source selection"]
+}

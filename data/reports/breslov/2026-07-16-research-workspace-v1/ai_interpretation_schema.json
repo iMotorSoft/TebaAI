@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QueryInterpretation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["language", "intent", "instruction_language", "confidence"],
+  "properties": {
+    "language": { "$ref": "#/$defs/language" },
+    "secondary_languages": { "type": "array", "maxItems": 3, "items": { "$ref": "#/$defs/language" } },
+    "intent": { "$ref": "#/$defs/intent" },
+    "instruction_language": { "$ref": "#/$defs/language" },
+    "instruction": { "type": ["string", "null"], "maxLength": 200 },
+    "query_subjects": { "type": "array", "maxItems": 6, "items": { "$ref": "#/$defs/subject" } },
+    "literal_phrases": { "type": "array", "maxItems": 3, "items": { "$ref": "#/$defs/literal" } },
+    "relations": { "type": "array", "maxItems": 3, "items": { "$ref": "#/$defs/relation" } },
+    "requested_works": { "type": "array", "maxItems": 6, "items": { "type": "string", "enum": ["kitzur", "lmi", "lmii", "lh", "lm_xv", "potencia_plegaria"] } },
+    "requested_languages": { "type": "array", "maxItems": 4, "items": { "$ref": "#/$defs/language" } },
+    "needs_context": { "type": "boolean", "default": false },
+    "resolved_context": { "type": ["string", "null"], "maxLength": 500 },
+    "requested_output": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "include_sources": { "type": "boolean" }, "include_pages": { "type": "boolean" }, "include_quotes": { "type": "boolean" } }
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+  },
+  "$defs": {
+    "language": { "type": "string", "enum": ["es", "en", "he", "mixed", "unknown"] },
+    "intent": { "type": "string", "enum": ["literal_lookup", "concept_lookup", "relation_query", "reference_lookup", "translation_or_explanation", "follow_up", "book_scope_query", "source_request", "comparison_query", "unknown"] },
+    "variant": {
+      "type": "object", "additionalProperties": false, "required": ["value", "kind"],
+      "properties": {
+        "value": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "kind": { "type": "string", "enum": ["exact", "niqqud_removed", "definite_article_removed", "controlled_prefix_removed", "validated_alias", "translation_secondary"] }
+      }
+    },
+    "subject": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "raw", "normalized", "language", "script", "variants"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["concept", "reference"] },
+        "raw": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "normalized": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "language": { "$ref": "#/$defs/language" },
+        "script": { "type": "string", "enum": ["hebrew", "latin", "mixed"] },
+        "variants": { "type": "array", "minItems": 1, "maxItems": 12, "items": { "$ref": "#/$defs/variant" } }
+      }
+    },
+    "literal": {
+      "type": "object", "additionalProperties": false, "required": ["raw", "normalized", "language"],
+      "properties": {
+        "raw": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "normalized": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "language": { "$ref": "#/$defs/language" }
+      }
+    },
+    "relation": {
+      "type": "object", "additionalProperties": false, "required": ["left", "right"],
+      "properties": {
+        "left": { "$ref": "#/$defs/subject" },
+        "right": { "$ref": "#/$defs/subject" },
+        "relation_type": { "type": "string", "enum": ["unspecified", "comparison"] }
+      }
+    }
+  }
+}

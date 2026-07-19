@@ -1,0 +1,72 @@
+[
+  {
+    "query": "תְּהִלָּתִי אֶחְטָם לָךְ",
+    "http_status": 200,
+    "status": "ok",
+    "intent": "literal_lookup",
+    "primary_evidence_ids": [
+      "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+    ],
+    "document_id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+    "physical_page": 96,
+    "printed_page": 76,
+    "section": "LIKUTEY MOHARÁN #2:7",
+    "match_type": "exact_phrase"
+  },
+  {
+    "query": "תהלתי אחטם לך",
+    "http_status": 200,
+    "status": "ok",
+    "intent": "literal_lookup",
+    "primary_evidence_ids": [
+      "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+    ],
+    "document_id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+    "physical_page": 96,
+    "printed_page": 76,
+    "section": "LIKUTEY MOHARÁN #2:7",
+    "match_type": "no_niqqud"
+  },
+  {
+    "query": "אחטם לך",
+    "http_status": 200,
+    "status": "ok",
+    "intent": "literal_lookup",
+    "primary_evidence_ids": [
+      "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+    ],
+    "document_id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+    "physical_page": 96,
+    "printed_page": 76,
+    "section": "LIKUTEY MOHARÁN #2:7",
+    "match_type": "no_niqqud"
+  },
+  {
+    "query": "תהלתי",
+    "http_status": 200,
+    "status": "ok",
+    "intent": "literal_lookup",
+    "primary_evidence_ids": [
+      "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+    ],
+    "document_id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+    "physical_page": 96,
+    "printed_page": 76,
+    "section": "LIKUTEY MOHARÁN #2:7",
+    "match_type": "no_niqqud"
+  },
+  {
+    "query": "איפה מופיע כבוד אל",
+    "http_status": 200,
+    "status": "ok",
+    "intent": "literal_lookup",
+    "primary_evidence_ids": [
+      "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+    ],
+    "document_id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+    "physical_page": 96,
+    "printed_page": 76,
+    "section": "LIKUTEY MOHARÁN #2:7",
+    "match_type": "no_niqqud"
+  }
+]

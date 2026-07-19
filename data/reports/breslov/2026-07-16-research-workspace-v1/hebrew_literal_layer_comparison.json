@@ -1,0 +1,153 @@
+{
+  "physical_pdf_page": 96,
+  "printed_page": 76,
+  "pdf_text_layer": {
+    "characters": 3347,
+    "sha256": "e5f0855310a89ab687c768a74f7784a047b060ac1eaa0ef9c54d0485c820f7f3",
+    "sample": "76\n שׁ ֶ הוּא בְּ חִ ינַ ת כְּ בוֹד אֵ ל, כְּ מוֹ שׁ ֶ כָּ תוּב )תהלים ס\"ו(: \"שׂ ִ ימוּ כָ בוֹד\nתְּ הִ לָּ תוֹ\", בְּ חִ ינַ ת: \"תְּ הִ לָּ תִ י אֶ חְ טָ ם לָ ךְ \". \nוְהַ נְּשׁ ָ מוֹת עִ ם הַ תְּ פִ לָּ ה, הַ נִּ קְ רָ א כָּ בוֹד, עַ ל שׁ ֵ ם שׁ ֶ הִ יא מַ לְ בֶּ שׁ ֶ ת \nזֶה -יְדֵ י-אוֹתָ נוּ, כִּ י 'ר' יוֹחָ נָ ן קָ רָ א לְ מָ אנֵיהּ מְ כַ בְּ דוּתָ א' )יב(, וְעַ ל\nנִ קְ רֵ את כְּ בוֹד אֵ ל. וְהֵ ן מְ אִ ירִ ין זֶה לָ זֶה; הַ נְּשׁ ָ מוֹת מְ אִ ירִ ין לְ הַ תְּ פִ לָּ ה \nבִּ בְ חִ ינַ ת  הַ עֲ לָ אַ ת  מַ יִן  נוּקְ בִ ין,  וְהַ תְּ פִ לָּ ה  מְ אִ ירָ ה  לְ הַ נְּשׁ ָ מוֹת \nבִּ בְ חִ ינַ ת חִ דּ וּשׁ ִ ין, שׁ ֶ הִ יא מְ חַ דֶּ שׁ ֶ ת אוֹתָ ם",
+    "defect": "extractor_inserted_spaces_between_hebrew_grapheme_clusters"
+  },
+  "glyph_geometry_projection": {
+    "characters": 3177,
+    "sha256": "3277b2423042696db70521faefb6999715324ca428efdd748c7aa33cf82a5049",
+    "equals_stored_literal": true,
+    "nfc": true
+  },
+  "stored_canonical": {
+    "characters": 3177,
+    "sha256": "3277b2423042696db70521faefb6999715324ca428efdd748c7aa33cf82a5049",
+    "contains_confirmed_phrase": true,
+    "sample": "76\nשֶׁהוּא בְּחִינַת כְּבוֹד אֵל, כְּמוֹ שֶׁכָּתוּב )תהלים ס\"ו(: \"שִׂימוּ כָבוֹד\nתְּהִלָּתוֹ\", בְּחִינַת: \"תְּהִלָּתִי אֶחְטָם לָךְ\".\nוְהַנְּשָׁמוֹת עִם הַתְּפִלָּה, הַנִּקְרָא כָּבוֹד, עַל שֵׁם שֶׁהִיא מַלְבֶּשֶׁת\nאוֹתָנוּ, כִּי 'ר' יוֹחָנָן קָרָא לְמָאנֵיהּ מְכַבְּדוּתָא' )יב(, וְעַל-יְדֵי-זֶה\nנִקְרֵאת כְּבוֹד אֵל. וְהֵן מְאִירִין זֶה לָזֶה; הַנְּשָׁמוֹת מְאִירִין לְהַתְּפִלָּה\nבִּבְחִינַת הַעֲלָאַת מַיִן נוּקְבִין, וְהַתְּפִלָּה מְאִירָה לְהַנְּשָׁמוֹת\nבִּבְחִינַת חִדּוּשִׁין, שֶׁהִיא מְחַדֶּשֶׁת אוֹתָם בִּבְחִינַת עִבּוּר.\n“transformar el estudio en plegarias” (Likutey Moharán II, 25). La Torá que uno estudia se\ntransforma en chispas de a"
+  },
+  "stored_search_normalized": {
+    "characters": 2872,
+    "normalized_query": "תהלתי אחטם לך",
+    "contains_normalized_query": true
+  },
+  "confirmed_phrase": "תְּהִלָּתִי אֶחְטָם לָךְ",
+  "confirmed_phrase_codepoints": [
+    {
+      "character": "ת",
+      "codepoint": "U+05EA",
+      "name": "HEBREW LETTER TAV"
+    },
+    {
+      "character": "ְ",
+      "codepoint": "U+05B0",
+      "name": "HEBREW POINT SHEVA"
+    },
+    {
+      "character": "ּ",
+      "codepoint": "U+05BC",
+      "name": "HEBREW POINT DAGESH OR MAPIQ"
+    },
+    {
+      "character": "ה",
+      "codepoint": "U+05D4",
+      "name": "HEBREW LETTER HE"
+    },
+    {
+      "character": "ִ",
+      "codepoint": "U+05B4",
+      "name": "HEBREW POINT HIRIQ"
+    },
+    {
+      "character": "ל",
+      "codepoint": "U+05DC",
+      "name": "HEBREW LETTER LAMED"
+    },
+    {
+      "character": "ָ",
+      "codepoint": "U+05B8",
+      "name": "HEBREW POINT QAMATS"
+    },
+    {
+      "character": "ּ",
+      "codepoint": "U+05BC",
+      "name": "HEBREW POINT DAGESH OR MAPIQ"
+    },
+    {
+      "character": "ת",
+      "codepoint": "U+05EA",
+      "name": "HEBREW LETTER TAV"
+    },
+    {
+      "character": "ִ",
+      "codepoint": "U+05B4",
+      "name": "HEBREW POINT HIRIQ"
+    },
+    {
+      "character": "י",
+      "codepoint": "U+05D9",
+      "name": "HEBREW LETTER YOD"
+    },
+    {
+      "character": " ",
+      "codepoint": "U+0020",
+      "name": "SPACE"
+    },
+    {
+      "character": "א",
+      "codepoint": "U+05D0",
+      "name": "HEBREW LETTER ALEF"
+    },
+    {
+      "character": "ֶ",
+      "codepoint": "U+05B6",
+      "name": "HEBREW POINT SEGOL"
+    },
+    {
+      "character": "ח",
+      "codepoint": "U+05D7",
+      "name": "HEBREW LETTER HET"
+    },
+    {
+      "character": "ְ",
+      "codepoint": "U+05B0",
+      "name": "HEBREW POINT SHEVA"
+    },
+    {
+      "character": "ט",
+      "codepoint": "U+05D8",
+      "name": "HEBREW LETTER TET"
+    },
+    {
+      "character": "ָ",
+      "codepoint": "U+05B8",
+      "name": "HEBREW POINT QAMATS"
+    },
+    {
+      "character": "ם",
+      "codepoint": "U+05DD",
+      "name": "HEBREW LETTER FINAL MEM"
+    },
+    {
+      "character": " ",
+      "codepoint": "U+0020",
+      "name": "SPACE"
+    },
+    {
+      "character": "ל",
+      "codepoint": "U+05DC",
+      "name": "HEBREW LETTER LAMED"
+    },
+    {
+      "character": "ָ",
+      "codepoint": "U+05B8",
+      "name": "HEBREW POINT QAMATS"
+    },
+    {
+      "character": "ך",
+      "codepoint": "U+05DA",
+      "name": "HEBREW LETTER FINAL KAF"
+    },
+    {
+      "character": "ְ",
+      "codepoint": "U+05B0",
+      "name": "HEBREW POINT SHEVA"
+    }
+  ],
+  "bidi_controls_in_stored_literal": [],
+  "manual_string_reversal": false,
+  "ocr_used": false
+}

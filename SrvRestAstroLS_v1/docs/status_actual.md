@@ -2,9 +2,63 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-09 (synthesis hardening + UI indicator)
+Ultima actualizacion: 2026-07-19 (prioridad de idioma y capa editorial `/research`)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
+
+## Prioridad de idioma y capa editorial `/research` — 2026-07-19
+
+Estado técnico de recuperación: `LANGUAGE_PRIORITY_AND_SOURCE_LAYER_FULL_PASS` y `READY_FOR_MANUAL_SOURCE_LAYER_REVIEW`.
+
+Estado general del flujo: bloqueado por `SOURCE_LAYER_FOLLOWUP_ANSWER_BLOCKED`. La recuperación, trazabilidad y clasificación conservan correctamente `source_layer=biblical_quote_in_lesson`, pero el follow-up «¿Es parte de la lección del Rebe, una cita o una nota?» reutiliza una síntesis anterior en vez de responder directamente «Sí. Es una cita bíblica incluida dentro de la lección del Rebe. No es una nota editorial.». Por este motivo no se declara `FULL_PASS` general.
+
+- El término hebreo determina `primary_retrieval_language=he`, mientras el idioma de instrucción controla la narración ES/EN/HE.
+- LM XV recupera una proyección Unicode NFKC/NFC desde la geometría del PDF sin reescribir PostgreSQL ni reingerir el corpus.
+- Golden real: `LIKUTEY MOHARÁN XV KDP.pdf`, SHA-256 `f4d7eb195cadf94d6566c5cd6d636113b62f4c6748f987b250fc4bd0fcd61303`, `document_id=0d534d6c-6809-421b-9a5e-336d0bb8ecdb`, página física 229, impresa 215, sección `LIKUTEY MOHARÁN II #83:8`.
+- El PDF imprime `וְהָיָה עֵינַי וְלִבִּי שָׁם`; la variante consultada `וְהָיוּ...` se resuelve de forma acotada, pero nunca sustituye el canónico.
+- La evidencia se clasifica `biblical_quote_in_lesson` con confianza alta: cita de 1 Reyes 9:3 dentro de la lección del Rebe.
+- El párrafo hebreo completo se entrega desde backend. Las notas españolas inferiores de la página 215 no se presentan como traducción.
+- El paralelo español de página física 228/impresa 214 se vincula sólo mediante misma sección y misma referencia bíblica.
+- El contrato allowlisted distingue texto de lección, citas bíblicas/rabínicas, traducción, comentario, nota, pie, referencia, headings, introducción y `unknown` prudente.
+- La UI presenta original hebreo primero, `lang=he`, `dir=rtl`, metadata LTR, capa/confianza, traducción separada y trazabilidad estable.
+
+Gates:
+
+- backend focalizado: 190/190;
+- frontend Vitest: 48/48;
+- batch de idioma: 18/18 idioma primario, 18/18 evidencia principal hebrea cuando existe, cero traducciones/comentarios adelantados;
+- batch de capas: 12/12 correcto o prudente, cero promociones editoriales falsas;
+- Playwright Chromium real: 42/42, incluida hidratación 10/10, golden ES+HE/HE/EN+HE, identidad de evidencia multi-turno, escorpión, sangre-habla, responsive y Axe sin violaciones críticas; la aserción conversacional directa de capa queda pendiente;
+- `pnpm check`: cero diagnósticos; `pnpm build`: 7 páginas; `lat check` y `git diff --check`: PASS.
+
+Evidencia y checklist: `data/reports/breslov/2026-07-16-research-workspace-v1/`.
+
+## Cierre automatizado multilingue `/research` — 2026-07-19
+
+Estado técnico de los gates ejecutados: `MULTILINGUAL_RESEARCH_AUTOMATED_FULL_PASS`. El cierre general permanece bloqueado por `SOURCE_LAYER_FOLLOWUP_ANSWER_BLOCKED` hasta que el follow-up de naturaleza de fuente responda directamente desde la capa del turno actual.
+
+- rama: `feature/console-backend-core`;
+- HEAD de la fase: `7e9066186318a3323a2df0f66bb9e95ffa61ba07`;
+- `POST /library/investigative-qa/v1` comprende consultas y follow-ups ES/EN/HE y mixtos con interpretación acotada por IA y retrieval/evidencia determinísticos;
+- la consulta `אתה מחפש איפה נמצא מושג העקרב.` conserva sujeto exacto `העקרב`, normaliza prudentemente a `עקרב` y recupera evidencia primaria real;
+- `ומה בליקוטי הלכות` conserva el sujeto y aplica scope `lh`; `תראה לי את המקור העיקרי` recupera la fuente validada;
+- copy/paste PDF hebreo, literales, relaciones, explicaciones y combinaciones ES+HE, EN+HE y HE+ES permanecen cubiertos;
+- corrección final: el idioma primario se decide desde el sujeto introducido por el usuario, no desde aliases secundarios de retrieval. Así `escorpion` conserva prioridad española aunque expanda a `עקרב`, mientras un sujeto hebreo conserva prioridad hebrea.
+
+Gates finales completos:
+
+- backend focalizado: `162 passed`;
+- frontend Vitest previo de la misma fase: `48 passed`;
+- `pnpm check`: 0 errores, warnings o hints;
+- `pnpm build`: PASS, 7 páginas;
+- batch real: determinístico 30/30, variantes 7/7, negativos 10/10, LiteLLM live 5/5 y HTTP autenticado 15/15;
+- Playwright Chromium completo contra backend real: `40 passed` en 3,5 minutos;
+- hidratación focal: 2/2 tests, incluyendo 10/10 montajes consecutivos y recuperación de preferencias corruptas;
+- `lat check`: PASS; `git diff --check`: PASS;
+- credenciales E2E presentes sólo por entorno, sin valores impresos ni hardcodeados;
+- backend `127.0.0.1:7008/health`: 200; Astro `127.0.0.1:3008/`: 200; ambos launchers validan PID y listener.
+
+Los gates técnicos quedan preservados como checkpoint. La fase conversacional no está cerrada: además de la revisión humana de naturalidad lingüística y pronunciación de lector de pantalla en hebreo, resta corregir la respuesta narrativa del follow-up de capa editorial.
 
 ## Directorio y rama
 

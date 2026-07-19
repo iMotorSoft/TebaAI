@@ -1,0 +1,967 @@
+{
+  "gate": "PASS",
+  "passed": 30,
+  "total": 30,
+  "results": [
+    {
+      "query": "dónde aparece עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "dónde aparece",
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "buscar el concepto העקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "buscar",
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "en qué libro aparece עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "dónde está תהלתי אחטם לך",
+      "expected_intent": "literal_lookup",
+      "intent": "literal_lookup",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "dónde está",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "qué significa תהלתי אחטם לך",
+      "expected_intent": "translation_or_explanation",
+      "intent": "translation_or_explanation",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "qué significa",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "relación entre דם y דיבור",
+      "expected_intent": "relation_query",
+      "intent": "relation_query",
+      "expected_subjects": [
+        "דם",
+        "דיבור"
+      ],
+      "subjects": [
+        "דם",
+        "דיבור"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "דם",
+        "sangre",
+        "דיבור",
+        "habla",
+        "דבור"
+      ],
+      "status": "ok",
+      "result_count": 60,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "dónde se menciona רבי נתן",
+      "expected_intent": "reference_lookup",
+      "intent": "reference_lookup",
+      "expected_subjects": [
+        "רבי נתן"
+      ],
+      "subjects": [
+        "רבי נתן"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "רבי נתן",
+        "Rabí Natán"
+      ],
+      "status": "ok",
+      "result_count": 55,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "buscar זוהר",
+      "expected_intent": "reference_lookup",
+      "intent": "reference_lookup",
+      "expected_subjects": [
+        "זוהר"
+      ],
+      "subjects": [
+        "זוהר"
+      ],
+      "instruction": "buscar",
+      "search_queries": [
+        "זוהר",
+        "zohar"
+      ],
+      "status": "ok",
+      "result_count": 60,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "qué se dice de עצבות",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עצבות"
+      ],
+      "subjects": [
+        "עצבות"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עצבות",
+        "tristeza"
+      ],
+      "status": "ok",
+      "result_count": 33,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "¿y en Likutey Halajot?",
+      "expected_intent": "follow_up",
+      "intent": "follow_up",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "no_evidence",
+      "result_count": 0,
+      "works": [
+        "lh"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "where is עקרב mentioned",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "where is",
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "find the concept העקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "find",
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "which book contains עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "where is תהלתי אחטם לך",
+      "expected_intent": "literal_lookup",
+      "intent": "literal_lookup",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "where is",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "what does תהלתי אחטם לך mean",
+      "expected_intent": "translation_or_explanation",
+      "intent": "translation_or_explanation",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "what does mean",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "relation between דם and דיבור",
+      "expected_intent": "relation_query",
+      "intent": "relation_query",
+      "expected_subjects": [
+        "דם",
+        "דיבור"
+      ],
+      "subjects": [
+        "דם",
+        "דיבור"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "דם",
+        "sangre",
+        "דיבור",
+        "habla",
+        "דבור"
+      ],
+      "status": "ok",
+      "result_count": 60,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "where is רבי נתן cited",
+      "expected_intent": "reference_lookup",
+      "intent": "reference_lookup",
+      "expected_subjects": [
+        "רבי נתן"
+      ],
+      "subjects": [
+        "רבי נתן"
+      ],
+      "instruction": "where is",
+      "search_queries": [
+        "רבי נתן",
+        "Rabí Natán"
+      ],
+      "status": "ok",
+      "result_count": 55,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "find זוהר",
+      "expected_intent": "reference_lookup",
+      "intent": "reference_lookup",
+      "expected_subjects": [
+        "זוהר"
+      ],
+      "subjects": [
+        "זוהר"
+      ],
+      "instruction": "find",
+      "search_queries": [
+        "זוהר",
+        "zohar"
+      ],
+      "status": "ok",
+      "result_count": 60,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "what is said about עצבות",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עצבות"
+      ],
+      "subjects": [
+        "עצבות"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עצבות",
+        "tristeza"
+      ],
+      "status": "ok",
+      "result_count": 33,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "and in Likutey Halajot?",
+      "expected_intent": "follow_up",
+      "intent": "follow_up",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "no_evidence",
+      "result_count": 0,
+      "works": [
+        "lh"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "איפה נמצא המושג עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "איפה נמצא",
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "היכן מוזכר העקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "היכן מוזכר",
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "חפש את המושג עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "חפש",
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "אתה מחפש איפה נמצא מושג העקרב.",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "איפה נמצא",
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "באיזה ספר מופיע עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "איפה מופיע תהלתי אחטם לך",
+      "expected_intent": "literal_lookup",
+      "intent": "literal_lookup",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "איפה מופיע",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "מה פירוש תהלתי אחטם לך",
+      "expected_intent": "translation_or_explanation",
+      "intent": "translation_or_explanation",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "מה הקשר בין דם לדיבור",
+      "expected_intent": "relation_query",
+      "intent": "relation_query",
+      "expected_subjects": [
+        "דם",
+        "דיבור"
+      ],
+      "subjects": [
+        "דם",
+        "דיבור"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "דם",
+        "sangre",
+        "לדיבור",
+        "דיבור",
+        "habla",
+        "דבור"
+      ],
+      "status": "ok",
+      "result_count": 60,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "איפה מוזכר רבי נתן",
+      "expected_intent": "reference_lookup",
+      "intent": "reference_lookup",
+      "expected_subjects": [
+        "רבי נתן"
+      ],
+      "subjects": [
+        "רבי נתן"
+      ],
+      "instruction": "איפה מוזכר",
+      "search_queries": [
+        "רבי נתן",
+        "Rabí Natán"
+      ],
+      "status": "ok",
+      "result_count": 55,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    },
+    {
+      "query": "ומה בליקוטי הלכות",
+      "expected_intent": "follow_up",
+      "intent": "follow_up",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "no_evidence",
+      "result_count": 0,
+      "works": [
+        "lh"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true
+    }
+  ]
+}

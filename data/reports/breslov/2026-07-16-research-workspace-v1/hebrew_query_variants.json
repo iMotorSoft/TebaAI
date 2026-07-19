@@ -1,0 +1,401 @@
+{
+  "gate": "PASS",
+  "passed": 7,
+  "total": 7,
+  "results": [
+    {
+      "query": "עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": true,
+      "invented_source_shape": false,
+      "pass": true,
+      "variants": [
+        {
+          "value": "עקרב",
+          "kind": "exact"
+        },
+        {
+          "value": "עַקְרַב",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "עקרבים",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "escorpión",
+          "kind": "translation_secondary"
+        }
+      ],
+      "exact_first": true
+    },
+    {
+      "query": "העקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": true,
+      "invented_source_shape": false,
+      "pass": true,
+      "variants": [
+        {
+          "value": "העקרב",
+          "kind": "exact"
+        },
+        {
+          "value": "עקרב",
+          "kind": "definite_article_removed"
+        },
+        {
+          "value": "עַקְרַב",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "עקרבים",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "escorpión",
+          "kind": "translation_secondary"
+        }
+      ],
+      "exact_first": true
+    },
+    {
+      "query": "בָּעַקְרָב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "בעקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "variants": [
+        {
+          "value": "בעקרב",
+          "kind": "exact"
+        },
+        {
+          "value": "עקרב",
+          "kind": "controlled_prefix_removed"
+        },
+        {
+          "value": "עַקְרַב",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "עקרבים",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "escorpión",
+          "kind": "translation_secondary"
+        }
+      ],
+      "exact_first": true
+    },
+    {
+      "query": "בעקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "בעקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": true,
+      "invented_source_shape": false,
+      "pass": true,
+      "variants": [
+        {
+          "value": "בעקרב",
+          "kind": "exact"
+        },
+        {
+          "value": "עקרב",
+          "kind": "controlled_prefix_removed"
+        },
+        {
+          "value": "עַקְרַב",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "עקרבים",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "escorpión",
+          "kind": "translation_secondary"
+        }
+      ],
+      "exact_first": true
+    },
+    {
+      "query": "לעקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "לעקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": true,
+      "invented_source_shape": false,
+      "pass": true,
+      "variants": [
+        {
+          "value": "לעקרב",
+          "kind": "exact"
+        },
+        {
+          "value": "עקרב",
+          "kind": "controlled_prefix_removed"
+        },
+        {
+          "value": "עַקְרַב",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "עקרבים",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "escorpión",
+          "kind": "translation_secondary"
+        }
+      ],
+      "exact_first": true
+    },
+    {
+      "query": "והעקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "והעקרב",
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": true,
+      "invented_source_shape": false,
+      "pass": true,
+      "variants": [
+        {
+          "value": "והעקרב",
+          "kind": "exact"
+        },
+        {
+          "value": "העקרב",
+          "kind": "controlled_prefix_removed"
+        },
+        {
+          "value": "עקרב",
+          "kind": "definite_article_removed"
+        },
+        {
+          "value": "עַקְרַב",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "עקרבים",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "escorpión",
+          "kind": "translation_secondary"
+        }
+      ],
+      "exact_first": true
+    },
+    {
+      "query": "עַקְרָב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": false,
+      "fallback_used": true,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "variants": [
+        {
+          "value": "עקרב",
+          "kind": "exact"
+        },
+        {
+          "value": "עַקְרַב",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "עקרבים",
+          "kind": "validated_alias"
+        },
+        {
+          "value": "escorpión",
+          "kind": "translation_secondary"
+        }
+      ],
+      "exact_first": true
+    }
+  ]
+}

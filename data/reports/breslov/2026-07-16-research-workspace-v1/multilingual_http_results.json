@@ -1,0 +1,745 @@
+{
+  "gate": "PASS",
+  "passed": 15,
+  "total": 15,
+  "results": [
+    {
+      "query": "איפה נמצא המושג עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "איפה נמצא",
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "היכן מוזכר העקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "היכן מוזכר",
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "חפש את המושג עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "חפש",
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "אתה מחפש איפה נמצא מושג העקרב.",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "איפה נמצא",
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "באיזה ספר מופיע עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "dónde aparece עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "dónde aparece",
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "buscar el concepto העקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "buscar",
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "en qué libro aparece עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "dónde está תהלתי אחטם לך",
+      "expected_intent": "literal_lookup",
+      "intent": "literal_lookup",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "dónde está",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1",
+          "work_code": "lmi",
+          "pdf_page": 96,
+          "printed_page": 76,
+          "quote_sha256": "3277b2423042696db70521faefb6999715324ca428efdd748c7aa33cf82a5049"
+        },
+        {
+          "hit_id": "lmi-d2eea545-1dcb-4b83-a474-2bbf2609eedd",
+          "work_code": "lmi",
+          "pdf_page": 76,
+          "printed_page": 56,
+          "quote_sha256": "93c960825d4e3fd8708ad3943dee2f768ff7447bed3b72f490e2cfa7f1794151"
+        },
+        {
+          "hit_id": "lmi-547f92de-76e0-4109-b7f7-6e7982934937",
+          "work_code": "lmi",
+          "pdf_page": 74,
+          "printed_page": 54,
+          "quote_sha256": "3419036808792ae1314d8290195898a1a41d527755217946afbcd8ab505d7f4a"
+        }
+      ]
+    },
+    {
+      "query": "qué significa תהלתי אחטם לך",
+      "expected_intent": "translation_or_explanation",
+      "intent": "translation_or_explanation",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "qué significa",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1",
+          "work_code": "lmi",
+          "pdf_page": 96,
+          "printed_page": 76,
+          "quote_sha256": "3277b2423042696db70521faefb6999715324ca428efdd748c7aa33cf82a5049"
+        },
+        {
+          "hit_id": "lmi-d2eea545-1dcb-4b83-a474-2bbf2609eedd",
+          "work_code": "lmi",
+          "pdf_page": 76,
+          "printed_page": 56,
+          "quote_sha256": "93c960825d4e3fd8708ad3943dee2f768ff7447bed3b72f490e2cfa7f1794151"
+        },
+        {
+          "hit_id": "lmi-547f92de-76e0-4109-b7f7-6e7982934937",
+          "work_code": "lmi",
+          "pdf_page": 74,
+          "printed_page": 54,
+          "quote_sha256": "3419036808792ae1314d8290195898a1a41d527755217946afbcd8ab505d7f4a"
+        }
+      ]
+    },
+    {
+      "query": "where is עקרב mentioned",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "where is",
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "find the concept העקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": "find",
+      "search_queries": [
+        "העקרב",
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "which book contains עקרב",
+      "expected_intent": "concept_lookup",
+      "intent": "concept_lookup",
+      "expected_subjects": [
+        "עקרב"
+      ],
+      "subjects": [
+        "עקרב"
+      ],
+      "instruction": null,
+      "search_queries": [
+        "עקרב",
+        "עַקְרַב",
+        "עקרבים",
+        "escorpión"
+      ],
+      "status": "ok",
+      "result_count": 1,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmii-0eafbd1ba22e"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmii-0eafbd1ba22e",
+          "work_code": "lmii",
+          "pdf_page": 29,
+          "printed_page": 19,
+          "quote_sha256": "96bf430bca45cfed7b00e5f89b73c85e184b60a0b6fe497e0231230b3aac5479"
+        }
+      ]
+    },
+    {
+      "query": "where is תהלתי אחטם לך",
+      "expected_intent": "literal_lookup",
+      "intent": "literal_lookup",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "where is",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1",
+          "work_code": "lmi",
+          "pdf_page": 96,
+          "printed_page": 76,
+          "quote_sha256": "3277b2423042696db70521faefb6999715324ca428efdd748c7aa33cf82a5049"
+        },
+        {
+          "hit_id": "lmi-d2eea545-1dcb-4b83-a474-2bbf2609eedd",
+          "work_code": "lmi",
+          "pdf_page": 76,
+          "printed_page": 56,
+          "quote_sha256": "93c960825d4e3fd8708ad3943dee2f768ff7447bed3b72f490e2cfa7f1794151"
+        },
+        {
+          "hit_id": "lmi-547f92de-76e0-4109-b7f7-6e7982934937",
+          "work_code": "lmi",
+          "pdf_page": 74,
+          "printed_page": 54,
+          "quote_sha256": "3419036808792ae1314d8290195898a1a41d527755217946afbcd8ab505d7f4a"
+        }
+      ]
+    },
+    {
+      "query": "what does תהלתי אחטם לך mean",
+      "expected_intent": "translation_or_explanation",
+      "intent": "translation_or_explanation",
+      "expected_subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "subjects": [
+        "תהלתי אחטם לך"
+      ],
+      "instruction": "what does mean",
+      "search_queries": [
+        "תהלתי אחטם לך"
+      ],
+      "status": "ok",
+      "result_count": 5,
+      "works": [
+        "kitzur",
+        "lh",
+        "lm_xv",
+        "lmi",
+        "lmii",
+        "potencia_plegaria"
+      ],
+      "ai_used": true,
+      "fallback_used": false,
+      "whole_sentence_searched": false,
+      "invented_source_shape": false,
+      "pass": true,
+      "http_status": 200,
+      "primary_evidence_ids": [
+        "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"
+      ],
+      "hit_audit": [
+        {
+          "hit_id": "lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1",
+          "work_code": "lmi",
+          "pdf_page": 96,
+          "printed_page": 76,
+          "quote_sha256": "3277b2423042696db70521faefb6999715324ca428efdd748c7aa33cf82a5049"
+        },
+        {
+          "hit_id": "lmi-d2eea545-1dcb-4b83-a474-2bbf2609eedd",
+          "work_code": "lmi",
+          "pdf_page": 76,
+          "printed_page": 56,
+          "quote_sha256": "93c960825d4e3fd8708ad3943dee2f768ff7447bed3b72f490e2cfa7f1794151"
+        },
+        {
+          "hit_id": "lmi-547f92de-76e0-4109-b7f7-6e7982934937",
+          "work_code": "lmi",
+          "pdf_page": 74,
+          "printed_page": 54,
+          "quote_sha256": "3419036808792ae1314d8290195898a1a41d527755217946afbcd8ab505d7f4a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "vitest": { "files": 4, "tests": 46, "failed": 0 },
+  "covered_surfaces": [
+    "EnrichedMarkdownAnswer", "EvidenceCard", "EvidenceList", "SourcePanel", "AssistantTurn",
+    "ResearchComposer", "EvidenceMatrix", "CrossCorpusMatrix", "tablet drawer", "mobile bottom sheet"
+  ],
+  "covered_contracts": [
+    "Hebrew", "mixed text", "niqqud", "NFC", "page/reference metadata", "long evidence",
+    "Markdown sanitization", "bdi isolation", "no manual reversal", "Unicode-safe snippets", "composer reset"
+  ],
+  "note": "Several named surfaces are logical sections of ResearchWorkspace rather than standalone component files; browser integration covers their composed behavior."
+}

@@ -1,0 +1,1 @@
+{"attempts":10,"login_pass":10,"redirect_pass":10,"composer_visible_pass":10,"reactive_loop":0,"corrupt_session_storage":"PASS","root_cause":"mutually reinforcing persistence and restoration effects","fix":"single onMount restore followed by gated persistence"}

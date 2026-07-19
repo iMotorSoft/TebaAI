@@ -106,7 +106,7 @@ Generation remains outside general search and is allowed only in the dedicated, 
 | LLM reranking | Not implemented |
 | LLM synthesis | Optional and downstream of canonical PG evidence |
 
-`POST /library/search` continues to retrieve bibliographic evidence only. It does not call a generative model or return interpretative synthesis.
+`POST /library/search` continues to retrieve bibliographic evidence only. It does not call a generative model or return interpretative synthesis. `POST /library/investigative-qa/v1` may call the same model solely for schema-validated multilingual query understanding and evidence-bound rendering under ADR-005; retrieval remains deterministic and downstream.
 
 ## Investigative Relation QA
 
@@ -122,6 +122,10 @@ The endpoint must:
 6. label model interpretation as `ai_inference` or `INFERIDA_POR_IA`;
 7. reject unknown model source IDs and fall back deterministically on invalid output;
 8. keep `content_preview` and `composite_page_context` out of final citations.
+9. return explicit claim-to-evidence associations with stable IDs for conversational consumers;
+10. separate literal fidelity from relevance and relational strength;
+11. prevent single-term matches from becoming primary evidence for a relational query;
+12. apply requested per-work limits to the final deduplicated result set.
 
 The accepted design and consequences are documented in `docs/adr/ADR-005-breslov-investigative-relation-qa-endpoint.md`.
 
@@ -147,6 +151,17 @@ These constraints protect source authority, citation integrity and embedding com
 - Do not change the embedding model mid-phase without re-indexing all chunks.
 - Do not hardcode API keys or model names in code — use `core/config.py`.
 
+## Conversational investigative query understanding
+
+`POST /library/investigative-qa/v1` supports bounded ES/EN/HE query interpretation and follow-up context.
+
+- Unicode preprocessing, Hebrew morphology, work mapping and query variants are deterministic.
+- LiteLLM returns strict JSON; model normalization is rebuilt and grounded by backend code.
+- Model failure always falls back without turning infrastructure failure into `no_evidence` by itself.
+- PostgreSQL evidence decides whether a match exists; model output never supplies citations or pages.
+- Conversation history is capped at 15 questions and cannot carry arbitrary source IDs into retrieval.
+- Translation aliases are secondary, explicit expansions and cannot replace the Hebrew subject as authority.
+
 ## Future directions (not implemented)
 
 The following capabilities require explicit design and validation before implementation.
@@ -154,5 +169,4 @@ The following capabilities require explicit design and validation before impleme
 - Sparse vectors (Milvus hybrid search with BM25).
 - Cross-encoder reranking.
 - Open-domain or conversational RAG beyond the bounded Relation QA contract.
-- Conversational search with follow-up context.
 - Multi-hop retrieval for intertextual questions.

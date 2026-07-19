@@ -1,0 +1,14 @@
+{
+  "page_heading": { "text": "215 / LIKUTEY MOHARÁN II #83:8", "source_layer": "page_heading", "confidence": "high" },
+  "hebrew_match": { "zone_id": "1783f30c-b471-46b6-a998-67393a2a76c1", "source_layer": "biblical_quote_in_lesson", "confidence": "high", "reference": "1 Kings 9:3" },
+  "verbal_form_code_points": {
+    "pdf_וְהָיָה": ["U+05D5", "U+05B0", "U+05D4", "U+05B8", "U+05D9", "U+05B8", "U+05D4"],
+    "query_וְהָיוּ": ["U+05D5", "U+05B0", "U+05D4", "U+05B8", "U+05D9", "U+05D5", "U+05BC"]
+  },
+  "hebrew_continuation": { "zone_id": "2e664f8c-4aa5-46f6-a83a-fdd4d14a3fe7", "source_layer": "rebbe_lesson_text", "confidence": "high" },
+  "spanish_below": { "classification": "editorial_note_or_footnote", "is_parallel_translation": false },
+  "parallel_spanish": { "physical_pdf_page": 228, "printed_page": 214, "source_layer": "editorial_translation", "link_type": "parallel_translation", "guards": ["same_section", "same_scripture_reference"] },
+  "generic_page_anchor_present": false,
+  "generic_content_node_present": false,
+  "runtime_anchor_kind": "library_lm_xv_kdp_pages_v1"
+}

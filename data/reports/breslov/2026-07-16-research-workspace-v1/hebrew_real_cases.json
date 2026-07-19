@@ -1,0 +1,17 @@
+{
+  "gate": "10/10 PASS, repeated 2/2 consecutive runs",
+  "validation_date": "2026-07-18",
+  "common_assertions": ["logical_order", "lang_he", "dir_rtl", "nfc_display", "no_artificial_niqqud_spacing", "metadata_ltr", "no_horizontal_overflow", "dom_equals_display"],
+  "cases": [
+    { "query": "escorpión", "work": "lmii", "pdf_page": 28, "result": "PASS" },
+    { "query": "plegaria", "work": "lmii", "pdf_page": 14, "result": "PASS" },
+    { "query": "temor", "work": "lmii", "pdf_page": 114, "result": "PASS" },
+    { "query": "tristeza", "work": "lmii", "pdf_page": 60, "result": "PASS" },
+    { "query": "Rabí Natán", "work": "lmii", "pdf_page": 18, "result": "PASS" },
+    { "query": "Zohar", "work": "lmii", "pdf_page": 14, "result": "PASS" },
+    { "query": "alma", "work": "lmii", "pdf_page": 48, "result": "PASS" },
+    { "query": "habla", "work": "lmii", "pdf_page": 14, "result": "PASS" },
+    { "query": "pureza", "work": "lmii", "pdf_page": 30, "result": "PASS" },
+    { "query": "hitbodedut", "work": "lmii", "pdf_page": 374, "result": "PASS" }
+  ]
+}

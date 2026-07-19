@@ -1,0 +1,14 @@
+{
+  "suite": "research-source-layer.spec.ts",
+  "real_backend": true,
+  "mocked_endpoint": false,
+  "spanish_plus_hebrew": "pass",
+  "all_hebrew": "pass",
+  "english_plus_hebrew": "pass",
+  "multiturn_source_identity": "pass",
+  "source_layer_followup_direct_answer": "blocked",
+  "checkpoint_status": "SOURCE_LAYER_FOLLOWUP_ANSWER_BLOCKED",
+  "mobile_rtl": "pass",
+  "axe_critical_violations": 0,
+  "screenshots_created": true
+}

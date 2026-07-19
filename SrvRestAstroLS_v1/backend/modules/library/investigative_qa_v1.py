@@ -17,6 +17,7 @@ from globalVar import (
     LITELLM_TIMEOUT_SECONDS,
     RESEARCH_CONVERSATION_MODEL,
 )
+from modules.library.concept_catalog import get_concept
 from modules.library.investigative_model import stable_hash
 from modules.library.hebrew_lexical_normalizer import (
     HebrewLiteralQuery,
@@ -37,6 +38,10 @@ from modules.library.multilingual_query import (
     deterministic_interpret,
     interpret_query,
     preprocess_query,
+)
+from modules.library.query_resolution import (
+    build_suggestion_contract,
+    resolve_query,
 )
 
 WORKS = {"kitzur", "lmi", "lmii", "lh", "lm_xv", "potencia_plegaria"}
@@ -1416,6 +1421,23 @@ async def run(conn, data: QaRequest) -> dict:
     literal_analysis = extract_literal_segments(data.question)
     resolved_question = structured.resolved_context or data.question
     concepts, literal_phrases = _retrieval_inputs(structured)
+
+    # ── Query resolution: typo tolerance / suggestions ──────────────
+    resolution_norm, suggestion_candidates, autoapply_id = resolve_query(data.question)
+    is_exact = suggestion_candidates and suggestion_candidates[0].suggestion_type == "exact_match"
+    if autoapply_id and not is_exact:
+        entry = get_concept(autoapply_id)
+        if entry:
+            # Replace concepts with corrected terms (including all catalog forms)
+            concept_terms = [entry.canonical_label, *entry.aliases, *entry.transliterations]
+            if entry.hebrew:
+                concept_terms.append(entry.hebrew)
+            concept_terms = list(dict.fromkeys(concept_terms))
+            concepts = [{"label": entry.canonical_label, "terms": concept_terms, "concept_id": entry.concept_id}]
+            interpretation_warnings.append(f"suggestion_autoapplied:{entry.concept_id}")
+    query_resolution = build_suggestion_contract(data.question, resolution_norm, suggestion_candidates, autoapply_id)
+    # ────────────────────────────────────────────────────────────────
+
     interpretation = structured.model_dump()
     interpretation.update({
         "detected_language": structured.language,
@@ -1580,6 +1602,14 @@ async def run(conn, data: QaRequest) -> dict:
         "contextual_hits": sum(hit.work_code == work and hit.relation_relevance not in {"single_term_literal", "unrelated_literal_noise"} and not hit.is_primary for hit in hits),
         "additional_literal_hits": sum(hit.work_code == work and hit.relation_relevance in {"single_term_literal", "unrelated_literal_noise"} for hit in hits),
     } for work in plan["works"]]
+    if query_resolution and query_resolution.get("suggestion_applied"):
+        warnings.append(
+            f"No encontré una coincidencia exacta para "
+            f"«{data.question}». "
+            f"Busqué la variante probable "
+            f"«{query_resolution['suggested_query']}»."
+        )
+
     return {
         "question": data.question,
         "intent": intent,
@@ -1588,6 +1618,7 @@ async def run(conn, data: QaRequest) -> dict:
         "answer_markdown": markdown,
         "summary": summary,
         "conversation": {"conversation_id": data.conversation.get("conversation_id"), "turn_id": data.conversation.get("turn_id"), "resolved_context": [resolved_question] if resolved_question != data.question else []},
+        "query_resolution": query_resolution,
         "interpretation": interpretation,
         "search_plan": plan,
         "works_consulted": plan["works"],

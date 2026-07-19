@@ -13,9 +13,9 @@ test("authenticated session reaches the protected admin route without storing se
   await page.fill("#login-email", adminEmail);
   await page.fill("#login-password", adminPassword);
   await page.getByRole("button", { name: "Ingresar" }).click();
-  const sessionConfirmation = page.getByText("Sesión iniciada");
+  await expect(page).toHaveURL(/\/research$/);
+  const sessionConfirmation = page.getByRole("heading", { name: "Investigación" });
   await expect(sessionConfirmation).toBeVisible();
-  await sessionConfirmation.screenshot({ path: path.join(authScreenshots, "session-confirmed.png") });
   await expect(page.evaluate(() => Boolean(localStorage.getItem("tebaai_access_token")))).resolves.toBe(true);
 
   await page.goto("/admin/users");

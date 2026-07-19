@@ -16,7 +16,7 @@ test.describe("Admin users UI", () => {
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
-    await expect(page.locator("text=Sesión iniciada")).toBeVisible({ timeout: 10000 });
+    await expect(page).toHaveURL(/\/research$/);
 
     await page.goto("/admin/users");
     await expect(page.locator("text=Administración de usuarios")).toBeVisible({ timeout: 10000 });
@@ -29,7 +29,7 @@ test.describe("Admin users UI", () => {
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
-    await expect(page.locator("text=Sesión iniciada")).toBeVisible({ timeout: 10000 });
+    await expect(page).toHaveURL(/\/research$/);
 
     await page.goto("/admin/users");
     await expect(page.locator("text=Administración de usuarios")).toBeVisible({ timeout: 10000 });
@@ -51,7 +51,7 @@ test.describe("Admin users UI", () => {
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
-    await expect(page.locator("text=Sesión iniciada")).toBeVisible({ timeout: 10000 });
+    await expect(page).toHaveURL(/\/research$/);
 
     await page.goto("/admin/users");
     await expect(page.locator("text=Administración de usuarios")).toBeVisible({ timeout: 10000 });

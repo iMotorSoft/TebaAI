@@ -17,7 +17,7 @@ test.describe("Library search UI", () => {
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
-    await expect(page.locator("text=Sesión iniciada")).toBeVisible({ timeout: 10000 });
+    await expect(page).toHaveURL(/\/research$/);
 
     // Go to search
     await page.goto("/library/search");
@@ -38,7 +38,7 @@ test.describe("Library search UI", () => {
     await page.fill("#login-email", ADMIN_EMAIL);
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
-    await expect(page.locator("text=Sesión iniciada")).toBeVisible({ timeout: 10000 });
+    await expect(page).toHaveURL(/\/research$/);
 
     await page.goto("/library/search");
     await expect(page.locator("text=Búsqueda bibliográfica")).toBeVisible({ timeout: 10000 });

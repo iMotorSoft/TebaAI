@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
+import pytest
+
 from modules.library.hebrew_lexical_normalizer import (
+    extract_literal_segments,
     normalize_hebrew_lexical,
     has_hebrew,
     strip_niqqud,
@@ -11,6 +14,8 @@ from modules.library.hebrew_lexical_normalizer import (
     strip_meteg,
     normalize_maqaf,
     remove_invisible_marks,
+    normalize_hebrew_search,
+    reconstruct_pdf_spaced_hebrew,
 )
 
 
@@ -158,3 +163,74 @@ class TestNormalizeHebrewLexical:
         assert "ס" in result
         assert "כ" in result
         assert "ת" in result
+
+
+class TestNormalizeHebrewSearch:
+    def test_equivalent_niqqud_and_unicode_forms(self):
+        pointed = "תְּהִלָּתִי אֶחְטָם לָךְ"
+        assert normalize_hebrew_search(pointed) == "תהלתי אחטם לך"
+        assert normalize_hebrew_search(pointed) == normalize_hebrew_search(
+            __import__("unicodedata").normalize("NFD", pointed)
+        )
+
+    def test_punctuation_spaces_and_bidi_controls_are_optional(self):
+        assert normalize_hebrew_search('\u2067“תהלתי,  אחטם לך!”\u2069') == "תהלתי אחטם לך"
+
+    def test_preserves_final_letters_and_word_boundaries(self):
+        assert normalize_hebrew_search("אחטם לך") == "אחטם לך"
+        assert normalize_hebrew_search("אחטמ לך") != normalize_hebrew_search("אחטם לך")
+
+    def test_does_not_reverse_text(self):
+        value = normalize_hebrew_search("תהלתי אחטם לך")
+        assert value == "תהלתי אחטם לך"
+        assert value != "ךל םטחא יתלהת"
+
+
+PDF_SPACED = "ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך"
+
+
+@pytest.mark.parametrize(("question", "instruction", "language"), [
+    (f"{PDF_SPACED} donde esta", "donde esta", "es"),
+    (f"dónde aparece {PDF_SPACED}", "dónde aparece", "es"),
+    (f"{PDF_SPACED} where is", "where is", "en"),
+    (f"find {PDF_SPACED}", "find", "en"),
+    (f"איפה {PDF_SPACED}", "איפה", "he"),
+    (f"היכן מופיע {PDF_SPACED}", "היכן מופיע", "he"),
+])
+def test_extracts_script_literal_without_location_instruction(
+    question: str,
+    instruction: str,
+    language: str,
+) -> None:
+    result = extract_literal_segments(question)
+    assert result is not None
+    assert result.literal_raw == PDF_SPACED
+    assert result.instruction == instruction
+    assert result.instruction_language == language
+    assert result.compact_letters == "תהלתיאחטםלך"
+    assert result.pdf_glyph_spacing_detected is True
+    assert len(result.candidates) <= 64
+    assert "תהלתי אחטם לך" in result.candidates
+
+
+@pytest.mark.parametrize("separator", [" ", "  ", "\u00a0", "\u2009", "\n"])
+def test_reassociates_spaced_letters_and_niqqud_without_reversing(separator: str) -> None:
+    raw = separator.join(["ת", "ְּ", "הִ", "לָּ", "ת", "ִ", "י", "אֶ", "חְ", "ט", "ָ", "ם", "לָ", "ך"])
+    result = reconstruct_pdf_spaced_hebrew(raw, "תהלתי אחטם לך")
+    assert result == "תְּהִלָּתִי אֶחְטָם לָך"
+    assert result != "ךָל םטָחְאֶ יתִלָּהִתְּ"
+
+
+def test_clean_word_boundaries_are_preserved() -> None:
+    result = extract_literal_segments("תְּהִלָּתִי אֶחְטָם לָךְ")
+    assert result is not None
+    assert result.pdf_glyph_spacing_detected is False
+    assert result.literal_reconstructed == "תְּהִלָּתִי אֶחְטָם לָךְ"
+    assert result.literal_search_normalized == "תהלתי אחטם לך"
+
+
+def test_no_phrase_specific_substitution_occurs() -> None:
+    result = extract_literal_segments("א ב ג ד ה where is")
+    assert result is not None
+    assert result.compact_letters == "אבגדה"
+    assert "תהלתי" not in result.literal_reconstructed

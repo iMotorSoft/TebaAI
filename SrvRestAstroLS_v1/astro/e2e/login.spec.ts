@@ -20,7 +20,7 @@ test.describe("Login UI", () => {
     await expect(page.locator('[role="alert"]')).toBeVisible({ timeout: 10000 });
   });
 
-  test("successful login shows user info", async ({ page }) => {
+  test("successful login enters the research workspace", async ({ page }) => {
     test.skip(!ADMIN_EMAIL || !ADMIN_PASSWORD, "TEBAAI_E2E_ADMIN_EMAIL/PASSWORD not set");
 
     await page.goto("/login");
@@ -28,9 +28,8 @@ test.describe("Login UI", () => {
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
 
-    await expect(page.locator("text=Sesión iniciada")).toBeVisible({ timeout: 10000 });
-    await expect(page.locator(`text=${ADMIN_EMAIL}`)).toBeVisible();
-    await expect(page.locator(".badge-primary")).toBeVisible();
+    await expect(page).toHaveURL(/\/research$/);
+    await expect(page.getByTestId("research-question")).toBeVisible();
   });
 
   test("logout clears session", async ({ page }) => {
@@ -41,9 +40,8 @@ test.describe("Login UI", () => {
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
 
-    await expect(page.locator("text=Sesión iniciada")).toBeVisible({ timeout: 10000 });
-
-    await page.getByRole("button", { name: "Cerrar sesión" }).click();
+    await expect(page).toHaveURL(/\/research$/);
+    await page.getByRole("button", { name: "Cerrar sesión" }).first().click();
 
     await expect(page.locator("#login-email")).toBeVisible();
     await expect(page.getByRole("button", { name: "Ingresar" })).toBeVisible();

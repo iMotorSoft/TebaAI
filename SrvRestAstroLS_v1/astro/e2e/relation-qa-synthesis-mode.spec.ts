@@ -118,7 +118,7 @@ async function doLogin(page: typeof test.prototype.page) {
   await page.fill("#login-email", ADMIN_EMAIL);
   await page.fill("#login-password", ADMIN_PASSWORD);
   await page.getByRole("button", { name: "Ingresar" }).click();
-  await expect(page.locator("text=Sesión iniciada")).toBeVisible({ timeout: 15000 });
+  await expect(page).toHaveURL(/\/research$/);
 }
 
 async function waitForForm(page: typeof test.prototype.page) {

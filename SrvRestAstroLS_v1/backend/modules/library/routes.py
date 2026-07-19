@@ -40,7 +40,7 @@ from modules.library.text_search import search_chunks_text
 from modules.library.investigative_qa_v1 import QaRequest, run as run_investigative_qa_v1
 
 
-@post("/library/investigative-qa/v1", status_code=200)
+@post("/library/investigative-qa/v1", status_code=200, guards=[require_auth])
 async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
     """Grounded bibliographic QA. Corpus retrieval is SQL-only and audit is excluded."""
     pool = await get_pg_pool(request)

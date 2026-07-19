@@ -25,6 +25,7 @@
       user = result.user;
       email = "";
       password = "";
+      window.location.assign("/research");
     } catch (err: unknown) {
       error = err instanceof Error ? err.message : "Error desconocido";
     } finally {
@@ -73,14 +74,7 @@
 
       <div class="card-actions mt-6 justify-between">
         <div class="flex gap-2">
-          {#if user.role === "admin"}
-            <a href="/admin/users" class="btn btn-ghost btn-sm">
-              Admin usuarios
-            </a>
-          {/if}
-          <a href="/library/search" class="btn btn-ghost btn-sm">
-            Buscar biblioteca
-          </a>
+          <a href="/research" class="btn btn-ghost btn-sm">Ir a Investigación</a>
         </div>
         <div class="flex gap-2">
           <button class="btn btn-ghost btn-sm" onclick={handleRefresh}>

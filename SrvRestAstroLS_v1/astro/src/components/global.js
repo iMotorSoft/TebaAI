@@ -30,8 +30,10 @@ export const BRAND = {
 export const ROUTES = {
   home: "/",
   login: "/login",
+  research: "/research",
   librarySearch: "/library/search",
   relationQa: "/library/relation-qa",
+  investigativeQa: "/library/investigative-qa/v1",
 };
 
 export const API_ROUTES = {
@@ -44,4 +46,5 @@ export const API_ROUTES = {
   users: "/users",
   librarySearch: "/library/search",
   relationQa: "/library/relation-qa",
+  investigativeQa: "/library/investigative-qa/v1",
 };

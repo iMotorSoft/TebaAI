@@ -23,8 +23,10 @@ export const BRAND: Readonly<{
 export const ROUTES: Readonly<{
   home: "/";
   login: "/login";
+  research: "/research";
   librarySearch: "/library/search";
   relationQa: "/library/relation-qa";
+  investigativeQa: "/library/investigative-qa/v1";
 }>;
 
 export const API_ROUTES: Readonly<{
@@ -37,4 +39,5 @@ export const API_ROUTES: Readonly<{
   users: "/users";
   librarySearch: "/library/search";
   relationQa: "/library/relation-qa";
+  investigativeQa: "/library/investigative-qa/v1";
 }>;

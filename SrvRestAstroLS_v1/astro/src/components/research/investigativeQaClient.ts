@@ -1,0 +1,82 @@
+import { API_BASE_URL, API_ROUTES } from "../global.js";
+
+export const WORKS = ["kitzur", "lmi", "lmii", "lh", "lm_xv", "potencia_plegaria"] as const;
+export type Language = "es" | "en" | "he";
+export interface ResearchRequest { question: string; conversation: { conversation_id: string | null; turn_id: string | null; history: Array<{ question: string }> }; works: string[]; languages: Language[]; include_thematic: boolean; include_audit: false; min_evidence: "literal"; max_hits_per_work: number; return_markdown: true; return_json: true; ai: { enabled: true; model: "openai_gpt-5.4-nano" }; }
+export type RelationRelevance = "direct_relation" | "same_fragment_both_terms" | "same_page_both_terms" | "same_section_relation" | "single_term_literal" | "thematic_parallel" | "inferred_relation" | "unrelated_literal_noise";
+export const SOURCE_LAYERS = ["rebbe_lesson_text", "biblical_quote_in_lesson", "rabbinic_quote_in_lesson", "editorial_translation", "editorial_commentary", "editorial_note", "footnote", "source_reference", "section_heading", "page_heading", "introduction", "unknown"] as const;
+export type SourceLayer = typeof SOURCE_LAYERS[number];
+export interface ParallelText { language: Language; source_layer: SourceLayer; text: string; linked_to_evidence_id: string; link_type: "parallel_translation"; physical_pdf_page: number | null; printed_page: number | null; }
+export interface Hit { hit_id: string; work_code: string; work_title: string; pdf_page: number | null; physical_pdf_page: number | null; printed_page: number | null; quote: string; snippet: string; match_text: string; sentence_text: string; paragraph_text: string; context_before: string; context_after: string; language: Language; direction: "ltr" | "rtl"; display_quote?: string | null; display_snippet?: string | null; display_normalization?: string | null; evidence_type: string; literal_strength: "strong" | "medium" | "weak"; evidence_strength: "strong" | "medium" | "weak" | "insufficient"; relation_relevance: RelationRelevance; matched_terms: string[]; matched_concepts: string[]; is_primary: boolean; source_layer: SourceLayer; source_layer_confidence: "high" | "medium" | "low"; source_layer_rationale: string; is_original_language: boolean; is_primary_language_match: boolean; is_translation: boolean; is_editorial_commentary: boolean; parallel_texts: ParallelText[]; search_record_type?: string; zone_type?: string | null; relation_level?: string; language_match: "exact" | "primary" | "secondary" | "fallback"; literal_match_kind: "none" | "exact_phrase" | "normalized" | "no_niqqud" | "single_term" | "semantic"; retrieval_tier: number; warnings: string[]; document_id?: string | null; physical_file_name?: string | null; source_sha256?: string | null; page_anchor_id?: string | null; content_node_id?: string | null; parent_zone_id?: string | null; evidence_id?: string | null; section?: string | null; }
+export interface Claim { claim_id: string; text: string; strength: "strong" | "medium" | "weak" | "insufficient"; evidence_ids: string[]; primary_evidence_id: string; }
+export interface EvidenceCounts { primary: number; contextual: number; additional_literal: number; }
+export interface MatrixRow { work_code: string; hits: number; primary_hits?: number; contextual_hits?: number; additional_literal_hits?: number; concept?: string; evidence_type?: string; evidence_strength?: string; pdf_page?: number | null; relation_type?: string; }
+export type ResearchIntent = "literal_lookup" | "concept_lookup" | "relation_query" | "translation_or_explanation" | "reference_lookup" | "follow_up" | "book_scope_query" | "source_request" | "comparison_query" | "unknown";
+export interface InterpretedSubject { kind: "concept" | "reference"; raw: string; normalized: string; language: string; script: string; variants: Array<{ value: string; kind: string }>; }
+export interface QueryInterpretation { language: string; secondary_languages: string[]; intent: ResearchIntent; instruction_language: string; instruction?: string | null; query_subjects: InterpretedSubject[]; literal_phrases: Array<{ raw?: string; text?: string; normalized?: string; search_normalized?: string; language: string }>; relations: Array<{ left: InterpretedSubject; right: InterpretedSubject; relation_type: string }>; requested_works: string[]; confidence: number; ai_used: boolean; fallback_used: boolean; }
+export interface ResearchResponse { status: "ok" | "partial" | "no_evidence"; intent?: ResearchIntent; interpretation?: QueryInterpretation; answer_text: string; answer_markdown: string; summary: string; conversation: { conversation_id: string | null; turn_id: string | null; resolved_context?: string[] }; works_consulted: string[]; hits: Hit[]; claims: Claim[]; primary_evidence_ids: string[]; evidence_counts: EvidenceCounts; evidence_matrix: MatrixRow[]; cross_corpus_matrix: MatrixRow[]; warnings: string[]; not_found: string[]; execution: Record<string, unknown>; }
+const array = <T>(value: unknown): T[] => Array.isArray(value) ? value as T[] : [];
+const string = (value: unknown, fallback = ""): string => typeof value === "string" ? value : fallback;
+const relevance = ["direct_relation", "same_fragment_both_terms", "same_page_both_terms", "same_section_relation", "single_term_literal", "thematic_parallel", "inferred_relation", "unrelated_literal_noise"];
+const legacyRetrievalLayers = ["chunk", "page_literal", "fine_zone", "main_text_spanish", "main_text_hebrew", "mixed_hebrew_spanish", "note_or_source_candidate", "note_source_unit", "nominal_reference"];
+const safeText = (value: unknown): string => string(value).replace(/<\/?(?:script|iframe|object|embed|style)\b[^>]*>/gi, "");
+function normalizeHits(value: unknown): Hit[] {
+  return array<unknown>(value).map((item) => {
+    if (!item || typeof item !== "object") throw new Error("La respuesta contiene una evidencia incompatible.");
+    const hit = item as Record<string, unknown>;
+    if (typeof hit.hit_id !== "string" || typeof hit.work_code !== "string" || typeof hit.work_title !== "string" || typeof hit.quote !== "string" || !["strong", "medium", "weak", "insufficient"].includes(String(hit.evidence_strength))) throw new Error("La respuesta contiene una evidencia incompatible.");
+    if (hit.pdf_page != null && typeof hit.pdf_page !== "number") throw new Error("La respuesta contiene una página incompatible.");
+    const sourceLayer = SOURCE_LAYERS.includes(hit.source_layer as SourceLayer) ? hit.source_layer as SourceLayer : legacyRetrievalLayers.includes(String(hit.source_layer)) ? "unknown" : null;
+    if (!sourceLayer) throw new Error("La respuesta contiene una capa editorial incompatible.");
+    const confidence = ["high", "medium", "low"].includes(String(hit.source_layer_confidence)) ? hit.source_layer_confidence as Hit["source_layer_confidence"] : "low";
+    const relationRelevance = typeof hit.relation_relevance === "string" && relevance.includes(hit.relation_relevance) ? hit.relation_relevance : "single_term_literal";
+    const languageMatch = ["exact", "primary", "secondary", "fallback"].includes(String(hit.language_match)) ? hit.language_match : "fallback";
+    const literalMatchKind = ["none", "exact_phrase", "normalized", "no_niqqud", "single_term", "semantic"].includes(String(hit.literal_match_kind)) ? hit.literal_match_kind : "none";
+    const evidenceText = string(hit.paragraph_text || hit.display_snippet || hit.snippet || hit.quote);
+    const inferredLanguage: Language = (evidenceText.match(/[\u0590-\u05ff]/gu)?.length ?? 0) >= 10 ? "he" : "es";
+    const language = ["es", "en", "he"].includes(String(hit.language)) ? hit.language as Language : inferredLanguage;
+    const parallelTexts = array<Record<string, unknown>>(hit.parallel_texts).map((parallel) => {
+      if (!["es", "en", "he"].includes(String(parallel.language)) || !SOURCE_LAYERS.includes(parallel.source_layer as SourceLayer) || parallel.link_type !== "parallel_translation" || parallel.linked_to_evidence_id !== hit.hit_id) throw new Error("La respuesta contiene un texto paralelo incompatible.");
+      return { ...parallel, text: safeText(parallel.text), physical_pdf_page: parallel.physical_pdf_page == null ? null : Number(parallel.physical_pdf_page), printed_page: parallel.printed_page == null ? null : Number(parallel.printed_page) } as ParallelText;
+    });
+    return {
+      ...hit,
+      source_layer: sourceLayer,
+      quote: safeText(hit.quote), snippet: safeText(hit.snippet || hit.quote),
+      match_text: safeText(hit.match_text), sentence_text: safeText(hit.sentence_text),
+      paragraph_text: safeText(hit.paragraph_text || hit.snippet || hit.quote),
+      context_before: safeText(hit.context_before), context_after: safeText(hit.context_after),
+      literal_strength: ["strong", "medium", "weak"].includes(String(hit.literal_strength)) ? hit.literal_strength : "strong",
+      relation_relevance: relationRelevance, language_match: languageMatch, literal_match_kind: literalMatchKind,
+      retrieval_tier: typeof hit.retrieval_tier === "number" ? hit.retrieval_tier : 99,
+      matched_terms: array<string>(hit.matched_terms), matched_concepts: array<string>(hit.matched_concepts),
+      is_primary: hit.is_primary === true, is_original_language: hit.is_original_language === true,
+      is_primary_language_match: hit.is_primary_language_match === true, is_translation: hit.is_translation === true,
+      is_editorial_commentary: hit.is_editorial_commentary === true,
+      pdf_page: hit.pdf_page == null ? null : hit.pdf_page,
+      physical_pdf_page: hit.physical_pdf_page == null ? (hit.pdf_page == null ? null : hit.pdf_page) : Number(hit.physical_pdf_page),
+      printed_page: hit.printed_page == null ? null : Number(hit.printed_page),
+      language, direction: language === "he" ? "rtl" : "ltr", source_layer_confidence: confidence,
+      source_layer_rationale: string(hit.source_layer_rationale, "insufficient_structural_evidence"),
+      parallel_texts: parallelTexts, warnings: array<string>(hit.warnings),
+    } as Hit;
+  });
+}
+function normalizeMatrix(value: unknown): MatrixRow[] { return array<unknown>(value).map((item) => { if (!item || typeof item !== "object") throw new Error("La respuesta contiene una matriz incompatible."); const row = item as Record<string, unknown>; if (typeof row.work_code !== "string" || typeof row.hits !== "number") throw new Error("La respuesta contiene una matriz incompatible."); return row as unknown as MatrixRow; }); }
+function normalizeClaims(value: unknown, hits: Hit[]): Claim[] { const allowed = new Set(hits.map((hit) => hit.hit_id)); const ids = new Set<string>(); return array<unknown>(value).map((item) => { if (!item || typeof item !== "object") throw new Error("La respuesta contiene un claim incompatible."); const claim = item as Record<string, unknown>; const claimId = string(claim.claim_id); const text = string(claim.text); const evidenceIds = array<unknown>(claim.evidence_ids).map((id) => string(id)); const primary = string(claim.primary_evidence_id); if (!claimId || ids.has(claimId) || !text || !evidenceIds.length || evidenceIds.some((id) => !allowed.has(id)) || !evidenceIds.includes(primary)) throw new Error("La trazabilidad entre afirmaciones y fuentes es incompatible."); ids.add(claimId); return { claim_id: claimId, text, strength: ["strong", "medium", "weak", "insufficient"].includes(String(claim.strength)) ? claim.strength as Claim["strength"] : "weak", evidence_ids: [...new Set(evidenceIds)], primary_evidence_id: primary }; }); }
+export function normalizeResearchResponse(value: unknown): ResearchResponse {
+  if (!value || typeof value !== "object") throw new Error("La respuesta de investigación no tiene un formato compatible.");
+  const raw = value as Record<string, unknown>; const status = raw.status;
+  if (status !== "ok" && status !== "partial" && status !== "no_evidence") throw new Error("La respuesta de investigación no indica un estado válido.");
+  const conversation = raw.conversation && typeof raw.conversation === "object" ? raw.conversation as Record<string, unknown> : {};
+  const answerText = string(raw.answer_text); const answerMarkdown = string(raw.answer_markdown, answerText);
+  if (status !== "no_evidence" && !answerMarkdown) throw new Error("La respuesta de investigación no contiene texto renderizable.");
+  const hits = normalizeHits(raw.hits); const claims = normalizeClaims(raw.claims, hits); const allowed = new Set(hits.map((hit) => hit.hit_id)); const primaryIds = array<unknown>(raw.primary_evidence_ids).map((id) => string(id)); if (primaryIds.some((id) => !allowed.has(id)) || claims.some((claim) => !primaryIds.includes(claim.primary_evidence_id))) throw new Error("La selección de evidencia principal es incompatible."); const counts = raw.evidence_counts && typeof raw.evidence_counts === "object" ? raw.evidence_counts as Record<string, unknown> : {}; const evidenceCounts = { primary: Number(counts.primary ?? primaryIds.length), contextual: Number(counts.contextual ?? 0), additional_literal: Number(counts.additional_literal ?? 0) }; if (Object.values(evidenceCounts).some((count) => !Number.isInteger(count) || count < 0)) throw new Error("El resumen de evidencias es incompatible.");
+  const intents = ["literal_lookup", "concept_lookup", "relation_query", "translation_or_explanation", "reference_lookup", "follow_up", "book_scope_query", "source_request", "comparison_query", "unknown"] as const;
+  const intent = intents.includes(raw.intent as typeof intents[number]) ? raw.intent as ResearchResponse["intent"] : undefined;
+  const interpretation = raw.interpretation && typeof raw.interpretation === "object" ? raw.interpretation as QueryInterpretation : undefined;
+  return { status, intent, interpretation, answer_text: answerText, answer_markdown: answerMarkdown, summary: string(raw.summary), conversation: { conversation_id: typeof conversation.conversation_id === "string" ? conversation.conversation_id : null, turn_id: typeof conversation.turn_id === "string" ? conversation.turn_id : null, resolved_context: array<string>(conversation.resolved_context) }, works_consulted: array<string>(raw.works_consulted), hits, claims, primary_evidence_ids: [...new Set(primaryIds)], evidence_counts: evidenceCounts, evidence_matrix: normalizeMatrix(raw.evidence_matrix), cross_corpus_matrix: normalizeMatrix(raw.cross_corpus_matrix), warnings: array<string>(raw.warnings), not_found: array<string>(raw.not_found), execution: raw.execution && typeof raw.execution === "object" ? raw.execution as Record<string, unknown> : {} };
+}
+export function selectInitialEvidence(response: ResearchResponse): string | null { return response.primary_evidence_ids[0] ?? response.hits.find((hit) => ["direct_relation", "same_fragment_both_terms", "same_section_relation", "same_page_both_terms"].includes(hit.relation_relevance))?.hit_id ?? null; }
+export function makeRequest(question: string, filters: { works: string[]; languages: Language[]; thematic: boolean; maxHits: number }, history: Array<{ question: string }>, conversationId: string | null, turnId: string | null): ResearchRequest { const works = filters.works.filter((w) => (WORKS as readonly string[]).includes(w)); const languages = filters.languages.filter((l): l is Language => ["es", "en", "he"].includes(l)); return { question, conversation: { conversation_id: conversationId, turn_id: turnId, history: history.slice(-15) }, works: works.length ? works : [...WORKS], languages: languages.length ? languages : ["es"], include_thematic: filters.thematic, include_audit: false, min_evidence: "literal", max_hits_per_work: [5, 10, 20].includes(filters.maxHits) ? filters.maxHits : 10, return_markdown: true, return_json: true, ai: { enabled: true, model: "openai_gpt-5.4-nano" } }; }
+export async function askInvestigativeQa(token: string, request: ResearchRequest): Promise<ResearchResponse> { const r = await fetch(`${API_BASE_URL.replace(/\/+$/, "")}${API_ROUTES.investigativeQa}`, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` }, body: JSON.stringify(request) }); if (!r.ok) throw new Error(r.status === 401 ? "Tu sesión expiró. Iniciá sesión nuevamente." : "No se pudo completar la investigación. Podés reintentar."); return normalizeResearchResponse(await r.json()); }

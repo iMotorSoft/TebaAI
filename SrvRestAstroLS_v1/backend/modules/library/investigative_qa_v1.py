@@ -1,77 +1,1481 @@
 """Grounded conversational investigative QA; corpus evidence is authoritative."""
 from __future__ import annotations
-import json,re,time
-from typing import Literal
-import httpx
-from pydantic import BaseModel,Field
-from globalVar import LITELLM_API_KEY,LITELLM_BASE_URL,LITELLM_TIMEOUT_SECONDS,RESEARCH_CONVERSATION_MODEL
 
-WORKS={'kitzur','lmii','lh','lm_xv','potencia_plegaria'}
-class QaAi(BaseModel): enabled:bool=True;model:str='gpt-5.4-nano'
+import json
+import re
+import time
+import unicodedata
+from collections import defaultdict
+from typing import Literal
+
+import httpx
+from pydantic import BaseModel, Field
+
+from globalVar import (
+    LITELLM_API_KEY,
+    LITELLM_BASE_URL,
+    LITELLM_TIMEOUT_SECONDS,
+    RESEARCH_CONVERSATION_MODEL,
+)
+from modules.library.investigative_model import stable_hash
+from modules.library.hebrew_lexical_normalizer import (
+    HebrewLiteralQuery,
+    extract_literal_segments,
+    normalize_hebrew_search,
+    reconstruct_pdf_spaced_hebrew,
+)
+from modules.library.editorial_source_layer import (
+    SOURCE_LAYERS,
+    SourceLayer,
+    classify_source_layer,
+    literal_context,
+    source_layer_priority,
+)
+from modules.library.hebrew_pdf_layout import readable_pdf_block
+from modules.library.multilingual_query import (
+    QueryInterpretation,
+    deterministic_interpret,
+    interpret_query,
+    preprocess_query,
+)
+
+WORKS = {"kitzur", "lmi", "lmii", "lh", "lm_xv", "potencia_plegaria"}
+WORK_TITLES = {
+    "kitzur": "Kitzur",
+    "lmi": "Likutey Moharán I — edición española BRI",
+    "lmii": "Likutey Moharán II",
+    "lh": "Likutey Halajot",
+    "lm_xv": "Likutey Moharán XV KDP",
+    "potencia_plegaria": "La Potencia de la Plegaria",
+}
+RELATION_RELEVANCE = {
+    "direct_relation",
+    "same_fragment_both_terms",
+    "same_page_both_terms",
+    "same_section_relation",
+    "single_term_literal",
+    "thematic_parallel",
+    "inferred_relation",
+    "unrelated_literal_noise",
+}
+RELATION_PRIORITY = {
+    "direct_relation": 0,
+    "same_fragment_both_terms": 1,
+    "same_section_relation": 2,
+    "same_page_both_terms": 3,
+    "thematic_parallel": 4,
+    "inferred_relation": 5,
+    "single_term_literal": 6,
+    "unrelated_literal_noise": 7,
+}
+LANGUAGE_TIER = {"he": 0, "es": 1, "en": 2}
+STOP_WORDS = {
+    "cual", "cuál", "como", "cómo", "donde", "dónde", "aparece", "aparecen",
+    "relacion", "relación", "entre", "sobre", "dice", "dicen", "algo", "alguna",
+    "what", "where", "between", "relation", "relationship", "about", "the", "una",
+    "uno", "el", "la", "es", "is", "para", "por", "con", "del", "las", "los", "que", "hay", "tambien",
+    "termino", "término", "term",
+    "does", "can", "could", "would", "should", "will", "shall", "may", "might",
+    "this", "that", "these", "those", "its", "has", "have", "had", "been",
+    "was", "were", "are", "being", "very", "much", "many", "some", "any",
+    "each", "every", "own", "same", "both", "all", "most", "few", "more",
+}
+HEBREW_STOP_WORDS = {
+    "את", "וה", "ו", "ה", "ש", "של", "כי", "יש", "לא", "אם",
+    "זה", "זו", "אלה", "הוא", "היא", "הם", "הן", "אנחנו",
+    "אני", "אתה", "אתן", "אתם", "על", "אל", "מן", "עם",
+    "לו", "לה", "להם", "להן", "לי", "לך", "לנו", "לכם",
+    "בן", "בין", "כמו", "כן", "אז", "עוד", "רק", "אך",
+}
+HEBREW_LETTER_RE = re.compile(r"[\u0590-\u05ff]")
+HEBREW_WORD_RE = re.compile(r"[\u0590-\u05ff]{2,}")
+LATIN_LETTER_RE = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ]")
+PHRASE_DELIM_RE = re.compile(r"[\u0590-\u05ff]{4,}(?:\s+[\u0590-\u05ff]{2,})+")
+ALIASES: dict[str, tuple[str, ...]] = {
+    "plegaria": ("plegaria", "oración", "rezar", "rezo", "tefilá", "tefila"),
+    "hitbodedut": ("hitbodedut", "aislamiento", "plegaria personal"),
+    "miedo": ("miedo", "temor", "temor reverencial"),
+    "temor": ("temor", "miedo", "temor reverencial"),
+    "fe": ("fe", "emuná", "emuna"),
+    "tristeza": ("tristeza", "melancolía", "melancolia"),
+    "alegría": ("alegría", "alegria", "simjá", "simja"),
+    "habla": ("habla", "hablar", "palabra", "palabras", "lenguaje", "voz"),
+    "alma": ("alma", "neshamá", "neshama"),
+    "sangre": ("sangre", "sanguínea", "sanguinea"),
+    "deseo": ("deseo", "anhelo", "lujuria", "lujurioso"),
+    "pureza": ("pureza", "purificación", "purificacion"),
+    "rabí natán": ("rabí natán", "rabi natan", "reb noson", "rabí noson"),
+    "rebe najmán": ("rebe najmán", "rebe najman", "rabí najmán", "rabi najman"),
+    "zohar": ("zohar", "zóhar"),
+    "torá": ("torá", "tora", "torah"),
+    "notas": ("nota", "notas", "fuente"),
+    "lágrimas": ("lágrimas", "lagrimas", "llorar", "llanto"),
+    "escorpión": ("escorpión", "escorpion", "escorpiones", "עקרב", "עקרבים", "עַקְרַב"),
+}
+
+
+class QaAi(BaseModel):
+    enabled: bool = True
+    model: str = "gpt-5.4-nano"
+
+
 class QaRequest(BaseModel):
- question:str=Field(min_length=2,max_length=1000);works:list[str]=Field(default_factory=lambda:sorted(WORKS));languages:list[Literal['es','en','he']]=Field(default_factory=lambda:['es','he','en']);include_thematic:bool=True;include_audit:bool=False;min_evidence:Literal['literal','strong','medium','weak']='literal';max_hits_per_work:int=Field(default=10,ge=1,le=20);return_markdown:bool=True;return_json:bool=True;ai:QaAi=Field(default_factory=QaAi);conversation:dict=Field(default_factory=dict)
+    question: str = Field(min_length=2, max_length=1000)
+    works: list[str] = Field(default_factory=lambda: sorted(WORKS))
+    languages: list[Literal["es", "en", "he"]] = Field(default_factory=lambda: ["es", "he", "en"])
+    include_thematic: bool = True
+    include_audit: bool = False
+    min_evidence: Literal["literal", "strong", "medium", "weak"] = "literal"
+    max_hits_per_work: int = Field(default=10, ge=1, le=20)
+    return_markdown: bool = True
+    return_json: bool = True
+    ai: QaAi = Field(default_factory=QaAi)
+    conversation: dict = Field(default_factory=dict)
+
+
+class ParallelText(BaseModel):
+    language: Literal["es", "en", "he"]
+    source_layer: SourceLayer
+    text: str
+    linked_to_evidence_id: str
+    link_type: Literal["parallel_translation"]
+    physical_pdf_page: int | None = None
+    printed_page: int | None = None
+
+
 class Hit(BaseModel):
- hit_id:str;work_code:str;work_title:str;pdf_page:int|None=None;printed_page:int|None=None;quote:str;source_view:str;search_record_type:str;source_layer:str;zone_type:str|None=None;note_number:str|None=None;surface_form:str|None=None;normalized_reference_name:str|None=None;matched_terms:list[str];evidence_type:str;evidence_strength:Literal['strong','medium','weak'];relation_level:Literal['literal','contextual','thematic']='literal';warnings:list[str]=Field(default_factory=list)
-def language(q:str)->str:
- return 'he' if re.search(r'[\u0590-\u05ff]',q) else 'en' if re.search(r'\b(where|what|prayer|fear|joy|faith)\b',q,re.I) else 'es'
-def terms(q:str)->list[str]:
- base=re.findall(r"[\wáéíóúñÁÉÍÓÚÑ]+",q.lower()); maps={'plegaria':['plegaria','oración','rezar','rezo'],'oración':['oración','plegaria'],'fe':['fe','emuná','emuna'],'miedo':['miedo','temor'],'rebe':['rebe najmán'],'rabino':['rabí natán','reb noson'],'hitbodedut':['hitbodedut','aislamiento'],'conocimiento':['conocimiento','daat']};out=[]
- for x in base:out+=maps.get(x,[x])
- return list(dict.fromkeys([x for x in out if len(x)>2]))[:12]
-async def _ai_interpret(question:str)->tuple[dict,list[str]]:
- fallback={'detected_language':language(question),'normalized_question':question,'concepts':terms(question),'requires_cross_corpus':True};
- if not LITELLM_API_KEY:return fallback,['ai_interpretation_fallback:litellm_key_missing']
- try:
-  async with httpx.AsyncClient(timeout=LITELLM_TIMEOUT_SECONDS) as c:
-   r=await c.post(f'{LITELLM_BASE_URL}/v1/chat/completions',headers={'Authorization':f'Bearer {LITELLM_API_KEY}'},json={'model':RESEARCH_CONVERSATION_MODEL,'messages':[{'role':'system','content':'Return JSON only: detected_language(es|en|he), normalized_question, concepts(array of literal search terms), requires_cross_corpus(boolean). Never provide citations.'},{'role':'user','content':question}],'temperature':0,'max_tokens':250,'response_format':{'type':'json_object'}})
-  value=json.loads(r.json()['choices'][0]['message']['content']);return {'detected_language':value.get('detected_language',fallback['detected_language']),'normalized_question':value.get('normalized_question',question),'concepts':[str(x) for x in value.get('concepts',fallback['concepts'])][:12],'requires_cross_corpus':bool(value.get('requires_cross_corpus',True))},[]
- except Exception as e:return fallback,[f'ai_interpretation_fallback:{type(e).__name__}']
-async def _fetch(conn,work:str,term:str,limit:int)->list[dict]:
- cfg={
- 'kitzur':("select null::int pdf_page,null::int printed_page,content quote,'chunk' record,null::text zone,null::text note,null::text surface from library_document_chunks c join library_documents d on d.id=c.document_id where d.title='KITZUR' and content ilike %s limit %s",'Kitzur','library_document_chunks'),
- 'lmii':("select pdf_page_number pdf_page,printed_page_number printed_page,literal_text quote,'page_literal' record,null::text zone,null::text note,null::text surface from library_lmii_search_ready_v2 where literal_text ilike %s limit %s",'Likutey Moharán II','library_lmii_search_ready_v2'),
- 'lh':("select pdf_page,printed_page,coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text) quote,search_record_type record,fine_zone_type zone,visible_note_number::text note,surface_form surface from library_likutey_halajot_investigative_search_v1 where coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text,'') ilike %s limit %s",'Likutey Halajot','library_likutey_halajot_investigative_search_v1'),
- 'lm_xv':("select pdf_page,printed_page,coalesce(text_quote,raw_text) quote,coalesce(zone_type,'page_literal') record,zone_type zone,null::text note,null::text surface from library_lm_xv_kdp_search_ready_v3 where coalesce(text_quote,raw_text,'') ilike %s limit %s",'Likutey Moharán XV KDP','library_lm_xv_kdp_search_ready_v3'),
- 'potencia_plegaria':("select pdf_page,null::int printed_page,quote,search_record_type record,zone_type zone,note_number::text note,surface_form surface from library_la_potencia_plegaria_investigative_search_v1 where quote ilike %s limit %s",'La Potencia de la Plegaria','library_la_potencia_plegaria_investigative_search_v1')}
- sql,title,view=cfg[work]
- async with conn.cursor() as cur:
-  await cur.execute(sql,(f'%{term}%',limit)); rows=await cur.fetchall()
- return [(r,title,view) for r in rows]
-def classify(work:str,r:dict,term:str,i:int)->Hit:
- rec=r['record'];nom=bool(r['surface']);note=bool(r['note']);typ='validated_nominal_reference' if nom else 'validated_numbered_note' if note else 'validated_fine_zone_quote' if rec in ('fine_zone','main_text_spanish','main_text_hebrew') else 'literal_same_page';strength='strong' if typ.startswith('validated') or typ=='literal_same_page' else 'medium';warn=['pdf_page_null_for_kitzur_chunk'] if work=='kitzur' and r['pdf_page'] is None else []
- return Hit(hit_id=f'{work}-{i}-{abs(hash(r["quote"]))%1000000}',work_code=work,work_title={'kitzur':'Kitzur','lmii':'Likutey Moharán II','lh':'Likutey Halajot','lm_xv':'Likutey Moharán XV KDP','potencia_plegaria':'La Potencia de la Plegaria'}[work],pdf_page=r['pdf_page'],printed_page=r['printed_page'],quote=r['quote'][:900],source_view='',search_record_type=rec,source_layer=rec,zone_type=r['zone'],note_number=r['note'],surface_form=r['surface'],matched_terms=[term],evidence_type=typ,evidence_strength=strength,warnings=warn)
-def render(question:str,hits:list[Hit],warnings:list[str])->str:
- lines=['## Síntesis investigativa',f'Se recuperaron {len(hits)} evidencias literales para: {question}.','', '## Evidencia principal']
- for h in hits[:20]:lines += [f'### {h.work_title} — PDF p. {h.pdf_page if h.pdf_page is not None else "no disponible"}',f'> {h.quote[:420]}',f'**Evidencia:** `{h.evidence_type}` · **Fuerza:** {h.evidence_strength} · **Capa:** `{h.source_layer}`','']
- lines += ['## Límites','- Los paralelos entre obras no demuestran una relación doctrinal.','- Una referencia nominal sólo acredita la aparición literal de esa forma.']
- if warnings:lines+=['','## Advertencias']+[f'- {w}' for w in sorted(set(warnings))]
- return '\n'.join(lines)
-async def _ai_render(question:str,hits:list[Hit])->tuple[str|None,list[str],list[dict]]:
- """Closed-context renderer; unknown evidence IDs are rejected before response."""
- if not LITELLM_API_KEY:return None,['ai_render_fallback:litellm_key_missing'],[]
- context=[{'id':h.hit_id,'work':h.work_title,'page':h.pdf_page,'quote':h.quote,'type':h.evidence_type,'strength':h.evidence_strength,'warnings':h.warnings} for h in hits[:20]]
- try:
-  async with httpx.AsyncClient(timeout=LITELLM_TIMEOUT_SECONDS) as c:
-   r=await c.post(f'{LITELLM_BASE_URL}/v1/chat/completions',headers={'Authorization':f'Bearer {LITELLM_API_KEY}'},json={'model':RESEARCH_CONVERSATION_MODEL,'messages':[{'role':'system','content':'Return JSON only: answer_markdown, used_evidence_ids, claims. claims is an array of {claim,evidence_ids}. Use only supplied evidence. Never invent quotes/pages/works. Nominal references are literal appearances, never doctrine. State limits.'},{'role':'user','content':json.dumps({'question':question,'evidence':context},ensure_ascii=False)}],'temperature':0,'max_tokens':1200,'response_format':{'type':'json_object'}})
-  v=json.loads(r.json()['choices'][0]['message']['content']);text,claims=validate_grounded_render(v,hits)
-  if text is None:return None,['ai_render_rejected_grounding_validation'],[]
-  return text,[],claims
- except Exception as e:return None,[f'ai_render_fallback:{type(e).__name__}'],[]
-def validate_grounded_render(value:dict,hits:list[Hit])->tuple[str|None,list[dict]]:
- """Pure validator used by live renderer and adversarial regression tests."""
- used=set(value.get('used_evidence_ids',[]));allowed={h.hit_id for h in hits};text=str(value.get('answer_markdown',''));claims=value.get('claims',[])
- if not used or not used.issubset(allowed) or not text or not isinstance(claims,list) or any(not isinstance(x,dict) or not x.get('claim') or not set(x.get('evidence_ids',[])).issubset(allowed) or not x.get('evidence_ids') for x in claims):return None,[]
- pages={str(h.pdf_page) for h in hits if h.pdf_page is not None}
- if any(x not in pages for x in re.findall(r'(?i)(?:página|pdf p\.)\s*(\d+)',text)):return None,[]
- if re.search(r'(?i)(demuestra|dependencia doctrinal|prueba doctrinal)',text):return None,[]
- return text,claims
-async def run(conn,data:QaRequest)->dict:
- started=time.perf_counter();warnings=[];interp,iw=await _ai_interpret(data.question) if data.ai.enabled else ({'detected_language':language(data.question),'normalized_question':data.question,'concepts':terms(data.question),'requires_cross_corpus':True},['ai_disabled']);warnings+=iw;plan={'queries':interp['concepts'] or terms(data.question),'works':[w for w in data.works if w in WORKS],'languages':data.languages,'layers':['page_literal','fine_zone','note_source_unit','nominal_reference'],'include_audit':False,'retrieval_mode':'sql_literal'};hits=[]
- for w in plan['works']:
-  for term in plan['queries']:
-   for row,title,view in await _fetch(conn,w,term,data.max_hits_per_work):
-    h=classify(w,row,term,len(hits));h.source_view=view
-    if h.hit_id not in {x.hit_id for x in hits}:hits.append(h)
- warnings += [z for h in hits for z in h.warnings];status='ok' if hits else 'no_evidence';markdown=render(data.question,hits,warnings);ai_markdown,aw,claims=await _ai_render(data.question,hits) if data.ai.enabled and hits else (None,[],[]);warnings+=aw
- if ai_markdown:markdown=ai_markdown
- matrix=[{'work_code':w,'hits':sum(h.work_code==w for h in hits)} for w in plan['works']];return {'question':data.question,'status':status,'answer_text':markdown,'answer_markdown':markdown,'summary':f'{len(hits)} evidencias literales recuperadas','conversation':{'conversation_id':data.conversation.get('conversation_id'),'turn_id':data.conversation.get('turn_id'),'resolved_context':[]},'interpretation':interp,'search_plan':plan,'works_consulted':plan['works'],'hits':[h.model_dump() for h in hits],'evidence_matrix':matrix,'cross_corpus_matrix':matrix,'claims':claims,'not_found':[] if hits else plan['queries'],'warnings':list(dict.fromkeys(warnings)),'execution':{'pipeline_version':'investigative_qa_v1','model':RESEARCH_CONVERSATION_MODEL,'used_ai_interpretation':data.ai.enabled and not iw,'used_ai_rendering':bool(ai_markdown),'ai_render_validated':bool(ai_markdown),'used_deterministic_fallback':not bool(ai_markdown),'used_vector':False,'used_external_sources':False,'used_ocr':False,'database':'postgresql','duration_ms':round((time.perf_counter()-started)*1000,2)}}
+    hit_id: str
+    work_code: str
+    work_title: str
+    pdf_page: int | None = None
+    printed_page: int | None = None
+    quote: str
+    snippet: str = ""
+    display_quote: str | None = None
+    display_snippet: str | None = None
+    display_normalization: str | None = None
+    source_view: str
+    search_record_type: str
+    source_layer: SourceLayer
+    source_layer_confidence: Literal["high", "medium", "low"] = "low"
+    source_layer_rationale: str = "insufficient_structural_evidence"
+    zone_type: str | None = None
+    note_number: str | None = None
+    surface_form: str | None = None
+    normalized_reference_name: str | None = None
+    matched_terms: list[str]
+    matched_concepts: list[str] = Field(default_factory=list)
+    evidence_type: str
+    literal_strength: Literal["strong", "medium", "weak"] = "strong"
+    evidence_strength: Literal["strong", "medium", "weak", "insufficient"]
+    relation_relevance: Literal[
+        "direct_relation", "same_fragment_both_terms", "same_page_both_terms",
+        "same_section_relation", "single_term_literal", "thematic_parallel",
+        "inferred_relation", "unrelated_literal_noise",
+    ] = "single_term_literal"
+    relation_level: Literal["literal", "contextual", "thematic"] = "literal"
+    is_primary: bool = False
+    language_match: Literal["exact", "primary", "secondary", "fallback"] = "fallback"
+    literal_match_kind: Literal["none", "exact_phrase", "normalized", "no_niqqud", "single_term", "semantic"] = "none"
+    retrieval_tier: int = 99
+    warnings: list[str] = Field(default_factory=list)
+    document_id: str | None = None
+    physical_file_name: str | None = None
+    source_sha256: str | None = None
+    page_anchor_id: str | None = None
+    section: str | None = None
+    retrieval_position: int | None = None
+    physical_pdf_page: int | None = None
+    match_text: str = ""
+    sentence_text: str = ""
+    paragraph_text: str = ""
+    context_before: str = ""
+    context_after: str = ""
+    language: Literal["es", "en", "he"] = "es"
+    direction: Literal["ltr", "rtl"] = "ltr"
+    source_original_language: Literal["es", "en", "he", "unknown"] = "unknown"
+    is_original_language: bool = False
+    is_primary_language_match: bool = False
+    is_translation: bool = False
+    is_editorial_commentary: bool = False
+    parent_zone_id: str | None = None
+    content_node_id: str | None = None
+    evidence_id: str | None = None
+    page_anchor_kind: str | None = None
+    ingestion_run_id: str | None = None
+    parallel_texts: list[ParallelText] = Field(default_factory=list)
+
+
+def language(question: str) -> str:
+    if re.search(r"[\u0590-\u05ff]", question):
+        return "he"
+    return "en" if re.search(r"\b(where|what|prayer|fear|joy|faith)\b", question, re.I) else "es"
+
+
+def _fold(value: str) -> str:
+    return unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode().casefold()
+
+
+def _clean_concept(value: str) -> str:
+    words = re.findall(r"[\wáéíóúñÁÉÍÓÚÑ\u0590-\u05ff]+", value.casefold())
+    return " ".join(word for word in words if word not in STOP_WORDS).strip()
+
+
+def _extract_literal_phrases(question: str) -> list[dict]:
+    """Detect Hebrew literal phrases within a mixed-language query."""
+    analysis = extract_literal_segments(question)
+    if analysis is None:
+        return []
+    search_text = analysis.literal_reconstructed
+    phrases = []
+    for match in re.finditer(r"[\u0590-\u05ff]{3,}(?:\s+[\u0590-\u05ff]{2,})+", search_text):
+        phrase = match.group()
+        words = [w for w in phrase.split() if len(w) >= 2 and w not in HEBREW_STOP_WORDS]
+        if words:
+            phrases.append({
+                "text": phrase,
+                "language": "he",
+                "script": "Hebrew",
+                "word_count": len(phrase.split()),
+                "content_words": words,
+            })
+    if not phrases:
+        hebrew_words = sorted(set(
+            w for w in re.findall(r"[\u0590-\u05ff]+", search_text)
+            if len(w) >= 3 and w not in HEBREW_STOP_WORDS
+        ))
+        if len(hebrew_words) >= 2:
+            phrases.append({
+                "text": " ".join(hebrew_words),
+                "language": "he",
+                "script": "Hebrew",
+                "word_count": len(hebrew_words),
+                "content_words": hebrew_words,
+                "reconstructed": True,
+            })
+        elif hebrew_words:
+            phrases.append({
+                "text": hebrew_words[0],
+                "language": "he",
+                "script": "Hebrew",
+                "word_count": 1,
+                "content_words": hebrew_words,
+                "single_word": True,
+            })
+    return phrases
+
+
+def _normalized_token_segmentations(text: str, compact: str) -> list[str]:
+    """Find exact token windows whose Hebrew letters equal a compact query."""
+    words = [word for word in text.split() if re.search(r"[\u05d0-\u05ea]", word)]
+    results: list[str] = []
+    for start in range(len(words)):
+        joined = ""
+        selected: list[str] = []
+        for word in words[start:start + 8]:
+            letters = "".join(re.findall(r"[\u05d0-\u05ea]", word))
+            if not letters:
+                continue
+            joined += letters
+            selected.append(letters)
+            if joined == compact:
+                results.append(" ".join(selected))
+                break
+            if len(joined) >= len(compact):
+                break
+    return list(dict.fromkeys(results))
+
+
+def _detect_interface_language(question: str) -> str:
+    """Detect the user's primary language, ignoring Hebrew literal quotations."""
+    non_hebrew = HEBREW_LETTER_RE.sub("", question).strip()
+    return language(non_hebrew) if non_hebrew else "he"
+
+
+def _analyze_query_language(question: str) -> dict:
+    interface_lang = _detect_interface_language(question)
+    literal_phrases = _extract_literal_phrases(question)
+    has_hebrew = bool(literal_phrases) or bool(HEBREW_LETTER_RE.search(question))
+    query_language = "he" if has_hebrew else interface_lang
+    primary_retrieval_language = "he" if has_hebrew else interface_lang
+    secondary_languages = ["es", "en", "he"]
+    if primary_retrieval_language == "he":
+        secondary_languages = ["es", "en"]
+    elif primary_retrieval_language == "es":
+        secondary_languages = ["he", "en"]
+    else:
+        secondary_languages = ["he", "es"]
+    return {
+        "interface_language": interface_lang,
+        "query_language": query_language,
+        "primary_retrieval_language": primary_retrieval_language,
+        "literal_phrases": literal_phrases,
+        "secondary_languages": [lang for lang in secondary_languages if lang != primary_retrieval_language],
+    }
+
+
+def classify_intent(question: str) -> Literal[
+    "literal_lookup", "concept_lookup", "relation_query", "translation_or_explanation",
+    "reference_lookup", "follow_up", "book_scope_query", "source_request",
+    "comparison_query", "unknown",
+]:
+    """Classify retrieval intent deterministically before optional AI wording."""
+    return deterministic_interpret(preprocess_query(question), []).intent
+
+
+def _hebrew_content_words(text: str) -> list[str]:
+    words = re.findall(r"[\u0590-\u05ff]+", text)
+    return [w for w in words if len(w) >= 2 and w not in HEBREW_STOP_WORDS]
+
+
+def relation_concepts(question: str) -> list[dict[str, object]]:
+    """Extract user-stated concepts; model expansions never become retrieval authority."""
+    literal_phrases = _extract_literal_phrases(question)
+    if literal_phrases:
+        phrase = literal_phrases[0]
+        words = phrase.get("content_words", [])
+        if words:
+            result = []
+            if phrase.get("reconstructed") or phrase.get("single_word"):
+                for word in words[:3]:
+                    result.append({"label": word, "terms": [word]})
+            else:
+                result.append({"label": phrase["text"], "terms": [phrase["text"]]})
+                for word in words[:3]:
+                    if word not in [t for r in result for t in r["terms"]]:
+                        result.append({"label": word, "terms": [word]})
+            return result[:2]
+    cleaned = question.strip(" ¿?")
+    cleaned = re.sub(r"(?i)^.*?\b(?:relaci[oó]n|v[ií]nculo|comparaci[oó]n)\s+(?:entre|de)\s+", "", cleaned)
+    parts = re.split(r"\s+(?:y|e|and|con)\s+", cleaned, maxsplit=1, flags=re.I)
+    labels = [_clean_concept(part) for part in parts]
+    labels = [label for label in labels if label]
+    if len(labels) < 2:
+        folded_cleaned = _fold(cleaned)
+        multiword_alias = next(
+            (alias for alias in ALIASES if " " in alias and _fold(alias) in folded_cleaned),
+            None,
+        )
+        if multiword_alias:
+            labels = [multiword_alias]
+        else:
+            tokens = [_clean_concept(token) for token in re.findall(r"[\wáéíóúñÁÉÍÓÚÑ\u0590-\u05ff]+", cleaned)]
+            labels = [token for token in tokens if token][:2] or [_clean_concept(question)]
+    result = []
+    for label in labels[:2]:
+        alias_key = next((key for key in ALIASES if _fold(key) == _fold(label)), label)
+        variants = ALIASES.get(alias_key, (label,))
+        result.append({"label": label, "terms": list(dict.fromkeys(variants))})
+    return result
+
+
+def _prior_relational_question(history: list[dict]) -> str | None:
+    for item in reversed(history[-15:]):
+        question = str(item.get("question", "")) if isinstance(item, dict) else ""
+        if re.search(r"(?i)\b(relaci[oó]n|v[ií]nculo|compar| y | e | and )", question):
+            return question
+    return None
+
+
+def _is_contextual_followup(question: str) -> bool:
+    return bool(re.search(r"(?i)\b(mostr|fuente|principal|qu[eé] parte|eso|tambi[eé]n|literal|interpretaci[oó]n|impureza)\b", question))
+
+
+def _mentioned_works(question: str) -> list[str]:
+    folded = _fold(question)
+    aliases = {
+        "kitzur": ("kitzur",),
+        "lmi": ("likutey moharan i", "likutey moharan 1"),
+        "lmii": ("likutey moharan ii", "likutey moharan 2"),
+        "lh": ("likutey halajot", "likutey halakhot"),
+        "lm_xv": ("likutey moharan xv", "likutey moharan 15"),
+        "potencia_plegaria": ("potencia de la plegaria",),
+    }
+    return [work for work, names in aliases.items() if any(name in folded for name in names)]
+
+
+def terms(question: str) -> list[str]:
+    return [term for concept in relation_concepts(question) for term in concept["terms"]][:20]
+
+
+async def _ai_interpret(question: str, history: list[dict] | None = None) -> tuple[dict, list[str]]:
+    concepts = relation_concepts(question)
+    fallback = {
+        "detected_language": language(question),
+        "normalized_question": question,
+        "concepts": [item["label"] for item in concepts],
+        "requires_cross_corpus": True,
+    }
+    if not LITELLM_API_KEY:
+        return fallback, ["ai_interpretation_fallback:litellm_key_missing"]
+    try:
+        async with httpx.AsyncClient(timeout=LITELLM_TIMEOUT_SECONDS) as client:
+            response = await client.post(
+                f"{LITELLM_BASE_URL}/v1/chat/completions",
+                headers={"Authorization": f"Bearer {LITELLM_API_KEY}"},
+                json={
+                    "model": RESEARCH_CONVERSATION_MODEL,
+                    "messages": [
+                        {"role": "system", "content": "Return JSON only: detected_language(es|en|he), normalized_question, requires_cross_corpus(boolean). Resolve follow-up references from the supplied question history, but do not add unrelated concepts and never provide citations."},
+                        {"role": "user", "content": json.dumps({"question": question, "history": (history or [])[-15:]}, ensure_ascii=False)},
+                    ],
+                    "temperature": 0,
+                    "max_tokens": 180,
+                    "response_format": {"type": "json_object"},
+                },
+            )
+        value = json.loads(response.json()["choices"][0]["message"]["content"])
+        return {
+            **fallback,
+            "detected_language": value.get("detected_language", fallback["detected_language"]),
+            "normalized_question": value.get("normalized_question", question),
+            "requires_cross_corpus": bool(value.get("requires_cross_corpus", True)),
+        }, []
+    except Exception as exc:
+        return fallback, [f"ai_interpretation_fallback:{type(exc).__name__}"]
+
+
+def _lm_xv_location(header: str | None) -> tuple[int | None, str | None]:
+    value = str(header or "")
+    printed = re.search(r"(?m)^\s*(\d{1,4})\s*$", value)
+    section = re.search(r"(?im)^\s*(LIKUTEY\s+MOHAR[ÁA]N\s+II\s+#\d+(?::\d+)?)\s*$", value)
+    return (
+        int(printed.group(1)) if printed else None,
+        section.group(1) if section else None,
+    )
+
+
+def _hebrew_compact(value: str) -> str:
+    return "".join(re.findall(r"[א-ת]", normalize_hebrew_search(value)))
+
+
+def _compact_candidate(text: str, term: str) -> bool:
+    """Cheap prefilter; a phrase may differ by one glyph, never by a rewrite."""
+    haystack, needle = _hebrew_compact(text), _hebrew_compact(term)
+    if not needle:
+        return False
+    if needle in haystack:
+        return True
+    if len(needle) < 8:
+        return False
+    return any(
+        sum(left != right for left, right in zip(needle, haystack[offset:offset + len(needle)])) <= 1
+        for offset in range(max(0, len(haystack) - len(needle) + 1))
+    )
+
+
+def _controlled_hebrew_context(text: str, term: str):
+    context = literal_context(text, term)
+    normalized = normalize_hebrew_search(term)
+    if context is not None or " " in normalized:
+        return context
+    for token in re.findall(r"[\u0590-\u05ff\ufb1d-\ufb4f]+", text):
+        candidate = normalize_hebrew_search(token)
+        if candidate.startswith(normalized) and candidate[len(normalized):] in {"א", "י", "ים"}:
+            return literal_context(text, token)
+    return None
+
+
+def _hebrew_number(value: str) -> int:
+    scores = {"א": 1, "ב": 2, "ג": 3, "ד": 4, "ה": 5, "ו": 6, "ז": 7, "ח": 8, "ט": 9,
+              "י": 10, "כ": 20, "ל": 30, "מ": 40, "נ": 50, "ס": 60, "ע": 70, "פ": 80, "צ": 90,
+              "ק": 100, "ר": 200, "ש": 300, "ת": 400}
+    return sum(scores.get(char, 0) for char in value)
+
+
+def _scripture_reference(value: str) -> tuple[str, int, int] | None:
+    hebrew = re.search(r"מלכים\s+א\s+([א-ת]+)\s+([א-ת]+)", normalize_hebrew_search(value))
+    if hebrew:
+        return "1_kings", _hebrew_number(hebrew.group(1)), _hebrew_number(hebrew.group(2))
+    spanish = re.search(r"(?i)Reyes\s+1\s*,\s*(\d+)\s*:\s*(\d+)", value)
+    if spanish:
+        return "1_kings", int(spanish.group(1)), int(spanish.group(2))
+    english = re.search(r"(?i)1\s+Kings\s+(\d+)\s*:\s*(\d+)", value)
+    if english:
+        return "1_kings", int(english.group(1)), int(english.group(2))
+    return None
+
+
+async def _fetch_lm_xv(conn, term: str, limit: int) -> list[tuple[dict, str, str]]:
+    """Search validated LM XV zones through a Unicode-safe derived projection."""
+    async with conn.cursor() as cursor:
+        await cursor.execute(
+            """SELECT p.id::text page_anchor_id,p.document_id::text,p.source_run_id,
+                      p.pdf_page,p.printed_page,p.text_hash,
+                      b.id::text content_node_id,b.bbox,b.text block_text,
+                      f.id::text parent_zone_id,f.zone_type,f.zone_role,
+                      f.authority_level,f.text_quote,f.confidence,
+                      s.document_part,s.evidence_quote,
+                      d.source_filename physical_file_name,d.source_sha256,d.source_path
+               FROM library_lm_xv_kdp_pages_v1 p
+               JOIN library_documents d ON d.id=p.document_id
+               JOIN library_lm_xv_kdp_structural_classifications_v1 s
+                 ON s.document_id=p.document_id AND s.pdf_page=p.pdf_page
+                AND s.source_run_id=p.source_run_id
+               JOIN library_lm_xv_kdp_fine_zones_v1 f
+                 ON f.document_id=p.document_id AND f.pdf_page=p.pdf_page
+                AND f.source_run_id=p.source_run_id
+               JOIN library_lm_xv_kdp_page_blocks_v1 b ON b.id=f.parent_block_id
+               WHERE f.validation_status IN ('validated','candidate')
+               ORDER BY p.pdf_page,f.block_index"""
+        )
+        rows = await cursor.fetchall()
+    results: list[tuple[dict, str, str]] = []
+    is_hebrew = bool(HEBREW_LETTER_RE.search(term))
+    normalized_term = normalize_hebrew_search(term)
+    for source in rows:
+        persisted = str(source.get("block_text") or source.get("text_quote") or "")
+        if not is_hebrew and normalized_term not in normalize_hebrew_search(persisted):
+            continue
+        if is_hebrew and source.get("zone_type") != "main_text_hebrew":
+            continue
+        if is_hebrew and not _compact_candidate(persisted, term):
+            continue
+        canonical = readable_pdf_block(
+            str(source["source_path"]), int(source["pdf_page"]), source.get("bbox")
+        ) or persisted
+        context = None
+        if is_hebrew:
+            context = literal_context(canonical, term)
+            if context is None:
+                continue
+        printed, section = _lm_xv_location(source.get("evidence_quote"))
+        decision = classify_source_layer(
+            canonical,
+            zone_type=source.get("zone_type"),
+            zone_role=source.get("zone_role"),
+            document_part=source.get("document_part"),
+            matched_text=term,
+        )
+        row = dict(source)
+        row.update({
+            "printed_page": source.get("printed_page") or printed,
+            "physical_pdf_page": source["pdf_page"],
+            "quote": canonical,
+            "record": source.get("zone_type") or "unknown",
+            "zone": source.get("zone_type"),
+            "note": None,
+            "surface": None,
+            "section": section,
+            "source_layer": decision.source_layer,
+            "source_layer_confidence": decision.confidence,
+            "source_layer_rationale": decision.rationale,
+            "match_context": context,
+            "match_position": normalize_hebrew_search(canonical).find(normalized_term),
+            "page_anchor_kind": "library_lm_xv_kdp_pages_v1",
+        })
+        reference = _scripture_reference(canonical) if decision.source_layer == "biblical_quote_in_lesson" else None
+        parallels = []
+        if reference:
+            for candidate in rows:
+                candidate_printed, candidate_section = _lm_xv_location(candidate.get("evidence_quote"))
+                candidate_text = str(candidate.get("block_text") or candidate.get("text_quote") or "")
+                if (
+                    candidate.get("zone_type") == "main_text_spanish"
+                    and abs(int(candidate["pdf_page"]) - int(source["pdf_page"])) <= 2
+                    and candidate_section == section
+                    and _scripture_reference(candidate_text) == reference
+                ):
+                    parallels.append({
+                        "language": "es",
+                        "source_layer": "editorial_translation",
+                        "text": candidate_text,
+                        "physical_pdf_page": int(candidate["pdf_page"]),
+                        "printed_page": candidate.get("printed_page") or candidate_printed,
+                    })
+                    break
+        row["parallel_candidates"] = parallels
+        results.append((row, WORK_TITLES["lm_xv"], "library_lm_xv_kdp_fine_zones_v1"))
+        if len(results) >= limit:
+            break
+    return results
+
+
+async def _fetch_lmii_hebrew(conn, term: str, limit: int) -> list[tuple[dict, str, str]]:
+    """Recover LM II Hebrew pages despite presentation-form storage glyphs."""
+    from modules.library.likutey_moharan_ii_layout import readable_page_text
+
+    async with conn.cursor() as cursor:
+        await cursor.execute(
+            """SELECT content_node_id::text,pdf_page_number pdf_page,
+                      printed_page_number printed_page,literal_text quote,
+                      'page_literal' record,NULL::text zone,NULL::text note,
+                      NULL::text surface,lesson_number
+               FROM library_lmii_search_ready_v2
+               ORDER BY pdf_page_number"""
+        )
+        rows = await cursor.fetchall()
+    results = []
+    seen_pages: set[int] = set()
+    for source in rows:
+        page = int(source["pdf_page"])
+        if page in seen_pages or not _compact_candidate(str(source["quote"]), term):
+            continue
+        readable = readable_page_text(page)
+        context = _controlled_hebrew_context(readable or "", term)
+        if not readable or context is None:
+            continue
+        row = dict(source)
+        row["quote"] = readable
+        row["section"] = f"LIKUTEY MOHARÁN II #{source['lesson_number']}" if source.get("lesson_number") else None
+        row["match_context"] = context
+        row["source_layer"] = "unknown"
+        row["source_layer_confidence"] = "low"
+        row["source_layer_rationale"] = "page_level_bilingual_layout_requires_zone_review"
+        row["physical_pdf_page"] = page
+        results.append((row, WORK_TITLES["lmii"], "library_lmii_search_ready_v2"))
+        seen_pages.add(page)
+        if len(results) >= limit:
+            break
+    return results
+
+
+async def _fetch(conn, work: str, term: str, limit: int) -> list[tuple[dict, str, str]]:
+    if work == "lm_xv":
+        return await _fetch_lm_xv(conn, term, limit)
+    if work == "lmii" and HEBREW_LETTER_RE.search(term):
+        return await _fetch_lmii_hebrew(conn, term, limit)
+    if work == "lmi":
+        normalized = normalize_hebrew_search(term)
+        async with conn.cursor() as cursor:
+            await cursor.execute(
+                """SELECT pdf_page_number pdf_page,printed_page_number printed_page,
+                          literal_text quote,'page_literal' record,NULL::text zone,
+                          NULL::text note,NULL::text surface,document_id::text,
+                          source_filename physical_file_name,source_sha256,
+                          page_anchor_id::text,section_page_label section,
+                          content_node_id::text,position(%s in normalized_text) match_position
+                   FROM library_lmi_literal_search_v1
+                   WHERE normalized_text LIKE %s
+                   ORDER BY position(%s in normalized_text),pdf_page_number LIMIT %s""",
+                (normalized, f"%{normalized}%", normalized, limit),
+            )
+            rows = await cursor.fetchall()
+        return [(row, WORK_TITLES[work], "library_lmi_literal_search_v1") for row in rows]
+    config = {
+        "kitzur": ("select null::int pdf_page,null::int printed_page,content quote,'chunk' record,null::text zone,null::text note,null::text surface from library_document_chunks c join library_documents d on d.id=c.document_id where d.title='KITZUR' and content ilike %s limit %s", "Kitzur", "library_document_chunks"),
+        "lmii": ("select pdf_page_number pdf_page,printed_page_number printed_page,literal_text quote,'page_literal' record,null::text zone,null::text note,null::text surface from library_lmii_search_ready_v2 where literal_text ilike %s limit %s", "Likutey Moharán II", "library_lmii_search_ready_v2"),
+        "lh": ("select pdf_page,printed_page,coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text) quote,search_record_type record,fine_zone_type zone,visible_note_number::text note,surface_form surface from library_likutey_halajot_investigative_search_v1 where coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text,'') ilike %s limit %s", "Likutey Halajot", "library_likutey_halajot_investigative_search_v1"),
+        "potencia_plegaria": ("select pdf_page,null::int printed_page,quote,search_record_type record,zone_type zone,note_number::text note,surface_form surface from library_la_potencia_plegaria_investigative_search_v1 where quote ilike %s limit %s", "La Potencia de la Plegaria", "library_la_potencia_plegaria_investigative_search_v1"),
+    }
+    sql, title, view = config[work]
+    async with conn.cursor() as cursor:
+        await cursor.execute(sql, (f"%{term}%", limit))
+        rows = await cursor.fetchall()
+    return [(row, title, view) for row in rows]
+
+
+async def _phrase_fetch(conn, work: str, phrase: str, limit: int) -> list[tuple[dict, str, str]]:
+    """Search for the exact phrase as a whole, not individual terms."""
+    if work in {"lmi", "lm_xv"} or (work == "lmii" and HEBREW_LETTER_RE.search(phrase)):
+        return await _fetch(conn, work, phrase, limit)
+    phrase_config = {
+        "kitzur": ("select null::int pdf_page,null::int printed_page,content quote,'chunk' record,null::text zone,null::text note,null::text surface from library_document_chunks c join library_documents d on d.id=c.document_id where d.title='KITZUR' and content ilike %s limit %s", "Kitzur", "library_document_chunks"),
+        "lmii": ("select pdf_page_number pdf_page,printed_page_number printed_page,literal_text quote,'page_literal' record,null::text zone,null::text note,null::text surface from library_lmii_search_ready_v2 where literal_text ilike %s limit %s", "Likutey Moharán II", "library_lmii_search_ready_v2"),
+        "lh": ("select pdf_page,printed_page,coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text) quote,search_record_type record,fine_zone_type zone,visible_note_number::text note,surface_form surface from library_likutey_halajot_investigative_search_v1 where coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text,'') ilike %s limit %s", "Likutey Halajot", "library_likutey_halajot_investigative_search_v1"),
+        "potencia_plegaria": ("select pdf_page,null::int printed_page,quote,search_record_type record,zone_type zone,note_number::text note,surface_form surface from library_la_potencia_plegaria_investigative_search_v1 where quote ilike %s limit %s", "La Potencia de la Plegaria", "library_la_potencia_plegaria_investigative_search_v1"),
+    }
+    sql, title, view = phrase_config[work]
+    async with conn.cursor() as cursor:
+        await cursor.execute(sql, (f"%{phrase}%", limit))
+        rows = await cursor.fetchall()
+    return [(row, title, view) for row in rows]
+
+
+async def _resolve_pdf_spaced_literal(
+    conn,
+    works: list[str],
+    analysis: HebrewLiteralQuery,
+    limit: int,
+) -> tuple[str | None, list[str]]:
+    """Resolve lost word boundaries using bounded candidates and the corpus.
+
+    The compact lookup is used only when PDF glyph spacing was detected. It
+    selects a segmentation; normal indexed phrase retrieval remains the
+    authority for evidence and ranking.
+    """
+    attempted = list(analysis.candidates[:64])
+    corpus_segmentations: list[str] = []
+    if "lmi" in works and analysis.compact_letters:
+        async with conn.cursor() as cursor:
+            await cursor.execute(
+                """SELECT normalized_text
+                   FROM library_lmi_literal_search_v1
+                   WHERE regexp_replace(normalized_text, '[^א-ת]', '', 'g') LIKE %s
+                   ORDER BY pdf_page_number
+                   LIMIT %s""",
+                (f"%{analysis.compact_letters}%", max(20, limit * 4)),
+            )
+            for row in await cursor.fetchall():
+                corpus_segmentations.extend(
+                    _normalized_token_segmentations(str(row["normalized_text"]), analysis.compact_letters)
+                )
+    if "lm_xv" in works and analysis.compact_letters:
+        async with conn.cursor() as cursor:
+            await cursor.execute(
+                """SELECT p.pdf_page,b.bbox,b.text,d.source_path
+                   FROM library_lm_xv_kdp_fine_zones_v1 f
+                   JOIN library_lm_xv_kdp_page_blocks_v1 b ON b.id=f.parent_block_id
+                   JOIN library_lm_xv_kdp_pages_v1 p
+                     ON p.document_id=f.document_id AND p.pdf_page=f.pdf_page
+                    AND p.source_run_id=f.source_run_id
+                   JOIN library_documents d ON d.id=f.document_id
+                   WHERE f.zone_type='main_text_hebrew'
+                   ORDER BY p.pdf_page,f.block_index"""
+            )
+            for row in await cursor.fetchall():
+                if analysis.compact_letters not in _hebrew_compact(str(row["text"])):
+                    continue
+                readable = readable_pdf_block(str(row["source_path"]), int(row["pdf_page"]), row["bbox"])
+                if readable:
+                    corpus_segmentations.extend(
+                        _normalized_token_segmentations(readable, analysis.compact_letters)
+                    )
+    for candidate in dict.fromkeys(corpus_segmentations):
+        if candidate not in attempted:
+            attempted.append(candidate)
+        for work in works:
+            if work in {"lmi", "lm_xv"} and await _phrase_fetch(conn, work, candidate, 1):
+                return candidate, attempted[:64]
+
+    # Generic bounded fallback for other corpus views. It never changes the
+    # source text and accepts a segmentation only after a literal DB match.
+    for candidate in attempted[:16]:
+        if not candidate or candidate == analysis.compact_letters:
+            continue
+        for work in works:
+            if await _phrase_fetch(conn, work, candidate, 1):
+                return candidate, attempted[:64]
+    return None, attempted[:64]
+
+
+def _hebrew_term_score(term: str) -> int:
+    """Score how meaningful a Hebrew term is for search (higher = better)."""
+    if len(term) >= 4:
+        return 3
+    if len(term) >= 3:
+        return 2
+    return 1
+
+
+def display_snippet(text: str, limit: int = 900) -> str:
+    """Presentation-only clipping; ``quote`` keeps the canonical retrieved text."""
+    value = text.strip()
+    clipped_start = bool(value and value[0].islower())
+    if len(value) > limit:
+        boundary = max(value.rfind(mark, 0, limit) for mark in (". ", "? ", "! ", "\n"))
+        if boundary < limit // 2:
+            boundary = value.rfind(" ", 0, limit)
+        value = value[: boundary if boundary > 0 else limit].rstrip() + "…"
+    if clipped_start:
+        value = "…" + value
+    return value
+
+
+def literal_context_snippet(text: str, matched_terms: list[str], limit: int = 900) -> str:
+    """Select complete source lines around a normalized literal match."""
+    normalized_terms = sorted(
+        {normalize_hebrew_search(term) for term in matched_terms if normalize_hebrew_search(term)},
+        key=len,
+        reverse=True,
+    )
+    lines = text.splitlines()
+    for index, line in enumerate(lines):
+        normalized_line = normalize_hebrew_search(line)
+        if any(term in normalized_line for term in normalized_terms):
+            start = max(0, index - 1)
+            end = min(len(lines), index + 2)
+            return display_snippet("\n".join(lines[start:end]), limit)
+    return display_snippet(text, limit)
+
+
+def _literal_strength(record: str, nominal: bool, note: bool) -> Literal["strong", "medium", "weak"]:
+    if nominal or note or record in {"fine_zone", "main_text_spanish", "main_text_hebrew"}:
+        return "strong"
+    return "medium"
+
+
+def _relation_strength(relevance: str) -> Literal["strong", "medium", "weak", "insufficient"]:
+    if relevance == "direct_relation":
+        return "strong"
+    if relevance in {"same_fragment_both_terms", "same_section_relation"}:
+        return "medium"
+    if relevance in {"same_page_both_terms", "thematic_parallel", "inferred_relation"}:
+        return "weak"
+    return "insufficient"
+
+
+def _detect_hit_language(quote: str) -> str:
+    he_count = len(HEBREW_LETTER_RE.findall(quote))
+    if he_count >= 10:
+        return "he"
+    total = len(quote.strip())
+    if total and he_count / total > 0.3:
+        return "he"
+    return "es"
+
+
+def _compute_language_match(hit_lang: str, primary_lang: str, secondary: list[str]) -> Literal["exact", "primary", "secondary", "fallback"]:
+    if hit_lang == primary_lang:
+        return "exact"
+    if hit_lang in secondary:
+        return "secondary"
+    return "fallback"
+
+
+def _compute_literal_match_kind(quote: str, terms: list[str], primary_lang: str) -> Literal["none", "exact_phrase", "normalized", "no_niqqud", "single_term", "semantic"]:
+    if primary_lang == "he" and HEBREW_LETTER_RE.search(quote):
+        he_terms = [t for t in terms if HEBREW_LETTER_RE.search(t) and len(t) >= 3]
+        for term in he_terms:
+            if term in quote:
+                return "exact_phrase"
+            normalized_term = normalize_hebrew_search(term)
+            if normalized_term and normalized_term in normalize_hebrew_search(quote):
+                has_marks = any(unicodedata.combining(char) for char in unicodedata.normalize("NFD", term))
+                return "normalized" if has_marks else "no_niqqud"
+        if he_terms:
+            return "single_term"
+    if len(terms) >= 2 and all(term in quote for term in terms):
+        return "exact_phrase"
+    if any(term in quote for term in terms):
+        return "single_term"
+    return "semantic"
+
+
+def _compute_retrieval_tier(language_match: str, literal_match_kind: str) -> int:
+    if language_match == "exact" and literal_match_kind in ("exact_phrase", "normalized", "no_niqqud"):
+        return 0
+    if language_match == "exact" and literal_match_kind == "single_term":
+        return 1
+    if language_match in ("primary", "exact") and literal_match_kind in ("semantic", "single_term"):
+        return 2
+    if language_match == "secondary":
+        return 3
+    return 4
+
+
+def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: list[str], view: str, primary_language: str = "es", secondary_languages: list[str] | None = None) -> Hit:
+    record = row["record"]
+    nominal = bool(row["surface"])
+    note = bool(row["note"])
+    evidence_type = (
+        "validated_nominal_reference" if nominal else
+        "validated_numbered_note" if note else
+        "validated_fine_zone_quote" if record in {"fine_zone", "main_text_spanish", "main_text_hebrew"} else
+        "literal_same_page"
+    )
+    relevance = "same_fragment_both_terms" if len(matched_concepts) >= 2 else "single_term_literal"
+    quote = str(row["quote"] or "")
+    match_context = row.get("match_context")
+    snippet = (
+        match_context.paragraph_text if match_context is not None else
+        literal_context_snippet(quote, matched_terms) if work == "lmi" else
+        display_snippet(quote)
+    )
+    display_quote = None
+    display_normalization = None
+    if work == "lmii" and row["pdf_page"] is not None and len(HEBREW_LETTER_RE.findall(quote)) >= 100:
+        from modules.library.likutey_moharan_ii_layout import readable_page_text
+
+        display_quote = readable_page_text(int(row["pdf_page"]))
+        if display_quote:
+            display_normalization = "pdf_glyph_geometry_nfc_v1"
+    warning = ["pdf_page_null_for_kitzur_chunk"] if work == "kitzur" and row["pdf_page"] is None else []
+    evidence_text = display_quote if display_quote and _detect_hit_language(display_quote) == "he" else quote
+    if display_quote and evidence_text == display_quote:
+        snippet = display_snippet(display_quote)
+    hit_lang = _detect_hit_language(evidence_text)
+    sec_langs = secondary_languages or ["he", "en"]
+    language_match = _compute_language_match(hit_lang, primary_language, sec_langs)
+    literal_match_kind = _compute_literal_match_kind(evidence_text, matched_terms, primary_language)
+    if match_context is not None:
+        literal_match_kind = match_context.match_kind
+    retrieval_tier = _compute_retrieval_tier(language_match, literal_match_kind)
+    source_layer = row.get("source_layer")
+    if source_layer not in SOURCE_LAYERS:
+        source_layer = (
+            "rebbe_lesson_text" if row.get("zone") == "main_text_hebrew" else
+            "editorial_translation" if row.get("zone") == "main_text_spanish" else
+            "footnote" if note else
+            "source_reference" if nominal else
+            "unknown"
+        )
+    hit_id = (
+        f"{work}-{row['content_node_id']}" if row.get("content_node_id")
+        else f"{work}-{stable_hash(work + '|' + quote)[:12]}"
+    )
+    parallel_texts = [ParallelText(
+        **candidate,
+        linked_to_evidence_id=hit_id,
+        link_type="parallel_translation",
+    ) for candidate in row.get("parallel_candidates", [])]
+    return Hit(
+        hit_id=hit_id,
+        work_code=work,
+        work_title=WORK_TITLES[work],
+        pdf_page=row["pdf_page"],
+        printed_page=row["printed_page"],
+        quote=quote[:4000],
+        snippet=snippet,
+        display_quote=display_quote[:4000] if display_quote else None,
+        display_snippet=display_snippet(display_quote) if display_quote else None,
+        display_normalization=display_normalization,
+        source_view=view,
+        search_record_type=record,
+        source_layer=source_layer,
+        source_layer_confidence=row.get("source_layer_confidence", "low"),
+        source_layer_rationale=row.get("source_layer_rationale", "insufficient_structural_evidence"),
+        zone_type=row["zone"],
+        note_number=row["note"],
+        surface_form=row["surface"],
+        matched_terms=matched_terms,
+        matched_concepts=matched_concepts,
+        evidence_type=evidence_type,
+        literal_strength=_literal_strength(record, nominal, note),
+        evidence_strength=_relation_strength(relevance),
+        relation_relevance=relevance,
+        language_match=language_match,
+        literal_match_kind=literal_match_kind,
+        retrieval_tier=retrieval_tier,
+        warnings=warning,
+        document_id=row.get("document_id"),
+        physical_file_name=row.get("physical_file_name"),
+        source_sha256=row.get("source_sha256"),
+        page_anchor_id=row.get("page_anchor_id"),
+        section=row.get("section"),
+        retrieval_position=row.get("match_position"),
+        physical_pdf_page=row.get("physical_pdf_page", row.get("pdf_page")),
+        match_text=match_context.match_text if match_context else "",
+        sentence_text=match_context.sentence_text if match_context else "",
+        paragraph_text=match_context.paragraph_text if match_context else snippet,
+        context_before=match_context.context_before if match_context else "",
+        context_after=match_context.context_after if match_context else "",
+        language=hit_lang,
+        direction="rtl" if hit_lang == "he" else "ltr",
+        source_original_language="he" if hit_lang == "he" else "unknown",
+        is_original_language=(hit_lang == "he" and source_layer in {
+            "rebbe_lesson_text", "biblical_quote_in_lesson", "rabbinic_quote_in_lesson"
+        }),
+        is_primary_language_match=hit_lang == primary_language,
+        is_translation=source_layer == "editorial_translation",
+        is_editorial_commentary=source_layer in {"editorial_commentary", "editorial_note", "footnote"},
+        parent_zone_id=row.get("parent_zone_id"),
+        content_node_id=row.get("content_node_id"),
+        evidence_id=hit_id,
+        page_anchor_kind=row.get("page_anchor_kind"),
+        ingestion_run_id=row.get("source_run_id"),
+        parallel_texts=parallel_texts,
+    )
+
+
+def _mark_same_page(hits: list[Hit]) -> None:
+    page_concepts: dict[tuple[str, int], set[str]] = defaultdict(set)
+    for hit in hits:
+        if hit.pdf_page is not None:
+            page_concepts[(hit.work_code, hit.pdf_page)].update(hit.matched_concepts)
+    for hit in hits:
+        if hit.relation_relevance == "single_term_literal" and hit.pdf_page is not None and len(page_concepts[(hit.work_code, hit.pdf_page)]) >= 2:
+            hit.relation_relevance = "same_page_both_terms"
+            hit.evidence_strength = "weak"
+            hit.relation_level = "contextual"
+
+
+def _sort_key(hit: Hit) -> tuple:
+    return (
+        hit.retrieval_tier,
+        source_layer_priority(hit.source_layer),
+        RELATION_PRIORITY[hit.relation_relevance],
+        -len(hit.matched_concepts),
+        hit.retrieval_position if hit.retrieval_position is not None else 10**9,
+        hit.work_code,
+        hit.pdf_page or 10**9,
+        hit.hit_id,
+    )
+
+
+def _normalize_claims(raw_claims: list[dict], hits: list[Hit], required_concepts: int = 1) -> list[dict]:
+    allowed = {hit.hit_id: hit for hit in hits}
+    claims = []
+    for index, raw in enumerate(raw_claims):
+        text = str(raw.get("text") or raw.get("claim") or "").strip()
+        evidence_ids = list(dict.fromkeys(str(value) for value in raw.get("evidence_ids", []) if str(value) in allowed))
+        if required_concepts >= 2:
+            direct_ids = [value for value in evidence_ids if len(allowed[value].matched_concepts) >= required_concepts]
+            if not direct_ids:
+                continue
+            evidence_ids = direct_ids
+        if not text or not evidence_ids:
+            continue
+        requested_primary = str(raw.get("primary_evidence_id") or "")
+        primary = requested_primary if requested_primary in evidence_ids else evidence_ids[0]
+        claims.append({
+            "claim_id": str(raw.get("claim_id") or f"claim_{index + 1}"),
+            "text": text,
+            "strength": str(raw.get("strength") or _relation_strength(allowed[primary].relation_relevance)),
+            "evidence_ids": evidence_ids,
+            "primary_evidence_id": primary,
+        })
+    return claims
+
+
+def validate_grounded_render(value: dict, hits: list[Hit], required_concepts: int = 1) -> tuple[str | None, list[dict]]:
+    """Validate narrative and claim associations against the authoritative hit set."""
+    allowed = {hit.hit_id for hit in hits}
+    used = {str(item) for item in value.get("used_evidence_ids", [])}
+    text = str(value.get("answer_markdown", ""))
+    raw_claims = value.get("claims", [])
+    if not used or not used.issubset(allowed) or not text or not isinstance(raw_claims, list):
+        return None, []
+    claims = _normalize_claims(raw_claims, hits, required_concepts)
+    if not claims or any(not set(claim["evidence_ids"]).issubset(allowed) for claim in claims):
+        return None, []
+    pages = {str(hit.pdf_page) for hit in hits if hit.pdf_page is not None}
+    if any(page not in pages for page in re.findall(r"(?i)(?:página|pdf p\.)\s*(\d+)", text)):
+        return None, []
+    if re.search(r"(?i)(demuestra|dependencia doctrinal|prueba doctrinal)", text):
+        return None, []
+    return text, claims
+
+
+async def _ai_render(question: str, hits: list[Hit]) -> tuple[str | None, list[str], list[dict]]:
+    if not LITELLM_API_KEY:
+        return None, ["ai_render_fallback:litellm_key_missing"], []
+    context = [{
+        "id": hit.hit_id,
+        "work": hit.work_title,
+        "page": hit.pdf_page,
+        "quote": hit.snippet,
+        "matched_concepts": hit.matched_concepts,
+        "relation_relevance": hit.relation_relevance,
+        "literal_strength": hit.literal_strength,
+        "warnings": hit.warnings,
+    } for hit in hits[:20]]
+    try:
+        async with httpx.AsyncClient(timeout=LITELLM_TIMEOUT_SECONDS) as client:
+            response = await client.post(
+                f"{LITELLM_BASE_URL}/v1/chat/completions",
+                headers={"Authorization": f"Bearer {LITELLM_API_KEY}"},
+                json={
+                    "model": RESEARCH_CONVERSATION_MODEL,
+                    "messages": [
+                        {"role": "system", "content": "Return JSON only: answer_markdown, used_evidence_ids, claims. Each claim must contain claim_id, text, strength, evidence_ids, primary_evidence_id. Use only supplied IDs. Prefer evidence containing every requested concept. A single-term literal is not strong evidence for a relation. Never invent quotes/pages/works and never assert doctrinal dependency."},
+                        {"role": "user", "content": json.dumps({"question": question, "evidence": context}, ensure_ascii=False)},
+                    ],
+                    "temperature": 0,
+                    "max_tokens": 1400,
+                    "response_format": {"type": "json_object"},
+                },
+            )
+        value = json.loads(response.json()["choices"][0]["message"]["content"])
+        text, claims = validate_grounded_render(value, hits, len(relation_concepts(question)))
+        if text is None:
+            return None, ["ai_render_rejected_grounding_validation"], []
+        return text, [], claims
+    except Exception as exc:
+        return None, [f"ai_render_fallback:{type(exc).__name__}"], []
+
+
+def _cap_hits_with_language_coverage(
+    hits: list[Hit],
+    max_hits_per_work: int,
+    requested_languages: list[str],
+) -> list[Hit]:
+    """Keep the ranked cap while preserving one readable Hebrew result when requested."""
+    def readable_hebrew(hit: Hit) -> bool:
+        if hit.display_normalization != "pdf_glyph_geometry_nfc_v1" or not hit.display_snippet:
+            return False
+        return len(HEBREW_LETTER_RE.findall(hit.display_snippet)) >= max(
+            1,
+            len(LATIN_LETTER_RE.findall(hit.display_snippet)),
+        )
+
+    selected_ids: set[str] = set()
+    for work in dict.fromkeys(hit.work_code for hit in hits):
+        work_hits = [hit for hit in hits if hit.work_code == work]
+        selected = work_hits[:max_hits_per_work]
+        if "he" in requested_languages and max_hits_per_work >= 2:
+            has_hebrew = any(readable_hebrew(hit) for hit in selected)
+            best_hebrew = next((hit for hit in work_hits if readable_hebrew(hit)), None)
+            if not has_hebrew and best_hebrew is not None:
+                selected = [*selected[:-1], best_hebrew]
+        selected_ids.update(hit.hit_id for hit in selected)
+    return [hit for hit in hits if hit.hit_id in selected_ids]
+
+
+def _deterministic_claims(
+    question: str,
+    hits: list[Hit],
+    intent: str = "concept_lookup",
+    literal_search_normalized: str | None = None,
+    concept_count: int | None = None,
+    instruction_language: str = "es",
+) -> list[dict]:
+    if intent in {"literal_lookup", "translation_or_explanation"} and hits:
+        phrases = _extract_literal_phrases(question)
+        literal_query = literal_search_normalized or (
+            normalize_hebrew_search(str(phrases[0]["text"])) if phrases else ""
+        )
+        literal_hits = [hit for hit in hits if hit.literal_match_kind in {
+            "exact_phrase", "normalized", "no_niqqud"
+        } and hit.is_primary_language_match]
+        if not literal_hits:
+            return []
+        primary = literal_hits[0]
+        location = " · ".join(filter(None, [
+            f"PDF p. {primary.pdf_page}" if primary.pdf_page is not None else None,
+            f"página impresa {primary.printed_page}" if primary.printed_page is not None else None,
+            primary.section,
+        ]))
+        layer = {
+            "biblical_quote_in_lesson": {
+                "es": "Capa: cita bíblica incluida en la lección del Rebe.",
+                "en": "Layer: biblical quotation included in the Rebbe's lesson.",
+                "he": "שכבה: ציטוט מקראי המשולב בשיעורו של הרבי.",
+            },
+            "rabbinic_quote_in_lesson": {
+                "es": "Capa: cita rabínica incluida en la lección del Rebe.",
+                "en": "Layer: rabbinic quotation included in the Rebbe's lesson.",
+                "he": "שכבה: ציטוט חז״לי המשולב בשיעורו של הרבי.",
+            },
+            "rebbe_lesson_text": {
+                "es": "Capa: texto original de la lección del Rebe.",
+                "en": "Layer: original text of the Rebbe's lesson.",
+                "he": "שכבה: הטקסט המקורי של שיעור הרבי.",
+            },
+        }.get(primary.source_layer, {
+            "es": "Capa editorial no confirmada; requiere revisión.",
+            "en": "Editorial layer is unconfirmed and requires review.",
+            "he": "השכבה העריכתית לא אושרה ודורשת בדיקה.",
+        })
+        locale = instruction_language if instruction_language in {"es", "en", "he"} else "es"
+        texts = {
+            "es": f"La frase aparece literalmente en {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['es']}",
+            "en": f"The phrase appears literally in {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['en']}",
+            "he": f"הביטוי מופיע במפורש ב־{primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['he']}",
+        }
+        return [{
+            "claim_id": "claim_1",
+            "text": texts[locale],
+            "strength": "strong",
+            "evidence_ids": [primary.hit_id],
+            "primary_evidence_id": primary.hit_id,
+        }]
+    candidates = [hit for hit in hits if hit.relation_relevance in {"same_fragment_both_terms", "same_section_relation", "same_page_both_terms"}]
+    required = concept_count if concept_count is not None else len(relation_concepts(question))
+    if not candidates and required == 1 and hits:
+        candidates = [hits[0]]
+    if not candidates:
+        return []
+    primary = candidates[0]
+    return [{
+        "claim_id": "claim_1",
+        "text": f"Se encontró evidencia contextual para la consulta «{question}»; la fuente debe leerse sin asumir dependencia doctrinal.",
+        "strength": _relation_strength(primary.relation_relevance),
+        "evidence_ids": [primary.hit_id],
+        "primary_evidence_id": primary.hit_id,
+    }]
+
+
+def _apply_claim_traceability(hits: list[Hit], claims: list[dict]) -> list[str]:
+    primary_ids = list(dict.fromkeys(claim["primary_evidence_id"] for claim in claims))
+    primary_order = {evidence_id: index for index, evidence_id in enumerate(primary_ids)}
+    claim_ids = {item for claim in claims for item in claim["evidence_ids"]}
+    by_id = {hit.hit_id: hit for hit in hits}
+    for evidence_id in claim_ids:
+        hit = by_id[evidence_id]
+        hit.relation_relevance = "direct_relation"
+        hit.evidence_strength = "strong"
+        hit.relation_level = "literal"
+        hit.is_primary = evidence_id in primary_ids
+    hits.sort(key=lambda hit: (0, primary_order[hit.hit_id]) if hit.hit_id in primary_order else (1, _sort_key(hit)))
+    return primary_ids
+
+
+def _counts(hits: list[Hit], primary_ids: list[str]) -> dict[str, int]:
+    primary = set(primary_ids)
+    contextual_types = {"same_fragment_both_terms", "same_section_relation", "same_page_both_terms", "thematic_parallel", "inferred_relation"}
+    return {
+        "primary": len(primary),
+        "contextual": sum(hit.hit_id not in primary and hit.relation_relevance in contextual_types for hit in hits),
+        "additional_literal": sum(hit.relation_relevance in {"single_term_literal", "unrelated_literal_noise"} for hit in hits),
+    }
+
+
+def render(question: str, claims: list[dict], hits: list[Hit], warnings: list[str], intent: str = "concept_lookup") -> str:
+    lines = ["## Síntesis investigativa"]
+    if claims:
+        lines.extend(f"- {claim['text']}" for claim in claims)
+    elif intent in {"literal_lookup", "translation_or_explanation"}:
+        lines.append(f"No se encontró una coincidencia literal para «{question}».")
+    elif intent in {"concept_lookup", "reference_lookup", "follow_up", "book_scope_query", "source_request"}:
+        lines.append(f"No se encontró evidencia para el concepto o fuente solicitada en «{question}».")
+    else:
+        lines.append(f"No se encontró evidencia suficiente para establecer la relación solicitada en «{question}».")
+    lines.extend(["", "## Evidencia principal"])
+    for hit in [item for item in hits if item.is_primary][:5]:
+        lang_label = {"exact": "", "primary": "", "secondary": " [Traducción]", "fallback": " [Otro idioma]"}.get(hit.language_match, "")
+        literal_label = {"exact_phrase": "Coincidencia exacta", "normalized": "Coincidencia normalizada", "no_niqqud": "Sin niqqud", "single_term": "Término individual", "semantic": "Semántica", "none": ""}.get(hit.literal_match_kind, "")
+        labels = " · ".join(filter(None, [lang_label, literal_label]))
+        lines.extend([
+            f"### {hit.work_title}{' — PDF p. ' + str(hit.pdf_page) if hit.pdf_page is not None else ''}",
+            f"> {hit.snippet}",
+            f"**Relevancia:** `{hit.relation_relevance}` · **Fuerza relacional:** {hit.evidence_strength}{' · ' + labels if labels else ''}",
+            "",
+        ])
+    if intent in {"literal_lookup", "translation_or_explanation"}:
+        lines.extend(["## Límites", "- La coincidencia se informa como literal o normalizada; no se sustituye por una traducción."])
+    else:
+        lines.extend(["## Límites", "- Una coincidencia literal de un solo término no establece la relación consultada.", "- Los paralelos entre obras no demuestran dependencia o equivalencia doctrinal."])
+    if warnings:
+        lines.extend(["", "## Advertencias", *[f"- {warning}" for warning in sorted(set(warnings))]])
+    return "\n".join(lines)
+
+
+def _retrieval_inputs(interpretation: QueryInterpretation) -> tuple[list[dict], list[dict]]:
+    """Map validated interpretation fields to the legacy deterministic retriever."""
+    subjects = list(interpretation.query_subjects)
+    if interpretation.relations:
+        subjects = [
+            side
+            for relation in interpretation.relations
+            for side in (relation.left, relation.right)
+        ]
+    concepts = []
+    for subject in subjects:
+        terms = [item.value for item in subject.variants]
+        if subject.script == "latin":
+            alias_key = next(
+                (key for key in ALIASES if _fold(key) == _fold(subject.normalized)),
+                None,
+            )
+            if alias_key:
+                terms.extend(ALIASES[alias_key])
+        concepts.append({
+            "label": subject.normalized,
+            "terms": list(dict.fromkeys(terms)),
+        })
+    literal_phrases = [{
+        "text": phrase.raw,
+        "language": phrase.language,
+        "script": "Hebrew" if HEBREW_LETTER_RE.search(phrase.raw) else "Latin",
+        "word_count": len(phrase.normalized.split()),
+        "content_words": phrase.normalized.split(),
+        "search_normalized": phrase.normalized,
+    } for phrase in interpretation.literal_phrases]
+    if literal_phrases and not concepts:
+        concepts = [{
+            "label": literal_phrases[0]["search_normalized"],
+            "terms": [literal_phrases[0]["search_normalized"]],
+        }]
+    return concepts, literal_phrases
+
+
+async def run(conn, data: QaRequest) -> dict:
+    started = time.perf_counter()
+    warnings: list[str] = []
+    history = data.conversation.get("history", []) if isinstance(data.conversation.get("history", []), list) else []
+    preprocessing = preprocess_query(data.question)
+    structured, interpretation_warnings = await interpret_query(
+        preprocessing,
+        history,
+        data.works,
+        data.languages,
+        ai_enabled=data.ai.enabled,
+    )
+    intent = structured.intent
+    literal_analysis = extract_literal_segments(data.question)
+    resolved_question = structured.resolved_context or data.question
+    concepts, literal_phrases = _retrieval_inputs(structured)
+    interpretation = structured.model_dump()
+    interpretation.update({
+        "detected_language": structured.language,
+        "normalized_question": data.question,
+        "requires_cross_corpus": not bool(structured.requested_works),
+        "concepts": [item["label"] for item in concepts],
+        "preprocessing": preprocessing.model_dump(),
+    })
+    warnings.extend(interpretation_warnings)
+    requested_works = [work for work in data.works if work in WORKS]
+    interpreted_works = [work for work in structured.requested_works if work in requested_works]
+    plan_works = interpreted_works or requested_works
+    selected_literal: str | None = None
+    segmentation_candidates: list[str] = []
+    if (
+        intent in {"literal_lookup", "translation_or_explanation"}
+        and literal_analysis is not None
+        and literal_analysis.pdf_glyph_spacing_detected
+    ):
+        selected_literal, segmentation_candidates = await _resolve_pdf_spaced_literal(
+            conn,
+            plan_works,
+            literal_analysis,
+            data.max_hits_per_work,
+        )
+    has_hebrew_subject = any(
+        HEBREW_LETTER_RE.search(str(concept["label"]))
+        for concept in concepts
+    ) or any(HEBREW_LETTER_RE.search(str(item["text"])) for item in literal_phrases)
+    primary_language = "he" if has_hebrew_subject else (
+        structured.language if structured.language in {"es", "en"} else "es"
+    )
+    secondary_languages = [
+        item for item in ("he", "es", "en") if item != primary_language
+    ]
+    if selected_literal and literal_analysis is not None:
+        reconstructed = reconstruct_pdf_spaced_hebrew(
+            literal_analysis.literal_raw,
+            selected_literal,
+        )
+        literal_phrases = [{
+            "text": reconstructed,
+            "language": "he",
+            "script": "Hebrew",
+            "word_count": len(selected_literal.split()),
+            "content_words": selected_literal.split(),
+            "reconstructed": True,
+            "search_normalized": selected_literal,
+        }]
+        concepts = [{"label": selected_literal, "terms": [selected_literal]}]
+        interpretation["concepts"] = [selected_literal]
+    resolved_literal_query = selected_literal or (
+        str(literal_phrases[0].get("search_normalized") or literal_phrases[0]["text"])
+        if literal_phrases else None
+    )
+    interpretation["interface_language"] = structured.language
+    interpretation["query_language"] = "he" if has_hebrew_subject else structured.language
+    interpretation["primary_retrieval_language"] = primary_language
+    interpretation["literal_phrases"] = literal_phrases
+    interpretation["intent"] = intent
+    if literal_analysis is not None and intent in {"literal_lookup", "translation_or_explanation"}:
+        interpretation.update({
+            "literal_raw": literal_analysis.literal_raw,
+            "literal_reconstructed": (
+                reconstruct_pdf_spaced_hebrew(literal_analysis.literal_raw, selected_literal)
+                if selected_literal else literal_analysis.literal_reconstructed
+            ),
+            "literal_search_normalized": resolved_literal_query,
+            "instruction": literal_analysis.instruction,
+            "instruction_language": literal_analysis.instruction_language,
+            "pdf_glyph_spacing_detected": literal_analysis.pdf_glyph_spacing_detected,
+            "candidate_count": len(segmentation_candidates or literal_analysis.candidates),
+            "selected_candidate": selected_literal,
+        })
+    plan = {
+        "queries": [term for concept in concepts for term in concept["terms"]],
+        "concept_groups": concepts,
+        "works": plan_works,
+        "languages": data.languages,
+        "primary_language": primary_language,
+        "secondary_languages": secondary_languages,
+        "literal_phrases": literal_phrases,
+        "layers": ["page_literal", "fine_zone", "note_source_unit", "nominal_reference"],
+        "include_audit": False,
+        "retrieval_mode": "sql_literal_relation_ranked",
+        "literal_first": intent in {"literal_lookup", "translation_or_explanation"},
+        "include_fts": True,
+        "include_trigram": True,
+        "include_semantic": data.include_thematic,
+        "intent": intent,
+        "literal_search_normalized": resolved_literal_query,
+        "candidate_count": len(segmentation_candidates or (literal_analysis.candidates if literal_analysis else ())),
+        "final_max_hits_per_work": data.max_hits_per_work,
+    }
+    candidates: dict[str, dict] = {}
+    phrase_matched: set[str] = set()
+    if literal_phrases:
+        phrase = literal_phrases[0]["text"]
+        for work in plan["works"]:
+            for row, _title, view in await _phrase_fetch(conn, work, phrase, data.max_hits_per_work * 2):
+                key = f"{work}:{stable_hash(str(row['quote']))}"
+                entry = candidates.setdefault(key, {"work": work, "row": row, "view": view, "terms": [phrase], "concepts": [phrase]})
+                phrase_matched.add(key)
+    for work in plan["works"]:
+        hebrew_terms_seen: set[str] = set()
+        for concept in concepts:
+            for term in concept["terms"]:
+                if HEBREW_LETTER_RE.search(term) and len(term) < 3:
+                    if term in hebrew_terms_seen:
+                        continue
+                    hebrew_terms_seen.add(term)
+                for row, _title, view in await _fetch(conn, work, term, data.max_hits_per_work * 2):
+                    key = f"{work}:{stable_hash(str(row['quote']))}"
+                    entry = candidates.setdefault(key, {"work": work, "row": row, "view": view, "terms": [], "concepts": []})
+                    if term not in entry["terms"]:
+                        entry["terms"].append(term)
+                    if concept["label"] not in entry["concepts"]:
+                        entry["concepts"].append(concept["label"])
+    hits = [classify(entry["work"], entry["row"], entry["terms"], entry["concepts"], entry["view"], primary_language=primary_language, secondary_languages=secondary_languages) for entry in candidates.values()]
+    for hit in hits:
+        if hit.hit_id and any(hit.quote == c.get("row", {}).get("quote", "") for c_key, c in candidates.items() if c_key in phrase_matched):
+            if hit.literal_match_kind == "none":
+                object.__setattr__(hit, "literal_match_kind", "exact_phrase")
+            if hit.language_match == "fallback":
+                object.__setattr__(hit, "language_match", "exact")
+            object.__setattr__(hit, "retrieval_tier", 0)
+    _mark_same_page(hits)
+    hits.sort(key=_sort_key)
+    hits = _cap_hits_with_language_coverage(hits, data.max_hits_per_work, data.languages)
+    generative_intents = {"relation_query", "comparison_query", "translation_or_explanation"}
+    ai_markdown, render_warnings, claims = await _ai_render(resolved_question, hits) if data.ai.enabled and hits and intent in generative_intents else (None, [], [])
+    warnings.extend(render_warnings)
+    claims = claims or _deterministic_claims(
+        resolved_question,
+        hits,
+        intent,
+        resolved_literal_query,
+        len(concepts),
+        structured.instruction_language,
+    )
+    primary_ids = _apply_claim_traceability(hits, claims)
+    counts = _counts(hits, primary_ids)
+    warnings.extend(warning for hit in hits for warning in hit.warnings)
+    status = "ok" if primary_ids else "no_evidence"
+    markdown = ai_markdown or render(resolved_question, claims, hits, warnings, intent)
+    summary = f"{counts['primary']} evidencias principales · {counts['contextual']} relaciones contextuales · {counts['additional_literal']} coincidencias literales adicionales"
+    matrix = [{
+        "work_code": work,
+        "hits": sum(hit.work_code == work for hit in hits),
+        "primary_hits": sum(hit.work_code == work and hit.is_primary for hit in hits),
+        "contextual_hits": sum(hit.work_code == work and hit.relation_relevance not in {"single_term_literal", "unrelated_literal_noise"} and not hit.is_primary for hit in hits),
+        "additional_literal_hits": sum(hit.work_code == work and hit.relation_relevance in {"single_term_literal", "unrelated_literal_noise"} for hit in hits),
+    } for work in plan["works"]]
+    return {
+        "question": data.question,
+        "intent": intent,
+        "status": status,
+        "answer_text": markdown,
+        "answer_markdown": markdown,
+        "summary": summary,
+        "conversation": {"conversation_id": data.conversation.get("conversation_id"), "turn_id": data.conversation.get("turn_id"), "resolved_context": [resolved_question] if resolved_question != data.question else []},
+        "interpretation": interpretation,
+        "search_plan": plan,
+        "works_consulted": plan["works"],
+        "hits": [hit.model_dump() for hit in hits],
+        "evidence_matrix": matrix,
+        "cross_corpus_matrix": [],
+        "claims": claims,
+        "primary_evidence_ids": primary_ids,
+        "evidence_counts": counts,
+        "not_found": [] if primary_ids else [item["label"] for item in concepts],
+        "warnings": list(dict.fromkeys(warnings)),
+        "execution": {
+            "pipeline_version": "investigative_qa_v1_traceable",
+            "model": RESEARCH_CONVERSATION_MODEL,
+            "used_ai_interpretation": structured.ai_used,
+            "ai_used": structured.ai_used,
+            "fallback_used": structured.fallback_used,
+            "interpretation_duration_ms": structured.duration_ms,
+            "interpreted_intent": structured.intent,
+            "interpreted_language": structured.language,
+            "subject_count": len(structured.query_subjects) or len(concepts),
+            "retrieval_modes": ["literal", "phrase", "fts", "trigram"],
+            "used_ai_rendering": bool(ai_markdown),
+            "ai_render_validated": bool(ai_markdown),
+            "used_deterministic_fallback": not bool(ai_markdown),
+            "used_vector": False,
+            "used_external_sources": False,
+            "used_ocr": False,
+            "database": "postgresql",
+            "duration_ms": round((time.perf_counter() - started) * 1000, 2),
+        },
+    }

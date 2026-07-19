@@ -2,12 +2,21 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass
+from functools import lru_cache
+from pathlib import Path
+
+import fitz
+
+from modules.library.hebrew_pdf_layout import readable_line
 
 HEBREW_RE = re.compile(r"[\u0590-\u05ff]")
+HEBREW_BASE_RE = re.compile(r"[\u05d0-\u05ea]")
 LESSON_RE = re.compile(r"(?:MOHAR[ÁA]N\s*#|סימן\s*)(\d+)(?::(\d+))?", re.I)
 
 PROFILE_NAME = "likutey_moharan_ii_spanish_bri_layout_v1"
+SOURCE_PDF = Path("/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY MOHARAN II Interior.pdf")
 FOOTNOTE_Y = 470.0
 HEADER_Y = 205.0
 
@@ -19,6 +28,37 @@ class LayoutPiece:
 
 def hebrew_chars(text: str) -> int:
     return len(HEBREW_RE.findall(text))
+
+
+# Compatibility alias for existing focused tests.
+_readable_line = readable_line
+
+
+@lru_cache(maxsize=128)
+def readable_page_text(pdf_page: int) -> str | None:
+    """Return a presentation-only projection; persisted literal text is untouched."""
+    if pdf_page < 1 or not SOURCE_PDF.is_file():
+        return None
+    with fitz.open(SOURCE_PDF) as document:
+        if pdf_page > len(document):
+            return None
+        raw = document[pdf_page - 1].get_text("rawdict", sort=False)
+    lines: list[str] = []
+    for block in raw.get("blocks", []):
+        grouped: list[dict] = []
+        for line in block.get("lines", []):
+            baseline = float(line.get("bbox", (0.0, 0.0, 0.0, 0.0))[1])
+            if grouped and abs(float(grouped[-1]["baseline"]) - baseline) <= 1.0:
+                grouped[-1]["spans"].extend(line.get("spans", []))
+            else:
+                grouped.append({"baseline": baseline, "spans": list(line.get("spans", []))})
+        for line in grouped:
+            value = readable_line(line).strip()
+            if re.fullmatch(r"(?:\d+|LIKUTEY\s+MOHAR[ÁA]N\s+#\S+)", value, re.I):
+                continue
+            if value:
+                lines.append(value)
+    return "\n".join(lines).strip() or None
 
 def classify_page(blocks: list[tuple[float, float, float, float, str]], pdf_page: int) -> list[LayoutPiece]:
     """Classify only geometry+script evidence; ambiguous body remains unknown."""

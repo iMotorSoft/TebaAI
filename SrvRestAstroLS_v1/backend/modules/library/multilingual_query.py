@@ -29,6 +29,7 @@ from modules.library.hebrew_lexical_normalizer import (
 Intent = Literal[
     "literal_lookup",
     "concept_lookup",
+    "concept_cooccurrence",
     "relation_query",
     "reference_lookup",
     "translation_or_explanation",
@@ -150,6 +151,17 @@ _INSTRUCTION = re.compile(
 )
 _LITERAL_LABEL = re.compile(r"(?i)(frase|phrase|ציטוט|משפט)")
 _CONCEPT_LABEL = re.compile(r"(?i)(concepto|concept|t[eé]rmino|term|מושג|המושג|מילה|המילה)")
+_COOCCURRENCE = re.compile(
+    r"(?i)"
+    r"(?:"
+    r"con\s+(?:qu[eé]\s+)?(?:otr[os]s?\s+)?conceptos|"
+    r"qu[eé]\s+(?:conceptos|temas|palabras)\s+(?:aparecen|est[aá]n)\s+(?:con|junto\s+a|alrededor\s+de|asociados\s+con|cerca\s+de)|"
+    r"(?:con\s+)?qu[eé]\s+(?:otros|otras)\s+(?:conceptos|temas)\s+(?:aparece|se\s+relaciona|se\s+vincula|se\s+asocia)|"
+    r"qu[eé]\s+(?:aparece|se\s+encuentra)\s+(?:junto\s+a|cerca\s+de|alrededor\s+de)|"
+    r"(?:con\s+)?qu[eé]\s+(?:conceptos|temas)\s+(?:rodean|acompañan|aparecen\s+con)|"
+    r"qu[eé]\s+(?:conceptos|temas)\s+(?:relaciona|asocia|vincula)\s+(?:con|al)"
+    r")"
+)
 _HEBREW_FUNCTION_WORDS = {
     "את", "אתה", "מחפש", "איפה", "היכן", "נמצא", "נמצאת", "מוזכר", "מוזכרת",
     "מופיע", "מופיעה", "חפש", "מצא", "מושג", "המושג", "מילה", "המילה", "באיזה",
@@ -163,6 +175,16 @@ _LATIN_FUNCTION_WORDS = {
     "the", "concept", "which", "book", "contains", "phrase", "what", "does", "mean",
     "relation", "between", "relacion", "relación", "entre", "in", "and", "se", "menciona", "está", "esta", "hay", "de",
     "el", "la", "los", "las", "un", "una", "y", "en", "sobre", "cited", "dice", "dicho", "said", "about",
+    # Additional function words for relational queries
+    "con", "sin", "por", "para", "tema", "temas", "palabra", "palabras",
+    "conceptos", "conceptos", "concept", "concepts",
+    "otro", "otra", "otros", "otras", "otr", "otrs", "otra", "otro",
+    "asociado", "asociados", "asociada", "asociadas",
+    "vinculado", "vinculados", "relacionado", "relacionados",
+    "junto", "cerca", "alrededor", "relaciona",
+    "with", "associated", "near", "around", "related", "appear", "appears",
+    "concepts", "words", "term", "terms", "other", "others",
+    "aparecen", "aparece", "appear", "appears",
 }
 _WORK_ALIASES = {
     "lh": ("likutey halajot", "likutey halakhot", "ליקוטי הלכות"),
@@ -313,15 +335,41 @@ def _works(value: str) -> list[str]:
     ]
 
 
-def _content_subjects(value: str) -> list[QuerySubject]:
-    tokens: list[tuple[int, str]] = []
+def _content_subjects(value: str, max_tokens: int = 6) -> list[QuerySubject]:
+    """Extract content subjects, prioritizing catalog concepts over position.
+
+    First checks if any token matches the concept catalog (including via typo/alias),
+    then falls back to positional selection for non-catalog tokens.
+    """
+    hebrew_tokens: list[tuple[int, str]] = []
+    latin_tokens: list[tuple[int, str]] = []
     for match in re.finditer(r"[\u0590-\u05ff]+", value):
         if normalize_hebrew_search(match.group()) not in _HEBREW_FUNCTION_WORDS:
-            tokens.append((match.start(), match.group()))
+            hebrew_tokens.append((match.start(), match.group()))
     for match in re.finditer(r"[A-Za-zÀ-ÖØ-öø-ÿ]+", value):
-        if match.group().casefold() not in _LATIN_FUNCTION_WORDS and len(match.group()) >= 3:
-            tokens.append((match.start(), match.group()))
-    return [item for _, token in sorted(tokens)[:6] if (item := _subject(token))]
+        token = match.group().casefold()
+        if token not in _LATIN_FUNCTION_WORDS and len(match.group()) >= 3:
+            latin_tokens.append((match.start(), match.group()))
+    all_tokens = sorted(hebrew_tokens + latin_tokens)
+
+    # Try to find catalog-matched subjects first
+    from modules.library.concept_catalog import CATALOG
+    catalog_forms: set[str] = set()
+    for entry in CATALOG:
+        for form in entry.all_searchable_forms():
+            catalog_forms.add(form.casefold())
+
+    catalog_matches = []
+    other_matches = []
+    for pos, token in all_tokens:
+        if token.casefold() in catalog_forms:
+            catalog_matches.append((pos, token))
+        else:
+            other_matches.append((pos, token))
+
+    # Prioritize catalog matches, then fill remaining slots with position-ordered tokens
+    selected = catalog_matches + other_matches
+    return [item for _, token in selected[:max_tokens] if (item := _subject(token))]
 
 
 def _literal_from_question(value: str) -> LiteralPhrase | None:
@@ -348,6 +396,8 @@ def deterministic_interpret(
         intent = "source_request"
     elif _FOLLOW_UP.search(value):
         intent = "follow_up"
+    elif _COOCCURRENCE.search(value):
+        intent = "concept_cooccurrence"
     elif _TRANSLATION.search(value):
         intent = "translation_or_explanation"
     elif _RELATION.search(value):
@@ -393,6 +443,15 @@ def deterministic_interpret(
         match = _REFERENCE.search(value)
         if match and (reference := _subject(match.group(), "reference")):
             subjects = [reference]
+    elif intent == "concept_cooccurrence":
+        # For cooccurrence queries, take catalog-matched terms (last occurring = the subject)
+        content = _content_subjects(value)  # catalog-matched first
+        if content:
+            # Take the LAST catalog-matched subject (the actual query term)
+            # or first non-catalog-matched as fallback
+            subjects = [content[-1]]
+        else:
+            subjects = []
     elif intent == "concept_lookup":
         subjects = _content_subjects(value)[:3]
 

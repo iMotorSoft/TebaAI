@@ -320,9 +320,9 @@ def _analyze_query_language(question: str) -> dict:
 
 
 def classify_intent(question: str) -> Literal[
-    "literal_lookup", "concept_lookup", "relation_query", "translation_or_explanation",
-    "reference_lookup", "follow_up", "book_scope_query", "source_request",
-    "comparison_query", "unknown",
+    "literal_lookup", "concept_lookup", "concept_cooccurrence", "relation_query",
+    "translation_or_explanation", "reference_lookup", "follow_up", "book_scope_query",
+    "source_request", "comparison_query", "unknown",
 ]:
     """Classify retrieval intent deterministically before optional AI wording."""
     return deterministic_interpret(preprocess_query(question), []).intent
@@ -1327,7 +1327,7 @@ def render(
         lines.extend(f"- {claim['text']}" for claim in claims)
     elif intent in {"literal_lookup", "translation_or_explanation"}:
         lines.append(f"No se encontró una coincidencia literal para «{question}».")
-    elif intent in {"concept_lookup", "reference_lookup", "follow_up", "book_scope_query", "source_request"}:
+    elif intent in {"concept_lookup", "concept_cooccurrence", "reference_lookup", "follow_up", "book_scope_query", "source_request"}:
         lines.append(f"No se encontró evidencia para el concepto o fuente solicitada en «{question}».")
     else:
         lines.append(f"No se encontró evidencia suficiente para establecer la relación solicitada en «{question}».")
@@ -1423,18 +1423,23 @@ async def run(conn, data: QaRequest) -> dict:
     concepts, literal_phrases = _retrieval_inputs(structured)
 
     # ── Query resolution: typo tolerance / suggestions ──────────────
-    resolution_norm, suggestion_candidates, autoapply_id = resolve_query(data.question)
-    is_exact = suggestion_candidates and suggestion_candidates[0].suggestion_type == "exact_match"
-    if autoapply_id and not is_exact:
+    # Resolve against the primary extracted subject (not the full question).
+    resolution_target = data.question
+    if structured.query_subjects:
+        resolution_target = structured.query_subjects[-1].raw
+    resolution_norm, suggestion_candidates, autoapply_id = resolve_query(resolution_target)
+    # Always expand to catalog entry when found (pulls in all corpus forms)
+    if autoapply_id:
         entry = get_concept(autoapply_id)
         if entry:
-            # Replace concepts with corrected terms (including all catalog forms)
             concept_terms = [entry.canonical_label, *entry.aliases, *entry.transliterations]
             if entry.hebrew:
                 concept_terms.append(entry.hebrew)
             concept_terms = list(dict.fromkeys(concept_terms))
             concepts = [{"label": entry.canonical_label, "terms": concept_terms, "concept_id": entry.concept_id}]
-            interpretation_warnings.append(f"suggestion_autoapplied:{entry.concept_id}")
+            was_typo = suggestion_candidates and suggestion_candidates[0].suggestion_type != "exact_match"
+            if was_typo:
+                interpretation_warnings.append(f"suggestion_autoapplied:{entry.concept_id}")
     query_resolution = build_suggestion_contract(data.question, resolution_norm, suggestion_candidates, autoapply_id)
     # ────────────────────────────────────────────────────────────────
 

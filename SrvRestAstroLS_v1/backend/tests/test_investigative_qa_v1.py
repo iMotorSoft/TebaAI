@@ -135,7 +135,7 @@ def test_model_rewording_does_not_replace_standalone_user_concepts(monkeypatch: 
 
     response = run_real(QaRequest(question="Rabí Natán", works=["lmii"]))
 
-    assert response["interpretation"]["concepts"] == ["rabí natán"]
+    assert response["interpretation"]["concepts"] == ["Rabí Natán"]
     assert "reb noson" in response["search_plan"]["queries"]
 
 

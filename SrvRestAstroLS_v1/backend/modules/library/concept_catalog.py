@@ -165,6 +165,20 @@ CATALOG: tuple[ConceptEntry, ...] = (
         ),
     ),
     ConceptEntry(
+        concept_id="escorpion",
+        canonical_label="Escorpión",
+        language="es",
+        hebrew="עקרב",
+        aliases=("escorpión", "escorpion", "escorpiones", "escorpoion", "scorpion", "עקרב", "עקרבים"),
+        transliterations=(),
+        translations=("scorpion", "escorpión", "עקרב"),
+        related_concepts=(
+            ConceptRelation("miedo", "thematic_parallel"),
+            ConceptRelation("temor", "thematic_parallel"),
+            ConceptRelation("serpiente", "thematic_parallel"),
+        ),
+    ),
+    ConceptEntry(
         concept_id="yirat_shamayim",
         canonical_label="Yirat Shamayim",
         language="es",

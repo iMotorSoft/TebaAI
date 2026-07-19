@@ -1,30 +1,39 @@
  <script lang="ts">
+  import { onMount } from "svelte";
   import { BRAND } from "../global.js";
   import {
     login,
     logout,
     getMe,
     getStoredUser,
-    isAuthenticated,
+    getStoredAccessToken,
     type UserInfo,
   } from "./authClient.ts";
 
   let email = $state("");
   let password = $state("");
   let loading = $state(false);
+  let verifying = $state(false);
   let error = $state<string | null>(null);
-  let user = $state<UserInfo | null>(getStoredUser());
+  let verifyMessage = $state<string | null>(null);
+  let checking = $state(true);
+  let user = $state<UserInfo | null>(null);
+
+  onMount(() => {
+    const stored = getStoredUser();
+    const token = getStoredAccessToken();
+    if (stored && token) {
+      user = stored;
+    }
+    checking = false;
+  });
 
   async function handleSubmit(e: Event) {
     e.preventDefault();
     loading = true;
     error = null;
-
     try {
       const result = await login(email, password);
-      user = result.user;
-      email = "";
-      password = "";
       window.location.assign("/research");
     } catch (err: unknown) {
       error = err instanceof Error ? err.message : "Error desconocido";
@@ -37,19 +46,39 @@
     await logout();
     user = null;
     error = null;
+    verifyMessage = null;
   }
 
   async function handleRefresh() {
-    const u = await getMe();
-    if (u) {
-      user = u;
-    } else {
+    verifying = true;
+    verifyMessage = null;
+    error = null;
+    try {
+      const u = await getMe();
+      if (u) {
+        user = u;
+        verifyMessage = "Sesión válida.";
+      } else {
+        user = null;
+        error = "La sesión expiró. Volvé a iniciar sesión.";
+      }
+    } catch {
       user = null;
+      error = "Error al verificar la sesión.";
+    } finally {
+      verifying = false;
     }
   }
 </script>
 
-{#if user}
+{#if checking}
+  <div class="card bg-base-100 w-full max-w-sm shadow-xl" role="status">
+    <div class="card-body">
+      <h2 class="card-title">{BRAND.publicName}</h2>
+      <p class="text-sm text-base-content/70">Verificando sesión…</p>
+    </div>
+  </div>
+{:else if user}
   <div class="card bg-base-100 w-full max-w-sm shadow-xl">
     <div class="card-body">
       <h2 class="card-title">{BRAND.publicName}</h2>
@@ -72,15 +101,35 @@
         {/if}
       </div>
 
+      {#if verifyMessage}
+        <div
+          class="alert mt-4 text-sm"
+          class:alert-success={verifyMessage === "Sesión válida."}
+          class:alert-warning={verifyMessage !== "Sesión válida."}
+          role="status"
+          aria-live="polite"
+        >
+          <span>{verifyMessage}</span>
+        </div>
+      {/if}
+
       <div class="card-actions mt-6 justify-between">
         <div class="flex gap-2">
           <a href="/research" class="btn btn-ghost btn-sm">Ir a Investigación</a>
         </div>
         <div class="flex gap-2">
-          <button class="btn btn-ghost btn-sm" onclick={handleRefresh}>
-            Verificar sesión
+          <button
+            type="button"
+            class="btn btn-ghost btn-sm"
+            onclick={handleRefresh}
+            disabled={verifying}
+          >
+            {#if verifying}
+              <span class="loading loading-spinner loading-sm"></span>
+            {/if}
+            {verifying ? "Verificando…" : "Verificar sesión"}
           </button>
-          <button class="btn btn-outline btn-sm" onclick={handleLogout}>
+          <button type="button" class="btn btn-outline btn-sm" onclick={handleLogout}>
             Cerrar sesión
           </button>
         </div>

@@ -1,0 +1,15 @@
+{
+  "pytest_auth": {
+    "total": 47,
+    "passed": 47,
+    "failed": 0,
+    "warnings": 50,
+    "command": "uv run pytest tests/ -k 'auth' --tb=short -q",
+    "note": "Warnings are pre-existing (deprecated datetime.utcnow(), Litestar inference)"
+  },
+  "health_check": {
+    "endpoint": "http://127.0.0.1:7008/health",
+    "status": 200,
+    "response": "ok"
+  }
+}

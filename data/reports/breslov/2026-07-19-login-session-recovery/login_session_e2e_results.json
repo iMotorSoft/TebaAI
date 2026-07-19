@@ -1,0 +1,51 @@
+{
+  "total_tests": 3,
+  "passed": 3,
+  "failed": 0,
+  "results": [
+    {
+      "test": "session card shows with valid session and buttons are functional",
+      "status": "passed",
+      "checks": [
+        "login form visible",
+        "login succeeds",
+        "/research loads",
+        "/login with session shows session card",
+        "email visible in session card",
+        "research link has href=/research",
+        "research link is <a> tag",
+        "research link navigates to /research",
+        "verify session button shows 'Sesión válida.'",
+        "logout clears session",
+        "/research redirects to /login after logout",
+        "zero console errors"
+      ]
+    },
+    {
+      "test": "research link is a real HTML anchor",
+      "status": "passed",
+      "checks": [
+        "research link is <a> element",
+        "href attribute is /research",
+        "visible in session card"
+      ]
+    },
+    {
+      "test": "full flow: login → research → login → verify → logout → re-login",
+      "status": "passed",
+      "checks": [
+        "initial login succeeds",
+        "/research loads with question input",
+        "/login shows session card",
+        "Ir a Investigación navigates to /research",
+        "back to /login shows session card",
+        "verify shows 'Sesión válida.'",
+        "logout shows login form",
+        "/research redirects to /login",
+        "re-login succeeds",
+        "/research loads after re-login",
+        "zero console errors"
+      ]
+    }
+  ]
+}

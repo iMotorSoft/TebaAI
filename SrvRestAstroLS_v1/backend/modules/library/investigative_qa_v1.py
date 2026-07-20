@@ -840,9 +840,10 @@ def _compute_literal_match_kind(quote: str, terms: list[str], primary_lang: str)
                 return "normalized" if has_marks else "no_niqqud"
         if he_terms:
             return "single_term"
-    if len(terms) >= 2 and all(term in quote for term in terms):
+    latin_terms = [t for t in terms if LATIN_LETTER_RE.search(t)]
+    if len(latin_terms) >= 2 and all(t.lower() in quote.lower() for t in latin_terms):
         return "exact_phrase"
-    if any(term in quote for term in terms):
+    if latin_terms and any(t.lower() in quote.lower() for t in latin_terms):
         return "single_term"
     return "semantic"
 
@@ -1152,17 +1153,33 @@ def _deterministic_claims(
             "en": "Editorial layer is unconfirmed and requires review.",
             "he": "השכבה העריכתית לא אושרה ודורשת בדיקה.",
         })
+        additional = [
+            h for h in literal_hits[1:]
+            if h.work_code != primary.work_code
+        ]
+        additional_note = ""
+        if additional:
+            extra = " · ".join(
+                f"{h.work_title} (p. {h.pdf_page})" if h.pdf_page else h.work_title
+                for h in additional[:3]
+            )
+            additional_note = {
+                "es": f" También aparece en {extra}.",
+                "en": f" It also appears in {extra}.",
+                "he": f" מופיע גם ב{extra}.",
+            }.get(instruction_language if instruction_language in {"es", "en", "he"} else "es", "")
         locale = instruction_language if instruction_language in {"es", "en", "he"} else "es"
+        all_evidence_ids = [primary.hit_id] + [h.hit_id for h in additional]
         texts = {
-            "es": f"La frase aparece literalmente en {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['es']}",
-            "en": f"The phrase appears literally in {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['en']}",
-            "he": f"הביטוי מופיע במפורש ב־{primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['he']}",
+            "es": f"La frase aparece literalmente en {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['es']}{additional_note}",
+            "en": f"The phrase appears literally in {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['en']}{additional_note}",
+            "he": f"הביטוי מופיע במפורש ב־{primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['he']}{additional_note}",
         }
         return [{
             "claim_id": "claim_1",
             "text": texts[locale],
             "strength": "strong",
-            "evidence_ids": [primary.hit_id],
+            "evidence_ids": all_evidence_ids,
             "primary_evidence_id": primary.hit_id,
         }]
     candidates = [hit for hit in hits if hit.relation_relevance in {"same_fragment_both_terms", "same_section_relation", "same_page_both_terms"}]
@@ -1355,6 +1372,21 @@ def render(
             f"**Relevancia:** {relevance_label} · **Fuerza relacional:** {strength_label}{' · ' + labels if labels else ''}",
             "",
         ])
+    additional_appearances = [
+        hit for hit in hits
+        if not hit.is_primary
+        and hit.literal_match_kind in {"exact_phrase", "normalized", "no_niqqud"}
+        and hit.work_code != (hits[0].work_code if hits else None)
+    ]
+    if additional_appearances:
+        lines.extend(["", "## Apariciones adicionales"])
+        for hit in additional_appearances[:3]:
+            loc = " · ".join(filter(None, [
+                f"PDF p. {hit.pdf_page}" if hit.pdf_page is not None else None,
+                f"página impresa {hit.printed_page}" if hit.printed_page is not None else None,
+                hit.section,
+            ]))
+            lines.append(f"- **{hit.work_title}**{f' — {loc}' if loc else ''}.")
     if source_layer_followup:
         lines.extend(["## Alcance", "- La clasificación responde a la capa editorial estructurada de la evidencia seleccionada."])
     elif intent in {"literal_lookup", "translation_or_explanation"}:

@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-07-20T15:22:00Z",
+  "query": "Moshé, tú lo has dicho bien",
+  "expected": {
+    "primary_work_code": "lmi",
+    "canonical_work_title": "Likutey Moharán I — edición española BRI",
+    "physical_filename": "LIKUTEY MOHARÁN I int (imprenta).pdf",
+    "section_label": "LIKUTEY MOHARÁN #2:6",
+    "printed_page": 73,
+    "pdf_page": 93,
+    "lesson_number": 2,
+    "subsection_number": 6,
+    "literal_match_kind": "exact_phrase"
+  },
+  "actual": {
+    "status": "ok",
+    "intent": "translation_or_explanation",
+    "primary_work_code": "lmi",
+    "canonical_work_title": "Likutey Moharán I — edición española BRI",
+    "physical_filename": "LIKUTEY MOHARÁN I int (imprenta).pdf",
+    "section_label": "LIKUTEY MOHARÁN #2:6",
+    "printed_page": 73,
+    "pdf_page": 93,
+    "literal_match_kind": "exact_phrase",
+    "primary_evidence_id": "lmi-bb95461d-88f3-489a-a1dc-de8ea99ac738"
+  },
+  "additional_occurrences": [
+    {
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 115,
+      "printed_page": 105,
+      "evidence_id": "lmii-21009724a7bf"
+    }
+  ],
+  "not_primary": "Likutey Moharán II remains secondary, never primary",
+  "verification": {
+    "primary_correct": true,
+    "lmii_not_primary": true,
+    "exact_phrase_matched": true,
+    "section_correct": true,
+    "printed_page_matches_user_report": true,
+    "no_false_ii_inference": true
+  }
+}

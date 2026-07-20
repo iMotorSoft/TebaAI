@@ -42,10 +42,12 @@
 .enriched-markdown td.research-hebrew-text,.enriched-markdown th.research-hebrew-text{min-width:220px}
 .synthesis>.research-hebrew-text,.claim-list .research-hebrew-text,.user-turn .research-hebrew-text{font-size:18px;line-height:1.8}
 .composer textarea.research-hebrew-text{font-size:18px;line-height:1.65;text-align:right}
+.research-empty{position:fixed;z-index:2;right:max(460px,32vw);bottom:86px;left:270px;box-sizing:border-box;max-width:none;margin:0;padding:0 max(24px,4vw)}
+.research-empty h2{margin:0 0 12px}
 
-@media(max-width:1100px){.research{grid-template-columns:230px minmax(0,1fr)}.composer{right:0}.sources{width:min(520px,96vw)}}
+@media(max-width:1100px){.research{grid-template-columns:230px minmax(0,1fr)}.composer{right:0}.sources{width:min(520px,96vw)}.research-empty{right:0;left:0}}
 @media(max-width:720px){
-  .research{display:block}.research-hebrew-text{font-size:17px;line-height:1.78}
+  .research{display:block}.research-hebrew-text{font-size:17px;line-height:1.78}.research-empty{bottom:84px;padding:0 14px}
   .sources{top:auto;right:0;bottom:0;left:0;width:100%;max-height:78dvh;padding:18px;transform:translateY(105%);border:1px solid var(--line);border-radius:18px 18px 0 0;box-shadow:0 -18px 50px rgba(6,31,59,.2)}
   .sources.open{transform:none}.source-detail blockquote.research-hebrew-text{font-size:17px;line-height:1.8;padding:13px 15px}
   .primary-evidence blockquote.research-hebrew-text,.enriched-markdown .research-hebrew-text{font-size:17px}

@@ -8,6 +8,12 @@ test.describe("authenticated research workspace", () => {
   test.skip(!email || !password, "requires configured E2E administrator credentials");
   test("redirects, researches with the real API, and logs out", async ({ page }) => {
     test.setTimeout(120_000);
+    const pageErrors: string[] = [];
+    const consoleErrors: string[] = [];
+    page.on("pageerror", (error) => pageErrors.push(error.message));
+    page.on("console", (message) => {
+      if (message.type() === "error") consoleErrors.push(message.text());
+    });
     await page.goto("/research");
     await expect(page).toHaveURL(/\/login$/);
     await page.fill("#login-email", email!);
@@ -37,7 +43,21 @@ test.describe("authenticated research workspace", () => {
     const accessibility = await new AxeBuilder({ page }).exclude(".enriched-markdown").analyze();
     expect(accessibility.violations.filter((item) => item.impact === "critical")).toEqual([]);
     await page.getByRole("button", { name: /Nueva investigación/ }).first().click();
-    await expect(page.getByRole("heading", { name: "¿Qué querés investigar?" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "¿Qué desea investigar?" })).toBeVisible();
+    await expect(page.getByText("¿Qué querés investigar?", { exact: true })).toHaveCount(0);
+    await expect(page.getByText("ESPACIO PRIVADO DE ESTUDIO", { exact: true })).toHaveCount(0);
+    await expect(page.getByText("Consultá conceptos, fuentes, páginas, referencias y paralelos entre las obras disponibles.", { exact: true })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "¿Dónde aparece la plegaria?" })).toHaveCount(0);
+    const composer = page.getByTestId("research-question");
+    await expect(composer).toBeVisible();
+    await composer.fill("Primera línea");
+    await composer.press("Shift+Enter");
+    await expect(composer).toHaveValue("Primera línea\n");
+    await composer.fill("Consulta de comprobación");
+    await composer.press("Enter");
+    await expect(page.getByRole("heading", { name: "Consulta de comprobación" })).toBeVisible();
+    expect(pageErrors).toEqual([]);
+    expect(consoleErrors).toEqual([]);
     await page.getByRole("button", { name: "Cerrar sesión" }).first().click();
     await expect(page).toHaveURL(/\/login$/);
   });

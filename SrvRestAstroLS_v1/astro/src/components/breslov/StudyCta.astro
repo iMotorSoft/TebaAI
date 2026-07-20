@@ -1,18 +1,132 @@
-<section class="study-cta" id="para-quien" aria-labelledby="study-title">
-  <div class="manuscript-decoration" aria-hidden="true"><span>אבגדהוזחטיכלמנסעפצקרשת</span><span>כתבי יד · מחקר · מקור</span></div>
-  <div class="study-copy">
-    <p class="section-kicker">Para investigadores y estudiosos</p>
-    <h2 id="study-title">Profundizá tu estudio.<br />Descubrí más.</h2>
-    <p>Breslov Research es una herramienta para investigadores, editores, estudiosos y buscadores de verdad.</p>
-    <div class="cta-actions" id="acceso">
-      <a class="login-button" href="/login">Iniciar sesión para acceder <span aria-hidden="true">→</span></a>
-      <a class="secondary-link" href="/request-access">Solicitar acceso <span aria-hidden="true">↗</span></a>
+---
+import SessionAwareAccess from "./SessionAwareAccess.svelte";
+
+const useCases = [
+  "Localizar dónde aparece hitbodedut.",
+  "Revisar en qué contextos se trata la tristeza.",
+  "Comparar referencias al miedo entre distintas obras.",
+  "Identificar si una frase pertenece a una lección, una cita o una nota.",
+  "Encontrar una cita hebrea copiada desde un PDF.",
+  "Seguir una referencia desde una traducción hasta una fuente original vinculada.",
+  "Verificar una cita antes de incluirla en un artículo, una clase o una edición.",
+];
+
+const responseSteps = [
+  "Interpretación de la consulta", "Localización de fuentes", "Selección de evidencia",
+  "Organización por obra y página", "Presentación del contexto", "Seguimiento mediante nuevas preguntas",
+];
+---
+
+<section class="home-section evidence-section" id="verificacion" aria-labelledby="evidence-title">
+  <div class="section-heading narrow">
+    <p class="section-kicker">Respuestas verificables</p>
+    <h2 id="evidence-title">Cada respuesta conserva su referencia</h2>
+    <p>La respuesta no termina en una síntesis. Las afirmaciones relevantes se presentan junto con la evidencia disponible para revisar la fuente que las respalda.</p>
+  </div>
+  <div class="evidence-layout">
+    <div class="reference-card">
+      <p class="reference-overline">Registro de evidencia</p>
+      <dl>
+        <div><dt>Obra</dt><dd>Título registrado</dd></div>
+        <div><dt>Ubicación</dt><dd>Página física e impresa, cuando están disponibles</dd></div>
+        <div><dt>Sección</dt><dd>Referencia estructural de la obra</dd></div>
+        <div><dt>Fuente</dt><dd>Cita literal e idioma</dd></div>
+        <div><dt>Capa editorial</dt><dd>Original, cita, traducción, comentario o nota</dd></div>
+        <div><dt>Relación</dt><dd>Evidencia principal, contexto o coincidencia adicional</dd></div>
+      </dl>
+    </div>
+    <ol class="verification-flow" aria-label="Flujo de verificación">
+      {['Pregunta', 'Resultado', 'Cita', 'Obra y página', 'Contexto', 'Relación con otras fuentes'].map((step, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{step}</li>)}
+    </ol>
+  </div>
+</section>
+
+<section class="home-section multilingual-section" id="idiomas" aria-labelledby="languages-title">
+  <div class="section-heading">
+    <p class="section-kicker">Trabajo multilingüe</p>
+    <h2 id="languages-title">Investigación en español, inglés y hebreo</h2>
+    <p>La pregunta puede combinar el idioma de la consulta con términos de la fuente. El texto original y las traducciones vinculadas se presentan como capas separadas.</p>
+  </div>
+  <div class="language-example">
+    <div class="language-query"><span>Pregunta</span><p>¿Dónde aparece <bdi lang="he" dir="rtl">התבודדות</bdi>?</p></div>
+    <div class="language-result">
+      <span>Resultado organizado</span>
+      <blockquote lang="he" dir="rtl">קטע מן המקור בעברית מוצג בכיווניות הנכונה</blockquote>
+      <p>Texto hebreo <i aria-hidden="true">→</i> traducción vinculada, cuando existe <i aria-hidden="true">→</i> obra, página y sección.</p>
     </div>
   </div>
-  <dl class="metrics" id="idiomas">
-    <div><dt>5</dt><dd>Obras principales</dd></div>
-    <div><dt>3</dt><dd>Idiomas integrados</dd></div>
-    <div><dt>Miles</dt><dd>de citas verificables</dd></div>
-    <div><dt>Comunidad</dt><dd>de investigadores</dd></div>
-  </dl>
+  <ul class="language-notes">
+    <li>Una frase hebrea prioriza evidencia hebrea cuando está disponible.</li>
+    <li>La narrativa mantiene el idioma de instrucción y conserva la fuente en su idioma original.</li>
+    <li>Una traducción no se presenta como equivalente al original sin un vínculo verificable.</li>
+    <li>Los fragmentos hebreos respetan la dirección de lectura de derecha a izquierda.</li>
+  </ul>
+</section>
+
+<section class="home-section use-cases" id="casos" aria-labelledby="cases-title">
+  <div class="section-heading narrow">
+    <p class="section-kicker">Casos de uso</p>
+    <h2 id="cases-title">Tareas habituales de investigación</h2>
+    <p>Los ejemplos describen operaciones documentales. No anticipan conclusiones religiosas ni sustituyen la lectura de las obras.</p>
+  </div>
+  <ul class="case-grid">
+    {useCases.map((item, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{item}</li>)}
+  </ul>
+</section>
+
+<section class="home-section response-organization" id="organizacion" aria-labelledby="organization-title">
+  <div class="section-heading">
+    <p class="section-kicker">Organización de la respuesta</p>
+    <h2 id="organization-title">De la consulta al contexto de la fuente</h2>
+    <p>La consulta se organiza para distinguir el término buscado, el tipo de relación solicitado y el idioma de la fuente. Los resultados presentan evidencia verificable y límites explícitos.</p>
+  </div>
+  <ol class="response-steps">
+    {responseSteps.map((step, index) => <li><span>{index + 1}</span><p>{step}</p></li>)}
+  </ol>
+</section>
+
+<section class="home-section comparison-section" id="comparacion" aria-labelledby="comparison-title">
+  <div class="section-heading narrow">
+    <p class="section-kicker">Diferencias frente a una búsqueda común</p>
+    <h2 id="comparison-title">Más que una lista de coincidencias</h2>
+    <p>La diferencia está en la organización documental y en la posibilidad de revisar la evidencia, no en una afirmación de autoridad sobre la fuente.</p>
+  </div>
+  <div class="comparison-table" role="table" aria-label="Comparación de resultados">
+    <div class="comparison-head" role="row"><span role="columnheader">Búsqueda común</span><span role="columnheader">Breslov Research</span></div>
+    {[
+      ['Lista de páginas', 'Fragmentos organizados por obra'],
+      ['Coincidencias aisladas', 'Fuentes con referencia verificable'],
+      ['Contexto limitado', 'Cita y contexto disponible'],
+      ['Sin clasificación editorial', 'Distinción de la naturaleza de la fuente'],
+      ['Revisión manual extensa', 'Seguimiento mediante preguntas relacionadas'],
+    ].map(([common, research]) => <div class="comparison-row" role="row"><span role="cell">{common}</span><span role="cell">{research}</span></div>)}
+  </div>
+</section>
+
+<section class="home-section rigor-section" id="rigor" aria-labelledby="rigor-title">
+  <div class="rigor-intro">
+    <p class="section-kicker">Rigor y límites</p>
+    <h2 id="rigor-title">Rigor en la presentación de resultados</h2>
+    <p>La trazabilidad permite revisar una respuesta; no convierte una coincidencia documental en una conclusión doctrinal.</p>
+  </div>
+  <ul>
+    <li>Una coincidencia literal no siempre implica una relación doctrinal.</li>
+    <li>La presencia en una misma página no demuestra por sí sola una relación directa.</li>
+    <li>Las inferencias y las coincidencias adicionales se muestran separadas de la evidencia principal.</li>
+    <li>Las páginas o secciones faltantes se informan en lugar de completarse por suposición.</li>
+    <li>Una traducción no reemplaza el original y sólo se vincula cuando la relación está registrada.</li>
+    <li>La evidencia incierta y las limitaciones forman parte de la respuesta.</li>
+  </ul>
+</section>
+
+<section class="home-section access-section" id="acceso" aria-labelledby="access-title">
+  <div>
+    <p class="section-kicker">Acceso</p>
+    <h2 id="access-title">Acceso al espacio de investigación</h2>
+    <p>El espacio de investigación reúne la conversación, la síntesis y las fuentes verificables en una misma vista. El acceso requiere una sesión válida.</p>
+  </div>
+  <div class="access-actions">
+    <SessionAwareAccess client:load loginLabel="Ingresar" researchLabel="Abrir investigación" className="primary-action light" />
+    <a class="secondary-action light" href="/request-access">Solicitar acceso</a>
+  </div>
 </section>

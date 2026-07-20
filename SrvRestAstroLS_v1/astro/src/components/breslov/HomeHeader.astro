@@ -2,21 +2,22 @@
 import RebbeNajmanIdentity from "./RebbeNajmanIdentity.astro";
 import MobileMenu from "./MobileMenu.svelte";
 import LanguageSelector from "./LanguageSelector.svelte";
+import SessionAwareAccess from "./SessionAwareAccess.svelte";
 
 const links = [
-  ["Acerca de", "#acerca"], ["Corpus", "#corpus"], ["Metodología", "#metodologia"],
-  ["Para quién", "#para-quien"], ["Idiomas", "#idiomas"], ["Acceso", "#acceso"],
+  ["Capacidades", "#capacidades"], ["Verificación", "#verificacion"],
+  ["Idiomas", "#idiomas"], ["Rigor", "#rigor"], ["Acceso", "#acceso"],
 ];
 ---
 
 <header class="home-header">
-  <a class="header-identity" href="#acerca" aria-label="Breslov Research, inicio"><RebbeNajmanIdentity compact /></a>
+  <a class="header-identity" href="#inicio" aria-label="Breslov Research, inicio"><RebbeNajmanIdentity compact /></a>
   <nav class="desktop-nav" aria-label="Navegación principal">
     {links.map(([label, href]) => <a href={href}>{label}</a>)}
   </nav>
   <div class="header-actions">
     <LanguageSelector client:load />
-    <a class="login-button header-login" href="/login"><span aria-hidden="true">⌁</span>Iniciar sesión</a>
+    <SessionAwareAccess client:load loginLabel="Ingresar" researchLabel="Abrir investigación" className="header-login" />
   </div>
   <MobileMenu client:load links={links} />
 </header>

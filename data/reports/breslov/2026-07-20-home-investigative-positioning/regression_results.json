@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "pnpm_check": { "status": "PASS", "errors": 0, "warnings": 0, "hints": 0 },
+  "pnpm_build": { "status": "PASS", "pages": 7 },
+  "vitest": { "status": "PASS", "tests": 48, "files": 4 },
+  "playwright": { "status": "PASS", "tests": 57, "duration": "8.5m" },
+  "lat_check": { "status": "PASS", "note": "Warnings only: repository has no LAT init version or LLM key." },
+  "git_diff_check": "PASS",
+  "secret_scan": "PASS",
+  "institutional_reference_scan": "PASS",
+  "routes": {
+    "/": 200,
+    "/login": 200,
+    "/request-access": 200,
+    "/research": 200,
+    "/health": 200
+  }
+}

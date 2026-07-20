@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Breslov Research — Investigación basada en fuentes",
-  description = "Plataforma privada de investigación conversacional sobre las enseñanzas de Rebe Najmán de Breslov, con citas verificables y fuentes en español, hebreo e inglés.",
+  title = "Breslov Research — Investigación de fuentes y conceptos en la literatura Breslov",
+  description = "Herramienta de investigación para localizar conceptos, citas y relaciones en obras de Breslov, con referencias verificables en español, inglés y hebreo.",
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, "https://breslov.tebaai.live");
 ---
@@ -25,12 +25,14 @@ const canonical = new URL(Astro.url.pathname, "https://breslov.tebaai.live");
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Breslov Research" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <title>{title}</title>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Ir al contenido principal</a>
     <slot />
   </body>
 </html>

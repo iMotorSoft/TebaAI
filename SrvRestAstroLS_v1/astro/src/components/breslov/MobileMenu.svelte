@@ -1,7 +1,16 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+  import { getMe, getStoredAccessToken } from "../auth/authClient.ts";
+
   let { links }: { links: string[][] } = $props();
   let open = $state(false);
+  let authenticated = $state(false);
   let menuButton: HTMLButtonElement;
+
+  onMount(async () => {
+    if (!getStoredAccessToken()) return;
+    authenticated = Boolean(await getMe());
+  });
 
   function close(restoreFocus = false) {
     open = false;
@@ -28,7 +37,8 @@
         {#each links as link}
           <a href={link[1]} onclick={close}>{link[0]}</a>
         {/each}
-        <a class="mobile-login" href="/login" onclick={close}>Iniciar sesión</a>
+        <a class="mobile-login" href={authenticated ? "/research" : "/login"} onclick={close}>{authenticated ? "Abrir investigación" : "Ingresar"}</a>
+        <a class="mobile-request" href="/request-access" onclick={close}>Solicitar acceso</a>
       </nav>
     </div>
   {/if}

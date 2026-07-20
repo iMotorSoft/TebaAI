@@ -27,7 +27,7 @@ test.describe("authenticated research workspace", () => {
     await expect(page.locator(".matrix-row").nth(1)).toBeVisible();
     await page.getByRole("button", { name: "Filtros" }).last().click();
     const dialog = page.getByRole("dialog", { name: "Filtros de investigación" });
-    await dialog.getByLabel("Kitzur Likutey Moharán").uncheck(); await dialog.getByLabel("Likutey Moharán I — edición española BRI").uncheck(); await dialog.getByLabel("Likutey Moharán II").uncheck(); await dialog.getByLabel("Likutey Moharán XV").uncheck(); await dialog.getByLabel("La Potencia de la Plegaria").uncheck();
+    await dialog.getByLabel("Kitzur Likutey Moharán").uncheck(); await dialog.getByLabel("Likutey Moharán I — edición española").uncheck(); await dialog.getByLabel("Likutey Moharán II").uncheck(); await dialog.getByLabel("Likutey Moharán XV").uncheck(); await dialog.getByLabel("La Potencia de la Plegaria").uncheck();
     await dialog.getByLabel("Incluir paralelos temáticos").uncheck(); await dialog.getByLabel("Resultados").selectOption("5"); await dialog.getByRole("button", { name: "Aplicar filtros" }).click();
     await page.getByTestId("research-question").fill("¿Y en Likutey Halajot?");
     const filteredRequest = page.waitForRequest((request) => request.url().endsWith("/library/investigative-qa/v1") && request.method() === "POST");

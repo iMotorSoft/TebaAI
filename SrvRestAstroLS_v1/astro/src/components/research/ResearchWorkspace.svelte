@@ -6,7 +6,7 @@
   import { askInvestigativeQa, makeRequest, selectInitialEvidence, WORKS, type Hit, type Language, type ResearchResponse } from "./investigativeQaClient.ts";
   import { relevanceLabels, strengthLabel, warningLabel, languageMatchLabel, literalKindLabel, sourceLayerLabels } from "./researchLabels.ts";
   import { composerDirection, isHebrewText, languageAttribute, normalizeDisplayText, safeSnippet, textDirection } from "./textDirection.ts";
-  const labels: Record<string, string> = { kitzur: "Kitzur Likutey Moharán", lmi: "Likutey Moharán I — edición española BRI", lmii: "Likutey Moharán II", lh: "Likutey Halajot", lm_xv: "Likutey Moharán XV", potencia_plegaria: "La Potencia de la Plegaria" };
+  const labels: Record<string, string> = { kitzur: "Kitzur Likutey Moharán", lmi: "Likutey Moharán I — edición española", lmii: "Likutey Moharán II", lh: "Likutey Halajot", lm_xv: "Likutey Moharán XV", potencia_plegaria: "La Potencia de la Plegaria" };
   type Turn = { id: string; question: string; response: ResearchResponse | null; state: "submitting" | "ok" | "partial" | "no_evidence" | "error" };
   let ready = $state(false), inputText = $state(""), isSubmitting = $state(false), requestError = $state<string | null>(null), activeTurnId = $state(""), selectedHitId = $state<string | null>(null);
   let filters = $state({ works: [...WORKS] as string[], languages: ["es", "he", "en"] as Language[], thematic: true, maxHits: 10 });

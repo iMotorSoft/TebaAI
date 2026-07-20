@@ -5,10 +5,14 @@ import HeroSection from "../components/breslov/HeroSection.astro";
 import CapabilityGrid from "../components/breslov/CapabilityGrid.astro";
 import StudyCta from "../components/breslov/StudyCta.astro";
 import HomeFooter from "../components/breslov/HomeFooter.astro";
+import "../assets/investigative-home.css";
 ---
 
-<PublicLayout>
-  <main class="breslov-home">
+<PublicLayout
+  title="Breslov Research — Investigación de fuentes y conceptos en la literatura Breslov"
+  description="Herramienta de investigación para localizar conceptos, citas y relaciones en obras de Breslov, con referencias verificables en español, inglés y hebreo."
+>
+  <main class="breslov-home" id="main-content">
     <div class="hero-shell">
       <HomeHeader />
       <HeroSection />

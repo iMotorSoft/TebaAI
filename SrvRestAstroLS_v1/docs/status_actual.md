@@ -2,9 +2,20 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-19 (prioridad de idioma y capa editorial `/research`)
+Ultima actualizacion: 2026-07-20 (posicionamiento investigativo de la home pública)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
+
+## Home pública investigativa — 2026-07-20
+
+Estado técnico: `BRESLOV_HOME_INVESTIGATIVE_POSITIONING_FULL_PASS` y `READY_FOR_MANUAL_HOME_REVIEW`.
+
+- La home presenta Breslov Research como herramienta de investigación documental, con tareas concretas, referencias verificables, trabajo ES/EN/HE y límites explícitos.
+- La identidad pública queda limitada a Rebe Najmán en hebreo y alfabeto latino, junto con Breslov Research; no se muestran instituciones, alianzas, respaldos o logos externos.
+- El CTA adapta su ruta a una sesión válida, conserva `/login` sin sesión y mantiene `/request-access` como enlace HTML real.
+- La representación visual del producto muestra consulta, síntesis, cita, obra, ubicación y fuentes sin inventar una referencia bibliográfica.
+- Playwright Chromium completo: 57/57; Vitest: 48/48; `pnpm check`: cero diagnósticos; build: 7 páginas; Axe sin violaciones críticas o serias; LAT y diff-check: PASS.
+- Evidencia, capturas y checklist: `data/reports/breslov/2026-07-20-home-investigative-positioning/`.
 
 ## Prioridad de idioma y capa editorial `/research` — 2026-07-19
 

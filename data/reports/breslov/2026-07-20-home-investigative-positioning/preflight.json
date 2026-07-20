@@ -1,0 +1,49 @@
+{
+  "date": "2026-07-20",
+  "branch": "feature/console-backend-core",
+  "initial_head": "b0ce7c86b6c5a37fa29554d1d7eba364969ce929",
+  "tracked_changes_before_phase": [],
+  "staged_changes_before_phase": [],
+  "untracked_preserved": [
+    "SrvRestAstroLS_v1/backend/data/",
+    "SrvRestAstroLS_v1/backend/scripts/milvus_operational_closure_probe.py",
+    "SrvRestAstroLS_v1/backend/scripts/milvus_v2_isolated_status_probe.py",
+    "data/reports/breslov/2026-07-09-kitzur-v2-lesson-index-recovery/",
+    "data/reports/breslov/2026-07-09-kitzur-v2-level1-hardening/",
+    "data/reports/breslov/2026-07-09-kitzur-v2-level2-hardening/",
+    "data/reports/breslov/2026-07-12-kitzur-level3-full-stack-synthesis-qa-v1/",
+    "data/reports/breslov/2026-07-12-kitzur-level3-size-model-diagnostics/",
+    "data/reports/breslov/2026-07-12-kitzur-level3-synthesis-terminal/",
+    "data/reports/breslov/2026-07-12-kitzur-level4-synthesis-qa-v1/",
+    "data/reports/breslov/2026-07-12-milvus-v2-isolated-status/",
+    "data/reports/breslov/2026-07-12-vector-store-decision/",
+    "data/reports/breslov/2026-07-13-likutey-moharan-ii-layout-profile-closure/",
+    "data/reports/breslov/2026-07-16-research-workspace-v1/blood_speech_case_after.json",
+    "data/reports/breslov/2026-07-16-research-workspace-v1/screenshots/"
+  ],
+  "baseline": {
+    "pnpm_check": "PASS: 0 diagnostics",
+    "pnpm_build": "PASS: 7 pages",
+    "vitest": "PASS: 48/48",
+    "session_recovery": "PASS after canonical Astro restart: 3/3",
+    "git_diff_check": "PASS"
+  },
+  "service_start_diagnosis": "Initial startup waited on filesystem I/O; both canonical services became healthy without application changes.",
+  "initial_service_pids": {
+    "backend": 55215,
+    "astro_listener": 55706
+  },
+  "initial_routes": {
+    "/": 200,
+    "/login": 200,
+    "/request-access": 200,
+    "/research": 200,
+    "/health": 200
+  },
+  "available_suites": [
+    "Vitest frontend unit tests",
+    "Playwright home, navigation, login, session recovery, mobile, RTL, Axe and research suites"
+  ],
+  "backend_url": "http://127.0.0.1:7008",
+  "frontend_url": "http://127.0.0.1:3008"
+}

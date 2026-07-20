@@ -149,11 +149,11 @@ test("captures controlled pre-index baseline and real negative literal result", 
   test.setTimeout(120_000); await page.setViewportSize({ width: 1366, height: 768 }); await login(page);
   await page.getByRole("button", { name: "Filtros" }).last().click();
   const filters = page.getByRole("dialog", { name: "Filtros de investigación" });
-  await filters.getByLabel("Likutey Moharán I — edición española BRI").uncheck(); await filters.getByLabel("Likutey Moharán XV").uncheck(); await filters.getByRole("button", { name: "Aplicar filtros" }).click();
+  await filters.getByLabel("Likutey Moharán I — edición española").uncheck(); await filters.getByLabel("Likutey Moharán XV").uncheck(); await filters.getByRole("button", { name: "Aplicar filtros" }).click();
   await page.getByTestId("research-question").fill("ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך donde esta"); await page.getByTestId("research-submit").click();
   await expect(page.locator(".no-evidence")).toBeVisible({ timeout: 30_000 }); await page.screenshot({ path: path.join(screenshots, "hebrew-literal-before.png"), fullPage: true }); await page.screenshot({ path: path.join(screenshots, "hebrew-copypaste-before.png"), fullPage: true });
   await page.locator(".desktop-action").filter({ hasText: "Nueva investigación" }).click(); await page.getByRole("button", { name: "Filtros" }).last().click();
-  await page.getByRole("dialog", { name: "Filtros de investigación" }).getByLabel("Likutey Moharán I — edición española BRI").check();
+  await page.getByRole("dialog", { name: "Filtros de investigación" }).getByLabel("Likutey Moharán I — edición española").check();
   await page.getByRole("dialog", { name: "Filtros de investigación" }).getByLabel("Likutey Moharán XV").check();
   await page.getByRole("dialog", { name: "Filtros de investigación" }).getByRole("button", { name: "Aplicar filtros" }).click();
   await page.getByTestId("research-question").fill("תהלתי אחטמ לך"); await page.getByTestId("research-submit").click();

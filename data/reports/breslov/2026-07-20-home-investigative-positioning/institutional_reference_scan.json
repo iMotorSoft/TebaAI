@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "rendered_home_matches": 0,
+  "astro_src_matches": 0,
+  "third_party_logo_elements": 0,
+  "control_occurrences": {
+    "e2e_home_spec": 1,
+    "purpose": "negative assertion pattern; never rendered"
+  },
+  "report_occurrences": "Expected documentary mentions in audit and policy files; never rendered.",
+  "patterns": [
+    "external institute full name",
+    "external institutional acronym as a whole word",
+    "Spanish collaboration statement",
+    "English collaboration statement",
+    "Hebrew collaboration or sponsorship statement"
+  ]
+}

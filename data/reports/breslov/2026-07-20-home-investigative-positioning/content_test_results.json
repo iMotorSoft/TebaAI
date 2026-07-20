@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "playwright_home_tests": 5,
+  "checks": {
+    "single_h1": true,
+    "investigative_value_visible": true,
+    "verifiable_references_visible": true,
+    "spanish_english_hebrew_visible": true,
+    "source_layers_visible": true,
+    "login_cta": true,
+    "request_access_cta": true,
+    "valid_session_routes_to_research": true,
+    "invalid_session_routes_to_login": true,
+    "technical_terms_absent_from_hero": true,
+    "motivational_tone_absent": true,
+    "tu_absent": true,
+    "vos_absent": true,
+    "external_institution_content_absent": true,
+    "third_party_logos_absent": true
+  }
+}

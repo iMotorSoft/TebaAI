@@ -1,17 +1,23 @@
 ---
 const capabilities = [
-  ["◌", "Conversación investigativa", "Hacé preguntas en lenguaje natural y obtené respuestas con evidencia precisa y trazable."],
-  ["⌕", "Búsqueda avanzada", "Encontramos lo que buscás explorando sinónimos, conceptos y referencias."],
-  ["⌘", "Relaciones y paralelos", "Descubrí cómo las enseñanzas se conectan a lo largo del corpus Breslov."],
-  ["◎", "Multilingüe", "Investigá en español, hebreo e inglés en una experiencia integrada."],
-  ["◇", "Privado y seguro", "Acceso restringido para investigadores y estudiosos. Tu investigación está protegida."],
+  ["01", "Localizar un concepto", "Identificar obras, páginas y secciones donde aparece un término o una referencia."],
+  ["02", "Recuperar el texto en contexto", "Revisar el fragmento, el párrafo relacionado y su ubicación dentro de la obra."],
+  ["03", "Distinguir la naturaleza de la fuente", "Separar texto de lección, citas, traducciones, comentarios y notas editoriales."],
+  ["04", "Comparar entre obras", "Organizar coincidencias literales, proximidades contextuales y relaciones temáticas con sus límites."],
+  ["05", "Continuar una investigación", "Formular preguntas relacionadas conservando las fuentes y evidencias de los turnos anteriores."],
 ];
 ---
-<section class="capability-wrap" id="corpus" aria-label="Capacidades de investigación">
+
+<section class="home-section capabilities" id="capacidades" aria-labelledby="capabilities-title">
+  <header class="section-heading">
+    <p class="section-kicker">Qué permite investigar</p>
+    <h2 id="capabilities-title">Una consulta puede comenzar por una palabra, una fuente o una relación</h2>
+    <p>La consulta combina herramientas de búsqueda y análisis para organizar resultados verificables. No determina conclusiones doctrinales.</p>
+  </header>
   <div class="capability-grid">
-    {capabilities.map(([icon, title, description]) => (
+    {capabilities.map(([index, title, description]) => (
       <article class="capability-card">
-        <span class="capability-icon" aria-hidden="true">{icon}</span>
+        <span class="capability-index" aria-hidden="true">{index}</span>
         <h3>{title}</h3>
         <p>{description}</p>
       </article>

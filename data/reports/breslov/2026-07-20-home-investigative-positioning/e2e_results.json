@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "runner": "Playwright 1.61.1",
+  "browser": "Chromium",
+  "base_url": "http://127.0.0.1:3008",
+  "backend_url": "http://127.0.0.1:7008",
+  "tests": 57,
+  "passed": 57,
+  "failed": 0,
+  "skipped": 0,
+  "duration": "8.5m",
+  "home_focused_tests": 8,
+  "home_focused_status": "PASS",
+  "console_errors_home": 0,
+  "unexpected_http_responses_home": 0,
+  "axe_home_critical_or_serious": 0
+}

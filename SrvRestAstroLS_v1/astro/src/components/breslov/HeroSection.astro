@@ -1,22 +1,40 @@
 ---
 import RebbeNajmanIdentity from "./RebbeNajmanIdentity.astro";
-import FloralMark from "./FloralMark.astro";
-import HeroQuote from "./HeroQuote.astro";
-import BriCollaborationCard from "./BriCollaborationCard.astro";
+import SessionAwareAccess from "./SessionAwareAccess.svelte";
 ---
 
-<section class="hero-section" id="acerca" aria-labelledby="breslov-title">
+<section class="research-hero" id="inicio" aria-labelledby="breslov-title">
   <div class="hero-copy">
-    <div class="hero-identity"><RebbeNajmanIdentity /></div>
-    <h1 id="breslov-title"><span>BRESLOV</span> <span>RESEARCH</span></h1>
-    <div class="gold-divider" aria-hidden="true"><i></i><FloralMark size={22} /><i></i></div>
-    <p class="hero-tagline">Investigación verdadera. Fuentes originales. Comprensión más profunda.</p>
-    <p class="hero-description">Una plataforma de investigación conversacional basada en el corpus auténtico de las enseñanzas de Rebe Najmán de Breslov y sus discípulos.</p>
-    <div class="hero-bri"><BriCollaborationCard /></div>
+    <RebbeNajmanIdentity />
+    <p class="hero-eyebrow">Investigación documental sobre literatura Breslov</p>
+    <p class="product-name">BRESLOV RESEARCH</p>
+    <h1 id="breslov-title">Localización de conceptos, fuentes y relaciones en las obras de Breslov</h1>
+    <p class="hero-description">Breslov Research permite consultar obras en español, inglés y hebreo, recuperar citas en su contexto y verificar cada resultado mediante referencias de obra, página y sección.</p>
+    <p class="hero-audience">Para investigación, docencia, traducción, edición y revisión bibliográfica.</p>
+    <div class="hero-actions">
+      <SessionAwareAccess client:load loginLabel="Ingresar a Investigación" researchLabel="Abrir investigación" className="primary-action" />
+      <a class="secondary-action" href="/request-access">Solicitar acceso</a>
+    </div>
   </div>
-  <div class="hero-visual">
-    <img src="/breslov/contemplative-valley-1200.webp" srcset="/breslov/contemplative-valley-768.webp 768w, /breslov/contemplative-valley-1200.webp 1200w, /breslov/contemplative-valley-1600.webp 1600w" sizes="(max-width: 959px) 100vw, 52vw" width="1672" height="941" alt="Sendero rural junto a un valle en luz dorada" loading="eager" fetchpriority="high" />
-    <HeroQuote />
+  <div class="product-preview" aria-label="Ejemplo visual de una respuesta organizada por fuente">
+    <div class="preview-topbar"><span>Investigación</span><span class="preview-status">Fuentes verificables</span></div>
+    <div class="preview-body">
+      <div class="preview-question">
+        <small>Consulta de ejemplo</small>
+        <p>¿Dónde aparece <bdi lang="he" dir="rtl">התבודדות</bdi> y en qué otras obras se desarrolla?</p>
+      </div>
+      <article class="preview-answer">
+        <p class="preview-label">Síntesis investigativa</p>
+        <p>Los resultados se agrupan por obra y distinguen evidencia principal, contexto y fuentes relacionadas.</p>
+        <div class="source-record">
+          <div><span>OBRA</span><strong>Obra disponible</strong></div>
+          <div><span>UBICACIÓN</span><strong>Página · sección</strong></div>
+          <blockquote>Fragmento de la fuente en su idioma original, presentado con el contexto disponible.</blockquote>
+          <div class="source-tags"><span>Cita literal</span><span>Texto original</span><span>Contexto</span></div>
+        </div>
+      </article>
+      <aside class="preview-sources"><strong>Fuentes</strong><span>01 Evidencia principal</span><span>02 Contexto relacionado</span><span>03 Otra obra</span></aside>
+    </div>
+    <p class="preview-note">Representación de la estructura del producto. No contiene una referencia bibliográfica real.</p>
   </div>
-  <div class="mobile-bri"><BriCollaborationCard /></div>
 </section>

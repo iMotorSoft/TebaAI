@@ -1,0 +1,41 @@
+# Checklist de revisión manual
+
+URL: `http://127.0.0.1:3008/`
+
+- [ ] se entiende qué es Breslov Research
+- [ ] se entiende que es una herramienta de investigación
+- [ ] no parece un chatbot espiritual
+- [ ] no parece una plataforma técnica
+- [ ] no tiene tono motivacional
+- [ ] usa español neutro
+- [ ] no usa “tú”
+- [ ] no usa “vos”
+- [ ] explica tareas concretas
+- [ ] explica referencias verificables
+- [ ] menciona español, inglés y hebreo
+- [ ] explica original, traducción, comentario y nota
+- [ ] explica comparación entre obras
+- [ ] explica seguimiento de preguntas
+- [ ] muestra utilidad para investigadores
+- [ ] no promete funciones inexistentes
+- [ ] CTA principal claro
+- [ ] CTA secundario claro
+- [ ] sesión válida entra a `/research`
+- [ ] sesión inválida entra por `/login`
+- [ ] request access funciona
+- [ ] navegación móvil funciona
+- [ ] selector de idioma funciona
+- [ ] RTL correcto
+- [ ] desktop correcto
+- [ ] tablet correcto
+- [ ] móvil correcto
+- [ ] accesibilidad correcta
+- [ ] SEO correcto
+- [ ] no hay errores de consola
+- [ ] no hay enlaces rotos
+- [ ] no aparece el nombre de un instituto externo
+- [ ] no aparece una sigla institucional externa
+- [ ] no aparece una declaración de colaboración
+- [ ] no aparecen logos de terceros
+- [ ] no se presentan respaldos institucionales
+- [ ] la identidad visible es exclusivamente Rebe Najmán / Breslov Research

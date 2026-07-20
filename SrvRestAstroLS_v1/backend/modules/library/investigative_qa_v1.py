@@ -841,9 +841,16 @@ def _compute_literal_match_kind(quote: str, terms: list[str], primary_lang: str)
         if he_terms:
             return "single_term"
     latin_terms = [t for t in terms if LATIN_LETTER_RE.search(t)]
-    if len(latin_terms) >= 2 and all(t.lower() in quote.lower() for t in latin_terms):
+    quote_flat = " ".join(quote.split())
+    latin_flat = [re.sub(r"\s+", " ", t) for t in latin_terms]
+    if len(latin_terms) >= 2 and all(t.lower() in quote_flat.lower() for t in latin_flat):
         return "exact_phrase"
-    if latin_terms and any(t.lower() in quote.lower() for t in latin_terms):
+    if len(latin_terms) >= 2:
+        clean_terms = [re.sub(r"[,\"\'«»“”]", "", t).strip().lower() for t in latin_flat]
+        clean_quote = re.sub(r"[,\"\'«»“”]", "", quote_flat).lower()
+        if all(t in clean_quote for t in clean_terms):
+            return "exact_phrase"
+    if latin_terms and any(t.lower() in quote_flat.lower() for t in latin_flat):
         return "single_term"
     return "semantic"
 

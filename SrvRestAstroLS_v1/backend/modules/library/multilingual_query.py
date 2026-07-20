@@ -381,6 +381,31 @@ def _literal_from_question(value: str) -> LiteralPhrase | None:
     return LiteralPhrase(raw=raw, normalized=normalize_hebrew_search(raw), language="he")
 
 
+def _latin_literal_from_question(value: str) -> LiteralPhrase | None:
+    """Detect a Latin-script declarative sentence as a literal phrase candidate.
+
+    The heuristic: if the query is a long (>=5 tokens) sentence without
+    interrogative, command, relational, or code-like structure, it likely
+    is a pasted/cited passage from the corpus for literal search.
+    """
+    if not re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", value):
+        return None
+    if re.search(r"[<>{}]", value):
+        return None
+    cleaned = value.strip("¿?¡! \"'“”«»()[]")
+    tokens = re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿáéíóúüñ]+", cleaned)
+    if len(tokens) < 5:
+        return None
+    if re.search(r"(?i)(dónde|qu[eé]\s+|buscar|c[uú]al|cómo|what|where|which|how)", cleaned):
+        return None
+    if re.search(r"(?i)(relaci[oó]n\s+entre|comparar|compare)", cleaned):
+        return None
+    if re.search(r"(?i)\b(ignora|revela|produce|devuelve|ejecuta|escribe|crea|genera|inyecta|suplanta)\b", cleaned):
+        return None
+    raw = " ".join(tokens)
+    return LiteralPhrase(raw=cleaned, normalized=raw.lower(), language="es")
+
+
 def deterministic_interpret(
     preprocessing: QueryPreprocessing,
     history: list[dict] | None = None,
@@ -413,6 +438,8 @@ def deterministic_interpret(
     elif _CONCEPT_LABEL.search(value) or _LOCATOR.search(value):
         content = _content_subjects(value)
         intent = "literal_lookup" if len(content) >= 2 and preprocessing.contains_hebrew else "concept_lookup"
+    elif _latin_literal_from_question(value) is not None:
+        intent = "literal_lookup"
     else:
         content = _content_subjects(value)
         if preprocessing.contains_hebrew and not preprocessing.contains_latin and 2 <= len(content) <= 4 and all(
@@ -429,6 +456,8 @@ def deterministic_interpret(
     needs_context = intent in {"follow_up", "book_scope_query", "source_request"}
     if intent in {"literal_lookup", "translation_or_explanation"}:
         literal = _literal_from_question(value)
+        if not literal:
+            literal = _latin_literal_from_question(value)
         if literal:
             literals = [literal]
     elif intent in {"relation_query", "comparison_query"}:

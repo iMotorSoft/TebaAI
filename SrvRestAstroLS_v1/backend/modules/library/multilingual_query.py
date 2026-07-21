@@ -32,6 +32,8 @@ Intent = Literal[
     "concept_cooccurrence",
     "relation_query",
     "reference_lookup",
+    "structural_reference_lookup",
+    "location_lookup",
     "translation_or_explanation",
     "follow_up",
     "book_scope_query",
@@ -96,6 +98,14 @@ class RelationPair(StrictModel):
     relation_type: Literal["unspecified", "comparison"] = "unspecified"
 
 
+class StructuralReference(StrictModel):
+    raw: str = Field(min_length=1, max_length=300)
+    reference_name: str = Field(min_length=1, max_length=200)
+    reference_number: int | None = None
+    number_raw: str | None = None
+    number_system: Literal["arabic", "roman", "hebrew", "none"] = "none"
+
+
 class RequestedOutput(StrictModel):
     include_sources: bool = True
     include_pages: bool = True
@@ -111,6 +121,7 @@ class QueryInterpretation(StrictModel):
     query_subjects: list[QuerySubject] = Field(default_factory=list, max_length=6)
     literal_phrases: list[LiteralPhrase] = Field(default_factory=list, max_length=3)
     relations: list[RelationPair] = Field(default_factory=list, max_length=3)
+    structural_reference: StructuralReference | None = None
     requested_works: list[WorkCode] = Field(default_factory=list, max_length=6)
     requested_languages: list[Language] = Field(default_factory=list, max_length=4)
     needs_context: bool = False
@@ -162,6 +173,22 @@ _COOCCURRENCE = re.compile(
     r"qu[eé]\s+(?:conceptos|temas)\s+(?:relaciona|asocia|vincula)\s+(?:con|al)"
     r")"
 )
+_STRUCTURAL_REFERENCE_RE = re.compile(
+    r"(?i)"
+    r"("
+    r"Oraj\s+Jaim|Orach\s+Chaim|Iore\s+Dea|Yoreh\s+Deah|"
+    r"Even\s+HaEzer|Joshen\s+Mishpat|Choshen\s+Mishpat|"
+    r"Hiljot|Hilchot|Halaj[óa]|Halakh[ah]|"
+    r"Sim[aá]n|Secci[oó]n|Ley|Tomo|Cap[ií]tulo|Volumen|Parte"
+    r")"
+    r"\s+"
+    r"(\d+|I{1,3}|IV|V|VI{0,3}|IX|X{1,3}|[א-ת])"
+)
+_STRUCTURAL_TERMS = frozenset({
+    "oraj jaim", "orach chaim", "iore dea", "yoreh deah",
+    "even haezer", "joshen mishpat", "choshen mishpat",
+    "shuljan aruj", "shulchan aruch",
+})
 _HEBREW_FUNCTION_WORDS = {
     "את", "אתה", "מחפש", "איפה", "היכן", "נמצא", "נמצאת", "מוזכר", "מוזכרת",
     "מופיע", "מופיעה", "חפש", "מצא", "מושג", "המושג", "מילה", "המילה", "באיזה",
@@ -381,6 +408,49 @@ def _literal_from_question(value: str) -> LiteralPhrase | None:
     return LiteralPhrase(raw=raw, normalized=normalize_hebrew_search(raw), language="he")
 
 
+ROMAN_MAP = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10,
+              "XI": 11, "XII": 12, "XIII": 13, "XIV": 14, "XV": 15}
+HEBREW_NUM_MAP = {"א": 1, "ב": 2, "ג": 3, "ד": 4, "ה": 5, "ו": 6, "ז": 7, "ח": 8, "ט": 9, "י": 10,
+                  "כ": 20, "ל": 30, "מ": 40, "נ": 50, "ס": 60, "ע": 70, "פ": 80, "צ": 90, "ק": 100}
+
+def _parse_number_from_query(num_str: str) -> tuple[int | None, str]:
+    if not num_str:
+        return None, "none"
+    # Arabic
+    if num_str.isdigit():
+        return int(num_str), "arabic"
+    # Roman
+    if num_str in ROMAN_MAP:
+        return ROMAN_MAP[num_str], "roman"
+    # Hebrew letter
+    if num_str in HEBREW_NUM_MAP:
+        return HEBREW_NUM_MAP[num_str], "hebrew"
+    return None, "none"
+
+
+def _detect_structural_reference(value: str) -> StructuralReference | None:
+    """Detect a numbered structural reference like 'Oraj Jaim 1' or 'Simán 3'."""
+    match = _STRUCTURAL_REFERENCE_RE.search(value)
+    if not match:
+        return None
+    name_part = match.group(1).strip()
+    num_part = match.group(2).strip()
+    number_value, number_system = _parse_number_from_query(num_part)
+    raw = f"{name_part} {num_part}"
+    # Check if the context suggests a structural reference or a generic mention
+    # A structural reference has a locator word or the number is explicitly attached
+    has_locator = bool(re.search(r"(?i)(d[oó]nde|buscar|aparece|en\s+qu[eé])", value))
+    if not has_locator and len(value.split()) < 5:
+        return None
+    return StructuralReference(
+        raw=raw,
+        reference_name=name_part,
+        reference_number=number_value,
+        number_raw=num_part,
+        number_system=number_system,
+    )
+
+
 def _latin_literal_from_question(value: str) -> LiteralPhrase | None:
     """Detect a Latin-script declarative sentence as a literal phrase candidate.
 
@@ -417,6 +487,7 @@ def deterministic_interpret(
     instruction_matches = list(_INSTRUCTION.finditer(value))
     instruction_match = max(instruction_matches, key=lambda item: len(item.group())) if instruction_matches else None
     intent: Intent
+    structural_ref = _detect_structural_reference(value)
     if _SOURCE.search(value):
         intent = "source_request"
     elif _FOLLOW_UP.search(value):
@@ -435,6 +506,8 @@ def deterministic_interpret(
         intent = "book_scope_query"
     elif preprocessing.pdf_spacing_detected or _LITERAL_LABEL.search(value):
         intent = "literal_lookup"
+    elif structural_ref is not None and (_LOCATOR.search(value) or _REFERENCE.search(value) or _LITERAL_LABEL.search(value)):
+        intent = "structural_reference_lookup"
     elif _CONCEPT_LABEL.search(value) or _LOCATOR.search(value):
         content = _content_subjects(value)
         intent = "literal_lookup" if len(content) >= 2 and preprocessing.contains_hebrew else "concept_lookup"
@@ -452,6 +525,7 @@ def deterministic_interpret(
     subjects: list[QuerySubject] = []
     literals: list[LiteralPhrase] = []
     relations: list[RelationPair] = []
+    structural_reference: StructuralReference | None = structural_ref if intent == "structural_reference_lookup" else None
     resolved_context: str | None = None
     needs_context = intent in {"follow_up", "book_scope_query", "source_request"}
     if intent in {"literal_lookup", "translation_or_explanation"}:
@@ -460,6 +534,13 @@ def deterministic_interpret(
             literal = _latin_literal_from_question(value)
         if literal:
             literals = [literal]
+    elif intent == "structural_reference_lookup" and structural_reference:
+        raw_ref = structural_reference.raw
+        lit = LiteralPhrase(raw=raw_ref, normalized=raw_ref.lower(), language="es")
+        literals = [lit]
+        name = _subject(raw_ref, "reference")
+        if name:
+            subjects = [name]
     elif intent in {"relation_query", "comparison_query"}:
         subjects = _content_subjects(value)[:2]
         if len(subjects) == 2:
@@ -500,7 +581,7 @@ def deterministic_interpret(
                 needs_context = False
                 break
 
-    confidence = 0.96 if (subjects or literals or relations) and intent != "unknown" else 0.45
+    confidence = 0.96 if (subjects or literals or relations or structural_reference) and intent != "unknown" else 0.45
     return QueryInterpretation(
         language=lang,
         secondary_languages=secondary,
@@ -510,6 +591,7 @@ def deterministic_interpret(
         query_subjects=subjects,
         literal_phrases=literals,
         relations=relations,
+        structural_reference=structural_reference,
         requested_works=requested_works,
         requested_languages=list(dict.fromkeys([lang, *secondary])) if lang != "unknown" else [],
         needs_context=needs_context,

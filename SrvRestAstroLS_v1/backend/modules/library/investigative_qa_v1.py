@@ -1189,6 +1189,28 @@ def _deterministic_claims(
             "evidence_ids": all_evidence_ids,
             "primary_evidence_id": primary.hit_id,
         }]
+    if intent == "structural_reference_lookup" and hits:
+        structural_hits = [hit for hit in hits if hit.literal_match_kind in {"exact_phrase", "normalized", "no_niqqud"}]
+        if structural_hits:
+            primary = structural_hits[0]
+            location = " · ".join(filter(None, [
+                f"PDF p. {primary.pdf_page}" if primary.pdf_page is not None else None,
+                f"página impresa {primary.printed_page}" if primary.printed_page is not None else None,
+                primary.section,
+            ]))
+            locale = instruction_language if instruction_language in {"es", "en", "he"} else "es"
+            texts = {
+                "es": f"Interpreté la consulta como referencia estructural. La referencia aparece en {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}.",
+                "en": f"Interpreted the query as a structural reference. The reference appears in {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}.",
+                "he": f"השאלה פורשה כהפניה מבנית. ההפניה מופיעה ב־{primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}.",
+            }
+            return [{
+                "claim_id": "claim_1",
+                "text": texts[locale],
+                "strength": "strong",
+                "evidence_ids": [primary.hit_id],
+                "primary_evidence_id": primary.hit_id,
+            }]
     candidates = [hit for hit in hits if hit.relation_relevance in {"same_fragment_both_terms", "same_section_relation", "same_page_both_terms"}]
     required = concept_count if concept_count is not None else len(relation_concepts(question))
     if not candidates and required == 1 and hits:
@@ -1351,6 +1373,8 @@ def render(
         lines.extend(f"- {claim['text']}" for claim in claims)
     elif intent in {"literal_lookup", "translation_or_explanation"}:
         lines.append(f"No se encontró una coincidencia literal para «{question}».")
+    elif intent in {"structural_reference_lookup"}:
+        lines.append(f"No se encontró una referencia estructural para la consulta «{question}».")
     elif intent in {"concept_lookup", "concept_cooccurrence", "reference_lookup", "follow_up", "book_scope_query", "source_request"}:
         lines.append(f"No se encontró evidencia para el concepto o fuente solicitada en «{question}».")
     else:

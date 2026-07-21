@@ -173,6 +173,7 @@ _COOCCURRENCE = re.compile(
     r"qu[eé]\s+(?:conceptos|temas)\s+(?:relaciona|asocia|vincula)\s+(?:con|al)"
     r")"
 )
+_WHAT_IS_RE = re.compile(r"(?i)^\s*(qu[eé]\s+es|what\s+is|what's|מה\s+זה|מהי|מיהו)\s+")
 _STRUCTURAL_REFERENCE_RE = re.compile(
     r"(?i)"
     r"("
@@ -511,6 +512,8 @@ def deterministic_interpret(
     elif _CONCEPT_LABEL.search(value) or _LOCATOR.search(value):
         content = _content_subjects(value)
         intent = "literal_lookup" if len(content) >= 2 and preprocessing.contains_hebrew else "concept_lookup"
+    elif _WHAT_IS_RE.search(value):
+        intent = "concept_lookup"
     elif _latin_literal_from_question(value) is not None:
         intent = "literal_lookup"
     else:

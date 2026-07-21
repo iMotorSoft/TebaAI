@@ -906,9 +906,13 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
     retrieval_tier = _compute_retrieval_tier(language_match, literal_match_kind)
     source_layer = row.get("source_layer")
     if source_layer not in SOURCE_LAYERS:
+        record = row.get("record")
+        zone = row.get("zone")
         source_layer = (
-            "rebbe_lesson_text" if row.get("zone") == "main_text_hebrew" else
-            "editorial_translation" if row.get("zone") == "main_text_spanish" else
+            "rebbe_lesson_text" if zone == "main_text_hebrew" else
+            "editorial_translation" if zone == "main_text_spanish" else
+            "section_heading" if record in {"structural_page", "heading"} or zone in {"halakhah_header", "section_heading"} else
+            "source_reference" if record == "nominal_reference" else
             "footnote" if note else
             "source_reference" if nominal else
             "unknown"
@@ -1001,6 +1005,19 @@ def _sort_key(hit: Hit) -> tuple:
         -len(hit.matched_concepts),
         hit.retrieval_position if hit.retrieval_position is not None else 10**9,
         hit.work_code,
+        hit.pdf_page or 10**9,
+        hit.hit_id,
+    )
+
+
+_STRUCTURAL_PRIORITY = {"lh": 0, "lmii": 1, "lmi": 1, "lm_xv": 1, "kitzur": 2, "potencia_plegaria": 3}
+
+def _structural_ref_sort_key(hit: Hit) -> tuple:
+    return (
+        _STRUCTURAL_PRIORITY.get(hit.work_code, 9),
+        source_layer_priority(hit.source_layer),
+        -(1 if hit.section else 0),
+        -(1 if hit.pdf_page is not None else 0),
         hit.pdf_page or 10**9,
         hit.hit_id,
     )
@@ -1192,6 +1209,7 @@ def _deterministic_claims(
     if intent == "structural_reference_lookup" and hits:
         structural_hits = [hit for hit in hits if hit.literal_match_kind in {"exact_phrase", "normalized", "no_niqqud"}]
         if structural_hits:
+            structural_hits.sort(key=_structural_ref_sort_key)
             primary = structural_hits[0]
             location = " · ".join(filter(None, [
                 f"PDF p. {primary.pdf_page}" if primary.pdf_page is not None else None,

@@ -2,9 +2,20 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-21 (cierre de presentación de evidencia literal)
+Ultima actualizacion: 2026-07-22 (resolución multilingüe de temas nominales)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
+
+## Resolución multilingüe de temas nominales — 2026-07-22
+
+Estado técnico: `NAMED_TOPIC_RESOLUTION_FULL_PASS`, `TRANSLITERATION_ALIAS_RESOLUTION_FULL_PASS`, `MULTILINGUAL_TOPIC_RETRIEVAL_FULL_PASS`, `NAMED_TOPIC_MATCH_CLASSIFICATION_FULL_PASS`, `AI_FALLBACK_NAMED_TOPIC_FULL_PASS` y `READY_FOR_MANUAL_NAMED_TOPIC_REVIEW`.
+
+- `tisha beav`, `Tisha B'Av`, variantes latinas y `תשעה באב` convergen al ID controlado `jewish_calendar.tisha_beav`, conservando consulta y alias originales.
+- El alias matcher de frase completa se ejecuta antes del tokenizer general; la IA detecta span y tipo, mientras el backend resuelve el canónico desde un glosario versionado de 12 temas iniciales.
+- El caso focal recupera Likutey Moharán XV KDP, PDF 262, página impresa 248, sección `LIKUTEY MOHARÁN II #85:2`, con match nominal fuerte y respaldo directo.
+- La caída o validación fallida de IA no bloquea el resultado: glosario y fallback determinístico preservan el tema completo, y la UI mantiene el motivo técnico contraído.
+- Gates: backend 1082/1082; frontend 52/52; Playwright Chromium 64/64; función/HTTP/UI focal 20/20 por consulta; `pnpm check`, build de 7 páginas, LAT, seguridad y diff-check PASS.
+- Evidencia, capturas y checklist: `data/reports/breslov/2026-07-22-named-topic-transliteration/`.
 
 ## Presentación final de evidencia literal — 2026-07-21
 

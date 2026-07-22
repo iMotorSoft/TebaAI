@@ -1,0 +1,11 @@
+{
+  "model": "openai_gpt-5.4-nano",
+  "probes": 12,
+  "valid_json_or_safe_fallback": 12,
+  "live_validation_errors": 0,
+  "invented_aliases": 0,
+  "truncated_named_topics": 0,
+  "named_topic_cases": 9,
+  "literal_regression": "literal_lookup",
+  "structural_regressions": ["Salmos 119", "Oraj Jaim 1"]
+}

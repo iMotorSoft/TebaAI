@@ -1,0 +1,11 @@
+{
+  "reported_pre_phase_ms": 7097,
+  "baseline_current_head_ai_ms": [3885, 3801],
+  "after_ai_all_works_ms": [5046, 4652],
+  "after_fallback_all_works_ms": [3354, 2526],
+  "stable_http_fallback_observed_range_ms": [1904, 3039],
+  "ai_calls_per_query": 1,
+  "milvus_used": false,
+  "optimization": "LM XV Latin aliases are SQL-prefiltered before PDF projection",
+  "interpretation_and_retrieval_timings_exposed": true
+}

@@ -1,0 +1,8 @@
+{
+  "backend": {"passed": 1036, "failed": 0, "warnings": 93, "seconds": 74.15},
+  "frontend_vitest": {"passed": 51, "failed": 0},
+  "pnpm_check": {"errors": 0, "warnings": 0, "hints": 0},
+  "pnpm_build": {"pages": 7, "status": "pass"},
+  "tisha_beav": {"deterministic_intent": "unknown", "deterministic_subjects": [], "live_ai_subject": "tisha beav", "baseline_http_ms": 3885},
+  "tisha_bav": {"deterministic_subject": "tisha", "primary_pdf_page": 262, "primary_printed_page": 248, "match_kind": "single_term", "evidence_strength": "insufficient", "baseline_http_ai_ms": 3801}
+}

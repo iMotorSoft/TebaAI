@@ -1,0 +1,11 @@
+{
+  "canonical_id": "jewish_calendar.tisha_beav",
+  "canonical_label": "Tishá BeAv",
+  "queries": ["tisha beav", "Tisha B'Av"],
+  "primary": {"work": "Likutey Moharán XV KDP", "pdf_page": 262, "printed_page": 248, "section": "LIKUTEY MOHARÁN II #85:2", "fragment_contains": "ayuno de Tisha beAv"},
+  "match_kinds": ["named_topic_exact", "named_topic_alias"],
+  "direct_support": true,
+  "strength": "strong",
+  "single_term": false,
+  "gate": "pass"
+}

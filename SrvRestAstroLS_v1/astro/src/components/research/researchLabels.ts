@@ -51,6 +51,12 @@ export const literalMatchKindLabels: Record<string, string> = {
   no_niqqud: "Coincidencia sin niqqud",
   single_term: "Término individual",
   semantic: "Coincidencia semántica",
+  named_topic_exact: "Tema nominal exacto",
+  named_topic_normalized: "Tema nominal normalizado",
+  named_topic_alias: "Alias nominal",
+  named_topic_translation: "Equivalente traducido",
+  named_topic_hebrew_equivalent: "Equivalente hebreo",
+  named_topic_partial: "Tema nominal parcial",
   none: "",
 };
 

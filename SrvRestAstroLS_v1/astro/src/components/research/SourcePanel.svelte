@@ -15,7 +15,7 @@
 <section class="source-panel" aria-label="Fuentes del turno">
   <header><div><p class="kicker">EVIDENCIA VERIFICABLE</p><h2>Fuentes del turno</h2></div>{#if onclose}<button class="panel-close" aria-label="Cerrar fuentes" onclick={onclose}>×</button>{/if}</header>
   {#if response}
-    <div class="source-stats" aria-label="Resumen de evidencia"><span>{response.evidence_counts.primary === 1 ? "1 evidencia principal" : `${response.evidence_counts.primary} evidencias principales`}</span><span>{response.evidence_counts.contextual === 1 ? "1 relación contextual" : `${response.evidence_counts.contextual} relaciones contextuales`}</span><span>{response.evidence_counts.additional_literal === 1 ? "1 coincidencia adicional" : `${response.evidence_counts.additional_literal} coincidencias adicionales`}</span></div>
+    {#if response.hits.length}<div class="source-stats" aria-label="Resumen de evidencia"><span>{response.evidence_counts.primary === 1 ? "1 evidencia principal" : `${response.evidence_counts.primary} evidencias principales`}</span><span>{response.evidence_counts.contextual === 1 ? "1 relación contextual" : `${response.evidence_counts.contextual} relaciones contextuales`}</span><span>{response.evidence_counts.additional_literal === 1 ? "1 coincidencia adicional" : `${response.evidence_counts.additional_literal} coincidencias adicionales`}</span></div>{/if}
     {#if active}
       <div class="primary-evidence">
       <article class="source-detail" tabindex="-1" aria-live="polite" data-evidence-id={active.hit_id}>

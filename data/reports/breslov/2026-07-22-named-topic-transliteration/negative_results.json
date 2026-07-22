@@ -1,0 +1,6 @@
+{
+  "total": 20,
+  "passed": 20,
+  "false_alias_resolutions": 0,
+  "covered": ["short tokens", "numbers", "script", "prompt injection", "SQL text", "long string", "ambiguous mixture", "bidi prefix"]
+}

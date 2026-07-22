@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "canonical_id": "jewish_calendar.tisha_beav",
+      "canonical_label": {"es": "Tishá BeAv", "en": "Tisha B'Av", "he": "תשעה באב"},
+      "topic_type": "jewish_calendar_observance",
+      "aliases": [
+        {"value": "Tishá BeAv", "language": "es", "script": "Latin"},
+        {"value": "Tishá beAv", "language": "es", "script": "Latin", "search": false},
+        {"value": "Tishá be-Av", "language": "es", "script": "Latin", "search": false},
+        {"value": "Tisha B'Av", "language": "en", "script": "Latin"},
+        {"value": "Tisha B’Av", "language": "en", "script": "Latin", "search": false},
+        {"value": "Tisha B´Av", "language": "en", "script": "Latin", "search": false},
+        {"value": "Tisha B Av", "language": "transliteration", "script": "Latin", "search": false},
+        {"value": "Tisha-b-Av", "language": "transliteration", "script": "Latin", "search": false},
+        {"value": "Tisha beAv", "language": "transliteration", "script": "Latin"},
+        {"value": "Tisha be-Av", "language": "transliteration", "script": "Latin", "search": false},
+        {"value": "tisha beav", "language": "transliteration", "script": "Latin"},
+        {"value": "9 de Av", "language": "es", "script": "Latin"},
+        {"value": "Nueve de Av", "language": "es", "script": "Latin"},
+        {"value": "fast of Tisha B'Av", "language": "en", "script": "Latin", "search": false},
+        {"value": "ayuno de Tishá BeAv", "language": "es", "script": "Latin", "search": false},
+        {"value": "תשעה באב", "language": "he", "script": "Hebrew"},
+        {"value": "צום תשעה באב", "language": "he", "script": "Hebrew", "search": false}
+      ]
+    },
+    {
+      "canonical_id": "jewish_calendar.rosh_hashana",
+      "canonical_label": {"es": "Rosh Hashaná", "en": "Rosh Hashanah", "he": "ראש השנה"},
+      "topic_type": "jewish_calendar_observance",
+      "aliases": [
+        {"value": "Rosh Hashaná", "language": "es", "script": "Latin"},
+        {"value": "Rosh Hashana", "language": "transliteration", "script": "Latin"},
+        {"value": "Rosh Hashanah", "language": "en", "script": "Latin"},
+        {"value": "ראש השנה", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "jewish_calendar.yom_kippur",
+      "canonical_label": {"es": "Yom Kipur", "en": "Yom Kippur", "he": "יום כיפור"},
+      "topic_type": "jewish_calendar_observance",
+      "aliases": [
+        {"value": "Yom Kipur", "language": "es", "script": "Latin"},
+        {"value": "Yom Kippur", "language": "en", "script": "Latin"},
+        {"value": "יום כיפור", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "jewish_calendar.shabbat",
+      "canonical_label": {"es": "Shabat", "en": "Shabbat", "he": "שבת"},
+      "topic_type": "jewish_calendar_observance",
+      "aliases": [
+        {"value": "Shabat", "language": "es", "script": "Latin"},
+        {"value": "Shabbat", "language": "en", "script": "Latin"},
+        {"value": "Shabbos", "language": "transliteration", "script": "Latin"},
+        {"value": "שבת", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "practice.hitbodedut",
+      "canonical_label": {"es": "Hitbodedut", "en": "Hitbodedut", "he": "התבודדות"},
+      "topic_type": "custom_or_practice",
+      "aliases": [
+        {"value": "Hitbodedut", "language": "transliteration", "script": "Latin"},
+        {"value": "Hisbodedus", "language": "transliteration", "script": "Latin"},
+        {"value": "התבודדות", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "person.rebbe_nachman",
+      "canonical_label": {"es": "Rebe Najmán", "en": "Rebbe Nachman", "he": "רבי נחמן"},
+      "topic_type": "person",
+      "aliases": [
+        {"value": "Rebe Najmán", "language": "es", "script": "Latin"},
+        {"value": "Rebbe Nachman", "language": "en", "script": "Latin"},
+        {"value": "רבי נחמן", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "person.rabbi_nathan",
+      "canonical_label": {"es": "Rabí Natán", "en": "Reb Noson", "he": "רבי נתן"},
+      "topic_type": "person",
+      "aliases": [
+        {"value": "Rabí Natán", "language": "es", "script": "Latin"},
+        {"value": "reb noson", "language": "transliteration", "script": "Latin"},
+        {"value": "רבי נתן", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "work.orach_chaim",
+      "canonical_label": {"es": "Oraj Jaim", "en": "Orach Chaim", "he": "אורח חיים"},
+      "topic_type": "work_title",
+      "aliases": [
+        {"value": "Oraj Jaim", "language": "es", "script": "Latin"},
+        {"value": "Orach Chaim", "language": "en", "script": "Latin"},
+        {"value": "אורח חיים", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "concept.tzadik",
+      "canonical_label": {"es": "Tzadik", "en": "Tzadik", "he": "צדיק"},
+      "topic_type": "conceptual_term",
+      "aliases": [
+        {"value": "Tzadik", "language": "transliteration", "script": "Latin"},
+        {"value": "Tsadik", "language": "transliteration", "script": "Latin"},
+        {"value": "צדיק", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "concept.emunah",
+      "canonical_label": {"es": "Emuná", "en": "Emunah", "he": "אמונה"},
+      "topic_type": "conceptual_term",
+      "aliases": [
+        {"value": "Emuná", "language": "es", "script": "Latin"},
+        {"value": "Emunah", "language": "transliteration", "script": "Latin"},
+        {"value": "אמונה", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "concept.simcha",
+      "canonical_label": {"es": "Simjá", "en": "Simcha", "he": "שמחה"},
+      "topic_type": "conceptual_term",
+      "aliases": [
+        {"value": "Simjá", "language": "es", "script": "Latin"},
+        {"value": "Simcha", "language": "transliteration", "script": "Latin"},
+        {"value": "שמחה", "language": "he", "script": "Hebrew"}
+      ]
+    },
+    {
+      "canonical_id": "concept.teshuvah",
+      "canonical_label": {"es": "Teshuvá", "en": "Teshuvah", "he": "תשובה"},
+      "topic_type": "conceptual_term",
+      "aliases": [
+        {"value": "Teshuvá", "language": "es", "script": "Latin"},
+        {"value": "Teshuvah", "language": "transliteration", "script": "Latin"},
+        {"value": "תשובה", "language": "he", "script": "Hebrew"}
+      ]
+    }
+  ]
+}

@@ -21,4 +21,12 @@ describe("research contract", () => {
     expect(r.hits[0].paragraph_text).toBe("");
     expect(r.hits[0].raw_snippet).toContain("<#>");
   });
+  it("preserves named-topic identity and strong direct match invariants", () => {
+    const source = { ...hit("tisha", "direct_relation"), work_code: "lm_xv", work_title: "Likutey Moharán XV KDP", pdf_page: 262, physical_pdf_page: 262, printed_page: 248, section: "LIKUTEY MOHARÁN II #85:2", literal_match_kind: "named_topic_alias", match_kind: "named_topic_alias", direct_support: true, match_strength: "strong", single_term: false, canonical_topic_id: "jewish_calendar.tisha_beav", matched_variant: "Tisha beAv" };
+    const named_topic = { canonical_id: "jewish_calendar.tisha_beav", canonical_label: "Tishá BeAv", topic_type: "jewish_calendar_observance", matched_alias: "Tisha B'Av", alias_match_kind: "exact_alias", match_language: "en", match_script: "Latin", variants_searched: ["Tisha B'Av", "Tisha beAv", "9 de Av", "תשעה באב"] };
+    const r = normalizeResearchResponse({ ...base, named_topic, query_understanding: { original_query: "Tisha B'Av", intent: "concept_lookup", operation: "find_named_topic", subject_type: "named_topic", subject_raw: "Tisha B'Av", subject_canonical: "Tishá BeAv", ai_used: false, ai_accepted: false, fallback_used: true, requires_clarification: false }, hits: [source], claims: [{ claim_id: "topic", text: "Interpreté la consulta", strength: "strong", evidence_ids: ["tisha"], primary_evidence_id: "tisha" }], primary_evidence_ids: ["tisha"] });
+    expect(r.named_topic?.canonical_label).toBe("Tishá BeAv");
+    expect(r.query_understanding?.subject_raw).toBe("Tisha B'Av");
+    expect(r.hits[0]).toMatchObject({ literal_match_kind: "named_topic_alias", direct_support: true, match_strength: "strong", single_term: false });
+  });
 });

@@ -44,6 +44,13 @@ from modules.library.multilingual_query import (
     interpret_query,
     preprocess_query,
 )
+from modules.library.named_topics import (
+    NamedTopicResolution,
+    load_named_topic_glossary,
+    named_topic_retrieval_plan,
+    normalize_named_topic_candidate,
+    resolve_named_topic,
+)
 from modules.library.query_resolution import (
     build_suggestion_contract,
     resolve_query,
@@ -224,7 +231,19 @@ class Hit(BaseModel):
     relation_level: Literal["literal", "contextual", "thematic"] = "literal"
     is_primary: bool = False
     language_match: Literal["exact", "primary", "secondary", "fallback"] = "fallback"
-    literal_match_kind: Literal["none", "exact_phrase", "normalized", "no_niqqud", "single_term", "semantic"] = "none"
+    literal_match_kind: Literal[
+        "none", "exact_phrase", "normalized", "no_niqqud", "single_term", "semantic",
+        "named_topic_exact", "named_topic_normalized", "named_topic_alias",
+        "named_topic_translation", "named_topic_hebrew_equivalent", "named_topic_partial",
+    ] = "none"
+    match_kind: str = "none"
+    direct_support: bool = False
+    match_strength: Literal["strong", "medium", "weak", "insufficient"] = "insufficient"
+    single_term: bool = True
+    canonical_topic_id: str | None = None
+    matched_variant: str | None = None
+    match_language: str | None = None
+    match_script: Literal["Latin", "Hebrew"] | None = None
     retrieval_tier: int = 99
     warnings: list[str] = Field(default_factory=list)
     document_id: str | None = None
@@ -551,6 +570,9 @@ def _scripture_reference(value: str) -> tuple[str, int, int] | None:
 
 async def _fetch_lm_xv(conn, term: str, limit: int) -> list[tuple[dict, str, str]]:
     """Search validated LM XV zones through a Unicode-safe derived projection."""
+    is_hebrew = bool(HEBREW_LETTER_RE.search(term))
+    latin_filter = "" if is_hebrew else " AND coalesce(b.text,f.text_quote,'') ILIKE %s"
+    row_limit = "" if is_hebrew else " LIMIT %s"
     async with conn.cursor() as cursor:
         await cursor.execute(
             """SELECT p.id::text page_anchor_id,p.document_id::text,p.source_run_id,
@@ -570,11 +592,11 @@ async def _fetch_lm_xv(conn, term: str, limit: int) -> list[tuple[dict, str, str
                 AND f.source_run_id=p.source_run_id
                JOIN library_lm_xv_kdp_page_blocks_v1 b ON b.id=f.parent_block_id
                WHERE f.validation_status IN ('validated','candidate')
-               ORDER BY p.pdf_page,f.block_index"""
+               """ + latin_filter + " ORDER BY p.pdf_page,f.block_index" + row_limit,
+            () if is_hebrew else (f"%{term}%", max(limit * 4, 20)),
         )
         rows = await cursor.fetchall()
     results: list[tuple[dict, str, str]] = []
-    is_hebrew = bool(HEBREW_LETTER_RE.search(term))
     normalized_term = normalize_hebrew_search(term)
     for source in rows:
         persisted = str(source.get("block_text") or source.get("text_quote") or "")
@@ -904,6 +926,12 @@ def _compute_literal_match_kind(quote: str, terms: list[str], primary_lang: str)
 
 
 def _compute_retrieval_tier(language_match: str, literal_match_kind: str) -> int:
+    if literal_match_kind in {"named_topic_exact", "named_topic_normalized", "named_topic_alias"}:
+        return 0
+    if literal_match_kind in {"named_topic_translation", "named_topic_hebrew_equivalent"}:
+        return 1
+    if literal_match_kind == "named_topic_partial":
+        return 2
     if language_match == "exact" and literal_match_kind in ("exact_phrase", "normalized", "no_niqqud"):
         return 0
     if language_match == "exact" and literal_match_kind == "single_term":
@@ -915,7 +943,49 @@ def _compute_retrieval_tier(language_match: str, literal_match_kind: str) -> int
     return 4
 
 
-def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: list[str], view: str, primary_language: str = "es", secondary_languages: list[str] | None = None) -> Hit:
+def _classify_named_topic_match(
+    quote: str,
+    matched_terms: list[str],
+    resolution: NamedTopicResolution,
+) -> tuple[str, str | None, str | None, str | None]:
+    quote_key = normalize_named_topic_candidate(quote)
+    entry = next(item for item in load_named_topic_glossary() if item.canonical_id == resolution.canonical_id)
+    aliases = {normalize_named_topic_candidate(alias.value): alias for alias in entry.aliases}
+    candidates = sorted(
+        (term for term in matched_terms if normalize_named_topic_candidate(term) in quote_key),
+        key=lambda term: len(normalize_named_topic_candidate(term)),
+        reverse=True,
+    )
+    if not candidates:
+        return "named_topic_partial", None, None, None
+    variant = candidates[0]
+    variant_key = normalize_named_topic_candidate(variant)
+    alias = aliases.get(variant_key)
+    query_key = normalize_named_topic_candidate(resolution.matched_alias_catalog_value)
+    canonical_key = normalize_named_topic_candidate(resolution.canonical_label)
+    if variant_key == canonical_key and query_key == canonical_key:
+        kind = "named_topic_exact"
+    elif variant_key == query_key:
+        kind = "named_topic_normalized"
+    elif alias and alias.script == "Hebrew":
+        kind = "named_topic_hebrew_equivalent"
+    elif alias and alias.language in {"es", "en"} and alias.language != resolution.language:
+        kind = "named_topic_translation"
+    else:
+        kind = "named_topic_alias"
+    return kind, variant, alias.language if alias else None, alias.script if alias else None
+
+
+def classify(
+    work: str,
+    row: dict,
+    matched_terms: list[str],
+    matched_concepts: list[str],
+    view: str,
+    primary_language: str = "es",
+    secondary_languages: list[str] | None = None,
+    named_topic: NamedTopicResolution | None = None,
+) -> Hit:
     record = row["record"]
     nominal = bool(row["surface"])
     note = bool(row["note"])
@@ -951,6 +1021,13 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
     literal_match_kind = _compute_literal_match_kind(evidence_text, matched_terms, primary_language)
     if match_context is not None:
         literal_match_kind = match_context.match_kind
+    matched_variant = match_language = match_script = None
+    if named_topic is not None:
+        literal_match_kind, matched_variant, match_language, match_script = _classify_named_topic_match(
+            evidence_text, matched_terms, named_topic,
+        )
+        if literal_match_kind != "named_topic_partial":
+            relevance = "direct_relation"
     retrieval_tier = _compute_retrieval_tier(language_match, literal_match_kind)
     source_layer = row.get("source_layer")
     if source_layer not in SOURCE_LAYERS:
@@ -981,7 +1058,7 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
     ) for candidate in row.get("parallel_candidates", [])]
 
     # ── Sanitize snippet for display ─────────────────────────────────
-    matched_phrase = " ".join(matched_terms) if matched_terms else None
+    matched_phrase = matched_variant or (" ".join(matched_terms) if matched_terms else None)
     sanitized = sanitize_evidence_snippet(
         snippet,
         matched_phrase=matched_phrase,
@@ -1019,10 +1096,18 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
         matched_concepts=matched_concepts,
         evidence_type=evidence_type,
         literal_strength=_literal_strength(record, nominal, note),
-        evidence_strength=_relation_strength(relevance),
+        evidence_strength="strong" if named_topic is not None and literal_match_kind != "named_topic_partial" else _relation_strength(relevance),
         relation_relevance=relevance,
         language_match=language_match,
         literal_match_kind=literal_match_kind,
+        match_kind=literal_match_kind,
+        direct_support=bool(named_topic is not None and literal_match_kind != "named_topic_partial"),
+        match_strength="strong" if named_topic is not None and literal_match_kind != "named_topic_partial" else _relation_strength(relevance),
+        single_term=not bool(named_topic is not None and literal_match_kind != "named_topic_partial"),
+        canonical_topic_id=named_topic.canonical_id if named_topic else None,
+        matched_variant=matched_variant,
+        match_language=match_language,
+        match_script=match_script,
         retrieval_tier=retrieval_tier,
         warnings=warning,
         document_id=row.get("document_id"),
@@ -1214,7 +1299,30 @@ def _deterministic_claims(
     literal_search_normalized: str | None = None,
     concept_count: int | None = None,
     instruction_language: str = "es",
+    named_topic: NamedTopicResolution | None = None,
 ) -> list[dict]:
+    if named_topic is not None and hits:
+        direct_hits = [hit for hit in hits if hit.direct_support]
+        if not direct_hits:
+            return []
+        primary = direct_hits[0]
+        location = ", ".join(filter(None, [
+            f"PDF p. {primary.pdf_page}" if primary.pdf_page is not None else None,
+            f"página impresa {primary.printed_page}" if primary.printed_page is not None else None,
+            f"sección {primary.section}" if primary.section else None,
+        ]))
+        text = (
+            f"Interpreté «{named_topic.subject_raw}» como «{named_topic.canonical_label}». "
+            f"La expresión aparece en {primary.work_title}{', ' + location if location else ''}. "
+            f"El fragmento menciona explícitamente «{primary.match_text or primary.matched_variant or named_topic.canonical_label}»."
+        )
+        return [{
+            "claim_id": "named_topic_primary",
+            "text": text,
+            "strength": "strong",
+            "evidence_ids": [primary.hit_id],
+            "primary_evidence_id": primary.hit_id,
+        }]
     if intent in {"literal_lookup", "translation_or_explanation"} and hits:
         phrases = _extract_literal_phrases(question)
         literal_query = literal_search_normalized or (
@@ -1461,6 +1569,7 @@ def render(
     intent: str = "concept_lookup",
     *,
     source_layer_followup: bool = False,
+    named_topic: NamedTopicResolution | None = None,
 ) -> str:
     lines = ["## Síntesis investigativa"]
     if claims:
@@ -1469,6 +1578,15 @@ def render(
         lines.append(f"No se encontró una coincidencia literal para «{question}».")
     elif intent in {"structural_reference_lookup"}:
         lines.append(f"No se encontró una referencia estructural para la consulta «{question}».")
+    elif named_topic is not None:
+        variants = [
+            value for value in named_topic.variants_searched
+            if value != named_topic.canonical_label
+        ][:3]
+        suffix = f" También busqué las variantes {', '.join(f'«{item}»' for item in variants)}." if variants else ""
+        lines.append(
+            f"No encontré referencias verificables a «{named_topic.canonical_label}» en el corpus consultado.{suffix}"
+        )
     elif intent in {"concept_lookup", "concept_cooccurrence", "reference_lookup", "follow_up", "book_scope_query", "source_request"}:
         lines.append(f"No se encontró evidencia para el concepto o fuente solicitada en «{question}».")
     else:
@@ -1476,7 +1594,13 @@ def render(
     lines.extend(["", "## Evidencia principal"])
     for hit in [item for item in hits if item.is_primary][:5]:
         lang_label = {"exact": "", "primary": "", "secondary": " [Traducción]", "fallback": " [Otro idioma]"}.get(hit.language_match, "")
-        literal_label = {"exact_phrase": "Coincidencia exacta", "normalized": "Coincidencia normalizada", "no_niqqud": "Sin niqqud", "single_term": "Término individual", "semantic": "Semántica", "none": ""}.get(hit.literal_match_kind, "")
+        literal_label = {
+            "exact_phrase": "Coincidencia exacta", "normalized": "Coincidencia normalizada",
+            "no_niqqud": "Sin niqqud", "single_term": "Término individual", "semantic": "Semántica", "none": "",
+            "named_topic_exact": "Tema nominal exacto", "named_topic_normalized": "Tema nominal normalizado",
+            "named_topic_alias": "Alias nominal", "named_topic_translation": "Equivalente traducido",
+            "named_topic_hebrew_equivalent": "Equivalente hebreo", "named_topic_partial": "Tema nominal parcial",
+        }.get(hit.literal_match_kind, "")
         labels = " · ".join(filter(None, [lang_label, literal_label]))
         relevance_label = {
             "direct_relation": "Respaldo directo",
@@ -1531,6 +1655,8 @@ def render(
             lines.append(f"- **{hit.work_title}**{f' — {loc}' if loc else ''}.")
     if source_layer_followup:
         lines.extend(["## Alcance", "- La clasificación responde a la capa editorial estructurada de la evidencia seleccionada."])
+    elif named_topic is not None:
+        lines.extend(["## Alcance", "- La equivalencia nominal proviene del glosario controlado; la evidencia y sus páginas provienen de PostgreSQL."])
     elif intent in {"literal_lookup", "translation_or_explanation"}:
         lines.extend(["## Límites", "- La coincidencia se informa como literal o normalizada; no se sustituye por una traducción."])
     else:
@@ -1586,6 +1712,9 @@ def _retrieval_inputs(interpretation: QueryInterpretation) -> tuple[list[dict], 
 async def run(conn, data: QaRequest) -> dict:
     started = time.perf_counter()
     warnings: list[str] = []
+    glossary_started = time.perf_counter()
+    named_topic = resolve_named_topic(data.question)
+    glossary_duration_ms = round((time.perf_counter() - glossary_started) * 1000, 2)
     history = data.conversation.get("history", []) if isinstance(data.conversation.get("history", []), list) else []
     preprocessing = preprocess_query(data.question)
     structured, interpretation_warnings = await interpret_query(
@@ -1595,10 +1724,25 @@ async def run(conn, data: QaRequest) -> dict:
         data.languages,
         ai_enabled=data.ai.enabled,
     )
+    if named_topic is None:
+        named_topic_subject = next(
+            (subject for subject in structured.query_subjects if subject.kind == "named_topic"),
+            None,
+        )
+        if named_topic_subject is not None:
+            named_topic = resolve_named_topic(named_topic_subject.raw)
     intent = structured.intent
     literal_analysis = extract_literal_segments(data.question)
     resolved_question = structured.resolved_context or data.question
     concepts, literal_phrases = _retrieval_inputs(structured)
+    named_topic_plan = named_topic_retrieval_plan(named_topic) if named_topic is not None else None
+    if named_topic is not None and named_topic_plan is not None:
+        named_topic.variants_searched = named_topic_plan["variants_searched"]
+        concepts = [{
+            "label": named_topic.canonical_label,
+            "terms": named_topic_plan["variants_searched"],
+            "concept_id": named_topic.canonical_id,
+        }]
 
     # ── Query resolution: typo tolerance / suggestions ──────────────
     # Resolve against the primary extracted subject (not the full question).
@@ -1607,7 +1751,7 @@ async def run(conn, data: QaRequest) -> dict:
         resolution_target = structured.query_subjects[-1].raw
     resolution_norm, suggestion_candidates, autoapply_id = resolve_query(resolution_target)
     # Always expand to catalog entry when found (pulls in all corpus forms)
-    if autoapply_id:
+    if autoapply_id and named_topic is None:
         entry = get_concept(autoapply_id)
         if entry:
             concept_terms = [entry.canonical_label, *entry.aliases, *entry.transliterations]
@@ -1646,7 +1790,7 @@ async def run(conn, data: QaRequest) -> dict:
             literal_analysis,
             data.max_hits_per_work,
         )
-    has_hebrew_subject = any(
+    has_hebrew_subject = named_topic is not None and named_topic.script == "Hebrew" or any(
         HEBREW_LETTER_RE.search(str(concept["label"]))
         for concept in concepts
     ) or any(HEBREW_LETTER_RE.search(str(item["text"])) for item in literal_phrases)
@@ -1681,6 +1825,20 @@ async def run(conn, data: QaRequest) -> dict:
     interpretation["primary_retrieval_language"] = primary_language
     interpretation["literal_phrases"] = literal_phrases
     interpretation["intent"] = intent
+    if named_topic is not None:
+        interpretation.update({
+            "operation": "find_named_topic",
+            "subject_type": "named_topic",
+            "subject_raw": named_topic.subject_raw,
+            "subject_canonical": named_topic.canonical_label,
+            "alias_resolution": named_topic.model_dump(),
+            "language_analysis": {
+                "interface_language": structured.language,
+                "query_language": "he" if named_topic.script == "Hebrew" else "latin_transliteration",
+                "canonical_language": "es",
+                "available_scripts": ["Latin", "Hebrew"],
+            },
+        })
     if literal_analysis is not None and intent in {"literal_lookup", "translation_or_explanation"}:
         interpretation.update({
             "literal_raw": literal_analysis.literal_raw,
@@ -1715,6 +1873,9 @@ async def run(conn, data: QaRequest) -> dict:
         "candidate_count": len(segmentation_candidates or (literal_analysis.candidates if literal_analysis else ())),
         "final_max_hits_per_work": data.max_hits_per_work,
     }
+    if named_topic_plan is not None:
+        plan.update(named_topic_plan)
+    retrieval_started = time.perf_counter()
     candidates: dict[str, dict] = {}
     phrase_matched: set[str] = set()
     if literal_phrases:
@@ -1739,7 +1900,12 @@ async def run(conn, data: QaRequest) -> dict:
                         entry["terms"].append(term)
                     if concept["label"] not in entry["concepts"]:
                         entry["concepts"].append(concept["label"])
-    hits = [classify(entry["work"], entry["row"], entry["terms"], entry["concepts"], entry["view"], primary_language=primary_language, secondary_languages=secondary_languages) for entry in candidates.values()]
+    hits = [classify(
+        entry["work"], entry["row"], entry["terms"], entry["concepts"], entry["view"],
+        primary_language=primary_language,
+        secondary_languages=secondary_languages,
+        named_topic=named_topic,
+    ) for entry in candidates.values()]
     for hit in hits:
         if hit.hit_id and any(hit.quote == c.get("row", {}).get("quote", "") for c_key, c in candidates.items() if c_key in phrase_matched):
             if hit.literal_match_kind == "none":
@@ -1762,6 +1928,7 @@ async def run(conn, data: QaRequest) -> dict:
             resolved_literal_query,
             len(concepts),
             structured.instruction_language,
+            named_topic,
         )
     )
     primary_ids = _apply_claim_traceability(hits, claims)
@@ -1779,7 +1946,9 @@ async def run(conn, data: QaRequest) -> dict:
         warnings,
         intent,
         source_layer_followup=source_layer_followup,
+        named_topic=named_topic,
     )
+    retrieval_duration_ms = round((time.perf_counter() - retrieval_started) * 1000, 2)
     summary = build_summary(counts["primary"], counts["contextual"], counts["additional_literal"])
     matrix = [{
         "work_code": work,
@@ -1809,6 +1978,32 @@ async def run(conn, data: QaRequest) -> dict:
         "summary": summary,
         "conversation": {"conversation_id": data.conversation.get("conversation_id"), "turn_id": data.conversation.get("turn_id"), "resolved_context": [resolved_question] if resolved_question != data.question else []},
         "query_resolution": query_resolution,
+        "query_understanding": {
+            "original_query": data.question,
+            "intent": intent,
+            "operation": "find_named_topic" if named_topic is not None else None,
+            "subject_type": "named_topic" if named_topic is not None else (
+                structured.query_subjects[0].kind if structured.query_subjects else None
+            ),
+            "subject_raw": named_topic.subject_raw if named_topic is not None else (
+                structured.query_subjects[0].raw if structured.query_subjects else None
+            ),
+            "subject_canonical": named_topic.canonical_label if named_topic is not None else None,
+            "ai_used": structured.ai_used,
+            "ai_accepted": structured.ai_used and not structured.fallback_used,
+            "fallback_used": structured.fallback_used,
+            "requires_clarification": named_topic.requires_clarification if named_topic is not None else False,
+        },
+        "named_topic": ({
+            "canonical_id": named_topic.canonical_id,
+            "canonical_label": named_topic.canonical_label,
+            "topic_type": named_topic.topic_type,
+            "matched_alias": named_topic.matched_alias,
+            "alias_match_kind": named_topic.match_kind,
+            "match_language": named_topic.language,
+            "match_script": named_topic.script,
+            "variants_searched": named_topic.variants_searched,
+        } if named_topic is not None else None),
         "interpretation": interpretation,
         "search_plan": plan,
         "works_consulted": plan["works"],
@@ -1827,6 +2022,8 @@ async def run(conn, data: QaRequest) -> dict:
             "ai_used": structured.ai_used,
             "fallback_used": structured.fallback_used,
             "interpretation_duration_ms": structured.duration_ms,
+            "glossary_duration_ms": glossary_duration_ms,
+            "retrieval_duration_ms": retrieval_duration_ms,
             "interpreted_intent": structured.intent,
             "interpreted_language": structured.language,
             "subject_count": len(structured.query_subjects) or len(concepts),

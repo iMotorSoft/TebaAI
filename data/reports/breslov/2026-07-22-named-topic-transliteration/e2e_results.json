@@ -1,0 +1,10 @@
+{
+  "real_flows": 2,
+  "fallback_real_backend": "pass",
+  "empty_render_contract": "pass",
+  "mobile": "pass",
+  "rtl": "pass",
+  "axe_critical_serious": 0,
+  "ui_repeat": {"passed": 40, "failed": 0},
+  "full_playwright": {"passed": 64, "failed": 0, "project": "chromium", "duration_minutes": 9.2}
+}

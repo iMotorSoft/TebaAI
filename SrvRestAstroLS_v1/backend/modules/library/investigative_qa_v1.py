@@ -33,6 +33,11 @@ from modules.library.editorial_source_layer import (
     source_layer_priority,
 )
 from modules.library.hebrew_pdf_layout import readable_pdf_block
+from modules.library.text_quality import (
+    sanitize_evidence_snippet,
+    build_summary,
+    singular_plural,
+)
 from modules.library.multilingual_query import (
     QueryInterpretation,
     deterministic_interpret,
@@ -116,6 +121,44 @@ ALIASES: dict[str, tuple[str, ...]] = {
     "notas": ("nota", "notas", "fuente"),
     "lágrimas": ("lágrimas", "lagrimas", "llorar", "llanto"),
     "escorpión": ("escorpión", "escorpion", "escorpiones", "עקרב", "עקרבים", "עַקְרַב"),
+}
+
+
+AuthorQuoteStatus = Literal[
+    "confirmed_author_text",
+    "confirmed_translated_author_text",
+    "editorial_paraphrase",
+    "editorial_commentary",
+    "translator_note",
+    "footnote_reference",
+    "not_confirmed",
+    "not_applicable",
+]
+
+ATTRIBUTION_LABELS: dict[str, str] = {
+    "confirmed_author_text": "Cita textual del autor confirmada",
+    "confirmed_translated_author_text": "Traducción del texto original del autor",
+    "editorial_paraphrase": "Paráfrasis editorial",
+    "editorial_commentary": "Comentario editorial",
+    "translator_note": "Nota del traductor",
+    "footnote_reference": "Referencia en nota al pie",
+    "not_confirmed": "No confirmada como formulación textual del autor original",
+    "not_applicable": "No corresponde atribución al autor",
+}
+
+AUTHOR_QUOTE_MAP: dict[str, AuthorQuoteStatus] = {
+    "rebbe_lesson_text": "confirmed_author_text",
+    "biblical_quote_in_lesson": "confirmed_author_text",
+    "rabbinic_quote_in_lesson": "confirmed_author_text",
+    "editorial_translation": "confirmed_translated_author_text",
+    "editorial_commentary": "editorial_commentary",
+    "editorial_note": "editorial_commentary",
+    "footnote": "footnote_reference",
+    "source_reference": "not_applicable",
+    "section_heading": "not_applicable",
+    "page_heading": "not_applicable",
+    "introduction": "editorial_commentary",
+    "unknown": "not_confirmed",
 }
 
 
@@ -209,6 +252,11 @@ class Hit(BaseModel):
     page_anchor_kind: str | None = None
     ingestion_run_id: str | None = None
     parallel_texts: list[ParallelText] = Field(default_factory=list)
+    author_quote_status: AuthorQuoteStatus = "not_confirmed"
+    attribution_label: str = "Coincidencia literal en la edición"
+    raw_snippet: str = ""
+    snippet_sanitized: bool = False
+    sanitization_reason_codes: list[str] = Field(default_factory=list)
 
 
 def language(question: str) -> str:
@@ -926,6 +974,23 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
         linked_to_evidence_id=hit_id,
         link_type="parallel_translation",
     ) for candidate in row.get("parallel_candidates", [])]
+
+    # ── Sanitize snippet for display ─────────────────────────────────
+    matched_phrase = " ".join(matched_terms) if matched_terms else None
+    sanitized = sanitize_evidence_snippet(
+        snippet,
+        matched_phrase=matched_phrase,
+        max_length=1200,
+        context_lines=2,
+    )
+    display_snippet_value = sanitized["display_snippet"]
+    snippet_sanitized = sanitized["sanitization_applied"]
+    reason_codes = sanitized["sanitization_reason_codes"]
+
+    # ── Author quote status from source layer ───────────────────────
+    author_status = AUTHOR_QUOTE_MAP.get(source_layer, "not_confirmed")
+    attribution_value = ATTRIBUTION_LABELS.get(author_status, "Coincidencia literal en la edición")
+
     return Hit(
         hit_id=hit_id,
         work_code=work,
@@ -935,7 +1000,7 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
         quote=quote[:4000],
         snippet=snippet,
         display_quote=display_quote[:4000] if display_quote else None,
-        display_snippet=display_snippet(display_quote) if display_quote else None,
+        display_snippet=display_snippet_value,
         display_normalization=display_normalization,
         source_view=view,
         search_record_type=record,
@@ -982,6 +1047,11 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
         page_anchor_kind=row.get("page_anchor_kind"),
         ingestion_run_id=row.get("source_run_id"),
         parallel_texts=parallel_texts,
+        author_quote_status=author_status,
+        attribution_label=attribution_value,
+        raw_snippet=quote[:4000],
+        snippet_sanitized=snippet_sanitized,
+        sanitization_reason_codes=reason_codes,
     )
 
 
@@ -1194,8 +1264,9 @@ def _deterministic_claims(
             }.get(instruction_language if instruction_language in {"es", "en", "he"} else "es", "")
         locale = instruction_language if instruction_language in {"es", "en", "he"} else "es"
         all_evidence_ids = [primary.hit_id] + [h.hit_id for h in additional]
+        attribution_es = f" Atribución: {primary.attribution_label}." if primary.attribution_label else ""
         texts = {
-            "es": f"La frase aparece literalmente en {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['es']}{additional_note}",
+            "es": f"La frase aparece literalmente en {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['es']}{attribution_es}{additional_note}",
             "en": f"The phrase appears literally in {primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['en']}{additional_note}",
             "he": f"הביטוי מופיע במפורש ב־{primary.physical_file_name or primary.work_title}{' — ' + location if location else ''}. {layer['he']}{additional_note}",
         }
@@ -1415,12 +1486,31 @@ def render(
         strength_label = {
             "strong": "Fuerte", "medium": "Media", "weak": "Débil", "insufficient": "Insuficiente",
         }[hit.evidence_strength]
+        display_text = hit.display_snippet or hit.snippet
+        layer_labels = {
+            "rebbe_lesson_text": "Texto original de la lección",
+            "biblical_quote_in_lesson": "Cita bíblica dentro de la lección",
+            "rabbinic_quote_in_lesson": "Cita rabínica dentro de la lección",
+            "editorial_translation": "Traducción editorial",
+            "editorial_commentary": "Comentario editorial",
+            "editorial_note": "Nota editorial",
+            "footnote": "Pie de página",
+            "source_reference": "Referencia de fuente",
+            "section_heading": "Encabezado de sección",
+            "page_heading": "Encabezado de página",
+            "introduction": "Introducción",
+            "unknown": "Capa editorial no confirmada; requiere revisión",
+        }
+        layer_text = layer_labels.get(hit.source_layer, hit.source_layer)
         lines.extend([
-            f"### {hit.work_title}{' — PDF p. ' + str(hit.pdf_page) if hit.pdf_page is not None else ''}",
-            f"> {hit.snippet}",
-            f"**Relevancia:** {relevance_label} · **Fuerza relacional:** {strength_label}{' · ' + labels if labels else ''}",
-            "",
-        ])
+                f"### {hit.work_title}{' — PDF p. ' + str(hit.pdf_page) if hit.pdf_page is not None else ''}",
+                f"> {display_text}",
+                f"**Relevancia:** {relevance_label} · **Fuerza relacional:** {strength_label}{' · ' + labels if labels else ''}",
+                f"**Capa:** {layer_text} · **Atribución:** {hit.attribution_label}",
+                "",
+            ])
+        if hit.snippet_sanitized:
+            lines.append("> _El fragmento visible fue limpiado de artefactos de extracción PDF; el texto fuente original se conserva para auditoría._")
     additional_appearances = [
         hit for hit in hits
         if not hit.is_primary
@@ -1670,6 +1760,9 @@ async def run(conn, data: QaRequest) -> dict:
     primary_ids = _apply_claim_traceability(hits, claims)
     counts = _counts(hits, primary_ids)
     warnings.extend(warning for hit in hits for warning in hit.warnings)
+    for hit in hits:
+        if hit.snippet_sanitized:
+            warnings.append(f"evidence_snippet_sanitized:{hit.hit_id}")
     status = "ok" if primary_ids else "no_evidence"
     narrative_question = data.question if source_layer_followup else resolved_question
     markdown = ai_markdown or render(
@@ -1680,14 +1773,14 @@ async def run(conn, data: QaRequest) -> dict:
         intent,
         source_layer_followup=source_layer_followup,
     )
-    summary = f"{counts['primary']} evidencias principales · {counts['contextual']} relaciones contextuales · {counts['additional_literal']} coincidencias literales adicionales"
+    summary = build_summary(counts["primary"], counts["contextual"], counts["additional_literal"])
     matrix = [{
         "work_code": work,
         "hits": sum(hit.work_code == work for hit in hits),
         "primary_hits": sum(hit.work_code == work and hit.is_primary for hit in hits),
         "contextual_hits": sum(hit.work_code == work and hit.relation_relevance not in {"single_term_literal", "unrelated_literal_noise"} and not hit.is_primary for hit in hits),
         "additional_literal_hits": sum(hit.work_code == work and hit.relation_relevance in {"single_term_literal", "unrelated_literal_noise"} for hit in hits),
-    } for work in plan["works"]]
+    } for work in plan["works"] if sum(hit.work_code == work for hit in hits) > 0]
     if query_resolution and query_resolution.get("suggestion_applied"):
         warnings.append(
             f"No encontré una coincidencia exacta para "

@@ -80,3 +80,14 @@ export function languageMatchLabel(value: string): string {
 export function literalKindLabel(value: string): string {
   return literalMatchKindLabels[value] ?? "";
 }
+
+export const attributionLabels: Record<string, string> = {
+  confirmed_author_text: "Cita textual del autor confirmada",
+  confirmed_translated_author_text: "Traducción del texto original del autor",
+  editorial_paraphrase: "Paráfrasis editorial",
+  editorial_commentary: "Comentario editorial",
+  translator_note: "Nota del traductor",
+  footnote_reference: "Referencia en nota al pie",
+  not_confirmed: "No confirmada como formulación textual del autor original",
+  not_applicable: "No corresponde atribución al autor",
+};

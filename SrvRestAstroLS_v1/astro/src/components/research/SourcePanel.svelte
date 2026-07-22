@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Hit, ResearchResponse } from "./investigativeQaClient.ts";
-  import { evidenceLabels, literalKindLabel, relevanceLabels, sourceLayerConfidenceLabels, sourceLayerLabels, warningLabel } from "./researchLabels.ts";
+  import { evidenceLabels, literalKindLabel, relevanceLabels, sourceLayerConfidenceLabels, sourceLayerLabels, warningLabel, attributionLabels } from "./researchLabels.ts";
   import { isHebrewText, languageAttribute, normalizeDisplayText, textDirection } from "./textDirection.ts";
 
   let { response, selectedId, onselect, onclose }: { response: ResearchResponse | null; selectedId: string | null; onselect: (hit: Hit) => void; onclose?: () => void } = $props();
@@ -26,14 +26,19 @@
         <blockquote class:research-hebrew-text={activeIsHebrew} lang={active.language} dir={active.direction} data-display-normalization={active.display_normalization ?? undefined}>{activeText}</blockquote>
         <h3>Naturaleza del fragmento</h3>
         <p>{sourceLayerLabels[active.source_layer]} <small>(confianza {sourceLayerConfidenceLabels[active.source_layer_confidence]})</small></p>
+        <p class="attribution">{active.attribution_label ?? attributionLabels[active.author_quote_status ?? "not_confirmed"]}</p>
         <dl>
           <div><dt>Relevancia</dt><dd>{relevanceLabels[active.relation_relevance]}</dd></div>
           <div><dt>Fuerza para esta consulta</dt><dd>{active.evidence_strength === "strong" ? "Fuerte" : active.evidence_strength === "medium" ? "Media" : active.evidence_strength === "weak" ? "Débil" : "Contextual"}</dd></div>
           <div><dt>Tipo de coincidencia</dt><dd>{literalKindLabel(active.literal_match_kind) || "Coincidencia contextual"}</dd></div>
           <div><dt>Tipo</dt><dd>{evidenceLabels[active.evidence_type] ?? "Evidencia investigativa"}</dd></div>
           <div><dt>Idioma</dt><dd>{active.language.toUpperCase()}</dd></div>
+          <div><dt>Atribución</dt><dd>{active.attribution_label ?? attributionLabels[active.author_quote_status ?? "not_confirmed"]}</dd></div>
           <div><dt>ID de evidencia</dt><dd dir="ltr">{active.evidence_id ?? active.hit_id}</dd></div>
         </dl>
+        {#if active.snippet_sanitized}
+          <p class="warning">El fragmento visible fue limpiado de artefactos de extracción PDF; el texto fuente original se conserva para auditoría.</p>
+        {/if}
         {#if active.parallel_texts.length}
           <section class="parallel-texts" aria-label="Traducción o ampliación">
             <h3>Traducción / ampliación</h3>

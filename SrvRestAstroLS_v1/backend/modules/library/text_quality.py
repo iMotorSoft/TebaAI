@@ -22,6 +22,7 @@ PDF_ARTIFACT_PATTERNS: list[re.Pattern] = [
     re.compile(r"●"),
     re.compile(r"►"),
     re.compile(r"↕"),
+    re.compile("\ufffd"),
 ]
 CONTROL_CHAR_CODEPOINTS = ALL_CONTROL
 
@@ -53,7 +54,7 @@ def analyze_text_quality(text: str) -> dict:
         "printable_ratio": round(printable_ratio, 4),
         "leading_corruption_span": [0, first_clean] if first_clean > 0 else None,
         "has_bidi_control_chars": has_bidi_control,
-        "reason_codes": _reason_codes(has_mojibake, bool(control_chars), pdf_artifact_count > 0, first_clean),
+        "reason_codes": _reason_codes(has_mojibake, bool(control_chars), pdf_artifact_count > 0, first_clean, has_bidi_control),
     }
 
 
@@ -62,6 +63,7 @@ def _reason_codes(
     has_control: bool,
     has_pdf: bool,
     first_clean: int,
+    has_bidi_control: bool,
 ) -> list[str]:
     codes: list[str] = []
     if has_mojibake:
@@ -72,6 +74,8 @@ def _reason_codes(
         codes.append("pdf_marker_artifact")
     if first_clean > 0:
         codes.append("leading_corruption_trimmed")
+    if has_bidi_control:
+        codes.append("bidi_control_removed")
     return codes
 
 
@@ -82,6 +86,8 @@ def _detect_mojibake(text: str) -> bool:
     if the original encoding were UTF-8. Considers C1 range chars that
     co-occur with Spanish text, indicating a mixed encoding page.
     """
+    if "\ufffd" in text or re.search(r"(?:Ã.|Â.|â€|ðŸ)", text):
+        return True
     c1_count = sum(1 for c in text if c in C1_CONTROL)
     hebrew_count = len(HEBREW_RANGE.findall(text))
     if c1_count >= 3:
@@ -234,7 +240,7 @@ def _clean_text_for_display(text: str) -> str:
     """Remove control characters and PDF artifacts for display."""
     result = []
     for char in text:
-        if char in ALL_CONTROL:
+        if char in ALL_CONTROL or char in BIDI_CHARS:
             result.append(" ")
         else:
             result.append(char)
@@ -284,6 +290,16 @@ def _match_centered_window(
         snippet = "".join(lines[start_line:end_line])
 
     result = snippet.strip()
+    if len(result) > max_length:
+        local_match = max(0, match_start - match_line_start)
+        start = max(0, local_match - max_length // 2)
+        end = min(len(result), start + max_length)
+        start = max(0, end - max_length)
+        result = result[start:end].strip()
+        if start > 0:
+            result = "…" + result
+        if end < len(snippet.strip()):
+            result += "…"
     if start_line > 0:
         result = "…" + result
     if end_line < len(lines) and result.endswith("\n"):

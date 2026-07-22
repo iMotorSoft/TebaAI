@@ -58,3 +58,13 @@ export function renderSafeMarkdown(markdown: string): string {
   }
   return template.innerHTML;
 }
+
+export function deduplicateStructuredMarkdown(markdown: string): string {
+  const sections = markdown.split(/(?=^##\s+)/gm);
+  const hasEvidenceSection = sections.some((section) => /^##\s+Evidencia principal\s*$/m.test(section));
+  if (!hasEvidenceSection) return markdown;
+  return sections.filter((section) => {
+    const heading = section.match(/^##\s+([^\n]+)/)?.[1]?.trim().toLocaleLowerCase("es");
+    return !["síntesis investigativa", "evidencia principal", "advertencias"].includes(heading ?? "");
+  }).join("").trim();
+}

@@ -708,7 +708,7 @@ async def _fetch(conn, work: str, term: str, limit: int) -> list[tuple[dict, str
     config = {
         "kitzur": ("select null::int pdf_page,null::int printed_page,content quote,'chunk' record,null::text zone,null::text note,null::text surface from library_document_chunks c join library_documents d on d.id=c.document_id where d.title='KITZUR' and content ilike %s limit %s", "Kitzur", "library_document_chunks"),
         "lmii": ("select pdf_page_number pdf_page,printed_page_number printed_page,literal_text quote,'page_literal' record,null::text zone,null::text note,null::text surface from library_lmii_search_ready_v2 where literal_text ilike %s limit %s", "Likutey Moharán II", "library_lmii_search_ready_v2"),
-        "lh": ("select pdf_page,printed_page,coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text) quote,search_record_type record,fine_zone_type zone,visible_note_number::text note,surface_form surface from library_likutey_halajot_investigative_search_v1 where coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text,'') ilike %s limit %s", "Likutey Halajot", "library_likutey_halajot_investigative_search_v1"),
+        "lh": ("select pdf_page,printed_page,coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text) quote,search_record_type record,fine_zone_type zone,visible_note_number::text note,surface_form surface,document_id::text,unit_label section,document_part,final_page_status from library_likutey_halajot_investigative_search_v1 where coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text,'') ilike %s limit %s", "Likutey Halajot", "library_likutey_halajot_investigative_search_v1"),
         "potencia_plegaria": ("select pdf_page,null::int printed_page,quote,search_record_type record,zone_type zone,note_number::text note,surface_form surface from library_la_potencia_plegaria_investigative_search_v1 where quote ilike %s limit %s", "La Potencia de la Plegaria", "library_la_potencia_plegaria_investigative_search_v1"),
     }
     sql, title, view = config[work]
@@ -725,7 +725,7 @@ async def _phrase_fetch(conn, work: str, phrase: str, limit: int) -> list[tuple[
     phrase_config = {
         "kitzur": ("select null::int pdf_page,null::int printed_page,content quote,'chunk' record,null::text zone,null::text note,null::text surface from library_document_chunks c join library_documents d on d.id=c.document_id where d.title='KITZUR' and content ilike %s limit %s", "Kitzur", "library_document_chunks"),
         "lmii": ("select pdf_page_number pdf_page,printed_page_number printed_page,literal_text quote,'page_literal' record,null::text zone,null::text note,null::text surface from library_lmii_search_ready_v2 where literal_text ilike %s limit %s", "Likutey Moharán II", "library_lmii_search_ready_v2"),
-        "lh": ("select pdf_page,printed_page,coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text) quote,search_record_type record,fine_zone_type zone,visible_note_number::text note,surface_form surface from library_likutey_halajot_investigative_search_v1 where coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text,'') ilike %s limit %s", "Likutey Halajot", "library_likutey_halajot_investigative_search_v1"),
+        "lh": ("select pdf_page,printed_page,coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text) quote,search_record_type record,fine_zone_type zone,visible_note_number::text note,surface_form surface,document_id::text,unit_label section,document_part,final_page_status from library_likutey_halajot_investigative_search_v1 where coalesce(resolution_quote,nominal_reference_quote,note_source_quote,fine_zone_quote,page_text,'') ilike %s limit %s", "Likutey Halajot", "library_likutey_halajot_investigative_search_v1"),
         "potencia_plegaria": ("select pdf_page,null::int printed_page,quote,search_record_type record,zone_type zone,note_number::text note,surface_form surface from library_la_potencia_plegaria_investigative_search_v1 where quote ilike %s limit %s", "La Potencia de la Plegaria", "library_la_potencia_plegaria_investigative_search_v1"),
     }
     sql, title, view = phrase_config[work]
@@ -965,6 +965,11 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
             "source_reference" if nominal else
             "unknown"
         )
+    source_layer_confidence = row.get("source_layer_confidence", "low")
+    source_layer_rationale = row.get("source_layer_rationale", "insufficient_structural_evidence")
+    if work == "lh" and record == "page_literal" and source_layer == "unknown":
+        source_layer_confidence = "low"
+        source_layer_rationale = "page_literal_only_without_validated_zone"
     hit_id = (
         f"{work}-{row['content_node_id']}" if row.get("content_node_id")
         else f"{work}-{stable_hash(work + '|' + quote)[:12]}"
@@ -1005,8 +1010,8 @@ def classify(work: str, row: dict, matched_terms: list[str], matched_concepts: l
         source_view=view,
         search_record_type=record,
         source_layer=source_layer,
-        source_layer_confidence=row.get("source_layer_confidence", "low"),
-        source_layer_rationale=row.get("source_layer_rationale", "insufficient_structural_evidence"),
+        source_layer_confidence=source_layer_confidence,
+        source_layer_rationale=source_layer_rationale,
         zone_type=row["zone"],
         note_number=row["note"],
         surface_form=row["surface"],
@@ -1509,8 +1514,6 @@ def render(
                 f"**Capa:** {layer_text} · **Atribución:** {hit.attribution_label}",
                 "",
             ])
-        if hit.snippet_sanitized:
-            lines.append("> _El fragmento visible fue limpiado de artefactos de extracción PDF; el texto fuente original se conserva para auditoría._")
     additional_appearances = [
         hit for hit in hits
         if not hit.is_primary
@@ -1532,8 +1535,12 @@ def render(
         lines.extend(["## Límites", "- La coincidencia se informa como literal o normalizada; no se sustituye por una traducción."])
     else:
         lines.extend(["## Límites", "- Una coincidencia literal de un solo término no establece la relación consultada.", "- Los paralelos entre obras no demuestran dependencia o equivalencia doctrinal."])
-    if warnings:
-        lines.extend(["", "## Advertencias", *[f"- {warning}" for warning in sorted(set(warnings))]])
+    narrative_warnings = [
+        warning for warning in warnings
+        if not warning.startswith("evidence_snippet_sanitized:")
+    ]
+    if narrative_warnings:
+        lines.extend(["", "## Advertencias", *[f"- {warning}" for warning in sorted(set(narrative_warnings))]])
     return "\n".join(lines)
 
 
@@ -1789,9 +1796,13 @@ async def run(conn, data: QaRequest) -> dict:
             f"«{query_resolution['suggested_query']}»."
         )
 
+    response_intent = "source_layer_question" if source_layer_followup else intent
+    target_evidence_id = primary_ids[0] if source_layer_followup and primary_ids else None
     return {
         "question": data.question,
-        "intent": intent,
+        "intent": response_intent,
+        "target_evidence_id": target_evidence_id,
+        "same_primary_evidence": bool(target_evidence_id) if source_layer_followup else None,
         "status": status,
         "answer_text": markdown,
         "answer_markdown": markdown,

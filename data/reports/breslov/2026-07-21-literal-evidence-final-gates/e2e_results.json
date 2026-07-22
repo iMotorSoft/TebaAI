@@ -1,0 +1,11 @@
+{
+  "command": "PLAYWRIGHT_SKIP_WEBSERVER=1 pnpm exec playwright test e2e/research-literal-evidence.spec.ts --project=chromium",
+  "tests": 2,
+  "passed": 2,
+  "failed": 0,
+  "duration": "2.1m",
+  "real_backend": true,
+  "api_mocked": false,
+  "ui_repeat_passed": 20,
+  "status": "pass"
+}

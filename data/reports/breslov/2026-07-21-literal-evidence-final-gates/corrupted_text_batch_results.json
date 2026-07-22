@@ -1,0 +1,9 @@
+{
+  "cases": 20,
+  "passed": 20,
+  "failed": 0,
+  "covers": ["C1", "<#>", "replacement character", "Latin-1 mojibake", "Hebrew", "niqqud", "RTL", "Spanish accents", "English", "quotes", "ligatures", "NBSP", "newlines", "hyphenation", "corruption inside match", "mostly corrupt page", "clean text", "note", "heading"],
+  "raw_preserved": true,
+  "valid_hebrew_preserved": true,
+  "status": "pass"
+}

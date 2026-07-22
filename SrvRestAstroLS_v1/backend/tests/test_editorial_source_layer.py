@@ -46,6 +46,14 @@ def test_confirmed_variants_match_without_rewriting_source(query: str) -> None:
     ("215\nLIKUTEY MOHARÁN II #83:8", "header", "navigational", "body", None, "page_heading"),
     ("Introducción del editor", "main_text_spanish", "primary", "front_matter", None, "introduction"),
     ("Fragmento ambiguo", "ambiguous", "primary", "body", None, "unknown"),
+    ("Número de página", "page_number", "navigational", "body", None, "page_heading"),
+    ("Encabezado corriente", "header", "navigational", "body", None, "page_heading"),
+    ("Índice alfabético", "index", "navigational", "back_matter", None, "unknown"),
+    ("Glosario editorial", "glossary", "satellite", "back_matter", None, "editorial_commentary"),
+    ("Texto principal sin zona validada", None, None, "main_text", None, "unknown"),
+    ("7) Nota conectada", "note_or_source_candidate", "satellite", "body", None, "footnote"),
+    ("Explicación secundaria", "translator_note", "satellite", "body", None, "editorial_commentary"),
+    ("Referencia breve (Salmos 119:62)", "reference", "satellite", "body", None, "source_reference"),
 ])
 def test_source_layer_batch(text, zone, role, part, matched, expected) -> None:
     decision = classify_source_layer(

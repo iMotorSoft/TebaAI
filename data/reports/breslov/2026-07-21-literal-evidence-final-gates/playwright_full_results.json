@@ -1,0 +1,12 @@
+{
+  "command": "PLAYWRIGHT_SKIP_WEBSERVER=1 pnpm exec playwright test --project=chromium",
+  "project": "chromium",
+  "tests": 59,
+  "passed": 59,
+  "failed": 0,
+  "duration": "10.5m",
+  "retries": 0,
+  "screenshots_on_failure": false,
+  "traces": "off",
+  "status": "pass"
+}

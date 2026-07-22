@@ -1,0 +1,9 @@
+{
+  "focused_command": "uv run pytest tests/test_text_quality.py tests/test_editorial_source_layer.py tests/test_investigative_qa_v1.py -q",
+  "focused_passed": 133,
+  "focused_failed": 0,
+  "full_collected": 1036,
+  "full_passed": 1036,
+  "new_test_delta": 33,
+  "status": "pass"
+}

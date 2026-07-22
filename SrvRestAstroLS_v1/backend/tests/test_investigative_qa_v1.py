@@ -548,7 +548,9 @@ def test_real_source_layer_followup_answers_the_current_question_directly() -> N
     ))
     primary = next(hit for hit in response["hits"] if hit["hit_id"] in response["primary_evidence_ids"])
     expected = "Sí. Es una cita bíblica incluida dentro de la lección del Rebe. No es una nota editorial."
-    assert response["intent"] == "follow_up"
+    assert response["intent"] == "source_layer_question"
+    assert response["target_evidence_id"] == primary["evidence_id"]
+    assert response["same_primary_evidence"] is True
     assert response["claims"][0]["text"] == expected
     assert response["answer_markdown"].startswith(f"## Síntesis investigativa\n- {expected}")
     assert primary["source_layer"] == "biblical_quote_in_lesson"

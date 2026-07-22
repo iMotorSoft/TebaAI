@@ -1,0 +1,11 @@
+{
+  "cases": {
+    "servir_a_hashem": {"work": "lh", "pdf": 137, "match": "exact_phrase", "status": "pass"},
+    "moshe": {"work": "lmi", "pdf": 93, "printed": 73, "section": "#2:6", "status": "pass"},
+    "community": {"work": "lmi", "pdf": 203, "printed": 183, "section": "#4:10", "status": "pass"},
+    "nobody": {"intent": "literal_lookup", "match": "exact_phrase", "false_exact_paraphrase": false, "status": "pass"},
+    "hebrew": {"work": "lmi", "pdf": 96, "niqqud_preserved": true, "status": "pass"},
+    "lm_xv": {"pdf": 229, "source_layer": "biblical_quote_in_lesson", "status": "pass"}
+  },
+  "status": "pass"
+}

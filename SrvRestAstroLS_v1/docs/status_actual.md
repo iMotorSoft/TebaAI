@@ -2,9 +2,19 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-20 (posicionamiento investigativo de la home pública)
+Ultima actualizacion: 2026-07-21 (cierre de presentación de evidencia literal)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
+
+## Presentación final de evidencia literal — 2026-07-21
+
+Estado técnico: `LITERAL_EVIDENCE_PRESENTATION_FULL_PASS`, `SOURCE_LAYER_CLASSIFICATION_FULL_PASS` y `READY_FOR_MANUAL_LITERAL_EVIDENCE_REVIEW`.
+
+- La consulta «servir a HaShem por la noche» conserva Likutey Halajot, PDF 137, `exact_phrase` y evidencia `lh-37c67830012c`, con display limpio y raw separado para auditoría.
+- La página es `page_literal_only`; al no existir zona, nota o marcador validado, la capa focal queda prudentemente `unknown/low` y la atribución `not_confirmed`.
+- La UI presenta una síntesis, un fragmento completo, un warning y una atribución. El follow-up editorial usa `source_layer_question` y conserva evidencia, obra y página.
+- Gates: backend 1036/1036; frontend 51/51; Playwright Chromium 59/59; función/HTTP/UI focal 20/20 cada uno; texto corrupto 20/20; source layer 20/20; check, build de 7 páginas, LAT y diff-check PASS.
+- Evidencia y checklist: `data/reports/breslov/2026-07-21-literal-evidence-final-gates/`.
 
 ## Home pública investigativa — 2026-07-20
 

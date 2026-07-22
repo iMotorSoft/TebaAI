@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { renderSafeMarkdown } from "./markdownRenderer.ts";
+import { deduplicateStructuredMarkdown, renderSafeMarkdown } from "./markdownRenderer.ts";
 
 describe("renderSafeMarkdown", () => {
   it("renders maintained Markdown structures", () => {
@@ -23,5 +23,13 @@ describe("renderSafeMarkdown", () => {
   it("does not trust direction or language supplied by Markdown HTML", () => {
     const html = renderSafeMarkdown('<blockquote dir="rtl" lang="he" onclick="x()">texto español</blockquote>');
     expect(html).toContain('dir="ltr"'); expect(html).toContain('lang="es"'); expect(html).not.toContain("onclick");
+  });
+  it("removes sections already represented by structured evidence UI", () => {
+    const markdown = "## Síntesis investigativa\n- Claim\n\n## Evidencia principal\n> servir a HaShem por la noche\n\n## Límites\n- Lectura prudente.\n\n## Advertencias\n- technical";
+    expect(deduplicateStructuredMarkdown(markdown)).toBe("## Límites\n- Lectura prudente.");
+  });
+  it("preserves Markdown-only responses", () => {
+    const markdown = "## Síntesis investigativa\nTexto sin evidencia estructurada.";
+    expect(deduplicateStructuredMarkdown(markdown)).toBe(markdown);
   });
 });

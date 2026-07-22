@@ -1,0 +1,9 @@
+{
+  "text_quality_ms": {"p50": 0.0268, "p95": 0.0614, "max": 0.1981},
+  "sanitization_ms": {"p50": 0.0454, "p95": 0.1038, "max": 0.2188},
+  "direct_endpoint_ms": {"p50": 186.715, "p95": 196.17, "max": 221.41},
+  "http_endpoint_ms": {"p50": 209.683, "p95": 231.833, "max": 232.835},
+  "ocr_used": false,
+  "full_corpus_processed_per_hit": false,
+  "status": "pass"
+}

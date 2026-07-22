@@ -23,7 +23,7 @@ test.describe("authenticated research workspace", () => {
     await page.getByTestId("research-question").fill("¿Dónde aparece la plegaria?");
     await page.getByTestId("research-submit").click();
     await expect(page.getByText("Breslov Research", { exact: true })).toBeVisible({ timeout: 30_000 });
-    await expect(page.getByText(/evidencias principales/)).toBeVisible();
+    await expect(page.getByText(/evidencia(?:s)? principal(?:es)?/i).first()).toBeVisible();
     await expect(page.getByText(/PDF p\.|Página no disponible/).first()).toBeVisible();
     await expect(page.getByRole("heading", { name: "Fuentes del turno" })).toBeVisible();
     const sources = page.locator(".source-list button:visible");
@@ -39,7 +39,7 @@ test.describe("authenticated research workspace", () => {
     const filteredRequest = page.waitForRequest((request) => request.url().endsWith("/library/investigative-qa/v1") && request.method() === "POST");
     await page.getByTestId("research-submit").click();
     const payload = (await filteredRequest).postDataJSON(); expect(payload.works).toEqual(["lh"]); expect(payload.max_hits_per_work).toBe(5); expect(payload.include_thematic).toBe(false); expect(payload.include_audit).toBe(false);
-    await expect(page.getByText(/evidencias principales|No se encontró evidencia suficiente/)).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByText(/evidencia(?:s)? principal(?:es)?|No se encontró evidencia suficiente/i).first()).toBeVisible({ timeout: 30_000 });
     const accessibility = await new AxeBuilder({ page }).exclude(".enriched-markdown").analyze();
     expect(accessibility.violations.filter((item) => item.impact === "critical")).toEqual([]);
     await page.getByRole("button", { name: /Nueva investigación/ }).first().click();

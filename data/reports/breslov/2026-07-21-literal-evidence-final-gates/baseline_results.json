@@ -1,0 +1,8 @@
+{
+  "backend": {"collected": 1003, "passed": 1003, "failed": 0, "duration_seconds": 58.41},
+  "frontend_check": {"errors": 0, "warnings": 0, "hints": 0},
+  "frontend_build": {"status": "pass", "pages": 7},
+  "git_diff_check": "pass",
+  "ui_summary_count_before": 2,
+  "baseline_screenshot": "screenshots/before-summary-state.png"
+}

@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { fulfillConfirmationPhases } from "./research-confirmation-helpers";
 
 const email = process.env.TEBAAI_E2E_ADMIN_EMAIL;
 const password = process.env.TEBAAI_E2E_ADMIN_PASSWORD;
@@ -17,8 +18,8 @@ async function login(page: Page) {
 }
 
 async function ask(page: Page, question: string) {
-  const pending = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST");
-  await page.getByTestId("research-question").fill(question); await page.getByTestId("research-submit").click();
+  const pending = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST" && response.request().postDataJSON()?.phase === "analyze");
+  await page.getByTestId("research-question").fill(question); await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   const response = await pending; expect(response.status()).toBe(200);
   return response.json();
 }
@@ -39,9 +40,7 @@ test("natural Hebrew concept query, scoped follow-up and source request remain g
   expect(main.search_plan.queries).toEqual(expect.arrayContaining(["העקרב", "עקרב"]));
   expect(main.primary_evidence_ids.length).toBeGreaterThan(0);
   await expect(page.locator(".user-turn h2").last()).toHaveText(question);
-  await expect(page.locator(".query-interpretation").last()).toContainText("Busqué el concepto");
-  await expect(page.locator(".query-interpretation bdi").last()).toHaveText("עקרב");
-  await expect(page.locator(".query-interpretation bdi").last()).toHaveAttribute("dir", "rtl");
+  await expect(page.getByTestId("interpretation-card").last()).toContainText("עקרב");
   await page.screenshot({ path: path.join(screenshots, "hebrew-concept-after.png"), fullPage: true });
   await page.screenshot({ path: path.join(screenshots, "scorpion-language-priority.png"), fullPage: true });
 
@@ -117,13 +116,13 @@ test("controlled diagnostics document the blocked state and discreet AI fallback
     interpretation: { language: "he", secondary_languages: [], intent: fallback ? "concept_lookup" : "literal_lookup", instruction_language: "he", instruction: "איפה נמצא", query_subjects: fallback ? [{ kind: "concept", raw: "העקרב", normalized: "עקרב", language: "he", script: "hebrew", variants: [{ value: "העקרב", kind: "exact" }, { value: "עקרב", kind: "definite_article_removed" }] }] : [], literal_phrases: [], relations: [], requested_works: [], confidence: fallback ? 0.95 : 0.3, ai_used: false, fallback_used: fallback },
     answer_text: "No se encontró evidencia suficiente en el corpus consultado.", answer_markdown: "No se encontró evidencia suficiente en el corpus consultado.", summary: "Sin evidencia", conversation: { conversation_id: null, turn_id: null }, works_consulted: [], hits: [], claims: [], primary_evidence_ids: [], evidence_counts: { primary: 0, contextual: 0, additional_literal: 0 }, evidence_matrix: [], cross_corpus_matrix: [], warnings: fallback ? ["La interpretación IA no estuvo disponible; se aplicó el analizador determinístico."] : [], not_found: [], execution: { ai_used: false, fallback_used: fallback },
   });
-  await page.route(endpoint, route => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(response(false)) }));
+  await page.route(endpoint, route => fulfillConfirmationPhases(route, response(false)));
   await ask(page, "אתה מחפש איפה נמצא מושג העקרב.");
   await page.screenshot({ path: path.join(screenshots, "hebrew-concept-before.png"), fullPage: true });
   await page.unroute(endpoint); await page.locator(".desktop-action").filter({ hasText: "Nueva investigación" }).click();
-  await page.route(endpoint, route => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(response(true)) }));
+  await page.route(endpoint, route => fulfillConfirmationPhases(route, response(true)));
   await ask(page, "אתה מחפש איפה נמצא מושג העקרב.");
-  await expect(page.locator(".query-interpretation")).toContainText("Busqué el concepto");
+  await expect(page.getByTestId("interpretation-card")).toContainText("העקרב");
   await expect(page.getByText(/analizador determinístico/)).toBeHidden();
   await page.locator("details").filter({ hasText: "Detalles de la consulta" }).locator("summary").click();
   await expect(page.getByText(/analizador determinístico/)).toBeVisible();

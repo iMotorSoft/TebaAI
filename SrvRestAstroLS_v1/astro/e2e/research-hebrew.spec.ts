@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { expect, test, type Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { fulfillConfirmationPhases } from "./research-confirmation-helpers";
 
 const email = process.env.TEBAAI_E2E_ADMIN_EMAIL;
 const password = process.env.TEBAAI_E2E_ADMIN_PASSWORD;
@@ -40,8 +41,8 @@ test("real scorpion evidence preserves logical Hebrew on desktop, tablet and mob
   test.setTimeout(180_000); const critical: string[] = [];
   page.on("console", message => { if (message.type() === "error") critical.push(message.text()); });
   await page.setViewportSize({ width: 1366, height: 768 }); await login(page);
-  const responsePromise = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST");
-  await page.getByTestId("research-question").fill("donde aparece el termino escorpion"); await page.getByTestId("research-submit").click();
+  const responsePromise = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST" && response.request().postDataJSON()?.phase === "analyze");
+  await page.getByTestId("research-question").fill("donde aparece el termino escorpion"); await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   const response = await responsePromise; expect(response.status()).toBe(200); const payload = await response.json();
   const hit = payload.hits.find((item: any) => item.work_code === "lmii" && item.pdf_page === 28 && item.display_normalization === "pdf_glyph_geometry_nfc_v1");
   expect(hit, "real LMII Hebrew scorpion evidence").toBeTruthy(); expect(hit.quote).toMatch(/[\u0590-\u05ff]\s[\u0591-\u05c7]/u);
@@ -70,8 +71,8 @@ test("Hebrew composer and rendered question retain direction", async ({ page }) 
   const composer = page.getByTestId("research-question"); await composer.fill("מה נאמר על תפילה 2:7?");
   await expect(composer).toHaveAttribute("dir", "rtl"); await expect(composer).toHaveAttribute("lang", "he");
   await page.screenshot({ path: path.join(screenshots, "hebrew-composer.png"), fullPage: true });
-  const responsePromise = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST");
-  await composer.press("Enter"); await responsePromise;
+  const responsePromise = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST" && response.request().postDataJSON()?.phase === "analyze");
+  await composer.press("Enter"); await page.getByTestId("interpretation-analyze").click(); await responsePromise;
   const question = page.locator(".user-turn h2").last(); await expect(question).toHaveText("מה נאמר על תפילה 2:7?"); await expect(question).toHaveAttribute("dir", "rtl"); await expect(question).toHaveAttribute("lang", "he");
   await expect(composer).toHaveAttribute("dir", "ltr");
 });
@@ -82,8 +83,8 @@ test("real Hebrew literal lookup traces niqqud variants to physical page 96", as
   await page.setViewportSize({ width: 1366, height: 768 }); await login(page);
 
   async function ask(question: string) {
-    const responsePromise = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST");
-    await page.getByTestId("research-question").fill(question); await page.getByTestId("research-submit").click();
+    const responsePromise = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST" && response.request().postDataJSON()?.phase === "analyze");
+    await page.getByTestId("research-question").fill(question); await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
     const response = await responsePromise; expect(response.status()).toBe(200); const payload = await response.json();
     expect(payload.status).toBe("ok"); expect(payload.intent).toBe("literal_lookup");
     const hit = payload.hits.find((item: any) => payload.primary_evidence_ids.includes(item.hit_id));
@@ -150,13 +151,13 @@ test("captures controlled pre-index baseline and real negative literal result", 
   await page.getByRole("button", { name: "Filtros" }).last().click();
   const filters = page.getByRole("dialog", { name: "Filtros de investigación" });
   await filters.getByLabel("Likutey Moharán I — edición española").uncheck(); await filters.getByLabel("Likutey Moharán XV").uncheck(); await filters.getByRole("button", { name: "Aplicar filtros" }).click();
-  await page.getByTestId("research-question").fill("ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך donde esta"); await page.getByTestId("research-submit").click();
+  await page.getByTestId("research-question").fill("ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך donde esta"); await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   await expect(page.locator(".no-evidence")).toBeVisible({ timeout: 30_000 }); await page.screenshot({ path: path.join(screenshots, "hebrew-literal-before.png"), fullPage: true }); await page.screenshot({ path: path.join(screenshots, "hebrew-copypaste-before.png"), fullPage: true });
   await page.locator(".desktop-action").filter({ hasText: "Nueva investigación" }).click(); await page.getByRole("button", { name: "Filtros" }).last().click();
   await page.getByRole("dialog", { name: "Filtros de investigación" }).getByLabel("Likutey Moharán I — edición española").check();
   await page.getByRole("dialog", { name: "Filtros de investigación" }).getByLabel("Likutey Moharán XV").check();
   await page.getByRole("dialog", { name: "Filtros de investigación" }).getByRole("button", { name: "Aplicar filtros" }).click();
-  await page.getByTestId("research-question").fill("תהלתי אחטמ לך"); await page.getByTestId("research-submit").click();
+  await page.getByTestId("research-question").fill("תהלתי אחטמ לך"); await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   await expect(page.locator(".no-evidence")).toBeVisible({ timeout: 30_000 }); await page.screenshot({ path: path.join(screenshots, "hebrew-no-evidence-negative.png"), fullPage: true }); await page.screenshot({ path: path.join(screenshots, "hebrew-copypaste-negative.png"), fullPage: true });
 });
 
@@ -164,8 +165,8 @@ test("real Hebrew corpus batch renders ten of ten in logical RTL", async ({ page
   test.setTimeout(360_000); await page.setViewportSize({ width: 1536, height: 1024 }); await login(page);
   const cases = ["escorpión", "plegaria", "temor", "tristeza", "Rabí Natán", "Zohar", "alma", "habla", "pureza", "hitbodedut"];
   for (const [index, query] of cases.entries()) {
-    const responsePromise = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST");
-    await page.getByTestId("research-question").fill(query); await page.getByTestId("research-submit").click();
+    const responsePromise = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST" && response.request().postDataJSON()?.phase === "analyze");
+    await page.getByTestId("research-question").fill(query); await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
     const response = await responsePromise; expect(response.status(), query).toBe(200); const payload = await response.json();
     const normalized = payload.hits.filter((item: any) => item.display_normalization === "pdf_glyph_geometry_nfc_v1" && /[\u0590-\u05ff]/u.test(item.display_snippet ?? ""));
     expect(normalized.length, `${query}: readable Hebrew evidence`).toBeGreaterThan(0);
@@ -180,12 +181,13 @@ test("real Hebrew corpus batch renders ten of ten in logical RTL", async ({ page
 test("mixed Markdown isolates Hebrew, Spanish metadata and references", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   const hebrew = "אָמַר רַבָּה: בְּרֵאשִׁית 2:7 · Bava Batra 74a · Likutey Moharán II · § 19 — זהו טקסט עברי ארוך עם נִקּוּד, סוֹגְרַיִם (כָּאֵלֶּה) וְצִיטּוּט \"שָׁלוֹם\".";
-  await page.route("**/library/investigative-qa/v1", route => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({
+  const analysis = {
     status: "ok", answer_text: "Respuesta", answer_markdown: `## Respuesta\n\nTexto español seguido de עברית and English 2:7.\n\n> ${hebrew}\n\n| Obra | Cita |\n|---|---|\n| LM II | ${hebrew} |`, summary: "Síntesis española con fuente hebrea.", conversation: { conversation_id: null, turn_id: null }, works_consulted: ["lmii"],
     hits: [{ hit_id: "mixed-hebrew", work_code: "lmii", work_title: "Likutey Moharán II", pdf_page: 210, printed_page: 200, quote: hebrew, snippet: hebrew, display_quote: hebrew, display_snippet: hebrew, display_normalization: "fixture_nfc", evidence_type: "literal_same_page", literal_strength: "strong", evidence_strength: "strong", relation_relevance: "direct_relation", matched_terms: ["עברית"], matched_concepts: ["עברית"], is_primary: true, source_layer: "page_literal", warnings: [] }],
     claims: [{ claim_id: "mixed-claim", text: "La evidencia contiene una cita hebrea vinculada.", strength: "strong", evidence_ids: ["mixed-hebrew"], primary_evidence_id: "mixed-hebrew" }], primary_evidence_ids: ["mixed-hebrew"], evidence_counts: { primary: 1, contextual: 0, additional_literal: 0 }, evidence_matrix: [{ work_code: "lmii", hits: 1, primary_hits: 1 }], cross_corpus_matrix: [], warnings: [], not_found: [], execution: {},
-  }) }));
-  await page.setViewportSize({ width: 1536, height: 1024 }); await login(page); await page.getByTestId("research-question").fill("texto mixto"); await page.getByTestId("research-submit").click();
+  };
+  await page.route("**/library/investigative-qa/v1", route => fulfillConfirmationPhases(route, analysis));
+  await page.setViewportSize({ width: 1536, height: 1024 }); await login(page); await page.getByTestId("research-question").fill("texto mixto"); await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   await expect(page.locator(".enriched-markdown blockquote.research-hebrew-text")).toHaveAttribute("lang", "he");
   await expect(page.locator(".enriched-markdown blockquote.research-hebrew-text")).toHaveAttribute("dir", "rtl");
   await expect(page.locator(".enriched-markdown .research-mixed-text bdi").first()).toHaveAttribute("lang", "he");

@@ -1,0 +1,18 @@
+{
+  "sample_size": 20,
+  "mode": "real UI and HTTP; deterministic interpretation fallback; real PostgreSQL retrieval",
+  "interpretation_ms": {
+    "p50": 71,
+    "p95": 85
+  },
+  "analysis_ms": {
+    "p50": 2355,
+    "p95": 2381
+  },
+  "total_ms": {
+    "p50": 2439,
+    "p95": 2462
+  },
+  "duplicated_ai_calls": false,
+  "duplicated_retrieval_calls": false
+}

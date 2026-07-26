@@ -1,0 +1,14 @@
+{
+  "empty_and_whitespace": "schema validation rejects",
+  "over_1000_characters": "schema validation rejects",
+  "html_and_xss": "rendered as escaped text; dangerous tags removed by client normalization",
+  "sql_and_prompt_injection": "treated as query text; no SQL or evidence fields accepted",
+  "manipulated_question_on_analyze": "ignored in favor of server original_query",
+  "manipulated_intent_subject_or_evidence_ids": "not part of analyze authority",
+  "cross_user_interpretation_id": "rejected",
+  "conversation_mismatch": "rejected",
+  "expired_interpretation": "410/rejected",
+  "superseded_interpretation": "rejected",
+  "repeated_submit": "single execution",
+  "status": "pass"
+}

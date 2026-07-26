@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { fulfillConfirmationPhases } from "./research-confirmation-helpers";
 
 const email = process.env.TEBAAI_E2E_ADMIN_EMAIL;
 const password = process.env.TEBAAI_E2E_ADMIN_PASSWORD;
@@ -23,10 +24,10 @@ async function login(page: Page) {
 async function ask(page: Page, question: string) {
   const pending = page.waitForResponse(
     (response) => response.url().endsWith("/library/investigative-qa/v1")
-      && response.request().method() === "POST",
+      && response.request().method() === "POST" && response.request().postDataJSON()?.phase === "analyze",
   );
   await page.getByTestId("research-question").fill(question);
-  await page.getByTestId("research-submit").click();
+  await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   const response = await pending;
   expect(response.status()).toBe(200);
   return response.json();
@@ -75,7 +76,7 @@ test("real named-topic aliases preserve the full subject and strong LM XV eviden
 
   const fallbackFriendly = await ask(page, "tisha beav");
   assertTishaPayload(fallbackFriendly, "tisha beav");
-  await expect(page.locator(".query-interpretation").last()).toContainText("Interpreté la consulta como: Tishá BeAv");
+  await expect(page.getByTestId("interpretation-card").last()).toContainText("Tishá BeAv");
   await expect(page.locator("body")).not.toContainText("Busqué el concepto: tisha");
   await expect(page.locator("body")).not.toContainText("relación solicitada");
   await page.screenshot({ path: path.join(screenshots, "canonical-topic.png"), fullPage: true });
@@ -144,12 +145,13 @@ test("real deterministic fallback keeps the named topic and hides ValidationErro
 test("named-topic empty rendering omits empty evidence structures", async ({ page }) => {
   fs.mkdirSync(screenshots, { recursive: true });
   await login(page);
-  await page.route("**/library/investigative-qa/v1", (route) => route.fulfill({ json: {
+  const emptyResponse = {
     status: "no_evidence", intent: "concept_lookup",
     query_understanding: { original_query: "Tishá BeAv", intent: "concept_lookup", operation: "find_named_topic", subject_type: "named_topic", subject_raw: "Tishá BeAv", subject_canonical: "Tishá BeAv", ai_used: false, ai_accepted: false, fallback_used: true, requires_clarification: false },
     named_topic: { canonical_id: "jewish_calendar.tisha_beav", canonical_label: "Tishá BeAv", topic_type: "jewish_calendar_observance", matched_alias: "Tishá BeAv", alias_match_kind: "exact_alias", match_language: "es", match_script: "Latin", variants_searched: ["Tishá BeAv", "Tisha B'Av", "9 de Av", "תשעה באב"] },
     answer_text: "", answer_markdown: "", summary: "Sin evidencia", conversation: { conversation_id: null, turn_id: null }, works_consulted: [], hits: [], claims: [], primary_evidence_ids: [], evidence_counts: { primary: 0, contextual: 0, additional_literal: 0 }, evidence_matrix: [], cross_corpus_matrix: [], warnings: [], not_found: ["Tishá BeAv"], execution: { fallback_used: true },
-  }}));
+  };
+  await page.route("**/library/investigative-qa/v1", (route) => fulfillConfirmationPhases(route, emptyResponse));
   await ask(page, "Tishá BeAv");
   await expect(page.getByText(/No encontré referencias verificables a «Tishá BeAv»/)).toBeVisible();
   await expect(page.getByText("Matriz de evidencia", { exact: true })).toHaveCount(0);
@@ -166,14 +168,14 @@ test("baseline fixtures document the empty and truncated pre-fix states", async 
     interpretation: { language: "unknown", secondary_languages: [], intent: subject ? "concept_lookup" : "unknown", instruction_language: "unknown", instruction: null, query_subjects: subject ? [{ kind: "concept", raw: subject, normalized: subject.toLowerCase(), language: "es", script: "latin", variants: [{ value: subject.toLowerCase(), kind: "exact" }] }] : [], literal_phrases: [], relations: [], requested_works: [], confidence: subject ? 0.96 : 0.45, ai_used: false, fallback_used: true },
     answer_text: "No se encontró evidencia suficiente para establecer la relación solicitada.", answer_markdown: "No se encontró evidencia suficiente para establecer la relación solicitada.", summary: "Sin evidencia", conversation: { conversation_id: null, turn_id: null }, works_consulted: [], hits: [], claims: [], primary_evidence_ids: [], evidence_counts: { primary: 0, contextual: 0, additional_literal: 0 }, evidence_matrix: [], cross_corpus_matrix: [], warnings: ["ai_interpretation_fallback:ValidationError"], not_found: subject ? [subject] : [], execution: { fallback_used: true },
   });
-  await page.route("**/library/investigative-qa/v1", (route) => route.fulfill({ json: oldResponse(null) }));
+  await page.route("**/library/investigative-qa/v1", (route) => fulfillConfirmationPhases(route, oldResponse(null)));
   await ask(page, "tisha beav");
   await page.screenshot({ path: path.join(screenshots, "before-tisha-beav-empty.png"), fullPage: true });
   await page.unroute("**/library/investigative-qa/v1");
   await page.locator(".desktop-action").filter({ hasText: "Nueva investigación" }).click();
-  await page.route("**/library/investigative-qa/v1", (route) => route.fulfill({ json: oldResponse("tisha") }));
+  await page.route("**/library/investigative-qa/v1", (route) => fulfillConfirmationPhases(route, oldResponse("tisha")));
   await ask(page, "Tisha B'Av");
-  await expect(page.locator(".query-interpretation")).toContainText("Busqué el concepto: tisha");
+  await expect(page.getByTestId("interpretation-card")).toContainText("Tisha B'Av");
   await page.screenshot({ path: path.join(screenshots, "before-tisha-bav-truncated.png"), fullPage: true });
 });
 
@@ -199,7 +201,7 @@ test("real UI named-topic resolution is stable twenty of twenty for both focal q
       const started = Date.now();
       const payload = await ask(page, query);
       const primary = assertTishaPayload(payload, query);
-      await expect(page.locator(".query-interpretation").last()).toContainText("Tishá BeAv");
+      await expect(page.getByTestId("interpretation-card").last()).toContainText("Tishá BeAv");
       await expect(page.locator("body")).not.toContainText("Busqué el concepto: tisha");
       results.push({ query, iteration, duration_ms: Date.now() - started, canonical_id: payload.named_topic.canonical_id, subject_raw: payload.query_understanding.subject_raw, evidence_id: primary.hit_id, pdf_page: primary.pdf_page, match_kind: primary.literal_match_kind, pass: true });
     }

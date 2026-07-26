@@ -17,8 +17,8 @@ async function login(page: Page) {
 }
 
 async function ask(page: Page, question: string) {
-  const pending = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST");
-  await page.getByTestId("research-question").fill(question); await page.getByTestId("research-submit").click();
+  const pending = page.waitForResponse(response => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST" && response.request().postDataJSON()?.phase === "analyze");
+  await page.getByTestId("research-question").fill(question); await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   const response = await pending; expect(response.status()).toBe(200);
   return response.json();
 }

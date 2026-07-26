@@ -363,6 +363,19 @@ def _subject(raw: str, kind: Literal["concept", "reference"] = "concept") -> Que
     )
 
 
+def _relation_subject(raw: str) -> QuerySubject | None:
+    """Preserve the visible relation span while normalizing a leading article."""
+    subject = _subject(raw)
+    if subject is None or subject.script != "latin":
+        return subject
+    normalized = re.sub(r"^(?:el|la|los|las|the)\s+", "", subject.normalized)
+    if normalized == subject.normalized:
+        return subject
+    subject.normalized = normalized
+    subject.variants = [SubjectVariant(value=normalized, kind="exact")]
+    return subject
+
+
 def _named_topic_subject(resolution: NamedTopicResolution) -> QuerySubject:
     return QuerySubject(
         kind="named_topic",
@@ -576,7 +589,18 @@ def deterministic_interpret(
         if name:
             subjects = [name]
     elif intent in {"relation_query", "comparison_query"}:
-        if named_topic is not None:
+        explicit_pair = re.search(
+            r"(?i)(?:relaci[oó]n\s+entre|relation\s+between)\s+(.+?)\s+(?:y|and)\s+(.+?)\s*[?.!]*$",
+            value,
+        )
+        if explicit_pair:
+            left_raw, right_raw = explicit_pair.group(1), explicit_pair.group(2)
+            left_topic = resolve_named_topic(left_raw)
+            right_topic = resolve_named_topic(right_raw)
+            left = _named_topic_subject(left_topic) if left_topic else _relation_subject(left_raw)
+            right = _named_topic_subject(right_topic) if right_topic else _relation_subject(right_raw)
+            subjects = [subject for subject in (left, right) if subject is not None]
+        elif named_topic is not None:
             without_topic = value[:named_topic.span_start] + " " + value[named_topic.span_end:]
             subjects = [_named_topic_subject(named_topic), *_content_subjects(without_topic)[:1]]
         else:

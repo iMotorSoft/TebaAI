@@ -1,0 +1,19 @@
+{
+  "backend": { "passed": 1082, "failed": 0, "warnings": 93 },
+  "frontend_vitest": { "passed": 52, "failed": 0 },
+  "pnpm_check": "pass",
+  "pnpm_build": { "status": "pass", "pages": 7 },
+  "lat_check": "pass",
+  "git_diff_check": "pass",
+  "playwright_initial": {
+    "passed": 20,
+    "failed": 44,
+    "isolated_cause": "stale Vite optimized dependency cache returned 504 Outdated Optimize Dep and prevented ResearchWorkspace hydration",
+    "application_regression": false,
+    "remediation": "canonical Astro restart"
+  },
+  "secret_scan": {
+    "status": "pass_with_preexisting_test_or_historical_literals",
+    "new_secrets_found": 0
+  }
+}

@@ -2,9 +2,21 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-22 (resolución multilingüe de temas nominales)
+Ultima actualizacion: 2026-07-26 (confirmación previa de interpretación)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
+
+## Confirmación previa de interpretación — 2026-07-26
+
+Estado técnico: `QUERY_INTERPRETATION_CONFIRMATION_FULL_PASS`, `ANALYZE_ACTION_EXECUTION_FULL_PASS`, `MODIFY_INTERPRETATION_FLOW_FULL_PASS`, `PRE_RETRIEVAL_CONFIRMATION_E2E_FULL_PASS` y `READY_FOR_MANUAL_INTERPRETATION_CONFIRMATION_REVIEW`.
+
+- `/research` separa `phase=interpret` de `phase=analyze` dentro de `POST /library/investigative-qa/v1`; el modo legacy permanece compatible, pero la UI no lo usa.
+- Interpretar autentica, valida query understanding, aliases y fallback, genera copy por plantillas controladas y no adquiere PostgreSQL ni devuelve evidencia, claims o fuentes.
+- La card muestra exactamente las acciones principales `Analizar` y `Modificar`. Modificar reinterpreta y supersede la versión previa; Analizar valida un ID opaco ligado a usuario y conversación y ejecuta retrieval una sola vez.
+- El registro servidor tiene TTL, estados explícitos e idempotencia concurrente. La UI restaura pendientes desde sessionStorage, conserva filtros hasta Analizar, aborta requests al iniciar otra investigación y mantiene RTL, móvil y foco.
+- Gates: backend 1122/1122; frontend 55/55; Playwright Chromium 71/71; batch 30/30 sin retrieval previo; flujos real UI/HTTP interpretar→analizar y interpretar→modificar→analizar 20/20 cada uno; `pnpm check`, build de 7 páginas, LAT, seguridad y diff-check PASS.
+- Performance real con fallback determinístico de interpretación y retrieval PostgreSQL: interpretación p50/p95 71/85 ms; análisis p50/p95 2355/2381 ms.
+- Evidencia, capturas y checklist: `data/reports/breslov/2026-07-26-query-interpretation-confirmation/`.
 
 ## Resolución multilingüe de temas nominales — 2026-07-22
 

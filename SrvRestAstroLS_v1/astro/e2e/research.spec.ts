@@ -22,6 +22,7 @@ test.describe("authenticated research workspace", () => {
     await expect(page).toHaveURL(/\/research$/);
     await page.getByTestId("research-question").fill("¿Dónde aparece la plegaria?");
     await page.getByTestId("research-submit").click();
+    await page.getByTestId("interpretation-analyze").click();
     await expect(page.getByText("Breslov Research", { exact: true })).toBeVisible({ timeout: 30_000 });
     await expect(page.getByText(/evidencia(?:s)? principal(?:es)?/i).first()).toBeVisible();
     await expect(page.getByText(/PDF p\.|Página no disponible/).first()).toBeVisible();
@@ -36,8 +37,9 @@ test.describe("authenticated research workspace", () => {
     await dialog.getByLabel("Kitzur Likutey Moharán").uncheck(); await dialog.getByLabel("Likutey Moharán I — edición española").uncheck(); await dialog.getByLabel("Likutey Moharán II").uncheck(); await dialog.getByLabel("Likutey Moharán XV").uncheck(); await dialog.getByLabel("La Potencia de la Plegaria").uncheck();
     await dialog.getByLabel("Incluir paralelos temáticos").uncheck(); await dialog.getByLabel("Resultados").selectOption("5"); await dialog.getByRole("button", { name: "Aplicar filtros" }).click();
     await page.getByTestId("research-question").fill("¿Y en Likutey Halajot?");
-    const filteredRequest = page.waitForRequest((request) => request.url().endsWith("/library/investigative-qa/v1") && request.method() === "POST");
+    const filteredRequest = page.waitForRequest((request) => request.url().endsWith("/library/investigative-qa/v1") && request.method() === "POST" && request.postDataJSON()?.phase === "analyze");
     await page.getByTestId("research-submit").click();
+    await page.getByTestId("interpretation-analyze").click();
     const payload = (await filteredRequest).postDataJSON(); expect(payload.works).toEqual(["lh"]); expect(payload.max_hits_per_work).toBe(5); expect(payload.include_thematic).toBe(false); expect(payload.include_audit).toBe(false);
     await expect(page.getByText(/evidencia(?:s)? principal(?:es)?|No se encontró evidencia suficiente/i).first()).toBeVisible({ timeout: 30_000 });
     const accessibility = await new AxeBuilder({ page }).exclude(".enriched-markdown").analyze();

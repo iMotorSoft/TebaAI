@@ -1,0 +1,20 @@
+{
+  "full_backend": "1122 passed",
+  "frontend_vitest": "55 passed",
+  "playwright_first_full_after_change": "67 passed, 2 failed",
+  "isolated_failures": [
+    "matrix header row omitted during workspace replacement",
+    "mobile drawer focus loop omitted during workspace replacement"
+  ],
+  "focused_after_root_cause_fixes": "2 passed",
+  "full_playwright_final": "71 passed, 0 failed, 10.6 minutes",
+  "retrieval_goldens_preserved": {
+    "tisha_beav": "LM XV PDF 262 printed 248 #85:2",
+    "oraj_jaim_1": "LH PDF 36 printed 18",
+    "moshe_phrase": "LMI PDF 93 printed 73 #2:6",
+    "literal_night_service": "LH PDF 137",
+    "hebrew": "pass",
+    "source_layer": "pass",
+    "traceability": "pass"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "total": 30,
+  "passed": 30,
+  "failed": 0,
+  "languages": ["es", "en", "he"],
+  "categories": ["named_topic", "literal", "structural_reference", "scripture", "concept", "cooccurrence", "relation", "comparison", "follow_up", "ambiguous", "typo"],
+  "exact_actions_30_of_30": true,
+  "retrieval_before_approval_30_of_30": 0,
+  "display_preserved_subject_30_of_30": true,
+  "additional_actions": 0,
+  "test": "test_interpretation_batch_never_returns_retrieval_artifacts"
+}

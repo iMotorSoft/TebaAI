@@ -1,0 +1,10 @@
+{
+  "query": "tisha beav",
+  "ai_enabled": false,
+  "fallback_used": true,
+  "display_contains": "Tishá BeAv",
+  "actions": ["analyze", "modify"],
+  "retrieval_before_analyze": 0,
+  "validation_error_visible": false,
+  "analysis_after_approval": "pass"
+}

@@ -1,0 +1,419 @@
+{
+  "flow_b": {
+    "passed": 20,
+    "failed": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 2,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 3,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 4,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 5,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 6,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 7,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 8,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 9,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 10,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 11,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 12,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 13,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 14,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 15,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 16,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 17,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 18,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 19,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 20,
+        "phases": [
+          "interpret",
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      }
+    ]
+  },
+  "flow_a": {
+    "passed": 20,
+    "failed": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "interpretation_ms": 70,
+        "analysis_ms": 2343,
+        "total_ms": 2438,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 2,
+        "interpretation_ms": 62,
+        "analysis_ms": 2366,
+        "total_ms": 2440,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 3,
+        "interpretation_ms": 76,
+        "analysis_ms": 2354,
+        "total_ms": 2447,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 4,
+        "interpretation_ms": 75,
+        "analysis_ms": 2353,
+        "total_ms": 2436,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 5,
+        "interpretation_ms": 80,
+        "analysis_ms": 2387,
+        "total_ms": 2482,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 6,
+        "interpretation_ms": 71,
+        "analysis_ms": 2353,
+        "total_ms": 2439,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 7,
+        "interpretation_ms": 76,
+        "analysis_ms": 2353,
+        "total_ms": 2439,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 8,
+        "interpretation_ms": 77,
+        "analysis_ms": 2351,
+        "total_ms": 2445,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 9,
+        "interpretation_ms": 54,
+        "analysis_ms": 2365,
+        "total_ms": 2433,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 10,
+        "interpretation_ms": 85,
+        "analysis_ms": 2351,
+        "total_ms": 2451,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 11,
+        "interpretation_ms": 58,
+        "analysis_ms": 2355,
+        "total_ms": 2428,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 12,
+        "interpretation_ms": 103,
+        "analysis_ms": 2337,
+        "total_ms": 2448,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 13,
+        "interpretation_ms": 68,
+        "analysis_ms": 2347,
+        "total_ms": 2432,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 14,
+        "interpretation_ms": 77,
+        "analysis_ms": 2362,
+        "total_ms": 2447,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 15,
+        "interpretation_ms": 65,
+        "analysis_ms": 2363,
+        "total_ms": 2439,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 16,
+        "interpretation_ms": 64,
+        "analysis_ms": 2355,
+        "total_ms": 2430,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 17,
+        "interpretation_ms": 62,
+        "analysis_ms": 2359,
+        "total_ms": 2438,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 18,
+        "interpretation_ms": 69,
+        "analysis_ms": 2356,
+        "total_ms": 2441,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 19,
+        "interpretation_ms": 72,
+        "analysis_ms": 2381,
+        "total_ms": 2462,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      },
+      {
+        "iteration": 20,
+        "interpretation_ms": 77,
+        "analysis_ms": 2372,
+        "total_ms": 2461,
+        "phases": [
+          "interpret",
+          "analyze"
+        ],
+        "pass": true
+      }
+    ]
+  },
+  "summary": {
+    "flow_a": "20/20",
+    "flow_b": "20/20",
+    "duplicate_analysis_requests": 0
+  }
+}

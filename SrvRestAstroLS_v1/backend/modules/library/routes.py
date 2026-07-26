@@ -37,12 +37,126 @@ from modules.library.schemas import (
     LibrarySearchResult,
 )
 from modules.library.text_search import search_chunks_text
-from modules.library.investigative_qa_v1 import QaRequest, run as run_investigative_qa_v1
+from modules.library.investigative_qa_v1 import (
+    PreparedQuery,
+    QaRequest,
+    interpret_only,
+    run as run_investigative_qa_v1,
+)
+from modules.library.multilingual_query import QueryInterpretation
+from modules.library.named_topics import NamedTopicResolution
+from modules.library.query_confirmation import (
+    INTERPRETATION_STORE,
+    InterpretationStateError,
+)
 
 
 @post("/library/investigative-qa/v1", status_code=200, guards=[require_auth])
 async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
-    """Grounded bibliographic QA. Corpus retrieval is SQL-only and audit is excluded."""
+    """Interpret first; execute grounded retrieval only after explicit analysis."""
+    payload = await get_current_user_payload(request)
+    user_id = str(payload.get("sub") or "")
+    if not user_id:
+        raise NotAuthorizedException("Invalid authenticated subject")
+
+    conversation_id = data.conversation.get("conversation_id")
+    if conversation_id is not None and not isinstance(conversation_id, str):
+        raise HTTPException(status_code=400, detail="Invalid conversation")
+
+    if data.phase == "interpret":
+        try:
+            prepared, response = await interpret_only(data)
+            if data.supersedes_interpretation_id:
+                await INTERPRETATION_STORE.supersede(
+                    data.supersedes_interpretation_id,
+                    user_id=user_id,
+                    conversation_id=conversation_id,
+                )
+            record = await INTERPRETATION_STORE.create(
+                user_id=user_id,
+                conversation_id=conversation_id,
+                original_query=data.question,
+                structured=prepared.structured.model_dump(),
+                named_topic=(
+                    prepared.named_topic.model_dump()
+                    if prepared.named_topic is not None
+                    else None
+                ),
+                interpretation_warnings=list(prepared.warnings),
+                display_interpretation=response["display_interpretation"],
+                query_understanding=response["query_understanding"],
+            )
+            response.update({
+                "interpretation_id": record.interpretation_id,
+                "conversation_id": record.conversation_id,
+                "expires_at": record.expires_at,
+            })
+            return response
+        except InterpretationStateError as exc:
+            raise HTTPException(status_code=409, detail=str(exc)) from exc
+        except Exception as exc:
+            raise HTTPException(status_code=500, detail="Query interpretation failed") from exc
+
+    if data.phase == "analyze":
+        if not data.interpretation_id:
+            raise HTTPException(status_code=400, detail="interpretation_id is required")
+        try:
+            record, owns_execution = await INTERPRETATION_STORE.begin_analysis(
+                data.interpretation_id,
+                user_id=user_id,
+                conversation_id=conversation_id,
+            )
+            if not owns_execution:
+                return await INTERPRETATION_STORE.wait_for_result(record)
+
+            authoritative = data.model_copy(update={
+                "question": record.original_query,
+                "conversation": {
+                    **data.conversation,
+                    "conversation_id": record.conversation_id,
+                },
+            })
+            prepared = PreparedQuery(
+                structured=QueryInterpretation.model_validate(record.structured),
+                named_topic=(
+                    NamedTopicResolution.model_validate(record.named_topic)
+                    if record.named_topic is not None
+                    else None
+                ),
+                warnings=tuple(record.interpretation_warnings),
+                preprocessing={},
+                glossary_duration_ms=0,
+            )
+            pool = await get_pg_pool(request)
+            async with transaction(pool) as conn:
+                result = await run_investigative_qa_v1(
+                    conn,
+                    authoritative,
+                    prepared=prepared,
+                )
+            result.update({
+                "phase": "analysis",
+                "interpretation_id": record.interpretation_id,
+                "approved_interpretation": {
+                    "original_query": record.original_query,
+                    "display_interpretation": record.display_interpretation,
+                    "query_understanding": record.query_understanding,
+                    "status": "analyzed",
+                },
+            })
+            await INTERPRETATION_STORE.finish(record, result)
+            return result
+        except InterpretationStateError as exc:
+            status = 410 if str(exc) == "interpretation_expired" else 409
+            raise HTTPException(status_code=status, detail=str(exc)) from exc
+        except HTTPException:
+            raise
+        except Exception as exc:
+            if "record" in locals() and "owns_execution" in locals() and owns_execution:
+                await INTERPRETATION_STORE.fail(record, "analysis_failed")
+            raise HTTPException(status_code=500, detail="Investigative QA failed") from exc
+
+    # Compatibility path for existing API consumers. The research UI never uses it.
     pool = await get_pg_pool(request)
     try:
         async with transaction(pool) as conn:

@@ -6,6 +6,7 @@ import re
 import time
 import unicodedata
 from collections import defaultdict
+from dataclasses import dataclass
 from typing import Literal
 
 import httpx
@@ -176,6 +177,10 @@ class QaAi(BaseModel):
 
 class QaRequest(BaseModel):
     question: str = Field(min_length=2, max_length=1000)
+    phase: Literal["legacy", "interpret", "analyze"] = "legacy"
+    interpretation_id: str | None = Field(default=None, max_length=100)
+    supersedes_interpretation_id: str | None = Field(default=None, max_length=100)
+    idempotency_key: str | None = Field(default=None, max_length=100)
     works: list[str] = Field(default_factory=lambda: sorted(WORKS))
     languages: list[Literal["es", "en", "he"]] = Field(default_factory=lambda: ["es", "he", "en"])
     include_thematic: bool = True
@@ -1709,13 +1714,25 @@ def _retrieval_inputs(interpretation: QueryInterpretation) -> tuple[list[dict], 
     return concepts, literal_phrases
 
 
-async def run(conn, data: QaRequest) -> dict:
-    started = time.perf_counter()
-    warnings: list[str] = []
+@dataclass(frozen=True)
+class PreparedQuery:
+    structured: QueryInterpretation
+    named_topic: NamedTopicResolution | None
+    warnings: tuple[str, ...]
+    preprocessing: dict
+    glossary_duration_ms: float
+
+
+async def prepare_query(data: QaRequest) -> PreparedQuery:
+    """Interpret and validate a query without consulting corpus evidence."""
     glossary_started = time.perf_counter()
     named_topic = resolve_named_topic(data.question)
     glossary_duration_ms = round((time.perf_counter() - glossary_started) * 1000, 2)
-    history = data.conversation.get("history", []) if isinstance(data.conversation.get("history", []), list) else []
+    history = (
+        data.conversation.get("history", [])
+        if isinstance(data.conversation.get("history", []), list)
+        else []
+    )
     preprocessing = preprocess_query(data.question)
     structured, interpretation_warnings = await interpret_query(
         preprocessing,
@@ -1731,6 +1748,137 @@ async def run(conn, data: QaRequest) -> dict:
         )
         if named_topic_subject is not None:
             named_topic = resolve_named_topic(named_topic_subject.raw)
+    if structured.intent in {"relation_query", "comparison_query"}:
+        # A named topic may be one side of a relation, but must not replace the
+        # complete validated relation contract.
+        named_topic = None
+    return PreparedQuery(
+        structured=structured,
+        named_topic=named_topic,
+        warnings=tuple(interpretation_warnings),
+        preprocessing=preprocessing.model_dump(),
+        glossary_duration_ms=glossary_duration_ms,
+    )
+
+
+def query_understanding_contract(data: QaRequest, prepared: PreparedQuery) -> dict:
+    structured = prepared.structured
+    named_topic = prepared.named_topic
+    subject = structured.query_subjects[0] if structured.query_subjects else None
+    operation_by_intent = {
+        "literal_lookup": "locate_literal_phrase",
+        "translation_or_explanation": "locate_literal_phrase",
+        "structural_reference_lookup": "locate_reference",
+        "reference_lookup": "locate_reference",
+        "concept_cooccurrence": "find_cooccurring_concepts",
+        "relation_query": "investigate_relation",
+        "comparison_query": "compare_subjects",
+        "concept_lookup": "find_concept",
+        "location_lookup": "locate_subject",
+        "book_scope_query": "locate_subject",
+        "source_request": "locate_source",
+        "follow_up": "resolve_follow_up",
+        "unknown": "investigate_query",
+    }
+    operation = (
+        "find_named_topic"
+        if named_topic is not None and structured.intent == "concept_lookup"
+        else operation_by_intent.get(structured.intent, "investigate_query")
+    )
+    return {
+        "original_query": data.question,
+        "intent": structured.intent,
+        "operation": operation,
+        "subject": {
+            "raw": named_topic.subject_raw if named_topic is not None else (
+                subject.raw if subject is not None else data.question
+            ),
+            "canonical": named_topic.canonical_label if named_topic is not None else (
+                subject.canonical or subject.normalized if subject is not None else data.question
+            ),
+            "subject_type": "named_topic" if named_topic is not None else (
+                subject.subject_type or subject.kind if subject is not None else "query"
+            ),
+        },
+        "confidence": min(
+            structured.confidence,
+            named_topic.confidence if named_topic is not None else 1.0,
+        ),
+        "ai_used": structured.ai_used,
+        "fallback_used": structured.fallback_used,
+    }
+
+
+def display_interpretation(data: QaRequest, prepared: PreparedQuery) -> str:
+    """Render controlled Spanish copy exclusively from validated fields."""
+    structured = prepared.structured
+    named_topic = prepared.named_topic
+    if structured.intent in {"relation_query", "comparison_query"} and structured.relations:
+        relation = structured.relations[0]
+        left = relation.left.canonical or relation.left.raw
+        right = relation.right.canonical or relation.right.raw
+        if structured.intent == "comparison_query":
+            return f"Interpreté que desea comparar «{left}» y «{right}»."
+        return f"Interpreté que desea investigar la relación entre «{left}» y «{right}»."
+    if named_topic is not None:
+        return f"Interpreté que desea investigar referencias sobre {named_topic.canonical_label}."
+    if structured.intent in {"literal_lookup", "translation_or_explanation"} and structured.literal_phrases:
+        return f"Interpreté que desea localizar la frase «{structured.literal_phrases[0].raw}»."
+    if structured.intent == "structural_reference_lookup" and structured.structural_reference:
+        return (
+            "Interpreté que desea localizar la referencia estructural "
+            f"«{structured.structural_reference.raw}»."
+        )
+    if structured.query_subjects:
+        subject = structured.query_subjects[0]
+        value = subject.canonical or subject.normalized
+        if structured.intent == "concept_cooccurrence":
+            return (
+                "Interpreté que desea identificar qué conceptos aparecen asociados con "
+                f"«{value}»."
+            )
+        if structured.intent in {"reference_lookup", "location_lookup"}:
+            return f"Interpreté que desea localizar la referencia «{value}»."
+        return f"Interpreté que desea investigar el concepto «{value}»."
+    return f"Interpreté que desea investigar «{data.question}»."
+
+
+async def interpret_only(data: QaRequest) -> tuple[PreparedQuery, dict]:
+    prepared = await prepare_query(data)
+    understanding = query_understanding_contract(data, prepared)
+    return prepared, {
+        "phase": "interpretation",
+        "status": "awaiting_confirmation",
+        "original_query": data.question,
+        "display_interpretation": display_interpretation(data, prepared),
+        "query_understanding": understanding,
+        "actions": ["analyze", "modify"],
+        "warnings": list(prepared.warnings),
+        "execution": {
+            "model": RESEARCH_CONVERSATION_MODEL,
+            "ai_used": prepared.structured.ai_used,
+            "fallback_used": prepared.structured.fallback_used,
+            "interpretation_duration_ms": prepared.structured.duration_ms,
+            "glossary_duration_ms": prepared.glossary_duration_ms,
+            "retrieval_executed": False,
+        },
+    }
+
+
+async def run(
+    conn,
+    data: QaRequest,
+    *,
+    prepared: PreparedQuery | None = None,
+) -> dict:
+    started = time.perf_counter()
+    warnings: list[str] = []
+    prepared = prepared or await prepare_query(data)
+    named_topic = prepared.named_topic
+    glossary_duration_ms = prepared.glossary_duration_ms
+    structured = prepared.structured
+    interpretation_warnings = list(prepared.warnings)
+    preprocessing = prepared.preprocessing
     intent = structured.intent
     literal_analysis = extract_literal_segments(data.question)
     resolved_question = structured.resolved_context or data.question
@@ -1771,7 +1919,7 @@ async def run(conn, data: QaRequest) -> dict:
         "normalized_question": data.question,
         "requires_cross_corpus": not bool(structured.requested_works),
         "concepts": [item["label"] for item in concepts],
-        "preprocessing": preprocessing.model_dump(),
+        "preprocessing": preprocessing,
     })
     warnings.extend(interpretation_warnings)
     requested_works = [work for work in data.works if work in WORKS]

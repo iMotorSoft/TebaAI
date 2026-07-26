@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
 import path from "node:path";
 import fs from "node:fs";
+import { fulfillConfirmationPhases } from "./research-confirmation-helpers";
 
 const email = process.env.TEBAAI_E2E_ADMIN_EMAIL;
 const password = process.env.TEBAAI_E2E_ADMIN_PASSWORD;
@@ -18,9 +19,9 @@ test("blood-speech claims open their explicit primary evidence", async ({ page }
   await page.getByRole("button", { name: "Ingresar" }).click();
   await expect(page.getByTestId("research-question")).toBeVisible();
 
-  const responsePromise = page.waitForResponse((response) => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST");
+  const responsePromise = page.waitForResponse((response) => response.url().endsWith("/library/investigative-qa/v1") && response.request().method() === "POST" && response.request().postDataJSON()?.phase === "analyze");
   await page.getByTestId("research-question").fill("la relacion entre sangre y el habla");
-  await page.getByTestId("research-submit").click();
+  await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   const response = await responsePromise;
   expect(response.status()).toBe(200);
   const payload = await response.json();
@@ -80,14 +81,14 @@ test("records the original mismatched primary source for the before report", asy
   before.claims = [{ claim_id: "before_claim", text: "La relación entre sangre y habla", strength: "strong", evidence_ids: [first.hit_id], primary_evidence_id: first.hit_id }];
   before.primary_evidence_ids = [first.hit_id];
   before.evidence_counts = { primary: 1, contextual: 0, additional_literal: before.hits.length - 1 };
-  await page.route("**/library/investigative-qa/v1", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify(before) }));
+  await page.route("**/library/investigative-qa/v1", (route) => fulfillConfirmationPhases(route, before));
   await page.goto("/login");
   await expect(page.locator("astro-island:not([ssr])")).toBeAttached();
   await page.fill("#login-email", email!);
   await page.fill("#login-password", password!);
   await page.getByRole("button", { name: "Ingresar" }).click();
   await page.getByTestId("research-question").fill("la relacion entre sangre y el habla");
-  await page.getByTestId("research-submit").click();
+  await page.getByTestId("research-submit").click(); await page.getByTestId("interpretation-analyze").click();
   await expect(page.locator(".source-detail")).toContainText(/shamir/i);
   await page.screenshot({ path: path.join(screenshots, "blood-speech-before.png"), fullPage: true });
 });

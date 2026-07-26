@@ -1,0 +1,12 @@
+{
+  "vitest": { "passed": 55, "failed": 0 },
+  "pnpm_check": { "errors": 0, "warnings": 0, "hints": 0 },
+  "build": { "status": "pass", "pages": 7 },
+  "playwright_chromium": { "passed": 71, "failed": 0, "duration_minutes": 10.6 },
+  "confirmation_card": "pass",
+  "exact_two_actions": "pass",
+  "modify_editor": "pass",
+  "reload": "pass",
+  "rtl_mobile": "pass",
+  "focus_trap": "pass"
+}

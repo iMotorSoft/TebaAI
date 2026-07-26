@@ -2,7 +2,7 @@ import { API_BASE_URL, API_ROUTES } from "../global.js";
 
 export const WORKS = ["kitzur", "lmi", "lmii", "lh", "lm_xv", "potencia_plegaria"] as const;
 export type Language = "es" | "en" | "he";
-export interface ResearchRequest { question: string; conversation: { conversation_id: string | null; turn_id: string | null; history: Array<{ question: string }> }; works: string[]; languages: Language[]; include_thematic: boolean; include_audit: false; min_evidence: "literal"; max_hits_per_work: number; return_markdown: true; return_json: true; ai: { enabled: true; model: "openai_gpt-5.4-nano" }; }
+export interface ResearchRequest { question: string; phase?: "legacy" | "interpret" | "analyze"; interpretation_id?: string; supersedes_interpretation_id?: string; idempotency_key?: string; conversation: { conversation_id: string | null; turn_id: string | null; history: Array<{ question: string }> }; works: string[]; languages: Language[]; include_thematic: boolean; include_audit: false; min_evidence: "literal"; max_hits_per_work: number; return_markdown: true; return_json: true; ai: { enabled: true; model: "openai_gpt-5.4-nano" }; }
 export type RelationRelevance = "direct_relation" | "same_fragment_both_terms" | "same_page_both_terms" | "same_section_relation" | "single_term_literal" | "thematic_parallel" | "inferred_relation" | "unrelated_literal_noise";
 export const SOURCE_LAYERS = ["rebbe_lesson_text", "biblical_quote_in_lesson", "rabbinic_quote_in_lesson", "editorial_translation", "editorial_commentary", "editorial_note", "footnote", "source_reference", "section_heading", "page_heading", "introduction", "unknown"] as const;
 export type SourceLayer = typeof SOURCE_LAYERS[number];
@@ -13,13 +13,35 @@ export interface Hit { hit_id: string; work_code: string; work_title: string; pd
 export interface Claim { claim_id: string; text: string; strength: "strong" | "medium" | "weak" | "insufficient"; evidence_ids: string[]; primary_evidence_id: string; }
 export interface EvidenceCounts { primary: number; contextual: number; additional_literal: number; }
 export interface MatrixRow { work_code: string; hits: number; primary_hits?: number; contextual_hits?: number; additional_literal_hits?: number; concept?: string; evidence_type?: string; evidence_strength?: string; pdf_page?: number | null; relation_type?: string; }
-export type ResearchIntent = "literal_lookup" | "concept_lookup" | "relation_query" | "translation_or_explanation" | "reference_lookup" | "follow_up" | "source_layer_question" | "book_scope_query" | "source_request" | "comparison_query" | "unknown";
+export type ResearchIntent = "literal_lookup" | "concept_lookup" | "concept_cooccurrence" | "relation_query" | "translation_or_explanation" | "reference_lookup" | "structural_reference_lookup" | "location_lookup" | "follow_up" | "source_layer_question" | "book_scope_query" | "source_request" | "comparison_query" | "unknown";
 export interface InterpretedSubject { kind: "concept" | "reference" | "named_topic"; raw: string; normalized: string; language: string; script: string; variants: Array<{ value: string; kind: string }>; subject_type?: string | null; topic_type?: string | null; canonical?: string | null; canonical_id?: string | null; }
 export interface QueryInterpretation { language: string; secondary_languages: string[]; intent: ResearchIntent; instruction_language: string; instruction?: string | null; query_subjects: InterpretedSubject[]; literal_phrases: Array<{ raw?: string; text?: string; normalized?: string; search_normalized?: string; language: string }>; relations: Array<{ left: InterpretedSubject; right: InterpretedSubject; relation_type: string }>; requested_works: string[]; confidence: number; ai_used: boolean; fallback_used: boolean; }
 export interface SuggestionAlternative { label: string; type: string; }
 export interface RelatedConcept { label: string; relation_type: string; }
 export interface QueryResolution { original_query: string; normalized_query: string; exact_match: boolean; suggestion_applied: boolean; suggested_query: string | null; suggestion_type: string | null; confidence: number | null; alternatives: SuggestionAlternative[]; related_concepts: RelatedConcept[]; }
 export interface QueryUnderstanding { original_query: string; intent: ResearchIntent; operation: string | null; subject_type: string | null; subject_raw: string | null; subject_canonical: string | null; ai_used: boolean; ai_accepted: boolean; fallback_used: boolean; requires_clarification: boolean; }
+export interface ConfirmableQueryUnderstanding {
+  original_query: string;
+  intent: ResearchIntent;
+  operation: string;
+  subject: { raw: string; canonical: string; subject_type: string };
+  confidence: number;
+  ai_used: boolean;
+  fallback_used: boolean;
+}
+export interface InterpretationResponse {
+  phase: "interpretation";
+  status: "awaiting_confirmation";
+  interpretation_id: string;
+  conversation_id: string;
+  original_query: string;
+  display_interpretation: string;
+  query_understanding: ConfirmableQueryUnderstanding;
+  actions: ["analyze", "modify"];
+  warnings: string[];
+  expires_at: number | null;
+  execution: Record<string, unknown>;
+}
 export interface NamedTopic { canonical_id: string; canonical_label: string; topic_type: string; matched_alias: string; alias_match_kind: string; match_language: string; match_script: "Latin" | "Hebrew"; variants_searched: string[]; }
 export interface ResearchResponse { status: "ok" | "partial" | "no_evidence"; intent?: ResearchIntent; target_evidence_id?: string | null; same_primary_evidence?: boolean | null; interpretation?: QueryInterpretation; query_resolution?: QueryResolution; query_understanding?: QueryUnderstanding; named_topic?: NamedTopic | null; answer_text: string; answer_markdown: string; summary: string; conversation: { conversation_id: string | null; turn_id: string | null; resolved_context?: string[] }; works_consulted: string[]; hits: Hit[]; claims: Claim[]; primary_evidence_ids: string[]; evidence_counts: EvidenceCounts; evidence_matrix: MatrixRow[]; cross_corpus_matrix: MatrixRow[]; warnings: string[]; not_found: string[]; execution: Record<string, unknown>; }
 const array = <T>(value: unknown): T[] => Array.isArray(value) ? value as T[] : [];
@@ -84,7 +106,7 @@ export function normalizeResearchResponse(value: unknown): ResearchResponse {
   const answerText = string(raw.answer_text); const answerMarkdown = string(raw.answer_markdown, answerText);
   if (status !== "no_evidence" && !answerMarkdown) throw new Error("La respuesta de investigación no contiene texto renderizable.");
   const hits = normalizeHits(raw.hits); const claims = normalizeClaims(raw.claims, hits); const allowed = new Set(hits.map((hit) => hit.hit_id)); const primaryIds = array<unknown>(raw.primary_evidence_ids).map((id) => string(id)); if (primaryIds.some((id) => !allowed.has(id)) || claims.some((claim) => !primaryIds.includes(claim.primary_evidence_id))) throw new Error("La selección de evidencia principal es incompatible."); const counts = raw.evidence_counts && typeof raw.evidence_counts === "object" ? raw.evidence_counts as Record<string, unknown> : {}; const evidenceCounts = { primary: Number(counts.primary ?? primaryIds.length), contextual: Number(counts.contextual ?? 0), additional_literal: Number(counts.additional_literal ?? 0) }; if (Object.values(evidenceCounts).some((count) => !Number.isInteger(count) || count < 0)) throw new Error("El resumen de evidencias es incompatible.");
-  const intents = ["literal_lookup", "concept_lookup", "relation_query", "translation_or_explanation", "reference_lookup", "follow_up", "source_layer_question", "book_scope_query", "source_request", "comparison_query", "unknown"] as const;
+  const intents = ["literal_lookup", "concept_lookup", "concept_cooccurrence", "relation_query", "translation_or_explanation", "reference_lookup", "structural_reference_lookup", "location_lookup", "follow_up", "source_layer_question", "book_scope_query", "source_request", "comparison_query", "unknown"] as const;
   const intent = intents.includes(raw.intent as typeof intents[number]) ? raw.intent as ResearchResponse["intent"] : undefined;
   const interpretation = raw.interpretation && typeof raw.interpretation === "object" ? raw.interpretation as QueryInterpretation : undefined;
   const queryResolution = raw.query_resolution && typeof raw.query_resolution === "object" ? raw.query_resolution as QueryResolution : undefined;
@@ -93,3 +115,111 @@ export function normalizeResearchResponse(value: unknown): ResearchResponse {
 export function selectInitialEvidence(response: ResearchResponse): string | null { return response.primary_evidence_ids[0] ?? response.hits.find((hit) => ["direct_relation", "same_fragment_both_terms", "same_section_relation", "same_page_both_terms"].includes(hit.relation_relevance))?.hit_id ?? null; }
 export function makeRequest(question: string, filters: { works: string[]; languages: Language[]; thematic: boolean; maxHits: number }, history: Array<{ question: string }>, conversationId: string | null, turnId: string | null): ResearchRequest { const works = filters.works.filter((w) => (WORKS as readonly string[]).includes(w)); const languages = filters.languages.filter((l): l is Language => ["es", "en", "he"].includes(l)); return { question, conversation: { conversation_id: conversationId, turn_id: turnId, history: history.slice(-15) }, works: works.length ? works : [...WORKS], languages: languages.length ? languages : ["es"], include_thematic: filters.thematic, include_audit: false, min_evidence: "literal", max_hits_per_work: [5, 10, 20].includes(filters.maxHits) ? filters.maxHits : 10, return_markdown: true, return_json: true, ai: { enabled: true, model: "openai_gpt-5.4-nano" } }; }
 export async function askInvestigativeQa(token: string, request: ResearchRequest): Promise<ResearchResponse> { const r = await fetch(`${API_BASE_URL.replace(/\/+$/, "")}${API_ROUTES.investigativeQa}`, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` }, body: JSON.stringify(request) }); if (!r.ok) throw new Error(r.status === 401 ? "Tu sesión expiró. Iniciá sesión nuevamente." : "No se pudo completar la investigación. Podés reintentar."); return normalizeResearchResponse(await r.json()); }
+
+export function normalizeInterpretationResponse(value: unknown): InterpretationResponse {
+  if (!value || typeof value !== "object") throw new Error("La interpretación no tiene un formato compatible.");
+  const raw = value as Record<string, unknown>;
+  const understanding = raw.query_understanding;
+  const actions = array<unknown>(raw.actions);
+  if (
+    raw.phase !== "interpretation"
+    || raw.status !== "awaiting_confirmation"
+    || typeof raw.interpretation_id !== "string"
+    || typeof raw.conversation_id !== "string"
+    || typeof raw.original_query !== "string"
+    || typeof raw.display_interpretation !== "string"
+    || !understanding
+    || typeof understanding !== "object"
+    || actions.length !== 2
+    || actions[0] !== "analyze"
+    || actions[1] !== "modify"
+  ) {
+    throw new Error("La interpretación no tiene un contrato confirmable válido.");
+  }
+  return {
+    phase: "interpretation",
+    status: "awaiting_confirmation",
+    interpretation_id: raw.interpretation_id,
+    conversation_id: raw.conversation_id,
+    original_query: safeText(raw.original_query),
+    display_interpretation: safeText(raw.display_interpretation),
+    query_understanding: understanding as ConfirmableQueryUnderstanding,
+    actions: ["analyze", "modify"],
+    warnings: array<string>(raw.warnings),
+    expires_at: typeof raw.expires_at === "number" ? raw.expires_at : null,
+    execution: raw.execution && typeof raw.execution === "object" ? raw.execution as Record<string, unknown> : {},
+  };
+}
+
+export function makeInterpretRequest(
+  question: string,
+  filters: { works: string[]; languages: Language[]; thematic: boolean; maxHits: number },
+  history: Array<{ question: string }>,
+  conversationId: string,
+  supersedesInterpretationId?: string,
+): ResearchRequest {
+  return {
+    ...makeRequest(question, filters, history, conversationId, null),
+    phase: "interpret",
+    ...(supersedesInterpretationId ? { supersedes_interpretation_id: supersedesInterpretationId } : {}),
+  };
+}
+
+export function makeAnalyzeRequest(
+  interpretation: InterpretationResponse,
+  filters: { works: string[]; languages: Language[]; thematic: boolean; maxHits: number },
+  history: Array<{ question: string }>,
+): ResearchRequest {
+  return {
+    ...makeRequest(
+      interpretation.original_query,
+      filters,
+      history,
+      interpretation.conversation_id,
+      null,
+    ),
+    phase: "analyze",
+    interpretation_id: interpretation.interpretation_id,
+    idempotency_key: `analysis:${interpretation.interpretation_id}`,
+  };
+}
+
+async function postConfirmationPhase(
+  token: string,
+  request: ResearchRequest,
+  signal?: AbortSignal,
+): Promise<unknown> {
+  const response = await fetch(
+    `${API_BASE_URL.replace(/\/+$/, "")}${API_ROUTES.investigativeQa}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+      body: JSON.stringify(request),
+      signal,
+    },
+  );
+  if (!response.ok) {
+    throw new Error(
+      response.status === 401
+        ? "Tu sesión expiró. Inicia sesión nuevamente."
+        : "No se pudo completar la investigación. Puede reintentar.",
+    );
+  }
+  return response.json();
+}
+
+export async function interpretInvestigativeQuery(
+  token: string,
+  request: ResearchRequest,
+  signal?: AbortSignal,
+): Promise<InterpretationResponse> {
+  return normalizeInterpretationResponse(await postConfirmationPhase(token, request, signal));
+}
+
+export async function analyzeConfirmedQuery(
+  token: string,
+  request: ResearchRequest,
+  signal?: AbortSignal,
+): Promise<ResearchResponse> {
+  return normalizeResearchResponse(await postConfirmationPhase(token, request, signal));
+}

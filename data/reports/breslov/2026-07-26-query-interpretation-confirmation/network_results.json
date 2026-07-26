@@ -1,0 +1,8 @@
+{
+  "initial_submit": { "interpret_requests": 1, "analyze_requests": 0 },
+  "analyze": { "interpret_requests": 0, "analyze_requests": 1 },
+  "modify_and_submit": { "interpret_requests": 1, "analyze_requests": 0 },
+  "modified_analyze": { "analyze_requests": 1 },
+  "double_click_analyze": { "analyze_requests": 1 },
+  "evidence_before_approval": 0
+}

@@ -1,0 +1,12 @@
+{
+  "focused_query_confirmation": { "passed": 40, "failed": 0 },
+  "focused_multilingual_and_confirmation": { "passed": 50, "failed": 0 },
+  "full_backend": { "passed": 1122, "failed": 0, "warnings": 93, "duration_seconds": 46.75 },
+  "interpret_does_not_call_retrieval": "pass",
+  "server_authority": "pass",
+  "idempotency": "pass",
+  "cross_user": "pass",
+  "conversation_mismatch": "pass",
+  "expiration": "pass",
+  "superseded": "pass"
+}

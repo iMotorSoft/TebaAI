@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { makeRequest, normalizeResearchResponse, selectInitialEvidence, WORKS } from "./investigativeQaClient.ts";
+import { makeAnalyzeRequest, makeInterpretRequest, makeRequest, normalizeInterpretationResponse, normalizeResearchResponse, selectInitialEvidence, WORKS } from "./investigativeQaClient.ts";
 const base = { status: "ok", answer_text: "texto", conversation: { conversation_id: null, turn_id: null }, hits: [], evidence_matrix: [], cross_corpus_matrix: [] };
 const hit = (id: string, relevance = "single_term_literal") => ({ hit_id: id, work_code: "kitzur", work_title: "Kitzur", pdf_page: null, printed_page: null, quote: "texto canónico", snippet: "…texto canónico", evidence_type: "literal_same_page", literal_strength: "strong", evidence_strength: relevance === "direct_relation" ? "strong" : "insufficient", relation_relevance: relevance, matched_terms: ["sangre"], matched_concepts: ["sangre"], is_primary: relevance === "direct_relation", source_layer: "unknown", warnings: [] });
 describe("research contract", () => {
@@ -28,5 +28,44 @@ describe("research contract", () => {
     expect(r.named_topic?.canonical_label).toBe("Tishá BeAv");
     expect(r.query_understanding?.subject_raw).toBe("Tisha B'Av");
     expect(r.hits[0]).toMatchObject({ literal_match_kind: "named_topic_alias", direct_support: true, match_strength: "strong", single_term: false });
+  });
+});
+
+describe("pre-retrieval interpretation confirmation", () => {
+  const interpretation = {
+    phase: "interpretation" as const, status: "awaiting_confirmation" as const,
+    interpretation_id: "stable-id", conversation_id: "conversation-id",
+    original_query: "tisha beav",
+    display_interpretation: "Interpreté que desea investigar referencias sobre Tishá BeAv.",
+    query_understanding: {
+      original_query: "tisha beav", intent: "concept_lookup" as const,
+      operation: "find_named_topic",
+      subject: { raw: "tisha beav", canonical: "Tishá BeAv", subject_type: "named_topic" },
+      confidence: .98, ai_used: true, fallback_used: false,
+    },
+    actions: ["analyze", "modify"] as ["analyze", "modify"],
+    warnings: [], expires_at: null, execution: { retrieval_executed: false },
+  };
+  const filters = { works: ["lm_xv"], languages: ["es"] as ("es" | "en" | "he")[], thematic: true, maxHits: 10 };
+
+  it("accepts exactly analyze and modify", () => {
+    expect(normalizeInterpretationResponse(interpretation).actions).toEqual(["analyze", "modify"]);
+    expect(() => normalizeInterpretationResponse({ ...interpretation, actions: ["continue", "modify"] })).toThrow();
+    expect(() => normalizeInterpretationResponse({ ...interpretation, actions: ["analyze", "modify", "cancel"] })).toThrow();
+  });
+
+  it("separates interpret and analyze payloads", () => {
+    const interpret = makeInterpretRequest("tisha beav", filters, [], "conversation-id");
+    expect(interpret.phase).toBe("interpret");
+    expect(interpret.interpretation_id).toBeUndefined();
+    const analyze = makeAnalyzeRequest(interpretation, filters, []);
+    expect(analyze.phase).toBe("analyze");
+    expect(analyze.interpretation_id).toBe("stable-id");
+    expect(analyze.idempotency_key).toBe("analysis:stable-id");
+  });
+
+  it("marks the previous interpretation as superseded", () => {
+    const request = makeInterpretRequest("relación entre Tishá BeAv y los veintiún días", filters, [], "conversation-id", "old-id");
+    expect(request.supersedes_interpretation_id).toBe("old-id");
   });
 });

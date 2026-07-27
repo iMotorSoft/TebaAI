@@ -34,21 +34,6 @@ class TestExpectedExports:
         assert isinstance(globalVar.SUPPORTED_LANGUAGES, list)
         assert "es" in globalVar.SUPPORTED_LANGUAGES
 
-    def test_http_mode_exports_default_to_development(self) -> None:
-        import globalVar
-
-        assert globalVar.IS_CORS_PRO is False
-        assert globalVar.FRONTEND_URL_DEV == "http://127.0.0.1:3008"
-        assert globalVar.FRONTEND_URL_PRO == "https://breslov.tebaai.live"
-        assert globalVar.FRONTEND_URL == globalVar.FRONTEND_URL_DEV
-        assert globalVar.CORS_ALLOWED_ORIGINS_PRO == [
-            "https://breslov.tebaai.live",
-        ]
-        assert globalVar.CORS_ALLOWED_ORIGINS == [
-            "http://127.0.0.1:3008",
-            "http://localhost:3008",
-        ]
-
     def test_postgres_exports_disabled_defaults(self) -> None:
         """When no DB_PG_* or TEBAAI_POSTGRES_* vars, postgres stays disabled with defaults."""
         from core.config import get_settings
@@ -102,10 +87,6 @@ class TestExpectedExports:
             # Runtime
             "SETTINGS", "SERVICE_NAME", "SERVICE_VERSION", "ENV", "DEBUG",
             "DEFAULT_LANGUAGE", "SUPPORTED_LANGUAGES",
-            # Public HTTP origins / CORS
-            "FRONTEND_URL_DEV", "FRONTEND_URL_PRO", "IS_CORS_PRO",
-            "CORS_ALLOWED_ORIGINS_DEV", "CORS_ALLOWED_ORIGINS_PRO",
-            "FRONTEND_URL", "CORS_ALLOWED_ORIGINS",
             # PostgreSQL
             "POSTGRES_ENABLED", "POSTGRES_HOST", "POSTGRES_PORT",
             "POSTGRES_DB", "POSTGRES_USER",

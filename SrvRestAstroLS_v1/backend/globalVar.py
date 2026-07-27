@@ -38,22 +38,6 @@ DEBUG: bool = SETTINGS.debug
 DEFAULT_LANGUAGE: str = SETTINGS.default_language
 SUPPORTED_LANGUAGES: list[str] = SETTINGS.supported_languages_list
 
-# ── Public HTTP origins (manual DEV/PRO selection) ──────────────
-FRONTEND_URL_DEV: str = "http://127.0.0.1:3008"
-FRONTEND_URL_PRO: str = "https://breslov.tebaai.live"
-IS_CORS_PRO: bool = False  # Manual toggle: true for a production backend.
-
-CORS_ALLOWED_ORIGINS_DEV: list[str] = [
-    FRONTEND_URL_DEV,
-    "http://localhost:3008",
-]
-CORS_ALLOWED_ORIGINS_PRO: list[str] = [FRONTEND_URL_PRO]
-
-FRONTEND_URL: str = FRONTEND_URL_PRO if IS_CORS_PRO else FRONTEND_URL_DEV
-CORS_ALLOWED_ORIGINS: list[str] = (
-    CORS_ALLOWED_ORIGINS_PRO if IS_CORS_PRO else CORS_ALLOWED_ORIGINS_DEV
-)
-
 # ── PostgreSQL ───────────────────────────────────────────────────
 POSTGRES_ENABLED: bool = SETTINGS.postgres_enabled
 POSTGRES_HOST: str = SETTINGS.postgres_host

@@ -4,6 +4,7 @@ from litestar import Litestar
 from litestar.config.cors import CORSConfig
 
 from core.lifespan import on_shutdown, on_startup
+from globalVar import CORS_ALLOWED_ORIGINS
 from modules.auth.routes import (
     activate_user,
     create_user,
@@ -21,10 +22,7 @@ from routes.health import health
 from routes.ready import ready
 
 cors_config = CORSConfig(
-    allow_origins=[
-        "http://127.0.0.1:3008",
-        "http://localhost:3008",
-    ],
+    allow_origins=CORS_ALLOWED_ORIGINS,
     allow_credentials=True,
 )
 

@@ -18,13 +18,13 @@ The frontend uses the versions declared by its package manifest and lockfile.
 
 API clients import `API_BASE_URL` and route constants from that module. They do not define separate base URLs, ports or API prefixes. `global.d.ts` remains synchronized with exported values.
 
-Only `PUBLIC_*` values safe for browser exposure may influence frontend configuration. Secrets never enter Astro public environment variables or generated assets.
+The REST endpoint uses the explicit manual DEV/PRO selector in `global.js`. Secrets never enter public configuration or generated assets.
 
 ## URL Rule
 
 Absolute backend URLs outside `global.js` are implementation debt and new occurrences are prohibited.
 
-The current direct-backend development URL is `http://127.0.0.1:7008`, overridable with `PUBLIC_TEBAAI_API_BASE_URL`. Any future reverse-proxy strategy must be made explicit in the same configuration boundary.
+DEV uses `http://127.0.0.1:7008`. PRO uses same-origin `/api`. Changing the manual selector requires rebuilding Astro, and no environment variable overrides the selected value.
 
 ## UI Boundary
 

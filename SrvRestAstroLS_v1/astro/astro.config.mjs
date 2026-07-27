@@ -2,8 +2,7 @@ import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import tailwindcss from "@tailwindcss/vite";
 
-const backendTarget =
-  process.env.PUBLIC_TEBAAI_API_BASE_URL ?? "http://127.0.0.1:7008";
+const backendDevTarget = "http://127.0.0.1:7008";
 
 export default defineConfig({
   integrations: [svelte()],
@@ -17,7 +16,7 @@ export default defineConfig({
     server: {
       proxy: {
         "/api": {
-          target: backendTarget,
+          target: backendDevTarget,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ""),
         },

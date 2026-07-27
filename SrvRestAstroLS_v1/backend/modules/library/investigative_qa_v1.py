@@ -1770,7 +1770,7 @@ def query_understanding_contract(data: QaRequest, prepared: PreparedQuery) -> di
         "translation_or_explanation": "locate_literal_phrase",
         "structural_reference_lookup": "locate_reference",
         "reference_lookup": "locate_reference",
-        "concept_cooccurrence": "find_cooccurring_concepts",
+        "concept_cooccurrence": "find_related_concepts",
         "relation_query": "investigate_relation",
         "comparison_query": "compare_subjects",
         "concept_lookup": "find_concept",
@@ -1783,12 +1783,27 @@ def query_understanding_contract(data: QaRequest, prepared: PreparedQuery) -> di
     operation = (
         "find_named_topic"
         if named_topic is not None and structured.intent == "concept_lookup"
+        else structured.operation
+        if structured.operation is not None
         else operation_by_intent.get(structured.intent, "investigate_query")
+    )
+    typo_resolution = (
+        {
+            "applied": True,
+            "original_fragment": structured.colloquial_normalizations[0].original_fragment,
+            "interpreted_as": structured.colloquial_normalizations[0].interpreted_as,
+            "reason": structured.colloquial_normalizations[0].reason,
+            "confidence": structured.colloquial_normalizations[0].confidence,
+        }
+        if structured.colloquial_normalizations
+        else None
     )
     return {
         "original_query": data.question,
         "intent": structured.intent,
         "operation": operation,
+        "instruction_span": structured.instruction_span,
+        "subject_span": structured.subject_span,
         "subject": {
             "raw": named_topic.subject_raw if named_topic is not None else (
                 subject.raw if subject is not None else data.question
@@ -1796,10 +1811,15 @@ def query_understanding_contract(data: QaRequest, prepared: PreparedQuery) -> di
             "canonical": named_topic.canonical_label if named_topic is not None else (
                 subject.canonical or subject.normalized if subject is not None else data.question
             ),
+            "normalized": named_topic.subject_normalized if named_topic is not None else (
+                subject.normalized if subject is not None else data.question.casefold()
+            ),
             "subject_type": "named_topic" if named_topic is not None else (
                 subject.subject_type or subject.kind if subject is not None else "query"
             ),
         },
+        "typo_resolution": typo_resolution,
+        "reason_codes": structured.reason_codes,
         "confidence": min(
             structured.confidence,
             named_topic.confidence if named_topic is not None else 1.0,
@@ -1833,10 +1853,7 @@ def display_interpretation(data: QaRequest, prepared: PreparedQuery) -> str:
         subject = structured.query_subjects[0]
         value = subject.canonical or subject.normalized
         if structured.intent == "concept_cooccurrence":
-            return (
-                "Interpreté que desea identificar qué conceptos aparecen asociados con "
-                f"«{value}»."
-            )
+            return f"Interpreté que desea investigar con qué conceptos se relaciona {value}."
         if structured.intent in {"reference_lookup", "location_lookup"}:
             return f"Interpreté que desea localizar la referencia «{value}»."
         return f"Interpreté que desea investigar el concepto «{value}»."

@@ -68,7 +68,11 @@ async def test_interpret_phase_never_calls_retrieval(monkeypatch: pytest.MonkeyP
         ),
         (
             "con qué conceptos aparece escorpión",
-            "Interpreté que desea identificar qué conceptos aparecen asociados con «escorpión».",
+            "Interpreté que desea investigar con qué conceptos se relaciona escorpión.",
+        ),
+        (
+            "azamra la relaciones que tiene",
+            "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
         ),
         (
             "relación entre Tishá BeAv y los veintiún días",
@@ -127,6 +131,47 @@ async def test_interpretation_batch_never_returns_retrieval_artifacts(question: 
     assert "hits" not in response
     assert "claims" not in response
     assert "primary_evidence_ids" not in response
+
+
+@pytest.mark.asyncio
+async def test_colloquial_relational_interpretation_is_structured_without_retrieval(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    async def forbidden(*_args, **_kwargs):
+        raise AssertionError("retrieval must remain deferred")
+
+    monkeypatch.setattr(qa, "_fetch", forbidden)
+    monkeypatch.setattr(qa, "_phrase_fetch", forbidden)
+    _, response = await interpret_only(QaRequest(
+        question="azamra la relaciones que tiene",
+        phase="interpret",
+        ai={"enabled": False},
+    ))
+
+    understanding = response["query_understanding"]
+    assert response["status"] == "awaiting_confirmation"
+    assert response["display_interpretation"] == (
+        "Interpreté que desea investigar con qué conceptos se relaciona Azamra."
+    )
+    assert response["actions"] == ["analyze", "modify"]
+    assert understanding["intent"] == "concept_cooccurrence"
+    assert understanding["operation"] == "find_related_concepts"
+    assert understanding["instruction_span"] == "la relaciones que tiene"
+    assert understanding["subject"] == {
+        "raw": "azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term",
+    }
+    assert understanding["typo_resolution"] == {
+        "applied": True,
+        "original_fragment": "la relaciones",
+        "interpreted_as": "las relaciones",
+        "reason": "article_number_agreement",
+        "confidence": "high",
+    }
+    assert response["execution"]["retrieval_executed"] is False
+    assert not {"hits", "claims", "evidence_matrix"} & response.keys()
 
 
 def test_http_interpret_analyze_is_idempotent_and_server_authoritative() -> None:

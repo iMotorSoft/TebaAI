@@ -167,6 +167,9 @@ def test_invalid_ai_output_falls_back(monkeypatch: pytest.MonkeyPatch, content: 
     assert result.query_subjects[0].normalized == "עקרב"
     assert result.fallback_used is True and result.ai_used is False
     assert warnings and warnings[0].startswith("ai_interpretation_fallback:")
+    assert "ValidationError" not in warnings[0]
+    if content != "not-json":
+        assert warnings == ["ai_interpretation_fallback:ai_schema_rejected"]
 
 
 def test_ai_timeout_falls_back(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -192,3 +195,87 @@ def test_ai_disabled_uses_safe_fallback() -> None:
     assert result.query_subjects[0].normalized == "עקרב"
     assert result.fallback_used and not result.ai_used
     assert warnings == ["ai_interpretation_fallback:disabled"]
+
+
+@pytest.mark.parametrize(
+    ("query", "subject"),
+    [
+        ("azamra la relaciones que tiene", "azamra"),
+        ("Azamra las relaciones que tiene", "Azamra"),
+        ("qué relaciones tiene Azamra", "Azamra"),
+        ("con qué se relaciona Azamra", "Azamra"),
+        ("Azamra con qué conceptos aparece", "Azamra"),
+        ("relaciones de Azamra", "Azamra"),
+        ("conceptos asociados a Azamra", "Azamra"),
+        ("tristeza con que se relaciona", "tristeza"),
+        ("cuales son las relaciones de la alegría", "la alegría"),
+        ("what is Azamra related to", "Azamra"),
+        ("concepts related to Azamra", "Azamra"),
+        ("עם אילו מושגים קשור אזמרה", "אזמרה"),
+    ],
+)
+def test_open_relational_queries_separate_instruction_and_subject(
+    query: str,
+    subject: str,
+) -> None:
+    result = deterministic_interpret(preprocess_query(query), [])
+
+    assert result.intent == "concept_cooccurrence"
+    assert result.operation == "find_related_concepts"
+    assert result.query_subjects[0].raw == subject
+    assert result.subject_span == subject
+    assert result.instruction_span
+    assert result.reason_codes[0] == "open_relational_query_single_subject"
+    assert result.query_subjects[0].raw.casefold() != query.casefold()
+
+
+def test_colloquial_agreement_normalization_preserves_original_query() -> None:
+    query = "azamra la relaciones que tiene"
+    preprocessing = preprocess_query(query)
+    result = deterministic_interpret(preprocessing, [])
+
+    assert preprocessing.raw_query == query
+    assert result.instruction_span == "la relaciones que tiene"
+    subject = result.query_subjects[0]
+    assert subject.raw == "azamra"
+    assert subject.normalized == "azamra"
+    assert subject.canonical == "Azamra"
+    assert subject.subject_type == "conceptual_term"
+    assert result.colloquial_normalizations[0].model_dump() == {
+        "original_fragment": "la relaciones",
+        "interpreted_as": "las relaciones",
+        "reason": "article_number_agreement",
+        "confidence": "high",
+    }
+
+
+@pytest.mark.parametrize(
+    ("query", "intent", "subjects"),
+    [
+        ("qué relaciones tiene Azamra", "concept_cooccurrence", ["azamra"]),
+        ("relación entre Azamra y alegría", "relation_query", ["azamra", "alegría"]),
+        ("miedo y fe qué relación tienen", "relation_query", ["miedo", "fe"]),
+    ],
+)
+def test_open_cooccurrence_is_distinct_from_grounded_binary_relation(
+    query: str,
+    intent: str,
+    subjects: list[str],
+) -> None:
+    result = deterministic_interpret(preprocess_query(query), [])
+    actual = (
+        [side.normalized for pair in result.relations for side in (pair.left, pair.right)]
+        or [subject.normalized for subject in result.query_subjects]
+    )
+    assert result.intent == intent
+    assert actual == subjects
+
+
+@pytest.mark.parametrize("query", [
+    "<script>alert(1)</script> la relaciones que tiene",
+    "\u202eazamra\u202c la relaciones que tiene",
+])
+def test_relational_subject_extraction_rejects_markup_and_bidi_controls(query: str) -> None:
+    result = deterministic_interpret(preprocess_query(query), [])
+    assert result.intent != "concept_cooccurrence"
+    assert result.query_subjects == []

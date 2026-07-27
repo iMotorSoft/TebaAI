@@ -68,6 +68,16 @@ class ConceptEntry:
 
 CATALOG: tuple[ConceptEntry, ...] = (
     ConceptEntry(
+        concept_id="azamra",
+        canonical_label="Azamra",
+        language="es",
+        hebrew="אזמרה",
+        aliases=("azamra",),
+        transliterations=("azamra",),
+        translations=(),
+        related_concepts=(),
+    ),
+    ConceptEntry(
         concept_id="hitbodedut",
         canonical_label="Hitbodedut",
         language="es",

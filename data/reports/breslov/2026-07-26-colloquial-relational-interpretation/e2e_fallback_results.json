@@ -1,0 +1,11 @@
+{
+  "query": "azamra la relaciones que tiene",
+  "litellm_disabled_for_interpret": true,
+  "fallback_intent": "concept_cooccurrence",
+  "fallback_subject": "Azamra",
+  "confirmable": true,
+  "validation_error_visible": false,
+  "analysis_after_approval": "pass",
+  "real_backend_retrieval": true,
+  "status": "pass"
+}

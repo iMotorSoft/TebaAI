@@ -107,7 +107,7 @@ def test_ai_schema_failure_uses_named_topic_fallback_without_truncation(monkeypa
     monkeypatch.setattr(multilingual, "LITELLM_API_KEY", "configured")
     monkeypatch.setattr(multilingual.httpx, "AsyncClient", lambda **_kwargs: _InvalidClient())
     result, warnings = asyncio.run(interpret_query(preprocess_query("Tisha B'Av"), ai_enabled=True))
-    assert warnings == ["ai_interpretation_fallback:ValidationError"]
+    assert warnings == ["ai_interpretation_fallback:ai_schema_rejected"]
     assert result.fallback_used and not result.ai_used
     assert result.query_subjects[0].raw == "Tisha B'Av"
     assert result.query_subjects[0].canonical_id == "jewish_calendar.tisha_beav"

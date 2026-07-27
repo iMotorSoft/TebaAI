@@ -1,0 +1,105 @@
+{
+  "function_internal": {
+    "iterations": 20,
+    "passed": 20,
+    "failed": 0,
+    "results": [
+      {
+        "iteration": 1,
+        "pass": true
+      },
+      {
+        "iteration": 2,
+        "pass": true
+      },
+      {
+        "iteration": 3,
+        "pass": true
+      },
+      {
+        "iteration": 4,
+        "pass": true
+      },
+      {
+        "iteration": 5,
+        "pass": true
+      },
+      {
+        "iteration": 6,
+        "pass": true
+      },
+      {
+        "iteration": 7,
+        "pass": true
+      },
+      {
+        "iteration": 8,
+        "pass": true
+      },
+      {
+        "iteration": 9,
+        "pass": true
+      },
+      {
+        "iteration": 10,
+        "pass": true
+      },
+      {
+        "iteration": 11,
+        "pass": true
+      },
+      {
+        "iteration": 12,
+        "pass": true
+      },
+      {
+        "iteration": 13,
+        "pass": true
+      },
+      {
+        "iteration": 14,
+        "pass": true
+      },
+      {
+        "iteration": 15,
+        "pass": true
+      },
+      {
+        "iteration": 16,
+        "pass": true
+      },
+      {
+        "iteration": 17,
+        "pass": true
+      },
+      {
+        "iteration": 18,
+        "pass": true
+      },
+      {
+        "iteration": 19,
+        "pass": true
+      },
+      {
+        "iteration": 20,
+        "pass": true
+      }
+    ]
+  },
+  "http_authenticated": {
+    "iterations_per_flow": 20,
+    "focal_passed": 20,
+    "modify_passed": 20,
+    "duplicate_analysis": 0,
+    "backend": "real",
+    "status": "pass"
+  },
+  "ui_real": {
+    "iterations_per_flow": 20,
+    "focal_passed": 20,
+    "modify_passed": 20,
+    "pending_panel_passed": 20,
+    "duration": "3.0m",
+    "status": "pass"
+  }
+}

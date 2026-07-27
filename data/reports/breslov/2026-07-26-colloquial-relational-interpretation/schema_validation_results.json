@@ -1,0 +1,13 @@
+{
+  "allowed_intent": "concept_cooccurrence",
+  "allowed_operation": "find_related_concepts",
+  "single_subject_required": true,
+  "full_query_subject_rejected": true,
+  "invented_subject_rejected": true,
+  "binary_relation_without_pair_rejected": true,
+  "evidence_fields_forbidden_by_strict_schema": true,
+  "sql_fields_forbidden_by_strict_schema": true,
+  "validation_error_surface_removed": true,
+  "schema_rejection_reason_code": "ai_schema_rejected",
+  "status": "pass"
+}

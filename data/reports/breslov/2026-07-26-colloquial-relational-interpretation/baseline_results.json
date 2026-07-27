@@ -1,0 +1,12 @@
+{
+  "head": "dcbf2d79e586a41004159b8159ecc1a01c580476",
+  "before_changes": true,
+  "backend_pytest": {"passed": 1122, "failed": 0, "warnings": 93},
+  "frontend_vitest": {"passed": 55, "failed": 0},
+  "playwright_chromium": {"passed": 71, "failed": 0},
+  "pnpm_check": {"errors": 0, "warnings": 0, "hints": 0},
+  "pnpm_build": {"status": "pass", "pages": 7},
+  "lat_check": "pass",
+  "git_diff_check": "pass",
+  "credentials": "presence_only_pass"
+}

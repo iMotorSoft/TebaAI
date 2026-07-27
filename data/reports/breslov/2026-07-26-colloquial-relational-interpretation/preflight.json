@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-26",
+  "branch": "feature/console-backend-core",
+  "initial_head": "dcbf2d79e586a41004159b8159ecc1a01c580476",
+  "initial_head_subject": "feat(breslov): add pre-retrieval interpretation confirmation",
+  "tracked_worktree_clean": true,
+  "preexisting_untracked_preserved": true,
+  "backend": {
+    "initial_pid": 47299,
+    "url": "http://127.0.0.1:7008",
+    "health": "ok"
+  },
+  "astro": {
+    "initial_pid": 66190,
+    "url": "http://127.0.0.1:3008",
+    "http_status": 200
+  },
+  "e2e_admin_email_present": true,
+  "e2e_admin_password_present": true,
+  "secret_values_recorded": false
+}

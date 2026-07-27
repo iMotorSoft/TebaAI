@@ -1,0 +1,11 @@
+{
+  "initial_query": "azamra la relaciones que tiene",
+  "modified_query": "relación entre Azamra y alegría",
+  "display": "Interpreté que desea investigar la relación entre «Azamra» y «alegría».",
+  "phase_sequence": ["interpret", "interpret", "analyze"],
+  "old_interpretation_analyzed": false,
+  "new_intent": "relation_query",
+  "exact_two_actions": true,
+  "real_backend": true,
+  "status": "pass"
+}

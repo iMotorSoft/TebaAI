@@ -1,0 +1,20 @@
+{
+  "backend_full": "pass",
+  "frontend_full": "pass",
+  "named_topics": "pass_after_schema_reason_code_fix",
+  "literal_lookup": "pass",
+  "structural_reference": "pass",
+  "hebrew_literal": "pass",
+  "source_layer_follow_up": "pass",
+  "reload": "pass",
+  "cancellation": "pass",
+  "history": "pass",
+  "filters": "pass",
+  "idempotency": "pass",
+  "playwright_full_final": {
+    "passed": 76,
+    "failed": 0,
+    "duration": "14.3m",
+    "browser": "chromium"
+  }
+}

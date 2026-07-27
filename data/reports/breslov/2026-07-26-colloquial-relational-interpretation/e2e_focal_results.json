@@ -1,0 +1,14 @@
+{
+  "query": "azamra la relaciones que tiene",
+  "real_backend": true,
+  "mocked_retrieval": false,
+  "semantic_display": "pass",
+  "exact_two_actions": "pass",
+  "pending_evidence_panel": "pass",
+  "no_analyze_before_action": "pass",
+  "analyze_once": "pass",
+  "intent_after_analyze": "concept_cooccurrence",
+  "stored_subject": "Azamra",
+  "real_sources": "pass",
+  "status": "pass"
+}

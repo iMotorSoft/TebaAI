@@ -15,7 +15,7 @@ export interface EvidenceCounts { primary: number; contextual: number; additiona
 export interface MatrixRow { work_code: string; hits: number; primary_hits?: number; contextual_hits?: number; additional_literal_hits?: number; concept?: string; evidence_type?: string; evidence_strength?: string; pdf_page?: number | null; relation_type?: string; }
 export type ResearchIntent = "literal_lookup" | "concept_lookup" | "concept_cooccurrence" | "relation_query" | "translation_or_explanation" | "reference_lookup" | "structural_reference_lookup" | "location_lookup" | "follow_up" | "source_layer_question" | "book_scope_query" | "source_request" | "comparison_query" | "unknown";
 export interface InterpretedSubject { kind: "concept" | "reference" | "named_topic"; raw: string; normalized: string; language: string; script: string; variants: Array<{ value: string; kind: string }>; subject_type?: string | null; topic_type?: string | null; canonical?: string | null; canonical_id?: string | null; }
-export interface QueryInterpretation { language: string; secondary_languages: string[]; intent: ResearchIntent; instruction_language: string; instruction?: string | null; query_subjects: InterpretedSubject[]; literal_phrases: Array<{ raw?: string; text?: string; normalized?: string; search_normalized?: string; language: string }>; relations: Array<{ left: InterpretedSubject; right: InterpretedSubject; relation_type: string }>; requested_works: string[]; confidence: number; ai_used: boolean; fallback_used: boolean; }
+export interface QueryInterpretation { language: string; secondary_languages: string[]; intent: ResearchIntent; instruction_language: string; instruction?: string | null; instruction_span?: string | null; subject_span?: string | null; query_subjects: InterpretedSubject[]; literal_phrases: Array<{ raw?: string; text?: string; normalized?: string; search_normalized?: string; language: string }>; relations: Array<{ left: InterpretedSubject; right: InterpretedSubject; relation_type: string }>; requested_works: string[]; confidence: number; ai_used: boolean; fallback_used: boolean; }
 export interface SuggestionAlternative { label: string; type: string; }
 export interface RelatedConcept { label: string; relation_type: string; }
 export interface QueryResolution { original_query: string; normalized_query: string; exact_match: boolean; suggestion_applied: boolean; suggested_query: string | null; suggestion_type: string | null; confidence: number | null; alternatives: SuggestionAlternative[]; related_concepts: RelatedConcept[]; }
@@ -24,7 +24,11 @@ export interface ConfirmableQueryUnderstanding {
   original_query: string;
   intent: ResearchIntent;
   operation: string;
-  subject: { raw: string; canonical: string; subject_type: string };
+  instruction_span: string | null;
+  subject_span: string | null;
+  subject: { raw: string; canonical: string; normalized: string; subject_type: string };
+  typo_resolution: { applied: boolean; original_fragment: string; interpreted_as: string; reason: string; confidence: string } | null;
+  reason_codes: string[];
   confidence: number;
   ai_used: boolean;
   fallback_used: boolean;

@@ -1,0 +1,13 @@
+{
+  "query": "azamra la relaciones que tiene",
+  "ai_enabled": false,
+  "intent": "concept_cooccurrence",
+  "operation": "find_related_concepts",
+  "subject_raw": "azamra",
+  "subject_canonical": "Azamra",
+  "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+  "actions": ["analyze", "modify"],
+  "retrieval_executed": false,
+  "validation_error_visible": false,
+  "e2e_real_backend": "pass"
+}

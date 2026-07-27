@@ -1,0 +1,30 @@
+{
+  "query": "azamra la relaciones que tiene",
+  "before": {
+    "deterministic_intent": "unknown",
+    "deterministic_subjects": [],
+    "ai_result": "rejected_then_deterministic_fallback",
+    "warning": "ai_interpretation_fallback:ValueError",
+    "operation": "investigate_query",
+    "display": "Interpreté que desea investigar «azamra la relaciones que tiene».",
+    "actions": ["analyze", "modify"],
+    "retrieval_executed": false,
+    "evidence_artifacts_returned": false,
+    "source_panel": "Seleccioná un turno para revisar sus fuentes y páginas.",
+    "screenshot": "before-generic-echo.png",
+    "screenshot_method": "controlled UI replay of the captured baseline response contract"
+  },
+  "after": {
+    "intent": "concept_cooccurrence",
+    "operation": "find_related_concepts",
+    "instruction_span": "la relaciones que tiene",
+    "subject_span": "azamra",
+    "subject_raw": "azamra",
+    "subject_canonical": "Azamra",
+    "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+    "actions": ["analyze", "modify"],
+    "retrieval_executed": false,
+    "evidence_artifacts_returned": false,
+    "source_panel": "La evidencia verificable aparecerá después del análisis."
+  }
+}

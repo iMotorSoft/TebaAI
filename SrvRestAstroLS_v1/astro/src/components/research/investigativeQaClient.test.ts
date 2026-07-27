@@ -40,7 +40,9 @@ describe("pre-retrieval interpretation confirmation", () => {
     query_understanding: {
       original_query: "tisha beav", intent: "concept_lookup" as const,
       operation: "find_named_topic",
-      subject: { raw: "tisha beav", canonical: "Tishá BeAv", subject_type: "named_topic" },
+      instruction_span: null, subject_span: "tisha beav",
+      subject: { raw: "tisha beav", canonical: "Tishá BeAv", normalized: "tisha beav", subject_type: "named_topic" },
+      typo_resolution: null, reason_codes: [],
       confidence: .98, ai_used: true, fallback_used: false,
     },
     actions: ["analyze", "modify"] as ["analyze", "modify"],
@@ -67,5 +69,26 @@ describe("pre-retrieval interpretation confirmation", () => {
   it("marks the previous interpretation as superseded", () => {
     const request = makeInterpretRequest("relación entre Tishá BeAv y los veintiún días", filters, [], "conversation-id", "old-id");
     expect(request.supersedes_interpretation_id).toBe("old-id");
+  });
+
+  it("preserves validated relational spans without accepting extra actions", () => {
+    const relational = normalizeInterpretationResponse({
+      ...interpretation,
+      original_query: "azamra la relaciones que tiene",
+      display_interpretation: "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      query_understanding: {
+        ...interpretation.query_understanding,
+        original_query: "azamra la relaciones que tiene",
+        intent: "concept_cooccurrence",
+        operation: "find_related_concepts",
+        instruction_span: "la relaciones que tiene",
+        subject_span: "azamra",
+        subject: { raw: "azamra", canonical: "Azamra", normalized: "azamra", subject_type: "conceptual_term" },
+        typo_resolution: { applied: true, original_fragment: "la relaciones", interpreted_as: "las relaciones", reason: "article_number_agreement", confidence: "high" },
+        reason_codes: ["open_relational_query_single_subject"],
+      },
+    });
+    expect(relational.query_understanding.subject).toMatchObject({ raw: "azamra", canonical: "Azamra" });
+    expect(relational.actions).toEqual(["analyze", "modify"]);
   });
 });

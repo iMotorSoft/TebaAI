@@ -1,0 +1,8 @@
+{
+  "focused": {"command": "uv run pytest tests/test_multilingual_query.py tests/test_query_confirmation.py -q", "passed": 102, "failed": 0},
+  "full": {"command": "uv run pytest -q", "passed": 1142, "failed": 0, "warnings": 93},
+  "retrieval_during_interpret": false,
+  "focal_live_ai_accepted": true,
+  "focal_fallback_passed": true,
+  "status": "pass"
+}

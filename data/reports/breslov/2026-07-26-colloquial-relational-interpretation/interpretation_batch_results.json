@@ -1,0 +1,607 @@
+{
+  "total": 30,
+  "passed": 30,
+  "failed": 0,
+  "results": [
+    {
+      "input": "azamra la relaciones que tiene",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "la relaciones que tiene",
+      "subject": {
+        "raw": "azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 2.886,
+      "pass": true
+    },
+    {
+      "input": "Azamra las relaciones que tiene",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "las relaciones que tiene",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.378,
+      "pass": true
+    },
+    {
+      "input": "qué relaciones tiene Azamra",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "qué relaciones tiene",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.31,
+      "pass": true
+    },
+    {
+      "input": "cuales son las relaciones de la alegría",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "cuales son las relaciones de",
+      "subject": {
+        "raw": "la alegría",
+        "canonical": "alegría",
+        "normalized": "alegría",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona alegría.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.459,
+      "pass": true
+    },
+    {
+      "input": "con qué se relaciona Azamra",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "con qué se relaciona",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.317,
+      "pass": true
+    },
+    {
+      "input": "con qué conceptos se relaciona Azamra",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "con qué conceptos se relaciona",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.383,
+      "pass": true
+    },
+    {
+      "input": "Azamra y sus relaciones",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "y sus relaciones",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.252,
+      "pass": true
+    },
+    {
+      "input": "relaciones de Azamra",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "relaciones",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.177,
+      "pass": true
+    },
+    {
+      "input": "vínculos de Azamra",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "vínculos",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.21,
+      "pass": true
+    },
+    {
+      "input": "conceptos asociados a Azamra",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "conceptos asociados a",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.406,
+      "pass": true
+    },
+    {
+      "input": "Azamra con qué aparece",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "con qué aparece",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.211,
+      "pass": true
+    },
+    {
+      "input": "qué temas aparecen con Azamra",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "qué temas aparecen con",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.269,
+      "pass": true
+    },
+    {
+      "input": "what is Azamra related to",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "what is … related to",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.266,
+      "pass": true
+    },
+    {
+      "input": "concepts related to Azamra",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "concepts related to",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.237,
+      "pass": true
+    },
+    {
+      "input": "Azamra and its relationships",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "and its relationships",
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "Azamra",
+        "normalized": "azamra",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.22,
+      "pass": true
+    },
+    {
+      "input": "עם אילו מושגים קשור אזמרה",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "עם אילו מושגים קשור",
+      "subject": {
+        "raw": "אזמרה",
+        "canonical": "אזמרה",
+        "normalized": "אזמרה",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona אזמרה.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.016,
+      "pass": true
+    },
+    {
+      "input": "sadness and its relationships",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "and its relationships",
+      "subject": {
+        "raw": "sadness",
+        "canonical": "sadness",
+        "normalized": "sadness",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona sadness.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.252,
+      "pass": true
+    },
+    {
+      "input": "what concepts appear with joy",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "what concepts appear with",
+      "subject": {
+        "raw": "joy",
+        "canonical": "joy",
+        "normalized": "joy",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona joy.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.263,
+      "pass": true
+    },
+    {
+      "input": "אילו נושאים מופיעים עם אזמרה",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": "אילו נושאים מופיעים עם",
+      "subject": {
+        "raw": "אזמרה",
+        "canonical": "אזמרה",
+        "normalized": "אזמרה",
+        "subject_type": "conceptual_term"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona אזמרה.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 0.971,
+      "pass": true
+    },
+    {
+      "input": "relación entre Azamra y alegría",
+      "intent": "relation_query",
+      "operation": "investigate_relation",
+      "instruction_span": null,
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "azamra",
+        "normalized": "azamra",
+        "subject_type": "concept"
+      },
+      "display": "Interpreté que desea investigar la relación entre «Azamra» y «alegría».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 2.083,
+      "pass": true
+    },
+    {
+      "input": "miedo y fe qué relación tienen",
+      "intent": "relation_query",
+      "operation": "investigate_relation",
+      "instruction_span": null,
+      "subject": {
+        "raw": "miedo",
+        "canonical": "miedo",
+        "normalized": "miedo",
+        "subject_type": "concept"
+      },
+      "display": "Interpreté que desea investigar la relación entre «miedo» y «fe».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.287,
+      "pass": true
+    },
+    {
+      "input": "relation between sadness and joy",
+      "intent": "relation_query",
+      "operation": "investigate_relation",
+      "instruction_span": null,
+      "subject": {
+        "raw": "sadness",
+        "canonical": "sadness",
+        "normalized": "sadness",
+        "subject_type": "concept"
+      },
+      "display": "Interpreté que desea investigar la relación entre «sadness» y «joy».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.737,
+      "pass": true
+    },
+    {
+      "input": "מה הקשר בין דם לדיבור",
+      "intent": "relation_query",
+      "operation": "investigate_relation",
+      "instruction_span": null,
+      "subject": {
+        "raw": "דם",
+        "canonical": "דם",
+        "normalized": "דם",
+        "subject_type": "concept"
+      },
+      "display": "Interpreté que desea investigar la relación entre «דם» y «לדיבור».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.465,
+      "pass": true
+    },
+    {
+      "input": "tisha beav",
+      "intent": "concept_lookup",
+      "operation": "find_named_topic",
+      "instruction_span": null,
+      "subject": {
+        "raw": "tisha beav",
+        "canonical": "Tishá BeAv",
+        "normalized": "tisha beav",
+        "subject_type": "named_topic"
+      },
+      "display": "Interpreté que desea investigar referencias sobre Tishá BeAv.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 0.915,
+      "pass": true
+    },
+    {
+      "input": "donde aparece Oraj Jaim 1",
+      "intent": "structural_reference_lookup",
+      "operation": "locate_reference",
+      "instruction_span": null,
+      "subject": {
+        "raw": "Oraj Jaim 1",
+        "canonical": "oraj jaim 1",
+        "normalized": "oraj jaim 1",
+        "subject_type": "reference"
+      },
+      "display": "Interpreté que desea localizar la referencia estructural «Oraj Jaim 1».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.544,
+      "pass": true
+    },
+    {
+      "input": "Moshé, tú lo has dicho bien",
+      "intent": "literal_lookup",
+      "operation": "locate_literal_phrase",
+      "instruction_span": null,
+      "subject": {
+        "raw": "Moshé, tú lo has dicho bien",
+        "canonical": "Moshé, tú lo has dicho bien",
+        "normalized": "moshé, tú lo has dicho bien",
+        "subject_type": "query"
+      },
+      "display": "Interpreté que desea localizar la frase «Moshé, tú lo has dicho bien».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 2.084,
+      "pass": true
+    },
+    {
+      "input": "con qué conceptos aparece escorpión",
+      "intent": "concept_cooccurrence",
+      "operation": "find_related_concepts",
+      "instruction_span": null,
+      "subject": {
+        "raw": "escorpión",
+        "canonical": "escorpión",
+        "normalized": "escorpión",
+        "subject_type": "concept"
+      },
+      "display": "Interpreté que desea investigar con qué conceptos se relaciona escorpión.",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.399,
+      "pass": true
+    },
+    {
+      "input": "versículos de Salmos 119",
+      "intent": "unknown",
+      "operation": "investigate_query",
+      "instruction_span": null,
+      "subject": {
+        "raw": "versículos de Salmos 119",
+        "canonical": "versículos de Salmos 119",
+        "normalized": "versículos de salmos 119",
+        "subject_type": "query"
+      },
+      "display": "Interpreté que desea investigar «versículos de Salmos 119».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.348,
+      "pass": true
+    },
+    {
+      "input": "Azamra",
+      "intent": "concept_lookup",
+      "operation": "find_concept",
+      "instruction_span": null,
+      "subject": {
+        "raw": "Azamra",
+        "canonical": "azamra",
+        "normalized": "azamra",
+        "subject_type": "concept"
+      },
+      "display": "Interpreté que desea investigar el concepto «azamra».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 0.808,
+      "pass": true
+    },
+    {
+      "input": "hitbodedut y emuná",
+      "intent": "unknown",
+      "operation": "investigate_query",
+      "instruction_span": null,
+      "subject": {
+        "raw": "hitbodedut y emuná",
+        "canonical": "hitbodedut y emuná",
+        "normalized": "hitbodedut y emuná",
+        "subject_type": "query"
+      },
+      "display": "Interpreté que desea investigar «hitbodedut y emuná».",
+      "actions": [
+        "analyze",
+        "modify"
+      ],
+      "retrieval_before_approval": false,
+      "duration_ms": 1.336,
+      "pass": true
+    }
+  ]
+}

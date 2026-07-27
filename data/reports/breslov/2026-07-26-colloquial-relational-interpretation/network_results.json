@@ -1,0 +1,9 @@
+{
+  "initial_submit": {"interpret_calls": 1, "analyze_calls": 0, "retrieval_calls": 0},
+  "analyze": {"interpret_calls": 1, "analyze_calls": 1, "duplicate_analysis": false},
+  "modify_before_submit": {"analyze_calls": 0},
+  "modified_submit": {"phase_sequence": ["interpret", "interpret"], "analyze_calls": 0},
+  "modified_analyze": {"phase_sequence": ["interpret", "interpret", "analyze"]},
+  "real_backend": true,
+  "status": "pass"
+}

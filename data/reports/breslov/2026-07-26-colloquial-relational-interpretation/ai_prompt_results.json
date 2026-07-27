@@ -1,0 +1,20 @@
+{
+  "policy_updated": true,
+  "strict_json_required": true,
+  "instruction_subject_separation_required": true,
+  "minor_grammar_tolerance_required": true,
+  "single_subject_open_relation_intent": "concept_cooccurrence",
+  "binary_relation_requires_two_grounded_subjects": true,
+  "examples_added": [
+    "azamra la relaciones que tiene",
+    "tristeza con que se relaciona",
+    "relación entre tristeza y alegría"
+  ],
+  "doctrinal_answers_in_prompt": false,
+  "focal_live_ai": {
+    "accepted": true,
+    "fallback_used": false,
+    "intent": "concept_cooccurrence",
+    "subject": "Azamra"
+  }
+}

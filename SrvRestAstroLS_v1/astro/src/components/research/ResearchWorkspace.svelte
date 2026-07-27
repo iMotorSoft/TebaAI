@@ -577,7 +577,13 @@
     </section>
 
     <aside class:open={mobilePanel === "sources"} class="sources" aria-label="Fuentes del turno">
-      <SourcePanel response={activeTurn?.response ?? null} selectedId={selectedHitId} onselect={(hit) => selectedHitId = hit.hit_id} onclose={closePanel} />
+      <SourcePanel
+        response={activeTurn?.response ?? null}
+        selectedId={selectedHitId}
+        pendingAnalysis={Boolean(activeTurn && ["interpreting", "awaiting_interpretation_confirmation", "editing_interpretation", "analyzing"].includes(activeTurn.state))}
+        onselect={(hit) => selectedHitId = hit.hit_id}
+        onclose={closePanel}
+      />
     </aside>
 
     <form class="composer" onsubmit={(event) => { event.preventDefault(); void submit(); }}>

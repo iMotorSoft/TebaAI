@@ -3,7 +3,7 @@
   import { evidenceLabels, literalKindLabel, relevanceLabels, sourceLayerConfidenceLabels, sourceLayerLabels, warningLabel, attributionLabels } from "./researchLabels.ts";
   import { isHebrewText, languageAttribute, normalizeDisplayText, textDirection } from "./textDirection.ts";
 
-  let { response, selectedId, onselect, onclose }: { response: ResearchResponse | null; selectedId: string | null; onselect: (hit: Hit) => void; onclose?: () => void } = $props();
+  let { response, selectedId, pendingAnalysis = false, onselect, onclose }: { response: ResearchResponse | null; selectedId: string | null; pendingAnalysis?: boolean; onselect: (hit: Hit) => void; onclose?: () => void } = $props();
   const primary = $derived(response?.primary_evidence_ids.map((id) => response.hits.find((hit) => hit.hit_id === id)).filter((hit): hit is Hit => Boolean(hit)) ?? []);
   const contextual = $derived(response?.hits.filter((hit) => !response.primary_evidence_ids.includes(hit.hit_id) && !["single_term_literal", "unrelated_literal_noise"].includes(hit.relation_relevance)) ?? []);
   const additional = $derived(response?.hits.filter((hit) => ["single_term_literal", "unrelated_literal_noise"].includes(hit.relation_relevance)) ?? []);
@@ -58,5 +58,7 @@
     {#if primary.length}<section class="source-group"><h3>Evidencias principales</h3><div class="source-list" aria-label="Evidencias principales">{#each primary as hit, index}<button data-evidence-id={hit.hit_id} class:active={hit.hit_id === active?.hit_id} aria-pressed={hit.hit_id === active?.hit_id} onclick={() => onselect(hit)}><span>{index + 1}</span><strong>{hit.work_title}</strong><small>{hit.pdf_page === null ? "Página no disponible" : `PDF p. ${hit.pdf_page}`}</small></button>{/each}</div></section>{/if}
     {#if contextual.length}<details class="source-group"><summary>Relaciones contextuales ({contextual.length})</summary><div class="source-list">{#each contextual as hit}<button data-evidence-id={hit.hit_id} class:active={hit.hit_id === active?.hit_id} aria-pressed={hit.hit_id === active?.hit_id} onclick={() => onselect(hit)}><strong>{hit.work_title}</strong><small>{relevanceLabels[hit.relation_relevance]}</small></button>{/each}</div></details>{/if}
     {#if additional.length}<details class="source-group additional-matches"><summary>Otras coincidencias literales ({additional.length})</summary><p>Estos fragmentos contienen sólo parte de la consulta y no respaldan por sí mismos la relación.</p><div class="source-list">{#each additional as hit}<button data-evidence-id={hit.hit_id} class:active={hit.hit_id === active?.hit_id} aria-pressed={hit.hit_id === active?.hit_id} onclick={() => onselect(hit)}><strong>{hit.work_title}</strong><small>{hit.matched_concepts.join(" · ")}</small></button>{/each}</div></details>{/if}
-  {:else}<p class="source-placeholder">Seleccioná un turno para revisar sus fuentes y páginas.</p>{/if}
+  {:else if pendingAnalysis}
+    <p class="source-placeholder" data-testid="pending-evidence-panel">La evidencia verificable aparecerá después del análisis.</p>
+  {:else}<p class="source-placeholder">Seleccione un turno analizado para revisar sus fuentes y páginas.</p>{/if}
 </section>

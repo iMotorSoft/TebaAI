@@ -1,0 +1,20 @@
+{
+  "date": "2026-07-27",
+  "branch": "feature/console-backend-core",
+  "initial_head": "866a68799f0ad225584c042f92a8e596bf10ec2b",
+  "database": "tebaai",
+  "schema": "public",
+  "guest_present_before": false,
+  "guest_present_after": true,
+  "baseline_counts": {
+    "users": 53,
+    "documents": 28,
+    "pages": 963,
+    "notes": 474,
+    "references": 420
+  },
+  "preexisting_untracked_preserved": true,
+  "secret_values_recorded": false,
+  "backend_url": "http://127.0.0.1:7008",
+  "frontend_url": "http://127.0.0.1:3008"
+}

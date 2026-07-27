@@ -110,6 +110,7 @@ class AppSettings(BaseSettings):
     auth_issuer: str = "tebaai-api"
     auth_audience: str = "tebaai-web"
     auth_password_pepper: SecretStr = SecretStr("")
+    guest_password: SecretStr = SecretStr("")
 
     @field_validator("supported_languages", mode="before")
     @classmethod

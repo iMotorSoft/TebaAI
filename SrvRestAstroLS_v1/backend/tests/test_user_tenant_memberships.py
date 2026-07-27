@@ -92,3 +92,24 @@ async def test_create_fails_closed_without_one_default_tenant_context() -> None:
             await UserRepository(AsyncMock()).create(user)
 
     assert execute.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_update_synchronizes_viewer_memberships() -> None:
+    user = User(
+        id=uuid4(),
+        email="guest@example.test",
+        username=None,
+        password_hash="hash",
+        role=UserRole.VIEWER,
+    )
+    with patch(
+        "modules.auth.repository.execute",
+        new=AsyncMock(return_value=1),
+    ) as execute:
+        await UserRepository(AsyncMock()).update(user)
+
+    assert execute.await_count == 4
+    for call in execute.await_args_list[1:]:
+        assert call.args[2]["membership_role"] == "viewer"
+        assert call.args[2]["user_id"] == str(user.id)

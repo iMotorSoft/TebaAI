@@ -2,9 +2,31 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-26 (confirmación previa de interpretación)
+Ultima actualizacion: 2026-07-27 (guest de lectura para beta privada)
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
+
+## Guest de lectura para beta privada — 2026-07-27
+
+Estado técnico: `GUEST_USER_PROVISIONING_FULL_PASS`,
+`RESEARCH_READ_ONLY_ROLE_FULL_PASS`, `GUEST_AUTHENTICATION_E2E_FULL_PASS`,
+`GUEST_WRITE_DENIAL_FULL_PASS` y `PRIVATE_BETA_GUEST_READY`.
+
+- `guest@tebaai.live` quedó activo con el rol canónico existente `viewer` y
+  membresías `viewer` en organización, workspace y proyecto.
+- El provisioner idempotente recibe sólo el email por argumento y resuelve la
+  contraseña mediante `TEBAAI_GUEST_PASSWORD` tipado como `SecretStr`; no
+  imprime ni persiste credenciales.
+- El backend contrasta usuario activo y rol JWT con PostgreSQL, sincroniza roles
+  de membresía y revoca refresh sessions ante degradación o desactivación.
+- `/research`, interpretar, Analizar, Modificar, evidencia y logout pasan; las
+  rutas de usuarios permanecen restringidas a `admin` y la UI redirige al
+  viewer sin renderizar controles administrativos.
+- Gates: backend 1153/1153; frontend 56/56; Playwright guest 3/3 y suite no
+  mutante 77/77; HTTP real guest 20/20; denegaciones directas 20/20 por
+  endpoint; cero cambios de corpus, vectores o usuarios durante los lotes.
+- Evidencia y checklist:
+  `data/reports/breslov/2026-07-27-private-beta-guest-user/`.
 
 ## Confirmación previa de interpretación — 2026-07-26
 

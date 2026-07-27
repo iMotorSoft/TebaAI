@@ -1,0 +1,11 @@
+{
+  "admin_controls_for_viewer": "redirect_to_research_implemented",
+  "research_controls": ["composer", "Analizar", "Modificar", "Fuentes", "Cerrar sesión"],
+  "vitest": {"passed": 56, "failed": 0},
+  "pnpm_check": "pass",
+  "build_pages": 7,
+  "real_guest_browser": "pass",
+  "guest_playwright": "3/3 pass",
+  "non_mutating_playwright": "77/77 pass",
+  "mutable_admin_tests_excluded": 2
+}

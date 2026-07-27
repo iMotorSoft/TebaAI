@@ -71,6 +71,18 @@ class AuthSessionRepository:
             {"revoked_at": now, "token_family_id": str(token_family_id)},
         )
 
+    async def revoke_for_user(self, user_id: UUID) -> None:
+        now = datetime.now(timezone.utc)
+        await execute(
+            self._conn,
+            """
+            UPDATE auth_sessions
+            SET revoked_at = %(revoked_at)s
+            WHERE user_id = %(user_id)s AND revoked_at IS NULL
+            """,
+            {"revoked_at": now, "user_id": str(user_id)},
+        )
+
     async def get_active_by_family(self, token_family_id: UUID) -> AuthSession | None:
         row = await fetch_one(
             self._conn,

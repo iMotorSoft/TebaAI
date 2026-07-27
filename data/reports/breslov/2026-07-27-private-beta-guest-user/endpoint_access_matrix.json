@@ -1,0 +1,32 @@
+{
+  "allowed": [
+    "POST /auth/login",
+    "POST /auth/refresh",
+    "POST /auth/logout",
+    "GET /auth/me",
+    "POST /library/investigative-qa/v1",
+    "POST /library/relation-qa",
+    "POST /library/book-qa",
+    "GET /library/book-qa/runs",
+    "GET /library/book-qa/runs/latest",
+    "POST /library/search"
+  ],
+  "denied_viewer": [
+    "GET /users",
+    "POST /users",
+    "GET /users/{id}",
+    "PATCH /users/{id}",
+    "POST /users/{id}/activate",
+    "POST /users/{id}/deactivate"
+  ],
+  "not_exposed": [
+    "ingestion",
+    "promotion",
+    "document mutation",
+    "corpus mutation",
+    "reindex",
+    "Milvus mutation",
+    "settings mutation",
+    "private reports"
+  ]
+}

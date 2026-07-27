@@ -8,6 +8,7 @@ from litestar.exceptions import HTTPException, NotAuthorizedException
 
 from core.dependencies import get_pg_pool
 from infrastructure.postgres.transaction import transaction
+from modules.auth.dependencies import require_current_roles
 from modules.auth.domain import User, UserRole
 from modules.auth.guards import require_roles
 from modules.auth.password import hash_password
@@ -114,6 +115,7 @@ async def me(request: Request) -> UserResponse:
 
 @get("/users", guards=[require_roles(UserRole.ADMIN)])
 async def list_users(request: Request) -> UserListResponse:
+    await require_current_roles(request, UserRole.ADMIN)
     pool = await get_pg_pool(request)
     async with transaction(pool) as conn:
         repo = UserRepository(conn)
@@ -126,6 +128,7 @@ async def list_users(request: Request) -> UserListResponse:
 
 @post("/users", guards=[require_roles(UserRole.ADMIN)])
 async def create_user(request: Request, data: CreateUserRequest) -> UserResponse:
+    await require_current_roles(request, UserRole.ADMIN)
     pool = await get_pg_pool(request)
     async with transaction(pool) as conn:
         repo = UserRepository(conn)
@@ -148,6 +151,7 @@ async def create_user(request: Request, data: CreateUserRequest) -> UserResponse
 
 @get("/users/{user_id:str}", guards=[require_roles(UserRole.ADMIN)])
 async def get_user(request: Request, user_id: str) -> UserResponse:
+    await require_current_roles(request, UserRole.ADMIN)
     pool = await get_pg_pool(request)
     async with transaction(pool) as conn:
         repo = UserRepository(conn)
@@ -159,12 +163,15 @@ async def get_user(request: Request, user_id: str) -> UserResponse:
 
 @patch("/users/{user_id:str}", guards=[require_roles(UserRole.ADMIN)])
 async def patch_user(request: Request, user_id: str, data: UpdateUserRequest) -> UserResponse:
+    await require_current_roles(request, UserRole.ADMIN)
     pool = await get_pg_pool(request)
     async with transaction(pool) as conn:
         repo = UserRepository(conn)
+        sessions = AuthSessionRepository(conn)
         user = await repo.get_by_id(UUID(user_id))
         if not user:
             raise HTTPException(status_code=404, detail="User not found")
+        previous_role = user.role
         if data.email is not None:
             user.email = data.email.strip().lower()
         if data.username is not None:
@@ -175,11 +182,14 @@ async def patch_user(request: Request, user_id: str, data: UpdateUserRequest) ->
             user.is_active = data.is_active
         user.updated_at = dt.utcnow()
         await repo.update(user)
+        if user.role != previous_role or not user.is_active:
+            await sessions.revoke_for_user(user.id)
     return _user_to_response(user)
 
 
 @post("/users/{user_id:str}/activate", guards=[require_roles(UserRole.ADMIN)])
 async def activate_user(request: Request, user_id: str) -> UserResponse:
+    await require_current_roles(request, UserRole.ADMIN)
     pool = await get_pg_pool(request)
     async with transaction(pool) as conn:
         repo = UserRepository(conn)
@@ -194,13 +204,16 @@ async def activate_user(request: Request, user_id: str) -> UserResponse:
 
 @post("/users/{user_id:str}/deactivate", guards=[require_roles(UserRole.ADMIN)])
 async def deactivate_user(request: Request, user_id: str) -> UserResponse:
+    await require_current_roles(request, UserRole.ADMIN)
     pool = await get_pg_pool(request)
     async with transaction(pool) as conn:
         repo = UserRepository(conn)
+        sessions = AuthSessionRepository(conn)
         user = await repo.get_by_id(UUID(user_id))
         if not user:
             raise HTTPException(status_code=404, detail="User not found")
         user.is_active = False
         user.updated_at = dt.utcnow()
         await repo.update(user)
+        await sessions.revoke_for_user(user.id)
     return _user_to_response(user)

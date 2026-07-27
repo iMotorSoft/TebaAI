@@ -1,0 +1,14 @@
+{
+  "email": "guest@tebaai.live",
+  "canonical_role": "viewer",
+  "status": "created",
+  "user_id": "5dad98e3-c34e-47ef-9d3f-099a9124345b",
+  "active": true,
+  "argon2id": true,
+  "memberships": {
+    "organization": "viewer",
+    "workspace": "viewer",
+    "project": "viewer"
+  },
+  "credentials_recorded": false
+}

@@ -51,6 +51,7 @@
       }
       user = u;
       if (u.role !== "admin") {
+        location.replace(ROUTES.research);
         loading = false;
         return;
       }
@@ -182,7 +183,6 @@
 <div class="card bg-base-100 w-full max-w-4xl shadow-xl">
   <div class="card-body">
     <h2 class="card-title">{BRAND.publicName}</h2>
-    <p class="text-sm text-base-content/70">Administración de usuarios</p>
 
     {#if successMsg}
       <div class="alert alert-success text-sm">
@@ -212,10 +212,9 @@
         <span>Sesión no válida. <a href={ROUTES.login} class="link link-primary">Iniciar sesión</a></span>
       </div>
     {:else if user.role !== "admin"}
-      <div class="alert alert-error">
-        <span>No autorizado. Se requiere rol admin para administrar usuarios.</span>
-      </div>
+      <p role="status">Redirigiendo al espacio de investigación…</p>
     {:else}
+      <p class="text-sm text-base-content/70">Administración de usuarios</p>
       <div class="flex items-center justify-between gap-4">
         <p class="text-sm">
           <span class="font-medium">{user.email}</span>

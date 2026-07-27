@@ -153,7 +153,30 @@ class UserRepository:
                 "id": str(user.id),
             },
         )
+        await self.sync_membership_roles(user)
         return user
+
+    async def sync_membership_roles(self, user: User) -> None:
+        """Keep tenant membership authority aligned with the canonical user role."""
+        membership_role = {
+            UserRole.ADMIN: "admin",
+            UserRole.EDITOR: "member",
+            UserRole.VIEWER: "viewer",
+        }[user.role]
+        params = {
+            "user_id": str(user.id),
+            "membership_role": membership_role,
+        }
+        for table in ("organization_members", "workspace_members", "project_members"):
+            await execute(
+                self._conn,
+                f"""
+                UPDATE {table}
+                SET role = %(membership_role)s::member_role, updated_at = now()
+                WHERE user_id = %(user_id)s
+                """,
+                params,
+            )
 
     async def update_password_hash(self, user_id: UUID, password_hash: str) -> None:
         now = datetime.utcnow()

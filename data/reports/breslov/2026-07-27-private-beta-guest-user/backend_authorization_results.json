@@ -1,0 +1,14 @@
+{
+  "focused_tests": {"passed": 42, "failed": 0},
+  "full_backend_suite": {"passed": 1153, "failed": 0},
+  "viewer_user_management": "backend_guarded",
+  "active_user_revalidation": "implemented",
+  "stale_role_claim_rejection": "implemented",
+  "membership_role_sync": "implemented",
+  "real_guest_http": "pass",
+  "viewer_denials_20x": {
+    "GET /users": "20/20",
+    "POST /users": "20/20",
+    "PATCH /users/{guest_id}": "20/20"
+  }
+}

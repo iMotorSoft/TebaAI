@@ -26,10 +26,38 @@ test("home communicates the investigative positioning and verifiable evidence", 
 
 test("home metadata uses the exclusive product identity", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveTitle("Breslov Research — Investigación sobre las fuentes del Rebe Najmán");
-  await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /citas verificables, referencias y vínculos entre obras/);
+  const title = "Breslov Research — Fuentes verificables del Rebe Najmán";
+  const description = "Investigación documental en español, inglés y hebreo con citas y fuentes verificables.";
+  const socialImage = "https://breslov.tebaai.live/breslov/breslov-social-share.jpg";
+  const socialImageAlt = "Sendero contemplativo entre árboles y un valle iluminado al amanecer";
+
+  await expect(page).toHaveTitle(title);
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", description);
   await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute("content", "Breslov Research");
+  await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", title);
+  await expect(page.locator('meta[property="og:description"]')).toHaveAttribute("content", description);
+  await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", "https://breslov.tebaai.live/");
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", socialImage);
+  await expect(page.locator('meta[property="og:image:secure_url"]')).toHaveAttribute("content", socialImage);
+  await expect(page.locator('meta[property="og:image:type"]')).toHaveAttribute("content", "image/jpeg");
+  await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute("content", "1200");
+  await expect(page.locator('meta[property="og:image:height"]')).toHaveAttribute("content", "630");
+  await expect(page.locator('meta[property="og:image:alt"]')).toHaveAttribute("content", socialImageAlt);
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute("content", "summary_large_image");
+  await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute("content", title);
+  await expect(page.locator('meta[name="twitter:description"]')).toHaveAttribute("content", description);
+  await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute("content", socialImage);
+  await expect(page.locator('meta[name="twitter:image:alt"]')).toHaveAttribute("content", socialImageAlt);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://breslov.tebaai.live/");
+  await expect(page.locator('meta[property="og:title"]')).toHaveCount(1);
+  await expect(page.locator('meta[property="og:description"]')).toHaveCount(1);
+  await expect(page.locator('meta[property="og:image"]')).toHaveCount(1);
+  await expect(page.locator('meta[property="og:url"]')).toHaveCount(1);
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveCount(1);
+  await expect(page.locator('meta[name="twitter:image"]')).toHaveCount(1);
+  await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
+  expect(socialImage).toMatch(/^https:\/\//);
+  expect(socialImage).not.toMatch(/localhost|127\.0\.0\.1/);
   await expect(page.locator("h1")).toHaveCount(1);
 });
 

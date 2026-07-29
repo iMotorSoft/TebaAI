@@ -4,13 +4,27 @@ import "../assets/app.css";
 interface Props {
   title?: string;
   description?: string;
+  canonicalURL?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  socialImage?: string;
+  socialImageAlt?: string;
 }
 
 const {
-  title = "Breslov Research — Investigación de fuentes y conceptos en la literatura Breslov",
-  description = "Herramienta de investigación para localizar conceptos, citas y relaciones en obras de Breslov, con referencias verificables en español, inglés y hebreo.",
+  title = "Breslov Research — Fuentes verificables del Rebe Najmán",
+  description = "Investigación documental en español, inglés y hebreo con citas y fuentes verificables.",
+  canonicalURL,
+  ogTitle = title,
+  ogDescription = description,
+  socialImage = "https://breslov.tebaai.live/breslov/breslov-social-share.jpg",
+  socialImageAlt = "Sendero contemplativo entre árboles y un valle iluminado al amanecer",
 } = Astro.props;
-const canonical = new URL(Astro.url.pathname, "https://breslov.tebaai.live");
+const canonicalPath = Astro.url.pathname.replace(/\/+$/, "") === "/breslov" ? "/" : Astro.url.pathname;
+const canonical = canonicalURL
+  ? new URL(canonicalURL)
+  : new URL(canonicalPath, "https://breslov.tebaai.live");
+const socialImageUrl = new URL(socialImage, "https://breslov.tebaai.live");
 ---
 
 <!doctype html>
@@ -22,13 +36,22 @@ const canonical = new URL(Astro.url.pathname, "https://breslov.tebaai.live");
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Breslov Research" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:secure_url" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={socialImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <title>{title}</title>
   </head>
   <body>

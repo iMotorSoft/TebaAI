@@ -45,7 +45,7 @@ class TestExpectedExports:
             assert globalVar.POSTGRES_ENABLED is False
             assert globalVar.POSTGRES_HOST == "127.0.0.1"
             assert globalVar.POSTGRES_PORT == 5432
-            assert globalVar.POSTGRES_DB == ""
+            assert globalVar.POSTGRES_DB == "tebaai"
             assert globalVar.POSTGRES_USER == ""
             assert isinstance(globalVar.POSTGRES_DSN, str)
             assert isinstance(globalVar.POSTGRES_DSN_DISPLAY, str)
@@ -86,14 +86,16 @@ class TestExpectedExports:
         expected = {
             # Runtime
             "SETTINGS", "SERVICE_NAME", "SERVICE_VERSION", "ENV", "DEBUG",
-            "DEFAULT_LANGUAGE", "SUPPORTED_LANGUAGES",
+            "TEBAAI_ENV", "DEFAULT_LANGUAGE", "SUPPORTED_LANGUAGES",
             # PostgreSQL
             "POSTGRES_ENABLED", "POSTGRES_HOST", "POSTGRES_PORT",
             "POSTGRES_DB", "POSTGRES_USER",
             "POSTGRES_DSN", "POSTGRES_DSN_DISPLAY",
+            "TEBAAI_DB_NAME", "TEBAAI_DB_URL", "TEBAAI_DB_URL_PSQL",
+            "get_tebaai_db_url", "get_tebaai_db_url_psql",
             "POSTGRES_MIN_POOL_SIZE", "POSTGRES_MAX_POOL_SIZE",
             "POSTGRES_CONNECT_TIMEOUT_SECONDS",             "POSTGRES_APPLICATION_NAME",
-            "POSTGRES_AUTO_MIGRATE",
+            "POSTGRES_AUTO_MIGRATE", "TEBAAI_POSTGRES_AUTO_MIGRATE",
             # Milvus
             "MILVUS_ENABLED", "MILVUS_HOST", "MILVUS_PORT",
             "MILVUS_URI", "MILVUS_CONNECT_TIMEOUT_SECONDS",
@@ -103,7 +105,10 @@ class TestExpectedExports:
             # Auth
             "AUTH_ENABLED", "AUTH_JWT_ALGORITHM",
             "AUTH_ACCESS_TOKEN_TTL_MINUTES", "AUTH_REFRESH_TOKEN_TTL_DAYS",
-            "AUTH_ISSUER", "AUTH_AUDIENCE",
+            "AUTH_ISSUER", "AUTH_AUDIENCE", "TEBAAI_AUTH_PEPPER",
+            "TEBAAI_JWT_SECRET", "get_tebaai_auth_pepper",
+            "get_tebaai_jwt_secret", "is_tebaai_production",
+            "get_tebaai_config_summary",
         }
         for name in expected:
             assert hasattr(globalVar, name), f"Missing export: {name}"
@@ -116,3 +121,36 @@ class TestFreshImport:
         importlib.reload(globalVar)
         v2 = globalVar.SERVICE_NAME
         assert v1 == v2
+
+
+class TestSafeConfigurationSummary:
+    def test_summary_contains_only_presence_flags(self) -> None:
+        from core.config import get_settings
+
+        env = {
+            "DB_PG_IP": "localhost",
+            "DB_PG_PORT": "5432",
+            "DB_PG_USER": "summary-user",
+            "DB_PG_PASS": "database-secret-value",
+            "TEBAAI_AUTH_PEPPER": "pepper-secret-value",
+            "TEBAAI_JWT_SECRET": "jwt-secret-value",
+        }
+        try:
+            with patch.dict(os.environ, env, clear=True):
+                get_settings.cache_clear()
+                import globalVar
+
+                importlib.reload(globalVar)
+                rendered = repr(globalVar.get_tebaai_config_summary())
+                assert "database_password_configured" in rendered
+                assert "auth_pepper_configured" in rendered
+                assert "jwt_secret_configured" in rendered
+                assert "database-secret-value" not in rendered
+                assert "pepper-secret-value" not in rendered
+                assert "jwt-secret-value" not in rendered
+                assert "postgresql://" not in rendered
+        finally:
+            get_settings.cache_clear()
+            import globalVar
+
+            importlib.reload(globalVar)

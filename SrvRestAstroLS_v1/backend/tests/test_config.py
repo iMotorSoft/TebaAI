@@ -81,7 +81,12 @@ class TestBooleanParsing:
 
 class TestIntegerParsing:
     def test_port_parsing(self) -> None:
-        with patch.dict(os.environ, _env(POSTGRES_PORT="7000"), clear=True):
+        with patch.dict(os.environ, {
+            "DB_PG_IP": "localhost",
+            "DB_PG_PORT": "7000",
+            "DB_PG_USER": "user",
+            "DB_PG_PASS": "password",
+        }, clear=True):
             s = get_settings()
         assert s.postgres_port == 7000
 
@@ -148,14 +153,13 @@ class TestAutoMigrate:
 
 class TestPostgresEnabled:
     def test_individual_fields(self) -> None:
-        env = _env(
-            POSTGRES_ENABLED="true",
-            POSTGRES_HOST="pg.example.com",
-            POSTGRES_PORT="5433",
-            POSTGRES_DB="tebaai",
-            POSTGRES_USER="admin",
-            POSTGRES_PASSWORD="s3cret",
-        )
+        env = {
+            "DB_PG_IP": "pg.example.com",
+            "DB_PG_PORT": "5433",
+            "DB_PG_USER": "admin",
+            "DB_PG_PASS": "s3cret",
+            "TEBAAI_DB_NAME": "tebaai",
+        }
         with patch.dict(os.environ, env, clear=True):
             s = get_settings()
         assert s.postgres_enabled is True
@@ -164,40 +168,38 @@ class TestPostgresEnabled:
         assert s.postgres_db == "tebaai"
         assert s.postgres_user == "admin"
 
-    def test_dsn_precedence(self) -> None:
+    def test_legacy_dsn_is_not_a_connection_source(self) -> None:
         env = _env(
-            POSTGRES_ENABLED="true",
-            POSTGRES_DSN="postgresql://dsn_user:dsn_pass@dsn_host:5555/dsn_db",
+            POSTGRES_DSN="postgresql://dsn_user:dsn_pass@dsn_host:5555/dsn_db"
         )
         with patch.dict(os.environ, env, clear=True):
             s = get_settings()
-        assert s.postgres_dsn == "postgresql://dsn_user:dsn_pass@dsn_host:5555/dsn_db"
-        assert s.postgres_resolved_dsn() == "postgresql://dsn_user:dsn_pass@dsn_host:5555/dsn_db"
+        assert s.postgres_enabled is False
+        assert s.postgres_resolved_dsn() == ""
 
     def test_resolved_dsn_from_fields(self) -> None:
-        env = _env(
-            POSTGRES_ENABLED="true",
-            POSTGRES_HOST="local.host",
-            POSTGRES_PORT="7777",
-            POSTGRES_DB="mydb",
-            POSTGRES_USER="myuser",
-            POSTGRES_PASSWORD="mypass",
-        )
+        env = {
+            "DB_PG_IP": "local.host",
+            "DB_PG_PORT": "7777",
+            "DB_PG_USER": "myuser",
+            "DB_PG_PASS": "mypass",
+            "TEBAAI_DB_NAME": "mydb",
+        }
         with patch.dict(os.environ, env, clear=True):
             s = get_settings()
         assert s.postgres_resolved_dsn() == "postgresql://myuser:mypass@local.host:7777/mydb"
 
     def test_missing_fields_raises(self) -> None:
-        env = _env(
-            POSTGRES_ENABLED="true",
-            POSTGRES_DB="",
-            POSTGRES_USER="",
-        )
+        env = {
+            "DB_PG_IP": "localhost",
+            "DB_PG_USER": "",
+            "DB_PG_PASS": "",
+        }
         with patch.dict(os.environ, env, clear=True), pytest.raises(ValueError):
             get_settings()
 
-    def test_missing_dsn_and_fields_raises(self) -> None:
-        env = _env(POSTGRES_ENABLED="true")
+    def test_partial_general_config_raises(self) -> None:
+        env = {"DB_PG_IP": "localhost"}
         with patch.dict(os.environ, env, clear=True), pytest.raises(ValueError):
             get_settings()
 
@@ -217,14 +219,13 @@ class TestDSNSanitize:
         assert sanitize_dsn("") == ""
 
     def test_dsn_display(self) -> None:
-        env = _env(
-            POSTGRES_ENABLED="true",
-            POSTGRES_HOST="h",
-            POSTGRES_PORT="1",
-            POSTGRES_DB="d",
-            POSTGRES_USER="u",
-            POSTGRES_PASSWORD="secret123",
-        )
+        env = {
+            "DB_PG_IP": "h",
+            "DB_PG_PORT": "1",
+            "DB_PG_USER": "u",
+            "DB_PG_PASS": "secret123",
+            "TEBAAI_DB_NAME": "d",
+        }
         with patch.dict(os.environ, env, clear=True):
             s = get_settings()
         display = s.postgres_dsn_display()
@@ -293,19 +294,19 @@ class TestSecretsHidden:
 
 class TestCache:
     def test_get_settings_is_cached(self) -> None:
-        with patch.dict(os.environ, _env(ENV="test"), clear=True):
+        with patch.dict(os.environ, _env(ENV="development"), clear=True):
             s1 = get_settings()
             s2 = get_settings()
         assert s1 is s2
 
     def test_cache_clear(self) -> None:
-        with patch.dict(os.environ, _env(ENV="test1"), clear=True):
+        with patch.dict(os.environ, _env(ENV="development"), clear=True):
             s1 = get_settings()
         get_settings.cache_clear()
-        with patch.dict(os.environ, _env(ENV="test2"), clear=True):
+        with patch.dict(os.environ, _env(ENV="staging"), clear=True):
             s2 = get_settings()
         assert s1 is not s2
-        assert s2.env == "test2"
+        assert s2.env == "staging"
 
 
 # ── Test: No side effects ───────────────────────────────────────────
@@ -316,12 +317,12 @@ class TestNoSideEffects:
         assert True
 
     def test_postgres_dsn_display_no_secret(self) -> None:
-        env = _env(
-            POSTGRES_ENABLED="true",
-            POSTGRES_DB="secretdb",
-            POSTGRES_USER="secretuser",
-            POSTGRES_PASSWORD="s3cret!",
-        )
+        env = {
+            "DB_PG_IP": "localhost",
+            "DB_PG_USER": "secretuser",
+            "DB_PG_PASS": "s3cret!",
+            "TEBAAI_DB_NAME": "secretdb",
+        }
         with patch.dict(os.environ, env, clear=True):
             s = get_settings()
         display = s.postgres_dsn_display()

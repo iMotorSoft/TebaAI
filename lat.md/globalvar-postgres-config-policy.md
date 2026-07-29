@@ -1,56 +1,99 @@
 # TebaAI — globalVar PostgreSQL Config Policy
 
 Estado: accepted.
-Fecha: 2026-06-30.
+
+Fecha: 2026-07-28.
 
 ## Contexto
 
-TebaAI sigue la convención iMotorSoft: `globalVar.py` como fachada única de configuración.
-PostgreSQL se resuelve desde variables `DB_PG_*` estándar del entorno local.
+TebaAI usa una sola convención de configuración PostgreSQL en todos los
+entornos.
 
-## Fuente de configuración
+`globalVar.py` es la fachada estable y `core/config.py` es la única capa que
+lee variables de entorno. Cada servidor define valores distintos bajo los
+mismos nombres.
+
+## Fuente canónica
+
+La conexión PostgreSQL se resuelve exclusivamente desde:
 
 | Variable | Propósito | Default |
-|----------|-----------|---------|
-| `DB_PG_IP` | Host PostgreSQL | `127.0.0.1` |
+| --- | --- | --- |
+| `DB_PG_IP` | Host PostgreSQL | obligatorio al configurar PostgreSQL |
 | `DB_PG_PORT` | Puerto PostgreSQL | `5432` |
-| `DB_PG_USER` | Usuario PostgreSQL | — |
-| `DB_PG_PASS` | Password PostgreSQL | — |
+| `DB_PG_USER` | Usuario PostgreSQL | obligatorio |
+| `DB_PG_PASS` | Password PostgreSQL | obligatorio, sin fallback |
+| `TEBAAI_DB_NAME` | Base exclusiva de TebaAI | `tebaai` |
 
-La base de datos del proyecto TebaAI es siempre `tebaai`.
+`TEBAAI_POSTGRES_HOST`, `TEBAAI_POSTGRES_DB`, `TEBAAI_POSTGRES_USER`,
+`TEBAAI_POSTGRES_PASSWORD` y `TEBAAI_POSTGRES_DSN` ya no son fuentes de
+conexión. Se evita así mantener dos configuraciones activas o aceptar un DSN
+arbitrario.
 
-## Reglas de resolución
+La configuración operativa adicional usa:
 
-Las reglas centralizan la resolución PostgreSQL en `core/config.py`.
+- `TEBAAI_ENV`: `development`, `staging` o `production`; se normalizan también
+  `dev`, `stg` y `prod`;
+- `TEBAAI_AUTH_PEPPER`;
+- `TEBAAI_JWT_SECRET`;
+- `TEBAAI_POSTGRES_AUTO_MIGRATE`;
+- `TEBAAI_E2E_GUEST_PASSWORD`.
 
-1. `globalVar.py` expone `POSTGRES_ENABLED`, `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_DSN`, `POSTGRES_DSN_DISPLAY` y demás constantes PostgreSQL.
-2. La resolución ocurre en `core/config.py` vía `AppSettings._validate_postgres()`.
-3. Si `TEBAAI_POSTGRES_*` están definidas, tienen prioridad (override explícito).
-4. Si no hay `TEBAAI_POSTGRES_*`, se intenta resolver desde `DB_PG_*`.
-5. Si `DB_PG_USER` y `DB_PG_PASS` están presentes, `postgres_enabled=True` y se construye DSN con db=`tebaai`.
-6. Si no hay credenciales disponibles, `postgres_enabled=False`.
-7. Ningún script de library lee variables de entorno directamente.
+`TEBAAI_AUTH_PASSWORD_PEPPER`, `TEBAAI_AUTH_JWT_SECRET` y
+`TEBAAI_GUEST_PASSWORD` permanecen sólo como aliases transitorios de
+compatibilidad para consumidores existentes.
 
-## Seguridad
+## URLs derivadas
 
-La configuración sanitiza secretos antes de exponer valores operativos.
+Las credenciales se codifican como componentes URL con escaping estricto. No
+se concatenan valores sin codificar.
 
-- `core/config.py` es la única fuente que lee variables de entorno.
-- `POSTGRES_DSN_DISPLAY` tiene el password sanitizado.
-- No se imprimen passwords ni DSN completos.
-- Los secretos se representan como `SecretStr`.
+`globalVar.py` expone:
 
-## Scripts
+- `TEBAAI_DB_URL`: `postgresql+psycopg://...`, para SQLAlchemy con Psycopg 3;
+- `TEBAAI_DB_URL_PSQL`: `postgresql://...`, para Psycopg, `psql`, `pg_dump` y
+  `pg_restore`;
+- `POSTGRES_DSN`: alias runtime de `TEBAAI_DB_URL_PSQL`, porque el backend usa
+  directamente Psycopg 3;
+- `POSTGRES_DSN_DISPLAY`: variante sanitizada sin password.
 
-Todos los scripts de library usan `from core.config import get_settings` y resuelven el pool vía `infrastructure/postgres/pool.py` que importa `POSTGRES_DSN` desde `globalVar`.
+Helpers canónicos:
 
-## Tests
+- `get_tebaai_db_url()`;
+- `get_tebaai_db_url_psql()`;
+- `get_tebaai_auth_pepper()`;
+- `get_tebaai_jwt_secret()`;
+- `is_tebaai_production()`;
+- `get_tebaai_config_summary()`.
 
-Los tests cubren resolución, overrides y sanitización de configuración.
+No se imprime ninguna URL operativa. Para herramientas CLI se obtiene la URL
+desde el proceso y se entrega directamente al cliente, sin registrarla en
+logs, historial ni documentación.
 
-- `test_globalvar_postgres_config.py` (12 tests) cubre DB_PG_* resolution, defaults, override y sanitización.
-- `test_global_var.py` cubre la fachada `globalVar.py`.
+## Validación
 
-## Servicios permanentes
+La configuración falla temprano ante valores incompletos o inseguros.
 
-PostgreSQL es un servicio permanente. No iniciar, detener, reiniciar ni migrar sin instrucción explícita.
+- host, usuario y password son obligatorios cuando existe cualquier `DB_PG_*`;
+- el puerto debe ser entero entre 1 y 65535;
+- el nombre de base usa un identificador acotado y rechaza explícitamente
+  `postgres`, `team360` y `v360`;
+- no existe fallback hardcodeado de credenciales;
+- un entorno inválido falla temprano;
+- producción requiere `TEBAAI_JWT_SECRET`, rechaza valores débiles conocidos y
+  exige `TEBAAI_POSTGRES_AUTO_MIGRATE=false`;
+- un pepper vacío se conserva como decisión explícita compatible con hashes
+  históricos; este gate no modifica hashes ni habilita pepper automáticamente.
+
+## Seguridad y lifecycle
+
+Los secretos se representan con `SecretStr`. El resumen de arranque informa
+únicamente presencia, entorno, host configurado, puerto, base y estado de
+auto-migración. Nunca contiene password, pepper, JWT, DSN ni parámetros
+sensibles.
+
+`globalVar.py` no crea conexiones ni pools. El pool Psycopg 3 permanece en el
+lifecycle Litestar y consume `POSTGRES_DSN`.
+
+PostgreSQL es un servicio permanente. No iniciar, detener, reiniciar,
+reconfigurar ni migrar sin instrucción explícita.

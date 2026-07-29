@@ -1,13 +1,22 @@
 from __future__ import annotations
 
+import logging
+
 from litestar import Litestar
 
-from globalVar import POSTGRES_AUTO_MIGRATE, POSTGRES_ENABLED
+from globalVar import (
+    POSTGRES_AUTO_MIGRATE,
+    POSTGRES_ENABLED,
+    get_tebaai_config_summary,
+)
 from infrastructure.postgres.pool import close_pool, create_pool_from_settings, open_pool
 from infrastructure.postgres.migrations import run_migrations
 
+logger = logging.getLogger(__name__)
+
 
 async def on_startup(app: Litestar) -> None:
+    logger.info("TebaAI configuration: %s", get_tebaai_config_summary())
     if not POSTGRES_ENABLED:
         return
 

@@ -1,12 +1,24 @@
 from __future__ import annotations
 
 import os
+import re
 from functools import lru_cache
-from typing import Any
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import quote, urlparse, urlunparse
 
-from pydantic import SecretStr, field_validator, model_validator
+from pydantic import AliasChoices, Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+_CANONICAL_ENVIRONMENTS = {
+    "dev": "development",
+    "development": "development",
+    "stg": "staging",
+    "staging": "staging",
+    "prod": "production",
+    "production": "production",
+}
+_FORBIDDEN_DATABASE_NAMES = {"postgres", "team360", "v360"}
+_DATABASE_NAME_PATTERN = re.compile(r"^[A-Za-z_][A-Za-z0-9_$-]*$")
+_WEAK_JWT_SECRETS = {"change_me", "change_me_dev_only", "dev", "secret"}
 
 
 def sanitize_dsn(dsn: str) -> str:
@@ -16,8 +28,10 @@ def sanitize_dsn(dsn: str) -> str:
         parsed = urlparse(dsn)
         if parsed.password:
             netloc = parsed.hostname or ""
+            if ":" in netloc:
+                netloc = f"[{netloc}]"
             if parsed.port:
-                netloc = f"{parsed.hostname}:{parsed.port}"
+                netloc = f"{netloc}:{parsed.port}"
             if parsed.username:
                 netloc = f"{parsed.username}@{netloc}"
             parsed = parsed._replace(netloc=netloc)
@@ -36,6 +50,10 @@ class AppSettings(BaseSettings):
 
     # ── Runtime ─────────────────────────────────────────────────
     env: str = "development"
+    db_name: str = Field(
+        default="tebaai",
+        validation_alias=AliasChoices("TEBAAI_DB_NAME"),
+    )
     debug: bool = False
     service_name: str = "tebaai-backend"
     service_version: str = "0.1.0"
@@ -49,7 +67,6 @@ class AppSettings(BaseSettings):
     postgres_db: str = ""
     postgres_user: str = ""
     postgres_password: SecretStr = SecretStr("")
-    postgres_dsn: str = ""
     postgres_min_pool_size: int = 1
     postgres_max_pool_size: int = 10
     postgres_connect_timeout_seconds: int = 10
@@ -103,14 +120,60 @@ class AppSettings(BaseSettings):
 
     # ── Auth ────────────────────────────────────────────────────
     auth_enabled: bool = False
-    auth_jwt_secret: SecretStr = SecretStr("")
+    jwt_secret: SecretStr = Field(
+        default=SecretStr(""),
+        validation_alias=AliasChoices(
+            "TEBAAI_JWT_SECRET",
+            "TEBAAI_AUTH_JWT_SECRET",
+        ),
+    )
     auth_jwt_algorithm: str = "HS256"
     auth_access_token_ttl_minutes: int = 15
     auth_refresh_token_ttl_days: int = 30
     auth_issuer: str = "tebaai-api"
     auth_audience: str = "tebaai-web"
-    auth_password_pepper: SecretStr = SecretStr("")
-    guest_password: SecretStr = SecretStr("")
+    auth_pepper: SecretStr = Field(
+        default=SecretStr(""),
+        validation_alias=AliasChoices(
+            "TEBAAI_AUTH_PEPPER",
+            "TEBAAI_AUTH_PASSWORD_PEPPER",
+        ),
+    )
+    e2e_guest_password: SecretStr = Field(
+        default=SecretStr(""),
+        validation_alias=AliasChoices(
+            "TEBAAI_E2E_GUEST_PASSWORD",
+            "TEBAAI_GUEST_PASSWORD",
+        ),
+    )
+
+    @field_validator("env", mode="before")
+    @classmethod
+    def _normalize_environment(cls, value: str) -> str:
+        normalized = str(value).strip().lower()
+        try:
+            return _CANONICAL_ENVIRONMENTS[normalized]
+        except KeyError as exc:
+            allowed = ", ".join(sorted(_CANONICAL_ENVIRONMENTS))
+            raise ValueError(
+                f"Invalid TEBAAI_ENV. Expected one of: {allowed}."
+            ) from exc
+
+    @field_validator("db_name", mode="before")
+    @classmethod
+    def _validate_database_name(cls, value: str) -> str:
+        name = str(value).strip()
+        if not name:
+            raise ValueError("TEBAAI_DB_NAME must not be empty.")
+        if not _DATABASE_NAME_PATTERN.fullmatch(name):
+            raise ValueError(
+                "TEBAAI_DB_NAME contains unsupported characters."
+            )
+        if name.casefold() in _FORBIDDEN_DATABASE_NAMES:
+            raise ValueError(
+                "TEBAAI_DB_NAME points to a database reserved for another purpose."
+            )
+        return name
 
     @field_validator("supported_languages", mode="before")
     @classmethod
@@ -120,40 +183,72 @@ class AppSettings(BaseSettings):
 
     @model_validator(mode="after")
     def _validate_postgres(self) -> AppSettings:
-        if not self.postgres_enabled:
-            # Try to resolve from DB_PG_* (iMotorSoft standard local vars)
-            # when no TEBAAI_POSTGRES_* explicit config was provided.
-            if not self.postgres_user and not self.postgres_db:
-                pg_user = os.environ.get("DB_PG_USER", "").strip()
-                pg_pass = os.environ.get("DB_PG_PASS", "").strip()
-                if pg_user or pg_pass:
-                    self.postgres_host = os.environ.get("DB_PG_IP", "127.0.0.1").strip() or "127.0.0.1"
-                    port_str = os.environ.get("DB_PG_PORT", "5432").strip()
-                    self.postgres_port = int(port_str) if port_str.isdigit() else 5432
-                    self.postgres_db = "tebaai"
-                    self.postgres_user = pg_user
-                    self.postgres_password = SecretStr(pg_pass)
-                    self.postgres_enabled = True
-            if not self.postgres_enabled:
-                return self
-        if self.postgres_dsn:
+        raw = {
+            name: os.environ.get(name)
+            for name in ("DB_PG_IP", "DB_PG_PORT", "DB_PG_USER", "DB_PG_PASS")
+        }
+        if all(value is None for value in raw.values()):
+            self.postgres_enabled = False
+            self.postgres_host = "127.0.0.1"
+            self.postgres_port = 5432
+            self.postgres_db = self.db_name
+            self.postgres_user = ""
+            self.postgres_password = SecretStr("")
+            if self.is_production:
+                raise ValueError(
+                    "Production PostgreSQL configuration requires "
+                    "DB_PG_IP, DB_PG_USER and DB_PG_PASS."
+                )
             return self
-        if not self.postgres_db or not self.postgres_user:
+
+        host = (raw["DB_PG_IP"] or "").strip()
+        user = raw["DB_PG_USER"] or ""
+        password = raw["DB_PG_PASS"] or ""
+        port_text = (raw["DB_PG_PORT"] or "5432").strip()
+
+        if not host:
+            raise ValueError("DB_PG_IP is required when PostgreSQL is configured.")
+        if any(char.isspace() for char in host) or any(
+            char in host for char in "/?#@"
+        ):
+            raise ValueError("DB_PG_IP is not a valid host or IP address.")
+        if not user:
+            raise ValueError("DB_PG_USER is required when PostgreSQL is configured.")
+        if not password:
             raise ValueError(
-                "PostgreSQL is enabled but missing required fields. "
-                "Set TEBAAI_POSTGRES_DSN / TEBAAI_POSTGRES_{DB,USER,PASSWORD} "
-                "or ensure DB_PG_USER and DB_PG_PASS are available."
+                "DB_PG_PASS is required when PostgreSQL is configured; "
+                "no password fallback is available."
             )
+        try:
+            port = int(port_text)
+        except ValueError as exc:
+            raise ValueError("DB_PG_PORT must be an integer.") from exc
+        if not 1 <= port <= 65535:
+            raise ValueError("DB_PG_PORT must be between 1 and 65535.")
+
+        self.postgres_enabled = True
+        self.postgres_host = host.removeprefix("[").removesuffix("]")
+        self.postgres_port = port
+        self.postgres_db = self.db_name
+        self.postgres_user = user
+        self.postgres_password = SecretStr(password)
         return self
 
     @model_validator(mode="after")
     def _validate_auth(self) -> AppSettings:
-        if not self.auth_enabled:
-            return self
-        if not self.auth_jwt_secret.get_secret_value():
+        jwt_secret = self.jwt_secret.get_secret_value()
+        if self.is_production and not jwt_secret:
+            raise ValueError("TEBAAI_JWT_SECRET is required in production.")
+        if self.is_production and jwt_secret.strip().casefold() in _WEAK_JWT_SECRETS:
+            raise ValueError("TEBAAI_JWT_SECRET is not safe for production.")
+        if self.auth_enabled and not jwt_secret:
             raise ValueError(
                 "Auth is enabled (TEBAAI_AUTH_ENABLED=true) but "
-                "TEBAAI_AUTH_JWT_SECRET is not set."
+                "TEBAAI_JWT_SECRET is not set."
+            )
+        if self.is_production and self.postgres_auto_migrate:
+            raise ValueError(
+                "TEBAAI_POSTGRES_AUTO_MIGRATE must be false in production."
             )
         return self
 
@@ -182,12 +277,25 @@ class AppSettings(BaseSettings):
     # ── Derived accessors ───────────────────────────────────────
 
     def postgres_resolved_dsn(self) -> str:
-        if self.postgres_dsn:
-            return self.postgres_dsn
+        """Return the canonical Psycopg/psql PostgreSQL URL."""
+        return self._build_postgres_url("postgresql")
+
+    def sqlalchemy_postgres_url(self) -> str:
+        """Return the canonical SQLAlchemy URL using the Psycopg 3 dialect."""
+        return self._build_postgres_url("postgresql+psycopg")
+
+    def _build_postgres_url(self, scheme: str) -> str:
+        if not self.postgres_enabled:
+            return ""
+        user = quote(self.postgres_user, safe="")
         pw = self.postgres_password.get_secret_value()
+        password = quote(pw, safe="")
+        host = self.postgres_host
+        if ":" in host:
+            host = f"[{host}]"
         return (
-            f"postgresql://{self.postgres_user}:{pw}"
-            f"@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
+            f"{scheme}://{user}:{password}"
+            f"@{host}:{self.postgres_port}/{quote(self.postgres_db, safe='')}"
         )
 
     def postgres_dsn_display(self) -> str:
@@ -203,7 +311,22 @@ class AppSettings(BaseSettings):
 
     @property
     def is_production(self) -> bool:
-        return self.env.strip().lower() == "production"
+        return self.env == "production"
+
+    @property
+    def auth_jwt_secret(self) -> SecretStr:
+        """Compatibility accessor for existing auth consumers."""
+        return self.jwt_secret
+
+    @property
+    def auth_password_pepper(self) -> SecretStr:
+        """Compatibility accessor for existing password consumers."""
+        return self.auth_pepper
+
+    @property
+    def guest_password(self) -> SecretStr:
+        """Compatibility accessor for the guest provisioning script."""
+        return self.e2e_guest_password
 
 
 @lru_cache(maxsize=1)

@@ -1,175 +1,257 @@
-"""Tests for PostgreSQL config resolution from DB_PG_* environment variables."""
+"""Canonical TebaAI configuration tests for DB_PG_* and TEBAAI_* variables."""
 
 from __future__ import annotations
 
 import os
 from unittest.mock import patch
+from urllib.parse import unquote, urlparse
 
 import pytest
+from pydantic import ValidationError
 
 from core.config import get_settings
 
 
-def _clear_settings_cache():
+def _clear_settings_cache() -> None:
     get_settings.cache_clear()
 
 
-class TestPostgresConfigFromDBPG:
-    def setup_method(self):
+def _db_env(**overrides: str) -> dict[str, str]:
+    env = {
+        "DB_PG_IP": "pg.example.com",
+        "DB_PG_PORT": "5432",
+        "DB_PG_USER": "tebaai-user",
+        "DB_PG_PASS": "tebaai-password",
+        "TEBAAI_DB_NAME": "tebaai",
+    }
+    env.update(overrides)
+    return env
+
+
+def _settings(env: dict[str, str]):
+    with patch.dict(os.environ, env, clear=True):
+        _clear_settings_cache()
+        return get_settings()
+
+
+class TestCanonicalPostgresConfig:
+    def setup_method(self) -> None:
         _clear_settings_cache()
 
-    def test_db_pg_resolves_dsn(self):
-        """DB_PG_* vars construct a working config for db=tebaai."""
-        with patch.dict(os.environ, {
-            "DB_PG_IP": "pg.example.com",
-            "DB_PG_PORT": "5432",
-            "DB_PG_USER": "testuser",
-            "DB_PG_PASS": "testpass",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            assert s.postgres_enabled is True
-            assert s.postgres_host == "pg.example.com"
-            assert s.postgres_port == 5432
-            assert s.postgres_db == "tebaai"
-            assert s.postgres_user == "testuser"
-            dsn = s.postgres_resolved_dsn()
-            assert dsn.startswith("postgresql://")
-            assert "testuser" in dsn
-            assert "testpass" in dsn
+    def test_db_pg_resolves_both_urls(self) -> None:
+        settings = _settings(_db_env())
 
-    def test_db_pg_defaults_localhost(self):
-        """DB_PG_IP defaults to localhost when not set."""
-        with patch.dict(os.environ, {
-            "DB_PG_USER": "u",
-            "DB_PG_PASS": "p",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            assert s.postgres_host == "127.0.0.1"
-            assert s.postgres_port == 5432
-            assert s.postgres_db == "tebaai"
+        assert settings.postgres_enabled is True
+        assert settings.postgres_host == "pg.example.com"
+        assert settings.postgres_port == 5432
+        assert settings.postgres_db == "tebaai"
+        assert settings.postgres_user == "tebaai-user"
+        assert settings.sqlalchemy_postgres_url().startswith(
+            "postgresql+psycopg://"
+        )
+        assert settings.postgres_resolved_dsn().startswith("postgresql://")
 
-    def test_db_pg_port_defaults_5432(self):
-        """DB_PG_PORT defaults to 5432 when not set."""
-        with patch.dict(os.environ, {
-            "DB_PG_IP": "localhost",
-            "DB_PG_USER": "u",
-            "DB_PG_PASS": "p",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            assert s.postgres_port == 5432
+    def test_default_port_and_database_name(self) -> None:
+        env = _db_env()
+        env.pop("DB_PG_PORT")
+        env.pop("TEBAAI_DB_NAME")
 
-    def test_db_pg_port_from_env(self):
-        """DB_PG_PORT is parsed correctly."""
-        with patch.dict(os.environ, {
-            "DB_PG_PORT": "6543",
-            "DB_PG_USER": "u",
-            "DB_PG_PASS": "p",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            assert s.postgres_port == 6543
+        settings = _settings(env)
 
-    def test_no_credentials_disables_postgres(self):
-        """Without DB_PG_USER or DB_PG_PASS, postgres stays disabled."""
-        with patch.dict(os.environ, {}, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            assert s.postgres_enabled is False
-            assert s.postgres_db == ""
-            assert s.postgres_user == ""
+        assert settings.postgres_port == 5432
+        assert settings.postgres_db == "tebaai"
 
-    def test_empty_user_keeps_disabled(self):
-        """Empty DB_PG_USER string does not enable postgres."""
-        with patch.dict(os.environ, {
-            "DB_PG_USER": "",
-            "DB_PG_PASS": "",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            assert s.postgres_enabled is False
+    def test_special_characters_are_escaped_once(self) -> None:
+        settings = _settings(
+            _db_env(
+                DB_PG_USER="user@domain/name",
+                DB_PG_PASS="p@ss:word/#% value",
+            )
+        )
 
-    def test_tebaai_override_takes_precedence(self):
-        """TEBAAI_POSTGRES_HOST overrides DB_PG_IP when set."""
-        with patch.dict(os.environ, {
-            "TEBAAI_POSTGRES_HOST": "override-host",
-            "TEBAAI_POSTGRES_DB": "override_db",
-            "TEBAAI_POSTGRES_USER": "override_user",
-            "TEBAAI_POSTGRES_PASSWORD": "override_pass",
-            "DB_PG_IP": "pg-default",
-            "DB_PG_USER": "pg-user",
-            "DB_PG_PASS": "pg-pass",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            assert s.postgres_host == "override-host"
-            assert s.postgres_db == "override_db"
-            assert s.postgres_user == "override_user"
+        for url in (
+            settings.sqlalchemy_postgres_url(),
+            settings.postgres_resolved_dsn(),
+        ):
+            parsed = urlparse(url)
+            assert unquote(parsed.username or "") == "user@domain/name"
+            assert unquote(parsed.password or "") == "p@ss:word/#% value"
+            assert "%2540" not in url
 
-    def test_tebaai_enabled_stops_dbpg_fallback(self):
-        """When TEBAAI_POSTGRES_ENABLED=true, DB_PG_* fallback is skipped."""
-        with patch.dict(os.environ, {
-            "TEBAAI_POSTGRES_ENABLED": "true",
-            "TEBAAI_POSTGRES_HOST": "tebaai-host",
-            "TEBAAI_POSTGRES_DB": "tebaai_db",
-            "TEBAAI_POSTGRES_USER": "tebaai_user",
-            "TEBAAI_POSTGRES_PASSWORD": "tebaai_pass",
-            "DB_PG_IP": "ignored",
-            "DB_PG_USER": "ignored",
-            "DB_PG_PASS": "ignored",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            assert s.postgres_host == "tebaai-host"
-            assert s.postgres_db == "tebaai_db"
-            assert s.postgres_user == "tebaai_user"
+    @pytest.mark.parametrize("host", ["127.0.0.1", "localhost", "pg.internal"])
+    def test_valid_hosts(self, host: str) -> None:
+        assert _settings(_db_env(DB_PG_IP=host)).postgres_host == host
 
-    def test_dsn_sanitized_no_password(self):
-        """DSN display does not leak password."""
-        with patch.dict(os.environ, {
-            "DB_PG_USER": "secretuser",
-            "DB_PG_PASS": "supersecret",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            display = s.postgres_dsn_display()
-            assert "supersecret" not in display
-            assert "secretuser" in display
+    def test_ipv6_is_bracketed_in_urls(self) -> None:
+        settings = _settings(_db_env(DB_PG_IP="2001:db8::1"))
+        assert "@[2001:db8::1]:5432/" in settings.postgres_resolved_dsn()
 
-    def test_dsn_operational_contains_password(self):
-        """Operational DSN contains password for connection."""
-        with patch.dict(os.environ, {
-            "DB_PG_USER": "opuser",
-            "DB_PG_PASS": "oppass",
-        }, clear=True):
-            _clear_settings_cache()
-            dsn = get_settings().postgres_resolved_dsn()
-            assert dsn.startswith("postgresql://")
-            assert "opuser" in dsn
-            assert "oppass" in dsn
+    @pytest.mark.parametrize(
+        ("name", "value"),
+        [
+            ("DB_PG_IP", ""),
+            ("DB_PG_USER", ""),
+            ("DB_PG_PASS", ""),
+        ],
+    )
+    def test_required_db_values(self, name: str, value: str) -> None:
+        with pytest.raises(ValidationError):
+            _settings(_db_env(**{name: value}))
+
+    @pytest.mark.parametrize("port", ["invalid", "0", "65536", "-1"])
+    def test_invalid_ports(self, port: str) -> None:
+        with pytest.raises(ValidationError):
+            _settings(_db_env(DB_PG_PORT=port))
+
+    @pytest.mark.parametrize(
+        "name",
+        ["team360", "v360", "postgres", "bad/name", "bad name", "bad?query"],
+    )
+    def test_invalid_database_names(self, name: str) -> None:
+        with pytest.raises(ValidationError):
+            _settings(_db_env(TEBAAI_DB_NAME=name))
+
+    def test_legacy_postgres_connection_variables_are_not_a_source(self) -> None:
+        settings = _settings(
+            {
+                "TEBAAI_POSTGRES_ENABLED": "true",
+                "TEBAAI_POSTGRES_HOST": "legacy-host",
+                "TEBAAI_POSTGRES_DB": "legacy-db",
+                "TEBAAI_POSTGRES_USER": "legacy-user",
+                "TEBAAI_POSTGRES_PASSWORD": "legacy-password",
+            }
+        )
+        assert settings.postgres_enabled is False
+        assert settings.postgres_resolved_dsn() == ""
 
 
-class TestPostgresConfigDisplaySafety:
-    def test_password_not_in_repr(self):
-        """Password fields do not appear in repr()."""
-        with patch.dict(os.environ, {
-            "DB_PG_USER": "u",
-            "DB_PG_PASS": "should-not-appear",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            r = repr(s)
-            assert "should-not-appear" not in r
+class TestEnvironmentAndProductionGuards:
+    @pytest.mark.parametrize(
+        ("raw", "expected"),
+        [
+            ("dev", "development"),
+            ("development", "development"),
+            ("stg", "staging"),
+            ("staging", "staging"),
+            ("prod", "production"),
+            ("production", "production"),
+        ],
+    )
+    def test_environment_normalization(self, raw: str, expected: str) -> None:
+        env = _db_env(
+            TEBAAI_ENV=raw,
+            TEBAAI_JWT_SECRET="production-jwt-value",
+            TEBAAI_POSTGRES_AUTO_MIGRATE="false",
+        )
+        assert _settings(env).env == expected
 
-    def test_password_not_in_str(self):
-        """Password fields do not appear in str()."""
-        with patch.dict(os.environ, {
-            "DB_PG_USER": "u",
-            "DB_PG_PASS": "should-not-appear-either",
-        }, clear=True):
-            _clear_settings_cache()
-            s = get_settings()
-            r = str(s)
-            assert "should-not-appear-either" not in r
+    def test_invalid_environment_fails(self) -> None:
+        with pytest.raises(ValidationError):
+            _settings({"TEBAAI_ENV": "unknown"})
+
+    def test_production_requires_database(self) -> None:
+        with pytest.raises(ValidationError):
+            _settings(
+                {
+                    "TEBAAI_ENV": "production",
+                    "TEBAAI_JWT_SECRET": "production-jwt-value",
+                    "TEBAAI_POSTGRES_AUTO_MIGRATE": "false",
+                }
+            )
+
+    @pytest.mark.parametrize("secret", ["", "change_me", "dev", "secret"])
+    def test_production_rejects_missing_or_weak_jwt(self, secret: str) -> None:
+        with pytest.raises(ValidationError):
+            _settings(
+                _db_env(
+                    TEBAAI_ENV="production",
+                    TEBAAI_JWT_SECRET=secret,
+                    TEBAAI_POSTGRES_AUTO_MIGRATE="false",
+                )
+            )
+
+    def test_production_rejects_auto_migrate(self) -> None:
+        with pytest.raises(ValidationError):
+            _settings(
+                _db_env(
+                    TEBAAI_ENV="production",
+                    TEBAAI_JWT_SECRET="production-jwt-value",
+                    TEBAAI_POSTGRES_AUTO_MIGRATE="true",
+                )
+            )
+
+    def test_production_accepts_explicit_safe_config(self) -> None:
+        settings = _settings(
+            _db_env(
+                TEBAAI_ENV="production",
+                TEBAAI_JWT_SECRET="production-jwt-value",
+                TEBAAI_POSTGRES_AUTO_MIGRATE="false",
+            )
+        )
+        assert settings.is_production is True
+        assert settings.postgres_auto_migrate is False
+
+
+class TestBooleanAndSecretCompatibility:
+    @pytest.mark.parametrize(
+        ("raw", "expected"),
+        [
+            ("true", True),
+            ("TRUE", True),
+            ("1", True),
+            ("yes", True),
+            ("on", True),
+            ("false", False),
+            ("FALSE", False),
+            ("0", False),
+            ("no", False),
+            ("off", False),
+        ],
+    )
+    def test_auto_migrate_boolean_values(self, raw: str, expected: bool) -> None:
+        settings = _settings(
+            _db_env(TEBAAI_POSTGRES_AUTO_MIGRATE=raw)
+        )
+        assert settings.postgres_auto_migrate is expected
+
+    def test_canonical_auth_variables_feed_compatibility_accessors(self) -> None:
+        settings = _settings(
+            {
+                "TEBAAI_AUTH_PEPPER": "pepper-value",
+                "TEBAAI_JWT_SECRET": "jwt-value",
+                "TEBAAI_E2E_GUEST_PASSWORD": "guest-value",
+            }
+        )
+        assert settings.auth_password_pepper.get_secret_value() == "pepper-value"
+        assert settings.auth_jwt_secret.get_secret_value() == "jwt-value"
+        assert settings.guest_password.get_secret_value() == "guest-value"
+
+    def test_legacy_auth_variable_names_remain_compatible(self) -> None:
+        settings = _settings(
+            {
+                "TEBAAI_AUTH_PASSWORD_PEPPER": "legacy-pepper",
+                "TEBAAI_AUTH_JWT_SECRET": "legacy-jwt",
+                "TEBAAI_GUEST_PASSWORD": "legacy-guest",
+            }
+        )
+        assert settings.auth_pepper.get_secret_value() == "legacy-pepper"
+        assert settings.jwt_secret.get_secret_value() == "legacy-jwt"
+        assert settings.e2e_guest_password.get_secret_value() == "legacy-guest"
+
+    def test_secrets_are_absent_from_repr_and_display_url(self) -> None:
+        env = _db_env(
+            DB_PG_PASS="database-secret",
+            TEBAAI_AUTH_PEPPER="pepper-secret",
+            TEBAAI_JWT_SECRET="jwt-secret-value",
+        )
+        settings = _settings(env)
+        rendered = repr(settings)
+        display = settings.postgres_dsn_display()
+
+        for secret in (
+            "database-secret",
+            "pepper-secret",
+            "jwt-secret-value",
+        ):
+            assert secret not in rendered
+            assert secret not in display

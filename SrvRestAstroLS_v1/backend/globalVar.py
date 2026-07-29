@@ -34,6 +34,7 @@ SETTINGS = get_settings()
 SERVICE_NAME: str = SETTINGS.service_name
 SERVICE_VERSION: str = SETTINGS.service_version
 ENV: str = SETTINGS.env
+TEBAAI_ENV: str = SETTINGS.env
 DEBUG: bool = SETTINGS.debug
 DEFAULT_LANGUAGE: str = SETTINGS.default_language
 SUPPORTED_LANGUAGES: list[str] = SETTINGS.supported_languages_list
@@ -46,11 +47,25 @@ POSTGRES_DB: str = SETTINGS.postgres_db
 POSTGRES_USER: str = SETTINGS.postgres_user
 POSTGRES_DSN: str = SETTINGS.postgres_resolved_dsn()
 POSTGRES_DSN_DISPLAY: str = SETTINGS.postgres_dsn_display()
+TEBAAI_DB_NAME: str = SETTINGS.db_name
+TEBAAI_DB_URL: str = SETTINGS.sqlalchemy_postgres_url()
+TEBAAI_DB_URL_PSQL: str = SETTINGS.postgres_resolved_dsn()
 POSTGRES_MIN_POOL_SIZE: int = SETTINGS.postgres_min_pool_size
 POSTGRES_MAX_POOL_SIZE: int = SETTINGS.postgres_max_pool_size
 POSTGRES_CONNECT_TIMEOUT_SECONDS: int = SETTINGS.postgres_connect_timeout_seconds
 POSTGRES_APPLICATION_NAME: str = SETTINGS.postgres_application_name
 POSTGRES_AUTO_MIGRATE: bool = SETTINGS.postgres_auto_migrate
+TEBAAI_POSTGRES_AUTO_MIGRATE: bool = SETTINGS.postgres_auto_migrate
+
+
+def get_tebaai_db_url() -> str:
+    """Return the escaped SQLAlchemy/Psycopg 3 database URL."""
+    return SETTINGS.sqlalchemy_postgres_url()
+
+
+def get_tebaai_db_url_psql() -> str:
+    """Return the escaped URL accepted by Psycopg and PostgreSQL CLI tools."""
+    return SETTINGS.postgres_resolved_dsn()
 
 # ── Milvus ───────────────────────────────────────────────────────
 MILVUS_ENABLED: bool = SETTINGS.milvus_enabled
@@ -105,8 +120,40 @@ BRESLOV_PRODUCTIVE_COLLECTION: str = SETTINGS.breslov_productive_collection
 
 # ── Auth ─────────────────────────────────────────────────────────
 AUTH_ENABLED: bool = SETTINGS.auth_enabled
+TEBAAI_AUTH_PEPPER = SETTINGS.auth_pepper
+TEBAAI_JWT_SECRET = SETTINGS.jwt_secret
 AUTH_JWT_ALGORITHM: str = SETTINGS.auth_jwt_algorithm
 AUTH_ACCESS_TOKEN_TTL_MINUTES: int = SETTINGS.auth_access_token_ttl_minutes
 AUTH_REFRESH_TOKEN_TTL_DAYS: int = SETTINGS.auth_refresh_token_ttl_days
 AUTH_ISSUER: str = SETTINGS.auth_issuer
 AUTH_AUDIENCE: str = SETTINGS.auth_audience
+
+
+def get_tebaai_auth_pepper() -> str:
+    """Return the configured auth pepper without logging or formatting it."""
+    return SETTINGS.auth_pepper.get_secret_value()
+
+
+def get_tebaai_jwt_secret() -> str:
+    """Return the configured JWT secret without logging or formatting it."""
+    return SETTINGS.jwt_secret.get_secret_value()
+
+
+def is_tebaai_production() -> bool:
+    return SETTINGS.is_production
+
+
+def get_tebaai_config_summary() -> dict[str, str | int | bool]:
+    """Return boot diagnostics that never contain secret values or DSNs."""
+    return {
+        "environment": TEBAAI_ENV,
+        "database_host_configured": POSTGRES_ENABLED and bool(POSTGRES_HOST),
+        "database_port": POSTGRES_PORT,
+        "database_name": TEBAAI_DB_NAME,
+        "database_user_configured": POSTGRES_ENABLED and bool(POSTGRES_USER),
+        "database_password_configured": POSTGRES_ENABLED
+        and bool(SETTINGS.postgres_password.get_secret_value()),
+        "auth_pepper_configured": bool(get_tebaai_auth_pepper()),
+        "jwt_secret_configured": bool(get_tebaai_jwt_secret()),
+        "postgres_auto_migrate": TEBAAI_POSTGRES_AUTO_MIGRATE,
+    }

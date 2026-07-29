@@ -1,0 +1,939 @@
+{
+  "questions": 22,
+  "simple_valid": 22,
+  "simple_with_evidence": 22,
+  "advanced_valid": 22,
+  "advanced_with_primary_evidence": 18,
+  "latency_ms": {
+    "simple_p50": 8762.56,
+    "simple_max": 13789.17,
+    "advanced_p50": 6771.6,
+    "advanced_max": 12520.38
+  },
+  "results": [
+    {
+      "question": "Relación sangre y habla",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-bde96c8957f87528",
+          "ev-7af91b0754199625",
+          "ev-6423079c6855c11f"
+        ],
+        "first_selected_source": {
+          "work": "KITZUR",
+          "pdf_page": 200,
+          "language": "es",
+          "evidence_id": "ev-bab24171455b389f"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 9852.76,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "no_evidence",
+        "answer_present": true,
+        "evidence_count": 46,
+        "primary_evidence_ids": [],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 8634.17,
+        "warnings": [
+          "ai_interpretation_fallback:ValueError",
+          "ai_render_rejected_grounding_validation",
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lmi-ba790e38-3a32-4b0c-9f75-bf6587b74345"
+        ]
+      }
+    },
+    {
+      "question": "salmo 19",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-2f2c163ee3aad4e4",
+          "ev-b383110d66e6925e",
+          "ev-5be5573459d106a6"
+        ],
+        "first_selected_source": {
+          "work": "La Potencia de la Plegaria",
+          "pdf_page": 353,
+          "language": "es",
+          "evidence_id": "ev-e8396c99395e1d7c"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 13597.63,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 19,
+        "primary_evidence_ids": [
+          "potencia_plegaria-0945631e2141"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 8923.84,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk"
+        ]
+      }
+    },
+    {
+      "question": "el término escorpión con qué está relacionado",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-b4b9fb20dbf919f5",
+          "ev-5645c3a4f3bdb01c",
+          "ev-ae8427293306270b"
+        ],
+        "first_selected_source": {
+          "work": "KITZUR",
+          "pdf_page": 326,
+          "language": "es",
+          "evidence_id": "ev-5645c3a4f3bdb01c"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 9887.46,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 7,
+        "primary_evidence_ids": [
+          "kitzur-aab21a5855a4",
+          "potencia_plegaria-46197df1f067",
+          "lmii-0eafbd1ba22e"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 7615.73,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk"
+        ]
+      }
+    },
+    {
+      "question": "azamra",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-2a3f95396fca0de0",
+          "ev-2ac9f980c2883fe4",
+          "ev-68ef97d666761b5c"
+        ],
+        "first_selected_source": {
+          "work": "La Potencia de la Plegaria",
+          "pdf_page": 74,
+          "language": "es",
+          "evidence_id": "ev-2a3f95396fca0de0"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 8573.38,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 27,
+        "primary_evidence_ids": [
+          "potencia_plegaria-5aa3c0929473"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 6813.8,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk"
+        ]
+      }
+    },
+    {
+      "question": "tristeza",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-fb96711e5a40abe0",
+          "ev-1fef430465962665"
+        ],
+        "first_selected_source": {
+          "work": "El Alma del Rebe Najmán",
+          "pdf_page": 153,
+          "language": "es",
+          "evidence_id": "ev-da5f6c1a41da6908"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 8339.78,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 42,
+        "primary_evidence_ids": [
+          "kitzur-08e6424c29c7"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 7711.42,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lmii-746fb97ad47f"
+        ]
+      }
+    },
+    {
+      "question": "miedo",
+      "simple_rag": {
+        "status": "degraded",
+        "compatibility_status": "partial",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-e6deea145a1b55d9"
+        ],
+        "first_selected_source": {
+          "work": "KITZUR",
+          "pdf_page": 366,
+          "language": "es",
+          "evidence_id": "ev-e6deea145a1b55d9"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": true,
+        "duration_ms": 11986.2,
+        "warnings": [
+          "La redacción automática no estuvo disponible. Se muestran las fuentes recuperadas.",
+          "ai_render_failed:ValueError"
+        ]
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "potencia_plegaria-f4ac426c4985"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 4596.03,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lmi-50262103-b03a-4409-bc21-beb0ac42811b"
+        ]
+      }
+    },
+    {
+      "question": "hitbodedut",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-8ffbdccbf991b686",
+          "ev-ce821f05f8bc81c3",
+          "ev-75216e8b44cfbd11"
+        ],
+        "first_selected_source": {
+          "work": "KITZUR",
+          "pdf_page": 236,
+          "language": "es",
+          "evidence_id": "ev-8ffbdccbf991b686"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 7039.88,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 43,
+        "primary_evidence_ids": [
+          "lm_xv-1666d01b-dbbd-4cec-b49e-d061fc39c42a"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 5667.9,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lm_xv-1666d01b-dbbd-4cec-b49e-d061fc39c42a",
+          "evidence_snippet_sanitized:lm_xv-5c3fb2ac-8aef-43d5-90ea-9336e8dd5aee",
+          "evidence_snippet_sanitized:lm_xv-1607f6dc-50bb-44d6-a291-9551aafbc0b1",
+          "evidence_snippet_sanitized:lmii-3bc109d5b3dd",
+          "evidence_snippet_sanitized:lmii-65438dcb66f4"
+        ]
+      }
+    },
+    {
+      "question": "emuná",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-5f42c6ab17b57946",
+          "ev-fd3645042d4d27e7",
+          "ev-b955ba813cc19252"
+        ],
+        "first_selected_source": {
+          "work": "Likutey Halajot LM II 8",
+          "pdf_page": 220,
+          "language": "es",
+          "evidence_id": "ev-5f42c6ab17b57946"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 6318.56,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 42,
+        "primary_evidence_ids": [
+          "potencia_plegaria-6818bf6bc6a4"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 5270.79,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lh-1e50c21bbe6b",
+          "evidence_snippet_sanitized:lh-4e448af3fa79",
+          "evidence_snippet_sanitized:lh-9f59a2a7ccf0",
+          "evidence_snippet_sanitized:lh-b2dcdee6e9bb",
+          "evidence_snippet_sanitized:lmii-4758ebc3c3b6",
+          "evidence_snippet_sanitized:lmii-3e0602d9b643"
+        ]
+      }
+    },
+    {
+      "question": "Rebe Najmán",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-1a40cd681e9e89d4"
+        ],
+        "first_selected_source": {
+          "work": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "pdf_page": 468,
+          "language": "es",
+          "evidence_id": "ev-1a40cd681e9e89d4"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 5259.52,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "lm_xv-5a4cc32e-4390-42bb-bac9-3f7695c8d917"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 5256.58,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lmi-6774e7d8-6955-4bb3-b2e2-180ccd2fa5bc",
+          "evidence_snippet_sanitized:lmii-3f2c994287c0"
+        ]
+      }
+    },
+    {
+      "question": "Likutey Moharán",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-caeaed0111acb086",
+          "ev-a1ee6b8a62d6e93c",
+          "ev-7abfeb1c95b2f87e"
+        ],
+        "first_selected_source": {
+          "work": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "pdf_page": 448,
+          "language": "es",
+          "evidence_id": "ev-a1ee6b8a62d6e93c"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 6778.32,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "no_evidence",
+        "answer_present": true,
+        "evidence_count": 10,
+        "primary_evidence_ids": [],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 6774.99,
+        "warnings": [
+          "evidence_snippet_sanitized:lm_xv-9fd687eb-76f0-4556-94fb-4c905b3aa383",
+          "evidence_snippet_sanitized:lm_xv-89f20834-c76b-4ef0-acc0-dd729f43a6fd"
+        ]
+      }
+    },
+    {
+      "question": "Rabí Natán",
+      "simple_rag": {
+        "status": "degraded",
+        "compatibility_status": "partial",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-abeb04ba31667eb7"
+        ],
+        "first_selected_source": {
+          "work": "Likutey Halajot LM II 8",
+          "pdf_page": 11,
+          "language": "es",
+          "evidence_id": "ev-abeb04ba31667eb7"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": true,
+        "duration_ms": 10425.39,
+        "warnings": [
+          "La redacción automática no estuvo disponible. Se muestran las fuentes recuperadas.",
+          "ai_render_failed:ValueError"
+        ]
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 55,
+        "primary_evidence_ids": [
+          "lm_xv-5a4cc32e-4390-42bb-bac9-3f7695c8d917"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 5921.26,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lmi-d7c02d0f-4cb3-4aea-8a7e-5a44ec7e414c",
+          "evidence_snippet_sanitized:lh-add40995a7e0",
+          "evidence_snippet_sanitized:lmii-3f2c994287c0"
+        ]
+      }
+    },
+    {
+      "question": "Zohar",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-8ba988c2144d2531",
+          "ev-a1274f4037d99365"
+        ],
+        "first_selected_source": {
+          "work": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "pdf_page": 438,
+          "language": "es",
+          "evidence_id": "ev-8844e35fe493ad51"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 6117.48,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "lm_xv-3bc38975-eac6-488c-a5fa-47954b57fc56"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 6768.22,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lmi-db0c9a6d-ea0e-471c-ac01-f6ae596cd321",
+          "evidence_snippet_sanitized:lmii-56babdd38b2a"
+        ]
+      }
+    },
+    {
+      "question": "Tzadik",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-57bb8193fec4ef8b",
+          "ev-7cf020c3fefe85c1",
+          "ev-8707e001a065c28e"
+        ],
+        "first_selected_source": {
+          "work": "Un Día en la Vida de un Jasid de Breslov",
+          "pdf_page": 41,
+          "language": "es",
+          "evidence_id": "ev-57bb8193fec4ef8b"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 10125.62,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "lm_xv-60824af2-64e1-4ff6-98f6-69c74fcf3778"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 8385.81,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lm_xv-d54579b8-334d-4582-aec1-4f774e4f44c9",
+          "evidence_snippet_sanitized:lm_xv-1d047ba7-77ac-4d06-b4e4-9bcb1db3bbf7",
+          "evidence_snippet_sanitized:lmi-960a4ac4-372e-4fb8-980d-701367559f00",
+          "evidence_snippet_sanitized:lmi-4613b4b6-22c1-49ca-a1c1-b46476854ed7",
+          "evidence_snippet_sanitized:lmi-c339a385-1c54-4c40-b66f-aaf5761964ff",
+          "evidence_snippet_sanitized:lmi-9c89ec44-7d61-4814-a221-0abbd096ed49",
+          "evidence_snippet_sanitized:lh-6f5977d7c1c4",
+          "evidence_snippet_sanitized:lmii-3f2c994287c0",
+          "evidence_snippet_sanitized:lmii-c3d81201fd42"
+        ]
+      }
+    },
+    {
+      "question": "alegría",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-9b52688c722a13a4",
+          "ev-bc3a8c854050c94b",
+          "ev-494e0dc20ee55d28"
+        ],
+        "first_selected_source": {
+          "work": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "pdf_page": 54,
+          "language": "es",
+          "evidence_id": "ev-9cce42fafbe81fc4"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 13789.17,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "potencia_plegaria-f3822ced27d3"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 8032.04,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lm_xv-a6a475be-fa88-4ee7-be27-9c5536a1bf1b",
+          "evidence_snippet_sanitized:lmi-082bb631-f3ab-42d9-b516-5b6d6ed87066",
+          "evidence_snippet_sanitized:lh-c3b0bcd7a7e8",
+          "evidence_snippet_sanitized:lh-1e5c8bfe7d20"
+        ]
+      }
+    },
+    {
+      "question": "verdad",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-bbbb520e29b96948",
+          "ev-a0a866aa5320fcaf",
+          "ev-e1105c8c51aec69f"
+        ],
+        "first_selected_source": {
+          "work": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "pdf_page": 72,
+          "language": "es",
+          "evidence_id": "ev-bbbb520e29b96948"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 6311.99,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "lm_xv-a474093d-0cfe-4cbc-94e0-3bb14091bc07"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 2965.73,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lh-3ec768e4359a"
+        ]
+      }
+    },
+    {
+      "question": "brit",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-dc61560f062e1433",
+          "ev-ea81627709246b7a",
+          "ev-7d458a60f0057c1f"
+        ],
+        "first_selected_source": {
+          "work": "Likutey Halajot LM II 8",
+          "pdf_page": 353,
+          "language": "es",
+          "evidence_id": "ev-94f12853891cf9cb"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 8951.75,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "lm_xv-33a48bf0-303d-4601-b23c-4f860ccdbcb4"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 12520.38,
+        "warnings": [
+          "ai_interpretation_fallback:ai_schema_rejected",
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lm_xv-33a48bf0-303d-4601-b23c-4f860ccdbcb4",
+          "evidence_snippet_sanitized:lmii-3a9e521d082b",
+          "evidence_snippet_sanitized:lmii-98bd7f0d8ac0"
+        ]
+      }
+    },
+    {
+      "question": "Mundo Venidero",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-6cdba7549b092f7f",
+          "ev-eec46a9904e85e3f",
+          "ev-b130b35252f0412a"
+        ],
+        "first_selected_source": {
+          "work": "KITZUR",
+          "pdf_page": 443,
+          "language": "es",
+          "evidence_id": "ev-6cdba7549b092f7f"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 6568.82,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "no_evidence",
+        "answer_present": true,
+        "evidence_count": 0,
+        "primary_evidence_ids": [],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 2429.47,
+        "warnings": []
+      }
+    },
+    {
+      "question": "qué relación hay entre alegría y emuná",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-9b52688c722a13a4",
+          "ev-5f42c6ab17b57946"
+        ],
+        "first_selected_source": {
+          "work": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "pdf_page": 54,
+          "language": "es",
+          "evidence_id": "ev-9cce42fafbe81fc4"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 9190.76,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 42,
+        "primary_evidence_ids": [
+          "potencia_plegaria-6818bf6bc6a4"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 5705.4,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lh-1e50c21bbe6b",
+          "evidence_snippet_sanitized:lh-4e448af3fa79",
+          "evidence_snippet_sanitized:lh-9f59a2a7ccf0",
+          "evidence_snippet_sanitized:lh-b2dcdee6e9bb",
+          "evidence_snippet_sanitized:lmii-4758ebc3c3b6",
+          "evidence_snippet_sanitized:lmii-3e0602d9b643"
+        ]
+      }
+    },
+    {
+      "question": "What does Rebbe Nachman teach about fear?",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 8,
+        "primary_evidence_ids": [
+          "ev-1b238543a40a864a",
+          "ev-a4662ed801632459",
+          "ev-0ebe39ddd79b6cc8"
+        ],
+        "first_selected_source": {
+          "work": "Kokhavey Ohr",
+          "pdf_page": 39,
+          "language": "en",
+          "evidence_id": "ev-0ebe39ddd79b6cc8"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 6929.12,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "lmi-960a4ac4-372e-4fb8-980d-701367559f00"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 5548.44,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lmi-6774e7d8-6955-4bb3-b2e2-180ccd2fa5bc",
+          "evidence_snippet_sanitized:lmii-3f2c994287c0"
+        ]
+      }
+    },
+    {
+      "question": "מהי התבודדות",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-939e1137fe28d87c",
+          "ev-0bd734884c16cf76"
+        ],
+        "first_selected_source": {
+          "work": "Un Día en la Vida de un Jasid de Breslov",
+          "pdf_page": 179,
+          "language": "es",
+          "evidence_id": "ev-939e1137fe28d87c"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 7871.54,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "no_evidence",
+        "answer_present": true,
+        "evidence_count": 6,
+        "primary_evidence_ids": [],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 7955.78,
+        "warnings": []
+      }
+    },
+    {
+      "question": "hitbodeduth",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-73d1853ba435d160",
+          "ev-8ffbdccbf991b686",
+          "ev-ce821f05f8bc81c3"
+        ],
+        "first_selected_source": {
+          "work": "Kokhavey Ohr",
+          "pdf_page": 446,
+          "language": "en",
+          "evidence_id": "ev-be714c6365d6ed51"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 11962.28,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 43,
+        "primary_evidence_ids": [
+          "lm_xv-1666d01b-dbbd-4cec-b49e-d061fc39c42a"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 5467.8,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lm_xv-1666d01b-dbbd-4cec-b49e-d061fc39c42a",
+          "evidence_snippet_sanitized:lm_xv-5c3fb2ac-8aef-43d5-90ea-9336e8dd5aee",
+          "evidence_snippet_sanitized:lm_xv-1607f6dc-50bb-44d6-a291-9551aafbc0b1",
+          "evidence_snippet_sanitized:lmii-3bc109d5b3dd",
+          "evidence_snippet_sanitized:lmii-65438dcb66f4",
+          "No encontré una coincidencia exacta para «hitbodeduth». Busqué la variante probable «Hitbodedut»."
+        ]
+      }
+    },
+    {
+      "question": "¿Cómo explica Rebe Najmán que una persona puede transformar el miedo y la tristeza mediante la plegaria y la alegría?",
+      "simple_rag": {
+        "status": "complete",
+        "compatibility_status": "ok",
+        "original_query_preserved": true,
+        "answer_present": true,
+        "evidence_count": 12,
+        "primary_evidence_ids": [
+          "ev-494e0dc20ee55d28",
+          "ev-8a63c803e8d3317f",
+          "ev-68cabc6bfef20091"
+        ],
+        "first_selected_source": {
+          "work": "La Potencia de la Plegaria",
+          "pdf_page": 96,
+          "language": "es",
+          "evidence_id": "ev-847799a75d8d5dfa"
+        },
+        "semantic_status": "ok",
+        "literal_status": "ok",
+        "fallback": false,
+        "duration_ms": 11338.66,
+        "warnings": []
+      },
+      "advanced": {
+        "status": "ok",
+        "answer_present": true,
+        "evidence_count": 60,
+        "primary_evidence_ids": [
+          "lm_xv-5a4cc32e-4390-42bb-bac9-3f7695c8d917"
+        ],
+        "used_vector": false,
+        "fallback": true,
+        "duration_ms": 8253.57,
+        "warnings": [
+          "pdf_page_null_for_kitzur_chunk",
+          "evidence_snippet_sanitized:lmi-6774e7d8-6955-4bb3-b2e2-180ccd2fa5bc",
+          "evidence_snippet_sanitized:lmii-3f2c994287c0"
+        ]
+      }
+    }
+  ]
+}

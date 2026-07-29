@@ -105,6 +105,17 @@ La deuda arquitectónica restante requiere decisiones explícitas y no debe mezc
 3. ADR previo a cualquier generación RAG o síntesis con LLM.
 4. Reconciliar conteos PostgreSQL/Milvus antes de reindexar.
 
+## Simple Grounded Research RAG — gate DEV 2026-07-29
+
+ADR-006 aprueba `simple_rag` como camino principal de
+`POST /library/investigative-qa/v1` durante el gate DEV.
+
+La consulta original se embebe intacta; Milvus encuentra candidatos;
+PostgreSQL complementa literal, rehidrata Markdown canónico y mantiene
+autoridad; LiteLLM sintetiza con IDs validados. El pipeline avanzado se conserva
+como `advanced` y enriquecimiento no bloqueante en `compare`. No implica
+rollout productivo.
+
 ## Mapping lógico/productivo Milvus — 2026-07-09
 
 El retrieval vectorial usa un mapeo de alias entre el scope lógico y la collection/productivo:

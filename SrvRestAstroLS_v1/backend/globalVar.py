@@ -117,6 +117,7 @@ LITELLM_TIMEOUT_SECONDS: int = SETTINGS.litellm_timeout_seconds
 RESEARCH_CONVERSATION_MODEL: str = SETTINGS.research_conversation_model
 RESEARCH_EMBEDDING_MODEL_ALIAS: str = SETTINGS.research_embedding_model_alias
 BRESLOV_PRODUCTIVE_COLLECTION: str = SETTINGS.breslov_productive_collection
+RESEARCH_PIPELINE: str = SETTINGS.research_pipeline
 
 # ── Auth ─────────────────────────────────────────────────────────
 AUTH_ENABLED: bool = SETTINGS.auth_enabled

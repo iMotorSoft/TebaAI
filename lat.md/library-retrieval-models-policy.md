@@ -95,16 +95,28 @@ Each public query mode maps to an explicit retrieval engine and use case.
 
 ## Generative Model
 
-Generation remains outside general search and is allowed only in the dedicated, evidence-first relation QA contract approved by ADR-005.
+Generation remains outside general search. It is allowed in the dedicated
+evidence-first relation QA contract approved by ADR-005 and in the simple
+grounded research path approved for the DEV gate by ADR-006.
 
 | Attribute | Value |
 |-----------|-------|
 | Generative model in production | `openai_gpt-5.4-nano` via LiteLLM |
-| Generative surface | `POST /library/relation-qa` only |
+| Generative surface | `POST /library/relation-qa` and `POST /library/investigative-qa/v1` |
 | RAG | Bounded evidence-first editorial synthesis; no open-domain chat |
 | Interpretative answer generation | Implemented only for Relation QA |
 | LLM reranking | Not implemented |
 | LLM synthesis | Optional and downstream of canonical PG evidence |
+
+`POST /library/investigative-qa/v1` uses `simple_rag` as its primary DEV path:
+the intact original query is embedded, Milvus supplies candidate chunk IDs,
+PostgreSQL complements literal retrieval and rehydrates complete canonical
+Markdown, and the model renders only from the selected context. Intent and
+specialized parsers are optional enrichment and cannot block this retrieval.
+
+The endpoint exposes `TEBAAI_RESEARCH_PIPELINE=simple_rag|advanced|compare`.
+`simple_rag` is the DEV default; no production rollout is implied by this
+policy update.
 
 `POST /library/search` continues to retrieve bibliographic evidence only. It does not call a generative model or return interpretative synthesis. `POST /library/investigative-qa/v1` may call the same model solely for schema-validated multilingual query understanding and evidence-bound rendering under ADR-005; retrieval remains deterministic and downstream.
 
@@ -129,7 +141,7 @@ The endpoint must:
 
 The accepted design and consequences are documented in `docs/adr/ADR-005-breslov-investigative-relation-qa-endpoint.md`.
 
-Any future generative surface, open-domain RAG pipeline, or LLM-based reranking beyond ADR-005 must:
+Any future generative surface, open-domain RAG pipeline, or LLM-based reranking beyond ADR-005 and ADR-006 must:
 
 1. Create a new ADR or update this policy.
 2. Keep retrieval separate from generation (retrieval first, generation second).

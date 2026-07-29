@@ -6,9 +6,11 @@
   import {
     WORKS,
     analyzeConfirmedQuery,
+    askInvestigativeQa,
     interpretInvestigativeQuery,
     makeAnalyzeRequest,
     makeInterpretRequest,
+    makeRequest,
     normalizeInterpretationResponse,
     selectInitialEvidence,
     type Hit,
@@ -217,7 +219,49 @@
 
   async function submit() {
     if (blocksNewQuestion) return;
-    await submitInterpretation(inputText);
+    const clean = inputText.trim();
+    const token = getStoredAccessToken();
+    if (!clean || !token || isSubmitting) return;
+    const id = crypto.randomUUID();
+    turns = [...turns, {
+      id,
+      question: clean,
+      interpretation: null,
+      response: null,
+      state: "analyzing",
+      editText: clean,
+    }];
+    activeTurnId = id;
+    inputText = "";
+    isSubmitting = true;
+    requestError = null;
+    const controller = new AbortController();
+    requestController = controller;
+    try {
+      const response = await askInvestigativeQa(
+        token,
+        makeRequest(clean, filters, historyBefore(id), conversationId, id),
+        controller.signal,
+      );
+      selectedHitId = selectInitialEvidence(response);
+      turns = turns.map((turn) => turn.id === id ? {
+        ...turn,
+        question: response.original_query || clean,
+        response,
+        state: response.status,
+      } : turn);
+      await tick();
+      document.querySelector<HTMLElement>('[data-testid="research-result-heading"]')?.focus();
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") return;
+      requestError = error instanceof Error ? error.message : "No se pudo completar la investigación.";
+      turns = turns.map((turn) => turn.id === id ? { ...turn, state: "error" } : turn);
+    } finally {
+      if (requestController === controller) {
+        requestController = null;
+        isSubmitting = false;
+      }
+    }
   }
 
   async function analyze(turn: Turn) {
@@ -509,12 +553,18 @@
 
           {#if activeTurn.response}
             <p class="speaker">Breslov Research</p>
-            {#if activeTurn.state === "partial"}<p class="partial">La respuesta es parcial: se encontró evidencia en algunas obras o capas, pero no en todas.</p>{/if}
+            {#if activeTurn.response.research_status === "complete"}
+              <p class="partial" data-research-status="complete">Resultado completo</p>
+            {:else if activeTurn.response.research_status === "partial"}
+              <p class="partial" data-research-status="partial">Resultado parcial: las fuentes no alcanzan para responder completamente.</p>
+            {:else if activeTurn.response.research_status === "degraded"}
+              <p class="partial" data-research-status="degraded">Resultado degradado: una capa no estuvo disponible y se utilizó una alternativa.</p>
+            {/if}
             {#if activeTurn.state === "no_evidence"}
               <p class="no-evidence" role="status">{noEvidenceText(activeTurn.response)}</p>
             {:else}
               <section class="synthesis">
-                <h3 data-testid="research-result-heading" tabindex="-1">Síntesis investigativa</h3>
+                <h3 data-testid="research-result-heading" tabindex="-1">Respuesta</h3>
                 <p lang={languageAttribute(activeTurn.response.summary)} dir={textDirection(activeTurn.response.summary)} class:research-hebrew-text={isHebrewText(activeTurn.response.summary)}>{activeTurn.response.summary}</p>
                 {#if activeTurn.response.claims.length}
                   <ol class="claim-list">

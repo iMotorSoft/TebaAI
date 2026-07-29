@@ -200,6 +200,7 @@ class QaAi(BaseModel):
 class QaRequest(BaseModel):
     question: str = Field(min_length=2, max_length=1000)
     phase: Literal["legacy", "interpret", "analyze"] = "legacy"
+    pipeline: Literal["simple_rag", "advanced", "compare"] | None = None
     interpretation_id: str | None = Field(default=None, max_length=100)
     supersedes_interpretation_id: str | None = Field(default=None, max_length=100)
     idempotency_key: str | None = Field(default=None, max_length=100)

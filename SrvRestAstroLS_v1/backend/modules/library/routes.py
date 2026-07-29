@@ -49,11 +49,13 @@ from modules.library.query_confirmation import (
     INTERPRETATION_STORE,
     InterpretationStateError,
 )
+from modules.library.simple_research_rag import run_simple_rag
+from globalVar import RESEARCH_PIPELINE
 
 
 @post("/library/investigative-qa/v1", status_code=200, guards=[require_auth])
 async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
-    """Interpret first; execute grounded retrieval only after explicit analysis."""
+    """Run simple grounded RAG by default; preserve advanced compatibility phases."""
     payload = await get_current_user_payload(request)
     user_id = str(payload.get("sub") or "")
     if not user_id:
@@ -156,11 +158,36 @@ async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
                 await INTERPRETATION_STORE.fail(record, "analysis_failed")
             raise HTTPException(status_code=500, detail="Investigative QA failed") from exc
 
-    # Compatibility path for existing API consumers. The research UI never uses it.
+    pipeline = data.pipeline or RESEARCH_PIPELINE
     pool = await get_pg_pool(request)
     try:
         async with transaction(pool) as conn:
-            return await run_investigative_qa_v1(conn, data)
+            if pipeline == "advanced":
+                return await run_investigative_qa_v1(conn, data)
+            simple = await run_simple_rag(conn, data)
+            if pipeline == "compare":
+                try:
+                    advanced = await run_investigative_qa_v1(conn, data)
+                    simple["comparison"] = {
+                        "advanced_status": advanced.get("status"),
+                        "advanced_hits": len(advanced.get("hits", [])),
+                        "advanced_primary_evidence": len(
+                            advanced.get("primary_evidence_ids", [])
+                        ),
+                        "advanced_duration_ms": advanced.get("execution", {}).get(
+                            "duration_ms"
+                        ),
+                    }
+                except Exception as exc:
+                    simple["comparison"] = {
+                        "advanced_status": "failed",
+                        "warning": f"advanced_enrichment_failed:{type(exc).__name__}",
+                    }
+                    simple["warnings"].append(
+                        "La interpretación avanzada no estuvo disponible; "
+                        "la respuesta simple se conservó."
+                    )
+            return simple
     except Exception as exc:
         raise HTTPException(status_code=500, detail="Investigative QA failed") from exc
 

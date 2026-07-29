@@ -64,6 +64,7 @@ Every branch resolves to one or more stable documents.
 - frontend: [[frontend-implementation-policy]];
 - AI gateway: [[ai-gateway-model-routing-policy]], [[embeddings-configuration-policy]];
 - library and retrieval: [[knowledge-scope-contract]], [[library-retrieval-models-policy]], [[bibliographic-metadata-audit]], [[page-aware-metadata-mapping-audit]], [[page-metadata-enrichment]];
+- primary research RAG decision: `docs/adr/ADR-006-simple-grounded-research-rag.md`;
 - validation: [[service-preflight-methodology]], [[browser-mcp-validation-policy]], [[root-cause-debugging-policy]];
 - diagrams: [[mermaid-diagram-policy]].
 

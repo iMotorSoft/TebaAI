@@ -41,6 +41,15 @@ export const warningLabels: Record<string, string> = {
 
 export function warningLabel(code: string): string {
   if (warningLabels[code]) return warningLabels[code];
+  if (
+    code.startsWith("La búsqueda semántica no estuvo disponible")
+    || code.startsWith("La búsqueda literal no estuvo disponible")
+    || code.startsWith("La redacción automática no estuvo disponible")
+    || code.startsWith("La interpretación avanzada no estuvo disponible")
+  ) return code;
+  if (code.startsWith("ai_render_failed:")) {
+    return "La redacción automática fue rechazada por la validación; se muestran las fuentes recuperadas";
+  }
   if (code.startsWith("ai_render_fallback:")) return "Se utilizó una respuesta determinística segura";
   if (code.startsWith("ai_interpretation_fallback:")) return "La interpretación automática no estuvo disponible; se conservaron los términos de la consulta";
   return "La consulta contiene una limitación técnica registrada en los detalles";

@@ -53,6 +53,19 @@ class TestDefaults:
         assert s.litellm_base_url == "http://127.0.0.1:4000"
         assert s.litellm_timeout_seconds == 60
 
+    def test_simple_rag_is_the_default_research_pipeline(self) -> None:
+        with patch.dict(os.environ, {}, clear=True):
+            s = get_settings()
+        assert s.research_pipeline == "simple_rag"
+
+    def test_research_pipeline_is_allowlisted(self) -> None:
+        with patch.dict(os.environ, _env(RESEARCH_PIPELINE="compare"), clear=True):
+            assert get_settings().research_pipeline == "compare"
+        get_settings.cache_clear()
+        with patch.dict(os.environ, _env(RESEARCH_PIPELINE="unknown"), clear=True):
+            with pytest.raises(ValueError):
+                get_settings()
+
     def test_auth_defaults(self) -> None:
         with patch.dict(os.environ, {}, clear=True):
             s = get_settings()

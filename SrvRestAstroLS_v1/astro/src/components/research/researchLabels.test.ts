@@ -10,6 +10,8 @@ describe("research evidence labels", () => {
   it("translates known warnings without exposing raw codes", () => {
     expect(warningLabel("pdf_page_null_for_kitzur_chunk")).toBe("La página no está disponible en el registro fuente");
     expect(warningLabel("ai_render_fallback:TimeoutError")).toMatch(/determinística/);
+    expect(warningLabel("La búsqueda semántica no estuvo disponible; se utilizó búsqueda literal.")).toMatch(/búsqueda literal/);
+    expect(warningLabel("ai_render_failed:ValueError")).toMatch(/validación/);
   });
 
   it("uses a safe generic label for unknown warnings", () => {

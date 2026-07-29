@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import re
 from functools import lru_cache
+from typing import Literal
 from urllib.parse import quote, urlparse, urlunparse
 
 from pydantic import AliasChoices, Field, SecretStr, field_validator, model_validator
@@ -117,6 +118,7 @@ class AppSettings(BaseSettings):
     research_conversation_model: str = "openai_gpt-5.4-nano"
     research_embedding_model_alias: str = "openai_text_embedding_3_small"
     breslov_productive_collection: str = "tebaai_breslov_chunks_v1"
+    research_pipeline: Literal["simple_rag", "advanced", "compare"] = "simple_rag"
 
     # ── Auth ────────────────────────────────────────────────────
     auth_enabled: bool = False

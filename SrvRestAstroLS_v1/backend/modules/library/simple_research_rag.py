@@ -52,9 +52,102 @@ LITERAL_TOP_K = 30
 CONTEXT_MIN = 8
 CONTEXT_MAX = 12
 
+_HEBREW_LETTER = re.compile(r"[\u05d0-\u05ea]")
+_HEBREW_PREFIXES = frozenset("ובכלמש")
+
+
+def _hebrew_catalog_cross_language_variants(original_query: str) -> list[str]:
+    """Look up Hebrew tokens in the concept catalog and return ES/EN aliases.
+
+    For each significant Hebrew token found in the query, strip common prefixes
+    (ה, ו, ב, כ, ל, מ, ש) and look up the form in the concept catalog.
+    If matched, add all non-Hebrew aliases and translations from the entry.
+    """
+    if not has_hebrew(original_query):
+        return []
+    from modules.library.concept_catalog import CATALOG
+
+    # Build reverse index: Hebrew form → concept_id
+    hebrew_to_concept: dict[str, str] = {}
+    for entry in CATALOG:
+        if entry.hebrew:
+            hebrew_to_concept[entry.hebrew] = entry.concept_id
+        for alias in entry.aliases:
+            if bool(_HEBREW_LETTER.search(alias)):
+                hebrew_to_concept[alias] = entry.concept_id
+
+    tokens = set(re.findall(r"[\u0590-\u05ff]{2,}", original_query))
+    seen: set[str] = set()
+    variants: list[str] = []
+
+    for token in tokens:
+        if len(token) < 2:
+            continue
+        # Direct form
+        concept_id = hebrew_to_concept.get(token)
+        # Strip a single prefix/waw/conjunctive letter (ובכלמש)
+        if not concept_id and len(token) >= 3 and token[0] in _HEBREW_PREFIXES:
+            concept_id = hebrew_to_concept.get(token[1:])
+        # Strip definite article ה
+        if not concept_id and len(token) >= 3 and token[0] == 'ה':
+            concept_id = hebrew_to_concept.get(token[1:])
+        # Strip double prefix (e.g. "והעקרב" → "עקרב")
+        if not concept_id and len(token) >= 4 and token[0] in _HEBREW_PREFIXES and token[1] in _HEBREW_PREFIXES:
+            concept_id = hebrew_to_concept.get(token[2:])
+        if not concept_id and len(token) >= 4 and token[0] in _HEBREW_PREFIXES and token[1] == 'ה':
+            concept_id = hebrew_to_concept.get(token[2:])
+
+        if concept_id and concept_id not in seen:
+            seen.add(concept_id)
+            entry = next((e for e in CATALOG if e.concept_id == concept_id), None)
+            if entry:
+                for alias in entry.aliases:
+                    if not _HEBREW_LETTER.search(alias):
+                        variants.append(alias)
+                for trans in entry.translations:
+                    if not _HEBREW_LETTER.search(trans):
+                        variants.append(trans)
+    return list(dict.fromkeys(variants))
+
+
+_LATIN_LETTERS = re.compile(r"[a-zA-Z]")
+
+
+def _latin_catalog_cross_language_variants(original_query: str) -> list[str]:
+    """Look up significant Latin-script tokens in the concept catalog.
+
+    For each alphabet token found in the query, check the catalog's form index.
+    If matched, add Hebrew and non-English/non-Spanish aliases from the entry.
+    This covers English queries like "speech" → "habla" + "דיבור".
+    """
+    if not _LATIN_LETTERS.search(original_query):
+        return []
+    from modules.library.concept_catalog import CATALOG, lookup_by_form
+
+    tokens = re.findall(r"[a-zA-Z\u00e0-\u00fc]{3,}", original_query.casefold())
+    seen: set[str] = set()
+    variants: list[str] = []
+
+    for token in tokens:
+        concept_id = lookup_by_form(token)
+        if concept_id and concept_id not in seen:
+            seen.add(concept_id)
+            entry = next((e for e in CATALOG if e.concept_id == concept_id), None)
+            if entry:
+                # Add Hebrew form if available
+                if entry.hebrew and entry.hebrew not in variants:
+                    variants.append(entry.hebrew)
+                # Add Hebrew aliases
+                for alias in entry.aliases:
+                    if _HEBREW_LETTER.search(alias) and alias not in variants:
+                        variants.append(alias)
+    return list(dict.fromkeys(variants))
+
+
 CONTROLLED_EXPANSIONS: dict[str, tuple[str, ...]] = {
     "azamra": ("Azamra", "Azamrá", "אזמרה", "אֲזַמְּרָה", "I will sing", "cantaré"),
     "escorpion": ("escorpión", "escorpion", "escorpiones", "scorpion", "scorpions", "עקרב", "עקרבים"),
+    "scorpion": ("scorpion", "scorpions", "escorpión", "escorpion", "escorpiones", "עקרב", "עקרבים"),
     "habla": ("habla", "palabra", "decir", "voz", "speech", "speaking", "דיבור"),
     "sangre": ("sangre", "blood", "דם"),
     "alegria": ("alegría", "alegria", "simjá", "simcha", "joy", "שמחה"),
@@ -99,7 +192,13 @@ def build_query_variants(original_query: str) -> list[str]:
             "recitar esos dos versículos",
             "Reinado del Cielo",
         ))
-    return list(dict.fromkeys(item.strip() for item in variants if item.strip()))[:24]
+    # Hebrew cross-language expansion via concept catalog
+    hebrew_cross = _hebrew_catalog_cross_language_variants(original_query)
+    variants.extend(hebrew_cross)
+    # Latin cross-language expansion via concept catalog (English→Hebrew, etc.)
+    latin_cross = _latin_catalog_cross_language_variants(original_query)
+    variants.extend(latin_cross)
+    return list(dict.fromkeys(item.strip() for item in variants if item.strip()))[:36]
 
 
 def build_explicit_filters(data: Any) -> dict[str, Any]:

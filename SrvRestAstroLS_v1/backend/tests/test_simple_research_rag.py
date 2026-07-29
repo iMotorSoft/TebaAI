@@ -543,3 +543,88 @@ def test_existing_http_endpoint_routes_legacy_requests_to_simple_rag() -> None:
     assert result.json()["original_query"] == "Relación sangre y habla"
     simple.assert_awaited_once()
     advanced.assert_not_awaited()
+
+
+# ---------------------------------------------------------------------------
+# Multilingual cross-language variant expansion tests
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("query", "expected_latin"),
+    [
+        ("אתה מחפש איפה נמצא מושג העקרב.", "escorpión"),
+        ("העקרב", "escorpión"),
+        ("עקרב", "escorpión"),
+        ("עקרבים", "escorpión"),
+        ("דיבור", "habla"),
+        ("דם", "sangre"),
+        ("פחד", "miedo"),
+        ("יראה", "miedo"),
+        ("אמונה", "emuná"),
+        ("שמחה", "simjá"),
+        ("עצבות", "tristeza"),
+        ("אזמרה", "azamra"),
+    ],
+)
+def test_hebrew_query_expands_to_latin_variants(query: str, expected_latin: str) -> None:
+    variants = rag.build_query_variants(query)
+    assert variants[0] == query, "First variant must be original"
+    assert expected_latin in variants, f"Expected {expected_latin} in {variants}"
+
+
+@pytest.mark.parametrize(
+    ("query", "expected_hebrew"),
+    [
+        ("escorpión", "עקרב"),
+        ("escorpion", "עקרב"),
+        ("escorpiones", "עקרב"),
+        ("scorpion", "עקרב"),
+        ("scorpions", "עקרב"),
+        ("habla", "דיבור"),
+        ("speech", "דיבור"),
+        ("sangre", "דם"),
+        ("blood", "דם"),
+        ("miedo", "פחד"),
+        ("fear", "פחד"),
+        ("emuná", "אמונה"),
+        ("emuna", "אמונה"),
+        ("faith", "אמונה"),
+        ("alegría", "שמחה"),
+        ("joy", "שמחה"),
+        ("tristeza", "עצבות"),
+        ("sadness", "עצבות"),
+    ],
+)
+def test_latin_query_expands_to_hebrew_variants(query: str, expected_hebrew: str) -> None:
+    variants = rag.build_query_variants(query)
+    assert variants[0] == query, "First variant must be original"
+    assert expected_hebrew in variants, f"Expected {expected_hebrew} in {variants}"
+
+
+def test_unrelated_queries_dont_expand() -> None:
+    variants = rag.build_query_variants("qué es la Torá")
+    assert variants[0] == "qué es la Torá"
+
+
+def test_related_concepts_not_merged_as_synonyms() -> None:
+    variants = rag.build_query_variants("עקרב")
+    assert "serpiente" not in variants  # related_concept, not alias
+
+
+def test_hebrew_prefix_stripping_expands_scorpion() -> None:
+    variants = rag.build_query_variants("העקרב")
+    assert "escorpión" in variants
+    assert "scorpion" in variants
+
+
+def test_fold_preserves_latin_and_catalog_lookup_handles_hebrew() -> None:
+    assert rag._fold("escorpión") == "escorpion"
+    hebrew_cross = rag._hebrew_catalog_cross_language_variants("העקרב")
+    assert "escorpión" in hebrew_cross
+
+
+def test_variant_count_limited() -> None:
+    variants = rag.build_query_variants("שמחה אמונה עצבות עקרב דיבור דם פחד")
+    assert len(variants) <= 36
+    assert variants[0] == "שמחה אמונה עצבות עקרב דיבור דם פחד"

@@ -293,6 +293,66 @@ CATALOG: tuple[ConceptEntry, ...] = (
             ConceptRelation("arrepentimiento", "translation"),
         ),
     ),
+    ConceptEntry(
+        concept_id="habla",
+        canonical_label="Habla",
+        language="es",
+        hebrew="דיבור",
+        aliases=(
+            "habla", "palabra", "decir", "voz",
+            "speech", "speaking", "word",
+            "דיבור", "דבור",
+        ),
+        transliterations=("dibur", "dibbur", "dibuk"),
+        translations=(
+            "speech", "speaking", "word",
+            "habla", "palabra", "voz",
+        ),
+        related_concepts=(
+            ConceptRelation("sangre", "thematic_parallel"),
+            ConceptRelation("hitbodedut", "related_concept"),
+            ConceptRelation("plegaria", "thematic_parallel"),
+        ),
+    ),
+    ConceptEntry(
+        concept_id="miedo",
+        canonical_label="Miedo",
+        language="es",
+        hebrew="פחד",
+        aliases=(
+            "miedo", "temor", "temor reverencial",
+            "fear", "awe", "dread",
+            "פחד", "יראה", "יראת",
+        ),
+        transliterations=("pahad", "pakhad", "yirah", "yira"),
+        translations=(
+            "fear", "awe", "dread", "reverence",
+            "miedo", "temor", "temor reverencial",
+        ),
+        related_concepts=(
+            ConceptRelation("Yirat Shamayim", "related_concept"),
+            ConceptRelation("Emuná", "thematic_parallel"),
+            ConceptRelation("escorpion", "thematic_parallel"),
+        ),
+    ),
+    ConceptEntry(
+        concept_id="sangre",
+        canonical_label="Sangre",
+        language="es",
+        hebrew="דם",
+        aliases=(
+            "sangre", "blood", "sanguínea",
+            "דם", "דמים",
+        ),
+        transliterations=("dam", "dom", "damin"),
+        translations=(
+            "blood", "sangre",
+        ),
+        related_concepts=(
+            ConceptRelation("habla", "thematic_parallel"),
+            ConceptRelation("impurezas", "thematic_parallel"),
+        ),
+    ),
 )
 
 

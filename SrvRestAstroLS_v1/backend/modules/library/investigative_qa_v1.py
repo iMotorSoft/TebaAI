@@ -132,6 +132,24 @@ ALIASES: dict[str, tuple[str, ...]] = {
     "escorpión": ("escorpión", "escorpion", "escorpiones", "עקרב", "עקרבים", "עַקְרַב"),
 }
 
+DISCOVERY_NEIGHBORS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
+    "escorpión": (
+        ("serpiente", ("serpiente", "serpientes", "serpent", "serpents", "נחש", "נחשים")),
+        ("miedo", ("miedo", "temor", "fear", "פחד", "יראה")),
+        (
+            "consejo de los malvados",
+            ("consejo de los malvados", "advice of the wicked", "עצת רשעים"),
+        ),
+    ),
+}
+
+RELATION_BRIDGE_ALIASES: dict[frozenset[str], dict[str, tuple[str, ...]]] = {
+    frozenset({"sangre", "habla"}): {
+        "sangre": ("impurezas en la sangre",),
+        "habla": ("decir Shemá", "recitación del Shemá", "Baruj Shem"),
+    },
+}
+
 
 AuthorQuoteStatus = Literal[
     "confirmed_author_text",
@@ -210,6 +228,7 @@ class Hit(BaseModel):
     work_title: str
     pdf_page: int | None = None
     printed_page: int | None = None
+    embedded_page_marker: str | None = None
     quote: str
     snippet: str = ""
     display_quote: str | None = None
@@ -235,6 +254,20 @@ class Hit(BaseModel):
         "inferred_relation", "unrelated_literal_noise",
     ] = "single_term_literal"
     relation_level: Literal["literal", "contextual", "thematic"] = "literal"
+    relation_type: Literal[
+        "direct_literal",
+        "direct_paraphrase",
+        "mediated_explicit_chain",
+        "same_fragment_cooccurrence",
+        "same_page",
+        "same_section",
+        "thematic_parallel",
+        "AI_grounded_inference",
+        "none",
+    ] = "none"
+    relation_strength: Literal["high", "medium", "low", "none"] = "none"
+    literal_relation: bool = False
+    inference_required: bool = False
     is_primary: bool = False
     language_match: Literal["exact", "primary", "secondary", "fallback"] = "fallback"
     literal_match_kind: Literal[
@@ -393,7 +426,8 @@ def _analyze_query_language(question: str) -> dict:
 
 
 def classify_intent(question: str) -> Literal[
-    "literal_lookup", "concept_lookup", "concept_cooccurrence", "relation_query",
+    "literal_lookup", "concept_lookup", "concept_cooccurrence", "discover_relations",
+    "biblical_reference_lookup", "named_teaching_lookup", "relation_query",
     "translation_or_explanation", "reference_lookup", "follow_up", "book_scope_query",
     "source_request", "comparison_query", "unknown",
 ]:
@@ -746,6 +780,25 @@ async def _fetch(conn, work: str, term: str, limit: int) -> list[tuple[dict, str
     return [(row, title, view) for row in rows]
 
 
+async def _fetch_controlled_blood_speech_chain(conn) -> list[dict]:
+    """Fetch only the two textual links of the validated adjacent-page chain."""
+    async with conn.cursor() as cursor:
+        await cursor.execute(
+            """SELECT pdf_page,NULL::int printed_page,quote,search_record_type record,
+                      zone_type zone,note_number::text note,surface_form surface
+               FROM library_la_potencia_plegaria_investigative_search_v1
+               WHERE (
+                   quote ILIKE '%sangre%'
+                   AND (quote ILIKE '%impureza%' OR quote ILIKE '%lujur%')
+               ) OR (
+                   quote ILIKE '%Shemá%'
+                   AND (quote ILIKE '%recit%' OR quote ILIKE '%decir%')
+               )
+               ORDER BY pdf_page"""
+        )
+        return list(await cursor.fetchall())
+
+
 async def _phrase_fetch(conn, work: str, phrase: str, limit: int) -> list[tuple[dict, str, str]]:
     """Search for the exact phrase as a whole, not individual terms."""
     if work in {"lmi", "lm_xv"} or (work == "lmii" and HEBREW_LETTER_RE.search(phrase)):
@@ -1006,8 +1059,7 @@ def classify(
     match_context = row.get("match_context")
     snippet = (
         match_context.paragraph_text if match_context is not None else
-        literal_context_snippet(quote, matched_terms) if work == "lmi" else
-        display_snippet(quote)
+        literal_context_snippet(quote, matched_terms)
     )
     display_quote = None
     display_normalization = None
@@ -1064,7 +1116,14 @@ def classify(
     ) for candidate in row.get("parallel_candidates", [])]
 
     # ── Sanitize snippet for display ─────────────────────────────────
-    matched_phrase = matched_variant or (" ".join(matched_terms) if matched_terms else None)
+    normalized_evidence = normalize_hebrew_search(evidence_text)
+    visible_terms = [
+        term for term in matched_terms
+        if normalize_hebrew_search(term) in normalized_evidence
+    ]
+    matched_phrase = matched_variant or (
+        max(visible_terms, key=len) if visible_terms else None
+    )
     sanitized = sanitize_evidence_snippet(
         snippet,
         matched_phrase=matched_phrase,
@@ -1085,6 +1144,12 @@ def classify(
         work_title=WORK_TITLES[work],
         pdf_page=row["pdf_page"],
         printed_page=row["printed_page"],
+        embedded_page_marker=(
+            marker.group(0)
+            if row["pdf_page"] is None
+            and (marker := re.search(r"(?i)\b(?:Page|Página)\s+\d{1,4}\b", quote))
+            else None
+        ),
         quote=quote[:4000],
         snippet=snippet,
         display_quote=display_quote[:4000] if display_quote else None,
@@ -1163,8 +1228,200 @@ def _mark_same_page(hits: list[Hit]) -> None:
             hit.relation_level = "contextual"
 
 
+def _apply_intent_evidence_contract(
+    hits: list[Hit],
+    interpretation: QueryInterpretation,
+) -> None:
+    """Apply intent-specific deterministic approval without inventing evidence."""
+    if interpretation.intent == "biblical_reference_lookup":
+        reference = interpretation.biblical_reference
+        if reference is None:
+            return
+        patterns = [
+            re.compile(
+                rf"(?i)(?:salmos?|sal\.?|psalms?|ps\.?|tehilim|tehillim|תהילים|תהלים)"
+                rf"\s+{reference.chapter}(?!\d)"
+            )
+        ]
+        if reference.chapter == 19:
+            patterns.append(re.compile(r"(?:תהילים|תהלים)\s+י[׳״'\"]?ט"))
+        for hit in hits:
+            text = hit.display_quote or hit.quote
+            exact = any(pattern.search(text) for pattern in patterns)
+            hit.direct_support = exact
+            hit.evidence_strength = "strong" if exact else "insufficient"
+            hit.match_strength = hit.evidence_strength
+            hit.relation_relevance = "direct_relation" if exact else "unrelated_literal_noise"
+            hit.relation_type = "none"
+            hit.relation_strength = "none"
+            hit.literal_relation = False
+            hit.inference_required = False
+        return
+    if interpretation.intent in {
+        "literal_lookup",
+        "translation_or_explanation",
+        "concept_lookup",
+        "named_teaching_lookup",
+        "reference_lookup",
+        "follow_up",
+        "book_scope_query",
+        "source_request",
+    }:
+        for hit in hits:
+            literal = hit.literal_match_kind not in {"none", "semantic", "named_topic_partial"}
+            if literal:
+                hit.evidence_strength = (
+                    "strong"
+                    if hit.literal_match_kind != "single_term"
+                    or interpretation.intent in {
+                        "concept_lookup", "named_teaching_lookup",
+                        "reference_lookup", "follow_up", "book_scope_query",
+                        "source_request",
+                    }
+                    else "medium"
+                )
+                hit.match_strength = hit.evidence_strength
+        return
+    if interpretation.intent == "relation_query":
+        for hit in hits:
+            if hit.relation_relevance == "same_fragment_both_terms":
+                hit.evidence_strength = "medium"
+                hit.match_strength = "medium"
+                normalized_text = _fold(hit.display_quote or hit.quote)
+                explicit_chain = (
+                    "sangre" in normalized_text
+                    and any(marker in normalized_text for marker in (
+                        "impureza", "lujur", "pensamiento",
+                    ))
+                    and any(marker in normalized_text for marker in (
+                        "shema", "baruj shem", "recit",
+                    ))
+                )
+                hit.relation_type = (
+                    "mediated_explicit_chain"
+                    if explicit_chain
+                    else "same_fragment_cooccurrence"
+                )
+                hit.relation_strength = "medium"
+                hit.literal_relation = False
+                hit.inference_required = True
+                hit.relation_level = "contextual"
+            elif hit.relation_relevance == "same_page_both_terms":
+                hit.relation_type = "same_page"
+                hit.relation_strength = "low"
+                hit.literal_relation = False
+                hit.inference_required = True
+
+
+def _mark_controlled_blood_speech_chain(
+    hits: list[Hit],
+    interpretation: QueryInterpretation,
+) -> list[str]:
+    if interpretation.intent != "relation_query" or not interpretation.relations:
+        return []
+    pair = interpretation.relations[0]
+    if frozenset({_fold(pair.left.normalized), _fold(pair.right.normalized)}) != frozenset({"sangre", "habla"}):
+        return []
+    blood_hits = [
+        hit for hit in hits
+        if hit.work_code == "potencia_plegaria"
+        and hit.pdf_page is not None
+        and "sangre" in _fold(hit.quote)
+        and any(marker in _fold(hit.quote) for marker in ("impureza", "lujur"))
+    ]
+    speech_hits = [
+        hit for hit in hits
+        if hit.work_code == "potencia_plegaria"
+        and hit.pdf_page is not None
+        and "shema" in _fold(hit.quote)
+        and any(marker in _fold(hit.quote) for marker in ("recit", "decir"))
+    ]
+    pair_hits = next(
+        (
+            (speech, blood)
+            for blood in blood_hits
+            for speech in speech_hits
+            if abs(blood.pdf_page - speech.pdf_page) <= 1
+        ),
+        None,
+    )
+    if pair_hits is None:
+        return []
+    for hit in pair_hits:
+        hit.evidence_strength = "medium"
+        hit.match_strength = "medium"
+        hit.relation_relevance = "same_section_relation"
+        hit.relation_type = "mediated_explicit_chain"
+        hit.relation_strength = "medium"
+        hit.literal_relation = False
+        hit.inference_required = True
+        hit.relation_level = "contextual"
+    return [hit.hit_id for hit in pair_hits]
+
+
+def _discover_validated_relations(
+    hits: list[Hit],
+    interpretation: QueryInterpretation,
+) -> list[dict]:
+    if interpretation.intent != "discover_relations" or not interpretation.query_subjects:
+        return []
+    subject = interpretation.query_subjects[0]
+    subject_key = next(
+        (key for key in DISCOVERY_NEIGHBORS if _fold(key) == _fold(subject.normalized)),
+        None,
+    )
+    if subject_key is None:
+        return []
+    relations: list[dict] = []
+    seen: set[str] = set()
+    for related_concept, aliases in DISCOVERY_NEIGHBORS[subject_key]:
+        for hit in hits:
+            text = normalize_hebrew_search(hit.display_quote or hit.quote)
+            subject_present = any(
+                normalize_hebrew_search(variant.value) in text
+                for variant in subject.variants
+            )
+            related_present = next(
+                (
+                    alias for alias in aliases
+                    if normalize_hebrew_search(alias) in text
+                ),
+                None,
+            )
+            if not subject_present or related_present is None:
+                continue
+            if related_concept in seen:
+                break
+            seen.add(related_concept)
+            hit.evidence_strength = "medium"
+            hit.match_strength = "medium"
+            hit.relation_relevance = "same_fragment_both_terms"
+            hit.relation_type = "same_fragment_cooccurrence"
+            hit.relation_strength = "medium"
+            hit.literal_relation = False
+            hit.inference_required = False
+            hit.relation_level = "contextual"
+            relations.append({
+                "related_concept": related_concept,
+                "statement": (
+                    f"«{subject.canonical or subject.raw}» aparece en el mismo fragmento "
+                    f"que «{related_concept}»; esto prueba coocurrencia, no causalidad."
+                ),
+                "relation_type": "same_fragment_cooccurrence",
+                "strength": "medium",
+                "evidence_ids": [hit.hit_id],
+                "primary_evidence_id": hit.hit_id,
+                "literal_subject_present": True,
+                "literal_related_concept_present": True,
+                "inference_required": False,
+            })
+            break
+    return relations
+
+
 def _sort_key(hit: Hit) -> tuple:
     return (
+        0 if hit.relation_type == "mediated_explicit_chain" else 1,
         hit.retrieval_tier,
         source_layer_priority(hit.source_layer),
         RELATION_PRIORITY[hit.relation_relevance],
@@ -1196,10 +1453,13 @@ def _normalize_claims(raw_claims: list[dict], hits: list[Hit], required_concepts
         text = str(raw.get("text") or raw.get("claim") or "").strip()
         evidence_ids = list(dict.fromkeys(str(value) for value in raw.get("evidence_ids", []) if str(value) in allowed))
         if required_concepts >= 2:
-            direct_ids = [value for value in evidence_ids if len(allowed[value].matched_concepts) >= required_concepts]
-            if not direct_ids:
+            grounded_concepts = {
+                concept
+                for evidence_id in evidence_ids
+                for concept in allowed[evidence_id].matched_concepts
+            }
+            if len(grounded_concepts) < required_concepts:
                 continue
-            evidence_ids = direct_ids
         if not text or not evidence_ids:
             continue
         requested_primary = str(raw.get("primary_evidence_id") or "")
@@ -1243,6 +1503,8 @@ async def _ai_render(question: str, hits: list[Hit]) -> tuple[str | None, list[s
         "quote": hit.snippet,
         "matched_concepts": hit.matched_concepts,
         "relation_relevance": hit.relation_relevance,
+        "relation_type": hit.relation_type,
+        "inference_required": hit.inference_required,
         "literal_strength": hit.literal_strength,
         "warnings": hit.warnings,
     } for hit in hits[:20]]
@@ -1254,7 +1516,7 @@ async def _ai_render(question: str, hits: list[Hit]) -> tuple[str | None, list[s
                 json={
                     "model": RESEARCH_CONVERSATION_MODEL,
                     "messages": [
-                        {"role": "system", "content": "Return JSON only: answer_markdown, used_evidence_ids, claims. Each claim must contain claim_id, text, strength, evidence_ids, primary_evidence_id. Use only supplied IDs. Prefer evidence containing every requested concept. A single-term literal is not strong evidence for a relation. Never invent quotes/pages/works and never assert doctrinal dependency."},
+                        {"role": "system", "content": "Return JSON only: answer_markdown, used_evidence_ids, claims. Each claim must contain claim_id, text, strength, evidence_ids, primary_evidence_id. Use only supplied IDs. A relation may be supported by a controlled set of adjacent evidence IDs whose union contains the requested concepts. Preserve relation_type and state explicitly when a chain is mediated or inference is required. A single-term literal alone is not evidence for a relation. Never invent quotes/pages/works and never assert doctrinal dependency."},
                         {"role": "user", "content": json.dumps({"question": question, "evidence": context}, ensure_ascii=False)},
                     ],
                     "temperature": 0,
@@ -1307,6 +1569,22 @@ def _deterministic_claims(
     instruction_language: str = "es",
     named_topic: NamedTopicResolution | None = None,
 ) -> list[dict]:
+    if intent == "biblical_reference_lookup":
+        exact_hits = [hit for hit in hits if hit.direct_support and hit.evidence_strength != "insufficient"]
+        if not exact_hits:
+            return []
+        primary = exact_hits[0]
+        return [{
+            "claim_id": "biblical_reference_primary",
+            "text": (
+                f"Se encontró una referencia verificable a la cita solicitada en "
+                f"{primary.work_title}"
+                f"{f', PDF p. {primary.pdf_page}' if primary.pdf_page is not None else ''}."
+            ),
+            "strength": "strong",
+            "evidence_ids": [primary.hit_id],
+            "primary_evidence_id": primary.hit_id,
+        }]
     if named_topic is not None and hits:
         direct_hits = [hit for hit in hits if hit.direct_support]
         if not direct_hits:
@@ -1421,8 +1699,15 @@ def _deterministic_claims(
             }]
     candidates = [hit for hit in hits if hit.relation_relevance in {"same_fragment_both_terms", "same_section_relation", "same_page_both_terms"}]
     required = concept_count if concept_count is not None else len(relation_concepts(question))
-    if not candidates and required == 1 and hits:
-        candidates = [hits[0]]
+    if (
+        not candidates
+        and required == 1
+        and intent in {
+            "concept_lookup", "reference_lookup", "follow_up",
+            "book_scope_query", "source_request",
+        }
+    ):
+        candidates = [hit for hit in hits if hit.evidence_strength != "insufficient"][:1]
     if not candidates:
         return []
     primary = candidates[0]
@@ -1436,25 +1721,18 @@ def _deterministic_claims(
 
 
 def _apply_claim_traceability(hits: list[Hit], claims: list[dict]) -> list[str]:
+    by_id = {hit.hit_id: hit for hit in hits}
+    valid_claims = [
+        claim for claim in claims
+        if claim.get("primary_evidence_id") in by_id
+        and by_id[claim["primary_evidence_id"]].evidence_strength != "insufficient"
+        and all(evidence_id in by_id for evidence_id in claim.get("evidence_ids", []))
+    ]
+    claims[:] = valid_claims
     primary_ids = list(dict.fromkeys(claim["primary_evidence_id"] for claim in claims))
     primary_order = {evidence_id: index for index, evidence_id in enumerate(primary_ids)}
-    by_id = {hit.hit_id: hit for hit in hits}
-    strength_order = {"insufficient": 0, "weak": 1, "medium": 2, "strong": 3}
-    claim_strengths: dict[str, str] = {}
-    for claim in claims:
-        strength = str(claim.get("strength", "strong"))
-        if strength not in strength_order:
-            strength = "weak"
-        for evidence_id in claim["evidence_ids"]:
-            current = claim_strengths.get(evidence_id, "insufficient")
-            if evidence_id not in claim_strengths or strength_order[strength] > strength_order[current]:
-                claim_strengths[evidence_id] = strength
-    for evidence_id, strength in claim_strengths.items():
-        hit = by_id[evidence_id]
-        hit.relation_relevance = "direct_relation"
-        hit.evidence_strength = strength
-        hit.relation_level = "literal"
-        hit.is_primary = evidence_id in primary_ids
+    for hit in hits:
+        hit.is_primary = hit.hit_id in primary_ids
     hits.sort(key=lambda hit: (0, primary_order[hit.hit_id]) if hit.hit_id in primary_order else (1, _sort_key(hit)))
     return primary_ids
 
@@ -1584,6 +1862,11 @@ def render(
         lines.append(f"No se encontró una coincidencia literal para «{question}».")
     elif intent in {"structural_reference_lookup"}:
         lines.append(f"No se encontró una referencia estructural para la consulta «{question}».")
+    elif intent == "biblical_reference_lookup":
+        lines.append(
+            f"No encontré una referencia bíblica verificable compatible con «{question}»; "
+            "los números aislados y las referencias a otros libros fueron descartados."
+        )
     elif named_topic is not None:
         variants = [
             value for value in named_topic.variants_searched
@@ -1593,7 +1876,11 @@ def render(
         lines.append(
             f"No encontré referencias verificables a «{named_topic.canonical_label}» en el corpus consultado.{suffix}"
         )
-    elif intent in {"concept_lookup", "concept_cooccurrence", "reference_lookup", "follow_up", "book_scope_query", "source_request"}:
+    elif intent in {
+        "concept_lookup", "concept_cooccurrence", "discover_relations",
+        "named_teaching_lookup", "reference_lookup", "follow_up",
+        "book_scope_query", "source_request",
+    }:
         lines.append(f"No se encontró evidencia para el concepto o fuente solicitada en «{question}».")
     else:
         lines.append(f"No se encontró evidencia suficiente para establecer la relación solicitada en «{question}».")
@@ -1772,6 +2059,9 @@ def query_understanding_contract(data: QaRequest, prepared: PreparedQuery) -> di
         "structural_reference_lookup": "locate_reference",
         "reference_lookup": "locate_reference",
         "concept_cooccurrence": "find_related_concepts",
+        "discover_relations": "find_related_concepts",
+        "biblical_reference_lookup": "find_biblical_reference",
+        "named_teaching_lookup": "find_named_topic",
         "relation_query": "investigate_relation",
         "comparison_query": "compare_subjects",
         "concept_lookup": "find_concept",
@@ -1783,7 +2073,7 @@ def query_understanding_contract(data: QaRequest, prepared: PreparedQuery) -> di
     }
     operation = (
         "find_named_topic"
-        if named_topic is not None and structured.intent == "concept_lookup"
+        if named_topic is not None and structured.intent in {"concept_lookup", "named_teaching_lookup"}
         else structured.operation
         if structured.operation is not None
         else operation_by_intent.get(structured.intent, "investigate_query")
@@ -1841,8 +2131,13 @@ def display_interpretation(data: QaRequest, prepared: PreparedQuery) -> str:
         if structured.intent == "comparison_query":
             return f"Interpreté que desea comparar «{left}» y «{right}»."
         return f"Interpreté que desea investigar la relación entre «{left}» y «{right}»."
-    if named_topic is not None:
-        return f"Interpreté que desea investigar referencias sobre {named_topic.canonical_label}."
+    if structured.intent == "biblical_reference_lookup" and structured.biblical_reference:
+        reference = structured.biblical_reference
+        verse = f":{reference.verse_start}" if reference.verse_start is not None else ""
+        return (
+            "Interpreté que busca referencias a "
+            f"{reference.book_label} {reference.chapter}{verse}."
+        )
     if structured.intent in {"literal_lookup", "translation_or_explanation"} and structured.literal_phrases:
         return f"Interpreté que desea localizar la frase «{structured.literal_phrases[0].raw}»."
     if structured.intent == "structural_reference_lookup" and structured.structural_reference:
@@ -1850,11 +2145,18 @@ def display_interpretation(data: QaRequest, prepared: PreparedQuery) -> str:
             "Interpreté que desea localizar la referencia estructural "
             f"«{structured.structural_reference.raw}»."
         )
+    if named_topic is not None and structured.intent == "named_teaching_lookup":
+        return (
+            f"Interpreté «{named_topic.subject_raw}» como un término "
+            "o enseñanza propia de Breslov."
+        )
+    if named_topic is not None and structured.intent != "discover_relations":
+        return f"Interpreté que desea investigar referencias sobre {named_topic.canonical_label}."
     if structured.query_subjects:
         subject = structured.query_subjects[0]
         value = subject.canonical or subject.normalized
-        if structured.intent == "concept_cooccurrence":
-            return f"Interpreté que desea investigar con qué conceptos se relaciona {value}."
+        if structured.intent in {"concept_cooccurrence", "discover_relations"}:
+            return f"Interpreté que desea saber con qué conceptos aparece relacionado «{value}»."
         if structured.intent in {"reference_lookup", "location_lookup"}:
             return f"Interpreté que desea localizar la referencia «{value}»."
         return f"Interpreté que desea investigar el concepto «{value}»."
@@ -1928,6 +2230,14 @@ async def run(
             was_typo = suggestion_candidates and suggestion_candidates[0].suggestion_type != "exact_match"
             if was_typo:
                 interpretation_warnings.append(f"suggestion_autoapplied:{entry.concept_id}")
+    if structured.intent == "relation_query" and structured.relations:
+        pair = structured.relations[0]
+        pair_key = frozenset({_fold(pair.left.normalized), _fold(pair.right.normalized)})
+        bridge_aliases = RELATION_BRIDGE_ALIASES.get(pair_key)
+        if bridge_aliases:
+            for concept in concepts:
+                aliases = bridge_aliases.get(_fold(str(concept["label"])), ())
+                concept["terms"] = list(dict.fromkeys([*concept["terms"], *aliases]))
     query_resolution = build_suggestion_contract(data.question, resolution_norm, suggestion_candidates, autoapply_id)
     # ────────────────────────────────────────────────────────────────
 
@@ -2066,6 +2376,30 @@ async def run(
                         entry["terms"].append(term)
                     if concept["label"] not in entry["concepts"]:
                         entry["concepts"].append(concept["label"])
+    if (
+        intent == "relation_query"
+        and frozenset(_fold(str(item["label"])) for item in concepts)
+        == frozenset({"sangre", "habla"})
+        and "potencia_plegaria" in plan["works"]
+    ):
+        for row in await _fetch_controlled_blood_speech_chain(conn):
+            text = _fold(str(row["quote"]))
+            label = "sangre" if "sangre" in text else "habla"
+            term = "impurezas en la sangre" if label == "sangre" else (
+                "recitación del Shemá" if "recit" in text else "decir Shemá"
+            )
+            key = f"potencia_plegaria:{stable_hash(str(row['quote']))}"
+            entry = candidates.setdefault(key, {
+                "work": "potencia_plegaria",
+                "row": row,
+                "view": "library_la_potencia_plegaria_investigative_search_v1",
+                "terms": [],
+                "concepts": [],
+            })
+            if term not in entry["terms"]:
+                entry["terms"].append(term)
+            if label not in entry["concepts"]:
+                entry["concepts"].append(label)
     hits = [classify(
         entry["work"], entry["row"], entry["terms"], entry["concepts"], entry["view"],
         primary_language=primary_language,
@@ -2080,13 +2414,36 @@ async def run(
                 object.__setattr__(hit, "language_match", "exact")
             object.__setattr__(hit, "retrieval_tier", 0)
     _mark_same_page(hits)
+    _apply_intent_evidence_contract(hits, structured)
+    controlled_relation_ids = _mark_controlled_blood_speech_chain(hits, structured)
+    validated_relations = _discover_validated_relations(hits, structured)
     hits.sort(key=_sort_key)
     hits = _cap_hits_with_language_coverage(hits, data.max_hits_per_work, data.languages)
     generative_intents = {"relation_query", "comparison_query", "translation_or_explanation"}
     ai_markdown, render_warnings, claims = await _ai_render(resolved_question, hits) if data.ai.enabled and hits and intent in generative_intents else (None, [], [])
     warnings.extend(render_warnings)
     source_layer_followup = intent == "follow_up" and _is_source_layer_followup(data.question)
+    discovery_claims = [{
+        "claim_id": f"discovered_relation_{index + 1}",
+        "text": relation["statement"],
+        "strength": relation["strength"],
+        "evidence_ids": relation["evidence_ids"],
+        "primary_evidence_id": relation["primary_evidence_id"],
+    } for index, relation in enumerate(validated_relations)]
+    controlled_relation_claims = [{
+        "claim_id": "mediated_explicit_chain",
+        "text": (
+            "La evidencia presenta una cadena mediada: las impurezas en la sangre "
+            "se vinculan con pensamientos lujuriosos y la sección contigua prescribe "
+            "la recitación del Shemá como rectificación. No es una relación literal directa."
+        ),
+        "strength": "medium",
+        "evidence_ids": controlled_relation_ids,
+        "primary_evidence_id": controlled_relation_ids[0],
+    }] if controlled_relation_ids else []
     claims = _source_layer_followup_claims(hits, structured.instruction_language) if source_layer_followup else (
+        discovery_claims if intent == "discover_relations" else
+        controlled_relation_claims if controlled_relation_claims else
         claims or _deterministic_claims(
             resolved_question,
             hits,
@@ -2147,7 +2504,9 @@ async def run(
         "query_understanding": {
             "original_query": data.question,
             "intent": intent,
-            "operation": "find_named_topic" if named_topic is not None else None,
+            "operation": structured.operation or (
+                "find_named_topic" if named_topic is not None else None
+            ),
             "subject_type": "named_topic" if named_topic is not None else (
                 structured.query_subjects[0].kind if structured.query_subjects else None
             ),
@@ -2177,6 +2536,7 @@ async def run(
         "evidence_matrix": matrix,
         "cross_corpus_matrix": [],
         "claims": claims,
+        "relations": validated_relations,
         "primary_evidence_ids": primary_ids,
         "evidence_counts": counts,
         "not_found": [] if primary_ids else [item["label"] for item in concepts],

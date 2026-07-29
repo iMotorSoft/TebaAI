@@ -32,7 +32,10 @@ Intent = Literal[
     "literal_lookup",
     "concept_lookup",
     "concept_cooccurrence",
+    "discover_relations",
     "relation_query",
+    "biblical_reference_lookup",
+    "named_teaching_lookup",
     "reference_lookup",
     "structural_reference_lookup",
     "location_lookup",
@@ -113,6 +116,16 @@ class StructuralReference(StrictModel):
     number_system: Literal["arabic", "roman", "hebrew", "none"] = "none"
 
 
+class BiblicalReference(StrictModel):
+    book: Literal["Psalms"]
+    book_label: str = Field(min_length=1, max_length=80)
+    chapter: int = Field(ge=1, le=150)
+    verse_start: int | None = Field(default=None, ge=1, le=176)
+    verse_end: int | None = Field(default=None, ge=1, le=176)
+    language: Literal["es", "en", "he"]
+    variants: list[str] = Field(min_length=1, max_length=16)
+
+
 class RequestedOutput(StrictModel):
     include_sources: bool = True
     include_pages: bool = True
@@ -130,7 +143,12 @@ class QueryInterpretation(StrictModel):
     language: Language
     secondary_languages: list[Language] = Field(default_factory=list, max_length=3)
     intent: Intent
-    operation: Literal["find_named_topic", "find_related_concepts", "investigate_relation"] | None = None
+    operation: Literal[
+        "find_named_topic",
+        "find_related_concepts",
+        "investigate_relation",
+        "find_biblical_reference",
+    ] | None = None
     instruction_language: Language
     instruction: str | None = Field(default=None, max_length=200)
     instruction_span: str | None = Field(default=None, max_length=300)
@@ -141,6 +159,7 @@ class QueryInterpretation(StrictModel):
     literal_phrases: list[LiteralPhrase] = Field(default_factory=list, max_length=3)
     relations: list[RelationPair] = Field(default_factory=list, max_length=3)
     structural_reference: StructuralReference | None = None
+    biblical_reference: BiblicalReference | None = None
     requested_works: list[WorkCode] = Field(default_factory=list, max_length=6)
     requested_languages: list[Language] = Field(default_factory=list, max_length=4)
     needs_context: bool = False
@@ -160,6 +179,11 @@ _SPANISH_CUE = re.compile(r"(?i)\b(d[oó]nde|buscar|concepto|libro|frase|qu[eé]
 _ENGLISH_CUE = re.compile(r"(?i)\b(where|find|concept|book|phrase|what|relation|source|page|mentioned|contains|mean)\b")
 _TRANSLATION = re.compile(r"(?i)(qu[eé]\s+significa|what\s+does|what\s+is\s+the\s+meaning|מה\s+פירוש|מה\s+משמעות|תרגם)")
 _RELATION = re.compile(r"(?i)(relaci[oó]n\s+entre|qu[eé]\s+relaci[oó]n\s+tiene(?:n)?(?:\s+con)?|relation\s+between|what\s+is\s+the\s+relation|מה\s+הקשר\s+בין)")
+_BARE_RELATION = re.compile(
+    r"(?i)^\s*[A-Za-zÀ-ÖØ-öø-ÿ\u0590-\u05ff'’ -]{2,80}"
+    r"\s+(?:y|e|and|ו)\s+"
+    r"[A-Za-zÀ-ÖØ-öø-ÿ\u0590-\u05ff'’ -]{2,80}\s*[?.!]*$"
+)
 _COMPARISON = re.compile(r"(?i)(comparar|compare|השווה)")
 _SOURCE = re.compile(r"(?i)(fuente\s+principal|main\s+source|המקור\s+העיקרי|תראה\s+לי\s+את\s+המקור)")
 _FOLLOW_UP = re.compile(
@@ -212,6 +236,10 @@ def _pattern(value: str) -> re.Pattern[str]:
 # Kept as small, ordered language-specific markers so subject position and
 # colloquial variants remain independently auditable.
 _OPEN_RELATIONAL_PATTERNS: tuple[tuple[str, Language, re.Pattern[str]], ...] = (
+    ("es_term_with_what_related", "es", _pattern(
+        r"^(?P<instruction>el\s+t[eé]rmino)\s+(?P<subject>.+?)\s+"
+        r"(?P<instruction_tail>con\s+qu[eé]\s+est[aá]\s+relacionado)\s*[?.!]*$"
+    )),
     ("es_subject_relations_it_has", "es", _pattern(
         r"^(?P<subject>.+?)\s+(?P<instruction>(?:la|las|los|sus?)\s+relaciones?\s+que\s+tiene(?:n)?)\s*[?.!]*$"
     )),
@@ -325,6 +353,12 @@ _VALIDATED_LATIN_EXPANSIONS: dict[str, tuple[str, ...]] = {
     "rabí natán": ("rabi natan", "reb noson", "rabí noson"),
     "rabbi nathan": ("rabí natán", "rabi natan", "reb noson"),
 }
+
+_PSALMS_REFERENCE_RE = re.compile(
+    r"(?i)(?P<book>salmos?|sal\.?|psalms?|ps\.?|tehilim|tehillim|תהילים|תהלים)"
+    r"\s+(?P<chapter>\d{1,3}|[א-ת׳״'\"]{1,5})"
+    r"(?:\s*[:.,]\s*(?P<verse>\d{1,3}|[א-ת׳״'\"]{1,5}))?"
+)
 
 
 def preprocess_query(raw_query: str) -> QueryPreprocessing:
@@ -590,6 +624,7 @@ ROMAN_MAP = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VII
 HEBREW_NUM_MAP = {"א": 1, "ב": 2, "ג": 3, "ד": 4, "ה": 5, "ו": 6, "ז": 7, "ח": 8, "ט": 9, "י": 10,
                   "כ": 20, "ל": 30, "מ": 40, "נ": 50, "ס": 60, "ע": 70, "פ": 80, "צ": 90, "ק": 100}
 
+
 def _parse_number_from_query(num_str: str) -> tuple[int | None, str]:
     if not num_str:
         return None, "none"
@@ -599,10 +634,61 @@ def _parse_number_from_query(num_str: str) -> tuple[int | None, str]:
     # Roman
     if num_str in ROMAN_MAP:
         return ROMAN_MAP[num_str], "roman"
-    # Hebrew letter
-    if num_str in HEBREW_NUM_MAP:
-        return HEBREW_NUM_MAP[num_str], "hebrew"
+    # Hebrew numeral (gershayim/geresh are presentation punctuation).
+    hebrew_letters = re.sub(r"[׳״'\"]", "", num_str)
+    if hebrew_letters and all(char in HEBREW_NUM_MAP for char in hebrew_letters):
+        return sum(HEBREW_NUM_MAP[char] for char in hebrew_letters), "hebrew"
     return None, "none"
+
+
+def _detect_biblical_reference(value: str) -> BiblicalReference | None:
+    match = _PSALMS_REFERENCE_RE.search(value)
+    if match is None:
+        return None
+    chapter, _ = _parse_number_from_query(match.group("chapter"))
+    verse, _ = _parse_number_from_query(match.group("verse") or "")
+    if chapter is None or not 1 <= chapter <= 150:
+        return None
+    book_raw = match.group("book")
+    language: Literal["es", "en", "he"] = (
+        "he" if _HEBREW.search(book_raw)
+        else "en" if book_raw.casefold().startswith(("psalm", "ps."))
+        else "es"
+    )
+    chapter_hebrew = "".join(
+        char for char in match.group("chapter") if char in HEBREW_NUM_MAP
+    )
+    variants = [
+        f"Salmo {chapter}",
+        f"Salmos {chapter}",
+        f"Sal. {chapter}",
+        f"Psalm {chapter}",
+        f"Psalms {chapter}",
+        f"Tehilim {chapter}",
+        f"Tehillim {chapter}",
+    ]
+    if chapter_hebrew:
+        variants.extend((f"תהילים {chapter_hebrew}", f"תהלים {chapter_hebrew}"))
+    else:
+        # The controlled Hebrew form is included only as a complete reference,
+        # never as a free-standing number.
+        hebrew_by_value = {19: "יט"}
+        if chapter in hebrew_by_value:
+            variants.extend((
+                f"תהילים {hebrew_by_value[chapter]}",
+                f"תהלים {hebrew_by_value[chapter]}",
+            ))
+    if verse is not None:
+        variants = [f"{variant}:{verse}" for variant in variants]
+    return BiblicalReference(
+        book="Psalms",
+        book_label="Salmos",
+        chapter=chapter,
+        verse_start=verse,
+        verse_end=verse,
+        language=language,
+        variants=list(dict.fromkeys(variants)),
+    )
 
 
 def _detect_structural_reference(value: str) -> StructuralReference | None:
@@ -659,8 +745,12 @@ def deterministic_interpret(
 ) -> QueryInterpretation:
     started = time.perf_counter()
     value = preprocessing.raw_query
+    unsafe_controls = bool(re.search(
+        r"[<>{}\u202a-\u202e\u2066-\u2069\x00-\x08\x0b\x0c\x0e-\x1f]",
+        value,
+    ))
     lang, secondary, instruction_lang = _language(value)
-    named_topic = resolve_named_topic(value)
+    named_topic = None if unsafe_controls else resolve_named_topic(value)
     if named_topic is not None and lang == "unknown":
         lang, instruction_lang = "es", "es"
     requested_works = _works(value)
@@ -671,17 +761,23 @@ def deterministic_interpret(
         lang = instruction_lang = open_relational.language
     intent: Intent
     structural_ref = _detect_structural_reference(value)
+    biblical_ref = _detect_biblical_reference(value)
     if _SOURCE.search(value):
         intent = "source_request"
     elif _FOLLOW_UP.search(value):
         intent = "follow_up"
+    elif biblical_ref is not None:
+        intent = "biblical_reference_lookup"
     elif open_relational is not None:
-        intent = "concept_cooccurrence"
+        intent = "discover_relations"
     elif _COOCCURRENCE.search(value):
-        intent = "concept_cooccurrence"
+        intent = "discover_relations"
     elif _TRANSLATION.search(value):
         intent = "translation_or_explanation"
-    elif _RELATION.search(value):
+    elif _RELATION.search(value) or (
+        _BARE_RELATION.search(value)
+        and len(re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ\u0590-\u05ff]+", value)) <= 5
+    ):
         intent = "relation_query"
     elif _COMPARISON.search(value):
         intent = "comparison_query"
@@ -694,7 +790,11 @@ def deterministic_interpret(
     elif structural_ref is not None and (_LOCATOR.search(value) or _REFERENCE.search(value) or _LITERAL_LABEL.search(value)):
         intent = "structural_reference_lookup"
     elif named_topic is not None:
-        intent = "concept_lookup"
+        intent = (
+            "named_teaching_lookup"
+            if named_topic.canonical_id.startswith("teaching.")
+            else "concept_lookup"
+        )
     elif _CONCEPT_LABEL.search(value) or _LOCATOR.search(value):
         content = _content_subjects(value)
         intent = "literal_lookup" if len(content) >= 2 and preprocessing.contains_hebrew else "concept_lookup"
@@ -715,9 +815,26 @@ def deterministic_interpret(
     literals: list[LiteralPhrase] = []
     relations: list[RelationPair] = []
     structural_reference: StructuralReference | None = structural_ref if intent == "structural_reference_lookup" else None
+    biblical_reference: BiblicalReference | None = biblical_ref if intent == "biblical_reference_lookup" else None
     resolved_context: str | None = None
     needs_context = intent in {"follow_up", "book_scope_query", "source_request"}
-    if intent in {"literal_lookup", "translation_or_explanation"}:
+    if intent == "biblical_reference_lookup" and biblical_reference is not None:
+        raw_reference = biblical_ref and _PSALMS_REFERENCE_RE.search(value)
+        raw = raw_reference.group(0) if raw_reference else value
+        subjects = [QuerySubject(
+            kind="reference",
+            raw=raw,
+            normalized=f"{biblical_reference.book} {biblical_reference.chapter}",
+            language=biblical_reference.language,
+            script="hebrew" if biblical_reference.language == "he" else "latin",
+            variants=[
+                SubjectVariant(value=variant, kind="validated_alias")
+                for variant in biblical_reference.variants[:12]
+            ],
+            subject_type="reference",
+            canonical=f"{biblical_reference.book} {biblical_reference.chapter}",
+        )]
+    elif intent in {"literal_lookup", "translation_or_explanation"}:
         literal = _literal_from_question(value)
         if not literal:
             literal = _latin_literal_from_question(value)
@@ -770,7 +887,7 @@ def deterministic_interpret(
         match = _REFERENCE.search(value)
         if match and (reference := _subject(match.group(), "reference")):
             subjects = [reference]
-    elif intent == "concept_cooccurrence":
+    elif intent in {"concept_cooccurrence", "discover_relations"}:
         if open_relational is not None:
             subject = _controlled_concept_subject(open_relational.subject_span)
             subjects = [subject] if subject is not None else []
@@ -779,7 +896,7 @@ def deterministic_interpret(
             # authoritative and positional extraction is only the fallback.
             content = _content_subjects(value)
             subjects = [content[-1]] if content else []
-    elif intent == "concept_lookup":
+    elif intent in {"concept_lookup", "named_teaching_lookup"}:
         subjects = [_named_topic_subject(named_topic)] if named_topic is not None else _content_subjects(value)[:3]
 
     if intent in {"relation_query", "comparison_query"} and len(subjects) < 2 and history:
@@ -817,15 +934,27 @@ def deterministic_interpret(
                 break
 
     confidence = 0.96 if (subjects or literals or relations or structural_reference) and intent != "unknown" else 0.45
+    if unsafe_controls:
+        intent = "unknown"
+        subjects = []
+        literals = []
+        relations = []
+        structural_reference = None
+        biblical_reference = None
+        open_relational = None
+        confidence = 0.0
     return QueryInterpretation(
         language=lang,
         secondary_languages=secondary,
         intent=intent,
         operation=(
+            "find_biblical_reference"
+            if intent == "biblical_reference_lookup"
+            else
             "find_named_topic"
-            if named_topic is not None and intent == "concept_lookup"
+            if named_topic is not None and intent in {"concept_lookup", "named_teaching_lookup"}
             else "find_related_concepts"
-            if open_relational is not None and intent == "concept_cooccurrence"
+            if open_relational is not None and intent == "discover_relations"
             else None
         ),
         instruction_language=instruction_lang,
@@ -846,6 +975,7 @@ def deterministic_interpret(
         literal_phrases=literals,
         relations=relations,
         structural_reference=structural_reference,
+        biblical_reference=biblical_reference,
         requested_works=requested_works,
         requested_languages=list(dict.fromkeys([lang, *secondary])) if lang != "unknown" else [],
         needs_context=needs_context,
@@ -880,10 +1010,15 @@ def _validate_grounding(result: QueryInterpretation, preprocessing: QueryPreproc
             raise ValueError("ungrounded_literal")
     if result.intent == "relation_query" and len(result.relations) != 1:
         raise ValueError("invalid_relation_shape")
-    if result.intent == "concept_cooccurrence" and len(result.query_subjects) != 1:
+    if result.intent in {"concept_cooccurrence", "discover_relations"} and len(result.query_subjects) != 1:
         raise ValueError("invalid_cooccurrence_shape")
-    if result.intent in {"concept_lookup", "reference_lookup"} and not result.query_subjects:
+    if result.intent in {
+        "concept_lookup", "reference_lookup", "named_teaching_lookup",
+        "biblical_reference_lookup",
+    } and not result.query_subjects:
         raise ValueError("missing_subject")
+    if result.intent == "biblical_reference_lookup" and result.biblical_reference is None:
+        raise ValueError("missing_biblical_reference")
     if result.intent in {"literal_lookup", "translation_or_explanation"} and not result.literal_phrases:
         raise ValueError("missing_literal")
     if result.intent in {"follow_up", "book_scope_query", "source_request"} and not (
@@ -899,7 +1034,7 @@ def _validate_relational_ai_output(
 ) -> None:
     if "open_relational_query_single_subject" not in fallback.reason_codes:
         return
-    if result.intent != "concept_cooccurrence":
+    if result.intent != "discover_relations":
         raise ValueError("ai_wrong_relational_intent")
     if len(result.query_subjects) != 1:
         raise ValueError("ai_missing_subject")
@@ -972,9 +1107,10 @@ async def interpret_query(
         "Return one JSON object matching the supplied schema. Interpret ES/EN/HE investigative queries. "
         "Preserve Hebrew and multi-token proper or named-topic spans exactly, including apostrophes, hyphens and particles; "
         "distinguish named topics, concepts, literal phrases, relations, references, explanation, "
-        "follow-up and book scope. Separate the instruction span from each subject even when colloquial word order, "
+        "follow-up and book scope. Preserve a biblical book plus chapter as one reference; never emit its number alone. "
+        "Separate the instruction span from each subject even when colloquial word order, "
         "missing accents or minor grammar errors are present. Open relations with one explicit subject use "
-        "intent=concept_cooccurrence and operation=find_related_concepts; binary relations require two grounded subjects. "
+        "intent=discover_relations and operation=find_related_concepts; binary relations require two grounded subjects. "
         "Examples: 'azamra la relaciones que tiene' has subject 'azamra'; 'tristeza con que se relaciona' has subject "
         "'tristeza'; 'relación entre tristeza y alegría' has two relation subjects. Never use the entire query as a "
         "subject when a relational instruction can be separated. Localization words are not subjects. Do not provide evidence, source IDs, "
@@ -984,30 +1120,36 @@ async def interpret_query(
     )
     try:
         async with httpx.AsyncClient(timeout=LITELLM_TIMEOUT_SECONDS) as client:
-            response = await client.post(
-                f"{LITELLM_BASE_URL}/v1/chat/completions",
-                headers={"Authorization": f"Bearer {LITELLM_API_KEY}"},
-                json={
-                    "model": RESEARCH_CONVERSATION_MODEL,
-                    "messages": [
-                        {"role": "system", "content": system},
-                        {"role": "user", "content": json.dumps({"schema": schema, "input": payload}, ensure_ascii=False)},
-                    ],
-                    "temperature": 0,
-                    "max_tokens": 1200,
-                    "response_format": {"type": "json_object"},
-                },
-            )
-            response.raise_for_status()
-        raw = json.loads(response.json()["choices"][0]["message"]["content"])
-        raw.update({
-            "ai_used": True,
-            "fallback_used": False,
-            "model_alias": RESEARCH_CONVERSATION_MODEL,
-            "duration_ms": round((time.perf_counter() - started) * 1000, 2),
-        })
-        result = _canonicalize_model_output(QueryInterpretation.model_validate(raw))
-        _validate_relational_ai_output(result, fallback, preprocessing)
+            for attempt in range(2):
+                response = await client.post(
+                    f"{LITELLM_BASE_URL}/v1/chat/completions",
+                    headers={"Authorization": f"Bearer {LITELLM_API_KEY}"},
+                    json={
+                        "model": RESEARCH_CONVERSATION_MODEL,
+                        "messages": [
+                            {"role": "system", "content": system},
+                            {"role": "user", "content": json.dumps({"schema": schema, "input": payload}, ensure_ascii=False)},
+                        ],
+                        "temperature": 0,
+                        "max_tokens": 1200,
+                        "response_format": {"type": "json_object"},
+                    },
+                )
+                response.raise_for_status()
+                try:
+                    raw = json.loads(response.json()["choices"][0]["message"]["content"])
+                    raw.update({
+                        "ai_used": True,
+                        "fallback_used": False,
+                        "model_alias": RESEARCH_CONVERSATION_MODEL,
+                        "duration_ms": round((time.perf_counter() - started) * 1000, 2),
+                    })
+                    result = _canonicalize_model_output(QueryInterpretation.model_validate(raw))
+                    _validate_relational_ai_output(result, fallback, preprocessing)
+                    break
+                except (KeyError, TypeError, ValueError, json.JSONDecodeError, ValidationError):
+                    if attempt == 1:
+                        raise
         if fallback.confidence >= 0.9:
             result.intent = fallback.intent
             result.operation = fallback.operation
@@ -1020,6 +1162,8 @@ async def interpret_query(
             result.query_subjects = fallback.query_subjects
             result.literal_phrases = fallback.literal_phrases
             result.relations = fallback.relations
+            result.structural_reference = fallback.structural_reference
+            result.biblical_reference = fallback.biblical_reference
             result.requested_works = fallback.requested_works
         if result.intent in {"follow_up", "book_scope_query", "source_request"}:
             result.query_subjects = fallback.query_subjects

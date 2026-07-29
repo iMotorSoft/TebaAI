@@ -187,6 +187,32 @@ def test_ai_timeout_falls_back(monkeypatch: pytest.MonkeyPatch) -> None:
     assert warnings == ["ai_interpretation_fallback:ReadTimeout"]
 
 
+def test_invalid_ai_json_retries_once_before_accepting_valid_schema(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    fallback = deterministic_interpret(preprocess_query("salmo 19"), [])
+    valid = fallback.model_dump()
+    responses = iter(("not-json", json.dumps(valid, ensure_ascii=False)))
+
+    class SequenceClient(_FakeClient):
+        async def post(self, *_: object, **__: object):
+            return _FakeResponse(next(responses))
+
+    monkeypatch.setattr(multilingual, "LITELLM_API_KEY", "configured")
+    monkeypatch.setattr(
+        multilingual.httpx,
+        "AsyncClient",
+        lambda **kwargs: SequenceClient(**kwargs),
+    )
+    result, warnings = asyncio.run(interpret_query(
+        preprocess_query("salmo 19"),
+        ai_enabled=True,
+    ))
+    assert result.intent == "biblical_reference_lookup"
+    assert result.ai_used is True
+    assert warnings == []
+
+
 def test_ai_disabled_uses_safe_fallback() -> None:
     result, warnings = asyncio.run(interpret_query(
         preprocess_query("אתה מחפש איפה נמצא מושג העקרב."),
@@ -222,7 +248,7 @@ def test_open_relational_queries_separate_instruction_and_subject(
 ) -> None:
     result = deterministic_interpret(preprocess_query(query), [])
 
-    assert result.intent == "concept_cooccurrence"
+    assert result.intent == "discover_relations"
     assert result.operation == "find_related_concepts"
     assert result.query_subjects[0].raw == subject
     assert result.subject_span == subject
@@ -254,7 +280,7 @@ def test_colloquial_agreement_normalization_preserves_original_query() -> None:
 @pytest.mark.parametrize(
     ("query", "intent", "subjects"),
     [
-        ("qué relaciones tiene Azamra", "concept_cooccurrence", ["azamra"]),
+        ("qué relaciones tiene Azamra", "discover_relations", ["azamra"]),
         ("relación entre Azamra y alegría", "relation_query", ["azamra", "alegría"]),
         ("miedo y fe qué relación tienen", "relation_query", ["miedo", "fe"]),
     ],
@@ -279,5 +305,44 @@ def test_open_cooccurrence_is_distinct_from_grounded_binary_relation(
 ])
 def test_relational_subject_extraction_rejects_markup_and_bidi_controls(query: str) -> None:
     result = deterministic_interpret(preprocess_query(query), [])
-    assert result.intent != "concept_cooccurrence"
+    assert result.intent != "discover_relations"
     assert result.query_subjects == []
+
+
+@pytest.mark.parametrize(
+    ("query", "language"),
+    [
+        ("salmo 19", "es"),
+        ("Salmos 19:8", "es"),
+        ("Psalm 19", "en"),
+        ("תהילים יט", "he"),
+    ],
+)
+def test_psalms_reference_preserves_book_and_number(query: str, language: str) -> None:
+    result = deterministic_interpret(preprocess_query(query), [])
+    assert result.intent == "biblical_reference_lookup"
+    assert result.operation == "find_biblical_reference"
+    assert result.biblical_reference is not None
+    assert result.biblical_reference.book == "Psalms"
+    assert result.biblical_reference.chapter == 19
+    assert result.biblical_reference.language == language
+    assert result.query_subjects[0].normalized == "Psalms 19"
+    assert all(variant.value != "19" for variant in result.query_subjects[0].variants)
+
+
+def test_requested_scorpion_relations_are_not_a_simple_lookup() -> None:
+    result = deterministic_interpret(
+        preprocess_query("el término escorpión con qué está relacionado"),
+        [],
+    )
+    assert result.intent == "discover_relations"
+    assert result.operation == "find_related_concepts"
+    assert [subject.normalized for subject in result.query_subjects] == ["escorpión"]
+
+
+@pytest.mark.parametrize("query", ["azamra", "Azamrá", "אזמרה"])
+def test_azamra_is_a_controlled_named_teaching(query: str) -> None:
+    result = deterministic_interpret(preprocess_query(query), [])
+    assert result.intent == "named_teaching_lookup"
+    assert result.operation == "find_named_topic"
+    assert result.query_subjects[0].canonical_id == "teaching.azamra"

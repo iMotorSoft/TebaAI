@@ -20,6 +20,18 @@ export const relevanceLabels: Record<string, string> = {
   unrelated_literal_noise: "Coincidencia literal no relacionada",
 };
 
+export const relationTypeLabels: Record<string, string> = {
+  direct_literal: "Relación literal directa",
+  direct_paraphrase: "Relación directa parafraseada",
+  mediated_explicit_chain: "Cadena explícita mediada",
+  same_fragment_cooccurrence: "Coocurrencia en el mismo fragmento",
+  same_page: "Coocurrencia en la misma página",
+  same_section: "Relación en la misma sección",
+  thematic_parallel: "Paralelo temático",
+  AI_grounded_inference: "Inferencia IA sustentada",
+  none: "No corresponde relación",
+};
+
 export const warningLabels: Record<string, string> = {
   pdf_page_null_for_kitzur_chunk: "La página no está disponible en el registro fuente",
   ai_render_rejected_grounding_validation: "La redacción automática no superó la validación de evidencia",

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Hit, ResearchResponse } from "./investigativeQaClient.ts";
-  import { evidenceLabels, literalKindLabel, relevanceLabels, sourceLayerConfidenceLabels, sourceLayerLabels, warningLabel, attributionLabels } from "./researchLabels.ts";
+  import { evidenceLabels, literalKindLabel, relevanceLabels, relationTypeLabels, sourceLayerConfidenceLabels, sourceLayerLabels, warningLabel, attributionLabels } from "./researchLabels.ts";
   import { isHebrewText, languageAttribute, normalizeDisplayText, textDirection } from "./textDirection.ts";
 
   let { response, selectedId, pendingAnalysis = false, onselect, onclose }: { response: ResearchResponse | null; selectedId: string | null; pendingAnalysis?: boolean; onselect: (hit: Hit) => void; onclose?: () => void } = $props();
@@ -22,6 +22,7 @@
         <p class="source-category">{active.is_primary ? "EVIDENCIA PRINCIPAL" : additional.includes(active) ? "COINCIDENCIA ADICIONAL" : "EVIDENCIA CONTEXTUAL"}</p>
         <strong lang={languageAttribute(active.work_title)} dir={textDirection(active.work_title)}>{active.work_title}</strong>
         <div class="evidence-meta" dir="ltr">{active.physical_pdf_page === null ? "Página no disponible en el registro fuente" : `PDF p. ${active.physical_pdf_page}${active.printed_page !== null ? ` · Página impresa ${active.printed_page}` : ""}${active.section ? ` · ${active.section}` : ""}`}</div>
+        {#if active.physical_pdf_page === null && active.embedded_page_marker}<div class="evidence-meta">Página canónica: no disponible · Marcador interno detectado: {active.embedded_page_marker}</div>{/if}
         {#if active.physical_file_name}<div class="evidence-meta" dir="ltr">Documento físico: {active.physical_file_name}</div>{/if}
         <h3>{activeIsHebrew ? "Texto original en hebreo" : "Fragmento recuperado"}</h3>
         <blockquote tabindex="0" class:research-hebrew-text={activeIsHebrew} lang={active.language} dir={active.direction} data-display-normalization={active.display_normalization ?? undefined}>{activeText}</blockquote>
@@ -29,6 +30,8 @@
         <p>{sourceLayerLabels[active.source_layer]} <small>(confianza {sourceLayerConfidenceLabels[active.source_layer_confidence]})</small></p>
         <dl>
           <div><dt>Relevancia</dt><dd>{relevanceLabels[active.relation_relevance]}</dd></div>
+          <div><dt>Relación</dt><dd>{relationTypeLabels[active.relation_type]}</dd></div>
+          {#if active.inference_required}<div><dt>Inferencia</dt><dd>Requerida y limitada por la evidencia</dd></div>{/if}
           <div><dt>Fuerza para esta consulta</dt><dd>{active.evidence_strength === "strong" ? "Fuerte" : active.evidence_strength === "medium" ? "Media" : active.evidence_strength === "weak" ? "Débil" : "Contextual"}</dd></div>
           <div><dt>Tipo de coincidencia</dt><dd>{literalKindLabel(active.literal_match_kind) || "Coincidencia contextual"}</dd></div>
           <div><dt>Tipo</dt><dd>{evidenceLabels[active.evidence_type] ?? "Evidencia investigativa"}</dd></div>

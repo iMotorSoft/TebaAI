@@ -58,6 +58,19 @@
       ]
     },
     {
+      "canonical_id": "teaching.azamra",
+      "canonical_label": {"es": "Azamra", "en": "Azamra", "he": "אזמרה"},
+      "topic_type": "conceptual_term",
+      "aliases": [
+        {"value": "Azamra", "language": "transliteration", "script": "Latin"},
+        {"value": "Azamrá", "language": "es", "script": "Latin"},
+        {"value": "אזמרה", "language": "he", "script": "Hebrew"},
+        {"value": "אֲזַמְּרָה", "language": "he", "script": "Hebrew"},
+        {"value": "I will sing", "language": "en", "script": "Latin"},
+        {"value": "cantaré", "language": "es", "script": "Latin"}
+      ]
+    },
+    {
       "canonical_id": "practice.hitbodedut",
       "canonical_label": {"es": "Hitbodedut", "en": "Hitbodedut", "he": "התבודדות"},
       "topic_type": "custom_or_practice",

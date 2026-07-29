@@ -65,6 +65,79 @@ def test_request_rejects_bad_limit() -> None:
         QaRequest(question="ok", max_hits_per_work=99)
 
 
+def test_real_psalm_19_requires_the_requested_book_and_chapter() -> None:
+    response = run_real(QaRequest(
+        question="salmo 19",
+        works=["potencia_plegaria"],
+        ai={"enabled": False},
+    ))
+    assert response["intent"] == "biblical_reference_lookup"
+    assert response["primary_evidence_ids"]
+    primaries = [
+        hit for hit in response["hits"]
+        if hit["hit_id"] in response["primary_evidence_ids"]
+    ]
+    assert all("salmo 19" in (hit["display_snippet"] or "").casefold() for hit in primaries)
+    assert all("proverbios 25:19" not in (hit["display_snippet"] or "").casefold() for hit in primaries)
+
+
+def test_real_blood_speech_uses_a_controlled_mediated_chain() -> None:
+    response = run_real(QaRequest(
+        question="dame la relación entre sangre y el habla",
+        works=["potencia_plegaria"],
+        ai={"enabled": False},
+    ))
+    claim = response["claims"][0]
+    evidence = [
+        next(hit for hit in response["hits"] if hit["hit_id"] == evidence_id)
+        for evidence_id in claim["evidence_ids"]
+    ]
+    assert claim["strength"] == "medium"
+    assert {hit["pdf_page"] for hit in evidence} == {207, 208}
+    assert {hit["relation_type"] for hit in evidence} == {"mediated_explicit_chain"}
+    assert all(hit["literal_relation"] is False for hit in evidence)
+    assert all(hit["inference_required"] is True for hit in evidence)
+
+
+def test_real_scorpion_discovers_only_textually_grounded_neighbors() -> None:
+    response = run_real(QaRequest(
+        question="el término escorpión con qué está relacionado",
+        works=["lmii"],
+        ai={"enabled": False},
+    ))
+    assert response["intent"] == "discover_relations"
+    assert response["relations"]
+    for relation in response["relations"]:
+        assert relation["literal_subject_present"] is True
+        assert relation["literal_related_concept_present"] is True
+        hit = next(
+            hit for hit in response["hits"]
+            if hit["hit_id"] == relation["primary_evidence_id"]
+        )
+        snippet = (hit["display_snippet"] or "").casefold()
+        assert "escorpi" in snippet or "עקרב" in snippet
+
+
+def test_real_azamra_uses_controlled_multilingual_named_teaching() -> None:
+    response = run_real(QaRequest(
+        question="azamra",
+        works=["potencia_plegaria", "lmi", "lmii"],
+        ai={"enabled": False},
+    ))
+    assert response["intent"] == "named_teaching_lookup"
+    assert response["named_topic"]["canonical_id"] == "teaching.azamra"
+    assert {"Azamra", "Azamrá", "אזמרה", "אֲזַמְּרָה", "I will sing", "cantaré"}.issubset(
+        set(response["named_topic"]["variants_searched"])
+    )
+    assert response["primary_evidence_ids"]
+    primary = next(
+        hit for hit in response["hits"]
+        if hit["hit_id"] == response["primary_evidence_ids"][0]
+    )
+    assert primary["evidence_strength"] == "strong"
+    assert "azamr" in (primary["display_snippet"] or "").casefold()
+
+
 @pytest.mark.parametrize("question", [
     "¿Es parte de la lección del Rebe, una cita o una nota?",
     "¿Es texto de la lección o comentario?",
@@ -183,7 +256,7 @@ def test_primary_evidence_is_sorted_first_and_strength_is_relational() -> None:
     primary = _apply_claim_traceability(hits, [{"evidence_ids": ["direct"], "primary_evidence_id": "direct"}])
     assert primary == ["direct"]
     assert hits[0].hit_id == "direct"
-    assert hits[0].is_primary and hits[0].evidence_strength == "strong"
+    assert hits[0].is_primary and hits[0].evidence_strength == "medium"
     assert hits[1].evidence_strength == "insufficient"
 
 
@@ -195,7 +268,7 @@ def test_primary_evidence_strength_matches_a_medium_claim() -> None:
         "primary_evidence_id": "direct",
     }])
     assert direct_hits[0].is_primary
-    assert direct_hits[0].relation_relevance == "direct_relation"
+    assert direct_hits[0].relation_relevance == "same_fragment_both_terms"
     assert direct_hits[0].evidence_strength == "medium"
 
 
@@ -221,7 +294,12 @@ def test_real_blood_speech_traceability_and_final_per_work_limit() -> None:
     assert response["status"] == "ok"
     assert response["primary_evidence_ids"]
     assert hit_ids[0] == response["primary_evidence_ids"][0]
-    assert response["hits"][0]["matched_concepts"] == ["sangre", "habla"]
+    claim_hits = [
+        next(hit for hit in response["hits"] if hit["hit_id"] == evidence_id)
+        for evidence_id in response["claims"][0]["evidence_ids"]
+    ]
+    assert {concept for hit in claim_hits for concept in hit["matched_concepts"]} == {"sangre", "habla"}
+    assert {hit["relation_type"] for hit in claim_hits} == {"mediated_explicit_chain"}
     assert "shamir" not in response["hits"][0]["snippet"].casefold()
     assert all(primary in hit_ids for primary in response["primary_evidence_ids"])
     assert all(claim["primary_evidence_id"] in claim["evidence_ids"] for claim in response["claims"])

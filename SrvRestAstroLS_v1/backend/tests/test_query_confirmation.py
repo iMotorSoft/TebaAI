@@ -68,11 +68,11 @@ async def test_interpret_phase_never_calls_retrieval(monkeypatch: pytest.MonkeyP
         ),
         (
             "con qué conceptos aparece escorpión",
-            "Interpreté que desea investigar con qué conceptos se relaciona escorpión.",
+            "Interpreté que desea saber con qué conceptos aparece relacionado «escorpión».",
         ),
         (
             "azamra la relaciones que tiene",
-            "Interpreté que desea investigar con qué conceptos se relaciona Azamra.",
+            "Interpreté que desea saber con qué conceptos aparece relacionado «Azamra».",
         ),
         (
             "relación entre Tishá BeAv y los veintiún días",
@@ -126,7 +126,7 @@ async def test_interpretation_batch_never_returns_retrieval_artifacts(question: 
     )
     assert response["original_query"] == question
     assert response["actions"] == ["analyze", "modify"]
-    assert response["display_interpretation"].startswith("Interpreté que desea")
+    assert response["display_interpretation"].startswith(("Interpreté que desea", "Interpreté que busca"))
     assert response["execution"]["retrieval_executed"] is False
     assert "hits" not in response
     assert "claims" not in response
@@ -151,17 +151,17 @@ async def test_colloquial_relational_interpretation_is_structured_without_retrie
     understanding = response["query_understanding"]
     assert response["status"] == "awaiting_confirmation"
     assert response["display_interpretation"] == (
-        "Interpreté que desea investigar con qué conceptos se relaciona Azamra."
+        "Interpreté que desea saber con qué conceptos aparece relacionado «Azamra»."
     )
     assert response["actions"] == ["analyze", "modify"]
-    assert understanding["intent"] == "concept_cooccurrence"
+    assert understanding["intent"] == "discover_relations"
     assert understanding["operation"] == "find_related_concepts"
     assert understanding["instruction_span"] == "la relaciones que tiene"
     assert understanding["subject"] == {
         "raw": "azamra",
         "canonical": "Azamra",
         "normalized": "azamra",
-        "subject_type": "conceptual_term",
+            "subject_type": "named_topic",
     }
     assert understanding["typo_resolution"] == {
         "applied": True,

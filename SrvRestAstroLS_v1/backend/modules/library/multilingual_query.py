@@ -291,6 +291,8 @@ _LATIN_FUNCTION_WORDS = {
     "the", "concept", "which", "book", "contains", "phrase", "what", "does", "mean",
     "relation", "between", "relacion", "relación", "entre", "in", "and", "se", "menciona", "está", "esta", "hay", "de",
     "el", "la", "los", "las", "un", "una", "y", "en", "sobre", "cited", "dice", "dicho", "said", "about",
+    "parte", "partes", "habla", "cuál", "cuáles", "cual", "cuales", "son", "fuente", "fuentes",
+    "discussed", "are", "source", "sources",
     # Additional function words for relational queries
     "con", "sin", "por", "para", "tema", "temas", "palabra", "palabras",
     "conceptos", "conceptos", "concept", "concepts",

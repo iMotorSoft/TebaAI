@@ -105,6 +105,16 @@ def test_structured_latin_concept_keeps_validated_cross_language_aliases() -> No
     assert {"escorpiones", "עקרב", "עַקְרַב"}.issubset(concepts[0]["terms"])
 
 
+def test_english_fear_query_keeps_validated_cross_language_aliases() -> None:
+    interpretation = deterministic_interpret(
+        preprocess_query("Where is fear discussed and what are the cited sources?")
+    )
+    concepts, literals = _retrieval_inputs(interpretation)
+    assert not literals
+    assert concepts[0]["label"] == "fear"
+    assert {"fear", "miedo", "temor", "יראה", "פחד"}.issubset(concepts[0]["terms"])
+
+
 def test_relation_concepts_keep_user_terms_and_known_aliases() -> None:
     concepts = relation_concepts("la relacion entre sangre y el habla")
     assert [item["label"] for item in concepts] == ["sangre", "habla"]

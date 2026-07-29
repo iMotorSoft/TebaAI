@@ -26,8 +26,8 @@ test("home communicates the investigative positioning and verifiable evidence", 
 
 test("home metadata uses the exclusive product identity", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveTitle("Breslov Research — Investigación de fuentes y conceptos en la literatura Breslov");
-  await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /referencias verificables en español, inglés y hebreo/);
+  await expect(page).toHaveTitle("Breslov Research — Investigación sobre las fuentes del Rebe Najmán");
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /citas verificables, referencias y vínculos entre obras/);
   await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute("content", "Breslov Research");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://breslov.tebaai.live/");
   await expect(page.locator("h1")).toHaveCount(1);
@@ -35,6 +35,7 @@ test("home metadata uses the exclusive product identity", async ({ page }) => {
 
 test("public navigation, language fallback and accessibility remain operational", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator("astro-island:not([ssr])").first()).toBeAttached();
   await expect(page.getByRole("link", { name: "Capacidades", exact: true }).first()).toHaveAttribute("href", "#capacidades");
   await page.getByRole("button", { name: "Idiomas disponibles" }).click();
   await page.getByRole("menuitem", { name: "HE" }).click();
@@ -51,18 +52,18 @@ test("valid session changes the home access route to research", async ({ page })
   await page.fill("#login-email", ADMIN_EMAIL);
   await page.fill("#login-password", ADMIN_PASSWORD);
   await page.getByRole("button", { name: "Ingresar" }).click();
-  await expect(page).toHaveURL(/\/research$/);
+  await expect(page).toHaveURL(/\/research\/?$/);
   await expect(page.getByTestId("research-question")).toBeVisible();
   await page.goto("/");
   const access = page.locator(".hero-actions").getByRole("link", { name: "Abrir investigación" });
   await expect(access).toHaveAttribute("href", "/research");
   await access.click();
-  await expect(page).toHaveURL(/\/research$/);
+  await expect(page).toHaveURL(/\/research\/?$/);
 });
 
 test("request access route remains available", async ({ page }) => {
   await page.goto("/");
   await page.locator(".hero-actions").getByRole("link", { name: "Solicitar acceso" }).click();
-  await expect(page).toHaveURL(/\/request-access$/);
+  await expect(page).toHaveURL(/\/request-access\/?$/);
   await expect(page.getByRole("heading", { level: 1, name: "Solicitar acceso" })).toBeVisible();
 });

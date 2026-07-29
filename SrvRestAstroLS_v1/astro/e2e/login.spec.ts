@@ -28,7 +28,7 @@ test.describe("Login UI", () => {
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
 
-    await expect(page).toHaveURL(/\/research$/);
+    await expect(page).toHaveURL(/\/research\/?$/);
     await expect(page.getByTestId("research-question")).toBeVisible();
   });
 
@@ -40,7 +40,7 @@ test.describe("Login UI", () => {
     await page.fill("#login-password", ADMIN_PASSWORD);
     await page.getByRole("button", { name: "Ingresar" }).click();
 
-    await expect(page).toHaveURL(/\/research$/);
+    await expect(page).toHaveURL(/\/research\/?$/);
     await page.getByRole("button", { name: "Cerrar sesión" }).first().click();
 
     await expect(page.locator("#login-email")).toBeVisible();

@@ -114,6 +114,7 @@ ALIASES: dict[str, tuple[str, ...]] = {
     "hitbodedut": ("hitbodedut", "aislamiento", "plegaria personal"),
     "miedo": ("miedo", "temor", "temor reverencial"),
     "temor": ("temor", "miedo", "temor reverencial"),
+    "fear": ("fear", "awe", "miedo", "temor", "temor reverencial", "יראה", "פחד"),
     "fe": ("fe", "emuná", "emuna"),
     "tristeza": ("tristeza", "melancolía", "melancolia"),
     "alegría": ("alegría", "alegria", "simjá", "simja"),

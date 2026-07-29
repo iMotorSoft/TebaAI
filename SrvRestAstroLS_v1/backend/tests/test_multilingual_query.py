@@ -18,6 +18,8 @@ from modules.library.multilingual_query import (
 @pytest.mark.parametrize(("query", "language", "intent", "subjects", "literal"), [
     ("dónde aparece escorpión", "es", "concept_lookup", ["escorpión"], []),
     ("where is scorpion mentioned", "en", "concept_lookup", ["scorpion"], []),
+    ("Where is fear discussed and what are the cited sources?", "en", "concept_lookup", ["fear"], []),
+    ("¿En qué partes se habla de la tristeza y cuáles son las fuentes?", "es", "concept_lookup", ["tristeza"], []),
     ("איפה נמצא המושג עקרב", "he", "concept_lookup", ["עקרב"], []),
     ("אתה מחפש איפה נמצא מושג העקרב.", "he", "concept_lookup", ["עקרב"], []),
     ("dónde aparece עקרב", "es", "concept_lookup", ["עקרב"], []),

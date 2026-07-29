@@ -15,17 +15,17 @@ test.describe("authenticated research workspace", () => {
       if (message.type() === "error") consoleErrors.push(message.text());
     });
     await page.goto("/research");
-    await expect(page).toHaveURL(/\/login$/);
+    await expect(page).toHaveURL(/\/login\/?$/);
     await page.fill("#login-email", email!);
     await page.fill("#login-password", password!);
     await page.getByRole("button", { name: "Ingresar" }).click();
-    await expect(page).toHaveURL(/\/research$/);
+    await expect(page).toHaveURL(/\/research\/?$/);
     await page.getByTestId("research-question").fill("¿Dónde aparece la plegaria?");
     await page.getByTestId("research-submit").click();
     await page.getByTestId("interpretation-analyze").click();
     await expect(page.getByText("Breslov Research", { exact: true })).toBeVisible({ timeout: 30_000 });
     await expect(page.getByText(/evidencia(?:s)? principal(?:es)?/i).first()).toBeVisible();
-    await expect(page.getByText(/PDF p\.|Página no disponible/).first()).toBeVisible();
+    await expect(page.locator(".source-detail").getByText(/PDF p\.|La página no está disponible/).first()).toBeVisible();
     await expect(page.getByRole("heading", { name: "Fuentes del turno" })).toBeVisible();
     const sources = page.locator(".source-list button:visible");
     await expect(sources.first()).toBeVisible();
@@ -61,6 +61,6 @@ test.describe("authenticated research workspace", () => {
     expect(pageErrors).toEqual([]);
     expect(consoleErrors).toEqual([]);
     await page.getByRole("button", { name: "Cerrar sesión" }).first().click();
-    await expect(page).toHaveURL(/\/login$/);
+    await expect(page).toHaveURL(/\/login\/?$/);
   });
 });

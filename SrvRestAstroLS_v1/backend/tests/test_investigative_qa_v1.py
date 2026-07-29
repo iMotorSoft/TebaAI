@@ -12,6 +12,7 @@ from modules.library.investigative_qa_v1 import (
     QaRequest,
     _apply_claim_traceability,
     _cap_hits_with_language_coverage,
+    _deterministic_claims,
     _discover_validated_relations,
     _is_source_layer_followup,
     _mentioned_works,
@@ -290,6 +291,33 @@ def test_primary_evidence_strength_matches_a_medium_claim() -> None:
     assert direct_hits[0].is_primary
     assert direct_hits[0].relation_relevance == "same_fragment_both_terms"
     assert direct_hits[0].evidence_strength == "medium"
+
+
+def test_concept_claim_uses_grounded_evidence_strength_not_relation_fallback() -> None:
+    hit = make_hit("concept", ["tristeza"], "La tristeza se menciona aquí.")
+    hit.evidence_strength = "strong"
+    claims = _deterministic_claims(
+        "¿Dónde aparece la tristeza?",
+        [hit],
+        intent="concept_lookup",
+        concept_count=1,
+    )
+    assert claims[0]["strength"] == "strong"
+    primary = _apply_claim_traceability([hit], claims)
+    assert primary == ["concept"]
+    assert claims[0]["strength"] == "strong"
+
+
+def test_traceability_repairs_insufficient_model_claim_from_valid_evidence() -> None:
+    direct = make_hit("direct", ["sangre", "habla"])
+    claims = [{
+        "strength": "insufficient",
+        "evidence_ids": ["direct"],
+        "primary_evidence_id": "direct",
+    }]
+    primary = _apply_claim_traceability([direct], claims)
+    assert primary == ["direct"]
+    assert claims[0]["strength"] == "medium"
 
 
 def test_grounding_rejects_unknown_page_and_doctrinal_overclaim() -> None:

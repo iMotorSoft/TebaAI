@@ -1453,6 +1453,16 @@ def _structural_ref_sort_key(hit: Hit) -> tuple:
     )
 
 
+def _grounded_claim_strength(
+    hit: Hit,
+    requested: object = None,
+) -> Literal["strong", "medium", "weak", "insufficient"]:
+    requested_strength = str(requested or "")
+    if requested_strength in {"strong", "medium", "weak"}:
+        return requested_strength  # type: ignore[return-value]
+    return hit.evidence_strength
+
+
 def _normalize_claims(raw_claims: list[dict], hits: list[Hit], required_concepts: int = 1) -> list[dict]:
     allowed = {hit.hit_id: hit for hit in hits}
     claims = []
@@ -1474,7 +1484,10 @@ def _normalize_claims(raw_claims: list[dict], hits: list[Hit], required_concepts
         claims.append({
             "claim_id": str(raw.get("claim_id") or f"claim_{index + 1}"),
             "text": text,
-            "strength": str(raw.get("strength") or _relation_strength(allowed[primary].relation_relevance)),
+            "strength": _grounded_claim_strength(
+                allowed[primary],
+                raw.get("strength"),
+            ),
             "evidence_ids": evidence_ids,
             "primary_evidence_id": primary,
         })
@@ -1721,7 +1734,7 @@ def _deterministic_claims(
     return [{
         "claim_id": "claim_1",
         "text": f"Se encontró evidencia contextual para la consulta «{question}»; la fuente debe leerse sin asumir dependencia doctrinal.",
-        "strength": _relation_strength(primary.relation_relevance),
+        "strength": _grounded_claim_strength(primary),
         "evidence_ids": [primary.hit_id],
         "primary_evidence_id": primary.hit_id,
     }]
@@ -1729,12 +1742,26 @@ def _deterministic_claims(
 
 def _apply_claim_traceability(hits: list[Hit], claims: list[dict]) -> list[str]:
     by_id = {hit.hit_id: hit for hit in hits}
-    valid_claims = [
-        claim for claim in claims
-        if claim.get("primary_evidence_id") in by_id
-        and by_id[claim["primary_evidence_id"]].evidence_strength != "insufficient"
-        and all(evidence_id in by_id for evidence_id in claim.get("evidence_ids", []))
-    ]
+    valid_claims = []
+    for claim in claims:
+        primary_id = claim.get("primary_evidence_id")
+        if (
+            primary_id not in by_id
+            or by_id[primary_id].evidence_strength == "insufficient"
+            or not all(
+                evidence_id in by_id
+                for evidence_id in claim.get("evidence_ids", [])
+            )
+        ):
+            continue
+        normalized = dict(claim)
+        normalized["strength"] = _grounded_claim_strength(
+            by_id[primary_id],
+            claim.get("strength"),
+        )
+        if normalized["strength"] == "insufficient":
+            continue
+        valid_claims.append(normalized)
     claims[:] = valid_claims
     primary_ids = list(dict.fromkeys(claim["primary_evidence_id"] for claim in claims))
     primary_order = {evidence_id: index for index, evidence_id in enumerate(primary_ids)}

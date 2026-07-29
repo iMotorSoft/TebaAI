@@ -15,6 +15,7 @@ from modules.library.hebrew_lexical_normalizer import (
     normalize_maqaf,
     remove_invisible_marks,
     normalize_hebrew_search,
+    normalize_hebrew_for_search,
     reconstruct_pdf_spaced_hebrew,
 )
 
@@ -234,3 +235,48 @@ def test_no_phrase_specific_substitution_occurs() -> None:
     assert result is not None
     assert result.compact_letters == "אבגדה"
     assert "תהלתי" not in result.literal_reconstructed
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "וּמִצְרַיִם נָסִים לִקְרָאתוֹ",
+        "ומצרים נסים לקראתו",
+        __import__("unicodedata").normalize(
+            "NFD", "וּמִצְרַיִם נָסִים לִקְרָאתוֹ"
+        ),
+        "\u2067וּמִצְרַיִם נָסִים לִקְרָאתוֹ\u2069",
+    ],
+)
+def test_target_forms_share_the_same_search_representation(value: str) -> None:
+    result = normalize_hebrew_for_search(value)
+    assert result.without_niqqud == "ומצרים נסים לקראתו"
+    assert result.tokens == ("ומצרים", "נסים", "לקראתו")
+    assert result.compact_letters == "ומצריםנסיםלקראתו"
+
+
+def test_realistic_fragmented_phrase_repairs_pdf_spacing() -> None:
+    result = normalize_hebrew_for_search(
+        "וּמ ִ צְ ר ַ יִם נָ סִ ים לִ ק ְר ָ אתו"
+    )
+    assert result.artificial_spacing_detected is True
+    assert result.without_niqqud == "ומצרים נסים לקראתו"
+    assert result.tokens == ("ומצרים", "נסים", "לקראתו")
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        "ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך",
+        "א ֲ ז ַ מ ְּ ר ָ ה",
+        "מ ָ ה ה ַ ק ֶּ ש ֶׁ ר ב ֵּ י ן ד ִּ ב ּ וּ ר ל ֶ א ֱ מ וּ נ ָ ה",
+        "ו ְ ה ָ י ָ ה כ ְּ צ ֵ א ת ִ י א ֶ ת ה ָ ע ִ י ר",
+        "ש ְׁ כ ָ ן א ֶ ר ֶ ץ וּ ר ְ ע ֵ ה א ֱ מ וּ נ ָ ה",
+    ],
+)
+def test_additional_realistic_pdf_spacing_fixtures_are_bounded(value: str) -> None:
+    result = normalize_hebrew_for_search(value)
+    assert result.artificial_spacing_detected is True
+    assert result.compact_letters
+    assert result.tokens
+    assert len(result.approximate_variants) <= 64

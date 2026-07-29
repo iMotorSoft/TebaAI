@@ -58,6 +58,13 @@ class TestDefaults:
             s = get_settings()
         assert s.research_pipeline == "simple_rag"
 
+    def test_test_candidate_research_is_readonly_and_dev_only(self) -> None:
+        with patch.dict(os.environ, {}, clear=True):
+            assert get_settings().research_include_test_candidates_readonly is True
+        get_settings.cache_clear()
+        with patch.dict(os.environ, _env(ENV="staging"), clear=True):
+            assert get_settings().research_include_test_candidates_readonly is False
+
     def test_research_pipeline_is_allowlisted(self) -> None:
         with patch.dict(os.environ, _env(RESEARCH_PIPELINE="compare"), clear=True):
             assert get_settings().research_pipeline == "compare"

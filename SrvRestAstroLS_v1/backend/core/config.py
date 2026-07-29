@@ -119,6 +119,7 @@ class AppSettings(BaseSettings):
     research_embedding_model_alias: str = "openai_text_embedding_3_small"
     breslov_productive_collection: str = "tebaai_breslov_chunks_v1"
     research_pipeline: Literal["simple_rag", "advanced", "compare"] = "simple_rag"
+    research_include_test_candidates_readonly: bool = True
 
     # ── Auth ────────────────────────────────────────────────────
     auth_enabled: bool = False
@@ -252,6 +253,8 @@ class AppSettings(BaseSettings):
             raise ValueError(
                 "TEBAAI_POSTGRES_AUTO_MIGRATE must be false in production."
             )
+        if not self.is_development:
+            self.research_include_test_candidates_readonly = False
         return self
 
     @model_validator(mode="after")

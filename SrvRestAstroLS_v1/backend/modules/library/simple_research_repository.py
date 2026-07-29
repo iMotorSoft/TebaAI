@@ -14,6 +14,7 @@ async def resolve_ready_documents(
     *,
     knowledge_scope_code: str,
     work_codes: list[str] | None = None,
+    include_test_candidates: bool = False,
 ) -> list[dict[str, Any]]:
     """Resolve explicit work filters without treating default UI scope as a filter."""
     rows = await fetch_all(
@@ -23,10 +24,13 @@ async def resolve_ready_documents(
         FROM library_documents d
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(scope)s
-          AND d.status = 'ready'
+          AND (
+                d.status = 'ready'
+                OR (%(include_test)s AND d.status = 'test_candidate')
+          )
         ORDER BY d.title
         """,
-        {"scope": knowledge_scope_code},
+        {"scope": knowledge_scope_code, "include_test": include_test_candidates},
     )
     if not work_codes:
         return rows
@@ -48,6 +52,10 @@ async def resolve_ready_documents(
         row
         for row in rows
         if any(alias in str(row.get("title") or "").casefold() for alias in wanted)
+        or (
+            "lmi" in work_codes
+            and row.get("document_code") == "likutey_moharan_ii_spanish_bri"
+        )
     ]
 
 
@@ -59,9 +67,12 @@ async def search_literal_candidates(
     languages: list[str],
     document_ids: list[str] | None,
     top_k: int,
+    hebrew_compact: str = "",
+    hebrew_fallback_compacts: list[str] | None = None,
+    include_test_candidates: bool = False,
 ) -> list[dict[str, Any]]:
     """Run phrase, FTS and trigram signals over canonical PostgreSQL chunks."""
-    return await fetch_all(
+    chunks = await fetch_all(
         conn,
         """
         WITH query_variants AS (
@@ -140,6 +151,75 @@ async def search_literal_candidates(
             "limit": top_k,
         },
     )
+    if not hebrew_compact or not include_test_candidates:
+        return chunks
+    nodes = await fetch_all(
+        conn,
+        """
+        SELECT
+            n.content_node_id AS chunk_id,
+            (
+                regexp_replace(n.literal_text, '[^א-ת]', '', 'g')
+                LIKE '%%' || %(compact)s || '%%'
+            ) AS exact_match,
+            1 AS exact_variant_count,
+            0.0::real AS fts_score,
+            0.0::real AS trigram_score,
+            CASE
+                WHEN regexp_replace(n.literal_text, '[^א-ת]', '', 'g')
+                    LIKE '%%' || %(compact)s || '%%'
+                    THEN 100.0
+                ELSE 60.0
+            END::real AS literal_score,
+            CASE
+                WHEN regexp_replace(n.literal_text, '[^א-ת]', '', 'g')
+                    LIKE '%%' || %(compact)s || '%%'
+                    THEN 'hebrew_exact_normalized'
+                ELSE 'hebrew_bigram'
+            END::text AS literal_match_type,
+            'content_node'::text AS search_record_type
+        FROM library_content_nodes_v2 n
+        JOIN library_content_units_v2 u
+          ON u.content_unit_id = n.content_unit_id
+        JOIN library_documents d
+          ON d.id = u.document_id
+        JOIN knowledge_scopes ks
+          ON ks.id = d.knowledge_scope_id
+        WHERE ks.knowledge_scope_code = %(scope)s
+          AND d.status = 'test_candidate'
+          AND n.citable = true
+          AND (
+                %(document_ids)s::uuid[] IS NULL
+                OR d.id = ANY(%(document_ids)s::uuid[])
+          )
+          AND regexp_replace(n.literal_text, '[^א-ת]', '', 'g')
+              LIKE ANY(%(patterns)s::text[])
+        ORDER BY
+            CASE
+                WHEN regexp_replace(n.literal_text, '[^א-ת]', '', 'g')
+                    LIKE '%%' || %(compact)s || '%%' THEN 0
+                ELSE 1
+            END,
+            CASE WHEN n.node_role = 'primary' THEN 0 ELSE 1 END,
+            n.content_node_id
+        LIMIT %(limit)s
+        """,
+        {
+            "scope": knowledge_scope_code,
+            "document_ids": document_ids or None,
+            "compact": hebrew_compact,
+            "patterns": [
+                f"%{value}%"
+                for value in dict.fromkeys([
+                    hebrew_compact,
+                    *(hebrew_fallback_compacts or []),
+                ])
+                if value
+            ],
+            "limit": top_k,
+        },
+    )
+    return [*nodes, *chunks][:top_k]
 
 
 async def fetch_canonical_chunks(
@@ -147,11 +227,12 @@ async def fetch_canonical_chunks(
     *,
     knowledge_scope_code: str,
     chunk_ids: list[str],
+    include_test_candidates: bool = False,
 ) -> list[dict[str, Any]]:
     """Rehydrate selected IDs from PostgreSQL, including complete canonical Markdown."""
     if not chunk_ids:
         return []
-    return await fetch_all(
+    chunks = await fetch_all(
         conn,
         """
         SELECT
@@ -186,3 +267,65 @@ async def fetch_canonical_chunks(
         """,
         {"scope": knowledge_scope_code, "chunk_ids": chunk_ids},
     )
+    if not include_test_candidates:
+        return chunks
+    nodes = await fetch_all(
+        conn,
+        """
+        SELECT
+            n.content_node_id AS chunk_id,
+            n.content_node_id AS content_node_id,
+            n.page_anchor_id,
+            d.id AS document_id,
+            d.document_code,
+            CASE
+                -- This source is physical volume 2 (lessons 7-16) of part I.
+                WHEN d.document_code = 'likutey_moharan_ii_spanish_bri'
+                    THEN 'Likutey Moharán I'
+                ELSE d.title
+            END AS work,
+            d.author,
+            d.source_filename AS physical_file_name,
+            d.source_sha256,
+            d.canonical_text_role,
+            d.status AS document_status,
+            n.language,
+            n.literal_text AS markdown,
+            n.literal_hash AS content_sha256,
+            p.pdf_page_number AS pdf_page,
+            p.pdf_page_number AS pdf_page_end,
+            p.printed_page_number::text AS printed_page,
+            coalesce(
+                'Torá ' || substring(u.canonical_ref from '([0-9]+:[0-9]+)'),
+                'Torá ' || substring(
+                    n.literal_text
+                    from 'LIKUTEY MOHAR[ÁA]N[[:space:]]*#([0-9]+:[0-9]+)'
+                ),
+                u.title,
+                u.canonical_ref
+            ) AS section,
+            u.canonical_ref AS reference_label,
+            n.content_type AS block_type,
+            n.node_role AS evidence_role,
+            n.citable,
+            n.metadata_json AS metadata,
+            '{}'::jsonb AS bibliographic_metadata,
+            'content_node'::text AS search_record_type,
+            n.authority_level
+        FROM library_content_nodes_v2 n
+        JOIN library_content_units_v2 u
+          ON u.content_unit_id = n.content_unit_id
+        JOIN library_documents d
+          ON d.id = u.document_id
+        JOIN knowledge_scopes ks
+          ON ks.id = d.knowledge_scope_id
+        LEFT JOIN library_page_anchors_v2 p
+          ON p.page_anchor_id = n.page_anchor_id
+        WHERE ks.knowledge_scope_code = %(scope)s
+          AND d.status = 'test_candidate'
+          AND n.citable = true
+          AND n.content_node_id = ANY(%(chunk_ids)s::uuid[])
+        """,
+        {"scope": knowledge_scope_code, "chunk_ids": chunk_ids},
+    )
+    return [*chunks, *nodes]

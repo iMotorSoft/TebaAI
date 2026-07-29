@@ -22,6 +22,7 @@ from globalVar import (
     LITELLM_BASE_URL,
     LITELLM_TIMEOUT_SECONDS,
     RESEARCH_CONVERSATION_MODEL,
+    RESEARCH_INCLUDE_TEST_CANDIDATES_READONLY,
 )
 from infrastructure.milvus.client import (
     create_connection,
@@ -31,6 +32,11 @@ from infrastructure.milvus.client import (
 from modules.embeddings.client import embed_text
 from modules.library.hybrid_search import resolve_milvus_collection_code_for_scope
 from modules.library.investigative_model import detect_language
+from modules.library.hebrew_lexical_normalizer import (
+    HebrewSearchNormalization,
+    has_hebrew,
+    normalize_hebrew_for_search,
+)
 from modules.library.simple_research_repository import (
     fetch_canonical_chunks,
     resolve_ready_documents,
@@ -72,6 +78,16 @@ def build_query_variants(original_query: str) -> list[str]:
     """Keep the complete query first and add only bounded, controlled aliases."""
     folded = _fold(original_query)
     variants = [original_query]
+    if has_hebrew(original_query):
+        try:
+            normalized = normalize_hebrew_for_search(original_query)
+            variants.extend((
+                normalized.compacted_with_marks,
+                normalized.without_cantillation,
+                normalized.without_niqqud,
+            ))
+        except Exception:
+            logger.warning("Hebrew query variant normalization failed", exc_info=True)
     for key, aliases in CONTROLLED_EXPANSIONS.items():
         if key in folded:
             variants.extend(aliases)
@@ -89,13 +105,15 @@ def build_query_variants(original_query: str) -> list[str]:
 def build_explicit_filters(data: Any) -> dict[str, Any]:
     works = list(data.works)
     explicit_works = works if set(works) != DEFAULT_WORKS else []
-    languages = list(dict.fromkeys(data.languages)) or [detect_language(data.question)]
+    query_language = detect_language(data.question)
+    languages = list(dict.fromkeys([query_language, *data.languages]))
     return {
         "scope": DEFAULT_SCOPE,
         "works": explicit_works,
         "languages": languages,
         "include_parallels": bool(data.include_thematic),
         "result_limit": min(max(int(data.max_hits_per_work), 1), 20),
+        "include_test_candidates": RESEARCH_INCLUDE_TEST_CANDIDATES_READONLY,
     }
 
 
@@ -162,6 +180,54 @@ def _semantic_search(
     )
 
 
+def _semantic_search_variants(
+    original_query: str,
+    *,
+    normalized_query: str | None,
+    scope_code: str,
+    languages: list[str],
+    document_ids: list[str],
+    simulate_failure: bool,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Search the original query and one bounded Hebrew-normalized variant."""
+    queries = list(dict.fromkeys(
+        query for query in (original_query, normalized_query) if query
+    ))
+    by_id: dict[str, dict[str, Any]] = {}
+    metadata: dict[str, Any] = {}
+    total_latency = 0.0
+    for query_index, query in enumerate(queries):
+        hits, current = _semantic_search(
+            query,
+            scope_code=scope_code,
+            languages=languages,
+            document_ids=document_ids,
+            simulate_failure=simulate_failure,
+        )
+        metadata = current
+        total_latency += float(current.get("latency_ms") or 0.0)
+        for hit in hits:
+            chunk_id = hit["chunk_id"]
+            existing = by_id.get(chunk_id)
+            if existing is None or hit["semantic_score"] > existing["semantic_score"]:
+                by_id[chunk_id] = {
+                    **hit,
+                    "semantic_query_variant": (
+                        "original" if query_index == 0 else "hebrew_without_niqqud"
+                    ),
+                }
+    ordered = sorted(
+        by_id.values(),
+        key=lambda item: item["semantic_score"],
+        reverse=True,
+    )[:SEMANTIC_TOP_K]
+    for rank, item in enumerate(ordered, 1):
+        item["semantic_rank"] = rank
+    metadata["latency_ms"] = round(total_latency, 2)
+    metadata["query_variants_used"] = len(queries)
+    return ordered, metadata
+
+
 def merge_results(
     semantic: list[dict[str, Any]],
     literal: list[dict[str, Any]],
@@ -191,6 +257,11 @@ def merge_results(
             "literal_rank": rank,
             "exact_match": bool(item.get("exact_match")),
             "exact_variant_count": int(item.get("exact_variant_count") or 0),
+            "literal_match_type": str(
+                item.get("literal_match_type")
+                or ("exact_phrase" if item.get("exact_match") else "literal")
+            ),
+            "search_record_type": str(item.get("search_record_type") or "chunk"),
         })
         target["retrieval_sources"].append("literal")
     for item in merged.values():
@@ -202,12 +273,27 @@ def merge_results(
             int(item.get("exact_variant_count") or 0),
             8,
         ) * 0.002
+        hebrew_literal_priority = {
+            "hebrew_exact_diacritized": 12.0,
+            "hebrew_exact_normalized": 11.0,
+            "hebrew_all_tokens_ordered": 9.0,
+            "hebrew_all_tokens_proximity": 8.0,
+            "hebrew_bigram": 6.0,
+            "hebrew_partial_tokens": 4.0,
+        }.get(str(item.get("literal_match_type")), 0.0)
+        semantic_only_penalty = (
+            -0.02
+            if query_language == "he" and not item.get("literal_rank")
+            else 0.0
+        )
         item["combined_score"] = (
-            semantic_rrf
+            hebrew_literal_priority
+            + semantic_rrf
             + literal_rrf
             + overlap_bonus
             + exact_bonus
             + controlled_coverage_bonus
+            + semantic_only_penalty
         )
         item["query_language"] = query_language
     return sorted(
@@ -220,6 +306,8 @@ def merge_results(
 def _source_layer(chunk: dict[str, Any]) -> str:
     role = str(chunk.get("evidence_role") or "")
     block = str(chunk.get("block_type") or "")
+    if chunk.get("authority_level") == "primary_original":
+        return "rebbe_lesson_text"
     if block == "footnote":
         return "footnote"
     if "source" in role:
@@ -278,7 +366,25 @@ def _evidence_id(chunk_id: str) -> str:
     return f"ev-{hashlib.sha256(chunk_id.encode()).hexdigest()[:16]}"
 
 
-def _context_pack(original_query: str, filters: dict[str, Any], chunks: list[dict[str, Any]]) -> str:
+HEBREW_PRIMARY_MATCH_TYPES = {
+    "hebrew_exact_diacritized",
+    "hebrew_exact_normalized",
+    "hebrew_all_tokens_ordered",
+}
+
+
+def _is_primary_eligible(chunk: dict[str, Any], *, query_language: str) -> bool:
+    if query_language != "he":
+        return True
+    return str(chunk.get("literal_match_type")) in HEBREW_PRIMARY_MATCH_TYPES
+
+
+def _context_pack(
+    original_query: str,
+    filters: dict[str, Any],
+    chunks: list[dict[str, Any]],
+    normalization: HebrewSearchNormalization | None = None,
+) -> str:
     lines = [
         "PREGUNTA ORIGINAL",
         original_query,
@@ -289,6 +395,13 @@ def _context_pack(original_query: str, filters: dict[str, Any], chunks: list[dic
         "INSTRUCCIONES DE RESPUESTA",
         "Usá exclusivamente las fuentes siguientes. Citá evidence_ids.",
     ]
+    if normalization:
+        lines.extend([
+            "",
+            "NORMALIZACIÓN HEBREA DE BÚSQUEDA (no es una cita)",
+            f"Forma sin niqqud: {normalization.without_niqqud}",
+            f"Tokens principales: {', '.join(normalization.tokens)}",
+        ])
     for index, chunk in enumerate(chunks, 1):
         lines.extend([
             "",
@@ -298,6 +411,7 @@ def _context_pack(original_query: str, filters: dict[str, Any], chunks: list[dic
             f"Página PDF: {chunk.get('pdf_page')}",
             f"Página impresa: {chunk.get('printed_page')}",
             f"Idioma: {chunk.get('language')}",
+            f"Tipo de coincidencia: {chunk.get('literal_match_type', 'semantic_only')}",
             "Markdown:",
             str(chunk.get("markdown") or ""),
         ])
@@ -358,6 +472,7 @@ async def render_grounded_answer(
     chunks: list[dict[str, Any]],
     *,
     simulate_failure: bool,
+    normalization: HebrewSearchNormalization | None = None,
 ) -> tuple[str, list[dict[str, Any]], bool]:
     if simulate_failure:
         raise RuntimeError("simulated_ai_render_failure")
@@ -376,8 +491,11 @@ async def render_grounded_answer(
         "evidence_ids, relation_type (direct|mediated|thematic|none), confidence "
         "(high|medium|low). Escribí como máximo 350 palabras y 3 claims. Todos los "
         "claims deben tener al menos un evidence_id exacto del paquete."
+        " Para hebreo, no afirmes que una frase no existe en el corpus: solo que "
+        "no aparece en las fuentes recuperadas. No uses semantic_only como prueba "
+        "literal. Si aparece exacta o normalizada, indicá obra, sección y página."
     )
-    context_pack = _context_pack(original_query, filters, chunks)
+    context_pack = _context_pack(original_query, filters, chunks, normalization)
     allowed_ids = [chunk["evidence_id"] for chunk in chunks]
     last_error: Exception | None = None
     async with httpx.AsyncClient(timeout=LITELLM_TIMEOUT_SECONDS) as client:
@@ -450,11 +568,22 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
     evidence_id = chunk["evidence_id"]
     markdown = str(chunk.get("markdown") or "")
     language = chunk.get("language") if chunk.get("language") in {"es", "en", "he"} else "es"
-    literal = float(chunk.get("literal_score") or 0.0) > 0
+    match_type = str(chunk.get("literal_match_type") or "semantic_only")
+    literal = match_type != "semantic_only" and float(chunk.get("literal_score") or 0.0) > 0
     return {
         "hit_id": evidence_id,
         "evidence_id": evidence_id,
         "chunk_id": str(chunk["chunk_id"]),
+        "content_node_id": (
+            str(chunk["content_node_id"])
+            if chunk.get("content_node_id")
+            else None
+        ),
+        "page_anchor_id": (
+            str(chunk["page_anchor_id"])
+            if chunk.get("page_anchor_id")
+            else None
+        ),
         "document_id": str(chunk["document_id"]),
         "work_code": _work_code(chunk),
         "work_title": str(chunk.get("work") or ""),
@@ -484,7 +613,7 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "relation_strength": "high" if literal else "medium",
         "literal_relation": literal,
         "inference_required": not literal,
-        "matched_terms": [],
+        "matched_terms": list(chunk.get("matched_terms") or []),
         "matched_concepts": [],
         "is_primary": evidence_id in primary_ids,
         "source_layer": _source_layer(chunk),
@@ -496,13 +625,22 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "is_editorial_commentary": _source_layer(chunk) == "editorial_commentary",
         "parallel_texts": [],
         "language_match": "exact" if language == chunk.get("query_language") else "secondary",
-        "literal_match_kind": "exact_phrase" if chunk.get("exact_match") else "semantic",
+        "literal_match_kind": (
+            "normalized"
+            if match_type == "hebrew_exact_normalized"
+            else "exact_phrase" if chunk.get("exact_match") else "semantic"
+        ),
+        "match_kind": match_type,
         "retrieval_tier": 0 if literal else 1,
         "retrieval_sources": chunk.get("retrieval_sources", []),
         "semantic_score": chunk.get("semantic_score"),
         "literal_score": chunk.get("literal_score"),
         "combined_score": chunk.get("combined_score"),
-        "warnings": [],
+        "warnings": (
+            ["test_candidate_read_only: no constituye promoción productiva"]
+            if chunk.get("document_status") == "test_candidate"
+            else []
+        ),
         "physical_file_name": chunk.get("physical_file_name"),
         "source_sha256": chunk.get("source_sha256"),
         "author_quote_status": "not_confirmed",
@@ -524,19 +662,41 @@ async def run_simple_rag(
     original_query = data.question
     filters = build_explicit_filters(data)
     query_language = detect_language(original_query)
-    variants = build_query_variants(original_query)
     warnings: list[str] = []
+    normalization_status = "not_needed"
+    try:
+        normalization = (
+            normalize_hebrew_for_search(original_query)
+            if query_language == "he" and has_hebrew(original_query)
+            else None
+        )
+        if normalization:
+            normalization_status = "ok"
+    except Exception:
+        normalization = None
+        normalization_status = "failed"
+        warnings.append(
+            "La normalización hebrea no estuvo disponible; se conservaron la "
+            "consulta original y las búsquedas de respaldo."
+        )
+    variants = build_query_variants(original_query)
     latency: dict[str, float] = {}
 
     documents = await resolve_ready_documents(
         conn,
         knowledge_scope_code=filters["scope"],
         work_codes=filters["works"] or None,
+        include_test_candidates=filters["include_test_candidates"],
     )
     document_ids = [str(item["document_id"]) for item in documents]
     semantic_task = asyncio.create_task(asyncio.to_thread(
-        _semantic_search,
+        _semantic_search_variants,
         original_query,
+        normalized_query=(
+            normalization.without_niqqud
+            if normalization and normalization.without_niqqud != original_query
+            else None
+        ),
         scope_code=filters["scope"],
         languages=filters["languages"],
         document_ids=document_ids if filters["works"] else [],
@@ -555,6 +715,16 @@ async def run_simple_rag(
             languages=filters["languages"],
             document_ids=document_ids if filters["works"] else None,
             top_k=LITERAL_TOP_K,
+            hebrew_compact=normalization.compact_letters if normalization else "",
+            hebrew_fallback_compacts=(
+                [
+                    "".join(normalization.tokens[index:index + 2])
+                    for index in range(len(normalization.tokens) - 1)
+                ]
+                if normalization
+                else []
+            ),
+            include_test_candidates=filters["include_test_candidates"],
         )
     except Exception:
         literal = []
@@ -578,6 +748,7 @@ async def run_simple_rag(
         conn,
         knowledge_scope_code=filters["scope"],
         chunk_ids=[item["chunk_id"] for item in ranked],
+        include_test_candidates=filters["include_test_candidates"],
     )
     latency["fetch_chunks_ms"] = round((time.perf_counter() - fetch_started) * 1000, 2)
     canonical_by_id = {str(item["chunk_id"]): item for item in canonical}
@@ -588,15 +759,29 @@ async def run_simple_rag(
     )
     for chunk in selected:
         chunk["evidence_id"] = _evidence_id(str(chunk["chunk_id"]))
+        if normalization:
+            chunk["matched_terms"] = list(normalization.tokens)
+            chunk.setdefault("literal_match_type", "semantic_only")
+    if any(chunk.get("document_status") == "test_candidate" for chunk in selected):
+        warnings.append(
+            "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+        )
 
     retrieval_failed = semantic_status == "failed" and literal_status == "failed"
+    canonical_missing = bool(ranked) and not canonical
     if not selected:
-        if retrieval_failed:
+        if retrieval_failed or canonical_missing:
             research_status = "degraded"
             answer = (
-                "No fue posible completar la búsqueda por un problema técnico. "
+                "No fue posible completar correctamente la búsqueda hebrea por "
+                "un problema técnico. "
                 "No se concluye que el corpus carezca de evidencia."
             )
+            if canonical_missing:
+                warnings.append(
+                    "Se recuperaron IDs, pero PostgreSQL no entregó el contenido "
+                    "canónico correspondiente."
+                )
         else:
             research_status = "no_evidence"
             answer = "No se encontró evidencia suficiente en el corpus consultado."
@@ -606,11 +791,16 @@ async def run_simple_rag(
     else:
         ai_started = time.perf_counter()
         try:
+            render_options: dict[str, Any] = {
+                "simulate_failure": bool(simulations.get("ai_render")),
+            }
+            if normalization:
+                render_options["normalization"] = normalization
             answer, claims, ai_used = await render_grounded_answer(
                 original_query,
                 filters,
                 selected,
-                simulate_failure=bool(simulations.get("ai_render")),
+                **render_options,
             )
             ai_status = "ok"
         except Exception as exc:
@@ -629,19 +819,64 @@ async def run_simple_rag(
         latency["ai_ms"] = round((time.perf_counter() - ai_started) * 1000, 2)
         research_status = (
             "complete"
-            if semantic_status == literal_status == ai_status == "ok"
+            if (
+                semantic_status == literal_status == ai_status == "ok"
+                and normalization_status != "failed"
+            )
             else "degraded"
         )
         if research_status == "complete" and len(selected) < CONTEXT_MIN:
             research_status = "partial"
 
+    primary_eligible_ids = {
+        chunk["evidence_id"]
+        for chunk in selected
+        if _is_primary_eligible(chunk, query_language=query_language)
+    }
+    if query_language == "he":
+        best_primary_id = next((
+            chunk["evidence_id"]
+            for chunk in selected
+            if chunk["evidence_id"] in primary_eligible_ids
+        ), None)
+        grounded_claims = []
+        for claim in claims:
+            eligible = [
+                evidence_id
+                for evidence_id in claim.get("evidence_ids", [])
+                if evidence_id in primary_eligible_ids
+            ]
+            if not eligible:
+                continue
+            if best_primary_id:
+                claim["evidence_ids"] = list(dict.fromkeys([
+                    best_primary_id,
+                    *claim.get("evidence_ids", []),
+                ]))
+                claim["primary_evidence_id"] = best_primary_id
+            else:
+                claim["primary_evidence_id"] = eligible[0]
+            grounded_claims.append(claim)
+        claims = grounded_claims
     primary_ids = list(dict.fromkeys(
         claim["primary_evidence_id"]
         for claim in claims
-        if claim.get("primary_evidence_id")
+        if claim.get("primary_evidence_id") in primary_eligible_ids
     ))
+    if query_language == "he" and primary_ids:
+        primary_ids = [
+            chunk["evidence_id"]
+            for chunk in selected
+            if chunk["evidence_id"] in primary_eligible_ids
+        ][:1]
     if not primary_ids and selected:
-        primary_ids = [selected[0]["evidence_id"]]
+        primary_ids = [
+            chunk["evidence_id"]
+            for chunk in selected
+            if chunk["evidence_id"] in primary_eligible_ids
+        ][:1]
+    if query_language == "he" and selected and not primary_ids and research_status == "complete":
+        research_status = "partial"
     hits = [_frontend_hit(chunk, set(primary_ids)) for chunk in selected]
     evidence = [{
         "evidence_id": chunk["evidence_id"],
@@ -660,6 +895,12 @@ async def run_simple_rag(
         "literal_score": chunk.get("literal_score"),
         "combined_score": chunk.get("combined_score"),
         "retrieval_sources": chunk.get("retrieval_sources"),
+        "literal_match_type": chunk.get("literal_match_type", "semantic_only"),
+        "content_node_id": (
+            str(chunk["content_node_id"])
+            if chunk.get("content_node_id")
+            else None
+        ),
     } for chunk in selected]
     compatibility_status = {
         "complete": "ok",
@@ -672,17 +913,26 @@ async def run_simple_rag(
     request_id = hashlib.sha256(f"{time.time_ns()}:{original_query}".encode()).hexdigest()[:16]
     logger.info(
         "simple_rag request_id=%s original_query_hash=%s query_language=%s "
+        "normalization_applied=%s artificial_spacing_detected=%s "
         "filters=%s milvus_status=%s literal_status=%s milvus_hits=%s "
-        "literal_hits=%s selected_chunks=%s ai_status=%s fallback=%s latency_ms=%s",
+        "literal_hits=%s selected_chunks=%s primary_match_type=%s "
+        "ai_status=%s fallback=%s latency_ms=%s",
         request_id,
         hashlib.sha256(original_query.encode()).hexdigest(),
         query_language,
+        normalization is not None,
+        bool(normalization and normalization.artificial_spacing_detected),
         filters,
         semantic_status,
         literal_status,
         len(semantic),
         len(literal),
         len(selected),
+        next((
+            chunk.get("literal_match_type")
+            for chunk in selected
+            if chunk["evidence_id"] in primary_ids
+        ), None),
         ai_status,
         research_status == "degraded",
         latency,
@@ -731,11 +981,24 @@ async def run_simple_rag(
             "literal_hits": len(literal),
             "selected_chunks": len(selected),
             "query_variants": variants,
+            "normalization": ({
+                "without_niqqud": normalization.without_niqqud,
+                "tokens": list(normalization.tokens),
+                "artificial_spacing_detected": normalization.artificial_spacing_detected,
+                "rtl_controls_removed": normalization.rtl_controls_removed,
+            } if normalization else None),
+            "primary_match_type": next((
+                chunk.get("literal_match_type")
+                for chunk in selected
+                if chunk["evidence_id"] in primary_ids
+            ), None),
         },
         "processing": {
             "ai_interpretation_used": False,
             "ai_render_used": ai_used,
             "fallback_used": research_status == "degraded",
+            "normalization_applied": normalization is not None,
+            "normalization_status": normalization_status,
         },
         "execution": {
             "pipeline_version": "simple_grounded_rag_v1",

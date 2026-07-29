@@ -194,6 +194,42 @@ def test_controlled_expansions_never_replace_original(
     assert expected in variants
 
 
+def test_hebrew_literal_exact_outranks_high_semantic_without_tokens() -> None:
+    semantic_id = "00000000-0000-0000-0000-000000000010"
+    literal_id = "00000000-0000-0000-0000-000000000020"
+    ranked = rag.merge_results(
+        [{
+            "chunk_id": semantic_id,
+            "semantic_score": 0.99,
+            "semantic_rank": 1,
+        }, {
+            "chunk_id": literal_id,
+            "semantic_score": 0.45,
+            "semantic_rank": 20,
+        }],
+        [{
+            "chunk_id": literal_id,
+            "literal_score": 100.0,
+            "exact_match": True,
+            "literal_match_type": "hebrew_exact_normalized",
+        }],
+        query_language="he",
+    )
+    assert ranked[0]["chunk_id"] == literal_id
+    assert ranked[0]["combined_score"] > ranked[1]["combined_score"]
+
+
+def test_semantic_only_hebrew_evidence_cannot_be_primary() -> None:
+    assert rag._is_primary_eligible(
+        {"literal_match_type": "semantic_only"},
+        query_language="he",
+    ) is False
+    assert rag._is_primary_eligible(
+        {"literal_match_type": "hebrew_exact_normalized"},
+        query_language="he",
+    ) is True
+
+
 def test_grounding_rejects_invented_evidence_and_pages() -> None:
     chunk = {**_canonical(), "evidence_id": "ev-real"}
     with pytest.raises(ValueError, match="invalid_evidence_id"):
@@ -363,7 +399,7 @@ async def test_invalid_ai_json_returns_recovered_sources(
 
 
 @pytest.mark.asyncio
-async def test_missing_canonical_chunk_is_honest_no_evidence(
+async def test_missing_canonical_chunk_is_reported_as_technical_degradation(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     await _install_retrieval_fakes(monkeypatch)
@@ -373,10 +409,44 @@ async def test_missing_canonical_chunk_is_honest_no_evidence(
 
     monkeypatch.setattr(rag, "fetch_canonical_chunks", missing_chunks)
     response = await rag.run_simple_rag(object(), _request())
-    assert response["research_status"] == "no_evidence"
+    assert response["research_status"] == "degraded"
     assert response["retrieval"]["semantic_status"] == "ok"
     assert response["retrieval"]["literal_status"] == "ok"
     assert response["evidence"] == []
+    assert "problema técnico" in response["answer_markdown"]
+    assert any("PostgreSQL" in warning for warning in response["warnings"])
+
+
+@pytest.mark.asyncio
+async def test_hebrew_normalizer_failure_preserves_original_and_degrades(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    await _install_retrieval_fakes(monkeypatch)
+    query = "ומצרים נסים לקראתו"
+
+    def broken_normalizer(value: str):
+        raise UnicodeError("simulated_normalizer_failure")
+
+    async def render(original_query, filters, chunks, *, simulate_failure):
+        evidence_id = chunks[0]["evidence_id"]
+        return "Respuesta desde recuperación de respaldo", [{
+            "claim_id": "claim",
+            "text": "Grounded",
+            "strength": "weak",
+            "confidence": "low",
+            "relation_type": "none",
+            "evidence_ids": [evidence_id],
+            "primary_evidence_id": evidence_id,
+        }], True
+
+    monkeypatch.setattr(rag, "normalize_hebrew_for_search", broken_normalizer)
+    monkeypatch.setattr(rag, "render_grounded_answer", render)
+    response = await rag.run_simple_rag(object(), _request(query))
+
+    assert response["original_query"] == query
+    assert response["research_status"] == "degraded"
+    assert response["processing"]["normalization_status"] == "failed"
+    assert any("normalización hebrea" in warning for warning in response["warnings"])
 
 
 @pytest.mark.asyncio

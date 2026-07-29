@@ -64,6 +64,22 @@ class HebrewLiteralQuery:
     candidates: tuple[str, ...]
 
 
+@dataclass(frozen=True)
+class HebrewSearchNormalization:
+    """Bounded search representations without mutating the source text."""
+
+    original: str
+    nfc: str
+    compacted_with_marks: str
+    without_cantillation: str
+    without_niqqud: str
+    tokens: tuple[str, ...]
+    compact_letters: str
+    artificial_spacing_detected: bool
+    rtl_controls_removed: bool
+    approximate_variants: tuple[str, ...]
+
+
 def has_hebrew(text: str) -> bool:
     """Check if text contains any Hebrew character."""
     return bool(_HEB_CHAR.search(text))
@@ -168,6 +184,59 @@ def normalize_hebrew_search(text: str) -> str:
     return " ".join(result.casefold().split())
 
 
+def normalize_hebrew_for_search(text: str) -> HebrewSearchNormalization:
+    """Build the canonical Hebrew query forms used by literal and vector search.
+
+    The original value remains byte-for-byte available. Approximate
+    segmentations are bounded and are never suitable for display as a quote.
+    """
+    nfc = unicodedata.normalize("NFC", unicodedata.normalize("NFKC", text))
+    without_controls = remove_invisible_marks(nfc)
+    analysis = extract_literal_segments(without_controls)
+    literal = analysis.literal_raw if analysis else without_controls
+    segmentation = next(
+        (
+            candidate
+            for candidate in (analysis.candidates if analysis else ())
+            if " " in candidate
+        ),
+        None,
+    )
+    reconstructed = (
+        reconstruct_pdf_spaced_hebrew(literal, segmentation)
+        if analysis and analysis.pdf_glyph_spacing_detected and segmentation
+        else analysis.literal_reconstructed
+        if analysis and analysis.literal_reconstructed
+        else " ".join(literal.split())
+    )
+    without_cantillation = normalize_hebrew_lexical(
+        reconstructed,
+        do_niqqud=False,
+        do_taamim=True,
+        do_meteg=True,
+    )
+    without_niqqud = normalize_hebrew_search(reconstructed)
+    tokens = tuple(
+        token for token in without_niqqud.split() if _HEBREW_LETTER.search(token)
+    )
+    compact_letters = "".join(_HEBREW_LETTER.findall(without_niqqud))
+    approximate = analysis.candidates if analysis else (without_niqqud,)
+    return HebrewSearchNormalization(
+        original=text,
+        nfc=nfc,
+        compacted_with_marks=reconstructed,
+        without_cantillation=without_cantillation,
+        without_niqqud=without_niqqud,
+        tokens=tokens,
+        compact_letters=compact_letters,
+        artificial_spacing_detected=bool(
+            analysis and analysis.pdf_glyph_spacing_detected
+        ),
+        rtl_controls_removed=without_controls != nfc,
+        approximate_variants=tuple(dict.fromkeys(approximate))[:64],
+    )
+
+
 def _is_hebrew_mark(char: str) -> bool:
     return "\u0590" <= char <= "\u05cf" and unicodedata.category(char).startswith("M")
 
@@ -246,7 +315,7 @@ def reconstruct_pdf_spaced_hebrew(value: str, segmentation: str | None = None) -
                 offset += size
             return " ".join(words)
     spaced_ratio = sum(gap > 0 for gap in gaps) / max(1, len(gaps))
-    if spaced_ratio >= 0.65:
+    if spaced_ratio >= 0.50 and len(graphemes) >= 4:
         return "".join(graphemes)
     return "".join(
         grapheme if index == 0 or not gaps[index - 1] else " " + grapheme
@@ -290,7 +359,8 @@ def extract_literal_segments(question: str) -> HebrewLiteralQuery | None:
     reconstructed = reconstruct_pdf_spaced_hebrew(literal_raw)
     normalized = normalize_hebrew_search(reconstructed)
     spaced_ratio = sum(gap > 0 for gap in gaps) / max(1, len(gaps))
-    candidates = list(_segmentation_candidates(compact)) if spaced_ratio >= 0.65 else [normalized]
+    artificial_spacing = spaced_ratio >= 0.50 and len(graphemes) >= 4
+    candidates = list(_segmentation_candidates(compact)) if artificial_spacing else [normalized]
     if normalized and normalized not in candidates:
         candidates.insert(0, normalized)
     return HebrewLiteralQuery(
@@ -301,6 +371,6 @@ def extract_literal_segments(question: str) -> HebrewLiteralQuery | None:
         compact_letters=compact,
         literal_reconstructed=reconstructed,
         literal_search_normalized=normalized,
-        pdf_glyph_spacing_detected=spaced_ratio >= 0.65,
+        pdf_glyph_spacing_detected=artificial_spacing,
         candidates=tuple(candidates[:64]),
     )

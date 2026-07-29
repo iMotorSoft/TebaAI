@@ -455,6 +455,17 @@
     warning.startsWith("ai_interpretation_fallback:")
       ? "La interpretación IA no estuvo disponible; se aplicó el analizador determinístico."
       : warning;
+  function hebrewNormalization(response: ResearchResponse) {
+    const value = response.retrieval?.normalization;
+    if (!value || typeof value !== "object") return null;
+    const normalized = value as Record<string, unknown>;
+    return {
+      withoutNiqqud: typeof normalized.without_niqqud === "string"
+        ? normalized.without_niqqud
+        : "",
+      artificialSpacing: normalized.artificial_spacing_detected === true,
+    };
+  }
 </script>
 
 <svelte:window onkeydown={handleKey} />
@@ -617,6 +628,10 @@
             <details class="matrix">
               <summary>Detalles de la consulta</summary>
               <p>Duración: {activeTurn.response.execution.duration_ms ?? "—"} ms</p>
+              {#if hebrewNormalization(activeTurn.response)?.withoutNiqqud}
+                <p lang="he" dir="rtl">Forma hebrea normalizada: {hebrewNormalization(activeTurn.response)?.withoutNiqqud}</p>
+                <p>{hebrewNormalization(activeTurn.response)?.artificialSpacing ? "Se reparó espaciado artificial de extracción PDF." : "No se detectó espaciado artificial."}</p>
+              {/if}
               {#each activeTurn.interpretation?.warnings ?? [] as warning}
                 <p>{interpretationWarningLabel(warning)}</p>
               {/each}

@@ -71,12 +71,54 @@ test.describe("simple grounded RAG DEV gate", () => {
     await expect(page).toHaveURL(/\/login\/?$/);
   });
 
+  test("admin resolves equivalent Hebrew PDF forms to the same canonical source", async ({ page }) => {
+    test.setTimeout(240_000);
+    await login(page, adminEmail, adminPassword);
+    let canonical: { document_id: string; pdf_page: number; section: string } | null = null;
+    for (const question of [
+      "וּמִצְרַיִם נָסִים לִקְרָאתוֹ",
+      "ומצרים נסים לקראתו",
+      "וּמ ִ צְ ר ַ יִם נָ סִ ים לִ ק ְר ָ אתו",
+    ]) {
+      const body = await ask(page, question);
+      expect(body.original_query).toBe(question);
+      expect(body.research_status).toBe("complete");
+      expect(body.retrieval.literal_hits).toBeGreaterThan(0);
+      expect(body.retrieval.primary_match_type).toBe("hebrew_exact_normalized");
+      const primary = body.hits.find((hit: { is_primary: boolean }) => hit.is_primary);
+      expect(primary).toEqual(expect.objectContaining({
+        work_title: "Likutey Moharán I",
+        pdf_page: 14,
+        printed_page: 4,
+        section: "Torá 7:1",
+        match_kind: "hebrew_exact_normalized",
+      }));
+      expect(primary.quote.replace(/[^א-ת]/gu, "")).toContain("ומצריםנסיםלקראתו");
+      const identity = {
+        document_id: primary.document_id,
+        pdf_page: primary.pdf_page,
+        section: primary.section,
+      };
+      if (canonical) expect(identity).toEqual(canonical);
+      else canonical = identity;
+      const sources = page.locator('aside[aria-label="Fuentes del turno"]');
+      await expect(sources.getByText("Coincidencia normalizada", { exact: false })).toBeVisible();
+      await expect(sources.getByText("Torá 7:1", { exact: false })).toBeVisible();
+      await page.locator(".desktop-action").filter({
+        hasText: "Nueva investigación",
+      }).click();
+    }
+    await page.getByRole("button", { name: "Cerrar sesión" }).first().click();
+    await expect(page).toHaveURL(/\/login\/?$/);
+  });
+
   test("mobile RTL keeps answer and source panel usable", async ({ page }) => {
     test.setTimeout(120_000);
     await page.setViewportSize({ width: 390, height: 844 });
     await login(page, adminEmail, adminPassword);
-    const body = await ask(page, "מהי התבודדות");
-    expect(body.original_query).toBe("מהי התבודדות");
+    const body = await ask(page, "וּמִצְרַיִם נָסִים לִקְרָאתוֹ");
+    expect(body.original_query).toBe("וּמִצְרַיִם נָסִים לִקְרָאתוֹ");
+    expect(body.hits[0].work_title).toBe("Likutey Moharán I");
     await expect(page.locator(".user-turn h2")).toHaveAttribute("dir", "rtl");
     await page.getByRole("button", { name: "Fuentes", exact: true }).click();
     await expect(page.locator('aside[aria-label="Fuentes del turno"]')).toBeVisible();
@@ -157,8 +199,11 @@ test.describe("simple RAG guest read-only", () => {
   test("guest can research, cannot administer, and can logout", async ({ page }) => {
     test.setTimeout(120_000);
     await login(page, guestEmail, guestPassword);
-    const body = await ask(page, "qué es hitbodedut");
+    const body = await ask(page, "ומצרים נסים לקראתו");
     expect(body.evidence.length).toBeGreaterThan(0);
+    expect(body.hits.some((hit: { work_title: string; section: string }) =>
+      hit.work_title === "Likutey Moharán I" && hit.section === "Torá 7:1"
+    )).toBe(true);
     await page.goto("/admin/users");
     await expect(page).toHaveURL(/\/research\/?$/);
     await expect(page.getByRole("button", { name: "Crear usuario" })).toHaveCount(0);

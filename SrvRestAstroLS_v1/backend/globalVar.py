@@ -118,6 +118,9 @@ RESEARCH_CONVERSATION_MODEL: str = SETTINGS.research_conversation_model
 RESEARCH_EMBEDDING_MODEL_ALIAS: str = SETTINGS.research_embedding_model_alias
 BRESLOV_PRODUCTIVE_COLLECTION: str = SETTINGS.breslov_productive_collection
 RESEARCH_PIPELINE: str = SETTINGS.research_pipeline
+RESEARCH_INCLUDE_TEST_CANDIDATES_READONLY: bool = (
+    SETTINGS.research_include_test_candidates_readonly
+)
 
 # ── Auth ─────────────────────────────────────────────────────────
 AUTH_ENABLED: bool = SETTINGS.auth_enabled

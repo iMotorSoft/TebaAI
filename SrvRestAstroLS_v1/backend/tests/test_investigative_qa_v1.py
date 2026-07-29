@@ -12,6 +12,7 @@ from modules.library.investigative_qa_v1 import (
     QaRequest,
     _apply_claim_traceability,
     _cap_hits_with_language_coverage,
+    _discover_validated_relations,
     _is_source_layer_followup,
     _mentioned_works,
     _normalize_claims,
@@ -116,6 +117,25 @@ def test_real_scorpion_discovers_only_textually_grounded_neighbors() -> None:
         )
         snippet = (hit["display_snippet"] or "").casefold()
         assert "escorpi" in snippet or "עקרב" in snippet
+
+
+def test_scorpion_discovery_validates_unaccented_controlled_aliases() -> None:
+    interpretation = deterministic_interpret(
+        preprocess_query("el término escorpión con qué está relacionado"),
+        [],
+    )
+    hit = make_hit(
+        "kitzur-unaccented-scorpion",
+        ["escorpión"],
+        "Los escorpiones aparecen junto a las serpientes.",
+    )
+
+    relations = _discover_validated_relations([hit], interpretation)
+
+    assert [relation["related_concept"] for relation in relations] == ["serpiente"]
+    assert relations[0]["literal_subject_present"] is True
+    assert relations[0]["literal_related_concept_present"] is True
+    assert hit.relation_type == "same_fragment_cooccurrence"
 
 
 def test_real_azamra_uses_controlled_multilingual_named_teaching() -> None:

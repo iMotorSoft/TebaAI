@@ -129,7 +129,10 @@ ALIASES: dict[str, tuple[str, ...]] = {
     "torá": ("torá", "tora", "torah"),
     "notas": ("nota", "notas", "fuente"),
     "lágrimas": ("lágrimas", "lagrimas", "llorar", "llanto"),
-    "escorpión": ("escorpión", "escorpion", "escorpiones", "עקרב", "עקרבים", "עַקְרַב"),
+    "escorpión": (
+        "escorpión", "escorpion", "escorpiones", "scorpion", "scorpions",
+        "עקרב", "עקרבים", "עַקְרַב",
+    ),
 }
 
 DISCOVERY_NEIGHBORS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
@@ -1372,14 +1375,18 @@ def _discover_validated_relations(
     )
     if subject_key is None:
         return []
+    subject_aliases = [
+        *[variant.value for variant in subject.variants],
+        *ALIASES.get(subject_key, (subject.normalized,)),
+    ]
     relations: list[dict] = []
     seen: set[str] = set()
     for related_concept, aliases in DISCOVERY_NEIGHBORS[subject_key]:
         for hit in hits:
             text = normalize_hebrew_search(hit.display_quote or hit.quote)
             subject_present = any(
-                normalize_hebrew_search(variant.value) in text
-                for variant in subject.variants
+                normalize_hebrew_search(alias) in text
+                for alias in subject_aliases
             )
             related_present = next(
                 (

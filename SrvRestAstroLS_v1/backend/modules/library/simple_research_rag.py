@@ -38,6 +38,7 @@ from modules.library.hebrew_lexical_normalizer import (
     has_hebrew,
     normalize_hebrew_for_search,
 )
+from modules.library.bibliographic_planner import run_bibliographic_planner
 from modules.library.page_first_evidence import build_evidence_v1
 from modules.library.simple_research_repository import (
     fetch_canonical_chunks,
@@ -1140,6 +1141,53 @@ def _fallback_answer(chunks: list[dict[str, Any]]) -> tuple[str, list[dict[str, 
     return "\n".join(lines), claims
 
 
+def _format_bibliographic_answer(
+    bib_result: dict[str, Any],
+    original_query: str,
+) -> str:
+    """Format a bibliographic answer into a readable markdown string."""
+    results = bib_result.get("bibliographic_results", [])
+    if not results:
+        return "No se encontraron ocurrencias bibliográficas."
+
+    lines = [f"### Resultado bibliográfico: {original_query}", ""]
+    for r in results:
+        vol_label = r.get("volume_label") or "Volumen único"
+        vol_conf = r.get("volume_confidence") or "unknown"
+        lines.append(f"**{r.get('work', 'Desconocida')}**")
+        lines.append(f"- {'Tomo' if vol_label else 'Obra'}: {vol_label} (confianza: {vol_conf})")
+        if r.get("occurrence_count"):
+            lines.append(f"- Ocurrencias: {r['occurrence_count']}")
+        if r.get("presence_types"):
+            lines.append(f"- Tipos de presencia: {', '.join(r['presence_types'])}")
+        if r.get("pages"):
+            pages_str = ", ".join(str(p) for p in r["pages"])
+            lines.append(f"- Páginas PDF: {pages_str}")
+        if r.get("sections"):
+            for s in r["sections"][:3]:
+                lines.append(f"- Sección: {s}")
+        if r.get("primary_evidence_id"):
+            lines.append(f"- Evidence ID principal: {r['primary_evidence_id']}")
+        vol_source = r.get("volume_source") or ""
+        if vol_source:
+            lines.append(f"- Fuente del tomo: {vol_source}")
+        lines.append("")
+
+    if bib_result.get("query_plan"):
+        qp = bib_result["query_plan"]
+        lines.append("**Plan de consulta**")
+        lines.append(f"- Intención: {qp.get('intent', 'N/A')}")
+        subject = qp.get("subject", {})
+        if subject.get("canonical"):
+            lines.append(f"- Concepto: {subject['canonical']}")
+        scope = qp.get("scope", {})
+        if scope.get("canonical_label"):
+            lines.append(f"- Obra: {scope['canonical_label']}")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
 def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any]:
     evidence_id = chunk["evidence_id"]
     markdown = str(chunk.get("markdown") or "")
@@ -1552,9 +1600,60 @@ async def run_simple_rag(
     )
     # ---------------------------------------------------------------------
 
+    # -- Bibliographic Query Planner V1 --------------------------------------
+    bibliographic_started = time.perf_counter()
+    bibliographic_data: dict[str, Any] = {"bibliographic_active": False}
+    if selected:
+        try:
+            document_rows_for_planner = list(canonical_by_id.values())
+            # Add document-level data from selected chunks
+            doc_info: dict[str, dict[str, Any]] = {}
+            for c in selected:
+                did = str(c.get("document_id") or "")
+                if did and did not in doc_info:
+                    doc_info[did] = {
+                        "id": did,
+                        "title": c.get("work") or c.get("title", ""),
+                        "edition": c.get("edition") or "",
+                        "document_code": c.get("document_code") or "",
+                        "source_filename": c.get("source_filename") or c.get("physical_file_name") or "",
+                        "status": c.get("document_status") or "",
+                        "metadata": c.get("metadata") or {},
+                    }
+            # Try bibliographic planner with document info
+            bib_result = run_bibliographic_planner(
+                query=original_query,
+                chunks=selected,
+                document_rows=list(doc_info.values()),
+                original_query=original_query,
+            )
+            if bib_result and bib_result.get("bibliographic_active"):
+                bibliographic_data = bib_result
+                selected = []  # bibliographic replaces normal retrieval output
+                research_status = "complete"
+                bib_answer = _format_bibliographic_answer(bib_result, original_query)
+                answer = bib_answer
+                answer_markdown = bib_answer
+                ai_used = False
+                ai_status = "not_run"
+                # Skip standard evidence construction for bibliographic responses
+                hits = []
+                evidence = []
+                primary_ids = []
+                claims = []
+                warnings.append("respuesta_bibliografica_generada_desde_metadata")
+        except Exception:
+            logger.warning("bibliographic_planner failed", exc_info=True)
+    latency["bibliographic_planner_ms"] = round(
+        (time.perf_counter() - bibliographic_started) * 1000, 2
+    )
+    # ---------------------------------------------------------------------
+
     retrieval_failed = semantic_status == "failed" and literal_status == "failed"
     canonical_missing = bool(ranked) and not canonical
-    if not selected:
+    if not selected and bibliographic_data.get("bibliographic_active"):
+        pass  # bibliographic response already set above
+    elif not selected:
         if retrieval_failed or canonical_missing:
             research_status = "degraded"
             answer = (
@@ -1924,6 +2023,7 @@ async def run_simple_rag(
         "relations": [],
         "not_found": [] if selected else [original_query],
         "warnings": list(dict.fromkeys(warnings)),
+        "bibliographic": bibliographic_data if bibliographic_data.get("bibliographic_active") else None,
         "query_understanding": {
             "original_query": original_query,
             "intent": (

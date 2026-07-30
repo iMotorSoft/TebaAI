@@ -1,0 +1,25 @@
+{
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "document_ids": [
+    "37b5842d-517d-49d1-bab0-3584f409f355",
+    "47768aac-704e-4296-9649-53b9ea037096"
+  ],
+  "timestamp": "2026-07-30T18:14:45Z",
+  "counts": {
+    "library_documents": 2,
+    "library_document_chunks": 2652,
+    "library_document_texts": 1,
+    "library_chunk_embeddings": 2222,
+    "library_pages_v2": 0,
+    "library_page_anchors_v2": 284,
+    "library_page_zones_v2": 0,
+    "library_page_structural_classifications_v2": 284,
+    "library_content_units_v2": 269,
+    "library_content_nodes_v2": 268,
+    "library_literal_spans_v2": 268,
+    "library_semantic_units_v2": 268,
+    "library_ingestion_runs_v2": 0,
+    "library_likutey_halajot_page_final_status_v2": 284,
+    "library_chunk_embeddings_total": 7325
+  }
+}

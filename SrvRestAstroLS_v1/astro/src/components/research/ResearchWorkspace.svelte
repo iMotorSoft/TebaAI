@@ -25,12 +25,14 @@
   } from "./researchLabels.ts";
   import {
     composerDirection,
+    detectLanguage,
     isHebrewText,
     languageAttribute,
     normalizeDisplayText,
     safeSnippet,
     textDirection,
   } from "./textDirection.ts";
+  import { getAnalyzingLabel } from "./researchAnalyzingLabels.ts";
 
   const labels: Record<string, string> = {
     kitzur: "Kitzur Likutey Moharán",
@@ -41,6 +43,8 @@
     potencia_plegaria: "La Potencia de la Plegaria",
   };
   const PENDING_KEY = "tebaai_research_pending_interpretation_v1";
+
+  type RequestState = "idle" | "working" | "error";
 
   type TurnState =
     | "interpreting"
@@ -62,7 +66,7 @@
 
   let ready = $state(false);
   let inputText = $state("");
-  let isSubmitting = $state(false);
+  let requestState = $state<RequestState>("idle");
   let requestError = $state<string | null>(null);
   let activeTurnId = $state("");
   let selectedHitId = $state<string | null>(null);
@@ -79,7 +83,16 @@
   let composer = $state<HTMLTextAreaElement>();
   let panelTrigger: HTMLElement | null = null;
   let requestController: AbortController | null = null;
+  let statusMessage = $state("");
+  let workingLanguage = $state("es");
+  let statusTimer: ReturnType<typeof setTimeout> | null = null;
+  let minimumWorkTimer: ReturnType<typeof setTimeout> | null = null;
+  let minimumWorkResolve: (() => void) | null = null;
 
+  const isWorking = $derived(requestState === "working");
+  const currentLanguage = $derived<string>(
+    isHebrewText(inputText) ? "he" : detectLanguage(inputText) === "es" ? "es" : "en",
+  );
   const activeTurn = $derived(turns.find((turn) => turn.id === activeTurnId) ?? turns.at(-1));
   const direction = $derived(composerDirection(inputText));
   const blocksNewQuestion = $derived(
@@ -157,6 +170,51 @@
       .map((turn) => ({ question: turn.question }));
   }
 
+  function startWork(requestLang: string) {
+    workingLanguage = requestLang;
+    requestState = "working";
+    statusMessage = getAnalyzingLabel(workingLanguage, "status.searching");
+    clearStatusTimers();
+    statusTimer = setTimeout(() => {
+      if (requestState !== "working") return;
+      statusMessage = getAnalyzingLabel(workingLanguage, "status.verifying");
+    }, 4000);
+    statusTimer = setTimeout(() => {
+      if (requestState !== "working") return;
+      statusMessage = getAnalyzingLabel(workingLanguage, "status.organizing");
+    }, 9000);
+  }
+
+  function clearStatusTimers() {
+    if (statusTimer !== null) {
+      clearTimeout(statusTimer);
+      statusTimer = null;
+    }
+  }
+
+  function endWork() {
+    clearStatusTimers();
+    if (minimumWorkTimer !== null) {
+      clearTimeout(minimumWorkTimer);
+      minimumWorkTimer = null;
+    }
+    if (minimumWorkResolve) {
+      minimumWorkResolve();
+      minimumWorkResolve = null;
+    }
+    requestState = "idle";
+    statusMessage = "";
+    workingLanguage = "es";
+  }
+
+  async function minimumWork(): Promise<void> {
+    const MINIMUM_MS = 350;
+    return new Promise((resolve) => {
+      minimumWorkResolve = resolve;
+      minimumWorkTimer = setTimeout(resolve, MINIMUM_MS);
+    });
+  }
+
   async function submitInterpretation(
     question: string,
     turnId?: string,
@@ -164,7 +222,7 @@
   ) {
     const clean = question.trim();
     const token = getStoredAccessToken();
-    if (!clean || !token || isSubmitting) return;
+    if (!clean || !token || isWorking) return;
     const id = turnId ?? crypto.randomUUID();
     const next: Turn = {
       id,
@@ -178,9 +236,10 @@
       ? turns.map((turn) => turn.id === id ? next : turn)
       : [...turns, next];
     activeTurnId = id;
-    if (!turnId) inputText = "";
-    isSubmitting = true;
     requestError = null;
+    const requestLang = isHebrewText(clean) ? "he" : detectLanguage(clean) === "es" ? "es" : "en";
+    startWork(requestLang);
+    if (!turnId) inputText = "";
     const controller = new AbortController();
     requestController = controller;
     try {
@@ -195,6 +254,8 @@
         ),
         controller.signal,
       );
+      await minimumWork();
+      if (requestController !== controller) return;
       conversationId = interpretation.conversation_id;
       turns = turns.map((turn) => turn.id === id ? {
         ...turn,
@@ -205,23 +266,24 @@
       } : turn);
       await tick();
       document.querySelector<HTMLElement>('[data-testid="interpretation-analyze"]')?.focus();
+      endWork();
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
       requestError = error instanceof Error ? error.message : "No se pudo interpretar la consulta.";
       turns = turns.map((turn) => turn.id === id ? { ...turn, state: "error" } : turn);
+      endWork();
     } finally {
       if (requestController === controller) {
         requestController = null;
-        isSubmitting = false;
       }
     }
   }
 
   async function submit() {
-    if (blocksNewQuestion) return;
+    if (blocksNewQuestion || isWorking) return;
     const clean = inputText.trim();
     const token = getStoredAccessToken();
-    if (!clean || !token || isSubmitting) return;
+    if (!clean || !token) return;
     const id = crypto.randomUUID();
     turns = [...turns, {
       id,
@@ -232,9 +294,10 @@
       editText: clean,
     }];
     activeTurnId = id;
-    inputText = "";
-    isSubmitting = true;
     requestError = null;
+    const requestLang = isHebrewText(clean) ? "he" : detectLanguage(clean) === "es" ? "es" : "en";
+    startWork(requestLang);
+    inputText = "";
     const controller = new AbortController();
     requestController = controller;
     try {
@@ -243,6 +306,8 @@
         makeRequest(clean, filters, historyBefore(id), conversationId, id),
         controller.signal,
       );
+      await minimumWork();
+      if (requestController !== controller) return;
       selectedHitId = selectInitialEvidence(response);
       turns = turns.map((turn) => turn.id === id ? {
         ...turn,
@@ -252,24 +317,26 @@
       } : turn);
       await tick();
       document.querySelector<HTMLElement>('[data-testid="research-result-heading"]')?.focus();
+      endWork();
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
       requestError = error instanceof Error ? error.message : "No se pudo completar la investigación.";
       turns = turns.map((turn) => turn.id === id ? { ...turn, state: "error" } : turn);
+      endWork();
     } finally {
       if (requestController === controller) {
         requestController = null;
-        isSubmitting = false;
       }
     }
   }
 
   async function analyze(turn: Turn) {
     const token = getStoredAccessToken();
-    if (!token || !turn.interpretation || turn.state !== "awaiting_interpretation_confirmation" || isSubmitting) return;
-    isSubmitting = true;
+    if (!token || !turn.interpretation || turn.state !== "awaiting_interpretation_confirmation" || isWorking) return;
     requestError = null;
     turns = turns.map((item) => item.id === turn.id ? { ...item, state: "analyzing" } : item);
+    const requestLang = isHebrewText(turn.question) ? "he" : detectLanguage(turn.question) === "es" ? "es" : "en";
+    startWork(requestLang);
     const controller = new AbortController();
     requestController = controller;
     try {
@@ -278,6 +345,8 @@
         makeAnalyzeRequest(turn.interpretation, filters, historyBefore(turn.id)),
         controller.signal,
       );
+      await minimumWork();
+      if (requestController !== controller) return;
       selectedHitId = selectInitialEvidence(response);
       turns = turns.map((item) => item.id === turn.id ? {
         ...item,
@@ -286,6 +355,7 @@
       } : item);
       await tick();
       document.querySelector<HTMLElement>('[data-testid="research-result-heading"]')?.focus();
+      endWork();
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
       requestError = error instanceof Error ? error.message : "No se pudo completar el análisis.";
@@ -293,16 +363,16 @@
         ...item,
         state: "awaiting_interpretation_confirmation",
       } : item);
+      endWork();
     } finally {
       if (requestController === controller) {
         requestController = null;
-        isSubmitting = false;
       }
     }
   }
 
   async function modify(turn: Turn) {
-    if (!turn.interpretation || isSubmitting) return;
+    if (!turn.interpretation || isWorking) return;
     if (turn.state === "awaiting_interpretation_confirmation") {
       turns = turns.map((item) => item.id === turn.id ? {
         ...item,
@@ -333,6 +403,7 @@
 
   async function signOut() {
     requestController?.abort();
+    endWork();
     await logout();
     location.assign("/login");
   }
@@ -340,7 +411,7 @@
   async function newConversation() {
     requestController?.abort();
     requestController = null;
-    isSubmitting = false;
+    endWork();
     turns = [];
     activeTurnId = "";
     selectedHitId = null;
@@ -471,7 +542,7 @@
 <svelte:window onkeydown={handleKey} />
 
 {#if ready}
-  <main class="research" aria-label="Investigación Breslov" aria-busy={isSubmitting}>
+  <main class="research" aria-label="Investigación Breslov" aria-busy={isWorking}>
     <header class="research-header">
       <a href="/" class="research-brand"><span lang="he" dir="rtl">רבי נחמן</span><small>REBE NAJMÁN · BRESLOV RESEARCH</small></a>
       <h1>Investigación</h1>
@@ -537,12 +608,12 @@
                   <button
                     data-testid="interpretation-analyze"
                     onclick={() => analyze(activeTurn)}
-                    disabled={activeTurn.state !== "awaiting_interpretation_confirmation" || isSubmitting}
+                    disabled={activeTurn.state !== "awaiting_interpretation_confirmation" || isWorking}
                   >Analizar</button>
                   <button
                     data-testid="interpretation-modify"
                     onclick={() => modify(activeTurn)}
-                    disabled={isSubmitting || (activeTurn.state === "editing_interpretation" && !activeTurn.editText.trim())}
+                    disabled={isWorking || (activeTurn.state === "editing_interpretation" && !activeTurn.editText.trim())}
                   >Modificar</button>
                 </div>
               {:else if activeTurn.state === "analyzing"}
@@ -645,7 +716,7 @@
       <SourcePanel
         response={activeTurn?.response ?? null}
         selectedId={selectedHitId}
-        pendingAnalysis={Boolean(activeTurn && ["interpreting", "awaiting_interpretation_confirmation", "editing_interpretation", "analyzing"].includes(activeTurn.state))}
+        pendingAnalysis={Boolean(activeTurn && ["interpreting", "awaiting_interpretation_confirmation", "editing_interpretation", "analyzing"].includes(activeTurn.state)) || isWorking}
         onselect={(hit) => selectedHitId = hit.hit_id}
         onclose={closePanel}
       />
@@ -664,11 +735,34 @@
         oninput={resize}
         maxlength="1000"
         placeholder="Escriba una pregunta de investigación…"
-        disabled={isSubmitting || blocksNewQuestion}
+        readonly={isWorking}
+        disabled={blocksNewQuestion}
       ></textarea>
       {#if inputText.length > 850}<small>{inputText.length}/1000</small>{/if}
-      <button data-testid="research-submit" type="submit" disabled={isSubmitting || blocksNewQuestion || !inputText.trim()}>Enviar</button>
+      <button
+        data-testid="research-submit"
+        type="submit"
+        disabled={isWorking || blocksNewQuestion || !inputText.trim()}
+        aria-disabled={isWorking || blocksNewQuestion || !inputText.trim()}
+        class:analyzing={isWorking}
+      >
+        {#if isWorking}
+          <span class="analyzing-icon" aria-hidden="true">
+            <svg class="sparkle-svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 2l2 7h7l-5.5 4.5L16.5 20 12 16.5 7.5 20l1.5-6.5L3 9h7z"/>
+            </svg>
+          </span>
+          <span lang={workingLanguage === "he" ? "he" : "es"} dir={workingLanguage === "he" ? "rtl" : "ltr"}>{getAnalyzingLabel(workingLanguage, "action.analyzing")}</span>
+        {:else}
+          <span lang="es">Enviar</span>
+        {/if}
+      </button>
     </form>
+    {#if isWorking}
+      <div class="analyzing-status" role="status" aria-live="polite">
+        <p lang={workingLanguage === "he" ? "he" : "es"} dir={workingLanguage === "he" ? "rtl" : "ltr"} class:analyzing-status-text={true} class:research-hebrew-text={workingLanguage === "he"}>{statusMessage}</p>
+      </div>
+    {/if}
 
     {#if mobilePanel === "filters"}
       <div class="panel-backdrop" role="presentation" onclick={closePanel}></div>
@@ -686,3 +780,141 @@
 {:else}
   <main class="research research--checking" aria-live="polite"><p>Verificando acceso…</p></main>
 {/if}
+
+<style>
+  /* ═══ Analyzing button ═══ */
+  button.analyzing {
+    position: relative;
+    min-width: 140px;
+    justify-content: center;
+    gap: 6px;
+    cursor: wait;
+    background: linear-gradient(145deg, #0a1e3a 0%, #0f2a4a 100%);
+    border: 1px solid rgba(200, 148, 50, 0.5);
+    box-shadow: 0 0 14px rgba(200, 148, 50, 0.12);
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  button.analyzing:disabled {
+    opacity: 0.85;
+  }
+  .analyzing-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sparkle-svg {
+    animation: sparkle-rotate 2.2s linear infinite;
+    filter: drop-shadow(0 0 3px rgba(200, 148, 50, 0.45));
+  }
+  @keyframes sparkle-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  button.analyzing .analyzing-icon + span {
+    animation: analyzing-pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes analyzing-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* ═══ Status indicator ═══ */
+  .analyzing-status {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    max-width: 520px;
+    width: calc(100% - 32px);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(200, 148, 50, 0.3);
+    background: rgba(10, 30, 58, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: analyzing-status-in 0.3s ease-out;
+  }
+  @keyframes analyzing-status-in {
+    from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+  .analyzing-status p {
+    margin: 0;
+    font: 400 0.82rem/1.45 var(--sans, sans-serif);
+    color: #e8dcc8;
+    letter-spacing: 0.02em;
+  }
+  .analyzing-status p.analyzing-status-text::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    margin-left: 4px;
+    animation: analyzing-dots 1.8s steps(3, end) infinite;
+    overflow: hidden;
+    vertical-align: bottom;
+    text-align: left;
+  }
+  @keyframes analyzing-dots {
+    0% { width: 0; content: ""; }
+    33% { width: 6px; }
+    66% { width: 12px; }
+    100% { width: 18px; }
+  }
+  .analyzing-status p.analyzing-status-text::after {
+    content: "\2026\00a0\00a0";
+    letter-spacing: 2px;
+  }
+  @keyframes analyzing-dots {
+    0% { content: "\2026"; }
+    33% { content: "\2026\00a0"; }
+    66% { content: "\2026\00a0\00a0"; }
+    100% { content: "\2026"; }
+  }
+
+  /* ═══ RTL status overrides ═══ */
+  .analyzing-status p[dir="rtl"].analyzing-status-text::after {
+    margin-left: 0;
+    margin-right: 4px;
+  }
+
+  /* ═══ Reduced motion ═══ */
+  @media (prefers-reduced-motion: reduce) {
+    .sparkle-svg {
+      animation: none;
+    }
+    button.analyzing .analyzing-icon + span {
+      animation: none;
+    }
+    .analyzing-status {
+      animation: none;
+    }
+    .analyzing-status p.analyzing-status-text::after {
+      animation: none;
+      content: "\2026";
+    }
+  }
+
+  /* ═══ Responsive status bar ═══ */
+  @media (max-width: 720px) {
+    .analyzing-status {
+      bottom: 12px;
+      padding: 8px 12px;
+      max-width: calc(100% - 24px);
+    }
+    .analyzing-status p {
+      font-size: 0.76rem;
+    }
+  }
+  @media (max-width: 390px) {
+    .analyzing-status {
+      bottom: 8px;
+      padding: 6px 10px;
+    }
+    .analyzing-status p {
+      font-size: 0.72rem;
+    }
+  }
+</style>

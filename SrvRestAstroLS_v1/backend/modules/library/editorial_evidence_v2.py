@@ -210,7 +210,7 @@ def classify_editorial_block(
 _BIBLICAL_REFERENCE = re.compile(
     r"\(?\s*(Salmos|Salmo|Tehilim|Éxodo|Génesis|Levítico|Números|Deuteronomio|"
     r"Isaías|Jeremías|Ezequiel|Oseas|Joel|Amós|Abdías|Jonás|Miqueas|Nahúm|"
-    r"Habacuc|Sofonías|Hageo|Zacarías|Malaquías|Proverbios|Job|Cantar|Rut|Lamentaciones|Eclesiastés|Ester|Daniel|Esdras|Nehemías|Crónicas|"
+    r"Habacuc|Sofonías|Hageo|Zacarías|Malaquías|Proverbios|Proverbio|Job|Cantar|Rut|Lamentaciones|Eclesiastés|Ester|Daniel|Esdras|Nehemías|Crónicas|"
     r"Mateo|Marcos|Lucas|Juan|Hechos|Romanos|Corintios|Gálatas|Efesios|Filipenses|Colosenses|Tesalonicenses|"
     r"Timoteo|Tito|Filemón|Hebreos|Santiago|Pedro|Judas|Apocalipsis)"
     r"\s+"  # book name followed by whitespace

@@ -174,6 +174,108 @@ async def search_structural_heading_candidates(
     )
 
 
+async def search_printed_reference_candidates(
+    conn: AsyncConnection,
+    *,
+    knowledge_scope_code: str,
+    reference_variants: list[str],
+    languages: list[str],
+    document_ids: list[str] | None,
+    include_test_candidates: bool = False,
+) -> list[dict[str, Any]]:
+    """Search for marginal_source chunks matching a printed biblical reference."""
+    if not reference_variants:
+        return []
+    # Use the reference regex to extract book, chapter, verse for precise matching
+    from modules.library.editorial_evidence_v2 import _BIBLICAL_REFERENCE
+    import re as _re
+    # Build variants as regex patterns with word boundaries
+    pg_re_variants = []
+    ilike_variants = []
+    for v in reference_variants:
+        m = _BIBLICAL_REFERENCE.search(v)
+        if m:
+            book = _re.escape(m.group(1))
+            chapter = _re.escape(m.group(2))
+            verse = _re.escape(m.group(3))
+            # Build regex that handles optional 's' suffix for book names
+            # e.g. Salmo -> (?:Salmo|Salmos), Proverbio -> (?:Proverbio|Proverbios)
+            book_pluralized = book
+            if not book.endswith('s'):
+                # If book is singular, also match the plural form
+                book_singular = book.rstrip('s')
+                book_pluralized = f'(?:{book}{book}s?)' if book != book_singular else f'(?:{book}{book}s)?'
+                # Simplify: just match with and without trailing 's'
+                book_pluralized = f'{book}s?'
+            # Match book chapter:verse NOT followed by another digit or hyphen-digit
+            # Use (?i) for case-insensitive
+            pg_re = r'(?i)' + book_pluralized + r'\s+' + chapter + r':' + verse + r'(?:[^\w]|$|\s)'
+            pg_re_variants.append(pg_re)
+            # Also add a simple ILIKE variant for backup
+            # Use the original reference text without parentheses
+            clean_ref = v.strip('()[]')
+            ilike_variants.append(clean_ref)
+    if not pg_re_variants:
+        return []
+    return await fetch_all(
+        conn,
+        """
+        WITH ref AS (
+            SELECT DISTINCT trim(value) AS query
+            FROM unnest(%(variants)s::text[]) AS values(value)
+            WHERE length(trim(value)) >= 2
+        )
+        SELECT DISTINCT ON (ch.id, ref.query)
+            ch.id AS chunk_id,
+            ch.document_id,
+            ch.chunk_index,
+            ch.content,
+            ch.block_type,
+            ch.evidence_role,
+            ch.citable,
+            ch.page_start,
+            ch.page_end,
+            ch.printed_page_label,
+            ch.section_title,
+            d.status AS document_status,
+            true AS exact_match,
+            2 AS exact_variant_count
+        FROM library_document_chunks ch
+        JOIN library_documents d ON d.id = ch.document_id
+        JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+        CROSS JOIN ref
+        WHERE ks.knowledge_scope_code = %(scope)s
+          AND (
+                d.status = 'ready'
+                OR (%(include_test)s AND d.status = 'test_candidate')
+          )
+          AND ch.citable = true
+          AND (
+                ch.evidence_role = 'marginal_citation'
+                OR ch.block_type = 'marginal_source'
+          )
+          AND (
+                ch.language = ANY(%(languages)s::text[])
+                OR ch.language = 'mixed'
+          )
+          AND (
+                %(document_ids)s::uuid[] IS NULL
+                OR ch.document_id = ANY(%(document_ids)s::uuid[])
+          )
+          AND ch.content ~ ref.query
+        ORDER BY ch.id, ref.query
+        LIMIT 30
+        """,
+        {
+            "scope": knowledge_scope_code,
+            "variants": pg_re_variants,
+            "languages": languages,
+            "document_ids": document_ids or None,
+            "include_test": include_test_candidates,
+        },
+    )
+
+
 async def search_literal_candidates(
     conn: AsyncConnection,
     *,
@@ -201,17 +303,23 @@ async def search_literal_candidates(
         scored AS (
             SELECT
                 ch.id AS chunk_id,
-                bool_or(ch.search_text_normalized ILIKE '%%' || q.query || '%%') AS exact_match,
+                bool_or(
+                    ch.search_text_normalized ILIKE '%%' || q.query || '%%'
+                    OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
+                ) AS exact_match,
                 count(DISTINCT q.query) FILTER (
                     WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
+                    OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
                 ) AS exact_variant_count,
                 (
                     array_agg(q.query ORDER BY q.ordinal) FILTER (
                         WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
+                        OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
                     )
                 )[1] AS matched_variant,
                 min(q.ordinal) FILTER (
                     WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
+                    OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
                 ) AS matched_variant_ordinal,
                 max(
                     GREATEST(
@@ -225,14 +333,21 @@ async def search_literal_candidates(
                         )
                     )
                 ) AS fts_score,
-                max(similarity(ch.search_text_normalized, q.query))
-                    FILTER (WHERE q.ordinal <= 2) AS trigram_score
+                max(
+                    COALESCE(
+                        similarity(ch.search_text_normalized, q.query),
+                        similarity(ch.content, q.query)
+                    )
+                ) FILTER (WHERE q.ordinal <= 2) AS trigram_score
             FROM library_document_chunks ch
             JOIN library_documents d ON d.id = ch.document_id
             JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
             CROSS JOIN query_variants q
             WHERE ks.knowledge_scope_code = %(scope)s
-              AND d.status = 'ready'
+              AND (
+                    d.status = 'ready'
+                    OR (%(include_test)s AND d.status = 'test_candidate')
+              )
               AND ch.citable = true
               AND ch.language = ANY(%(languages)s::text[])
               AND (
@@ -240,12 +355,18 @@ async def search_literal_candidates(
                     OR ch.document_id = ANY(%(document_ids)s::uuid[])
               )
               AND (
-                    ch.search_text_normalized ILIKE '%%' || q.query || '%%'
+                    (
+                        ch.search_text_normalized ILIKE '%%' || q.query || '%%'
+                        OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
+                    )
                     OR ch.search_vector_es @@ websearch_to_tsquery('spanish', q.query)
                     OR ch.search_vector_simple @@ websearch_to_tsquery('simple', q.query)
                     OR (
                         q.ordinal <= 2
-                        AND similarity(ch.search_text_normalized, q.query) > 0.12
+                        AND COALESCE(
+                            similarity(ch.search_text_normalized, q.query),
+                            similarity(ch.content, q.query)
+                        ) > 0.12
                     )
               )
             GROUP BY ch.id
@@ -273,6 +394,7 @@ async def search_literal_candidates(
             "variants": variants,
             "languages": languages,
             "document_ids": document_ids or None,
+            "include_test": include_test_candidates,
             "limit": top_k,
         },
     )

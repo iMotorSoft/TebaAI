@@ -39,12 +39,17 @@ from modules.library.hebrew_lexical_normalizer import (
     normalize_hebrew_for_search,
 )
 from modules.library.bibliographic_planner import run_bibliographic_planner
-from modules.library.editorial_evidence_v2 import enrich_evidence_with_v2, build_section_timeline
+from modules.library.editorial_evidence_v2 import (
+    _BIBLICAL_REFERENCE,
+    enrich_evidence_with_v2,
+    build_section_timeline,
+)
 from modules.library.page_first_evidence import build_evidence_v1
 from modules.library.simple_research_repository import (
     fetch_canonical_chunks,
     resolve_ready_documents,
     search_literal_candidates,
+    search_printed_reference_candidates,
     search_structural_heading_candidates,
 )
 
@@ -721,6 +726,10 @@ def merge_results(
             "english_name_variant": 7.0,
             "english_name_partial": 4.0,
         }.get(str(item.get("literal_match_type")), 0.0)
+        printed_reference_priority = {
+            "printed_reference_exact": 15.0,
+            "printed_reference_normalized": 13.0,
+        }.get(str(item.get("literal_match_type")), 0.0)
         structural_heading_priority = {
             "structural_heading_exact": 20.0,
             "structural_heading_normalized": 18.0,
@@ -746,6 +755,7 @@ def merge_results(
             structural_heading_priority
             + hebrew_literal_priority
             + english_name_priority
+            + printed_reference_priority
             + semantic_rrf
             + literal_rrf
             + overlap_bonus
@@ -770,6 +780,8 @@ def _source_layer(chunk: dict[str, Any]) -> str:
         return "rebbe_lesson_text"
     if block == "footnote":
         return "footnote"
+    if role == "marginal_citation" or block == "marginal_source":
+        return "marginal_reference"
     if "source" in role:
         return "rebbe_lesson_text"
     if "comment" in role:
@@ -891,6 +903,9 @@ def _is_primary_eligible(
         return match_type in HEBREW_PRIMARY_MATCH_TYPES
     if english_name_query is not None:
         return match_type in ENGLISH_NAME_PRIMARY_MATCH_TYPES
+    # printed references are always eligible
+    if match_type == "printed_reference_exact":
+        return True
     return True
 
 
@@ -1315,7 +1330,15 @@ async def run_simple_rag(
     simulations = simulations or {}
     original_query = data.question
     filters = build_explicit_filters(data)
-    english_name_query = detect_short_english_name_query(original_query)
+    # Detect printed biblical references (e.g. "Salmos 16:1") before english_name detection
+    is_printed_reference = bool(
+        _BIBLICAL_REFERENCE.search(original_query)
+    )
+    english_name_query = (
+        None
+        if is_printed_reference
+        else detect_short_english_name_query(original_query)
+    )
     query_language = detect_research_query_language(
         original_query,
         english_name_query,
@@ -1402,8 +1425,37 @@ async def run_simple_rag(
         query_language = detect_language(original_query)
         filters["query_language"] = query_language
         filters["query_shape"] = "structural_heading"
+    elif is_printed_reference:
+        filters["query_shape"] = "printed_reference"
     elif english_name_query:
         filters["query_shape"] = "short_proper_name"
+    printed_reference_results: list[dict[str, Any]] = []
+    if is_printed_reference:
+        try:
+            raw = await search_printed_reference_candidates(
+                conn,
+                knowledge_scope_code=filters["scope"],
+                reference_variants=[original_query, original_query.casefold()],
+                languages=filters["languages"],
+                document_ids=document_ids if filters["works"] else None,
+                include_test_candidates=filters["include_test_candidates"],
+            )
+            for item in raw:
+                item["literal_score"] = 1.5
+                item["exact_match"] = True
+                item["exact_variant_count"] = 2
+                item["retrieval_sources"] = ["printed_reference"]
+                item["literal_match_type"] = "printed_reference_exact"
+                item["matched_variant"] = original_query
+                logger.info(
+                    "printed_reference match: chunk=%s page=%s ref=%s",
+                    item.get("chunk_id"),
+                    item.get("page_start"),
+                    original_query,
+                )
+            printed_reference_results = raw
+        except Exception:
+            logger.warning("printed_reference search failed", exc_info=True)
     variants = (
         list(dict.fromkeys([
             original_query,
@@ -1468,9 +1520,8 @@ async def run_simple_rag(
                 top_k=LITERAL_TOP_K,
                 include_test_candidates=filters["include_test_candidates"],
             )
-        # Structural matches are applied last so a generic body/FTS hit for the
-        # same chunk cannot erase first-class heading metadata during fusion.
-        literal = [*literal, *structural]
+        # Inject targeted printed reference results with high priority
+        literal = [*printed_reference_results, *literal, *structural]
     except Exception:
         literal = list(structural)
         literal_status = "failed"
@@ -1520,6 +1571,15 @@ async def run_simple_rag(
         (time.perf_counter() - association_started) * 1000,
         2,
     )
+    # Boost printed_reference_exact items (already tagged by targeted search)
+    # to ensure they outrank generic text matches.
+    for item in ranked:
+        if item.get("literal_match_type") == "printed_reference_exact":
+            item["combined_score"] = (
+                item.get("combined_score", 0.0) + 15.0
+            )
+    # Re-sort after printed_reference_exact boost
+    ranked.sort(key=lambda x: x.get("combined_score", 0.0), reverse=True)
     selected = select_context(
         ranked,
         canonical_by_id,

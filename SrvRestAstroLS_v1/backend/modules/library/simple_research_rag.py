@@ -39,6 +39,7 @@ from modules.library.hebrew_lexical_normalizer import (
     normalize_hebrew_for_search,
 )
 from modules.library.bibliographic_planner import run_bibliographic_planner
+from modules.library.editorial_evidence_v2 import enrich_evidence_with_v2, build_section_timeline
 from modules.library.page_first_evidence import build_evidence_v1
 from modules.library.simple_research_repository import (
     fetch_canonical_chunks,
@@ -1866,6 +1867,19 @@ async def run_simple_rag(
             ):
                 if v1_key in v1 and v1[v1_key] is not None:
                     ev[v1_key] = v1[v1_key]
+        # Enrich with editorial V2 fields
+        try:
+            page_chunks_for_v2 = [
+                c for c in canonical
+                if c.get("pdf_page") == chunk.get("pdf_page")
+            ] or [chunk]
+            enrich_evidence_with_v2(ev, chunk, page_chunks_for_v2)
+        except Exception:
+            logger.warning(
+                "editorial_v2 enrichment failed for chunk %s",
+                chunk.get("chunk_id"),
+                exc_info=True,
+            )
         evidence.append(ev)
     compatibility_status = {
         "complete": "ok",

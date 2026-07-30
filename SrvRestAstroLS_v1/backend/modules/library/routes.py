@@ -53,6 +53,44 @@ from modules.library.simple_research_rag import run_simple_rag
 from globalVar import RESEARCH_PIPELINE
 
 
+async def _run_research_pipeline(
+    conn: object,
+    data: QaRequest,
+    *,
+    pipeline: str,
+    prepared: PreparedQuery | None = None,
+) -> dict:
+    """Keep legacy and confirmation-phase execution on the same pipeline."""
+    if pipeline == "advanced":
+        return await run_investigative_qa_v1(conn, data, prepared=prepared)
+
+    simple = await run_simple_rag(conn, data)
+    if pipeline != "compare":
+        return simple
+    try:
+        advanced = await run_investigative_qa_v1(conn, data, prepared=prepared)
+        simple["comparison"] = {
+            "advanced_status": advanced.get("status"),
+            "advanced_hits": len(advanced.get("hits", [])),
+            "advanced_primary_evidence": len(
+                advanced.get("primary_evidence_ids", [])
+            ),
+            "advanced_duration_ms": advanced.get("execution", {}).get(
+                "duration_ms"
+            ),
+        }
+    except Exception as exc:
+        simple["comparison"] = {
+            "advanced_status": "failed",
+            "warning": f"advanced_enrichment_failed:{type(exc).__name__}",
+        }
+        simple["warnings"].append(
+            "La interpretación avanzada no estuvo disponible; "
+            "la respuesta simple se conservó."
+        )
+    return simple
+
+
 @post("/library/investigative-qa/v1", status_code=200, guards=[require_auth])
 async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
     """Run simple grounded RAG by default; preserve advanced compatibility phases."""
@@ -130,10 +168,12 @@ async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
                 glossary_duration_ms=0,
             )
             pool = await get_pg_pool(request)
+            pipeline = data.pipeline or RESEARCH_PIPELINE
             async with transaction(pool) as conn:
-                result = await run_investigative_qa_v1(
+                result = await _run_research_pipeline(
                     conn,
                     authoritative,
+                    pipeline=pipeline,
                     prepared=prepared,
                 )
             result.update({
@@ -162,32 +202,11 @@ async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
     pool = await get_pg_pool(request)
     try:
         async with transaction(pool) as conn:
-            if pipeline == "advanced":
-                return await run_investigative_qa_v1(conn, data)
-            simple = await run_simple_rag(conn, data)
-            if pipeline == "compare":
-                try:
-                    advanced = await run_investigative_qa_v1(conn, data)
-                    simple["comparison"] = {
-                        "advanced_status": advanced.get("status"),
-                        "advanced_hits": len(advanced.get("hits", [])),
-                        "advanced_primary_evidence": len(
-                            advanced.get("primary_evidence_ids", [])
-                        ),
-                        "advanced_duration_ms": advanced.get("execution", {}).get(
-                            "duration_ms"
-                        ),
-                    }
-                except Exception as exc:
-                    simple["comparison"] = {
-                        "advanced_status": "failed",
-                        "warning": f"advanced_enrichment_failed:{type(exc).__name__}",
-                    }
-                    simple["warnings"].append(
-                        "La interpretación avanzada no estuvo disponible; "
-                        "la respuesta simple se conservó."
-                    )
-            return simple
+            return await _run_research_pipeline(
+                conn,
+                data,
+                pipeline=pipeline,
+            )
     except Exception as exc:
         raise HTTPException(status_code=500, detail="Investigative QA failed") from exc
 

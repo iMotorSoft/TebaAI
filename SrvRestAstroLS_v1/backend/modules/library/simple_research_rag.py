@@ -10,6 +10,7 @@ import re
 import time
 import unicodedata
 from collections import defaultdict
+from dataclasses import dataclass
 from typing import Any
 
 import httpx
@@ -54,6 +55,107 @@ CONTEXT_MAX = 12
 
 _HEBREW_LETTER = re.compile(r"[\u05d0-\u05ea]")
 _HEBREW_PREFIXES = frozenset("ובכלמש")
+_LATIN_NAME_TOKEN = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ]+(?:['’][A-Za-zÀ-ÖØ-öø-ÿ]+)?")
+_PAGE_MARKER = re.compile(r"(?m)^## Page\s+(\d+)\s*$")
+_NAME_CONNECTORS = frozenset({"of", "de", "del", "ben", "bar", "von", "van"})
+_NAME_HONORIFICS = frozenset({
+    "baal", "maggid", "moharnat", "rabbi", "rabi", "rabí", "rav", "reb",
+    "rebbe",
+})
+_QUESTION_WORDS = frozenset({
+    "what", "where", "when", "why", "how", "who", "which", "does", "is",
+    "are", "can", "could", "would", "should",
+})
+
+
+@dataclass(frozen=True)
+class EnglishNameQuery:
+    normalized: str
+    tokens: tuple[str, ...]
+    nominal_tokens: tuple[str, ...]
+
+
+def normalize_english_for_search(value: str) -> str:
+    """Normalize Latin search text without dropping nominal connectors such as 'of'."""
+    normalized = unicodedata.normalize("NFKC", value)
+    normalized = "".join(
+        " "
+        if unicodedata.category(char) in {"Cf", "Cc", "Zl", "Zp"}
+        else char
+        for char in normalized
+    )
+    normalized = (
+        normalized.replace("’", "'")
+        .replace("‘", "'")
+        .replace("–", "-")
+        .replace("—", "-")
+    )
+    tokens = _LATIN_NAME_TOKEN.findall(normalized)
+    return " ".join(token.casefold() for token in tokens)
+
+
+def detect_short_english_name_query(value: str) -> EnglishNameQuery | None:
+    """Recognize bounded nominal lookups without requiring an intent classifier."""
+    if has_hebrew(value):
+        return None
+    raw_tokens = _LATIN_NAME_TOKEN.findall(unicodedata.normalize("NFKC", value))
+    if not 1 <= len(raw_tokens) <= 5:
+        return None
+    tokens = tuple(token.casefold().replace("’", "'") for token in raw_tokens)
+    if tokens[0] in _QUESTION_WORDS:
+        return None
+    non_connector_tokens = [
+        (raw_token, token)
+        for raw_token, token in zip(raw_tokens, tokens, strict=True)
+        if token not in _NAME_CONNECTORS
+    ]
+    has_nominal_shape = (
+        any(token in _NAME_CONNECTORS or token in _NAME_HONORIFICS for token in tokens)
+        or all(raw_token[:1].isupper() for raw_token, _ in non_connector_tokens)
+    )
+    if not has_nominal_shape:
+        return None
+    nominal_tokens = tuple(
+        token for token in tokens if token not in _NAME_CONNECTORS
+    )
+    if not nominal_tokens:
+        return None
+    return EnglishNameQuery(
+        normalized=" ".join(tokens),
+        tokens=tokens,
+        nominal_tokens=nominal_tokens,
+    )
+
+
+def detect_research_query_language(
+    value: str,
+    english_name_query: EnglishNameQuery | None = None,
+) -> str:
+    """Resolve ASCII proper-name lookups as English instead of the Spanish default."""
+    english_name_query = english_name_query or detect_short_english_name_query(value)
+    if english_name_query is not None and all(ord(char) < 128 for char in value):
+        return "en"
+    return detect_language(value)
+
+
+def _english_name_orthographic_variants(query: EnglishNameQuery) -> list[str]:
+    """Generate a small, auditable vowel-variation set for transliterated names."""
+    variants: list[str] = []
+    token_index = len(query.tokens) - 1
+    token = query.tokens[token_index]
+    if token in _NAME_CONNECTORS or len(token) < 5:
+        return variants
+    for char_index, char in enumerate(token):
+        if char not in {"e", "i"}:
+            continue
+        replacement = "i" if char == "e" else "e"
+        changed = token[:char_index] + replacement + token[char_index + 1:]
+        changed_tokens = list(query.tokens)
+        changed_tokens[token_index] = changed
+        variants.append(" ".join(changed_tokens))
+        if len(variants) >= 4:
+            break
+    return variants
 
 
 def _hebrew_catalog_cross_language_variants(original_query: str) -> list[str]:
@@ -171,6 +273,10 @@ def build_query_variants(original_query: str) -> list[str]:
     """Keep the complete query first and add only bounded, controlled aliases."""
     folded = _fold(original_query)
     variants = [original_query]
+    english_name_query = detect_short_english_name_query(original_query)
+    if english_name_query:
+        variants.append(english_name_query.normalized)
+        variants.extend(_english_name_orthographic_variants(english_name_query))
     if has_hebrew(original_query):
         try:
             normalized = normalize_hebrew_for_search(original_query)
@@ -332,6 +438,7 @@ def merge_results(
     literal: list[dict[str, Any]],
     *,
     query_language: str,
+    english_name_query: EnglishNameQuery | None = None,
 ) -> list[dict[str, Any]]:
     """Fuse ranks without allowing either retrieval branch to erase the other."""
     merged: dict[str, dict[str, Any]] = {}
@@ -361,7 +468,19 @@ def merge_results(
                 or ("exact_phrase" if item.get("exact_match") else "literal")
             ),
             "search_record_type": str(item.get("search_record_type") or "chunk"),
+            "matched_variant": item.get("matched_variant"),
+            "matched_variant_ordinal": item.get("matched_variant_ordinal"),
         })
+        if english_name_query:
+            matched_variant = normalize_english_for_search(
+                str(item.get("matched_variant") or "")
+            )
+            if item.get("exact_match") and matched_variant == english_name_query.normalized:
+                target["literal_match_type"] = "english_name_exact"
+            elif item.get("exact_match") and matched_variant:
+                target["literal_match_type"] = "english_name_variant"
+            else:
+                target["literal_match_type"] = "english_name_partial"
         target["retrieval_sources"].append("literal")
     for item in merged.values():
         semantic_rrf = 1 / (50 + item["semantic_rank"]) if item.get("semantic_rank") else 0.0
@@ -380,13 +499,25 @@ def merge_results(
             "hebrew_bigram": 6.0,
             "hebrew_partial_tokens": 4.0,
         }.get(str(item.get("literal_match_type")), 0.0)
+        english_name_priority = {
+            "english_name_exact": 12.0,
+            "english_name_normalized": 11.0,
+            "english_name_all_tokens_ordered": 9.0,
+            "english_name_all_tokens_proximity": 8.0,
+            "english_name_variant": 7.0,
+            "english_name_partial": 4.0,
+        }.get(str(item.get("literal_match_type")), 0.0)
         semantic_only_penalty = (
             -0.02
-            if query_language == "he" and not item.get("literal_rank")
+            if (
+                (query_language == "he" or english_name_query is not None)
+                and not item.get("literal_rank")
+            )
             else 0.0
         )
         item["combined_score"] = (
             hebrew_literal_priority
+            + english_name_priority
             + semantic_rrf
             + literal_rrf
             + overlap_bonus
@@ -470,12 +601,55 @@ HEBREW_PRIMARY_MATCH_TYPES = {
     "hebrew_exact_normalized",
     "hebrew_all_tokens_ordered",
 }
+ENGLISH_NAME_PRIMARY_MATCH_TYPES = {
+    "english_name_exact",
+    "english_name_normalized",
+    "english_name_all_tokens_ordered",
+    "english_name_all_tokens_proximity",
+    "english_name_variant",
+}
 
 
-def _is_primary_eligible(chunk: dict[str, Any], *, query_language: str) -> bool:
-    if query_language != "he":
-        return True
-    return str(chunk.get("literal_match_type")) in HEBREW_PRIMARY_MATCH_TYPES
+def _is_primary_eligible(
+    chunk: dict[str, Any],
+    *,
+    query_language: str,
+    english_name_query: EnglishNameQuery | None = None,
+) -> bool:
+    match_type = str(chunk.get("literal_match_type"))
+    if query_language == "he":
+        return match_type in HEBREW_PRIMARY_MATCH_TYPES
+    if english_name_query is not None:
+        return match_type in ENGLISH_NAME_PRIMARY_MATCH_TYPES
+    return True
+
+
+def _match_local_pdf_page(chunk: dict[str, Any]) -> int | None:
+    """Resolve the page marker nearest a literal match inside a spanning chunk."""
+    markdown = str(chunk.get("markdown") or "")
+    matched_variant = str(chunk.get("matched_variant") or "").strip()
+    if not markdown or not matched_variant:
+        return chunk.get("pdf_page")
+    match_position = markdown.casefold().find(matched_variant.casefold())
+    if match_position < 0:
+        return chunk.get("pdf_page")
+    markers = [
+        (match.start(), int(match.group(1)))
+        for match in _PAGE_MARKER.finditer(markdown)
+        if match.start() <= match_position
+    ]
+    if not markers:
+        return chunk.get("pdf_page")
+    marker_page = markers[-1][1]
+    page_start = chunk.get("pdf_page")
+    page_end = chunk.get("pdf_page_end")
+    if (
+        page_start is not None
+        and page_end is not None
+        and not int(page_start) <= marker_page <= int(page_end)
+    ):
+        return chunk.get("pdf_page")
+    return marker_page
 
 
 def _context_pack(
@@ -511,6 +685,7 @@ def _context_pack(
             f"Página impresa: {chunk.get('printed_page')}",
             f"Idioma: {chunk.get('language')}",
             f"Tipo de coincidencia: {chunk.get('literal_match_type', 'semantic_only')}",
+            f"Variante coincidente: {chunk.get('matched_variant') or 'ninguna'}",
             "Markdown:",
             str(chunk.get("markdown") or ""),
         ])
@@ -562,6 +737,8 @@ def validate_grounded_answer(
     mentioned_pages = re.findall(r"(?i)(?:página|pdf p\.)\s*(\d+)", markdown)
     if any(page not in allowed_pages for page in mentioned_pages):
         raise ValueError("invented_page")
+    if not any(evidence_id in markdown for evidence_id in allowed):
+        raise ValueError("missing_markdown_evidence_id")
     return markdown, normalized_claims
 
 
@@ -590,6 +767,14 @@ async def render_grounded_answer(
         "evidence_ids, relation_type (direct|mediated|thematic|none), confidence "
         "(high|medium|low). Escribí como máximo 350 palabras y 3 claims. Todos los "
         "claims deben tener al menos un evidence_id exacto del paquete."
+        " Respondé en el idioma indicado por filtros.query_language."
+        " answer_markdown debe incluir al menos un evidence_id exacto entre "
+        "corchetes para que la cita sea visible."
+        " Si filtros.query_shape es short_proper_name, explicá únicamente el "
+        "contexto de la mención nominal mejor rankeada, priorizá "
+        "english_name_exact/normalized sobre fuentes semánticas, e indicá obra, "
+        "página y evidence_id. No conviertas el nombre en una pregunta relacional "
+        "ni agregues biografía externa."
         " Para hebreo, no afirmes que una frase no existe en el corpus: solo que "
         "no aparece en las fuentes recuperadas. No uses semantic_only como prueba "
         "literal. Si aparece exacta o normalizada, indicá obra, sección y página."
@@ -604,7 +789,8 @@ async def render_grounded_answer(
                 if attempt == 0
                 else (
                     "\nREINTENTO DE VALIDACIÓN: la salida anterior fue rechazada. "
-                    "Usá solamente estos IDs exactos y no dejes evidence_ids vacío: "
+                    "Usá solamente estos IDs exactos, no dejes evidence_ids vacío "
+                    "e incluí al menos uno literalmente en answer_markdown: "
                     + ", ".join(allowed_ids)
                 )
             )
@@ -726,7 +912,7 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "language_match": "exact" if language == chunk.get("query_language") else "secondary",
         "literal_match_kind": (
             "normalized"
-            if match_type == "hebrew_exact_normalized"
+            if match_type in {"hebrew_exact_normalized", "english_name_variant"}
             else "exact_phrase" if chunk.get("exact_match") else "semantic"
         ),
         "match_kind": match_type,
@@ -760,7 +946,17 @@ async def run_simple_rag(
     simulations = simulations or {}
     original_query = data.question
     filters = build_explicit_filters(data)
-    query_language = detect_language(original_query)
+    english_name_query = detect_short_english_name_query(original_query)
+    query_language = detect_research_query_language(
+        original_query,
+        english_name_query,
+    )
+    if query_language == "en" and english_name_query is not None:
+        filters["languages"] = list(dict.fromkeys([
+            "en",
+            *filters["languages"],
+        ]))
+    filters["query_language"] = query_language
     warnings: list[str] = []
     normalization_status = "not_needed"
     try:
@@ -779,6 +975,8 @@ async def run_simple_rag(
             "consulta original y las búsquedas de respaldo."
         )
     variants = build_query_variants(original_query)
+    if english_name_query:
+        filters["query_shape"] = "short_proper_name"
     latency: dict[str, float] = {}
 
     documents = await resolve_ready_documents(
@@ -807,10 +1005,13 @@ async def run_simple_rag(
     try:
         if simulations.get("literal"):
             raise RuntimeError("simulated_literal_failure")
+        literal_variants = (
+            variants[:2] if english_name_query is not None else variants
+        )
         literal = await search_literal_candidates(
             conn,
             knowledge_scope_code=filters["scope"],
-            variants=variants,
+            variants=literal_variants,
             languages=filters["languages"],
             document_ids=document_ids if filters["works"] else None,
             top_k=LITERAL_TOP_K,
@@ -825,6 +1026,20 @@ async def run_simple_rag(
             ),
             include_test_candidates=filters["include_test_candidates"],
         )
+        if (
+            english_name_query is not None
+            and len(variants) > len(literal_variants)
+            and not any(item.get("exact_match") for item in literal)
+        ):
+            literal = await search_literal_candidates(
+                conn,
+                knowledge_scope_code=filters["scope"],
+                variants=variants,
+                languages=filters["languages"],
+                document_ids=document_ids if filters["works"] else None,
+                top_k=LITERAL_TOP_K,
+                include_test_candidates=filters["include_test_candidates"],
+            )
     except Exception:
         literal = []
         literal_status = "failed"
@@ -841,7 +1056,12 @@ async def run_simple_rag(
         warnings.append("La búsqueda semántica no estuvo disponible; se utilizó búsqueda literal.")
     latency["embedding_and_milvus_ms"] = float(embedding_metadata.get("latency_ms") or 0.0)
 
-    ranked = merge_results(semantic, literal, query_language=query_language)
+    ranked = merge_results(
+        semantic,
+        literal,
+        query_language=query_language,
+        english_name_query=english_name_query,
+    )
     fetch_started = time.perf_counter()
     canonical = await fetch_canonical_chunks(
         conn,
@@ -856,10 +1076,23 @@ async def run_simple_rag(
         canonical_by_id,
         explicit_work_filter=bool(filters["works"]),
     )
+    if english_name_query is not None:
+        exact_name_chunks = [
+            chunk
+            for chunk in selected
+            if chunk.get("literal_match_type") == "english_name_exact"
+        ]
+        if exact_name_chunks:
+            selected = exact_name_chunks[:4]
     for chunk in selected:
         chunk["evidence_id"] = _evidence_id(str(chunk["chunk_id"]))
+        chunk["canonical_pdf_page_start"] = chunk.get("pdf_page")
+        chunk["pdf_page"] = _match_local_pdf_page(chunk)
         if normalization:
             chunk["matched_terms"] = list(normalization.tokens)
+            chunk.setdefault("literal_match_type", "semantic_only")
+        elif english_name_query:
+            chunk["matched_terms"] = list(english_name_query.nominal_tokens)
             chunk.setdefault("literal_match_type", "semantic_only")
     if any(chunk.get("document_status") == "test_candidate" for chunk in selected):
         warnings.append(
@@ -872,8 +1105,8 @@ async def run_simple_rag(
         if retrieval_failed or canonical_missing:
             research_status = "degraded"
             answer = (
-                "No fue posible completar correctamente la búsqueda hebrea por "
-                "un problema técnico. "
+                "No fue posible completar correctamente la búsqueda por un "
+                "problema técnico. "
                 "No se concluye que el corpus carezca de evidencia."
             )
             if canonical_missing:
@@ -924,15 +1157,30 @@ async def run_simple_rag(
             )
             else "degraded"
         )
-        if research_status == "complete" and len(selected) < CONTEXT_MIN:
+        exact_literal_answer = bool(selected) and (
+            (
+                english_name_query is not None
+                and selected[0].get("literal_match_type") == "english_name_exact"
+            )
+            or selected[0].get("literal_match_type") == "hebrew_exact_normalized"
+        )
+        if (
+            research_status == "complete"
+            and len(selected) < CONTEXT_MIN
+            and not exact_literal_answer
+        ):
             research_status = "partial"
 
     primary_eligible_ids = {
         chunk["evidence_id"]
         for chunk in selected
-        if _is_primary_eligible(chunk, query_language=query_language)
+        if _is_primary_eligible(
+            chunk,
+            query_language=query_language,
+            english_name_query=english_name_query,
+        )
     }
-    if query_language == "he":
+    if query_language == "he" or english_name_query is not None:
         best_primary_id = next((
             chunk["evidence_id"]
             for chunk in selected
@@ -962,7 +1210,7 @@ async def run_simple_rag(
         for claim in claims
         if claim.get("primary_evidence_id") in primary_eligible_ids
     ))
-    if query_language == "he" and primary_ids:
+    if (query_language == "he" or english_name_query is not None) and primary_ids:
         primary_ids = [
             chunk["evidence_id"]
             for chunk in selected
@@ -974,8 +1222,27 @@ async def run_simple_rag(
             for chunk in selected
             if chunk["evidence_id"] in primary_eligible_ids
         ][:1]
-    if query_language == "he" and selected and not primary_ids and research_status == "complete":
+    if (
+        (query_language == "he" or english_name_query is not None)
+        and selected
+        and not primary_ids
+        and research_status == "complete"
+    ):
         research_status = "partial"
+    primary_match_type = next((
+        chunk.get("literal_match_type")
+        for chunk in selected
+        if chunk["evidence_id"] in primary_ids
+    ), None)
+    if (
+        primary_match_type == "english_name_variant"
+        and research_status == "complete"
+    ):
+        research_status = "partial"
+        warnings.append(
+            "Se recuperó una variante ortográfica aproximada del nombre; "
+            "la equivalencia editorial no se afirma como exacta."
+        )
     hits = [_frontend_hit(chunk, set(primary_ids)) for chunk in selected]
     evidence = [{
         "evidence_id": chunk["evidence_id"],
@@ -1013,25 +1280,25 @@ async def run_simple_rag(
     logger.info(
         "simple_rag request_id=%s original_query_hash=%s query_language=%s "
         "normalization_applied=%s artificial_spacing_detected=%s "
-        "filters=%s milvus_status=%s literal_status=%s milvus_hits=%s "
-        "literal_hits=%s selected_chunks=%s primary_match_type=%s "
+        "query_shape=%s filters=%s milvus_status=%s literal_status=%s "
+        "milvus_hits=%s literal_hits=%s selected_chunks=%s "
+        "primary_match_type=%s matched_tokens=%s selected_primary=%s "
         "ai_status=%s fallback=%s latency_ms=%s",
         request_id,
         hashlib.sha256(original_query.encode()).hexdigest(),
         query_language,
         normalization is not None,
         bool(normalization and normalization.artificial_spacing_detected),
+        "short_proper_name" if english_name_query else "general",
         filters,
         semantic_status,
         literal_status,
         len(semantic),
         len(literal),
         len(selected),
-        next((
-            chunk.get("literal_match_type")
-            for chunk in selected
-            if chunk["evidence_id"] in primary_ids
-        ), None),
+        primary_match_type,
+        list(english_name_query.nominal_tokens) if english_name_query else [],
+        bool(primary_ids),
         ai_status,
         research_status == "degraded",
         latency,
@@ -1079,6 +1346,10 @@ async def run_simple_rag(
             "semantic_hits": len(semantic),
             "literal_hits": len(literal),
             "selected_chunks": len(selected),
+            "query_language": query_language,
+            "query_shape": (
+                "short_proper_name" if english_name_query else "general"
+            ),
             "query_variants": variants,
             "normalization": ({
                 "without_niqqud": normalization.without_niqqud,
@@ -1086,11 +1357,12 @@ async def run_simple_rag(
                 "artificial_spacing_detected": normalization.artificial_spacing_detected,
                 "rtl_controls_removed": normalization.rtl_controls_removed,
             } if normalization else None),
-            "primary_match_type": next((
-                chunk.get("literal_match_type")
-                for chunk in selected
-                if chunk["evidence_id"] in primary_ids
-            ), None),
+            "primary_match_type": primary_match_type,
+            "matched_tokens": (
+                list(english_name_query.nominal_tokens)
+                if english_name_query
+                else []
+            ),
         },
         "processing": {
             "ai_interpretation_used": False,

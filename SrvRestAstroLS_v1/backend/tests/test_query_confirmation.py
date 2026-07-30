@@ -226,9 +226,13 @@ def test_http_interpret_analyze_is_idempotent_and_server_authoritative() -> None
         patch("modules.library.routes.get_pg_pool", new=AsyncMock(return_value=object())),
         patch("modules.library.routes.transaction", new=fake_transaction),
         patch(
-            "modules.library.routes.run_investigative_qa_v1",
+            "modules.library.routes.run_simple_rag",
             new=AsyncMock(return_value=result),
         ) as run,
+        patch(
+            "modules.library.routes.run_investigative_qa_v1",
+            new=AsyncMock(),
+        ) as advanced,
         TestClient(Litestar(route_handlers=[investigative_qa_v1])) as client,
     ):
         interpreted = client.post(
@@ -266,6 +270,7 @@ def test_http_interpret_analyze_is_idempotent_and_server_authoritative() -> None
     assert first.status_code == second.status_code == 200
     assert run.await_count == 1
     assert run.await_args.args[1].question == "tisha beav"
+    advanced.assert_not_awaited()
     assert first.json() == second.json()
 
 

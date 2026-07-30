@@ -90,6 +90,14 @@ async def search_literal_candidates(
                 count(DISTINCT q.query) FILTER (
                     WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
                 ) AS exact_variant_count,
+                (
+                    array_agg(q.query ORDER BY q.ordinal) FILTER (
+                        WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
+                    )
+                )[1] AS matched_variant,
+                min(q.ordinal) FILTER (
+                    WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
+                ) AS matched_variant_ordinal,
                 max(
                     GREATEST(
                         ts_rank_cd(
@@ -131,6 +139,8 @@ async def search_literal_candidates(
             chunk_id,
             exact_match,
             exact_variant_count,
+            matched_variant,
+            matched_variant_ordinal,
             fts_score,
             trigram_score,
             (

@@ -219,6 +219,102 @@ def test_hebrew_literal_exact_outranks_high_semantic_without_tokens() -> None:
     assert ranked[0]["combined_score"] > ranked[1]["combined_score"]
 
 
+@pytest.mark.parametrize(
+    ("query", "normalized", "tokens"),
+    [
+        ("Gedalia of Linitz", "gedalia of linitz", ("gedalia", "linitz")),
+        ("gedalia  of\nLinitz", "gedalia of linitz", ("gedalia", "linitz")),
+        ("Reb Noson", "reb noson", ("reb", "noson")),
+        ("Baal Shem Tov", "baal shem tov", ("baal", "shem", "tov")),
+        ("Maggid of Mezritch", "maggid of mezritch", ("maggid", "mezritch")),
+    ],
+)
+def test_short_english_name_detection_preserves_nominal_connectors(
+    query: str,
+    normalized: str,
+    tokens: tuple[str, ...],
+) -> None:
+    detected = rag.detect_short_english_name_query(query)
+    assert detected is not None
+    assert detected.normalized == normalized
+    assert detected.nominal_tokens == tokens
+
+
+def test_english_search_normalization_handles_typography_and_controls() -> None:
+    assert (
+        rag.normalize_english_for_search("  GEDALIA\u200f of\nLinitz’s  ")
+        == "gedalia of linitz's"
+    )
+
+
+def test_short_name_variants_are_bounded_and_not_person_specific() -> None:
+    variants = rag.build_query_variants("Gedalia of Linetz")
+    assert variants[0] == "Gedalia of Linetz"
+    assert "gedalia of linitz" in variants
+    assert len(variants) <= 36
+
+
+def test_ascii_short_proper_name_is_detected_as_english() -> None:
+    assert rag.detect_research_query_language("Gedalia of Linitz") == "en"
+    assert rag.detect_research_query_language("Rabí Natán") == "es"
+    assert rag.detect_short_english_name_query("Relación sangre y habla") is None
+
+
+def test_english_name_exact_outranks_high_semantic_without_name_tokens() -> None:
+    semantic_id = "00000000-0000-0000-0000-000000000030"
+    literal_id = "00000000-0000-0000-0000-000000000040"
+    name_query = rag.detect_short_english_name_query("Gedalia of Linitz")
+    assert name_query is not None
+    ranked = rag.merge_results(
+        [{
+            "chunk_id": semantic_id,
+            "semantic_score": 0.99,
+            "semantic_rank": 1,
+        }, {
+            "chunk_id": literal_id,
+            "semantic_score": 0.30,
+            "semantic_rank": 25,
+        }],
+        [{
+            "chunk_id": literal_id,
+            "literal_score": 2.0,
+            "exact_match": True,
+            "matched_variant": "Gedalia of Linitz",
+        }],
+        query_language="en",
+        english_name_query=name_query,
+    )
+    assert ranked[0]["chunk_id"] == literal_id
+    assert ranked[0]["literal_match_type"] == "english_name_exact"
+
+
+def test_semantic_only_english_name_evidence_cannot_be_primary() -> None:
+    name_query = rag.detect_short_english_name_query("Gedalia of Linitz")
+    assert name_query is not None
+    assert rag._is_primary_eligible(
+        {"literal_match_type": "semantic_only"},
+        query_language="en",
+        english_name_query=name_query,
+    ) is False
+    assert rag._is_primary_eligible(
+        {"literal_match_type": "english_name_exact"},
+        query_language="en",
+        english_name_query=name_query,
+    ) is True
+
+
+def test_literal_match_uses_nearest_canonical_page_marker() -> None:
+    assert rag._match_local_pdf_page({
+        "markdown": (
+            "tail from prior page\n\n## Page 21\n\n"
+            "Gedalia of Linitz and other great Rabbis"
+        ),
+        "matched_variant": "Gedalia of Linitz",
+        "pdf_page": 20,
+        "pdf_page_end": 21,
+    }) == 21
+
+
 def test_semantic_only_hebrew_evidence_cannot_be_primary() -> None:
     assert rag._is_primary_eligible(
         {"literal_match_type": "semantic_only"},
@@ -244,7 +340,7 @@ def test_grounding_rejects_invented_evidence_and_pages() -> None:
         }, [chunk])
     with pytest.raises(ValueError, match="invented_page"):
         rag.validate_grounded_answer({
-            "answer_markdown": "Según la página 999.",
+            "answer_markdown": "Según la página 999. [ev-real]",
             "claims": [{
                 "text": "Grounded",
                 "evidence_ids": ["ev-real"],

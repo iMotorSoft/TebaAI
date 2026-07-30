@@ -118,6 +118,15 @@ The endpoint exposes `TEBAAI_RESEARCH_PIPELINE=simple_rag|advanced|compare`.
 `simple_rag` is the DEV default; no production rollout is implied by this
 policy update.
 
+For short ASCII proper-name queries, `simple_rag` must prioritize canonical
+PostgreSQL literal evidence over vector similarity. Nominal connectors such as
+`of` remain part of phrase matching. A `semantic_only` candidate without the
+nominal tokens cannot be primary, and an exact literal candidate must enter the
+generation context. Approximate spelling variants remain retrieval hints,
+produce an explicit partial result, and never establish editorial identity by
+themselves. The accepted DEV design is recorded in
+`docs/adr/ADR-009-short-proper-name-literal-retrieval.md`.
+
 `POST /library/search` continues to retrieve bibliographic evidence only. It does not call a generative model or return interpretative synthesis. `POST /library/investigative-qa/v1` may call the same model solely for schema-validated multilingual query understanding and evidence-bound rendering under ADR-005; retrieval remains deterministic and downstream.
 
 ## Investigative Relation QA

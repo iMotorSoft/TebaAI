@@ -752,7 +752,7 @@
               <path d="M12 2l2 7h7l-5.5 4.5L16.5 20 12 16.5 7.5 20l1.5-6.5L3 9h7z"/>
             </svg>
           </span>
-          <span lang={workingLanguage === "he" ? "he" : "es"} dir={workingLanguage === "he" ? "rtl" : "ltr"}>{getAnalyzingLabel(workingLanguage, "action.analyzing")}</span>
+          <span lang={workingLanguage} dir={workingLanguage === "he" ? "rtl" : "ltr"}>{getAnalyzingLabel(workingLanguage, "action.analyzing")}</span>
         {:else}
           <span lang="es">Enviar</span>
         {/if}
@@ -760,7 +760,7 @@
     </form>
     {#if isWorking}
       <div class="analyzing-status" role="status" aria-live="polite">
-        <p lang={workingLanguage === "he" ? "he" : "es"} dir={workingLanguage === "he" ? "rtl" : "ltr"} class:analyzing-status-text={true} class:research-hebrew-text={workingLanguage === "he"}>{statusMessage}</p>
+        <p lang={workingLanguage} dir={workingLanguage === "he" ? "rtl" : "ltr"} class:analyzing-status-text={true} class:research-hebrew-text={workingLanguage === "he"}>{statusMessage}</p>
       </div>
     {/if}
 

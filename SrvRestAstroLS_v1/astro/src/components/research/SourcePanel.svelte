@@ -36,8 +36,18 @@
           <div><dt>Fuerza para esta consulta</dt><dd>{active.evidence_strength === "strong" ? "Fuerte" : active.evidence_strength === "medium" ? "Media" : active.evidence_strength === "weak" ? "Débil" : "Contextual"}</dd></div>
           <div><dt>Tipo de coincidencia</dt><dd>{literalKindLabel(active.literal_match_kind) || "Coincidencia contextual"}</dd></div>
           {#if active.heading_original}<div><dt>Consulta original</dt><dd>{response.original_query}</dd></div>{/if}
-          {#if active.heading_original}<div><dt>Encabezado original</dt><dd>{active.heading_original}</dd></div>{/if}
+          {#if active.heading_text}<div><dt>Encabezado estructural</dt><dd>{active.heading_text}</dd></div>{/if}
+          {#if active.heading_original && active.heading_original !== active.heading_text}<div><dt>Encabezado original</dt><dd>{active.heading_original}</dd></div>{/if}
           {#if active.heading_normalized}<div><dt>Variante normalizada</dt><dd>{active.heading_normalized}</dd></div>{/if}
+          {#if active.exact_quote}<div><dt>Cita exacta</dt><dd>{active.exact_quote}</dd></div>{/if}
+          {#if active.section_path && active.section_path.length}
+            <div><dt>Ruta de sección</dt><dd>{active.section_path.join(' ▸ ')}</dd></div>
+          {/if}
+          {#if active.location_precision}<div><dt>Precisión de localización</dt><dd>{active.location_precision}</dd></div>{/if}
+          {#if active.context_before}<div><dt>Contexto anterior</dt><dd>{active.context_before}</dd></div>{/if}
+          {#if active.context_after}<div><dt>Contexto posterior</dt><dd>{active.context_after}</dd></div>{/if}
+          {#if active.page_id}<div><dt>ID de página canónica</dt><dd dir="ltr">{active.page_id}</dd></div>{/if}
+          {#if active.page_resolution_method}<div><dt>Método de resolución</dt><dd>{active.page_resolution_method}</dd></div>{/if}
           {#if active.associated_chunk_id}<div><dt>Chunk de contexto asociado</dt><dd dir="ltr">{active.associated_chunk_id}</dd></div>{/if}
           <div><dt>Tipo</dt><dd>{evidenceLabels[active.evidence_type] ?? "Evidencia investigativa"}</dd></div>
           <div><dt>Idioma</dt><dd>{active.language.toUpperCase()}</dd></div>

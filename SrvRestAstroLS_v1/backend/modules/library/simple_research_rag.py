@@ -38,6 +38,7 @@ from modules.library.hebrew_lexical_normalizer import (
     has_hebrew,
     normalize_hebrew_for_search,
 )
+from modules.library.page_first_evidence import build_evidence_v1
 from modules.library.simple_research_repository import (
     fetch_canonical_chunks,
     resolve_ready_documents,
@@ -1239,6 +1240,19 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "raw_snippet": markdown,
         "snippet_sanitized": False,
         "sanitization_reason_codes": [],
+        # Page-first evidence V1 fields
+        "heading_text": chunk.get("_v1", {}).get("heading_text"),
+        "heading_source": chunk.get("_v1", {}).get("heading_source"),
+        "section_path": chunk.get("_v1", {}).get("section_path", []),
+        "exact_quote": chunk.get("_v1", {}).get("exact_quote"),
+        "context_before": chunk.get("_v1", {}).get("context_before"),
+        "context_after": chunk.get("_v1", {}).get("context_after"),
+        "start_offset": chunk.get("_v1", {}).get("start_offset"),
+        "end_offset": chunk.get("_v1", {}).get("end_offset"),
+        "location_precision": chunk.get("_v1", {}).get("location_precision"),
+        "page_id": chunk.get("_v1", {}).get("page_id"),
+        "canonical_page_source": chunk.get("_v1", {}).get("canonical_page_source"),
+        "page_resolution_method": chunk.get("_v1", {}).get("page_resolution_method"),
     }
 
 
@@ -1499,6 +1513,45 @@ async def run_simple_rag(
             "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
         )
 
+    # -- Page-first evidence V1 enrichment --------------------------------
+    page_first_started = time.perf_counter()
+    if selected:
+        # Collect same-page chunks for fuller canonical page text
+        same_page_pool: dict[str, list[dict[str, Any]]] = {}
+        for chunk in selected:
+            page_key = str(chunk.get("pdf_page", ""))
+            doc_str = str(chunk.get("document_id", ""))
+            pool_key = f"{doc_str}:{page_key}"
+            if pool_key not in same_page_pool:
+                same_page_pool[pool_key] = []
+            same_page_pool[pool_key].append(chunk)
+        # Enrich each selected chunk
+        for chunk in selected:
+            page_key = str(chunk.get("pdf_page", ""))
+            doc_str = str(chunk.get("document_id", ""))
+            pool_key = f"{doc_str}:{page_key}"
+            same_page = same_page_pool.get(pool_key, [chunk])
+            try:
+                v1 = build_evidence_v1(
+                    query=original_query,
+                    chunk=chunk,
+                    heading_candidates=structural,
+                    same_page_chunks=same_page,
+                    language=query_language,
+                )
+                if v1:
+                    chunk["_v1"] = v1
+            except Exception:
+                logger.warning(
+                    "page_first_v1 enrichment failed for chunk %s",
+                    chunk.get("chunk_id"),
+                    exc_info=True,
+                )
+    latency["page_first_v1_ms"] = round(
+        (time.perf_counter() - page_first_started) * 1000, 2
+    )
+    # ---------------------------------------------------------------------
+
     retrieval_failed = semantic_status == "failed" and literal_status == "failed"
     canonical_missing = bool(ranked) and not canonical
     if not selected:
@@ -1657,33 +1710,64 @@ async def run_simple_rag(
             "la equivalencia editorial no se afirma como exacta."
         )
     hits = [_frontend_hit(chunk, set(primary_ids)) for chunk in selected]
-    evidence = [{
-        "evidence_id": chunk["evidence_id"],
-        "chunk_id": str(chunk["chunk_id"]),
-        "document_id": str(chunk["document_id"]),
-        "work": chunk["work"],
-        "title": chunk["work"],
-        "pdf_page": chunk.get("pdf_page"),
-        "printed_page": chunk.get("printed_page"),
-        "section": chunk.get("section"),
-        "language": chunk.get("language"),
-        "markdown": chunk.get("markdown"),
-        "source_layer": _source_layer(chunk),
-        "attribution_status": "not_confirmed",
-        "semantic_score": chunk.get("semantic_score"),
-        "literal_score": chunk.get("literal_score"),
-        "combined_score": chunk.get("combined_score"),
-        "retrieval_sources": chunk.get("retrieval_sources"),
-        "literal_match_type": chunk.get("literal_match_type", "semantic_only"),
-        "associated_chunk_id": chunk.get("associated_chunk_id"),
-        "heading_original": chunk.get("heading_original"),
-        "heading_normalized": chunk.get("heading_normalized"),
-        "content_node_id": (
-            str(chunk["content_node_id"])
-            if chunk.get("content_node_id")
-            else None
-        ),
-    } for chunk in selected]
+    evidence = []
+    for chunk in selected:
+        ev = {
+            "evidence_id": chunk["evidence_id"],
+            "chunk_id": str(chunk["chunk_id"]),
+            "document_id": str(chunk["document_id"]),
+            "work": chunk["work"],
+            "title": chunk["work"],
+            "pdf_page": chunk.get("pdf_page"),
+            "printed_page": chunk.get("printed_page"),
+            "section": chunk.get("section"),
+            "language": chunk.get("language"),
+            "markdown": chunk.get("markdown"),
+            "source_layer": _source_layer(chunk),
+            "attribution_status": "not_confirmed",
+            "semantic_score": chunk.get("semantic_score"),
+            "literal_score": chunk.get("literal_score"),
+            "combined_score": chunk.get("combined_score"),
+            "retrieval_sources": chunk.get("retrieval_sources"),
+            "literal_match_type": chunk.get("literal_match_type", "semantic_only"),
+            "associated_chunk_id": chunk.get("associated_chunk_id"),
+            "heading_original": chunk.get("heading_original"),
+            "heading_normalized": chunk.get("heading_normalized"),
+            "content_node_id": (
+                str(chunk["content_node_id"])
+                if chunk.get("content_node_id")
+                else None
+            ),
+        }
+        # Enrich with page-first V1 fields if available
+        v1 = chunk.get("_v1")
+        if v1:
+            # Merge V1 fields into evidence (V1 fields override legacy where appropriate)
+            for v1_key in (
+                "page_id",
+                "pdf_page",
+                "printed_page",
+                "heading_text",
+                "heading_level",
+                "heading_source",
+                "section_path",
+                "exact_quote",
+                "context_before",
+                "context_after",
+                "start_offset",
+                "end_offset",
+                "location_precision",
+                "block_id",
+                "paragraph_index",
+                "matched_variant",
+                "canonical_page_source",
+                "page_resolution_method",
+                "page_resolution_confidence",
+                "heading_original",
+            ):
+                if v1_key in v1 and v1[v1_key] is not None:
+                    ev[v1_key] = v1[v1_key]
+        evidence.append(ev)
     compatibility_status = {
         "complete": "ok",
         "partial": "partial",

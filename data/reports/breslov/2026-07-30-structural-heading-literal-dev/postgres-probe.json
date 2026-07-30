@@ -1,0 +1,405 @@
+{
+  "documents": [
+    {
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "document_code": null,
+      "title": "Likutey Halajot LM II 8",
+      "source_filename": "LIKUTEY HALAJOT LM II 8.pdf",
+      "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+      "content_sha256": null,
+      "status": "ready",
+      "language": "es",
+      "knowledge_scope_code": "breslov_primary",
+      "metadata": {},
+      "bibliographic_metadata": {
+        "legal_review": {
+          "notes": "The Rosenberg Edition. Menciona Breslov Research Institute en el texto (referencia a 'El Castillo de Agua', BRI, 2013). No se encontró página de copyright explícita en front matter visible. Sin licencia. Uso interno recomendado conservadoramente.",
+          "status": "legal_status_pending_manual_confirmation",
+          "publisher": "Breslov Research Institute (referenciado en texto)",
+          "reviewed_at": "2026-07-03T13:30:01.023321+00:00",
+          "license_found": false,
+          "copyright_notice_found": false,
+          "public_exposure_status": "public_exposure_blocked",
+          "internal_use_recommendation": "recommend_internal_ready"
+        },
+        "ready_review": {
+          "blockers": [],
+          "promoted": true,
+          "promoted_at": "2026-07-05T22:58:28.117795+00:00",
+          "legal_status": "legal_status_pending_manual_confirmation",
+          "technical_closure": "eligible_pending_manual_legal",
+          "manual_review_status": "manual_review_pass_with_minor_limitations",
+          "ready_promotion_recommendation": "ready_recommended_pending_user_approval"
+        },
+        "manual_review": {
+          "notes": "Texto español mayormente limpio. Título con mezcla EN/ES (Rosenberg Edition). 73 chunks con artefactos U+FFFD en caracteres hebreos de la portada — no afectan legibilidad general. 1205 chunks (documento más extenso). Referencias a Breslov Research Institute en el texto.",
+          "status": "manual_review_pass_with_minor_limitations",
+          "limitations": [
+            "73 chunks con caracteres U+FFFD (encoding artifact en pasajes hebreos del título)"
+          ],
+          "reviewed_at": "2026-07-03T13:30:01.023321+00:00",
+          "sample_count": 10,
+          "sample_strategy": "beginning_quarter_middle_three_quarter_end_longest_shortest_front_matter"
+        },
+        "source_quality": {
+          "evidence": {
+            "chunks": 0,
+            "empty_chunks": 0,
+            "embedding_count": 20,
+            "embedding_model": "openai_text_embedding_3_small",
+            "litellm_endpoint": "http://127.0.0.1:4000",
+            "milvus_roundtrip": 1.0,
+            "embedding_dimension": 1536,
+            "page_mapping_coverage": 1.0
+          },
+          "fts_status": "pass",
+          "ocr_status": "not_ocr",
+          "limitations": [
+            "Page mapping incompleto: 10.7% (requiere ≥95%).",
+            "PDF extraído con PyMuPDF4LLM sin page markers controlados.",
+            "Requeriría reextracción con --page-markers force (patrón Koren) para mapping completo.",
+            "No evaluado legal/editorialmente."
+          ],
+          "source_kind": "pdf_modern_unicode",
+          "empty_chunks": 0,
+          "evaluated_at": "2026-07-02T22:51:45.404803+00:00",
+          "layout_status": "pass",
+          "language_hints": [
+            "es"
+          ],
+          "policy_version": "2026-07-02",
+          "chunking_status": "pass",
+          "embedding_model": "openai_text_embedding_3_small",
+          "roundtrip_sha256": "pass",
+          "embedding_provider": "litellm",
+          "canonical_text_role": "canonical_text",
+          "embedding_dimension": 1536,
+          "page_mapping_status": "pass",
+          "text_quality_status": "pass",
+          "page_mapping_coverage": 1.0,
+          "canonical_text_allowed": true,
+          "embedding_smoke_status": "pass",
+          "milvus_roundtrip_status": "pass",
+          "facsimile_anchor_allowed": true,
+          "promotion_recommendation": "approved_candidate",
+          "promotion_status_virtual": "evaluated_blocked"
+        },
+        "promotion_decision": {
+          "notes": "Promovido a ready como corpus estable interno. Exposición pública no habilitada.",
+          "status": "promoted_to_ready",
+          "promoted_at": "2026-07-05T22:58:28.117795+00:00",
+          "promoted_by": "development_team",
+          "decision_basis": "document_source_quality_policy_v1",
+          "promotion_scope": "internal_research_corpus",
+          "promotion_audit_doc": "breslov_es_en_promotion_audit_2026-07-05.md",
+          "public_exposure_status": "internal_only",
+          "promotion_source_commit": "c27d986"
+        },
+        "embedding_validation": {
+          "repair_note": "Re-embedded 96 orphaned chunks via LiteLLM",
+          "chunks_embedded": "1297",
+          "last_repaired_at": "2026-07-05T23:07:42.557895+00:00"
+        },
+        "phase_a_sanitation_at": "2026-07-02T22:51:06.675597+00:00",
+        "page_mapping_diagnosis": {
+          "cause": "PDFs extracted with plain PyMuPDF4LLM without page markers.",
+          "diagnosed_at": "2026-07-02T22:59:26.001404+00:00",
+          "phase_c_complete": true,
+          "strategy_recommended": "reextract_with_page_markers"
+        },
+        "promotion_decision_dry_run": {
+          "notes": "Embeddings vía LiteLLM OK. Milvus test round-trip 20/20 OK. Golden queries aceptables. Pendiente: manual review sample + decisión legal/copyright.",
+          "decision": "eligible_pending_manual_legal",
+          "checks_total": 18,
+          "evaluated_at": "2026-07-03T13:21:51.707920+00:00",
+          "checks_failed": 0,
+          "checks_passed": 16,
+          "target_status": null,
+          "decision_basis": "document_source_quality_policy_v1",
+          "embedding_status": "pass",
+          "page_mapping_pct": 100.0,
+          "page_mapping_status": "pass",
+          "golden_queries_status": "pass",
+          "milvus_roundtrip_status": "pass"
+        },
+        "phase_b_quality_assessment_at": "2026-07-02T22:51:45.404803+00:00"
+      },
+      "chunk_set_version": null,
+      "chunk_count": 1205,
+      "embedding_count": 1205,
+      "node_count": 0
+    },
+    {
+      "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+      "document_code": null,
+      "title": "Likutey Halajot Explicado — Interior Final",
+      "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "content_sha256": null,
+      "status": "test_candidate",
+      "language": "es",
+      "knowledge_scope_code": "breslov_primary",
+      "metadata": {
+        "ingestion_profile": "layout_aware_likutey_halajot",
+        "metadata_confidence": "high",
+        "bibliographic_status": "complete",
+        "metadata_review_notes": "Metadata extracted from PDF pages 1-4. Title page, copyright page, and credits page all present and consistent. Author (Reb Noson), commentator/annotator (Moshé Mykoff), Spanish translator (Guillermo Beilinson), publisher (Breslov Research Institute), year (2020), edition (First) all found. ISBN not found in visible front matter. PDF is 'The Rosenberg Edition' containing Orach Chaim section only."
+      },
+      "bibliographic_metadata": {
+        "extraction": {
+          "pages": 284,
+          "method": "layout_aware_pymupdf_dict",
+          "parser": "likutey_layout_parser"
+        },
+        "bibliographic": {
+          "author": "Reb Noson Sternhartz of Breslov (Rabí Natán de Breslov)",
+          "editor": "Breslov Research Institute Editorial Staff",
+          "edition": "First Edition",
+          "copyright": "©2020 Breslov Research Institute",
+          "publisher": "Breslov Research Institute",
+          "section_he": "אורח חיים — הלכות השכמת הבוקר",
+          "commentator": "Moshé Mykoff",
+          "contributor": "Dov Grant",
+          "volume_info": "The Rosenberg Edition",
+          "translator_es": "Guillermo Beilinson",
+          "metadata_source": "pdf_front_matter",
+          "metadata_status": "complete",
+          "publication_year": 2020,
+          "publisher_places": [
+            "Jerusalem, Israel",
+            "Monsey, NY, USA"
+          ],
+          "rights_statement": "All rights reserved. No part may be reproduced without permission.",
+          "work_title_section": "Orach Chaim — Hashkamat HaBoker (Levantándose por la Mañana)",
+          "metadata_confidence": "high",
+          "metadata_review_notes": "Metadata extracted from PDF pages 1-4. Title page, copyright page, and credits page all present and consistent. Author (Reb Noson), commentator/annotator (Moshé Mykoff), Spanish translator (Guillermo Beilinson), publisher (Breslov Research Institute), year (2020), edition (First) all found. ISBN not found in visible front matter. PDF is 'The Rosenberg Edition' containing Orach Chaim section only.",
+          "public_exposure_status": "internal_only",
+          "work_title_original_en": "Likutey Halakhot",
+          "work_title_original_he": "ליקוטי הלכות"
+        },
+        "source_quality": {
+          "ocr_status": "not_ocr",
+          "source_kind": "pdf_modern_unicode_si960",
+          "layout_status": "layout_aware_parsed",
+          "language_hints": [
+            "es",
+            "he"
+          ],
+          "document_family": "Breslov/LikuteyHalajot",
+          "ingestion_profile": "layout_aware_likutey_halajot",
+          "canonical_text_role": "candidate",
+          "page_mapping_status": "layout_based_mapping",
+          "text_quality_status": "pass_layout_aware",
+          "canonical_text_allowed": true,
+          "promotion_recommendation": "promovible_con_observaciones"
+        }
+      },
+      "chunk_set_version": null,
+      "chunk_count": 2652,
+      "embedding_count": 2222,
+      "node_count": 0
+    },
+    {
+      "document_id": "37b5842d-517d-49d1-bab0-3584f409f355",
+      "document_code": "likutey_halajot_interior_final",
+      "title": "Likutey Halajot",
+      "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "content_sha256": null,
+      "status": "test_candidate",
+      "language": "es",
+      "knowledge_scope_code": "breslov_primary",
+      "metadata": {},
+      "bibliographic_metadata": {},
+      "chunk_set_version": null,
+      "chunk_count": 0,
+      "embedding_count": 0,
+      "node_count": 268
+    }
+  ],
+  "target": {
+    "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+    "document_code": null,
+    "title": "Likutey Halajot Explicado — Interior Final",
+    "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "content_sha256": null,
+    "status": "test_candidate",
+    "language": "es",
+    "knowledge_scope_code": "breslov_primary",
+    "metadata": {
+      "ingestion_profile": "layout_aware_likutey_halajot",
+      "metadata_confidence": "high",
+      "bibliographic_status": "complete",
+      "metadata_review_notes": "Metadata extracted from PDF pages 1-4. Title page, copyright page, and credits page all present and consistent. Author (Reb Noson), commentator/annotator (Moshé Mykoff), Spanish translator (Guillermo Beilinson), publisher (Breslov Research Institute), year (2020), edition (First) all found. ISBN not found in visible front matter. PDF is 'The Rosenberg Edition' containing Orach Chaim section only."
+    },
+    "bibliographic_metadata": {
+      "extraction": {
+        "pages": 284,
+        "method": "layout_aware_pymupdf_dict",
+        "parser": "likutey_layout_parser"
+      },
+      "bibliographic": {
+        "author": "Reb Noson Sternhartz of Breslov (Rabí Natán de Breslov)",
+        "editor": "Breslov Research Institute Editorial Staff",
+        "edition": "First Edition",
+        "copyright": "©2020 Breslov Research Institute",
+        "publisher": "Breslov Research Institute",
+        "section_he": "אורח חיים — הלכות השכמת הבוקר",
+        "commentator": "Moshé Mykoff",
+        "contributor": "Dov Grant",
+        "volume_info": "The Rosenberg Edition",
+        "translator_es": "Guillermo Beilinson",
+        "metadata_source": "pdf_front_matter",
+        "metadata_status": "complete",
+        "publication_year": 2020,
+        "publisher_places": [
+          "Jerusalem, Israel",
+          "Monsey, NY, USA"
+        ],
+        "rights_statement": "All rights reserved. No part may be reproduced without permission.",
+        "work_title_section": "Orach Chaim — Hashkamat HaBoker (Levantándose por la Mañana)",
+        "metadata_confidence": "high",
+        "metadata_review_notes": "Metadata extracted from PDF pages 1-4. Title page, copyright page, and credits page all present and consistent. Author (Reb Noson), commentator/annotator (Moshé Mykoff), Spanish translator (Guillermo Beilinson), publisher (Breslov Research Institute), year (2020), edition (First) all found. ISBN not found in visible front matter. PDF is 'The Rosenberg Edition' containing Orach Chaim section only.",
+        "public_exposure_status": "internal_only",
+        "work_title_original_en": "Likutey Halakhot",
+        "work_title_original_he": "ליקוטי הלכות"
+      },
+      "source_quality": {
+        "ocr_status": "not_ocr",
+        "source_kind": "pdf_modern_unicode_si960",
+        "layout_status": "layout_aware_parsed",
+        "language_hints": [
+          "es",
+          "he"
+        ],
+        "document_family": "Breslov/LikuteyHalajot",
+        "ingestion_profile": "layout_aware_likutey_halajot",
+        "canonical_text_role": "candidate",
+        "page_mapping_status": "layout_based_mapping",
+        "text_quality_status": "pass_layout_aware",
+        "canonical_text_allowed": true,
+        "promotion_recommendation": "promovible_con_observaciones"
+      }
+    },
+    "chunk_set_version": null,
+    "chunk_count": 2652,
+    "embedding_count": 2222,
+    "node_count": 0
+  },
+  "chunk_hits": [
+    {
+      "chunk_id": "91aba034-7a02-4520-aa1c-3f29be2741be",
+      "chunk_index": 356,
+      "page_start": 51,
+      "page_end": 51,
+      "printed_page_label": "33",
+      "section_title": "השכמת הבוקר",
+      "section": null,
+      "block_type": "main_explanation_es",
+      "evidence_role": "commentary",
+      "citable": true,
+      "ingestion_profile": "layout_aware_likutey_halajot",
+      "char_start": null,
+      "char_end": null,
+      "content": "4 ■ CONSTRUYENDO UN MISHKÁN",
+      "search_text_normalized": null,
+      "metadata": {
+        "citable": true,
+        "language": "es",
+        "node_path": "Likutey Halajot > השכמת הבוקר",
+        "block_type": "main_explanation_es",
+        "page_number": 51,
+        "evidence_role": "commentary",
+        "physical_page": 50,
+        "hebrew_decoder": "",
+        "extraction_method": "pymupdf_dict_layout_aware",
+        "ingestion_profile": "layout_aware_likutey_halajot",
+        "layout_confidence": 1.0,
+        "printed_page_label": "33",
+        "needs_hebrew_review": false,
+        "hebrew_decoder_applied": false,
+        "needs_reference_review": false
+      },
+      "bibliographic_metadata": {}
+    }
+  ],
+  "document_text_hits": [
+    {
+      "document_text_id": "6da4052e-96d4-4ce0-9768-3809a6aa028d",
+      "text_format": "markdown",
+      "extraction_method": "layout_aware_parser",
+      "page_markers_enabled": true,
+      "page_count": 284,
+      "content_length": 961211,
+      "exact_pos": 128814,
+      "folded_pos": 129680,
+      "excerpt": "אּה עס óיצלןצ עתנעמעלבארןצאפ איצאה éהסןם ןמןצ ןדאתלץסער לעד \nןהצעה עד עץק éהסןם אמבאה ןדארתנןצנע לע נעיב נע אדאצ ןמדץט ןסץלצני סéץפסעד לעד \nעתנעדיצני לעד ןררעצעב עד ןרן. סעץף éהסןם ארע אל נóיצאנראצנע \nלעד נעיב, ןמןצ בתסע ןדאסערפחע נע לע ןלץצמסרעצ אללֵא\" ןיצ \nעץק ארע \"ןנעץב.24 ִי רןפ ןל ןתנאת éהסןם אמנעת אל דאדיצאפאצ \nעתנערעהני עד רארתנןצנע ערפמעיס לע נעיב נע אדאצ ןנץ - ןסץלצני \nנע סןל סערןדאצעפ לעד ןלבעץפ ןמדץט. A סéצארת עד ןתסע מעהשאּה עץפ ןדאצאלפא י \nסעצנןתנע על óנעדרן לא ןלבעץפ ןמדץט אל נóיצצץרתסנןצ לעד נבכהסים ןמןצ נץ נúכית \nאראפ ץס ןדאצעפ. אדאץ ןמדץט אמבעד ריץבירתנןצ א אל נóיצצץרתסנןצ לעד נבכהסים עד \nןדרעץצא א אל דאדיסןרענעג עד ץס נóזארןצ. סעץף éהסןם אמבאה ןדאתרעפסעד לע נעיב \nנע אדאצ אנןסרעפ י אדאצ אנץ, נע אל אדידעמ עד עסע נעיב, óיץבירתנןצ סעצנןתנע א \nאל נóיצצץרתסנןצ לעד נבכהסים עד ןדרעץצא א אל דאדיסןרענעג עד ץס נעץב נóזארןצ.\nסעץף לע נבכהסים עס óיץרתסנןצ א ריתראפ לעד נעיב עץק \nאמבאה ןדיס יפער ןדאנ נע אדאצ ןנץ עד סןל סןמדץט. עתסֹ סע לע \nיפינגיס ןדאצ עד אל נóיצארעמץנע עד סןל סןלאגער עץק עצאה אל ברןּת \nןמןצ ןרן\" י אתאלפ י ערבןצ י לץזא עתסעלעצ י ןטןר ןרץצסן י \n\"מסעמראצ. אדאץ אנןסרעפ óצעלל נץ ןלאגער עתנעץרגנןצ נןצ ץס \nןיפןרפ ןתנץפ ןנעץב. אּל בלאבאך אñעסנע עץק ןרן\" י אתאלפ י ערבןצ \nי לץזא עתסעלעצ…\" נעדץלא א סןל סערןלןצ סערןירעפץס,25 עץק נןס סןציתאתנעסערפער, נע מס \nסןמסימ, לעד נעיב"
+    }
+  ],
+  "node_hits": [],
+  "specialized_view_hits": [],
+  "specialized_pages_50_52": [],
+  "chunk_neighbors": [
+    {
+      "chunk_id": "f3d3d8ca-0414-46da-9899-25f82697ce92",
+      "chunk_index": 354,
+      "page_start": 51,
+      "page_end": 51,
+      "printed_page_label": "33",
+      "section_title": "השכמת הבוקר",
+      "block_type": "source_hebrew",
+      "evidence_role": "source_text",
+      "citable": true,
+      "content": "č ĀĐ עĒĀ :(ď-ָד ,Đė ĥַהđĦ) Ħ ÿĜĕ üē ַמø ŅĐ þņ þĺ ,ָה ָבý ĀĤ øĻ ַנü ַהü ď Āē ָבþ ָה ĀŊ ַהü Ĥ ýĤ ַמĀ øĦ üō þĺ ָנŖč ÿĐ ָה ĀŊ ַהü Đ ĀĜ øč üĜ ֵה ĀŊ øĺ üŌ ÿĐ ĕ üŊ\n ,Ŗŋ þĺ Đ ĀčŖĔ Đ ĀŃ ģַא øō ÿĐ ĕ üĠ øŊ ď Āē ָבþ øđ ď Āē ָבþ ָה ĀŊ ĕָב üč ýĐ þĺ - ע ėŅא øđ ĕ üĜ Āĺ Ħ ַגÿ ĦŖָהÿ øđ ֵה ַהĀ ָדĀ øĤ ָבÿ øđ Ħ ָהþ ýė øĦŅ Ħ þĺāē øĜŅ ğ þĝ þė Āđ\n ď Āē ָבþ ָה Āė ַמø ĺ ַנý þĺ ָנŖč ÿĐ Ħ ÿĜĕ üē ַמø ֶה ýĐ þĺ ,ĕֵה ָבü ָהĀ ַגü ĕֵה üĜ Āđ øł ÿĐ Ħ ÿĜĕ üē ַמø ֶה ýĐ ,ėŅא øđ Ħ ָהþ ýė øĦŅ Ħ þĺāē øĜŅ ğ þĝ þė Āđ č ĀĐ ĀĒ ĕ üŊ\n.ָה ָבý ĀĤ øĻ ַנü ַהü"
+    },
+    {
+      "chunk_id": "4b69f35c-77e5-4ee9-9c7e-ddd3211a22bf",
+      "chunk_index": 355,
+      "page_start": 51,
+      "page_end": 51,
+      "printed_page_label": "33",
+      "section_title": "השכמת הבוקר",
+      "block_type": "section_marker",
+      "evidence_role": null,
+      "citable": false,
+      "content": "/LNXWH\\\u0003+DODNKRW\u0003(OXFLGDWHG\nLikutey Halajot Explicado"
+    },
+    {
+      "chunk_id": "91aba034-7a02-4520-aa1c-3f29be2741be",
+      "chunk_index": 356,
+      "page_start": 51,
+      "page_end": 51,
+      "printed_page_label": "33",
+      "section_title": "השכמת הבוקר",
+      "block_type": "main_explanation_es",
+      "evidence_role": "commentary",
+      "citable": true,
+      "content": "4 ■ CONSTRUYENDO UN MISHKÁN"
+    },
+    {
+      "chunk_id": "d0ae8b80-0947-4503-a45f-11e4b9c7d0ff",
+      "chunk_index": 357,
+      "page_start": 51,
+      "page_end": 51,
+      "printed_page_label": "33",
+      "section_title": "השכמת הבוקר",
+      "block_type": "main_explanation_es",
+      "evidence_role": "commentary",
+      "citable": true,
+      "content": "El Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar \nel bien incluso en el menos digno de los judíos y de cómo utilizó entonces \nesos puntos buenos para construir el Mishkán como un tikún para el pecado \ndel becerro de oro."
+    },
+    {
+      "chunk_id": "b48bff0b-0f82-4fca-9455-4a08b338152b",
+      "chunk_index": 358,
+      "page_start": 51,
+      "page_end": 51,
+      "printed_page_label": "33",
+      "section_title": "השכמת הבוקר",
+      "block_type": "marginal_source",
+      "evidence_role": "marginal_citation",
+      "citable": true,
+      "content": "“La mujer concibió y \ntuvo un hijo. Ella vio \nque era bueno”.\n(Éxodo 2:2)"
+    }
+  ]
+}

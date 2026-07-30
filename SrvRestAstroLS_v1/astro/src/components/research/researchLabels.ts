@@ -7,6 +7,7 @@ export const evidenceLabels: Record<string, string> = {
   thematic_parallel: "Paralelo temático",
   remesh_or_derash_candidate: "Posible relación interpretativa",
   literal_same_page: "Cita literal recuperada",
+  canonical_markdown: "Fragmento canónico recuperado",
 };
 
 export const relevanceLabels: Record<string, string> = {
@@ -78,6 +79,12 @@ export const literalMatchKindLabels: Record<string, string> = {
   named_topic_translation: "Equivalente traducido",
   named_topic_hebrew_equivalent: "Equivalente hebreo",
   named_topic_partial: "Tema nominal parcial",
+  structural_heading_exact: "Coincidencia exacta con título de sección",
+  structural_heading_normalized: "Encabezado estructural normalizado",
+  structural_heading_accent_folded: "Encabezado estructural sin distinción de acentos",
+  structural_heading_all_tokens_ordered: "Todos los términos del encabezado en orden",
+  structural_heading_all_tokens_proximity: "Términos del encabezado en proximidad",
+  structural_heading_partial: "Coincidencia parcial con encabezado",
   none: "",
 };
 

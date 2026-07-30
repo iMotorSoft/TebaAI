@@ -99,7 +99,11 @@ async def _install_retrieval_fakes(
             "latency_ms": 1.0,
         }
 
+    async def structural_search(*args, **kwargs):
+        return []
+
     monkeypatch.setattr(rag, "resolve_ready_documents", documents)
+    monkeypatch.setattr(rag, "search_structural_heading_candidates", structural_search)
     monkeypatch.setattr(rag, "search_literal_candidates", literal_search)
     monkeypatch.setattr(rag, "fetch_canonical_chunks", fetch_chunks)
     monkeypatch.setattr(rag, "_semantic_search", semantic_search)
@@ -260,6 +264,116 @@ def test_ascii_short_proper_name_is_detected_as_english() -> None:
     assert rag.detect_short_english_name_query("Relación sangre y habla") is None
 
 
+@pytest.mark.parametrize(
+    ("query", "normalized", "folded", "number"),
+    [
+        ("CONSTRUYENDO UN MISHKÁN", "construyendo un mishkán", "construyendo un mishkan", None),
+        ("4. CONSTRUYENDO UN MISHKÁN", "construyendo un mishkán", "construyendo un mishkan", "4"),
+        ("## 4 ■ Construyendo\u00a0un Mishkan —", "construyendo un mishkan", "construyendo un mishkan", "4"),
+    ],
+)
+def test_structural_heading_normalization(
+    query: str,
+    normalized: str,
+    folded: str,
+    number: str | None,
+) -> None:
+    result = rag.normalize_structural_heading_for_search(query)
+    assert result.original == query
+    assert result.normalized == normalized
+    assert result.accent_folded == folded
+    assert result.leading_section_number == number
+
+
+def test_structural_heading_classification_requires_a_real_heading() -> None:
+    query = rag.normalize_structural_heading_for_search("Construyendo un Mishkan")
+    candidates = [{
+        "chunk_id": "00000000-0000-0000-0000-000000000041",
+        "associated_chunk_id": "00000000-0000-0000-0000-000000000042",
+        "content": "4 ■ CONSTRUYENDO UN MISHKÁN",
+        "section_title": None,
+        "block_type": "main_explanation_es",
+    }]
+    matches = rag.classify_structural_heading_candidates(query, candidates)
+    assert matches[0]["literal_match_type"] == "structural_heading_accent_folded"
+    assert matches[0]["heading_original"] == "4 ■ CONSTRUYENDO UN MISHKÁN"
+    assert matches[0]["heading_display"] == "4. CONSTRUYENDO UN MISHKÁN"
+    assert matches[0]["associated_chunk_id"].endswith("42")
+
+    body_only = [{
+        **candidates[0],
+        "content": "Rabí Natán explica cómo se estaba construyendo un Mishkán.",
+    }]
+    assert rag.classify_structural_heading_candidates(query, body_only) == []
+
+
+def test_all_caps_editorial_phrase_is_not_an_english_proper_name() -> None:
+    assert rag.detect_short_english_name_query("CONSTRUYENDO UN MISHKÁN") is None
+    assert rag.detect_short_english_name_query("CAPÍTULO QUE NO EXISTE") is None
+    assert rag.detect_short_english_name_query("Gedalia of Linitz") is not None
+    assert rag.has_editorial_heading_form("CONSTRUYENDO UN TEMPLO INEXISTENTE")
+    assert rag.has_editorial_heading_form("4. Construyendo un Mishkán")
+    assert not rag.has_editorial_heading_form("Relación sangre y habla")
+
+
+def test_structural_heading_exact_outranks_high_semantic_without_heading() -> None:
+    semantic_id = "00000000-0000-0000-0000-000000000043"
+    heading_id = "00000000-0000-0000-0000-000000000044"
+    structural_query = rag.normalize_structural_heading_for_search(
+        "CONSTRUYENDO UN MISHKÁN"
+    )
+    ranked = rag.merge_results(
+        [{"chunk_id": semantic_id, "semantic_score": 0.99, "semantic_rank": 1}],
+        [{
+            "chunk_id": heading_id,
+            "literal_score": 2.0,
+            "exact_match": True,
+            "literal_match_type": "exact_phrase",
+        }, {
+            "chunk_id": heading_id,
+            "literal_score": 200.0,
+            "exact_match": True,
+            "literal_match_type": "structural_heading_exact",
+            "matched_variant": "4 ■ CONSTRUYENDO UN MISHKÁN",
+        }],
+        query_language="es",
+        structural_heading_query=structural_query,
+    )
+    assert ranked[0]["chunk_id"] == heading_id
+    assert ranked[0]["literal_match_type"] == "structural_heading_exact"
+    assert rag._is_primary_eligible(
+        ranked[1],
+        query_language="es",
+        structural_heading_query=structural_query,
+    ) is False
+    assert rag._is_primary_eligible(
+        {"literal_match_type": "structural_heading_all_tokens_ordered"},
+        query_language="he",
+        structural_heading_query=structural_query,
+    ) is True
+
+
+def test_heading_body_association_preserves_canonical_chunks() -> None:
+    heading_id = "00000000-0000-0000-0000-000000000045"
+    body_id = "00000000-0000-0000-0000-000000000046"
+    canonical = {
+        heading_id: {**_canonical(heading_id), "markdown": "4 ■ CONSTRUYENDO UN MISHKÁN"},
+        body_id: {**_canonical(body_id), "markdown": "El Rabí Natán concluye su explicación."},
+    }
+    ranked = [{
+        "chunk_id": heading_id,
+        "associated_chunk_id": body_id,
+        "literal_match_type": "structural_heading_exact",
+        "heading_original": "4 ■ CONSTRUYENDO UN MISHKÁN",
+        "heading_display": "4. CONSTRUYENDO UN MISHKÁN",
+        "heading_normalized": "construyendo un mishkán",
+    }]
+    rag._attach_structural_heading_contexts(canonical, ranked)
+    assert "El Rabí Natán concluye" in canonical[heading_id]["markdown"]
+    assert canonical[heading_id]["section"] == "4. CONSTRUYENDO UN MISHKÁN"
+    assert canonical[heading_id]["associated_chunk_id"] == body_id
+
+
 def test_english_name_exact_outranks_high_semantic_without_name_tokens() -> None:
     semantic_id = "00000000-0000-0000-0000-000000000030"
     literal_id = "00000000-0000-0000-0000-000000000040"
@@ -348,6 +462,94 @@ def test_grounding_rejects_invented_evidence_and_pages() -> None:
                 "confidence": "high",
             }],
         }, [chunk])
+
+
+@pytest.mark.asyncio
+async def test_structural_heading_fixture_returns_page_body_and_evidence(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    heading_id = "91aba034-7a02-4520-aa1c-3f29be2741be"
+    body_id = "d0ae8b80-0947-4503-a45f-11e4b9c7d0ff"
+    document_id = "47768aac-704e-4296-9649-53b9ea037096"
+
+    async def documents(*args, **kwargs):
+        return [{"document_id": document_id, "title": "Likutey Halajot"}]
+
+    async def structural(*args, **kwargs):
+        return [{
+            "chunk_id": heading_id,
+            "associated_chunk_id": body_id,
+            "document_id": document_id,
+            "chunk_index": 356,
+            "content": "4 ■ CONSTRUYENDO UN MISHKÁN",
+            "section_title": "השכמת הבוקר",
+            "block_type": "main_explanation_es",
+            "page_start": 51,
+            "printed_page_label": "33",
+        }]
+
+    async def literal(*args, **kwargs):
+        return []
+
+    async def fetch(*args, **kwargs):
+        common = {
+            **_canonical(),
+            "document_id": document_id,
+            "work": "Likutey Halajot",
+            "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 51,
+            "pdf_page_end": 51,
+            "printed_page": "33",
+            "document_status": "test_candidate",
+            "section": "השכמת הבוקר",
+            "block_type": "main_explanation_es",
+            "evidence_role": "commentary",
+        }
+        values = {
+            heading_id: {**common, "chunk_id": heading_id, "markdown": "4 ■ CONSTRUYENDO UN MISHKÁN", "content_sha256": "heading"},
+            body_id: {**common, "chunk_id": body_id, "markdown": "El Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar el bien.", "content_sha256": "body"},
+        }
+        return [values[item] for item in kwargs["chunk_ids"] if item in values]
+
+    def semantic(*args, **kwargs):
+        return [], {"dimension": 1536, "latency_ms": 1.0}
+
+    async def render(*args, **kwargs):
+        evidence_id = args[2][0]["evidence_id"]
+        return f"La sección desarrolla el contexto recuperado. [{evidence_id}]", [{
+            "claim_id": "heading",
+            "text": "La sección desarrolla el contexto recuperado.",
+            "strength": "strong",
+            "confidence": "high",
+            "relation_type": "direct",
+            "evidence_ids": [evidence_id],
+            "primary_evidence_id": evidence_id,
+        }], True
+
+    monkeypatch.setattr(rag, "resolve_ready_documents", documents)
+    monkeypatch.setattr(rag, "search_structural_heading_candidates", structural)
+    monkeypatch.setattr(rag, "search_literal_candidates", literal)
+    monkeypatch.setattr(rag, "fetch_canonical_chunks", fetch)
+    monkeypatch.setattr(rag, "_semantic_search", semantic)
+    monkeypatch.setattr(rag, "render_grounded_answer", render)
+
+    response = await rag.run_simple_rag(
+        object(),
+        _request("CONSTRUYENDO UN MISHKÁN"),
+    )
+    primary = next(hit for hit in response["hits"] if hit["is_primary"])
+    assert response["research_status"] == "complete"
+    assert response["retrieval"]["query_shape"] == "structural_heading"
+    assert response["retrieval"]["primary_match_type"] == "structural_heading_exact"
+    assert primary["work_title"] == "Likutey Halajot"
+    assert primary["physical_file_name"] == "LIKUTEY HALAJOT (Interior Final).pdf"
+    assert primary["physical_pdf_page"] == 51
+    assert primary["printed_page"] == 33
+    assert primary["section"] == "4. CONSTRUYENDO UN MISHKÁN"
+    assert primary["associated_chunk_id"] == body_id
+    assert "El Rabí Natán concluye su explicación" in primary["quote"]
+    assert response["primary_evidence_ids"] == ["ev-bf5ac6e2fbf46812"]
 
 
 @pytest.mark.asyncio
@@ -573,6 +775,20 @@ async def test_semantic_timeout_uses_literal_fallback(
     assert response["retrieval"]["semantic_status"] == "failed"
     assert response["retrieval"]["literal_status"] == "ok"
     assert any("semántica" in warning for warning in response["warnings"])
+
+
+@pytest.mark.asyncio
+async def test_nonexistent_editorial_heading_does_not_promote_thematic_semantics(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    await _install_retrieval_fakes(monkeypatch, semantic=True, literal=True)
+    response = await rag.run_simple_rag(
+        object(),
+        _request("CONSTRUYENDO UN TEMPLO INEXISTENTE"),
+    )
+    assert response["research_status"] == "no_evidence"
+    assert response["primary_evidence_ids"] == []
+    assert response["retrieval"]["query_shape"] == "general"
 
 
 @pytest.mark.asyncio

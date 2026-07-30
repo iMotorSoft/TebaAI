@@ -20,6 +20,7 @@
       <div class="primary-evidence">
       <article class="source-detail" tabindex="-1" aria-live="polite" data-evidence-id={active.hit_id}>
         <p class="source-category">{active.is_primary ? "EVIDENCIA PRINCIPAL" : additional.includes(active) ? "COINCIDENCIA ADICIONAL" : "EVIDENCIA CONTEXTUAL"}</p>
+        {#if active.literal_match_kind === "structural_heading_exact"}<p class="structural-match-label">Coincidencia exacta con título de sección</p>{/if}
         <strong lang={languageAttribute(active.work_title)} dir={textDirection(active.work_title)}>{active.work_title}</strong>
         <div class="evidence-meta" dir="ltr">{active.physical_pdf_page === null ? "Página no disponible en el registro fuente" : `PDF p. ${active.physical_pdf_page}${active.printed_page !== null ? ` · Página impresa ${active.printed_page}` : ""}${active.section ? ` · ${active.section}` : ""}`}</div>
         {#if active.physical_pdf_page === null && active.embedded_page_marker}<div class="evidence-meta">Página canónica: no disponible · Marcador interno detectado: {active.embedded_page_marker}</div>{/if}
@@ -34,6 +35,10 @@
           {#if active.inference_required}<div><dt>Inferencia</dt><dd>Requerida y limitada por la evidencia</dd></div>{/if}
           <div><dt>Fuerza para esta consulta</dt><dd>{active.evidence_strength === "strong" ? "Fuerte" : active.evidence_strength === "medium" ? "Media" : active.evidence_strength === "weak" ? "Débil" : "Contextual"}</dd></div>
           <div><dt>Tipo de coincidencia</dt><dd>{literalKindLabel(active.literal_match_kind) || "Coincidencia contextual"}</dd></div>
+          {#if active.heading_original}<div><dt>Consulta original</dt><dd>{response.original_query}</dd></div>{/if}
+          {#if active.heading_original}<div><dt>Encabezado original</dt><dd>{active.heading_original}</dd></div>{/if}
+          {#if active.heading_normalized}<div><dt>Variante normalizada</dt><dd>{active.heading_normalized}</dd></div>{/if}
+          {#if active.associated_chunk_id}<div><dt>Chunk de contexto asociado</dt><dd dir="ltr">{active.associated_chunk_id}</dd></div>{/if}
           <div><dt>Tipo</dt><dd>{evidenceLabels[active.evidence_type] ?? "Evidencia investigativa"}</dd></div>
           <div><dt>Idioma</dt><dd>{active.language.toUpperCase()}</dd></div>
           <div><dt>Atribución</dt><dd>{active.attribution_label ?? attributionLabels[active.author_quote_status ?? "not_confirmed"]}</dd></div>

@@ -1,0 +1,185 @@
+{
+  "environment": "DEV",
+  "auth": "admin credentials omitted",
+  "http_status": 200,
+  "observed_latency_ms": 5829.56,
+  "pipeline": "simple_rag",
+  "original_query": "CONSTRUYENDO UN MISHKÁN",
+  "status": "ok",
+  "research_status": "complete",
+  "answer_markdown": "En la sección **4. CONSTRUYENDO UN MISHKÁN** se presenta la conclusión de la explicación del Rabí Natán sobre cómo Moshé halló el bien incluso en los judíos “menos dignos”, y cómo utilizó esos puntos buenos para **construir el Mishkán** como **tikún** (reparación) por el pecado del **becerro de oro**. [ev-bf5ac6e2fbf46812]",
+  "claims": [
+    {
+      "claim_id": "c1",
+      "text": "La sección 4, titulada “CONSTRUYENDO UN MISHKÁN”, concluye la explicación del Rabí Natán sobre la capacidad de Moshé de encontrar el bien incluso en los judíos menos dignos.",
+      "strength": "strong",
+      "confidence": "high",
+      "relation_type": "direct",
+      "evidence_ids": [
+        "ev-bf5ac6e2fbf46812"
+      ],
+      "primary_evidence_id": "ev-bf5ac6e2fbf46812"
+    },
+    {
+      "claim_id": "c2",
+      "text": "En esa misma sección se explica que Moshé utilizó esos puntos buenos para construir el Mishkán como tikún para el pecado del becerro de oro.",
+      "strength": "strong",
+      "confidence": "high",
+      "relation_type": "direct",
+      "evidence_ids": [
+        "ev-bf5ac6e2fbf46812"
+      ],
+      "primary_evidence_id": "ev-bf5ac6e2fbf46812"
+    }
+  ],
+  "primary_evidence_ids": [
+    "ev-bf5ac6e2fbf46812"
+  ],
+  "warnings": [
+    "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+  ],
+  "retrieval": {
+    "semantic_used": true,
+    "literal_used": true,
+    "semantic_status": "ok",
+    "literal_status": "ok",
+    "semantic_hits": 30,
+    "literal_hits": 16,
+    "selected_chunks": 1,
+    "query_language": "es",
+    "query_shape": "structural_heading",
+    "query_variants": [
+      "CONSTRUYENDO UN MISHKÁN",
+      "construyendo un mishkán",
+      "construyendo un mishkan"
+    ],
+    "structural_status": "ok",
+    "structural_hits": 1,
+    "structural_normalization": {
+      "original": "CONSTRUYENDO UN MISHKÁN",
+      "normalized": "construyendo un mishkán",
+      "accent_folded": "construyendo un mishkan",
+      "tokens": [
+        "construyendo",
+        "un",
+        "mishkan"
+      ],
+      "leading_section_number": null
+    },
+    "normalization": null,
+    "primary_match_type": "structural_heading_exact",
+    "matched_tokens": [
+      "construyendo",
+      "un",
+      "mishkan"
+    ]
+  },
+  "processing": {
+    "ai_interpretation_used": false,
+    "ai_render_used": true,
+    "fallback_used": false,
+    "normalization_applied": false,
+    "normalization_status": "not_needed"
+  },
+  "execution": {
+    "pipeline_version": "simple_grounded_rag_v1",
+    "model": "openai_gpt-5.4-nano",
+    "embedding_model": "openai_text_embedding_3_small",
+    "embedding_dimension": 1536,
+    "used_ai_interpretation": false,
+    "used_ai_rendering": true,
+    "used_deterministic_fallback": false,
+    "used_vector": true,
+    "retrieval_modes": [
+      "structural_heading",
+      "milvus",
+      "literal",
+      "fts",
+      "trigram"
+    ],
+    "duration_ms": 5822.31,
+    "latency_ms": {
+      "structural_normalization_ms": 0.11,
+      "structural_heading_ms": 184.42,
+      "literal_ms": 2689.47,
+      "embedding_and_milvus_ms": 573.87,
+      "merge_ms": 0.16,
+      "fetch_chunks_ms": 8.85,
+      "heading_body_association_ms": 0.03,
+      "ai_ms": 2936.42,
+      "total_ms": 5822.31
+    },
+    "request_id": "190c8ae524714df5"
+  },
+  "primary": {
+    "hit_id": "ev-bf5ac6e2fbf46812",
+    "evidence_id": "ev-bf5ac6e2fbf46812",
+    "chunk_id": "91aba034-7a02-4520-aa1c-3f29be2741be",
+    "associated_chunk_id": "d0ae8b80-0947-4503-a45f-11e4b9c7d0ff",
+    "heading_original": "4 ■ CONSTRUYENDO UN MISHKÁN",
+    "heading_normalized": "construyendo un mishkán",
+    "matched_variant": "4 ■ CONSTRUYENDO UN MISHKÁN",
+    "content_node_id": null,
+    "page_anchor_id": null,
+    "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+    "work_code": "lh",
+    "work_title": "Likutey Halajot",
+    "pdf_page": 51,
+    "physical_pdf_page": 51,
+    "printed_page": 33,
+    "section": "4. CONSTRUYENDO UN MISHKÁN",
+    "quote": "4 ■ CONSTRUYENDO UN MISHKÁN\n\nEl Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar \nel bien incluso en el menos digno de los judíos y de cómo utilizó entonces \nesos puntos buenos para construir el Mishkán como un tikún para el pecado \ndel becerro de oro.",
+    "snippet": "4 ■ CONSTRUYENDO UN MISHKÁN El Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar el bien incluso en el menos digno de los judíos y de cómo utilizó entonces esos puntos buenos para construir el Mishkán como un tikún para el pecado del becerro de oro.",
+    "display_snippet": "4 ■ CONSTRUYENDO UN MISHKÁN El Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar el bien incluso en el menos digno de los judíos y de cómo utilizó entonces esos puntos buenos para construir el Mishkán como un tikún para el pecado del becerro de oro.",
+    "match_text": "",
+    "sentence_text": "",
+    "paragraph_text": "4 ■ CONSTRUYENDO UN MISHKÁN\n\nEl Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar \nel bien incluso en el menos digno de los judíos y de cómo utilizó entonces \nesos puntos buenos para construir el Mishkán como un tikún para el pecado \ndel becerro de oro.",
+    "context_before": "",
+    "context_after": "",
+    "language": "es",
+    "direction": "ltr",
+    "evidence_type": "canonical_markdown",
+    "literal_strength": "strong",
+    "evidence_strength": "strong",
+    "relation_relevance": "direct_relation",
+    "relation_type": "direct_literal",
+    "relation_strength": "high",
+    "literal_relation": true,
+    "inference_required": false,
+    "matched_terms": [
+      "construyendo",
+      "un",
+      "mishkan"
+    ],
+    "matched_concepts": [],
+    "is_primary": true,
+    "source_layer": "section_heading",
+    "source_layer_confidence": "high",
+    "source_layer_rationale": "structural_heading_with_associated_canonical_body",
+    "is_original_language": true,
+    "is_primary_language_match": true,
+    "is_translation": false,
+    "is_editorial_commentary": false,
+    "parallel_texts": [],
+    "language_match": "exact",
+    "literal_match_kind": "structural_heading_exact",
+    "match_kind": "structural_heading_exact",
+    "retrieval_tier": 0,
+    "retrieval_sources": [
+      "literal"
+    ],
+    "semantic_score": 0.0,
+    "literal_score": 200.0,
+    "combined_score": 20.023151515151515,
+    "warnings": [
+      "test_candidate_read_only: no constituye promoción productiva"
+    ],
+    "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "author_quote_status": "not_confirmed",
+    "attribution_label": "Encabezado estructural y contexto canónico recuperados desde PostgreSQL",
+    "raw_snippet": "4 ■ CONSTRUYENDO UN MISHKÁN\n\nEl Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar \nel bien incluso en el menos digno de los judíos y de cómo utilizó entonces \nesos puntos buenos para construir el Mishkán como un tikún para el pecado \ndel becerro de oro.",
+    "snippet_sanitized": false,
+    "sanitization_reason_codes": []
+  }
+}

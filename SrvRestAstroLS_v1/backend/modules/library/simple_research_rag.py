@@ -42,6 +42,7 @@ from modules.library.simple_research_repository import (
     fetch_canonical_chunks,
     resolve_ready_documents,
     search_literal_candidates,
+    search_structural_heading_candidates,
 )
 
 logger = logging.getLogger(__name__)
@@ -56,6 +57,11 @@ CONTEXT_MAX = 12
 _HEBREW_LETTER = re.compile(r"[\u05d0-\u05ea]")
 _HEBREW_PREFIXES = frozenset("ובכלמש")
 _LATIN_NAME_TOKEN = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ]+(?:['’][A-Za-zÀ-ÖØ-öø-ÿ]+)?")
+_STRUCTURAL_TOKEN = re.compile(r"[^\W_]+(?:['’][^\W_]+)?", re.UNICODE)
+_STRUCTURAL_LEADING_NUMBER = re.compile(
+    r"^\s*(?P<number>\d+(?:\.\d+)*)\s*(?:[.):\-–—■]+\s*)?"
+)
+_MARKDOWN_HEADING = re.compile(r"^\s{0,3}#{1,6}\s+")
 _PAGE_MARKER = re.compile(r"(?m)^## Page\s+(\d+)\s*$")
 _NAME_CONNECTORS = frozenset({"of", "de", "del", "ben", "bar", "von", "van"})
 _NAME_HONORIFICS = frozenset({
@@ -66,6 +72,11 @@ _QUESTION_WORDS = frozenset({
     "what", "where", "when", "why", "how", "who", "which", "does", "is",
     "are", "can", "could", "would", "should",
 })
+_STRUCTURAL_QUESTION_WORDS = frozenset({
+    *_QUESTION_WORDS,
+    "como", "cómo", "cual", "cuál", "cuando", "cuándo", "donde", "dónde",
+    "por", "porque", "porqué", "que", "qué", "quien", "quién",
+})
 
 
 @dataclass(frozen=True)
@@ -73,6 +84,195 @@ class EnglishNameQuery:
     normalized: str
     tokens: tuple[str, ...]
     nominal_tokens: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class StructuralHeadingNormalization:
+    original: str
+    normalized: str
+    accent_folded: str
+    tokens: tuple[str, ...]
+    leading_section_number: str | None
+
+
+def normalize_structural_heading_for_search(
+    value: str,
+) -> StructuralHeadingNormalization:
+    """Normalize an editorial heading while preserving its original citation form."""
+    original = value
+    normalized = unicodedata.normalize("NFKC", value)
+    normalized = "".join(
+        " " if unicodedata.category(char) in {"Cf", "Cc", "Zl", "Zp", "Zs"} else char
+        for char in normalized
+    )
+    normalized = _MARKDOWN_HEADING.sub("", normalized)
+    normalized = normalized.strip().strip("*_`~")
+    number_match = _STRUCTURAL_LEADING_NUMBER.match(normalized)
+    leading_number = number_match.group("number") if number_match else None
+    if number_match:
+        normalized = normalized[number_match.end():]
+    normalized = normalized.replace("■", " ")
+    tokens = tuple(token.casefold() for token in _STRUCTURAL_TOKEN.findall(normalized))
+    normalized_text = " ".join(tokens)
+    accent_folded = "".join(
+        char
+        for char in unicodedata.normalize("NFKD", normalized_text)
+        if not unicodedata.combining(char)
+    )
+    return StructuralHeadingNormalization(
+        original=original,
+        normalized=normalized_text,
+        accent_folded=accent_folded,
+        tokens=tuple(_STRUCTURAL_TOKEN.findall(accent_folded)),
+        leading_section_number=leading_number,
+    )
+
+
+def is_structural_heading_candidate_shape(value: str) -> bool:
+    normalized = normalize_structural_heading_for_search(value)
+    if not 2 <= len(normalized.tokens) <= 10:
+        return False
+    if normalized.tokens[0] in _STRUCTURAL_QUESTION_WORDS:
+        return False
+    if value.rstrip().endswith("?"):
+        return False
+    return True
+
+
+def has_editorial_heading_form(value: str) -> bool:
+    normalized = normalize_structural_heading_for_search(value)
+    cased_letters = [
+        char for char in value if char.isalpha() and (char.islower() or char.isupper())
+    ]
+    return bool(normalized.leading_section_number) or (
+        bool(cased_letters) and all(char.isupper() for char in cased_letters)
+    )
+
+
+def _heading_display_text(value: str) -> str:
+    text = unicodedata.normalize("NFKC", value).strip()
+    text = _MARKDOWN_HEADING.sub("", text).strip().strip("*_`~")
+    match = _STRUCTURAL_LEADING_NUMBER.match(text)
+    number = match.group("number") if match else None
+    if match:
+        text = text[match.end():]
+    text = " ".join(text.replace("■", " ").split())
+    return f"{number}. {text}" if number else text
+
+
+def _structural_heading_lines(candidate: dict[str, Any]) -> list[str]:
+    values: list[str] = []
+    section_title = str(candidate.get("section_title") or "").strip()
+    if section_title:
+        values.append(section_title)
+    content = str(candidate.get("content") or "")
+    lines = [line.strip() for line in content.splitlines() if line.strip()]
+    block_type = str(candidate.get("block_type") or "")
+    for line in lines:
+        markdown_signal = bool(_MARKDOWN_HEADING.match(line))
+        numbered_signal = bool(_STRUCTURAL_LEADING_NUMBER.match(line))
+        letters = [char for char in line if char.isalpha()]
+        uppercase_signal = bool(letters) and all(
+            not char.islower() for char in letters
+        )
+        structural_block = block_type in {"page_header", "section_marker"}
+        compact_standalone = (
+            len(lines) == 1
+            and len(line) <= 240
+            and (numbered_signal or uppercase_signal or structural_block)
+        )
+        if markdown_signal or compact_standalone:
+            values.append(line)
+    return list(dict.fromkeys(values))
+
+
+def classify_structural_heading_candidates(
+    query: StructuralHeadingNormalization,
+    candidates: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Classify real corpus headings; query form alone never establishes the shape."""
+    classified: list[dict[str, Any]] = []
+    priorities = {
+        "structural_heading_exact": 200.0,
+        "structural_heading_normalized": 180.0,
+        "structural_heading_accent_folded": 160.0,
+        "structural_heading_all_tokens_ordered": 130.0,
+        "structural_heading_all_tokens_proximity": 110.0,
+        "structural_heading_partial": 80.0,
+    }
+    for candidate in candidates:
+        best: tuple[float, str, str, StructuralHeadingNormalization] | None = None
+        for heading in _structural_heading_lines(candidate):
+            normalized = normalize_structural_heading_for_search(heading)
+            if not normalized.tokens:
+                continue
+            if normalized.normalized == query.normalized:
+                match_type = (
+                    "structural_heading_exact"
+                    if normalized.accent_folded == query.accent_folded
+                    else "structural_heading_normalized"
+                )
+            elif normalized.accent_folded == query.accent_folded:
+                match_type = "structural_heading_accent_folded"
+            else:
+                heading_tokens = list(normalized.tokens)
+                query_tokens = list(query.tokens)
+                positions: list[int] = []
+                cursor = 0
+                for token in query_tokens:
+                    try:
+                        position = heading_tokens.index(token, cursor)
+                    except ValueError:
+                        positions = []
+                        break
+                    positions.append(position)
+                    cursor = position + 1
+                if positions and len(positions) == len(query_tokens):
+                    match_type = (
+                        "structural_heading_all_tokens_ordered"
+                        if positions == list(range(positions[0], positions[0] + len(positions)))
+                        else "structural_heading_all_tokens_proximity"
+                    )
+                else:
+                    overlap = len(set(query_tokens) & set(heading_tokens))
+                    if overlap < 2 or overlap / max(len(set(query_tokens)), 1) < 0.7:
+                        continue
+                    match_type = "structural_heading_partial"
+            score = priorities[match_type]
+            if best is None or score > best[0]:
+                best = (score, match_type, heading, normalized)
+        if best is None:
+            continue
+        score, match_type, heading, normalized = best
+        classified.append({
+            **candidate,
+            "chunk_id": str(candidate["chunk_id"]),
+            "associated_chunk_id": (
+                str(candidate["associated_chunk_id"])
+                if candidate.get("associated_chunk_id")
+                else None
+            ),
+            "exact_match": match_type == "structural_heading_exact",
+            "exact_variant_count": 1,
+            "literal_score": score,
+            "literal_match_type": match_type,
+            "search_record_type": "structural_heading",
+            "matched_variant": heading,
+            "heading_original": heading,
+            "heading_display": _heading_display_text(heading),
+            "heading_normalized": normalized.normalized,
+            "heading_accent_folded": normalized.accent_folded,
+            "heading_tokens": list(normalized.tokens),
+            "leading_section_number": normalized.leading_section_number,
+        })
+    return sorted(
+        classified,
+        key=lambda item: (
+            float(item["literal_score"]),
+            -len(str(item.get("heading_original") or "")),
+        ),
+        reverse=True,
+    )
 
 
 def normalize_english_for_search(value: str) -> str:
@@ -111,7 +311,10 @@ def detect_short_english_name_query(value: str) -> EnglishNameQuery | None:
     ]
     has_nominal_shape = (
         any(token in _NAME_CONNECTORS or token in _NAME_HONORIFICS for token in tokens)
-        or all(raw_token[:1].isupper() for raw_token, _ in non_connector_tokens)
+        or all(
+            raw_token[:1].isupper() and not raw_token.isupper()
+            for raw_token, _ in non_connector_tokens
+        )
     )
     if not has_nominal_shape:
         return None
@@ -439,6 +642,7 @@ def merge_results(
     *,
     query_language: str,
     english_name_query: EnglishNameQuery | None = None,
+    structural_heading_query: StructuralHeadingNormalization | None = None,
 ) -> list[dict[str, Any]]:
     """Fuse ranks without allowing either retrieval branch to erase the other."""
     merged: dict[str, dict[str, Any]] = {}
@@ -470,6 +674,13 @@ def merge_results(
             "search_record_type": str(item.get("search_record_type") or "chunk"),
             "matched_variant": item.get("matched_variant"),
             "matched_variant_ordinal": item.get("matched_variant_ordinal"),
+            "associated_chunk_id": item.get("associated_chunk_id"),
+            "heading_original": item.get("heading_original"),
+            "heading_display": item.get("heading_display"),
+            "heading_normalized": item.get("heading_normalized"),
+            "heading_accent_folded": item.get("heading_accent_folded"),
+            "heading_tokens": item.get("heading_tokens"),
+            "leading_section_number": item.get("leading_section_number"),
         })
         if english_name_query:
             matched_variant = normalize_english_for_search(
@@ -507,16 +718,30 @@ def merge_results(
             "english_name_variant": 7.0,
             "english_name_partial": 4.0,
         }.get(str(item.get("literal_match_type")), 0.0)
+        structural_heading_priority = {
+            "structural_heading_exact": 20.0,
+            "structural_heading_normalized": 18.0,
+            "structural_heading_accent_folded": 16.0,
+            "structural_heading_all_tokens_ordered": 13.0,
+            "structural_heading_all_tokens_proximity": 11.0,
+            "body_literal": 8.0,
+            "structural_heading_partial": 6.0,
+        }.get(str(item.get("literal_match_type")), 0.0)
         semantic_only_penalty = (
             -0.02
             if (
-                (query_language == "he" or english_name_query is not None)
+                (
+                    query_language == "he"
+                    or english_name_query is not None
+                    or structural_heading_query is not None
+                )
                 and not item.get("literal_rank")
             )
             else 0.0
         )
         item["combined_score"] = (
-            hebrew_literal_priority
+            structural_heading_priority
+            + hebrew_literal_priority
             + english_name_priority
             + semantic_rrf
             + literal_rrf
@@ -534,6 +759,8 @@ def merge_results(
 
 
 def _source_layer(chunk: dict[str, Any]) -> str:
+    if str(chunk.get("literal_match_type") or "").startswith("structural_heading_"):
+        return "section_heading"
     role = str(chunk.get("evidence_role") or "")
     block = str(chunk.get("block_type") or "")
     if chunk.get("authority_level") == "primary_original":
@@ -608,6 +835,43 @@ ENGLISH_NAME_PRIMARY_MATCH_TYPES = {
     "english_name_all_tokens_proximity",
     "english_name_variant",
 }
+STRUCTURAL_HEADING_PRIMARY_MATCH_TYPES = {
+    "structural_heading_exact",
+    "structural_heading_normalized",
+    "structural_heading_accent_folded",
+    "structural_heading_all_tokens_ordered",
+    "structural_heading_all_tokens_proximity",
+}
+
+
+def _attach_structural_heading_contexts(
+    canonical_by_id: dict[str, dict[str, Any]],
+    ranked: list[dict[str, Any]],
+) -> None:
+    """Join a heading to its immediate canonical body without mutating persistence."""
+    for item in ranked:
+        if not str(item.get("literal_match_type") or "").startswith(
+            "structural_heading_"
+        ):
+            continue
+        heading = canonical_by_id.get(str(item["chunk_id"]))
+        if not heading:
+            continue
+        associated_id = str(item.get("associated_chunk_id") or "")
+        body = canonical_by_id.get(associated_id)
+        heading_markdown = str(heading.get("markdown") or "").strip()
+        body_markdown = str(body.get("markdown") or "").strip() if body else ""
+        if body_markdown and body_markdown != heading_markdown:
+            heading["markdown"] = f"{heading_markdown}\n\n{body_markdown}"
+            heading["content_sha256"] = hashlib.sha256(
+                heading["markdown"].encode()
+            ).hexdigest()
+        heading["associated_chunk_id"] = associated_id or None
+        heading["heading_original"] = item.get("heading_original")
+        heading["heading_display"] = item.get("heading_display")
+        heading["heading_normalized"] = item.get("heading_normalized")
+        heading["heading_accent_folded"] = item.get("heading_accent_folded")
+        heading["section"] = item.get("heading_display") or heading.get("section")
 
 
 def _is_primary_eligible(
@@ -615,8 +879,11 @@ def _is_primary_eligible(
     *,
     query_language: str,
     english_name_query: EnglishNameQuery | None = None,
+    structural_heading_query: StructuralHeadingNormalization | None = None,
 ) -> bool:
     match_type = str(chunk.get("literal_match_type"))
+    if structural_heading_query is not None:
+        return match_type in STRUCTURAL_HEADING_PRIMARY_MATCH_TYPES
     if query_language == "he":
         return match_type in HEBREW_PRIMARY_MATCH_TYPES
     if english_name_query is not None:
@@ -657,6 +924,7 @@ def _context_pack(
     filters: dict[str, Any],
     chunks: list[dict[str, Any]],
     normalization: HebrewSearchNormalization | None = None,
+    structural_heading: StructuralHeadingNormalization | None = None,
 ) -> str:
     lines = [
         "PREGUNTA ORIGINAL",
@@ -675,6 +943,13 @@ def _context_pack(
             f"Forma sin niqqud: {normalization.without_niqqud}",
             f"Tokens principales: {', '.join(normalization.tokens)}",
         ])
+    if structural_heading:
+        lines.extend([
+            "",
+            "CONSULTA DE ENCABEZADO ESTRUCTURAL (normalización no citable)",
+            f"Encabezado normalizado: {structural_heading.normalized}",
+            f"Tokens: {', '.join(structural_heading.tokens)}",
+        ])
     for index, chunk in enumerate(chunks, 1):
         lines.extend([
             "",
@@ -683,6 +958,9 @@ def _context_pack(
             f"Obra: {chunk['work']}",
             f"Página PDF: {chunk.get('pdf_page')}",
             f"Página impresa: {chunk.get('printed_page')}",
+            f"Sección: {chunk.get('section')}",
+            f"Encabezado original: {chunk.get('heading_original') or 'no aplica'}",
+            f"Chunk asociado: {chunk.get('associated_chunk_id') or 'mismo chunk'}",
             f"Idioma: {chunk.get('language')}",
             f"Tipo de coincidencia: {chunk.get('literal_match_type', 'semantic_only')}",
             f"Variante coincidente: {chunk.get('matched_variant') or 'ninguna'}",
@@ -749,6 +1027,7 @@ async def render_grounded_answer(
     *,
     simulate_failure: bool,
     normalization: HebrewSearchNormalization | None = None,
+    structural_heading: StructuralHeadingNormalization | None = None,
 ) -> tuple[str, list[dict[str, Any]], bool]:
     if simulate_failure:
         raise RuntimeError("simulated_ai_render_failure")
@@ -775,11 +1054,22 @@ async def render_grounded_answer(
         "english_name_exact/normalized sobre fuentes semánticas, e indicá obra, "
         "página y evidence_id. No conviertas el nombre en una pregunta relacional "
         "ni agregues biografía externa."
+        " Si filtros.query_shape es structural_heading, tratá el título como una "
+        "consulta válida: indicá dónde aparece y explicá únicamente lo que desarrolla "
+        "el fragmento asociado. Citá obra, página física, página impresa, sección y "
+        "evidence_id. No escribas metacomentarios como 'no hay una pregunta', "
+        "'PREGUNTA ORIGINAL' o 'con las fuentes provistas'."
         " Para hebreo, no afirmes que una frase no existe en el corpus: solo que "
         "no aparece en las fuentes recuperadas. No uses semantic_only como prueba "
         "literal. Si aparece exacta o normalizada, indicá obra, sección y página."
     )
-    context_pack = _context_pack(original_query, filters, chunks, normalization)
+    context_pack = _context_pack(
+        original_query,
+        filters,
+        chunks,
+        normalization,
+        structural_heading,
+    )
     allowed_ids = [chunk["evidence_id"] for chunk in chunks]
     last_error: Exception | None = None
     async with httpx.AsyncClient(timeout=LITELLM_TIMEOUT_SECONDS) as client:
@@ -859,6 +1149,10 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "hit_id": evidence_id,
         "evidence_id": evidence_id,
         "chunk_id": str(chunk["chunk_id"]),
+        "associated_chunk_id": chunk.get("associated_chunk_id"),
+        "heading_original": chunk.get("heading_original"),
+        "heading_normalized": chunk.get("heading_normalized"),
+        "matched_variant": chunk.get("matched_variant"),
         "content_node_id": (
             str(chunk["content_node_id"])
             if chunk.get("content_node_id")
@@ -902,8 +1196,14 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "matched_concepts": [],
         "is_primary": evidence_id in primary_ids,
         "source_layer": _source_layer(chunk),
-        "source_layer_confidence": "medium",
-        "source_layer_rationale": "canonical_chunk_metadata",
+        "source_layer_confidence": (
+            "high" if match_type.startswith("structural_heading_") else "medium"
+        ),
+        "source_layer_rationale": (
+            "structural_heading_with_associated_canonical_body"
+            if match_type.startswith("structural_heading_")
+            else "canonical_chunk_metadata"
+        ),
         "is_original_language": True,
         "is_primary_language_match": language == chunk.get("query_language"),
         "is_translation": False,
@@ -911,7 +1211,9 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "parallel_texts": [],
         "language_match": "exact" if language == chunk.get("query_language") else "secondary",
         "literal_match_kind": (
-            "normalized"
+            match_type
+            if match_type.startswith("structural_heading_")
+            else "normalized"
             if match_type in {"hebrew_exact_normalized", "english_name_variant"}
             else "exact_phrase" if chunk.get("exact_match") else "semantic"
         ),
@@ -929,7 +1231,11 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "physical_file_name": chunk.get("physical_file_name"),
         "source_sha256": chunk.get("source_sha256"),
         "author_quote_status": "not_confirmed",
-        "attribution_label": "Markdown canónico recuperado desde PostgreSQL",
+        "attribution_label": (
+            "Encabezado estructural y contexto canónico recuperados desde PostgreSQL"
+            if match_type.startswith("structural_heading_")
+            else "Markdown canónico recuperado desde PostgreSQL"
+        ),
         "raw_snippet": markdown,
         "snippet_sanitized": False,
         "sanitization_reason_codes": [],
@@ -974,9 +1280,6 @@ async def run_simple_rag(
             "La normalización hebrea no estuvo disponible; se conservaron la "
             "consulta original y las búsquedas de respaldo."
         )
-    variants = build_query_variants(original_query)
-    if english_name_query:
-        filters["query_shape"] = "short_proper_name"
     latency: dict[str, float] = {}
 
     documents = await resolve_ready_documents(
@@ -986,6 +1289,68 @@ async def run_simple_rag(
         include_test_candidates=filters["include_test_candidates"],
     )
     document_ids = [str(item["document_id"]) for item in documents]
+
+    structural_normalization_started = time.perf_counter()
+    structural_heading_query = (
+        normalize_structural_heading_for_search(original_query)
+        if is_structural_heading_candidate_shape(original_query)
+        else None
+    )
+    latency["structural_normalization_ms"] = round(
+        (time.perf_counter() - structural_normalization_started) * 1000,
+        2,
+    )
+    structural_lookup_only = bool(
+        structural_heading_query and has_editorial_heading_form(original_query)
+    )
+    structural_started = time.perf_counter()
+    structural_status = "not_applicable"
+    structural: list[dict[str, Any]] = []
+    if structural_heading_query is not None:
+        try:
+            raw_structural = await search_structural_heading_candidates(
+                conn,
+                knowledge_scope_code=filters["scope"],
+                normalized_query=structural_heading_query.normalized,
+                accent_folded_query=structural_heading_query.accent_folded,
+                hebrew_query=has_hebrew(original_query),
+                languages=filters["languages"],
+                document_ids=document_ids if filters["works"] else None,
+                top_k=LITERAL_TOP_K,
+                include_test_candidates=filters["include_test_candidates"],
+            )
+            structural = classify_structural_heading_candidates(
+                structural_heading_query,
+                raw_structural,
+            )
+            structural_status = "ok"
+        except Exception:
+            structural_status = "failed"
+            warnings.append(
+                "La búsqueda de encabezados estructurales no estuvo disponible; "
+                "continuaron las capas literal y semántica."
+            )
+    latency["structural_heading_ms"] = round(
+        (time.perf_counter() - structural_started) * 1000,
+        2,
+    )
+    if structural:
+        english_name_query = None
+        query_language = detect_language(original_query)
+        filters["query_language"] = query_language
+        filters["query_shape"] = "structural_heading"
+    elif english_name_query:
+        filters["query_shape"] = "short_proper_name"
+    variants = (
+        list(dict.fromkeys([
+            original_query,
+            structural_heading_query.normalized,
+            structural_heading_query.accent_folded,
+        ]))
+        if structural
+        else build_query_variants(original_query)
+    )
+
     semantic_task = asyncio.create_task(asyncio.to_thread(
         _semantic_search_variants,
         original_query,
@@ -1040,10 +1405,16 @@ async def run_simple_rag(
                 top_k=LITERAL_TOP_K,
                 include_test_candidates=filters["include_test_candidates"],
             )
+        # Structural matches are applied last so a generic body/FTS hit for the
+        # same chunk cannot erase first-class heading metadata during fusion.
+        literal = [*literal, *structural]
     except Exception:
-        literal = []
+        literal = list(structural)
         literal_status = "failed"
-        warnings.append("La búsqueda literal no estuvo disponible; se utilizó recuperación semántica.")
+        warnings.append(
+            "La búsqueda literal general no estuvo disponible; se conservaron "
+            "los encabezados estructurales recuperados y la capa semántica."
+        )
     latency["literal_ms"] = round((time.perf_counter() - literal_started) * 1000, 2)
 
     semantic_status = "ok"
@@ -1056,40 +1427,69 @@ async def run_simple_rag(
         warnings.append("La búsqueda semántica no estuvo disponible; se utilizó búsqueda literal.")
     latency["embedding_and_milvus_ms"] = float(embedding_metadata.get("latency_ms") or 0.0)
 
+    merge_started = time.perf_counter()
     ranked = merge_results(
         semantic,
         literal,
         query_language=query_language,
         english_name_query=english_name_query,
+        structural_heading_query=(structural_heading_query if structural else None),
     )
+    latency["merge_ms"] = round((time.perf_counter() - merge_started) * 1000, 2)
     fetch_started = time.perf_counter()
+    fetch_ids = list(dict.fromkeys([
+        str(identifier)
+        for item in ranked
+        for identifier in (item.get("chunk_id"), item.get("associated_chunk_id"))
+        if identifier
+    ]))
     canonical = await fetch_canonical_chunks(
         conn,
         knowledge_scope_code=filters["scope"],
-        chunk_ids=[item["chunk_id"] for item in ranked],
+        chunk_ids=fetch_ids,
         include_test_candidates=filters["include_test_candidates"],
     )
     latency["fetch_chunks_ms"] = round((time.perf_counter() - fetch_started) * 1000, 2)
     canonical_by_id = {str(item["chunk_id"]): item for item in canonical}
+    association_started = time.perf_counter()
+    _attach_structural_heading_contexts(canonical_by_id, ranked)
+    latency["heading_body_association_ms"] = round(
+        (time.perf_counter() - association_started) * 1000,
+        2,
+    )
     selected = select_context(
         ranked,
         canonical_by_id,
         explicit_work_filter=bool(filters["works"]),
     )
-    if english_name_query is not None:
+    if structural_lookup_only and not structural:
+        selected = []
+    if structural:
+        heading_chunks = [
+            chunk
+            for chunk in selected
+            if chunk.get("literal_match_type")
+            in STRUCTURAL_HEADING_PRIMARY_MATCH_TYPES
+        ]
+        if heading_chunks:
+            selected = heading_chunks[:1]
+    elif english_name_query is not None:
         exact_name_chunks = [
             chunk
             for chunk in selected
             if chunk.get("literal_match_type") == "english_name_exact"
         ]
         if exact_name_chunks:
-            selected = exact_name_chunks[:4]
+            selected = exact_name_chunks[:1]
     for chunk in selected:
         chunk["evidence_id"] = _evidence_id(str(chunk["chunk_id"]))
         chunk["canonical_pdf_page_start"] = chunk.get("pdf_page")
         chunk["pdf_page"] = _match_local_pdf_page(chunk)
         if normalization:
             chunk["matched_terms"] = list(normalization.tokens)
+            chunk.setdefault("literal_match_type", "semantic_only")
+        elif structural:
+            chunk["matched_terms"] = list(structural_heading_query.tokens)
             chunk.setdefault("literal_match_type", "semantic_only")
         elif english_name_query:
             chunk["matched_terms"] = list(english_name_query.nominal_tokens)
@@ -1128,6 +1528,8 @@ async def run_simple_rag(
             }
             if normalization:
                 render_options["normalization"] = normalization
+            if structural:
+                render_options["structural_heading"] = structural_heading_query
             answer, claims, ai_used = await render_grounded_answer(
                 original_query,
                 filters,
@@ -1163,6 +1565,11 @@ async def run_simple_rag(
                 and selected[0].get("literal_match_type") == "english_name_exact"
             )
             or selected[0].get("literal_match_type") == "hebrew_exact_normalized"
+            or selected[0].get("literal_match_type") in {
+                "structural_heading_exact",
+                "structural_heading_normalized",
+                "structural_heading_accent_folded",
+            }
         )
         if (
             research_status == "complete"
@@ -1178,9 +1585,15 @@ async def run_simple_rag(
             chunk,
             query_language=query_language,
             english_name_query=english_name_query,
+            structural_heading_query=(structural_heading_query if structural else None),
         )
     }
-    if query_language == "he" or english_name_query is not None:
+    priority_literal_query = (
+        query_language == "he"
+        or english_name_query is not None
+        or bool(structural)
+    )
+    if priority_literal_query:
         best_primary_id = next((
             chunk["evidence_id"]
             for chunk in selected
@@ -1210,7 +1623,7 @@ async def run_simple_rag(
         for claim in claims
         if claim.get("primary_evidence_id") in primary_eligible_ids
     ))
-    if (query_language == "he" or english_name_query is not None) and primary_ids:
+    if priority_literal_query and primary_ids:
         primary_ids = [
             chunk["evidence_id"]
             for chunk in selected
@@ -1223,7 +1636,7 @@ async def run_simple_rag(
             if chunk["evidence_id"] in primary_eligible_ids
         ][:1]
     if (
-        (query_language == "he" or english_name_query is not None)
+        priority_literal_query
         and selected
         and not primary_ids
         and research_status == "complete"
@@ -1262,6 +1675,9 @@ async def run_simple_rag(
         "combined_score": chunk.get("combined_score"),
         "retrieval_sources": chunk.get("retrieval_sources"),
         "literal_match_type": chunk.get("literal_match_type", "semantic_only"),
+        "associated_chunk_id": chunk.get("associated_chunk_id"),
+        "heading_original": chunk.get("heading_original"),
+        "heading_normalized": chunk.get("heading_normalized"),
         "content_node_id": (
             str(chunk["content_node_id"])
             if chunk.get("content_node_id")
@@ -1277,19 +1693,38 @@ async def run_simple_rag(
     duration_ms = round((time.perf_counter() - started) * 1000, 2)
     latency["total_ms"] = duration_ms
     request_id = hashlib.sha256(f"{time.time_ns()}:{original_query}".encode()).hexdigest()[:16]
+    query_shape = (
+        "structural_heading"
+        if structural
+        else "short_proper_name" if english_name_query else "general"
+    )
+    matched_query_tokens = (
+        list(structural_heading_query.tokens)
+        if structural
+        else list(english_name_query.nominal_tokens) if english_name_query else []
+    )
+    normalized_heading_hash = (
+        hashlib.sha256(structural_heading_query.normalized.encode()).hexdigest()
+        if structural
+        else None
+    )
     logger.info(
         "simple_rag request_id=%s original_query_hash=%s query_language=%s "
         "normalization_applied=%s artificial_spacing_detected=%s "
-        "query_shape=%s filters=%s milvus_status=%s literal_status=%s "
+        "query_shape=%s normalized_heading_hash=%s structural_status=%s "
+        "filters=%s milvus_status=%s literal_status=%s "
         "milvus_hits=%s literal_hits=%s selected_chunks=%s "
         "primary_match_type=%s matched_tokens=%s selected_primary=%s "
+        "primary_document_id=%s primary_chunk_id=%s pdf_page=%s printed_page=%s "
         "ai_status=%s fallback=%s latency_ms=%s",
         request_id,
         hashlib.sha256(original_query.encode()).hexdigest(),
         query_language,
         normalization is not None,
         bool(normalization and normalization.artificial_spacing_detected),
-        "short_proper_name" if english_name_query else "general",
+        query_shape,
+        normalized_heading_hash,
+        structural_status,
         filters,
         semantic_status,
         literal_status,
@@ -1297,8 +1732,12 @@ async def run_simple_rag(
         len(literal),
         len(selected),
         primary_match_type,
-        list(english_name_query.nominal_tokens) if english_name_query else [],
+        matched_query_tokens,
         bool(primary_ids),
+        selected[0].get("document_id") if selected else None,
+        selected[0].get("chunk_id") if selected else None,
+        selected[0].get("pdf_page") if selected else None,
+        selected[0].get("printed_page") if selected else None,
         ai_status,
         research_status == "degraded",
         latency,
@@ -1347,10 +1786,17 @@ async def run_simple_rag(
             "literal_hits": len(literal),
             "selected_chunks": len(selected),
             "query_language": query_language,
-            "query_shape": (
-                "short_proper_name" if english_name_query else "general"
-            ),
+            "query_shape": query_shape,
             "query_variants": variants,
+            "structural_status": structural_status,
+            "structural_hits": len(structural),
+            "structural_normalization": ({
+                "original": structural_heading_query.original,
+                "normalized": structural_heading_query.normalized,
+                "accent_folded": structural_heading_query.accent_folded,
+                "tokens": list(structural_heading_query.tokens),
+                "leading_section_number": structural_heading_query.leading_section_number,
+            } if structural else None),
             "normalization": ({
                 "without_niqqud": normalization.without_niqqud,
                 "tokens": list(normalization.tokens),
@@ -1358,11 +1804,7 @@ async def run_simple_rag(
                 "rtl_controls_removed": normalization.rtl_controls_removed,
             } if normalization else None),
             "primary_match_type": primary_match_type,
-            "matched_tokens": (
-                list(english_name_query.nominal_tokens)
-                if english_name_query
-                else []
-            ),
+            "matched_tokens": matched_query_tokens,
         },
         "processing": {
             "ai_interpretation_used": False,
@@ -1380,7 +1822,9 @@ async def run_simple_rag(
             "used_ai_rendering": ai_used,
             "used_deterministic_fallback": not ai_used and bool(selected),
             "used_vector": bool(semantic),
-            "retrieval_modes": ["milvus", "literal", "fts", "trigram"],
+            "retrieval_modes": [
+                "structural_heading", "milvus", "literal", "fts", "trigram"
+            ],
             "duration_ms": duration_ms,
             "latency_ms": latency,
             "request_id": request_id,
@@ -1398,9 +1842,15 @@ async def run_simple_rag(
         "warnings": list(dict.fromkeys(warnings)),
         "query_understanding": {
             "original_query": original_query,
-            "intent": "unknown",
-            "operation": "simple_grounded_retrieval",
-            "subject_type": "query",
+            "intent": (
+                "structural_reference_lookup" if structural else "unknown"
+            ),
+            "operation": (
+                "structural_heading_lookup"
+                if structural
+                else "simple_grounded_retrieval"
+            ),
+            "subject_type": "structural_heading" if structural else "query",
             "subject_raw": original_query,
             "subject_canonical": original_query,
             "ai_used": False,

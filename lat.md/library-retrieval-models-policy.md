@@ -127,6 +127,14 @@ produce an explicit partial result, and never establish editorial identity by
 themselves. The accepted DEV design is recorded in
 `docs/adr/ADR-009-short-proper-name-literal-retrieval.md`.
 
+Short title and section-heading lookups are classified from query form plus an
+actual structural match in PostgreSQL. Exact, normalized and accent-folded
+headings outrank body literals and semantic-only candidates. A structural match
+may join an existing heading chunk to its immediate canonical body chunk, while
+preserving both physical PDF and printed pagination. A semantic-only result
+without the heading tokens cannot be primary. The accepted DEV design is
+recorded in `docs/adr/ADR-010-structural-heading-literal-retrieval.md`.
+
 `POST /library/search` continues to retrieve bibliographic evidence only. It does not call a generative model or return interpretative synthesis. `POST /library/investigative-qa/v1` may call the same model solely for schema-validated multilingual query understanding and evidence-bound rendering under ADR-005; retrieval remains deterministic and downstream.
 
 ## Investigative Relation QA

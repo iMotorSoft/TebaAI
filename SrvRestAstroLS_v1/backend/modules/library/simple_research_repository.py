@@ -59,6 +59,121 @@ async def resolve_ready_documents(
     ]
 
 
+async def search_structural_heading_candidates(
+    conn: AsyncConnection,
+    *,
+    knowledge_scope_code: str,
+    normalized_query: str,
+    accent_folded_query: str,
+    hebrew_query: bool,
+    languages: list[str],
+    document_ids: list[str] | None,
+    top_k: int,
+    include_test_candidates: bool = False,
+) -> list[dict[str, Any]]:
+    """Return a bounded set of existing title/heading fields for Python classification.
+
+    Indexed normalized text covers ordinary chunks. The short-null branch is limited
+    to compact layout blocks from DEV test candidates whose ingestion predates
+    ``search_text_normalized``.
+    """
+    return await fetch_all(
+        conn,
+        """
+        SELECT
+            ch.id AS chunk_id,
+            ch.document_id,
+            ch.chunk_index,
+            ch.content,
+            ch.section_title,
+            ch.block_type,
+            ch.evidence_role,
+            ch.citable,
+            ch.page_start,
+            ch.page_end,
+            ch.printed_page_label,
+            ch.search_text_normalized,
+            d.status AS document_status,
+            body.id AS associated_chunk_id
+        FROM library_document_chunks ch
+        JOIN library_documents d ON d.id = ch.document_id
+        JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+        LEFT JOIN LATERAL (
+            SELECT candidate.id
+            FROM library_document_chunks candidate
+            WHERE candidate.document_id = ch.document_id
+              AND candidate.chunk_index > ch.chunk_index
+              AND candidate.page_start = ch.page_start
+              AND candidate.citable = true
+              AND length(trim(candidate.content)) >= 40
+              AND (
+                    ch.block_type IS NULL
+                    OR candidate.block_type = ch.block_type
+                    OR ch.section_title IS NOT NULL
+              )
+            ORDER BY candidate.chunk_index
+            LIMIT 1
+        ) body ON true
+        WHERE ks.knowledge_scope_code = %(scope)s
+          AND (
+                d.status = 'ready'
+                OR (%(include_test)s AND d.status = 'test_candidate')
+          )
+          AND ch.language = ANY(%(languages)s::text[])
+          AND (
+                %(document_ids)s::uuid[] IS NULL
+                OR ch.document_id = ANY(%(document_ids)s::uuid[])
+          )
+          AND (
+                lower(coalesce(ch.section_title, ''))
+                    LIKE '%%' || %(normalized_query)s || '%%'
+                OR public.unaccent(lower(coalesce(ch.section_title, '')))
+                    LIKE '%%' || %(query)s || '%%'
+                OR (
+                    %(hebrew_query)s
+                    AND lower(ch.content) LIKE '%%' || %(normalized_query)s || '%%'
+                )
+                OR ch.search_text_normalized ILIKE '%%' || %(query)s || '%%'
+                OR (
+                    %(include_test)s
+                    AND d.status = 'test_candidate'
+                    AND ch.search_text_normalized IS NULL
+                    AND length(ch.content) <= 320
+                    AND public.unaccent(lower(ch.content))
+                        LIKE '%%' || %(query)s || '%%'
+                )
+          )
+        ORDER BY
+            CASE
+                WHEN lower(coalesce(ch.section_title, '')) = %(normalized_query)s
+                    OR public.unaccent(lower(coalesce(ch.section_title, ''))) = %(query)s
+                    THEN 0
+                WHEN (
+                        %(hebrew_query)s
+                        AND lower(ch.content) LIKE '%%' || %(normalized_query)s || '%%'
+                    )
+                    OR public.unaccent(lower(ch.content)) LIKE '%%' || %(query)s || '%%'
+                    THEN 1
+                ELSE 2
+            END,
+            length(ch.content),
+            ch.document_id,
+            ch.chunk_index
+        LIMIT %(limit)s
+        """,
+        {
+            "scope": knowledge_scope_code,
+            "normalized_query": normalized_query,
+            "query": accent_folded_query,
+            "hebrew_query": hebrew_query,
+            "languages": languages,
+            "document_ids": document_ids or None,
+            "include_test": include_test_candidates,
+            "limit": top_k,
+        },
+    )
+
+
 async def search_literal_candidates(
     conn: AsyncConnection,
     *,
@@ -249,11 +364,28 @@ async def fetch_canonical_chunks(
             ch.id AS chunk_id,
             ch.document_id,
             d.document_code,
-            d.title AS work,
+            coalesce(
+                (
+                    SELECT canonical_document.title
+                    FROM library_documents canonical_document
+                    WHERE canonical_document.source_sha256 = d.source_sha256
+                      AND (
+                            canonical_document.status = 'ready'
+                            OR canonical_document.document_code IS NOT NULL
+                      )
+                    ORDER BY
+                        CASE WHEN canonical_document.status = 'ready' THEN 0 ELSE 1 END,
+                        CASE WHEN canonical_document.document_code IS NOT NULL THEN 0 ELSE 1 END,
+                        canonical_document.created_at DESC
+                    LIMIT 1
+                ),
+                d.title
+            ) AS work,
             d.author,
             d.source_filename AS physical_file_name,
             d.source_sha256,
             d.canonical_text_role,
+            d.status AS document_status,
             ch.language,
             ch.content AS markdown,
             ch.content_sha256,
@@ -271,11 +403,18 @@ async def fetch_canonical_chunks(
         JOIN library_documents d ON d.id = ch.document_id
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(scope)s
-          AND d.status = 'ready'
+          AND (
+                d.status = 'ready'
+                OR (%(include_test)s AND d.status = 'test_candidate')
+          )
           AND ch.citable = true
           AND ch.id = ANY(%(chunk_ids)s::uuid[])
         """,
-        {"scope": knowledge_scope_code, "chunk_ids": chunk_ids},
+        {
+            "scope": knowledge_scope_code,
+            "chunk_ids": chunk_ids,
+            "include_test": include_test_candidates,
+        },
     )
     if not include_test_candidates:
         return chunks

@@ -1,0 +1,107 @@
+[
+  {
+    "query": "CONSTRUYENDO UN MISHKÁN",
+    "mode": "ilike",
+    "hits": 1,
+    "target_heading_hit": true,
+    "latency_ms": 41.722
+  },
+  {
+    "query": "CONSTRUYENDO UN MISHKÁN",
+    "mode": "fts",
+    "hits": 0,
+    "target_heading_hit": false,
+    "latency_ms": 262.957
+  },
+  {
+    "query": "CONSTRUYENDO UN MISHKÁN",
+    "mode": "trigram",
+    "hits": 0,
+    "target_heading_hit": false,
+    "latency_ms": 24.974
+  },
+  {
+    "query": "construyendo un mishkán",
+    "mode": "ilike",
+    "hits": 1,
+    "target_heading_hit": true,
+    "latency_ms": 49.527
+  },
+  {
+    "query": "construyendo un mishkán",
+    "mode": "fts",
+    "hits": 0,
+    "target_heading_hit": false,
+    "latency_ms": 0.946
+  },
+  {
+    "query": "construyendo un mishkán",
+    "mode": "trigram",
+    "hits": 0,
+    "target_heading_hit": false,
+    "latency_ms": 8.532
+  },
+  {
+    "query": "construyendo un mishkan",
+    "mode": "ilike",
+    "hits": 1,
+    "target_heading_hit": true,
+    "latency_ms": 37.971
+  },
+  {
+    "query": "construyendo un mishkan",
+    "mode": "fts",
+    "hits": 14,
+    "target_heading_hit": true,
+    "latency_ms": 11.904
+  },
+  {
+    "query": "construyendo un mishkan",
+    "mode": "trigram",
+    "hits": 0,
+    "target_heading_hit": false,
+    "latency_ms": 7.726
+  },
+  {
+    "query": "mishkán",
+    "mode": "ilike",
+    "hits": 20,
+    "target_heading_hit": true,
+    "latency_ms": 10.36
+  },
+  {
+    "query": "mishkán",
+    "mode": "fts",
+    "hits": 0,
+    "target_heading_hit": false,
+    "latency_ms": 0.748
+  },
+  {
+    "query": "mishkán",
+    "mode": "trigram",
+    "hits": 0,
+    "target_heading_hit": false,
+    "latency_ms": 4.164
+  },
+  {
+    "query": "mishkan",
+    "mode": "ilike",
+    "hits": 20,
+    "target_heading_hit": true,
+    "latency_ms": 9.986
+  },
+  {
+    "query": "mishkan",
+    "mode": "fts",
+    "hits": 20,
+    "target_heading_hit": true,
+    "latency_ms": 0.967
+  },
+  {
+    "query": "mishkan",
+    "mode": "trigram",
+    "hits": 0,
+    "target_heading_hit": false,
+    "latency_ms": 3.88
+  }
+]

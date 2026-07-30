@@ -1,0 +1,528 @@
+{
+  "environment": "DEV",
+  "auth": "admin credentials omitted",
+  "results": [
+    {
+      "family": "likutey_halajot",
+      "query": "3. DESPERTANDO LOS PUNTOS BUENOS",
+      "http_status": 200,
+      "elapsed_ms": 5838.83,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-0239dad572992f96"
+      ],
+      "answer_markdown": "En el apartado **3. DESPERTANDO LOS PUNTOS BUENOS**, se presenta la idea de que el “despertar del sueño espiritual” depende de **encontrar los propios puntos buenos**; luego, el texto anuncia que se **demostrará la conexión** entre esos puntos buenos personales y el **despertar antes del alba**. [ev-0239dad572992f96]",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "primary": {
+        "evidence_id": "ev-0239dad572992f96",
+        "chunk_id": "199f3d0e-4531-420d-ab7c-60866928ee98",
+        "associated_chunk_id": "0a0f02a5-8c04-4f38-acdf-88c3c573d9a8",
+        "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+        "work_title": "Likutey Halajot",
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 47,
+        "printed_page": 29,
+        "section": "3. DESPERTANDO LOS PUNTOS BUENOS",
+        "heading_original": "3 ■ DESPERTANDO LOS PUNTOS BUENOS",
+        "heading_normalized": "despertando los puntos buenos",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "3 ■ DESPERTANDO LOS PUNTOS BUENOS El Rabí Natán ha explicado hasta aquí que el despertar del sueño espiritual requiere encontrar los propios puntos buenos. A continuación demostrará la conexión entre los puntos buenos de la persona y el despertar antes del alba."
+      }
+    },
+    {
+      "family": "likutey_halajot",
+      "query": "CONSTRUYENDO UN MISHKAN",
+      "http_status": 200,
+      "elapsed_ms": 6463.95,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_accent_folded",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-bf5ac6e2fbf46812"
+      ],
+      "answer_markdown": "En el fragmento titulado **“4 ■ CONSTRUYENDO UN MISHKÁN”** se presenta la conclusión de la explicación del Rabí Natán sobre la capacidad de Moshé de hallar el bien incluso en quienes son “menos dignos”, y se vincula ese uso de “puntos buenos” con la construcción del Mishkán como **tikún** (reparación) por el pecado del becerro de oro. [ev-bf5ac6e2fbf46812]",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "primary": {
+        "evidence_id": "ev-bf5ac6e2fbf46812",
+        "chunk_id": "91aba034-7a02-4520-aa1c-3f29be2741be",
+        "associated_chunk_id": "d0ae8b80-0947-4503-a45f-11e4b9c7d0ff",
+        "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+        "work_title": "Likutey Halajot",
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 51,
+        "printed_page": 33,
+        "section": "4. CONSTRUYENDO UN MISHKÁN",
+        "heading_original": "4 ■ CONSTRUYENDO UN MISHKÁN",
+        "heading_normalized": "construyendo un mishkán",
+        "literal_match_kind": "structural_heading_accent_folded",
+        "source_layer": "section_heading",
+        "snippet": "4 ■ CONSTRUYENDO UN MISHKÁN El Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar el bien incluso en el menos digno de los judíos y de cómo utilizó entonces esos puntos buenos para construir el Mishkán como un tikún para el pecado del becerro de oro."
+      }
+    },
+    {
+      "family": "likutey_halajot",
+      "query": "Inclinado hacia la bondad",
+      "http_status": 200,
+      "elapsed_ms": 6113.09,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-b9c8c36d20630de0"
+      ],
+      "answer_markdown": "El fragmento bajo el encabezado **“5 ■ INCLINADO HACIA LA BONDAD”** aparece en *Likutey Halajot*, sección **5. INCLINADO HACIA LA BONDAD** (PDF **53**, impresa **35**) [ev-b9c8c36d20630de0]. En el chunk asociado se indica que el Rabí Natán **continúa** con su interpretación del versículo de *Tehilim* citado al comienzo de §3 y luego **retoma** la explicación de la ley del *Shuljan Aruj* [ev-b9c8c36d20630de0].",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "primary": {
+        "evidence_id": "ev-b9c8c36d20630de0",
+        "chunk_id": "b924d168-e675-4c88-9e50-27da17aa5c45",
+        "associated_chunk_id": "0cc80c0b-eb55-4266-af39-247e4aa51d3a",
+        "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+        "work_title": "Likutey Halajot",
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 53,
+        "printed_page": 35,
+        "section": "5. INCLINADO HACIA LA BONDAD",
+        "heading_original": "5 ■ INCLINADO HACIA LA BONDAD",
+        "heading_normalized": "inclinado hacia la bondad",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "5 ■ INCLINADO HACIA LA BONDAD El Rabí Natán completa a continuación su interpretación del versículo de los Tehilim citado al comienzo de §3 y luego retorna a explicar la ley del Shuljan Aruj."
+      }
+    },
+    {
+      "family": "likutey_halajot",
+      "query": "ELEVANDO EL HABLA",
+      "http_status": 200,
+      "elapsed_ms": 6261.65,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-39f1af296ea2364d"
+      ],
+      "answer_markdown": "## 7 ■ ELEVANDO EL HABLA [ev-39f1af296ea2364d]\n\nEl fragmento desarrolla el tema de **“elevando el habla”** como un apartado dentro de *Likutey Halajot* (sección 7), presentado como encabezado estructural exacto. [ev-39f1af296ea2364d]",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "primary": {
+        "evidence_id": "ev-39f1af296ea2364d",
+        "chunk_id": "0f33bb5b-3d65-4ce3-80a0-bffeb9b8b9a4",
+        "associated_chunk_id": "11860bd6-eb73-40a3-be2d-bd201d14b55f",
+        "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+        "work_title": "Likutey Halajot",
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 59,
+        "printed_page": 41,
+        "section": "7. ELEVANDO EL HABLA",
+        "heading_original": "7 ■ ELEVANDO EL HABLA",
+        "heading_normalized": "elevando el habla",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "7 ■ ELEVANDO EL HABLA נֵא אתסע נóיצצעס י נע אל רןיאמ עתראפ עד אל עתנעיץגיס לע מבאּר נבתאן ברארתסןמעד עץק לע ןסנעצסא לאפיצנירפ לעד נעיב עס עצץדןרפ נע אל אמרןפ לעד רץביד, לעד אלבאה - נע ראלץציתראפ ןמןצ איראגעלפ. אּל בלאבאך אñעסנע עץק רץביד סע ןמינóניס עד תץטלאם, אל נóיצאתסעפינאמ עד אל בניטעהש נע לע ןדנץמ. רןף ןל ןתנאת ןדנאץצ אל בניטעהש בתסע אתלץצן לעד ערבמןה, עד ןדןמ עץק עס עציד עץק תץטלאם בתסע נע לע ןיליחע, לע רץביד נéיבמאת בתסע ןדאתיליבעד. אּל אנןסרעפ סע סעצנןתנע זאפאצני עד רירבא אל אצןב אראפ עלראלבאה א מעהשאּה. עתנעמלאץתיריפסֵא, סע ןמןצ נץ ןדץמ. עש עתנעיס סןטעל עד מעהשאּה י סע זאפאצני עד רארן. סץש סארבאלאפ נבתסע נע לע ןיליחע. ןרעף יס עס אצלעץצ סעצנןתנע א אל נóיצצעפסןרתני י ארתנעץצנע סץס סןתנץפ סןנעץב, ןדנאנרןתער סעצנןתנע א מעהשאּה נע בצץהסעת, ץס רץביד עדנעיצסא עדסעד לע ןיליחע. לֵא ןלץצבניפ עד ץס ןסנעצסא עס אתסעיפינאמ ןמןצ אל דץתינעלפ לעד אלבאה עץק אל אנןסרעפ אזנאצלא לא ראתיצער סאל ענןמה"
+      }
+    },
+    {
+      "family": "likutey_halajot",
+      "query": "DIVIDIENDO LA NOCHE",
+      "http_status": 200,
+      "elapsed_ms": 7451.24,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-ee31e27da60804ac"
+      ],
+      "answer_markdown": "En **Likutey Halajot**, sección **13. DIVIDIENDO LA NOCHE**, el texto presenta el desarrollo del tema de **jatzot** y explica **por qué el éxodo de Egipto ocurrió específicamente a medianoche**. [ev-ee31e27da60804ac]",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "primary": {
+        "evidence_id": "ev-ee31e27da60804ac",
+        "chunk_id": "45cb6fb2-13b0-46e6-adbf-36416cb6b6fb",
+        "associated_chunk_id": "a680e3d4-9bd8-4349-8594-90fc066409ff",
+        "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+        "work_title": "Likutey Halajot",
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 88,
+        "printed_page": 70,
+        "section": "13. DIVIDIENDO LA NOCHE",
+        "heading_original": "13 ■ DIVIDIENDO LA NOCHE",
+        "heading_normalized": "dividiendo la noche",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "13 ■ DIVIDIENDO LA NOCHE El Rabí Natán desarrolla aún más el tema de jatzot y, de esta manera, explica por qué el éxodo de Egipto tuvo lugar específicamente a medianoche."
+      }
+    },
+    {
+      "family": "kitzur",
+      "query": "14 - Para Traer Paz",
+      "http_status": 200,
+      "elapsed_ms": 7704.73,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-4854b034a9fba791"
+      ],
+      "answer_markdown": "## **14 - Para Traer Paz** [ev-4854b034a9fba791]\n\nEn la lección 14 se presenta que el “honor más grande de Dios” ocurre cuando quienes están muy alejados comienzan a acercarse a Él, y que ese retorno “trae paz al mundo” [ev-4854b034a9fba791]. También se afirma que, cuando personas “que están afuera” entran a la santidad (ya sea prosélitos o judíos alejados que retornan), el honor se eleva a su raíz —el temor sagrado— y eso trae paz [ev-4854b034a9fba791]. Finalmente, se indica que “Mediante la Torá” es posible acercar a los prosélitos y a quienes retornan a la fe, mostrándoles el sendero que deben tomar [ev-4854b034a9fba791].",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-4854b034a9fba791",
+        "chunk_id": "3b7eee80-ef16-4c3f-8490-22f81eb104d7",
+        "associated_chunk_id": null,
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "work_title": "KITZUR",
+        "physical_file_name": "KITZUR ultimo(createspace).pdf",
+        "physical_pdf_page": 57,
+        "printed_page": null,
+        "section": "14. Para Traer Paz",
+        "heading_original": "## **14 - Para Traer Paz**",
+        "heading_normalized": "para traer paz",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "rnar a Dios, deberá pedirle y rogarle a Dios que le permita, en Su bondad, acercarse a un Tzadik así - uno lo suficientemente fuerte como para elevar y renovar para bien incluso su alma. ¡Feliz de aquél que merece encontrar un Tzadik así! ## Page 57 Lección 14 5 Jeshvan ## **14 - Para Traer Paz** 1. El honor más grande de Dios tiene lugar cuando aquellos que están muy alejados comienzan a acercarse a Él. Pues en ese momento, “El Nombre del Santo, bendito sea, asciende y es glorificado, arriba y abajo” (Zohar II, 69a) y aumenta así el honor de Dios en el mundo. Por lo tanto, es deber de cada uno el esforzarse para acercar a aquellos que están lejos de Dios. Más aún, nadie debe decir, “¿Cómo puedo acercarme a Dios cuando, debido a mis muchas y malas acciones, estoy tan lejos de Él?”. Pues en verdad sucede todo lo contrario: Cuanto más alejada esté la persona, más se exaltará el honor de Di"
+      }
+    },
+    {
+      "family": "kitzur",
+      "query": "La Luz Oculta",
+      "http_status": 200,
+      "elapsed_ms": 7374.42,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 2,
+      "primary_evidence_ids": [
+        "ev-85e9820140971e8e"
+      ],
+      "answer_markdown": "En **KITZUR**, sección **15 - La Luz Oculta** (p. PDF **65**), el fragmento desarrolla que quien quiera “experimentar el sabor” de la **luz oculta** debe elevar el **temor** hasta su raíz. Esa elevación se realiza mediante el **“juicio”**, entendido como **hitbodedut** y conversación con el Creador, donde la persona derrama su corazón, se evalúa y se juzga a sí misma en sus actividades; así se eliminan temores y se eleva el temor desde su lugar correcto. El texto contrasta esto con el caso en que la persona no se evalúa: entonces es evaluada y juzgada “desde arriba”, y su juicio se “invierte” en cosas del mundo, de modo que cualquier circunstancia puede funcionar como agente para ejecutar el juicio decretado contra ella (p. PDF 65) [ev-85e9820140971e8e].",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-85e9820140971e8e",
+        "chunk_id": "c3b46bbb-1ae6-4124-a791-7b333f6efccb",
+        "associated_chunk_id": null,
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "work_title": "KITZUR",
+        "physical_file_name": "KITZUR ultimo(createspace).pdf",
+        "physical_pdf_page": 65,
+        "printed_page": null,
+        "section": "15. La Luz Oculta",
+        "heading_original": "## **15 - La Luz Oculta**",
+        "heading_normalized": "la luz oculta",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "Jeremías 15:19) y dado ## Page 65 Lección 15 10 Jeshvan que KeRI y IaKaR tienen las mismas letras hebreas [ello indica una conexión conceptual]. ## **15 - La Luz Oculta** 1. Aquel que desee experimentar el sabor de la “luz oculta” -es decir, los misterios de la Torá que serán revelados en el futurodeberá elevar el aspecto del temor hasta su raíz. Esa elevación se logra mediante el “juicio” - es decir, mediante el hitbodedut y la conversación con el Creador, en la cual la persona derrama su corazón delante de Dios y se evalúa y se juzga a sí misma en todas sus actividades. De esta manera, se eliminan todos los temores y se eleva al temor desde donde esté sumido. Pues si la persona no se evalúa ni se juzga a sí misma, es entonces evaluada y juzgada desde arriba. Subsecuentemente, su juicio se “inviste” en [toda clase de] cosas y todo en el mundo se vuelve un agente de Dios para ejecutar el"
+      }
+    },
+    {
+      "family": "kitzur",
+      "query": "Agregados a la Lección Precedente",
+      "http_status": 200,
+      "elapsed_ms": 7268.47,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-009d9727250d53c8"
+      ],
+      "answer_markdown": "En **“Agregados a la Lección Precedente”** se desarrolla, dentro del mismo fragmento, una explicación sobre el **sentido del oído**: las letras del habla se “graban” en el aire, el aire golpea más aire y así sucesivamente hasta que las letras llegan al oído del oyente; por eso, si el aire está calmo y claro, el habla puede oírse a distancia, mientras que con viento tormentoso se vuelve imposible oír incluso la voz de otra persona. [ev-009d9727250d53c8]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-009d9727250d53c8",
+        "chunk_id": "d8a41a81-bd50-4401-baa0-cd2d7ba8db4b",
+        "associated_chunk_id": null,
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "work_title": "KITZUR",
+        "physical_file_name": "KITZUR ultimo(createspace).pdf",
+        "physical_pdf_page": 76,
+        "printed_page": null,
+        "section": "Agregados a la Lección Precedente",
+        "heading_original": "## **Agregados a la Lección Precedente**",
+        "heading_normalized": "agregados a la lección precedente",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "l altar y las chispas de las partes del altar retornan a su lugar. Entonces, el altar -que se asemeja a la mesa de la persona (Berajot 55a)- vuelve a estar libre de defecto alguno; en otras palabras, la persona merece comer con la santidad apropiada. ## **Agregados a la Lección Precedente** El sentido del oído funciona de la siguiente manera. Las letras del habla de la persona se graban en el aire. Ese aire “golpea” entonces más aire el cual a su vez “golpea” más aire todavía, hasta que las letras alcanzan el oído del oyente. De modo que si el aire está calmo, tranquilo y claro, el habla puede ser oída a la distancia. Pero si sopla un viento tormentoso, se vuelve imposible oír incluso el sonido de la voz de otra persona y menos aún sus palabras."
+      }
+    },
+    {
+      "family": "potencia",
+      "query": "EL SERVICIO DEL CORAZÓN",
+      "http_status": 200,
+      "elapsed_ms": 6688.33,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-553868913d06f43d"
+      ],
+      "answer_markdown": "## _**El Servicio del Corazón**_ [ev-553868913d06f43d]\n\nEl fragmento asociado desarrolla que, así como para otras tareas se requieren instrumentos adecuados, la plegaria también necesita “los instrumentos apropiados” para que ocurra. En ese marco, plantea que no se puede realizar ciertas acciones sin herramientas (ejemplos: rastrillar el jardín sin rastrillo; volar sin avión; guardar datos sin computadora) y luego pregunta: si se desea orar, ¿qué instrumentos se necesitan? [ev-553868913d06f43d]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-553868913d06f43d",
+        "chunk_id": "993af03e-c322-45a4-b40d-9640af4a90fc",
+        "associated_chunk_id": null,
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "work_title": "La Potencia de la Plegaria",
+        "physical_file_name": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+        "physical_pdf_page": 21,
+        "printed_page": null,
+        "section": "El Servicio del Corazón",
+        "heading_original": "## _**El Servicio del Corazón**_",
+        "heading_normalized": "el servicio del corazón",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "ntes en lugar de reconstruirlos. Por el contrario, decir palabras de Torá y de plegaria construye mundos. El término _Beit haKNeSet_ también implica que estamos _KoNeS_ (recolectando) las dispersas chispas[6] e infundiéndoles una nueva vida y unidad. El Rabí Natán agrega que nuestros Sabios establecieron un cierto orden para el servicio de la plegaria en la sinagoga con el objetivo de mantener la paz y la unidad. Por ejemplo, el orden en el que la gente es llamada a la lectura de la Torá -primero un _Kohen_ , luego un _Levi_ y luego un Israel- tiene el objetivo de mantener la paz entre los asistentes. Cuando hay unidad abajo, ello genera una unidad Arriba, la que se filtra hacia nosotros en la tierra para permitirnos, en la forma de bendiciones, experimentar a HaShem. Vemos así que el _sidur_ tiene el objetivo de mantener el orden en las plegarias, de guardar el orden en la sinagoga y, l"
+      }
+    },
+    {
+      "family": "potencia",
+      "query": "Los Niños Cambiados",
+      "http_status": 200,
+      "elapsed_ms": 6521.11,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 3,
+      "primary_evidence_ids": [
+        "ev-3681b89251f1bb9e"
+      ],
+      "answer_markdown": "En el fragmento bajo el encabezado **“Los Niños Cambiados”** se presenta un cuento: una criada da a luz al mismo tiempo que la reina, y la comadrona intercambia a los bebés (coloca al hijo del rey junto a la criada y al hijo de la criada junto a la reina). Con el tiempo, ambos niños crecen y estudian juntos, y se describe cómo cada uno se inclina hacia “maneras” distintas según su crianza y entorno. [ev-3681b89251f1bb9e]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-3681b89251f1bb9e",
+        "chunk_id": "28f7ddfa-ec0c-4276-91bd-a55bef88ce7b",
+        "associated_chunk_id": null,
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "work_title": "La Potencia de la Plegaria",
+        "physical_file_name": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+        "physical_pdf_page": 390,
+        "printed_page": null,
+        "section": "Los Niños Cambiados",
+        "heading_original": "## _**Los Niños Cambiados**_",
+        "heading_normalized": "los niños cambiados",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "**_ - Una persona justa _**Tzitzit**_ - La prenda de cuatro esquinas llevada por los hombres ## Page 395 ## **APÉNDICE A** ## _**Los Niños Cambiados**_ **(** _**Los Cuentos del Rabí Najmán #**_ **11)** ## **Un Cuento del Rebe Najmán de Breslov** abía un rey que tenía una criada que servía a la reina en el palacio. (Es obvio que una simple cocinera no tendría acceso al rey, pero en este caso, esta criada era una sierva de baja categoría.) Llegó el Htiempo en que la reina hubo de dar a luz. También la criada dio a luz en ese mismo momento y la comadrona intercambió a las criaturas, para ver qué sucedería y cómo se desarrollarían las circunstancias. Intercambió a los niños colocando al hijo del rey junto a la criada y al hijo de la criada junto a la reina. Con el paso del tiempo los dos niños fueron creciendo. El hijo del rey, es decir aquél niño criado en la casa del rey y que se suponía q"
+      }
+    },
+    {
+      "family": "potencia",
+      "query": "Preparacion para la Plegaria",
+      "http_status": 200,
+      "elapsed_ms": 10834.03,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_accent_folded",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-f21b5997a766af8c"
+      ],
+      "answer_markdown": "En **La Potencia de la Plegaria**, en la sección **“Preparación para la Plegaria”** (Capítulo 5), el fragmento desarrolla que, dado que las plegarias son extremadamente poderosas y pueden ascender a las alturas más elevadas, no deben esperarse “sin preparación” que alcancen al Uno Arriba. Se compara la plegaria con disparar un arco y una flecha: así como no se dispara sin preparación, tampoco se logra que la plegaria impacte en el blanco sin antes colocarse en el estado apropiado y con disciplina. Por eso, la preparación implica enviar la plegaria de manera precisa para que “den en el blanco” y sean respondidas. [ev-f21b5997a766af8c]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-f21b5997a766af8c",
+        "chunk_id": "3e828c6d-e0e1-4d1e-b3af-da3bc96411fc",
+        "associated_chunk_id": null,
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "work_title": "La Potencia de la Plegaria",
+        "physical_file_name": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+        "physical_pdf_page": 41,
+        "printed_page": null,
+        "section": "Preparación para la Plegaria",
+        "heading_original": "## _**Preparación para la Plegaria**_",
+        "heading_normalized": "preparación para la plegaria",
+        "literal_match_kind": "structural_heading_accent_folded",
+        "source_layer": "section_heading",
+        "snippet": ". Y aprendemos ## Page 40 **40**[■] **La Potencia de la Plegaria** que la fe significa plegaria, como está dicho, “Y sus manos eran _emuná_ ” (Éxodo 17:), que _Unklos_ traduce, “Sus manos estaban extendida en plegaria” ( _Likutey Moharán_ I, 9:1). _Maljut_ , representando tanto la fe como la plegaria, es la conexión o la interfaz con las energías espirituales que descienden hacia nosotros desde _Kéter_ . Dado que esas energías espirituales están fluyendo desde Arriba, nos corresponde a nosotros utilizarlas como mejor podamos para captar esa abundancia. El Rebe enseña que debemos orar con toda nuestra energía para poder renovar nuestra fuerza. Como dijo el Rabí Natán más arriba, la plegaria es algo tan grande que puede ascender hacia _Kéter_ . Cuando oramos, podemos acceder a los niveles más elevados (i.e., a las “Alturas de la Creación”), lo que permite acceder a nuestra misma esencia. #"
+      }
+    },
+    {
+      "family": "kokhavey",
+      "query": "Truth and Faith",
+      "http_status": 200,
+      "elapsed_ms": 6372.01,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 2,
+      "primary_evidence_ids": [
+        "ev-14c79606e433c530"
+      ],
+      "answer_markdown": "## Truth and Faith [ev-14c79606e433c530]\n\nEn el fragmento bajo el encabezado **“Truth and Faith”**, se vincula la esperanza de “rectificar” todo con la atención cuidadosa al **Mikveh** (inmersión), y se explica que “There is no moment without a problem and supplication” implica salvación de “bad happenings” y mérito de “goodness”. [ev-14c79606e433c530]\n\nAdemás, se interpreta la expresión “Ain rega b’lo pega” como que requiere añadir “Ain rega b’li pega”, donde “pega” puede referir tanto a un mal suceso (“pega ra”) como a una súplica. [ev-14c79606e433c530]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-14c79606e433c530",
+        "chunk_id": "67557d0e-743d-4902-922a-421923f19f89",
+        "associated_chunk_id": "c8512f25-26ba-4bac-b9d0-f712bb7562a4",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "work_title": "Kokhavey Ohr",
+        "physical_file_name": "Kokhavey Ohr layout BH_PRINT-4.pdf",
+        "physical_pdf_page": 98,
+        "printed_page": null,
+        "section": "Truth and Faith",
+        "heading_original": "## **Truth and Faith**",
+        "heading_normalized": "truth and faith",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "the matter should be rectified.[164] The verse used the term “ _Mikveh_ ” to hint at what was mentioned. Only if one is careful with immersing in the _Mikveh_ of water will there be hope that everything will be rectified. Amen, so may it be His will. I heard that Reb Noson said about the verse, “ _Ain rega b’lo pega_ [there is no moment without a problem],” that is it necessary to add, “ _Ain rega b’li pega_ [there is no moment without a supplication].”[165] For the word “ _pega_ ” bears two implications: it can refer to a bad happening _[pega ra]_ or a term of supplication. 164. There are many verses in Scripture which are said as if asking a question but are at times interpreted by the Rabbis to also mean to be said as a rhetorical question in the affirmative. 165. _Shelah_ 2:138a; see _Rabbi Nachman’s Wisdom_ #308. ## Page 99 > Th e I m p o rta n c e o f I m m e r s i n g i n t h e M "
+      }
+    },
+    {
+      "family": "kokhavey",
+      "query": "WORDS OF WISDOM",
+      "http_status": 200,
+      "elapsed_ms": 7269.88,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-b6812e646230adae"
+      ],
+      "answer_markdown": "En **Kokhavey Ohr**, sección **“Words of Wisdom”** (pág. PDF **81**), el fragmento desarrolla que, para el beneficio de la **oración** y la **caridad** (y otros consejos de tzaddikim verdaderos), a veces “no se escucha”, y aun cuando se escucha hay **distinciones**; por ejemplo, en algunos casos la oración se acepta a la primera, mientras que en otros es necesario **orar mucho**. También se menciona una práctica: orar **cuarenta días consecutivos** (sin omitir) para que ocurra una petición. [ev-b6812e646230adae]\n\nAdemás, en la misma sección aparece el encabezado **“Words of Wisdom”** y se introducen “palabras” atribuidas a **Reb Noson** (citadas para beneficio de los hermanos), incluyendo una instrucción a R. Yitzchak de Tulchin sobre **no mudarse a Israel hasta los sesenta años**. [ev-b6812e646230adae]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-b6812e646230adae",
+        "chunk_id": "d61a0f7e-1519-4a04-bd6c-67a58a33d616",
+        "associated_chunk_id": null,
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "work_title": "Kokhavey Ohr",
+        "physical_file_name": "Kokhavey Ohr layout BH_PRINT-4.pdf",
+        "physical_pdf_page": 81,
+        "printed_page": null,
+        "section": "Words of Wisdom",
+        "heading_original": "## **Words of Wisdom**",
+        "heading_normalized": "words of wisdom",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "tection even after his passing to include any child who came to his grave before he turned seven years old and fulfilled his holy words by giving charity and reciting the ten chapters of _Tehillim_ . (I know of someone who tried this, and it worked.) Concerning the benefit of prayer, charity and other advice of true Tzaddikim _—_ at times it is not heard.[124] And even when it is heard, there are many distinctions. For sometimes prayer 121. _Shmad_ represents the forces of idolatry. “Anyone who has pride is as if he worshipped idols” ( _Sotah_ 4b) All bad traits are drawn from ego, which is a form of self-worship. 122. Lack of sexual purity. 123. See more in _Sichot V’Sippurim_ #2, 3. 124. _Likutey Moharan_ I, 223. ## Page 82 > 82 • C h a p t e r O n e is accepted the first time; other times it is necessary to pray a lot. In my humble opinion, it is understood from the words of _Moharnat"
+      }
+    },
+    {
+      "family": "kokhavey",
+      "query": "The Redemption",
+      "http_status": 200,
+      "elapsed_ms": 6758.23,
+      "pipeline": "simple_rag",
+      "research_status": "complete",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_exact",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-68db325c2f0c55f4"
+      ],
+      "answer_markdown": "## The Redemption [ev-68db325c2f0c55f4]\n\nEn el fragmento bajo el encabezado **“The Redemption”**, se presenta una explicación mediante una **parábola**: una ciudad amurallada resiste a los reyes hasta que un rey “sabio” hace que sus soldados ataquen repetidamente; aunque los soldados caen, el muro queda “tembloroso” y finalmente puede ser derribado incluso con personas débiles (mujeres, niños y enfermos). La sección aplica esa idea a la **redención**, donde los “mighty soldiers” (tzaddikim) serían quienes “shaken the wall” hasta que la redención sea posible. [ev-68db325c2f0c55f4]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-68db325c2f0c55f4",
+        "chunk_id": "1d838ffe-182f-46c0-8e2f-1a24962319bb",
+        "associated_chunk_id": "44279165-15b5-4921-8479-9a5aaa2807e5",
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "work_title": "Kokhavey Ohr",
+        "physical_file_name": "Kokhavey Ohr layout BH_PRINT-4.pdf",
+        "physical_pdf_page": 240,
+        "printed_page": null,
+        "section": "The Redemption",
+        "heading_original": "## **The Redemption**",
+        "heading_normalized": "the redemption",
+        "literal_match_kind": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "snippet": "he good in the king’s palace. The tzaddik looks for ways to bring a person to a new understanding and give him a taste of the delights of Eden that they could attain in this world. ~ ## **Regarding the Danger of This World** Imagine an army at war. A soldier sees how his fellow troops are constantly being felled by arrows, and then the arrows are aimed at him, and he does not know how to rescue himself. He is so frightened and downhearted that he no longer has the strength to wield his sword. Then he holds onto the other soldiers to keep from falling, and he urges himself to stay safe and not surrender and not allow the enemy to achieve its goals. In the same way, every person needs to make himself aware of the danger in this world, of the fact that “the evil one” constantly takes hold of a person and causes people to fall. The only advice is for a person to encourage himself to stay fir"
+      }
+    },
+    {
+      "family": "hebrew",
+      "query": "לשוני מרע",
+      "http_status": 200,
+      "elapsed_ms": 6350.68,
+      "pipeline": "simple_rag",
+      "research_status": "partial",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_all_tokens_ordered",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-467509fe49e98853"
+      ],
+      "answer_markdown": "En el fragmento titulado **“לשוני מרע (Cuida mi lengua)”** se explica que el **habla** corresponde al **rúaj** (espíritu de vida) y que la **lengua** es el medio más importante de comunicación (por ejemplo, la plegaria y la conversación). Se afirma que, si se usa de manera positiva para dar aliento, puede **construir** a las personas e incluso **construir mundos**; en cambio, si se usa de manera negativa, tiene el poder de **destruir**. [ev-467509fe49e98853]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-467509fe49e98853",
+        "chunk_id": "f4404c32-eccd-40ed-8964-76794408bd6a",
+        "associated_chunk_id": "ebb31887-8c6b-499a-b539-db6f0ed37885",
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "work_title": "La Potencia de la Plegaria",
+        "physical_file_name": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+        "physical_pdf_page": 254,
+        "printed_page": null,
+        "section": "לשוני מרע (Cuida mi lengua)",
+        "heading_original": "## **לשוני מרע (Cuida mi lengua)**",
+        "heading_normalized": "לשוני מרע cuida mi lengua",
+        "literal_match_kind": "structural_heading_all_tokens_ordered",
+        "source_layer": "section_heading",
+        "snippet": "una vida de alegría y de satisfacción, una vida de plenitud y de la realización de nuestros emprendimientos. El Rebe Najmán agrega que, cuando uno vive una vida moral, es posible alcanzar esta “vida” y sus bendiciones ( _Likutey Moharán_ I, 23:1-3). Concluimos la bendición final con, “Bendito eres Tú, Dios, que bendice a Su pueblo Israel _beshalom_ (con la paz)”. El Ari escribe que _BeShaLOM_ ( )בשלוםtiene las mismas letras que _MaLBUSh_ ( ,מלבושvestimenta). Por lo tanto, atraemos sobre nosotros una vestimenta que nos protegerá de las _klipot_ , dado que ahora vamos a comenzar a descender hacia los mundos inferiores ( _Pri Etz Jaim, Shaar Amidá_ 20, p. 252). ## _**¡Elohai! Netzor**_ ## **Dios mío, cuida mi lengua** ra aceptable para los Sabios talmúdicos el agregar sus propias plegarias luego de concluir las _Shmone Esere_ ( _Berajot_ 17a). Mar, el hijo de Ravina, Ecompuso el pasaje de _"
+      }
+    },
+    {
+      "family": "hebrew",
+      "query": "עשה למען שמך",
+      "http_status": 200,
+      "elapsed_ms": 6045.34,
+      "pipeline": "simple_rag",
+      "research_status": "partial",
+      "query_shape": "structural_heading",
+      "match_type": "structural_heading_all_tokens_ordered",
+      "structural_hits": 1,
+      "primary_evidence_ids": [
+        "ev-4e1eea79a5088fc3"
+      ],
+      "answer_markdown": "## **עשה למען שמך(Actúa en aras de Tu Nombre)**\n\nEl fragmento asociado indica que quien pronuncia los cuatro “actúa” —“en aras de Tu Nombre”, “en aras de Tu diestra”, “de Tu Torá” y “de Tu santidad”— merece ver la Presencia Divina. [ev-4e1eea79a5088fc3]",
+      "warnings": [],
+      "primary": {
+        "evidence_id": "ev-4e1eea79a5088fc3",
+        "chunk_id": "832c4a61-1ce8-4792-8186-ca117c86c433",
+        "associated_chunk_id": null,
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "work_title": "La Potencia de la Plegaria",
+        "physical_file_name": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+        "physical_pdf_page": 256,
+        "printed_page": null,
+        "section": "עשה למען שמך(Actúa en aras de Tu Nombre)",
+        "heading_original": "## **עשה למען שמך(Actúa en aras de Tu Nombre)**",
+        "heading_normalized": "עשה למען שמך actúa en aras de tu nombre",
+        "literal_match_kind": "structural_heading_all_tokens_ordered",
+        "source_layer": "section_heading",
+        "snippet": "ncrespado de la vida”, lo mejor es aferrarse al atributo del silencio. Por cada ola, por cada desafío y frustración que nos abrumen, debemos simplemente bajar nuestras cabezas. Entonces, lentamente, llegaremos a la costa ( _Rabí Eliáhu Jaim Rosen_ ). La esencia de _¡Elohai! Netzor_ es mantenerse centrado y sobrevivir a las vicisitudes de la vida. La plegaria concluye, “Sálvame de los celos, de la ira y abre mi corazón a la Torá y a la plegaria”. Estas ideas son como el _hitbodedut_ , pidiendo por las cosas que son importantes para uno en ese momento. El _Mishná Brurá_ (122:8) cita el _Jaiei Adam_ quien dice que, durante _¡Elohai! Netzor_ , la persona debe agregar su propia plegaria para llegar a ser una persona temerosa de Dios, para tener buenos hijos y por todo aquello que requiera en la vida. ## **עשה למען שמך(Actúa en aras de Tu Nombre)** Todo aquel que dice estos cuatro “actúa” -en "
+      }
+    }
+  ]
+}

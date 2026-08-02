@@ -37,6 +37,8 @@
           <div><dt>Tipo de coincidencia</dt><dd>{literalKindLabel(active.literal_match_kind) || "Coincidencia contextual"}</dd></div>
           {#if active.heading_original}<div><dt>Consulta original</dt><dd>{response.original_query}</dd></div>{/if}
           {#if active.heading_text}<div><dt>Encabezado estructural</dt><dd>{active.heading_text}</dd></div>{/if}
+          {#if active.anchor_section}<div><dt>Sección ancla del marcador</dt><dd>{active.anchor_section}</dd></div>{/if}
+          {#if active.next_heading}<div><dt>Próximo encabezado editorial</dt><dd>{active.next_heading}</dd></div>{/if}
           {#if active.heading_original && active.heading_original !== active.heading_text}<div><dt>Encabezado original</dt><dd>{active.heading_original}</dd></div>{/if}
           {#if active.heading_normalized}<div><dt>Variante normalizada</dt><dd>{active.heading_normalized}</dd></div>{/if}
           {#if active.exact_quote}<div><dt>Cita exacta</dt><dd>{active.exact_quote}</dd></div>{/if}

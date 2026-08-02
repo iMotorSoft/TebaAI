@@ -47,6 +47,7 @@ from modules.library.editorial_evidence_v2 import (
 from modules.library.page_first_evidence import build_evidence_v1
 from modules.library.simple_research_repository import (
     fetch_canonical_chunks,
+    fetch_preceding_section_title,
     resolve_ready_documents,
     search_literal_candidates,
     search_printed_reference_candidates,
@@ -480,14 +481,19 @@ def _fold(value: str) -> str:
     )
 
 
-def build_query_variants(original_query: str) -> list[str]:
+def build_query_variants(
+    original_query: str,
+    *,
+    is_printed_reference: bool = False,
+) -> list[str]:
     """Keep the complete query first and add only bounded, controlled aliases."""
     folded = _fold(original_query)
     variants = [original_query]
-    english_name_query = detect_short_english_name_query(original_query)
-    if english_name_query:
-        variants.append(english_name_query.normalized)
-        variants.extend(_english_name_orthographic_variants(english_name_query))
+    if not is_printed_reference:
+        english_name_query = detect_short_english_name_query(original_query)
+        if english_name_query:
+            variants.append(english_name_query.normalized)
+            variants.extend(_english_name_orthographic_variants(english_name_query))
     if has_hebrew(original_query):
         try:
             normalized = normalize_hebrew_for_search(original_query)
@@ -644,6 +650,86 @@ def _semantic_search_variants(
     return ordered, metadata
 
 
+def _literal_evidence_strength(match_type: str) -> int:
+    """Order duplicate literal records by evidence strength, not arrival order."""
+    return {
+        "footnote_literal_exact": 60,
+        "printed_reference_exact": 50,
+        "structural_heading_exact": 50,
+        "body_literal_exact": 40,
+        "exact_phrase": 30,
+    }.get(match_type, 0)
+
+
+_EMBEDDED_FOOTNOTE_START = re.compile(
+    r"(?m)^\s*(?P<number>\d{1,3})\s+(?=[^\n]*[a-záéíóúüñ])(?=[A-Za-zÁÉÍÓÚÜÑ])"
+)
+
+
+def _normalize_literal_whitespace(value: str) -> str:
+    """Normalize only presentation whitespace for deterministic literal checks."""
+    return re.sub(r"\s+", " ", _fold(value)).strip()
+
+
+def _embedded_footnote_number(content: str, query: str) -> int | None:
+    """Return a numbered footnote containing a full normalized query, if present.
+
+    Some page-first V2 records are persisted as one citable page block.  This
+    recognizes only an explicit numbered note region; it never promotes a
+    long phrase merely because it appears in an ordinary page body.
+    """
+    normalized_query = _normalize_literal_whitespace(query)
+    if not normalized_query:
+        return None
+    starts = list(_EMBEDDED_FOOTNOTE_START.finditer(content))
+    for index, start in enumerate(starts):
+        end = starts[index + 1].start() if index + 1 < len(starts) else len(content)
+        if normalized_query in _normalize_literal_whitespace(content[start.start():end]):
+            return int(start.group("number"))
+    return None
+
+
+def _embedded_footnote_body(content: str, number: int | None) -> str | None:
+    """Extract one complete numbered footnote from a page-first page block."""
+    if number is None:
+        return None
+    starts = list(_EMBEDDED_FOOTNOTE_START.finditer(content))
+    for index, start in enumerate(starts):
+        if int(start.group("number")) != number:
+            continue
+        end = starts[index + 1].start() if index + 1 < len(starts) else len(content)
+        return content[start.start():end].strip()
+    return None
+
+
+def classify_editorial_literal_matches(
+    candidates: list[dict[str, Any]],
+    *,
+    query: str = "",
+) -> list[dict[str, Any]]:
+    """Classify exact literals using preserved editorial metadata only."""
+    for candidate in candidates:
+        if not candidate.get("exact_match") or candidate.get("literal_match_type"):
+            continue
+        block_type = str(candidate.get("block_type") or "")
+        evidence_role = str(candidate.get("evidence_role") or "")
+        if block_type == "footnote" or evidence_role == "footnote_body":
+            candidate["literal_match_type"] = "footnote_literal_exact"
+        elif query and (number := _embedded_footnote_number(
+            str(candidate.get("content") or ""), query
+        )) is not None:
+            # Preserve this resolved source layer through merge/fetch.  The
+            # parser is evidence-based (numbered note boundaries + full
+            # normalized literal), not a document-specific ranking boost.
+            candidate["block_type"] = "footnote"
+            candidate["evidence_role"] = "footnote_body"
+            candidate["footnote_number"] = number
+            candidate["literal_match_type"] = "footnote_literal_exact"
+        elif block_type or evidence_role:
+            candidate["literal_match_type"] = "body_literal_exact"
+    return candidates
+
+
 def merge_results(
     semantic: list[dict[str, Any]],
     literal: list[dict[str, Any]],
@@ -670,15 +756,25 @@ def merge_results(
             "semantic_rank": None,
             "retrieval_sources": [],
         })
+        incoming_match_type = str(
+            item.get("literal_match_type")
+            or ("exact_phrase" if item.get("exact_match") else "literal")
+        )
+        existing_match_type = str(target.get("literal_match_type") or "")
+        if _literal_evidence_strength(existing_match_type) > _literal_evidence_strength(
+            incoming_match_type
+        ):
+            target["retrieval_sources"].append("literal")
+            continue
         target.update({
             "literal_score": float(item.get("literal_score") or 0.0),
             "literal_rank": rank,
             "exact_match": bool(item.get("exact_match")),
             "exact_variant_count": int(item.get("exact_variant_count") or 0),
-            "literal_match_type": str(
-                item.get("literal_match_type")
-                or ("exact_phrase" if item.get("exact_match") else "literal")
-            ),
+            "literal_match_type": incoming_match_type,
+            "block_type": item.get("block_type"),
+            "evidence_role": item.get("evidence_role"),
+            "footnote_number": item.get("footnote_number"),
             "search_record_type": str(item.get("search_record_type") or "chunk"),
             "matched_variant": item.get("matched_variant"),
             "matched_variant_ordinal": item.get("matched_variant_ordinal"),
@@ -730,6 +826,10 @@ def merge_results(
             "printed_reference_exact": 15.0,
             "printed_reference_normalized": 13.0,
         }.get(str(item.get("literal_match_type")), 0.0)
+        editorial_literal_priority = {
+            "footnote_literal_exact": 26.0,
+            "body_literal_exact": 20.0,
+        }.get(str(item.get("literal_match_type")), 0.0)
         structural_heading_priority = {
             "structural_heading_exact": 20.0,
             "structural_heading_normalized": 18.0,
@@ -752,7 +852,8 @@ def merge_results(
             else 0.0
         )
         item["combined_score"] = (
-            structural_heading_priority
+            editorial_literal_priority
+            + structural_heading_priority
             + hebrew_literal_priority
             + english_name_priority
             + printed_reference_priority
@@ -778,7 +879,7 @@ def _source_layer(chunk: dict[str, Any]) -> str:
     block = str(chunk.get("block_type") or "")
     if chunk.get("authority_level") == "primary_original":
         return "rebbe_lesson_text"
-    if block == "footnote":
+    if block == "footnote" or role == "footnote_body":
         return "footnote"
     if role == "marginal_citation" or block == "marginal_source":
         return "marginal_reference"
@@ -1210,6 +1311,10 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
     language = chunk.get("language") if chunk.get("language") in {"es", "en", "he"} else "es"
     match_type = str(chunk.get("literal_match_type") or "semantic_only")
     literal = match_type != "semantic_only" and float(chunk.get("literal_score") or 0.0) > 0
+    footnote_number = chunk.get("footnote_number")
+    footnote_quote = _embedded_footnote_body(markdown, footnote_number)
+    exact_quote = footnote_quote or chunk.get("_v1", {}).get("exact_quote")
+    editorial = chunk.get("_editorial") or {}
     return {
         "hit_id": evidence_id,
         "evidence_id": evidence_id,
@@ -1236,15 +1341,15 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "printed_page": (
             int(chunk["printed_page"])
             if str(chunk.get("printed_page") or "").isdigit()
-            else None
+            else chunk.get("_v1", {}).get("printed_page")
         ),
         "section": chunk.get("section"),
-        "quote": markdown,
-        "snippet": " ".join(markdown.split())[:900],
-        "display_snippet": " ".join(markdown.split())[:900],
+        "quote": footnote_quote or markdown,
+        "snippet": " ".join(str(footnote_quote or markdown).split())[:900],
+        "display_snippet": " ".join(str(footnote_quote or markdown).split())[:900],
         "match_text": "",
         "sentence_text": "",
-        "paragraph_text": markdown,
+        "paragraph_text": footnote_quote or markdown,
         "context_before": "",
         "context_after": "",
         "language": language,
@@ -1261,6 +1366,13 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "matched_concepts": [],
         "is_primary": evidence_id in primary_ids,
         "source_layer": _source_layer(chunk),
+        "block_role": chunk.get("evidence_role"),
+        "footnote_number": footnote_number,
+        "footnote_marker": (
+            str(chunk["footnote_number"])
+            if chunk.get("footnote_number") is not None
+            else None
+        ),
         "source_layer_confidence": (
             "high" if match_type.startswith("structural_heading_") else "medium"
         ),
@@ -1306,9 +1418,11 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "sanitization_reason_codes": [],
         # Page-first evidence V1 fields
         "heading_text": chunk.get("_v1", {}).get("heading_text"),
+        "anchor_section": editorial.get("anchor_section"),
+        "next_heading": editorial.get("next_heading"),
         "heading_source": chunk.get("_v1", {}).get("heading_source"),
         "section_path": chunk.get("_v1", {}).get("section_path", []),
-        "exact_quote": chunk.get("_v1", {}).get("exact_quote"),
+        "exact_quote": exact_quote,
         "context_before": chunk.get("_v1", {}).get("context_before"),
         "context_after": chunk.get("_v1", {}).get("context_after"),
         "start_offset": chunk.get("_v1", {}).get("start_offset"),
@@ -1463,7 +1577,7 @@ async def run_simple_rag(
             structural_heading_query.accent_folded,
         ]))
         if structural
-        else build_query_variants(original_query)
+        else build_query_variants(original_query, is_printed_reference=is_printed_reference)
     )
 
     semantic_task = asyncio.create_task(asyncio.to_thread(
@@ -1522,6 +1636,15 @@ async def run_simple_rag(
             )
         # Inject targeted printed reference results with high priority
         literal = [*printed_reference_results, *literal, *structural]
+        # Tag exact ILIKE matches from the general literal lane as printed_reference
+        # when the query was detected as a printed biblical reference. Without this,
+        # generic "exact_phrase" items miss the +15 printed_reference_priority boost
+        # in merge_results and get outranked by FTS-only results from ready documents.
+        if is_printed_reference:
+            for item in literal:
+                if item.get("exact_match") and not item.get("literal_match_type"):
+                    item["literal_match_type"] = "printed_reference_exact"
+        classify_editorial_literal_matches(literal, query=original_query)
     except Exception:
         literal = list(structural)
         literal_status = "failed"
@@ -1621,6 +1744,25 @@ async def run_simple_rag(
         warnings.append(
             "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
         )
+
+    # A footnote body can be set on the next physical page while its marker
+    # remains attached to the preceding editorial section. Keep that anchor
+    # distinct from the next heading introduced by the footnote page.
+    for chunk in selected:
+        if chunk.get("literal_match_type") != "footnote_literal_exact":
+            continue
+        current_section = str(
+            chunk.get("section_title") or chunk.get("section") or ""
+        ).strip() or None
+        previous_section = await fetch_preceding_section_title(
+            conn,
+            document_id=str(chunk["document_id"]),
+            pdf_page=int(chunk.get("pdf_page") or chunk.get("page_start") or 0),
+        )
+        chunk["_editorial"] = {
+            "anchor_section": previous_section or current_section,
+            "next_heading": current_section,
+        }
 
     # -- Page-first evidence V1 enrichment --------------------------------
     page_first_started = time.perf_counter()
@@ -1805,6 +1947,10 @@ async def run_simple_rag(
         query_language == "he"
         or english_name_query is not None
         or bool(structural)
+        or any(
+            chunk.get("literal_match_type") == "footnote_literal_exact"
+            for chunk in selected
+        )
     )
     if priority_literal_query:
         best_primary_id = next((
@@ -1934,6 +2080,8 @@ async def run_simple_rag(
                 if c.get("pdf_page") == chunk.get("pdf_page")
             ] or [chunk]
             enrich_evidence_with_v2(ev, chunk, page_chunks_for_v2)
+            if chunk.get("_editorial"):
+                ev["editorial"].update(chunk["_editorial"])
         except Exception:
             logger.warning(
                 "editorial_v2 enrichment failed for chunk %s",

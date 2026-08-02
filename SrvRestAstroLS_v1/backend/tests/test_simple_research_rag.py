@@ -223,6 +223,128 @@ def test_hebrew_literal_exact_outranks_high_semantic_without_tokens() -> None:
     assert ranked[0]["combined_score"] > ranked[1]["combined_score"]
 
 
+def test_exact_footnote_literal_outranks_ready_body_and_semantic() -> None:
+    ready_semantic_id = "00000000-0000-0000-0000-000000000021"
+    ready_body_id = "00000000-0000-0000-0000-000000000022"
+    footnote_id = "00000000-0000-0000-0000-000000000023"
+    literal = rag.classify_editorial_literal_matches([
+        {
+            "chunk_id": ready_body_id,
+            "literal_score": 99.0,
+            "exact_match": True,
+            "block_type": "main_explanation_es",
+            "evidence_role": "commentary",
+        },
+        {
+            "chunk_id": footnote_id,
+            "literal_score": 1.0,
+            "exact_match": True,
+            "block_type": "footnote",
+            "evidence_role": "footnote_body",
+        },
+    ])
+    ranked = rag.merge_results(
+        [
+            {"chunk_id": ready_semantic_id, "semantic_score": 0.99, "semantic_rank": 1},
+            {"chunk_id": ready_body_id, "semantic_score": 0.95, "semantic_rank": 2},
+        ],
+        literal,
+        query_language="es",
+    )
+    assert literal[1]["literal_match_type"] == "footnote_literal_exact"
+    assert literal[0]["literal_match_type"] == "body_literal_exact"
+    assert ranked[0]["chunk_id"] == footnote_id
+    assert ranked[1]["chunk_id"] == ready_body_id
+
+
+def test_footnote_literal_classification_requires_exact_known_footnote() -> None:
+    candidates = rag.classify_editorial_literal_matches([
+        {"chunk_id": "a", "exact_match": False, "block_type": "footnote"},
+        {"chunk_id": "b", "exact_match": True},
+        {"chunk_id": "c", "exact_match": True, "evidence_role": "footnote_body"},
+    ])
+    assert "literal_match_type" not in candidates[0]
+    assert "literal_match_type" not in candidates[1]
+    assert candidates[2]["literal_match_type"] == "footnote_literal_exact"
+
+
+def test_embedded_numbered_footnote_exact_is_classified_without_document_rule() -> None:
+    query = "El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía"
+    candidates = rag.classify_editorial_literal_matches([{
+        "chunk_id": "footnote-page",
+        "exact_match": True,
+        "block_type": "page_first_v2",
+        "evidence_role": "commentary",
+        "content": (
+            "Cuerpo editorial.35 Continúa el párrafo.\n"
+            "35 Ver la nota anterior. El hombre se une a HaShem desde este mundo físico\n"
+            "principalmente a través de la melodía y de la canción.\n"
+            "36 Nota vecina sin la frase."
+        ),
+    }], query=query)
+    assert candidates[0]["literal_match_type"] == "footnote_literal_exact"
+    assert candidates[0]["footnote_number"] == 35
+    assert candidates[0]["evidence_role"] == "footnote_body"
+
+
+def test_embedded_numbered_body_does_not_become_footnote_without_note_region() -> None:
+    candidates = rag.classify_editorial_literal_matches([{
+        "chunk_id": "body",
+        "exact_match": True,
+        "block_type": "page_first_v2",
+        "evidence_role": "commentary",
+        "content": "6 ■ MELODÍAS Y PLEGARIAS\nEl hombre se une a HaShem desde este mundo físico.",
+    }], query="El hombre se une a HaShem desde este mundo físico.")
+    assert candidates[0]["literal_match_type"] == "body_literal_exact"
+
+
+def test_merge_keeps_strongest_duplicate_literal_evidence() -> None:
+    chunk_id = "00000000-0000-0000-0000-000000000024"
+    ranked = rag.merge_results(
+        [],
+        [
+            {"chunk_id": chunk_id, "exact_match": True, "literal_score": 100.0,
+             "literal_match_type": "footnote_literal_exact", "block_type": "footnote"},
+            {"chunk_id": chunk_id, "exact_match": True, "literal_score": 200.0,
+             "literal_match_type": "body_literal_exact", "block_type": "main_explanation_es"},
+        ],
+        query_language="es",
+    )
+    assert ranked[0]["literal_match_type"] == "footnote_literal_exact"
+    assert ranked[0]["block_type"] == "footnote"
+
+
+def test_footnote_source_layer_preserves_editorial_role() -> None:
+    assert rag._source_layer({"evidence_role": "footnote_body"}) == "footnote"
+
+
+def test_embedded_footnote_body_preserves_the_complete_note() -> None:
+    content = (
+        "Párrafo ancla.35\n"
+        "35 Primera línea de la nota.\nSegunda línea de la nota.\n"
+        "36 Nota vecina."
+    )
+    assert rag._embedded_footnote_body(content, 35) == (
+        "35 Primera línea de la nota.\nSegunda línea de la nota."
+    )
+
+
+def test_frontend_hit_keeps_anchor_and_next_heading_separate() -> None:
+    hit = rag._frontend_hit({
+        "evidence_id": "ev-footnote", "chunk_id": "chunk", "document_id": "doc",
+        "work": "Likutey Halajot — Interior Final", "markdown": "35 Nota completa.",
+        "footnote_number": 35, "literal_match_type": "footnote_literal_exact",
+        "literal_score": 1.0, "evidence_role": "footnote_body", "language": "es",
+        "_editorial": {
+            "anchor_section": "5 ■ INCLINADO HACIA LA BONDAD",
+            "next_heading": "6 ■ MELODÍAS Y PLEGARIAS",
+        },
+    }, {"ev-footnote"})
+    assert hit["anchor_section"] == "5 ■ INCLINADO HACIA LA BONDAD"
+    assert hit["next_heading"] == "6 ■ MELODÍAS Y PLEGARIAS"
+    assert hit["exact_quote"] == "35 Nota completa."
+
+
 @pytest.mark.parametrize(
     ("query", "normalized", "tokens"),
     [

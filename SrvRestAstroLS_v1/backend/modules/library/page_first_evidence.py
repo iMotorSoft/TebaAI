@@ -192,6 +192,13 @@ def _resolve_printed_page(chunk: dict[str, Any]) -> int | None:
             return int(label)
         except (ValueError, TypeError):
             pass
+    # Page-first PDF extracts can retain the printed folio only in the running
+    # header.  Restrict inference to the opening header, never to a numbered
+    # footnote or body paragraph later on the page.
+    opening = str(chunk.get("markdown") or chunk.get("content") or "")[:240]
+    match = re.match(r"\s*(\d{1,4})\s+[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s]{3,}", opening)
+    if match:
+        return int(match.group(1))
     return None
 
 
@@ -297,8 +304,10 @@ def locate_evidence_within_page(
     # Also use the matched_variant if available
     matched_variant = str(candidate_chunk.get("matched_variant") or "").strip()
 
-    # Try exact match first
-    for search_text in [matched_variant, chunk_text, query]:
+    # Prefer the requested evidence span to the full chunk, which may be an
+    # entire physical PDF page in page-first records.
+    direct_query = query if len(query.split()) >= 3 else ""
+    for search_text in [direct_query, matched_variant]:
         if not search_text:
             continue
         result = _find_in_text(search_text, page_text, exact=True)
@@ -311,8 +320,19 @@ def locate_evidence_within_page(
                 matched_variant=search_text,
             )
 
+    # Preserve the canonical chunk quote for a short lookup term.  A long
+    # phrase continues to the whitespace-aware span matcher below.
+    if not direct_query and chunk_text:
+        result = _find_in_text(chunk_text, page_text, exact=True)
+        if result:
+            return EvidenceLocation(
+                exact_quote=result["quote"], start_offset=result["start"],
+                end_offset=result["end"], location_precision="exact",
+                matched_variant=chunk_text,
+            )
+
     # Try normalized match
-    for search_text in [matched_variant, chunk_text, query]:
+    for search_text in [direct_query, matched_variant, chunk_text]:
         if not search_text:
             continue
         result = _find_in_text(search_text, page_text, exact=False)
@@ -323,6 +343,32 @@ def locate_evidence_within_page(
                 end_offset=result["end"],
                 location_precision="normalized_exact",
                 matched_variant=search_text,
+            )
+
+    # PDF line wrapping is presentation-only.  Preserve the original span and
+    # quote while accepting whitespace-normalized literal evidence.
+    for search_text in [matched_variant, direct_query]:
+        tokens = search_text.split()
+        if not tokens:
+            continue
+        wrapped = re.search(r"\s+".join(re.escape(token) for token in tokens), page_text)
+        if wrapped:
+            return EvidenceLocation(
+                exact_quote=wrapped.group(0),
+                start_offset=wrapped.start(),
+                end_offset=wrapped.end(),
+                location_precision="normalized_exact",
+                matched_variant=search_text,
+            )
+
+    # A full chunk remains a valid fallback only after query-local evidence.
+    if chunk_text:
+        result = _find_in_text(chunk_text, page_text, exact=True)
+        if result:
+            return EvidenceLocation(
+                exact_quote=result["quote"], start_offset=result["start"],
+                end_offset=result["end"], location_precision="exact",
+                matched_variant=chunk_text,
             )
 
     # Token span: match ordered tokens within a sliding window
@@ -501,9 +547,12 @@ def resolve_containing_section(
         )
 
     # 3. Parse page text for markdown headings before the chunk position
-    if canonical_page.text and candidate_chunk.get("chunk_index") is not None:
+    if canonical_page.text:
+        search_text = canonical_page.text
+        if candidate_chunk.get("chunk_index") is not None:
+            search_text = canonical_page.text
         heading = _find_preceding_heading(
-            canonical_page.text, candidate_chunk
+            search_text, candidate_chunk
         )
         if heading:
             return SectionReference(

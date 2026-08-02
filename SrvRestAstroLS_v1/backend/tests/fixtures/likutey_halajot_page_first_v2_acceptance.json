@@ -1,0 +1,53 @@
+[
+  {
+    "query": "CONSTRUYENDO UN MISHKÁN",
+    "expected_pdf_page": 51,
+    "expected_printed_page": 33,
+    "expected_match_type": "structural_heading_exact",
+    "expected_source_layer": "section_heading",
+    "document_family": "likutey_halajot",
+    "document_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a"
+  },
+  {
+    "query": "INCLINADO HACIA LA BONDAD",
+    "expected_pdf_page": 53,
+    "expected_printed_page": 35,
+    "expected_match_type": "structural_heading_exact",
+    "expected_source_layer": "section_heading",
+    "document_family": "likutey_halajot",
+    "document_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a"
+  },
+  {
+    "query": "Salmos 16:1",
+    "expected_pdf_page": 55,
+    "expected_printed_page": 37,
+    "expected_match_type": "printed_reference_exact",
+    "expected_source_layer": "marginal_reference",
+    "expected_reference_surface": "(Salmos 16:1)",
+    "associated_quote_contains": "He puesto a HaShem siempre delante de mí",
+    "document_family": "likutey_halajot",
+    "document_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a"
+  },
+  {
+    "query": "El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción",
+    "expected_pdf_page": 56,
+    "expected_printed_page": 38,
+    "expected_match_type": "footnote_literal_exact",
+    "expected_source_layer": "footnote",
+    "expected_footnote_number": 35,
+    "expected_primary": true,
+    "associated_heading": "6 ■ MELODÍAS Y PLEGARIAS",
+    "expected_next_heading_contains": "MELODÍAS Y PLEGARIAS",
+    "document_family": "likutey_halajot",
+    "document_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a"
+  },
+  {
+    "query": "MELODÍAS Y PLEGARIAS",
+    "expected_pdf_page": 56,
+    "expected_printed_page": 38,
+    "expected_match_type": "structural_heading_exact",
+    "expected_source_layer": "section_heading",
+    "document_family": "likutey_halajot",
+    "document_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a"
+  }
+]

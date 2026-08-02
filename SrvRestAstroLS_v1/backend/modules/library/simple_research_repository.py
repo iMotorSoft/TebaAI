@@ -51,7 +51,7 @@ async def resolve_ready_documents(
     return [
         row
         for row in rows
-        if any(alias in str(row.get("title") or "").casefold() for alias in wanted)
+        if any(alias.casefold() in str(row.get("title") or "").casefold() for alias in wanted)
         or (
             "lmi" in work_codes
             and row.get("document_code") == "likutey_moharan_ii_spanish_bri"
@@ -294,32 +294,38 @@ async def search_literal_candidates(
         """
         WITH query_variants AS (
             SELECT
-                public.unaccent(trim(value)) AS query,
+                regexp_replace(
+                    public.unaccent(lower(trim(value))),
+                    '[[:space:]]+', ' ', 'g'
+                ) AS query,
                 min(ordinality) AS ordinal
             FROM unnest(%(variants)s::text[]) WITH ORDINALITY AS values(value, ordinality)
             WHERE length(trim(value)) >= 2
-            GROUP BY public.unaccent(trim(value))
+            GROUP BY 1
         ),
         scored AS (
             SELECT
                 ch.id AS chunk_id,
+                ch.block_type,
+                ch.evidence_role,
+                ch.content,
                 bool_or(
-                    ch.search_text_normalized ILIKE '%%' || q.query || '%%'
-                    OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
+                    regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
+                        LIKE '%%' || q.query || '%%'
                 ) AS exact_match,
                 count(DISTINCT q.query) FILTER (
-                    WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
-                    OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
+                    WHERE regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
+                        LIKE '%%' || q.query || '%%'
                 ) AS exact_variant_count,
                 (
                     array_agg(q.query ORDER BY q.ordinal) FILTER (
-                        WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
-                        OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
+                        WHERE regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
+                            LIKE '%%' || q.query || '%%'
                     )
                 )[1] AS matched_variant,
                 min(q.ordinal) FILTER (
-                    WHERE ch.search_text_normalized ILIKE '%%' || q.query || '%%'
-                    OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
+                    WHERE regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
+                        LIKE '%%' || q.query || '%%'
                 ) AS matched_variant_ordinal,
                 max(
                     GREATEST(
@@ -356,8 +362,8 @@ async def search_literal_candidates(
               )
               AND (
                     (
-                        ch.search_text_normalized ILIKE '%%' || q.query || '%%'
-                        OR (ch.search_text_normalized IS NULL AND ch.content ILIKE '%%' || q.query || '%%')
+                        regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
+                            LIKE '%%' || q.query || '%%'
                     )
                     OR ch.search_vector_es @@ websearch_to_tsquery('spanish', q.query)
                     OR ch.search_vector_simple @@ websearch_to_tsquery('simple', q.query)
@@ -373,6 +379,9 @@ async def search_literal_candidates(
         )
         SELECT
             chunk_id,
+            block_type,
+            evidence_role,
+            content,
             exact_match,
             exact_variant_count,
             matched_variant,
@@ -600,3 +609,26 @@ async def fetch_canonical_chunks(
         {"scope": knowledge_scope_code, "chunk_ids": chunk_ids},
     )
     return [*chunks, *nodes]
+
+
+async def fetch_preceding_section_title(
+    conn: Any,
+    *,
+    document_id: str,
+    pdf_page: int,
+) -> str | None:
+    """Return the preceding canonical section for a cross-page footnote."""
+    rows = await fetch_all(
+        conn,
+        """
+        SELECT section_title
+        FROM library_document_chunks
+        WHERE document_id = %(document_id)s
+          AND page_start < %(pdf_page)s
+          AND coalesce(section_title, '') <> ''
+        ORDER BY page_start DESC, chunk_index DESC
+        LIMIT 1
+        """,
+        {"document_id": document_id, "pdf_page": pdf_page},
+    )
+    return str(rows[0]["section_title"]).strip() if rows else None

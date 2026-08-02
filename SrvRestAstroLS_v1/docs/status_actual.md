@@ -2,9 +2,340 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-07-27 (guest de lectura para beta privada)
+Ultima actualizacion: 2026-08-02 (reconciliación editorial de nota 35 en DEV)
+
+## Nota 35 — reconciliación editorial DEV
+
+- PRIMARY preserva `LIKUTEY HALAJOT (Interior Final).pdf`, PDF 56, impresa 38,
+  `footnote_literal_exact`, `source_layer=footnote`, bloque `footnote_body`,
+  marker/número 35 y cita completa;
+- `anchor_section` y `next_heading` son contratos distintos: el ancla es
+  `5 ■ INCLINADO HACIA LA BONDAD`; el siguiente límite es
+  `6 ■ MELODÍAS Y PLEGARIAS`;
+- regresiones documentadas: consultas cortas conservan el chunk completo,
+  frases de 3+ términos ubican el span literal, whitespace-normalized cubre
+  frases partidas y footnotes exactas usan `footnote_literal_exact`.
 
 Este tablero contiene solo el estado tecnico vigente. La evolucion previa esta resumida en `status_historico_hasta_2026-06-28.md` y conservada con detalle en Git.
+
+## Likutey Halajot — Native Page-First V2 — cierre 2026-07-31 (DEV)
+
+Estado tecnico: `TEBAAI_LIKUTEY_HALAJOT_PAGE_FIRST_REINGEST_V2_DEV_READY`.
+
+- documento: `LIKUTEY HALAJOT (Interior Final).pdf`, SHA-256
+  `440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a`,
+  document ID `132a791a-d12b-45bc-9b34-dd143605de12`, status `test_candidate`;
+- 284 paginas canonicas nativas en `library_pages_v2`;
+- 268 chunks derivados en `library_document_chunks` con
+  `search_text_normalized` completo (0 NULL);
+- 268/268 embeddings (`openai_text_embedding_3_small`, dim 1536)
+  generados con batch adaptativo en 179.8s;
+- PG↔Milvus: 268/268 match (100%), 0 missing, 0 orphans, 0 duplicates;
+- Milvus total: 5,370 entidades (5,102 previas + 268 nuevas);
+- paginas criticas validadas: 51 (Mishkán), 53 (Bondad), 55 (Salmos 16:1),
+  56 (nota 35 y Melodías y Plegarias);
+- fix aplicado: `alias.casefold()` en `resolve_ready_documents` para filtros
+  de obra con titulos completos.
+
+Casos de aceptacion:
+
+| Query | PDF | Impresa | Match type |
+|---|---|---|---|
+| CONSTRUYENDO UN MISHKÁN | 51 | 33 | structural_heading_exact |
+| INCLINADO HACIA LA BONDAD | 53 | 35 | structural_heading_exact |
+| Salmos 16:1 | 55 | 37 | printed_reference_exact |
+| El hombre se une a HaShem… | 56 | 38 | footnote_literal_exact |
+| MELODÍAS Y PLEGARIAS | 56 | 38 | structural_heading_exact |
+
+ADR: `docs/adr/ADR-014-likutey-halajot-native-page-first-reingest-v2.md`.
+Fixtures: `backend/tests/fixtures/likutey_halajot_page_first_v2_acceptance.json`.
+Reportes: `data/reports/breslov/2026-07-31-likutey-halajot-embedding-retrieval-completion-v2-dev/`.
+
+Produccion no modificada. Push no realizado.
+
+## Exact Editorial Evidence Ranking V1 — cierre 2026-07-31 (DEV)
+
+Estado tecnico: `TEBAAI_EXACT_EDITORIAL_EVIDENCE_RANKING_V1_DEV_READY`.
+
+- causa raiz: `build_query_variants("Salmos 16:1")` generaba el variant
+  `"salmos"` via `detect_short_english_name_query`, que disparaba ILIKE en
+  docenas de chunks `ready` inflando su `literal_score` al nivel del match
+  exacto del `test_candidate`;
+- fix: `build_query_variants` acepta `is_printed_reference` para suprimir
+  la expansion de nombre corto en consultas de referencia estructurada;
+- regla general: una consulta detectada como referencia impresa no debe
+  generar variantes del carril de short English name;
+- regla de ranking: evidencia exacta scoped > semantica ready; status
+  documental desempata solo cuando la fuerza de evidencia es equivalente;
+- `Salmos 16:1`, `(Salmos 16:1)` y `salmos 16:1` recuperan PRIMARY
+  page 55 del documento `test_candidate`;
+- regresiones preservadas: Mishkán, Bondad, nota 35, Melodías, Gedalia,
+  hebreo.
+
+ADR: `docs/adr/ADR-015-exact-editorial-evidence-ranking-v1.md`.
+Reportes: `data/reports/breslov/2026-07-31-exact-editorial-evidence-ranking-v1-dev/`.
+
+Backend: 1401 tests PASS. Frontend: check 0 issues, 60 tests PASS,
+build 8 paginas.
+
+Produccion no modificada. Push no realizado.
+
+Proximo paso: autorizar fase de provisioning de usuarios productivos para
+desbloquear E2E autenticado.
+
+## Corpus Breslov en PostgreSQL productivo — cierre 2026-07-28
+
+Estado técnico: `POSTGRESQL_PRODUCTION_CORPUS_PROMOTION_CLOSED`.
+
+- PostgreSQL productivo contiene 8 documentos `ready`, 5102 chunks canónicos,
+  5102 filas de tracking y 9 runs de embedding;
+- distribución documental: 4250 chunks ES, 852 EN y cero documentos HE; el
+  texto hebreo embebido se preservó sin recategorizar idiomas;
+- el paquete transaccional de 17 tablas preservó IDs, texto, Unicode, páginas,
+  estructura y referencias; dry-run y reconciliación posterior terminaron con
+  conflictos, faltantes, extras, duplicados, huérfanos y FK inválidas en cero;
+- tracking: `openai_text_embedding_3_small`, dimensión 1536, 5102/5102 y
+  destino futuro `tebaai_breslov_chunks_v1`; `vector_status=generated` deja
+  explícito que la colección Milvus productiva aún no existe;
+- backups custom previo y posterior validados con `pg_restore --list`; el
+  posterior está en
+  `/home/administrator/backups/tebaai/postgres/20260728T132847Z-post-corpus/`;
+- PostgreSQL, Docker y Milvus no fueron reiniciados; Team360, LiteLLM, Nginx,
+  backend, frontend y `.bashrc` no fueron modificados;
+- no se creó ni modificó la colección Milvus. La fase Milvus debe reabrirse
+  mediante una instrucción independiente.
+
+Informe:
+`data/reports/tebaai/2026-07-28-postgresql-corpus-promotion/README.md`.
+
+## PostgreSQL 18 productivo — cierre 2026-07-28
+
+Estado técnico: `POSTGRESQL_PRODUCTION_BASELINE_CLOSED`. La infraestructura
+PostgreSQL de producción para TebaAI quedó creada, migrada, respaldada y cerrada
+operativamente. El backend y el frontend productivos todavía no fueron
+desplegados y no deben iniciarse hasta integrar explícitamente la configuración
+que desactiva las migraciones automáticas.
+
+- servidor: `vps-0bfd28fb`; contenedor observado:
+  `imotorsoft-postgres`; PostgreSQL reportó versión `18.3`;
+- base: `tebaai`, owner `tebaai_app`, UTF-8 y locale `en_US.utf8`;
+- rol: `tebaai_app` con login y sin `SUPERUSER`, `CREATEDB`, `CREATEROLE`,
+  `REPLICATION` ni `BYPASSRLS`;
+- migraciones: 39/39 aplicadas por el runner canónico, versiones `001` a
+  `039`, sin fallos, pendientes ni discrepancias de nombre;
+- extensiones instaladas en `tebaai`: `pg_trgm`, `unaccent` y `plpgsql`;
+- inventario validado: 52 tablas, 36 vistas, 194 índices, 821 constraints,
+  36 funciones, un trigger y cero secuencias;
+- ownership: cero tablas públicas ajenas a `tebaai_app`;
+- permisos: conexión, lectura y escritura de aplicación validadas con una
+  transacción revertida; el objeto de prueba no persistió;
+- aislamiento: el rol puede establecer conexión con `team360` por el privilegio
+  global `PUBLIC CONNECT` preexistente, pero no puede leer sus objetos. No se
+  modificaron privilegios globales ni bases ajenas;
+- backup baseline validado:
+  `/home/administrator/backups/tebaai/postgres/20260728T010027Z/tebaai-baseline.dump`;
+  formato custom, 288799 bytes, 476 entradas y SHA-256
+  `584f3b9f6c20d93c2f0987703248001232347dbd07846ff5ac417bfd8ab27033`;
+- `pg_restore --list` confirmó esquema, migraciones, tablas, funciones e
+  índices en el backup;
+- configuración productiva reservada en
+  `/home/administrator/.config/tebaai/postgres.env`, owner
+  `administrator`, directorio `700` y archivo `600`; no documentar ni mostrar
+  sus valores;
+- `TEBAAI_POSTGRES_AUTO_MIGRATE=false` quedó preparado en ese archivo. La
+  futura unidad systemd debe cargarlo mediante `EnvironmentFile` antes del
+  primer arranque;
+- paquete mínimo de migración conservado en
+  `/home/administrator/project/iMotorSoft/ai/TebaAI/postgres-bootstrap/`;
+- PostgreSQL y Docker no fueron reiniciados; Team360 y las demás bases no
+  fueron modificadas; `.bashrc` no fue modificado ni cargado;
+- cierre final: proceso maestro PostgreSQL visible con PID de host `46538` y
+  `pg_postmaster_start_time()` del `2026-07-14 14:34:58.034940+00:00`; no hubo
+  reinicio durante la preparación productiva ni durante el cierre;
+- inventario final reconfirmado sin discrepancias: 52 tablas, 36 vistas, 194
+  índices, 821 constraints, 36 funciones, un trigger y cero secuencias;
+- Team360 acepta conexión, mantiene una sesión PostgreSQL activa observada y
+  expone cero tablas legibles o visibles al rol `tebaai_app`; no se consultaron
+  ni modificaron sus objetos;
+- configuración final: directorio `700`, archivo `600`, owner
+  `administrator`, una única clave `TEBAAI_POSTGRES_AUTO_MIGRATE` validada como
+  `false` sin imprimir valores;
+- backup final: tamaño y SHA-256 coincidentes; `pg_restore --list` confirmó
+  476 entradas;
+- el entorno reproducible
+  `postgres-bootstrap/.migration-venv/` fue validado como directorio real,
+  no symlink ni mountpoint, y eliminado; se conservaron las 39 migraciones, el
+  runner, `pyproject.toml`, `uv.lock`, el backup y el archivo productivo;
+- no se avanzó a Milvus, LiteLLM, Nginx, frontend, backend, systemd, guest o
+  pruebas de investigación.
+
+Informe sanitizado:
+`data/reports/tebaai/2026-07-28-postgresql-production-closure/README.md`.
+
+Próximo paso: abrir una fase separada, con preflight propio, para Milvus,
+LiteLLM o el despliegue de la aplicación. La futura unidad systemd debe cargar
+el archivo productivo mediante `EnvironmentFile` antes del primer arranque.
+
+## Milvus productivo — cierre 2026-07-28
+
+Estado técnico: `MILVUS_PRODUCTION_BASELINE_CLOSED`.
+
+- Milvus remoto está healthy en `vps-0bfd28fb`, versión 2.6.0, gRPC
+  `127.0.0.1:19530` y health `127.0.0.1:9091`;
+- `tebaai_breslov_chunks_v1` contiene exactamente 5102 entidades, dimensión
+  1536, PK manual, metadata canónica `collection_code=breslov` y cero aliases;
+- índice `HNSW/COSINE`, `M=16`, `efConstruction=200`, terminado 5102/5102;
+  búsqueda con `ef=64`;
+- colección `Loaded` al 100% con una réplica; el ciclo
+  `release → NotLoad → load → Loaded` preservó count, índice y búsqueda;
+- PostgreSQL↔Milvus reconcilia 100% por PK, chunk, documento, idioma, metadata
+  y vector: faltantes, extras, duplicados, huérfanos y mismatches en cero;
+- búsquedas de control ES, EN y texto hebreo embebido, filtros y round-trip a
+  PostgreSQL pasaron; benchmark no agresivo: p50 4.745 ms, p95 5.571 ms;
+- el preflight bloqueado por PostgreSQL vacío se conserva como evidencia
+  histórica. Un primer intento de reapertura ejecutó rollback exacto por una
+  falsa diferencia de orden de índices; el inventario probó aislamiento y el
+  segundo intento cerró todos los gates;
+- las nueve colecciones ajenas y todos los aliases permanecieron intactos;
+  Milvus, Docker y PostgreSQL no fueron reiniciados, y PostgreSQL, LiteLLM,
+  Team360, `.bashrc`, backend y frontend no fueron modificados.
+
+Informe:
+`data/reports/tebaai/2026-07-28-milvus-production-closure/README.md`.
+
+Próximo paso permitido: abrir una fase LiteLLM independiente. Este cierre no la
+inició.
+
+## Alias LiteLLM productivo para TebaAI — cierre 2026-07-28
+
+Estado técnico:
+`LITELLM_PRODUCTION_TEBAAI_ALIAS_BASELINE_CLOSED`.
+
+- se agregó una entrada `openai_gpt-5.4-nano` que replica exactamente los
+  parámetros de `openai_gpt-5-nano`; ambas apuntan a
+  `openai/gpt-5.4-nano`;
+- se preservaron el alias Team360 y `openai_text_embedding_3_small`; YAML,
+  unicidad, igualdad de parámetros, checksum y permisos pasaron;
+- el backup previo está bajo
+  `/home/administrator/.local/state/tebaai/backups/litellm/` con directorios
+  `700`, archivos `600` y checksums válidos;
+- el usuario reinició LiteLLM manualmente mediante el launcher canónico
+  `scripts/run.sh`; el agente no reinició, recargó, detuvo ni señaló el
+  servicio;
+- `/v1/models` publica exactamente una entrada de cada alias y conserva
+  embeddings; nuevos PIDs `2855117`/`2855127`, listener `0.0.0.0:4000`;
+- probes texto, JSON, ES, EN y HE pasan 5/5 con HTTP 200; ambos aliases
+  responden, embeddings permanece HTTP 200 con dimensión 1536 y no se observó
+  fallback;
+- Team360 conserva `openai_gpt-5-nano`, mantiene sus PIDs y health HTTP 200,
+  sin errores recientes de modelo o LiteLLM;
+- PostgreSQL, Milvus, Team360, Docker, Nginx, backend, frontend y `.bashrc`
+  permanecen intactos; no hubo push.
+
+Informe:
+`data/reports/tebaai/2026-07-28-litellm-tebaai-alias/README.md`.
+
+Próximo paso permitido: abrir una fase separada de despliegue TebaAI. La
+coexistencia de aliases es intencional; la revisión del alias Team360 queda
+diferida hasta finalizar el despliegue. Esta fase no desplegó la aplicación.
+
+## Frontend Breslov productivo — cierre 2026-07-28
+
+Estado técnico: `BRESLOV_FRONTEND_ROUTE_AND_PRODUCTION_DIST_CLOSED`.
+
+- `astro/src/pages/breslov.astro` replica byte a byte `index.astro`; ambas
+  fuentes conservan SHA-256
+  `aba832f7809808086c10b71af3d1c09308b1e509e604842579972bef7680798c`;
+- `PublicLayout.astro` canonicaliza la ruta generada `/breslov/` a la raíz
+  pública del subdominio; no cambió contenido visual;
+- Astro check terminó con cero diagnósticos, Vitest pasó 57/57 y Playwright
+  dev/estático/productivo pasó rutas, navegación, assets, consola,
+  desktop/móvil, canonical y mixed content;
+- build estático PRO: 8 páginas, 26 archivos, 866839 bytes, `/api` incorporado
+  y cero referencias a `127.0.0.1:7008` o `localhost`;
+- el `dist` se transfirió y activó mediante directorios aislados y renombres
+  atómicos; manifest local/remoto
+  `ca6c0c4c12b66421fd8e713273f7913dc9b4accbea1fa611cd2684f12decbd5d`;
+- Nginx sirve la raíz mediante `try_files /breslov/index.html =404`; el SHA
+  del body HTTPS coincide con el archivo, `/api/` y TLS se preservaron,
+  `nginx -t` pasó y el usuario realizó reload sin restart;
+- producción: HTTP 301 a HTTPS, HTTPS 200, assets 200, URL pública sin
+  `/breslov`, navegación 3/3 y `/api/health=502` esperado hasta desplegar el
+  backend;
+- backup de `dist` y site Nginx conservado en
+  `/home/administrator/.local/state/tebaai/backups/frontend/`;
+- PostgreSQL, Milvus, LiteLLM, Team360, Docker, backend y `.bashrc`
+  permanecieron intactos; no hubo push.
+
+Informe:
+`data/reports/tebaai/2026-07-28-breslov-frontend-route-production/README.md`.
+
+Próximo paso permitido: abrir una fase backend independiente. La futura home
+general de `tebaai.live` permanece diferida.
+
+## Backend productivo con uv — preparación 2026-07-28
+
+Estado técnico: `BACKEND_PRODUCTION_UV_LAUNCH_PREPARED`.
+
+- el backend versionado quedó preparado en el VPS con el mismo
+  `pyproject.toml`, `uv.lock`, Uvicorn y módulo
+  `ls_iMotorSoft_Srv01:app` usados en desarrollo;
+- `uv` remoto 0.11.21 en `/home/administrator/.local/bin/uv`,
+  CPython 3.12.13 y `uv sync --frozen --no-dev` pasaron;
+- los archivos privados `postgres.env`, `milvus.env`, `litellm.env` y
+  `backend.env` tienen owner `administrator` y modo `600`;
+- import no-listening PASS con Litestar, producción, debug desactivado,
+  auth habilitado y `TEBAAI_POSTGRES_AUTO_MIGRATE=false`; las migraciones
+  permanecieron 39 antes y después;
+- conectividad read-only PASS: PostgreSQL 8 documentos/5102 chunks/5102
+  tracking, Milvus 5102 entidades y LiteLLM con aliases generativo y de
+  embeddings presentes;
+- tests focalizados: 107/107; sintaxis, rutas, permisos, Uvicorn, bind
+  `127.0.0.1:7008` y ausencia de `reload` validados;
+- el agente no inició el backend; posteriormente el usuario ejecutó la línea
+  documentada en tmux y Uvicorn quedó en `127.0.0.1:7008`;
+- PostgreSQL, Milvus, LiteLLM, Team360, Nginx, Docker y `.bashrc`
+  permanecieron sin cambios operativos; no hubo commit ni push.
+
+Informe:
+`data/reports/tebaai/2026-07-28-backend-production-uv-launch-preparation/README.md`.
+
+Arranque manual confirmado posteriormente; `/health`, `/ready` y
+`/api/health` están validados. No se preparó systemd.
+
+## Producción inicial y assets sociales — 2026-07-28
+
+Estado técnico:
+`TEBAAI_PRODUCTION_SOCIAL_ASSETS_DEPLOYED_AUTH_E2E_BLOCKED`.
+
+- backend productivo en `127.0.0.1:7008`: `/health`, `/ready` y Nginx
+  `/api/health` responden 200; PID 2880184 preservado sin restart;
+- PostgreSQL read-only confirma 8 documentos ready, 5102 chunks, 5102 tracking
+  y cero usuarios; Milvus conserva 5102 entidades Loaded y LiteLLM publica
+  ambos aliases TebaAI;
+- se incorporaron favicon SVG, PNG 16/32, apple touch icon 180 y tarjeta social
+  original 1200×630; no se usaron logos oficiales externos;
+- canonical, Open Graph y Twitter apuntan a
+  `https://breslov.tebaai.live/` y a una imagen absoluta pública;
+- build PRO, Astro check, Vitest 57/57, Playwright dev/estático y validaciones
+  productivas desktop/móvil pasaron; bundle sin endpoints DEV ni secretos;
+- `dist` se respaldó, verificó y activó atómicamente; crawlers WhatsApp y
+  Facebook reciben HTML server-side e imagen pública HTTP 200;
+- Nginx no cambió ni recibió reload; PostgreSQL, Milvus, LiteLLM, Team360,
+  Docker, backend y `.bashrc` permanecieron intactos;
+- la baseline E2E autenticada no se cerró: admin devuelve 401 porque producción
+  contiene cero usuarios, `guest@tebaai.live` está ausente y la fase no
+  autorizaba provisionarlo;
+- investigación ES/EN/HE y logout quedan bloqueados hasta una fase autorizada
+  de usuarios productivos. El almacenamiento actual de tokens sigue siendo
+  `localStorage`, no cookies `HttpOnly/Secure`, según la política transitoria.
+
+Informe:
+`data/reports/tebaai/2026-07-28-production-e2e-social-assets/README.md`.
+
+Próximo paso: autorizar una fase separada de provisioning/promoción de admin y
+guest y decidir explícitamente el gate de almacenamiento de tokens. No se
+declaró `TEBAAI_PRODUCTION_INITIAL_E2E_AND_SOCIAL_ASSETS_CLOSED`.
 
 ## Guest de lectura para beta privada — 2026-07-27
 

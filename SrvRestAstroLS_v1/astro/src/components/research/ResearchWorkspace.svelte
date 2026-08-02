@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, tick } from "svelte";
-  import { getMe, getStoredAccessToken, logout } from "../auth/authClient.ts";
+  import { fetchMe, getStoredAccessToken, logout } from "../auth/authClient.ts";
   import EnrichedMarkdownAnswer from "./EnrichedMarkdownAnswer.svelte";
   import SourcePanel from "./SourcePanel.svelte";
   import {
@@ -65,6 +65,7 @@
   };
 
   let ready = $state(false);
+  let accessState = $state<"checking" | "denied" | "error">("checking");
   let inputText = $state("");
   let requestState = $state<RequestState>("idle");
   let requestError = $state<string | null>(null);
@@ -392,13 +393,20 @@
   }
 
   async function verify() {
-    if (!(await getMe())) {
+    const result = await fetchMe();
+    if (result.status === "ok") {
+      ready = true;
+      await tick();
+      if (!activeTurn) composer?.focus();
+      return;
+    }
+    if (result.status === "unauthorized") {
       location.assign("/login");
       return;
     }
-    ready = true;
-    await tick();
-    if (!activeTurn) composer?.focus();
+    // 403 (authenticated without research access) and technical errors
+    // (5xx / network) render a terminal state instead of loading forever.
+    accessState = result.status === "forbidden" ? "denied" : "error";
   }
 
   async function signOut() {
@@ -776,6 +784,17 @@
       </div>
     {/if}
     {#if mobilePanel && mobilePanel !== "filters"}<button class="panel-backdrop" aria-label="Cerrar panel" onclick={closePanel}></button>{/if}
+  </main>
+{:else if accessState === "denied"}
+  <main class="research research--denied" aria-live="polite">
+    <p>Acceso denegado. Su usuario no tiene permiso para investigar.</p>
+    <a href="/">Volver al inicio</a>
+  </main>
+{:else if accessState === "error"}
+  <main class="research research--error" aria-live="polite" role="alert">
+    <p>No se pudo verificar el acceso. Verifique la conexión e intente nuevamente.</p>
+    <button onclick={() => { accessState = "checking"; void verify(); }}>Reintentar</button>
+    <button onclick={signOut}>Cerrar sesión</button>
   </main>
 {:else}
   <main class="research research--checking" aria-live="polite"><p>Verificando acceso…</p></main>

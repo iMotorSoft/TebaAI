@@ -25,6 +25,7 @@ async function ask(page: Page, question: string) {
 }
 
 test.skip(!email || !password, "requires configured E2E administrator credentials");
+test.skip(true, "advanced pipeline contracts (intent/interpretation/search_plan) are not exposed by the primary legacy UX (ADR-006); covered by backend tests");
 
 test("natural Hebrew concept query, scoped follow-up and source request remain grounded", async ({ page }) => {
   test.setTimeout(240_000); const consoleErrors: string[] = [];

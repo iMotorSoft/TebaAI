@@ -22,5 +22,11 @@ export default defineConfig({
         },
       },
     },
+    optimizeDeps: {
+      // Eagerly pre-bundle the markdown rendering deps so the dev server
+      // never serves a stale "Outdated Optimize Dep" 504 that breaks
+      // ResearchWorkspace hydration ("Verificando acceso…" forever).
+      include: ["dompurify", "marked"],
+    },
   },
 });

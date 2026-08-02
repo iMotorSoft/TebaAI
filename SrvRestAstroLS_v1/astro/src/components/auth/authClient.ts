@@ -119,17 +119,40 @@ export async function login(email: string, password: string): Promise<LoginResul
 }
 
 export async function getMe(): Promise<UserInfo | null> {
-  const token = getAccessToken();
-  if (!token) return null;
+  const result = await fetchMe();
+  return result.status === "ok" ? result.user : null;
+}
 
+/**
+ * Status-aware session check. Every branch terminates: a valid session
+ * returns the user; 401 means "not authenticated", 403 means "authenticated
+ * but not authorized", and anything else (5xx, network) is a technical
+ * error. Callers must never render an indefinite loading state.
+ */
+export type MeResult =
+  | { status: "ok"; user: UserInfo }
+  | { status: "unauthorized" }
+  | { status: "forbidden" }
+  | { status: "error" };
+
+export async function fetchMe(): Promise<MeResult> {
+  const token = getAccessToken();
+  if (!token) return { status: "unauthorized" };
   try {
-    const user = await apiGet<UserInfo>(`${BASE}${API_ROUTES.me}`, token);
+    const res = await fetch(`${BASE}${API_ROUTES.me}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (res.status === 401) return { status: "unauthorized" };
+    if (res.status === 403) return { status: "forbidden" };
+    if (!res.ok) return { status: "error" };
+    const user = (await res.json()) as UserInfo;
     if (isBrowser) {
       localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(user));
     }
-    return user;
+    return { status: "ok", user };
   } catch {
-    return null;
+    return { status: "error" };
   }
 }
 

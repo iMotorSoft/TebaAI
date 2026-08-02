@@ -1,7 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { relevanceLabels, strengthLabel, warningLabel } from "./researchLabels.ts";
+import { literalKindLabel, relevanceLabels, strengthLabel, warningLabel } from "./researchLabels.ts";
 
 describe("research evidence labels", () => {
+  it("labels footnote and printed-reference literal kinds", () => {
+    expect(literalKindLabel("footnote_literal_exact")).toBe("Cita literal exacta de nota al pie");
+    expect(literalKindLabel("printed_reference_exact")).toBe("Referencia impresa exacta");
+    expect(literalKindLabel("body_literal_exact")).toBe("Cita literal exacta del cuerpo");
+  });
+
   it("separates relation relevance from literal strength", () => {
     expect(relevanceLabels.single_term_literal).toMatch(/un solo concepto/);
     expect(strengthLabel("insufficient")).toBe("Sin evidencia suficiente");

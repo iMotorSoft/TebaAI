@@ -64,6 +64,7 @@ function assertTishaPayload(payload: any, raw: string) {
 }
 
 test.skip(!email || !password, "requires configured E2E administrator credentials");
+test.skip(true, "advanced named-topic resolution contracts are not exposed by the primary legacy UX (ADR-006); covered by backend tests");
 
 test("real named-topic aliases preserve the full subject and strong LM XV evidence", async ({ page }) => {
   test.setTimeout(240_000);

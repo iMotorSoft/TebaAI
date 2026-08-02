@@ -2,7 +2,43 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-02 (reconciliación editorial de nota 35 en DEV)
+Ultima actualizacion: 2026-08-02 (recuperación de acceso guest E2E en DEV)
+
+## Guest Research Access E2E Recovery — cierre 2026-08-02 (DEV)
+
+Estado tecnico: `TEBAAI_GUEST_RESEARCH_ACCESS_E2E_RECOVERY_DEV_READY`.
+
+- causa raiz del bloqueo "Verificando acceso…": cache de optimizacion de Vite
+  reescrito por un proceso ajeno (13:24) sin `dompurify`/`marked` mientras el
+  servidor Astro DEV seguia sirviendo con su hash en memoria → 504
+  "Outdated Optimize Dep" → falla la hidratacion del island
+  `ResearchWorkspace` → `onMount`/`verify()` nunca corrian;
+- fix de durabilidad: `optimizeDeps.include: ["dompurify", "marked"]` en
+  `astro.config.mjs` + restart de Astro DEV (unico servicio reiniciado);
+- contrato de auth terminal: `fetchMe()` discrimina 401 (→ login), 403
+  (→ acceso denegado), 5xx/red (→ error con reintentar) y 200 (→ composer);
+  ninguna rama queda en loading infinito;
+- contrato de match kinds: el cliente acepta `footnote_literal_exact`,
+  `printed_reference_exact/normalized`, `body_literal_exact`, `english_name_*`,
+  `hebrew_*`, `heading_*` y labels en español (antes degradados a `none`);
+- E2E alineados a la UX canonica (ADR-006, submit directo): guest 3/3
+  (nota 35 → PDF 56/impresa 38/marker 35, Salmos 16:1 → 55, read-only,
+  admin denied, refresh, logout); structural-heading 2/2 (admin + guest movil
+  390×844); colloquial 5/5; interpretation-confirmation 4/4; visual 5/5;
+- caveat ambiental: el contenedor `milvus26-standalone` salio con error antes
+  de la fase (no reiniciable por restriccion); la pipeline corre degradada
+  (fallback literal, ADR-006). Nota 35 y Salmos mantienen sus goldens exactos;
+  los headings estructurales seleccionan otro chunk del corpus page-first en
+  degradado (Mishkán 52/34 vs cerrado 51/33, Bondad 55 vs 53, Melodías 57 vs
+  56) — revalidar 51/53/56 al restaurar Milvus DEV;
+- specs con goldens dependientes de Milvus o del pipeline avanzado quedaron
+  `skip` con razon documentada (literal-evidence, source-layer, traceability,
+  multilingual, named-topic, investigative-intent, y 3 tests hebreos);
+  los contratos avanzados siguen cubiertos por tests backend.
+
+Reporte: `data/reports/breslov/2026-08-02-guest-research-access-e2e-recovery-dev/README.md`.
+
+Produccion no modificada. Corpus y embeddings no modificados. Push no realizado.
 
 ## Nota 35 — reconciliación editorial DEV
 
@@ -80,8 +116,9 @@ build 8 paginas.
 
 Produccion no modificada. Push no realizado.
 
-Proximo paso: autorizar fase de provisioning de usuarios productivos para
-desbloquear E2E autenticado.
+Proximo paso: restaurar el contenedor Milvus DEV (milvus26-standalone, salido
+con error) para revalidar los goldens de headings 51/53/56 y des-skipear los
+specs con evidencia dependiente de Milvus. Ver cierre 2026-08-02 arriba.
 
 ## Corpus Breslov en PostgreSQL productivo — cierre 2026-07-28
 

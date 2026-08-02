@@ -26,13 +26,12 @@ async function ask(page: Page, question: string) {
   const responsePromise = page.waitForResponse((response) => {
     if (!response.url().endsWith("/library/investigative-qa/v1")) return false;
     if (response.request().method() !== "POST") return false;
-    return response.request().postDataJSON()?.phase === "analyze";
+    return !response.request().postDataJSON()?.phase;
   }, { timeout: 180_000 });
 
   await page.getByTestId("research-question").fill(question);
   await page.getByTestId("research-submit").click();
-  await expect(page.getByTestId("interpretation-analyze")).toBeVisible();
-  await page.getByTestId("interpretation-analyze").click();
+  await expect(page.getByTestId("research-result-heading")).toBeVisible({ timeout: 120_000 });
 
   const response = await responsePromise;
   const body = await response.json();

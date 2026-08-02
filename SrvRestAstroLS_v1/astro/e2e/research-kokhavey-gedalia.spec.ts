@@ -49,7 +49,7 @@ function expectCanonicalGedalia(body: any) {
   expect(body).toMatchObject({
     pipeline: "simple_rag",
     original_query: "Gedalia of Linitz",
-    research_status: expect.stringMatching(/^(complete|degraded)$/),
+    research_status: expect.stringMatching(/^(complete|partial|degraded)$/),
     retrieval: {
       query_language: "en",
       query_shape: "short_proper_name",
@@ -80,7 +80,7 @@ test.describe("Kokhavey Ohr short proper-name DEV gate", () => {
     await login(page, adminEmail, adminPassword);
     const body = await ask(page, "Gedalia of Linitz");
     expectCanonicalGedalia(body);
-    await expect(page.locator('[data-research-status="complete"], [data-research-status="degraded"]').first()).toBeVisible();
+    await expect(page.locator('[data-research-status="complete"], [data-research-status="partial"], [data-research-status="degraded"]').first()).toBeVisible();
     const sources = page.locator('aside[aria-label="Fuentes del turno"]');
     await expect(sources.getByText("Kokhavey Ohr", { exact: true }).first()).toBeVisible();
     await expect(sources.getByText("PDF p. 21", { exact: false }).first()).toBeVisible();

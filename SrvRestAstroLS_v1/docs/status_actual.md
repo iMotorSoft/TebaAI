@@ -6,7 +6,15 @@ Ultima actualizacion: 2026-08-02 (recuperación de acceso guest E2E en DEV)
 
 ## Guest Research Access E2E Recovery — cierre 2026-08-02 (DEV)
 
-Estado tecnico: `TEBAAI_GUEST_RESEARCH_ACCESS_E2E_RECOVERY_DEV_READY`.
+Estados:
+
+```
+TEBAAI_GUEST_RESEARCH_ACCESS_E2E_RECOVERY_DEV_READY
+TEBAAI_FOOTNOTE_LITERAL_RANKING_V1_DEV_READY
+TEBAAI_PAGE_FIRST_EDITORIAL_CONVENTIONS_DOCUMENTED_DEV_READY
+TEBAAI_EXACT_EDITORIAL_EVIDENCE_RANKING_V1_DEV_REVIEW_REQUIRED
+TEBAAI_LIKUTEY_HALAJOT_PAGE_FIRST_REINGEST_V2_DEV_REVIEW_REQUIRED
+```
 
 - causa raiz del bloqueo "Verificando acceso…": cache de optimizacion de Vite
   reescrito por un proceso ajeno (13:24) sin `dompurify`/`marked` mientras el
@@ -21,20 +29,34 @@ Estado tecnico: `TEBAAI_GUEST_RESEARCH_ACCESS_E2E_RECOVERY_DEV_READY`.
 - contrato de match kinds: el cliente acepta `footnote_literal_exact`,
   `printed_reference_exact/normalized`, `body_literal_exact`, `english_name_*`,
   `hebrew_*`, `heading_*` y labels en español (antes degradados a `none`);
-- E2E alineados a la UX canonica (ADR-006, submit directo): guest 3/3
-  (nota 35 → PDF 56/impresa 38/marker 35, Salmos 16:1 → 55, read-only,
-  admin denied, refresh, logout); structural-heading 2/2 (admin + guest movil
-  390×844); colloquial 5/5; interpretation-confirmation 4/4; visual 5/5;
-- caveat ambiental: el contenedor `milvus26-standalone` salio con error antes
-  de la fase (no reiniciable por restriccion); la pipeline corre degradada
-  (fallback literal, ADR-006). Nota 35 y Salmos mantienen sus goldens exactos;
-  los headings estructurales seleccionan otro chunk del corpus page-first en
-  degradado (Mishkán 52/34 vs cerrado 51/33, Bondad 55 vs 53, Melodías 57 vs
-  56) — revalidar 51/53/56 al restaurar Milvus DEV;
-- specs con goldens dependientes de Milvus o del pipeline avanzado quedaron
-  `skip` con razon documentada (literal-evidence, source-layer, traceability,
-  multilingual, named-topic, investigative-intent, y 3 tests hebreos);
-  los contratos avanzados siguen cubiertos por tests backend.
+- E2E alineados a la UX canonica (ADR-006, submit directo): acceso validado
+  10/10 ×2 con Milvus up (guest 3/3 con nota 35 → 56/38/marker 35, Salmos,
+  read-only, admin denied, refresh, logout; structural-heading 2/2 admin +
+  guest movil 390×844; admin 4/4; responsive 1/1);
+- **incidente ambiental resuelto**: el contenedor `milvus26-standalone` salio
+  con error durante la fase; fue **bajado y levantado manualmente por el
+  usuario** el 2026-08-02. Verificado: contenedor healthy, coleccion
+  `tebaai_breslov_chunks_v1` con 5,370 entidades, `semantic_status=ok` y
+  `research_status` sin degraded en todas las consultas del gate;
+- **hallazgo headings (revision pendiente)**: con Milvus up, nota 35 revalida
+  EXACTA (56/38, footnote, marker 35, 3/3 estable). Los headings NO revalidan
+  51/53/56: seleccion live `structural_heading_all_tokens_ordered` en 52/34,
+  55, 57 del doc page-first 132a791a — comportamiento ya presente en los logs
+  del 2026-07-31 con Milvus operativo, por lo que NO era causado por el modo
+  degraded. El contenido dorado (heading + cita + impresa 33/35/38) existe en
+  paginas 51/53/56 del corpus pero la seleccion literal elige los chunks
+  cuerpo adyacentes. No se modifico ranking ni corpus; el contrato 51/53/56
+  no se flexibilizo. No se actualizaron goldens a 52/55/57;
+- **hallazgo Salmos (revision pendiente)**: `printed_reference_exact` estable
+  y evidencia LH 55 siempre entre los primarios; el primary activo alterna
+  55↔368 (Cruzando el Puente Angosto) por no determinismo del grounding de
+  claims. `printed_page` actual null vs golden 37 (metadata pendiente
+  separada del ranking); no se declara PASS;
+- specs con goldens de era pre-reingest o del pipeline avanzado quedaron
+  `skip` con razon corregida (verificado con Milvus up: ninguno era
+  Milvus-causado): literal-evidence, source-layer, traceability, multilingual,
+  named-topic, investigative-intent, y 4 tests hebreos. Los contratos
+  avanzados siguen cubiertos por tests backend.
 
 Reporte: `data/reports/breslov/2026-08-02-guest-research-access-e2e-recovery-dev/README.md`.
 
@@ -116,9 +138,10 @@ build 8 paginas.
 
 Produccion no modificada. Push no realizado.
 
-Proximo paso: restaurar el contenedor Milvus DEV (milvus26-standalone, salido
-con error) para revalidar los goldens de headings 51/53/56 y des-skipear los
-specs con evidencia dependiente de Milvus. Ver cierre 2026-08-02 arriba.
+Proximo paso: decidir el hallazgo de revalidacion de headings (ver cierre
+2026-08-02 arriba): aceptar 52/55/57 all_tokens_ordered como canonicos
+(actualizar goldens/specs) o abrir un cambio de ranking con ADR para
+recuperar 51/53/56. Milvus DEV ya fue restaurado manualmente.
 
 ## Corpus Breslov en PostgreSQL productivo — cierre 2026-07-28
 

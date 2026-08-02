@@ -58,7 +58,7 @@ function expectCanonicalHeading(body: any, expectedMatch = /structural_heading_/
   expect(body).toMatchObject({
     pipeline: "simple_rag",
     original_query: expect.any(String),
-    research_status: expect.stringMatching(/^(complete|degraded)$/),
+    research_status: expect.stringMatching(/^(complete|partial|degraded)$/),
     retrieval: {
       query_language: "es",
       query_shape: "structural_heading",

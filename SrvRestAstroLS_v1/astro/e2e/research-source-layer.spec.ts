@@ -46,7 +46,7 @@ function assertGolden(payload: any, instructionLanguage: "es" | "en" | "he") {
 }
 
 test.skip(!email || !password, "requires configured E2E administrator credentials");
-test.skip(true, "golden LM XV evidence (229/215 biblical quote) depends on the DEV Milvus container being up; degraded literal lane returns a different primary");
+test.skip(true, "golden LM XV evidence (229/215 biblical quote) belongs to the pre-reingest corpus era; the current legacy pipeline returns no primary for the query (verified with Milvus up); covered by backend tests");
 
 test("real LM XV source-language priority and editorial layer remain auditable", async ({ page }) => {
   test.setTimeout(300_000); const errors: string[] = [];

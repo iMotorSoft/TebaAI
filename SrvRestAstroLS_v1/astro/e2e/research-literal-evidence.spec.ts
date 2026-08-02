@@ -36,7 +36,7 @@ async function ask(page: Page, question: string) {
 }
 
 test.skip(!email || !password, "requires configured E2E administrator credentials");
-test.skip(true, "golden evidence (ev-lh-37c67830012c, Hebrew batch) depends on the DEV Milvus container (milvus26-standalone) being up; it exited with status 1 on 2026-08-02");
+test.skip(true, "golden evidence (ev-lh-37c67830012c, Hebrew batch) belongs to the pre-reingest corpus era; the current legacy pipeline selects different chunks (verified with Milvus up); covered by backend tests");
 
 test("real literal evidence presentation remains clean and auditable", async ({ page }) => {
   test.setTimeout(300_000);

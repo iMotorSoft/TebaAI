@@ -8,7 +8,7 @@ const password = process.env.TEBAAI_E2E_ADMIN_PASSWORD;
 const screenshots = path.resolve(import.meta.dirname, "../../../data/reports/breslov/2026-07-16-research-workspace-v1/screenshots");
 
 test.skip(!email || !password, "requires configured E2E administrator credentials");
-test.skip(true, "golden blood-speech evidence (kitzur null-page) depends on the DEV Milvus container being up; degraded literal lane returns a different primary");
+test.skip(true, "golden blood-speech evidence (kitzur null-page) belongs to the pre-reingest corpus era; the current legacy pipeline selects a different primary (verified with Milvus up); covered by backend tests");
 
 test("blood-speech claims open their explicit primary evidence", async ({ page }) => {
   test.setTimeout(120_000);

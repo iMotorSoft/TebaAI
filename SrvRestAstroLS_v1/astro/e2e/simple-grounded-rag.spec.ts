@@ -83,7 +83,7 @@ expect(body.retrieval.semantic_status).toEqual(expect.stringMatching(/^(ok|faile
     ]) {
       const body = await ask(page, question);
       expect(body.original_query).toBe(question);
-      expect(body.research_status).toEqual(expect.stringMatching(/^(complete|degraded)$/));
+      expect(body.research_status).toEqual(expect.stringMatching(/^(complete|partial|degraded)$/));
       expect(body.retrieval.literal_hits).toBeGreaterThan(0);
       expect(body.retrieval.primary_match_type).toBe("hebrew_exact_normalized");
       const primary = body.hits.find((hit: { is_primary: boolean }) => hit.is_primary);

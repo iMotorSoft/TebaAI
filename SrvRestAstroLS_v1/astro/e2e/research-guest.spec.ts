@@ -49,10 +49,38 @@ async function ask(page: import("@playwright/test").Page, question: string) {
   return body;
 }
 
-function primaryHit(body: Record<string, any>) {
-  const hit = body.hits?.find((candidate: Record<string, any>) => candidate.is_primary);
+interface ResearchHit {
+  is_primary?: boolean;
+  work_title?: string;
+  physical_file_name?: string;
+  physical_pdf_page?: number | null;
+  printed_page?: number | null;
+  section?: string;
+  source_layer?: string;
+  literal_match_kind?: string;
+  footnote_marker?: string | null;
+  evidence_id?: string;
+  hit_id?: string;
+}
+
+interface ResearchPayload {
+  pipeline?: string;
+  original_query?: string;
+  research_status?: string;
+  primary_evidence_ids?: string[];
+  hits?: ResearchHit[];
+  retrieval?: {
+    query_language?: string;
+    query_shape?: string;
+    primary_match_type?: string | null;
+    matched_tokens?: string[];
+  };
+}
+
+function primaryHit(body: ResearchPayload) {
+  const hit = body.hits?.find((candidate) => candidate.is_primary);
   expect(hit, "expected the response to include a primary evidence hit").toBeTruthy();
-  return hit;
+  return hit as ResearchHit;
 }
 
 test.describe("read-only research guest", () => {
@@ -87,17 +115,20 @@ test.describe("read-only research guest", () => {
     await expect(sources).toContainText("El hombre se une a HaShem");
     await page.screenshot({ path: path.join(SCREENSHOTS, "research-guest-footnote-35.png"), fullPage: true });
 
-    // ── Salmos 16:1 → LH page 55 ────────────────────────────────────────
-    // The printed_reference_exact retrieval contract is stable; the active
-    // primary alternates between the LH page-55 evidence and a Cruzando el
-    // Puente Angosto page-368 hit (grounding nondeterminism, documented in
-    // the phase report). The LH page-55 evidence is consistently a primary.
+    // ── Salmos 16:1 → LH page 55 / printed 37, deterministic primary ────
+    // Canonical editorial selection fixes the PRIMARY before synthesis: LH
+    // page 55 with printed page 37, marginal_reference. Other works with a
+    // real occurrence remain secondary evidence.
     const salmos = await ask(page, "Salmos 16:1");
     expect(salmos.retrieval).toMatchObject({ primary_match_type: "printed_reference_exact" });
-    const lh55 = salmos.hits.find(
-      (hit) => hit.physical_pdf_page === 55 && salmos.primary_evidence_ids.includes(hit.hit_id),
-    );
-    expect(lh55, "LH page-55 printed-reference evidence is present among the primaries").toBeTruthy();
+    const salmosPrimary = primaryHit(salmos);
+    expect(salmosPrimary).toMatchObject({
+      work_title: "Likutey Halajot — Interior Final",
+      physical_pdf_page: 55,
+      printed_page: 37,
+      source_layer: "marginal_reference",
+      literal_match_kind: "printed_reference_exact",
+    });
     const sourcesPanel = page.locator('aside[aria-label="Fuentes del turno"]');
     await expect(sourcesPanel.getByText("PDF p. 55").first()).toBeVisible();
     await page.screenshot({ path: path.join(SCREENSHOTS, "research-guest-salmos-16-1.png"), fullPage: true });

@@ -158,7 +158,8 @@ async def search_structural_heading_candidates(
             END,
             length(ch.content),
             ch.document_id,
-            ch.chunk_index
+            ch.chunk_index,
+            ch.id
         LIMIT %(limit)s
         """,
         {
@@ -189,7 +190,9 @@ async def search_printed_reference_candidates(
     # Use the reference regex to extract book, chapter, verse for precise matching
     from modules.library.editorial_evidence_v2 import _BIBLICAL_REFERENCE
     import re as _re
-    # Build variants as regex patterns with word boundaries
+    # Build variants as regex patterns with exact verse boundaries.  A query
+    # verse must never be a prefix of a longer verse: "16:1" must not match
+    # "16:10" or "16:11", and "116:1" is a different chapter entirely.
     pg_re_variants = []
     ilike_variants = []
     for v in reference_variants:
@@ -207,9 +210,15 @@ async def search_printed_reference_candidates(
                 book_pluralized = f'(?:{book}{book}s?)' if book != book_singular else f'(?:{book}{book}s)?'
                 # Simplify: just match with and without trailing 's'
                 book_pluralized = f'{book}s?'
-            # Match book chapter:verse NOT followed by another digit or hyphen-digit
-            # Use (?i) for case-insensitive
-            pg_re = r'(?i)' + book_pluralized + r'\s+' + chapter + r':' + verse + r'(?:[^\w]|$|\s)'
+            # Match the exact book chapter:verse surface.  The trailing
+            # guard excludes longer verses (16:10, 16:11) and a following
+            # hyphenated range.  The leading guard excludes 116:1 when the
+            # query is 16:1, and vice versa.
+            pg_re = (
+                r'(?i)(?<![\d:])' + book_pluralized + r'\s+' + chapter + r':' + verse
+                + r'(?![\d])'
+                + r'(?:[^\w]|$)'
+            )
             pg_re_variants.append(pg_re)
             # Also add a simple ILIKE variant for backup
             # Use the original reference text without parentheses
@@ -263,7 +272,7 @@ async def search_printed_reference_candidates(
                 OR ch.document_id = ANY(%(document_ids)s::uuid[])
           )
           AND ch.content ~ ref.query
-        ORDER BY ch.id, ref.query
+        ORDER BY ch.id, ref.query, ch.document_id, ch.page_start, ch.chunk_index
         LIMIT 30
         """,
         {

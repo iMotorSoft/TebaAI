@@ -115,6 +115,7 @@ export const sourceLayerLabels: Record<string, string> = {
   source_reference: "Referencia de fuente",
   section_heading: "Encabezado de sección",
   page_heading: "Encabezado de página",
+  marginal_reference: "Referencia marginal impresa",
   introduction: "Introducción",
   unknown: "Capa editorial no confirmada; requiere revisión",
 };

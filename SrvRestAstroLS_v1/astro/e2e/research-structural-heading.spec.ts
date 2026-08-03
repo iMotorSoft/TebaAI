@@ -48,13 +48,44 @@ async function ask(page: Page, question: string) {
   return body;
 }
 
-function expectCanonicalHeading(body: any, expectedMatch = /structural_heading_/) {
-  // Environment-tolerant gate: with Milvus up the primary is the exact
-  // heading chunk (PDF 51 / printed 33, structural_heading_exact); in the
-  // degraded literal mode (Milvus unavailable) the page-first corpus selects
-  // the adjacent section chunk (PDF 52 / printed 34,
-  // structural_heading_all_tokens_ordered). Both preserve the section
-  // evidence contract: LH Interior Final, section 4, heading literal.
+interface ResearchHit {
+  is_primary?: boolean;
+  work_title?: string;
+  physical_file_name?: string;
+  physical_pdf_page?: number | null;
+  printed_page?: number | null;
+  section?: string;
+  source_layer?: string;
+  literal_match_kind?: string;
+  heading_original?: string;
+  quote?: string;
+  evidence_id?: string;
+  hit_id?: string;
+}
+
+interface ResearchPayload {
+  pipeline?: string;
+  original_query?: string;
+  research_status?: string;
+  answer_markdown?: string;
+  primary_evidence_ids?: string[];
+  hits?: ResearchHit[];
+  retrieval?: {
+    query_language?: string;
+    query_shape?: string;
+    primary_match_type?: string | null;
+    matched_tokens?: string[];
+  };
+}
+
+function expectCanonicalHeading(body: ResearchPayload, expected: {
+  pdfPage: number;
+  printedPage: number;
+  section: string;
+  tokens: string[];
+  headingOriginal: string;
+  quotePattern: RegExp;
+}) {
   expect(body).toMatchObject({
     pipeline: "simple_rag",
     original_query: expect.any(String),
@@ -62,44 +93,79 @@ function expectCanonicalHeading(body: any, expectedMatch = /structural_heading_/
     retrieval: {
       query_language: "es",
       query_shape: "structural_heading",
-      primary_match_type: expect.stringMatching(expectedMatch),
-      matched_tokens: ["construyendo", "un", "mishkan"],
+      primary_match_type: expect.stringMatching(
+        /^structural_heading_(exact|normalized|accent_folded)$/,
+      ),
+      matched_tokens: expected.tokens,
     },
   });
-  const primary = body.hits.find((hit: { is_primary: boolean }) => hit.is_primary);
+  const primary = body.hits?.find((hit) => hit.is_primary);
+  expect(primary, "expected a primary evidence hit").toBeTruthy();
   expect(primary).toMatchObject({
     work_title: expect.stringMatching(/Likutey Halajot/),
     physical_file_name: "LIKUTEY HALAJOT (Interior Final).pdf",
-    physical_pdf_page: expect.any(Number),
-    printed_page: expect.any(Number),
-    section: expect.stringContaining("CONSTRUYENDO UN MISHKÁN"),
+    physical_pdf_page: expected.pdfPage,
+    printed_page: expected.printedPage,
+    section: expect.stringContaining(expected.section),
     source_layer: "section_heading",
-    literal_match_kind: expect.stringMatching(expectedMatch),
-    heading_original: expect.stringContaining("4 ■ CONSTRUYENDO UN MISHKÁN"),
+    literal_match_kind: expect.stringMatching(
+      /^structural_heading_(exact|normalized|accent_folded)$/,
+    ),
+    heading_original: expect.stringContaining(expected.headingOriginal),
   });
-  expect([51, 52]).toContain(primary.physical_pdf_page);
-  expect([33, 34]).toContain(primary.printed_page);
-  expect(primary.quote).toMatch(/(El Rabí Natán concluye su explicación|DISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA)/);
-  expect(body.answer_markdown).toContain(primary.evidence_id);
+  expect(primary?.quote).toMatch(expected.quotePattern);
+  expect(body.answer_markdown).toContain(primary?.evidence_id);
   return primary;
 }
+
+const MISHKAN = {
+  pdfPage: 51,
+  printedPage: 33,
+  section: "CONSTRUYENDO UN MISHKÁN",
+  tokens: ["construyendo", "un", "mishkan"],
+  headingOriginal: "4 ■ CONSTRUYENDO UN MISHKÁN",
+  quotePattern: /El Rabí Natán concluye su explicación/,
+};
+
+const BONDAD = {
+  pdfPage: 53,
+  printedPage: 35,
+  section: "INCLINADO HACIA LA BONDAD",
+  tokens: ["inclinado", "hacia", "la", "bondad"],
+  headingOriginal: "5 ■ INCLINADO HACIA LA BONDAD",
+  quotePattern: /De la misma manera/,
+};
+
+const MELODIAS = {
+  pdfPage: 56,
+  printedPage: 38,
+  section: "MELODÍAS Y PLEGARIAS",
+  tokens: ["melodias", "y", "plegarias"],
+  headingOriginal: "6 ■ MELODÍAS Y PLEGARIAS",
+  quotePattern: /El Rabí Natán expandirá ahora/,
+};
 
 test.describe("structural section heading literal DEV gate", () => {
   test.skip(!adminEmail || !adminPassword, "admin E2E credentials are required");
 
   test("admin recovers exact, accent-folded and negative heading lookups", async ({ page }) => {
-    test.setTimeout(300_000);
+    test.setTimeout(600_000);
     await login(page, adminEmail, adminPassword);
 
-    const primary = expectCanonicalHeading(await ask(page, "CONSTRUYENDO UN MISHKÁN"));
+    const mishkan = expectCanonicalHeading(
+      await ask(page, "CONSTRUYENDO UN MISHKÁN"),
+      MISHKAN,
+    ) ?? null;
     const sources = page.locator('aside[aria-label="Fuentes del turno"]');
-    await expect(sources).toContainText(/Coincidencia exacta con título de sección|Todos los términos del encabezado en orden/);
-    await expect(sources).toContainText(/PDF p\. 5[12] · Página impresa 3[34] · 4\. CONSTRUYENDO UN MISHKÁN/);
+    await expect(sources).toContainText("Coincidencia exacta con título de sección");
+    await expect(sources).toContainText(/PDF p\. 51 · Página impresa 33 · 4\. CONSTRUYENDO UN MISHKÁN/);
     await expect(sources).toContainText("LIKUTEY HALAJOT (Interior Final).pdf");
-    await expect(sources).toContainText(/(El Rabí Natán concluye su explicación|DISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA)/);
-    await expect(sources).toContainText(primary.evidence_id);
+    await expect(sources).toContainText("El Rabí Natán concluye su explicación");
+    await expect(sources).toContainText(mishkan?.evidence_id ?? "");
 
-    expectCanonicalHeading(await ask(page, "Construyendo un Mishkan"));
+    expectCanonicalHeading(await ask(page, "Construyendo un Mishkan"), MISHKAN);
+    expectCanonicalHeading(await ask(page, "INCLINADO HACIA LA BONDAD"), BONDAD);
+    expectCanonicalHeading(await ask(page, "MELODÍAS Y PLEGARIAS"), MELODIAS);
     const negative = await ask(page, "CONSTRUYENDO UN TEMPLO INEXISTENTE");
     expect(negative).toMatchObject({
       pipeline: "simple_rag",
@@ -120,14 +186,14 @@ test.describe("structural heading guest mobile gate", () => {
     test.setTimeout(240_000);
     await page.setViewportSize({ width: 390, height: 844 });
     await login(page, guestEmail, guestPassword);
-    expectCanonicalHeading(await ask(page, "CONSTRUYENDO UN MISHKÁN"));
+    expectCanonicalHeading(await ask(page, "CONSTRUYENDO UN MISHKÁN"), MISHKAN);
     await clickVisibleButton(page, "Fuentes");
     const sources = page.locator('aside[aria-label="Fuentes del turno"]');
     await expect(sources).toBeVisible();
     await expect(sources).toContainText("Likutey Halajot");
-    await expect(sources).toContainText(/PDF p\. 5[12]/);
-    await expect(sources).toContainText(/Página impresa 3[34]/);
-    await expect(sources).toContainText(/Coincidencia exacta con título de sección|Todos los términos del encabezado en orden/);
+    await expect(sources).toContainText(/PDF p\. 51/);
+    await expect(sources).toContainText(/Página impresa 33/);
+    await expect(sources).toContainText("Coincidencia exacta con título de sección");
     const overflow = await page.evaluate(
       () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
     );

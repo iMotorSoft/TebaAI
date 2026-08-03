@@ -170,16 +170,27 @@ def _heading_display_text(value: str) -> str:
 
 
 def _structural_heading_lines(candidate: dict[str, Any]) -> list[str]:
-    values: list[str] = []
+    """Return candidate heading lines: content-derived lines first, then the
+    inherited ``section_title`` metadata.  Content lines outrank inherited
+    metadata so the actual heading block beats adjacent body chunks whose
+    ``section_title`` repeats the heading."""
+    content_values = _structural_heading_content_lines(candidate)
     section_title = str(candidate.get("section_title") or "").strip()
+    values = list(content_values)
     if section_title:
         values.append(section_title)
+    return list(dict.fromkeys(values))
+
+
+def _structural_heading_content_lines(candidate: dict[str, Any]) -> list[str]:
     content = str(candidate.get("content") or "")
     lines = [line.strip() for line in content.splitlines() if line.strip()]
     block_type = str(candidate.get("block_type") or "")
+    values: list[str] = []
     for line in lines:
         markdown_signal = bool(_MARKDOWN_HEADING.match(line))
         numbered_signal = bool(_STRUCTURAL_LEADING_NUMBER.match(line))
+        editorial_symbol = "■" in line
         letters = [char for char in line if char.isalpha()]
         uppercase_signal = bool(letters) and all(
             not char.islower() for char in letters
@@ -190,7 +201,16 @@ def _structural_heading_lines(candidate: dict[str, Any]) -> list[str]:
             and len(line) <= 240
             and (numbered_signal or uppercase_signal or structural_block)
         )
-        if markdown_signal or compact_standalone:
+        explicit_editorial_heading = (
+            numbered_signal
+            and editorial_symbol
+            and 1 <= len(_STRUCTURAL_TOKEN.findall(line)) <= 10
+        )
+        if (
+            markdown_signal
+            or compact_standalone
+            or explicit_editorial_heading
+        ):
             values.append(line)
     return list(dict.fromkeys(values))
 
@@ -210,7 +230,8 @@ def classify_structural_heading_candidates(
         "structural_heading_partial": 80.0,
     }
     for candidate in candidates:
-        best: tuple[float, str, str, StructuralHeadingNormalization] | None = None
+        best: tuple[float, str, str, StructuralHeadingNormalization, bool] | None = None
+        content_lines = set(_structural_heading_content_lines(candidate))
         for heading in _structural_heading_lines(candidate):
             normalized = normalize_structural_heading_for_search(heading)
             if not normalized.tokens:
@@ -248,11 +269,12 @@ def classify_structural_heading_candidates(
                         continue
                     match_type = "structural_heading_partial"
             score = priorities[match_type]
-            if best is None or score > best[0]:
-                best = (score, match_type, heading, normalized)
+            from_content = heading in content_lines
+            if best is None or (score, from_content) > (best[0], best[4]):
+                best = (score, match_type, heading, normalized, from_content)
         if best is None:
             continue
-        score, match_type, heading, normalized = best
+        score, match_type, heading, normalized, from_content = best
         classified.append({
             **candidate,
             "chunk_id": str(candidate["chunk_id"]),
@@ -273,11 +295,13 @@ def classify_structural_heading_candidates(
             "heading_accent_folded": normalized.accent_folded,
             "heading_tokens": list(normalized.tokens),
             "leading_section_number": normalized.leading_section_number,
+            "heading_from_content": from_content,
         })
     return sorted(
         classified,
         key=lambda item: (
             float(item["literal_score"]),
+            bool(item.get("heading_from_content")),
             -len(str(item.get("heading_original") or "")),
         ),
         reverse=True,
@@ -489,7 +513,16 @@ def build_query_variants(
     """Keep the complete query first and add only bounded, controlled aliases."""
     folded = _fold(original_query)
     variants = [original_query]
-    if not is_printed_reference:
+    if is_printed_reference:
+        # Scoped forms ("Salmos 16:1 en Likutey Halajot") never appear
+        # verbatim in the corpus; add the bare reference surface so the
+        # literal lane can locate the canonical page.
+        match = _BIBLICAL_REFERENCE.search(original_query)
+        if match:
+            bare = f"{match.group(1)} {match.group(2)}:{match.group(3)}"
+            if bare not in variants:
+                variants.append(bare)
+    else:
         english_name_query = detect_short_english_name_query(original_query)
         if english_name_query:
             variants.append(english_name_query.normalized)
@@ -656,8 +689,13 @@ def _literal_evidence_strength(match_type: str) -> int:
         "footnote_literal_exact": 60,
         "printed_reference_exact": 50,
         "structural_heading_exact": 50,
+        "structural_heading_normalized": 48,
+        "structural_heading_accent_folded": 46,
+        "structural_heading_all_tokens_ordered": 42,
+        "structural_heading_all_tokens_proximity": 40,
         "body_literal_exact": 40,
         "exact_phrase": 30,
+        "structural_heading_partial": 20,
     }.get(match_type, 0)
 
 
@@ -748,6 +786,16 @@ def merge_results(
             "exact_match": False,
             "retrieval_sources": ["milvus"],
         }
+    # Assign literal ranks deterministically: the input list order is
+    # pipeline-dependent (targeted reference lane, structural lane), so
+    # ranking by arrival order would leak retrieval order into scores.
+    literal = sorted(
+        literal,
+        key=lambda item: (
+            -float(item.get("literal_score") or 0.0),
+            str(item.get("chunk_id") or ""),
+        ),
+    )
     for rank, item in enumerate(literal, 1):
         chunk_id = str(item["chunk_id"])
         target = merged.setdefault(chunk_id, {
@@ -865,9 +913,22 @@ def merge_results(
             + semantic_only_penalty
         )
         item["query_language"] = query_language
+    # Deterministic tie-break: combined score, then semantic score, then a
+    # stable canonical key.  A Python ``sorted`` is stable, so the final
+    # key guarantees identical ordering across runs regardless of Milvus or
+    # SQL arrival order.  ``merged`` is a plain dict keyed by chunk_id,
+    # which already preserves stable insertion order.
+    def _stable_key(item: dict[str, Any]) -> tuple[object, ...]:
+        return (
+            float(item.get("combined_score") or 0.0),
+            float(item.get("semantic_score") or 0.0),
+            str(item.get("document_id") or ""),
+            str(item.get("chunk_id") or ""),
+        )
+
     return sorted(
         merged.values(),
-        key=lambda item: (item["combined_score"], item["semantic_score"]),
+        key=_stable_key,
         reverse=True,
     )
 
@@ -875,6 +936,10 @@ def merge_results(
 def _source_layer(chunk: dict[str, Any]) -> str:
     if str(chunk.get("literal_match_type") or "").startswith("structural_heading_"):
         return "section_heading"
+    if chunk.get("literal_match_type") == "printed_reference_exact":
+        return "marginal_reference"
+    if chunk.get("literal_match_type") == "footnote_literal_exact":
+        return "footnote"
     role = str(chunk.get("evidence_role") or "")
     block = str(chunk.get("block_type") or "")
     if chunk.get("authority_level") == "primary_original":
@@ -888,6 +953,43 @@ def _source_layer(chunk: dict[str, Any]) -> str:
     if "comment" in role:
         return "editorial_commentary"
     return "editorial_translation" if chunk.get("language") == "es" else "unknown"
+
+
+def _content_has_exact_reference_surface(content: str, query: str) -> bool:
+    """Verify a chunk truly contains the exact printed reference surface.
+
+    The verse must not be a prefix of a longer verse: "16:1" never matches
+    "16:10" or "16:11", and "116:1" is a different chapter.  Uses the same
+    boundary construction as the targeted reference lane.
+    """
+    if not content:
+        return False
+    match = _BIBLICAL_REFERENCE.search(query)
+    if not match:
+        return False
+    book = re.escape(match.group(1))
+    chapter = re.escape(match.group(2))
+    verse = re.escape(match.group(3))
+    book_pluralized = f"{book}s?"
+    pattern = (
+        r"(?i)(?<![\d:])"
+        + book_pluralized
+        + r"\s+"
+        + chapter
+        + r":"
+        + verse
+        + r"(?![\d])(?:[^\w]|$)"
+    )
+    return re.search(pattern, content) is not None
+
+
+def _explicit_likutey_halajot_scope(query: str) -> bool:
+    """Detect an explicit "en Likutey Halajot" scope in a structured query.
+
+    The scope is a document filter for the printed-reference lane, derived
+    from the query surface itself — never a per-work ranking boost.
+    """
+    return "likutey halajot" in _fold(query)
 
 
 def _work_code(chunk: dict[str, Any]) -> str:
@@ -958,6 +1060,14 @@ STRUCTURAL_HEADING_PRIMARY_MATCH_TYPES = {
     "structural_heading_all_tokens_ordered",
     "structural_heading_all_tokens_proximity",
 }
+# A canonical structural heading (exact/normalized/accent-folded) is the
+# PRIMARY for a nominal heading query.  Adjacent body chunks that merely
+# contain the query tokens may only be context, never the canonical cite.
+STRUCTURAL_HEADING_CANONICAL_MATCH_TYPES = {
+    "structural_heading_exact",
+    "structural_heading_normalized",
+    "structural_heading_accent_folded",
+}
 
 
 def _attach_structural_heading_contexts(
@@ -988,6 +1098,46 @@ def _attach_structural_heading_contexts(
         heading["heading_normalized"] = item.get("heading_normalized")
         heading["heading_accent_folded"] = item.get("heading_accent_folded")
         heading["section"] = item.get("heading_display") or heading.get("section")
+
+
+def _canonical_printed_page(chunk: dict[str, Any]) -> int | None:
+    """Resolve the printed page for a selected chunk without mutating it.
+
+    Preference:
+    1. Explicit chunk metadata (``printed_page`` / ``printed_page_label``).
+    2. Page-first corpus: the visible printed folio in the opening running
+       header of the page content (``"34 LIKUTEY HALAJOT"`` or ``"  37"``).
+    """
+    label = chunk.get("printed_page") or chunk.get("printed_page_label")
+    if label is not None:
+        try:
+            return int(label)
+        except (ValueError, TypeError):
+            pass
+    opening = str(chunk.get("markdown") or chunk.get("content") or "")[:240]
+    for line in opening.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        digits_alone = re.match(r"(\d{1,4})$", line)
+        if digits_alone:
+            return int(digits_alone.group(1))
+        header = re.match(
+            r"(\d{1,4})\s+[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s]{3,}",
+            line,
+        )
+        if header:
+            return int(header.group(1))
+        # Binary RTL glyph preambles (running-header glyphs) can carry the
+        # folio at the end of the line ("<glyphs> 33"); keep scanning.
+        if any(unicodedata.category(char) == "Cc" for char in line):
+            trailing = re.search(r"(\d{1,4})\s*$", line)
+            if trailing:
+                return int(trailing.group(1))
+            continue
+        # First readable content line without a folio marker.
+        return None
+    return None
 
 
 def _is_primary_eligible(
@@ -1389,7 +1539,17 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "language_match": "exact" if language == chunk.get("query_language") else "secondary",
         "literal_match_kind": (
             match_type
-            if match_type.startswith("structural_heading_")
+            if (
+                match_type.startswith("structural_heading_")
+                or match_type in {
+                    "footnote_literal_exact",
+                    "printed_reference_exact",
+                    "printed_reference_normalized",
+                    "body_literal_exact",
+                    "english_name_exact",
+                    "english_name_normalized",
+                }
+            )
             else "normalized"
             if match_type in {"hebrew_exact_normalized", "english_name_variant"}
             else "exact_phrase" if chunk.get("exact_match") else "semantic"
@@ -1551,7 +1711,11 @@ async def run_simple_rag(
                 knowledge_scope_code=filters["scope"],
                 reference_variants=[original_query, original_query.casefold()],
                 languages=filters["languages"],
-                document_ids=document_ids if filters["works"] else None,
+                document_ids=(
+                    document_ids
+                    if filters["works"] or _explicit_likutey_halajot_scope(original_query)
+                    else None
+                ),
                 include_test_candidates=filters["include_test_candidates"],
             )
             for item in raw:
@@ -1637,12 +1801,20 @@ async def run_simple_rag(
         # Inject targeted printed reference results with high priority
         literal = [*printed_reference_results, *literal, *structural]
         # Tag exact ILIKE matches from the general literal lane as printed_reference
-        # when the query was detected as a printed biblical reference. Without this,
-        # generic "exact_phrase" items miss the +15 printed_reference_priority boost
-        # in merge_results and get outranked by FTS-only results from ready documents.
+        # when the query was detected as a printed biblical reference AND the
+        # chunk actually contains the exact reference surface.  ILIKE is
+        # substring-based, so without the surface check "Salmos 16:1" would
+        # wrongly tag chunks containing "Salmos 16:10" or "Salmos 16:11".
         if is_printed_reference:
             for item in literal:
-                if item.get("exact_match") and not item.get("literal_match_type"):
+                if (
+                    item.get("exact_match")
+                    and not item.get("literal_match_type")
+                    and _content_has_exact_reference_surface(
+                        str(item.get("content") or ""),
+                        original_query,
+                    )
+                ):
                     item["literal_match_type"] = "printed_reference_exact"
         classify_editorial_literal_matches(literal, query=original_query)
     except Exception:
@@ -1711,14 +1883,23 @@ async def run_simple_rag(
     if structural_lookup_only and not structural:
         selected = []
     if structural:
-        heading_chunks = [
+        canonical_heading_chunks = [
             chunk
             for chunk in selected
             if chunk.get("literal_match_type")
-            in STRUCTURAL_HEADING_PRIMARY_MATCH_TYPES
+            in STRUCTURAL_HEADING_CANONICAL_MATCH_TYPES
         ]
-        if heading_chunks:
-            selected = heading_chunks[:1]
+        if canonical_heading_chunks:
+            selected = canonical_heading_chunks[:1]
+        else:
+            heading_chunks = [
+                chunk
+                for chunk in selected
+                if chunk.get("literal_match_type")
+                in STRUCTURAL_HEADING_PRIMARY_MATCH_TYPES
+            ]
+            if heading_chunks:
+                selected = heading_chunks[:1]
     elif english_name_query is not None:
         exact_name_chunks = [
             chunk
@@ -1731,6 +1912,16 @@ async def run_simple_rag(
         chunk["evidence_id"] = _evidence_id(str(chunk["chunk_id"]))
         chunk["canonical_pdf_page_start"] = chunk.get("pdf_page")
         chunk["pdf_page"] = _match_local_pdf_page(chunk)
+        # Recover the printed folio from canonical page metadata when the
+        # stored label is NULL (page-first ingest of odd folio pages).
+        if not chunk.get("printed_page"):
+            printed = _canonical_printed_page(chunk)
+            if printed is not None:
+                chunk["printed_page"] = printed
+        # A canonical non-null printed page must never be replaced by null
+        # during enrichment; preserve the resolved value.
+        elif chunk.get("_v1", {}).get("printed_page") is None:
+            chunk["_v1"] = {**(chunk.get("_v1") or {}), "printed_page": chunk["printed_page"]}
         if normalization:
             chunk["matched_terms"] = list(normalization.tokens)
             chunk.setdefault("literal_match_type", "semantic_only")
@@ -1947,6 +2138,7 @@ async def run_simple_rag(
         query_language == "he"
         or english_name_query is not None
         or bool(structural)
+        or is_printed_reference
         or any(
             chunk.get("literal_match_type") == "footnote_literal_exact"
             for chunk in selected

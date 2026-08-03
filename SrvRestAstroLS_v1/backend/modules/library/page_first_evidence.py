@@ -185,20 +185,45 @@ def _resolve_pdf_page(chunk: dict[str, Any]) -> int | None:
 
 
 def _resolve_printed_page(chunk: dict[str, Any]) -> int | None:
-    """Extract printed page number."""
+    """Extract printed page number.
+
+    Preference:
+    1. Explicit ``printed_page`` / ``printed_page_label`` metadata.
+    2. Page-first corpus: the visible printed folio sits in the opening
+       running header of the page. The header is either ``"34 LIKUTEY
+       HALAJOT"`` (even pages) or a bare ``"  37"`` line (odd pages, before
+       the RTL marker glyphs). Inference is restricted to the first
+       non-empty lines, never to a numbered footnote or body paragraph.
+    """
     label = chunk.get("printed_page") or chunk.get("printed_page_label")
     if label is not None:
         try:
             return int(label)
         except (ValueError, TypeError):
             pass
-    # Page-first PDF extracts can retain the printed folio only in the running
-    # header.  Restrict inference to the opening header, never to a numbered
-    # footnote or body paragraph later on the page.
     opening = str(chunk.get("markdown") or chunk.get("content") or "")[:240]
-    match = re.match(r"\s*(\d{1,4})\s+[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s]{3,}", opening)
-    if match:
-        return int(match.group(1))
+    for line in opening.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        digits_alone = re.match(r"(\d{1,4})$", line)
+        if digits_alone:
+            return int(digits_alone.group(1))
+        header = re.match(
+            r"(\d{1,4})\s+[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\s]{3,}",
+            line,
+        )
+        if header:
+            return int(header.group(1))
+        # Binary RTL glyph preambles (running-header glyphs) can carry the
+        # folio at the end of the line ("<glyphs> 33"); keep scanning.
+        if any(unicodedata.category(char) == "Cc" for char in line):
+            trailing = re.search(r"(\d{1,4})\s*$", line)
+            if trailing:
+                return int(trailing.group(1))
+            continue
+        # The first content line of an odd page; the folio was not extracted.
+        return None
     return None
 
 

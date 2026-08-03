@@ -215,6 +215,7 @@ _BIBLICAL_REFERENCE = re.compile(
     r"Timoteo|Tito|Filemón|Hebreos|Santiago|Pedro|Judas|Apocalipsis)"
     r"\s+"  # book name followed by whitespace
     r"(\d+)\s*[.:]\s*(\d+(?:[–-]\d+)?)"  # chapter:verse
+    r"(?!\d)"  # never a prefix of a longer verse (16:1 must not match 16:10)
     r"\s*\)?",
     re.I,
 )

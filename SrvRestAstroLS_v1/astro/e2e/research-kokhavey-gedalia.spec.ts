@@ -66,7 +66,7 @@ function expectCanonicalGedalia(body: any) {
     physical_file_name: "Kokhavey Ohr layout BH_PRINT-4.pdf",
     pdf_page: 21,
     match_kind: "english_name_exact",
-    literal_match_kind: "exact_phrase",
+    literal_match_kind: "english_name_exact",
   });
   expect(primary.quote).toContain("Gedalia of Linitz and other great Rabbis");
   expect(body.answer_markdown).toContain(primary.evidence_id);
@@ -84,7 +84,7 @@ test.describe("Kokhavey Ohr short proper-name DEV gate", () => {
     const sources = page.locator('aside[aria-label="Fuentes del turno"]');
     await expect(sources.getByText("Kokhavey Ohr", { exact: true }).first()).toBeVisible();
     await expect(sources.getByText("PDF p. 21", { exact: false }).first()).toBeVisible();
-    await expect(sources.getByText("Coincidencia literal exacta", { exact: true })).toBeVisible();
+    await expect(sources.getByText("Nombre propio en inglés exacto", { exact: true })).toBeVisible();
     await clickVisibleButton(page, "Cerrar sesión");
     await expect(page).toHaveURL(/\/login\/?$/);
   });

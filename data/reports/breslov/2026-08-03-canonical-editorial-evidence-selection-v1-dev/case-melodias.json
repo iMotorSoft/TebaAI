@@ -1,0 +1,37 @@
+{
+  "case": "MELODÍAS Y PLEGARIAS",
+  "golden": {
+    "pdf_page": 56,
+    "printed_page": 38,
+    "match_type": "structural_heading_exact",
+    "source_layer": "section_heading",
+    "primary": true
+  },
+  "live_before": {
+    "pdf_page": 57,
+    "printed_page": null,
+    "match_type": "structural_heading_all_tokens_ordered",
+    "source_layer": "section_heading"
+  },
+  "live_after": {
+    "pdf_page": 56,
+    "printed_page": 38,
+    "match_type": "structural_heading_exact",
+    "source_layer": "section_heading",
+    "evidence_id": "ev-e419ec6448d2d992",
+    "chunk_id": "036be7c5-2dde-4b0a-9dde-010e9d24e53e",
+    "research_status": "complete",
+    "semantic_status": "ok",
+    "stable_5_of_5": true
+  },
+  "root_cause": [
+    "heading line inside chunk content not compared by structural search",
+    "inherited section_title classified the page-57 body chunk all_tokens_ordered",
+    "merge discarded the golden's structural classification"
+  ],
+  "fix": [
+    "heading line recovery inside content",
+    "content-vs-metadata provenance in classification",
+    "evidence strength table covers structural heading types"
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "connection_ok": true,
+  "host": "127.0.0.1",
+  "port": 19530,
+  "collections": [
+    {
+      "collection": "tebaai_breslov_chunks_v1",
+      "collection_exists": true,
+      "status": "READY_METADATA",
+      "load_state": "Loaded",
+      "num_entities": 5370,
+      "fields": [
+        {
+          "name": "pk",
+          "dtype": "21",
+          "primary": true,
+          "params": {
+            "max_length": 128
+          }
+        },
+        {
+          "name": "chunk_id",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "document_id",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "collection_code",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "language",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 8
+          }
+        },
+        {
+          "name": "title",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 512
+          }
+        },
+        {
+          "name": "source_type",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 32
+          }
+        },
+        {
+          "name": "source_sha256",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "content_sha256",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "chunk_index",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "page_start",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "page_end",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "content_preview",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 1024
+          }
+        },
+        {
+          "name": "embedding",
+          "dtype": "101",
+          "primary": false,
+          "params": {
+            "dim": 1536
+          }
+        }
+      ],
+      "vector_field": "embedding",
+      "vector_dim": 1536,
+      "indexes": [
+        {
+          "field_name": "embedding",
+          "params": {
+            "index_type": "HNSW",
+            "metric_type": "COSINE",
+            "params": {
+              "M": 16,
+              "efConstruction": 200
+            }
+          }
+        }
+      ],
+      "index_exists": true,
+      "query_sample_ok": true,
+      "metadata_sample": [
+        {
+          "page_end": 144,
+          "pk": "001b08ff7321231c4d9c1828",
+          "chunk_id": "954227a7-716a-4771-a18f-5c45b1273a31",
+          "collection_code": "breslov",
+          "source_type": "pdf",
+          "content_sha256": "60f04c77107f11960098593ca152a8c58b0536c303b004497f25c9d9ab4347b0",
+          "content_preview": "iese santifi cando el Nombre de Dios ( _Sabiduría y Enseñanzas del Rabí Najmán_ #12). De manera similar, la persona debe tratar de concentrarse por completo en el momento de la oración. Mientras la persona esté consciente de la presencia\n\n## Page 145\n\n_LA PLEGARIA / 123_\n\nde otros a su alrededor, su _kavaná_ no es completa. Es necesario lograr un nivel de plegaria tal que sólo se encuentren allí Dios y uno mismo ( _Likutey Moharan I_ 1, 103).",
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "language": "es",
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "source_sha256": "6dae1488cd2f87f84c024a9091336515c9225e1dee02501e725729304bdb5cd7",
+          "chunk_index": 210,
+          "page_start": 144
+        },
+        {
+          "page_end": 478,
+          "pk": "0028a1d5-e342-4466-a787-02528bbfeab8",
+          "chunk_id": "3278d1db-535d-42ef-9f7c-5b66ab918de0",
+          "collection_code": "breslov",
+          "source_type": "book",
+          "content_sha256": "74cdb88d0f3d4048acb73e3503fed83ffca055a8ac3769a9c7ac086e8e34378c",
+          "content_preview": "án (Esaú) tiene permiso para juzgar a la humanidad por sus pecados. Aquí, esto se relaciona con el Otro Lado que se alimenta de la compasión y de un _daat_ dañado, de modo que todas nuestras plegarias se encuentran entonces en la categoría de juicio.\n\n**228. extraemos toda la esencia de vida…** El Rebe Najmán enseñó previamente que el Tzadik, que es el maestro de fortaleza, eleva una plegaria de juicio que es el concepto de la vara de fortaleza. Esta plegaria/vara se atasca en la garganta del Ot",
+          "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+          "language": "es",
+          "title": "Likutey Halajot LM II 8",
+          "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+          "chunk_index": 1070,
+          "page_start": 477
+        }
+      ],
+      "search_ok": "skipped_no_query_vector",
+      "limit": 2
+    }
+  ],
+  "postgres_expected": {
+    "run_id_requested": null,
+    "scope_requested": "breslov_primary",
+    "knowledge_scope": {
+      "id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "code": "breslov_primary"
+    }
+  },
+  "errors": [],
+  "all_collections": [
+    "JAI_document_embeddings",
+    "JAI_document_embeddings_lab_ingest",
+    "team360_diagnosis_debug_20260614_203636",
+    "team360_diagnosis_debug_20260614_203658",
+    "team360_diagnosis_debug_20260614_210254",
+    "team360_diagnosis_debug_20260614_210515",
+    "team360_diagnosis_debug_20260614_224849",
+    "team360_lab_pgvector_benchmark_openai_small_1536",
+    "team360_sales_diagnosis_knowledge_v1",
+    "tebaai_breslov_bm25_test_v2",
+    "tebaai_breslov_bm25_test_v3",
+    "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+    "tebaai_breslov_chunks_v1",
+    "tebaai_breslov_chunks_v2_dev",
+    "tebaai_breslov_test_chunks_v1"
+  ]
+}

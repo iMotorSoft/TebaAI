@@ -1,0 +1,52 @@
+{
+  "case": "Salmos 16:1",
+  "golden": {
+    "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+    "pdf_page": 55,
+    "printed_page": 37,
+    "match_type": "printed_reference_exact",
+    "source_layer": "marginal_reference",
+    "primary": true
+  },
+  "live_before": {
+    "primary_alternated_between": [
+      "Likutey Halajot page 55 (printed_reference_exact, printed_page null)",
+      "Cruzando el Puente Angosto page 368 (printed_reference_exact)"
+    ],
+    "printed_page": null
+  },
+  "live_after_20_runs": {
+    "runs": 20,
+    "unique_primary_signatures": 1,
+    "primary": {
+      "evidence_id": "ev-716847bfff6da041",
+      "document": "Likutey Halajot — Interior Final",
+      "pdf_page": 55,
+      "printed_page": 37,
+      "match_type": "printed_reference_exact",
+      "source_layer": "marginal_reference",
+      "research_status": "complete",
+      "semantic_status": "ok"
+    }
+  },
+  "secondary_occurrences_kept": [
+    "Likutey Halajot page 159 (printed_reference_exact)",
+    "Likutey Halajot page 188 / printed 170",
+    "Likutey Halajot page 158 / printed 140",
+    "Cruzando el Puente Angosto page 368 (exact_phrase — 16:10 prefix, no reference boost)"
+  ],
+  "root_cause": [
+    "false positive: ILIKE %salmos 16:1% matches (Salmos 16:10) in the Cruzando chunk, tagged printed_reference_exact and boosted +15",
+    "merge_results assigned literal_rank by input arrival order, leaking retrieval order into combined scores",
+    "priority_literal_query excluded printed references, so primary fell to claim-generation order (non-deterministic)",
+    "printed_page null: extract_printed_page returned null for odd folio pages and the resolver returned None at the first non-matching line (binary RTL glyph preamble before the folio)"
+  ],
+  "fix": [
+    "exact reference surface with verse boundary (?!\\d): 16:1 never matches 16:10/16:11/116:1",
+    "deterministic literal sort by (literal_score, chunk_id) before rank assignment",
+    "stable final sort key (combined, semantic, document_id, chunk_id)",
+    "priority_literal_query includes is_printed_reference: PRIMARY fixed before IA; claim grounding cannot change it",
+    "printed folio recovery from the opening running header, skipping binary RTL glyph preambles",
+    "explicit scope (Salmos 16:1 en Likutey Halajot) filters to the document and adds the bare surface variant"
+  ]
+}

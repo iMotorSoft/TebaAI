@@ -1,0 +1,386 @@
+[
+  {
+    "query": "CONSTRUYENDO UN TEMPLO INVENTADO",
+    "research_status": "no_evidence",
+    "query_shape": "general",
+    "primary_match_type": null,
+    "semantic_status": "ok",
+    "literal_status": "ok",
+    "primary": null,
+    "primary_evidence_ids": [],
+    "hits": []
+  },
+  {
+    "query": "INCLINADO HACIA UNA BONDAD INEXISTENTE",
+    "research_status": "no_evidence",
+    "query_shape": "general",
+    "primary_match_type": null,
+    "semantic_status": "ok",
+    "literal_status": "ok",
+    "primary": null,
+    "primary_evidence_ids": [],
+    "hits": []
+  },
+  {
+    "query": "MELODÍAS Y PLEGARIAS FALSAS",
+    "research_status": "no_evidence",
+    "query_shape": "general",
+    "primary_match_type": null,
+    "semantic_status": "ok",
+    "literal_status": "ok",
+    "primary": null,
+    "primary_evidence_ids": [],
+    "hits": []
+  },
+  {
+    "query": "Salmos 16:99",
+    "research_status": "complete",
+    "query_shape": "general",
+    "primary_match_type": null,
+    "semantic_status": "ok",
+    "literal_status": "ok",
+    "primary": {
+      "evidence_id": "ev-e114c4a9e1eeff17",
+      "document": "Un Día en la Vida de un Jasid de Breslov",
+      "pdf_page": 186,
+      "printed_page": null,
+      "match_type": "semantic_only",
+      "source_layer": "editorial_translation"
+    },
+    "primary_evidence_ids": [
+      "ev-e114c4a9e1eeff17"
+    ],
+    "hits": [
+      {
+        "pdf_page": 186,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": true
+      },
+      {
+        "pdf_page": 332,
+        "printed_page": null,
+        "work_title": "KITZUR",
+        "match_kind": "literal",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 184,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 84,
+        "printed_page": null,
+        "work_title": "El Jardín de las Almas",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 156,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 84,
+        "printed_page": null,
+        "work_title": "El Jardín de las Almas",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 177,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 269,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 335,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 420,
+        "printed_page": null,
+        "work_title": "Likutey Halajot LM II 8",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 151,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 86,
+        "printed_page": null,
+        "work_title": "El Jardín de las Almas",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "query": "Salmos 99:99",
+    "research_status": "complete",
+    "query_shape": "general",
+    "primary_match_type": null,
+    "semantic_status": "ok",
+    "literal_status": "ok",
+    "primary": {
+      "evidence_id": "ev-ce375db17fe7a0ad",
+      "document": "Un Día en la Vida de un Jasid de Breslov",
+      "pdf_page": 156,
+      "printed_page": null,
+      "match_type": "semantic_only",
+      "source_layer": "editorial_translation"
+    },
+    "primary_evidence_ids": [
+      "ev-ce375db17fe7a0ad"
+    ],
+    "hits": [
+      {
+        "pdf_page": 156,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": true
+      },
+      {
+        "pdf_page": 98,
+        "printed_page": null,
+        "work_title": "Likutey Halajot LM II 8",
+        "match_kind": "literal",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 186,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 331,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "literal",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 184,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 120,
+        "printed_page": null,
+        "work_title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "match_kind": "literal",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 151,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 332,
+        "printed_page": null,
+        "work_title": "KITZUR",
+        "match_kind": "literal",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 335,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 183,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 375,
+        "printed_page": null,
+        "work_title": "KITZUR",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 84,
+        "printed_page": null,
+        "work_title": "El Jardín de las Almas",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      }
+    ]
+  },
+  {
+    "query": "(Salmos 116:1)",
+    "research_status": "complete",
+    "query_shape": "general",
+    "primary_match_type": "exact_phrase",
+    "semantic_status": "ok",
+    "literal_status": "ok",
+    "primary": {
+      "evidence_id": "ev-4f704c5a068ee1c6",
+      "document": "El Jardín de las Almas",
+      "pdf_page": 84,
+      "printed_page": null,
+      "match_type": "exact_phrase",
+      "source_layer": "editorial_translation"
+    },
+    "primary_evidence_ids": [
+      "ev-4f704c5a068ee1c6"
+    ],
+    "hits": [
+      {
+        "pdf_page": 84,
+        "printed_page": null,
+        "work_title": "El Jardín de las Almas",
+        "match_kind": "exact_phrase",
+        "source_layer": "editorial_translation",
+        "is_primary": true
+      },
+      {
+        "pdf_page": 375,
+        "printed_page": null,
+        "work_title": "KITZUR",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 156,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 425,
+        "printed_page": null,
+        "work_title": "Likutey Halajot LM II 8",
+        "match_kind": "literal",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 269,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 134,
+        "printed_page": null,
+        "work_title": "KITZUR",
+        "match_kind": "literal",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 238,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 186,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 151,
+        "printed_page": null,
+        "work_title": "La Potencia de la Plegaria",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 86,
+        "printed_page": null,
+        "work_title": "El Jardín de las Almas",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 184,
+        "printed_page": null,
+        "work_title": "Un Día en la Vida de un Jasid de Breslov",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      },
+      {
+        "pdf_page": 84,
+        "printed_page": null,
+        "work_title": "El Jardín de las Almas",
+        "match_kind": "semantic_only",
+        "source_layer": "editorial_translation",
+        "is_primary": false
+      }
+    ]
+  }
+]

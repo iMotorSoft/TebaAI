@@ -1,0 +1,38 @@
+{
+  "case": "CONSTRUYENDO UN MISHKÁN",
+  "golden": {
+    "pdf_page": 51,
+    "printed_page": 33,
+    "match_type": "structural_heading_exact",
+    "source_layer": "section_heading",
+    "primary": true
+  },
+  "live_before": {
+    "pdf_page": 52,
+    "printed_page": 34,
+    "match_type": "structural_heading_all_tokens_ordered",
+    "source_layer": "section_heading"
+  },
+  "live_after": {
+    "pdf_page": 51,
+    "printed_page": 33,
+    "match_type": "structural_heading_exact",
+    "source_layer": "section_heading",
+    "evidence_id": "ev-6e965be966db45f1",
+    "chunk_id": "8e1a1192-02f2-4903-97f8-ce85f29bdf2a",
+    "research_status": "complete",
+    "semantic_status": "ok",
+    "stable_5_of_5": true
+  },
+  "root_cause": [
+    "heading line inside chunk content was not compared by the structural search (only section_title/search_text_normalized)",
+    "adjacent body chunk inherits section_title and classified all_tokens_ordered (130) above the golden partial (80)",
+    "merge discarded the structural classification of the golden chunk because _literal_evidence_strength lacked structural heading types (exact_phrase 30 > accent_folded 0)"
+  ],
+  "fix": [
+    "recognize numbered editorial heading lines (N ■ TITLE) inside content",
+    "content-derived heading lines outrank inherited section_title metadata (heading_from_content)",
+    "_literal_evidence_strength ranks structural heading types above generic exact_phrase",
+    "canonical heading types (exact/normalized/accent_folded) become PRIMARY; all_tokens_ordered body is context"
+  ]
+}

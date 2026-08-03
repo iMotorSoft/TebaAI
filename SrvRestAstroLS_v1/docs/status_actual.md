@@ -2,18 +2,69 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-02 (recuperación de acceso guest E2E en DEV)
+Ultima actualizacion: 2026-08-03 (selección canónica de evidencia editorial V1 en DEV)
 
-## Guest Research Access E2E Recovery — cierre 2026-08-02 (DEV)
+## Canonical Editorial Evidence Selection V1 — cierre 2026-08-03 (DEV)
 
-Estados:
+Estado técnico: `TEBAAI_CANONICAL_EDITORIAL_EVIDENCE_SELECTION_V1_DEV_READY`.
+
+Elevados:
+
+```
+TEBAAI_EXACT_EDITORIAL_EVIDENCE_RANKING_V1_DEV_READY
+TEBAAI_LIKUTEY_HALAJOT_PAGE_FIRST_REINGEST_V2_DEV_READY
+```
+
+Acumulados:
 
 ```
 TEBAAI_GUEST_RESEARCH_ACCESS_E2E_RECOVERY_DEV_READY
 TEBAAI_FOOTNOTE_LITERAL_RANKING_V1_DEV_READY
 TEBAAI_PAGE_FIRST_EDITORIAL_CONVENTIONS_DOCUMENTED_DEV_READY
-TEBAAI_EXACT_EDITORIAL_EVIDENCE_RANKING_V1_DEV_REVIEW_REQUIRED
-TEBAAI_LIKUTEY_HALAJOT_PAGE_FIRST_REINGEST_V2_DEV_REVIEW_REQUIRED
+```
+
+- **headings canónicos**: los bloques heading reales (51/33, 53/35, 56/38)
+  ahora quedan PRIMARY con `structural_heading_exact`; el chunk cuerpo
+  adyacente (52/55/57, `all_tokens_ordered`) queda como contexto. Causa raíz
+  dual: (a) la línea heading dentro de `content` no era comparada por la
+  búsqueda estructural; (b) el `section_title` heredado por los chunks cuerpo
+  los clasificaba como `all_tokens_ordered` y el merge descartaba la
+  clasificación estructural del golden frente al `exact_phrase` genérico;
+- **Salmos 16:1 determinista**: PRIMARY fijado por el backend antes de la
+  síntesis (20/20 ejecuciones idénticas, LH 55/37, `printed_reference_exact`,
+  `marginal_reference`). Cruzando 368 (`Salmos 16:10`) dejó de ser
+  `printed_reference_exact` (falso positivo por substring ILIKE); el regex
+  ahora exige borde de versículo (`16:1` ≠ `16:10`/`16:11`/`116:1`);
+- **printed_page 37 recuperado**: el folio impreso visible en el encabezado
+  de la página (`"  37"` precedido por glifos RTL binarios) se resuelve cuando
+  la metadata almacenada es NULL; un `printed_page` no nulo nunca se
+  reemplaza por null en merge/dedupe/enrichment;
+- **ordenamiento determinista**: `merge_results` ordena el carril literal por
+  `(literal_score, chunk_id)` antes de asignar ranks y desempata con
+  `(combined, semantic, document_id, chunk_id)` — sin dependencia del orden
+  de llegada de Milvus ni de la IA;
+- **scope explícito**: `Salmos 16:1 en Likutey Halajot` y la forma
+  interrogativa filtran al documento y fijan LH 55/37 sin ambigüedad;
+- Milvus healthy durante toda la fase (colección 5.370 entidades,
+  `semantic_status=ok`, `research_status` sin degraded); no fue reiniciado
+  por el agente; PostgreSQL y LiteLLM no reiniciados; producción/corpus/
+  embeddings no modificados; sin push.
+
+ADR: `docs/adr/ADR-016-canonical-editorial-evidence-selection-v1.md`.
+Tests: `backend/tests/test_canonical_editorial_evidence_selection.py`.
+Fixtures: `backend/tests/fixtures/likutey_halajot_page_first_v2_acceptance.json`
+(con `expected_match_type`, `expected_source_layer`, `expected_primary`,
+`expected_printed_page`, `expected_stable_primary`).
+Reporte: `data/reports/breslov/2026-08-03-canonical-editorial-evidence-selection-v1-dev/`.
+
+## Guest Research Access E2E Recovery — cierre 2026-08-02 (DEV)
+
+Estados (históricos):
+
+```
+TEBAAI_GUEST_RESEARCH_ACCESS_E2E_RECOVERY_DEV_READY
+TEBAAI_FOOTNOTE_LITERAL_RANKING_V1_DEV_READY
+TEBAAI_PAGE_FIRST_EDITORIAL_CONVENTIONS_DOCUMENTED_DEV_READY
 ```
 
 - causa raiz del bloqueo "Verificando acceso…": cache de optimizacion de Vite
@@ -138,10 +189,9 @@ build 8 paginas.
 
 Produccion no modificada. Push no realizado.
 
-Proximo paso: decidir el hallazgo de revalidacion de headings (ver cierre
-2026-08-02 arriba): aceptar 52/55/57 all_tokens_ordered como canonicos
-(actualizar goldens/specs) o abrir un cambio de ranking con ADR para
-recuperar 51/53/56. Milvus DEV ya fue restaurado manualmente.
+Resuelto el 2026-08-03 por ADR-016 (seleccion canonica de evidencia
+editorial V1): los headings 51/53/56 vuelven a ser PRIMARY con
+`structural_heading_exact`; los goldens no fueron flexibilizados a 52/55/57.
 
 ## Corpus Breslov en PostgreSQL productivo — cierre 2026-07-28
 

@@ -1,7 +1,7 @@
 # Page-First & Editorial Retrieval — Conventions
 
 Operational reference for Breslov PDF ingestion and retrieval. Authoritative
-decisions live in ADR-014 and ADR-015.
+decisions live in ADR-014, ADR-015 and ADR-016.
 
 ---
 
@@ -77,6 +77,40 @@ footnote_body     → anchor paragraph → containing section
 
 ## Ranking de Evidencia
 
+### Heading primary vs body context
+
+For a nominal heading query, the canonical heading block
+(`structural_heading_exact|normalized|accent_folded`) is the PRIMARY. A body
+chunk that merely contains the query tokens (`all_tokens_ordered`) is context
+or associated body, never the canonical cite.
+
+- The heading line is recognized inside the chunk content (`N ■ TITLE` with
+  the editorial symbol), independently of the inherited `section_title`.
+- Content-derived headings outrank metadata-inherited headings.
+- The merge preserves the structural classification over a generic
+  `exact_phrase` from the general literal lane.
+- The heading page (PDF and printed) is never replaced by the body page.
+
+### Printed reference deterministic primary
+
+For a structured reference such as `Salmos 16:1`:
+
+1. `printed_reference_exact` (exact surface, verse boundary enforced:
+   `16:1` never matches `16:10`/`16:11`/`116:1`);
+2. explicit work scope (`Salmos 16:1 en Likutey Halajot`) filters to the
+   document;
+3. `source_layer=marginal_reference`;
+4. complete editorial metadata (PDF + printed page);
+5. document status as tiebreak between equivalents;
+6. stable canonical key `(document_id, chunk_id)` as the final tie-break.
+
+The PRIMARY is fixed by the backend before generative synthesis. The IA may
+associate claims with allowed evidence IDs but cannot change the canonical
+document/page or select a different primary. `printed_page` non-null is
+preserved through merge/dedupe/enrichment; when the stored label is NULL the
+visible printed folio is recovered from the opening running header of the
+page content.
+
 ### Tiers (strongest to weakest)
 
 ```
@@ -130,13 +164,19 @@ Ready exact                  >  test_candidate semantic
 
 ## Fixtures de Regresión
 
-Permanent validation cases (see `tests/fixtures/likutey_halajot_page_first_v2_acceptance.json`):
+Permanent validation cases (see `tests/fixtures/likutey_halajot_page_first_v2_acceptance.json`,
+which also records `expected_match_type`, `expected_source_layer`,
+`expected_primary`, `expected_printed_page` and `expected_stable_primary`):
 
-1. `CONSTRUYENDO UN MISHKÁN` → page 51, structural_heading
-2. `INCLINADO HACIA LA BONDAD` → page 53, structural_heading
-3. `Salmos 16:1` → page 55, printed_reference
-4. `El hombre se une a HaShem…` → page 56, footnote
-5. `MELODÍAS Y PLEGARIAS` → page 56, structural_heading
+1. `CONSTRUYENDO UN MISHKÁN` → 51/33, structural_heading_exact, section_heading, PRIMARY
+2. `INCLINADO HACIA LA BONDAD` → 53/35, structural_heading_exact, section_heading, PRIMARY
+3. `Salmos 16:1` → 55/37, printed_reference_exact, marginal_reference, PRIMARY (determinista 20/20)
+4. `El hombre se une a HaShem…` → 56/38, footnote_literal_exact, footnote, PRIMARY
+5. `MELODÍAS Y PLEGARIAS` → 56/38, structural_heading_exact, section_heading, PRIMARY
+
+Negativos: headings inventados → `no_evidence`; `Salmos 16:99`/`99:99` sin
+`printed_reference_exact` falso; `(Salmos 116:1)` no se clasifica como
+referencia impresa si el corpus solo contiene `116:10`.
 
 ---
 

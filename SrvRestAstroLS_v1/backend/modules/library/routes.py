@@ -26,6 +26,22 @@ from modules.library.book_qa_service import (
     list_book_qa_runs,
     run_book_qa,
 )
+from modules.library.content_manager import (
+    cancel_job,
+    create_job,
+    get_diagnostic,
+    get_job,
+    list_jobs,
+    retry_job,
+    validate_and_store_upload,
+)
+from modules.library.content_manager_schemas import (
+    CreateJobRequest,
+    IngestionDiagnostic,
+    JobListResponse,
+    JobResponse,
+    UploadResponse,
+)
 from modules.library.errors import ScopeAccessDeniedError
 from modules.library.hybrid_search import search_chunks_hybrid
 from modules.library.relation_qa_schemas import RelationQARequest, RelationQAResponse
@@ -387,3 +403,167 @@ async def library_search(
         query=data.query, collection=knowledge_scope_code,
         mode=data.mode, language=data.language, total=len(results), results=results,
     )
+
+
+# ── Content Manager V1 ────────────────────────────────────────────────────
+
+
+@post("/admin/content/uploads", status_code=201, guards=[require_auth])
+async def content_manager_upload(request: Request) -> UploadResponse:
+    """Validate and register a PDF upload. Admin-only."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_id = payload.get("sub", "")
+    user_role = payload.get("role", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    form = await request.form()
+    uploaded_file = form.get("file")
+    if not uploaded_file or not hasattr(uploaded_file, "read"):
+        raise HTTPException(status_code=400, detail="Se requiere un archivo PDF")
+
+    file_content = await uploaded_file.read()
+    original_filename = getattr(uploaded_file, "filename", "upload.pdf")
+
+    try:
+        async with transaction(pool) as conn:
+            result = await validate_and_store_upload(
+                conn,
+                file_content=file_content,
+                original_filename=original_filename,
+                actor_user_id=user_id,
+            )
+        return result
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al validar el upload") from exc
+
+
+@post("/admin/content/jobs", status_code=201, guards=[require_auth])
+async def content_manager_create_job(request: Request, data: CreateJobRequest) -> JobResponse:
+    """Create an ingestion job from a validated upload. Admin-only."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_id = payload.get("sub", "")
+    user_role = payload.get("role", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            job = await create_job(conn, data, actor_user_id=user_id)
+        return job
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al crear el job") from exc
+
+
+@get("/admin/content/jobs", status_code=200, guards=[require_auth])
+async def content_manager_list_jobs(request: Request) -> JobListResponse:
+    """List recent ingestion jobs. Admin-only."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_role = payload.get("role", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            return await list_jobs(conn)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al listar jobs") from exc
+
+
+@get("/admin/content/jobs/{job_id:str}", status_code=200, guards=[require_auth])
+async def content_manager_get_job(request: Request, job_id: str) -> JobResponse:
+    """Get a single job's status. Admin-only."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_role = payload.get("role", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            job = await get_job(conn, job_id)
+        if not job:
+            raise HTTPException(status_code=404, detail="Job no encontrado")
+        return job
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al obtener el job") from exc
+
+
+@post("/admin/content/jobs/{job_id:str}/retry", status_code=200, guards=[require_auth])
+async def content_manager_retry_job(request: Request, job_id: str) -> JobResponse:
+    """Retry a failed job. Admin-only."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_id = payload.get("sub", "")
+    user_role = payload.get("role", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            job = await retry_job(conn, job_id, actor_user_id=user_id)
+        if not job:
+            raise HTTPException(status_code=404, detail="Job no encontrado")
+        return job
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al reintentar el job") from exc
+
+
+@post("/admin/content/jobs/{job_id:str}/cancel", status_code=200, guards=[require_auth])
+async def content_manager_cancel_job(request: Request, job_id: str) -> JobResponse:
+    """Cancel a pending job. Admin-only."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_role = payload.get("role", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            job = await cancel_job(conn, job_id)
+        if not job:
+            raise HTTPException(status_code=404, detail="Job no encontrado")
+        return job
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al cancelar el job") from exc
+
+
+@get("/admin/content/jobs/{job_id:str}/diagnostic", status_code=200, guards=[require_auth])
+async def content_manager_diagnostic(request: Request, job_id: str) -> IngestionDiagnostic:
+    """Get the diagnostic report for a job. Admin-only."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_role = payload.get("role", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            diag = await get_diagnostic(conn, job_id)
+        if not diag:
+            raise HTTPException(status_code=404, detail="Job no encontrado")
+        return diag
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al obtener el diagnóstico") from exc

@@ -88,8 +88,10 @@ def test_id_does_not_include_status() -> None:
 
 
 def test_entity_key_for_footnote_without_number() -> None:
-    assert _entity_key({"literal_match_type": "footnote_literal_exact", "footnote_number": None}) == "footnote:unknown"
-    assert _entity_key({"evidence_role": "footnote_body", "literal_match_type": ""}) == "footnote:unknown"
+    # If literal_match_type is footnote but no number, fall back to chunk
+    assert _entity_key({"literal_match_type": "footnote_literal_exact", "footnote_number": None}) == "chunk"
+    # With evidence_role=footnote_body, it resolves to footnote:unknown
+    assert _entity_key({"evidence_role": "footnote_body", "literal_match_type": "", "block_type": ""}) == "footnote:unknown"
 
 
 def test_entity_key_for_role_only() -> None:

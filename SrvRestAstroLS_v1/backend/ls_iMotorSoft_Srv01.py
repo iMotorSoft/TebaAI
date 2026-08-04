@@ -16,7 +16,12 @@ from modules.auth.routes import (
     patch_user,
     refresh,
 )
-from modules.library.routes import book_qa, book_qa_runs, book_qa_runs_latest, library_search, relation_qa, investigative_qa_v1
+from modules.library.routes import (
+    book_qa, book_qa_runs, book_qa_runs_latest, library_search, relation_qa, investigative_qa_v1,
+    content_manager_upload, content_manager_create_job, content_manager_list_jobs,
+    content_manager_get_job, content_manager_retry_job, content_manager_cancel_job,
+    content_manager_diagnostic,
+)
 from routes.health import health
 from routes.ready import ready
 
@@ -48,6 +53,13 @@ app = Litestar(
         library_search,
         relation_qa,
         investigative_qa_v1,
+        content_manager_upload,
+        content_manager_create_job,
+        content_manager_list_jobs,
+        content_manager_get_job,
+        content_manager_retry_job,
+        content_manager_cancel_job,
+        content_manager_diagnostic,
     ],
     on_startup=[on_startup],
     on_shutdown=[on_shutdown],

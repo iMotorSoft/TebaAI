@@ -2,7 +2,26 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-04 (Editorial Evidence Granularity & Stable IDs V1 en DEV)
+Ultima actualizacion: 2026-08-04 (Content Manager V1 — backend + frontend inicial en DEV)
+
+## Content Manager V1 (Gestor de Contenidos) — 2026-08-04 (DEV)
+
+Estado: backend funcional (migración + rutas + upload + job state machine),
+frontend inicial (admin/content con flujo guiado).
+
+- backend: `modules/library/content_manager.py` + `content_manager_schemas.py`;
+  migración `040_content_manager_uploads_and_jobs.sql` con tablas de uploads y
+  jobs; rutas en `/admin/content/*` protegidas por rol admin/editor;
+- frontend: `admin/content.astro` + `ContentManager.svelte` con flujo Archivo →
+  Metadata → Confirmación → Progreso → Resultado; lista de cargas recientes;
+  resumen operativo; desktop (tabla editorial) + móvil (cards);
+- validación de PDF (magic bytes, tamaño, páginas, SHA-256); detección de
+  duplicados; idempotencia (mismo SHA-256 no reingiere); `requested_status=ready`
+  rechazado; guest/viewer → 403;
+- pendiente: E2E completos, validación visual premium exhaustiva, fixtures de
+  test PDF, auditoría read-only, tests de integración con pipeline real.
+
+ADR: `docs/adr/ADR-022-pdf-upload-ingestion-console-v1.md`.
 
 ## Editorial Evidence Granularity & Stable IDs V1 — 2026-08-04 (DEV)
 

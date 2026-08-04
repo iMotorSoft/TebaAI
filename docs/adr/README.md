@@ -18,6 +18,8 @@ ADRs for TebaAI.
 - [`ADR-020-pdf-ligature-literal-normalization-v1.md`](ADR-020-pdf-ligature-literal-normalization-v1.md):
   normalización literal de ligaduras y fragmentaciones de extracción PDF
   (nota 36, batch literal 25/25) sin alterar el texto citado.
-- [`ADR-021-editorial-evidence-granularity-stable-ids-v1.md`](ADR-021-editorial-evidence-granularity-stable-ids-v1.md):
+- [`ADR-022-pdf-upload-ingestion-console-v1.md`](ADR-022-pdf-upload-ingestion-console-v1.md):
+  Content Manager V1 — carga controlada de PDFs, validación, detección de
+  duplicados, job state machine e ingesta trazable con frontend premium.
   identidad editorial granular (nota 35 ≠ nota 36, heading ≠ footnote,
   reference variants comparten ID); ID legacy preservado para compatibilidad.

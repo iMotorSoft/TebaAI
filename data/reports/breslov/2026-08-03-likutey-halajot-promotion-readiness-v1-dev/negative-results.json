@@ -1,0 +1,158 @@
+[
+  {
+    "query": "CONSTRUYENDO UN TEMPLO INEXISTENTE",
+    "http_status": 200,
+    "research_status": "no_evidence",
+    "semantic_status": null,
+    "warnings": [],
+    "query_language": "es",
+    "primary": null,
+    "answer_markdown": null,
+    "pass": true
+  },
+  {
+    "query": "Salmos 16:99",
+    "http_status": 200,
+    "research_status": "complete",
+    "semantic_status": null,
+    "warnings": [],
+    "query_language": "en",
+    "primary": {
+      "document": "UN DÍA EN LA VIDA (KDP).pdf",
+      "page": 186,
+      "printed_page": null,
+      "evidence_id": "ev-e114c4a9e1eeff17",
+      "match_type": "semantic",
+      "source_layer": "editorial_translation",
+      "evidence_language": "es",
+      "document_status": null,
+      "footnote_number": null
+    },
+    "answer_markdown": null,
+    "pass": true
+  },
+  {
+    "query": "Salmos 99:99",
+    "http_status": 200,
+    "research_status": "complete",
+    "semantic_status": null,
+    "warnings": [],
+    "query_language": "en",
+    "primary": {
+      "document": "UN DÍA EN LA VIDA (KDP).pdf",
+      "page": 156,
+      "printed_page": null,
+      "evidence_id": "ev-ce375db17fe7a0ad",
+      "match_type": "semantic",
+      "source_layer": "editorial_translation",
+      "evidence_language": "es",
+      "document_status": null,
+      "footnote_number": null
+    },
+    "answer_markdown": null,
+    "pass": true
+  },
+  {
+    "query": "Salmos 116:1 en Likutey Halajot",
+    "http_status": 200,
+    "research_status": "complete",
+    "semantic_status": null,
+    "warnings": [
+      "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+    ],
+    "query_language": "es",
+    "primary": {
+      "document": "El Jardin de las Almas (Spanish - Rebe Najman de Breslov.pdf",
+      "page": 84,
+      "printed_page": null,
+      "evidence_id": "ev-4f704c5a068ee1c6",
+      "match_type": "exact_phrase",
+      "source_layer": "editorial_translation",
+      "evidence_language": "es",
+      "document_status": null,
+      "footnote_number": null
+    },
+    "answer_markdown": null,
+    "pass": true
+  },
+  {
+    "query": "nota 9999 de melodías",
+    "http_status": 200,
+    "research_status": "partial",
+    "semantic_status": null,
+    "warnings": [],
+    "query_language": "es",
+    "primary": null,
+    "answer_markdown": null,
+    "pass": true
+  },
+  {
+    "query": "Tomo 9 de Interior Final",
+    "http_status": 200,
+    "research_status": "complete",
+    "semantic_status": null,
+    "warnings": [
+      "respuesta_bibliografica_generada_desde_metadata"
+    ],
+    "query_language": "en",
+    "primary": null,
+    "answer_markdown": "### Resultado bibliográfico: Tomo 9 de Interior Final\n\n**Interior Final**\n- Tomo: Tomo no resuelto (confianza: unresolved)\n- Ocurrencias: 12\n- Tipos de presencia: literal_normalized, thematic_development\n- Páginas PDF: 4, 5, 7, 14, 15, 17, 18, 28, 127, 253\n- Evidence ID principal: ev-443fa3e887ca8d12\n- Fuente del tomo: unresolved\n\n**Plan de consulta**\n- Intención: bibliographic_locator\n- Concepto: Interior Final\n- Obra: Interior Final\n",
+    "pass": true
+  },
+  {
+    "query": "GEDALIA DE MARTE",
+    "http_status": 200,
+    "research_status": "no_evidence",
+    "semantic_status": null,
+    "warnings": [],
+    "query_language": "en",
+    "primary": null,
+    "answer_markdown": null,
+    "pass": true
+  },
+  {
+    "query": "SECCIÓN DEL DRAGÓN AZUL",
+    "http_status": 200,
+    "research_status": "no_evidence",
+    "semantic_status": null,
+    "warnings": [],
+    "query_language": "es",
+    "primary": null,
+    "answer_markdown": null,
+    "pass": true
+  },
+  {
+    "query": "página PDF 999 de Likutey Halajot",
+    "http_status": 200,
+    "research_status": "partial",
+    "semantic_status": null,
+    "warnings": [
+      "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+    ],
+    "query_language": "es",
+    "primary": null,
+    "answer_markdown": null,
+    "pass": true
+  },
+  {
+    "query": "frase fabricada que nunca aparece en el corpus xyzzy",
+    "http_status": 200,
+    "research_status": "complete",
+    "semantic_status": null,
+    "warnings": [],
+    "query_language": "es",
+    "primary": {
+      "document": "CRUZANDO EL PUENTE (digital).pdf",
+      "page": 15,
+      "printed_page": null,
+      "evidence_id": "ev-4329515a902f4040",
+      "match_type": "semantic",
+      "source_layer": "editorial_translation",
+      "evidence_language": "es",
+      "document_status": null,
+      "footnote_number": null
+    },
+    "answer_markdown": null,
+    "pass": true
+  }
+]

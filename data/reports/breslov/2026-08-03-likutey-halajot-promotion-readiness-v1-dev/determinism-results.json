@@ -1,0 +1,53 @@
+[
+  {
+    "query": "CONSTRUYENDO UN MISHKÁN",
+    "runs": 10,
+    "unique_primary_signatures": 1,
+    "signatures": {
+      "{\"document\": \"LIKUTEY HALAJOT (Interior Final).pdf\", \"document_status\": null, \"evidence_id\": \"ev-6e965be966db45f1\", \"evidence_language\": \"es\", \"footnote_number\": null, \"match_type\": \"structural_heading_exact\", \"page\": 51, \"printed_page\": 33, \"source_layer\": \"section_heading\"}": 10
+    },
+    "pass": true
+  },
+  {
+    "query": "INCLINADO HACIA LA BONDAD",
+    "runs": 10,
+    "unique_primary_signatures": 1,
+    "signatures": {
+      "{\"document\": \"LIKUTEY HALAJOT (Interior Final).pdf\", \"document_status\": null, \"evidence_id\": \"ev-e6dc84557a57331e\", \"evidence_language\": \"es\", \"footnote_number\": null, \"match_type\": \"structural_heading_exact\", \"page\": 53, \"printed_page\": 35, \"source_layer\": \"section_heading\"}": 10
+    },
+    "pass": true
+  },
+  {
+    "query": "MELODÍAS Y PLEGARIAS",
+    "runs": 10,
+    "unique_primary_signatures": 1,
+    "signatures": {
+      "{\"document\": \"LIKUTEY HALAJOT (Interior Final).pdf\", \"document_status\": null, \"evidence_id\": \"ev-e419ec6448d2d992\", \"evidence_language\": \"es\", \"footnote_number\": null, \"match_type\": \"structural_heading_exact\", \"page\": 56, \"printed_page\": 38, \"source_layer\": \"section_heading\"}": 10
+    },
+    "pass": true
+  },
+  {
+    "query": "Salmos 16:1",
+    "runs": 20,
+    "unique_primary_signatures": 1,
+    "signatures": {
+      "{\"document\": \"LIKUTEY HALAJOT (Interior Final).pdf\", \"document_status\": null, \"evidence_id\": \"ev-716847bfff6da041\", \"evidence_language\": \"es\", \"footnote_number\": null, \"match_type\": \"printed_reference_exact\", \"page\": 55, \"printed_page\": 37, \"source_layer\": \"marginal_reference\"}": 20
+    },
+    "pass": true
+  },
+  {
+    "query": "El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción",
+    "runs": 10,
+    "unique_primary_signatures": 1,
+    "signatures": {
+      "{\"document\": \"LIKUTEY HALAJOT (Interior Final).pdf\", \"document_status\": null, \"evidence_id\": \"ev-e419ec6448d2d992\", \"evidence_language\": \"es\", \"footnote_number\": 35, \"match_type\": \"footnote_literal_exact\", \"page\": 56, \"printed_page\": 38, \"source_layer\": \"footnote\"}": 10
+    },
+    "pass": true
+  },
+  {
+    "query": "Azamra, ¿en qué tomo de Likutey Halajot está?",
+    "runs": 10,
+    "unique_answers": 1,
+    "pass": true
+  }
+]

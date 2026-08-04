@@ -1,0 +1,103 @@
+{
+  "gate": "TEBAAI_LIKUTEY_HALAJOT_CORPUS_PROMOTION_READINESS_V1_DEV_READY",
+  "document_identity": {
+    "filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+    "title": "Likutey Halajot — Interior Final",
+    "document_family": "likutey_halajot",
+    "sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "status_before": "test_candidate",
+    "status_after_audit": "test_candidate",
+    "ingestion_profile": "likutey_halajot_page_first_v2"
+  },
+  "integrity_expectations": {
+    "physical_pages": 284,
+    "textual_pages": 268,
+    "deliberately_blank_pages": [6, 8, 34, 38, 100, 102, 116, 118, 146, 202, 204, 240, 242, 266, 274, 284],
+    "chunks": 268,
+    "embeddings": 268,
+    "embedding_model": "openai_text_embedding_3_small",
+    "embedding_dimension": 1536,
+    "milvus_collection": "tebaai_breslov_chunks_v1",
+    "missing_vectors": 0,
+    "orphan_vectors": 0,
+    "duplicate_vectors": 0
+  },
+  "editorial_goldens": [
+    {
+      "query": "CONSTRUYENDO UN MISHKÁN",
+      "pdf_page": 51,
+      "printed_page": 33,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "evidence_id": "ev-6e965be966db45f1"
+    },
+    {
+      "query": "INCLINADO HACIA LA BONDAD",
+      "pdf_page": 53,
+      "printed_page": 35,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "evidence_id": "ev-e6dc84557a57331e"
+    },
+    {
+      "query": "MELODÍAS Y PLEGARIAS",
+      "pdf_page": 56,
+      "printed_page": 38,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "evidence_id": "ev-e419ec6448d2d992"
+    },
+    {
+      "query": "Salmos 16:1",
+      "pdf_page": 55,
+      "printed_page": 37,
+      "match_type": "printed_reference_exact",
+      "source_layer": "marginal_reference",
+      "evidence_id": "ev-716847bfff6da041"
+    },
+    {
+      "query": "El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción",
+      "pdf_page": 56,
+      "printed_page": 38,
+      "match_type": "footnote_literal_exact",
+      "source_layer": "footnote",
+      "footnote_number": 35,
+      "evidence_id": "ev-e419ec6448d2d992"
+    }
+  ],
+  "bibliographic_expectations": {
+    "volume_number_from_source": 1,
+    "volume_source": "PDF page 10 front matter: ‘el primer volumen ... está ahora en sus manos’",
+    "volume_confidence": "explicit",
+    "persisted_volume_number": null,
+    "planner_required_volume_number": null,
+    "planner_required_volume_source": "unresolved",
+    "forbidden_inference": "document_code suffix _v2 must not mean Tomo 2"
+  },
+  "duplicate_policy": {
+    "same_hash_active_documents_max": 1,
+    "binary_duplicate_allowed": false,
+    "related_ready_document": "LIKUTEY HALAJOT LM II 8.pdf",
+    "classification": "related_ready_record_with_conflicting_title_and_scope_metadata",
+    "promotion_condition": "resolve the existing ready record whose title says Likutey Halajot but whose content identifies Likutey Moharán II #8 before promotion"
+  },
+  "legal_editorial_status": {
+    "legal": "LEGAL_REVIEW_REQUIRED",
+    "editorial": "PASS_WITH_CONDITION",
+    "copyright_source": "PDF page 4",
+    "permission_verified": false,
+    "public_exposure_allowed": false,
+    "conditions": [
+      "obtain or record written permission for the intended exposure",
+      "persist explicit bibliographic volume/edition metadata before promotion",
+      "resolve the conflicting ready record and verify exact Interior Final scope behavior"
+    ]
+  },
+  "promotion_recommendation": {
+    "result": "NOT_READY_FOR_PROMOTION",
+    "promotion_executed": false,
+    "status_change_authorized": false,
+    "rollback_from": "ready",
+    "rollback_to": "test_candidate"
+  }
+}

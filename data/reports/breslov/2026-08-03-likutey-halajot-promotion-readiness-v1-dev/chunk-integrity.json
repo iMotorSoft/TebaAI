@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "total_chunks": 268,
+    "unique_chunk_ids": 268,
+    "unique_chunk_uids": 268,
+    "empty_content": 0,
+    "missing_normalized": 0,
+    "missing_page": 0,
+    "cross_page": 0,
+    "invalid_page": 0,
+    "invalid_offsets": 0,
+    "missing_persisted_printed_page": 256
+  },
+  "anchors": {
+    "total": 268,
+    "missing_anchor": 0,
+    "missing_page": 0,
+    "page_mismatch": 0,
+    "document_mismatch": 0
+  },
+  "duplicate_content_hashes": []
+}

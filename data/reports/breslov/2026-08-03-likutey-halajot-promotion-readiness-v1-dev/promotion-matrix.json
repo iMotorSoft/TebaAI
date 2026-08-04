@@ -1,0 +1,28 @@
+{
+  "recommendation": "NOT_READY_FOR_PROMOTION",
+  "promotion_executed": false,
+  "document_status": "test_candidate",
+  "dimensions": [
+    {"dimension":"PDF source","status":"PASS","evidence":"284-page PDF 1.6; hash and size match; 16 visually blank pages justified","blocking":false},
+    {"dimension":"Hash","status":"PASS","evidence":"440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a","blocking":false},
+    {"dimension":"Page-first","status":"PASS","evidence":"284 unique continuous pages; 268 textual; 16 source-blank; zero orphan/duplicate pages","blocking":false},
+    {"dimension":"Chunks","status":"PASS","evidence":"268 unique, nonempty, normalized, anchored chunks; zero invalid ranges/duplicates","blocking":false},
+    {"dimension":"Embeddings","status":"PASS","evidence":"268 indexed, model openai_text_embedding_3_small, dim 1536","blocking":false},
+    {"dimension":"PG↔Milvus","status":"PASS","evidence":"268/268, 100%; missing/orphan/duplicate/mismatch all zero","blocking":false},
+    {"dimension":"Headings","status":"PASS","evidence":"five canonical controls stable plus 12/12 expanded heading runs","blocking":false},
+    {"dimension":"Footnotes","status":"PASS_WITH_CONDITION","evidence":"note 35 10/10 and notes 34/36/37 source audit; note-36 normalized query can be displaced","blocking":true},
+    {"dimension":"Printed references","status":"PASS","evidence":"Salmos 16:1 20/20; boundary negatives honest","blocking":false},
+    {"dimension":"Printed pages","status":"PASS_WITH_CONDITION","evidence":"critical pages recovered; 256/268 persisted labels remain null and rely on deterministic runtime recovery","blocking":false},
+    {"dimension":"Determinism","status":"PASS","evidence":"Mishkán/Bondad/Melodías/note 35 10/10; Salmos 20/20; Azamra 10/10","blocking":false},
+    {"dimension":"Investigative QA","status":"FAIL","evidence":"4/5 natural interrogative examples selected unrelated ready works instead of Interior Final; direct canonical surfaces pass","blocking":true},
+    {"dimension":"Relation QA","status":"FAIL","evidence":"3/5 scoped relation examples selected the conflicting ready record; thematic/literal labeling remains explicit where candidate wins","blocking":true},
+    {"dimension":"ES/EN/HE","status":"PASS_WITH_CONDITION","evidence":"ES and global HE goldens pass; EN can retrieve Spanish evidence; mixed queries can select another corpus and are not mislabeled literal translations","blocking":false},
+    {"dimension":"Planner bibliographic","status":"PASS_WITH_CONDITION","evidence":"false Tomo 2 fixed; API now returns unresolved deterministically","blocking":false},
+    {"dimension":"Tomo","status":"PASS_WITH_CONDITION","evidence":"PDF page 10 explicitly says first volume; number is not persisted, planner correctly returns null/unresolved","blocking":true},
+    {"dimension":"Duplicates/versions","status":"FAIL","evidence":"no binary duplicate, but an existing ready record has conflicting Likutey-Halajot title and Likutey-Moharán-II content, contaminating scope","blocking":true},
+    {"dimension":"Auth/E2E","status":"PASS","evidence":"selected Playwright admin/guest/mobile gate 10 passed, 4 documented skips","blocking":false},
+    {"dimension":"Legal","status":"BLOCKED","evidence":"PDF page 4 requires prior written editor consent; no permission evidence found","blocking":true},
+    {"dimension":"Editorial metadata","status":"FAIL","evidence":"author, annotator, translator, publisher, edition, year and volume are explicit in PDF but absent from persisted fields","blocking":true},
+    {"dimension":"Rollback","status":"PASS","evidence":"single status-field reversal; no reingest/vector changes","blocking":false}
+  ]
+}

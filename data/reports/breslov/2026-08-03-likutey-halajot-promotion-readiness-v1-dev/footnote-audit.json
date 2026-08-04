@@ -1,0 +1,49 @@
+{
+  "assessment": "PASS_WITH_CONDITION",
+  "persisted_model": "page-level chunk with deterministic embedded-footnote parsing at retrieval time",
+  "samples": [
+    {
+      "pdf_page": 55,
+      "printed_page": 37,
+      "footnote_number": 34,
+      "body_starts": "El ‘lado derecho’ hace referencia a la columna de la derecha",
+      "anchor_section": "5 ■ INCLINADO HACIA LA BONDAD",
+      "classification": "explicit_in_source"
+    },
+    {
+      "pdf_page": 56,
+      "printed_page": 38,
+      "footnote_number": 35,
+      "body_starts": "Ver §1 más arriba. Escribe el Rabí Natán en otra instancia",
+      "anchor_section": "5 ■ INCLINADO HACIA LA BONDAD",
+      "next_heading": "6 ■ MELODÍAS Y PLEGARIAS",
+      "api_match_type": "footnote_literal_exact",
+      "api_source_layer": "footnote",
+      "api_stability": "10/10",
+      "classification": "PASS"
+    },
+    {
+      "pdf_page": 56,
+      "printed_page": 38,
+      "footnote_number": 36,
+      "body_starts": "Birur (pl. birurim; lit. ‘tamizar’) hace referencia",
+      "anchor_section": "6 ■ MELODÍAS Y PLEGARIAS",
+      "classification": "explicit_in_source; accent/ligature-normalized API query can lose to unrelated semantic evidence"
+    },
+    {
+      "pdf_page": 57,
+      "printed_page": 39,
+      "footnote_number": 37,
+      "body_starts": "Ver Shaar HaKavanot, Drushei HaLaila 4",
+      "anchor_section": "6 ■ MELODÍAS Y PLEGARIAS",
+      "api_match_type": "footnote_literal_exact",
+      "classification": "PASS"
+    }
+  ],
+  "negative_controls": [
+    "nota 9999 de melodías -> no exact false evidence",
+    "partial number is not accepted as a footnote identity",
+    "two note bodies are never concatenated into one exact quote"
+  ],
+  "condition": "Persisted block roles remain coarse; promotion should wait until the note-36 ligature-normalized literal query no longer loses to semantic evidence from the conflicting ready record."
+}

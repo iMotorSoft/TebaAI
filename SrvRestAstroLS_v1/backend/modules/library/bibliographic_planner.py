@@ -480,9 +480,11 @@ def resolve_volume_for_document(
         except (ValueError, TypeError):
             pass
 
-    # 2. Document code
+    # 2. Document code.  Only explicit bibliographic labels are authority:
+    # a technical suffix such as ``_v2`` denotes an ingestion/version profile,
+    # not a volume of the source work.
     doc_code = doc.get("document_code") or ""
-    vol_match = re.search(r"(?:vol|tomo|v)\s*[.\-]?\s*(\d+)", doc_code, re.I)
+    vol_match = re.search(r"(?:volume|volumen|vol|tomo)\s*[.\-_]?\s*(\d+)", doc_code, re.I)
     if vol_match:
         vol_num = int(vol_match.group(1))
         return ResolvedVolume(
@@ -539,12 +541,12 @@ def resolve_volume_for_document(
             edition_label=edition,
         )
 
-    # 6. Unresolved — return single-volume default
+    # 6. Unresolved — never turn missing metadata into a single-volume claim.
     warnings_list.append("volume_not_determined")
     return ResolvedVolume(
-        volume_id=f"vol-{doc_id[:8]}-single",
-        volume_number=0,
-        volume_label="Obra completa (un volumen)",
+        volume_id=f"vol-{doc_id[:8]}-unresolved",
+        volume_number=None,
+        volume_label="Tomo no resuelto",
         volume_source=VolumeSource.UNRESOLVED,
         volume_confidence=VolumeConfidence.UNRESOLVED,
         document_id=doc_id,

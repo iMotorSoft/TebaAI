@@ -1,0 +1,35 @@
+{
+  "focused": {
+    "command": "uv run pytest -q tests -k 'likutey_halajot or promotion_readiness or page_first or structural_heading or footnote or printed_reference or exact_editorial or relation_qa or investigative'",
+    "passed": 220,
+    "failed": 0,
+    "deselected": 1218,
+    "duration_seconds": 31.86
+  },
+  "backend_full": {
+    "command": "uv run pytest -q",
+    "passed": 1438,
+    "failed": 0,
+    "warnings": 94,
+    "duration_seconds": 58.60,
+    "warning_note": "known datetime.utcnow, short test JWT keys and Litestar inferred-query deprecations"
+  },
+  "frontend_check": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 2,
+    "status": "PASS"
+  },
+  "frontend_tests": {
+    "files_passed": 6,
+    "tests_passed": 69,
+    "failed": 0,
+    "duration_seconds": 3.32
+  },
+  "frontend_build": {
+    "status": "PASS",
+    "pages": 8,
+    "duration_seconds": 2.55
+  },
+  "git_diff_check": "PASS"
+}

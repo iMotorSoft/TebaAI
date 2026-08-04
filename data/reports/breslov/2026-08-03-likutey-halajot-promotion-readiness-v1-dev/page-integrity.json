@@ -1,0 +1,4648 @@
+{
+  "summary": {
+    "total_pages": 284,
+    "unique_page_ids": 284,
+    "unique_pdf_pages": 284,
+    "pages_with_text": 268,
+    "pages_without_text": 16,
+    "char_count_mismatches": 0,
+    "orphan_pages": 0,
+    "min_pdf_page": 1,
+    "max_pdf_page": 284
+  },
+  "anchors": {
+    "total": 268,
+    "missing_anchor": 0,
+    "missing_page": 0,
+    "page_mismatch": 0,
+    "document_mismatch": 0
+  },
+  "pages": [
+    {
+      "pdf_page": 1,
+      "page_id": "1ff6513e-712d-42b8-b65a-5c975b8a4799",
+      "char_count": 132,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b607fa4784c91674622d6a1dc6563d63ab20a2a45078ddee4202ad2ed0ac1071",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 2,
+      "page_id": "363cc499-cc62-4b34-88c0-40720ac895a4",
+      "char_count": 337,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e97c2310009db70cb3255cc4d40062232d8cd6686a0ad3d0b9b21f263ff93d19",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 3,
+      "page_id": "66243f62-11ed-4cc3-8e8a-4ec85d0d4a5c",
+      "char_count": 176,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "1396a69d1d54677f6f0ce5426811d510a7c7e8cc4ec661c6af09f7844964312d",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 4,
+      "page_id": "454ae53b-88de-4111-bc14-01454760300c",
+      "char_count": 748,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f6e14c8aa5486e225f317285372756f4e385b6f8949aca1301d2b8be63d71e5f",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 5,
+      "page_id": "46e78ce6-7cc0-4864-8e59-f24e779b2ad4",
+      "char_count": 94,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "24d55479f00f3ce27a899638c6521d64135b8204e8a41d86cdb72e789c5e06e9",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 6,
+      "page_id": "50c9fc8c-eccd-47e0-a01e-d49b71b18011",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": null,
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 7,
+      "page_id": "641a1add-167a-4d05-bcd0-5ed8b2af3470",
+      "char_count": 1658,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "97b32435da097d9b77b8524bb78b66be2e1d5e25659503bc03d25d5435afde3c",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 8,
+      "page_id": "aa34a111-f930-43fe-9d08-ced1dac2c064",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": null,
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 9,
+      "page_id": "5fcee768-6e9d-4342-bd03-e9d0a831d614",
+      "char_count": 2414,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "46b2974eaf5d650dfb67ccff2c4a8f359135f3b0559e682f682bb5597bfd362a",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 10,
+      "page_id": "7651ea77-b76c-418c-8e20-7b7ce8bbce9e",
+      "char_count": 2230,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6754c7b9459913042e219d4cf42635000b5ab347b9e8266d5fb1b13fdb57aebc",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 11,
+      "page_id": "cfca1e7a-23cf-4310-86b1-9aa4d65545d2",
+      "char_count": 2688,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6d243301a1cc3c2d655ee3f077a318b36888e9d1d6f20bf2cfacb86c417de2b6",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 12,
+      "page_id": "96c323a1-ba65-4aab-9f07-9836b88bea89",
+      "char_count": 3421,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "5d31fa0e736c64107db4318f52e7bcf47bbe1f545ebb9f10a7eff6a16fc07c2e",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 13,
+      "page_id": "9d4d5aa1-9444-4050-86f8-2181fb113a02",
+      "char_count": 2922,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "053ec55d8913dc808a6dd2772e37a286cf1430de6a6e6b34ba2bd5ccde7d11df",
+        "heading": null,
+        "language": "es",
+        "printed_page": 1,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 14,
+      "page_id": "487baffa-ce54-49a5-b215-7fe105fed965",
+      "char_count": 3512,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b9890c5d1cbed41a21867bcfabb562a8fea5a07ded5db272d181904d8c5622bb",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 15,
+      "page_id": "ee681f10-4163-4de6-a7db-d02eaab5c323",
+      "char_count": 3475,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "30caec68113da526443d844d4afb1c646ecc99a8bc388fb459e9f0af0335d814",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 16,
+      "page_id": "f1a27d9e-cfc9-4cc7-b0a3-1e2c3b3d344e",
+      "char_count": 2417,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "44f459a8a4058e4f3a475b5b6fed5cbc060be5d09d3940db9ccc94c51965b69d",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 17,
+      "page_id": "ebb8d9c3-4215-4753-bfb7-802d63d54257",
+      "char_count": 2815,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f480066fd3dd8d4e2d938f64a9cdfc9451ac7f228d19cde3e4198daff0507fc9",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 18,
+      "page_id": "d5e35815-8210-4839-b18e-221e627e70d8",
+      "char_count": 2622,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e62c544b17fc4b6c5865d9107dbef9d8a907e4016736647e2fa5f6f635e67229",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 19,
+      "page_id": "f35375f3-b35f-4ad2-b348-dc000866eb96",
+      "char_count": 48,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "0c22c8f13192734443be2ab269ed13e68abb914db126851cdf9a20dbffe7eb0f",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 20,
+      "page_id": "1c007766-bb0b-462f-b969-8703eb7a208a",
+      "char_count": 2590,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "7ace47b04e88ebfa69ddbb995ec76642fbb406d394c07e44ea4f692a6dd6b82a",
+        "heading": null,
+        "language": "es",
+        "printed_page": 1,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 21,
+      "page_id": "acf22af6-8f60-41f0-818d-1161177c50be",
+      "char_count": 2377,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2a2067fe233c2edfe7beb4d408f6813d3c40fa26504c97d6e1903d747dbe27cc",
+        "heading": null,
+        "language": "es",
+        "printed_page": 3,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 22,
+      "page_id": "89ae56c5-e3a6-403a-853e-58257d27b224",
+      "char_count": 3259,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e88b54936ac606f64b0eac3b9530f7364f06b1c7597b5ad395a2882478e2c6d5",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 23,
+      "page_id": "5b29144d-dc2e-4fd4-ae80-774016569efd",
+      "char_count": 2949,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d79c66fd469ffe0b624a6360fff11f4cc07ff7a10b9cf4152022960a9417f5e3",
+        "heading": null,
+        "language": "es",
+        "printed_page": 5,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 24,
+      "page_id": "16b6c6e3-e704-4086-87bb-ab4004414885",
+      "char_count": 3097,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c88ef951838df4f2b9967127b63245651ccaeb2e0ffc28f0ceb8c8f4b0ab4481",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 25,
+      "page_id": "f7f9f5d2-9033-4c79-bad5-60dd714b5bc9",
+      "char_count": 3129,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "886ac259b6634d579de38958b3fa544b4435a23f778a7583aad471c4f0ce133b",
+        "heading": null,
+        "language": "es",
+        "printed_page": 7,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 26,
+      "page_id": "a6e70db3-11b1-4ae8-91a4-c3eb18cf8317",
+      "char_count": 3451,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "8ca577f8b354ebe1a1f22b34eb777527e1f9da25fbf56521c219ff703213796e",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 27,
+      "page_id": "4ed3735f-4563-40a6-946c-b923a9e7b6b7",
+      "char_count": 3412,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "7c8561f3aab68bdcea3b3ea586a3b0dbaf6b8b9ab4d5b4e462a1bb31b194a4da",
+        "heading": null,
+        "language": "es",
+        "printed_page": 9,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 28,
+      "page_id": "54b92095-4b07-4477-9e27-bee3021277ff",
+      "char_count": 3540,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "3708b6b3f849c1fe93b44bb5a7b4fa4033b8322a3133eb118cb4ed5729428039",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 29,
+      "page_id": "a558656f-f312-48e4-b062-bcffa8b9ec77",
+      "char_count": 3488,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c20c6af084f5c61dc540b944485a3025279e3e66e0845259c71719c03ac5e33b",
+        "heading": null,
+        "language": "es",
+        "printed_page": 11,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 30,
+      "page_id": "8a4c69ed-06f5-4ae2-9fd2-0400d1664656",
+      "char_count": 3340,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6d4620f4af2bbd3c0e7537a680b46a5dacac454706f313d1d6b8b82f92096f05",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 31,
+      "page_id": "31374f89-8874-43f3-a860-af1dd1843658",
+      "char_count": 3465,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "518753aa4d1d52c7139387004549a5b8f945208bd81627de159eaa8d28bab4ac",
+        "heading": null,
+        "language": "es",
+        "printed_page": 13,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 32,
+      "page_id": "aa282282-5ba0-43a3-8689-a91066f79bfe",
+      "char_count": 1276,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c14ddd7314962a5d2276d53e77d91629e24e658299b343272644526f9e5410fc",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 33,
+      "page_id": "f554eb5c-403a-498a-8784-233d2de2cec8",
+      "char_count": 871,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e20f96354ebc0948e639d30f34b408c90aad41d17da0a11e03acbfc209139829",
+        "heading": null,
+        "language": "es",
+        "printed_page": 15,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 34,
+      "page_id": "447f7ffd-4e10-453b-b666-f2a28d233b08",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": null,
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 35,
+      "page_id": "85e30cf1-cea3-434d-8109-58ea23413b32",
+      "char_count": 105,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "bf6fbc98f2ba8f4ed138df6d479f1349fac63ed4a4031e77da295eb22c224ab4",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 36,
+      "page_id": "d9375a3f-8d0f-4a6a-935d-56cff37309b2",
+      "char_count": 2525,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "8f95353b906911c9cb3b6f84b72b9436b52d900f2b2771f1150bab87504bb9a2",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 37,
+      "page_id": "0e79c971-0165-477f-bb24-3feb93a25898",
+      "char_count": 26,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "bb8d4c4ffda750cce34691d2f38c23e5ce04212f9173b63da3b8a51f20ad4aa8",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 38,
+      "page_id": "90674b8c-1dc9-4528-8ec0-665097855e84",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": null,
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 39,
+      "page_id": "60dcb224-b7dd-4fed-97a6-ffdfd9927221",
+      "char_count": 1357,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "dbb8221feb175f8c8287029954e85df607928a9bb47a659cf1a4443c263a56ae",
+        "heading": null,
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 40,
+      "page_id": "1e0a3f0e-99a9-4756-9feb-76d82999e95e",
+      "char_count": 3332,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "eba2714aa31b2049a5b7927faa0d8980b05e7c54a590c4b4d891e30548d09683",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 41,
+      "page_id": "0ff2b415-9d00-4192-9cfb-95bce0db61ca",
+      "char_count": 3628,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "cb53c4b95916286e43face623a4e66bf3d68e4304358a6258fd2a13cf4ad2c3a",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 42,
+      "page_id": "79ea595f-98b5-4320-ab64-c816b0854d2b",
+      "char_count": 4465,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2b5440c6e05a77789c5254ee3830397e824f639b849b8930066a74dd3c3608bc",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 43,
+      "page_id": "f41438cb-405e-45ad-8c6a-2c3a0794b59d",
+      "char_count": 4536,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d7b3aae35a0a9bb0ff40e3d05e19066519fd60a22879e6d1ff27d710e85b1de0",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 44,
+      "page_id": "4480d558-b4e0-487c-9e10-e714b061877e",
+      "char_count": 3454,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d8e2566f0e09ce2b5bab0a61568ccacd0b555471f8b0faf6e754cddb56dd0453",
+        "heading": "2 ■ DESPERTÁNDOSE DEL SUEÑO ESPIRITUAL\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 45,
+      "page_id": "bb64519b-14e9-4f2e-a9af-c970feb90df3",
+      "char_count": 3746,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b49b050e7496e83670102b79582d07380a50208e7ec4c72016f22ab2dcba4d68",
+        "heading": "2 ■ DESPERTÁNDOSE DEL SUEÑO ESPIRITUAL\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 46,
+      "page_id": "c17b1202-70fa-44cd-9041-38e4625df89a",
+      "char_count": 3764,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "30461b4c99e7507d89dfdec123704234b11374741bec4b869a086e09c6b0dcc2",
+        "heading": "2 ■ DESPERTÁNDOSE DEL SUEÑO ESPIRITUAL\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 47,
+      "page_id": "9ca050bd-3423-4b49-8345-04184cc900b5",
+      "char_count": 3576,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b5ed4aaee9938063d275e6c1a70c9abaf67abd332d78e5979fa996d7c362fca3",
+        "heading": "3 ■ DESPERTANDO LOS PUNTOS BUENOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 48,
+      "page_id": "8da58f3c-6720-4f4a-8096-786ac87472e3",
+      "char_count": 3830,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6533c1189a188eee636d372eb000c3ccf58f52f2e2122d7692939e2dc08111ab",
+        "heading": "3 ■ DESPERTANDO LOS PUNTOS BUENOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 49,
+      "page_id": "f9e1a011-7a7a-4830-bd44-f5a2ad143a87",
+      "char_count": 3742,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c8ddb7d8ce235dda03f03671c96715b6009b44c46e16f7227cd848d0f39d5dc8",
+        "heading": "3 ■ DESPERTANDO LOS PUNTOS BUENOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 50,
+      "page_id": "dd23d84c-fb4b-49d4-8254-2e760825c27c",
+      "char_count": 3926,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f9f4622463d58317dc4a1e9d9d2e00589627e79a91bc2548562533b54ed7bff6",
+        "heading": "3 ■ DESPERTANDO LOS PUNTOS BUENOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 51,
+      "page_id": "a4d3198d-a7fc-49e6-a44c-7850bf6194d2",
+      "char_count": 3853,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "82654b4ea2c5698a7815f15b01a914d4b566a1fcaddec32da93134d448bc5c0c",
+        "heading": "4 ■ CONSTRUYENDO UN MISHKÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 52,
+      "page_id": "0141e006-71cc-4e08-8bc8-9026c66a9988",
+      "char_count": 4012,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b161b7f969df74f15a3a38e53e3fd07b86c68d7f31021457fed1459b47d1e030",
+        "heading": "4 ■ CONSTRUYENDO UN MISHKÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 53,
+      "page_id": "41d46d9c-4f85-4bb1-b2e7-a98352e1b7bd",
+      "char_count": 3300,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a8501a319c127fa7b7b86eb012cd4bcdd9c1a3b28b094df4f780b9c464fdf9e1",
+        "heading": "5 ■ INCLINADO HACIA LA BONDAD\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 54,
+      "page_id": "63ffebb4-aad0-4bd4-a07e-dbe52b4bbfe5",
+      "char_count": 3999,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6b7f10c5551a3feb3b3bbfcadc506a8f4b118210266dced76b8664e9e81b70a0",
+        "heading": "5 ■ INCLINADO HACIA LA BONDAD\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 55,
+      "page_id": "002dd46c-9bbd-4b67-9cc0-397ce03e67b0",
+      "char_count": 3798,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b6219dc41c3e0f20bb1f144f44a24422aba818a874c857a0ce78ed93f029ca8a",
+        "heading": "5 ■ INCLINADO HACIA LA BONDAD\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 56,
+      "page_id": "2072468c-3408-4e23-9233-0aad8e6b0e2f",
+      "char_count": 3886,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "dfe216f5de46e144f8ae9cfd7583795cde06c6062a4974391eea087a27f66d73",
+        "heading": "6 ■ MELODÍAS Y PLEGARIAS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 57,
+      "page_id": "5752fb0a-591f-4e67-85e2-e705fa7c970e",
+      "char_count": 3965,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c73d30f9162fe9c16913e2acb2c2cab9960e6d64fa72944f797fcf76043b1e45",
+        "heading": "6 ■ MELODÍAS Y PLEGARIAS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 58,
+      "page_id": "0fa3287d-c582-4b3f-a284-b2c30a5fcd9e",
+      "char_count": 4616,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f052cac7fbd77c0c8c94c72828342d00712d1c0bb805d9af81ada2018c79bd6b",
+        "heading": "6 ■ MELODÍAS Y PLEGARIAS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 6,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 59,
+      "page_id": "4959ea8d-942a-47d8-b20e-d92c594e2bf7",
+      "char_count": 4325,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "9ae6477ecf690149ce34f30db51c9aaab0f7b0bcfcaa192c9b45ca521bdcde2e",
+        "heading": "7 ■ ELEVANDO EL HABLA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 60,
+      "page_id": "7be040ba-d95c-4fbf-bad6-227d6a208441",
+      "char_count": 4320,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "948797dea7dd27186904d3c3b4d76122c63d764475c1ad5fc8c2f423c6f7acad",
+        "heading": "7 ■ ELEVANDO EL HABLA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 61,
+      "page_id": "92e77e36-5c79-49a1-b8fa-11493a42088f",
+      "char_count": 3911,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "cac2dcec7c572bd5be292f496ce80d2ebb6f1545a8c7cd7c1171062575e78be6",
+        "heading": "7 ■ ELEVANDO EL HABLA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 62,
+      "page_id": "13bea79e-21ab-4c60-8afa-a14341d5c50f",
+      "char_count": 3678,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f0d26948085d8df40b627a1e1f4ff9d114fea7ab991faebfc39c0ee5b07e982f",
+        "heading": "8 ■ PUNTOS BUENOS",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 63,
+      "page_id": "a98d1ad4-c398-434b-b6aa-2f0953849380",
+      "char_count": 4144,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2f7cd294ad61779567215e4e80b4dd3ed1d78341ccc2b07166c980f222f40566",
+        "heading": "8 ■ PUNTOS BUENOS",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 64,
+      "page_id": "cbbceaa8-dd11-4d10-ab8c-86ad489b7f7f",
+      "char_count": 3911,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "76b637e5c1c5e7a8c0a0e156901169080371d28e2fd01d8092a4a586bd9fb241",
+        "heading": "8 ■ PUNTOS BUENOS",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 65,
+      "page_id": "e8681291-e9ac-4806-8312-537300cc0805",
+      "char_count": 4834,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "aeb843709424b5dcad94c064fb9b49978ad1b817ad86076d8086b5614fbe0f4c",
+        "heading": "8 ■ PUNTOS BUENOS",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 66,
+      "page_id": "f5073ece-ab71-4f89-822c-9e72c791ab53",
+      "char_count": 3323,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "bd28e269b07c88065aec87f11136ef9c349cb0a70358b163f720d75eed286b87",
+        "heading": "8 ■ PUNTOS BUENOS",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 67,
+      "page_id": "28de9211-a7c5-4af6-8902-795c7b7240f0",
+      "char_count": 3677,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "7a9dc96f38ff8c57347639824b1de14caa2cd58a48f87c60e1b19daf5f57983b",
+        "heading": "8 ■ PUNTOS BUENOS",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 68,
+      "page_id": "18ab1550-ce22-4ab8-8be9-f22a2786f154",
+      "char_count": 3481,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "94869539f77c519acc6388f1b25d28c81a2888307f5b931b482e8c8e3b523d5a",
+        "heading": "9 ■ PERFECCIÓN DE LA PLEGARIA Y DEL HABLA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 69,
+      "page_id": "42bb9bd2-5024-4db4-a33e-5006c578deaf",
+      "char_count": 4060,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "4c2106a50ba2f52640e88739b821efbfc3e473488a9a8ce1463d8f3e21843a3e",
+        "heading": "9 ■ PERFECCIÓN DE LA PLEGARIA Y DEL HABLA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 70,
+      "page_id": "c3dc21e0-d009-426b-abb5-99ca1b3b1d65",
+      "char_count": 4637,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2497a77b4199457da679e30a4190c58ea43f8ed643cfa88029ad14c19a9a8eb8",
+        "heading": "9 ■ PERFECCIÓN DE LA PLEGARIA Y DEL HABLA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 71,
+      "page_id": "3af24de6-b387-473d-9ef1-b791720233f3",
+      "char_count": 4183,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "fca56f9bd7fba548377cd8f60531e7f39663b02d24304b9e2be4a8be4ea365a6",
+        "heading": "9 ■ PERFECCIÓN DE LA PLEGARIA Y DEL HABLA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 72,
+      "page_id": "656d83dc-d98c-4cd5-b0c5-fd9269baa540",
+      "char_count": 3271,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6bd10718452a3dae5e863bc0348063d2fc39015915ad1af56a24727378de6d4d",
+        "heading": "10 ■ VISTIENDO EL CUERPO",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 73,
+      "page_id": "ab4de9a3-5989-43b9-808d-6331596f7846",
+      "char_count": 4124,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b58772383a77a69cf7be2e8ca9a14b365c1afe7c014c32cb30665b0f3cb3f1c6",
+        "heading": "10 ■ VISTIENDO EL CUERPO",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 74,
+      "page_id": "21aa63e2-6184-4d6e-b320-999af878761e",
+      "char_count": 3951,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "807ed51bdb91eaa242e79d89c94ea692b9d9a1c49479409411f21fe80395f9a8",
+        "heading": "10 ■ VISTIENDO EL CUERPO",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 75,
+      "page_id": "ccd9101d-49e2-4f98-9077-6c3940ac4db5",
+      "char_count": 3517,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "86c20a3b9b2b1a6071fe4e6165e27a9aa06d8566fe8d59af645ae64885c8a6e7",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 76,
+      "page_id": "fd63883b-85b3-49ab-95d5-7b75438376a3",
+      "char_count": 3284,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "15c216eb96c1f374a39f26090ea593219ffc686c90a2a0be39d7155fa81e3c58",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 77,
+      "page_id": "a8c4c5e6-5b01-4c54-8f2a-5bfd99ad2997",
+      "char_count": 4557,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "0cd45ef0e2c7195c3bcf6e39e9ef01d95def8d0d82c90b8757e75d086a233e72",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 6,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 78,
+      "page_id": "3d318e36-bf16-422f-a580-1bfc53ae32c5",
+      "char_count": 3906,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d626ebf9b6a9d5f1785c2dab600defb3c64ca5f9b43c84f99eace13c54614cfe",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 79,
+      "page_id": "f7bf949c-de95-4e0c-9ec5-4f3c10c2efe9",
+      "char_count": 3740,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "426c5a36fb72f1c366f335d00d1bf127e04b7740ed2f31bca67aed19942025de",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 80,
+      "page_id": "8989c43c-38f1-4fad-9291-3aee9730ebfc",
+      "char_count": 3546,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "681af1e805c20343f72ec2e631e7aa8b6db3e3507330d94eeab77bd3cead81db",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 81,
+      "page_id": "7530d3ff-152a-4f41-a115-6d7b2acebab5",
+      "char_count": 4667,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6769d8d702aca5c7d628875a87eaabdb3861528fd55cc32af8b28a1fd7c0f4ee",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 82,
+      "page_id": "b0a30b17-fd4a-41c0-bef7-b1a3021172ba",
+      "char_count": 3755,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a58dc1bdd5e0b5eb1129a8cdfb402d2e1068288039d24967afc4af6387bb05ea",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 83,
+      "page_id": "f6edab84-67ab-480a-962c-6c85d9427955",
+      "char_count": 3743,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "00470ecc49fcb948fc9d033b85365728ea1590bcc92dd8e4c3fb158bfe5f4938",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 84,
+      "page_id": "2c6c6225-1fc3-40fc-a8f4-f58a88cba951",
+      "char_count": 4188,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "3868a9a4e53890e7fc318a53133113269f95942448aa3d896cd5eb52afbc5bd5",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 85,
+      "page_id": "e6ac5049-57dc-430d-9c49-6e4ef580d0a8",
+      "char_count": 3169,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "111e31e18dda7b618e15c81ac9e765248c15193e0f5ae6fc57f0d234a44c1952",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 86,
+      "page_id": "16345716-866d-4621-a0bf-5b68592f31e8",
+      "char_count": 4244,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "132faf5148573d4cd5e0ae2ada90a51e078d6a2edc8fc6c473e936919b619111",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 87,
+      "page_id": "d0e265c3-d5b0-4876-88a8-6e47ffcdf723",
+      "char_count": 3934,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "625c934cc9da9234c58cf9a98794a0e1bc38875928650cee72c77f31bc91e3e9",
+        "heading": "11 ■ LAS BENDICIONES DE LA MAÑANA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 88,
+      "page_id": "7a4ff43e-d110-4c12-8931-4c87fd2d7af0",
+      "char_count": 4013,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f4c79edc122ff57ce12cf2133efd1376bf92685bbbf6c9c6c446c49b08b58cc9",
+        "heading": "13 ■ DIVIDIENDO LA NOCHE\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 89,
+      "page_id": "23340e3e-529c-4ccd-a3a1-71b1d0cd8fcd",
+      "char_count": 3856,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c9cb936e606fc003072268dd4288782f0794ed7d385e45f27afb97b20a44b896",
+        "heading": "13 ■ DIVIDIENDO LA NOCHE\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 90,
+      "page_id": "0f9733de-3d46-486c-83d3-6e14b9a74c4d",
+      "char_count": 3820,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "9f7e3880f6cba5aef0b2e65c608390b252b8e7629a55d8f19940c5cfa0f1eef5",
+        "heading": "13 ■ DIVIDIENDO LA NOCHE\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 91,
+      "page_id": "7e3c98a3-8ecf-4ebb-af8e-a9302c72127d",
+      "char_count": 3378,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "819ce002197315542021c8367b59f91548a800ab73fd5f12b047f313abe7d848",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 92,
+      "page_id": "3ac56326-ef1f-4bdf-9b97-1316d43eea17",
+      "char_count": 3197,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b0c61b73291ff59424953513b89473b7a4500a3d7c3c985e3cbec5b5485972c5",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 93,
+      "page_id": "2fc6e0d5-0771-4101-96cf-3737059bd063",
+      "char_count": 4042,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "1fe7c2b991658fe299af79192c5d2604b165f28617bef98e322f6ec817874a19",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 94,
+      "page_id": "cf5fe372-2415-4eee-b96b-20656dad62a0",
+      "char_count": 3692,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "054eb5f4dcc89b43fad962ddaaf264e62d820b5567bf95a060ecf88474c385dd",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 95,
+      "page_id": "d7b65595-ba1d-4f8f-ac7d-a7c9ab4f2ac4",
+      "char_count": 3918,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "0831c8a21dd45776e5d8aa0affa1cb26080eebca386bf6ef378703ceb5488417",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 96,
+      "page_id": "e797b857-7ca1-46ed-bfb0-6d890f1a47d9",
+      "char_count": 3804,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "efba952eeddb567adc60a46a94152943f2c2c93baa1b25db238697075178e590",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 97,
+      "page_id": "a660051c-6f06-47cc-9ce5-6fcdd34f8d55",
+      "char_count": 3156,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a314c0641ad02647da6f5976b2a75267a2578444ece9c16f07f76451a396e3d2",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 98,
+      "page_id": "3d85a187-6117-4dc1-838a-2ae004846284",
+      "char_count": 1301,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e90853385d266043d2c6614db6adc3cf0f773478aedf4461edec05ff56171d52",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 99,
+      "page_id": "56090a25-cf83-4327-a599-24321737a5de",
+      "char_count": 1411,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "54d869d4db4082d010a3ae4174402c13fecc5773a89abb494ce040694fa11010",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": 81,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 100,
+      "page_id": "b7089278-21d9-45d2-9b62-1ad8acdb1b9f",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 101,
+      "page_id": "db0cc881-a8b1-48f5-8208-1cda8029a624",
+      "char_count": 26,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "9ce7046d5a96c29d7ec21601978b16a99cf960648765eaaa30dd7b2e327f2841",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 102,
+      "page_id": "1d5518c1-6068-461b-9f0a-1e4790132eab",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 103,
+      "page_id": "219479d1-d7cc-4cb1-9293-f1991fbd053f",
+      "char_count": 951,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "74247bf4701689899e677ceecb64961864704fb0c4db2e28145247c1d83a4de0",
+        "heading": "14 ■ DESDE LOS NIVELES MÁS BAJOS\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 104,
+      "page_id": "28d2a5fb-2368-4de3-a59f-18586f9aaf8f",
+      "char_count": 4674,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c9dab364cb6c810a1f49b0a2cf0f37017e4ee5e8cd1eb81ff84cb01b8250f005",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 8
+      }
+    },
+    {
+      "pdf_page": 105,
+      "page_id": "4db50d80-4398-492f-90d2-733a3fab9ca1",
+      "char_count": 5428,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "0770af4c52cc7b34ceadef6ff97410cc2e982b54811b40855a9dad78e14df80c",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 6,
+        "headings_count": 0,
+        "footnotes_count": 7
+      }
+    },
+    {
+      "pdf_page": 106,
+      "page_id": "e47019b0-ab6e-4792-b503-c9b89ef7af38",
+      "char_count": 4667,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c42963f8449eeaf10ad0d8b760da87a973d41c182b20ca3855a5dac7c86b7ce6",
+        "heading": "2 ■ ZERIZUT Y EMUNÁ\nL",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 107,
+      "page_id": "90f39a80-e601-4377-b7fb-19bc7a92e439",
+      "char_count": 5174,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a8e053b589b390d6b806c2a03bb04938131db7f29c628cb15197ff589e6245d7",
+        "heading": "2 ■ ZERIZUT Y EMUNÁ\nL",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 108,
+      "page_id": "92fa0aab-30b7-4769-aa2a-9a472ffe0ec9",
+      "char_count": 4730,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "684ad7c5ef30bae1e20af1fe902415f5589c91ef1f9a5ccea622ec392aa7607e",
+        "heading": "2 ■ ZERIZUT Y EMUNÁ\nL",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 109,
+      "page_id": "05b44902-d0ef-4507-a87f-d90e143f2a65",
+      "char_count": 3700,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b2c2d5b32e4a34b2f34802aa07c35288d4d697c369e344b9d36c445e205580f7",
+        "heading": "3 ■ DORMIR PARA EL ALMA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 110,
+      "page_id": "d551d271-efc5-4576-87ae-25a92afdac8b",
+      "char_count": 4585,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "fb7cc35ced68ec8b82ddf9b6e570fbb403f5b24048676bf4bf09c0d59fd4d17c",
+        "heading": "3 ■ DORMIR PARA EL ALMA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 111,
+      "page_id": "36e5d7af-ca0e-400c-a3db-be3d4a61248e",
+      "char_count": 3964,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "8b728f4dc3345869cc918ad9b8d639d8d9b64c07527e2eeec3387b4bdd166722",
+        "heading": "4 ■ COMO UN LEÓN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 112,
+      "page_id": "8a670a39-6efd-4843-bfe0-68cf3dcaa660",
+      "char_count": 4169,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ebde7d627783a9f68aa293f7224ee5987a2fecc21bc30b3b4262392c8eae6428",
+        "heading": "5 ■ MITIGANDO EL DIN\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 113,
+      "page_id": "242854b5-fa61-42d9-a4b2-fdc136b9c9e3",
+      "char_count": 4268,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "1ac2885a9a7ac00dfa049ced0274fb4b82e31736e9cf88ca3cb3e31347b3cb53",
+        "heading": "5 ■ MITIGANDO EL DIN\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 114,
+      "page_id": "259b8324-06a5-40ce-bf80-7932a15d649e",
+      "char_count": 4524,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f5bba457d15c0de8e1cb68c0f01efa665e6f62dd905ce308c9ce0c93f685b0b1",
+        "heading": "5 ■ MITIGANDO EL DIN\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 115,
+      "page_id": "a3b0a262-b708-44c4-85af-d47c88b674af",
+      "char_count": 892,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "14f2bb17b8924d766282ab85bfcbdab8ff018957711fc923ac1451830ec8b77f",
+        "heading": "5 ■ MITIGANDO EL DIN\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 116,
+      "page_id": "b484dbe6-6763-46ce-bda2-456009c82d6f",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "5 ■ MITIGANDO EL DIN\nH",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 117,
+      "page_id": "9b7978cf-263f-4cc2-914e-488e0982022e",
+      "char_count": 26,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "125ea6548940c771dd71b023880d500bf46b9424f4a9dd12682f0e48ec2d5592",
+        "heading": "5 ■ MITIGANDO EL DIN\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 118,
+      "page_id": "0d430fd8-1e60-4d1f-a723-82b0a39ed594",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "5 ■ MITIGANDO EL DIN\nH",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 119,
+      "page_id": "9ef4a194-0bd7-45a7-b6b0-8e1d2fde8981",
+      "char_count": 737,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "79c7b5995d56e11e131bb362fa8210f4a128018e65264430f0a19088d50de1aa",
+        "heading": "5 ■ MITIGANDO EL DIN\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 120,
+      "page_id": "a5661d32-8c45-4336-a59c-342bc64419b3",
+      "char_count": 3423,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "9d5145bbd95a5c9040174afb27f3d4f9f69552e1eb0b2441499e0cfd5748bb47",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 121,
+      "page_id": "506099d4-8cc6-423a-b7fd-a4a5e1ae59c9",
+      "char_count": 4275,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "02e3b4e9944aee7384f28b07750286b0b34e6b19265979ccfbca448b6108c9aa",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 122,
+      "page_id": "bb69560e-cc5c-403d-a5e6-b100b8bf4bd4",
+      "char_count": 4565,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "367172bd4cd9dfde9f4d62a22f5e604c0774be7a82d8632bffc6782097e3cb57",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 123,
+      "page_id": "514e6409-c277-43cb-8c7d-256703b8c342",
+      "char_count": 5389,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b56601c4ccae68b3ed0ec2b228c70c5bb01ea53b12ef24dafe21842441882290",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 124,
+      "page_id": "3d74b409-c546-46a9-b435-f9318f84c5cf",
+      "char_count": 5157,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d6898086928b87b3874f3b8d2666c81bf41deb4ab48d92a89bb4a6ab3662baeb",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 6
+      }
+    },
+    {
+      "pdf_page": 125,
+      "page_id": "7592520c-38fd-4f87-80d2-3f98fcf13d0a",
+      "char_count": 3750,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b850f8c45c073558a5beb546a492523552a4e751b7da74661910c205b63d95bc",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 126,
+      "page_id": "cd228036-7297-4c24-ae2c-1f2fca5bba4b",
+      "char_count": 3885,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "974885a0ed729d5e7fdc6e96884d79707ef02fcb01a82e374bbb8ddb7dde20ec",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 127,
+      "page_id": "2203604b-77ff-4253-b5f4-3474ce2cacf1",
+      "char_count": 3924,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "7f5fc8531cea45e2e3e79fea98628620e97b99124fd3af02e4e17d8d977b945d",
+        "heading": "2 ■ LEVANTÁNDOSE CON EMUNÁ\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 128,
+      "page_id": "383f5eb1-2746-4ee5-b1ff-13fbc5c4ff8e",
+      "char_count": 3688,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2998604a47a8fb3e4c8e4a631ea52bb7e4e5e7f3da45a7b40980f97dfbf5b6d5",
+        "heading": "2 ■ LEVANTÁNDOSE CON EMUNÁ\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 129,
+      "page_id": "f313ad32-46b3-41f4-8f35-60e903229185",
+      "char_count": 3515,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "5f15e4757a0f60c480ebb6401b551f203db13a4c36192236b109b5ffd11f5afc",
+        "heading": "2 ■ LEVANTÁNDOSE CON EMUNÁ\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 130,
+      "page_id": "e64369f5-aa67-4b88-b435-4e10ffccc26b",
+      "char_count": 4654,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "4fcdd001c202090050863ecffeeeac64d5c725a4d858721c85b7b8c18e6022d5",
+        "heading": "2 ■ LEVANTÁNDOSE CON EMUNÁ\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 131,
+      "page_id": "ef53a351-7927-4bef-88c4-dee01e2601f4",
+      "char_count": 4036,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d80e48514d7de8a55854aaa64278a64fe8a92c8c359e9c04104cfb25f10b6ca0",
+        "heading": "2 ■ LEVANTÁNDOSE CON EMUNÁ\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 132,
+      "page_id": "d1f451c9-9bc4-4a29-9230-7764b66c7295",
+      "char_count": 3461,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c22ddde167c5a9350adddc0a8a23e232ea8930ba66bbf92fd80dfcec0a357b02",
+        "heading": "2 ■ LEVANTÁNDOSE CON EMUNÁ\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 133,
+      "page_id": "8fa9d3c2-4461-476b-90f1-0d90be07e2d4",
+      "char_count": 3518,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b5e9f78b9ab96261a5fb5217505f3a4b330323211c3a12e4aaa8a1e816f9d316",
+        "heading": "3 ■ DESBLOQUEANDO EL DAAT A MEDIANOCHE\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 134,
+      "page_id": "5f2846cb-4ace-4989-bee6-1afcb9e420e0",
+      "char_count": 3736,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "be9a49f6062e9a2d67ef3e10969c01cae8372cfe6c58495bd600edcd1b2c3c8a",
+        "heading": "3 ■ DESBLOQUEANDO EL DAAT A MEDIANOCHE\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 135,
+      "page_id": "899d769b-c7c1-47b5-9267-292b7e0aa4f8",
+      "char_count": 3284,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "34bb50896de2bd9593d34a40e95214c01e36d5e69da0107d43e32ba70f1a9191",
+        "heading": "4 ■ ORANDO CON UN CORAZÓN PLENO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 136,
+      "page_id": "775ccea8-e6cc-4734-870b-c001cabe488b",
+      "char_count": 3629,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "519f7958bb73a1bfc9edacd7c46d2619b7a5ce30b0f474e7dd7bba6e51fce2fd",
+        "heading": "4 ■ ORANDO CON UN CORAZÓN PLENO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 137,
+      "page_id": "2937d85f-4aae-4618-b056-d33c6f305c84",
+      "char_count": 3916,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "0f2c9daadae6912a8b0b612008f6febd3ea4103ea1019c34892e6d2223ae7812",
+        "heading": "4 ■ ORANDO CON UN CORAZÓN PLENO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 138,
+      "page_id": "08606147-fa19-495f-9bd9-b640b813d523",
+      "char_count": 3024,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "1e0f56624808838b1bcd27d4b0da9d7113b22656b8aaf449d3a8174fcec1908e",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 139,
+      "page_id": "472a1566-8a89-427f-bb4f-c7a7c10d5512",
+      "char_count": 3418,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "3fea8adaa2de5b1ef0887b44c7f89ea52bb090f5f449168581f885c055690be7",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 140,
+      "page_id": "b097f2b1-e529-46fa-a08b-776e01ff4850",
+      "char_count": 4698,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "288f358f8f762d0aab4b6b935edefa9fc516cbb65f2fa9e65225f72c2d9cb82a",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 141,
+      "page_id": "ea57a302-79cd-4979-b54b-6b5def431a88",
+      "char_count": 4372,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2d95a4cff3111e926e7ed0d10837b11c1325dba8c3361c8be2798626a6386542",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 142,
+      "page_id": "ab9a5128-7a5e-4b77-a17b-c9192691ab21",
+      "char_count": 3716,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "4bf8b35a6ef74594bdea1ff453145faf2bc207b601fe14e395d16d0ab8c34521",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 143,
+      "page_id": "0fff52a9-2606-434e-81a2-f2b6ba4660c8",
+      "char_count": 4442,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "1f21173ed670e81d440fd2c8ff8240f496ff719da2de082dd718d0ed12c30f07",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 144,
+      "page_id": "4e1a2d80-0aee-489c-95bf-6520e229baed",
+      "char_count": 1043,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "5e6c1725272eb35168241b9c23b17fa50f78c5549de1885066bbc3f31f2c0ebc",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 145,
+      "page_id": "e0b723ea-815d-4477-84bf-d9c4fbd8baaa",
+      "char_count": 26,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "54bfa234c0796c00b056a1e6574cfcfdd9506a943c9afbfa9e729d5c0408fe3c",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 146,
+      "page_id": "244cf84a-3f35-4ee9-b596-0af38bc2c32a",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 147,
+      "page_id": "68f67cd6-ddc7-4bc1-aa5f-c3dad39634d0",
+      "char_count": 1393,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "908ee4313bc05b2d34a8d1fc2093684acfdada572accfdcb6ad43fe5e54c9fb7",
+        "heading": "5 ■ HACIENDO UN NUEVO COMIENZO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 148,
+      "page_id": "5e6a9152-8260-4721-879a-f6bd7aed5d70",
+      "char_count": 3799,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e09c399cd4bae731bd33a2b5102bfbcffef28ef49dcd446a4e58561995f93051",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 149,
+      "page_id": "78afb63f-37c2-4863-9839-e3c9d587006f",
+      "char_count": 4243,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "cb77cfe7db15a6f20e41e002de1de857428602394407f1bc5f7ca3892fe0e0c2",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 150,
+      "page_id": "d1fe6e80-16ec-4c2e-8e99-327c451ae30b",
+      "char_count": 5014,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "770eec9107d502ae4e95e6cba9f7ac95104e7d574eb551193f5c7ac20975b527",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 8
+      }
+    },
+    {
+      "pdf_page": 151,
+      "page_id": "3016a04f-b0ad-4ad1-b6d3-2bfeb9483d81",
+      "char_count": 4396,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "54e1b467890789bc696df63c67dfa79a332df92b63e0039add417f940368bf5f",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 152,
+      "page_id": "b894c4a0-5f35-4298-bd41-54220a7e5175",
+      "char_count": 3553,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a24f57efd69ff998cdc9c18ed4a95062808c9fb286974f1e2b7e0bae015c4a4c",
+        "heading": "2 ■ LEVANTÁNDOSE ANTES DEL ALBA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 153,
+      "page_id": "8f08d2e7-d839-4ec5-be57-6fdf13d0ad57",
+      "char_count": 3964,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "1cb8d183480cd6a739a652bf0ca6cd799c000ea511cbb828878728924897525c",
+        "heading": "3 ■ LOS BENEFICIOS DEL DORMIR\nY",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 154,
+      "page_id": "78541ac3-606e-45d6-ade9-639d178dd63f",
+      "char_count": 3545,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "aa25283217a96f6f9c0e406ac570ba07bec3f861bf7fb9a6c110e8eef4f6acac",
+        "heading": "3 ■ LOS BENEFICIOS DEL DORMIR\nY",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 155,
+      "page_id": "40464f4e-ac38-4d55-86f2-09a2d8392cae",
+      "char_count": 3641,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "bfb66bdf08720e0d4ab1ae44ded9952c13a8c455534a0820a8ef33b66829c3cf",
+        "heading": "3 ■ LOS BENEFICIOS DEL DORMIR\nY",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 156,
+      "page_id": "b10a1753-7bf8-42a7-831a-a52a36fa1d4b",
+      "char_count": 3571,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "82ccebbdbe73876dd8625ed322c008bfb59c514ed4a6bf13b1d979caaaf816a3",
+        "heading": "4 ■ ALEGRÍAS DE LOS PANIM\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 157,
+      "page_id": "274c8de4-3b72-4141-a0cb-2588c737b412",
+      "char_count": 3757,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "42100ea0ac3effb5a3675f7601493509d61b0375dfad42f7ea0aedaf7449ad5e",
+        "heading": "4 ■ ALEGRÍAS DE LOS PANIM\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 158,
+      "page_id": "8e3ee1e8-387b-41ac-9892-5d52c5e44c82",
+      "char_count": 3763,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "aa33c8785979a1ca8a9d353e021bcdb8e282b70996c097c2da9ed178f0716d21",
+        "heading": "4 ■ ALEGRÍAS DE LOS PANIM\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 159,
+      "page_id": "7e8db778-0c1b-470e-bd3c-a386a83459e7",
+      "char_count": 3950,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "7b8cca0d000c1b2990b52b958a132b634065d8735dbd36749d40b9de283a901d",
+        "heading": "4 ■ ALEGRÍAS DE LOS PANIM\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 160,
+      "page_id": "24b58df7-06ad-4fa2-8b8f-9120c8a6c2fa",
+      "char_count": 3326,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "95d80f408b278f390235f9ca2feb4e0a31da2138a53cd8f0d683ab3540e9cc1c",
+        "heading": "5 ■ EL OR HAPANIM Y EL BEIT HAMIKDASH\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 161,
+      "page_id": "cf369fd0-9f91-41fe-817b-4e9adb1c8c92",
+      "char_count": 3923,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e42c856fa0cab0b7009162aa8144513de7d1be0fbd6ac2d182ef3b4e7aafe3cb",
+        "heading": "5 ■ EL OR HAPANIM Y EL BEIT HAMIKDASH\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 162,
+      "page_id": "b5072c64-7b29-47e6-9975-a80015c37ab2",
+      "char_count": 3842,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "071f40abdeff20b44174e7329362903e41a2d459dff5aeb3ef5cbed49a87b748",
+        "heading": "6 ■ LAMENTANDO A LOS VERDADEROS TZADIKIM\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 1,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 163,
+      "page_id": "2fd34cd1-b30b-4212-bdbe-783525e4ddb8",
+      "char_count": 3531,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e771352539675534499856caf925a4b31365e0acd22d1d5c7abd23a0aac264c1",
+        "heading": "7 ■ BUSCANDO AL TZADIK\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 164,
+      "page_id": "84f2cf00-d1ed-45d5-9d1f-c2a95a680e8a",
+      "char_count": 4383,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "9edfd5c6ac0ab32c66de2d16fe0d9176973163b7e099e13162c70ace8b052a12",
+        "heading": "7 ■ BUSCANDO AL TZADIK\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 165,
+      "page_id": "4320a594-ff07-485d-a4c2-fa1e6371dc34",
+      "char_count": 3735,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d3855f30c753336a70939b54800ce6f7dac3af866ed896d4e3c460b30a443fa3",
+        "heading": "7 ■ BUSCANDO AL TZADIK\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 166,
+      "page_id": "2b7c81be-acaf-4a36-8cd1-c35887ba334d",
+      "char_count": 3108,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "72e392df437da843127c2103a5cf58271ab8bbc6d3b358320e11e1e697f58605",
+        "heading": "8 ■ LOS ZAPATOS Y LA SABIDURÍA INFERIOR\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 167,
+      "page_id": "4221ad68-3a14-49bb-82f5-56f75be9ec06",
+      "char_count": 3636,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "7c370c401689a512d562202d71bd4fea6b3458ce7a899c195d1784c5fd8d4b55",
+        "heading": "8 ■ LOS ZAPATOS Y LA SABIDURÍA INFERIOR\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 6,
+        "headings_count": 0,
+        "footnotes_count": 7
+      }
+    },
+    {
+      "pdf_page": 168,
+      "page_id": "65df2fea-1c1e-4e07-93bd-445e2f120757",
+      "char_count": 3785,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ba305d8b0e80e787768fd0f2696168758dfede99535d1c1702069e8dd80b35e5",
+        "heading": "9 ■ EXPELIENDO LO SUPERFLUO\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 169,
+      "page_id": "af88f92c-9053-4d30-9202-0c6423c3f259",
+      "char_count": 3567,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c5f8821dcd2d58dfbf6d848d574847c7f6c285c4523a04e8c022bc6666504e6d",
+        "heading": "9 ■ EXPELIENDO LO SUPERFLUO\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 170,
+      "page_id": "eac5b1d0-bbd9-4270-aee6-d66d580e26aa",
+      "char_count": 3754,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "bd1730e7e45150fde9c3aff7170ccf7a8a08d75b7405ef1e981ee299835ec367",
+        "heading": "9 ■ EXPELIENDO LO SUPERFLUO\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 171,
+      "page_id": "7c646316-acba-4d7d-8fd5-dccb02f672e6",
+      "char_count": 3596,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2cabc35ef514d79768d0b17033417ef2cc25ce701bf79b1cd3e597a31d7d27bc",
+        "heading": "10 ■ LA LUZ DE JÁNUCA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 1,
+        "footnotes_count": 6
+      }
+    },
+    {
+      "pdf_page": 172,
+      "page_id": "287f9ea9-f664-415c-b83e-f018f7f63eff",
+      "char_count": 3881,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6287c2d1e1bbd75e0984d8c3532cd271329f0992dfbc7075dced1d92c95f8581",
+        "heading": "10 ■ LA LUZ DE JÁNUCA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 173,
+      "page_id": "c3a3221d-ace5-451d-bf6b-ea67e3b5c88f",
+      "char_count": 4060,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "4e99f1bf3c2c0a0cbab7611659a406e119d3b4b786e806ef129f193830c3b607",
+        "heading": "10 ■ LA LUZ DE JÁNUCA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 174,
+      "page_id": "13ae854c-494a-4590-8b45-85b5560bda78",
+      "char_count": 3987,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "79452a279af86c273d41a7ea9b5c34780f58c463bc19d2876f56bbd5f35aec53",
+        "heading": "10 ■ LA LUZ DE JÁNUCA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 175,
+      "page_id": "a50249f2-d7c3-411c-a9c5-919180dd03db",
+      "char_count": 3819,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2a6d957c1ac414f7ce29acbdc9ae697146937fce4fa4054c4a7b7ce71b2c0a1f",
+        "heading": "10 ■ LA LUZ DE JÁNUCA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 176,
+      "page_id": "c83ca5da-ebcd-4a24-b87e-a9d8fce9166a",
+      "char_count": 3359,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2b7135906db671683f2c1784db7301134ca509b483c539043f3336bd2a534e4f",
+        "heading": "11 ■ BEIT HILEL Y BEIT SHAMAI\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 177,
+      "page_id": "ea969539-0c28-4a32-b9c3-7c3c6bde8125",
+      "char_count": 3864,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "73046765eeeef3e1bc57c0fc4cc659211614c638312cd18062bc059b38261f2d",
+        "heading": "11 ■ BEIT HILEL Y BEIT SHAMAI\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 178,
+      "page_id": "46800018-ac5d-49e4-a681-724fe88e5f9d",
+      "char_count": 3747,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "559aea59d66b8b63a3262adf6b2491e3d5cc8d1f989c8c370c1ce6df660346d1",
+        "heading": "11 ■ BEIT HILEL Y BEIT SHAMAI\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 179,
+      "page_id": "995c7b63-a0a6-4013-bf2d-9b3406b36dd0",
+      "char_count": 3726,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6519b5e19862f94832fbeaa0c3959a68202087c28758410f03d95bdf94e43a92",
+        "heading": "11 ■ BEIT HILEL Y BEIT SHAMAI\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 180,
+      "page_id": "5c56e27e-21d8-45ab-970f-fee3a044314a",
+      "char_count": 3741,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "42289ebb52d2ffa83e32608ecd403614dc345cd65436f62fefdd1cf7347ee427",
+        "heading": "11 ■ BEIT HILEL Y BEIT SHAMAI\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 181,
+      "page_id": "c6e988ff-9ade-4163-9d87-ff3a73395439",
+      "char_count": 3281,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "0d02b5942bec195ed942395d2529c1bb3d89a9d8cdfa597a1c74b97252ac5410",
+        "heading": "12 ■ JÁNUCA Y EL BEIT HAMIKDASH\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 182,
+      "page_id": "f0119064-58fe-4aa9-9770-f1300bb3948b",
+      "char_count": 3489,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "255cc7d526b436a16307beb4b17b337f9f4bb18940c7a6c53a7b892373405984",
+        "heading": "13 ■ LA MITZVÁ ES UNA LÁMPARA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 183,
+      "page_id": "babad94c-b325-449b-9419-e7da9c22b196",
+      "char_count": 3594,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ab060b89839cdc844873891f706bb742ebd136452c76bbd4d378194e14a0d5bd",
+        "heading": "14 ■ VISITANDO A LOS ENFERMOS\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 184,
+      "page_id": "9960c1d8-3e42-49ef-a9ad-e877cb033332",
+      "char_count": 4079,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2d6840f122d52fb838393cefc113a978d904d4b9019a4d3000ea8815b010e79b",
+        "heading": "14 ■ VISITANDO A LOS ENFERMOS\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 185,
+      "page_id": "6a8d3459-964c-47ea-9afb-92e3e5b681d4",
+      "char_count": 3912,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a7d5f3c147d0071cae4da548502a63f360bab6755a279dd9cbe7ae559ffa3937",
+        "heading": "14 ■ VISITANDO A LOS ENFERMOS\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 186,
+      "page_id": "18d2706a-8f0f-4772-8288-e47f489978f3",
+      "char_count": 3713,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d46d0fadd794b74a94b787b182a636d3333d6685244655f9d54b59d2412fc838",
+        "heading": "14 ■ VISITANDO A LOS ENFERMOS\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 187,
+      "page_id": "08f68fa2-e238-446e-a074-5c59a00dd517",
+      "char_count": 3815,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "3f80499951e6c70615efc001e98c93a96844028ab820ccf0b21030c611868a0e",
+        "heading": "14 ■ VISITANDO A LOS ENFERMOS\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 188,
+      "page_id": "958ad0a3-4ac2-487b-9d40-d010d0382d2d",
+      "char_count": 3602,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "09df23e1c900b4eb1ff10359e07b30070f6a2f928c761a790c2f144a1ef8348a",
+        "heading": "15  ■ LA TZEDAKA DE JÁNUCA Y LOS POBRES\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 189,
+      "page_id": "bcc97602-7799-44df-8502-180a3d1cc9ee",
+      "char_count": 3952,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "229618fb721493d5a70920108a08a63539271b832ea1f7d5a1601d38229d6387",
+        "heading": "15  ■ LA TZEDAKA DE JÁNUCA Y LOS POBRES\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 190,
+      "page_id": "e9e14ff4-a741-4b1f-9984-95c0b7c33b62",
+      "char_count": 3627,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "821b1d0f20278d7d2c7e3f94536c90afb5b07bf38af5dea6de8bb8efd4decf3f",
+        "heading": "16 ■ AUMENTANDO LA LUZ\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 191,
+      "page_id": "0f8517fe-838f-4031-a3a1-697bda05e746",
+      "char_count": 3881,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a6c04c673a3d7afd017ad45ede9b065cda0de2ab19b395037b4049544639ab10",
+        "heading": "16 ■ AUMENTANDO LA LUZ\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 192,
+      "page_id": "4bcc4ea3-b5dd-4fa4-a5bb-2cca387ff8cd",
+      "char_count": 3716,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a23727d4db68b06b048019ee5acf2402c0ff5d03b7d42cee33c1201c77bc4e54",
+        "heading": "16 ■ AUMENTANDO LA LUZ\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 193,
+      "page_id": "4df73a84-5bd7-4a1f-8a2d-415df654ac36",
+      "char_count": 3820,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c36f06380f0ae86dc0b74cf751206cf2923f7a3b6295e94dbadbdebdf377cc85",
+        "heading": "16 ■ AUMENTANDO LA LUZ\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 194,
+      "page_id": "5f180497-8b51-4c4c-90fa-9cdcddfeb643",
+      "char_count": 3682,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "41080702061bcc7ea73847c753bdab6a3ff968626abaa223cf2471f3660aa588",
+        "heading": "17 ■ IOSEF",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 195,
+      "page_id": "2e91dcef-e898-4a99-a2ac-653d898c9836",
+      "char_count": 4073,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "91695b329ea83de1ccbfd2893ec6736ef979951beceb9206e299c5967f852249",
+        "heading": "17 ■ IOSEF",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 196,
+      "page_id": "71ff6fee-6421-4368-8c6e-02f59e9e4057",
+      "char_count": 3727,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "80dd754b0fc1459ea2c34a75130a4448771a62982786fb00abbc3592bc51c7c4",
+        "heading": "18 ■ IOSEF",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 197,
+      "page_id": "d6f18a7b-8349-442f-a777-a3d297c84cf8",
+      "char_count": 3879,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f6451983d6cca03d964fb368af10def836bc1d0a09c0e7d6b8ef73fac53e8599",
+        "heading": "18 ■ IOSEF",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 198,
+      "page_id": "ae747537-0e38-4ae1-8fbe-969f60655608",
+      "char_count": 3477,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "62fcd22f62bcc6ff7d9b6607814180f6138400fd8e70ea1d5e4bcc05b2350030",
+        "heading": "18 ■ IOSEF",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 199,
+      "page_id": "9f0fc133-6511-4886-8dad-c04a7b3ddbc7",
+      "char_count": 3576,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "773b8adfc2b9ee699feff1c3514a141d7b3cf57117f3262df1cfe64cd7c546e6",
+        "heading": "19 ■ EL SOL",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 200,
+      "page_id": "948fbbe6-845b-4b2a-854a-f02b244d1040",
+      "char_count": 2579,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "38b06eee7da48283a5e881893b5612c297a317f50f4de947808bb766e0874c9b",
+        "heading": "19 ■ EL SOL",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 201,
+      "page_id": "86284e49-0672-4493-9337-ff1ef0427dca",
+      "char_count": 2050,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a6184a9562072ef4eb0faf6cab72b62681c93d3364cf26df8bdbc92786a2e21e",
+        "heading": "19 ■ EL SOL",
+        "language": "es",
+        "printed_page": 183,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 202,
+      "page_id": "a92dd3e0-d079-4290-a588-e82698bb3f60",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "19 ■ EL SOL",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 203,
+      "page_id": "3b6804c5-65e3-473e-ba23-b711269ba931",
+      "char_count": 26,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "cc08bfaac506a7ff95645b80666a6c9112ba723d24c41941f8ea4478c7f7f411",
+        "heading": "19 ■ EL SOL",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 204,
+      "page_id": "1481a7dc-891e-447f-a438-d77091e0b40d",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "19 ■ EL SOL",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 205,
+      "page_id": "cafbb095-46dc-425d-b3b4-4e6f84bed2af",
+      "char_count": 1311,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "da2c882ed899675595675e79149513b72a11bd4b56c3343d46e1939f8ec59022",
+        "heading": "19 ■ EL SOL",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 206,
+      "page_id": "cbd9feb3-6d75-4425-8a2e-5bdd6123d191",
+      "char_count": 4309,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b9b62b91647b82ec88e5ead4f60e6c6be9eade5f5e50ff2df2ca57191ab60877",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 6
+      }
+    },
+    {
+      "pdf_page": 207,
+      "page_id": "c162f33c-a4e4-4174-953e-cb0e414c1187",
+      "char_count": 5431,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "23b44d8f704bf212f7b6ba1d4656f454a23a0c137b26f274dba6e82962a01c35",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 6
+      }
+    },
+    {
+      "pdf_page": 208,
+      "page_id": "36348f25-bfcb-4cd6-88a4-938a0b625c00",
+      "char_count": 5575,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "5de34f0ce22363a475128e65a2e1fd7146f0b24ae6ec37951b9e69f8684ab4c9",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 209,
+      "page_id": "fce84110-b3aa-4712-8d34-e42ed699973c",
+      "char_count": 5514,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "c6821452f0ccdc6b4457c779d9c8affd72b72ac3174ed2200dd68b8b93e4acd3",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 6
+      }
+    },
+    {
+      "pdf_page": 210,
+      "page_id": "42aaab2f-f687-4da6-a09a-84f7deea16f9",
+      "char_count": 4900,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "102a6facf792085227c18b17b9517caee9ceab4ef0dade910ba7d91015f2865c",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 6,
+        "headings_count": 0,
+        "footnotes_count": 6
+      }
+    },
+    {
+      "pdf_page": 211,
+      "page_id": "ca7ec6b0-413f-45a4-8684-142e61717076",
+      "char_count": 4723,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f5ad3facfe2b03bc81528ab7a0706d969d9837cd19ff8d20d5c133a056eace91",
+        "heading": "1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 212,
+      "page_id": "fd1684fe-c9e3-4a24-bce2-dc97abaffc32",
+      "char_count": 3412,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ab646ec47a1bf650f82dd77be37e82f9a52cf344219d7f77f270315e5cb18553",
+        "heading": "2 ■ LA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 213,
+      "page_id": "d91fad82-8a3d-4ae9-bcfb-b03c2ff4c112",
+      "char_count": 3604,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "3c96d7de30ec9555095f79978001f17d184ee1841f6793ec133448ead42ea466",
+        "heading": "2 ■ LA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 214,
+      "page_id": "de2dd0af-59a6-4ecd-b0e0-b3a66f0ba91b",
+      "char_count": 4095,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "68b3bcaf05d9280ba9ed404a2ae1a79c8e67ceb52c1ee75feaa3c344d1900c47",
+        "heading": "2 ■ LA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 215,
+      "page_id": "7d37d865-a633-4469-ba3e-b169fc61bbfa",
+      "char_count": 3548,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "015ab4fa8d2f623bc582eccb3dde988e58506243dae3feb94d2116e4b78adb26",
+        "heading": "2 ■ LA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 216,
+      "page_id": "97844e63-4590-4618-8d7c-676d56733bbc",
+      "char_count": 3850,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "363bbdd53b1f6eab2eaff09c4acbd9650120f3afdbd4afef32d7155eea622946",
+        "heading": "2 ■ LA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 217,
+      "page_id": "dd6f415e-c0d8-4655-96e8-6ea4e44da195",
+      "char_count": 3716,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2fb3618daf25027930e742cab63326a88811c5ec99b8346415ccb57f7dae196a",
+        "heading": "2 ■ LA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 218,
+      "page_id": "11746070-b67c-4772-bc21-8642f329e8fa",
+      "char_count": 4102,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f131cbc204e4193a95c1be2832b3dbddfc472797adc0292beb615498d3e22e89",
+        "heading": "2 ■ LA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 219,
+      "page_id": "c8912d3e-1a0f-4b95-b75e-171529097b93",
+      "char_count": 3597,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ffa18c58d717e57447379d0be87eb365cbe76fbe4d9f6649a6f8cf9ead33390d",
+        "heading": "3 ■ RENOVACIÓN\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 220,
+      "page_id": "de5eeb95-c9ca-4ede-a941-6d458ea23d41",
+      "char_count": 3955,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "68e895bcc59d1531cdfb5db34e3d3d6e119674da7c37ffdaf5059c179d40794a",
+        "heading": "3 ■ RENOVACIÓN\nH",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 221,
+      "page_id": "e193c3b5-d595-485d-8690-4e832ddbf511",
+      "char_count": 3646,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "4b8d17d37ea527a7ca3df7d70cd1766e82667485e4d93bd5b77de6dc86a10478",
+        "heading": "4 ■ LA NUEVA CANCIÓN\nL",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 222,
+      "page_id": "1e93601d-c015-4a1a-8d00-17bd30bfefa1",
+      "char_count": 3570,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "34c15f90c8a028503fe8d729d6cefd7a6cd71f3ddedecaf382f51f05d4aac62f",
+        "heading": "5 ■ LEVANTÁNDOSE CON FUERZA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 223,
+      "page_id": "282aebfc-6306-4f7c-aba9-189391d77af5",
+      "char_count": 3240,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ed90c9408197fa1509f432cf9841d6308df05d8037fca4fdcfdb319f7dec31df",
+        "heading": "6 ■ LAVARSE CON DAAT\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 1,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 224,
+      "page_id": "20bf0e56-35b8-4fe4-81e9-86b9ebffea9d",
+      "char_count": 3747,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "60bb88b0a5dc6bf99d447da89201cd3a3956d5ef1e67e4730ad4a46f78c4cecd",
+        "heading": "6 ■ LAVARSE CON DAAT\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 3,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 225,
+      "page_id": "7c85fc43-1c57-4028-a5fd-0fb2b5f05212",
+      "char_count": 3242,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "6bb60b04774527eb5bc79c5e0a225d836dff06530bb7dd243fc178d8e0fcf7d2",
+        "heading": "7 ■ RECITAR EL KADISH EN UN IORTZAIT\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 226,
+      "page_id": "14370fa2-2f6e-4fce-8f29-a7e6f0008cca",
+      "char_count": 3636,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "47d8e628fa6d08f2a22305375f43def4c462079cc1d246e29ab98ff3143049e2",
+        "heading": "7 ■ RECITAR EL KADISH EN UN IORTZAIT\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 4,
+        "headings_count": 0,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 227,
+      "page_id": "fb24fd23-2fc4-405b-b923-4ad860e2c76b",
+      "char_count": 3453,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "fb9c6e350c0d6977c667424382b169d1fcf7343fb1e923c5a1ebbf8fe2e62667",
+        "heading": "7 ■ RECITAR EL KADISH EN UN IORTZAIT\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 228,
+      "page_id": "302f00f4-ec81-4229-bfff-44e826b8b1dc",
+      "char_count": 3317,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "3b82f64ba7c3fc71d8b29c43d44dd0b3a333eaaa22690accb9b5239211077d4f",
+        "heading": "8 ■ AYUNANDO EN EL IORTZAIT\nP",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 229,
+      "page_id": "42b351c5-9e95-4a6f-b4f6-c5076229ca44",
+      "char_count": 3905,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e319acd8c0635d2182630ffa45165f27e4a368e30d83c765e74446d18d1052b3",
+        "heading": "9 ■ LOS CICLOS DEL TIEMPO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 4
+      }
+    },
+    {
+      "pdf_page": 230,
+      "page_id": "13a39ea4-e127-4435-ac8f-fe572df7451a",
+      "char_count": 3795,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "db7e5eac7254a28ff96929b73e657645c62a57f9070cae093b367b1cf7ce4338",
+        "heading": "9 ■ LOS CICLOS DEL TIEMPO\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 231,
+      "page_id": "c14c0dc0-1688-4c77-ba09-da6d90d7de28",
+      "char_count": 3646,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "131cd1197b786d00c9204a2381c87057e2ad4c49a476078e4dc73a02c3587fbb",
+        "heading": "10 ■ LA CADENA DEL DAAT\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 1,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 232,
+      "page_id": "719f1d3d-f619-4c3c-9a6d-fae0879e51c0",
+      "char_count": 3166,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "38c4b313e0f8e10f942d373f9bc914287af3a676ab5f8c9132e3d128c79d722e",
+        "heading": "11 ■ EL ORDEN DE LA MAÑANA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 1,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 233,
+      "page_id": "9a972a42-a311-46d9-bbae-1c5af3315397",
+      "char_count": 3330,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "9d2dcab2c332a607b5b0ed9f523d61bd677078ef662d3d7bdbba7694f7589c97",
+        "heading": "11 ■ EL ORDEN DE LA MAÑANA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 7
+      }
+    },
+    {
+      "pdf_page": 234,
+      "page_id": "01eabccc-a4c0-4d8a-8ee8-c2655ac878bd",
+      "char_count": 4243,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d5176587b72510ead6ab4f0cd853049862fbed5cad1b1418bf044796dcea3d47",
+        "heading": "11 ■ EL ORDEN DE LA MAÑANA\nE",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 235,
+      "page_id": "a8ddb8d8-2bdf-4c51-9459-6ea46e1c3458",
+      "char_count": 3604,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "50bc09d252f29c8e7d0375311b3d19191081e6455d980ea081286f670d2645f0",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 1,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 236,
+      "page_id": "2fa1193a-7703-4ce8-ac7f-5238ca6fa55a",
+      "char_count": 2968,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "065a5d203e1239446c024ecbc4a0718e2325bf8f1d4dfeda2fda0b34438afeca",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 237,
+      "page_id": "28f98ea8-fd31-45b8-bab2-8a52af739cd2",
+      "char_count": 4120,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "00a735d6bd83b7499ec747b0b086f385421c90fad1a976533b011e879ffb83ae",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 238,
+      "page_id": "c419cae6-44c5-41fe-b92b-18b33e6f9641",
+      "char_count": 3798,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "342d75d8d095598a4d2ec3a2b2913780f7c08ec851ca45505d1eec246711644a",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 239,
+      "page_id": "216a8596-e4e7-4c30-99a1-bb5ef6ccebd9",
+      "char_count": 1802,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "3b8e6e9b309af9d2e63175d97e0fed995ddb70f8cf7825c56de6d2f43e03e1d1",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": 221,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 240,
+      "page_id": "25adc544-da39-4541-98f7-7f2f72627de4",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 241,
+      "page_id": "b868f925-04d6-4d91-bc45-ee5cfbc57900",
+      "char_count": 20,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d3b72c2492d221abf0b9a3c515861a845538e195437dacb0d45377d40a1d68b8",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 242,
+      "page_id": "e27d49e9-d33f-487e-8561-f36c176ffc2f",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 243,
+      "page_id": "4b575de7-dfa6-432d-b2b0-771e3c68dabf",
+      "char_count": 2278,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "68e67faeb4757db9c8eaf2611e5a9a6778881a4e5eb8b147e1769d76166777de",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 244,
+      "page_id": "ffef6b75-fefb-4da8-8104-7ad7d3e03622",
+      "char_count": 3160,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "694e44fe453b8ebece9d949d6dca21648442ad9b4cda3901c96be159c5116939",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 245,
+      "page_id": "1b53305f-10f5-4366-a5df-69fa7cea40dd",
+      "char_count": 3333,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "898bd4235c162e51b95f0209f9cb069f429e18b61f6c5d12cb1591d4b3f4be79",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 246,
+      "page_id": "f737fd11-3867-41f0-af9f-093350134242",
+      "char_count": 2941,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "4c31a701de7b35f8e41b24afedae0277411d2572e1d33acd9592f6d36069e04c",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 247,
+      "page_id": "bb04f816-86cc-4741-b14d-731d613cf1f3",
+      "char_count": 3173,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "3aa8e9b0aca92d7657704fb7ae6366aa762890a5d772fa6834974ef7d11858c6",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 248,
+      "page_id": "d9130bac-6c1c-4ff1-a6ed-178c59b6f254",
+      "char_count": 3259,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "777bc04aff92b4ad268f6b0c8083e0674201f3bdad4dd7add6af213f5333a16c",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 249,
+      "page_id": "8649c59d-d366-44cc-a7ae-8c0cf1e5830b",
+      "char_count": 3280,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "475436c0de99e892b3f31f41b7120763e78b510046c65eb9d6c6dd2991c72ff3",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 3
+      }
+    },
+    {
+      "pdf_page": 250,
+      "page_id": "b36a370e-f6e4-474f-b26d-3bd086b7a65f",
+      "char_count": 3746,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "1ae75bca49cea3f1b55e95f0872b5bc5bade5b954f5297c5242da889d8a4b62b",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 251,
+      "page_id": "e9d0b67c-8c3f-4355-8513-90425ee7c39b",
+      "char_count": 3315,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "9dbd0731049b8fa1793ef73fba3806ed3c9c1a35cb1df7460088e48c1e8c3868",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 252,
+      "page_id": "4815f8d2-f117-4bbc-8dbd-2149b583a24c",
+      "char_count": 3285,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "558fcd4cba97a0732ba5549594b9c9033bd179c561ccb88c95b5d0d00c8ee87d",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 2
+      }
+    },
+    {
+      "pdf_page": 253,
+      "page_id": "53741183-2f8d-4c1f-afe3-81ad7f1de77b",
+      "char_count": 3705,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2c2a0b483460907fedfd5fc02ef4adf237cf275bf9bf7bbc7eb5339a36be821d",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 5,
+        "headings_count": 0,
+        "footnotes_count": 5
+      }
+    },
+    {
+      "pdf_page": 254,
+      "page_id": "ee0c26fe-9d4b-462b-a8c3-8f61683c3d21",
+      "char_count": 1058,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "1a7964d4277ec3794cf46a5da23661359e8e2fe3cc334fdc9ee641457d1e1e0b",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 1
+      }
+    },
+    {
+      "pdf_page": 255,
+      "page_id": "364ce00b-c869-4e3e-b670-a39f52504335",
+      "char_count": 2174,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a4f2afc9e7e02671aec89c2fba05cd601ef36dc0311f104b7d5acff33c0b9851",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 256,
+      "page_id": "a78b80bc-395d-4792-a7ec-02a41edf30bb",
+      "char_count": 3410,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "b52cae8d5e8d9d25bab906eb7d753591f686b3c22fa543630500f8ddbc4303f6",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 257,
+      "page_id": "5f167d3a-6f06-460a-8434-eee9fe75da9a",
+      "char_count": 3543,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ed0ef3461ff34d4de2153f2a4663b61146a08c7c0a7f0e407ef54ff87d7b94f5",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 258,
+      "page_id": "5df4a7fd-5f8f-4a1e-a7c1-484d4f25fdcc",
+      "char_count": 3537,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "591ab7166ab70ead64fcc12ee73ac6379ddf1304d15880fbcc8a2beb0ebe2930",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 259,
+      "page_id": "0cf008e6-183a-4da6-a152-0925283c26d1",
+      "char_count": 3348,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "84498fdf2631263a935c2db0bb4cbbb12277320e469043e9d19a610d313668b5",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 1,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 260,
+      "page_id": "d0aec090-5e43-4153-8230-4054898cab15",
+      "char_count": 3531,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "8179e33ae84775cb4916c0486e818222b0d145a35a4ae5e7870ac4d3e01bd7ff",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 261,
+      "page_id": "9c4c7e9a-6858-4936-9c6b-34dacd037449",
+      "char_count": 3630,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "9561ad239dce2af87ad3ca263630ca4ad86d7148cec4049079daec3fe7016614",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 2,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 262,
+      "page_id": "04da14de-fc44-44de-98b4-61dfba1725fc",
+      "char_count": 3537,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "f4d668418a26a7055762ee54ae7fe6ce8291173284e194b415292018b677dbcb",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 263,
+      "page_id": "b6c9d9e4-8613-4914-ab63-c4279a58dae8",
+      "char_count": 3817,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "44b4b3277e73faa2a256b14d37b9d266c7626205426e21ede809e586050b2063",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 264,
+      "page_id": "a2cb1b06-a644-4492-b080-5c4715dc3dfb",
+      "char_count": 3482,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "8778e5310f563184fb65c8941f7ce5758686457558ef2b3b2b9d81e9cc40598a",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 265,
+      "page_id": "d7032876-ae75-471b-af6e-3c02b2da1cea",
+      "char_count": 3344,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "578a65ec5bbaa8ff7c242f9f88619065cdb5049c45640111ac9ee74249009b0c",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 266,
+      "page_id": "83533c3a-63dd-4d7b-af5c-e17a9a433bff",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 267,
+      "page_id": "f3022812-d54c-4c52-86f2-394516c4839c",
+      "char_count": 1990,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2615bdee69f72acad63821772430b9bded7c2083f9f1dc45098389fc09aff4b4",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 268,
+      "page_id": "f64f6c1a-bc48-4b99-9dab-338a230d1a0d",
+      "char_count": 2366,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "055eae4cf9fd7cb4623f6f9c1492c95f40a82db6ccfe42c47374240a912fa069",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 269,
+      "page_id": "c297d184-5928-41dd-9d39-4d85a54d9592",
+      "char_count": 2481,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "38f1d3da34080b1ec5fb5b6d40b19c5354a7645113f9886f5b2f1438887292f2",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 270,
+      "page_id": "7dd3e3b7-e5b8-4d29-8089-6292e2b9c7b0",
+      "char_count": 2476,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "64729daa2e9edc4dcbd27c6a8d812b9b4fd741c06e114e735afc3750f5090166",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 271,
+      "page_id": "ede0836b-0dd2-48af-aac6-0a4ca40ce34b",
+      "char_count": 2444,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "0ece62133db5c05682359c1abd52da65913b4cac5f9add9037e28fb3302e6f7f",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 272,
+      "page_id": "e609ba77-dce4-4a76-b267-72433e5e063d",
+      "char_count": 2392,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "8921195b567deb42561a29c23b2a0554cd84a1331c1b226c4bd3d332058ae377",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 273,
+      "page_id": "419b407b-e7ec-4858-8326-91efdf034c80",
+      "char_count": 1880,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "d1e1c95c2d36f5959d923193389fe8e5fa6e0b2f6a27c818880c4d4a25a5e795",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 274,
+      "page_id": "bb4a01d1-2312-4bdf-a112-872807951306",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 275,
+      "page_id": "89a0a9a5-f06e-434d-ad83-1bf549772c7a",
+      "char_count": 20,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "eb19389d7125026302c6163e575eb3207d4e3d9dcdab5a335adf7ab51e7bf8ac",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 276,
+      "page_id": "0120ca9a-0290-45b9-9351-1ccf38bc511c",
+      "char_count": 109,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ade54ad3cc4ae011ffa8db8b05bc7651da27249d06e07facdf765da1be679569",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 277,
+      "page_id": "080c6522-a3ba-4673-8ca1-33d7ea92c8bb",
+      "char_count": 28,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "ca6efa46e167376847fa3637b86001a6e30e4667576667a29c814a249f32841d",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 278,
+      "page_id": "96845e1f-b8d0-4f4f-b396-1ce39a174312",
+      "char_count": 415,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "8fef7a450aab6e106b7a268f6e42c3417be45cc47b460e18e8a6e4178c0f8d2e",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 279,
+      "page_id": "29aa424c-74c2-4075-9480-be9632e4fb0b",
+      "char_count": 1070,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "a4f1fe55eb81c285edcb57ac33db825ac0c0da27edf8761cb694e68ef7edcf11",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 280,
+      "page_id": "bda179cb-a580-4f0d-9d0e-b55cc8d1f46c",
+      "char_count": 864,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "566588a9f2ec9142bfe0e385f784e198c0de62f81729aed0fe192285cbc61cbe",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "mixed",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 281,
+      "page_id": "4af96135-9147-468a-a91e-f92b9f24d043",
+      "char_count": 828,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "2acc47204cf3add9be139f1ce34ce605959b76922b7045b08062ebf9a428ae09",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 282,
+      "page_id": "d2299013-5037-4ac5-b46e-91e0a79ce4b7",
+      "char_count": 574,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e2d91651c3aaf58d8d8104eb91fa96843d02ed71c65e3231c0044b03e5ccfe6c",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 283,
+      "page_id": "9b940270-7f6f-4508-ba98-6aa0afe9aac5",
+      "char_count": 295,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "4515ab88c5fa62a713ae84c213bf63ab5ff740d6e6cacfe296fbd1fe30702385",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "es",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    },
+    {
+      "pdf_page": 284,
+      "page_id": "698803c1-4130-459c-903b-a42b3eae018c",
+      "char_count": 0,
+      "extraction_method": "pymupdf_text_v2",
+      "confidence": "0.90",
+      "layout_notes": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "heading": "12 ■ DESPERTANDO LA REDENCIÓN\nA",
+        "language": "und",
+        "printed_page": null,
+        "markers_count": 0,
+        "headings_count": 0,
+        "footnotes_count": 0
+      }
+    }
+  ],
+  "pdf_blank_validation": [
+    {
+      "pdf_page": 6,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 8,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 34,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 38,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 100,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 102,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 116,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 118,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 146,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 202,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 204,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 240,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 242,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 266,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 274,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    },
+    {
+      "pdf_page": 284,
+      "nonwhite_ratio": 0.0,
+      "images": 0
+    }
+  ]
+}

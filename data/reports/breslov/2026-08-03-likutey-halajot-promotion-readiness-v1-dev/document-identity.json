@@ -1,0 +1,244 @@
+{
+  "id": "132a791a-d12b-45bc-9b34-dd143605de12",
+  "title": "Likutey Halajot — Interior Final",
+  "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+  "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "source_size_bytes": 4550267,
+  "status": "test_candidate",
+  "language": "es",
+  "document_code": "likutey_halajot_interior_final_v2",
+  "canonical_text_role": "candidate",
+  "created_at": "2026-07-30 18:21:15.685015+00:00",
+  "updated_at": "2026-07-30 18:21:15.685015+00:00",
+  "metadata": {
+    "pipeline": "likutey_halajot_page_first_v2",
+    "physical_pages": 284
+  },
+  "bibliographic_metadata": {
+    "edition": "Interior Final",
+    "physical_file_verified": true
+  },
+  "author": null,
+  "editor": null,
+  "translator": null,
+  "publisher": null,
+  "publication_year": null,
+  "edition": null,
+  "knowledge_scope_code": "breslov_primary",
+  "id_resolution": [
+    "source_sha256",
+    "source_filename",
+    "document_family",
+    "ingestion_profile"
+  ],
+  "ingestion_runs": [
+    {
+      "run_id": "a5220a7c-11f8-40ac-a1fd-0ca6732f0508",
+      "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+      "pipeline_version": "likutey_halajot_page_first_v2",
+      "scope_code": "breslov_research",
+      "status": "completed",
+      "started_at": "2026-07-30 18:21:15.685015+00:00",
+      "finished_at": "2026-07-30 18:21:15.685015+00:00",
+      "metrics_json": {
+        "sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "duration_sec": 17.6,
+        "textual_pages": 268,
+        "physical_pages": 284,
+        "embeddings_generated": false
+      },
+      "warnings_json": [],
+      "created_at": "2026-07-30 18:21:15.685015+00:00"
+    }
+  ],
+  "status_after_audit": "test_candidate",
+  "pdf": {
+    "path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf",
+    "accessible": true,
+    "sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "hash_matches": true,
+    "pdf_valid": true,
+    "encrypted": false,
+    "physical_pages": 284,
+    "empty_text_pages": [
+      6,
+      8,
+      34,
+      38,
+      100,
+      102,
+      116,
+      118,
+      146,
+      202,
+      204,
+      240,
+      242,
+      266,
+      274,
+      284
+    ],
+    "expected_blank_pages": [
+      6,
+      8,
+      34,
+      38,
+      100,
+      102,
+      116,
+      118,
+      146,
+      202,
+      204,
+      240,
+      242,
+      266,
+      274,
+      284
+    ],
+    "blank_pages_match": true,
+    "blank_visual_review": [
+      {
+        "pdf_page": 6,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 8,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 34,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 38,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 100,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 102,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 116,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 118,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 146,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 202,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 204,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 240,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 242,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 266,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 274,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      },
+      {
+        "pdf_page": 284,
+        "nonwhite_ratio": 0.0,
+        "images": 0
+      }
+    ],
+    "short_nonempty_pages": [
+      {
+        "pdf_page": 37,
+        "characters": 26,
+        "surface": "Halakhah 1 Č ĐėĘĐ\nHalajá 1"
+      },
+      {
+        "pdf_page": 101,
+        "characters": 26,
+        "surface": "Halakhah 2 č ĐėĘĐ\nHalajá 2"
+      },
+      {
+        "pdf_page": 117,
+        "characters": 26,
+        "surface": "Halakhah 3 Ď ĐėĘĐ\nHalajá 3"
+      },
+      {
+        "pdf_page": 145,
+        "characters": 26,
+        "surface": "Halakhah 4 ď ĐėĘĐ\nHalajá 4"
+      },
+      {
+        "pdf_page": 203,
+        "characters": 26,
+        "surface": "Halakhah 5 Đ ĐėĘĐ\nHalajá 5"
+      },
+      {
+        "pdf_page": 241,
+        "characters": 20,
+        "surface": "Appendices\nApéndices"
+      },
+      {
+        "pdf_page": 275,
+        "characters": 20,
+        "surface": "Appendices\nDiagramas"
+      },
+      {
+        "pdf_page": 277,
+        "characters": 28,
+        "surface": "EL ORDEN DE LAS DIEZ SEFIROT"
+      }
+    ],
+    "metadata": {
+      "format": "PDF 1.6",
+      "title": "LIKUTEY HALAJOT correg STONE.indd",
+      "author": "Usuario",
+      "subject": "",
+      "keywords": "",
+      "creator": "PScript5.dll Version 5.2.2",
+      "producer": "Acrobat Distiller 11.0 (Windows)",
+      "creationDate": "D:20201029171034-03'00'",
+      "modDate": "D:20201029172232-03'00'",
+      "trapped": "",
+      "encryption": null
+    },
+    "front_matter_evidence": {
+      "title_page_pdf_3": "Explicado y Anotado por\nMoshé Mykoff\ncon\nDov Grant\nTraducción al Español \nGuillermo Beilinson\nLikutey\nHalajot\nPublicado por:\nBreslov Research Institute\nJerusalem / Nueva York\nh",
+      "copyright_pdf_4": "Copyright©2020 Breslov Research Institute\nNinguna parte de esta publicación podrá ser traducida,\nreproducida o archivada en ningún sistema o transmitida de\nninguna forma y de ninguna manera, electrónica, mecánica,\nfotocopiada o grabada o de cualquier otra manera, sin el\nconsentimiento previo, por escrito, del editor.\nPrimera edición\nTítulo del original:\nLikutey Halakhot \nOraj Jaim\nPara más información:\nBreslov Research Institute\nPOB 5370\nJerusalem, Israel.\nBreslov Research Institute\nPOB 587\nMonsey, NY 10952-0587\nEstados Unidos.\nBreslov Research Institute\nc\\o G.Beilinson\ncalle 493 bis # 2548\nGonnet (1897)\nArgentina.\ne-mail: abei2ar@yahoo.com.ar\nImpreso en Argentina\nDiseño de cubierta: Ben Gasner Studio\nRevisión del original: Betzalel Retyk",
+      "volume_statement_pdf_10": "el primer volumen de los discursos originales del Rabí Natán ... está ahora en sus manos"
+    }
+  }
+}

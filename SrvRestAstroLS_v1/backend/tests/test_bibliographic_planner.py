@@ -209,6 +209,31 @@ class TestResolveVolume:
         assert vol.volume_source == VolumeSource.FILENAME
         assert vol.volume_confidence == VolumeConfidence.LOW
 
+    def test_technical_v2_document_code_is_not_tomo_two(self):
+        doc = _make_doc(
+            title="Likutey Halajot — Interior Final",
+            edition="",
+            metadata={},
+            document_code="likutey_halajot_interior_final_v2",
+        )
+        vol = resolve_volume_for_document(doc)
+        assert vol.volume_number is None
+        assert vol.volume_label == "Tomo no resuelto"
+        assert vol.volume_source == VolumeSource.UNRESOLVED
+        assert vol.volume_confidence == VolumeConfidence.UNRESOLVED
+        assert "volume_not_determined" in vol.warnings
+
+    def test_explicit_volume_in_document_code_remains_supported(self):
+        doc = _make_doc(
+            title="Likutey Halajot",
+            edition="",
+            metadata={},
+            document_code="likutey_halajot_tomo_2",
+        )
+        vol = resolve_volume_for_document(doc)
+        assert vol.volume_number == 2
+        assert vol.volume_source == VolumeSource.DOCUMENT_CODE
+
     def test_unresolved_default(self):
         doc = _make_doc(title="Likutey Halajot", edition="", metadata={})
         vol = resolve_volume_for_document(doc)

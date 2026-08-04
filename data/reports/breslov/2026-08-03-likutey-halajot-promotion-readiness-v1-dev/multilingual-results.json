@@ -1,0 +1,296 @@
+{
+  "multilingual": [
+    {
+      "query": "CONSTRUYENDO UN MISHKÁN",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 51,
+        "printed_page": 33,
+        "evidence_id": "ev-6e965be966db45f1",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "Where does Reb Noson discuss Azamra?",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 68,
+        "printed_page": 50,
+        "evidence_id": "ev-6f9730f97b4dab97",
+        "match_type": "body_literal_exact",
+        "source_layer": "editorial_commentary",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "רבי נתן",
+      "http_status": 200,
+      "research_status": "partial",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "he",
+      "primary": null,
+      "answer_markdown": null
+    },
+    {
+      "query": "Azamra y puntos buenos",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 68,
+        "printed_page": 50,
+        "evidence_id": "ev-6f9730f97b4dab97",
+        "match_type": "body_literal_exact",
+        "source_layer": "editorial_commentary",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "melody and prayer in Likutey Halajot",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "en",
+      "primary": {
+        "document": "LIKUTEY HALAJOT LM II 8.pdf",
+        "page": 59,
+        "printed_page": null,
+        "evidence_id": "ev-6e9fce5d02f067c4",
+        "match_type": "semantic",
+        "source_layer": "editorial_translation",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "MELODÍAS prayer plegarias",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "en",
+      "primary": {
+        "document": "UN DÍA EN LA VIDA (KDP).pdf",
+        "page": 156,
+        "printed_page": null,
+        "evidence_id": "ev-ce375db17fe7a0ad",
+        "match_type": "exact_phrase",
+        "source_layer": "editorial_translation",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    }
+  ],
+  "proper_names": [
+    {
+      "query": "Gedalia of Linitz",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [],
+      "query_language": "en",
+      "primary": {
+        "document": "Kokhavey Ohr layout BH_PRINT-4.pdf",
+        "page": 21,
+        "printed_page": null,
+        "evidence_id": "ev-0f2b0ebedf5e0315",
+        "match_type": "english_name_exact",
+        "source_layer": "unknown",
+        "evidence_language": "en",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "Gedalia",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [],
+      "query_language": "en",
+      "primary": {
+        "document": "CRUZANDO EL PUENTE (digital).pdf",
+        "page": 411,
+        "printed_page": null,
+        "evidence_id": "ev-18501526ce1d7d55",
+        "match_type": "english_name_exact",
+        "source_layer": "editorial_translation",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "Linitz",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [],
+      "query_language": "en",
+      "primary": {
+        "document": "Kokhavey Ohr layout BH_PRINT-4.pdf",
+        "page": 382,
+        "printed_page": null,
+        "evidence_id": "ev-fba0a895004ef67b",
+        "match_type": "english_name_exact",
+        "source_layer": "unknown",
+        "evidence_language": "en",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "Reb Noson",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [],
+      "query_language": "en",
+      "primary": {
+        "document": "CRUZANDO EL PUENTE (digital).pdf",
+        "page": 466,
+        "printed_page": null,
+        "evidence_id": "ev-1aa314e240ac5fb7",
+        "match_type": "english_name_exact",
+        "source_layer": "editorial_translation",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "Rabí Natán",
+      "http_status": 200,
+      "research_status": "partial",
+      "semantic_status": null,
+      "warnings": [],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT LM II 8.pdf",
+        "page": 11,
+        "printed_page": null,
+        "evidence_id": "ev-6b2ca0af6de664a1",
+        "match_type": "structural_heading_all_tokens_ordered",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "Rebe Najmán",
+      "http_status": 200,
+      "research_status": "partial",
+      "semantic_status": null,
+      "warnings": [
+        "Se recuperó una variante ortográfica aproximada del nombre; la equivalencia editorial no se afirma como exacta."
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "CRUZANDO EL PUENTE (digital).pdf",
+        "page": 468,
+        "printed_page": null,
+        "evidence_id": "ev-1a40cd681e9e89d4",
+        "match_type": "normalized",
+        "source_layer": "editorial_translation",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    }
+  ],
+  "hebrew_goldens": [
+    {
+      "query": "וּמִצְרַיִם נָסִים לִקְרָאתוֹ",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "he",
+      "primary": {
+        "document": "LIKUTEY MOHARAN II Interior.pdf",
+        "page": 14,
+        "printed_page": 4,
+        "evidence_id": "ev-f0990f7b1498aaf4",
+        "match_type": "normalized",
+        "source_layer": "rebbe_lesson_text",
+        "evidence_language": "he",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    },
+    {
+      "query": "ומצרים נסים לקראתו",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "he",
+      "primary": {
+        "document": "LIKUTEY MOHARAN II Interior.pdf",
+        "page": 14,
+        "printed_page": 4,
+        "evidence_id": "ev-f0990f7b1498aaf4",
+        "match_type": "normalized",
+        "source_layer": "rebbe_lesson_text",
+        "evidence_language": "he",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null
+    }
+  ]
+}

@@ -2,7 +2,33 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-03 (selección canónica de evidencia editorial V1 en DEV)
+Ultima actualizacion: 2026-08-03 (Promotion Readiness V1 de Likutey Halajot en DEV)
+
+## Likutey Halajot Corpus Promotion Readiness V1 — 2026-08-03 (DEV)
+
+Estado de auditoría: `TEBAAI_LIKUTEY_HALAJOT_CORPUS_PROMOTION_READINESS_V1_DEV_READY`.
+Recomendación: `NOT_READY_FOR_PROMOTION`. El documento conserva status
+`test_candidate`; no fue promovido.
+
+- integridad fuente/page-first/chunks/embeddings PASS: hash canónico, 284
+  páginas (268 textuales + 16 blancos físicos justificados), 268 chunks y
+  PG↔Milvus 268/268, sin missing/orphans/duplicados/mismatches;
+- cinco goldens deterministas PASS (Salmos 20/20; restantes 10/10) y planner
+  corregido para no convertir el sufijo técnico `_v2` en `Tomo 2`; runtime
+  devuelve tomo unresolved, mientras el PDF 10 dice explícitamente “primer
+  volumen” y requiere persistencia editorial separada;
+- bloqueantes: preguntas Investigative/Relation naturales pueden seleccionar
+  otras obras; el registro `ready` titulado `Likutey Halajot LM II 8` contiene
+  superficies `LIKUTEY MOHARÁN II #8` y contamina scope/PRIMARY; metadata
+  bibliográfica crítica no está persistida;
+- legal: `LEGAL_REVIEW_REQUIRED`; PDF 4 exige consentimiento previo escrito y
+  no se encontró evidencia de permiso para exposición pública.
+
+ADR: `docs/adr/ADR-017-likutey-halajot-corpus-promotion-readiness-v1.md`.
+Reporte: `data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/`.
+Próxima acción explícita: fase separada para corregir identidad/scope del
+registro conflictivo, cerrar QA natural, aprobar metadata y resolver permiso;
+luego repetir readiness antes de autorizar promoción.
 
 ## Canonical Editorial Evidence Selection V1 — cierre 2026-08-03 (DEV)
 

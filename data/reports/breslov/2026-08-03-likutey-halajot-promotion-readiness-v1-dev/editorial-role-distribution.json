@@ -1,0 +1,18 @@
+{
+  "persisted_distribution": [
+    {
+      "block_type": "page_first_v2",
+      "evidence_role": "commentary",
+      "language": "es",
+      "count": 267
+    },
+    {
+      "block_type": "page_first_v2",
+      "evidence_role": "commentary",
+      "language": "mixed",
+      "count": 1
+    }
+  ],
+  "assessment": "Persisted page-level chunks use coarse commentary roles; exact headings, footnotes and marginal references are derived deterministically at retrieval time.",
+  "unknown_persisted_roles": 0
+}

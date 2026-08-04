@@ -1,0 +1,31 @@
+{
+  "environment": "DEV",
+  "backend": "http://127.0.0.1:7008",
+  "frontend": "http://127.0.0.1:3008",
+  "browser": "Playwright Chromium",
+  "mocks": false,
+  "command": "pnpm exec playwright test --project=chromium e2e/research-structural-heading.spec.ts e2e/research-guest.spec.ts e2e/research-hebrew.spec.ts e2e/research-kokhavey-gedalia.spec.ts e2e/research-responsive.spec.ts",
+  "passed": 10,
+  "failed": 0,
+  "skipped": 4,
+  "duration": "1.9m",
+  "admin": {
+    "status": "PASS",
+    "coverage": "login, three canonical headings, negative, evidence, proper name, logout"
+  },
+  "guest": {
+    "status": "PASS",
+    "coverage": "login, note 35, Salmos 16:1, evidence, read-only, admin denied, persisted session, logout"
+  },
+  "mobile_390x844": {
+    "status": "PASS",
+    "coverage": "heading evidence, proper-name evidence, no horizontal overflow, read-only, logout"
+  },
+  "rtl": {
+    "status": "PASS_WITH_DOCUMENTED_SKIPS",
+    "coverage": "composer direction and mixed Markdown passed; four old pipeline-specific tests remained skipped by their existing contracts"
+  },
+  "api_admin_five_goldens": "PASS; headings/note 35 10/10 and Salmos 20/20",
+  "planner_azamra": "PASS after honesty fix; 10/10 unresolved, no Tomo 2",
+  "blocking_product_findings": "E2E auth/UI passes do not override Investigative/Relation routing failures recorded in investigative-relation-results.json"
+}

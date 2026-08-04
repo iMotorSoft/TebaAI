@@ -1,0 +1,37 @@
+{
+  "simulation_type": "pure/non-persistent",
+  "tests": "backend/tests/test_likutey_halajot_promotion_readiness.py",
+  "before": {
+    "status": "test_candidate",
+    "dev_include_test_candidates": true,
+    "normal_ready_only_retrieval": false,
+    "dev_retrieval": true,
+    "warning": "test_candidate_read_only"
+  },
+  "simulated_after": {
+    "status": "ready",
+    "normal_ready_only_retrieval": true,
+    "dev_retrieval": true,
+    "warning": null
+  },
+  "score_effect": "none: merge_results does not use document_status in combined_score",
+  "tie_break_effect": "none: deterministic document_id/chunk_id key remains unchanged",
+  "exactness_rule": "exact editorial evidence continues to outrank semantic-only ready evidence",
+  "scope_effect": "candidate becomes visible to every ready-only unscoped and Likutey-Halajot-family query",
+  "risks": [
+    "The existing ready record titled Likutey Halajot LM II 8 resolves to the same work family although sampled content identifies Likutey Moharán II #8.",
+    "Broad investigative and relation questions already select that conflicting ready record over Interior Final evidence.",
+    "Promotion would remove the DEV warning and make the candidate normally retrievable without resolving this scope ambiguity.",
+    "No status-based score or tie-break exists; promotion cannot itself repair candidate selection."
+  ],
+  "other_works_before_after": {
+    "Likutey Moharán": "potential scope contamination remains from the mislabeled ready record",
+    "Likutey Moharán II": "same risk; sampled conflicting record contains LIKUTEY MOHARÁN II #8",
+    "Kitzur": "semantic primary can remain on interrogative heading queries",
+    "La Potencia de la Plegaria": "semantic primary can remain on note/relation questions",
+    "Cruzando el Puente Angosto": "exact/heading competition remains query-dependent",
+    "El Alma del Rebe Najmán": "no score change expected",
+    "Kokhavey Or": "proper-name lane remains stable in E2E"
+  },
+  "conclusion": "FAIL_FOR_PROMOTION: status expansion is understood and reversible, but scope/routing ambiguity and investigative-query displacement must be fixed first."
+}

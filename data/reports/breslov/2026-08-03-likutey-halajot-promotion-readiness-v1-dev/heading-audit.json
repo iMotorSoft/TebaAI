@@ -1,0 +1,353 @@
+{
+  "sample_size": 12,
+  "results": [
+    {
+      "query": "LOS ZAPATOS Y LA SABIDURÍA INFERIOR",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 166,
+        "printed_page": 148,
+        "evidence_id": "ev-164b62af193509ed",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 166,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "DESPERTÁNDOSE DEL SUEÑO ESPIRITUAL",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 44,
+        "printed_page": 26,
+        "evidence_id": "ev-da18467a3a65cf88",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 44,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "DESPERTANDO LOS PUNTOS BUENOS",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 47,
+        "printed_page": 29,
+        "evidence_id": "ev-f344a1a1b9d7d5e9",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 47,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "CONSTRUYENDO UN MISHKÁN",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 51,
+        "printed_page": 33,
+        "evidence_id": "ev-6e965be966db45f1",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 51,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "INCLINADO HACIA LA BONDAD",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 53,
+        "printed_page": 35,
+        "evidence_id": "ev-e6dc84557a57331e",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 53,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "MELODÍAS Y PLEGARIAS",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 56,
+        "printed_page": 38,
+        "evidence_id": "ev-e419ec6448d2d992",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 56,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "ELEVANDO EL HABLA",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 59,
+        "printed_page": 41,
+        "evidence_id": "ev-931eb8b4f965fa98",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 59,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "DIVIDIENDO LA NOCHE",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 88,
+        "printed_page": 70,
+        "evidence_id": "ev-7f0c0a89c539151c",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 88,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "PERFECCIÓN DE LA PLEGARIA Y DEL HABLA",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 68,
+        "printed_page": 50,
+        "evidence_id": "ev-6f9730f97b4dab97",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 68,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "VISTIENDO EL CUERPO",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 72,
+        "printed_page": 54,
+        "evidence_id": "ev-d5b63cf430d8c8b3",
+        "match_type": "structural_heading_exact",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 72,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "Construyendo un Mishkan",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 51,
+        "printed_page": 33,
+        "evidence_id": "ev-6e965be966db45f1",
+        "match_type": "structural_heading_accent_folded",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 51,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    },
+    {
+      "query": "melodias y plegarias",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "query_language": "es",
+      "primary": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 56,
+        "printed_page": 38,
+        "evidence_id": "ev-e419ec6448d2d992",
+        "match_type": "structural_heading_accent_folded",
+        "source_layer": "section_heading",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 56,
+        "source_layer": "section_heading",
+        "evidence_type": "structural_heading"
+      },
+      "pass": true
+    }
+  ]
+}

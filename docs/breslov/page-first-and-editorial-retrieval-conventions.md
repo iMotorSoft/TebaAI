@@ -124,6 +124,33 @@ footnote_body     → anchor paragraph → containing section
   three or more terms locate the source span; line-wrap whitespace is
   normalized for matching while the original quote remains intact.
 
+## Normalización Literal PDF (ADR-020)
+
+Dos representaciones:
+
+- `text_original`: superficie extraída/persistida; cita, evidencia visible,
+  offsets y auditoría; nunca se reescribe.
+- `search_text_normalized`: forma de búsqueda; NFKC + colapso de whitespace
+  + variantes controladas de fragmentación.
+
+Reglas (módulo `pdf_ligature_normalization.py`):
+
+- Compatibilidad: `ﬀ→ff`, `ﬁ→fi`, `ﬂ→fl`, `ﬃ→ffi`, `ﬄ→ffl`, `ﬅ→st`, `ﬆ→st`
+  (NFKC + tabla explícita determinista).
+- Fragmentación segura: las variantes solo *insertan* el espacio de extracción
+  tras un dígrafo de ligadura embebido (`refinamiento` → `refi namiento`);
+  nunca se eliminan espacios, por lo que las palabras reales nunca se unen
+  (`la flor`, `por fin`, `fi nal` intactas).
+- Elisión de glosas parentéticas precedidas por letra (solo matching):
+  `Birur (pl. birurim; lit. “tamizar”) hace` → `birur hace`;
+  `(Salmos 16:1)` al inicio de línea/bloque se preserva.
+- Idempotencia obligatoria y Hebreo intacto (niqqud/RTL/combining marks).
+- La normalización no corrige ortografía (`aﬀecto`→`affecto`).
+- Nota 36 (`reﬁ namiento`, página 56/38): recuperada como
+  `footnote_literal_exact` PRIMARY con la consulta normalizada; la cita
+  conserva la ligadura original. Batch literal ampliado **25/25**.
+
+
 ---
 
 ## Ranking de Evidencia

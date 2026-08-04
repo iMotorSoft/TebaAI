@@ -1,0 +1,44 @@
+[
+  {
+    "query": "CONSTRUYENDO UN TEMPLO INEXISTENTE",
+    "research_status": "no_evidence",
+    "match_type": null,
+    "pass": true
+  },
+  {
+    "query": "Salmos 16:99",
+    "research_status": "complete",
+    "match_type": "semantic",
+    "pass": true
+  },
+  {
+    "query": "Salmos 99:99",
+    "research_status": "complete",
+    "match_type": "semantic",
+    "pass": true
+  },
+  {
+    "query": "Salmos 116:1 en Likutey Halajot",
+    "research_status": "complete",
+    "match_type": "semantic",
+    "pass": true
+  },
+  {
+    "query": "nota 9999 de melodías",
+    "research_status": "partial",
+    "match_type": null,
+    "pass": true
+  },
+  {
+    "query": "GEDALIA DE MARTE",
+    "research_status": "no_evidence",
+    "match_type": null,
+    "pass": true
+  },
+  {
+    "query": "frase fabricada que nunca aparece en el corpus xyzzy",
+    "research_status": "complete",
+    "match_type": "semantic",
+    "pass": true
+  }
+]

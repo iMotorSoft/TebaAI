@@ -1,0 +1,42 @@
+[
+  {
+    "query": "la flor",
+    "variants": [
+      "la flor"
+    ],
+    "forbidden": [
+      "laflor"
+    ],
+    "pass": true
+  },
+  {
+    "query": "por fin",
+    "variants": [
+      "por fin"
+    ],
+    "forbidden": [
+      "porfin"
+    ],
+    "pass": true
+  },
+  {
+    "query": "fi nal",
+    "variants": [
+      "fi nal"
+    ],
+    "forbidden": [
+      "final"
+    ],
+    "pass": true
+  },
+  {
+    "query": "refi namiento",
+    "variants": [
+      "refi namiento"
+    ],
+    "forbidden": [
+      "refinamiento"
+    ],
+    "pass": true
+  }
+]

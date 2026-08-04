@@ -2,7 +2,45 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-04 (Canonical Work–Edition–Source Metadata V1 en DEV)
+Ultima actualizacion: 2026-08-04 (PDF Ligature Literal Normalization V1 en DEV)
+
+## PDF Ligature Literal Normalization V1 — 2026-08-04 (DEV)
+
+Estado: `TEBAAI_PDF_LIGATURE_LITERAL_NORMALIZATION_V1_DEV_READY`.
+
+- causa raíz de la nota 36 (página PDF 56, impresa 38, Interior Final): la
+  extracción emite `reﬁ namiento` (U+FB01 + espacio interno) e `Inﬁ nito`;
+  `search_text_normalized` expande la ligadura pero conserva el espacio, por lo
+  que `refinamiento` no coincidía literalmente; además el extractor interpone
+  la glosa `(pl. birurim; lit. “tamizar”)` que rompía la contigüidad de la
+  frase completa; los chunks de esta edición no tienen `search_vector_es`;
+- normalización reusable en `backend/modules/library/pdf_ligature_normalization.py`:
+  NFKC + tabla explícita (`ﬀ→ff ﬁ→fi ﬂ→fl ﬃ→ffi ﬄ→ffl ﬅ→st ﬆ→st`), colapso de
+  whitespace, variantes de fragmentación que solo insertan el espacio de
+  extracción (`refinamiento` → `refi namiento`) y elisión de glosas
+  parentéticas precedidas por letra (solo matching; `(Salmos 16:1)` se
+  preserva); nunca une palabras reales; idempotente; hebreo intacto;
+- nota 36 recuperada como PRIMARY estable `footnote_literal_exact` footnote 36,
+  source layer footnote, block role footnote_body, evidencia
+  `ev-e419ec6448d2d992` estable en 10/10 admin y 10/10 guest; la cita
+  conserva la ligadura original (`reﬁ namiento`, `Inﬁ nito`);
+- batch literal ampliado 25/25 (antes 24/25) sin sustituir consultas; nota 35,
+  Mishkán, Bondad, Melodías, Salmos 16:1 (y bordes 16:10/16:11), proper names
+  y hebreo con/sin niqqud sin regresión; Azamra sigue `Tomo no resuelto`;
+- metadata canónica (familia/edición/fuente/volumen/versión) intacta; scope y
+  status sin cambios; Interior Final sigue `test_candidate`; sin reingesta,
+  embeddings, Milvus ni promoción;
+- validaciones: backend focalizado 382 PASS, backend completo 1482 PASS,
+  frontend 0 errores / 70 tests / build 8 páginas, Playwright Chromium
+  admin/guest/móvil 390×844 3/3 + regresiones 5/5, auditoría read-only PASS
+  (exit 0), `git diff --check` PASS;
+- PostgreSQL solo lectura; Milvus solo inspección (5.370 entidades, Loaded);
+  sin push.
+
+ADR: `docs/adr/ADR-020-pdf-ligature-literal-normalization-v1.md`.
+Reporte: `data/reports/breslov/2026-08-04-pdf-ligature-literal-normalization-v1-dev/`.
+Próximo paso: repetir promotion readiness completa cuando metadata/QA/legal lo
+permitan; la nota 36 ya no es bloqueante literal.
 
 ## Canonical Work–Edition–Source Metadata V1 — 2026-08-04 (DEV)
 

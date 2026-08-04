@@ -1,0 +1,56 @@
+{
+  "Mishkán": {
+    "query": "CONSTRUYENDO UN MISHKÁN",
+    "page": 51,
+    "printed": 33,
+    "match_type": "structural_heading_exact",
+    "pass": true
+  },
+  "Bondad": {
+    "query": "INCLINADO HACIA LA BONDAD",
+    "page": 53,
+    "printed": 35,
+    "match_type": "structural_heading_exact",
+    "pass": true
+  },
+  "Melodías": {
+    "query": "MELODÍAS Y PLEGARIAS",
+    "page": 56,
+    "printed": 38,
+    "match_type": "structural_heading_exact",
+    "pass": true
+  },
+  "Salmos 16:1": {
+    "query": "Salmos 16:1",
+    "page": 55,
+    "printed": 37,
+    "match_type": "printed_reference_exact",
+    "pass": true
+  },
+  "nota_35": {
+    "query": "El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción",
+    "page": 56,
+    "printed": 38,
+    "match_type": "footnote_literal_exact",
+    "footnote": 35,
+    "pass": true
+  },
+  "Salmos 16:10 boundary": {
+    "query": "Salmos 16:10",
+    "page": 158,
+    "match_type": "printed_reference_exact",
+    "boundary_not_16_1": true
+  },
+  "Salmos 16:11 boundary": {
+    "query": "Salmos 16:11",
+    "page": 159,
+    "match_type": "printed_reference_exact",
+    "boundary_not_16_1": true
+  },
+  "(Salmos 16:1)": {
+    "query": "(Salmos 16:1)",
+    "page": 55,
+    "match_type": "printed_reference_exact",
+    "pass": true
+  }
+}

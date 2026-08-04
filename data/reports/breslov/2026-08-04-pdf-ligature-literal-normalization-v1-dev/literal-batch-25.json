@@ -1,0 +1,206 @@
+{
+  "rows": [
+    {
+      "query": "LOS ZAPATOS Y LA SABIDURÍA INFERIOR",
+      "expected_page": 166,
+      "actual_page": 166,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "DESPERTÁNDOSE DEL SUEÑO ESPIRITUAL",
+      "expected_page": 44,
+      "actual_page": 44,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "DESPERTANDO LOS PUNTOS BUENOS",
+      "expected_page": 47,
+      "actual_page": 47,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "CONSTRUYENDO UN MISHKÁN",
+      "expected_page": 51,
+      "actual_page": 51,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "INCLINADO HACIA LA BONDAD",
+      "expected_page": 53,
+      "actual_page": 53,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "MELODÍAS Y PLEGARIAS",
+      "expected_page": 56,
+      "actual_page": 56,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "ELEVANDO EL HABLA",
+      "expected_page": 59,
+      "actual_page": 59,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "DIVIDIENDO LA NOCHE",
+      "expected_page": 88,
+      "actual_page": 88,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "PERFECCIÓN DE LA PLEGARIA Y DEL HABLA",
+      "expected_page": 68,
+      "actual_page": 68,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "VISTIENDO EL CUERPO",
+      "expected_page": 72,
+      "actual_page": 72,
+      "match_type": "structural_heading_exact",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "He puesto a HaShem siempre delante de mí",
+      "expected_page": 156,
+      "actual_page": 156,
+      "match_type": "footnote_literal_exact",
+      "source_layer": "footnote",
+      "pass": true
+    },
+    {
+      "query": "Tu jesed, HaShem, me sustentará",
+      "expected_page": 56,
+      "actual_page": 56,
+      "match_type": "body_literal_exact",
+      "source_layer": "editorial_commentary",
+      "pass": true
+    },
+    {
+      "query": "el despertar el alba alude a levantarse del sueño espiritual",
+      "expected_page": 55,
+      "actual_page": 55,
+      "match_type": "body_literal_exact",
+      "source_layer": "editorial_commentary",
+      "pass": true
+    },
+    {
+      "query": "el menos digno de los judíos",
+      "expected_page": 48,
+      "actual_page": 48,
+      "match_type": "footnote_literal_exact",
+      "source_layer": "footnote",
+      "pass": true
+    },
+    {
+      "query": "Rabí Natán concluye su explicación",
+      "expected_page": 51,
+      "actual_page": 51,
+      "match_type": "normalized",
+      "source_layer": "editorial_commentary",
+      "pass": true
+    },
+    {
+      "query": "Explicado y Anotado por Moshé Mykoff con Dov Grant",
+      "expected_page": 3,
+      "actual_page": 3,
+      "match_type": "body_literal_exact",
+      "source_layer": "editorial_commentary",
+      "pass": true
+    },
+    {
+      "query": "Traducción al Español Guillermo Beilinson",
+      "expected_page": 3,
+      "actual_page": 3,
+      "match_type": "body_literal_exact",
+      "source_layer": "editorial_commentary",
+      "pass": true
+    },
+    {
+      "query": "Birur hace referencia a la extracción y refinamiento de las chispas",
+      "expected_page": 56,
+      "actual_page": 56,
+      "match_type": "footnote_literal_exact",
+      "source_layer": "footnote",
+      "pass": true
+    },
+    {
+      "query": "durante la noche la Shejiná desciende hacia los mundos inferiores",
+      "expected_page": 57,
+      "actual_page": 57,
+      "match_type": "footnote_literal_exact",
+      "source_layer": "footnote",
+      "pass": true
+    },
+    {
+      "query": "Hashkamat Haboker Levantándose por la Mañana",
+      "expected_page": 2,
+      "actual_page": 2,
+      "match_type": "body_literal_exact",
+      "source_layer": "editorial_commentary",
+      "pass": true
+    },
+    {
+      "query": "El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción",
+      "expected_page": 56,
+      "actual_page": 56,
+      "match_type": "footnote_literal_exact",
+      "source_layer": "footnote",
+      "pass": true
+    },
+    {
+      "query": "Salmos 16:1",
+      "expected_page": 55,
+      "actual_page": 55,
+      "match_type": "printed_reference_exact",
+      "source_layer": "marginal_reference",
+      "pass": true
+    },
+    {
+      "query": "salmos 16:1",
+      "expected_page": 55,
+      "actual_page": 55,
+      "match_type": "printed_reference_exact",
+      "source_layer": "marginal_reference",
+      "pass": true
+    },
+    {
+      "query": "Construyendo un Mishkan",
+      "expected_page": 51,
+      "actual_page": 51,
+      "match_type": "structural_heading_accent_folded",
+      "source_layer": "section_heading",
+      "pass": true
+    },
+    {
+      "query": "melodias y plegarias",
+      "expected_page": 56,
+      "actual_page": 56,
+      "match_type": "structural_heading_accent_folded",
+      "source_layer": "section_heading",
+      "pass": true
+    }
+  ],
+  "passed": 25,
+  "total": 25
+}

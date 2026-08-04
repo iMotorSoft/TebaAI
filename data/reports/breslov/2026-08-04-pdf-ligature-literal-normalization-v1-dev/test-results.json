@@ -1,0 +1,20 @@
+{
+  "focused": {
+    "command": "uv run pytest -q tests -k \"ligature or unicode or normalization or footnote or literal or page_first or simple_research or investigative or relation_qa\"",
+    "passed": 382,
+    "failed": 0,
+    "deselected": 1100,
+    "duration_seconds": 36.25
+  },
+  "backend_full": {
+    "command": "uv run pytest -q",
+    "passed": 1482,
+    "failed": 0,
+    "warnings": 94,
+    "duration_seconds": 57.7
+  },
+  "frontend_check": "PASS: 0 errors, 0 warnings, 2 pre-existing hints",
+  "frontend_vitest": "PASS: 70 tests",
+  "frontend_build": "PASS: 8 pages",
+  "e2e_playwright": "PASS: 3/3 (admin, guest, mobile) + 5/5 regressions"
+}

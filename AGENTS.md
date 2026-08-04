@@ -70,6 +70,7 @@ La rama heredada `ux/team360-console-design-handoff` tiene un nombre ajeno a Teb
 | Browser QA o E2E | `lat.md/browser-mcp-validation-policy.md` |
 | Bugs no triviales | `lat.md/root-cause-debugging-policy.md` |
 | Diagramas | `lat.md/mermaid-diagram-policy.md` |
+| Gestor de Contenidos (UI/UX) | `lat.md/content-manager-premium-ux-policy.md` |
 
 ## Limites de implementacion
 
@@ -84,6 +85,7 @@ La rama heredada `ux/team360-console-design-handoff` tiene un nombre ajeno a Teb
 - `global.js` contiene solo configuracion publica y nunca secretos.
 - No hardcodear credenciales, tokens, passwords, API keys ni credenciales E2E.
 - No introducir logica Breslov en modulos genericos cuando pueda expresarse como datos, colecciones o configuracion.
+- **UI del Gestor de Contenidos**: antes de tocar cualquier componente, leer `lat.md/content-manager-premium-ux-policy.md`. El cierre del gate requiere `TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1_DEV_READY` (funcional) Y `TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS` (visual). No aprobar una implementacion que parezca un dashboard administrativo generico.
 
 ## Validacion
 

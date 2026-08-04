@@ -1079,8 +1079,63 @@ def select_context(
     return selected
 
 
-def _evidence_id(chunk_id: str) -> str:
+def _legacy_chunk_evidence_id(chunk_id: str) -> str:
+    """Pre-v2 evidence ID based solely on chunk identity (page-level)."""
     return f"ev-{hashlib.sha256(chunk_id.encode()).hexdigest()[:16]}"
+
+
+def _entity_key(chunk: dict[str, Any]) -> str:
+    """Derive a stable editorial-entity discriminator from chunk metadata.
+
+    Each entity type uses a different key space so that a footnote, a heading
+    and a printed reference on the same page receive distinct identities.
+    The key is deterministic: it depends only on the persisted chunk content
+    and the classification metadata, never on the query surface or rank.
+    """
+    match_type = str(chunk.get("literal_match_type") or "")
+    footnote = chunk.get("footnote_number")
+    heading = str(chunk.get("heading_original") or "")
+    matched_variant = str(chunk.get("matched_variant") or "")
+    evidence_role = str(chunk.get("evidence_role") or "")
+    block_type = str(chunk.get("block_type") or "")
+
+    if match_type == "footnote_literal_exact" and footnote is not None:
+        return f"footnote:{footnote}"
+    if match_type.startswith("structural_heading_") and heading:
+        return f"heading:{_fold(heading)}"
+    if match_type == "printed_reference_exact":
+        # Normalize the reference surface to its canonical form so that
+        # "Salmos 16:1", "(Salmos 16:1)" and "salmos 16:1" share the same
+        # entity identity.
+        ref = _fold(matched_variant).strip().strip("()[]{} ")
+        return f"reference:{ref}"
+    if match_type == "body_literal_exact":
+        return "body"
+    if match_type == "english_name_exact":
+        return f"name:{_fold(matched_variant)}"
+    if evidence_role == "footnote_body" or block_type == "footnote":
+        return "footnote:unknown"
+    if evidence_role:
+        return f"role:{evidence_role}"
+    return "chunk"
+
+
+def _evidence_id(chunk: dict[str, Any]) -> str:
+    """Stable evidence identity keyed by editorial entity.
+
+    The payload includes chunk identity and a deterministic entity
+    discriminator (footnote number, heading title, reference surface, etc.).
+    Two distinct editorial entities on the same page (e.g. notes 35 and 36)
+    receive different IDs; two queries targeting the same entity receive the
+    same ID.
+    """
+    payload = {
+        "v": "2",
+        "chunk": str(chunk.get("chunk_id") or ""),
+        "entity": _entity_key(chunk),
+    }
+    normalized = json.dumps(payload, sort_keys=True, separators=(",", ":"))
+    return f"ev-{hashlib.sha256(normalized.encode()).hexdigest()[:16]}"
 
 
 HEBREW_PRIMARY_MATCH_TYPES = {
@@ -1511,6 +1566,8 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
     return {
         "hit_id": evidence_id,
         "evidence_id": evidence_id,
+        "legacy_evidence_id": chunk.get("legacy_evidence_id"),
+        "evidence_identity_version": "v2",
         "chunk_id": str(chunk["chunk_id"]),
         "associated_chunk_id": chunk.get("associated_chunk_id"),
         "heading_original": chunk.get("heading_original"),
@@ -2032,7 +2089,8 @@ async def run_simple_rag(
         if exact_name_chunks:
             selected = exact_name_chunks[:1]
     for chunk in selected:
-        chunk["evidence_id"] = _evidence_id(str(chunk["chunk_id"]))
+        chunk["legacy_evidence_id"] = _legacy_chunk_evidence_id(str(chunk["chunk_id"]))
+        chunk["evidence_id"] = _evidence_id(chunk)
         chunk["_query"] = original_query
         chunk["_pdf_normalization"] = (
             has_pdf_fragmentation_signal(original_query)

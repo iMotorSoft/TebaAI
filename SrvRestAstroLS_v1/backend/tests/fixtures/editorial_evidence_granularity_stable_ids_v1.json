@@ -1,0 +1,78 @@
+{
+  "phase": "TEBAAI_EDITORIAL_EVIDENCE_GRANULARITY_STABLE_IDS_V1_DEV",
+  "evidence_identity_version": "v2",
+  "identity_rules": {
+    "component": "chunk_id + entity discriminator (source_layer + sub-entity key)",
+    "version_payload": {"v": "2", "chunk": "<chunk_id>", "entity": "<entity_key>"},
+    "hash": "SHA-256 of sorted JSON payload, hex[:16], prefix 'ev-'"
+  },
+  "entity_keys": {
+    "footnote_literal_exact": "footnote:{number} via chunk['footnote_number']",
+    "structural_heading_*": "heading:{_fold(heading_original)}",
+    "printed_reference_exact": "reference:{_fold(matched_variant).strip('()[]{} ')}",
+    "body_literal_exact": "body",
+    "english_name_exact": "name:{_fold(matched_variant)}",
+    "evidence_role=footnote_body": "footnote:unknown",
+    "evidence_role={other}": "role:{evidence_role}",
+    "fallback": "chunk"
+  },
+  "entities": {
+    "note_35": {
+      "description": "Likutey Halajot (Interior Final) page 56, footnote 35",
+      "evidence_id": "ev-4e5a8dfb9583bcc2",
+      "legacy_evidence_id": "ev-e419ec6448d2d992",
+      "chunk_id": "036be7c5-2dde-4b0a-9dde-010e9d24e53e",
+      "source_layer": "footnote",
+      "footnote_number": 35
+    },
+    "note_36": {
+      "description": "Likutey Halajot (Interior Final) page 56, footnote 36",
+      "evidence_id": "ev-3f9669e232ecf193",
+      "legacy_evidence_id": "ev-e419ec6448d2d992",
+      "chunk_id": "036be7c5-2dde-4b0a-9dde-010e9d24e53e",
+      "source_layer": "footnote",
+      "footnote_number": 36
+    },
+    "heading_6_melodias": {
+      "description": "Likutey Halajot (Interior Final) page 56, heading 6",
+      "evidence_id": "ev-4903b73f2011afee",
+      "legacy_evidence_id": "ev-e419ec6448d2d992",
+      "chunk_id": "036be7c5-2dde-4b0a-9dde-010e9d24e53e",
+      "source_layer": "section_heading",
+      "heading_original": "6 ■ MELODÍAS Y PLEGARIAS"
+    },
+    "heading_4_mishkan": {
+      "description": "Likutey Halajot (Interior Final) page 51, heading 4",
+      "evidence_id": "ev-53b3fac9b0c3291a",
+      "legacy_evidence_id": "ev-6e965be966db45f1",
+      "chunk_id": "8e1a1192-02f2-4903-97f8-ce85f29bdf2a",
+      "source_layer": "section_heading"
+    },
+    "heading_5_bondad": {
+      "description": "Likutey Halajot (Interior Final) page 53, heading 5",
+      "evidence_id": "ev-f4ed171391fc8593",
+      "legacy_evidence_id": "ev-e6dc84557a57331e",
+      "chunk_id": "a5a1a977-b1c2-444e-a9ac-a19bb52a8dac",
+      "source_layer": "section_heading"
+    },
+    "reference_salmos_16_1": {
+      "description": "Likutey Halajot (Interior Final) page 55, marginal reference",
+      "evidence_id": "ev-68c3400c24c38e8a",
+      "legacy_evidence_id": "ev-716847bfff6da041",
+      "chunk_id": "4ab8b2bd-e9a3-4818-9c99-5f757816c8ae",
+      "source_layer": "marginal_reference"
+    }
+  },
+  "relationships": [
+    {"left": "note_35", "right": "note_36", "expected": "different_evidence_id", "actual": true},
+    {"left": "note_36_plain_query", "right": "note_36_ligature_query", "expected": "same_evidence_id", "actual": true},
+    {"left": "heading_6", "right": "note_35", "expected": "different_evidence_id", "actual": true},
+    {"left": "reference_salmos_normal", "right": "reference_salmos_parens", "expected": "same_evidence_id", "actual": true},
+    {"left": "note_36", "right": "note_36", "expected": "same_evidence_id_deterministic", "actual": true}
+  ],
+  "legacy_compatibility": {
+    "field": "legacy_evidence_id",
+    "format": "ev-{sha256(chunk_id)[:16]}",
+    "consumers": ["reports", "debug", "session_history_transition"]
+  }
+}

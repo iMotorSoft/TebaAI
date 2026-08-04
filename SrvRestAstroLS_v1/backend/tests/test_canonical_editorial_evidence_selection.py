@@ -239,11 +239,25 @@ def test_heading_page_not_replaced_by_body_page() -> None:
     assert canonical[heading_id]["printed_page"] == "33"
 
 
-def test_evidence_id_stable() -> None:
-    assert rag._evidence_id("8e1a1192-02f2-4903-97f8-ce85f29bdf2a") == (
-        rag._evidence_id("8e1a1192-02f2-4903-97f8-ce85f29bdf2a")
-    )
-    assert rag._evidence_id("a") != rag._evidence_id("b")
+def test_evidence_id_entity_based() -> None:
+    """Same entity → same ID; different entity → different ID."""
+    chunk_id = "8e1a1192-02f2-4903-97f8-ce85f29bdf2a"
+    # footnote:35 vs footnote:36 — different IDs
+    n35 = rag._evidence_id({"chunk_id": chunk_id, "literal_match_type": "footnote_literal_exact", "footnote_number": 35})
+    n36 = rag._evidence_id({"chunk_id": chunk_id, "literal_match_type": "footnote_literal_exact", "footnote_number": 36})
+    assert n35 != n36
+    # same entity → deterministic
+    assert rag._evidence_id({"chunk_id": chunk_id, "literal_match_type": "footnote_literal_exact", "footnote_number": 35}) == n35
+    # heading vs footnote — different IDs
+    h = rag._evidence_id({"chunk_id": chunk_id, "literal_match_type": "structural_heading_exact", "heading_original": "6 ■ MELODÍAS Y PLEGARIAS"})
+    assert h != n35 and h != n36
+    # reference variants share ID
+    r1 = rag._evidence_id({"chunk_id": chunk_id, "literal_match_type": "printed_reference_exact", "matched_variant": "Salmos 16:1"})
+    r2 = rag._evidence_id({"chunk_id": chunk_id, "literal_match_type": "printed_reference_exact", "matched_variant": "(Salmos 16:1)"})
+    r3 = rag._evidence_id({"chunk_id": chunk_id, "literal_match_type": "printed_reference_exact", "matched_variant": "salmos 16:1"})
+    assert r1 == r2 == r3
+    # legacy ID preserved
+    assert rag._legacy_chunk_evidence_id(chunk_id) == "ev-6e965be966db45f1"
 
 
 # ---------------------------------------------------------------------------

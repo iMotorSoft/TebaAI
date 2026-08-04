@@ -5,6 +5,10 @@
 > antes de escribir código. El cumplimiento de esta política es condición para
 > cerrar el gate visual `TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS`.
 
+El Gestor de Contenidos debe reflejar la identidad editorial premium de
+Breslov Research, reutilizando sus tokens visuales, tipografías y patrones de
+navegación. No debe diseñarse como un panel administrativo independiente.
+
 ---
 
 ## 1. Principio visual obligatorio
@@ -245,34 +249,23 @@ proceso completo debe poder realizarse sin zoom ni scroll horizontal.
 
 ## 9. Multilingüe y RTL
 
-Preparado para español, inglés y hebreo. El idioma del documento no cambia
-automáticamente el de la interfaz. Contenido hebreo: `dir=rtl`, alineación
-correcta, niqqud preservado, filename Unicode preservado, título original
-legible. Componentes mixtos LTR/RTL correctos en una misma pantalla.
+La interfaz debe estar preparada para español, inglés y hebreo. El idioma del
+documento no cambia automáticamente el de la interfaz.
 
 ---
 
 ## 10. Accesibilidad
 
-- Navegación completa por teclado.
-- Focus visible coherente con el sistema visual.
-- Input file correctamente etiquetado.
-- Dropzone activable por teclado.
-- `aria-live` para cambios de etapa.
-- Errores asociados al campo correspondiente.
-- Contraste suficiente.
-- Estados diferenciados mediante texto e icono (no solo color).
-- Áreas táctiles adecuadas.
-- Respetar `prefers-reduced-motion`.
+Debe garantizarse navegación completa por teclado, foco visible y etiquetado
+correcto de campos. Los estados deben diferenciarse por texto e icono, no solo
+por color.
 
 ---
 
 ## 11. Animación
 
-Transiciones cortas, aparición suave de resultados, actualización clara de
-etapas, feedback inmediato de selección. **No usar**: animaciones permanentes,
-spinners grandes, efectos decorativos, movimientos que distraigan de la
-lectura. Respetar `prefers-reduced-motion`.
+Usar transiciones cortas y discretas, con feedback inmediato. Respetar
+`prefers-reduced-motion`.
 
 ---
 

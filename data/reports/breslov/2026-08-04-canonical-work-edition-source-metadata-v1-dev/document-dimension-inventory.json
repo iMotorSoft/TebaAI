@@ -1,0 +1,312 @@
+{
+  "documents": [
+    {
+      "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+      "title": "Likutey Halajot — Interior Final",
+      "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "status": "test_candidate",
+      "document_code": "likutey_halajot_interior_final_v2",
+      "edition": null,
+      "metadata": {
+        "pipeline": "likutey_halajot_page_first_v2",
+        "physical_pages": 284
+      },
+      "bibliographic_metadata": {
+        "edition": "Interior Final",
+        "canonical_identity_v1": {
+          "work_identity": {
+            "source": "pdf_title_and_running_headers",
+            "confidence": "explicit",
+            "family_code": "likutey_halajot",
+            "family_label": "Likutey Halajot",
+            "canonical_work_code": "likutey_halajot",
+            "canonical_work_label": "Likutey Halajot"
+          },
+          "edition_identity": {
+            "edition_label": "Interior Final",
+            "volume_number": null,
+            "volume_source": "unresolved",
+            "edition_source": "source_filename_label",
+            "volume_confidence": "unresolved",
+            "edition_confidence": "derived",
+            "metadata_approval_status": "pending_approval",
+            "physical_source_volume_hint": 1,
+            "physical_source_volume_hint_source": "pdf_page_10",
+            "physical_source_volume_hint_confidence": "explicit"
+          },
+          "source_identities": [],
+          "technical_identity": {
+            "source": "library_documents.metadata.pipeline",
+            "version": "v2",
+            "pipeline": "likutey_halajot_page_first_v2",
+            "confidence": "derived"
+          },
+          "source_identity_scope": "section_or_chunk_only"
+        },
+        "physical_file_verified": true
+      },
+      "knowledge_scope_code": "breslov_primary",
+      "chunks": 268,
+      "content_nodes": 268
+    },
+    {
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "title": "Likutey Halajot LM II 8",
+      "source_filename": "LIKUTEY HALAJOT LM II 8.pdf",
+      "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+      "status": "ready",
+      "document_code": null,
+      "edition": null,
+      "metadata": {},
+      "bibliographic_metadata": {
+        "legal_review": {
+          "notes": "The Rosenberg Edition. Menciona Breslov Research Institute en el texto (referencia a 'El Castillo de Agua', BRI, 2013). No se encontró página de copyright explícita en front matter visible. Sin licencia. Uso interno recomendado conservadoramente.",
+          "status": "legal_status_pending_manual_confirmation",
+          "publisher": "Breslov Research Institute (referenciado en texto)",
+          "reviewed_at": "2026-07-03T13:30:01.023321+00:00",
+          "license_found": false,
+          "copyright_notice_found": false,
+          "public_exposure_status": "public_exposure_blocked",
+          "internal_use_recommendation": "recommend_internal_ready"
+        },
+        "ready_review": {
+          "blockers": [],
+          "promoted": true,
+          "promoted_at": "2026-07-05T22:58:28.117795+00:00",
+          "legal_status": "legal_status_pending_manual_confirmation",
+          "technical_closure": "eligible_pending_manual_legal",
+          "manual_review_status": "manual_review_pass_with_minor_limitations",
+          "ready_promotion_recommendation": "ready_recommended_pending_user_approval"
+        },
+        "manual_review": {
+          "notes": "Texto español mayormente limpio. Título con mezcla EN/ES (Rosenberg Edition). 73 chunks con artefactos U+FFFD en caracteres hebreos de la portada — no afectan legibilidad general. 1205 chunks (documento más extenso). Referencias a Breslov Research Institute en el texto.",
+          "status": "manual_review_pass_with_minor_limitations",
+          "limitations": [
+            "73 chunks con caracteres U+FFFD (encoding artifact en pasajes hebreos del título)"
+          ],
+          "reviewed_at": "2026-07-03T13:30:01.023321+00:00",
+          "sample_count": 10,
+          "sample_strategy": "beginning_quarter_middle_three_quarter_end_longest_shortest_front_matter"
+        },
+        "source_quality": {
+          "evidence": {
+            "chunks": 0,
+            "empty_chunks": 0,
+            "embedding_count": 20,
+            "embedding_model": "openai_text_embedding_3_small",
+            "litellm_endpoint": "http://127.0.0.1:4000",
+            "milvus_roundtrip": 1.0,
+            "embedding_dimension": 1536,
+            "page_mapping_coverage": 1.0
+          },
+          "fts_status": "pass",
+          "ocr_status": "not_ocr",
+          "limitations": [
+            "Page mapping incompleto: 10.7% (requiere ≥95%).",
+            "PDF extraído con PyMuPDF4LLM sin page markers controlados.",
+            "Requeriría reextracción con --page-markers force (patrón Koren) para mapping completo.",
+            "No evaluado legal/editorialmente."
+          ],
+          "source_kind": "pdf_modern_unicode",
+          "empty_chunks": 0,
+          "evaluated_at": "2026-07-02T22:51:45.404803+00:00",
+          "layout_status": "pass",
+          "language_hints": [
+            "es"
+          ],
+          "policy_version": "2026-07-02",
+          "chunking_status": "pass",
+          "embedding_model": "openai_text_embedding_3_small",
+          "roundtrip_sha256": "pass",
+          "embedding_provider": "litellm",
+          "canonical_text_role": "canonical_text",
+          "embedding_dimension": 1536,
+          "page_mapping_status": "pass",
+          "text_quality_status": "pass",
+          "page_mapping_coverage": 1.0,
+          "canonical_text_allowed": true,
+          "embedding_smoke_status": "pass",
+          "milvus_roundtrip_status": "pass",
+          "facsimile_anchor_allowed": true,
+          "promotion_recommendation": "approved_candidate",
+          "promotion_status_virtual": "evaluated_blocked"
+        },
+        "promotion_decision": {
+          "notes": "Promovido a ready como corpus estable interno. Exposición pública no habilitada.",
+          "status": "promoted_to_ready",
+          "promoted_at": "2026-07-05T22:58:28.117795+00:00",
+          "promoted_by": "development_team",
+          "decision_basis": "document_source_quality_policy_v1",
+          "promotion_scope": "internal_research_corpus",
+          "promotion_audit_doc": "breslov_es_en_promotion_audit_2026-07-05.md",
+          "public_exposure_status": "internal_only",
+          "promotion_source_commit": "c27d986"
+        },
+        "embedding_validation": {
+          "repair_note": "Re-embedded 96 orphaned chunks via LiteLLM",
+          "chunks_embedded": "1297",
+          "last_repaired_at": "2026-07-05T23:07:42.557895+00:00"
+        },
+        "canonical_identity_v1": {
+          "work_identity": {
+            "source": "source_front_matter_and_contents",
+            "confidence": "explicit",
+            "family_code": "likutey_halajot",
+            "family_label": "Likutey Halajot",
+            "canonical_work_code": "likutey_halajot",
+            "canonical_work_label": "Likutey Halajot"
+          },
+          "edition_identity": {
+            "edition_label": "The Rosenberg Edition",
+            "volume_number": null,
+            "volume_source": "unresolved",
+            "edition_source": "pdf_page_1_title_page",
+            "volume_confidence": "unresolved",
+            "edition_confidence": "explicit"
+          },
+          "source_identities": [
+            {
+              "source": "pdf_pages_1_3_17_and_contents",
+              "confidence": "explicit",
+              "source_lesson": 8,
+              "source_relation": "develops",
+              "source_work_code": "likutey_moharan_ii",
+              "source_work_label": "Likutey Moharán II"
+            }
+          ],
+          "technical_identity": {
+            "source": "unresolved",
+            "version": null,
+            "confidence": "unresolved"
+          }
+        },
+        "phase_a_sanitation_at": "2026-07-02T22:51:06.675597+00:00",
+        "page_mapping_diagnosis": {
+          "cause": "PDFs extracted with plain PyMuPDF4LLM without page markers.",
+          "diagnosed_at": "2026-07-02T22:59:26.001404+00:00",
+          "phase_c_complete": true,
+          "strategy_recommended": "reextract_with_page_markers"
+        },
+        "promotion_decision_dry_run": {
+          "notes": "Embeddings vía LiteLLM OK. Milvus test round-trip 20/20 OK. Golden queries aceptables. Pendiente: manual review sample + decisión legal/copyright.",
+          "decision": "eligible_pending_manual_legal",
+          "checks_total": 18,
+          "evaluated_at": "2026-07-03T13:21:51.707920+00:00",
+          "checks_failed": 0,
+          "checks_passed": 16,
+          "target_status": null,
+          "decision_basis": "document_source_quality_policy_v1",
+          "embedding_status": "pass",
+          "page_mapping_pct": 100.0,
+          "page_mapping_status": "pass",
+          "golden_queries_status": "pass",
+          "milvus_roundtrip_status": "pass"
+        },
+        "phase_b_quality_assessment_at": "2026-07-02T22:51:45.404803+00:00"
+      },
+      "knowledge_scope_code": "breslov_primary",
+      "chunks": 1205,
+      "content_nodes": 0
+    },
+    {
+      "document_id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+      "title": "Likutey Moharán II — edición española BRI",
+      "source_filename": "LIKUTEY MOHARAN II Interior.pdf",
+      "source_sha256": "ce7304e31c37cadd5bc938732d93c8e5385afc026c0af0de612635d8b76cab61",
+      "status": "test_candidate",
+      "document_code": "likutey_moharan_ii_spanish_bri",
+      "edition": null,
+      "metadata": {
+        "layout_profile": "likutey_moharan_ii_spanish_bri_layout_v1"
+      },
+      "bibliographic_metadata": {
+        "canonical_identity_v1": {
+          "work_identity": {
+            "source": "pdf_title_and_section_headers",
+            "confidence": "explicit",
+            "family_code": "likutey_moharan_ii",
+            "family_label": "Likutey Moharán II",
+            "canonical_work_code": "likutey_moharan_ii",
+            "canonical_work_label": "Likutey Moharán II"
+          },
+          "edition_identity": {
+            "edition_label": "Edición española BRI",
+            "volume_number": null,
+            "volume_source": "unresolved",
+            "edition_source": "document_title",
+            "volume_confidence": "unresolved",
+            "edition_confidence": "derived"
+          },
+          "source_identities": [],
+          "technical_identity": {
+            "source": "library_documents.metadata.layout_profile",
+            "version": "layout_v1",
+            "confidence": "derived"
+          }
+        }
+      },
+      "knowledge_scope_code": "breslov_primary",
+      "chunks": 0,
+      "content_nodes": 678
+    }
+  ],
+  "dimensions": [
+    {
+      "dimension": "work_family",
+      "current_field": "bibliographic_metadata.canonical_identity_v1.work_identity",
+      "persisted": true,
+      "derived": false,
+      "scope": true,
+      "ranking": false
+    },
+    {
+      "dimension": "canonical_work",
+      "current_field": "bibliographic_metadata.canonical_identity_v1.work_identity",
+      "persisted": true,
+      "derived": false,
+      "scope": true,
+      "ranking": false
+    },
+    {
+      "dimension": "edition",
+      "current_field": "bibliographic_metadata.canonical_identity_v1.edition_identity",
+      "persisted": true,
+      "derived": "allowed_with_provenance",
+      "scope": true,
+      "ranking": false
+    },
+    {
+      "dimension": "volume",
+      "current_field": "bibliographic_metadata.canonical_identity_v1.edition_identity",
+      "persisted": true,
+      "derived": false,
+      "scope": true,
+      "ranking": false
+    },
+    {
+      "dimension": "source_work/source_lesson",
+      "current_field": "bibliographic_metadata.canonical_identity_v1.source_identities",
+      "persisted": "document_when_global; section/chunk_when_local",
+      "derived": false,
+      "scope": true,
+      "ranking": false
+    },
+    {
+      "dimension": "technical_version",
+      "current_field": "metadata.pipeline/document_code plus canonical technical provenance",
+      "persisted": true,
+      "derived": true,
+      "scope": false,
+      "ranking": false
+    },
+    {
+      "dimension": "document_instance",
+      "current_field": "library_documents id/filename/hash/status",
+      "persisted": true,
+      "derived": false,
+      "scope": true,
+      "ranking": "status tiebreak only"
+    }
+  ]
+}

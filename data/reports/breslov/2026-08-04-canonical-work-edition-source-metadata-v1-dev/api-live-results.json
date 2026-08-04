@@ -1,0 +1,869 @@
+{
+  "rows": [
+    {
+      "case": "family",
+      "query": "¿Dónde habla Likutey Halajot sobre la plegaria?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_halajot"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT (Interior Final).pdf",
+        "LIKUTEY HALAJOT LM II 8.pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "Interior Final",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "v2",
+          "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+          "physical_pdf_page": 61,
+          "printed_page": 43,
+          "match_kind": "body_literal_exact"
+        },
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "Interior Final",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "v2",
+          "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+          "physical_pdf_page": 62,
+          "printed_page": 44,
+          "match_kind": "body_literal_exact"
+        },
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "The Rosenberg Edition",
+          "volume_number": null,
+          "source_work_code": "likutey_moharan_ii",
+          "source_work": "Likutey Moharán II",
+          "source_lesson": 8,
+          "source_relation": "develops",
+          "technical_version": null,
+          "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+          "physical_pdf_page": 405,
+          "printed_page": null,
+          "match_kind": "exact_phrase"
+        }
+      ],
+      "role": "admin",
+      "pass": true
+    },
+    {
+      "case": "edition",
+      "query": "¿Dónde aparece MELODÍAS Y PLEGARIAS en Interior Final?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_halajot"
+        ],
+        "scope_edition": "Interior Final",
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT (Interior Final).pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "Interior Final",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "v2",
+          "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+          "physical_pdf_page": 56,
+          "printed_page": 38,
+          "match_kind": "structural_heading_exact"
+        }
+      ],
+      "role": "admin",
+      "pass": true
+    },
+    {
+      "case": "document",
+      "query": "MELODÍAS Y PLEGARIAS",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [],
+        "scope_edition": null,
+        "scope_document_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT (Interior Final).pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "Interior Final",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "v2",
+          "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+          "physical_pdf_page": 56,
+          "printed_page": 38,
+          "match_kind": "structural_heading_exact"
+        }
+      ],
+      "role": "admin",
+      "pass": true
+    },
+    {
+      "case": "source",
+      "query": "¿Dónde desarrolla Likutey Halajot la lección 8 de Likutey Moharán II?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_halajot"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": "likutey_moharan_ii",
+        "scope_source_lesson": 8,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT LM II 8.pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "The Rosenberg Edition",
+          "volume_number": null,
+          "source_work_code": "likutey_moharan_ii",
+          "source_work": "Likutey Moharán II",
+          "source_lesson": 8,
+          "source_relation": "develops",
+          "technical_version": null,
+          "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+          "physical_pdf_page": 188,
+          "printed_page": null,
+          "match_kind": "literal"
+        },
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "The Rosenberg Edition",
+          "volume_number": null,
+          "source_work_code": "likutey_moharan_ii",
+          "source_work": "Likutey Moharán II",
+          "source_lesson": 8,
+          "source_relation": "develops",
+          "technical_version": null,
+          "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+          "physical_pdf_page": 372,
+          "printed_page": null,
+          "match_kind": "semantic_only"
+        }
+      ],
+      "role": "admin",
+      "pass": true
+    },
+    {
+      "case": "original",
+      "query": "¿Dónde está la lección 8 de Likutey Moharán II?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_moharan_ii"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": 8,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_moharan_ii"
+      ],
+      "documents": [
+        "LIKUTEY MOHARAN II Interior.pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_moharan_ii",
+          "work_family": "Likutey Moharán II",
+          "canonical_work": "Likutey Moharán II",
+          "edition": "Edición española BRI",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "layout_v1",
+          "physical_file_name": "LIKUTEY MOHARAN II Interior.pdf",
+          "physical_pdf_page": 45,
+          "printed_page": 35,
+          "match_kind": "source_lesson_exact"
+        },
+        {
+          "work_family_code": "likutey_moharan_ii",
+          "work_family": "Likutey Moharán II",
+          "canonical_work": "Likutey Moharán II",
+          "edition": "Edición española BRI",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "layout_v1",
+          "physical_file_name": "LIKUTEY MOHARAN II Interior.pdf",
+          "physical_pdf_page": 50,
+          "printed_page": 40,
+          "match_kind": "source_lesson_exact"
+        }
+      ],
+      "role": "admin",
+      "pass": true
+    },
+    {
+      "case": "cross",
+      "query": "Compará Likutey Moharán II 8 con Likutey Halajot.",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_moharan_ii",
+          "likutey_halajot"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": "likutey_moharan_ii",
+        "scope_source_lesson": 8,
+        "cross_family": true,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot",
+        "likutey_moharan_ii"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT LM II 8.pdf",
+        "LIKUTEY MOHARAN II Interior.pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_moharan_ii",
+          "work_family": "Likutey Moharán II",
+          "canonical_work": "Likutey Moharán II",
+          "edition": "Edición española BRI",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "layout_v1",
+          "physical_file_name": "LIKUTEY MOHARAN II Interior.pdf",
+          "physical_pdf_page": 45,
+          "printed_page": 35,
+          "match_kind": "source_lesson_exact"
+        },
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "The Rosenberg Edition",
+          "volume_number": null,
+          "source_work_code": "likutey_moharan_ii",
+          "source_work": "Likutey Moharán II",
+          "source_lesson": 8,
+          "source_relation": "develops",
+          "technical_version": null,
+          "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+          "physical_pdf_page": 7,
+          "printed_page": null,
+          "match_kind": "semantic_only"
+        }
+      ],
+      "role": "admin",
+      "pass": true
+    },
+    {
+      "case": "planner",
+      "query": "Azamra, ¿en qué tomo de Likutey Halajot está?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva",
+        "respuesta_bibliografica_generada_desde_metadata"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_halajot"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": "### Resultado bibliográfico: Azamra, ¿en qué tomo de Likutey Halajot está?\n\n**Likutey Halajot**\n- Tomo: Tomo no resuelto (confianza: unresolved)\n- Ocurrencias: 12\n- Tipos de presencia: thematic_development, literal_exact\n- Páginas PDF: 19, 22, 39, 41, 42, 68, 94, 97, 98, 231, 483, 505\n- Sección: 9 ■ PERFECCIÓN DE LA PLEGARIA Y DEL HABLA\nE\n- Sección: 14 ■ DESDE LOS NIVELES MÁS BAJOS\nE\n- Sección: 1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\n- Evidence ID principal: ev-51744e75da377360\n- Fuente del tomo: unresolved\n\n**Plan de consulta**\n- Intención: bibliographic_locator\n- Concepto: Azamra\n- Obra: Likutey Halajot\n",
+      "families": [],
+      "documents": [],
+      "primaries": [],
+      "role": "admin",
+      "pass": true
+    },
+    {
+      "case": "ambiguous",
+      "query": "Likutey",
+      "http_status": 200,
+      "research_status": "no_evidence",
+      "warnings": [
+        "scope_ambiguous"
+      ],
+      "canonical_scope": {
+        "scope_family": [],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": true,
+        "warnings": [
+          "scope_ambiguous"
+        ],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [],
+      "documents": [],
+      "primaries": [],
+      "role": "admin",
+      "pass": true
+    },
+    {
+      "case": "family",
+      "query": "¿Dónde habla Likutey Halajot sobre la plegaria?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_halajot"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT (Interior Final).pdf",
+        "LIKUTEY HALAJOT LM II 8.pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "Interior Final",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "v2",
+          "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+          "physical_pdf_page": 61,
+          "printed_page": 43,
+          "match_kind": "body_literal_exact"
+        },
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "Interior Final",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "v2",
+          "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+          "physical_pdf_page": 62,
+          "printed_page": 44,
+          "match_kind": "body_literal_exact"
+        },
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "The Rosenberg Edition",
+          "volume_number": null,
+          "source_work_code": "likutey_moharan_ii",
+          "source_work": "Likutey Moharán II",
+          "source_lesson": 8,
+          "source_relation": "develops",
+          "technical_version": null,
+          "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+          "physical_pdf_page": 405,
+          "printed_page": null,
+          "match_kind": "exact_phrase"
+        }
+      ],
+      "role": "guest",
+      "pass": true
+    },
+    {
+      "case": "edition",
+      "query": "¿Dónde aparece MELODÍAS Y PLEGARIAS en Interior Final?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_halajot"
+        ],
+        "scope_edition": "Interior Final",
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT (Interior Final).pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "Interior Final",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "v2",
+          "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+          "physical_pdf_page": 56,
+          "printed_page": 38,
+          "match_kind": "structural_heading_exact"
+        }
+      ],
+      "role": "guest",
+      "pass": true
+    },
+    {
+      "case": "document",
+      "query": "MELODÍAS Y PLEGARIAS",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [],
+        "scope_edition": null,
+        "scope_document_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT (Interior Final).pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "Interior Final",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "v2",
+          "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+          "physical_pdf_page": 56,
+          "printed_page": 38,
+          "match_kind": "structural_heading_exact"
+        }
+      ],
+      "role": "guest",
+      "pass": true
+    },
+    {
+      "case": "source",
+      "query": "¿Dónde desarrolla Likutey Halajot la lección 8 de Likutey Moharán II?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_halajot"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": "likutey_moharan_ii",
+        "scope_source_lesson": 8,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT LM II 8.pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "The Rosenberg Edition",
+          "volume_number": null,
+          "source_work_code": "likutey_moharan_ii",
+          "source_work": "Likutey Moharán II",
+          "source_lesson": 8,
+          "source_relation": "develops",
+          "technical_version": null,
+          "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+          "physical_pdf_page": 188,
+          "printed_page": null,
+          "match_kind": "literal"
+        },
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "The Rosenberg Edition",
+          "volume_number": null,
+          "source_work_code": "likutey_moharan_ii",
+          "source_work": "Likutey Moharán II",
+          "source_lesson": 8,
+          "source_relation": "develops",
+          "technical_version": null,
+          "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+          "physical_pdf_page": 7,
+          "printed_page": null,
+          "match_kind": "literal"
+        }
+      ],
+      "role": "guest",
+      "pass": true
+    },
+    {
+      "case": "original",
+      "query": "¿Dónde está la lección 8 de Likutey Moharán II?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_moharan_ii"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": 8,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_moharan_ii"
+      ],
+      "documents": [
+        "LIKUTEY MOHARAN II Interior.pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_moharan_ii",
+          "work_family": "Likutey Moharán II",
+          "canonical_work": "Likutey Moharán II",
+          "edition": "Edición española BRI",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "layout_v1",
+          "physical_file_name": "LIKUTEY MOHARAN II Interior.pdf",
+          "physical_pdf_page": 45,
+          "printed_page": 35,
+          "match_kind": "source_lesson_exact"
+        },
+        {
+          "work_family_code": "likutey_moharan_ii",
+          "work_family": "Likutey Moharán II",
+          "canonical_work": "Likutey Moharán II",
+          "edition": "Edición española BRI",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "layout_v1",
+          "physical_file_name": "LIKUTEY MOHARAN II Interior.pdf",
+          "physical_pdf_page": 50,
+          "printed_page": 40,
+          "match_kind": "source_lesson_exact"
+        }
+      ],
+      "role": "guest",
+      "pass": true
+    },
+    {
+      "case": "cross",
+      "query": "Compará Likutey Moharán II 8 con Likutey Halajot.",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_moharan_ii",
+          "likutey_halajot"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": "likutey_moharan_ii",
+        "scope_source_lesson": 8,
+        "cross_family": true,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [
+        "likutey_halajot",
+        "likutey_moharan_ii"
+      ],
+      "documents": [
+        "LIKUTEY HALAJOT LM II 8.pdf",
+        "LIKUTEY MOHARAN II Interior.pdf"
+      ],
+      "primaries": [
+        {
+          "work_family_code": "likutey_moharan_ii",
+          "work_family": "Likutey Moharán II",
+          "canonical_work": "Likutey Moharán II",
+          "edition": "Edición española BRI",
+          "volume_number": null,
+          "source_work_code": null,
+          "source_work": null,
+          "source_lesson": null,
+          "source_relation": null,
+          "technical_version": "layout_v1",
+          "physical_file_name": "LIKUTEY MOHARAN II Interior.pdf",
+          "physical_pdf_page": 45,
+          "printed_page": 35,
+          "match_kind": "source_lesson_exact"
+        },
+        {
+          "work_family_code": "likutey_halajot",
+          "work_family": "Likutey Halajot",
+          "canonical_work": "Likutey Halajot",
+          "edition": "The Rosenberg Edition",
+          "volume_number": null,
+          "source_work_code": "likutey_moharan_ii",
+          "source_work": "Likutey Moharán II",
+          "source_lesson": 8,
+          "source_relation": "develops",
+          "technical_version": null,
+          "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+          "physical_pdf_page": 7,
+          "printed_page": null,
+          "match_kind": "semantic_only"
+        }
+      ],
+      "role": "guest",
+      "pass": true
+    },
+    {
+      "case": "planner",
+      "query": "Azamra, ¿en qué tomo de Likutey Halajot está?",
+      "http_status": 200,
+      "research_status": "complete",
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva",
+        "respuesta_bibliografica_generada_desde_metadata"
+      ],
+      "canonical_scope": {
+        "scope_family": [
+          "likutey_halajot"
+        ],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": false,
+        "warnings": [],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": "### Resultado bibliográfico: Azamra, ¿en qué tomo de Likutey Halajot está?\n\n**Likutey Halajot**\n- Tomo: Tomo no resuelto (confianza: unresolved)\n- Ocurrencias: 12\n- Tipos de presencia: thematic_development, literal_exact\n- Páginas PDF: 19, 22, 39, 41, 42, 68, 94, 97, 98, 231, 483, 505\n- Sección: 9 ■ PERFECCIÓN DE LA PLEGARIA Y DEL HABLA\nE\n- Sección: 14 ■ DESDE LOS NIVELES MÁS BAJOS\nE\n- Sección: 1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\n- Evidence ID principal: ev-51744e75da377360\n- Fuente del tomo: unresolved\n\n**Plan de consulta**\n- Intención: bibliographic_locator\n- Concepto: Azamra\n- Obra: Likutey Halajot\n",
+      "families": [],
+      "documents": [],
+      "primaries": [],
+      "role": "guest",
+      "pass": true
+    },
+    {
+      "case": "ambiguous",
+      "query": "Likutey",
+      "http_status": 200,
+      "research_status": "no_evidence",
+      "warnings": [
+        "scope_ambiguous"
+      ],
+      "canonical_scope": {
+        "scope_family": [],
+        "scope_edition": null,
+        "scope_document_sha256": null,
+        "scope_source_work": null,
+        "scope_source_lesson": null,
+        "cross_family": false,
+        "scope_ambiguous": true,
+        "warnings": [
+          "scope_ambiguous"
+        ],
+        "resolution_method": "explicit_or_deterministic_alias"
+      },
+      "answer_markdown": null,
+      "families": [],
+      "documents": [],
+      "primaries": [],
+      "role": "guest",
+      "pass": true
+    }
+  ],
+  "passed": 16,
+  "total": 16,
+  "all_pass": true
+}

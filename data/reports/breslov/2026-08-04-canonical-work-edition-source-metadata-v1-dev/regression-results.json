@@ -1,0 +1,144 @@
+{
+  "passed": 9,
+  "total": 9,
+  "all_pass": true,
+  "rows": [
+    {
+      "case": "Mishkan",
+      "query": "CONSTRUYENDO UN MISHKÁN",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 51,
+        "printed_page": 33,
+        "match_kind": "structural_heading_exact",
+        "edition": "Interior Final",
+        "work_family": "Likutey Halajot"
+      },
+      "answer": null,
+      "pass": true
+    },
+    {
+      "case": "Bondad",
+      "query": "INCLINADO HACIA LA BONDAD",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 53,
+        "printed_page": 35,
+        "match_kind": "structural_heading_exact",
+        "edition": "Interior Final",
+        "work_family": "Likutey Halajot"
+      },
+      "answer": null,
+      "pass": true
+    },
+    {
+      "case": "Melodias",
+      "query": "MELODÍAS Y PLEGARIAS",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 56,
+        "printed_page": 38,
+        "match_kind": "structural_heading_exact",
+        "edition": "Interior Final",
+        "work_family": "Likutey Halajot"
+      },
+      "answer": null,
+      "pass": true
+    },
+    {
+      "case": "Salmos",
+      "query": "Salmos 16:1",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 55,
+        "printed_page": 37,
+        "match_kind": "printed_reference_exact",
+        "edition": "Interior Final",
+        "work_family": "Likutey Halajot"
+      },
+      "answer": null,
+      "pass": true
+    },
+    {
+      "case": "Nota35",
+      "query": "El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 56,
+        "printed_page": 38,
+        "match_kind": "footnote_literal_exact",
+        "edition": "Interior Final",
+        "work_family": "Likutey Halajot"
+      },
+      "answer": null,
+      "pass": true
+    },
+    {
+      "case": "Gedalia",
+      "query": "Gedalia of Linitz",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": {
+        "physical_file_name": "Kokhavey Ohr layout BH_PRINT-4.pdf",
+        "physical_pdf_page": 21,
+        "printed_page": null,
+        "match_kind": "english_name_exact",
+        "edition": null,
+        "work_family": "Kokhavey Ohr"
+      },
+      "answer": null,
+      "pass": true
+    },
+    {
+      "case": "HebreoConNiqqud",
+      "query": "וּמִצְרַיִם נָסִים לִקְרָאתוֹ",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": {
+        "physical_file_name": "LIKUTEY MOHARAN II Interior.pdf",
+        "physical_pdf_page": 14,
+        "printed_page": 4,
+        "match_kind": "hebrew_exact_normalized",
+        "edition": "Edición española BRI",
+        "work_family": "Likutey Moharán II"
+      },
+      "answer": null,
+      "pass": true
+    },
+    {
+      "case": "HebreoSinNiqqud",
+      "query": "ומצרים נסים לקראתו",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": {
+        "physical_file_name": "LIKUTEY MOHARAN II Interior.pdf",
+        "physical_pdf_page": 14,
+        "printed_page": 4,
+        "match_kind": "hebrew_exact_normalized",
+        "edition": "Edición española BRI",
+        "work_family": "Likutey Moharán II"
+      },
+      "answer": null,
+      "pass": true
+    },
+    {
+      "case": "Azamra",
+      "query": "Azamra, ¿en qué tomo de Likutey Halajot está?",
+      "http_status": 200,
+      "research_status": "complete",
+      "primary": null,
+      "answer": "### Resultado bibliográfico: Azamra, ¿en qué tomo de Likutey Halajot está?\n\n**Likutey Halajot**\n- Tomo: Tomo no resuelto (confianza: unresolved)\n- Ocurrencias: 12\n- Tipos de presencia: thematic_development, literal_exact\n- Páginas PDF: 19, 22, 39, 41, 42, 68, 94, 97, 98, 231, 483, 505\n- Sección: 9 ■ PERFECCIÓN DE LA PLEGARIA Y DEL HABLA\nE\n- Sección: 14 ■ DESDE LOS NIVELES MÁS BAJOS\nE\n- Sección: 1 ■ CONCEPTOS CLAVES DEL LIKUTEY MOHARÁN\n- Evidence ID principal: ev-51744e75da377360\n- Fuente del tomo: unresolved\n\n**Plan de consulta**\n- Intención: bibliographic_locator\n- Concepto: Azamra\n- Obra: Likutey Halajot\n",
+      "pass": true
+    }
+  ]
+}

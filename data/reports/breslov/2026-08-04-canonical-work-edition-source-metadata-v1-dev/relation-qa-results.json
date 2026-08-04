@@ -1,0 +1,10 @@
+{
+  "endpoint": "POST /library/relation-qa",
+  "query": "¿Qué relación existe entre melodía y plegaria?",
+  "use_ai": false,
+  "include_test_candidates": true,
+  "http_status": 200,
+  "sources": 20,
+  "compatibility": "PASS",
+  "note": "The existing Relation QA contract remains additive and operational; canonical metadata fields are introduced on investigative evidence without removing existing Relation QA fields."
+}

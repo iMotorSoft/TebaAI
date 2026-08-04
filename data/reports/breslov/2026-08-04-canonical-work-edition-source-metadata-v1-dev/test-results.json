@@ -1,0 +1,27 @@
+{
+  "focused": {
+    "command": "uv run pytest -q tests -k \"canonical_work or edition or source_work or source_lesson or metadata or scope or bibliographic or likutey_halajot or likutey_moharan\"",
+    "passed": 134,
+    "deselected": 1334,
+    "failed": 0,
+    "warnings": 12,
+    "duration_seconds": 2.33
+  },
+  "backend_full": {
+    "command": "uv run pytest -q",
+    "passed": 1468,
+    "failed": 0,
+    "warnings": 94,
+    "duration_seconds": 61.38
+  },
+  "frontend": {
+    "check": "PASS: 0 errors, 0 warnings, 2 pre-existing hints",
+    "vitest": "PASS: 70 tests",
+    "build": "PASS: 8 pages"
+  },
+  "api_live": "PASS: 16/16 admin+guest",
+  "regressions": "PASS: 9/9",
+  "relation_qa": "PASS: HTTP 200, 20 sources",
+  "git_diff_check": "PASS",
+  "lat_check": "PASS"
+}

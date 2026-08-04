@@ -26,6 +26,36 @@ explícito. Elegir una edición concreta dentro de una familia requiere scope o
 metadata de edición explícitos; no se implementa mediante penalizaciones,
 filename exclusions o document IDs especiales.
 
+### Contrato canónico V1
+
+| Dimensión | Semántica | Scope | Ranking |
+|---|---|---|---|
+| `work_family` | familia contenedora | sí | no |
+| `canonical_work` | obra normalizada | sí | no |
+| `edition` | edición publicada con procedencia | explícito | no |
+| `volume` | volumen bibliográfico aprobado | explícito | no |
+| `source_work` | obra desarrollada/citada | source scope | no |
+| `source_lesson` | unidad de la obra fuente | source scope | no |
+| `technical_version` | pipeline/representación | no | no |
+| `document_instance` | ID, filename, hash y status | document scope | status solo desempata |
+
+La procedencia permitida es `explicit|derived|unresolved|conflicting`. Un valor
+no nulo nunca puede ser `unresolved`; filename y `document_code` solo generan
+metadata `derived`. `_v2`, `II` en una obra fuente y el número de lección nunca
+son volumen.
+
+Scopes canónicos:
+
+```text
+family scope  ≠ edition scope ≠ document scope ≠ source scope
+```
+
+El family scope LH incluye Interior Final y The Rosenberg Edition. El edition
+scope Interior Final excluye otras ediciones. El source scope LM II, lección 8
+puede incluir el original y comentarios que declaren una relación explícita,
+con roles separados. `Likutey Halajot LM II 8` es un documento LH que desarrolla
+LM II, 8; la fuente no reemplaza su familia.
+
 ## Ingesta: Page-First
 
 ```

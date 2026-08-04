@@ -1,0 +1,41 @@
+[
+  {
+    "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+    "document_code": "likutey_halajot_interior_final_v2",
+    "technical_version": {
+      "value": "v2",
+      "confidence": "derived",
+      "source": "library_documents.metadata.pipeline",
+      "warnings": []
+    },
+    "planner_volume_number": null,
+    "planner_volume_source": "unresolved",
+    "pass": true
+  },
+  {
+    "source_filename": "LIKUTEY HALAJOT LM II 8.pdf",
+    "document_code": null,
+    "technical_version": {
+      "value": null,
+      "confidence": "unresolved",
+      "source": "unresolved",
+      "warnings": []
+    },
+    "planner_volume_number": null,
+    "planner_volume_source": "unresolved",
+    "pass": true
+  },
+  {
+    "source_filename": "LIKUTEY MOHARAN II Interior.pdf",
+    "document_code": "likutey_moharan_ii_spanish_bri",
+    "technical_version": {
+      "value": "layout_v1",
+      "confidence": "derived",
+      "source": "library_documents.metadata.layout_profile",
+      "warnings": []
+    },
+    "planner_volume_number": null,
+    "planner_volume_source": "unresolved",
+    "pass": true
+  }
+]

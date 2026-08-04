@@ -1,0 +1,19 @@
+[
+  {
+    "query": "Likutey",
+    "scope": {
+      "scope_family": [],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": true,
+      "warnings": [
+        "scope_ambiguous"
+      ],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "matching_documents": []
+  }
+]

@@ -2,7 +2,34 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-04 (Corpus Scope Integrity Review V1 bloqueada en DEV)
+Ultima actualizacion: 2026-08-04 (Canonical Work–Edition–Source Metadata V1 en DEV)
+
+## Canonical Work–Edition–Source Metadata V1 — 2026-08-04 (DEV)
+
+Estado: `TEBAAI_CANONICAL_WORK_EDITION_SOURCE_METADATA_V1_DEV_READY`.
+
+- contrato aditivo separa `work_family`, `canonical_work`, `edition`, `volume`,
+  `source_work`, `source_lesson`, `technical_version` y `document_instance`,
+  con procedencia `explicit|derived|unresolved|conflicting`;
+- metadata confirmada quedó en
+  `bibliographic_metadata.canonical_identity_v1` para tres fuentes DEV, sin
+  migración: Rosenberg es LH que desarrolla LM II, 8; Interior Final es LH,
+  edición derivada del filename, versión técnica v2 y volumen runtime null;
+  el original LM II conserva familia propia;
+- scopes family/edition/document/source se resuelven antes del ranking: family
+  LH devuelve ambas ediciones, edition/document Interior Final restringen el
+  candidato, source LM II 8 devuelve el comentario LH, original LM II devuelve
+  sus nodos estructurales y cross-source mantiene ambos roles;
+- API autenticada admin+guest: 16/16; ambiguo `Likutey` devuelve
+  `scope_ambiguous`; planner Azamra sigue `Tomo no resuelto` y nunca interpreta
+  `_v2`, `II` o lección 8 como volumen;
+- UI muestra Obra, Edición y Fuente desarrollada por separado; versión técnica
+  es secundaria. Playwright Chromium admin/guest/móvil 390×844: 3/3;
+- no hubo cambio de status, promoción, reingesta, embeddings ni Milvus. Nota 36
+  queda fuera de alcance con batch literal 24/25.
+
+ADR: `docs/adr/ADR-019-canonical-work-edition-source-metadata-v1.md`.
+Reporte: `data/reports/breslov/2026-08-04-canonical-work-edition-source-metadata-v1-dev/`.
 
 ## Breslov Corpus Scope Integrity Review V1 — 2026-08-04 (DEV)
 

@@ -1,0 +1,42 @@
+[
+  {
+    "query": "¿Dónde desarrolla Likutey Halajot la lección 8 de Likutey Moharán II?",
+    "scope": {
+      "scope_family": [
+        "likutey_halajot"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": "likutey_moharan_ii",
+      "scope_source_lesson": 8,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "matching_documents": [
+      "LIKUTEY HALAJOT LM II 8.pdf"
+    ]
+  },
+  {
+    "query": "Compará Likutey Moharán II 8 con Likutey Halajot.",
+    "scope": {
+      "scope_family": [
+        "likutey_moharan_ii",
+        "likutey_halajot"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": "likutey_moharan_ii",
+      "scope_source_lesson": 8,
+      "cross_family": true,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "matching_documents": [
+      "LIKUTEY HALAJOT LM II 8.pdf",
+      "LIKUTEY MOHARAN II Interior.pdf"
+    ]
+  }
+]

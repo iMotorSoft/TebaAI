@@ -1,0 +1,21 @@
+{
+  "optional_request_fields": [
+    "scope_family",
+    "scope_edition",
+    "scope_document_sha256",
+    "scope_source_work",
+    "scope_source_lesson"
+  ],
+  "optional_hit_fields": [
+    "work_family",
+    "canonical_work",
+    "edition",
+    "volume_number",
+    "source_work",
+    "source_lesson",
+    "source_relation",
+    "technical_version",
+    "metadata_warnings"
+  ],
+  "breaking_changes": false
+}

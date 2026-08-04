@@ -1,0 +1,21 @@
+{
+  "framework": "Playwright",
+  "browser": "Chromium",
+  "spec": "e2e/research-canonical-metadata.spec.ts",
+  "final": {
+    "passed": 3,
+    "failed": 0,
+    "duration_seconds": 59.8,
+    "coverage": [
+      "admin family, edition, source, original, cross-source, ambiguous, refresh, logout",
+      "guest canonical labels, source relation, read-only denial, refresh, logout",
+      "guest mobile 390x844 edition labels, evidence, no overflow, refresh, logout"
+    ]
+  },
+  "iteration": {
+    "initial": "2 passed, 1 failed because the test expected a mobile-only Conversación button on desktop after refresh",
+    "correction": "removed the invalid desktop interaction; product behavior was unchanged",
+    "rerun": "3 passed"
+  },
+  "mocks": false
+}

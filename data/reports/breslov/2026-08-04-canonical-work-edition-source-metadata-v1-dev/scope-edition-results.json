@@ -1,0 +1,21 @@
+[
+  {
+    "query": "Buscá esto solo en Interior Final.",
+    "scope": {
+      "scope_family": [
+        "likutey_halajot"
+      ],
+      "scope_edition": "Interior Final",
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "matching_documents": [
+      "LIKUTEY HALAJOT (Interior Final).pdf"
+    ]
+  }
+]

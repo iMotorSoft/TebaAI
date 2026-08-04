@@ -43,6 +43,11 @@ describe("research contract", () => {
     expect(r.query_understanding?.subject_raw).toBe("Tisha B'Av");
     expect(r.hits[0]).toMatchObject({ literal_match_kind: "named_topic_alias", direct_support: true, match_strength: "strong", single_term: false });
   });
+  it("preserves canonical work, edition, source lesson, and technical metadata", () => {
+    const source = { ...hit("canonical", "direct_relation"), work_code: "lh", work_title: "Likutey Halajot LM II 8", work_family_code: "likutey_halajot", work_family: "Likutey Halajot", canonical_work_code: "likutey_halajot", canonical_work: "Likutey Halajot", edition: "The Rosenberg Edition", edition_confidence: "explicit", volume_number: null, volume_confidence: "unresolved", volume_source: "unresolved", source_work_code: "likutey_moharan_ii", source_work: "Likutey Moharán II", source_lesson: 8, source_relation: "develops", technical_version: null, metadata_warnings: [] };
+    const r = normalizeResearchResponse({ ...base, hits: [source], claims: [{ claim_id: "canonical", text: "Se encontró", strength: "strong", evidence_ids: ["canonical"], primary_evidence_id: "canonical" }], primary_evidence_ids: ["canonical"] });
+    expect(r.hits[0]).toMatchObject({ work_family: "Likutey Halajot", canonical_work: "Likutey Halajot", edition: "The Rosenberg Edition", source_work: "Likutey Moharán II", source_lesson: 8, source_relation: "develops", volume_number: null });
+  });
 });
 
 describe("pre-retrieval interpretation confirmation", () => {

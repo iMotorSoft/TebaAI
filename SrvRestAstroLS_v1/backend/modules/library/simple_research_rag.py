@@ -39,6 +39,12 @@ from modules.library.hebrew_lexical_normalizer import (
     normalize_hebrew_for_search,
 )
 from modules.library.bibliographic_planner import run_bibliographic_planner
+from modules.library.canonical_metadata import (
+    content_query_without_scope_surfaces,
+    filter_documents_for_scope,
+    identity_from_document,
+    resolve_canonical_scope,
+)
 from modules.library.editorial_evidence_v2 import (
     _BIBLICAL_REFERENCE,
     enrich_evidence_with_v2,
@@ -51,6 +57,7 @@ from modules.library.simple_research_repository import (
     resolve_ready_documents,
     search_literal_candidates,
     search_printed_reference_candidates,
+    search_source_lesson_candidates,
     search_structural_heading_candidates,
 )
 
@@ -1465,6 +1472,7 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
     footnote_quote = _embedded_footnote_body(markdown, footnote_number)
     exact_quote = footnote_quote or chunk.get("_v1", {}).get("exact_quote")
     editorial = chunk.get("_editorial") or {}
+    canonical_identity = chunk.get("_canonical_identity") or {}
     return {
         "hit_id": evidence_id,
         "evidence_id": evidence_id,
@@ -1484,8 +1492,8 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
             else None
         ),
         "document_id": str(chunk["document_id"]),
-        "work_code": _work_code(chunk),
-        "work_title": str(chunk.get("work") or ""),
+        "work_code": canonical_identity.get("work_code") or _work_code(chunk),
+        "work_title": str(canonical_identity.get("document_title") or chunk.get("work") or ""),
         "pdf_page": chunk.get("pdf_page"),
         "physical_pdf_page": chunk.get("pdf_page"),
         "printed_page": (
@@ -1567,6 +1575,21 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         ),
         "physical_file_name": chunk.get("physical_file_name"),
         "source_sha256": chunk.get("source_sha256"),
+        "work_family_code": canonical_identity.get("work_family_code"),
+        "work_family": canonical_identity.get("work_family"),
+        "canonical_work_code": canonical_identity.get("canonical_work_code"),
+        "canonical_work": canonical_identity.get("canonical_work"),
+        "edition": canonical_identity.get("edition"),
+        "edition_confidence": canonical_identity.get("edition_confidence"),
+        "volume_number": canonical_identity.get("volume_number"),
+        "volume_confidence": canonical_identity.get("volume_confidence"),
+        "volume_source": canonical_identity.get("volume_source"),
+        "source_work_code": canonical_identity.get("source_work_code"),
+        "source_work": canonical_identity.get("source_work"),
+        "source_lesson": canonical_identity.get("source_lesson"),
+        "source_relation": canonical_identity.get("source_relation"),
+        "technical_version": canonical_identity.get("technical_version"),
+        "metadata_warnings": canonical_identity.get("metadata_warnings", []),
         "author_quote_status": "not_confirmed",
         "attribution_label": (
             "Encabezado estructural y contexto canónico recuperados desde PostgreSQL"
@@ -1642,18 +1665,42 @@ async def run_simple_rag(
         )
     latency: dict[str, float] = {}
 
-    documents = await resolve_ready_documents(
+    all_documents = await resolve_ready_documents(
         conn,
         knowledge_scope_code=filters["scope"],
-        work_codes=filters["works"] or None,
+        work_codes=None,
         include_test_candidates=filters["include_test_candidates"],
     )
+    available_identities = [identity_from_document(item) for item in all_documents]
+    canonical_scope = resolve_canonical_scope(
+        original_query,
+        available_identities,
+        requested_work_codes=filters["works"] or None,
+        scope_family=getattr(data, "scope_family", None),
+        scope_edition=getattr(data, "scope_edition", None),
+        scope_document_sha256=getattr(data, "scope_document_sha256", None),
+        scope_source_work=getattr(data, "scope_source_work", None),
+        scope_source_lesson=getattr(data, "scope_source_lesson", None),
+    )
+    documents, document_identities = filter_documents_for_scope(
+        all_documents, canonical_scope
+    )
     document_ids = [str(item["document_id"]) for item in documents]
+    scoped_document_ids = (
+        document_ids or ["00000000-0000-0000-0000-000000000000"]
+        if canonical_scope.active
+        else []
+    )
+    filters["canonical_scope"] = canonical_scope.public()
+    warnings.extend(canonical_scope.warnings)
+    retrieval_query = content_query_without_scope_surfaces(
+        original_query, canonical_scope, available_identities
+    )
 
     structural_normalization_started = time.perf_counter()
     structural_heading_query = (
-        normalize_structural_heading_for_search(original_query)
-        if is_structural_heading_candidate_shape(original_query)
+        normalize_structural_heading_for_search(retrieval_query)
+        if is_structural_heading_candidate_shape(retrieval_query)
         else None
     )
     latency["structural_normalization_ms"] = round(
@@ -1675,7 +1722,7 @@ async def run_simple_rag(
                 accent_folded_query=structural_heading_query.accent_folded,
                 hebrew_query=has_hebrew(original_query),
                 languages=filters["languages"],
-                document_ids=document_ids if filters["works"] else None,
+                document_ids=scoped_document_ids if canonical_scope.active else None,
                 top_k=LITERAL_TOP_K,
                 include_test_candidates=filters["include_test_candidates"],
             )
@@ -1712,8 +1759,8 @@ async def run_simple_rag(
                 reference_variants=[original_query, original_query.casefold()],
                 languages=filters["languages"],
                 document_ids=(
-                    document_ids
-                    if filters["works"] or _explicit_likutey_halajot_scope(original_query)
+                    scoped_document_ids
+                    if canonical_scope.active or _explicit_likutey_halajot_scope(original_query)
                     else None
                 ),
                 include_test_candidates=filters["include_test_candidates"],
@@ -1741,7 +1788,10 @@ async def run_simple_rag(
             structural_heading_query.accent_folded,
         ]))
         if structural
-        else build_query_variants(original_query, is_printed_reference=is_printed_reference)
+        else list(dict.fromkeys([
+            *build_query_variants(retrieval_query, is_printed_reference=is_printed_reference),
+            original_query,
+        ]))
     )
 
     semantic_task = asyncio.create_task(asyncio.to_thread(
@@ -1754,7 +1804,7 @@ async def run_simple_rag(
         ),
         scope_code=filters["scope"],
         languages=filters["languages"],
-        document_ids=document_ids if filters["works"] else [],
+        document_ids=scoped_document_ids if canonical_scope.active else [],
         simulate_failure=bool(simulations.get("milvus")),
     ))
 
@@ -1771,7 +1821,7 @@ async def run_simple_rag(
             knowledge_scope_code=filters["scope"],
             variants=literal_variants,
             languages=filters["languages"],
-            document_ids=document_ids if filters["works"] else None,
+            document_ids=scoped_document_ids if canonical_scope.active else None,
             top_k=LITERAL_TOP_K,
             hebrew_compact=normalization.compact_letters if normalization else "",
             hebrew_fallback_compacts=(
@@ -1794,12 +1844,35 @@ async def run_simple_rag(
                 knowledge_scope_code=filters["scope"],
                 variants=variants,
                 languages=filters["languages"],
-                document_ids=document_ids if filters["works"] else None,
+                document_ids=scoped_document_ids if canonical_scope.active else None,
                 top_k=LITERAL_TOP_K,
                 include_test_candidates=filters["include_test_candidates"],
             )
-        # Inject targeted printed reference results with high priority
-        literal = [*printed_reference_results, *literal, *structural]
+        source_lesson_results: list[dict[str, Any]] = []
+        lesson_work_code = canonical_scope.source_work_code
+        if (
+            lesson_work_code is None
+            and canonical_scope.source_lesson is not None
+            and len(canonical_scope.family_codes) == 1
+            and canonical_scope.family_codes[0] == "likutey_moharan_ii"
+        ):
+            lesson_work_code = "likutey_moharan_ii"
+        if lesson_work_code and canonical_scope.source_lesson is not None:
+            source_lesson_results = await search_source_lesson_candidates(
+                conn,
+                knowledge_scope_code=filters["scope"],
+                source_work_code=lesson_work_code,
+                lesson_number=canonical_scope.source_lesson,
+                document_ids=scoped_document_ids,
+                top_k=CONTEXT_MAX,
+            )
+        # Inject targeted structural/reference results with high priority.
+        literal = [
+            *printed_reference_results,
+            *source_lesson_results,
+            *literal,
+            *structural,
+        ]
         # Tag exact ILIKE matches from the general literal lane as printed_reference
         # when the query was detected as a printed biblical reference AND the
         # chunk actually contains the exact reference surface.  ILIKE is
@@ -1816,7 +1889,7 @@ async def run_simple_rag(
                     )
                 ):
                     item["literal_match_type"] = "printed_reference_exact"
-        classify_editorial_literal_matches(literal, query=original_query)
+        classify_editorial_literal_matches(literal, query=retrieval_query)
     except Exception:
         literal = list(structural)
         literal_status = "failed"
@@ -1860,6 +1933,10 @@ async def run_simple_rag(
     )
     latency["fetch_chunks_ms"] = round((time.perf_counter() - fetch_started) * 1000, 2)
     canonical_by_id = {str(item["chunk_id"]): item for item in canonical}
+    for item in canonical:
+        document_id = str(item.get("document_id") or "")
+        identity = document_identities.get(document_id) or identity_from_document(item)
+        item["_canonical_identity"] = identity.public()
     association_started = time.perf_counter()
     _attach_structural_heading_contexts(canonical_by_id, ranked)
     latency["heading_body_association_ms"] = round(
@@ -1878,7 +1955,7 @@ async def run_simple_rag(
     selected = select_context(
         ranked,
         canonical_by_id,
-        explicit_work_filter=bool(filters["works"]),
+        explicit_work_filter=canonical_scope.active,
     )
     if structural_lookup_only and not structural:
         selected = []
@@ -1997,7 +2074,7 @@ async def run_simple_rag(
     # -- Bibliographic Query Planner V1 --------------------------------------
     bibliographic_started = time.perf_counter()
     bibliographic_data: dict[str, Any] = {"bibliographic_active": False}
-    if selected:
+    if selected and canonical_scope.source_lesson is None:
         try:
             document_rows_for_planner = list(canonical_by_id.values())
             # Add document-level data from selected chunks
@@ -2382,6 +2459,8 @@ async def run_simple_rag(
             "semantic_hits": len(semantic),
             "literal_hits": len(literal),
             "selected_chunks": len(selected),
+            "canonical_scope": canonical_scope.public(),
+            "resolved_document_count": len(documents),
             "query_language": query_language,
             "query_shape": query_shape,
             "query_variants": variants,

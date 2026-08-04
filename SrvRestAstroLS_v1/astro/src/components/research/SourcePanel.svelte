@@ -21,7 +21,10 @@
       <article class="source-detail" tabindex="-1" aria-live="polite" data-evidence-id={active.hit_id}>
         <p class="source-category">{active.is_primary ? "EVIDENCIA PRINCIPAL" : additional.includes(active) ? "COINCIDENCIA ADICIONAL" : "EVIDENCIA CONTEXTUAL"}</p>
         {#if active.literal_match_kind === "structural_heading_exact"}<p class="structural-match-label">Coincidencia exacta con título de sección</p>{/if}
-        <strong lang={languageAttribute(active.work_title)} dir={textDirection(active.work_title)}>{active.work_title}</strong>
+        <strong lang={languageAttribute(active.canonical_work || active.work_title)} dir={textDirection(active.canonical_work || active.work_title)}>Obra: {active.canonical_work || active.work_title}</strong>
+        {#if active.edition}<div class="evidence-meta">Edición: {active.edition}{active.edition_confidence === "derived" ? " (derivada)" : ""}</div>{/if}
+        {#if active.source_work}<div class="evidence-meta">Fuente {active.source_relation === "develops" ? "desarrollada" : "relacionada"}: {active.source_work}{active.source_lesson !== null && active.source_lesson !== undefined ? `, lección ${active.source_lesson}` : ""}</div>{/if}
+        {#if active.work_title && active.work_title !== (active.canonical_work || active.work_title)}<div class="evidence-meta">Documento: {active.work_title}</div>{/if}
         <div class="evidence-meta" dir="ltr">{active.physical_pdf_page === null ? "Página no disponible en el registro fuente" : `PDF p. ${active.physical_pdf_page}${active.printed_page !== null ? ` · Página impresa ${active.printed_page}` : ""}${active.section ? ` · ${active.section}` : ""}`}</div>
         {#if active.physical_pdf_page === null && active.embedded_page_marker}<div class="evidence-meta">Página canónica: no disponible · Marcador interno detectado: {active.embedded_page_marker}</div>{/if}
         {#if active.physical_file_name}<div class="evidence-meta" dir="ltr">Documento físico: {active.physical_file_name}</div>{/if}
@@ -53,6 +56,8 @@
           {#if active.associated_chunk_id}<div><dt>Chunk de contexto asociado</dt><dd dir="ltr">{active.associated_chunk_id}</dd></div>{/if}
           <div><dt>Tipo</dt><dd>{evidenceLabels[active.evidence_type] ?? "Evidencia investigativa"}</dd></div>
           <div><dt>Idioma</dt><dd>{active.language.toUpperCase()}</dd></div>
+          {#if active.volume_number !== null && active.volume_number !== undefined}<div><dt>Volumen</dt><dd>{active.volume_number}</dd></div>{/if}
+          {#if active.technical_version}<div><dt>Versión técnica</dt><dd>{active.technical_version}</dd></div>{/if}
           <div><dt>Atribución</dt><dd>{active.attribution_label ?? attributionLabels[active.author_quote_status ?? "not_confirmed"]}</dd></div>
           <div><dt>ID de evidencia</dt><dd dir="ltr">{active.evidence_id ?? active.hit_id}</dd></div>
         </dl>

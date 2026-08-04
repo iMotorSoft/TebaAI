@@ -20,7 +20,9 @@ async def resolve_ready_documents(
     rows = await fetch_all(
         conn,
         """
-        SELECT d.id AS document_id, d.document_code, d.title, d.language
+        SELECT d.id AS document_id, d.document_code, d.title, d.language,
+               d.source_filename, d.source_sha256, d.status, d.edition,
+               d.metadata, d.bibliographic_metadata
         FROM library_documents d
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(scope)s
@@ -487,6 +489,62 @@ async def search_literal_candidates(
     return [*nodes, *chunks][:top_k]
 
 
+async def search_source_lesson_candidates(
+    conn: AsyncConnection,
+    *,
+    knowledge_scope_code: str,
+    source_work_code: str,
+    lesson_number: int,
+    document_ids: list[str],
+    top_k: int = 12,
+) -> list[dict[str, Any]]:
+    """Return original-work nodes for an explicitly requested source lesson.
+
+    This structural lane uses persisted unit references, never title tokens or
+    AI classification. Commentary documents are retrieved through their
+    explicit source identities in the ordinary lexical/vector lanes.
+    """
+    canonical_prefixes = {"likutey_moharan_ii": "LMII"}
+    prefix = canonical_prefixes.get(source_work_code)
+    if not prefix or not document_ids:
+        return []
+    return await fetch_all(
+        conn,
+        """
+        SELECT DISTINCT ON (u.canonical_ref)
+            n.content_node_id AS chunk_id,
+            n.content_type AS block_type,
+            n.node_role AS evidence_role,
+            n.literal_text AS content,
+            true AS exact_match,
+            1 AS exact_variant_count,
+            u.canonical_ref AS matched_variant,
+            0 AS matched_variant_ordinal,
+            1.0::float AS fts_score,
+            1.0::float AS trigram_score,
+            4.0::float AS literal_score,
+            'source_lesson_exact'::text AS literal_match_type
+        FROM library_content_units_v2 u
+        JOIN library_content_nodes_v2 n ON n.content_unit_id=u.content_unit_id
+        JOIN library_documents d ON d.id=u.document_id
+        JOIN knowledge_scopes ks ON ks.id=d.knowledge_scope_id
+        WHERE ks.knowledge_scope_code=%(scope)s
+          AND d.id=ANY(%(document_ids)s::uuid[])
+          AND d.status IN ('ready', 'test_candidate')
+          AND n.citable=true
+          AND u.canonical_ref LIKE %(reference)s
+        ORDER BY u.canonical_ref, n.node_order, n.content_node_id
+        LIMIT %(limit)s
+        """,
+        {
+            "scope": knowledge_scope_code,
+            "document_ids": document_ids,
+            "reference": f"{prefix} {lesson_number}:%",
+            "limit": top_k,
+        },
+    )
+
+
 async def fetch_canonical_chunks(
     conn: AsyncConnection,
     *,
@@ -526,6 +584,9 @@ async def fetch_canonical_chunks(
             d.source_sha256,
             d.canonical_text_role,
             d.status AS document_status,
+            d.edition,
+            d.metadata AS document_metadata,
+            d.bibliographic_metadata AS document_bibliographic_metadata,
             ch.language,
             ch.content AS markdown,
             ch.content_sha256,
@@ -578,6 +639,9 @@ async def fetch_canonical_chunks(
             d.source_sha256,
             d.canonical_text_role,
             d.status AS document_status,
+            d.edition,
+            d.metadata AS document_metadata,
+            d.bibliographic_metadata AS document_bibliographic_metadata,
             n.language,
             n.literal_text AS markdown,
             n.literal_hash AS content_sha256,

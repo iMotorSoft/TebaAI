@@ -18,6 +18,7 @@ from globalVar import (
     LITELLM_TIMEOUT_SECONDS,
     RESEARCH_CONVERSATION_MODEL,
 )
+from modules.library.canonical_metadata import Confidence
 from modules.library.concept_catalog import get_concept
 from modules.library.investigative_model import stable_hash
 from modules.library.hebrew_lexical_normalizer import (
@@ -205,6 +206,11 @@ class QaRequest(BaseModel):
     supersedes_interpretation_id: str | None = Field(default=None, max_length=100)
     idempotency_key: str | None = Field(default=None, max_length=100)
     works: list[str] = Field(default_factory=lambda: sorted(WORKS))
+    scope_family: str | None = Field(default=None, max_length=120)
+    scope_edition: str | None = Field(default=None, max_length=160)
+    scope_document_sha256: str | None = Field(default=None, pattern=r"^[0-9a-f]{64}$")
+    scope_source_work: str | None = Field(default=None, max_length=120)
+    scope_source_lesson: int | None = Field(default=None, ge=1, le=9999)
     languages: list[Literal["es", "en", "he"]] = Field(default_factory=lambda: ["es", "he", "en"])
     include_thematic: bool = True
     include_audit: bool = False
@@ -292,6 +298,21 @@ class Hit(BaseModel):
     document_id: str | None = None
     physical_file_name: str | None = None
     source_sha256: str | None = None
+    work_family_code: str | None = None
+    work_family: str | None = None
+    canonical_work_code: str | None = None
+    canonical_work: str | None = None
+    edition: str | None = None
+    edition_confidence: Confidence | None = None
+    volume_number: int | None = None
+    volume_confidence: Confidence | None = None
+    volume_source: str | None = None
+    source_work_code: str | None = None
+    source_work: str | None = None
+    source_lesson: int | None = None
+    source_relation: str | None = None
+    technical_version: str | None = None
+    metadata_warnings: list[str] = Field(default_factory=list)
     page_anchor_id: str | None = None
     section: str | None = None
     retrieval_position: int | None = None

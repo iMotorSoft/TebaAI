@@ -1,0 +1,24 @@
+{
+  "canonical": {
+    "lh": [
+      "Likutey Halajot",
+      "Likutei Halachot",
+      "Likutey Halachos",
+      "ליקוטי הלכות"
+    ],
+    "lmii": [
+      "Likutey Moharán II",
+      "Likutey Moharan II",
+      "LM II",
+      "ליקוטי מוהר\"ן תנינא"
+    ]
+  },
+  "critical_rule": "A source lesson label (LM II, 8) does not replace the containing work family (Likutey Halajot).",
+  "ambiguous": [
+    "Likutey",
+    "LM",
+    "Halajot II",
+    "LH II 8"
+  ],
+  "runtime_observation": "Aliases are distributed across modules and no persisted canonical work_family field exists on library_documents."
+}

@@ -5,6 +5,27 @@ decisions live in ADR-014, ADR-015 and ADR-016.
 
 ---
 
+## Identidad y scope documental
+
+El scope por obra se resuelve antes del ranking. La familia canónica no se
+infiere desde un token compartido ni desde una referencia interna aislada:
+
+```text
+work_family ≠ free document title ≠ source lesson ≠ edition
+LH ≠ LM II
+```
+
+Un volumen de Likutey Halajot puede seleccionar discursos basados en Likutey
+Moharán II, 8 sin convertirse en una edición de Likutey Moharán II. El status
+`ready|test_candidate` tampoco define identidad bibliográfica: solo participa
+como desempate entre evidencias equivalentes.
+
+Aliases ambiguos como `Likutey` o `LM` no deben resolverse automáticamente. Una
+consulta comparativa puede habilitar ambas familias solo cuando el cruce es
+explícito. Elegir una edición concreta dentro de una familia requiere scope o
+metadata de edición explícitos; no se implementa mediante penalizaciones,
+filename exclusions o document IDs especiales.
+
 ## Ingesta: Page-First
 
 ```

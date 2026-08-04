@@ -1,0 +1,204 @@
+{
+  "gate": "TEBAAI_BRESLOV_CORPUS_SCOPE_INTEGRITY_V1_DEV_BLOCKED",
+  "record": {
+    "id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+    "title": "Likutey Halajot LM II 8",
+    "source_filename": "LIKUTEY HALAJOT LM II 8.pdf",
+    "status": "ready",
+    "document_code": null,
+    "language": "es",
+    "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+    "canonical_text_role": "candidate",
+    "bibliographic_metadata": {
+      "legal_review": {
+        "notes": "The Rosenberg Edition. Menciona Breslov Research Institute en el texto (referencia a 'El Castillo de Agua', BRI, 2013). No se encontró página de copyright explícita en front matter visible. Sin licencia. Uso interno recomendado conservadoramente.",
+        "status": "legal_status_pending_manual_confirmation",
+        "publisher": "Breslov Research Institute (referenciado en texto)",
+        "reviewed_at": "2026-07-03T13:30:01.023321+00:00",
+        "license_found": false,
+        "copyright_notice_found": false,
+        "public_exposure_status": "public_exposure_blocked",
+        "internal_use_recommendation": "recommend_internal_ready"
+      },
+      "ready_review": {
+        "blockers": [],
+        "promoted": true,
+        "promoted_at": "2026-07-05T22:58:28.117795+00:00",
+        "legal_status": "legal_status_pending_manual_confirmation",
+        "technical_closure": "eligible_pending_manual_legal",
+        "manual_review_status": "manual_review_pass_with_minor_limitations",
+        "ready_promotion_recommendation": "ready_recommended_pending_user_approval"
+      },
+      "manual_review": {
+        "notes": "Texto español mayormente limpio. Título con mezcla EN/ES (Rosenberg Edition). 73 chunks con artefactos U+FFFD en caracteres hebreos de la portada — no afectan legibilidad general. 1205 chunks (documento más extenso). Referencias a Breslov Research Institute en el texto.",
+        "status": "manual_review_pass_with_minor_limitations",
+        "limitations": [
+          "73 chunks con caracteres U+FFFD (encoding artifact en pasajes hebreos del título)"
+        ],
+        "reviewed_at": "2026-07-03T13:30:01.023321+00:00",
+        "sample_count": 10,
+        "sample_strategy": "beginning_quarter_middle_three_quarter_end_longest_shortest_front_matter"
+      },
+      "source_quality": {
+        "evidence": {
+          "chunks": 0,
+          "empty_chunks": 0,
+          "embedding_count": 20,
+          "embedding_model": "openai_text_embedding_3_small",
+          "litellm_endpoint": "http://127.0.0.1:4000",
+          "milvus_roundtrip": 1.0,
+          "embedding_dimension": 1536,
+          "page_mapping_coverage": 1.0
+        },
+        "fts_status": "pass",
+        "ocr_status": "not_ocr",
+        "limitations": [
+          "Page mapping incompleto: 10.7% (requiere ≥95%).",
+          "PDF extraído con PyMuPDF4LLM sin page markers controlados.",
+          "Requeriría reextracción con --page-markers force (patrón Koren) para mapping completo.",
+          "No evaluado legal/editorialmente."
+        ],
+        "source_kind": "pdf_modern_unicode",
+        "empty_chunks": 0,
+        "evaluated_at": "2026-07-02T22:51:45.404803+00:00",
+        "layout_status": "pass",
+        "language_hints": [
+          "es"
+        ],
+        "policy_version": "2026-07-02",
+        "chunking_status": "pass",
+        "embedding_model": "openai_text_embedding_3_small",
+        "roundtrip_sha256": "pass",
+        "embedding_provider": "litellm",
+        "canonical_text_role": "canonical_text",
+        "embedding_dimension": 1536,
+        "page_mapping_status": "pass",
+        "text_quality_status": "pass",
+        "page_mapping_coverage": 1.0,
+        "canonical_text_allowed": true,
+        "embedding_smoke_status": "pass",
+        "milvus_roundtrip_status": "pass",
+        "facsimile_anchor_allowed": true,
+        "promotion_recommendation": "approved_candidate",
+        "promotion_status_virtual": "evaluated_blocked"
+      },
+      "promotion_decision": {
+        "notes": "Promovido a ready como corpus estable interno. Exposición pública no habilitada.",
+        "status": "promoted_to_ready",
+        "promoted_at": "2026-07-05T22:58:28.117795+00:00",
+        "promoted_by": "development_team",
+        "decision_basis": "document_source_quality_policy_v1",
+        "promotion_scope": "internal_research_corpus",
+        "promotion_audit_doc": "breslov_es_en_promotion_audit_2026-07-05.md",
+        "public_exposure_status": "internal_only",
+        "promotion_source_commit": "c27d986"
+      },
+      "embedding_validation": {
+        "repair_note": "Re-embedded 96 orphaned chunks via LiteLLM",
+        "chunks_embedded": "1297",
+        "last_repaired_at": "2026-07-05T23:07:42.557895+00:00"
+      },
+      "phase_a_sanitation_at": "2026-07-02T22:51:06.675597+00:00",
+      "page_mapping_diagnosis": {
+        "cause": "PDFs extracted with plain PyMuPDF4LLM without page markers.",
+        "diagnosed_at": "2026-07-02T22:59:26.001404+00:00",
+        "phase_c_complete": true,
+        "strategy_recommended": "reextract_with_page_markers"
+      },
+      "promotion_decision_dry_run": {
+        "notes": "Embeddings vía LiteLLM OK. Milvus test round-trip 20/20 OK. Golden queries aceptables. Pendiente: manual review sample + decisión legal/copyright.",
+        "decision": "eligible_pending_manual_legal",
+        "checks_total": 18,
+        "evaluated_at": "2026-07-03T13:21:51.707920+00:00",
+        "checks_failed": 0,
+        "checks_passed": 16,
+        "target_status": null,
+        "decision_basis": "document_source_quality_policy_v1",
+        "embedding_status": "pass",
+        "page_mapping_pct": 100.0,
+        "page_mapping_status": "pass",
+        "golden_queries_status": "pass",
+        "milvus_roundtrip_status": "pass"
+      },
+      "phase_b_quality_assessment_at": "2026-07-02T22:51:45.404803+00:00"
+    },
+    "knowledge_scope_code": "breslov_primary",
+    "canonical_pages": 0,
+    "chunks": 1205,
+    "embeddings": 1205,
+    "min_chunk_page": 1,
+    "max_chunk_page": 525
+  },
+  "first_three_chunks": [
+    {
+      "chunk_index": 0,
+      "page_start": 1,
+      "page_end": 7,
+      "section_title": null,
+      "content": "## Page 1\n\nTHE ROSENBERG EDITION _**Likutey Halajot**_ ������� ������ ������ _RabíReb Noson of Natán de BreslovBreslov_ ����� AN ELUCIDATED Once lecciones basadas ENGLISH TRANSLATION, en el ANDF _Likutey Moharán_ ULLY S AOURCEDNNOTATED II, 8 del Rebe Najmán de Breslov\n\n**O AIM - IORE DEA RAJ J ORACH CHAIM**\n\nHashkamat HaBoker — Rising in the Morning\n\n## Page 2\n\n## Page 3\n\n## _**Likutey Halajot**_\n\nOnce lecciones basadas en el _Likutey Moharán_ II, 8 del Rebe Najmán de Breslov\n\n_Notas al Likutey Moharán_ Jaim Kramer\n\n_Estudios Adicionales_ Moshé Mykoff\n\n_Compilado y traducido por_ Guillermo Beilinson\n\nPublicado por BRESLOV RESEARCH INSTITUTE Jerusalem/New York\n\n## Page 4\n\nCopyright©2022 Breslov Research Institute\n\nNinguna parte de esta publicación podrá ser traducida, reproducida o archivada en ningún sistema o transmitida de ninguna forma y de ninguna manera, electrónica, mecánica, fotocopiada o grabada o de cualquier otra manera, sin el consentimiento previo, por escrito, del editor.\n\nPrimera edición\n\nTítulo del original:\n\n## _**Likutey Halajot Oraj Jaim - Iore Dea**_\n\nPara más información: Breslov Research Institute POB 5370 Jerusalem, Israel.\n\nBreslov Research Institute POB 587 Monsey, NY 10952-0587 Estados Unidos.\n\nBreslov Research Institute c\\o G.Beilinson calle 493 bis # 2548 Gonnet (1897) Argentina. e-mail: abei2ar@yahoo.com.ar\n\nDiseño de cubierta: Ben Gasner Studio - PB Revisión del original: Betzalel Retyk\n\n## Page 5\n\nPara la Elevación del Alma\n\nde mi Padre\n\n## **Aarón ben Biniamin z”l**\n\ny de mi Madre\n\n**Berta bat Pola z”l**\n\n## Page 6\n\n## Page 7\n\n## **ÍNDICE**"
+    },
+    {
+      "chunk_index": 1,
+      "page_start": 4,
+      "page_end": 7,
+      "section_title": null,
+      "content": "oo.com.ar\n\nDiseño de cubierta: Ben Gasner Studio - PB Revisión del original: Betzalel Retyk\n\n## Page 5\n\nPara la Elevación del Alma\n\nde mi Padre\n\n## **Aarón ben Biniamin z”l**\n\ny de mi Madre\n\n**Berta bat Pola z”l**\n\n## Page 6\n\n## Page 7\n\n## **ÍNDICE**\n\nPrefacio del Editor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 Sobre el Rabí Natán . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11 Sobre el _Likutey Halajot_ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 Notas sobre la Presente Edición  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17\n\n_**Likutey Halajot**_ Introducción del Rabí Natán . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 Puntos Principales del _Likutey Moharán_ II, 8 . . . . . . . . . . . . . . . . . . . . . . . . . . 27\n\n## _**Oraj Jaim**_"
+    },
+    {
+      "chunk_index": 2,
+      "page_start": 7,
+      "page_end": 7,
+      "section_title": null,
+      "content": "*Likutey Halajot**_ Introducción del Rabí Natán . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 Puntos Principales del _Likutey Moharán_ II, 8 . . . . . . . . . . . . . . . . . . . . . . . . . . 27\n\n## _**Oraj Jaim**_\n\n_Hiljot Tzitzit_ #5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 _Hiljot Tzitzit_ #7 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63 _Hiljot Kriat HaTorá_ (Lectura de la Torá) #6 . . . . . . . . . . . . . . . . . . . . . . . . . . . 79 _Hiljot Beit HaKneset_ (Sinagoga) #6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 131 _Hiljot Netilat Iadaim_ (Lavado de Manos) #4 . . . . . . . . . . . . . . . . . . . . . . . . . . . 157 _Hiljot Birkat HaReiaj_ (Bendición sobre Perfumes) #4 . . . . . . . . . . . . . . . . 175 _Hiljot Iom Tov_ (Festividades) #3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 257 _Hiljot Jol HaMoed_ (Días Intermedios) #4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 269 _Hiljot Suká_ #6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 299\n\n## _**Iore Dea**_"
+    }
+  ],
+  "representative_identity_samples": [
+    {
+      "chunk_index": 0,
+      "page_start": 1,
+      "content": "## Page 1\n\nTHE ROSENBERG EDITION _**Likutey Halajot**_ ������� ������ ������ _RabíReb Noson of Natán de BreslovBreslov_ ����� AN ELUCIDATED Once lecciones basadas ENGLISH TRANSLATION, en el ANDF _Likutey Moharán_ ULLY S AOURCEDNNOTATED II, 8 del Rebe Najmán de Breslov\n\n**O AIM - IORE DEA RAJ J ORACH CHAIM**\n\nHashkamat HaBoker — Rising in the Morning\n\n## Page 2\n\n## Page 3\n\n## _**Likutey Halajot**_\n\nOnce lecciones basadas en el _Likutey Moharán_ II, 8 del Rebe Najmán de Breslov\n\n_Notas al Likutey Moharán_ Jaim Kramer\n\n_Estudios Adicionales_ Moshé Mykoff\n\n_Compilado y traducido por_ Guillermo Beilinson\n\nPublicado por BRESLOV RESEARCH INSTITUTE Jerusalem/New York\n\n## Page 4\n\nCopyright©2022 Breslov Research Institute\n\nNinguna parte de esta publicación podrá ser traducida, reproducida o archivada en ningún sistema o transmitida de ninguna forma y de ninguna manera, electrónica, mecánica, fotocopiada o grabada o de cualquier otra manera, sin el consentimiento previo, por escrito, del editor.\n\nPrimera edición\n\nTítulo del original:\n\n## _**Likutey Halajot Oraj Jaim - Iore Dea**_\n\nPara más información: Breslov Research Institute POB 5370 Jerusalem, Israel.\n\nBreslov Research Institute POB 587 Monsey, NY 10952-0587 Estados Unidos.\n\nBreslov Research Institute c\\o G.Beilinson calle 493 bis # 2548 Gonnet (1897) Argentina. e-mail: abei2ar@yahoo.com.ar\n\nDiseño de cubierta: Ben Gasner Studio - PB Revisión del original: Betzalel Retyk\n\n## Page 5\n\nPara la Elevación del Alma\n\nde mi Padre\n\n## **Aarón ben Biniamin z”l**\n\ny de mi Madre\n\n**Berta bat Pola z”l**\n\n## Page 6\n\n## Page 7\n\n## **ÍNDICE**"
+    },
+    {
+      "chunk_index": 10,
+      "page_start": 12,
+      "content": "ortal de la Plegaria_ ) - plegarias originales basadas en las lecciones del _Likutey Moharán_\n\n■ _Likutey Halajot_ ( _Colección de Discursos_ ) - ideas originales sobre las leyes del _Shuljan Aruj_\n\n## Page 13\n\nSOBRE EL RABÍ NATÁN\n\nLIKUTEY HALAJOT 13\n\nEl 20 de diciembre del año 1844 (10 de Tevet del año 5605) el Rabí Natán falleció en la ciudad de Breslov, dejando la Jasidut sólidamente establecida. El movimiento continuaría creciendo, primero en la Europa Oriental, luego en Israel y después a lo largo y ancho del mundo. Hoy en día los judíos de todas partes están estudiando las enseñanzas del Rebe Najmán, publicadas en muchos idiomas. Se reúnen en Umán cada año, para pasar Rosh HaShaná con el Rebe, en un encuentro al que han asistido últimamente más de 60.000 personas. Las sinagogas de Breslov y los grupos de estudio se encuentran en todas partes, a la vez que el estudio _online_ ha llegado a todos los rincones del globo. Por todo esto y más, debemos agradecer al Rabí Natán. Su visión, su determinación y sus incansables esfuerzos potenciaron a un movimiento destinado a cumplir con la promesa del Rebe Najmán: “¡Mi fuego arderá hasta la llegada del Mashíaj!”.\n\n■ ■ ■\n\n## Page 14\n\n14 LIKUTEY HALAJOT\n\n## **SOBRE EL LIKUTEY HALAJOT[1]**\n\nEdel Rabí Natán de Breslov (1780-1844), el principal discípulo y escriba del l _Likutey Halajot_ (Colección de Discursos), presenta las exposiciones de Torá Rebe Najmán de Breslov. Una obra en ocho volúmenes en hebreo en el original, el _Likutey Halajot_ explora la ley judía a través del prisma de las enseñanzas del Rebe Najmán. Al mismo tiempo, la obra del Rabí Natán es un comentario sobre las enseñanzas de su maestro y, no menos importante, una guía para su estudio."
+    },
+    {
+      "chunk_index": 12,
+      "page_start": 14,
+      "content": "mente a que comenzara a desarrollar sus propios _jidushei Torá_ . El Rabí Natán comenzó a hacerlo, aunque sólo en su pensamiento,\n\n1 Esta introducción ha sido adaptada en parte de _El Castillo de Agua_ (Dovid Sears, Breslov Research Institute, 2013).\n\n2 Ver _Tzadik_ #367; también la biografía del Rabí Natán por Jaim Kramer, _A Través del Fuego y del Agua_ : La vida del Rabí Natán de Breslov (Breslov Research Institute, 2010).\n\n3 _Iemei Moharnat_ I, #5 (Diario de un Camino Espiritual, Breslov Research Institute, 2014); _A Través del Fuego y del Agua_ , capítulos 10 y 11.\n\n4 Se afi rma en _Sabiduría y Enseñanzas del Rabí Najmán de Breslov_ #297: El Rebe nos solía hablar mucho sobre cuánto quería que pusiéramos en práctica las lecciones que él había revelado. Esto es, “andar con una lección” - fundamentar durante un tiempo todo nuestro servicio y acercamiento a la conciencia de HaShem en una lección. Tomar la lección y buscar su consejo práctico. Seguirlo durante dos o tres meses, utilizándolo para fortalecer nuestra devoción y temor a HaShem. Debemos orar a HaShem y rogarle para que nos ayude a ser dignos de alcanzar el ideal establecido en esa lección. Cuando se ha completado una lección, se debe trabajar en otra. Así se debe continuar hasta haber completado cada lección. Feliz aquel que lleva a cabo esto.\n\n## Page 15\n\nSOBRE EL LIKUTEY HALAJOT\n\nLIKUTEY HALAJOT 15"
+    },
+    {
+      "chunk_index": 13,
+      "page_start": 14,
+      "content": "l ideal establecido en esa lección. Cuando se ha completado una lección, se debe trabajar en otra. Así se debe continuar hasta haber completado cada lección. Feliz aquel que lleva a cabo esto.\n\n## Page 15\n\nSOBRE EL LIKUTEY HALAJOT\n\nLIKUTEY HALAJOT 15\n\nhasta que un año más tarde el Rebe Najmán lo instruyó a comenzar a registrar sus ideas. A lo largo de 40 años el Rabí Natán compuso los cerca de 550 discursos que componen el _Likutey Halajot_ .[5] Basando sus ideas en las lecciones del Rebe Najmán y utilizando las leyes del _Shuljan Aruj_ como el trampolín para sus exploraciones, el Rabí Natán fue capaz de descubrir las diversas conexiones entre las enseñanzas místicas y prácticas de la Torá de una manera absolutamente original. También incorporó en sus discursos varios temas de las porciones semanales de la Torá y, en sus discursos más largos, las diversas porciones semanales mismas al igual que el “tema del día” - los temas cotidianos que lo afectaban a él, a sus discípulos, a su comunidad o incluso al mundo en general. Así sea al tratar un concepto de la lección del Rebe Najmán, una _halajá_ del _Shuljan Aruj_ , una festividad del calendario judío o las noticias del mundo - el Rabí Natán era capaz de derivar de allí nuevos fundamentos y consejos prácticos en el servicio a HaShem.\n\nEl _Likutey Halajot_ atraviesa las cuatro secciones del _Shuljan Aruj_ y sirve como la fuente primaria para comprender las lecciones del Rebe y cómo aplicarlas de manera práctica. Los jasidim de Breslov siempre han considerado los discursos del Rabí Natán como la lente más clara a través de la cual percibir las enseñanzas del Rebe Najmán en su _Likutey Moharán_ ."
+    },
+    {
+      "chunk_index": 15,
+      "page_start": 15,
+      "content": "Najmán o de las lecciones que son directamente relevantes a su tema principal. Ocasionalmente\n\n> 5 Varios de los discursos del Rabí Natán fueron confi scados por el gobierno y nunca fueron devueltos. Ver _A Través del Fuego y del Agua_ , capítulo 35.\n\n> 6 Esta comparación con el “alma y el “cuerpo” no debe ser entendida como una trivialización de las enseñanzas _halájicas_ y prácticas de la Torá, que son fundamentales. Como el Rebe Najmán afi rma en el _Likutey Moharán_ I, 52, y en otras instancias, el mundo fue creado para que pongamos en práctica la Voluntad de HaShem, en particular con el cumplimiento de las _mitzvot_ .\n\n## Page 16\n\nSOBRE EL LIKUTEY HALAJOT\n\n16 LIKUTEY HALAJOT\n\nreserva uno u otro de esos conceptos para más adelante en el discurso, luego de familiarizar al lector con el contexto necesario en el cual comprenderlo. Comenzando con la segunda sección (en la mayor parte de los discursos), el Rabí Natán introduce sus propias ideas originales. Es aquí donde aprendemos cuál es el objetivo del Rabí Natán y por qué ha conectado esta _halajá_ del _Shuljan Aruj_ con esa enseñanza del Rebe. En las secciones siguientes se va desarrollando el cuerpo del discurso cuando el Rabí Natán demuestra cómo los conceptos del Rebe iluminan el signifi cado profundo de la _halajá_ .[7]"
+    },
+    {
+      "chunk_index": 17,
+      "page_start": 16,
+      "content": "tro. En general, esta superposición es demostrada entonces trayendo como referencia una asociación bíblica o kabalística. Es este “asemejar una cosa con otra” lo que da fe de la cualidad caleidoscópica de virtualmente todas las enseñanzas de Breslov.\n\nOtra característica defi nitoria del _Likutey Halajot_ es lo que podría llamarse el estilo de improvisación del Rabí Natán. En la mayor parte de las homilías y discursos jasídicos, el autor sigue un plan cuidadosamente establecido o una guía para desarrollar sus ideas de manera lineal. En contraste, el pensamiento del Rabí Natán es lateral: un acercamiento intuitivo y así espontáneo, similar a la improvisación musical. El Rabí Natán establece su tema y se embarca en una cierta línea de pensamiento; luego vuelve hacia atrás, en general repitiendo el tema o parte de él, sólo para empezar en una dirección nueva y fresca. Aun así, el discurso del Rabí Natán siempre permanece sólidamente enraizado en la enseñanza del Rabí\n\n> 7 Las excepciones a este formato se presentan principalmente en los discursos de la Halajá 1 (series _alef_ ). 8 El Rabí Natán oyó que cierta vez dijo el Rebe Najmán, “Mis enseñanzas de Torá están construidas totalmente de _bejinot_ ” ( _Tzadik_ #350).\n\n> 9 Hemos traducido el término _bejiná_ de diversas maneras, incluyendo literalmente, “aspecto” y, contextualmente, “concepto” o “dimensión”. Para “A es _bejinat_ de B”, hemos decidido recurrir a formulaciones lingüísticas, incluyendo “el concepto de”, “corresponde a”, “se relaciona con”, “es paralelo de”, “es sinónimo de”, y demás.\n\n## Page 17\n\nSOBRE EL LIKUTEY HALAJOT\n\nLIKUTEY HALAJOT 17\n\nNajmán, de modo que sus exploraciones son todas comentarios incisivos sobre las lecciones de su maestro."
+    }
+  ],
+  "term_counts": {
+    "chunks": 1205,
+    "chunks_mentioning_lh": 489,
+    "chunks_mentioning_lmii_8": 228,
+    "chunks_with_hiljot_headings": 422
+  },
+  "internal_evidence_finding": "The source is a Spanish Likutey Halajot anthology: its title page says Likutey Halajot, its contents enumerate Hiljot discourses, and its edition note says those discourses are based on Likutey Moharan II, 8. The LM II, 8 reference is the source lesson/organizing theme, not the work family.",
+  "canonical_family": "likutey_halajot",
+  "related_source_lesson": "likutey_moharan_ii_8",
+  "prior_hypothesis": "record_is_likutey_moharan_ii",
+  "prior_hypothesis_result": "rejected_by_internal_front_matter_and_contents",
+  "milvus": {
+    "collection": "tebaai_breslov_chunks_v1",
+    "collection_entities": 5370,
+    "record_vectors": 1205,
+    "mutated": false
+  }
+}

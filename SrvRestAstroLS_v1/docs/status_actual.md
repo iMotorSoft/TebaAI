@@ -2,7 +2,36 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-03 (Promotion Readiness V1 de Likutey Halajot en DEV)
+Ultima actualizacion: 2026-08-04 (Corpus Scope Integrity Review V1 bloqueada en DEV)
+
+## Breslov Corpus Scope Integrity Review V1 — 2026-08-04 (DEV)
+
+Estado: `TEBAAI_BRESLOV_CORPUS_SCOPE_INTEGRITY_V1_DEV_BLOCKED`.
+
+- la hipótesis de contaminación entre familias fue refutada por la fuente:
+  `Likutey Halajot LM II 8` es una antología de Likutey Halajot con once
+  discursos basados en Likutey Moharán II, lección 8; portada, índice,
+  introducción y 422 chunks con headings `Hiljot` confirman la familia LH;
+- el resolver actual la incluye en `lh` y la excluye de `lmii`, en acuerdo con
+  el contenido; quitarla de LH o penalizarla habría persistido una identidad
+  bibliográfica falsa;
+- la primera capa incorrecta fue el diagnóstico parcial de readiness, que
+  confundió `work_family` con `source_lesson`; ADR-017 conserva
+  `NOT_READY_FOR_PROMOTION`, pero su diagnóstico cross-family queda corregido
+  por ADR-018;
+- exigir que `Interior Final` sea PRIMARY 5/5 para consultas que solo declaran
+  la familia LH es una selección de edición, no integridad de familia; requiere
+  contrato y metadata canónica de edición separados;
+- nota 36 sigue abierta de forma independiente: `refinamiento` no coincide con
+  la extracción PDF `reﬁ namiento` (ligature + espacio interno); batch 24/25;
+- no se modificaron status, títulos, metadata, corpus, embeddings ni Milvus;
+  `Interior Final` sigue `test_candidate` y no fue promovido.
+
+ADR: `docs/adr/ADR-018-breslov-corpus-scope-integrity-v1.md`.
+Reporte: `data/reports/breslov/2026-08-04-corpus-scope-integrity-v1-dev/`.
+Próximo paso: fases separadas para identidad canónica familia/edición/lección
+fuente y para normalización literal de ligaduras PDF; después redefinir los
+Goldens naturales por familia vs edición y repetir readiness completa.
 
 ## Likutey Halajot Corpus Promotion Readiness V1 — 2026-08-03 (DEV)
 

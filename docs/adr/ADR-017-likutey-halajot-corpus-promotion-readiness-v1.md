@@ -4,6 +4,13 @@
 **Date:** 2026-08-03
 **Result:** `NOT_READY_FOR_PROMOTION`
 
+> **Erratum (2026-08-04):** ADR-018 supersedes only this audit's
+> cross-family diagnosis. Full front matter and contents prove that
+> `Likutey Halajot LM II 8` is a Likutey Halajot anthology based on Likutey
+> Moharán II, lesson 8—not a Likutey Moharán II work. The readiness result
+> remains `NOT_READY_FOR_PROMOTION` because natural edition selection, note 36,
+> metadata and legal blockers remain open.
+
 ## Context
 
 `LIKUTEY HALAJOT (Interior Final).pdf` is a `test_candidate`. Its native

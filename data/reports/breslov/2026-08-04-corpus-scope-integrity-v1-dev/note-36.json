@@ -1,0 +1,34 @@
+{
+  "status": "OPEN_SEPARATE_LITERAL_NORMALIZATION_DEFECT",
+  "cases": [
+    {
+      "query": "Birur hace referencia a la extracción y refinamiento de las chispas",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [],
+      "query_language": "es",
+      "primary": {
+        "document": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+        "page": 37,
+        "printed_page": null,
+        "evidence_id": "ev-9688a2b4eb68a1fd",
+        "match_type": "semantic",
+        "source_layer": "editorial_translation",
+        "evidence_language": "es",
+        "document_status": null,
+        "footnote_number": null
+      },
+      "answer_markdown": null,
+      "expected": {
+        "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "page": 56,
+        "source_layer": "footnote",
+        "evidence_type": "footnote"
+      },
+      "pass": false
+    }
+  ],
+  "cause_evidence": "The canonical page contains PDF extraction surface reﬁ namiento (ligature plus inserted space), while the query contains refinamiento. This is independent of work-family identity.",
+  "change_applied": false
+}

@@ -1,0 +1,124 @@
+{
+  "source": "2026-08-03 readiness authenticated baseline; not rerun after a fix because no fix was valid",
+  "result": "2/5 Interior Final primary under the prior edition-specific expectation",
+  "identity_reassessment": "Three primaries belong to another valid Likutey Halajot edition/selection. Work-family scope alone cannot require Interior Final.",
+  "cases": [
+    {
+      "query": "melodía y plegaria en Likutey Halajot",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "claim_count": 3,
+      "primary_evidence_ids": [
+        "ev-6e9fce5d02f067c4",
+        "ev-530426e98359fe1a",
+        "ev-3857fadb48418328"
+      ],
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+        "physical_pdf_page": 59,
+        "printed_page": null,
+        "source_layer": "editorial_translation",
+        "literal_match_kind": "semantic",
+        "evidence_id": "ev-6e9fce5d02f067c4"
+      },
+      "method": "general"
+    },
+    {
+      "query": "bondad y juicio favorable en Likutey Halajot",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "claim_count": 3,
+      "primary_evidence_ids": [
+        "ev-f38c2c6a3a1c71c0",
+        "ev-c12b2cc56076897e"
+      ],
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+        "physical_pdf_page": 477,
+        "printed_page": null,
+        "source_layer": "editorial_translation",
+        "literal_match_kind": "semantic",
+        "evidence_id": "ev-f38c2c6a3a1c71c0"
+      },
+      "method": "general"
+    },
+    {
+      "query": "Mishkán y construcción espiritual en Likutey Halajot",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "claim_count": 3,
+      "primary_evidence_ids": [
+        "ev-849a2d000fde3b51",
+        "ev-1d9f103075fd4bfa",
+        "ev-60d885a536ee8f8d"
+      ],
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT LM II 8.pdf",
+        "physical_pdf_page": 293,
+        "printed_page": null,
+        "source_layer": "editorial_translation",
+        "literal_match_kind": "semantic",
+        "evidence_id": "ev-849a2d000fde3b51"
+      },
+      "method": "general"
+    },
+    {
+      "query": "Salmos 16:1 y presencia de HaShem en Likutey Halajot",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "claim_count": 3,
+      "primary_evidence_ids": [
+        "ev-716847bfff6da041"
+      ],
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 55,
+        "printed_page": 37,
+        "source_layer": "marginal_reference",
+        "literal_match_kind": "printed_reference_exact",
+        "evidence_id": "ev-716847bfff6da041"
+      },
+      "method": "general"
+    },
+    {
+      "query": "Azamra y puntos buenos en Likutey Halajot",
+      "http_status": 200,
+      "research_status": "complete",
+      "semantic_status": null,
+      "warnings": [
+        "test_candidate_read_only: fuente DEV; no constituye promoción productiva"
+      ],
+      "claim_count": 3,
+      "primary_evidence_ids": [
+        "ev-6f9730f97b4dab97",
+        "ev-440c9c87ab34211f",
+        "ev-4c783f6e41399095"
+      ],
+      "primary": {
+        "physical_file_name": "LIKUTEY HALAJOT (Interior Final).pdf",
+        "physical_pdf_page": 68,
+        "printed_page": 50,
+        "source_layer": "editorial_commentary",
+        "literal_match_kind": "body_literal_exact",
+        "evidence_id": "ev-6f9730f97b4dab97"
+      },
+      "method": "general"
+    }
+  ]
+}

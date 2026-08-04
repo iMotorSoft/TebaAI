@@ -1,0 +1,167 @@
+{
+  "gate": "TEBAAI_BRESLOV_CORPUS_SCOPE_INTEGRITY_V1_DEV_BLOCKED",
+  "resolver": "simple_research_repository.resolve_ready_documents",
+  "filters": {
+    "lh": [
+      {
+        "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+        "document_code": "likutey_halajot_interior_final_v2",
+        "title": "Likutey Halajot — Interior Final",
+        "language": "es"
+      },
+      {
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "document_code": null,
+        "title": "Likutey Halajot LM II 8",
+        "language": "es"
+      }
+    ],
+    "lmii": [
+      {
+        "document_id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+        "document_code": "likutey_moharan_ii_spanish_bri",
+        "title": "Likutey Moharán II — edición española BRI",
+        "language": "es"
+      }
+    ],
+    "unscoped": [
+      {
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "document_code": null,
+        "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "language": "es"
+      },
+      {
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "document_code": null,
+        "title": "El Alma del Rebe Najmán",
+        "language": "es"
+      },
+      {
+        "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+        "document_code": null,
+        "title": "El Jardín de las Almas",
+        "language": "es"
+      },
+      {
+        "document_id": "093e7975-1bb2-4d8f-8394-63ca82879500",
+        "document_code": null,
+        "title": "HebrewBooks 34314 (subset 1-15)",
+        "language": "he"
+      },
+      {
+        "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+        "document_code": null,
+        "title": "KITZUR",
+        "language": "es"
+      },
+      {
+        "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+        "document_code": null,
+        "title": "Kokhavey Ohr",
+        "language": "en"
+      },
+      {
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "document_code": null,
+        "title": "La Potencia de la Plegaria",
+        "language": "es"
+      },
+      {
+        "document_id": "cbfd6458-aad2-43df-986a-4b3350e6f8a7",
+        "document_code": "la_potencia_de_la_plegaria_interior_print",
+        "title": "La Potencia de la Plegaria — Interior Print",
+        "language": "es"
+      },
+      {
+        "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+        "document_code": "likutey_halajot_interior_final_v2",
+        "title": "Likutey Halajot — Interior Final",
+        "language": "es"
+      },
+      {
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "document_code": null,
+        "title": "Likutey Halajot LM II 8",
+        "language": "es"
+      },
+      {
+        "document_id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+        "document_code": "likutey_moharan_i_spanish_bri",
+        "title": "Likutey Moharán I — edición española BRI",
+        "language": "es"
+      },
+      {
+        "document_id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+        "document_code": "likutey_moharan_ii_spanish_bri",
+        "title": "Likutey Moharán II — edición española BRI",
+        "language": "es"
+      },
+      {
+        "document_id": "0d534d6c-6809-421b-9a5e-336d0bb8ecdb",
+        "document_code": "likutey_moharan_xv_kdp",
+        "title": "Likutey Moharán XV KDP",
+        "language": "es"
+      },
+      {
+        "document_id": "b62619cb-0068-4c97-a857-1b5a9250ef29",
+        "document_code": null,
+        "title": "Masoretic Text (Hebrew test)",
+        "language": "he"
+      },
+      {
+        "document_id": "d48fa596-7f78-4d2a-8b23-6a3f9002e903",
+        "document_code": null,
+        "title": "Tanakh Torah (Bereshit+Shemot) — Masoretic Text PDF pages 1-200 (Hebrew test)",
+        "language": "he"
+      },
+      {
+        "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+        "document_code": null,
+        "title": "Un Día en la Vida de un Jasid de Breslov",
+        "language": "es"
+      },
+      {
+        "document_id": "0985d874-d223-4cac-9920-0352050bf8ff",
+        "document_code": null,
+        "title": "ליקוטי הלכות — אורח חיים — Sefaria test subset",
+        "language": "he"
+      },
+      {
+        "document_id": "252c9436-6338-4cbd-b2a7-365c495009fc",
+        "document_code": null,
+        "title": "ליקוטי הלכות — אורח חיים — הלכות ברכות התורה (Sefaria test)",
+        "language": "he"
+      },
+      {
+        "document_id": "ab48603a-cf31-469a-a37c-cbaed28c7acb",
+        "document_code": null,
+        "title": "ליקוטי הלכות — אורח חיים — הלכות השכמת הבוקר (Sefaria test)",
+        "language": "he"
+      },
+      {
+        "document_id": "40dbe222-e1a9-4e72-9bb0-386d75d89548",
+        "document_code": null,
+        "title": "ליקוטי הלכות — אורח חיים — הלכות נטילת ידים שחרית (Sefaria test)",
+        "language": "he"
+      },
+      {
+        "document_id": "7dbe7097-2ad3-4633-ba34-2daf8275f9db",
+        "document_code": null,
+        "title": "ליקוטי הלכות — אורח חיים — הלכות קדיש (Sefaria test)",
+        "language": "he"
+      },
+      {
+        "document_id": "00259e13-b718-4f3d-bd8a-935f97612508",
+        "document_code": null,
+        "title": "ליקוטי הלכות — אורח חיים — הלכות תפלה (Sefaria test)",
+        "language": "he"
+      }
+    ]
+  },
+  "disputed_document_in_lh": true,
+  "disputed_document_in_lmii": false,
+  "finding": "The disputed document enters LH at title matching because it is internally identified as LH; it does not enter LM II.",
+  "change_applied": false,
+  "blocked_reason": "Removing this record from LH would persist a false bibliographic classification."
+}

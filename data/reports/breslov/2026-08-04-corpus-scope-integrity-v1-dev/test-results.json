@@ -1,0 +1,17 @@
+{
+  "status": "PASS_FOCUSED_BLOCKED_PHASE",
+  "focused": {
+    "command": "uv run pytest -q tests/test_breslov_corpus_scope_integrity_v1.py tests/test_work_identity.py tests/test_likutey_halajot_promotion_readiness.py tests/test_bibliographic_planner.py",
+    "passed": 75,
+    "failed": 0,
+    "duration_seconds": 2.29
+  },
+  "syntax": {
+    "command": "uv run python -m py_compile scripts/audit_breslov_corpus_scope_integrity_v1.py tests/test_breslov_corpus_scope_integrity_v1.py",
+    "result": "PASS"
+  },
+  "audit_reproduction": "PASS",
+  "full_backend": "NOT_RUN: no runtime correction was applied after the identity precondition blocked the phase",
+  "frontend": "NOT_RUN: no frontend file belongs to this phase",
+  "e2e": "NOT_RUN_AFTER_FIX: there is no valid fix to validate"
+}

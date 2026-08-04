@@ -1,0 +1,65 @@
+{
+  "gate": "TEBAAI_BRESLOV_CORPUS_SCOPE_INTEGRITY_V1_DEV_BLOCKED",
+  "canonical_document_families": {
+    "likutey_halajot": {
+      "work_code": "lh",
+      "aliases": ["Likutey Halajot", "Likutei Halachot", "Likutey Halachos", "ליקוטי הלכות"]
+    },
+    "likutey_moharan_ii": {
+      "work_code": "lmii",
+      "aliases": ["Likutey Moharán II", "Likutey Moharan II", "LM II", "ליקוטי מוהר\"ן תנינא"]
+    }
+  },
+  "ambiguous_aliases": ["Likutey", "LM", "Halajot II", "LH II 8"],
+  "identity_cases": [
+    {
+      "filename": "LIKUTEY HALAJOT LM II 8.pdf",
+      "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+      "expected_work_code": "lh",
+      "expected_family": "likutey_halajot",
+      "related_source_lesson": "likutey_moharan_ii_8",
+      "evidence": [
+        "title page: Likutey Halajot",
+        "subtitle: Once lecciones basadas en el Likutey Moharán II, 8",
+        "contents: Hiljot Tzitzit, Hiljot Kriat HaTorá, Hiljot Beit HaKneset and other Likutey Halajot discourses",
+        "edition note: selected Likutey Halajot lessons based on Likutey Moharán II, 8"
+      ]
+    },
+    {
+      "filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "expected_work_code": "lh",
+      "expected_family": "likutey_halajot"
+    },
+    {
+      "filename": "LIKUTEY MOHARÁN II.pdf",
+      "expected_work_code": "lmii",
+      "expected_family": "likutey_moharan_ii"
+    }
+  ],
+  "negative_identity_cases": [
+    {
+      "surface": "LM II, 8",
+      "rule": "an internal source-lesson reference must not overwrite a containing Likutey Halajot work identity"
+    }
+  ],
+  "investigative_qa_cases": [
+    "¿Dónde habla Likutey Halajot de construir un Mishkán?",
+    "¿Dónde aparece ‘Inclinado hacia la Bondad’?",
+    "¿Qué dice la nota 35 sobre melodía y cercanía a HaShem?",
+    "¿Dónde aparece Salmos 16:1?",
+    "¿Qué relación existe entre melodías y plegarias?"
+  ],
+  "relation_qa_cases": [
+    "melodía y plegaria en Likutey Halajot",
+    "bondad y juicio favorable en Likutey Halajot",
+    "Mishkán y construcción espiritual en Likutey Halajot",
+    "Salmos 16:1 y presencia de HaShem en Likutey Halajot",
+    "Azamra y puntos buenos en Likutey Halajot"
+  ],
+  "note_36_case": "Birur hace referencia a la extracción y refinamiento de las chispas",
+  "lmii_regression_cases": ["Likutey Moharán II 8", "LM II 8"],
+  "no_scope_cases": ["melodía y plegaria", "bondad y juicio favorable"],
+  "cross_corpus_cases": ["¿Cómo se relaciona Likutey Halajot con Likutey Moharán II sobre la plegaria?"],
+  "blocking_finding": "The disputed ready source is not Likutey Moharán II. Reclassifying or excluding it from the Likutey Halajot family would be bibliographically false. The requested 5/5 edition-level primary expectation cannot be derived from a work-family-only query."
+}

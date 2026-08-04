@@ -51,6 +51,12 @@ from modules.library.editorial_evidence_v2 import (
     build_section_timeline,
 )
 from modules.library.page_first_evidence import build_evidence_v1
+from modules.library.pdf_ligature_normalization import (
+    build_pdf_literal_match_variants,
+    elide_parenthetical_glosses,
+    has_pdf_fragmentation_signal,
+    normalize_pdf_search_text,
+)
 from modules.library.simple_research_repository import (
     fetch_canonical_chunks,
     fetch_preceding_section_title,
@@ -561,6 +567,19 @@ def build_query_variants(
     # Latin cross-language expansion via concept catalog (English→Hebrew, etc.)
     latin_cross = _latin_catalog_cross_language_variants(original_query)
     variants.extend(latin_cross)
+    # Controlled PDF split-word variants: insert the extraction space after
+    # an embedded ligature digraph (``refinamiento`` -> ``refi namiento``) so
+    # literal matching can locate ``reﬁ namiento`` in extracted text.  These
+    # variants only add a space; they never join real words, and they are
+    # appended after every canonical/alias form so the clean surface always
+    # wins when it matches.
+    if has_pdf_fragmentation_signal(original_query):
+        variants.extend(
+            variant
+            for candidate in variants[:2]
+            for variant in build_pdf_literal_match_variants(candidate)
+            if variant != normalize_pdf_search_text(candidate)
+        )
     return list(dict.fromkeys(item.strip() for item in variants if item.strip()))[:36]
 
 
@@ -722,15 +741,31 @@ def _embedded_footnote_number(content: str, query: str) -> int | None:
     Some page-first V2 records are persisted as one citable page block.  This
     recognizes only an explicit numbered note region; it never promotes a
     long phrase merely because it appears in an ordinary page body.
+
+    The query is tested in its canonical search form first and then through
+    controlled PDF split-word variants (``refinamiento`` -> ``refi namiento``)
+    so ligature-fragmented extraction surfaces are still classified as
+    literal footnotes instead of degrading to body/semantic evidence.  Inline
+    parenthetical glosses inserted by the extractor (``Birur (pl. birurim;
+    lit. “tamizar”) hace …``) are elided for the comparison only.
     """
-    normalized_query = _normalize_literal_whitespace(query)
-    if not normalized_query:
+    variants = build_pdf_literal_match_variants(query)
+    normalized_variants = [
+        _normalize_literal_whitespace(elide_parenthetical_glosses(variant))
+        for variant in variants
+    ]
+    normalized_variants = list(dict.fromkeys(v for v in normalized_variants if v))
+    if not normalized_variants:
         return None
     starts = list(_EMBEDDED_FOOTNOTE_START.finditer(content))
     for index, start in enumerate(starts):
         end = starts[index + 1].start() if index + 1 < len(starts) else len(content)
-        if normalized_query in _normalize_literal_whitespace(content[start.start():end]):
-            return int(start.group("number"))
+        normalized_body = _normalize_literal_whitespace(
+            elide_parenthetical_glosses(content[start.start():end])
+        )
+        for normalized_query in normalized_variants:
+            if normalized_query in normalized_body:
+                return int(start.group("number"))
     return None
 
 
@@ -1522,6 +1557,17 @@ def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any
         "inference_required": not literal,
         "matched_terms": list(chunk.get("matched_terms") or []),
         "matched_concepts": [],
+        "matched_normalized_text": (
+            str(chunk.get("matched_variant") or "")
+            if chunk.get("_pdf_normalization")
+            else None
+        ),
+        "normalization_applied": bool(chunk.get("_pdf_normalization")),
+        "normalization_kinds": (
+            ["pdf_ligature_expansion", "pdf_split_word_variant"]
+            if chunk.get("_pdf_normalization")
+            else []
+        ),
         "is_primary": evidence_id in primary_ids,
         "source_layer": _source_layer(chunk),
         "block_role": chunk.get("evidence_role"),
@@ -1987,6 +2033,11 @@ async def run_simple_rag(
             selected = exact_name_chunks[:1]
     for chunk in selected:
         chunk["evidence_id"] = _evidence_id(str(chunk["chunk_id"]))
+        chunk["_query"] = original_query
+        chunk["_pdf_normalization"] = (
+            has_pdf_fragmentation_signal(original_query)
+            and str(chunk.get("matched_variant") or "") != normalize_pdf_search_text(original_query)
+        )
         chunk["canonical_pdf_page_start"] = chunk.get("pdf_page")
         chunk["pdf_page"] = _match_local_pdf_page(chunk)
         # Recover the printed folio from canonical page metadata when the

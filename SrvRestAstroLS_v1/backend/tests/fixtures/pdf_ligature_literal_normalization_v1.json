@@ -1,0 +1,69 @@
+{
+  "phase": "TEBAAI_PDF_LIGATURE_LITERAL_NORMALIZATION_V1_DEV",
+  "scope": "dev_only",
+  "document": {
+    "filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "status": "test_candidate",
+    "pipeline": "likutey_halajot_page_first_v2"
+  },
+  "ligature_mappings": [
+    {"character": "\ufb00", "name": "LATIN SMALL LIGATURE FF", "code": "U+FB00", "nfkc": "ff"},
+    {"character": "\ufb01", "name": "LATIN SMALL LIGATURE FI", "code": "U+FB01", "nfkc": "fi"},
+    {"character": "\ufb02", "name": "LATIN SMALL LIGATURE FL", "code": "U+FB02", "nfkc": "fl"},
+    {"character": "\ufb03", "name": "LATIN SMALL LIGATURE FFI", "code": "U+FB03", "nfkc": "ffi"},
+    {"character": "\ufb04", "name": "LATIN SMALL LIGATURE FFL", "code": "U+FB04", "nfkc": "ffl"},
+    {"character": "\ufb05", "name": "LATIN SMALL LIGATURE LONG S T", "code": "U+FB05", "nfkc": "st"},
+    {"character": "\ufb06", "name": "LATIN SMALL LIGATURE ST", "code": "U+FB06", "nfkc": "st"}
+  ],
+  "positive_examples": [
+    {"original": "reﬁnamiento", "normalized_search": "refinamiento"},
+    {"original": "reﬁ namiento", "normalized_search": "refi namiento"},
+    {"original": "oﬁcina", "normalized_search": "oficina"},
+    {"original": "oﬁ cina", "normalized_search": "ofi cina"},
+    {"original": "ﬂor", "normalized_search": "flor"},
+    {"original": "aﬀecto", "normalized_search": "affecto"},
+    {"original": "oﬃcina", "normalized_search": "officina"}
+  ],
+  "fragmentation_variants": [
+    {"query": "refinamiento", "variants": ["refinamiento", "refi namiento"]},
+    {"query": "oficina", "variants": ["oficina", "ofi cina"]}
+  ],
+  "negative_examples": [
+    {"query": "la flor", "forbidden": "laflor"},
+    {"query": "por fin", "forbidden": "porfin"},
+    {"query": "fi nal", "forbidden": "final"},
+    {"query": "refi namiento", "forbidden_join": "refinamiento"}
+  ],
+  "note_36": {
+    "query": "Birur hace referencia a la extracción y refinamiento de las chispas",
+    "expected": {
+      "document": "LIKUTEY HALAJOT (Interior Final).pdf",
+      "pdf_page": 56,
+      "footnote_number": 36,
+      "match_type": "footnote_literal_exact",
+      "source_layer": "footnote",
+      "block_role": "footnote_body"
+    },
+    "original_quote_fragment": "reﬁ namiento",
+    "normalized_match_fragment": "refinamiento",
+    "extra_ligature_in_note": "Inﬁ nito"
+  },
+  "hebrew_regressions": {
+    "with_niqqud": "וּמִצְרַיִם נָסִים לִקְרָאתוֹ",
+    "without_niqqud": "ומצרים נסים לקראתו",
+    "requirement": "same evidence, same document, same page, RTL, combining marks preserved in citation"
+  },
+  "printed_reference_regressions": {
+    "positives": ["Salmos 16:1", "(Salmos 16:1)", "salmos 16:1"],
+    "negatives": ["Salmos 16:10", "Salmos 16:11", "Salmos 116:1", "Salmos 99:99"]
+  },
+  "proper_name_regressions": ["Gedalia of Linitz", "Gedalia", "Linitz", "Reb Noson", "Rabí Natán", "Rebe Najmán"],
+  "editorial_regressions": {
+    "Mishkán": {"query": "CONSTRUYENDO UN MISHKÁN", "page": 51, "printed": 33, "match_type": "structural_heading_exact"},
+    "Bondad": {"query": "INCLINADO HACIA LA BONDAD", "page": 53, "printed": 35, "match_type": "structural_heading_exact"},
+    "Melodías": {"query": "MELODÍAS Y PLEGARIAS", "page": 56, "printed": 38, "match_type": "structural_heading_exact"},
+    "Salmos": {"query": "Salmos 16:1", "page": 55, "printed": 37, "match_type": "printed_reference_exact"},
+    "nota_35": {"query": "El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción", "page": 56, "printed": 38, "match_type": "footnote_literal_exact"}
+  }
+}

@@ -302,17 +302,31 @@ async def search_literal_candidates(
     """Run phrase, FTS and trigram signals over canonical PostgreSQL chunks."""
     chunks = await fetch_all(
         conn,
-        """
+        r"""
         WITH query_variants AS (
             SELECT
                 regexp_replace(
-                    public.unaccent(lower(trim(value))),
+                    regexp_replace(
+                        public.unaccent(lower(trim(value))),
+                        '(?<=[a-z]) *\([^()\n]{2,120}\)', '', 'g'
+                    ),
                     '[[:space:]]+', ' ', 'g'
                 ) AS query,
                 min(ordinality) AS ordinal
             FROM unnest(%(variants)s::text[]) WITH ORDINALITY AS values(value, ordinality)
             WHERE length(trim(value)) >= 2
             GROUP BY 1
+        ),
+        normalized_text AS (
+            SELECT id,
+                   regexp_replace(
+                       regexp_replace(
+                           public.unaccent(lower(coalesce(search_text_normalized, content))),
+                           '(?<=[a-z]) *\([^()\n]{2,120}\)', '', 'g'
+                       ),
+                       '[[:space:]]+', ' ', 'g'
+                   ) AS norm_text
+            FROM library_document_chunks
         ),
         scored AS (
             SELECT
@@ -321,22 +335,18 @@ async def search_literal_candidates(
                 ch.evidence_role,
                 ch.content,
                 bool_or(
-                    regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
-                        LIKE '%%' || q.query || '%%'
+                    nt.norm_text LIKE '%%' || q.query || '%%'
                 ) AS exact_match,
                 count(DISTINCT q.query) FILTER (
-                    WHERE regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
-                        LIKE '%%' || q.query || '%%'
+                    WHERE nt.norm_text LIKE '%%' || q.query || '%%'
                 ) AS exact_variant_count,
                 (
                     array_agg(q.query ORDER BY q.ordinal) FILTER (
-                        WHERE regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
-                            LIKE '%%' || q.query || '%%'
+                        WHERE nt.norm_text LIKE '%%' || q.query || '%%'
                     )
                 )[1] AS matched_variant,
                 min(q.ordinal) FILTER (
-                    WHERE regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
-                        LIKE '%%' || q.query || '%%'
+                    WHERE nt.norm_text LIKE '%%' || q.query || '%%'
                 ) AS matched_variant_ordinal,
                 max(
                     GREATEST(
@@ -357,6 +367,7 @@ async def search_literal_candidates(
                     )
                 ) FILTER (WHERE q.ordinal <= 2) AS trigram_score
             FROM library_document_chunks ch
+            JOIN normalized_text nt ON nt.id = ch.id
             JOIN library_documents d ON d.id = ch.document_id
             JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
             CROSS JOIN query_variants q
@@ -373,8 +384,7 @@ async def search_literal_candidates(
               )
               AND (
                     (
-                        regexp_replace(public.unaccent(lower(coalesce(ch.search_text_normalized, ch.content))), '[[:space:]]+', ' ', 'g')
-                            LIKE '%%' || q.query || '%%'
+                        nt.norm_text LIKE '%%' || q.query || '%%'
                     )
                     OR ch.search_vector_es @@ websearch_to_tsquery('spanish', q.query)
                     OR ch.search_vector_simple @@ websearch_to_tsquery('simple', q.query)

@@ -2,7 +2,31 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-04 (PDF Ligature Literal Normalization V1 en DEV)
+Ultima actualizacion: 2026-08-04 (Editorial Evidence Granularity & Stable IDs V1 en DEV)
+
+## Editorial Evidence Granularity & Stable IDs V1 — 2026-08-04 (DEV)
+
+Estado: `TEBAAI_EDITORIAL_EVIDENCE_GRANULARITY_STABLE_IDS_V1_DEV_READY`.
+
+- `evidence_id` v2 identifica la entidad editorial mínima citable (chunk +
+  source_layer + entity discriminator), no el chunk de almacenamiento:
+  `SHA-256({"v":"2","chunk":chunk_id,"entity":entity_key})[:16]` prefijado `ev-`;
+- claves: `footnote:{number}`, `heading:{_fold(heading_original)}`,
+  `reference:{_fold(matched).strip(parenthesis)}`, `body`, `role:{name}`,
+  `chunk` (fallback);
+- nota 35 ≠ nota 36 ≠ heading 6: cada entidad editorial recibe ID distinto;
+  variantes de query (nota 36 con/sin ligadura, Salmos 16:1 con/sin
+  paréntesis/minúsculas) comparten ID; cross-interface admin/guest
+  consistente;
+- `legacy_evidence_id` preserva el ID de chunk anterior; `evidence_identity_version`
+  marca `"v2"`; el ID no depende de query, rank, IA ni status;
+- no se modificaron chunks, páginas, embeddings, Milvus ni status;
+  `Interior Final` sigue `test_candidate`;
+- validaciones: backend 1482 PASS, frontend 0 errores/70 tests/build 8 páginas,
+  Playwright Chromium 8/8, auditoría API 10/10 checks PASS.
+
+ADR: `docs/adr/ADR-021-editorial-evidence-granularity-stable-ids-v1.md`.
+Reporte: `data/reports/breslov/2026-08-04-editorial-evidence-granularity-stable-ids-v1-dev/`.
 
 ## PDF Ligature Literal Normalization V1 — 2026-08-04 (DEV)
 

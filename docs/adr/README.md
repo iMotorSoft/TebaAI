@@ -18,3 +18,6 @@ ADRs for TebaAI.
 - [`ADR-020-pdf-ligature-literal-normalization-v1.md`](ADR-020-pdf-ligature-literal-normalization-v1.md):
   normalización literal de ligaduras y fragmentaciones de extracción PDF
   (nota 36, batch literal 25/25) sin alterar el texto citado.
+- [`ADR-021-editorial-evidence-granularity-stable-ids-v1.md`](ADR-021-editorial-evidence-granularity-stable-ids-v1.md):
+  identidad editorial granular (nota 35 ≠ nota 36, heading ≠ footnote,
+  reference variants comparten ID); ID legacy preservado para compatibilidad.

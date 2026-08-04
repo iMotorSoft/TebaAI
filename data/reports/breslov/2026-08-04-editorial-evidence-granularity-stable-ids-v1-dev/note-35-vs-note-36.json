@@ -1,0 +1,13 @@
+{
+  "before": {
+    "note_35": "ev-e419ec6448d2d992",
+    "note_36": "ev-e419ec6448d2d992",
+    "shared": true
+  },
+  "after": {
+    "note_35": "ev-4e5a8dfb9583bcc2",
+    "note_36": "ev-3f9669e232ecf193",
+    "shared": false
+  },
+  "reason": "evidence_id v2 includes footnote_number as entity discriminator"
+}

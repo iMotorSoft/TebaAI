@@ -1,0 +1,18 @@
+{
+  "evidence_id_version": "v2",
+  "payload": {
+    "v": "2",
+    "chunk": "<chunk_id>",
+    "entity": "<entity_key>"
+  },
+  "hash": "SHA-256 sorted JSON, hex[:16], ev- prefix",
+  "entity_keys": {
+    "footnote_literal_exact": "footnote:{number}",
+    "structural_heading_*": "heading:{fold(heading_original)}",
+    "printed_reference_exact": "reference:{fold(matched).strip(\"()[]{}\")}",
+    "body_literal_exact": "body",
+    "english_name_exact": "name:{fold(matched)}",
+    "evidence_role=footnote_body": "footnote:unknown",
+    "fallback": "chunk"
+  }
+}

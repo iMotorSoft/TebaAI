@@ -150,6 +150,35 @@ Reglas (módulo `pdf_ligature_normalization.py`):
   `footnote_literal_exact` PRIMARY con la consulta normalizada; la cita
   conserva la ligadura original. Batch literal ampliado **25/25**.
 
+## Identidad Editorial de Evidencia (ADR-021)
+
+El `evidence_id` (v2) identifica la **entidad editorial mínima citable**,
+no el chunk de almacenamiento:
+
+```text
+evidence_id = ev-{SHA-256({"v":"2","chunk":chunk_id,"entity":entity_key})}
+```
+
+Claves por tipo:
+
+| Match type | Entity key |
+|---|---|
+| `footnote_literal_exact` | `footnote:{number}` |
+| `structural_heading_*` | `heading:{_fold(heading_original)}` |
+| `printed_reference_exact` | `reference:{_fold(variant).strip(parenthesis)}` |
+| `body_literal_exact` | `body` |
+| fallback | `chunk` |
+
+Campos asociados:
+- `evidence_identity_version`: `"v2"`
+- `legacy_evidence_id`: ID de chunk anterior (compatibilidad)
+
+Invariantes:
+- Distinta entidad → distinto ID (nota 35 ≠ nota 36 ≠ heading 6)
+- Misma entidad → mismo ID (variantes de query, ligaduras, casing)
+- Query, rank, IA, status → no afectan
+- Cross-interface (admin/guest) → mismo ID
+
 
 ---
 

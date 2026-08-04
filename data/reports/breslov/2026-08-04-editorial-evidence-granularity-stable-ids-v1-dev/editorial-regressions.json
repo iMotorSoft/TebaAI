@@ -1,0 +1,46 @@
+{
+  "Mishkan": {
+    "page": 51,
+    "printed": 33,
+    "evidence_id": "ev-53b3fac9b0c3291a",
+    "match_type": "structural_heading_exact",
+    "pass": true
+  },
+  "Bondad": {
+    "page": 53,
+    "printed": 35,
+    "evidence_id": "ev-f4ed171391fc8593",
+    "match_type": "structural_heading_exact",
+    "pass": true
+  },
+  "Melodias": {
+    "page": 56,
+    "printed": 38,
+    "evidence_id": "ev-4903b73f2011afee",
+    "match_type": "structural_heading_exact",
+    "pass": true
+  },
+  "Salmos_16_1": {
+    "page": 55,
+    "printed": 37,
+    "evidence_id": "ev-68c3400c24c38e8a",
+    "match_type": "printed_reference_exact",
+    "pass": true
+  },
+  "nota_35": {
+    "page": 56,
+    "printed": 38,
+    "evidence_id": "ev-4e5a8dfb9583bcc2",
+    "match_type": "footnote_literal_exact",
+    "footnote": 35,
+    "pass": true
+  },
+  "nota_36": {
+    "page": 56,
+    "printed": 38,
+    "evidence_id": "ev-3f9669e232ecf193",
+    "match_type": "footnote_literal_exact",
+    "footnote": 36,
+    "pass": true
+  }
+}

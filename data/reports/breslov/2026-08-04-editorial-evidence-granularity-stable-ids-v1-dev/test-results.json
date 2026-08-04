@@ -1,0 +1,17 @@
+{
+  "backend_focused": {
+    "command": "pytest -k evidence_id/evidence_identity/editorial_evidence/footnote/claim_grounding/canonical_editorial",
+    "passed": 68,
+    "deselected": 1373,
+    "duration_s": 2.15
+  },
+  "backend_full": {
+    "command": "pytest -q",
+    "passed": 1482,
+    "failed": 0,
+    "warnings": 94,
+    "duration_s": 54.27
+  },
+  "frontend": "0 errors, 0 warnings, 2 hints, 70 tests, 8 pages build",
+  "e2e": "8/8 (3 canonical + 3 ligature + 2 structural heading)"
+}

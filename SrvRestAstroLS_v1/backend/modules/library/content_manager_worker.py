@@ -3,17 +3,31 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import logging
 from typing import Awaitable, Callable, Protocol
 from uuid import UUID
 
 from modules.library.content_manager_repository import ClaimedJob
 from modules.library.content_manager_schemas import IngestionStage
 
+logger = logging.getLogger(__name__)
+
 
 @dataclass(frozen=True)
 class PipelineResult:
     document_id: UUID
     warnings: tuple[str, ...] = ()
+    page_ids: tuple[UUID, ...] = ()
+    chunk_ids: tuple[UUID, ...] = ()
+    embedding_ids: tuple[UUID, ...] = ()
+    vector_ids: tuple[str, ...] = ()
+    page_count: int = 0
+    textual_page_count: int = 0
+    empty_page_count: int = 0
+    heading_count: int = 0
+    footnote_count: int = 0
+    printed_reference_count: int = 0
+    diagnostics: dict[str, object] | None = None
 
 
 Advance = Callable[[IngestionStage, str, float], Awaitable[None]]
@@ -88,6 +102,7 @@ class ContentManagerWorker:
         except LostWorkerLease:
             raise
         except Exception as exc:
+            logger.exception("Content Manager attempt failed at stage %s", current.value)
             error_code = getattr(exc, "error_code", "pipeline_stage_failed")
             await self.store.record_failure(job, current, str(error_code))
             if current not in {

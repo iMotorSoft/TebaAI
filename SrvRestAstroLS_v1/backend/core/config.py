@@ -129,7 +129,11 @@ class AppSettings(BaseSettings):
     content_manager_worker_heartbeat_seconds: int = 30
     content_manager_pipeline_version: str = "content_page_first_v1"
     content_manager_document_schema_version: str = "page_first_v2"
+    content_manager_e2e_enabled: bool = False
+    content_manager_e2e_scope: str = "breslov_e2e"
     content_manager_e2e_collection: str = "tebaai_content_manager_e2e_v1"
+    content_manager_e2e_fixture_sha256: str = ""
+    content_manager_worker_poll_seconds: float = 1.0
 
     # ── Auth ────────────────────────────────────────────────────
     auth_enabled: bool = False
@@ -265,6 +269,10 @@ class AppSettings(BaseSettings):
             )
         if not self.is_development:
             self.research_include_test_candidates_readonly = False
+            if self.content_manager_e2e_enabled:
+                raise ValueError(
+                    "TEBAAI_CONTENT_MANAGER_E2E_ENABLED is allowed only in development."
+                )
         return self
 
     @model_validator(mode="after")

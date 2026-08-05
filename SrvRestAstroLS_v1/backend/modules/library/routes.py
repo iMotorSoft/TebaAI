@@ -68,6 +68,7 @@ from modules.library.query_confirmation import (
 from modules.library.simple_research_rag import run_simple_rag
 from globalVar import (
     CONTENT_MANAGER_E2E_COLLECTION,
+    CONTENT_MANAGER_E2E_SCOPE,
     MILVUS_COLLECTION_BRESLOV,
     RESEARCH_PIPELINE,
 )
@@ -421,7 +422,7 @@ def _content_scope_kwargs(scope: object) -> dict[str, str]:
 
 
 def _content_collection(scope_code: str) -> str:
-    if scope_code.startswith("content_manager_e2e"):
+    if scope_code == CONTENT_MANAGER_E2E_SCOPE:
         return CONTENT_MANAGER_E2E_COLLECTION
     return MILVUS_COLLECTION_BRESLOV
 

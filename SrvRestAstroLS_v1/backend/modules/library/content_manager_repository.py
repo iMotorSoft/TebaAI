@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 from datetime import datetime, timedelta, timezone
 from typing import Any
 from uuid import UUID
@@ -44,6 +45,7 @@ async def claim_next_job(
     *,
     worker_id: str,
     lease_seconds: int,
+    allowed_scope_code: str,
 ) -> ClaimedJob | None:
     """Atomically claim one queued job; concurrent workers skip the locked row."""
     now = datetime.now(timezone.utc)
@@ -52,11 +54,13 @@ async def claim_next_job(
         await cur.execute(
             """
             WITH candidate AS (
-                SELECT id
-                FROM content_manager_jobs
-                WHERE status = 'queued'
-                  AND (lease_expires_at IS NULL OR lease_expires_at <= %(now)s)
-                ORDER BY created_at, id
+                SELECT j.id
+                FROM content_manager_jobs j
+                JOIN knowledge_scopes ks ON ks.id=j.knowledge_scope_id
+                WHERE j.status = 'queued'
+                  AND ks.knowledge_scope_code = %(scope)s
+                  AND (j.lease_expires_at IS NULL OR j.lease_expires_at <= %(now)s)
+                ORDER BY j.created_at, j.id
                 FOR UPDATE SKIP LOCKED
                 LIMIT 1
             )
@@ -69,7 +73,7 @@ async def claim_next_job(
             WHERE j.id = candidate.id
             RETURNING j.*
             """,
-            {"now": now, "worker": worker_id, "lease": lease_expires},
+            {"now": now, "worker": worker_id, "lease": lease_expires, "scope": allowed_scope_code},
         )
         row = await cur.fetchone()
         if not row:
@@ -150,12 +154,19 @@ async def transition_claimed_job(
             UPDATE content_manager_jobs
             SET status = %(target)s, current_stage = %(target)s,
                 progress_percent = %(progress)s, updated_at = %(now)s,
+                stage_states = jsonb_set(
+                    jsonb_set(COALESCE(stage_states,'{}'::jsonb), ARRAY[%(current)s], '"done"'::jsonb, true),
+                    ARRAY[%(target)s], %(target_state)s::jsonb, true),
                 finished_at = CASE WHEN %(terminal)s THEN %(now)s ELSE finished_at END,
                 lease_expires_at = CASE WHEN %(terminal)s THEN NULL ELSE lease_expires_at END
             WHERE id = %(job)s AND status = %(current)s AND claimed_by = %(worker)s
             """,
             {
                 "target": target.value,
+                "target_state": json.dumps(
+                    "failed" if target is IngestionStage.FAILED
+                    else "done" if terminal else "active"
+                ),
                 "progress": progress_percent,
                 "now": now,
                 "terminal": terminal,

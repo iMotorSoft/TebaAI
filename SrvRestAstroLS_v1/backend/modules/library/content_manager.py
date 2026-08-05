@@ -563,9 +563,33 @@ async def get_diagnostic(
         return None
     row = dict(rows[0])
 
+    stored = row.get("diagnostic") or {}
+    if isinstance(stored, str):
+        stored = json.loads(stored)
+    reconciliation = stored.get("reconciliation", {}) if isinstance(stored, dict) else {}
+    duration = None
+    if row.get("started_at") and row.get("finished_at"):
+        duration = (row["finished_at"] - row["started_at"]).total_seconds()
     diag = IngestionDiagnostic(
-        job_id=_uuid.UUID(job_id),
-        document_id=row.get("document_id"),
+        job_id=_uuid.UUID(job_id), document_id=row.get("document_id"),
+        attempt_number=row.get("attempt_number", 1), job_status=row.get("status"),
+        document_status=stored.get("document_status") if isinstance(stored, dict) else None,
+        pipeline_version=row.get("pipeline_version"), scope=stored.get("scope") if isinstance(stored, dict) else None,
+        collection_code=row.get("collection_code"), pdf_pages=stored.get("pdf_pages") if isinstance(stored, dict) else None,
+        textual_pages=stored.get("textual_pages") if isinstance(stored, dict) else None,
+        empty_pages=stored.get("empty_pages") if isinstance(stored, dict) else None,
+        headings=stored.get("headings") if isinstance(stored, dict) else None,
+        footnotes=stored.get("footnotes") if isinstance(stored, dict) else None,
+        printed_references=stored.get("printed_references") if isinstance(stored, dict) else None,
+        embeddings=stored.get("embeddings") if isinstance(stored, dict) else None,
+        milvus_entity_count=stored.get("milvus_vectors") if isinstance(stored, dict) else None,
+        pg_missing=len(reconciliation.get("pg_missing", [])),
+        milvus_missing=len(reconciliation.get("missing", [])),
+        milvus_orphan=len(reconciliation.get("orphans", [])),
+        duplicates=len(reconciliation.get("duplicates", [])),
+        warnings=stored.get("warnings", []) if isinstance(stored, dict) else [],
+        errors=stored.get("errors", []) if isinstance(stored, dict) else [],
+        cleanup_result=row.get("cleanup_status"), duration_seconds=duration,
     )
 
     if row.get("document_id"):
@@ -575,7 +599,8 @@ async def get_diagnostic(
                 (SELECT count(*) FROM library_pages_v2 WHERE document_id = %(did)s) AS pages,
                 (SELECT count(*) FROM library_document_chunks WHERE document_id = %(did)s) AS chunks,
                 (SELECT count(*) FROM library_chunk_embeddings WHERE chunk_id IN
-                    (SELECT id FROM library_document_chunks WHERE document_id = %(did)s)) AS embeddings
+                    (SELECT id FROM library_document_chunks WHERE document_id = %(did)s)) AS embeddings,
+                (SELECT status FROM library_documents WHERE id = %(did)s) AS document_status
             """,
             {"did": row["document_id"]},
         )
@@ -585,6 +610,8 @@ async def get_diagnostic(
                 "canonical_pages": doc_info.get("pages"),
                 "chunks": doc_info.get("chunks"),
                 "pg_embedding_count": doc_info.get("embeddings"),
+                "document_status": doc_info.get("document_status") or diag.document_status,
+                "page_integrity": "match" if doc_info.get("pages") == diag.pdf_pages else "mismatch",
             })
 
     diag = diag.model_copy(update={

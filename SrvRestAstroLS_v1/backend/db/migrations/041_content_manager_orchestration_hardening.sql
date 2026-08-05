@@ -69,6 +69,11 @@ DO $$ BEGIN
             ('not_required','pending','running','completed','completed_with_warnings','failed'));
 EXCEPTION WHEN duplicate_object THEN NULL; END $$;
 
+-- A failed Content Manager attempt is distinct from a legacy generic error.
+ALTER TABLE library_documents DROP CONSTRAINT IF EXISTS library_documents_status_valid;
+ALTER TABLE library_documents ADD CONSTRAINT library_documents_status_valid
+    CHECK (status IN ('draft','ready','test_candidate','archived','error','ingestion_failed'));
+
 CREATE TABLE IF NOT EXISTS content_manager_job_attempts (
     id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     job_id uuid NOT NULL REFERENCES content_manager_jobs(id),
@@ -103,7 +108,7 @@ CREATE TABLE IF NOT EXISTS content_manager_ingestion_manifests (
     id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     job_id uuid NOT NULL REFERENCES content_manager_jobs(id),
     attempt_number integer NOT NULL,
-    document_id uuid,
+    document_id uuid REFERENCES library_documents(id) ON DELETE SET NULL,
     ingestion_run_id uuid,
     temporary_file_id uuid,
     started_at timestamptz NOT NULL DEFAULT now(),
@@ -116,7 +121,7 @@ CREATE TABLE IF NOT EXISTS content_manager_ingestion_manifests (
 CREATE TABLE IF NOT EXISTS content_manager_manifest_resources (
     manifest_id uuid NOT NULL REFERENCES content_manager_ingestion_manifests(id) ON DELETE CASCADE,
     resource_type text NOT NULL CHECK (resource_type IN
-        ('document','document_text','ingestion_run','page','chunk','embedding','vector','temporary_file')),
+        ('document','document_text','ingestion_run','embedding_run','page','chunk','embedding','vector','temporary_file')),
     resource_id text NOT NULL,
     was_preexisting boolean NOT NULL DEFAULT false,
     created_at timestamptz NOT NULL DEFAULT now(),
@@ -124,3 +129,18 @@ CREATE TABLE IF NOT EXISTS content_manager_manifest_resources (
     cleanup_error text,
     PRIMARY KEY(manifest_id, resource_type, resource_id)
 );
+CREATE INDEX IF NOT EXISTS idx_cm_manifest_resources_type
+    ON content_manager_manifest_resources(manifest_id, resource_type);
+
+CREATE TABLE IF NOT EXISTS content_manager_cleanup_events (
+    id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    manifest_id uuid NOT NULL REFERENCES content_manager_ingestion_manifests(id) ON DELETE CASCADE,
+    resource_type text NOT NULL,
+    resource_id text NOT NULL,
+    action text NOT NULL,
+    result text NOT NULL CHECK (result IN ('deleted','already_absent','not_owned_by_attempt','failed')),
+    error_detail text,
+    occurred_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS idx_cm_cleanup_events_manifest
+    ON content_manager_cleanup_events(manifest_id, occurred_at);

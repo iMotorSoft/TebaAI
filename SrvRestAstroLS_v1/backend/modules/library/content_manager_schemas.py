@@ -161,10 +161,19 @@ class JobListResponse(BaseModel):
 class IngestionDiagnostic(BaseModel):
     document_id: UUID | None = None
     job_id: UUID
+    attempt_number: int = 1
+    job_status: str | None = None
+    document_status: str | None = None
+    pipeline_version: str | None = None
+    scope: str | None = None
+    collection_code: str | None = None
     pdf_pages: int | None = None
     canonical_pages: int | None = None
     textual_pages: int | None = None
     empty_pages: int | None = None
+    headings: int | None = None
+    footnotes: int | None = None
+    printed_references: int | None = None
     chunks: int | None = None
     embeddings: int | None = None
     pg_embedding_count: int | None = None
@@ -172,6 +181,8 @@ class IngestionDiagnostic(BaseModel):
     pg_missing: int | None = None
     milvus_missing: int | None = None
     milvus_orphan: int | None = None
+    duplicates: int | None = None
+    duration_seconds: float | None = None
     page_integrity: str | None = None  # "match", "mismatch", "pending"
     warnings: list[str] = Field(default_factory=list)
     errors: list[str] = Field(default_factory=list)

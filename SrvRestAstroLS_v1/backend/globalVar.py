@@ -130,7 +130,11 @@ CONTENT_MANAGER_WORKER_LEASE_SECONDS: int = SETTINGS.content_manager_worker_leas
 CONTENT_MANAGER_WORKER_HEARTBEAT_SECONDS: int = SETTINGS.content_manager_worker_heartbeat_seconds
 CONTENT_MANAGER_PIPELINE_VERSION: str = SETTINGS.content_manager_pipeline_version
 CONTENT_MANAGER_DOCUMENT_SCHEMA_VERSION: str = SETTINGS.content_manager_document_schema_version
+CONTENT_MANAGER_E2E_ENABLED: bool = SETTINGS.content_manager_e2e_enabled
+CONTENT_MANAGER_E2E_SCOPE: str = SETTINGS.content_manager_e2e_scope
 CONTENT_MANAGER_E2E_COLLECTION: str = SETTINGS.content_manager_e2e_collection
+CONTENT_MANAGER_E2E_FIXTURE_SHA256: str = SETTINGS.content_manager_e2e_fixture_sha256
+CONTENT_MANAGER_WORKER_POLL_SECONDS: float = SETTINGS.content_manager_worker_poll_seconds
 
 # ── Auth ─────────────────────────────────────────────────────────
 AUTH_ENABLED: bool = SETTINGS.auth_enabled

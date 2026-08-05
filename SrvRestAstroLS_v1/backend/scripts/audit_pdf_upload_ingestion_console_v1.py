@@ -22,6 +22,12 @@ REPOSITORY = BACKEND / "modules/library/content_manager_repository.py"
 WORKER = BACKEND / "modules/library/content_manager_worker.py"
 MIGRATION = BACKEND / "db/migrations/041_content_manager_orchestration_hardening.sql"
 CONFIG = BACKEND / "core/config.py"
+PIPELINE = BACKEND / "modules/library/page_first_pipeline.py"
+GATEWAY = BACKEND / "modules/library/page_first_gateway.py"
+RUNTIME = BACKEND / "modules/library/content_manager_runtime.py"
+CLEANUP = BACKEND / "modules/library/content_manager_cleanup.py"
+SCOPE_SETUP = BACKEND / "scripts/prepare_content_manager_e2e_scope.py"
+WORKER_RUNNER = BACKEND / "scripts/content_manager_worker.py"
 
 
 @dataclass(frozen=True)
@@ -67,17 +73,27 @@ def run_audit() -> dict[str, object]:
         Check("manifest_schema",
               _contains(MIGRATION, "content_manager_ingestion_manifests", "content_manager_manifest_resources"),
               "Attempts and exact resource IDs have normalized persistent tables."),
-        Check("real_ingestion_orchestration", False,
-              "The durable worker contract exists, but no production PageFirstPipeline implementation invokes extraction, pages, chunks, LiteLLM, Milvus and reconciliation."),
-        Check("job_summary_and_reconciliation", False,
-              "The diagnostic remains PostgreSQL-only and does not query attempt-scoped Milvus IDs."),
-        Check("temporary_and_compensating_cleanup", False,
-              "Manifest schema exists, but no executor deletes only manifest-owned PG/Milvus resources or performs TTL cleanup."),
+        Check("real_ingestion_orchestration",
+              _contains(PIPELINE, "ConcretePageFirstPipeline", "extract_pdf_page_first", "pymupdf4llm")
+              and _contains(RUNTIME, "PsycopgWorkerStore")
+              and _contains(WORKER_RUNNER, "ConcretePageFirstPipeline"),
+              "A document-agnostic PyMuPDF4LLM page-first pipeline is wired to the durable worker."),
+        Check("job_summary_and_reconciliation",
+              _contains(PIPELINE, "reconcile_resource_sets", "ReconciliationResult")
+              and _contains(GATEWAY, "attempt_key", "missing_vectors", "orphan_vectors"),
+              "Reconciliation compares manifest PG resources with attempt-keyed isolated vectors."),
+        Check("temporary_and_compensating_cleanup",
+              _contains(CLEANUP, "ManifestCleanupService", "already_absent", "manifest_id")
+              and _contains(MIGRATION, "content_manager_cleanup_events", "not_owned_by_attempt"),
+              "Cleanup is manifest/document bounded, Milvus-first, audited and idempotent."),
         Check("configurable_limits",
               _contains(CONFIG, "content_manager_max_upload_bytes", "content_manager_worker_lease_seconds"),
               "Upload and worker limits are typed in core/config.py."),
-        Check("isolated_write_e2e", False,
-              "No authorized fixture scope exists in PostgreSQL; only breslov_primary is present. Write mode remains disabled."),
+        Check("isolated_write_e2e",
+              _contains(CONFIG, "content_manager_e2e_enabled", "content_manager_e2e_fixture_sha256")
+              and _contains(SCOPE_SETUP, "breslov_primary", "--apply")
+              and _contains(GATEWAY, "E2EIsolationError", "CONTENT_MANAGER_E2E_SCOPE"),
+              "Write validation is default-off, DEV-only, fixture-hash constrained and routed to an isolated scope/collection."),
     ]
     blockers = [check.name for check in checks if not check.passed]
     return {

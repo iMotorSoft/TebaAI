@@ -1,0 +1,85 @@
+{
+  "audit": "TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1",
+  "mode": "read_only_source_audit",
+  "writes_performed": false,
+  "services_contacted": [],
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "endpoints",
+      "passed": true,
+      "evidence": "Upload, job, detail, retry, cancel and diagnostic routes are declared."
+    },
+    {
+      "name": "role_permissions",
+      "passed": true,
+      "evidence": "All Content Manager routes reject viewer and guest roles."
+    },
+    {
+      "name": "tenant_scoped_resource_access",
+      "passed": true,
+      "evidence": "Routes resolve authorized scope and resource SQL constrains organization/workspace/project."
+    },
+    {
+      "name": "state_machine_transition_validation",
+      "passed": true,
+      "evidence": "One canonical graph rejects skipped, repeated and terminal transitions."
+    },
+    {
+      "name": "exclusive_claim_and_lease",
+      "passed": true,
+      "evidence": "Atomic claim, worker ownership, lease and heartbeat persistence are implemented."
+    },
+    {
+      "name": "abandoned_job_recovery",
+      "passed": true,
+      "evidence": "Expired untouched claims requeue; partial attempts fail closed for review."
+    },
+    {
+      "name": "duplicate_policy",
+      "passed": true,
+      "evidence": "Exact duplicates are rejected before job creation."
+    },
+    {
+      "name": "ready_rejected",
+      "passed": true,
+      "evidence": "Only test_candidate is accepted."
+    },
+    {
+      "name": "idempotent_concurrent_job_creation",
+      "passed": true,
+      "evidence": "A partial unique index and atomic conflict handling protect active jobs."
+    },
+    {
+      "name": "manifest_schema",
+      "passed": true,
+      "evidence": "Attempts and exact resource IDs have normalized persistent tables."
+    },
+    {
+      "name": "real_ingestion_orchestration",
+      "passed": true,
+      "evidence": "A document-agnostic PyMuPDF4LLM page-first pipeline is wired to the durable worker."
+    },
+    {
+      "name": "job_summary_and_reconciliation",
+      "passed": true,
+      "evidence": "Reconciliation compares manifest PG resources with attempt-keyed isolated vectors."
+    },
+    {
+      "name": "temporary_and_compensating_cleanup",
+      "passed": true,
+      "evidence": "Cleanup is manifest/document bounded, Milvus-first, audited and idempotent."
+    },
+    {
+      "name": "configurable_limits",
+      "passed": true,
+      "evidence": "Upload and worker limits are typed in core/config.py."
+    },
+    {
+      "name": "isolated_write_e2e",
+      "passed": true,
+      "evidence": "Write validation is default-off, DEV-only, fixture-hash constrained and routed to an isolated scope/collection."
+    }
+  ],
+  "blockers": []
+}

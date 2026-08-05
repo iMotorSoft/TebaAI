@@ -1,0 +1,10 @@
+{
+  "gate": "TEBAAI_PAGE_FIRST_PIPELINE_REUSABLE_V1_DEV_READY",
+  "status": "PASS",
+  "input": ["upload_id", "job_id", "attempt_number", "source_path", "source_sha256", "title", "language", "work_family", "ingestion_profile", "pipeline_version", "embedding_model", "collection_code", "tenant", "actor_user_id"],
+  "stages": ["extracting", "normalizing", "persisting_pages", "building_chunks", "embedding", "indexing", "validating_result"],
+  "output": ["document_id", "page_ids", "chunk_ids", "embedding_ids", "vector_ids", "page_count", "textual_page_count", "empty_page_count", "heading_count", "footnote_count", "printed_reference_count", "warnings", "diagnostics"],
+  "extractor": "pymupdf4llm",
+  "document_specific_dispatch": false,
+  "final_document_status": "test_candidate"
+}

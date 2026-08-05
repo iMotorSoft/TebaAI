@@ -1,9 +1,14 @@
 {
-  "status": "BLOCKED",
-  "postgres_expected": "NOT RUN",
-  "milvus_expected": "NOT RUN",
-  "missing": "NOT RUN",
-  "orphans": "NOT RUN",
-  "duplicates": "NOT RUN",
-  "reason": "attempt-scoped Milvus query/reconciliation is not implemented"
+  "status": "PASS",
+  "scope": "breslov_e2e",
+  "attempt_bounded": true,
+  "postgres_expected": 2,
+  "postgres_embeddings": 2,
+  "milvus_expected": 2,
+  "milvus_found": 2,
+  "missing": 0,
+  "orphans": 0,
+  "duplicates": 0,
+  "metadata_mismatches": 0,
+  "primary_collection_queried_for_reconciliation": false
 }

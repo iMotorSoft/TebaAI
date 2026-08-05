@@ -6,30 +6,32 @@ Ultima actualizacion: 2026-08-05 (Content Manager V1 — gate DEV bloqueado)
 
 ## Content Manager V1 (Gestor de Contenidos) — 2026-08-05 (DEV)
 
-Estado: `TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED`.
+Estado funcional: `TEBAAI_CONTENT_MANAGER_INGESTION_ORCHESTRATOR_V1_DEV_READY`
+y `TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1_DEV_READY`. Estado general:
+`TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED` únicamente por UX premium no ejecutada.
 
-La continuación endureció la base sin declarar un falso cierre: existe grafo
-canónico de transiciones, claim `FOR UPDATE SKIP LOCKED`, ownership con lease y
-heartbeat, recuperación de claims expirados, idempotencia atómica para jobs
-activos, rechazo de duplicado exacto, acceso tenant-scoped, límites tipados y
-schema normalizado de attempts/manifests/IDs de recursos. El worker durable es
-independiente de HTTP y 40 tests nuevos cubren transiciones, dos workers, lease,
-fallo y terminales; backend completo: 1534 PASS.
+`ConcretePageFirstPipeline` es reusable y document-agnostic: PyMuPDF4LLM por
+página física, Markdown original, normalización Unicode/ligaduras separada,
+hebreo/niqqud, señales prudentes de headings/notas/referencias, chunks,
+LiteLLM y Milvus. El worker durable registra recursos incrementalmente y
+reconcilia exclusivamente por job/attempt; cleanup Milvus-first elimina IDs
+del manifest y es idempotente.
 
-El gate sigue bloqueado porque no existe una implementación concreta reusable
-de `PageFirstPipeline`: los pipelines reales continúan en scripts documentales
-específicos. También faltan reconciliación Milvus acotada al intento, cleanup
-compensatorio por IDs del manifest y scope E2E aislado (PG solo contiene
-`breslov_primary`). La migración 041 pasó dry-run transaccional con rollback y
-no fue aplicada; no se ejecutaron escrituras reales.
+Migración 041: dry-run revertido PASS y aplicación por runner oficial PASS, sin
+reinicio PostgreSQL. E2E real aislado en `breslov_e2e` +
+`tebaai_content_manager_e2e_v1`: 3 páginas (2 textuales, 1 vacía), 2 chunks,
+2 embeddings, 2 vectores, missing/orphans/duplicates=0, job
+`completed_with_warnings`, documento `test_candidate`; cleanup dos veces PASS.
+Backend 1555 PASS; guest HTTP 403.
 
 La UI inicial tampoco cierra el gate premium: presenta tres etapas declaradas
 en lugar de cinco, no tiene detalle/historial/diagnóstico operable, usa patrones
 DaisyUI de dashboard genérico y carece de evidencia responsive, RTL,
 accesibilidad y capturas de todos los estados.
 
-No se ejecutó escritura E2E ni se tocó PostgreSQL, Milvus, LiteLLM o el corpus.
-Auditoría: `backend/scripts/audit_pdf_upload_ingestion_console_v1.py`.
+La escritura quedó confinada al scope/colección E2E y fue limpiada por manifest:
+ready=8, Interior Final=`test_candidate` y Milvus primary=5370 antes/después.
+PostgreSQL, Milvus y LiteLLM no se reiniciaron. Auditoría: `backend/scripts/audit_pdf_upload_ingestion_console_v1.py`.
 Reporte: `data/reports/breslov/2026-08-05-content-manager-v1-dev/`.
 ADR: `docs/adr/ADR-022-pdf-upload-ingestion-console-v1.md`.
 

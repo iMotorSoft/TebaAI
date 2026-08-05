@@ -1,0 +1,19 @@
+{
+  "gate": "TEBAAI_CONTENT_MANAGER_PG_MILVUS_RECONCILIATION_V1_DEV_READY",
+  "status": "PASS",
+  "job_id": "8a160ff5-671d-4fc6-bd98-2edcecb85be0",
+  "attempt_number": 1,
+  "document_id": "784244ed-af11-5a12-92d0-de0656e358e0",
+  "scope": "breslov_e2e",
+  "collection": "tebaai_content_manager_e2e_v1",
+  "expected_chunks": 2,
+  "expected_embeddings": 2,
+  "expected_vectors": 2,
+  "found_vectors": 2,
+  "missing_vectors": [],
+  "orphan_vectors": [],
+  "duplicate_vectors": [],
+  "metadata_mismatches": [],
+  "consistent": true,
+  "global_collection_scan": false
+}

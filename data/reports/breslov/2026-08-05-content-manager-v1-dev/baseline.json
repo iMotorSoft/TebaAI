@@ -1,9 +1,11 @@
 {
   "date": "2026-08-05",
   "branch": "feature/console-backend-core",
-  "head_initial": "95e360a74d1c431cb62647e4ea6f82fde1819482",
-  "status": "TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED",
-  "postgres_writes": false,
-  "milvus_writes": false,
-  "migration_041_applied": false
+  "head_initial_cycle": "8b64455fd3e50951b665e0212a5266a1c28bd156",
+  "functional_status": "TEBAAI_CONTENT_MANAGER_INGESTION_ORCHESTRATOR_V1_DEV_READY",
+  "general_status": "TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED_BY_PREMIUM_UX",
+  "migration_041_applied": true,
+  "isolated_e2e_writes": true,
+  "primary_writes": false,
+  "production_writes": false
 }

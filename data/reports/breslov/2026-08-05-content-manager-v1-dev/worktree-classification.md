@@ -1,35 +1,34 @@
-# Worktree classification — continuation baseline
+# Worktree classification — PageFirstPipeline continuation
 
-HEAD inicial: `95e360a74d1c431cb62647e4ea6f82fde1819482`.
+HEAD inicial real: `8b64455fd3e50951b665e0212a5266a1c28bd156`.
 
-## Content Manager related
+## Files in this cycle
 
-| Path | Class | Decision |
+| Paths | Classification | Purpose / state / tests |
 |---|---|---|
-| `backend/modules/library/content_manager.py` | implementation | Hardened; retain. HTTP service still lacks real pipeline. |
-| `backend/modules/library/content_manager_schemas.py` | contract | Hardened; retain and tested. |
-| `backend/modules/library/content_manager_state.py` | implementation | New canonical graph; retain and tested. |
-| `backend/modules/library/content_manager_repository.py` | repository | New claim/lease/recovery SQL; retain and source-audited. |
-| `backend/modules/library/content_manager_worker.py` | orchestrator | New durable worker contract; retain and unit-tested. No concrete pipeline yet. |
-| `backend/modules/library/routes.py` | HTTP/security | Tenant-scoped changes; retain; full backend tests pass. |
-| `backend/core/config.py`, `backend/globalVar.py` | configuration | Typed limits/lease values; retain. |
-| `backend/db/migrations/041_*` | migration | New hardening schema; dry-run in rolled-back PG transaction passed; not applied. |
-| `backend/tests/test_content_manager_orchestration.py` | tests | New; 40 focused tests pass. |
-| `backend/scripts/audit_pdf_upload_ingestion_console_v1.py` | audit | Updated read-only audit; correctly remains BLOCKED. |
-| `astro/src/components/admin/ContentManager.svelte`, `astro/src/pages/admin/content.astro` | UI baseline | Tracked and unchanged in this continuation; incomplete premium UX. |
-| `docs/adr/ADR-022-*`, `docs/breslov/page-first-*`, `docs/status_actual.md`, this report | documentation | Update with partial hardening and current blockers. |
+| `backend/modules/library/page_first_pipeline.py` | pipeline reusable | Typed document-agnostic contract, PyMuPDF4LLM physical pages, Unicode/ligatures, conservative headings/footnotes/references and stage orchestration. Unit and real E2E PASS. |
+| `backend/modules/library/page_first_gateway.py` | pipeline adapters + reconciliation | PostgreSQL manifests, chunks/embeddings, isolated attempt-keyed Milvus adapter and exact reconciliation. Unit and real E2E PASS. |
+| `backend/modules/library/content_manager_cleanup.py` | cleanup | Milvus-first manifest compensation, exact PG IDs, audit events and repeat-safe outcomes. Unit and real twice-run cleanup PASS. |
+| `backend/modules/library/content_manager_runtime.py` | worker wiring | Psycopg store, pipeline result/diagnostic and failure compensation. Real worker PASS. |
+| `content_manager_worker.py`, `content-worker-dev.sh` | DEV runner | Explicit DEV/E2E guards, PID/log ownership and one isolated worker. Active at close. |
+| `prepare_content_manager_e2e_scope.py` | isolation setup | Explicit dry-run/apply for `breslov_e2e`; primary is never updated. |
+| `generate_content_manager_e2e_fixture.py` | fixture generator | Generates an authorized temporary 3-page ES/HE/empty PDF; PDF is excluded. |
+| `core/config.py`, `globalVar.py` | configuration | Default-off E2E flag, exact scope/collection/hash and worker polling. |
+| `migration 041` | migration | Reviewed before first application; adds cleanup audit and `ingestion_failed`, then applied with the official runner. |
+| existing Content Manager modules/routes/schemas/audit | existing orchestrator integration | Durable design preserved; minimally extended for real stages, diagnostics and E2E routing. |
+| `tests/test_page_first_pipeline.py`, `test_content_manager_cleanup.py`, `test_content_manager_e2e_isolation.py` | tests | Pipeline/reconciliation/cleanup/isolation coverage; focused 61 PASS, full backend 1555 PASS. |
+| current ADR/status/conventions/report | documentation/report | Records reproducible gates and evidence. |
 
-## Pre-existing unrelated changes — preserved and excluded
+## Existing scripts inventoried, not copied into the worker
 
-- Modified frontend public configuration/layout: `astro/src/components/global.js`, `global.test.ts`, `layouts/PublicLayout.astro`.
-- Modified backend regression: `backend/tests/test_simple_research_rag.py`.
-- Modified manual documentation and architecture: `docs/manual-dev-pro-configuration.md`, `docs/adr/ADR-013-*`, `lat.md/frontend-implementation-policy.md`.
-- Modified historical screenshots under the 2026-07-16 and 2026-07-26 reports.
-- Untracked social assets and rendering scripts under `astro/public/` and `astro/scripts/`.
-- Untracked historical probes, backend-generated reports and report trees dated 2026-07-09 through 2026-07-31.
+The `ingest_*page_first*.py` scripts mix reusable page concepts with hardcoded document IDs, titles, paths, page ranges, edition IDs and direct SQL. Only conservative document-agnostic concepts were extracted. Existing scripts were preserved unchanged and the worker never invokes shell or subprocess.
 
-These files were neither restored nor staged. Generated `__pycache__`, `.dev-logs` and `.dev-pids` remain ignored operational artifacts.
+## Pre-existing unrelated files preserved and excluded
 
-## Commit allowlist
+- Modified `astro/src/components/global.js`, `global.test.ts`, `layouts/PublicLayout.astro`.
+- Modified `backend/tests/test_simple_research_rag.py`.
+- Modified `docs/manual-dev-pro-configuration.md`, `docs/adr/ADR-013-*`, `lat.md/frontend-implementation-policy.md`.
+- Modified historical screenshots under 2026-07-16 and 2026-07-26 reports.
+- Untracked social assets/rendering scripts, historical backend probes and report trees dated 2026-07-09 through 2026-07-31.
 
-Only the explicit Content Manager paths listed in the first table are eligible. No `git add .` is used.
+They were not restored, edited or staged. PID files, logs, local E2E settings and generated PDFs are runtime artifacts and are excluded from commits. No `git add .` is used.

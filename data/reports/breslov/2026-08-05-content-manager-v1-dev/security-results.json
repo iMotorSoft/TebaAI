@@ -1,11 +1,14 @@
 {
-  "status": "PARTIAL",
-  "role_guard": "PASS_SOURCE",
-  "tenant_scope": "PASS_SOURCE",
-  "exact_duplicate_rejected": "PASS_SOURCE",
-  "ready_rejected": "PASS_SOURCE",
+  "status": "PASS_FUNCTIONAL",
+  "role_guard": "PASS_SOURCE_AND_GUEST_HTTP_403",
+  "tenant_scope": "PASS_SOURCE_AND_REAL_E2E",
+  "exact_duplicate_rejected": "PASS",
+  "ready_rejected": "PASS",
   "typed_limits": "PASS",
-  "temp_ttl_cleanup": "BLOCKED",
-  "cross_tenant_http_negative_tests": "NOT RUN",
+  "e2e_default_off": true,
+  "dev_only_guard": true,
+  "fixture_hash_required": true,
+  "primary_scope_worker_claim": "REJECTED_BY_SCOPE_FILTER",
+  "primary_cleanup": "REJECTED",
   "secrets_exposed": false
 }

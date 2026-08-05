@@ -2,7 +2,7 @@
 
 ## Estado
 
-Aceptado como diseño; implementación DEV bloqueada (2026-08-05).
+Aceptado; orquestador funcional DEV cerrado, UX premium pendiente (2026-08-05).
 
 ## Contexto
 
@@ -69,22 +69,30 @@ idempotencia activa queda protegida por índice único parcial y el acceso a
 uploads/jobs se restringe por organización, workspace y proyecto resueltos
 desde el scope autorizado.
 
-Este hardening no aprueba aún una implementación de pipeline. El contrato
-`PageFirstPipeline` permanece sin implementación concreta porque los scripts
-existentes son específicos por documento y Milvus todavía no ofrece en esta
-capa reconciliación/cleanup exactos por manifest. La migración 041 fue validada
-en una transacción revertida y no aplicada.
+La continuación funcional implementa `ConcretePageFirstPipeline` sin dispatch
+por obra: extracción PyMuPDF4LLM por página, persistencia page-first, chunks,
+embeddings LiteLLM, indexación y reconciliación Milvus por `attempt_key`. Los
+IDs se registran incrementalmente en el manifest. El cleanup compensatorio es
+Milvus-first, elimina solo IDs propios, audita cada resultado y admite repetición.
+
+La escritura E2E queda default-off y exige DEV, flag explícito, SHA de fixture,
+scope `breslov_e2e` y colección `tebaai_content_manager_e2e_v1`; el claim del
+worker también filtra ese scope. Migración 041 pasó dry-run revertido y fue
+aplicada con el runner oficial sin reiniciar PostgreSQL. El E2E real terminó en
+`test_candidate`, reconcilió 2/2 vectores y limpió dos veces sin tocar primary.
 
 ## Consecuencias
 
-- La migración, los contratos HTTP y la superficie inicial sirven como baseline, no como gate cerrado.
-- El pipeline page-first real continúa distribuido entre servicios parciales y scripts específicos; no existe todavía un orquestador reusable, transaccional y aislado que pueda consumir un worker web.
-- Los jobs actuales no avanzan por sí mismos desde `validating`, la idempotencia no es atómica y las consultas por ID no aplican la cadena tenant completa.
-- Hasta resolver esos bloqueos, no se ejecutan E2E de escritura ni se declara funcional o visualmente listo el Gestor.
-- La fase futura debe extraer el pipeline reusable, añadir ownership/leases y cleanup probado, y recién después cerrar seguridad, integración y UX premium.
+- El gate funcional del orquestador y la consola de ingesta queda cerrado en DEV.
+- PostgreSQL conserva verdad; Milvus E2E es derivado y totalmente compensable.
+- Un fallo conserva diagnóstico y limpia únicamente recursos del attempt.
+- `breslov_primary`, documentos ready e Interior Final quedan fuera del worker E2E.
+- El gate general continúa bloqueado hasta completar la UX premium vinculante.
 
 ## Rollback
 
-Eliminación de la migración 040, el módulo `content_manager.py`, las rutas en
-`routes.py`, la página `admin/content.astro` y el componente
-`ContentManager.svelte`. Sin impacto en datos existentes.
+Tras aplicar 041 no se elimina una migración versionada: cualquier rollback de
+schema requiere migración forward. El runtime puede detenerse mediante
+`content-worker-dev.sh stop`; los datos E2E se compensan por manifest y la
+colección aislada puede quedar vacía sin afectar primary. El rollback de código
+se realiza por commits, preservando 040/041 y el historial de auditoría.

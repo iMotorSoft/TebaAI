@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "before": {"ready_documents": 8, "interior_final": "test_candidate", "milvus_primary": 5370},
+  "during_success": {"ready_documents": 8, "interior_final": "test_candidate", "milvus_primary": 5370, "e2e_test_candidates": 1},
+  "after_cleanup": {"ready_documents": 8, "interior_final": "test_candidate", "milvus_primary": 5370, "e2e_documents_remaining": 0, "e2e_attempt_vectors_remaining": 0},
+  "primary_inserts": 0,
+  "primary_deletes": 0,
+  "guest_write_http": 403
+}

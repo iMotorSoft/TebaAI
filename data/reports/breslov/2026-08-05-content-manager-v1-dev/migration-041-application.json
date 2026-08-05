@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "schema_before": "040",
+  "reviewed_scope": "Content Manager tables/columns/indexes plus library document ingestion_failed status",
+  "corpus_rows_modified": false,
+  "dry_run": "PASS_ROLLED_BACK",
+  "official_runner": true,
+  "applied": ["041_content_manager_orchestration_hardening.sql"],
+  "schema_after": "041",
+  "postgres_restarted": false,
+  "backend_stopped_for_application": true,
+  "backend_restarted_after_application": true,
+  "rollback": "transactional on application failure; forward migration required after successful application",
+  "verified_tables": ["content_manager_job_attempts", "content_manager_job_transitions", "content_manager_ingestion_manifests", "content_manager_manifest_resources", "content_manager_cleanup_events"],
+  "verified_index": "uq_cm_jobs_active_idempotency"
+}

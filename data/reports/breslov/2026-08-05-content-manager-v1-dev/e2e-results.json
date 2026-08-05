@@ -1,10 +1,13 @@
 {
-  "status": "NOT RUN",
-  "admin": "NOT RUN",
-  "viewer": "NOT RUN",
-  "guest": "NOT RUN",
-  "mobile": "NOT RUN",
-  "credentials_printed": false,
-  "writes_performed": false,
-  "reason": "write-E2E preconditions are not met"
+  "status": "PASS_FUNCTIONAL_ISOLATED",
+  "admin_write_flow": "PASS",
+  "guest_write_denial": "PASS_HTTP_403",
+  "worker_claim": "PASS_ONCE",
+  "document_before_cleanup": "test_candidate",
+  "job_before_cleanup": "completed_with_warnings",
+  "reconciliation": "PASS",
+  "cleanup_twice": "PASS",
+  "primary_protection": "PASS",
+  "browser_premium_ux": "NOT_RUN",
+  "credentials_printed": false
 }

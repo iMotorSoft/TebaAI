@@ -1,0 +1,13 @@
+{
+  "gate": "TEBAAI_CONTENT_MANAGER_MANIFEST_CLEANUP_V1_DEV_READY",
+  "status": "PASS",
+  "job_id": "8a160ff5-671d-4fc6-bd98-2edcecb85be0",
+  "attempt_number": 1,
+  "scope": "breslov_e2e",
+  "order": ["vectors", "embeddings", "embedding_run", "chunks", "pages", "document_text", "ingestion_run", "document", "temporary_file"],
+  "first_run": {"status": "completed", "deleted": 13, "already_absent": 1, "failed": 0},
+  "second_run": {"status": "completed", "deleted": 0, "already_absent": 14, "failed": 0},
+  "remaining_attempt_vectors": 0,
+  "remaining_e2e_document": 0,
+  "primary_deletes": 0
+}

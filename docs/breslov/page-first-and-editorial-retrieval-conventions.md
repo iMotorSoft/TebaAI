@@ -289,20 +289,24 @@ referencia impresa si el corpus solo contiene `116:10`.
 
 ## Gestor de Contenidos V1
 
-La consola de upload no puede ejecutar esta ingesta mientras el pipeline
-page-first continúe distribuido entre scripts específicos y servicios
-parciales. El gate requiere un orquestador Python reusable que persista la
-página completa antes de derivar bloques y chunks, seleccione una colección
-test aislada, registre ownership y transiciones atómicas del job, y reconcilie
-PostgreSQL↔Milvus antes de finalizar en `test_candidate`.
+La consola ejecuta ingesta solo mediante el orquestador Python reusable: la
+página completa se persiste antes de derivar chunks, toda escritura registra
+ownership y transición atómica, y PostgreSQL↔Milvus debe reconciliar antes de
+finalizar en `test_candidate`. Los scripts documentales específicos no forman
+parte del worker.
 
-La continuación de 2026-08-05 agregó la base durable (claim exclusivo,
-lease/heartbeat, grafo de estados, attempts y manifest), y la creación atómica
-ahora encola en vez de quedar en `validating`. Esto no equivale a ingesta: el
-contrato de worker todavía no tiene una implementación concreta reusable del
-pipeline, reconciliación ni cleanup exacto. No se autoriza envolver scripts con
-shell ni ejecutar E2E de escritura contra `breslov_primary`. Ver ADR-022 y el
-reporte reproducible
+La continuación de 2026-08-05 cerró el servicio reusable: PyMuPDF4LLM extrae
+cada página física a Markdown original y una superficie normalizada separada;
+las páginas se persisten antes de chunks, embeddings y vectores. Señales
+editoriales genéricas son prudentes y lo no resuelto produce warnings, nunca
+metadata inventada. El worker registra IDs por etapa en el manifest.
+
+La reconciliación consulta únicamente `attempt_key` en la colección E2E y los
+IDs del manifest en PostgreSQL. El cleanup es Milvus-first, exacto, auditable e
+idempotente. La escritura real requiere `breslov_e2e`, colección aislada, flag
+DEV y SHA autorizado; el worker no puede reclamar `breslov_primary`. E2E:
+3 páginas, 2 chunks/embeddings/vectores, cero missing/orphans/duplicates,
+`test_candidate`, cleanup 2/2 PASS. Ver ADR-022 y
 `data/reports/breslov/2026-08-05-content-manager-v1-dev/`.
 
 ## Documento de Referencia

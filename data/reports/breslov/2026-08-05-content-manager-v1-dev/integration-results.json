@@ -1,9 +1,11 @@
 {
-  "status": "NOT RUN",
-  "fixture": null,
-  "isolated_scope": false,
-  "isolated_milvus_collection": "configured_name_only",
-  "cleanup_verified": false,
-  "writes_performed": false,
-  "blocking_reason": "only breslov_primary exists and no concrete safe pipeline/cleanup exists"
+  "status": "PASS",
+  "flow": ["admin_login", "upload_validated", "job_queued", "exclusive_claim", "page_first_extract", "pages_persisted", "chunks_persisted", "embeddings_generated", "isolated_milvus_upsert", "attempt_reconciliation", "test_candidate", "manifest_cleanup_twice"],
+  "job_status": "completed_with_warnings",
+  "document_status": "test_candidate",
+  "warnings": ["physical_empty_pages_detected", "empty_pages_preserved"],
+  "counts": {"pages": 3, "textual_pages": 2, "empty_pages": 1, "chunks": 2, "embeddings": 2, "vectors": 2},
+  "reconciliation": {"missing": 0, "orphans": 0, "duplicates": 0},
+  "cleanup": {"first": "completed", "second": "completed"},
+  "primary_unchanged": true
 }

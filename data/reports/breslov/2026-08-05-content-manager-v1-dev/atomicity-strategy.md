@@ -1,14 +1,5 @@
-# PostgreSQL–Milvus atomicity strategy
+# PostgreSQL–Milvus controlled eventual consistency
 
-Migration 041 establishes attempt and manifest persistence. Each created resource is intended to be recorded as `(manifest_id, resource_type, resource_id, was_preexisting)` before a later stage relies on it.
+No distributed transaction is claimed. Every PG stage commits deterministic IDs and manifest rows before the next stage. The isolated Milvus schema adds `attempt_key`, `job_id` and `attempt_number`; upsert is followed by flush and strong-consistency attempt query. Completion requires exact chunk/embedding/vector counts with zero missing, orphan, duplicate or metadata mismatch.
 
-The required eventual-consistency algorithm is specified but not executable yet:
-
-1. deterministic IDs per source/profile/pipeline;
-2. PostgreSQL stage commit plus manifest resource rows;
-3. idempotent Milvus upsert into an isolated collection;
-4. reconciliation by exact document/job/attempt vector IDs;
-5. terminal completion only with zero missing, orphan and duplicate IDs;
-6. compensation only for non-preexisting manifest IDs.
-
-Because the current Milvus client exposes insertion/search but no exact manifest cleanup/reconciliation API, the implementation gate remains BLOCKED.
+A crash after vector upsert but before manifest registration is still recoverable: cleanup queries the exact attempt key, then deletes Milvus first and manifest-owned PG IDs in FK-safe order. `already_absent` is successful and every cleanup action is audited. Real E2E reconciled 2/2/2 and cleanup twice produced 13 deletes + one already-absent, then 14 already-absent with no failures.

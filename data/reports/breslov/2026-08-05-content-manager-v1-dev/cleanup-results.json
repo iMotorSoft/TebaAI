@@ -1,9 +1,12 @@
 {
-  "status": "BLOCKED",
+  "status": "PASS",
   "manifest_schema": true,
   "exact_resource_ids": true,
-  "postgres_cleanup_executor": false,
-  "milvus_cleanup_executor": false,
-  "ttl_sweeper": false,
-  "writes_performed": false
+  "postgres_cleanup_executor": true,
+  "milvus_cleanup_executor": true,
+  "cleanup_audit_events": true,
+  "idempotent_second_run": true,
+  "first_run_failed": 0,
+  "second_run_failed": 0,
+  "primary_resources_touched": 0
 }

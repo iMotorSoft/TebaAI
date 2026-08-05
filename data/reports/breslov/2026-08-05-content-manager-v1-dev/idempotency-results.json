@@ -1,8 +1,11 @@
 {
-  "status": "SOURCE_AND_UNIT_PASS_INTEGRATION_NOT_RUN",
+  "status": "PASS",
   "active_job_unique_index": "uq_cm_jobs_active_idempotency",
   "key_inputs": ["knowledge_scope_id", "source_sha256", "pipeline_version", "ingestion_profile"],
   "atomic_create": true,
-  "page_chunk_embedding_vector_duplication": "NOT RUN",
-  "reason": "concrete pipeline and isolated scope are absent"
+  "deterministic_document_page_chunk_embedding_vector_ids": true,
+  "retry_attempts_separated": true,
+  "cleanup_repeat_safe": true,
+  "two_worker_unit_test": "PASS",
+  "real_retry_after_compensation": "PASS"
 }

@@ -1,8 +1,10 @@
 {
-  "status": "UNIT_PASS_REAL_NOT_RUN",
+  "status": "PASS_UNIT_AND_REAL_E2E",
   "claim": "SELECT FOR UPDATE SKIP LOCKED",
+  "claim_scope_filter": "breslov_e2e",
   "fields": ["claimed_by", "claimed_at", "lease_expires_at", "heartbeat_at", "attempt_number"],
   "expired_without_writes": "requeued",
-  "expired_with_partial_writes": "manual_review_required",
-  "database_migration_applied": false
+  "expired_with_partial_writes": "manual_review_required_then_exact_cleanup",
+  "database_migration_applied": true,
+  "real_claim_count_for_final_job": 1
 }

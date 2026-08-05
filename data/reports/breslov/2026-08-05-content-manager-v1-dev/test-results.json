@@ -1,12 +1,15 @@
 {
-  "backend_focused_initial": {"passed": 48, "failed": 0, "deselected": 1446},
-  "backend_focused_final": {"passed": 88, "failed": 0, "deselected": 1446},
-  "new_orchestrator_tests": {"passed": 40, "failed": 0},
-  "backend_full": {"passed": 1534, "failed": 0, "warnings": 94, "duration_seconds": 70.33},
-  "migration_041_transactional_dry_run": "PASS_ROLLED_BACK",
-  "source_audit": "BLOCKED_EXPECTED",
+  "backend_baseline_previous": {"passed": 1534, "warnings": 94},
+  "backend_focused": {"passed": 61, "failed": 0, "deselected": 1494},
+  "backend_full": {"passed": 1555, "failed": 0, "warnings": 94, "duration_seconds": 57.43},
+  "new_warnings": 0,
   "frontend": {"check_errors": 0, "check_hints": 2, "tests_passed": 70, "tests_failed": 0, "build": "PASS_9_PAGES"},
-  "e2e": "NOT RUN",
+  "migration_041_dry_run": "PASS_ROLLED_BACK",
+  "migration_041_application": "PASS_OFFICIAL_RUNNER",
+  "source_audit": "PASS",
+  "http_write_e2e": "PASS_ISOLATED",
+  "guest_write_denial_http": 403,
+  "manifest_cleanup_twice": "PASS",
   "lat": "PASS_WITH_ENVIRONMENT_WARNINGS",
   "git_diff_check": "PASS"
 }

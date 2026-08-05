@@ -68,6 +68,7 @@ class IngestionStage(str, enum.Enum):
     VALIDATION_FAILED = "validation_failed"
     READY_TO_INGEST = "ready_to_ingest"
     QUEUED = "queued"
+    CLAIMED = "claimed"
     EXTRACTING = "extracting"
     NORMALIZING = "normalizing"
     PERSISTING_PAGES = "persisting_pages"
@@ -88,6 +89,7 @@ class IngestionProfile(str, enum.Enum):
 
 class CreateJobRequest(BaseModel):
     upload_id: UUID
+    knowledge_scope_code: str = Field(default="breslov_primary", min_length=1, max_length=100)
     title: str = Field(..., min_length=1, max_length=500)
     language: str = Field(default="auto", pattern=r"^(auto|es|en|he|mixed|unknown)$")
     work_family: str | None = Field(default=None, max_length=100)
@@ -124,6 +126,14 @@ class JobResponse(BaseModel):
     created_at: datetime | None = None
     started_at: datetime | None = None
     finished_at: datetime | None = None
+    worker_id: str | None = None
+    claimed_at: datetime | None = None
+    lease_expires_at: datetime | None = None
+    heartbeat_at: datetime | None = None
+    cleanup_status: str | None = None
+    recovery_status: str | None = None
+    pipeline_version: str | None = None
+    idempotency_key: str | None = None
 
 
 class JobListItem(BaseModel):

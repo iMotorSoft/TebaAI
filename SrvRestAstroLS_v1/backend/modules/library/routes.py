@@ -66,7 +66,11 @@ from modules.library.query_confirmation import (
     InterpretationStateError,
 )
 from modules.library.simple_research_rag import run_simple_rag
-from globalVar import RESEARCH_PIPELINE
+from globalVar import (
+    CONTENT_MANAGER_E2E_COLLECTION,
+    MILVUS_COLLECTION_BRESLOV,
+    RESEARCH_PIPELINE,
+)
 
 
 async def _run_research_pipeline(
@@ -408,8 +412,24 @@ async def library_search(
 # ── Content Manager V1 ────────────────────────────────────────────────────
 
 
+def _content_scope_kwargs(scope: object) -> dict[str, str]:
+    return {
+        "organization_id": str(scope.organization_id),
+        "workspace_id": str(scope.workspace_id),
+        "project_id": str(scope.project_id),
+    }
+
+
+def _content_collection(scope_code: str) -> str:
+    if scope_code.startswith("content_manager_e2e"):
+        return CONTENT_MANAGER_E2E_COLLECTION
+    return MILVUS_COLLECTION_BRESLOV
+
+
 @post("/admin/content/uploads", status_code=201, guards=[require_auth])
-async def content_manager_upload(request: Request) -> UploadResponse:
+async def content_manager_upload(
+    request: Request, knowledge_scope_code: str = "breslov_primary",
+) -> UploadResponse:
     """Validate and register a PDF upload. Admin-only."""
     pool = await get_pg_pool(request)
     payload = await get_current_user_payload(request)
@@ -429,13 +449,17 @@ async def content_manager_upload(request: Request) -> UploadResponse:
 
     try:
         async with transaction(pool) as conn:
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
             result = await validate_and_store_upload(
-                conn,
-                file_content=file_content,
-                original_filename=original_filename,
-                actor_user_id=user_id,
+                conn, file_content=file_content, original_filename=original_filename,
+                actor_user_id=user_id, knowledge_scope_id=str(scope.id),
+                **_content_scope_kwargs(scope),
             )
         return result
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
     except Exception as exc:
@@ -455,8 +479,17 @@ async def content_manager_create_job(request: Request, data: CreateJobRequest) -
 
     try:
         async with transaction(pool) as conn:
-            job = await create_job(conn, data, actor_user_id=user_id)
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=data.knowledge_scope_code,
+            )
+            job = await create_job(
+                conn, data, actor_user_id=user_id, knowledge_scope_id=str(scope.id),
+                collection_code=_content_collection(scope.knowledge_scope_code),
+                **_content_scope_kwargs(scope),
+            )
         return job
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
     except Exception as exc:
@@ -464,38 +497,54 @@ async def content_manager_create_job(request: Request, data: CreateJobRequest) -
 
 
 @get("/admin/content/jobs", status_code=200, guards=[require_auth])
-async def content_manager_list_jobs(request: Request) -> JobListResponse:
+async def content_manager_list_jobs(
+    request: Request, knowledge_scope_code: str = "breslov_primary",
+) -> JobListResponse:
     """List recent ingestion jobs. Admin-only."""
     pool = await get_pg_pool(request)
     payload = await get_current_user_payload(request)
     user_role = payload.get("role", "")
+    user_id = payload.get("sub", "")
 
     if user_role not in ("admin", "editor"):
         raise PermissionDeniedException("Se requiere rol admin o editor")
 
     try:
         async with transaction(pool) as conn:
-            return await list_jobs(conn)
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
+            return await list_jobs(conn, **_content_scope_kwargs(scope))
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
     except Exception as exc:
         raise HTTPException(status_code=500, detail="Error al listar jobs") from exc
 
 
 @get("/admin/content/jobs/{job_id:str}", status_code=200, guards=[require_auth])
-async def content_manager_get_job(request: Request, job_id: str) -> JobResponse:
+async def content_manager_get_job(
+    request: Request, job_id: str, knowledge_scope_code: str = "breslov_primary",
+) -> JobResponse:
     """Get a single job's status. Admin-only."""
     pool = await get_pg_pool(request)
     payload = await get_current_user_payload(request)
     user_role = payload.get("role", "")
+    user_id = payload.get("sub", "")
 
     if user_role not in ("admin", "editor"):
         raise PermissionDeniedException("Se requiere rol admin o editor")
 
     try:
         async with transaction(pool) as conn:
-            job = await get_job(conn, job_id)
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
+            job = await get_job(conn, job_id, **_content_scope_kwargs(scope))
         if not job:
             raise HTTPException(status_code=404, detail="Job no encontrado")
         return job
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
     except HTTPException:
         raise
     except Exception as exc:
@@ -503,7 +552,9 @@ async def content_manager_get_job(request: Request, job_id: str) -> JobResponse:
 
 
 @post("/admin/content/jobs/{job_id:str}/retry", status_code=200, guards=[require_auth])
-async def content_manager_retry_job(request: Request, job_id: str) -> JobResponse:
+async def content_manager_retry_job(
+    request: Request, job_id: str, knowledge_scope_code: str = "breslov_primary",
+) -> JobResponse:
     """Retry a failed job. Admin-only."""
     pool = await get_pg_pool(request)
     payload = await get_current_user_payload(request)
@@ -515,10 +566,17 @@ async def content_manager_retry_job(request: Request, job_id: str) -> JobRespons
 
     try:
         async with transaction(pool) as conn:
-            job = await retry_job(conn, job_id, actor_user_id=user_id)
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
+            job = await retry_job(
+                conn, job_id, actor_user_id=user_id, **_content_scope_kwargs(scope),
+            )
         if not job:
             raise HTTPException(status_code=404, detail="Job no encontrado")
         return job
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
     except Exception as exc:
@@ -526,21 +584,31 @@ async def content_manager_retry_job(request: Request, job_id: str) -> JobRespons
 
 
 @post("/admin/content/jobs/{job_id:str}/cancel", status_code=200, guards=[require_auth])
-async def content_manager_cancel_job(request: Request, job_id: str) -> JobResponse:
+async def content_manager_cancel_job(
+    request: Request, job_id: str, knowledge_scope_code: str = "breslov_primary",
+) -> JobResponse:
     """Cancel a pending job. Admin-only."""
     pool = await get_pg_pool(request)
     payload = await get_current_user_payload(request)
     user_role = payload.get("role", "")
+    user_id = payload.get("sub", "")
 
     if user_role not in ("admin", "editor"):
         raise PermissionDeniedException("Se requiere rol admin o editor")
 
     try:
         async with transaction(pool) as conn:
-            job = await cancel_job(conn, job_id)
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
+            job = await cancel_job(
+                conn, job_id, actor_user_id=user_id, **_content_scope_kwargs(scope),
+            )
         if not job:
             raise HTTPException(status_code=404, detail="Job no encontrado")
         return job
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
     except Exception as exc:
@@ -548,21 +616,29 @@ async def content_manager_cancel_job(request: Request, job_id: str) -> JobRespon
 
 
 @get("/admin/content/jobs/{job_id:str}/diagnostic", status_code=200, guards=[require_auth])
-async def content_manager_diagnostic(request: Request, job_id: str) -> IngestionDiagnostic:
+async def content_manager_diagnostic(
+    request: Request, job_id: str, knowledge_scope_code: str = "breslov_primary",
+) -> IngestionDiagnostic:
     """Get the diagnostic report for a job. Admin-only."""
     pool = await get_pg_pool(request)
     payload = await get_current_user_payload(request)
     user_role = payload.get("role", "")
+    user_id = payload.get("sub", "")
 
     if user_role not in ("admin", "editor"):
         raise PermissionDeniedException("Se requiere rol admin o editor")
 
     try:
         async with transaction(pool) as conn:
-            diag = await get_diagnostic(conn, job_id)
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
+            diag = await get_diagnostic(conn, job_id, **_content_scope_kwargs(scope))
         if not diag:
             raise HTTPException(status_code=404, detail="Job no encontrado")
         return diag
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
     except HTTPException:
         raise
     except Exception as exc:

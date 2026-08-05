@@ -122,6 +122,16 @@ RESEARCH_INCLUDE_TEST_CANDIDATES_READONLY: bool = (
     SETTINGS.research_include_test_candidates_readonly
 )
 
+# ── Content Manager ──────────────────────────────────────────────
+CONTENT_MANAGER_MAX_UPLOAD_BYTES: int = SETTINGS.content_manager_max_upload_bytes
+CONTENT_MANAGER_MAX_PDF_PAGES: int = SETTINGS.content_manager_max_pdf_pages
+CONTENT_MANAGER_UPLOAD_TTL_HOURS: int = SETTINGS.content_manager_upload_ttl_hours
+CONTENT_MANAGER_WORKER_LEASE_SECONDS: int = SETTINGS.content_manager_worker_lease_seconds
+CONTENT_MANAGER_WORKER_HEARTBEAT_SECONDS: int = SETTINGS.content_manager_worker_heartbeat_seconds
+CONTENT_MANAGER_PIPELINE_VERSION: str = SETTINGS.content_manager_pipeline_version
+CONTENT_MANAGER_DOCUMENT_SCHEMA_VERSION: str = SETTINGS.content_manager_document_schema_version
+CONTENT_MANAGER_E2E_COLLECTION: str = SETTINGS.content_manager_e2e_collection
+
 # ── Auth ─────────────────────────────────────────────────────────
 AUTH_ENABLED: bool = SETTINGS.auth_enabled
 TEBAAI_AUTH_PEPPER = SETTINGS.auth_pepper

@@ -4,10 +4,8 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 import pathlib
 import tempfile
-import time
 import uuid as _uuid
 from datetime import datetime, timedelta, timezone
 from typing import Any
@@ -15,6 +13,13 @@ from typing import Any
 from psycopg import AsyncConnection
 from psycopg.rows import dict_row
 
+from globalVar import (
+    CONTENT_MANAGER_MAX_PDF_PAGES,
+    CONTENT_MANAGER_MAX_UPLOAD_BYTES,
+    CONTENT_MANAGER_PIPELINE_VERSION,
+    CONTENT_MANAGER_UPLOAD_TTL_HOURS,
+    EMBEDDINGS_MODEL_ALIAS,
+)
 from modules.library.content_manager_schemas import (
     CreateJobRequest,
     DuplicateClassification,
@@ -32,11 +37,11 @@ from modules.library.content_manager_schemas import (
     UploadValidationStatus,
 )
 
-# ── Configuration (overridable via env / globalVar) ──────────────────────
+# ── Typed configuration ─────────────────────────────────────────────────
 
-MAX_UPLOAD_BYTES = 200 * 1024 * 1024  # 200 MB
-MAX_PDF_PAGES = 2000
-UPLOAD_TTL_HOURS = 24
+MAX_UPLOAD_BYTES = CONTENT_MANAGER_MAX_UPLOAD_BYTES
+MAX_PDF_PAGES = CONTENT_MANAGER_MAX_PDF_PAGES
+UPLOAD_TTL_HOURS = CONTENT_MANAGER_UPLOAD_TTL_HOURS
 TEMP_DIR = pathlib.Path(tempfile.gettempdir()) / "tebaai_content_manager"
 
 
@@ -48,6 +53,7 @@ STAGE_LABELS: dict[str, str] = {
     IngestionStage.VALIDATION_FAILED.value: "Validación fallida",
     IngestionStage.READY_TO_INGEST.value: "Listo para procesar",
     IngestionStage.QUEUED.value: "En cola de procesamiento",
+    IngestionStage.CLAIMED.value: "Procesamiento asignado",
     IngestionStage.EXTRACTING.value: "Extrayendo las páginas",
     IngestionStage.NORMALIZING.value: "Normalizando el contenido",
     IngestionStage.PERSISTING_PAGES.value: "Organizando las secciones",
@@ -82,6 +88,15 @@ def _now_iso() -> str:
 
 def _short_hash(sha256: str) -> str:
     return sha256[:16] + "…"
+
+
+def _json_list(value: Any) -> list[str]:
+    if isinstance(value, list):
+        return [str(item) for item in value]
+    if isinstance(value, str) and value:
+        loaded = json.loads(value)
+        return [str(item) for item in loaded] if isinstance(loaded, list) else []
+    return []
 
 
 def _compute_sha256(file_path: str) -> str:
@@ -135,6 +150,7 @@ async def validate_and_store_upload(
     organization_id: str | None = None,
     workspace_id: str | None = None,
     project_id: str | None = None,
+    knowledge_scope_id: str | None = None,
 ) -> UploadResponse:
     """Validate a PDF upload, store it temporarily, detect duplicates."""
     warnings: list[str] = []
@@ -175,7 +191,9 @@ async def validate_and_store_upload(
             )
 
         # -- Duplicate detection --
-        existing = await _find_existing_document(conn, file_sha256, original_filename)
+        existing = await _find_existing_document(
+            conn, file_sha256, original_filename, knowledge_scope_id=knowledge_scope_id,
+        )
         duplicate_status = DuplicateClassification.NEW_DOCUMENT
         existing_doc = None
         if existing:
@@ -202,16 +220,16 @@ async def validate_and_store_upload(
         await conn.execute(
             """
             INSERT INTO content_manager_uploads
-                (id, organization_id, workspace_id, project_id, actor_user_id,
+                (id, organization_id, workspace_id, project_id, knowledge_scope_id, actor_user_id,
                  filename, original_filename, size_bytes, sha256, mime_type,
                  page_count, validation_status, validation_errors,
                  duplicate_status, existing_document_id,
                  temp_path, warnings, limits, created_at, expires_at)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
             (
-                upload_id, organization_id, workspace_id, project_id, actor_user_id,
+                upload_id, organization_id, workspace_id, project_id, knowledge_scope_id, actor_user_id,
                 safe_name, original_filename, len(file_content), file_sha256, "application/pdf",
                 page_count, validation_status.value, json.dumps([e.model_dump() for e in errors]),
                 duplicate_status.value, existing_doc.document_id if existing_doc else None,
@@ -246,29 +264,38 @@ async def validate_and_store_upload(
 
 
 async def _find_existing_document(
-    conn: AsyncConnection, sha256: str, filename: str
+    conn: AsyncConnection, sha256: str, filename: str, *, knowledge_scope_id: str | None,
 ) -> dict[str, Any] | None:
     """Find an existing document by SHA-256 or filename."""
     cur = await conn.execute(
         """
         SELECT id, title, status, source_sha256, created_at
         FROM library_documents
-        WHERE source_sha256 = %(sha)s
-           OR source_filename = %(fn)s
+        WHERE knowledge_scope_id = %(scope)s
+          AND (source_sha256 = %(sha)s OR source_filename = %(fn)s)
         ORDER BY
             CASE WHEN source_sha256 = %(sha)s THEN 0 ELSE 1 END,
             created_at DESC
         LIMIT 1
         """,
-        {"sha": sha256, "fn": filename},
+        {"sha": sha256, "fn": filename, "scope": knowledge_scope_id},
     )
     rows = await cur.fetchall()
     return dict(rows[0]) if rows else None
 
 
-async def get_upload(conn: AsyncConnection, upload_id: str) -> dict[str, Any] | None:
+async def get_upload(
+    conn: AsyncConnection,
+    upload_id: str,
+    *,
+    organization_id: str,
+    workspace_id: str,
+    project_id: str,
+) -> dict[str, Any] | None:
     cur = await conn.execute(
-        "SELECT * FROM content_manager_uploads WHERE id = %s", (upload_id,)
+        """SELECT * FROM content_manager_uploads
+           WHERE id = %s AND organization_id = %s AND workspace_id = %s AND project_id = %s""",
+        (upload_id, organization_id, workspace_id, project_id),
     )
     rows = await cur.fetchall()
     return dict(rows[0]) if rows else None
@@ -282,72 +309,109 @@ async def create_job(
     req: CreateJobRequest,
     *,
     actor_user_id: str,
-    organization_id: str | None = None,
+    organization_id: str,
+    workspace_id: str,
+    project_id: str,
+    knowledge_scope_id: str,
+    collection_code: str,
 ) -> JobResponse:
-    """Create a new ingestion job from a validated upload."""
-    upload = await get_upload(conn, str(req.upload_id))
+    """Atomically enqueue one job for a validated, tenant-scoped upload."""
+    upload = await get_upload(
+        conn, str(req.upload_id), organization_id=organization_id,
+        workspace_id=workspace_id, project_id=project_id,
+    )
     if not upload:
-        raise ValueError("Upload no encontrado.")
+        raise ValueError("Upload no encontrado en el contexto activo.")
     if upload["validation_status"] != UploadValidationStatus.VALID.value:
         raise ValueError("El upload no superó la validación.")
-
-    # Reject ready status
-    if req.requested_status == "ready":
+    if upload["duplicate_status"] == DuplicateClassification.EXACT_DUPLICATE.value:
+        raise ValueError("El archivo es un duplicado exacto y no puede reingerirse.")
+    if req.requested_status != "test_candidate":
         raise ValueError(
-            "No se puede solicitar estado 'ready' desde el Gestor de Contenidos. "
-            "El documento debe ser promovido mediante un proceso de revisión separado."
+            "El Gestor de Contenidos solo puede crear candidatos para revisión; "
+            "no puede publicar ni promover documentos."
         )
 
-    # Check for existing job with same upload (idempotency)
+    profile = req.ingestion_profile.value if isinstance(req.ingestion_profile, IngestionProfile) else req.ingestion_profile
+    raw_key = ":".join((knowledge_scope_id, upload["sha256"], CONTENT_MANAGER_PIPELINE_VERSION, str(profile)))
+    idempotency_key = hashlib.sha256(raw_key.encode("utf-8")).hexdigest()
+    job_id = _uuid.uuid4()
+    stage_states = _initial_stage_states()
+    stage_states.update({"validating": "done", "ready_to_ingest": "done", "queued": "active"})
+
     cur = await conn.execute(
         """
-        SELECT id FROM content_manager_jobs
-        WHERE upload_id = %s AND status NOT IN ('failed', 'cancelled')
-        ORDER BY created_at DESC LIMIT 1
-        """,
-        (req.upload_id,),
-    )
-    existing = await cur.fetchone()
-    if existing:
-        job_id = str(existing[0]) if isinstance(existing, tuple) else str(existing["id"])
-        return await get_job(conn, job_id)  # type: ignore[return-value]
-
-    job_id = _uuid.uuid4()
-    profile = req.ingestion_profile.value if isinstance(req.ingestion_profile, IngestionProfile) else req.ingestion_profile
-
-    await conn.execute(
-        """
         INSERT INTO content_manager_jobs
-            (id, upload_id, organization_id, actor_user_id, title, language,
-             work_family, administrative_notes, ingestion_profile,
-             requested_status, status, current_stage, stage_states, created_at, updated_at)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            (id, upload_id, organization_id, workspace_id, project_id, knowledge_scope_id,
+             actor_user_id, title, language, work_family, administrative_notes,
+             ingestion_profile, requested_status, status, current_stage, stage_states,
+             pipeline_version, embedding_model, collection_code, idempotency_key,
+             created_at, updated_at)
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'queued','queued',%s,%s,%s,%s,%s,%s,%s)
+        ON CONFLICT (idempotency_key)
+          WHERE status NOT IN ('failed', 'cancelled', 'validation_failed')
+        DO NOTHING
+        RETURNING id
         """,
         (
-            job_id, req.upload_id, organization_id, actor_user_id,
-            req.title, req.language, req.work_family, req.administrative_notes,
-            profile, req.requested_status,
-            IngestionStage.VALIDATING.value, IngestionStage.VALIDATING.value,
-            json.dumps(_initial_stage_states()), _utcnow(), _utcnow(),
+            job_id, req.upload_id, organization_id, workspace_id, project_id,
+            knowledge_scope_id, actor_user_id, req.title, req.language,
+            req.work_family, req.administrative_notes, profile, req.requested_status,
+            json.dumps(stage_states), CONTENT_MANAGER_PIPELINE_VERSION,
+            EMBEDDINGS_MODEL_ALIAS, collection_code, idempotency_key, _utcnow(), _utcnow(),
         ),
     )
-
-    return await get_job(conn, str(job_id))  # type: ignore[return-value]
+    inserted = await cur.fetchone()
+    if not inserted:
+        cur = await conn.execute(
+            """SELECT id FROM content_manager_jobs
+               WHERE idempotency_key=%s
+                 AND status NOT IN ('failed','cancelled','validation_failed')""",
+            (idempotency_key,),
+        )
+        inserted = await cur.fetchone()
+    resolved_job_id = str(inserted[0] if isinstance(inserted, tuple) else inserted["id"])
+    if resolved_job_id == str(job_id):
+        now = _utcnow()
+        await conn.execute(
+            """
+            INSERT INTO content_manager_job_transitions
+                (job_id, attempt_number, from_status, to_status, stage, actor_id, reason, occurred_at)
+            VALUES
+                (%s,1,'uploaded','validating','validating',%s,'validated_upload',%s),
+                (%s,1,'validating','ready_to_ingest','ready_to_ingest',%s,'validation_passed',%s),
+                (%s,1,'ready_to_ingest','queued','queued',%s,'editor_confirmed',%s)
+            """,
+            (job_id, actor_user_id, now, job_id, actor_user_id, now, job_id, actor_user_id, now),
+        )
+    return await get_job(
+        conn, resolved_job_id, organization_id=organization_id,
+        workspace_id=workspace_id, project_id=project_id,
+    )  # type: ignore[return-value]
 
 
 def _initial_stage_states() -> dict[str, str]:
     stages = [
         IngestionStage.VALIDATING, IngestionStage.READY_TO_INGEST, IngestionStage.QUEUED,
-        IngestionStage.EXTRACTING, IngestionStage.NORMALIZING, IngestionStage.PERSISTING_PAGES,
-        IngestionStage.BUILDING_CHUNKS, IngestionStage.EMBEDDING, IngestionStage.INDEXING,
-        IngestionStage.VALIDATING_RESULT,
+        IngestionStage.CLAIMED, IngestionStage.EXTRACTING, IngestionStage.NORMALIZING,
+        IngestionStage.PERSISTING_PAGES, IngestionStage.BUILDING_CHUNKS,
+        IngestionStage.EMBEDDING, IngestionStage.INDEXING, IngestionStage.VALIDATING_RESULT,
     ]
     return {s.value: "pending" for s in stages}
 
 
-async def get_job(conn: AsyncConnection, job_id: str) -> JobResponse | None:
+async def get_job(
+    conn: AsyncConnection,
+    job_id: str,
+    *,
+    organization_id: str,
+    workspace_id: str,
+    project_id: str,
+) -> JobResponse | None:
     cur = await conn.execute(
-        "SELECT * FROM content_manager_jobs WHERE id = %s", (job_id,)
+        """SELECT * FROM content_manager_jobs
+           WHERE id=%s AND organization_id=%s AND workspace_id=%s AND project_id=%s""",
+        (job_id, organization_id, workspace_id, project_id),
     )
     rows = await cur.fetchall()
     if not rows:
@@ -359,14 +423,15 @@ async def get_job(conn: AsyncConnection, job_id: str) -> JobResponse | None:
 async def list_jobs(
     conn: AsyncConnection,
     *,
-    organization_id: str | None = None,
+    organization_id: str,
+    workspace_id: str,
+    project_id: str,
     limit: int = 50,
 ) -> JobListResponse:
-    where = "WHERE 1=1"
-    params: dict[str, Any] = {"limit": limit}
-    if organization_id:
-        where += " AND organization_id = %(org)s"
-        params["org"] = organization_id
+    where = "WHERE j.organization_id=%(org)s AND j.workspace_id=%(ws)s AND j.project_id=%(project)s"
+    params: dict[str, Any] = {
+        "limit": limit, "org": organization_id, "ws": workspace_id, "project": project_id,
+    }
 
     cur = await conn.execute(
         f"""
@@ -403,114 +468,95 @@ async def list_jobs(
     return JobListResponse(jobs=items, summary=status_counts)
 
 
-async def update_job_stage(
-    conn: AsyncConnection,
-    job_id: str,
-    stage: IngestionStage,
-    *,
-    progress_percent: float | None = None,
-    warning_codes: list[str] | None = None,
-    document_id: str | None = None,
-    error_code: str | None = None,
-    error_message: str | None = None,
-    stage_timing: float | None = None,
+async def cancel_job(
+    conn: AsyncConnection, job_id: str, *, actor_user_id: str,
+    organization_id: str, workspace_id: str, project_id: str,
 ) -> JobResponse | None:
-    """Advance a job to a new stage."""
-    job = await get_job(conn, job_id)
-    if not job:
-        return None
-
-    stage_states = _load_stage_states(conn, job_id)
-    stage_states[stage.value] = "done" if stage not in TERMINAL_STAGES else (
-        "done" if stage in (IngestionStage.COMPLETED, IngestionStage.COMPLETED_WITH_WARNINGS) else "failed"
-    )
-
-    now = _utcnow()
-    updates: dict[str, Any] = {
-        "status": stage.value,
-        "current_stage": stage.value,
-        "stage_states": json.dumps(stage_states),
-        "updated_at": now,
-    }
-    if progress_percent is not None:
-        updates["progress_percent"] = progress_percent
-    if document_id:
-        updates["document_id"] = document_id
-    if error_code:
-        updates["error_code"] = error_code
-    if error_message:
-        updates["error_message"] = error_message
-    if warning_codes:
-        existing = job.warning_codes or []
-        updates["warning_codes"] = json.dumps(list(set(existing + warning_codes)))
-    if stage == IngestionStage.QUEUED and not job.started_at:
-        updates["started_at"] = now
-    if stage in TERMINAL_STAGES:
-        updates["finished_at"] = now
-    if stage_timing is not None:
-        timing = _load_timings(conn, job_id)
-        timing[job.current_stage.value if job.current_stage else "unknown"] = stage_timing
-        updates["stage_timings"] = json.dumps(timing)
-
-    set_clause = ", ".join(f"{k} = %({k})s" for k in updates)
-    await conn.execute(
-        f"UPDATE content_manager_jobs SET {set_clause} WHERE id = %(jid)s",
-        {**updates, "jid": job_id},
-    )
-    return await get_job(conn, job_id)
-
-
-async def cancel_job(conn: AsyncConnection, job_id: str) -> JobResponse | None:
-    job = await get_job(conn, job_id)
+    job = await get_job(conn, job_id, organization_id=organization_id,
+                        workspace_id=workspace_id, project_id=project_id)
     if not job:
         return None
     if job.status in TERMINAL_STAGES:
         return job
-    cancellable = {IngestionStage.UPLOADED, IngestionStage.VALIDATING, IngestionStage.READY_TO_INGEST, IngestionStage.QUEUED}
-    if job.status not in cancellable:
+    if job.status not in {IngestionStage.UPLOADED, IngestionStage.VALIDATING,
+                          IngestionStage.READY_TO_INGEST, IngestionStage.QUEUED}:
         raise ValueError(
             f"No se puede cancelar un job en estado '{job.status.value}'. "
-            "La cancelación solo es posible antes de iniciar la escritura de datos."
+            "La cancelación solo es posible antes de iniciar escrituras."
         )
-    return await update_job_stage(conn, job_id, IngestionStage.CANCELLED, progress_percent=0.0)
+    now = _utcnow()
+    cur = await conn.execute(
+        """UPDATE content_manager_jobs SET status='cancelled', current_stage='cancelled',
+                  finished_at=%s, updated_at=%s
+           WHERE id=%s AND organization_id=%s AND workspace_id=%s AND project_id=%s
+             AND status=%s""",
+        (now, now, job_id, organization_id, workspace_id, project_id, job.status.value),
+    )
+    if cur.rowcount != 1:
+        raise ValueError("El job cambió de estado antes de la cancelación.")
+    await conn.execute(
+        """INSERT INTO content_manager_job_transitions
+           (job_id,attempt_number,from_status,to_status,stage,actor_id,reason,occurred_at)
+           VALUES(%s,%s,%s,'cancelled','cancelled',%s,'editor_cancelled',%s)""",
+        (job_id, job.attempt_number, job.status.value, actor_user_id, now),
+    )
+    return await get_job(conn, job_id, organization_id=organization_id,
+                         workspace_id=workspace_id, project_id=project_id)
 
 
-async def retry_job(conn: AsyncConnection, job_id: str, *, actor_user_id: str) -> JobResponse | None:
-    job = await get_job(conn, job_id)
-    if not job:
+async def retry_job(
+    conn: AsyncConnection, job_id: str, *, actor_user_id: str,
+    organization_id: str, workspace_id: str, project_id: str,
+) -> JobResponse | None:
+    cur = await conn.execute(
+        """SELECT j.*, u.temp_path, u.expires_at AS upload_expires_at
+           FROM content_manager_jobs j JOIN content_manager_uploads u ON u.id=j.upload_id
+           WHERE j.id=%s AND j.organization_id=%s AND j.workspace_id=%s AND j.project_id=%s""",
+        (job_id, organization_id, workspace_id, project_id),
+    )
+    row = await cur.fetchone()
+    if not row:
         return None
-    if job.status not in {IngestionStage.FAILED, IngestionStage.CANCELLED}:
+    source = dict(row)
+    if source["status"] not in {"failed", "cancelled"}:
         raise ValueError("Solo se puede reintentar un job fallido o cancelado.")
-
-    upload = await get_upload(conn, str(job.upload_id) if hasattr(job, 'upload_id') else "")
-    if not upload:
-        raise ValueError("El upload original ya no está disponible. Cargá el archivo nuevamente.")
+    temp_path = pathlib.Path(source.get("temp_path") or "")
+    if not temp_path.is_file() or (source.get("upload_expires_at") and source["upload_expires_at"] <= _utcnow()):
+        raise ValueError("reupload_required: el archivo temporal ya no está disponible.")
+    if source.get("cleanup_status") in {"pending", "running", "failed"}:
+        raise ValueError("El intento anterior requiere cleanup verificado antes del retry.")
 
     new_job_id = _uuid.uuid4()
     await conn.execute(
         """
         INSERT INTO content_manager_jobs
-            (id, upload_id, organization_id, actor_user_id, title, language,
-             work_family, administrative_notes, ingestion_profile,
-             requested_status, status, current_stage, stage_states,
-             attempt_number, created_at, updated_at)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            (id,upload_id,organization_id,workspace_id,project_id,knowledge_scope_id,
+             actor_user_id,title,language,work_family,administrative_notes,ingestion_profile,
+             requested_status,status,current_stage,stage_states,attempt_number,
+             pipeline_version,document_schema_version,embedding_model,collection_code,
+             idempotency_key,created_at,updated_at,recovery_status)
+        VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'test_candidate','queued','queued',%s,
+               %s,%s,%s,%s,%s,%s,%s,%s,'requeued')
         """,
-        (
-            new_job_id, job.upload_id if hasattr(job, 'upload_id') else None, None, actor_user_id,
-            job.title, job.language, None, None,
-            job.ingestion_profile.value if hasattr(job.ingestion_profile, 'value') else "auto",
-            "test_candidate", IngestionStage.QUEUED.value, IngestionStage.QUEUED.value,
-            json.dumps(_initial_stage_states()),
-            job.attempt_number + 1, _utcnow(), _utcnow(),
-        ),
+        (new_job_id, source["upload_id"], organization_id, workspace_id, project_id,
+         source["knowledge_scope_id"], actor_user_id, source["title"], source["language"],
+         source["work_family"], source["administrative_notes"], source["ingestion_profile"],
+         json.dumps(_initial_stage_states()), source["attempt_number"] + 1,
+         source["pipeline_version"], source["document_schema_version"], source["embedding_model"],
+         source["collection_code"], source["idempotency_key"], _utcnow(), _utcnow()),
     )
-    return await get_job(conn, str(new_job_id))
+    return await get_job(conn, str(new_job_id), organization_id=organization_id,
+                         workspace_id=workspace_id, project_id=project_id)
 
 
-async def get_diagnostic(conn: AsyncConnection, job_id: str) -> IngestionDiagnostic | None:
+async def get_diagnostic(
+    conn: AsyncConnection, job_id: str, *, organization_id: str,
+    workspace_id: str, project_id: str,
+) -> IngestionDiagnostic | None:
     job_row = await conn.execute(
-        "SELECT * FROM content_manager_jobs WHERE id = %s", (job_id,)
+        """SELECT * FROM content_manager_jobs
+           WHERE id=%s AND organization_id=%s AND workspace_id=%s AND project_id=%s""",
+        (job_id, organization_id, workspace_id, project_id),
     )
     rows = await job_row.fetchall()
     if not rows:
@@ -577,12 +623,20 @@ def _job_response(row: dict[str, Any]) -> JobResponse:
         ),
         error_code=row.get("error_code"),
         error_message=row.get("error_message"),
-        warning_codes=json.loads(row.get("warning_codes") or "[]"),
+        warning_codes=_json_list(row.get("warning_codes")),
         attempt_number=row.get("attempt_number", 1),
         ingestion_profile=IngestionProfile(row.get("ingestion_profile", "auto")),
         created_at=row.get("created_at"),
         started_at=row.get("started_at"),
         finished_at=row.get("finished_at"),
+        worker_id=row.get("claimed_by"),
+        claimed_at=row.get("claimed_at"),
+        lease_expires_at=row.get("lease_expires_at"),
+        heartbeat_at=row.get("heartbeat_at"),
+        cleanup_status=row.get("cleanup_status"),
+        recovery_status=row.get("recovery_status"),
+        pipeline_version=row.get("pipeline_version"),
+        idempotency_key=row.get("idempotency_key"),
     )
 
 

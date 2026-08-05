@@ -121,6 +121,16 @@ class AppSettings(BaseSettings):
     research_pipeline: Literal["simple_rag", "advanced", "compare"] = "simple_rag"
     research_include_test_candidates_readonly: bool = True
 
+    # ── Content Manager ─────────────────────────────────────────
+    content_manager_max_upload_bytes: int = 200 * 1024 * 1024
+    content_manager_max_pdf_pages: int = 2000
+    content_manager_upload_ttl_hours: int = 24
+    content_manager_worker_lease_seconds: int = 120
+    content_manager_worker_heartbeat_seconds: int = 30
+    content_manager_pipeline_version: str = "content_page_first_v1"
+    content_manager_document_schema_version: str = "page_first_v2"
+    content_manager_e2e_collection: str = "tebaai_content_manager_e2e_v1"
+
     # ── Auth ────────────────────────────────────────────────────
     auth_enabled: bool = False
     jwt_secret: SecretStr = Field(

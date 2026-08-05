@@ -1,6 +1,8 @@
 {
   "status": "NOT RUN",
-  "source_support": "The component does not set dir for Hebrew or mixed document titles/filenames and does not reuse research textDirection helpers.",
-  "niqqud": "NOT VALIDATED",
-  "mixed_ltr_rtl": "NOT VALIDATED"
+  "hebrew_filename": "NOT RUN",
+  "hebrew_title": "NOT RUN",
+  "niqqud": "NOT RUN",
+  "mixed_text": "NOT RUN",
+  "local_rtl_only": "NOT RUN"
 }

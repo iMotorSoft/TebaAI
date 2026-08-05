@@ -1,26 +1,27 @@
-# Content Manager V1 — DEV blocking report
+# Content Manager V1 — DEV continuation report
 
 ## Outcome
 
 `TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED`
 
-- `TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1_DEV_READY`: **BLOCKED**
-- `TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS`: **BLOCKED**
-- `TEBAAI_CONTENT_MANAGER_V1_DEV_READY`: **BLOCKED**
+| Gate | Result |
+|---|---|
+| `TEBAAI_CONTENT_MANAGER_INGESTION_ORCHESTRATOR_V1_DEV_READY` | BLOCKED |
+| `TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1_DEV_READY` | BLOCKED |
+| `TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS` | NOT RUN / BLOCKED |
+| `TEBAAI_CONTENT_MANAGER_V1_DEV_READY` | BLOCKED |
 
-The checked-in baseline provides upload/job tables, HTTP contracts and an initial UI. It cannot close the phase because no reusable worker invokes the real page-first ingestion pipeline. Jobs remain in `validating`; exact duplicates can reach job creation; state transitions and concurrent idempotency are not enforced atomically; resource queries are not tenant-scoped; success/TTL cleanup and PG↔Milvus reconciliation are absent.
+## Progress in this continuation
 
-The UI is also a baseline only: its declared three-step presentation conflicts with the required five stages, technical detail/history/diagnostic actions are missing, and no reproducible premium visual, RTL, mobile or accessibility evidence exists.
+The PostgreSQL orchestration foundation now has a canonical transition graph, exclusive claim/lease/heartbeat SQL, stale-claim recovery, atomic active-job idempotency, tenant-scoped resource access, exact-duplicate rejection, normalized attempts/manifests/resource IDs and an HTTP-independent worker contract. Forty new orchestration tests pass; the complete backend passes 1534 tests.
 
-No real upload or corpus write was attempted. PostgreSQL, Milvus and LiteLLM were not started, stopped, restarted, migrated or reconfigured. Existing corpus and `Interior Final` were not touched.
+## Root blocker
 
-## Minimum unblock
+There is still no concrete reusable `PageFirstPipeline`. Existing pipelines are document-specific scripts and cannot safely be called by the generic worker. The current Milvus client also lacks attempt-scoped reconciliation and exact manifest cleanup. PostgreSQL exposes only `breslov_primary`; therefore an authorized isolated write E2E cannot run without risking corpus/vector contamination.
 
-1. Extract a reusable, typed page-first ingestion service from document-specific scripts.
-2. Add a worker ownership/lease model, atomic transition graph and database-backed idempotency key.
-3. Resolve effective organization/workspace/project/scope for every upload and job query.
-4. Add isolated test collection/profile plus exact cleanup for PG and Milvus.
-5. Finish validation, diagnostics, fixtures, backend/E2E tests and only then complete the premium UI gate.
+Migration 041 passed a transactional dry-run and was rolled back; it was not applied. No upload, document, page, chunk, embedding or vector was written. `Interior Final` and all `ready` documents remain untouched.
+
+The premium UI phase was intentionally not claimed: the tracked baseline still presents three stages and generic dashboard patterns. No screenshots or fake progress evidence were generated.
 
 Read-only audit:
 
@@ -29,4 +30,4 @@ cd SrvRestAstroLS_v1/backend
 uv run python scripts/audit_pdf_upload_ingestion_console_v1.py --json
 ```
 
-The expected exit code is non-zero while these blockers remain.
+Expected result: `BLOCKED` with concrete pipeline, reconciliation, cleanup and isolated-write-E2E blockers.

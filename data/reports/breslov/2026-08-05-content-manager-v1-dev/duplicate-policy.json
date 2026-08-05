@@ -1,9 +1,9 @@
 {
-  "status": "BLOCKED",
+  "status": "SOURCE_PASS_REAL_NOT_RUN",
   "sha256_computed": true,
+  "scope_constrained_detection": true,
   "exact_duplicate_classified": true,
-  "exact_duplicate_job_rejected": false,
+  "exact_duplicate_job_rejected": true,
   "same_filename_different_hash": "possible_revised_edition",
-  "known_source_new_instance": "enum only",
-  "atomic_duplicate_guard": false
+  "active_job_atomic_guard": true
 }

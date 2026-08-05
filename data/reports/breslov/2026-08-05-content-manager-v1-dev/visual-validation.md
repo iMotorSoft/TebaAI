@@ -1,7 +1,7 @@
-# Visual validation
+# Visual validation — NOT RUN
 
-Status: **BLOCKED / NOT RUN**.
+The initial Svelte surface remains unchanged in this continuation because the functional orchestrator gate is still blocked.
 
-Source review found an initial DaisyUI admin surface rather than demonstrated continuity with `/research`: repeated shadowed stats/cards, generic badges/table, emoji upload icon, three-stage copy, and no product identity lockup. Required history/detail/diagnostic states are absent. No screenshots were captured because the functional flow cannot progress beyond `validating` and both DEV servers were initially inactive.
+Known nonconformance remains: three-stage copy instead of the required five-stage flow, generic DaisyUI stats/table/dashboard treatment, no history/detail/diagnostic surface, and no complete state fixtures. Therefore no premium screenshots were manufactured and `TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS` remains **NOT RUN/BLOCKED**.
 
-The premium gate requires reproducible Playwright states at 1440×900, 1024×768 and 390×844 after the ingestion worker and safe fixtures exist. RTL, mixed-script filenames, keyboard operation, focus, aria-live and reduced motion must be included.
+The next visual phase must reuse Breslov Research typography/tokens and capture all required states at 1440×900, 1024×768 and 390×844, including local RTL/niqqud and automated accessibility evidence.

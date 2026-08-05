@@ -1,9 +1,9 @@
 {
   "status": "NOT RUN",
-  "reason": "No reusable worker/orchestrator and no proven isolated PG+Milvus cleanup profile.",
+  "fixture": null,
+  "isolated_scope": false,
+  "isolated_milvus_collection": "configured_name_only",
+  "cleanup_verified": false,
   "writes_performed": false,
-  "postgres_modified": false,
-  "milvus_modified": false,
-  "litellm_called": false,
-  "existing_corpus_modified": false
+  "blocking_reason": "only breslov_primary exists and no concrete safe pipeline/cleanup exists"
 }

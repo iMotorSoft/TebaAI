@@ -8,18 +8,20 @@ Ultima actualizacion: 2026-08-05 (Content Manager V1 — gate DEV bloqueado)
 
 Estado: `TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED`.
 
-La baseline incluye migración, contratos HTTP y una UI inicial, pero no es una
-implementación funcional cerrable. La auditoría read-only confirmó que no hay
-worker ni orquestador reusable que conecte el job con el pipeline page-first;
-un job creado permanece en `validating`. La ingesta real sigue distribuida
-entre servicios parciales y scripts documentales específicos.
+La continuación endureció la base sin declarar un falso cierre: existe grafo
+canónico de transiciones, claim `FOR UPDATE SKIP LOCKED`, ownership con lease y
+heartbeat, recuperación de claims expirados, idempotencia atómica para jobs
+activos, rechazo de duplicado exacto, acceso tenant-scoped, límites tipados y
+schema normalizado de attempts/manifests/IDs de recursos. El worker durable es
+independiente de HTTP y 40 tests nuevos cubren transiciones, dos workers, lease,
+fallo y terminales; backend completo: 1534 PASS.
 
-Bloqueos de seguridad e integridad: acceso a upload/job por ID sin cadena
-tenant completa, idempotencia select-then-insert sin constraint atómico,
-duplicado exacto clasificado pero no rechazado al crear job, máquina de estados
-sin grafo de transiciones ni ownership de worker, límites fuera de
-`core/config.py`, y ausencia de cleanup por éxito/TTL con auditoría. El
-diagnóstico actual no reconcilia PG↔Milvus.
+El gate sigue bloqueado porque no existe una implementación concreta reusable
+de `PageFirstPipeline`: los pipelines reales continúan en scripts documentales
+específicos. También faltan reconciliación Milvus acotada al intento, cleanup
+compensatorio por IDs del manifest y scope E2E aislado (PG solo contiene
+`breslov_primary`). La migración 041 pasó dry-run transaccional con rollback y
+no fue aplicada; no se ejecutaron escrituras reales.
 
 La UI inicial tampoco cierra el gate premium: presenta tres etapas declaradas
 en lugar de cinco, no tiene detalle/historial/diagnóstico operable, usa patrones

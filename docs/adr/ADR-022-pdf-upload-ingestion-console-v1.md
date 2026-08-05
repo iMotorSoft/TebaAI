@@ -58,6 +58,23 @@ Arquitectura en dos capas:
 - No se despliega a producción.
 - No se modifica el corpus existente.
 
+## Continuación de hardening — 2026-08-05
+
+Se aprobó como diseño incremental la migración 041 y las capas
+`content_manager_state.py`, `content_manager_repository.py` y
+`content_manager_worker.py`. La decisión concreta usa PostgreSQL como cola
+durable: claim exclusivo con `FOR UPDATE SKIP LOCKED`, lease/heartbeat,
+compare-and-swap de transiciones, attempts y manifest normalizado. La
+idempotencia activa queda protegida por índice único parcial y el acceso a
+uploads/jobs se restringe por organización, workspace y proyecto resueltos
+desde el scope autorizado.
+
+Este hardening no aprueba aún una implementación de pipeline. El contrato
+`PageFirstPipeline` permanece sin implementación concreta porque los scripts
+existentes son específicos por documento y Milvus todavía no ofrece en esta
+capa reconciliación/cleanup exactos por manifest. La migración 041 fue validada
+en una transacción revertida y no aplicada.
+
 ## Consecuencias
 
 - La migración, los contratos HTTP y la superficie inicial sirven como baseline, no como gate cerrado.

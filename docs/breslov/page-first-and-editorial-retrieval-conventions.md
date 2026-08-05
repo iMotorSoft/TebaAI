@@ -296,9 +296,13 @@ página completa antes de derivar bloques y chunks, seleccione una colección
 test aislada, registre ownership y transiciones atómicas del job, y reconcilie
 PostgreSQL↔Milvus antes de finalizar en `test_candidate`.
 
-La baseline de 2026-08-05 queda bloqueada: crear un job no inicia ningún worker,
-por lo que no se autoriza envolver scripts con shell ni ejecutar E2E de
-escritura contra el corpus principal. Ver ADR-022 y el reporte reproducible
+La continuación de 2026-08-05 agregó la base durable (claim exclusivo,
+lease/heartbeat, grafo de estados, attempts y manifest), y la creación atómica
+ahora encola en vez de quedar en `validating`. Esto no equivale a ingesta: el
+contrato de worker todavía no tiene una implementación concreta reusable del
+pipeline, reconciliación ni cleanup exacto. No se autoriza envolver scripts con
+shell ni ejecutar E2E de escritura contra `breslov_primary`. Ver ADR-022 y el
+reporte reproducible
 `data/reports/breslov/2026-08-05-content-manager-v1-dev/`.
 
 ## Documento de Referencia

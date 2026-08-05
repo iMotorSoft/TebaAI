@@ -1,0 +1,9 @@
+{
+  "status": "BLOCKED",
+  "manifest_schema": true,
+  "exact_resource_ids": true,
+  "postgres_cleanup_executor": false,
+  "milvus_cleanup_executor": false,
+  "ttl_sweeper": false,
+  "writes_performed": false
+}

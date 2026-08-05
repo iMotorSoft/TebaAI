@@ -1,7 +1,5 @@
 # Rollback plan
 
-The blocking-report changes are documentation and a read-only audit script; reverting them performs no data operation.
+No migration was applied and no runtime data was written in this continuation.
 
-The initial Content Manager runtime baseline can be disabled by removing its route registrations and frontend page without touching existing valid documents. Migration 040 must not be dropped automatically on a shared database. Any future rollback of persisted upload/job rows requires an explicit, scoped migration after confirming no worker owns a job.
-
-No rollback against PostgreSQL or Milvus is needed for this assessment because no write test, migration or ingestion was executed.
+Code rollback is commit-scoped: revert the Content Manager hardening commit. Migration 041 must not be removed after application; a forward migration would be required. Before any future write E2E, cleanup must use exact manifest IDs and an isolated Milvus collection. Never delete by title, filename or broad timestamp and never drop a shared collection.

@@ -1,6 +1,9 @@
 {
-  "status": "BLOCKED",
-  "present": ["dropzone role/button", "tabindex", "file input", "basic aria-label"],
-  "missing_or_unverified": ["five-step semantics", "aria-live progress", "field-linked errors", "focus restoration", "Escape/cancel behavior", "reduced motion", "contrast audit", "complete keyboard E2E"],
-  "axe": "NOT RUN"
+  "status": "NOT RUN",
+  "keyboard": "NOT RUN",
+  "focus_visible": "NOT RUN",
+  "dropzone": "BASELINE_ONLY",
+  "aria_live": "MISSING",
+  "axe": "NOT RUN",
+  "reduced_motion": "NOT RUN"
 }

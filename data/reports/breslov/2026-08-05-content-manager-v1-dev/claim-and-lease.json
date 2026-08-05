@@ -1,0 +1,8 @@
+{
+  "status": "UNIT_PASS_REAL_NOT_RUN",
+  "claim": "SELECT FOR UPDATE SKIP LOCKED",
+  "fields": ["claimed_by", "claimed_at", "lease_expires_at", "heartbeat_at", "attempt_number"],
+  "expired_without_writes": "requeued",
+  "expired_with_partial_writes": "manual_review_required",
+  "database_migration_applied": false
+}

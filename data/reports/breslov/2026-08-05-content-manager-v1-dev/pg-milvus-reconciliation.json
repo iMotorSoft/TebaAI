@@ -1,0 +1,9 @@
+{
+  "status": "BLOCKED",
+  "postgres_expected": "NOT RUN",
+  "milvus_expected": "NOT RUN",
+  "missing": "NOT RUN",
+  "orphans": "NOT RUN",
+  "duplicates": "NOT RUN",
+  "reason": "attempt-scoped Milvus query/reconciliation is not implemented"
+}

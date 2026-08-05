@@ -1,11 +1,12 @@
 {
-  "backend_focused": {"command": "uv run pytest -q tests -k content-manager-related-selection", "result": "8 passed, 1486 deselected", "note": "No dedicated Content Manager tests were discovered."},
-  "backend_full": {"result": "1494 passed, 94 warnings"},
-  "frontend_check": {"result": "0 errors, 2 hints"},
-  "frontend_test": {"result": "70 passed"},
-  "frontend_build": {"result": "PASS, 9 pages"},
-  "audit": {"result": "expected BLOCKED", "exit_code": 1},
-  "lat_check": "PASS (canonical Content Manager policy added to lat.md index)",
-  "git_diff_check": "PASS",
-  "e2e": "NOT RUN because real ingestion and isolated cleanup are blocked"
+  "backend_focused_initial": {"passed": 48, "failed": 0, "deselected": 1446},
+  "backend_focused_final": {"passed": 88, "failed": 0, "deselected": 1446},
+  "new_orchestrator_tests": {"passed": 40, "failed": 0},
+  "backend_full": {"passed": 1534, "failed": 0, "warnings": 94, "duration_seconds": 70.33},
+  "migration_041_transactional_dry_run": "PASS_ROLLED_BACK",
+  "source_audit": "BLOCKED_EXPECTED",
+  "frontend": {"check_errors": 0, "check_hints": 2, "tests_passed": 70, "tests_failed": 0, "build": "PASS_9_PAGES"},
+  "e2e": "NOT RUN",
+  "lat": "PASS_WITH_ENVIRONMENT_WARNINGS",
+  "git_diff_check": "PASS"
 }

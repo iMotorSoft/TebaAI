@@ -1,10 +1,8 @@
 {
-  "status": "BLOCKED",
-  "enumerated_states": 16,
-  "transition_graph_enforced": false,
-  "worker_ownership": false,
-  "compare_and_swap": false,
-  "created_job_advances": false,
-  "cancel_guard_present": true,
-  "retry_history_partial": true
+  "status": "UNIT_PASS",
+  "states": ["uploaded", "validating", "validation_failed", "ready_to_ingest", "queued", "claimed", "extracting", "normalizing", "persisting_pages", "building_chunks", "embedding", "indexing", "validating_result", "completed", "completed_with_warnings", "failed", "cancelled"],
+  "canonical_source": "SrvRestAstroLS_v1/backend/modules/library/content_manager_state.py",
+  "invalid_transitions_rejected": true,
+  "transition_audit_schema": true,
+  "real_database_execution": "NOT RUN"
 }

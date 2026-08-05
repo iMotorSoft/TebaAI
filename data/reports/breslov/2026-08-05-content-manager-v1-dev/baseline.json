@@ -1,10 +1,9 @@
 {
   "date": "2026-08-05",
   "branch": "feature/console-backend-core",
-  "expected_head": "fae20d0",
-  "actual_initial_head": "330e291c919b0c24da3d612676666f2bb412bb27",
-  "divergence": "Two Content Manager commits already present: 5938bb4 and 330e291",
-  "preexisting_changes_preserved": true,
-  "preexisting_tracked_summary": ["frontend public configuration/layout/assets", "research backend test", "manual DEV documentation", "ADR-013", "LAT frontend policy", "historical screenshots"],
-  "preexisting_untracked_summary": ["favicon/image assets", "frontend scripts", "backend data/probes", "historical report directories"]
+  "head_initial": "95e360a74d1c431cb62647e4ea6f82fde1819482",
+  "status": "TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED",
+  "postgres_writes": false,
+  "milvus_writes": false,
+  "migration_041_applied": false
 }

@@ -1,5 +1,7 @@
 {
-  "status": "BLOCKED",
-  "present": ["POST /admin/content/uploads", "POST /admin/content/jobs", "GET /admin/content/jobs", "GET /admin/content/jobs/{job_id}", "POST /admin/content/jobs/{job_id}/retry", "POST /admin/content/jobs/{job_id}/cancel", "GET /admin/content/jobs/{job_id}/diagnostic"],
-  "missing_or_incomplete": ["document ingestion summary route", "tenant-scoped lookup", "real worker dispatch", "typed public API client", "stable machine-readable validation errors"]
+  "base": "/admin/content",
+  "endpoints": ["POST /uploads", "POST /jobs", "GET /jobs", "GET /jobs/{id}", "POST /jobs/{id}/retry", "POST /jobs/{id}/cancel", "GET /jobs/{id}/diagnostic"],
+  "scope_selector": "knowledge_scope_code validated server-side against membership",
+  "terminal_document_status": "test_candidate_only",
+  "known_gap": "diagnostic has no attempt-scoped Milvus reconciliation"
 }

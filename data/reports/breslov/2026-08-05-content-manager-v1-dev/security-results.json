@@ -1,6 +1,11 @@
 {
-  "status": "BLOCKED",
-  "pass": ["random upload directory", "no shell execution in upload route", "PDF prefix check", "size limit", "SHA-256", "coarse role denial", "no internal path in response schema"],
-  "fail": ["tenant-scoped lookup", "real MIME validation", "encryption rejection", "corrupt parse rejection", "atomic idempotency", "success/TTL cleanup", "FK/check constraints"],
-  "real_attack_fixture_execution": "NOT RUN"
+  "status": "PARTIAL",
+  "role_guard": "PASS_SOURCE",
+  "tenant_scope": "PASS_SOURCE",
+  "exact_duplicate_rejected": "PASS_SOURCE",
+  "ready_rejected": "PASS_SOURCE",
+  "typed_limits": "PASS",
+  "temp_ttl_cleanup": "BLOCKED",
+  "cross_tenant_http_negative_tests": "NOT RUN",
+  "secrets_exposed": false
 }

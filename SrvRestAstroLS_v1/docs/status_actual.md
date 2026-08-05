@@ -2,25 +2,33 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-04 (Content Manager V1 — backend + frontend inicial en DEV)
+Ultima actualizacion: 2026-08-05 (Content Manager V1 — gate DEV bloqueado)
 
-## Content Manager V1 (Gestor de Contenidos) — 2026-08-04 (DEV)
+## Content Manager V1 (Gestor de Contenidos) — 2026-08-05 (DEV)
 
-Estado: backend funcional (migración + rutas + upload + job state machine),
-frontend inicial (admin/content con flujo guiado).
+Estado: `TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED`.
 
-- backend: `modules/library/content_manager.py` + `content_manager_schemas.py`;
-  migración `040_content_manager_uploads_and_jobs.sql` con tablas de uploads y
-  jobs; rutas en `/admin/content/*` protegidas por rol admin/editor;
-- frontend: `admin/content.astro` + `ContentManager.svelte` con flujo Archivo →
-  Metadata → Confirmación → Progreso → Resultado; lista de cargas recientes;
-  resumen operativo; desktop (tabla editorial) + móvil (cards);
-- validación de PDF (magic bytes, tamaño, páginas, SHA-256); detección de
-  duplicados; idempotencia (mismo SHA-256 no reingiere); `requested_status=ready`
-  rechazado; guest/viewer → 403;
-- pendiente: E2E completos, validación visual premium exhaustiva, fixtures de
-  test PDF, auditoría read-only, tests de integración con pipeline real.
+La baseline incluye migración, contratos HTTP y una UI inicial, pero no es una
+implementación funcional cerrable. La auditoría read-only confirmó que no hay
+worker ni orquestador reusable que conecte el job con el pipeline page-first;
+un job creado permanece en `validating`. La ingesta real sigue distribuida
+entre servicios parciales y scripts documentales específicos.
 
+Bloqueos de seguridad e integridad: acceso a upload/job por ID sin cadena
+tenant completa, idempotencia select-then-insert sin constraint atómico,
+duplicado exacto clasificado pero no rechazado al crear job, máquina de estados
+sin grafo de transiciones ni ownership de worker, límites fuera de
+`core/config.py`, y ausencia de cleanup por éxito/TTL con auditoría. El
+diagnóstico actual no reconcilia PG↔Milvus.
+
+La UI inicial tampoco cierra el gate premium: presenta tres etapas declaradas
+en lugar de cinco, no tiene detalle/historial/diagnóstico operable, usa patrones
+DaisyUI de dashboard genérico y carece de evidencia responsive, RTL,
+accesibilidad y capturas de todos los estados.
+
+No se ejecutó escritura E2E ni se tocó PostgreSQL, Milvus, LiteLLM o el corpus.
+Auditoría: `backend/scripts/audit_pdf_upload_ingestion_console_v1.py`.
+Reporte: `data/reports/breslov/2026-08-05-content-manager-v1-dev/`.
 ADR: `docs/adr/ADR-022-pdf-upload-ingestion-console-v1.md`.
 
 ## Editorial Evidence Granularity & Stable IDs V1 — 2026-08-04 (DEV)

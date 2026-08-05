@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED",
+  "pass": ["random upload directory", "no shell execution in upload route", "PDF prefix check", "size limit", "SHA-256", "coarse role denial", "no internal path in response schema"],
+  "fail": ["tenant-scoped lookup", "real MIME validation", "encryption rejection", "corrupt parse rejection", "atomic idempotency", "success/TTL cleanup", "FK/check constraints"],
+  "real_attack_fixture_execution": "NOT RUN"
+}

@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED",
+  "implemented": ["non-empty", "byte size", "PDF prefix", "SHA-256", "page count attempt", "page maximum"],
+  "missing": ["extension", "declared MIME", "real MIME", "encrypted PDF rejection", "corrupt PDF rejection when page count is zero", "double-extension policy", "config-backed limits", "structured error codes"],
+  "fixtures": "NOT CREATED because no safe complete ingestion layer exists"
+}

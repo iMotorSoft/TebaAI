@@ -71,6 +71,7 @@ Each architecture concern has one canonical LAT source and may be anchored from 
 - [[authentication-security-policy]]
 - [[tenant-context-authorization-policy]]
 - [[frontend-implementation-policy]]
+- [[content-manager-premium-ux-policy]]
 - [[knowledge-scope-contract]]
 - [[library-retrieval-models-policy]]
 - [[breslov-test-corpus-policy]]

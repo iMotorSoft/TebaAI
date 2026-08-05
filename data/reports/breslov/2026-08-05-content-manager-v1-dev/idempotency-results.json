@@ -1,0 +1,8 @@
+{
+  "status": "BLOCKED",
+  "sequential_select_then_insert": "present",
+  "database_unique_key": false,
+  "concurrent_double_submit": "NOT SAFE",
+  "worker_claim": "absent",
+  "stable_identity": "source_sha256/pipeline_version/profile/scope not persisted as one key"
+}

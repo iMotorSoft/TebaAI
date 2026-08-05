@@ -1,0 +1,9 @@
+{
+  "status": "NOT RUN",
+  "reason": "No reusable worker/orchestrator and no proven isolated PG+Milvus cleanup profile.",
+  "writes_performed": false,
+  "postgres_modified": false,
+  "milvus_modified": false,
+  "litellm_called": false,
+  "existing_corpus_modified": false
+}

@@ -1,0 +1,10 @@
+{
+  "status": "BLOCKED",
+  "enumerated_states": 16,
+  "transition_graph_enforced": false,
+  "worker_ownership": false,
+  "compare_and_swap": false,
+  "created_job_advances": false,
+  "cancel_guard_present": true,
+  "retry_history_partial": true
+}

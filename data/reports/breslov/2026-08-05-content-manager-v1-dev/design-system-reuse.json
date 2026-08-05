@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED",
+  "reused": ["Layout.astro", "global app.css/research.css imports", "existing DaisyUI utility classes"],
+  "not_reused_or_missing": ["Breslov identity components", "research editorial navigation", "typed API/session client", "direction helpers", "premium editorial surfaces"],
+  "new_components": [{"name": "ContentManager.svelte", "reason": "business flow baseline", "assessment": "too monolithic and generic for premium gate"}]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "BLOCKED",
+  "admin": "coarse JWT role allowed; tenant membership not resolved",
+  "editor": "currently allowed although prompt requires authorized administrative users; effective permission not defined",
+  "viewer": "403 by route role check",
+  "guest": "403 when authenticated as viewer; 401 without authentication",
+  "cross_tenant": "FAIL: resource queries use only upload_id/job_id",
+  "frontend_hiding": "not an authorization source"
+}

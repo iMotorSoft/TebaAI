@@ -2,7 +2,7 @@
 
 ## Estado
 
-Aceptado (DEV inicial).
+Aceptado como diseño; implementación DEV bloqueada (2026-08-05).
 
 ## Contexto
 
@@ -60,10 +60,11 @@ Arquitectura en dos capas:
 
 ## Consecuencias
 
-- Flujo de carga controlado y trazable.
-- Jobs idempotentes con diagnóstico.
-- Base para futuras iteraciones (editor manual, promoción, pipeline avanzado).
-- Necesidad de E2E completos y validación visual premium en iteración siguiente.
+- La migración, los contratos HTTP y la superficie inicial sirven como baseline, no como gate cerrado.
+- El pipeline page-first real continúa distribuido entre servicios parciales y scripts específicos; no existe todavía un orquestador reusable, transaccional y aislado que pueda consumir un worker web.
+- Los jobs actuales no avanzan por sí mismos desde `validating`, la idempotencia no es atómica y las consultas por ID no aplican la cadena tenant completa.
+- Hasta resolver esos bloqueos, no se ejecutan E2E de escritura ni se declara funcional o visualmente listo el Gestor.
+- La fase futura debe extraer el pipeline reusable, añadir ownership/leases y cleanup probado, y recién después cerrar seguridad, integración y UX premium.
 
 ## Rollback
 

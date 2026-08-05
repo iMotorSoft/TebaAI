@@ -287,6 +287,20 @@ referencia impresa si el corpus solo contiene `116:10`.
 
 ---
 
+## Gestor de Contenidos V1
+
+La consola de upload no puede ejecutar esta ingesta mientras el pipeline
+page-first continúe distribuido entre scripts específicos y servicios
+parciales. El gate requiere un orquestador Python reusable que persista la
+página completa antes de derivar bloques y chunks, seleccione una colección
+test aislada, registre ownership y transiciones atómicas del job, y reconcilie
+PostgreSQL↔Milvus antes de finalizar en `test_candidate`.
+
+La baseline de 2026-08-05 queda bloqueada: crear un job no inicia ningún worker,
+por lo que no se autoriza envolver scripts con shell ni ejecutar E2E de
+escritura contra el corpus principal. Ver ADR-022 y el reporte reproducible
+`data/reports/breslov/2026-08-05-content-manager-v1-dev/`.
+
 ## Documento de Referencia
 
 - **Document:** `LIKUTEY HALAJOT (Interior Final).pdf`

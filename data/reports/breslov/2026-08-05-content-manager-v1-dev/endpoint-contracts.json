@@ -1,0 +1,5 @@
+{
+  "status": "BLOCKED",
+  "present": ["POST /admin/content/uploads", "POST /admin/content/jobs", "GET /admin/content/jobs", "GET /admin/content/jobs/{job_id}", "POST /admin/content/jobs/{job_id}/retry", "POST /admin/content/jobs/{job_id}/cancel", "GET /admin/content/jobs/{job_id}/diagnostic"],
+  "missing_or_incomplete": ["document ingestion summary route", "tenant-scoped lookup", "real worker dispatch", "typed public API client", "stable machine-readable validation errors"]
+}

@@ -1,0 +1,11 @@
+{
+  "backend_focused": {"command": "uv run pytest -q tests -k content-manager-related-selection", "result": "8 passed, 1486 deselected", "note": "No dedicated Content Manager tests were discovered."},
+  "backend_full": {"result": "1494 passed, 94 warnings"},
+  "frontend_check": {"result": "0 errors, 2 hints"},
+  "frontend_test": {"result": "70 passed"},
+  "frontend_build": {"result": "PASS, 9 pages"},
+  "audit": {"result": "expected BLOCKED", "exit_code": 1},
+  "lat_check": "PASS (canonical Content Manager policy added to lat.md index)",
+  "git_diff_check": "PASS",
+  "e2e": "NOT RUN because real ingestion and isolated cleanup are blocked"
+}

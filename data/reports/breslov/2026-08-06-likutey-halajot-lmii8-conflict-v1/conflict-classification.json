@@ -1,0 +1,40 @@
+{
+  "assessed": {
+    "A_alias_metadata": true,
+    "B_logical_duplicate": false,
+    "C_same_quote_two_works": false,
+    "D_chunk_wrong_doc": false,
+    "E_page_wrong_doc": false,
+    "F_pg_vs_milvus_drift": false,
+    "G_superseded_active": false,
+    "H_identity_inferred_wrong": false,
+    "I_lesson_confused_with_volume": false,
+    "J_code_collision": false,
+    "K_evidence_collision": false,
+    "L_editorial_ambiguity": true
+  },
+  "summary": "Sin defectos activos: la causa fue el diagnóstico de ADR-017, ya resuelto por el contrato canónico (ADR-019) sin modificar corpus; la ambigüedad corta (Likutey/LM) retorna scope_ambiguous por diseño.",
+  "hypothesis_labels": {
+    "A": "alias de metadata sin corrupción de contenido",
+    "B": "registro lógico duplicado",
+    "C": "misma cita utilizada legítimamente por dos obras",
+    "D": "chunk asignado al documento incorrecto",
+    "E": "página asignada al documento incorrecto",
+    "F": "metadata PostgreSQL diferente de metadata Milvus",
+    "G": "registro superseded todavía activo",
+    "H": "identidad canónica inferida incorrectamente",
+    "I": "source_lesson=8 confundido con volumen o edición",
+    "J": "colisión de document_code o collection_code",
+    "K": "colisión o deriva de evidence_id",
+    "L": "ambigüedad editorial no resoluble automáticamente"
+  },
+  "active_defects": [],
+  "resolutions": {
+    "A_alias_metadata": true,
+    "L_editorial_ambiguity": true
+  },
+  "active": [
+    "A_alias_metadata",
+    "L_editorial_ambiguity"
+  ]
+}

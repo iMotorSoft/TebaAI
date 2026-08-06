@@ -1,0 +1,246 @@
+[
+  {
+    "query": "Likutey Halajot",
+    "scope": {
+      "scope_family": [
+        "likutey_halajot"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": [
+      {
+        "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+        "title": "Likutey Halajot — Interior Final",
+        "family": "likutey_halajot",
+        "status": "test_candidate"
+      },
+      {
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "title": "Likutey Halajot LM II 8",
+        "family": "likutey_halajot",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "query": "Likutey Halajot LM II 8",
+    "scope": {
+      "scope_family": [
+        "likutey_halajot"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": "likutey_moharan_ii",
+      "scope_source_lesson": 8,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": [
+      {
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "title": "Likutey Halajot LM II 8",
+        "family": "likutey_halajot",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "query": "Likutey Halajot, lección 8",
+    "scope": {
+      "scope_family": [
+        "likutey_halajot"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": [
+      {
+        "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+        "title": "Likutey Halajot — Interior Final",
+        "family": "likutey_halajot",
+        "status": "test_candidate"
+      },
+      {
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "title": "Likutey Halajot LM II 8",
+        "family": "likutey_halajot",
+        "status": "ready"
+      }
+    ]
+  },
+  {
+    "query": "Likutey Moharán II",
+    "scope": {
+      "scope_family": [
+        "likutey_moharan_ii"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": [
+      {
+        "document_id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+        "title": "Likutey Moharán II — edición española BRI",
+        "family": "likutey_moharan_ii",
+        "status": "test_candidate"
+      }
+    ]
+  },
+  {
+    "query": "Likutey Moharán II lección 8",
+    "scope": {
+      "scope_family": [
+        "likutey_moharan_ii"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": 8,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": [
+      {
+        "document_id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+        "title": "Likutey Moharán II — edición española BRI",
+        "family": "likutey_moharan_ii",
+        "status": "test_candidate"
+      }
+    ]
+  },
+  {
+    "query": "LM II",
+    "scope": {
+      "scope_family": [
+        "likutey_moharan_ii"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": [
+      {
+        "document_id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+        "title": "Likutey Moharán II — edición española BRI",
+        "family": "likutey_moharan_ii",
+        "status": "test_candidate"
+      }
+    ]
+  },
+  {
+    "query": "LM II 8",
+    "scope": {
+      "scope_family": [
+        "likutey_moharan_ii"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": 8,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": [
+      {
+        "document_id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+        "title": "Likutey Moharán II — edición española BRI",
+        "family": "likutey_moharan_ii",
+        "status": "test_candidate"
+      }
+    ]
+  },
+  {
+    "query": "Likutey",
+    "scope": {
+      "scope_family": [],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": true,
+      "warnings": [
+        "scope_ambiguous"
+      ],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": []
+  },
+  {
+    "query": "LM",
+    "scope": {
+      "scope_family": [],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": true,
+      "warnings": [
+        "scope_ambiguous"
+      ],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": []
+  },
+  {
+    "query": "¿Qué dice la Torá 8 de Likutey Halajot?",
+    "scope": {
+      "scope_family": [
+        "likutey_halajot"
+      ],
+      "scope_edition": null,
+      "scope_document_sha256": null,
+      "scope_source_work": null,
+      "scope_source_lesson": null,
+      "cross_family": false,
+      "scope_ambiguous": false,
+      "warnings": [],
+      "resolution_method": "explicit_or_deterministic_alias"
+    },
+    "selected": [
+      {
+        "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+        "title": "Likutey Halajot — Interior Final",
+        "family": "likutey_halajot",
+        "status": "test_candidate"
+      },
+      {
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "title": "Likutey Halajot LM II 8",
+        "family": "likutey_halajot",
+        "status": "ready"
+      }
+    ]
+  }
+]

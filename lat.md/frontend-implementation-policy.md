@@ -18,13 +18,13 @@ The frontend uses the versions declared by its package manifest and lockfile.
 
 API clients import `API_BASE_URL` and route constants from that module. They do not define separate base URLs, ports or API prefixes. `global.d.ts` remains synchronized with exported values.
 
-The REST endpoint uses the explicit manual DEV/PRO selector in `global.js`. Secrets never enter public configuration or generated assets.
+The REST endpoint uses the same-origin `/api` prefix in every browser build. Secrets never enter public configuration or generated assets.
 
 ## URL Rule
 
 Absolute backend URLs outside `global.js` are implementation debt and new occurrences are prohibited.
 
-DEV uses `http://127.0.0.1:7008`. PRO uses same-origin `/api`. Changing the manual selector requires rebuilding Astro, and no environment variable overrides the selected value.
+DEV and PRO both use same-origin `/api`. Astro's development server proxies that prefix to the local backend, while the production reverse proxy resolves it on the public origin. Browser bundles must never contain `127.0.0.1:7008` or `localhost:7008`.
 
 ## UI Boundary
 

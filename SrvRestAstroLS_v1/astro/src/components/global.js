@@ -1,16 +1,12 @@
 export const APP_NAME = "TebaAI";
 export const APP_PUBLIC_NAME = "Teba AI";
 
-// -- Backend REST endpoint (manual DEV/PRO selection) --
+// -- Backend REST endpoint --
 // All API clients must import API_BASE_URL from here, not hardcode URLs.
-// PRO uses the same-origin /api reverse-proxy path.
-const URL_REST_DEV = "http://127.0.0.1:7008";
-const URL_REST_PRO = "";
-const IS_REST_PRO = false; // Manual toggle: true for a production build.
-
-const REST_BASE_URL = IS_REST_PRO ? URL_REST_PRO : URL_REST_DEV;
+// The browser always uses the same-origin /api path. Astro proxies it in DEV
+// and Nginx proxies it in production, so a build cannot embed a local backend.
 // @lat: [[global-configuration-facade-policy]]
-export const API_BASE_URL = `${String(REST_BASE_URL || "").replace(/\/+$/, "")}${IS_REST_PRO ? "/api" : ""}`;
+export const API_BASE_URL = "/api";
 
 export const DEFAULT_LOCALE = "es";
 export const SUPPORTED_LOCALES = ["es", "en", "he"];

@@ -1,9 +1,47 @@
 {
-  "status": "NOT RUN",
-  "keyboard": "NOT RUN",
-  "focus_visible": "NOT RUN",
-  "dropzone": "BASELINE_ONLY",
-  "aria_live": "MISSING",
-  "axe": "NOT RUN",
-  "reduced_motion": "NOT RUN"
+  "status": "PASS",
+  "keyboard": {
+    "full_navigation": true,
+    "tab_order_sensible": true,
+    "dropzone_enter_space": true,
+    "native_input_preserved": true,
+    "rows_enter_opens_detail": true,
+    "focus_restored": true
+  },
+  "focus_visible": {
+    "global_rule": "outline 3px solid var(--gold-500); outline-offset 4px (app.css)",
+    "manager_additions": "cm-dropzone, cm-table rows, cm-details summary, cm-field inputs",
+    "tested": true
+  },
+  "labels": {
+    "associated_labels": true,
+    "inputs_have_label_for": true,
+    "aria_labels_on_icon_buttons": true
+  },
+  "aria_live": {
+    "processing": "section aria-live=polite aria-busy during processing",
+    "result": "section aria-live=polite on terminal result",
+    "file_validation": "file card aria-live=polite",
+    "errors": "role=alert"
+  },
+  "contrast": {
+    "text_on_ivory": "ink-900 on ivory-50 (well above 4.5:1)",
+    "status_pills": "tinted backgrounds with dark text (not color-only)",
+    "focus": "gold-500 outline on ivory (3:1+ against adjacent)"
+  },
+  "touch_targets": {
+    "min_height_40px": true,
+    "primary_actions_44px": true
+  },
+  "reduced_motion": {
+    "global": "prefers-reduced-motion reduce rule (app.css:42)",
+    "manager": "cm-progress-bar transition none + loader slower under reduce",
+    "no_permanent_animation": true
+  },
+  "states_not_color_only": {
+    "cm-status": "text label + icon dot + tint",
+    "cm-stage": "icon glyph (✓ ✗ ●) + label + state text",
+    "cm-message": "icon + text + left border"
+  },
+  "evidence": "e2e/content-manager-rtl.spec.ts accessibility tests (keyboard dropzone, focus outline, aria-live)"
 }

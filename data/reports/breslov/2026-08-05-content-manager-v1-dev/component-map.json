@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "components": {
+    "header": "cm-header (brand רבי נחמן + REBE NAJMÁN · BRESLOV RESEARCH, Investigación link, user, Cerrar sesión)",
+    "heading": "cm-kicker DOCUMENTACIÓN + h1 Gestor de Contenidos + cm-sub descripción",
+    "summary": "cm-summary 4 items: En procesamiento, Pendientes de revisión, Con observaciones, Fallidos",
+    "history_desktop": "cm-table (Documento, Idioma, Fecha, Estado, Etapa, Páginas/Intento, Acciones)",
+    "history_mobile": "cm-mobile-cards (título, estado, meta, Ver detalle)",
+    "empty": "cm-empty (Todavía no hay documentos cargados + Cargar primer documento)",
+    "wizard": "cm-wizard with cm-stepper 1 Archivo → 2 Información → 3 Confirmación → 4 Procesamiento → 5 Resultado",
+    "dropzone": "cm-dropzone (drag/click/Enter/Space, native input)",
+    "file_card": "cm-file-card (nombre, tamaño, páginas, tipo, estado validación, Detalles técnicos contraíble)",
+    "validation_messages": "cm-message--success/warning/error/info",
+    "metadata": "cm-field (Título, Idioma, Familia opcional, Nota opcional)",
+    "confirmation": "cm-sheet dl (archivo, título, idioma, páginas, tamaño, familia, duplicados, proceso, estado final)",
+    "processing": "cm-stages 7 etapas editoriales + cm-progress-bar secundaria + cm-persist-note",
+    "result": "cm-result (marca, título, estado, stats, acciones)",
+    "detail": "cm-detail-head + resumen + timeline + auditoría + cm-details diagnóstico contraíble",
+    "technical_diagnostic": "cm-details summary Diagnóstico técnico (PDF pages, canonical, textual, empty, headings, notas, referencias, chunks, embeddings, Milvus, PG↔Milvus, integridad, duración, cleanup, job, intento, documento, pipeline, alcance, colección)"
+  },
+  "state_coverage": {
+    "empty": true,
+    "validating": true,
+    "valid": true,
+    "invalid": true,
+    "duplicate": true,
+    "queued": true,
+    "processing": true,
+    "completed": true,
+    "completed_with_warnings": true,
+    "failed": true,
+    "retry": true,
+    "cancelled": true
+  },
+  "no_ids_primary": true,
+  "technical_subordinated": true,
+  "real_backend_states": true,
+  "no_simulated_progress": true
+}

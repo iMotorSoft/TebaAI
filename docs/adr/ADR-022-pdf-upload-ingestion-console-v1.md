@@ -2,7 +2,7 @@
 
 ## Estado
 
-Aceptado; orquestador funcional DEV cerrado, UX premium pendiente (2026-08-05).
+Aceptado; gates funcionales y UX premium DEV cerrados (2026-08-05).
 
 ## Contexto
 
@@ -81,13 +81,36 @@ worker también filtra ese scope. Migración 041 pasó dry-run revertido y fue
 aplicada con el runner oficial sin reiniciar PostgreSQL. El E2E real terminó en
 `test_candidate`, reconcilió 2/2 vectores y limpió dos veces sin tocar primary.
 
+## Continuación de UX premium — 2026-08-05
+
+La UI inicial (tres etapas, DaisyUI genérico) fue reemplazada por una
+superficie premium que continúa la identidad de Breslov Research: mismos
+tokens (`app.css`), identidad `רבי נחמן · REBE NAJMÁN · BRESLOV RESEARCH`,
+tipografía editorial, pills, acordeones y tratamiento RTL de `/research`.
+Sin shell administrativo paralelo ni segundo design system.
+
+- flujo de cinco etapas (Archivo → Información → Confirmación →
+  Procesamiento → Resultado) con estados reales del backend; sin progreso
+  simulado; cancelación solo en estados cancelables; retry real;
+- capa API tipada y vocabulario editorial centralizados (preparación i18n);
+- historial, estado vacío, detalle con diagnóstico técnico contraíble;
+- responsive: tabla editorial desktop / cards móvil, sin overflow a 390px;
+- accesibilidad: teclado (dropzone Enter/Space), focus visible, aria-live,
+  estados por texto+icono+color, `prefers-reduced-motion`;
+- Playwright Content Manager 11/11 con backend real en `breslov_e2e`;
+  capturas 13 en 1440/1024/768/390;
+- fix mínimo de cleanup: borrado de vectores del manifest por ID exacto
+  además de attempt_key (query escalar silenciosamente vacía dejaba residuos
+  en la colección aislada); test de regresión agregado (1556 PASS backend).
+
 ## Consecuencias
 
-- El gate funcional del orquestador y la consola de ingesta queda cerrado en DEV.
+- Los gates funcionales y UX del Content Manager V1 quedan cerrados en DEV.
 - PostgreSQL conserva verdad; Milvus E2E es derivado y totalmente compensable.
 - Un fallo conserva diagnóstico y limpia únicamente recursos del attempt.
 - `breslov_primary`, documentos ready e Interior Final quedan fuera del worker E2E.
-- El gate general continúa bloqueado hasta completar la UX premium vinculante.
+- Los gates del Content Manager V1 quedan cerrados en DEV; no se habilita
+  ingesta `breslov_primary`, promoción a ready, publicación ni edición manual.
 
 ## Rollback
 

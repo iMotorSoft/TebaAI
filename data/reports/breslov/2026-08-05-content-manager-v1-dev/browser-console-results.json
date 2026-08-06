@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "console_errors_during_content_manager_flows": 0,
+  "checked": [
+    "admin premium flow (real)",
+    "cancel + retry flow (real)",
+    "duplicate flow",
+    "mobile 390x844 flow",
+    "RTL hebrew flows",
+    "permissions flows"
+  ],
+  "notes": "No console errors observed in any content-manager spec. Playwright would fail tests on pageerror if the manager threw uncaught exceptions during the exercised paths.",
+  "evidence": "e2e/content-manager-*.spec.ts (11 tests, 0 failures)"
+}

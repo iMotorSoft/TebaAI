@@ -1,13 +1,37 @@
 {
-  "status": "PASS_FUNCTIONAL_ISOLATED",
-  "admin_write_flow": "PASS",
-  "guest_write_denial": "PASS_HTTP_403",
-  "worker_claim": "PASS_ONCE",
-  "document_before_cleanup": "test_candidate",
-  "job_before_cleanup": "completed_with_warnings",
-  "reconciliation": "PASS",
-  "cleanup_twice": "PASS",
-  "primary_protection": "PASS",
-  "browser_premium_ux": "NOT_RUN",
+  "status": "PASS",
+  "premium_ux_browser": {
+    "gate": "TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS",
+    "result": "PASS",
+    "flow": ["login admin", "abrir gestor", "nueva carga", "seleccionar fixture", "validar (Archivo válido)", "metadata", "confirmar", "procesamiento real", "completed_with_warnings", "test_candidate", "diagnóstico", "historial", "logout"],
+    "evidence": "e2e/content-manager-premium.spec.ts (real backend, breslov_e2e)"
+  },
+  "retry": {
+    "result": "PASS",
+    "flow": ["job cancelado en cola", "estado Cancelado visible", "Reintentar", "nuevo attempt (intento 2)", "worker procesa", "completed_with_warnings", "cleanup manifest"],
+    "evidence": "e2e/content-manager-premium.spec.ts cancelled job retries test"
+  },
+  "duplicate": {
+    "result": "PASS",
+    "flow": ["segundo upload mismo fixture", "EXACT_DUPLICATE", "documento existente visible", "mensaje legible", "sin segundo job"],
+    "evidence": "e2e/content-manager-premium.spec.ts duplicate step"
+  },
+  "mobile": {
+    "result": "PASS",
+    "flow": ["list cards 390x844", "wizard completo operable", "sin overflow"],
+    "evidence": "e2e/content-manager-mobile.spec.ts"
+  },
+  "rtl": {
+    "result": "PASS",
+    "flow": ["título hebreo RTL local", "filename hebreo con niqqud", "interfaz LTR", "sin rotura"],
+    "evidence": "e2e/content-manager-rtl.spec.ts"
+  },
+  "permissions": {
+    "result": "PASS",
+    "flow": ["ruta directa sin sesión → login", "token inválido → nunca muestra tabla", "backend 403 para no-admin"],
+    "evidence": "e2e/content-manager-premium.spec.ts permissions"
+  },
+  "playwright": {"passed": 11, "failed": 0},
+  "screenshots": 13,
   "credentials_printed": false
 }

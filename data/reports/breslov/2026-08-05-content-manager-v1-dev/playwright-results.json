@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "expected": 11,
+  "unexpected": 0,
+  "flaky": 0,
+  "skipped": 0,
+  "command": "npx playwright test e2e/content-manager-*.spec.ts (chromium, 1 worker, real backend for premium)",
+  "specs": [
+    { "file": "content-manager-premium.spec.ts", "tests": 4, "ok": true, "real_backend": true,
+      "covered": ["five-stage wizard with real processing", "cancel + retry with new attempt", "permissions (no session)", "permissions (invalid token)"] },
+    { "file": "content-manager-mobile.spec.ts", "tests": 2, "ok": true,
+      "covered": ["cards no overflow at 390x844", "wizard flow operable at 390x844"] },
+    { "file": "content-manager-rtl.spec.ts", "tests": 4, "ok": true,
+      "covered": ["hebrew title RTL local", "hebrew filename native bidi", "keyboard dropzone", "focus + aria-live"] },
+    { "file": "content-manager-captures.spec.ts", "tests": 1, "ok": true,
+      "covered": ["13 evidence screenshots across 1440/1024/768/390"] }
+  ],
+  "regression_notes": "Full suite: 86 passed / 6 failed / 25 skipped. The 6 failures are pre-existing research retrieval golden specs (research-kokhavey-gedalia, simple-grounded-rag, research-visual tablet) outside the Content Manager area; they reproduce identically without any content-manager change (warm-up dependent, pass when rerun individually)."
+}

@@ -1,9 +1,44 @@
 {
-  "status": "NOT RUN",
-  "viewports": {
-    "1440x900": "NOT RUN",
-    "1024x768": "NOT RUN",
-    "390x844": "NOT RUN"
+  "status": "PASS",
+  "viewports": [
+    { "name": "desktop-1440", "width": 1440, "height": 900, "overflow_x": 0, "ok": true },
+    { "name": "desktop-1024", "width": 1024, "height": 768, "overflow_x": 0, "ok": true },
+    { "name": "tablet-768", "width": 768, "height": 1024, "overflow_x": 0, "ok": true },
+    { "name": "mobile-390", "width": 390, "height": 844, "overflow_x": 0, "ok": true }
+  ],
+  "desktop": {
+    "reading_width_controlled": true,
+    "wide_spacing": true,
+    "clear_hierarchy": true,
+    "moderate_density": true,
+    "table_not_dominant": true,
+    "no_large_empty_areas": true,
+    "no_unneeded_cards": true,
+    "no_heavy_shadows": true
   },
-  "reason": "premium UX phase deferred until functional gate"
+  "mobile_390": {
+    "cards_instead_of_table": true,
+    "title_status_stage_first": true,
+    "touch_targets_ok": true,
+    "technical_collapsed": true,
+    "compact_header": true,
+    "no_side_panel": true,
+    "no_horizontal_overflow": true,
+    "no_zoom_needed": true,
+    "full_flow_operable": true,
+    "full_filename_accessible": true
+  },
+  "tablet_768": {
+    "hierarchy": true,
+    "form": true,
+    "progress": true,
+    "history": true,
+    "actions": true,
+    "detail": true
+  },
+  "evidence": {
+    "spec": "e2e/content-manager-mobile.spec.ts + e2e/content-manager-captures.spec.ts",
+    "overflow_measured": "documentElement.scrollWidth - clientWidth <= 1",
+    "touch_target_min_height": 40
+  }
 }

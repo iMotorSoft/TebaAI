@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "mobile_390": {
+    "cards_instead_of_table": true,
+    "title_status_stage_first": true,
+    "actions_touchable": true,
+    "no_horizontal_overflow": true,
+    "no_cut_elements": true,
+    "no_buttons_out_of_viewport": true,
+    "no_overlapping_text": true,
+    "focus_visible": true,
+    "full_flow": "login → gestor → nueva carga → seleccionar → validar → metadata → confirmar → procesar → resultado → diagnóstico → historial → logout (mocked states + real premium flow)",
+    "evidence": "e2e/content-manager-mobile.spec.ts wizard flow fully operable at 390x844"
+  }
+}

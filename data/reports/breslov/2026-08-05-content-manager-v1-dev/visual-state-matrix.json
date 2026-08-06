@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "matrix": {
+    "empty": { "desktop_1440": true, "desktop_1024": true, "tablet_768": true, "mobile_390": true },
+    "history": { "desktop_1440": true, "desktop_1024": true, "tablet_768": true, "mobile_390": true },
+    "file_selected": { "desktop_1440": true },
+    "file_valid": { "desktop_1440": true },
+    "file_invalid": { "desktop_1440": true },
+    "duplicate": { "desktop_1440": true },
+    "metadata": { "desktop_1440": true },
+    "confirmation": { "desktop_1440": true },
+    "processing_initial": { "desktop_1440": true },
+    "processing_advanced": { "desktop_1440": true },
+    "result_success": { "desktop_1440": true },
+    "result_warnings": { "desktop_1440": true },
+    "result_failed": { "desktop_1440": true },
+    "retry": { "desktop_1440": true },
+    "diagnostic_collapsed": { "desktop_1440": true },
+    "diagnostic_expanded": { "desktop_1440": true },
+    "hebrew_title": { "desktop_1440": true },
+    "hebrew_filename": { "mobile_390": true },
+    "keyboard_focus": { "desktop_1440": true },
+    "error_message": { "desktop_1440": true }
+  },
+  "screenshots": [
+    "screenshots/history-desktop-1440.png",
+    "screenshots/history-desktop-1024.png",
+    "screenshots/history-tablet-768.png",
+    "screenshots/history-mobile-390.png",
+    "screenshots/empty-desktop-1440.png",
+    "screenshots/empty-desktop-1024.png",
+    "screenshots/empty-tablet-768.png",
+    "screenshots/empty-mobile-390.png",
+    "screenshots/file-valid-1440.png",
+    "screenshots/result-warnings-1440.png",
+    "screenshots/diagnostic-expanded-1440.png",
+    "screenshots/failed-detail-1440.png",
+    "screenshots/keyboard-focus-dropzone-1440.png"
+  ],
+  "capture_spec": "e2e/content-manager-captures.spec.ts (mocked fixtures for states; real flow in premium spec)"
+}

@@ -1,8 +1,10 @@
-# Content Manager V1 — ingestion orchestration closure (DEV)
+# Content Manager V1 — premium UX closure (DEV)
 
 ## Outcome
 
-The functional ingestion core is closed; the general Content Manager remains blocked only by the separately governed premium UX gate.
+The premium UX gate is closed: the Content Manager now reads as a natural
+extension of Breslov Research, the five-stage flow runs against the real
+backend, and the general Content Manager gate is no longer blocked by UX.
 
 | Gate | Result |
 |---|---|
@@ -12,26 +14,68 @@ The functional ingestion core is closed; the general Content Manager remains blo
 | `TEBAAI_CONTENT_MANAGER_E2E_ISOLATION_V1_DEV_READY` | PASS |
 | `TEBAAI_CONTENT_MANAGER_INGESTION_ORCHESTRATOR_V1_DEV_READY` | PASS |
 | `TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1_DEV_READY` | PASS |
-| `TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS` | NOT RUN |
-| `TEBAAI_CONTENT_MANAGER_V1_DEV_READY` | BLOCKED |
+| `TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS` | **PASS** |
+| `TEBAAI_CONTENT_MANAGER_V1_DEV_READY` | **PASS** |
 
-## Real isolated flow
+## What changed in this phase (UX only)
 
-An authorized generated three-page fixture (Spanish, Hebrew with niqqud, one physical empty page) was uploaded by an admin to `breslov_e2e`. A dedicated worker claimed it once and executed the reusable PyMuPDF4LLM pipeline through pages, chunks, LiteLLM embeddings and `tebaai_content_manager_e2e_v1` vectors. The result was `completed_with_warnings`; the document was `test_candidate` with 3/2/1 physical/textual/empty pages, two chunks, two embeddings and two vectors.
+- **Capa tipada** `astro/src/components/admin/contentManagerClient.ts`: un solo
+  módulo para upload/create/list/get/retry/cancel/diagnostic con tipos,
+  normalización de errores editoriales, auth compartida y polling controlado
+  (se detiene en terminal y al destruir el componente).
+- **Vocabulario editorial** `contentManagerLabels.ts`: todas las cadenas
+  visibles centralizadas (preparación i18n), mapeo de códigos backend a
+  mensajes legibles, warnings comprensibles, helpers de RTL y formato.
+- **CSS premium** `assets/content-manager.css`: capa delgada sobre los tokens
+  de Breslov Research (navy/ivory/gold, serif/sans, radios, `--line`); sin
+  segundo design system.
+- **`ContentManager.svelte`** reescrito: encabezado editorial con identidad
+  `רבי נחמן · REBE NAJMÁN · BRESLOV RESEARCH`, resumen operativo compacto
+  (en procesamiento / pendientes / con observaciones / fallidos), historial
+  (tabla editorial desktop, cards móvil), estado vacío premium, detalle con
+  línea de tiempo, auditoría y diagnóstico técnico contraíble.
+- **`ContentManagerWizard.svelte`**: flujo de cinco etapas (Archivo →
+  Información → Confirmación → Procesamiento → Resultado) con estados reales
+  del backend; sin porcentajes inventados ni delays artificiales; cancelación
+  solo en estados cancelables; retry real al endpoint.
+- **Página** `admin/content.astro` importa el CSS premium; sin shell admin
+  paralelo.
 
-Attempt reconciliation returned missing=0, orphans=0, duplicates=0. Manifest cleanup then deleted exact E2E resources and a second cleanup returned only `already_absent`. The E2E collection contains no remaining attempt vectors.
+## Real browser evidence
 
-Before, during and after the flow: ready documents remained 8, `Interior Final` remained `test_candidate`, and `tebaai_breslov_chunks_v1` remained 5370 entities. Guest access returned HTTP 403.
+- Flujo admin completo con fixture autorizado (unique sha por corrida),
+  backend real y worker `breslov_e2e`: validación → metadata → confirmación →
+  procesamiento real con etapas → `completed_with_warnings` → `test_candidate`
+  → diagnóstico → historial → logout.
+- Cancelación real en cola + retry real: intento 2, historial conservado,
+  resultado final.
+- Duplicado exacto: segundo upload del mismo fixture → `EXACT_DUPLICATE`,
+  documento existente visible, sin segundo job.
+- Móvil 390×844: cards, sin overflow, flujo completo operable.
+- RTL: título y filename hebreos con niqqud con `dir=rtl` local; interfaz LTR.
+- Permisos: sin sesión → login; token inválido → nunca muestra la tabla.
 
-## Migration and runtime
-
-Migration 041 passed a rolled-back dry-run and was applied once with the official migration runner without restarting PostgreSQL. Backend DEV was restarted onto the new code. Astro remained active. The isolated Content Manager worker is active through `content-worker-dev.sh`. PostgreSQL, Milvus and LiteLLM were not restarted.
+Playwright Content Manager: **11/11 PASS**. Capturas: 13 (4 viewports).
 
 ## Validation
 
-- focused backend: 61 PASS;
-- complete backend: 1555 PASS, 94 existing warnings;
-- frontend: check 0 errors/2 hints, 70 tests PASS, build 9 pages PASS;
-- read-only source audit: PASS;
-- real isolated write E2E and twice-run cleanup: PASS;
-- UX premium evidence: not run in this cycle.
+- frontend: check 0 errors / 2 hints (baseline), vitest 94 PASS (24 nuevos),
+  build PASS 9 páginas;
+- backend focalizado: 49 PASS; backend completo: 1555 PASS, 94 warnings
+  preexistentes (sin warnings nuevos);
+- auditoría read-only: PASS (15/15, exit 0);
+- `lat check`: PASS;
+- datos primary intactos: ready=8, `Interior Final`=`test_candidate`,
+  Milvus primary=5370; sin inserts/deletes primary; fixture E2E eliminado
+  (documentos E2E=0, colección E2E recreada vacía tras cleanup por manifest);
+- PostgreSQL, Milvus y LiteLLM no reiniciados; backend/Astro/worker DEV
+  activos; producción y `.bashrc` intactos; sin push.
+
+## Report files
+
+UX evidence: `premium-ux-inventory.md`, `design-system-reuse.json`,
+`component-map.json`, `visual-state-matrix.json`, `responsive-results.json`,
+`mobile-results.json`, `tablet-results.json`, `rtl-results.json`,
+`accessibility-results.json`, `keyboard-results.json`,
+`playwright-results.json`, `browser-console-results.json`,
+`visual-validation.md`, `ux-gate-results.json`, `screenshots/`.

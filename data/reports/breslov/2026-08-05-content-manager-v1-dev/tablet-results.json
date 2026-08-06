@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "tablet_768": {
+    "hierarchy": true,
+    "form": true,
+    "progress": true,
+    "history": true,
+    "actions": true,
+    "detail": true,
+    "notes": "Summary grid switches to 2 columns at <=900px; result stats to 2 columns; no forced mobile or desktop layout at 768x1024.",
+    "evidence": "screenshots/history-tablet-768.png, screenshots/empty-tablet-768.png + capture spec viewport"
+  }
+}

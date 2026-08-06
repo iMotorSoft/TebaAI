@@ -1,6 +1,44 @@
 {
-  "status": "BLOCKED",
-  "reused": ["Layout.astro", "global app.css/research.css imports", "existing DaisyUI utility classes"],
-  "not_reused_or_missing": ["Breslov identity components", "research editorial navigation", "typed API/session client", "direction helpers", "premium editorial surfaces"],
-  "new_components": [{"name": "ContentManager.svelte", "reason": "business flow baseline", "assessment": "too monolithic and generic for premium gate"}]
+  "status": "PASS",
+  "reused_tokens": [
+    "--navy-950", "--navy-900", "--navy-800", "--ivory-50", "--ivory-100",
+    "--paper-200", "--gold-500", "--ink-900", "--ink-700", "--line",
+    "--serif", "--sans"
+  ],
+  "reused_components": [
+    "Layout.astro (app.css + research.css)",
+    "research-brand identity pattern (Rebe Najman + REBE NAJMÁN · BRESLOV RESEARCH)",
+    "research-header visual pattern",
+    "details/summary accordion pattern from works-results",
+    "source-stats pill badges",
+    "research-hebrew-text RTL treatment (Noto Serif Hebrew)",
+    "prefers-reduced-motion global rule",
+    "focus-visible gold outline global rule",
+    "desktop-table + mobile-cards responsive strategy"
+  ],
+  "new_components": [
+    { "name": "contentManagerClient.ts", "reason": "single typed API layer; no scattered fetch, centralized auth/errors/polling" },
+    { "name": "contentManagerLabels.ts", "reason": "editorial vocabulary and error-code mapping; i18n-ready single source" },
+    { "name": "content-manager.css", "reason": "thin premium layer over existing tokens; no second design system" },
+    { "name": "ContentManager.svelte", "reason": "list/detail/summary surface (rewrite of the generic DaisyUI version)" },
+    { "name": "ContentManagerWizard.svelte", "reason": "five-stage flow with real backend states" },
+    { "name": "cm-dropzone", "reason": "accessible dropzone did not exist; Enter/Space + drag + native input" },
+    { "name": "cm-stepper", "reason": "five-stage indicator required by policy; did not exist" },
+    { "name": "cm-status pills", "reason": "states differentiated by text+icon+color" },
+    { "name": "cm-message variants", "reason": "editorial validation/result messages with actions" },
+    { "name": "cm-timeline", "reason": "document detail timeline; did not exist" }
+  ],
+  "generic_admin_patterns_removed": [
+    "DaisyUI stats cards",
+    "DaisyUI table-zebra",
+    "DaisyUI btn/alert/badge surface on the manager",
+    "three-stage copy (replaced by five-stage flow)",
+    "technical IDs as primary labels"
+  ],
+  "identity": {
+    "product_name": "Gestor de Contenidos",
+    "description": "Carga, procesamiento y validación de fuentes documentales",
+    "brand": ["רבי נחמן", "REBE NAJMÁN", "BRESLOV RESEARCH"],
+    "forbidden_titles_absent": ["PDF Upload Console", "Ingestion Dashboard", "Admin Content", "Content Pipeline", "Editor técnico"]
+  }
 }

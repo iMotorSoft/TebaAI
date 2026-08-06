@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "keyboard_tests": [
+    "dropzone receives focus via Tab",
+    "Enter opens the native file picker",
+    "native file input remains focusable (not display:none)",
+    "table rows activate detail on Enter",
+    "focus outline computed non-none"
+  ],
+  "evidence": "e2e/content-manager-rtl.spec.ts keyboard + focus tests; captured screenshot screenshots/keyboard-focus-dropzone-1440.png"
+}

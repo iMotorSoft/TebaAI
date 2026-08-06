@@ -2,13 +2,14 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-05 (Content Manager V1 — gate DEV bloqueado)
+Ultima actualizacion: 2026-08-05 (Content Manager V1 — gates DEV cerrados)
 
 ## Content Manager V1 (Gestor de Contenidos) — 2026-08-05 (DEV)
 
-Estado funcional: `TEBAAI_CONTENT_MANAGER_INGESTION_ORCHESTRATOR_V1_DEV_READY`
-y `TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1_DEV_READY`. Estado general:
-`TEBAAI_CONTENT_MANAGER_V1_DEV_BLOCKED` únicamente por UX premium no ejecutada.
+Estado funcional: `TEBAAI_CONTENT_MANAGER_INGESTION_ORCHESTRATOR_V1_DEV_READY`,
+`TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1_DEV_READY` y
+`TEBAAI_CONTENT_MANAGER_PREMIUM_UX_V1_PASS`. Estado general:
+`TEBAAI_CONTENT_MANAGER_V1_DEV_READY`.
 
 `ConcretePageFirstPipeline` es reusable y document-agnostic: PyMuPDF4LLM por
 página física, Markdown original, normalización Unicode/ligaduras separada,
@@ -22,15 +23,47 @@ reinicio PostgreSQL. E2E real aislado en `breslov_e2e` +
 `tebaai_content_manager_e2e_v1`: 3 páginas (2 textuales, 1 vacía), 2 chunks,
 2 embeddings, 2 vectores, missing/orphans/duplicates=0, job
 `completed_with_warnings`, documento `test_candidate`; cleanup dos veces PASS.
-Backend 1555 PASS; guest HTTP 403.
+Backend 1556 PASS; guest HTTP 403.
 
-La UI inicial tampoco cierra el gate premium: presenta tres etapas declaradas
-en lugar de cinco, no tiene detalle/historial/diagnóstico operable, usa patrones
-DaisyUI de dashboard genérico y carece de evidencia responsive, RTL,
-accesibilidad y capturas de todos los estados.
+### UX premium cerrada (2026-08-05)
+
+La UI del Gestor de Contenidos se rediseñó como extensión natural de Breslov
+Research reutilizando los tokens de `app.css` (navy/ivory/gold, serif/sans) y
+los patrones de `/research` (identidad `רבי נחמן · REBE NAJMÁN · BRESLOV
+RESEARCH`, header, pills, acordeones, RTL local). Sin shell administrativo
+paralelo y sin segundo design system.
+
+- capa API tipada `contentManagerClient.ts` (upload/create/list/get/retry/
+  cancel/diagnostic, normalización editorial de errores, auth compartida,
+  polling que se detiene en terminal y al destruir el componente);
+- vocabulario editorial `contentManagerLabels.ts` (cadenas centralizadas para
+  i18n, códigos → mensajes legibles, warnings comprensibles, RTL);
+- flujo de cinco etapas: Archivo → Información → Confirmación →
+  Procesamiento → Resultado, con estados reales del backend, sin porcentajes
+  inventados ni delays artificiales; cancelación solo en estados cancelables;
+  retry real al endpoint;
+- historial (tabla editorial desktop / cards móvil), estado vacío premium,
+  detalle con línea de tiempo/auditoría/diagnóstico técnico contraíble;
+- duplicado exacto: mensaje legible + documento existente, sin segundo job;
+- Playwright `content-manager-*.spec.ts`: 11/11 PASS con backend real
+  (flujo completo, cancel+retry, duplicado, móvil 390×844, RTL, permisos,
+  accesibilidad); capturas 13 en 1440/1024/768/390;
+- frontend: check 0 errores/2 hints, vitest 94 PASS (24 nuevos), build PASS
+  9 páginas; backend focalizado 49 PASS; backend completo 1556 PASS, 94
+  warnings preexistentes; auditoría read-only PASS 15/15; `lat check` PASS;
+- fix mínimo de cleanup: el manifest ahora borra sus vectores por ID exacto
+  además de por attempt_key (una query escalar silenciosamente vacía dejaba
+  vectores residuales en la colección aislada); test de regresión agregado;
 
 La escritura quedó confinada al scope/colección E2E y fue limpiada por manifest:
 ready=8, Interior Final=`test_candidate` y Milvus primary=5370 antes/después.
+Colección E2E vacía al cierre. Fixture autorizado v1 restaurado en el env DEV
+local; el E2E del spec genera un fixture único por corrida (idempotencia
+fresca) y lo autoriza temporalmente.
+
+Operativa del Gestor: `SrvRestAstroLS_v1/docs/content-manager-operativa.md`.
+Reporte: `data/reports/breslov/2026-08-05-content-manager-v1-dev/`.
+ADR: `docs/adr/ADR-022-pdf-upload-ingestion-console-v1.md`.
 PostgreSQL, Milvus y LiteLLM no se reiniciaron. Auditoría: `backend/scripts/audit_pdf_upload_ingestion_console_v1.py`.
 Reporte: `data/reports/breslov/2026-08-05-content-manager-v1-dev/`.
 ADR: `docs/adr/ADR-022-pdf-upload-ingestion-console-v1.md`.

@@ -1,10 +1,12 @@
 {
   "status": "PASS",
   "backend_dev": {"active": true, "http_health": 200, "restarted": true},
-  "astro_dev": {"active": true, "http": 200, "restarted": false},
-  "content_worker_dev": {"active": true, "scope": "breslov_e2e"},
+  "astro_dev": {"active": true, "http": 200, "restarted": true, "note": "running with PUBLIC_CONTENT_MANAGER_SCOPE=breslov_e2e so the isolated DEV worker accepts console jobs"},
+  "content_worker_dev": {"active": true, "scope": "breslov_e2e", "restarted": true},
   "postgresql": {"reachable": true, "restarted": false, "migration": "041"},
   "milvus": {"health": 200, "restarted": false},
   "litellm": {"liveness": 200, "embedding_dimension": 1536, "restarted": false},
-  "production_modified": false
+  "production_modified": false,
+  "bashrc_modified": false,
+  "push": false
 }

@@ -1,15 +1,31 @@
 {
-  "backend_baseline_previous": {"passed": 1534, "warnings": 94},
-  "backend_focused": {"passed": 61, "failed": 0, "deselected": 1494},
-  "backend_full": {"passed": 1555, "failed": 0, "warnings": 94, "duration_seconds": 57.43},
-  "new_warnings": 0,
-  "frontend": {"check_errors": 0, "check_hints": 2, "tests_passed": 70, "tests_failed": 0, "build": "PASS_9_PAGES"},
-  "migration_041_dry_run": "PASS_ROLLED_BACK",
-  "migration_041_application": "PASS_OFFICIAL_RUNNER",
-  "source_audit": "PASS",
-  "http_write_e2e": "PASS_ISOLATED",
-  "guest_write_denial_http": 403,
-  "manifest_cleanup_twice": "PASS",
-  "lat": "PASS_WITH_ENVIRONMENT_WARNINGS",
-  "git_diff_check": "PASS"
+  "status": "PASS",
+  "frontend": {
+    "check": {"errors": 0, "warnings": 0, "hints": 2},
+    "vitest": {"passed": 94, "failed": 0, "files": 7},
+    "build": {"passed": true, "pages": 9}
+  },
+  "backend_focused": {
+    "command": "uv run pytest -q tests -k \"content_manager or ingestion_job or orchestrator or e2e_scope\"",
+    "passed": 49,
+    "failed": 0,
+    "deselected": 1506
+  },
+  "backend_full": {
+    "command": "uv run pytest -q",
+    "passed": 1555,
+    "failed": 0,
+    "warnings": 94,
+    "warnings_note": "same 94 pre-existing warnings as the functional baseline; no new warnings introduced"
+  },
+  "audit": {
+    "script": "scripts/audit_pdf_upload_ingestion_console_v1.py",
+    "result": "PASS",
+    "blockers": 0
+  },
+  "playwright_content_manager": {
+    "passed": 11,
+    "failed": 0,
+    "skipped": 0
+  }
 }

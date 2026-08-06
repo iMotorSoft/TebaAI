@@ -1,8 +1,31 @@
 {
-  "status": "NOT RUN",
-  "hebrew_filename": "NOT RUN",
-  "hebrew_title": "NOT RUN",
-  "niqqud": "NOT RUN",
-  "mixed_text": "NOT RUN",
-  "local_rtl_only": "NOT RUN"
+  "status": "PASS",
+  "hebrew_filename": {
+    "tested": true,
+    "result": "dir=rtl on the file card name, lang=he, full name with .pdf readable, no overflow at 390x844",
+    "evidence": "e2e/content-manager-rtl.spec.ts upload card test"
+  },
+  "hebrew_title": {
+    "tested": true,
+    "result": "dir=rtl lang=he on history title with niqqud preserved (מְשִׁיחָא)",
+    "evidence": "e2e/content-manager-rtl.spec.ts hebrew title test"
+  },
+  "niqqud": { "tested": true, "result": "preserved verbatim in title and filename" },
+  "mixed_content": {
+    "tested": true,
+    "result": "mixed hebrew/spanish title keeps native bidi (unicode-bidi plaintext), interface stays LTR",
+    "evidence": "contentDirection() unit test + RTL spec"
+  },
+  "local_alignment_only": {
+    "tested": true,
+    "result": "only document content flips to RTL; .content-manager container and interface labels remain LTR",
+    "evidence": "pageDir assertion in RTL spec"
+  },
+  "ids_legible": {
+    "tested": true,
+    "result": "IDs rendered in .cm-code mono with unicode-bidi isolate inside RTL content",
+    "evidence": "diagnostic rows render codes legibly"
+  },
+  "interface_not_flipped": true,
+  "implementation": "textDirection.ts (existing) + contentDirection() label helper + .cm-hebrew/.cm-mixed CSS reusing research.css treatment"
 }

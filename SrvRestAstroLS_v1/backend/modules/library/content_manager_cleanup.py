@@ -49,6 +49,9 @@ class ManifestCleanupService:
 
         # Milvus first. Querying by attempt_key catches an insert that happened
         # immediately before a worker crash and before the manifest record.
+        # The manifest's own vector IDs are also deleted by exact ID: delete is
+        # idempotent and does not depend on scalar-filter query consistency,
+        # which can silently return zero rows for fresh segments.
         try:
             index = self.index_factory(manifest["collection_code"])
             found = await asyncio.to_thread(index.list_attempt, manifest["attempt_key"])
@@ -58,8 +61,11 @@ class ManifestCleanupService:
             for vector_id in vector_ids:
                 items.append(CleanupItem("vector", vector_id, "deleted"))
             manifest_vectors = set(manifest["resources"].get("vector", []))
-            for vector_id in sorted(manifest_vectors - set(vector_ids)):
-                items.append(CleanupItem("vector", vector_id, "already_absent"))
+            stale_vectors = sorted(manifest_vectors - set(vector_ids))
+            if stale_vectors:
+                deleted = await asyncio.to_thread(index.delete_ids, stale_vectors)
+                for vector_id in stale_vectors:
+                    items.append(CleanupItem("vector", vector_id, "deleted" if deleted else "already_absent"))
         except Exception as exc:
             items.append(CleanupItem("vector", "attempt", "failed", type(exc).__name__))
             await self._finish(manifest["manifest_id"], items, "failed")

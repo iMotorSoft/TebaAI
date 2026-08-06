@@ -1,0 +1,10 @@
+{
+  "job_id": "b482318e-3063-48c6-8728-c513639af836",
+  "scope": "breslov_primary",
+  "status_inicial": "queued",
+  "resources": "0 (document_id null, manifest vacío, 0 recursos)",
+  "ownership": "fixture E2E 'Fuente Premium UX Playwright' del run frontend mal configurado (2026-08-06 17:43 UTC)",
+  "accion": "cancelación oficial queued->cancelled via cancel_job (repositorio)",
+  "status_final": "cancelled",
+  "auditoria": "transición registrada en content_manager_job_transitions (actor 965d0a0e, reason editor_cancelled, 2026-08-06 18:42 UTC)"
+}

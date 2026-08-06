@@ -1,0 +1,117 @@
+{
+  "pages": [
+    {
+      "pdf_page": 1,
+      "char_count": 132,
+      "snippet": "Likutey  \n Halakhot\nReb \nNoson of \nBreslov\nTHE \nROSENBERG \nE"
+    },
+    {
+      "pdf_page": 16,
+      "char_count": 2417,
+      "snippet": "CONVENCIONES USADAS \nEN ESTA TRADUCCIÓN\nE\nsta traducción del"
+    },
+    {
+      "pdf_page": 51,
+      "char_count": 3853,
+      "snippet": "  33\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ד\n4 ■ CONS"
+    },
+    {
+      "pdf_page": 55,
+      "char_count": 3798,
+      "snippet": "  37\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ה\nEl Rabí "
+    },
+    {
+      "pdf_page": 56,
+      "char_count": 3886,
+      "snippet": "38 LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA"
+    },
+    {
+      "pdf_page": 96,
+      "char_count": 3804,
+      "snippet": "78 LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA"
+    },
+    {
+      "pdf_page": 143,
+      "char_count": 4442,
+      "snippet": "  125\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ג ה\nde un"
+    },
+    {
+      "pdf_page": 200,
+      "char_count": 2579,
+      "snippet": "182  LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑA"
+    },
+    {
+      "pdf_page": 283,
+      "char_count": 295,
+      "snippet": "300 = ש70  =    ע20 = כ,ך6 = ו1 = א\n400 = ת80 = פ,ף30  =  ל7"
+    },
+    {
+      "pdf_page": 284,
+      "char_count": 0,
+      "snippet": ""
+    }
+  ],
+  "goldens": [
+    {
+      "label": "CONSTRUYENDO UN MISHKÁN",
+      "pdf_page": 51,
+      "match_type": "structural_heading_exact",
+      "chunk_id": "8e1a1192-02f2-4903-97f8-ce85f29bdf2a",
+      "evidence_id": "ev-642ffbdda59f6ac7",
+      "entity_key": "role:commentary",
+      "content_head": "  33\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ד\n4 ■ CONSTRUYENDO UN MISHKÁN\nEl Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar \nel "
+    },
+    {
+      "label": "Salmos 16:1",
+      "pdf_page": 55,
+      "match_type": "printed_reference_exact",
+      "chunk_id": "4ab8b2bd-e9a3-4818-9c99-5f757816c8ae",
+      "evidence_id": "ev-f60c594fcdaa0ed6",
+      "entity_key": "role:commentary",
+      "content_head": "  37\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ה\nEl Rabí Natán ha explicado que, en un nivel más profundo, el despertar el \nalba alude a levantarse del sueño"
+    },
+    {
+      "label": "nota 35 (El hombre se une a HaShem…)",
+      "pdf_page": 56,
+      "match_type": "footnote_literal_exact",
+      "chunk_id": "036be7c5-2dde-4b0a-9dde-010e9d24e53e",
+      "evidence_id": "ev-814007aadb569d59",
+      "entity_key": "role:commentary",
+      "content_head": "38 LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA      HALAJÁ 1: 6\nEsta idea, que jesed impide que uno tropiece, está \nrefl ejada en el versículo “Si"
+    }
+  ],
+  "hebrew_sample": [
+    {
+      "chunk_index": 45,
+      "pdf_page": 45,
+      "content_head": "  27\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ב\nque ya no tiene esperanza alguna, jas ve-shalom. Éste es el signifi cado del versículo \nsiguiente, “Muchos d"
+    },
+    {
+      "chunk_index": 47,
+      "pdf_page": 47,
+      "content_head": "  29\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ג\n3 ■ DESPERTANDO LOS PUNTOS BUENOS\nEl Rabí Natán ha explicado hasta aquí que el despertar del sueño espiritua"
+    },
+    {
+      "chunk_index": 49,
+      "pdf_page": 49,
+      "content_head": "  31\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ג\nconstruido como resultado de que HaShem se volvió favorable hacia el pueblo \njudío a través del sacrifi cio "
+    },
+    {
+      "chunk_index": 51,
+      "pdf_page": 51,
+      "content_head": "  33\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ד\n4 ■ CONSTRUYENDO UN MISHKÁN\nEl Rabí Natán concluye su explicación de la capacidad de Moshé de encontrar \nel "
+    },
+    {
+      "chunk_index": 53,
+      "pdf_page": 53,
+      "content_head": "  35\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ה\nDe la misma manera, se comprende a partir de las palabras del Rebe en su \nlección, que a través del bien que"
+    }
+  ],
+  "findings": {
+    "title_page_mentions_rosenberg": true,
+    "persisted_edition": "Interior Final",
+    "title_page_surface": "Likutey   |  Halakhot | Reb  | Noson of  | Breslov | THE  | ROSENBERG  | E",
+    "page_143_encoding_artifact": true,
+    "page_1_hebrew_glyph_artifact": true
+  }
+}

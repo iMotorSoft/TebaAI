@@ -1,0 +1,71 @@
+{
+  "source": {
+    "filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "mime": "application/pdf",
+    "physical_pages": 284
+  },
+  "facts": [
+    {
+      "field": "procedencia",
+      "value": "archivo local en /media/issajar/DEVELOP/Download/Tora/Breslov/",
+      "classification": "declarado"
+    },
+    {
+      "field": "editorial",
+      "value": "Breslov Research Institute (referenciado en portada/texto)",
+      "classification": "declarado"
+    },
+    {
+      "field": "autor",
+      "value": "Rabí Natán de Breslov (portada)",
+      "classification": "declarado"
+    },
+    {
+      "field": "traductor",
+      "value": "no persistido en bibliographic_metadata (texto en español)",
+      "classification": "desconocido"
+    },
+    {
+      "field": "edición",
+      "value": "persistida 'Interior Final'; portada 'THE ROSENBERG EDITION'",
+      "classification": "declarado/inferido"
+    },
+    {
+      "field": "año",
+      "value": null,
+      "classification": "desconocido"
+    },
+    {
+      "field": "isbn",
+      "value": null,
+      "classification": "desconocido"
+    },
+    {
+      "field": "copyright_visible",
+      "value": "no verificado en esta fase (requiere inspección humana del PDF)",
+      "classification": "desconocido"
+    },
+    {
+      "field": "licencia",
+      "value": "no encontrada en metadata; legal_review del registro ready 56ddcc3b indica uso interno recomendado",
+      "classification": "inferido"
+    },
+    {
+      "field": "permiso_publicacion",
+      "value": "no verificado",
+      "classification": "desconocido"
+    },
+    {
+      "field": "aportada_por",
+      "value": "no registrado",
+      "classification": "desconocido"
+    },
+    {
+      "field": "uso_previsto",
+      "value": "investigación interna TebaAI (DEV)",
+      "classification": "declarado"
+    }
+  ],
+  "note": "Dossier factual; no constituye conclusión jurídica. Cada dato está clasificado confirmado/declarado/inferido/desconocido."
+}

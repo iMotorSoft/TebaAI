@@ -1,0 +1,10 @@
+{
+  "phase": "likutey-halajot-editorial-legal-review-v1",
+  "date": "2026-08-06",
+  "backend_focused": {"cmd": "pytest -k 'likutey_halajot or editorial_review or legal_review or promotion_decision or ingestion_job'", "passed": 37, "failed": 0},
+  "backend_complete": {"passed": 1578, "failed": 0, "skipped": 0, "warnings": 94, "warnings_new": 0, "duration_s": 60.24},
+  "governance_tests": {"file": "tests/test_promotion_decision_governance.py", "passed": 15, "failed": 0},
+  "frontend": {"check": "0 errores / 0 warnings / 8 hints (preexistentes)", "vitest": 94, "build": "no changes (frontend no modificado)"},
+  "lat_check": "PASS",
+  "git_diff_check": "PASS"
+}

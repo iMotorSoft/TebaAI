@@ -1,0 +1,59 @@
+{
+  "document": {
+    "title": "Likutey Halajot — Interior Final",
+    "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+    "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "status": "test_candidate",
+    "scope": "breslov_primary",
+    "language": "es",
+    "work_family": "Likutey Halajot",
+    "canonical_work": "Likutey Halajot",
+    "edition": "Interior Final",
+    "edition_confidence": "derived",
+    "volume": null,
+    "source_work": null,
+    "source_lesson": null,
+    "technical_version": "v2"
+  },
+  "counts": {
+    "physical_pages": 284,
+    "pages_with_text": 268,
+    "chunks": 268,
+    "embeddings": 268,
+    "milvus_vectors": 268,
+    "hebrew_containing_chunks": 120,
+    "structural_classification_rows": 284
+  },
+  "readiness": {
+    "technical_result": "TECHNICALLY_READY_FOR_EDITORIAL_REVIEW",
+    "pg_milvus": "268/268 missing=0 orphans=0 mismatches=0",
+    "retrieval_literal": "PASS",
+    "retrieval_fts": "PASS",
+    "retrieval_hybrid": "PASS",
+    "goldens": [
+      "CONSTRUYENDO UN MISHKÁN",
+      "Salmos 16:1",
+      "nota 35 (El hombre se une a HaShem…)"
+    ]
+  },
+  "annex": {
+    "pipeline_version": "likutey_halajot_page_first_v2",
+    "collection_code": "tebaai_breslov_chunks_v1",
+    "document_code": "likutey_halajot_interior_final_v2",
+    "audit_scripts": [
+      "scripts/audit_likutey_halajot_promotion_readiness_v2.py",
+      "scripts/audit_likutey_halajot_lmii8_conflict_v1.py",
+      "scripts/build_likutey_halajot_editorial_legal_review_package_v1.py"
+    ]
+  },
+  "warnings": [
+    "Página 143: encabezado con glifos corruptos (artefacto de extracción); cuerpo en español intacto.",
+    "Página 1 (portada): bloque hebreo con bytes de control (artefacto de codificación).",
+    "Edición persistida 'Interior Final' (derivada del filename) vs portada 'THE ROSENBERG EDITION'."
+  ],
+  "known_limitations": [
+    "Revisión editorial humana pendiente (título, edición, calidad de texto de la portada/pág. 143).",
+    "Revisión legal pendiente (LEGAL_REVIEW_REQUIRED)."
+  ]
+}

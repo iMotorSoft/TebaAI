@@ -1,0 +1,28 @@
+{
+  "phase": "likutey-halajot-editorial-legal-review-v1",
+  "date": "2026-08-06",
+  "branch": "feature/console-backend-core",
+  "head_initial": "1aa31c77e10eebe4b282e05fd7092127df94f6ae",
+  "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "status_documental": "test_candidate",
+  "ready_documents_baseline": 8,
+  "queued_job": {
+    "id": "b482318e-3063-48c6-8728-c513639af836",
+    "scope": "breslov_primary",
+    "status_inicial": "queued",
+    "status_final": "cancelled",
+    "recursos": 0
+  },
+  "no_mutation": {
+    "interior_final_status_after": "test_candidate",
+    "ready_documents_after": 8,
+    "chunks_after": 268,
+    "vectors_after": 268,
+    "promotion_executed": false
+  },
+  "git": {
+    "worktree_untracked": ["SrvRestAstroLS_v1/backend/data/ (runtime excluido)"],
+    "diff_check": "PASS"
+  }
+}

@@ -4,6 +4,37 @@ Objetivo: `desarrollo`
 
 Ultima actualizacion: 2026-08-06 (Worktree reconciliation, conflicto LM II 8 y Promotion Readiness V2)
 
+## Revisión editorial + legal + decisión de promoción V1 — 2026-08-06 (DEV)
+
+Gates:
+- `TEBAAI_CONTENT_MANAGER_PRIMARY_QUEUED_JOB_RECONCILIATION_V1_DEV_READY` → **SAFE_CANCEL_COMPLETED**
+- `TEBAAI_LIKUTEY_HALAJOT_EDITORIAL_REVIEW_PACKAGE_V1_READY` → **READY** (revisión humana pendiente)
+- `TEBAAI_LIKUTEY_HALAJOT_LEGAL_REVIEW_PACKAGE_V1_READY` → **READY** (dossier factual; decisión pendiente)
+- `TEBAAI_LIKUTEY_HALAJOT_PROMOTION_DECISION_V1_READY` → **READY** (decisión: `BLOCKED_EDITORIAL_AND_LEGAL_REVIEW_REQUIRED`)
+
+Resultado: `promotion_decision=BLOCKED_EDITORIAL_AND_LEGAL_REVIEW_REQUIRED`,
+`promotion_executed=false`. Estado válido: faltan las decisiones humanas
+editorial y legal; no se promovió nada.
+
+- Job queued reconciliado: `b482318e` (breslov_primary, queued, 0 recursos,
+  origen fixture E2E del frontend mal configurado) → cancelado
+  `queued→cancelled` vía `cancel_job` oficial con auditoría de transición.
+- Paquete read-only: `build_likutey_halajot_editorial_legal_review_package_v1.py`
+  (identidad, conteos, muestras, evidence IDs, hallazgos, readiness, estados).
+- Hallazgos editoriales para revisión humana: H1 portada dice "THE ROSENBERG
+  EDITION" vs edición persistida "Interior Final"; H2 pág. 143 con artefacto de
+  extracción en encabezado; H3 portada con bytes de control en hebreo.
+- Legal: dossier factual (`legal-facts.json`) + cuestionario de 13 preguntas;
+  `LEGAL_REVIEW_REQUIRED` (copyright/licencia/año desconocidos; uso interno
+  recomendado en registro hermano).
+- Validaciones: backend completo 1578 PASS (94 warnings preexistentes),
+  focalizados fase 37 PASS, gobernanza 15 PASS, frontend check 0 errores,
+  vitest 94 PASS, `lat check` PASS, `git diff --check` PASS.
+- Reporte: `data/reports/breslov/2026-08-06-likutey-halajot-editorial-legal-review-v1/`.
+- Próximo gate permitido (solo con aprobación editorial+legal humana):
+  `TEBAAI_LIKUTEY_HALAJOT_CONTROLLED_PROMOTION_V1` (plan en
+  `future-promotion-plan.md`; no ejecutado).
+
 ## Worktree Reconciliation + Conflicto LM II 8 + Readiness V2 — 2026-08-06 (DEV)
 
 Gates: `TEBAAI_WORKTREE_RECONCILIATION_V1_DEV_READY` (cerrado),

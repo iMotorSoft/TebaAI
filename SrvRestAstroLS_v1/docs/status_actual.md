@@ -7,11 +7,11 @@ Ultima actualizacion: 2026-08-06 (Worktree reconciliation, conflicto LM II 8 y P
 ## Worktree Reconciliation + Conflicto LM II 8 + Readiness V2 — 2026-08-06 (DEV)
 
 Gates: `TEBAAI_WORKTREE_RECONCILIATION_V1_DEV_READY` (cerrado),
-`TEBAAI_LIKUTEY_HALAJOT_LMII8_CONFLICT_RESOLUTION_V1_DEV_READY` (cerrado por
-resolución técnica sin escritura),
+`TEBAAI_LIKUTEY_HALAJOT_LMII8_CONFLICT_RESOLUTION_V1_DEV_READY` (cerrado,
+corroboración Milvus completada),
 `TEBAAI_LIKUTEY_HALAJOT_PROMOTION_READINESS_V2_DEV_READY` (auditoría ejecutada),
-`TEBAAI_LIKUTEY_HALAJOT_TECHNICAL_READINESS_V2_DEV_BLOCKED` (verificación Milvus
-pendiente + legal).
+`TEBAAI_LIKUTEY_HALAJOT_TECHNICAL_READINESS_V2_DEV_READY` (técnico:
+`TECHNICALLY_READY_FOR_EDITORIAL_REVIEW`; legal separado).
 
 ### Worktree (reconciliación)
 
@@ -21,7 +21,7 @@ pendiente + legal).
 - `backend/data/` (13 JSON runtime) excluido sin borrar; sin secretos;
   `git diff --check` PASS.
 - Incidencia ambiental: `milvus26-standalone` salió Exited(1) (etcd timeouts,
-  13:26 local); requiere reinicio manual por el usuario (precedente 2026-08-02).
+  13:26 local); fue levantado manualmente por el usuario (precedente 2026-08-02).
   El agente no lo reinicia.
 
 ### Conflicto Likutey Halajot / LM II 8 (resuelto, sin escritura)
@@ -34,14 +34,22 @@ pendiente + legal).
 - 0 duplicados, 0 colisiones de evidence id, 0 chunks compartidos; test de
   regresión nuevo (7 tests, falla con estado previo).
 
-### Promotion Readiness V2
+### Promotion Readiness V2 (cierre técnico 2026-08-06, segunda pasada con Milvus)
 
-- `NOT_READY_TECHNICAL_BLOCKERS`: PG↔Milvus e híbrido bloqueados por Milvus
-  caído (ambiental); editorial PENDIENTE; legal LEGAL_REVIEW_REQUIRED;
+- Resultado: `TECHNICALLY_READY_FOR_EDITORIAL_REVIEW` con 0 bloqueos técnicos;
+  PG↔Milvus Interior Final 268/268 (missing=0, orphans=0, mismatches=0, 100%);
+  retrieval híbrido PASS (goldens Salmos 16:1 → pág 55, Mishkán → pág 51);
+  editorial PENDIENTE; legal `LEGAL_REVIEW_REQUIRED` (separado);
   `promotion_executed=false`. Documento NO promovido.
+- Content Manager Playwright: **11/11 PASS** (la causa de los 2 fallos previos
+  era ambiental: mi restart de Astro sin `PUBLIC_CONTENT_MANAGER_SCOPE=breslov_e2e`
+  y el env CM no cargado en el proceso de cleanup; sin cambios de código).
+- Leftovers E2E limpiados por manifest con IDs exactos (3 jobs, 2 vectores
+  eliminados, docs/chunks/embeddings/pages a 0); primary intacto (5370);
+  colección E2E 0 vectores vivos.
 - Validaciones: backend completo 1563 PASS (94 warnings preexistentes),
-  focalizados fase 115 PASS, frontend check 0 errores, vitest 94 PASS,
-  `lat check` PASS.
+  focalizados Content Manager 62 PASS, frontend check 0 errores, vitest 94 PASS,
+  build 9 páginas, `lat check` PASS.
 
 Reportes: `data/reports/breslov/2026-08-06-worktree-reconciliation-v1/`,
 `data/reports/breslov/2026-08-06-likutey-halajot-lmii8-conflict-v1/`,
@@ -49,8 +57,10 @@ Reportes: `data/reports/breslov/2026-08-06-worktree-reconciliation-v1/`,
 Scripts: `backend/scripts/audit_likutey_halajot_lmii8_conflict_v1.py` y
 `backend/scripts/audit_likutey_halajot_promotion_readiness_v2.py` (read-only).
 
-Próximo paso (requiere usuario): levantar Milvus; luego re-ejecutar audit V2
-para cerrar PG↔Milvus e híbrido, y repetir readiness completa.
+Próximo paso: revisión editorial humana y resolución legal
+(LEGAL_REVIEW_REQUIRED) antes de cualquier decisión de promoción. Queda
+documentado un job `queued` en scope primary (`b482318e-…`, sin recursos)
+artefacto del restart mal configurado; no requiere acción urgente.
 
 ## Content Manager V1 (Gestor de Contenidos) — 2026-08-05 (DEV)
 

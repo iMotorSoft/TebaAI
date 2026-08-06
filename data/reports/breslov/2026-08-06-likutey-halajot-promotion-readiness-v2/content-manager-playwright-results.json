@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-08-06T15:00:00-03:00",
+  "suite": "content-manager-{premium,mobile,rtl,captures}.spec.ts",
+  "result": "11/11 PASS",
+  "failed": [],
+  "root_cause_of_prior_failures": {
+    "test_1_wizard": "Astro DEV reiniciado en la fase anterior sin PUBLIC_CONTENT_MANAGER_SCOPE=breslov_e2e -> el job se creaba en breslov_primary y el worker aislado no lo reclamaba. Regresión ambiental de mi restart, no de código.",
+    "test_2_cleanup": "el proceso Playwright no tenía TEBAAI_ENV=development + TEBAAI_CONTENT_MANAGER_E2E_ENABLED=true para el script de cleanup por manifest."
+  },
+  "primary_protection": "PASS (breslov_primary intacto; 5370 entidades antes/después)",
+  "e2e_scope_isolation": "PASS (todos los jobs del run exitoso en tebaai_content_manager_e2e_v1)"
+}

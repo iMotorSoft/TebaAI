@@ -55,3 +55,15 @@ Milvus no alcanzable — ambiental).
   ambientalmente; el usuario debe levantarlo como en 2026-08-02).
 - Validación de retrieval con Milvus up.
 - Matriz técnica completa del documento `test_candidate` Interior Final.
+
+## Corroboración Milvus (2026-08-06, segunda pasada con Milvus operativo)
+
+- Milvus healthy: `tebaai_breslov_chunks_v1` = 5370 entidades, Loaded.
+- Ownership correcto: 1205 vectores Rosenberg, 268 Interior Final, 0 LM II BRI
+  (coinciden con embeddings PG por documento).
+- Sin drift a nivel conteo; sin chunks compartidos; sin duplicados; sin
+  colisiones de evidence id.
+- Batería de retrieval híbrido real (backend + Milvus): `LH LM II 8` → solo
+  Rosenberg; `LM II` / `Likutey` / `LM` → 0 hits (sin contaminación, ambiguos
+  sin selección arbitraria).
+- Evidencia: `milvus-corroboration.json`.

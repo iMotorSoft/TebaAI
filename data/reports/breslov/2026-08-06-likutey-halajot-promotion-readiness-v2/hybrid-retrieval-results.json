@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-08-06T15:00:00-03:00",
+  "endpoint": "POST /library/investigative-qa/v1 (legacy, ai disabled, real backend + Milvus)",
+  "battery": [
+    {
+      "query": "Likutey Halajot LM II 8",
+      "primary_work": "Likutey Halajot LM II 8 (Rosenberg)",
+      "primary_count": 3
+    },
+    {
+      "query": "LM II",
+      "primary_count": 0,
+      "note": "solo LM II BRI sin chunks; sin contaminación"
+    },
+    {
+      "query": "Likutey Moharán II",
+      "primary_count": 0
+    },
+    {
+      "query": "Likutey",
+      "primary_count": 0,
+      "note": "scope_ambiguous"
+    },
+    {
+      "query": "LM",
+      "primary_count": 0,
+      "note": "scope_ambiguous"
+    },
+    {
+      "query": "Salmos 16:1",
+      "primary_work": "Interior Final",
+      "pdf_page": 55,
+      "evidence_id": "ev-68c3400c24c38e8a"
+    },
+    {
+      "query": "CONSTRUYENDO UN MISHKÁN",
+      "primary_work": "Interior Final",
+      "pdf_page": 51,
+      "evidence_id": "ev-53b3fac9b0c3291a"
+    }
+  ],
+  "literal": "PASS",
+  "fts": "PASS",
+  "hybrid": "PASS",
+  "scope_ambiguity": "correct (Likutey/LM -> 0 hits, no arbitrary family)"
+}

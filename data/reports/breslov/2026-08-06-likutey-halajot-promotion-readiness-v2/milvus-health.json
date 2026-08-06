@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-08-06T15:00:00-03:00",
+  "connected": true,
+  "endpoint": "127.0.0.1:19530",
+  "connect_latency_ms": 126.5,
+  "container": {
+    "name": "milvus26-standalone",
+    "status": "Up (healthy)",
+    "restarted_by": "user"
+  },
+  "collections": {
+    "tebaai_breslov_chunks_v1": {
+      "entities": 5370,
+      "load_state": "Loaded"
+    },
+    "tebaai_content_manager_e2e_v1": {
+      "entities_stats": 4,
+      "live_vectors": 0,
+      "note": "tombstones pendientes de compactación; 0 vectores vivos"
+    },
+    "tebaai_breslov_chunks_v2_dev": {
+      "entities": 506,
+      "load_state": "Loaded"
+    },
+    "tebaai_breslov_test_chunks_v1": {
+      "entities": 10115,
+      "load_state": "Loaded"
+    }
+  },
+  "query_test": {
+    "interior_final": "5 rows, 37.4ms"
+  },
+  "errors": [],
+  "stable": true
+}

@@ -1,6 +1,14 @@
 {
-  "milvus_available": false,
-  "error": "MilvusException: <MilvusException: (code=2, message=Fail connecting to server on 127.0.0.1:19530, illegal connection params or server unavailable)>",
+  "milvus_available": true,
+  "collection_entities": 5370,
+  "load_state": {
+    "state": 3
+  },
   "pg_chunks": 268,
-  "pg_embedding_rows": 268
+  "pg_embedding_rows": 268,
+  "milvus_document_vectors": 268,
+  "missing": [],
+  "orphans": [],
+  "mismatches": [],
+  "match_percent": 100.0
 }

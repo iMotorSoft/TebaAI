@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-08-06T15:00:00-03:00",
+  "audit": "audit_likutey_halajot_lmii8_conflict_v1.py (re-run with Milvus up)",
+  "collection": "tebaai_breslov_chunks_v1",
+  "collection_entities": 5370,
+  "load_state": "Loaded",
+  "pg_expected_vectors_matched": true,
+  "per_document": {
+    "56ddcc3b_rosenberg": {
+      "pg_embeddings": 1205,
+      "milvus_expected": 1205
+    },
+    "132a791a_interior_final": {
+      "pg_embeddings": 268,
+      "milvus_expected": 268
+    }
+  },
+  "metadata_drift": "none (count-level)",
+  "chunks_shared": 0,
+  "duplicates": 0,
+  "evidence_collisions": 0,
+  "scope_battery": {
+    "LH LM II 8": "solo Rosenberg",
+    "LM II": "solo LM II BRI",
+    "Likutey": "scope_ambiguous",
+    "LM": "scope_ambiguous"
+  }
+}

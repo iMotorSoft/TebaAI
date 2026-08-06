@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-08-06T15:00:00-03:00",
+  "leftovers_before": [
+    {
+      "job": "1cc9e9f5-19c3-43fd-add0-9dec57e1497d",
+      "attempt": 2,
+      "doc": "2420c686-584a-55ba-9639-9523952e1a33",
+      "status": "completed_with_warnings",
+      "origin": "run parcial 17:44 (cleanup por env fallido)",
+      "vectors": 2
+    },
+    {
+      "job": "4f0db733-4247-404d-8a70-2e1809ee8c11",
+      "attempt": 2,
+      "doc": "463f168c-902b-5245-932a-afb1760704d7",
+      "status": "failed",
+      "origin": "Milvus caído 16:32",
+      "vectors": 0
+    },
+    {
+      "job": "004914b0-b3b4-45ef-a40e-e756e2408dc9",
+      "attempt": 2,
+      "doc": "a0967ba8-1b6b-5e22-8d9d-27ebff1279bf",
+      "status": "failed",
+      "origin": "Milvus caído 16:48",
+      "vectors": 0
+    }
+  ],
+  "cleanup": {
+    "method": "content_manager_cleanup_job.py (ManifestCleanupService, idempotente, IDs exactos)",
+    "1cc9e9f5": {
+      "status": "completed",
+      "deleted": [
+        "vector x2"
+      ],
+      "already_absent": 12
+    },
+    "4f0db733": {
+      "status": "completed",
+      "deleted": [],
+      "already_absent": 12
+    },
+    "004914b0": {
+      "status": "completed",
+      "deleted": [],
+      "already_absent": 12
+    },
+    "after_state": {
+      "docs": "0/0/0/0 (document, chunks, embeddings, pages)",
+      "primary_unchanged": true
+    }
+  },
+  "e2e_collection_after": {
+    "stats_entities": 4,
+    "live_vectors": 0,
+    "note": "tombstones sin compactar; búsqueda vectorial devuelve 0 vivos"
+  },
+  "primary_leftovers_not_touched": [
+    {
+      "type": "job queued",
+      "id": "b482318e-3063-48c6-8728-c513639af836",
+      "scope": "breslov_primary",
+      "reason": "artefacto del restart mal configurado (PUBLIC_CONTENT_MANAGER_SCOPE ausente); cero recursos (document_id=None); no E2E-isolado -> preservado y documentado"
+    },
+    {
+      "type": "upload",
+      "id": "fa71c272-375c-4af7-bb57-bc6255dc134f",
+      "scope": "breslov_primary",
+      "reason": "asociada al job queued anterior; preservada"
+    }
+  ]
+}

@@ -1,4 +1,115 @@
 {
-  "differences": [],
-  "note": "Milvus unavailable; diff deferred."
+  "differences": [
+    {
+      "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+      "embeddings_pg": 741,
+      "with_milvus_key_pg": 741
+    },
+    {
+      "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+      "embeddings_pg": 498,
+      "with_milvus_key_pg": 498
+    },
+    {
+      "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+      "embeddings_pg": 147,
+      "with_milvus_key_pg": 147
+    },
+    {
+      "document_id": "093e7975-1bb2-4d8f-8394-63ca82879500",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+      "embeddings_pg": 817,
+      "with_milvus_key_pg": 817
+    },
+    {
+      "document_id": "c7c10741-c324-4916-93a7-61070863e3f9",
+      "embeddings_pg": 852,
+      "with_milvus_key_pg": 852
+    },
+    {
+      "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+      "embeddings_pg": 646,
+      "with_milvus_key_pg": 646
+    },
+    {
+      "document_id": "cbfd6458-aad2-43df-986a-4b3350e6f8a7",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+      "embeddings_pg": 268,
+      "with_milvus_key_pg": 268
+    },
+    {
+      "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "embeddings_pg": 1205,
+      "with_milvus_key_pg": 1205
+    },
+    {
+      "document_id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "0d534d6c-6809-421b-9a5e-336d0bb8ecdb",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "b62619cb-0068-4c97-a857-1b5a9250ef29",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "d48fa596-7f78-4d2a-8b23-6a3f9002e903",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+      "embeddings_pg": 196,
+      "with_milvus_key_pg": 196
+    },
+    {
+      "document_id": "0985d874-d223-4cac-9920-0352050bf8ff",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "252c9436-6338-4cbd-b2a7-365c495009fc",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "ab48603a-cf31-469a-a37c-cbaed28c7acb",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "40dbe222-e1a9-4e72-9bb0-386d75d89548",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "7dbe7097-2ad3-4633-ba34-2daf8275f9db",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    },
+    {
+      "document_id": "00259e13-b718-4f3d-bd8a-935f97612508",
+      "embeddings_pg": 0,
+      "with_milvus_key_pg": 0
+    }
+  ],
+  "note": "Count-level comparison only; vector-by-vector reconciliation is deferred to the promotion-readiness audit."
 }

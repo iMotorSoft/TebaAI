@@ -8,19 +8,17 @@ Estado global: `TEBAAI_LIKUTEY_HALAJOT_TECHNICAL_READINESS_V2_DEV_BLOCKED`
 
 ```json
 {
-  "technical_result": "NOT_READY_TECHNICAL_BLOCKERS",
-  "technical_blockers": ["PostgreSQL↔Milvus", "Retrieval híbrido"],
+  "technical_result": "TECHNICALLY_READY_FOR_EDITORIAL_REVIEW",
+  "technical_blockers": [],
   "editorial_review": "PENDIENTE",
   "legal_review": "LEGAL_REVIEW_REQUIRED",
   "promotion_executed": false
 }
 ```
 
-Los dos controles bloqueados son **ambientales** (Milvus caído desde las
-13:26 del 2026-08-06, contenedor `milvus26-standalone` Exited(1), etcd
-timeouts; sin restart policy). Ninguno es un defecto del corpus: el cierre
-2026-07-31 ya verificó PG↔Milvus 268/268 con Milvus operativo, pero el
-contrato de la fase exige conteos reales y no históricos.
+Segunda pasada (2026-08-06) con Milvus operativo (levantado manualmente por el
+usuario): PG↔Milvus 268/268 (missing=0, orphans=0, mismatches=0, 100%) y
+retrieval híbrido PASS. La revisión legal permanece separada y pendiente.
 
 ## Matriz técnica (resumen)
 

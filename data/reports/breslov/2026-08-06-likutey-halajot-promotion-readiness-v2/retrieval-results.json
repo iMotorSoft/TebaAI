@@ -1,0 +1,27 @@
+{
+  "goldens_contract": [
+    {
+      "query": "CONSTRUYENDO UN MISHKÁN",
+      "expected": "structural_heading_exact"
+    },
+    {
+      "query": "INCLINADO HACIA LA BONDAD",
+      "expected": "structural_heading_exact"
+    },
+    {
+      "query": "Salmos 16:1",
+      "expected": "printed_reference_exact"
+    },
+    {
+      "query": "El hombre se une a HaShem…",
+      "expected": "footnote_literal_exact"
+    },
+    {
+      "query": "MELODÍAS Y PLEGARIAS",
+      "expected": "structural_heading_exact"
+    }
+  ],
+  "evidence": "backend/tests/test_page_first_evidence.py (27 tests) and test_canonical_editorial_evidence_selection.py pass in the phase run (115 focused PASS).",
+  "hybrid_retrieval": "BLOCKED until Milvus is operational (environmental).",
+  "literal_retrieval": "PASS (deterministic PG + fixtures)."
+}

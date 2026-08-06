@@ -1,0 +1,6 @@
+{
+  "milvus_available": false,
+  "error": "MilvusException: <MilvusException: (code=2, message=Fail connecting to server on 127.0.0.1:19530, illegal connection params or server unavailable)>",
+  "pg_chunks": 268,
+  "pg_embedding_rows": 268
+}

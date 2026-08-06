@@ -1,0 +1,102 @@
+[
+  {
+    "control": "Identidad documental",
+    "result": "PASS",
+    "note": "canonical_identity_v1 family likutey_halajot"
+  },
+  {
+    "control": "Metadata canónica",
+    "result": "PASS",
+    "note": "ADR-019 contrato persistido; edición derivada del filename"
+  },
+  {
+    "control": "Page-first",
+    "result": "PASS",
+    "note": "284 páginas v2"
+  },
+  {
+    "control": "Páginas físicas",
+    "result": "PASS",
+    "note": "284 físicas; 268 textuales + 16 blancas justificadas"
+  },
+  {
+    "control": "Referencias impresas",
+    "result": "PASS",
+    "note": "printed_reference_exact Salmos 16:1 golden (ADR-016)"
+  },
+  {
+    "control": "Headings",
+    "result": "PASS",
+    "note": "structural_heading_exact 51/53/56 (ADR-016)"
+  },
+  {
+    "control": "Notas al pie",
+    "result": "PASS",
+    "note": "footnote_literal_exact nota 35; ligaduras ADR-020"
+  },
+  {
+    "control": "Chunks",
+    "result": "PASS",
+    "note": "268 chunks, integridad ok"
+  },
+  {
+    "control": "Evidence IDs",
+    "result": "PASS",
+    "note": "0 colisiones; contrato ADR-021 v2"
+  },
+  {
+    "control": "PostgreSQL↔Milvus",
+    "result": "BLOCKED",
+    "note": "Milvus no operativo (ambiental); histórico 268/268 2026-07-31"
+  },
+  {
+    "control": "Duplicados",
+    "result": "PASS",
+    "note": "0 content_sha duplicados"
+  },
+  {
+    "control": "Retrieval literal",
+    "result": "PASS",
+    "note": "goldens deterministas + tests"
+  },
+  {
+    "control": "Retrieval híbrido",
+    "result": "BLOCKED",
+    "note": "requiere Milvus operativo"
+  },
+  {
+    "control": "Español",
+    "result": "PASS",
+    "note": "documento ES"
+  },
+  {
+    "control": "Inglés",
+    "result": "NA",
+    "note": "no aplica a este documento"
+  },
+  {
+    "control": "Hebreo",
+    "result": "NA",
+    "note": "hebreo embebido preservado; no es documento HE"
+  },
+  {
+    "control": "QA cruzado",
+    "result": "PASS",
+    "note": "scope LH vs LM II correcto (ver conflicto LM II 8)"
+  },
+  {
+    "control": "Warnings técnicos",
+    "result": "ACEPTABLE",
+    "note": "sin bloqueos técnicos de integridad"
+  },
+  {
+    "control": "Revisión editorial",
+    "result": "PENDIENTE",
+    "note": ""
+  },
+  {
+    "control": "Legal/copyright",
+    "result": "PENDIENTE",
+    "note": "LEGAL_REVIEW_REQUIRED"
+  }
+]

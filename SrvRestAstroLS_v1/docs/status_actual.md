@@ -2,7 +2,55 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-05 (Content Manager V1 — gates DEV cerrados)
+Ultima actualizacion: 2026-08-06 (Worktree reconciliation, conflicto LM II 8 y Promotion Readiness V2)
+
+## Worktree Reconciliation + Conflicto LM II 8 + Readiness V2 — 2026-08-06 (DEV)
+
+Gates: `TEBAAI_WORKTREE_RECONCILIATION_V1_DEV_READY` (cerrado),
+`TEBAAI_LIKUTEY_HALAJOT_LMII8_CONFLICT_RESOLUTION_V1_DEV_READY` (cerrado por
+resolución técnica sin escritura),
+`TEBAAI_LIKUTEY_HALAJOT_PROMOTION_READINESS_V2_DEV_READY` (auditoría ejecutada),
+`TEBAAI_LIKUTEY_HALAJOT_TECHNICAL_READINESS_V2_DEV_BLOCKED` (verificación Milvus
+pendiente + legal).
+
+### Worktree (reconciliación)
+
+- 17 tracked + 303 untracked clasificados; 5 commits sin push: config HTTP
+  `/api` same-origin (+ docs), favicons/tarjeta social, test evidence id v2,
+  ADR-013 (corpus reconciliation), reportes + probes Milvus read-only.
+- `backend/data/` (13 JSON runtime) excluido sin borrar; sin secretos;
+  `git diff --check` PASS.
+- Incidencia ambiental: `milvus26-standalone` salió Exited(1) (etcd timeouts,
+  13:26 local); requiere reinicio manual por el usuario (precedente 2026-08-02).
+  El agente no lo reinicia.
+
+### Conflicto Likutey Halajot / LM II 8 (resuelto, sin escritura)
+
+- `56ddcc3b` (Rosenberg, ready) es LH con `source_identities=[lmii:8 develops]`
+  (ADR-019 persistido); `132a791a` Interior Final LH (edición derivada, v2);
+  `3715c6e0` LM II BRI sin chunks.
+- Resolver: `Likutey Halajot LM II 8` → solo Rosenberg; `LM II` → solo LM II
+  BRI (sin contaminación); `Likutey`/`LM` → `scope_ambiguous` (diseño).
+- 0 duplicados, 0 colisiones de evidence id, 0 chunks compartidos; test de
+  regresión nuevo (7 tests, falla con estado previo).
+
+### Promotion Readiness V2
+
+- `NOT_READY_TECHNICAL_BLOCKERS`: PG↔Milvus e híbrido bloqueados por Milvus
+  caído (ambiental); editorial PENDIENTE; legal LEGAL_REVIEW_REQUIRED;
+  `promotion_executed=false`. Documento NO promovido.
+- Validaciones: backend completo 1563 PASS (94 warnings preexistentes),
+  focalizados fase 115 PASS, frontend check 0 errores, vitest 94 PASS,
+  `lat check` PASS.
+
+Reportes: `data/reports/breslov/2026-08-06-worktree-reconciliation-v1/`,
+`data/reports/breslov/2026-08-06-likutey-halajot-lmii8-conflict-v1/`,
+`data/reports/breslov/2026-08-06-likutey-halajot-promotion-readiness-v2/`.
+Scripts: `backend/scripts/audit_likutey_halajot_lmii8_conflict_v1.py` y
+`backend/scripts/audit_likutey_halajot_promotion_readiness_v2.py` (read-only).
+
+Próximo paso (requiere usuario): levantar Milvus; luego re-ejecutar audit V2
+para cerrar PG↔Milvus e híbrido, y repetir readiness completa.
 
 ## Content Manager V1 (Gestor de Contenidos) — 2026-08-05 (DEV)
 

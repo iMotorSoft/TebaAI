@@ -1,0 +1,39 @@
+{
+  "related_documents": [
+    {
+      "id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "title": "Likutey Halajot LM II 8",
+      "source_filename": "LIKUTEY HALAJOT LM II 8.pdf",
+      "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+      "status": "ready",
+      "document_code": null,
+      "pages": 0,
+      "chunks": 1205,
+      "embeddings": 1205
+    },
+    {
+      "id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+      "title": "Likutey Moharán II — edición española BRI",
+      "source_filename": "LIKUTEY MOHARAN II Interior.pdf",
+      "source_sha256": "ce7304e31c37cadd5bc938732d93c8e5385afc026c0af0de612635d8b76cab61",
+      "status": "test_candidate",
+      "document_code": "likutey_moharan_ii_spanish_bri",
+      "pages": 0,
+      "chunks": 0,
+      "embeddings": 0
+    },
+    {
+      "id": "132a791a-d12b-45bc-9b34-dd143605de12",
+      "title": "Likutey Halajot — Interior Final",
+      "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "status": "test_candidate",
+      "document_code": "likutey_halajot_interior_final_v2",
+      "pages": 284,
+      "chunks": 268,
+      "embeddings": 268
+    }
+  ],
+  "binary_duplicate": false,
+  "logical_duplicate": false
+}

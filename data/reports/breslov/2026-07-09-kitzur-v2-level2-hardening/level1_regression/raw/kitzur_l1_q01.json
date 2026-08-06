@@ -1,0 +1,103 @@
+{
+  "question": "¿Cuál es el nombre del autor de la obra \"Síntesis del Likutey Moharán\" (Kitzur Likutey Moharán)?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "phrase_lookup",
+  "short_conclusion": "Se encontraron 6 ocurrencia(s) en 6 páginas.",
+  "evidence_summary": {
+    "literal_matches": 6,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      1,
+      2,
+      4,
+      6,
+      11,
+      415
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 1,
+      "evidence_type": "partial_phrase",
+      "score": 0.5,
+      "snippet": "Síntesis Síntesis Síntesis Síntesis Síntesis del del del del del Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán (Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán) por  el Rabí Natán de Breslov Rabí Nat",
+      "matched_terms": [
+        "síntesis"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 11,
+      "evidence_type": "partial_phrase",
+      "score": 0.5,
+      "snippet": "SÍNTESIS SÍNTESIS SÍNTESIS SÍNTESIS SÍNTESIS DEL DEL DEL DEL DEL LIKUTEY MOHARÁN LIKUTEY MOHARÁN LIKUTEY MOHARÁN LIKUTEY MOHARÁN LIKUTEY MOHARÁN Parte I Parte I Parte I Parte I Parte I",
+      "matched_terms": [
+        "síntesis"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 415,
+      "evidence_type": "partial_phrase",
+      "score": 0.5,
+      "snippet": "SÍNTESIS SÍNTESIS SÍNTESIS SÍNTESIS SÍNTESIS DEL DEL DEL DEL DEL LIKUTEY MOHARÁN LIKUTEY MOHARÁN LIKUTEY MOHARÁN LIKUTEY MOHARÁN LIKUTEY MOHARÁN Parte II Parte II Parte II Parte II Parte II",
+      "matched_terms": [
+        "síntesis"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 2,
+      "evidence_type": "partial_phrase",
+      "score": 0.5,
+      "snippet": "el consentimiento previo, por escrito, del editor. Título del original: Kitzur Likutey Moharan Kitzur Likutey Moharan Kitzur Likutey Moharan Kitzur Likutey Moharan Kitzur Likutey Moharan Para más información: Breslov Research Institute POB 5370 Jerusalem, Israel. Breslov Research Institute POB 587",
+      "matched_terms": [
+        "likutey"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 4,
+      "evidence_type": "partial_phrase",
+      "score": 0.5,
+      "snippet": "da”. una versión abreviada”. (Pesajim 3b) Incluso antes de que se imprimiese el Likutey Moharán, el Rebe Najmán le pidió al rabí Natán que comenzase a recopilar los consejos prácticos de cada una de sus lecciones y los presentase en un formato abreviado. Después de escribir algunas páginas, el rabí",
+      "matched_terms": [
+        "likutey"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 6,
+      "evidence_type": "partial_phrase",
+      "score": 0.5,
+      "snippet": "na colección abreviada de los consejos prácticos contenidos en el libro Likutey Moharán, recopilación de las enseñanzas puras y santas de nuestro grande y santo Rav, la “luz oculta”, el Rebe Najmán de Breslov, que su memoria sea para bendición. Pues el Rebe mismo me ordenó compilar este volumen, sie",
+      "matched_terms": [
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

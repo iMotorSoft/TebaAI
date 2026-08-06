@@ -1,0 +1,207 @@
+{
+  "question": "¿Cuál es el propósito del suspiro sagrado y cómo beneficia a la persona en su servicio a Dios?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      7,
+      13,
+      14,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      28,
+      57,
+      59
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 13,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ituye la rectificación para esa locura. Pues la Torá está compuesta enteramente por los Nombres del Santo, bendito sea, y esos Nombres anulan la mala inclinación y eliminan la demencia y el espíritu de locura que se aferran a la persona como resultado de sus pecados.  Lección 1  1 Tishrei 13",
+      "matched_terms": [
+        "santo",
+        "persona",
+        "santidad",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 20,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "lo que le sucede, todos los días de su vida, es sólo para su bien y que ello se debe al amor que el Santo, bendito sea, siente por ella. Ésta es la esencia de un saber  Lección 4 7 Tishrei 20",
+      "matched_terms": [
+        "santo",
+        "persona",
+        "santidad",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 24,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "istiendo como un ser “separado” de Dios y no expire antes de su tiempo, Dios no lo permita. Pues el Santo, bendito sea, desea nuestro servicio; por lo tanto, no debe mantenerse en ese estado, sino que “debe esperar” hasta el tiempo en que el Santo, bendito sea, tome Él Mismo su alma [cuando fallezca]. Entonces quedará completamente anulada y absorbida en el Infinito en el grado que haya merecido. 15. Mediante la unión de la persona con el Infinito en el aspecto de “correr y retornar” -de modo que no quede completamente anulada- y al volver, más tarde, a su propia conciencia en el estado de “separación de Dios”, permanecerá en ella un remanente de la maravillosa luz de ese estado de unión. Es",
+      "matched_terms": [
+        "santo",
+        "persona",
+        "santidad",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 18,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "sión de Dios. Lo que sucede es que aún no está completa la construcción de santidad que necesita la persona para poder entrar. Después de muchos días y de muchos años, si no se deja desalentar, si apela a todas sus fuerzas, se fortalece y se dedica una y otra vez a la plegaria, entonces, mediante sus oraciones, se despertará la compasión de Dios y Él se volverá hacia la persona y le hará brillar Su rostro, cumpliendo con su deseo y con su voluntad, mediante el poder de los verdaderos Tzadikim, acercándola a Él con una gran compasión y misericordia. 7. No es apropiado pensar en recibir una recompensa por cosa alguna, pues todas nuestras buenas acciones y todas las plegarias nos son dadas por",
+      "matched_terms": [
+        "persona",
+        "santidad",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 19,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "tra  Bava Batra  Bava Batra  Bava Batra 73b) 73b) 73b) 73b) 73b) 1. Mediante la canción sagrada, la persona realza y eleva el Reino de Santidad y merece una posición de autoridad. También sucede lo opuesto. Los que ofician como cantores y cantantes del Otro Lado [i.e., las fuerzas de la impureza] dañan el Reinado de Santidad y prolongan el exilio. Debido a ellos, la gente tropieza y queda atrapada como pájaros en una red. Por lo tanto, es necesario ser muy cuidadosos y no escuchar las canciones de un cantante del Otro Lado, cuya intención al cantar no es en absoluto en aras del Cielo, sino más bien por dinero, honor o vanidad. Escuchar el cantar de tal persona es dañino para el servicio a Di",
+      "matched_terms": [
+        "persona",
+        "santidad",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 21,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "completo: que la persona no debe irritarse ni confundirse a causa de los sinsabores que pueda experimentar. En su lugar, debe tener fe en que todo es para su bien eterno. 2. Al confesarse delante de un verdadero estudioso de Torá, la persona eleva el Reinado de Santidad hacia su raíz; anula a su vez el gobierno de las naciones y merece entonces saber que todo lo que le sucede es para su propio bien. Entonces dirá la bendición “Quien es bueno y hace el bien” sobre todo lo que le suceda (ver Shuljan Aruj, Oraj Jaim 222:1) - y ello es un “anticipo del Mundo que Viene”. [Ver Tzelaj (Tzion LeNefesh Jaia), Pesajim 50a: “En el Mundo que Viene, la persona comprenderá que debía haber dicho la bendici",
+      "matched_terms": [
+        "persona",
+        "santidad",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 22,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "en que ellos son como “nada”- les permite expiar los pecados. 5. La persona que desee andar en la senda de la santidad deberá quebrar todos los rasgos negativos que derivan de los cuatro elementos, tal cual ha sido enseñado. También deberá abrir su corazón ante un estudioso de Torá -es decir, deberá confesarse ante él- y éste le explicará y le aclarará el sendero que debe seguir de acuerdo a la raíz de su alma. 6. Existen tres pasos en la unión con los Tzadikim por medio de los cuales todo alcanza su rectificación. El primer paso es cuando uno ve al Tzadik. Al hacerlo se anulan los rasgos negativos que derivan del elemento “mineral” y del elemento “vegetal” - es decir, la tristeza, la indole",
+      "matched_terms": [
+        "persona",
+        "santidad",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 28,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "s la esencia del conflicto entre los Tzadikim es principalmente en aras de esa prueba - para que la persona que quiera alejarse pueda hacerlo. En verdad, es apropiado alejarla, dado que ha dañado las “gotas” de su mente. Pero si se mantiene firme ante la prueba y comprende la enormidad del daño que ha hecho y no le presta atención alguna a ese conflicto, entonces es precisamente a través de ello que podrá acercarse. Pues dado que ha hecho un daño tan grande es imposible que se acerque a no ser por esa prueba en particular. Comprende esto. Pues en verdad, Dios desea hacer el bien y acercar a aquellos que están lejos de Él, aunque no lo merezcan. Pero ellos sólo pueden acercarse mediante esta",
+      "matched_terms": [
+        "persona",
+        "santidad",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 57,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ndo aquellos que están muy alejados comienzan a acercarse a Él. Pues en ese momento, “El Nombre del Santo, bendito sea, asciende y es glorificado, arriba y abajo” (Zohar II, 69a) y aumenta así el honor de Dios en el mundo. Por lo tanto, es deber de cada uno el esforzarse para acercar a aquellos que están lejos de Dios. Más aún, nadie debe decir, “¿Cómo puedo acercarme a Dios cuando, debido a mis muchas y malas acciones, estoy tan lejos de Él?”. Pues en verdad sucede todo lo contrario: Cuanto más alejada esté la persona, más se exaltará el honor de Dios al retornar y acercarse a Él. Pues ése es el honor más grande de Dios. 5 Jeshvan 2. Cuando la gente que está afuera se acerca y entra a la sa",
+      "matched_terms": [
+        "santo",
+        "sagrado",
+        "temor sagrado",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 59,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "han estado llevando (cf. Zacarías 3:4), dado que esas “vestimentas sucias” les impiden retornar al Santo, bendito sea. Esas vestimentas bloquean a las personas como un río que es imposible atravesar. Por lo tanto no te desanimes si ves que, pese a tu deseo de acercarte a Dios, surgen enormes obstáculos que te lo impiden. Pues inevitablemente deberás experimentar muchas y enormes barreras que son el resultado de las “vestimentas sucias” creadas por tus pecados; deberás simplemente sufrir las batallas y las amarguras hasta que puedas deshacerte de esas “vestimentas  sucias”. Luego de ello, desaparecerán todos los obstáculos y las barreras que te separaban de la santidad. 10. De acuerdo al hon",
+      "matched_terms": [
+        "santo",
+        "sagrado",
+        "temor sagrado",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 7,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "e de aguas vivas. Entonces, todo aquel que desee agregar a nuestra selección podrá hacerlo. Pues la persona de conocimiento perfecto podrá encontrar muchas más cosas como éstas en cada discurso y en cada una de las enseñanzas que se encuentran en el Likutey Moharán. Pues las palabras de ese libro son en verdad profundas y cada discurso está dividido en muchas explicaciones y temas maravillosos y tremendos, al igual de estar plenos de consejos, de una guía sólida y de maravillosas y notables ideas para inspirar a la persona en el servicio a Dios. Es digno de notar que la mayor parte de los contenidos de este volumen fueron examinados por el mismo Rebe y encontraron favor a sus ojos. La verdad",
+      "matched_terms": [
+        "persona",
+        "sagrado",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 14,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "var de los astutos engaños de la mala inclinación - que, en la mayoría de los casos, no incita a la persona a transgredir de manera directa. Más bien, primero se disfraza de mitzvot, etc., para engañar a la persona. Al dedicarse al estudio de la Torá la persona merece una verdadera comprensión y ser salvada de todo ello. 6. Las plegarias no son aceptadas cuando las palabras carecen de gracia. Por lo tanto, es necesario esforzarse para que las palabras tengan verdadera gracia. Y esto se logra mediante el estudio de la Torá, que hace que las plegarias sean aceptadas. 2 Tishrei 7. El judío debe siempre buscar el intelecto en cada cosa y conectarse con la sabiduría y el intelecto que se encuentr",
+      "matched_terms": [
+        "persona",
+        "sagrado",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

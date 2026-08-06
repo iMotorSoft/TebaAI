@@ -1,0 +1,483 @@
+[
+  {
+    "collection": "tebaai_breslov_chunks_v1",
+    "collection_exists": true,
+    "status": "READY_METADATA",
+    "load_state": "Loaded",
+    "num_entities": 5102,
+    "fields": [
+      {
+        "name": "pk",
+        "dtype": "21",
+        "primary": true,
+        "params": {
+          "max_length": 128
+        }
+      },
+      {
+        "name": "chunk_id",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "document_id",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "collection_code",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "language",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 8
+        }
+      },
+      {
+        "name": "title",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 512
+        }
+      },
+      {
+        "name": "source_type",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 32
+        }
+      },
+      {
+        "name": "source_sha256",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "content_sha256",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "chunk_index",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "page_start",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "page_end",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "content_preview",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 1024
+        }
+      },
+      {
+        "name": "embedding",
+        "dtype": "101",
+        "primary": false,
+        "params": {
+          "dim": 1536
+        }
+      }
+    ],
+    "vector_field": "embedding",
+    "vector_dim": 1536,
+    "indexes": [
+      {
+        "field_name": "embedding",
+        "params": {
+          "index_type": "HNSW",
+          "metric_type": "COSINE",
+          "params": {
+            "M": 16,
+            "efConstruction": 200
+          }
+        }
+      }
+    ],
+    "index_exists": true,
+    "query_sample_ok": true,
+    "metadata_sample": [
+      {
+        "language": "es",
+        "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "source_type": "pdf",
+        "source_sha256": "6dae1488cd2f87f84c024a9091336515c9225e1dee02501e725729304bdb5cd7",
+        "content_sha256": "60f04c77107f11960098593ca152a8c58b0536c303b004497f25c9d9ab4347b0",
+        "chunk_index": 210,
+        "chunk_id": "954227a7-716a-4771-a18f-5c45b1273a31",
+        "collection_code": "breslov",
+        "page_start": 144,
+        "page_end": 144,
+        "content_preview": "iese santifi cando el Nombre de Dios ( _Sabiduría y Enseñanzas del Rabí Najmán_ #12). De manera similar, la persona debe tratar de concentrarse por completo en el momento de la oración. Mientras la persona esté consciente de la presencia\n\n## Page 145\n\n_LA PLEGARIA / 123_\n\nde otros a su alrededor, su _kavaná_ no es completa. Es necesario lograr un nivel de plegaria tal que sólo se encuentren allí Dios y uno mismo ( _Likutey Moharan I_ 1, 103).",
+        "pk": "001b08ff7321231c4d9c1828",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb"
+      },
+      {
+        "language": "es",
+        "title": "Likutey Halajot LM II 8",
+        "source_type": "book",
+        "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+        "content_sha256": "74cdb88d0f3d4048acb73e3503fed83ffca055a8ac3769a9c7ac086e8e34378c",
+        "chunk_index": 1070,
+        "chunk_id": "3278d1db-535d-42ef-9f7c-5b66ab918de0",
+        "collection_code": "breslov",
+        "page_start": 477,
+        "page_end": 478,
+        "content_preview": "án (Esaú) tiene permiso para juzgar a la humanidad por sus pecados. Aquí, esto se relaciona con el Otro Lado que se alimenta de la compasión y de un _daat_ dañado, de modo que todas nuestras plegarias se encuentran entonces en la categoría de juicio.\n\n**228. extraemos toda la esencia de vida…** El Rebe Najmán enseñó previamente que el Tzadik, que es el maestro de fortaleza, eleva una plegaria de juicio que es el concepto de la vara de fortaleza. Esta plegaria/vara se atasca en la garganta del Ot",
+        "pk": "0028a1d5-e342-4466-a787-02528bbfeab8",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6"
+      },
+      {
+        "language": "es",
+        "title": "Likutey Halajot LM II 8",
+        "source_type": "book",
+        "source_sha256": "",
+        "content_sha256": "eaf492d60aa6cb0c91eed4701db9220c56b3441e0c47c3e5944624bed7d1953e",
+        "chunk_index": 128,
+        "chunk_id": "48ada5e0-cb06-4d1f-9ea1-9a669ac33bd0",
+        "collection_code": "breslov",
+        "page_start": 69,
+        "page_end": 70,
+        "content_preview": "mente por otros 603,550 de acuerdo a la opinión de que también se aceptó ser garantía por los garantes mismos. Mira lo que hemos dicho sobre esto en las Leyes de _Piriá veRiviá_ .[18]\n\n> 17 “Un tercio enrollado… tres circunvoluciones… tres pulgares”.\n\n> 18 Ver en _Likutey Moharán_ II 8, Agregado II, La Casa de Plegaria, donde se cita del _Likutey Halajot, Even HaEzer, Piriá veRiviá_ 5:6, 12 y se explica este concepto en detalle.\n\n> 16 Ver _Kitzur Shuljan Aruj,_ 9:3; 5.\n\n## Page 70\n\n70 LIKUTEY HALAJOT\n\nHILJOT TZITZIT #7\n\nEs imposible cumplir con estas obligaciones si no es a través del agregado de nuevos miembros santos, correspondiente a la reunión de los dispersos, que se logra por medio de los sagrados _tzitzit_ . Es así que los _tzitzit_ tienen el valor numérico de 613 como se explicó, correspondiente a los 613 preceptos, y también a las 603,550 almas judías, que corresponden también a 613, es decir 3.550 = 13 (3 + 5 + 5), y 600,000 = 600, todo lo cual da 613. Ello se debe a que...",
+        "pk": "00485beb-1715-4933-bb96-34022cc334b0",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6"
+      },
+      {
+        "language": "es",
+        "title": "La Potencia de la Plegaria",
+        "source_type": "book",
+        "source_sha256": "",
+        "content_sha256": "a150d602915712483a4da04d4c1eb342632973e01dfd9ae33a93509ff3bb710b",
+        "chunk_index": 580,
+        "chunk_id": "26c42fab-51bd-48bc-b96a-81b4c34c70bb",
+        "collection_code": "breslov",
+        "page_start": 367,
+        "page_end": 368,
+        "content_preview": "HaJodesh_ pedimos una buena vida, una vida de paz y un consistente sustento. También recordamos las pasadas salvaciones, oramos para que sea un mes bendecido y por una rápida redención de este presente exilio.\n\n## חֲ מִ יםאָ ב הָ רַ\n\nPadre compasivo\n\nste pasaje fue compuesto debido a los mártires asesinados por los cruzados en los años 1096 y 1106. Las Cruzadas comenzaron cuando Elos soldados ingleses, franceses y alemanes siguieron el llamado del Papa para luchar contra los musulmanes que habían conquistado la Tierra Santa. La idea era quitarles el control de la Tierra Santa a los “infieles”. La historia de las Cruzadas, que duraron varios cientos de años, no ofrece ninguna razón válida para semejante empresa. Sólo muerte y destrucción surgieron de esas guerras. Pero los cristianos que fueron a la guerra contra los musulmanes diezmaron a las comunidades judías a lo largo de Europa. Éstas fueron calcinadas, masacradas por la espada y enfrentaron innumerables torturas gracias a...",
+        "pk": "00586216-54af-42b4-b43e-d23aa82fd614",
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893"
+      },
+      {
+        "language": "es",
+        "title": "El Alma del Rebe Najmán",
+        "source_type": "pdf",
+        "source_sha256": "b4af5c690bd7bb217b525ab208fb5aa18bd951802a14a106313f17bc5302896f",
+        "content_sha256": "fd1afa3b654b1c1419cceb08c4528e07eb2ec0cba438bdb83e4dc57f8f468d59",
+        "chunk_index": 221,
+        "chunk_id": "a346333e-b41b-43d5-9b7d-c0508cab39f5",
+        "collection_code": "breslov",
+        "page_start": 85,
+        "page_end": 86,
+        "content_preview": "r a todo tipo de actos tontos, si es ésa la única manera de alcanzar la alegría.\n\nCuando la persona alcanza la verdadera alegría, HaShem Mismo vela sobre ella y la protege de la impurificación sexual.\n\n( _Sijot HaRan_ #20)\n\n## _**Simja es la clave**_\n\n_Rabeinu zal_ dice que la clave para estudiar Torá y orar es _simja_ . La persona que tiene verdadera _simja_ , que siempre está _besimja_ y nunca se permite caer en la depresión, es una persona que puede orar con mucha mayor pureza y que puede est",
+        "pk": "007873ce9ea6611836c33b14",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856"
+      }
+    ],
+    "search_ok": "skipped_no_query_vector",
+    "limit": 5
+  },
+  {
+    "collection": "tebaai_breslov_test_chunks_v1",
+    "collection_exists": true,
+    "status": "READY_METADATA",
+    "load_state": "Loaded",
+    "num_entities": 10115,
+    "fields": [
+      {
+        "name": "pk",
+        "dtype": "21",
+        "primary": true,
+        "params": {
+          "max_length": 128
+        }
+      },
+      {
+        "name": "chunk_id",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "document_id",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "collection_code",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "language",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 8
+        }
+      },
+      {
+        "name": "title",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 512
+        }
+      },
+      {
+        "name": "source_type",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 32
+        }
+      },
+      {
+        "name": "source_sha256",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "content_sha256",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "chunk_index",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "page_start",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "page_end",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "content_preview",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 1024
+        }
+      },
+      {
+        "name": "embedding",
+        "dtype": "101",
+        "primary": false,
+        "params": {
+          "dim": 1536
+        }
+      }
+    ],
+    "vector_field": "embedding",
+    "vector_dim": 1536,
+    "indexes": [
+      {
+        "field_name": "embedding",
+        "params": {
+          "index_type": "HNSW",
+          "metric_type": "COSINE",
+          "params": {
+            "M": 16,
+            "efConstruction": 200
+          }
+        }
+      }
+    ],
+    "index_exists": true,
+    "query_sample_ok": true,
+    "metadata_sample": [
+      {
+        "chunk_id": "a310e0de-3e4c-447c-875b-38b791b9edd0",
+        "page_start": 201,
+        "page_end": 202,
+        "content_preview": "Vaed_ - Bendito sea el Nombre de la gloria de Su reino por siempre jamás. En este versículo hay veinticuatro letras, correspondientes a los veinticuatro libros de la Biblia ( _Tikuney Zohar_ Introducción, p. 14a).\n\n## **Las Cuarenta y Nueve Letras**\n\nEnseña el Talmud “Cincuenta puertas de _Biná_ (comprensión) fueron creadas en el mundo y todas le fueron dadas a Moshé, excepto una” ( _Rosh HaShaná_ 21b). Las cuarenta y nueve letras del _Shemá_ y del _Baruj Shem_ juntas corresponden a esas cuarent",
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "collection_code": "breslov_primary",
+        "language": "es",
+        "title": "La Potencia de la Plegaria",
+        "source_type": "pdf",
+        "source_sha256": "8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46",
+        "content_sha256": "eae91d17610eb2234b4536a96a7ce35437203651335676c3f8556e0c3f49b223",
+        "chunk_index": 318,
+        "pk": "000079723f31c5fa401cfc72"
+      },
+      {
+        "chunk_id": "954227a7-716a-4771-a18f-5c45b1273a31",
+        "page_start": 144,
+        "page_end": 144,
+        "content_preview": "iese santifi cando el Nombre de Dios ( _Sabiduría y Enseñanzas del Rabí Najmán_ #12). De manera similar, la persona debe tratar de concentrarse por completo en el momento de la oración. Mientras la persona esté consciente de la presencia\n\n## Page 145\n\n_LA PLEGARIA / 123_\n\nde otros a su alrededor, su _kavaná_ no es completa. Es necesario lograr un nivel de plegaria tal que sólo se encuentren allí Dios y uno mismo ( _Likutey Moharan I_ 1, 103).",
+        "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+        "collection_code": "breslov_primary",
+        "language": "es",
+        "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+        "source_type": "pdf",
+        "source_sha256": "6dae1488cd2f87f84c024a9091336515c9225e1dee02501e725729304bdb5cd7",
+        "content_sha256": "60f04c77107f11960098593ca152a8c58b0536c303b004497f25c9d9ab4347b0",
+        "chunk_index": 210,
+        "pk": "001b08ff7321231c4d9c1828"
+      },
+      {
+        "chunk_id": "517960ec-5e14-473d-9840-8e442ab0968d",
+        "page_start": 148,
+        "page_end": 148,
+        "content_preview": "pendo de otra gente - ni para honor, ni para adulación, ni para el sustento. CCuando soy autosuficiente, entonces puedo alabar a Dios con ¿ honestidad ( _Likutey Moharán_ I, 66:3).\n\n## :הַ י בְּ עוֹדִ יאֲ זַמְּ רָה לֵ א\n\nCantaré a Dios con todo mi ser.\n\nn una de sus lecciones más famosas, conocida como _Azamra_ ( _Likutey Moharán_ I, 282), el Rebe Najmán habla de encontrar los puntos buenos en Elos demás y también en uno mismo. Basa su lección en este versículo\n\n89 _Shaar HaKavanot, Inián Tefi lat HaShajar_ , p. 114.\n\n## Page 149\n\n_**Ashrei y Haleluiá**_[■] **149**\n\n“Cantaré a Dios con todo mi s",
+        "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+        "collection_code": "breslov_primary",
+        "language": "es",
+        "title": "La Potencia de la Plegaria",
+        "source_type": "pdf",
+        "source_sha256": "8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46",
+        "content_sha256": "60879e68891fe3564ac8e2413a355a2c33a888910a4cdfcc07beeb04a784c000",
+        "chunk_index": 228,
+        "pk": "001c2665f6951f89ffa3d0a3"
+      },
+      {
+        "chunk_id": "0bfa540b-8b42-4617-8c40-367cd5792d73",
+        "page_start": 160,
+        "page_end": 161,
+        "content_preview": "odos los conceptos tratados más arriba, para hacerlo capaz de revelarle al pueblo el _Jidush HaOlam_ . Para que todos sepan y tengan _emuná_ en la verdad tal cual es, que el mundo fue creado por HaShem _iesh mi-ain_ , con lo cual se evoca la Canción.\n\nPor lo tanto, lo más importante es revelar la _emuná_ en el _Jidush HaOlam_ , como en, “En el comienzo creó Elokim los cielos y la tierra”. Esto corresponde a, “A Su pueblo manifestó el _KoaJ_ ( ,כחpoder) de Sus obras”, lo que es aspecto de las _Ko",
+        "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+        "collection_code": "breslov_primary",
+        "language": "es",
+        "title": "Likutey Halajot LM II 8",
+        "source_type": "pdf",
+        "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+        "content_sha256": "e9a7ee286d02177cd36cd0f1b8545d6110e863966c0fc5794e7470f2d4fb576c",
+        "chunk_index": 331,
+        "pk": "001efa01bb144df241c8fa6e"
+      },
+      {
+        "chunk_id": "a346333e-b41b-43d5-9b7d-c0508cab39f5",
+        "page_start": 85,
+        "page_end": 86,
+        "content_preview": "r a todo tipo de actos tontos, si es ésa la única manera de alcanzar la alegría.\n\nCuando la persona alcanza la verdadera alegría, HaShem Mismo vela sobre ella y la protege de la impurificación sexual.\n\n( _Sijot HaRan_ #20)\n\n## _**Simja es la clave**_\n\n_Rabeinu zal_ dice que la clave para estudiar Torá y orar es _simja_ . La persona que tiene verdadera _simja_ , que siempre está _besimja_ y nunca se permite caer en la depresión, es una persona que puede orar con mucha mayor pureza y que puede estudiar mejor la Torá, pues _simja_ es la clave con la cual la persona puede hablar con HaShem de manera privada.\n\nEl _hitbodedut_ sólo es posible mediante _simja_ . Si la persona tiene _simja_ , puede volverse a HaShem  por  pura _simja_ y  hablar  con  HaShem  con  un  corazón  quebrantado.  Un  cor",
+        "document_id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+        "collection_code": "breslov_primary",
+        "language": "es",
+        "title": "El Alma del Rebe Najmán",
+        "source_type": "pdf",
+        "source_sha256": "b4af5c690bd7bb217b525ab208fb5aa18bd951802a14a106313f17bc5302896f",
+        "content_sha256": "de136d3da77426401c4dae072a3dfc25f16bf0ed065bcc7753bab8603317f964",
+        "chunk_index": 221,
+        "pk": "007873ce9ea6611836c33b14"
+      }
+    ],
+    "search_ok": "skipped_no_query_vector",
+    "limit": 5
+  },
+  {
+    "collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+    "collection_exists": true,
+    "status": "EXISTS_NOT_LOADED",
+    "load_state": "NotLoad",
+    "num_entities": 100,
+    "fields": [
+      {
+        "name": "pk",
+        "dtype": "21",
+        "primary": true,
+        "params": {
+          "max_length": 128
+        }
+      },
+      {
+        "name": "page_number",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "text_preview",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 1024
+        }
+      },
+      {
+        "name": "embedding",
+        "dtype": "101",
+        "primary": false,
+        "params": {
+          "dim": 1536
+        }
+      }
+    ],
+    "vector_field": "embedding",
+    "vector_dim": 1536,
+    "indexes": [
+      {
+        "field_name": "embedding",
+        "params": {
+          "index_type": "HNSW",
+          "metric_type": "COSINE",
+          "params": {
+            "M": 16,
+            "efConstruction": 200
+          }
+        }
+      }
+    ],
+    "index_exists": true,
+    "query_sample_ok": "skipped",
+    "metadata_sample": null,
+    "search_ok": "skipped",
+    "limit": 5
+  }
+]

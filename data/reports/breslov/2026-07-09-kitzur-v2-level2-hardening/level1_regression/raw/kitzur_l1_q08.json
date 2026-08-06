@@ -1,0 +1,165 @@
+{
+  "question": "¿Qué se debe hacer antes de comenzar cualquier mitzvá o devoción religiosa para ampliar los pasajes hacia la santidad?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 10 resultado(s) en 10 páginas.",
+  "evidence_summary": {
+    "literal_matches": 10,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      18,
+      19,
+      41,
+      42,
+      64,
+      80,
+      92,
+      93,
+      100,
+      430
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 430,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "erdo al esfuerzo es la recompensa” (Avot 5:23). 3. La caridad agranda todos los pasajes hacia la santidad. En otras palabras, cuando la persona se aboca a un sendero en particular o a una devoción especial en el servicio a Dios, debe crear una apertura allí a través de la cual pasar hacia ese camino - y es por ello que “todos los comienzos son difíciles”. Mediante la caridad, se amplía la entrada.",
+      "matched_terms": [
+        "pasajes hacia la",
+        "hacia la santidad",
+        "pasajes hacia",
+        "ra ampliar",
+        "ampliar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 92,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "la Tierra de Israel. Pues todos los pasos que la persona deba dar en su camino hacia la santidad sólo se concretan gracias a la Tierra de Israel. De manera similar, el ascenso de las plegarias se produce exclusivamente en la Tierra de Israel. 9. Para poder ir a la Tierra de Israel, es necesario primero anular a los malvados que “difunden un informe maligno sobre la Lección 20",
+      "matched_terms": [
+        "hacia la",
+        "hacia la santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 93,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "ha caído en medio de ellos, entre las fuerzas de la impureza, vuelve a elevarse hacia la santidad]. Ése es el significado del versículo, “Así saldrá un juicio Lección 20                                                                             30 Jeshvan",
+      "matched_terms": [
+        "hacia la",
+        "hacia la santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 18,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "ces, mediante sus oraciones, se despertará la compasión de Dios y Él se volverá hacia la persona y le hará brillar Su rostro, cumpliendo con su deseo y con su voluntad, mediante el poder de los verdaderos Tzadikim, acercándola a Él con una gran compasión y misericordia. 7. No es apropiado pensar en recibir una recompensa por cosa alguna, pues todas nuestras buenas acciones y todas las plegarias no",
+      "matched_terms": [
+        "hacia la",
+        "hacia",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 19,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "8. La esencia de la mala inclinación es el impulso hacia la transgresión sexual. Ésa es la fuente principal de contaminación espiritual. Por lo tanto, es necesario saber que la principal prueba en este mundo es la batalla con ese deseo. ¡Afortunado aquél que merece ganar la guerra! 9. El verdadero Tzadik de la generación está asociado con el concepto de la “luminaria mayor”. Él brilla e ilumina a",
+      "matched_terms": [
+        "hacia la",
+        "hacia",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 41,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "carse a la santidad - lo esencial de su rectificación es simplemente orientarse hacia la verdad. Debe fijar su vista en la verdad absoluta y sólo buscar la verdad. Lo mismo se aplica a las plegarias, aunque uno no pueda orar debido a la profunda oscuridad que lo rodea, debe asegurarse de decir las palabras con honestidad, por más bajo que sea su nivel. Por ejemplo, deberá decir con sinceridad, “¡D",
+      "matched_terms": [
+        "hacia la",
+        "hacia",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 42,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "la separan de la santidad y encontrar las brechas para salir desde la oscuridad hacia la luz. Mediante ello también merece despertar a otros e inspirar a otras personas hacia el arrepentimiento, sacarlas de la oscuridad y llevarlas de retorno a Dios. 7. Es necesario que cada uno eleve sus plegarias a través del portal de su propia tribu [de entre las doce tribus de Israel]; sin embargo, hace falta",
+      "matched_terms": [
+        "hacia la",
+        "hacia",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 64,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": "de Dios sólo brilla en el mundo gracias a los Tzadikim. Ellos llevan a la gente hacia la rectitud y trabajan para acercar a aquellos que están lejos de Dios, volviéndolos al arrepentimiento. Todo esto es la fuente principal del honor de Dios. Ésta es la idea que subyace en la elegía fúnebre que debe ser dicha al fallecer los Tzadikim, que Dios nos salve. 25. Hablar con un amigo sobre las enseñanza",
+      "matched_terms": [
+        "hacia la"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 80,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": "honor y meramente lo atribuye a su compasión. Tal líder puede llevar a la gente hacia la herejía y el ateísmo, Dios no lo permita, pero el Cielo es misericordioso y no le permite retener su posición de autoridad. 7. Mediante el amor a los sabios se establece el reinado y el liderazgo. Por el contrario, si el rey o el líder sienten odio por los sabios, podemos estar seguros de que el Cielo les quit",
+      "matched_terms": [
+        "hacia la"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 100,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": "o [el período de shivá], que Dios nos salve. Esos siete días sirven para elevar hacia la “Luz del Rostro” el alma de la persona fallecida. Por lo tanto, se requiere que el deudo rasgue su vestimenta (ver Shuljan Aruj, Iore Dea 340), que Dios nos salve - dado que la palabra Kerá (rasgar) es numéricamente equivalente a 370, correspondiente a las “370 iluminaciones de la Luz del Rostro”. El número 37",
+      "matched_terms": [
+        "hacia la"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

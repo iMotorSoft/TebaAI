@@ -1,0 +1,16 @@
+{
+  "validation": {
+    "git_diff_check": "PASS",
+    "secrets_scan": "PASS (sin credenciales; solo falsos positivos 'tokens' LLM y 'secretos de la Torá')",
+    "probes_read_only": "PASS (milvus_v2 nunca hace load; milvus_operational solo con --safe-load; sin insert/delete/drop)",
+    "runtime_excluded": "PASS (13 archivos de backend/data excluidos del commit)",
+    "assets_in_use": "PASS (favicons referenciados por PublicLayout.astro; tarjeta social referenciada por socialImage)",
+    "foreign_changes_preserved": "PASS (ningún cambio eliminado; backend/data conservado en disco)",
+    "gitignore_report_dir": "PASS (data/reports/breslov/** ya no ignorado)",
+    "staged_before": 0,
+    "tracked_clasificados": 17,
+    "untracked_clasificados": 303,
+    "untracked_excluidos": 13,
+    "untracked_commiteables": 290
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "question": "¿Cómo ayuda la humildad a la persona en su arrepentimiento y en la recepción de la Torá?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      21,
+      22,
+      23,
+      24,
+      29,
+      33,
+      45,
+      46,
+      47,
+      48,
+      58,
+      505
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 46,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "n respecto a todas las áreas en las cuales necesita arrepentirse, hasta que merece llevar a cabo el arrepentimiento exacto que le corresponde. De manera similar, en cada ocasión, cada vez que se arrepiente, la persona asciende de un nivel a otro hasta que sale de su nivel inferior y llega a la comprensión de la Torá. 2. Cuando uno es cuidadoso y se preocupa de que el honor a Dios no sufra ningún daño -al tiempo en que uno mismo se considera despreciable y odioso a sus propios ojos al punto en que su honor no significa nada en comparación con el honor de Dios- merecerá entonces decir palabras radiantes de Torá que le iluminen el camino hacia el perfecto arrepentimiento. De esa manera merecerá",
+      "matched_terms": [
+        "arrepentimiento",
+        "orgullo",
+        "arrepentirse",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 29,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "a persona que es así honrada?”. Ellos se le oponen diciendo que no merece tal honor. 2. Mediante la humildad, uno merece el arrepentimiento. Pues la esencia del arrepentimiento se manifiesta cuando la persona oye que la avergüenzan y sin embargo se mantiene firme y en silencio. Sufre los insultos y el “derramamiento de sangre”, aceptando su propia bajeza y pequeñez, reconociendo el gran daño que ha hecho y comprendiendo que es adecuado que sufra esos insultos. De esa manera disminuye la sangre en el ventrículo izquierdo del corazón y aniquila su mala inclinación, mereciendo así “el honor de Dios”. 3. Antes de arrepentirse la persona aún no tiene “ser”; es como si aún no existiese en el mundo",
+      "matched_terms": [
+        "humildad",
+        "persona",
+        "arrepentirse",
+        "arrepentimiento"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 22,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "s con el elemento “animal” y con el elemento “humano” - que son las palabras vanas, la calumnia, el orgullo y los rasgos relacionados. 8. El tercer paso es que la persona se confiese delante del estudioso de Torá. Mediante ello, el estudioso la dirige por el sendero correcto de acuerdo a la raíz de su alma. Ello es lo más importante, pues esto la salva de todo. 9. La pobreza es producto de las palabras vanas, de la calumnia y del orgullo. Mediante la caridad que se le da al estudioso de Torá la persona rectifica todo eso y se hace digna de la riqueza. 10. Aunque la persona ya se encuentre delante del estudioso de Torá y le haya dado caridad, no sabrá aún en qué sendero anda pues para ello de",
+      "matched_terms": [
+        "orgullo",
+        "persona",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 45,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ría, la comprensión de la Torá en sus niveles revelados y ocultos y el espíritu de profecía. 10. El arrepentimiento tiene su raíz en Rosh Jodesh (el comienzo del mes lunar). De acuerdo con ello, en Rosh Jodesh el arrepentimiento desciende sobre todas las criaturas del mundo y las lleva a tener pensamientos de arrepentimiento. Hasta los malvados en el Gueinom deben inevitablemente sentir algún remordimiento en Rosh Jodesh, momento en el que se arrepienten, lamentan, admiten sus malas acciones y se  Lección 10 25 Tishrei                                                                                                                                                                        45",
+      "matched_terms": [
+        "arrepentimiento",
+        "orgullo",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 47,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "la pureza sexual se salva del orgullo y se hace digno de la luz que le iluminará el camino hacia el arrepentimiento, hasta que llegue a alcanzar profundos niveles de comprensión de la Torá. 27 Tishrei 6. La amargura experimentada en la lucha por el sustento es producto de un daño en la pureza sexual. Para la persona que cuida la pureza sexual -aunque esté ocupada con las treinta y nueve clases de tareas y el comercio- su trabajo se encuentra en el nivel de las treinta y nueve clases de tareas realizadas en la construcción del Tabernáculo y es como “un rocío de luces” (Isaías 26:19). [La palabra hebrea para “rocío”, tal, tiene el valor numérico de treinta y nueve. El rocío también connota la",
+      "matched_terms": [
+        "arrepentimiento",
+        "orgullo",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 21,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "udito de Torá, la persona extrae las letras grabadas en sus huesos y rectifica todo. 4. La tremenda humildad de los verdaderos Tzadikim -al punto  Lección 4 8 Tishrei                                                                                                                                                                       21",
+      "matched_terms": [
+        "humildad",
+        "persona",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 23,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "bien” sobre todas las cosas y ello es un “anticipo del Mundo que Viene”. 10 Tishrei 12. Mediante la humildad uno merece deshacerse de la materialidad y quedar incluido en el Infinito. También se llega a saber que todo lo que sucede es para el propio bien, lo que es un “anticipo del Mundo que Viene”. 13. Son muy pocos los Tzadikim que pueden otorgarles una vislumbre de la luz del Infinito a aquellos que se acercan a ellos y que están incluidos en sus nombres. Esto explica porqué a veces la persona se siente súbitamente entusiasmada en medio de las plegarias y recita algunas palabras de la oración con gran fervor. Ello se debe a que Dios, en Su compasión, le ha abierto la luz del Infinito y br",
+      "matched_terms": [
+        "humildad",
+        "persona",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 24,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "todo esto al confesarse delante de un verdadero estudioso de Torá. 16. Cuando un judío despierta en arrepentimiento debido a que siente alguna pequeña impureza espiritual que lo distrae durante sus plegarias y devociones, su arrepentimiento hace que también los judíos que son completamente malvados y que se han alejado del pueblo judío debido a sus malas acciones, se transformen en un trono para la santidad y vuelvan en arrepentimiento. Entonces también ellos ayudarán, a aquellos que están sirviendo a Dios, a construir “edificios de santidad”. Amén, que así sea Su voluntad.  Lección 4 10 Tishrei 24",
+      "matched_terms": [
+        "arrepentimiento",
+        "persona",
+        "torá"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 48,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "la arrogancia. Esto hace referencia específicamente a la persona que es humilde porque sabe que el orgullo es un rasgo muy despreciable; por lo tanto, actúa con humildad para ser honrada y respetada. En efecto, se muestra humilde para alcanzar posiciones y honor. Por lo tanto, es necesario vigilar cuidadosamente nuestro comportamiento y alejarse totalmente del orgullo, ubicándose en el extremo opuesto, como dijeron nuestros Sabios, de bendita memoria, “Sé muy, muy humilde” (Avot 4:4). Pues el orgullo corresponde a las siete casas de idolatría, debido a las cuales el pueblo judío fue exilado de su tierra. Más todavía, aún no hemos podido retornar a nuestra Tierra debido a esa gente que persi",
+      "matched_terms": [
+        "orgullo",
+        "humilde",
+        "torá",
+        "humildad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 58,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "luz proveniente de la raíz de sus almas, allí en donde se encuentren y de esa manera, llevarlos al arrepentimiento. 5. Cada persona -y en particular el estudioso de la Torá- debe ocuparse, mediante su estudio, de iluminar y de llevar bendiciones a las raíces de las almas  - es decir, hacia el “primero en el pensamiento [de la creación]”. Con ello, podrá acercar y despertar al arrepentimiento a los  malvados y a los prosélitos - incluso a aquellos que se encuentran muy lejos, físicamente, de la persona [en el momento en el que está estudiando]. Entonces merecerá también tener un hijo que llegue a ser un estudioso de la Torá. Pero si no estudia de esa manera, su hijo no será un erudito de la",
+      "matched_terms": [
+        "arrepentimiento",
+        "orgullo",
+        "humilde",
+        "humildad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 33,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "y escuchar con atención todas las palabras de nuestros santos Sabios. Entonces merecerá el genuino arrepentimiento. 17 Tishrei 11. La humildad es el elemento crucial del arrepentimiento. En otras palabras, uno debe “dejarse pisotear como un desierto” (Eruvin 54a) y no prestarle la mínima atención a la oposición y a los insultos que reciba. Más bien, deberá apoyarse en el atributo del silencio y ser “uno de aquellos que oyen que los avergüenzan y no responden” (Shabat 88b). Entonces será llamado verdaderamente “sabio” y merecerá el arrepentimiento, que es el concepto de Keter. Con ello se hará digno del honor verdadero y eterno -que es “el honor de Dios”- y de una buena porción en el Mundo q",
+      "matched_terms": [
+        "arrepentimiento",
+        "humildad",
+        "dejarse pisotear"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 505,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "taría que sucedieran, debe saber que ello se debe al orgullo. Por lo tanto deberá arrepentirse, ser humilde y llevarse al nivel de “¿Qué?” [como en, “¿Qué soy yo?”]. Entonces las cosas volverán a suceder como lo desea. 2. El mes de Elul es el momento más propicio para el arrepentimiento. Ello se debe a que esos son días de favor Divino, cuando Moisés ascendió para recibir el segundo juego de Tablas y cuando abrió un claro sendero por el cual andar. Ese sendero de arrepentimiento iluminado por Moisés es el hecho de que la persona debe unirse incluso al más bajo de los judíos. Pues hasta el más bajo de los judíos ciertamente posee algo de Divinidad y es por medio de esa Divinidad que es posibl",
+      "matched_terms": [
+        "humilde",
+        "arrepentirse"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

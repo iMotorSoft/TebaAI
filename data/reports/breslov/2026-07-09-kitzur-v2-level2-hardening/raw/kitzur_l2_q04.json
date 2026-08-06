@@ -1,0 +1,206 @@
+{
+  "question": "¿Cómo se relaciona el honor que se le demuestra a una persona con el temor a Dios según el Kitzur?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      4,
+      19,
+      22,
+      25,
+      26,
+      27,
+      29,
+      57,
+      59,
+      63,
+      64,
+      142
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 29,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": ". De esa manera merecerá “el honor de Dios”. Entonces la gente no indagará sobre el honor que se le demuestra para comprobar si lo merece o no. Pero aquel que persigue el honor no obtiene “el honor de Dios”. Por lo tanto, aunque tal persona disfrute del honor, todos la examinan e inquieren sobre ella, preguntando, “¿Quién es esa persona que es así honrada?”. Ellos se le oponen diciendo que no merece tal honor. 2. Mediante la humildad, uno merece el arrepentimiento. Pues la esencia del arrepentimiento se manifiesta cuando la persona oye que la avergüenzan y sin embargo se mantiene firme y en silencio. Sufre los insultos y el “derramamiento de sangre”, aceptando su propia bajeza y pequeñez, re",
+      "matched_terms": [
+        "demuestra",
+        "persona",
+        "honor",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 59,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "demuestre a las personas temerosas de Dios, así se elevará el honor a su raíz. Lo más importante es honrar de todo corazón a las personas temerosas de Dios; de esta manera, se rectifican los daños producidos al propio temor a Dios y uno se hace digno de la paz. 11. Existen dos clases de “paz”. Primero, está la “paz en los huesos” - dado que inicialmente la persona debe ocuparse de tener “paz en los huesos”, pues a veces no hay tal paz, como está escrito, “No hay paz en mis huesos debido a mi pecado” (Salmos 38:4). Mediante Lección 14                                                                               6 Jeshvan",
+      "matched_terms": [
+        "honrar",
+        "honor a su raíz",
+        "temor sagrado",
+        "temor",
+        "honor"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 63,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "despertando a aquellos que están lejos de Él y haciéndolos retornar. Entonces uno se hace digno del temor sagrado a Dios, de la armonía en su hogar y de la plegaria. También se elimina el conflicto y las habladurías y les llega a los mundos la “paz general”. 20. Existen calumniadores y personas que promueven el conflicto. Estos están descritos en el versículo, “El calumniador separa a un hombre de su amigo” (Proverbios 16:28). Tales personas andan difundiendo habladurías y calumnias e incitan a la disputa y al conflicto entre amigos y entre el esposo y la esposa. Todo esto sucede en el ámbito físico, en el nivel mundano. Un fenómeno similar también se produce en el nivel espiritual, donde el",
+      "matched_terms": [
+        "temor sagrado",
+        "honor",
+        "temor",
+        "honor a su raíz"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 26,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "sido emitidos. 6. La persona que en Rosh HaShaná oye el shofar hecho sonar por un hombre piadoso y temeroso de Dios, ciertamente no necesitará preocuparse por los “truenos” durante todo el año. 12 tishrei 7. Para lograr plenamente el “trueno” mencionado más arriba es necesario limpiar la mente de toda clase de saberes seculares, de pensamientos indeseables y de malas cavilaciones. 8. La persona debe ejercer el máximo cuidado y limpiar su mente del saber secular y de los pensamientos indeseables - del “jametz” (levadura)- para no “fermentar” su propio intelecto con ideologías que no son de la Torá y con deseos [físicos]. Pues ello embota y contamina la mente, haciendo imposible concentrarse",
+      "matched_terms": [
+        "temeroso de dios",
+        "persona",
+        "temor",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 57,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "to sea, asciende y es glorificado, arriba y abajo”. El honor se eleva entonces a su raíz, que es el temor sagrado y ello, a su vez, trae paz al mundo. 3. Mediante la Torá es posible acercar a los prosélitos y a todos aquellos que retornan a la fe y hacerles conocer el sendero que deben tomar. 4. Al estudiar la Torá en santidad, la persona despierta a los pecadores judíos y a los prosélitos, llevándolos al arrepentimiento. Pero para ello hace falta la humildad más grande. Con esa cualidad, uno merece estudiar verdaderamente la Torá, llegando a ser capaz, mediante sus estudios, de iluminar y de despertar las raíces de las almas del pueblo judío - incluso las almas de aquellos que se encuentran",
+      "matched_terms": [
+        "temor sagrado",
+        "honor",
+        "temor"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 4,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "acio del Editor Prefacio del Editor Prefacio del Editor Prefacio del Editor Prefacio del Editor “La persona siempre debe enseñarles a sus alumnos “La persona siempre debe enseñarles a sus alumnos “La persona siempre debe enseñarles a sus alumnos “La persona siempre debe enseñarles a sus alumnos “La persona siempre debe enseñarles a sus alumnos una versión abreviada”. una versión abreviada”. una versión abreviada”. una versión abreviada”. una versión abreviada”. (Pesajim 3b) Incluso antes de que se imprimiese el Likutey Moharán, el Rebe Najmán le pidió al rabí Natán que comenzase a recopilar los consejos prácticos de cada una de sus lecciones y los presentase en un formato abreviado. Después",
+      "matched_terms": [
+        "persona",
+        "kitzur",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 19,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "tra  Bava Batra  Bava Batra  Bava Batra 73b) 73b) 73b) 73b) 73b) 1. Mediante la canción sagrada, la persona realza y eleva el Reino de Santidad y merece una posición de autoridad. También sucede lo opuesto. Los que ofician como cantores y cantantes del Otro Lado [i.e., las fuerzas de la impureza] dañan el Reinado de Santidad y prolongan el exilio. Debido a ellos, la gente tropieza y queda atrapada como pájaros en una red. Por lo tanto, es necesario ser muy cuidadosos y no escuchar las canciones de un cantante del Otro Lado, cuya intención al cantar no es en absoluto en aras del Cielo, sino más bien por dinero, honor o vanidad. Escuchar el cantar de tal persona es dañino para el servicio a Di",
+      "matched_terms": [
+        "persona",
+        "honor",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 22,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "en que ellos son como “nada”- les permite expiar los pecados. 5. La persona que desee andar en la senda de la santidad deberá quebrar todos los rasgos negativos que derivan de los cuatro elementos, tal cual ha sido enseñado. También deberá abrir su corazón ante un estudioso de Torá -es decir, deberá confesarse ante él- y éste le explicará y le aclarará el sendero que debe seguir de acuerdo a la raíz de su alma. 6. Existen tres pasos en la unión con los Tzadikim por medio de los cuales todo alcanza su rectificación. El primer paso es cuando uno ve al Tzadik. Al hacerlo se anulan los rasgos negativos que derivan del elemento “mineral” y del elemento “vegetal” - es decir, la tristeza, la indole",
+      "matched_terms": [
+        "persona",
+        "relaciona",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 25,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "nsiderar en todo momento cómo rectificar el mundo, para proveer lo que falte y orar por él. 2. Cada persona debe llevar a cabo las mitzvot con tanta alegría como para no desear ninguna recompensa por ello en el Mundo que Viene. Más bien, sólo debe desear que el Santo, bendito sea, le envíe otra mitzvá como recompensa por esa mitzvá - dado que su alegría proviene de la mitzvá misma. Mediante esa alegría, la persona puede llegar a saber lo decretado sobre el mundo, así sea antes de que el decreto se haya emitido como después de habérselo emitido y sobre quién recaerá, Dios se apiade. También sabrá cómo orar por el mundo. Pues después de que el decreto final ha sido emitido, los Tzadikim deben",
+      "matched_terms": [
+        "persona",
+        "temor",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 27,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "uando oiga algo concerniente a las disputas entre los Tzadikim deberá tomarlo como una amonestación personal y juzgarse a sí mismo: quién es y qué es en realidad. Pues con ello lo están reprendiendo por haber malgastado las “gotas” de su mente, pues si su mente no hubiera estado dañada de seguro no habría oído nada sobre ese conflicto entre Tzadikim y no habría tenido ninguna duda sobre ellos, en absoluto. La esencia de ese conflicto es sólo para él -es decir, para el propósito ya explicado más arriba- para que pueda comprender y recordar por medio de los conflictos entre los Tzadikim quién es él y qué es en realidad, y para que comprenda que, mediante ese conflicto, se encuentra en peligro",
+      "matched_terms": [
+        "persona",
+        "temor",
+        "dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 142,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "de Torá, la gente cae en grandes herejías y no cumplen con el versículo, “Honrará al temeroso de Dios” (Salmos 15:4). En su lugar, esos eruditos insultan y humillan a aquellos que son temerosos de Dios. Ésa es la fuente de toda la oposición que sufren los justos. Por lo tanto, se debe evitar oír enseñanzas de Torá provenientes de eruditos que no son rectos (como afirmaron nuestros Sabios, de bendita memoria, en Jaguigá 15a; Moed Katan 17b; Taanit 7a). 2. Esa oposición se anula y se rectifica a través del concepto de “gusano” (TOLA), que corresponde a la fe (EMuNá), como está escrito, “Todos aquellos que fueron criados (haEMuNim) en escarlata (TOLA)” (Lamentaciones 4:5). Éste es el aspecto de",
+      "matched_terms": [
+        "honrar",
+        "temeroso de dios"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 64,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "medio fundamental para traer la paz -que es la esencia de toda curación- es demostrarles un sincero honor a las personas temerosas de Dios. De esa manera, uno hace retornar el honor a su raíz, que es el temor sagrado y, a su vez, se hace digno de la paz y de la curación. 24. El honor de Dios sólo brilla en el mundo gracias a los Tzadikim. Ellos llevan a la gente hacia la rectitud y trabajan para acercar a aquellos que están lejos de Dios, volviéndolos al arrepentimiento. Todo esto es la fuente principal del honor de Dios. Ésta es la idea que subyace en la elegía fúnebre que debe ser dicha al fallecer los Tzadikim, que Dios nos salve. 25. Hablar con un amigo sobre las enseñanzas morales y el",
+      "matched_terms": [
+        "honor",
+        "temor",
+        "honor a su raíz"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

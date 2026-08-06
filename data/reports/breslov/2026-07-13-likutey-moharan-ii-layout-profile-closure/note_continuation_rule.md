@@ -1,0 +1,1 @@
+`footnote_continuation_without_marker_v1` fue evaluada y rechazada: los bloques ambiguos inician una página/zona inferior sin nota marcada inmediatamente precedente en el mismo flujo geométrico. Clasificarlos como continuación sería una inferencia insegura.

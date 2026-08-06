@@ -1,0 +1,14 @@
+{
+  "decision": "MILVUS_KEEP_PRIMARY_WITH_FIXES",
+  "milvus_service_reachable": true,
+  "v2_safe_load_search_ok": true,
+  "milvus_p50_ms": 2.236,
+  "sql_page_p50_ms": 9.269,
+  "pgvector_status": "PGVECTOR_NOT_INSTALLED",
+  "required_fixes": [
+    "explicit load readiness wait before search",
+    "do not release V2 collection between requests in a batch without rechecking readiness",
+    "define V2 metadata contract for run_id, document_id, scope and language",
+    "add vector health/readiness reporting and SQL/FTS fallback"
+  ]
+}

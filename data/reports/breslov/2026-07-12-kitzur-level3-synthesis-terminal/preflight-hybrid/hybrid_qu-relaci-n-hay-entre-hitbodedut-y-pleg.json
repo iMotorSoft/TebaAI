@@ -1,0 +1,144 @@
+{
+  "question": "¿Qué relación hay entre hitbodedut y plegaria?",
+  "route": "book_qa_v2_hybrid",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "answer_type": "hybrid",
+  "short_conclusion": "Se encontraron 10 fuente(s) en 10 página(s). SQL: 10, Milvus: 0.",
+  "evidence_summary": {
+    "sql_candidates": 15,
+    "milvus_candidates": 10,
+    "merged_sources": 10,
+    "pages": [
+      13,
+      15,
+      22,
+      27,
+      28,
+      35,
+      40,
+      65,
+      67,
+      82
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 13,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "que haya sido poseída por un espíritu de locura. Por lo tanto, cada persona -en relación directa con las transgresiones que haya cometido y con los daños espirituales que haya causado- está literalmente demente. Y es por ello que la mayor parte de la gente tiene toda clase de rarezas y de conductas",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 35,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "Redención. 9. El consejo que la persona recibe de los Tzadikim es análogo a una relación marital y a una unión sagrada. Pues uno acoge las “gotas” del intelecto del Tzadik junto con el consejo que recibe de él. Ello implica la rectificación de la transgresión sexual. Por otro lado, el consejo de aqu",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 40,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "alabras de las plegarias y allí se renueve. De esa manera se logra la fe. 2. La relación del hombre con su esposa, al igual que el sustento, están determinados por la calidad de su plegaria. Por lo tanto, al orar con energía, la persona merece tener un buen matrimonio y un buen sustento. 3. La plega",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 82,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "pureza sexual, así mismo merecerá la perfección del Lenguaje Sagrado. La misma relación existe también en conexión con los daños en esas áreas, Dios no lo permita. Pues la persona que daña su pureza sexual pierde el Lenguaje Sagrado, mientras que la persona que posee el Lenguaje Sagrado es capaz de",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 15,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "9. La esencia de la lucha entre la buena inclinación y la mala inclinación se encuentra precisamente en esta área. Pues la buena inclinación incita a la persona a aborrecer todo conocimiento y pensamiento secular al igual que todos los deseos físicos que son pura necedad y locura; e impele a la pers",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 22,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "ctifica todo eso y se hace digna de la riqueza. 10. Aunque la persona ya se encuentre delante del estudioso de Torá y le haya dado caridad, no sabrá aún en qué sendero anda pues para ello deberá confesarse y abrir su corazón delante  Lección 4 9 Tishrei 22",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 27,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "se apiade de su vida no deberá escuchar ni prestarle atención a los conflictos entre los Tzadikim que han alcanzado la perfección; en cambio, deberá tener fe en todos ellos. Cuando oiga algo concerniente a las disputas entre los Tzadikim deberá tomarlo como una amonestación personal y juzgarse a sí",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 28,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "es la manera de alcanzar su rectificación eterna. Pues la esencia del conflicto entre los Tzadikim es principalmente en aras de esa prueba - para que la persona que quiera alejarse pueda hacerlo. En verdad, es apropiado alejarla, dado que ha dañado las “gotas” de su mente. Pero si se mantiene firme",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 65,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "ta su raíz. Esa elevación se logra mediante el “juicio” - es decir, mediante el hitbodedut y la conversación con el Creador, en la cual la persona derrama su corazón delante de Dios y se evalúa y se juzga a sí misma en todas sus actividades. De esta manera, se eliminan todos los temores y se eleva a",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 67,
+      "evidence_type": "literal",
+      "score": 0.8,
+      "sql_score": 0.8,
+      "milvus_score": 0.0,
+      "snippet": "ón de Dios, y entonces sabrá a Quién debe temer. Todo ello se logra mediante el hitbodedut -al juzgarse a uno mismo- mediante ello, uno merece la “luz oculta”. ¡Feliz de aquél que es digno de ello! 12 Jeshvan 4. Cuando clamamos a Dios con imágenes que se aplican a carne y hueso [i.e. descripciones a",
+      "matched_terms": [],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_plus_milvus_test",
+    "used_milvus": true,
+    "used_embeddings": true,
+    "used_ai": false,
+    "milvus_collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1"
+  }
+}

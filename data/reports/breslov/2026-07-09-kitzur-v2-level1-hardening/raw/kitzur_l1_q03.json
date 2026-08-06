@@ -1,0 +1,69 @@
+{
+  "question": "Según la Lección 1, ¿mediante qué se aceptan todas las plegarias y los pedidos?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "lesson_lookup",
+  "short_conclusion": "Lección 1: 3 fuente(s) en 3 página(s).",
+  "evidence_summary": {
+    "literal_matches": 3,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      13,
+      14,
+      15
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 13,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "” (Salmos 119:1) (Salmos 119:1) (Salmos 119:1) (Salmos 119:1) (Salmos 119:1) 1. Mediante el estudio de la Torá son aceptadas todas las plegarias y los pedidos, se realza y se eleva la gracia y la importancia del pueblo judío ante la estima de todos aquellos de los cuales se pueda necesitar, así sea en temas espirituales como materiales. 2. Al dedicarse al estudio de la Torá con energía y entusiasm",
+      "matched_terms": [
+        "mediante"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 14,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "sario esforzarse para que las palabras tengan verdadera gracia. Y esto se logra mediante el estudio de la Torá, que hace que las plegarias sean aceptadas. 2 Tishrei 7. El judío debe siempre buscar el intelecto en cada cosa y conectarse con la sabiduría y el intelecto que se encuentran en cada cosa, para que el intelecto en cada elemento lo ilumine y pueda acercarse a Dios a través de esa misma cos",
+      "matched_terms": [
+        "mediante"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 15,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "se vuelve como la luz del sol” (Isaías 30:26); y se alcanza la gracia. Entonces todas las plegarias y pedidos son aceptados. 11.La mala inclinación desea volver loca a la persona, literalmente, Dios no lo permita. Porque aquel que peca es un demente, como dijeron nuestros Sabios, de bendita memoria, “La persona no comete una transgresión a no ser que esté poseída por un espíritu de locura” (Sotá 3",
+      "matched_terms": [
+        "todas"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "section_resolved_from_lesson_index: Lección 1 → páginas 13-16"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

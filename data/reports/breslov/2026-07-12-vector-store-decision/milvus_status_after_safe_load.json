@@ -1,0 +1,119 @@
+{
+  "collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "safe_load_requested": true,
+  "connection_ok": true,
+  "events": [
+    "Collection.load called by explicit --safe-load"
+  ],
+  "search_ok_before": "skipped",
+  "search_ok_after": true,
+  "load_state_before": "NotLoad",
+  "num_entities": 100,
+  "fields": [
+    "pk",
+    "page_number",
+    "text_preview",
+    "embedding"
+  ],
+  "vector_field": "embedding",
+  "status": "SEARCH_OK",
+  "safe_load_latency_ms": 1716.45,
+  "load_state_after": "Loaded",
+  "metadata_sample": [
+    {
+      "text_preview": "Síntesis Síntesis Síntesis Síntesis Síntesis del del del del del Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán (Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán) por  el Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Traducción al Español Guillermo Beilinson Publicado por BRESLOV RESEARCH INSTITUTE Jerusalem/New York",
+      "pk": "k_1",
+      "page_number": 1
+    },
+    {
+      "text_preview": "para entibiarse con él. Así como la JuPá -que corresponde a la luz de esos niveles circundantes de conocimiento- actúa para cubrir o vestir literalmente a alguien [dándole así calor], lo mismo sucede con la percepción de esos niveles circundantes de conocimiento que generan calor y entusiasmo. Para continuar con el paralelismo, los siete días de celebración observados después de la jupá [del matrimonio] corresponden a las “siete luminarias”. La misma idea también está presente en los siete días",
+      "pk": "k_100",
+      "page_number": 100
+    },
+    {
+      "text_preview": "que el conocimiento y la luz del intelecto se le oculten. Es incapaz de originar o de comprender enseñanzas de Torá y también se la considera como si estuviera muerta. 12. Cuando la persona es humilde, modesta y paciente y no se encoleriza al ser insultada, santifica de esa manera la nariz [dado que atrae “el aliento extendido de la paciencia”]. Cuando la persona es “de espíritu fiel y encubre el caso” (Proverbios 11:13), de modo que cuando alguien le confiesa un secreto, lo guarda celosamente y",
+      "pk": "k_101",
+      "page_number": 101
+    },
+    {
+      "text_preview": "6 Kislev 14. La persona que estudia Torá sin entender y que no origina ninguna nueva interpretación, no debe exponer la Torá en público. Aunque el Santo, bendito sea, se deleita en su estudio, aun así no debe enseñarlo, porque su estudio de Torá se encuentra en el aspecto de “Iaacov” - es como el embrión en el vientre materno. Ésta es la interpretación del versículo, “Pues Dios eligió a Iaacov para Sí, a Israel como Su tesoro especial” (Salmos 135:4). En otras palabras, aquel estudio de Torá que",
+      "pk": "k_102",
+      "page_number": 102
+    },
+    {
+      "text_preview": "demás el bien que ha alcanzado. Cada persona, en su propio nivel, posee tanto conocimientos “internalizados” [i.e., cosas que comprende] como niveles circundantes de conocimiento [que no comprende]. En la medida en que Dios la favorezca y le permita internalizar en su mente esos niveles circundantes de conocimiento y comprender algo nuevo, así mismo deberá pasarles ese bien a los demás. 16. Todos los problemas, los sufrimientos y los exilios que la persona deba experimentar, y todo aquello de lo",
+      "pk": "k_103",
+      "page_number": 103
+    }
+  ],
+  "search_latency_ms": 26.13,
+  "search_hits": [
+    {
+      "id": "k_19",
+      "distance": 0.3966870903968811,
+      "fields": {
+        "pk": "k_19",
+        "distance": 0.3966870903968811,
+        "entity": {
+          "page_number": 19,
+          "text_preview": "8. La esencia de la mala inclinación es el impulso hacia la transgresión sexual. Ésa es la fuente principal de contaminación espiritual. Por lo tanto, es necesario saber que la principal prueba en este mundo es la batalla con ese deseo. ¡Afortunado aquél que merece ganar la guerra! 9. El verdadero Tzadik de la generación está asociado con el concepto de la “luminaria mayor”. Él brilla e ilumina a la plegaria, que es el concepto de la “luminaria menor”. 6 Tishrei 3 - “Yo mismo vi esa rana” 3 - “Y",
+          "pk": "k_19"
+        }
+      }
+    },
+    {
+      "id": "k_48",
+      "distance": 0.3960576057434082,
+      "fields": {
+        "pk": "k_48",
+        "distance": 0.3960576057434082,
+        "entity": {
+          "page_number": 48,
+          "text_preview": "Hay un segundo tipo de persona cuyas relaciones maritales son exclusivamente en el Shabat (ibid.). Esa persona se encuentra en el aspecto de la “unificación superior” y por medio de ello, también puede aprehender la Kabalá [el aspecto místico e interno de la Torá], que es conocida como los “secretos de los secretos” (Isaías 24:16). Incluso la persona cuyas relaciones maritales son exclusivamente en el Shabat debe ser muy cuidadosa y comportarse con santidad, para poder ser contada entre aquellos",
+          "pk": "k_48"
+        }
+      }
+    },
+    {
+      "id": "k_69",
+      "distance": 0.3813594579696655,
+      "fields": {
+        "pk": "k_69",
+        "distance": 0.3813594579696655,
+        "entity": {
+          "page_number": 69,
+          "text_preview": "13 Jeshvan 8. Los secretos de la Torá son llamados “santos”, y “Ningún extraño comerá de lo que es santo” (Levítico 22:10) - de aquello que es “primero”. Sólo podrán comerlo aquellos que se han santificado y que son llamados en Él. Esos secretos de la Torá son también el concepto del Santo Templo, que sea reconstruido y establecido pronto y en nuestros días. Amén. 16 - “Contó el rabí Iojanan” 16 - “Contó el rabí Iojanan” 16 - “Contó el rabí Iojanan” 16 - “Contó el rabí Iojanan” 16 - “Contó el ra",
+          "pk": "k_69"
+        }
+      }
+    },
+    {
+      "id": "k_77",
+      "distance": 0.3772141933441162,
+      "fields": {
+        "pk": "k_77",
+        "distance": 0.3772141933441162,
+        "entity": {
+          "page_number": 77,
+          "text_preview": "altar - es decir, de las chispas sagradas del altar que cayeron hacia los lugares de idolatría. Cuando el prosélito abandona su propia fe y sigue la fe judía, subyuga a la idolatría que proviene de los daños en el altar y las chispas de las partes del altar retornan a su lugar. Entonces, el altar -que se asemeja a la mesa de la persona (Berajot 55a)- vuelve a estar libre de defecto alguno; en otras palabras, la persona merece comer con la santidad apropiada. Agregados a la Lección Precedente Agr",
+          "pk": "k_77"
+        }
+      }
+    },
+    {
+      "id": "k_1",
+      "distance": 0.3651250898838043,
+      "fields": {
+        "pk": "k_1",
+        "distance": 0.3651250898838043,
+        "entity": {
+          "page_number": 1,
+          "text_preview": "Síntesis Síntesis Síntesis Síntesis Síntesis del del del del del Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán (Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán) por  el Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Traducción al Español Guillermo Beilinson Publicado por BRESLOV RESEARCH INSTITUTE Jerusalem/New York",
+          "pk": "k_1"
+        }
+      }
+    }
+  ]
+}

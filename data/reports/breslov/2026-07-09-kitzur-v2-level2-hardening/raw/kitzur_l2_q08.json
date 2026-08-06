@@ -1,0 +1,186 @@
+{
+  "question": "¿Qué conexión establece el texto entre el mes de Tishrei y la rectificación espiritual?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      25,
+      26,
+      52,
+      110,
+      116,
+      117,
+      182,
+      189,
+      439,
+      448,
+      479,
+      490
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 117,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "es I, 8:2), por el hecho de estar asociado con la fuerza y la audacia. En ese mes, hacemos sonar el shofar, cuyo sonido también es el concepto de la audacia sagrada. Mediante los sonidos del shofar, al igual que mediante todos los otros sonidos sagrados, se quiebra la osadía del Otro Lado, tanto en el nivel individual como colectivo. De acuerdo a ello, Tishrei es un tiempo de alegría para el pueblo judío, dado que es a través de la alegría que uno alcanza la audacia sagrada, como está escrito, “¡El regocijo en Dios es nuestra fortaleza, nuestra audacia!” (Nehemías 8:10). Más aún, este versículo hace referencia especialmente a Rosh HaShaná (ver Rashi, ad loc.). 15 Kislev 17. Uno debe sentir v",
+      "matched_terms": [
+        "shofar",
+        "sello",
+        "iom kipur",
+        "sukot"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 439,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "oca esa luminiscencia mental - que está asociada con los Tefilín y con el “sello de santidad”; y en Iom Kipur, se completa la etapa final del “sello de santidad”, cuando la mente irradia con el conocimiento y la percepción de la Divinidad. En Sukot, se atrae la alegría que rectifica el alimento para que éste no pueda dañar los sueños y no llegar así, como resultado de lo que se ingiere, a la polución nocturna, Dios no lo permita. Shmini Atzeret es el tiempo en el cual se rectifican los juicios, con lo que la persona se salva de las emisiones nocturnas    Lección 5                                                                                          7 Av Parte II",
+      "matched_terms": [
+        "iom kipur",
+        "sello",
+        "sukot"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 116,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "encionados anteriormente -es decir, el “sello dentro de un sello”- se establecen y se rectifican en Iom Kipur Lección 22                                                                                14 Kislev 116",
+      "matched_terms": [
+        "iom kipur",
+        "sello"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 25,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "11 Tishrei 5 - “Con trompetas y sonido de shofar” 5 - “Con trompetas y sonido de shofar” 5 - “Con trompetas y sonido de shofar” 5 - “Con trompetas y sonido de shofar” 5 - “Con trompetas y sonido de shofar” (Salmos 98:6) (Salmos 98:6) (Salmos 98:6) (Salmos 98:6) (Salmos 98:6) 1. Cada uno está obligado a decir, “El mundo entero fue creado sólo para mí” (Sanedrín 37a). Por lo tanto, cada uno debe contemplar y considerar en todo momento cómo rectificar el mundo, para proveer lo que falte y orar por él. 2. Cada persona debe llevar a cabo las mitzvot con tanta alegría como para no desear ninguna recompensa por ello en el Mundo que Viene. Más bien, sólo debe desear que el Santo, bendito sea, le env",
+      "matched_terms": [
+        "shofar",
+        "tishrei"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 26,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "todos los decretos, incluso luego de haber sido emitidos. 6. La persona que en Rosh HaShaná oye el shofar hecho sonar por un hombre piadoso y temeroso de Dios, ciertamente no necesitará preocuparse por los “truenos” durante todo el año. 12 tishrei 7. Para lograr plenamente el “trueno” mencionado más arriba es necesario limpiar la mente de toda clase de saberes seculares, de pensamientos indeseables y de malas cavilaciones. 8. La persona debe ejercer el máximo cuidado y limpiar su mente del saber secular y de los pensamientos indeseables - del “jametz” (levadura)- para no “fermentar” su propio intelecto con ideologías que no son de la Torá y con deseos [físicos]. Pues ello embota y contamina",
+      "matched_terms": [
+        "shofar",
+        "tishrei"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 448,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "carga ni siquiera por un día. 14 Av 13. En la medida en que la persona merezca que sea aceptado en Iom Kipur su ruego de “¡Por favor perdona!”, asimismo alcanzará la santidad de Jánuca, que está asociada con el Santo Templo. Ahora bien, la esencia de la santidad del Santo Templo evocada en Jánuca consiste en alcanzar el conocimiento sagrado para saber y hacer saber que Dios es el Señor, dado que “Cuando la persona adquiere conocimiento, es como si el Santo Templo se construyera en sus días” (Berajot 33a). Más aún, ello implica que, como resultado de ese conocimiento, abandonará los pecados, podrá inculcarles ese conocimiento a sus hijos y a sus discípulos, para todas las generaciones y perc",
+      "matched_terms": [
+        "iom kipur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 479,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "El verdadero Tzadik siente un enorme temor al enseñar Torá, más aún que el temor de Rosh HaShaná y Iom Kipur. 8 Elul 48 48 48 48 48 1. La persona debe fortalecerse con una tremenda determinación para no desalentarse al percibir que aunque hayan pasado muchos días y muchos años y aunque todavía    Lección 47-48                                                                                8 Elul Parte II                                                                                                                                                                     479",
+      "matched_terms": [
+        "iom kipur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 490,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "por las faltas en esos rasgos de carácter. 3. Ésta es la explicación de por qué el día siguiente a Iom Kipur es llamado “El Nombre de Dios”: Todos los castigos que la persona recibe debido a sus pecados afectan el Nombre de Dios. Después de Iom Kipur, luego de que Dios perdona al pueblo judío de sus pecados, los judíos se salvan de todos los castigos y de todos los decretos severos - y de ésta manera se engrandece el Nombre de Dios [i.e., por la anulación de los castigos que hubieran eclipsado y dañado el Nombre de Dios, por así decirlo]. Por lo tanto, el día siguiente a Iom Kipur es llamado “El Nombre de Dios”, porque mediante el perdón que se lleva a cabo en Iom Kipur, se engrandece el No",
+      "matched_terms": [
+        "iom kipur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 52,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "e que el alma del Taná vuelva a su cuerpo. 1 Jeshvan 13 - “Feliz el pueblo que conoce el sonido del shofar” 13 - “Feliz el pueblo que conoce el sonido del shofar” 13 - “Feliz el pueblo que conoce el sonido del shofar” 13 - “Feliz el pueblo que conoce el sonido del shofar” 13 - “Feliz el pueblo que conoce el sonido del shofar” (Salmos 89:16) (Salmos 89:16) (Salmos 89:16) (Salmos 89:16) (Salmos 89:16); Providencia Divina Providencia Divina Providencia Divina Providencia Divina Providencia Divina 1. Al quebrar el deseo de dinero se atrae una Providencia Divina completa. El deseo de dinero se quiebra mediante la caridad, que enfría el ardiente deseo de dinero y quebranta el deseo de riquezas y d",
+      "matched_terms": [
+        "shofar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 110,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "sagrados - pues todos esos sonidos, así sea el sonido del clamar a Dios, el suspiro, el sonido del shofar, la canción, las voces de los verdaderos Tzadikim, o cualquier otro sonido sagrado, todos se encuentran en la categoría de audacia sagrada. Incluso el tintinear de las monedas para caridad es considerado audacia sagrada. Mediante todos esos sonidos se quiebra la osadía del cuerpo. 11 Kislev 6. La verdadera esencia de la persona -aquello a lo cual la persona hace referencia como “yo”- es el alma (neshamá), que es la esencia eterna de la persona. Sin embargo, el alma se encuentra extremadamente lejos de la carne y del cuerpo, debido a la osadía de este último en sus deseos físicos. Pero s",
+      "matched_terms": [
+        "shofar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 182,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "s cuales está investido el “punto” del otro. 5 Shvat 35 - “Feliz la nación que conoce el sonido del shofar” 35 - “Feliz la nación que conoce el sonido del shofar” 35 - “Feliz la nación que conoce el sonido del shofar” 35 - “Feliz la nación que conoce el sonido del shofar” 35 - “Feliz la nación que conoce el sonido del shofar” (Salmos 89:16) (Salmos 89:16) (Salmos 89:16) (Salmos 89:16) (Salmos 89:16); Arrojar Arrojar Arrojar Arrojar Arrojar 1. Debes saber que el arrepentimiento implica retornar algo al lugar del cual fue tomado. Éste es el aspecto de “arrojar” (Tikuney Zohar #21, p. 47a). En otras palabras, el arrepentimiento significa el retorno de algo a sus raíces. Ahora bien, Jojmá (Sabid",
+      "matched_terms": [
+        "shofar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 189,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "deres mentales renovados para estudiar Torá y unirse al Creador. 15. Y esto corresponde a soplar el shofar en Rosh HaShaná. Rosh HaShaná, como es sabido, es un aspecto de “dormir”, que es un aspecto de la actividad comercial fidedigna. Pero los sonidos del shofar producen un despertar, que es la renovación de los poderes mentales -es decir, el intelecto y el alma de cada    Lección 35                                                                               10  Shvat                                                                                                                                                                     189",
+      "matched_terms": [
+        "shofar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

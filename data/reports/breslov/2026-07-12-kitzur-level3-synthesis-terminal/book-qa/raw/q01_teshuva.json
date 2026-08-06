@@ -1,0 +1,324 @@
+{
+  "question": "¿Cómo describe el Kitzur Likutey Moharán el proceso de teshuvá: humildad ante insultos, confesión, vergüenza, juicio de sí mismo, Keter y arrepentirse de arrepentimientos anteriores?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 20 ocurrencia(s) en 20 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      1,
+      4,
+      6,
+      7,
+      9,
+      21,
+      23,
+      24,
+      29,
+      30,
+      33,
+      45,
+      46,
+      58,
+      59,
+      82,
+      95,
+      203,
+      207,
+      505
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 46,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "n respecto a todas las áreas en las cuales necesita arrepentirse, hasta que merece llevar a cabo el arrepentimiento exacto que le corresponde. De manera similar, en cada ocasión, cada vez que se arrepiente, la persona asciende de un nivel a otro hasta que sale de su nivel inferior y llega a la comprensión de la Torá. 2. Cuando uno es cuidadoso y se preocupa de que el honor a Dios no sufra ningún daño -al tiempo en que uno mismo se considera despreciable y odioso a sus propios ojos al punto en que su honor no significa nada en comparación con el honor de Dios- merecerá entonces decir palabras radiantes de Torá que le iluminen el camino hacia el perfecto arrepentimiento. De esa manera merecerá",
+      "matched_terms": [
+        "arrepentimiento",
+        "mismo",
+        "vergüenza",
+        "likutey",
+        "arrepentirse"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 33,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "palabras de nuestros santos Sabios. Entonces merecerá el genuino arrepentimiento. 17 Tishrei 11. La humildad es el elemento crucial del arrepentimiento. En otras palabras, uno debe “dejarse pisotear como un desierto” (Eruvin 54a) y no prestarle la mínima atención a la oposición y a los insultos que reciba. Más bien, deberá apoyarse en el atributo del silencio y ser “uno de aquellos que oyen que los avergüenzan y no responden” (Shabat 88b). Entonces será llamado verdaderamente “sabio” y merecerá el arrepentimiento, que es el concepto de Keter. Con ello se hará digno del honor verdadero y eterno -que es “el honor de Dios”- y de una buena porción en el Mundo que Viene. Ése es su arrepentimiento",
+      "matched_terms": [
+        "humildad",
+        "arrepentimiento",
+        "dejarse pisotear",
+        "insultos",
+        "vergüenza"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 29,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "a persona que es así honrada?”. Ellos se le oponen diciendo que no merece tal honor. 2. Mediante la humildad, uno merece el arrepentimiento. Pues la esencia del arrepentimiento se manifiesta cuando la persona oye que la avergüenzan y sin embargo se mantiene firme y en silencio. Sufre los insultos y el “derramamiento de sangre”, aceptando su propia bajeza y pequeñez, reconociendo el gran daño que ha hecho y comprendiendo que es adecuado que sufra esos insultos. De esa manera disminuye la sangre en el ventrículo izquierdo del corazón y aniquila su mala inclinación, mereciendo así “el honor de Dios”. 3. Antes de arrepentirse la persona aún no tiene “ser”; es como si aún no existiese en el mundo",
+      "matched_terms": [
+        "humildad",
+        "arrepentimiento",
+        "insultos",
+        "vergüenza",
+        "keter"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 4,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "oharán es un texto muy intrincado. Contiene tanto ideas simples como esotéricas, generalmente en un mismo párrafo. El Rebe puede tomar un texto de la Biblia o del Midrash y luego conectar una enseñanza Talmúdica con una idea del Ari - pero a no ser que el lector se mantenga concentrado en el flujo de la lección, es posible que no perciba la intención principal, que siempre es aconsejar cómo acercarse a Dios. El Kitzur Likutey Moharán contiene todos los consejos prácticos que surgen de las enseñanzas del Rebe. El rabí Natán fue capaz de profundizar en la complicada estructura de cada lección y presentar el consejo en un formato similar al de la lección, pero que se centra en una o dos frases",
+      "matched_terms": [
+        "mismo",
+        "likutey",
+        "kitzur",
+        "moharán",
+        "ante"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 6,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "del Autor Este volumen es una colección abreviada de los consejos prácticos contenidos en el libro Likutey Moharán, recopilación de las enseñanzas puras y santas de nuestro grande y santo Rav, la “luz oculta”, el Rebe Najmán de Breslov, que su memoria sea para bendición. Pues el Rebe mismo me ordenó compilar este volumen, siendo que la esencia de sus santas intenciones, en todos sus discursos y en todas las asombrosas y tremendas enseñanzas que él le reveló al Pueblo Elegido, era sólo en aras de la acción - dado que “No es el estudio lo más importante sino la acción” (Avot 1:17). Esto era algo claro para todos aquellos que tuvieron el privilegio de refugiarse a la sombra de su santidad. Tod",
+      "matched_terms": [
+        "likutey",
+        "moharán",
+        "mismo",
+        "ante"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 7,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "iscurso el tópico de la enseñanza sobre la cual el Rebe construye el fundamento de su lección en el Likutey Moharán. Así sea que esos tópicos provengan de las Escrituras o de las palabras de los Sabios, todos proceden de los lugares sagrados y fluyen desde la fuente de aguas vivas. Entonces, todo aquel que desee agregar a nuestra selección podrá hacerlo. Pues la persona de conocimiento perfecto podrá encontrar muchas más cosas como éstas en cada discurso y en cada una de las enseñanzas que se encuentran en el Likutey Moharán. Pues las palabras de ese libro son en verdad profundas y cada discurso está dividido en muchas explicaciones y temas maravillosos y tremendos, al igual de estar plenos",
+      "matched_terms": [
+        "likutey",
+        "moharán",
+        "mismo",
+        "ante"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 59,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ante. Esto describe la situación en la cual el cuerpo sigue los deseos del alma. Esta lección en el Likutey Moharán implica que en la medida en que la persona merece liberarse de sus “vestimentas sucias”, de la misma manera se hace digna de la santidad de la Tierra de Israel.] 9. Incluso después de haber sido iluminados y despertados hacia el arrepentimiento, los pecadores siguen muy lejos de la santidad y pueden experimentar grandes obstáculos. Esas personas deben esforzarse tremendamente para liberarse de las “vestimentas sucias” que han estado llevando (cf. Zacarías 3:4), dado que esas “vestimentas sucias” les impiden retornar al Santo, bendito sea. Esas vestimentas bloquean a las persona",
+      "matched_terms": [
+        "likutey",
+        "moharán",
+        "describe",
+        "arrepentimiento"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 58,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "su hijo no será un erudito de la Torá (ver Nedarim 81a). 6. Sólo se es digno de la Torá mediante la humildad, quebrando el orgullo en las cuatro categorías de la humildad. Es necesario considerarse menos que aquellos que son más grandes que uno; menos que sus iguales; menos que aquellos que son inferiores a uno; e incluso, si uno mismo es el más pequeño de los pequeños, debe considerase menos que su propio nivel, considerándose a sí mismo como menos de lo que es en realidad. 6 Jeshvan 7. Es necesario cuidarse de aquellos atributos sobre los cuales la gente suele enorgullecerse. Existen tres de esos atributos: la sabiduría, la fuerza y la riqueza, como está escrito, “Que el sabio no se enorgu",
+      "matched_terms": [
+        "humildad",
+        "arrepentimiento",
+        "humilde",
+        "mismo",
+        "orgullo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 30,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "a persona sepa que su arrepentimiento ha sido completo, sin embargo, necesitará arrepentirse de sus arrepentimientos anteriores. Pues originalmente, cuando se arrepintió, lo hizo de acuerdo a la concepción [de Dios] que tenía en ese momento. Subsecuentemente y luego de haberse arrepentido, alcanzó indudablemente un reconocimiento y una concepción de Dios mucho más perfectos. De acuerdo a la concepción que ahora tiene, su comprensión previa era, en comparación, ciertamente tosca. Así, ahora debe arrepentirse por haber hecho burda la exaltada naturaleza de Dios. ¡Feliz de aquel que merece esta clase de arrepentimiento!  Lección 6 15 Tishrei 30",
+      "matched_terms": [
+        "arrepentimientos",
+        "anteriores",
+        "arrepentimiento",
+        "arrepentirse"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 9,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "Prólogo al  Prólogo al  Prólogo al  Prólogo al  Prólogo al Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán ¡Ven y observa las obras de Dios! ¡Ven y observa las obras de Dios! ¡Ven y observa las obras de Dios! ¡Ven y observa las obras de Dios! ¡Ven y observa las obras de Dios! Una asombrosa revelación concerniente al misterio de la Una asombrosa revelación concerniente al misterio de la Una asombrosa revelación concerniente al misterio de la Una asombrosa revelación concerniente al misterio de la Una asombrosa revelación concerniente al misterio de la grandeza del santo sabio, Rabí Shimón ben Iojai, de bendita grandeza del santo sabio, Rabí Shimón ben Iojai, de",
+      "matched_terms": [
+        "likutey",
+        "moharán",
+        "mismo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 24,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "enerse en ese estado, sino que “debe esperar” hasta el tiempo en que el Santo, bendito sea, tome Él Mismo su alma [cuando fallezca]. Entonces quedará completamente anulada y absorbida en el Infinito en el grado que haya merecido. 15. Mediante la unión de la persona con el Infinito en el aspecto de “correr y retornar” -de modo que no quede completamente anulada- y al volver, más tarde, a su propia conciencia en el estado de “separación de Dios”, permanecerá en ella un remanente de la maravillosa luz de ese estado de unión. Ese remanente le mostrará entonces a la mente consciente de la persona la unidad y la bondad del Infinito, de modo que ahora sabrá que todo es bueno y que todo es uno. Esa",
+      "matched_terms": [
+        "mismo",
+        "ante",
+        "arrepentimiento"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 82,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "que se merezca. Por otro lado, en la medida en que la persona haya alcanzado la pureza sexual, así mismo merecerá la perfección del Lenguaje Sagrado. La misma relación existe también en conexión con los daños en esas áreas, Dios no lo permita. Pues la persona que daña su pureza sexual pierde el Lenguaje Sagrado, mientras que la persona que posee el Lenguaje Sagrado es capaz de mantener la pureza sexual. 6. Todos los insultos, la vergüenza y la humillación que experimenta la persona son resultado de su daño a la pureza sexual. Por el contrario, mediante la pureza sexual, la persona merece el honor. 7. La pasión sexual, que es el mal general, está encarnada en la serpiente primordial que sedu",
+      "matched_terms": [
+        "mismo",
+        "insultos",
+        "vergüenza"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 1,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "Síntesis Síntesis Síntesis Síntesis Síntesis del del del del del Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán (Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán) por  el Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Traducción al Español Guillermo Beilinson Publicado por BRESLOV RESEARCH INSTITUTE Jerusalem/New York",
+      "matched_terms": [
+        "likutey",
+        "moharán",
+        "kitzur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 95,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "í Natán, de bendita memoria, ordenó las lecciones en la antigua [i.e., original] versión del Kitzur Likutey Moharán, y no quise alterarlo. Lección 21                                                                                  2 Kislev                                                                                                                                                                       95",
+      "matched_terms": [
+        "likutey",
+        "moharán",
+        "kitzur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 207,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "e la semana, como si también ahora fuese “Mi día santo” [i.e., Shabat] (ver más en la lección en el Likutey Moharán). 22 Shvat 39 - “Proveeré forraje” 39 - “Proveeré forraje” 39 - “Proveeré forraje” 39 - “Proveeré forraje” 39 - “Proveeré forraje” (Deuteronomio 11:15) (Deuteronomio 11:15) (Deuteronomio 11:15) (Deuteronomio 11:15) (Deuteronomio 11:15) 1. Si la persona siente hambre, viéndose avasallada por el deseo de comer, debe saber que tiene enemigos. Como dijeron nuestros Sabios, de bendita memoria, “Si la persona ha empobrecido abajo, también ha empobrecido arriba” (Sanedrín 103b). Tal persona debe por lo tanto superar y quebrar el lado animal que desea comer -dado que el hambre proviene",
+      "matched_terms": [
+        "likutey",
+        "moharán",
+        "vergüenza"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 45,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "gran alegría, al punto en que uno llega a aplaudir y a bailar en santidad. Esto entonces mitiga los juicios severos y lo hace merecedor de la sabiduría, de la vida, de la longevidad y de la comprensión de la Torá, tanto en sus niveles revelados como ocultos. 8. Regocijarse en Purim, aplaudiendo y bailando, hace que la Torá pueda ser recibida y aceptada tanto en sus niveles revelados como ocultos - que son la tremenda luz de Mordejai y de Esther. [Ésa clase de alegría en Purim también] permite que la persona lleve a cabo con propiedad la mitzvá de la Cuenta del Omer, que subyuga las fuerzas impuras de Hamán-Amalek, que sus nombres sean borrados. Entonces se anula el orgullo, la idolatría y el",
+      "matched_terms": [
+        "juicio",
+        "arrepentimiento",
+        "orgullo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 203,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "epentirse por completo no poseía la comprensión necesaria que le hubiese permitido sentir la propia vergüenza dada la enormidad de sus transgresiones y la grandeza del Creador en contra de Quien pecó. Pero subsecuentemente, una vez que se arrepiente y elimina la insensatez, fortaleciendo su intelecto, experimenta entonces esa vergüenza mucho más plenamente y ésta se revela en su rostro. Esa vergüenza es un aspecto de la “luz de los tefilín”, que son la señal de la verdadera unión con el Creador. Esa vergüenza es también el estado interior detrás del “brillo de la piel del rostro”, resultado de una profunda e intensa unión con Dios (ver Éxodo 34:29- 30, donde se habla sobre el brillo del rost",
+      "matched_terms": [
+        "vergüenza",
+        "arrepentirse"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 505,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "taría que sucedieran, debe saber que ello se debe al orgullo. Por lo tanto deberá arrepentirse, ser humilde y llevarse al nivel de “¿Qué?” [como en, “¿Qué soy yo?”]. Entonces las cosas volverán a suceder como lo desea. 2. El mes de Elul es el momento más propicio para el arrepentimiento. Ello se debe a que esos son días de favor Divino, cuando Moisés ascendió para recibir el segundo juego de Tablas y cuando abrió un claro sendero por el cual andar. Ese sendero de arrepentimiento iluminado por Moisés es el hecho de que la persona debe unirse incluso al más bajo de los judíos. Pues hasta el más bajo de los judíos ciertamente posee algo de Divinidad y es por medio de esa Divinidad que es posibl",
+      "matched_terms": [
+        "humilde",
+        "arrepentirse"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 21,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "udito de Torá, la persona extrae las letras grabadas en sus huesos y rectifica todo. 4. La tremenda humildad de los verdaderos Tzadikim -al punto  Lección 4 8 Tishrei                                                                                                                                                                       21",
+      "matched_terms": [
+        "humildad",
+        "ante"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 23,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "bien” sobre todas las cosas y ello es un “anticipo del Mundo que Viene”. 10 Tishrei 12. Mediante la humildad uno merece deshacerse de la materialidad y quedar incluido en el Infinito. También se llega a saber que todo lo que sucede es para el propio bien, lo que es un “anticipo del Mundo que Viene”. 13. Son muy pocos los Tzadikim que pueden otorgarles una vislumbre de la luz del Infinito a aquellos que se acercan a ellos y que están incluidos en sus nombres. Esto explica porqué a veces la persona se siente súbitamente entusiasmada en medio de las plegarias y recita algunas palabras de la oración con gran fervor. Ello se debe a que Dios, en Su compasión, le ha abierto la luz del Infinito y br",
+      "matched_terms": [
+        "humildad",
+        "ante"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

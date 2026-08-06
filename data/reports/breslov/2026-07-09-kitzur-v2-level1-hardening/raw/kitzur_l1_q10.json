@@ -1,0 +1,45 @@
+{
+  "question": "¿Cuántas bendiciones contiene la plegaria de la Amidá, según la Lección 216?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "lesson_lookup",
+  "short_conclusion": "Lección 216: 1 fuente(s) en 1 página(s).",
+  "evidence_summary": {
+    "literal_matches": 1,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      382
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 382,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "216 216 216 216 216 1. La plegaria de la Amidá contiene JaI (dieciocho) bendiciones [JaI significa literalmente “vida”; sus letras tienen el valor numérico de dieciocho], además de la bendición concerniente a los herejes. Esto alude al hecho de que mediante la plegaria anulamos a la “naturaleza”, a la que los filósofos llaman “la madre de todo lo vivo (JaI)”, y de esa manera también subyug",
+      "matched_terms": [
+        "bendiciones"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "section_resolved_from_lesson_index: Lección 216 → páginas 382-385"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "question_id": "q3_plegaria",
+  "question": "Describe el proceso para alcanzar una plegaria perfecta.",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_filter": "resolved by run",
+  "claims": [
+    {
+      "claim_id": "q3_plegaria_1",
+      "claim": "verdad",
+      "page_direct": [
+        {
+          "source_id": "ver_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ás aún, toda la vitalidad de la persona proviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar la verdadera santidad deberá dedicarse con frecuencia e intensidad a la plegaria, a la súplica y a la conversación con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar caridad",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p18",
+          "page": 18,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "a la persona y le hará brillar Su rostro, cumpliendo con su deseo y con su voluntad, mediante el poder de los verdaderos Tzadikim, acercándola a Él con una gran compasión y misericordia. 7. No es apropiado pensar en recibir una recompensa por cosa alguna, pues todas nuestras buenas acciones y todas las plegarias nos son dadas por Dios. Por lo tanto, aunque la persona merezca ocasionalmente alguna salvación y aunque logre acercarse un poco más a la santidad, etcétera, no debe pensar que lo ha merecido como resultado de su est",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p41",
+          "page": 41,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": ", aunque uno no pueda orar debido a la profunda oscuridad que lo rodea, debe asegurarse de decir las palabras con honestidad, por más bajo que sea su nivel. Por ejemplo, deberá decir con sinceridad, “¡Dios, sálvame!”. Y aunque no pueda decir algo así con el entusiasmo y la inspiración apropiada, deberá forzarse al menos a decir las palabras con sinceridad y simpleza, de acuerdo a quién es. Entonces merecerá ver las brechas en la oscuridad. Pues si uno desea sinceramente la verdad, no habrá oscuridad en el mundo que se la pue",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p60",
+          "page": 60,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "deben asegurarse de lograr esa “paz en los huesos” de la manera más completa - en otras palabras, debe haber verdadera paz entre el cuerpo y el alma. Entonces ciertamente no se querrá tener ninguna conexión con los asuntos de este mundo y sólo se aspirará a actuar en aras del alma. Más aún, todas las plegarias serán sólo en aras de conectar el alma [con Lección 14 7 Jeshvan 60",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p61",
+          "page": 61,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "físicas, la intención no será para el cuerpo, sino más bien para el “sustento” y la “salud” del alma. Pues en verdad, cuando uno se rectifica en el ámbito espiritual, automáticamente se rectifica en el ámbito físico y Dios le provee de todas sus necesidades, graciosamente y en abundancia. Pero la intención de la persona al orar sólo debe ser en aras del alma. 14. A veces vemos que hay Tzadikim que indudablemente han rectificado en ellos todo lo espiritual, pero que no reciben abundancia en el ámbito físico. Ese fenómeno se d",
+          "score": 1.0
+        },
+        {
+          "source_id": "ver_p293",
+          "page": 293,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "la primera. Entonces la plegaria habrá alcanzado la perfección. Sólo es posible ser digno de ello mediante el verdadero Tzadik que es el Señor del Campo. Él es capaz de llevar a cada persona hacia el objetivo verdadero y final, que es enteramente bueno y enteramente uno. Con ello, la persona se vuelve digna de hacer que la plegaria sea una unidad, lo cual constituye su perfección. Lección 65 22 Nisán",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "accepted": [
+        {
+          "source_id": "ver_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ás aún, toda la vitalidad de la persona proviene de la plegaria. Por lo tanto, aquel que aspire a alcanzar la verdadera santidad deberá dedicarse con frecuencia e intensidad a la plegaria, a la súplica y a la conversación con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar caridad",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q3_plegaria_2",
+      "claim": "Tzadikim",
+      "page_direct": [
+        {
+          "source_id": "Tza_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ante el cuidado de la pureza sexual a la perfección. Por lo tanto, toda persona debe unir sus plegarias a los verdaderos Tzadikim de la generación, dado que ellos saben cómo elevar cada plegaria a su lugar apropiado. Más aún, esos Tzadikim edifican con esas palabras la estructura de la Presencia Divina, acelerando así la venida del Mashíaj. 5. El estudio de la Torá y la plegaria se fortalecen y se iluminan mutuamente, de modo que es necesario dedicarse a ambas actividades. Toda la Torá que la persona estudia con la intención",
+          "score": 1.0
+        },
+        {
+          "source_id": "Tza_p18",
+          "page": 18,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "a la persona y le hará brillar Su rostro, cumpliendo con su deseo y con su voluntad, mediante el poder de los verdaderos Tzadikim, acercándola a Él con una gran compasión y misericordia. 7. No es apropiado pensar en recibir una recompensa por cosa alguna, pues todas nuestras buenas acciones y todas las plegarias nos son dadas por Dios. Por lo tanto, aunque la persona merezca ocasionalmente alguna salvación y aunque logre acercarse un poco más a la santidad, etcétera, no debe pensar que lo ha merecido como resultado de su est",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "accepted": [
+        {
+          "source_id": "Tza_p17",
+          "page": 17,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "ante el cuidado de la pureza sexual a la perfección. Por lo tanto, toda persona debe unir sus plegarias a los verdaderos Tzadikim de la generación, dado que ellos saben cómo elevar cada plegaria a su lugar apropiado. Más aún, esos Tzadikim edifican con esas palabras la estructura de la Presencia Divina, acelerando así la venida del Mashíaj. 5. El estudio de la Torá y la plegaria se fortalecen y se iluminan mutuamente, de modo que es necesario dedicarse a ambas actividades. Toda la Torá que la persona estudia con la intención",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q3_plegaria_3",
+      "claim": "alegría",
+      "page_direct": [
+        {
+          "source_id": "ale_p25",
+          "page": 25,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "nvestir sus plegarias dentro de cuentos. Todo esto se logra realizando la mitzvá por la mitzvá misma, con una gran alegría. 3. La esencia de la alegría está en el corazón. Pero es imposible que el corazón se regocije a menos que la persona enderece su “corazón torcido” y logre un “corazón recto”. Entonces merecerá la alegría. El “corazón torcido” se corrige por medio del “trueno” - es decir, orando con energía y entusiasmo, con temor y amor a Dios y con una intensa concentración. 4. La alegría se logra orando con energía y e",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "accepted": [
+        {
+          "source_id": "ale_p25",
+          "page": 25,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "nvestir sus plegarias dentro de cuentos. Todo esto se logra realizando la mitzvá por la mitzvá misma, con una gran alegría. 3. La esencia de la alegría está en el corazón. Pero es imposible que el corazón se regocije a menos que la persona enderece su “corazón torcido” y logre un “corazón recto”. Entonces merecerá la alegría. El “corazón torcido” se corrige por medio del “trueno” - es decir, orando con energía y entusiasmo, con temor y amor a Dios y con una intensa concentración. 4. La alegría se logra orando con energía y e",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q3_plegaria_4",
+      "claim": "obstáculos",
+      "page_direct": [
+        {
+          "source_id": "obs_p331",
+          "page": 331,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "s el deleite más grande de Dios. 95 95 95 95 95 1. Cuando los líderes y los guías de la generación se vuelven orgullosos, el Santo, bendito sea, les envía gente para que se les oponga y hable en contra de ellos, para que no se vuelvan autoritarios. 21 Iyar 96 96 96 96 96 1. Los pensamientos externos que le llegan a la persona cuando está orando -y particularmente al Tzadik que desea orar con un gran apego a Dios- derivan de las chispas de santidad que cayeron en el momento de la Rotura de los Recipientes. Esos pensamientos e",
+          "score": 1.0
+        },
+        {
+          "source_id": "obs_p332",
+          "page": 332,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "as, alcanzar el dominio y llevar a cabo lo que desee. Sin embargo, el mayor impedimento para ello es el falso orgullo y los pensamientos externos que se experimentan durante la oración. Pues hay personas que se sienten orgullosas de su linaje distinguido o del hecho de que han trabajado muy duro en el servicio al Creador; en tal caso, les es ciertamente imposible alcanzar el dominio mediante las plegarias. Por lo tanto, al ponerse de pie para orar, deberán prevalecer y quebrar todo eso y olvidar por completo su linaje distin",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 8,
+      "accepted": [
+        {
+          "source_id": "obs_p331",
+          "page": 331,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "s el deleite más grande de Dios. 95 95 95 95 95 1. Cuando los líderes y los guías de la generación se vuelven orgullosos, el Santo, bendito sea, les envía gente para que se les oponga y hable en contra de ellos, para que no se vuelvan autoritarios. 21 Iyar 96 96 96 96 96 1. Los pensamientos externos que le llegan a la persona cuando está orando -y particularmente al Tzadik que desea orar con un gran apego a Dios- derivan de las chispas de santidad que cayeron en el momento de la Rotura de los Recipientes. Esos pensamientos e",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "claim_id": "q3_plegaria_5",
+      "claim": "paz",
+      "page_direct": [
+        {
+          "source_id": "paz_p60",
+          "page": 60,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "“paz en sus huesos” y orar. Por medio de la plegaria se hace digna [de una segunda clase de paz, que es] “la paz general” o la paz en todos los mundos. Uno llega a ese temor sagrado mediante la humildad y la Torá. 7 Jeshvan 12. El temor sagrado a Dios es el factor esencial en la plegaria. Pues la plegaria sustituye a los sacrificios y está escrito con respecto a los sacrificios, “Todo aquel que tenga un defecto no podrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la persona no tiene defecto alguno, ello corresponde",
+          "score": 1.0
+        },
+        {
+          "source_id": "paz_p61",
+          "page": 61,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "(II, 216) y en el Tikuney Zohar (#69). 15. Las palabras de las plegarias rectifican el conflicto y traen la “paz general” o la paz en todos los mundos. 16. La persona debe acostumbrarse a orar por todo aquello que le falte - así sea el sustento o los hijos o por alguien enfermo en su hogar, Dios no lo permita. En todos esos casos, la estrategia esencial debe ser solamente orarle a Dios. La persona debe tener fe en Dios, en que el Santo, bendito sea, es bueno para todo -así sea para curación, sustento o alguna otra cosa- y l",
+          "score": 1.0
+        }
+      ],
+      "book_qa_hits": 0,
+      "accepted": [
+        {
+          "source_id": "paz_p60",
+          "page": 60,
+          "language": "es",
+          "method": "page_direct",
+          "evidence_type": "literal",
+          "quote": "“paz en sus huesos” y orar. Por medio de la plegaria se hace digna [de una segunda clase de paz, que es] “la paz general” o la paz en todos los mundos. Uno llega a ese temor sagrado mediante la humildad y la Torá. 7 Jeshvan 12. El temor sagrado a Dios es el factor esencial en la plegaria. Pues la plegaria sustituye a los sacrificios y está escrito con respecto a los sacrificios, “Todo aquel que tenga un defecto no podrá acercarse” (Levítico 21:18). [Por otro lado,] cuando la persona no tiene defecto alguno, ello corresponde",
+          "score": 1.0
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "diagnostics": {
+    "sql_hits": 13,
+    "fts_hits": 0,
+    "milvus_hits": 0,
+    "hybrid_hits": 8,
+    "relation_qa_hits": 0,
+    "book_qa_hits": 32,
+    "page_direct_hits": 13,
+    "methods_unavailable": [
+      "FTS and Relation QA do not accept an Ingesta V2 run_id in current contracts"
+    ],
+    "semantic_error": null,
+    "backend_runtime_model": "openai_gpt-5.4-nano",
+    "embedding_model": "openai_text_embedding_3_small",
+    "ai_synthesis_used": true,
+    "fallback_used": false,
+    "ai_error": null,
+    "hybrid_collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1"
+  },
+  "answer": "Para alcanzar una “plegaria perfecta”, el proceso indicado en las fuentes se puede sintetizar así:\n\n1) **Dedicarse con frecuencia e intensidad a la plegaria** (junto con súplica y conversación con el Creador), ya que de ella proviene la vitalidad y es el “arma principal” para la guerra espiritual. [ver_p17]  \n\n2) **Cuidar la pureza sexual**, porque quien la preserva se vuelve digno de orar; quien la daña pierde la capacidad de orar. [ver_p17]  \n\n3) **Practicar la caridad antes de orar**, para que la plegaria resulte “fluida”. [ver_p17]  \n\n4) **Unir las plegarias a los Tzadikim verdaderos**, ya que ellos saben elevar cada plegaria a su lugar apropiado y con sus palabras “edifican” la estructura de la Presencia Divina, acelerando la venida del Mashíaj. [Tza_p17]  \n\n5) **Fortalecer conjuntamente Torá y plegaria**, porque se iluminan y se refuerzan mutuamente; por eso es necesario dedicarse a ambas actividades. [Tza_p17]  \n\n6) **Orar con energía y entusiasmo**, con **temor y amor a Dios** y con **intensa concentración**, como vía para corregir el “corazón torcido” hacia un “corazón recto”, condición para la alegría que acompaña la plegaria. [ale_p25]  \n\n7) **Cultivar el temor sagrado**, considerado factor esencial en la plegaria; se vincula con la humildad y la Torá. [paz_p60]  \n\n8) **Reconocer que pueden surgir pensamientos externos durante la oración**, especialmente en el Tzadik que desea orar con gran apego a Dios, y que esos pensamientos derivan de chispas de santidad caídas en la Rotura de los Recipientes. [obs_p331]  \n\nSi querés, puedo convertir esto en una lista operativa paso a paso (tipo “checklist”) manteniendo las mismas citas.",
+  "final_status": "PASS"
+}

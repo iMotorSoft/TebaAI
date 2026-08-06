@@ -1,0 +1,177 @@
+{
+  "question": "¿Qué le pidió el Rebe Najmán al rabí Natán que comenzase a recopilar antes de que se imprimiese el Likutey Moharán?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 10 resultado(s) en 10 páginas.",
+  "evidence_summary": {
+    "literal_matches": 10,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      1,
+      4,
+      6,
+      7,
+      51,
+      59,
+      86,
+      92,
+      207,
+      242
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 4,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "da”. una versión abreviada”. (Pesajim 3b) Incluso antes de que se imprimiese el Likutey Moharán, el Rebe Najmán le pidió al rabí Natán que comenzase a recopilar los consejos prácticos de cada una de sus lecciones y los presentase en un formato abreviado. Después de escribir algunas páginas, el rabí Natán se las mostró al Rebe quien no estuvo satisfecho. El rabí Natán encaró entonces un enfoque dis",
+      "matched_terms": [
+        "likutey moharán",
+        "el likutey",
+        "se imprimiese",
+        "imprimiese el likutey",
+        "imprimiese el"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 7,
+      "evidence_type": "direct_factual_match",
+      "score": 0.8,
+      "snippet": "la enseñanza sobre la cual el Rebe construye el fundamento de su lección en el Likutey Moharán. Así sea que esos tópicos provengan de las Escrituras o de las palabras de los Sabios, todos proceden de los lugares sagrados y fluyen desde la fuente de aguas vivas. Entonces, todo aquel que desee agregar a nuestra selección podrá hacerlo. Pues la persona de conocimiento perfecto podrá encontrar muchas",
+      "matched_terms": [
+        "likutey moharán",
+        "el likutey",
+        "likutey",
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 51,
+      "evidence_type": "direct_factual_match",
+      "score": 0.8,
+      "snippet": "grandes y maravillosas unificaciones espirituales (ver más en esta lección del Likutey Moharán). 9. Conservando la alegría en medio del sufrimiento (Shabat 88b)  Lección 12 30 Tishrei                                                                                                                                                                       51",
+      "matched_terms": [
+        "likutey moharán",
+        "el likutey",
+        "likutey",
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 59,
+      "evidence_type": "direct_factual_match",
+      "score": 0.8,
+      "snippet": "la situación en la cual el cuerpo sigue los deseos del alma. Esta lección en el Likutey Moharán implica que en la medida en que la persona merece liberarse de sus “vestimentas sucias”, de la misma manera se hace digna de la santidad de la Tierra de Israel.] 9. Incluso después de haber sido iluminados y despertados hacia el arrepentimiento, los pecadores siguen muy lejos de la santidad y pueden exp",
+      "matched_terms": [
+        "likutey moharán",
+        "el likutey",
+        "likutey",
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 86,
+      "evidence_type": "direct_factual_match",
+      "score": 0.8,
+      "snippet": "as letras que están presentes en cada cosa (como se explica en esta lección del Likutey Moharán). Pero le será imposible experimentar y derivar placer exclusivamente de esas combinaciones de letras -correspondiente a “Él comió y bebió y estuvo bien su corazón”- y merecer que todos sus placeres Lección 19                                                                             26 Jeshvan  86",
+      "matched_terms": [
+        "likutey moharán",
+        "el likutey",
+        "likutey",
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 92,
+      "evidence_type": "direct_factual_match",
+      "score": 0.8,
+      "snippet": "reflejando la secuencia enseñada en esta lección. Ver más en esta lección en el Likutey Moharán]. 7. Pero la Tierra de Israel es una de las tres cosas que sólo se obtienen a través del sufrimiento (Berajot 5a), y sólo mediante el sufrimiento puede uno llegar a la Tierra de Israel. El principal sufrimiento proviene de aquellos malvados que se oponen, de aquellos “que difunden un informe maligno sob",
+      "matched_terms": [
+        "likutey moharán",
+        "el likutey",
+        "likutey",
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 207,
+      "evidence_type": "direct_factual_match",
+      "score": 0.7,
+      "snippet": "también ahora fuese “Mi día santo” [i.e., Shabat] (ver más en la lección en el Likutey Moharán). 22 Shvat 39 - “Proveeré forraje” 39 - “Proveeré forraje” 39 - “Proveeré forraje” 39 - “Proveeré forraje” 39 - “Proveeré forraje” (Deuteronomio 11:15) (Deuteronomio 11:15) (Deuteronomio 11:15) (Deuteronomio 11:15) (Deuteronomio 11:15) 1. Si la persona siente hambre, viéndose avasallada por el deseo de",
+      "matched_terms": [
+        "likutey moharán",
+        "el likutey",
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 242,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "están investidos y ocultos en este mundo”, como se explica en esta lección del Likutey Moharán. 16 Adar 6. Las actividades comerciales [literalmente, masá u-matán (“toma y daca”), donde uno toma algo y da otra cosa a cambio] representan la unificación del Tzadik con la Congregación de Israel. El Tzadik es llamado masá (quien toma) y la Congregación de Israel es llamada matán (quien da), como se e",
+      "matched_terms": [
+        "likutey moharán",
+        "el likutey"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 1,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "Síntesis Síntesis Síntesis Síntesis Síntesis del del del del del Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán Likutey Moharán (Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán Kitzur Likutey Moharán) por  el Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Rabí Natán de Breslov Traducción al Españo",
+      "matched_terms": [
+        "likutey moharán",
+        "likutey",
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 6,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "men es una colección abreviada de los consejos prácticos contenidos en el libro Likutey Moharán, recopilación de las enseñanzas puras y santas de nuestro grande y santo Rav, la “luz oculta”, el Rebe Najmán de Breslov, que su memoria sea para bendición. Pues el Rebe mismo me ordenó compilar este volumen, siendo que la esencia de sus santas intenciones, en todos sus discursos y en todas las asombros",
+      "matched_terms": [
+        "likutey moharán",
+        "likutey",
+        "moharán"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

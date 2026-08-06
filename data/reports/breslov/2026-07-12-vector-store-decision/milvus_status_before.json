@@ -1,0 +1,21 @@
+{
+  "collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+  "scope": "breslov_test",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "safe_load_requested": false,
+  "connection_ok": true,
+  "events": [],
+  "search_ok_before": "skipped",
+  "search_ok_after": "skipped",
+  "load_state_before": "NotLoad",
+  "num_entities": 100,
+  "fields": [
+    "pk",
+    "page_number",
+    "text_preview",
+    "embedding"
+  ],
+  "vector_field": "embedding",
+  "status": "COLLECTION_FOUND_NOT_LOADED",
+  "recommendation": "OPTIONAL_SAFE_LOAD_PROBE_REQUIRED"
+}

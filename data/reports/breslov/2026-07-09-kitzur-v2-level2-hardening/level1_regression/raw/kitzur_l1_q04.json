@@ -1,0 +1,69 @@
+{
+  "question": "¿Cuál es el arma principal del judío, según la Lección 2?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "lesson_lookup",
+  "short_conclusion": "Lección 2: 3 fuente(s) en 3 página(s).",
+  "evidence_summary": {
+    "literal_matches": 3,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      17,
+      19,
+      21
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 17,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "tico 21:1) (Levítico 21:1) (Levítico 21:1) (Levítico 21:1) 1. La plegaria es el arma principal del judío. Todas las batallas que la persona deba librar -así sean las batallas en contra de la mala inclinación u otras batallas en contra de aquellos que desean obstaculizarla u oponérsele- todas se combaten mediante la plegaria. Más aún, toda la vitalidad de la persona proviene de la plegaria. Por lo",
+      "matched_terms": [
+        "arma"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 19,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "a mala inclinación es el impulso hacia la transgresión sexual. Ésa es la fuente principal de contaminación espiritual. Por lo tanto, es necesario saber que la principal prueba en este mundo es la batalla con ese deseo. ¡Afortunado aquél que merece ganar la guerra! 9. El verdadero Tzadik de la generación está asociado con el concepto de la “luminaria mayor”. Él brilla e ilumina a la plegaria, que e",
+      "matched_terms": [
+        "principal"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 21,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "ebería decir esa misma bendición incluso ahora”.] 8 Tishrei 3. La rectificación principal de todos los pecados se lleva a cabo gracias al verdadero Tzadik. La persona que desee merecer un final bueno y duradero deberá esforzarse por estar cerca de los verdaderos Tzadikim y de sus discípulos. Deberá contarle al Tzadik todo lo que hay en su corazón - es decir, deberá confesarse delante de él. De esa",
+      "matched_terms": [
+        "principal"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "section_resolved_from_lesson_index: Lección 2 → páginas 17-21"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

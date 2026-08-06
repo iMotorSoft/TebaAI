@@ -1,0 +1,57 @@
+{
+  "question": "¿Qué representa el ayuno, según la Lección 179?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "lesson_lookup",
+  "short_conclusion": "Lección 179: 2 fuente(s) en 2 página(s).",
+  "evidence_summary": {
+    "literal_matches": 2,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      365,
+      366
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 365,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "gir el daño causado por sus pecados. 16 Sivan 179 - Sobre el Gran Beneficio del Ayuno 179 - Sobre el Gran Beneficio del Ayuno 179 - Sobre el Gran Beneficio del Ayuno 179 - Sobre el Gran Beneficio del Ayuno 179 - Sobre el Gran Beneficio del Ayuno 1. Ayunar anula los conflictos tanto físicos como espirituales. También es considerado un conflicto el no ser capaz de orar ni de hacer lo que se debe en",
+      "matched_terms": [
+        "ayuno"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 366,
+      "evidence_type": "section_match",
+      "score": 1.0,
+      "snippet": "16 Sivan uniéndolo al Santo, bendito sea, y haciendo la paz. 2. El ayuno revive a los muertos - es decir, le devuelve la vitalidad a los días que estuvieron en la oscuridad y que no tienen “vida”. En otras palabras, cuando la persona malogra un día al no realizar en ese día ninguna mitzvá ni ninguna buena acción -y más aún si ha hecho algún mal en ese día, Dios no lo permita- entonces",
+      "matched_terms": [
+        "ayuno"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "section_resolved_from_lesson_index: Lección 179 → páginas 365-366"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

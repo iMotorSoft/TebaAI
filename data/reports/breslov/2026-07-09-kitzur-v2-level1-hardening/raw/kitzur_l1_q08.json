@@ -1,0 +1,165 @@
+{
+  "question": "¿Qué se debe hacer antes de comenzar cualquier mitzvá o devoción religiosa para ampliar los pasajes hacia la santidad?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 10 resultado(s) en 10 páginas.",
+  "evidence_summary": {
+    "literal_matches": 10,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      18,
+      19,
+      41,
+      42,
+      64,
+      92,
+      93,
+      306,
+      430,
+      487
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 430,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "antes de comenzar cualquier mitzvá o devoción religiosa, es bueno dar caridad para ampliar los pasajes hacia la santidad que la persona debe realizar mediante sus devociones. De esa manera no le será tan difícil y oneroso el entrar. 29 Tamuz 4. El comienzo de la caridad es extremadamente difícil y costoso, pero los beneficios son muy grandes en verdad. La explicación de esto es que el cuerpo tiene",
+      "matched_terms": [
+        "ra ampliar",
+        "hacia la santidad",
+        "pasajes hacia",
+        "pasajes hacia la",
+        "ampliar"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 92,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "la Tierra de Israel. Pues todos los pasos que la persona deba dar en su camino hacia la santidad sólo se concretan gracias a la Tierra de Israel. De manera similar, el ascenso de las plegarias se produce exclusivamente en la Tierra de Israel. 9. Para poder ir a la Tierra de Israel, es necesario primero anular a los malvados que “difunden un informe maligno sobre la Lección 20",
+      "matched_terms": [
+        "hacia la santidad",
+        "hacia la"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 93,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "ha caído en medio de ellos, entre las fuerzas de la impureza, vuelve a elevarse hacia la santidad]. Ése es el significado del versículo, “Así saldrá un juicio Lección 20                                                                             30 Jeshvan",
+      "matched_terms": [
+        "hacia la santidad",
+        "hacia la"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 18,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "ces, mediante sus oraciones, se despertará la compasión de Dios y Él se volverá hacia la persona y le hará brillar Su rostro, cumpliendo con su deseo y con su voluntad, mediante el poder de los verdaderos Tzadikim, acercándola a Él con una gran compasión y misericordia. 7. No es apropiado pensar en recibir una recompensa por cosa alguna, pues todas nuestras buenas acciones y todas las plegarias no",
+      "matched_terms": [
+        "hacia la",
+        "hacia",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 19,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "8. La esencia de la mala inclinación es el impulso hacia la transgresión sexual. Ésa es la fuente principal de contaminación espiritual. Por lo tanto, es necesario saber que la principal prueba en este mundo es la batalla con ese deseo. ¡Afortunado aquél que merece ganar la guerra! 9. El verdadero Tzadik de la generación está asociado con el concepto de la “luminaria mayor”. Él brilla e ilumina a",
+      "matched_terms": [
+        "hacia la",
+        "hacia",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 41,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "carse a la santidad - lo esencial de su rectificación es simplemente orientarse hacia la verdad. Debe fijar su vista en la verdad absoluta y sólo buscar la verdad. Lo mismo se aplica a las plegarias, aunque uno no pueda orar debido a la profunda oscuridad que lo rodea, debe asegurarse de decir las palabras con honestidad, por más bajo que sea su nivel. Por ejemplo, deberá decir con sinceridad, “¡D",
+      "matched_terms": [
+        "hacia la",
+        "hacia",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 42,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "la separan de la santidad y encontrar las brechas para salir desde la oscuridad hacia la luz. Mediante ello también merece despertar a otros e inspirar a otras personas hacia el arrepentimiento, sacarlas de la oscuridad y llevarlas de retorno a Dios. 7. Es necesario que cada uno eleve sus plegarias a través del portal de su propia tribu [de entre las doce tribus de Israel]; sin embargo, hace falta",
+      "matched_terms": [
+        "hacia la",
+        "hacia",
+        "santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 306,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": "las palabras “Y Tú gobiernas por sobre todas las cosas” - es decir, para elevar hacia la santidad el honor y el dominio caídos en el Otro Lado. 6. Cuando el honor retorna a aquellos que realmente poseen conocimiento -es decir, a los verdaderos líderes- entonces, desde el comienzo de su dominio, surge la oposición y el conflicto. 7. Cuando los enemigos de los verdaderos poseedores de conocimiento e",
+      "matched_terms": [
+        "hacia la santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 487,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": ". En su lugar, debe correr y saltar por sobre todo lo que deba saltar y brincar hacia la santidad con gran velocidad. Una persona así actúa con presteza y es recompensada por ello. 60 60 60 60 60 1. Las guerras y el derramamiento de sangre traen aparejada la sequía, Dios no lo permita, al igual que la inflación, Dios no lo quiera. 2. También trae sequía el hecho de que la persona enseñe Torá en pú",
+      "matched_terms": [
+        "hacia la santidad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 64,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": "de Dios sólo brilla en el mundo gracias a los Tzadikim. Ellos llevan a la gente hacia la rectitud y trabajan para acercar a aquellos que están lejos de Dios, volviéndolos al arrepentimiento. Todo esto es la fuente principal del honor de Dios. Ésta es la idea que subyace en la elegía fúnebre que debe ser dicha al fallecer los Tzadikim, que Dios nos salve. 25. Hablar con un amigo sobre las enseñanza",
+      "matched_terms": [
+        "hacia la"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

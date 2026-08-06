@@ -1,0 +1,1 @@
+**NOT_READY_FOR_MASS_INGESTION.** El patrón estándar de cuerpos y notas marcadas es seguro para LM II 7/8. Los continuadores inter-página sin marcador requieren alineación editorial o regla adicional basada en continuidad visual/fuente verificable antes de masificar.

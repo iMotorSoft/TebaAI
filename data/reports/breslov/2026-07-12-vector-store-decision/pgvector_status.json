@@ -1,0 +1,8 @@
+{
+  "status": "PGVECTOR_NOT_INSTALLED",
+  "extension_installed": false,
+  "vector_tables_exist": false,
+  "comparable_data_exists": false,
+  "benchmark_possible": false,
+  "notes": "Read-only PostgreSQL probe returned no pg_extension row for vector and no vector-typed columns. No extension, schema or data was created."
+}

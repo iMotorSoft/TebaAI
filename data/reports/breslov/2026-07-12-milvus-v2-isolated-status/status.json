@@ -1,0 +1,428 @@
+{
+  "connection_ok": true,
+  "host": "127.0.0.1",
+  "port": 19530,
+  "collections": [
+    {
+      "collection": "tebaai_breslov_chunks_v1",
+      "collection_exists": true,
+      "status": "READY_METADATA",
+      "load_state": "Loaded",
+      "num_entities": 5102,
+      "fields": [
+        {
+          "name": "pk",
+          "dtype": "21",
+          "primary": true,
+          "params": {
+            "max_length": 128
+          }
+        },
+        {
+          "name": "chunk_id",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "document_id",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "collection_code",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "language",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 8
+          }
+        },
+        {
+          "name": "title",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 512
+          }
+        },
+        {
+          "name": "source_type",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 32
+          }
+        },
+        {
+          "name": "source_sha256",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "content_sha256",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "chunk_index",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "page_start",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "page_end",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "content_preview",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 1024
+          }
+        },
+        {
+          "name": "embedding",
+          "dtype": "101",
+          "primary": false,
+          "params": {
+            "dim": 1536
+          }
+        }
+      ],
+      "vector_field": "embedding",
+      "vector_dim": 1536,
+      "indexes": [
+        {
+          "field_name": "embedding",
+          "params": {
+            "index_type": "HNSW",
+            "metric_type": "COSINE",
+            "params": {
+              "M": 16,
+              "efConstruction": 200
+            }
+          }
+        }
+      ],
+      "index_exists": true,
+      "query_sample_ok": true,
+      "metadata_sample": [
+        {
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "source_type": "pdf",
+          "source_sha256": "6dae1488cd2f87f84c024a9091336515c9225e1dee02501e725729304bdb5cd7",
+          "content_sha256": "60f04c77107f11960098593ca152a8c58b0536c303b004497f25c9d9ab4347b0",
+          "page_start": 144,
+          "chunk_id": "954227a7-716a-4771-a18f-5c45b1273a31",
+          "collection_code": "breslov",
+          "chunk_index": 210,
+          "page_end": 144,
+          "content_preview": "iese santifi cando el Nombre de Dios ( _Sabiduría y Enseñanzas del Rabí Najmán_ #12). De manera similar, la persona debe tratar de concentrarse por completo en el momento de la oración. Mientras la persona esté consciente de la presencia\n\n## Page 145\n\n_LA PLEGARIA / 123_\n\nde otros a su alrededor, su _kavaná_ no es completa. Es necesario lograr un nivel de plegaria tal que sólo se encuentren allí Dios y uno mismo ( _Likutey Moharan I_ 1, 103).",
+          "pk": "001b08ff7321231c4d9c1828",
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "language": "es"
+        },
+        {
+          "title": "Likutey Halajot LM II 8",
+          "source_type": "book",
+          "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74",
+          "content_sha256": "74cdb88d0f3d4048acb73e3503fed83ffca055a8ac3769a9c7ac086e8e34378c",
+          "page_start": 477,
+          "chunk_id": "3278d1db-535d-42ef-9f7c-5b66ab918de0",
+          "collection_code": "breslov",
+          "chunk_index": 1070,
+          "page_end": 478,
+          "content_preview": "án (Esaú) tiene permiso para juzgar a la humanidad por sus pecados. Aquí, esto se relaciona con el Otro Lado que se alimenta de la compasión y de un _daat_ dañado, de modo que todas nuestras plegarias se encuentran entonces en la categoría de juicio.\n\n**228. extraemos toda la esencia de vida…** El Rebe Najmán enseñó previamente que el Tzadik, que es el maestro de fortaleza, eleva una plegaria de juicio que es el concepto de la vara de fortaleza. Esta plegaria/vara se atasca en la garganta del Ot",
+          "pk": "0028a1d5-e342-4466-a787-02528bbfeab8",
+          "document_id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+          "language": "es"
+        }
+      ],
+      "search_ok": "skipped_no_query_vector",
+      "limit": 2
+    },
+    {
+      "collection": "tebaai_breslov_test_chunks_v1",
+      "collection_exists": true,
+      "status": "READY_METADATA",
+      "load_state": "Loaded",
+      "num_entities": 10115,
+      "fields": [
+        {
+          "name": "pk",
+          "dtype": "21",
+          "primary": true,
+          "params": {
+            "max_length": 128
+          }
+        },
+        {
+          "name": "chunk_id",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "document_id",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "collection_code",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "language",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 8
+          }
+        },
+        {
+          "name": "title",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 512
+          }
+        },
+        {
+          "name": "source_type",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 32
+          }
+        },
+        {
+          "name": "source_sha256",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "content_sha256",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 64
+          }
+        },
+        {
+          "name": "chunk_index",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "page_start",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "page_end",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "content_preview",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 1024
+          }
+        },
+        {
+          "name": "embedding",
+          "dtype": "101",
+          "primary": false,
+          "params": {
+            "dim": 1536
+          }
+        }
+      ],
+      "vector_field": "embedding",
+      "vector_dim": 1536,
+      "indexes": [
+        {
+          "field_name": "embedding",
+          "params": {
+            "index_type": "HNSW",
+            "metric_type": "COSINE",
+            "params": {
+              "M": 16,
+              "efConstruction": 200
+            }
+          }
+        }
+      ],
+      "index_exists": true,
+      "query_sample_ok": true,
+      "metadata_sample": [
+        {
+          "pk": "000079723f31c5fa401cfc72",
+          "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+          "title": "La Potencia de la Plegaria",
+          "source_sha256": "8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46",
+          "content_sha256": "eae91d17610eb2234b4536a96a7ce35437203651335676c3f8556e0c3f49b223",
+          "page_start": 201,
+          "chunk_id": "a310e0de-3e4c-447c-875b-38b791b9edd0",
+          "collection_code": "breslov_primary",
+          "language": "es",
+          "source_type": "pdf",
+          "chunk_index": 318,
+          "page_end": 202,
+          "content_preview": "Vaed_ - Bendito sea el Nombre de la gloria de Su reino por siempre jamás. En este versículo hay veinticuatro letras, correspondientes a los veinticuatro libros de la Biblia ( _Tikuney Zohar_ Introducción, p. 14a).\n\n## **Las Cuarenta y Nueve Letras**\n\nEnseña el Talmud “Cincuenta puertas de _Biná_ (comprensión) fueron creadas en el mundo y todas le fueron dadas a Moshé, excepto una” ( _Rosh HaShaná_ 21b). Las cuarenta y nueve letras del _Shemá_ y del _Baruj Shem_ juntas corresponden a esas cuarent"
+        },
+        {
+          "pk": "001b08ff7321231c4d9c1828",
+          "document_id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+          "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+          "source_sha256": "6dae1488cd2f87f84c024a9091336515c9225e1dee02501e725729304bdb5cd7",
+          "content_sha256": "60f04c77107f11960098593ca152a8c58b0536c303b004497f25c9d9ab4347b0",
+          "page_start": 144,
+          "chunk_id": "954227a7-716a-4771-a18f-5c45b1273a31",
+          "collection_code": "breslov_primary",
+          "language": "es",
+          "source_type": "pdf",
+          "chunk_index": 210,
+          "page_end": 144,
+          "content_preview": "iese santifi cando el Nombre de Dios ( _Sabiduría y Enseñanzas del Rabí Najmán_ #12). De manera similar, la persona debe tratar de concentrarse por completo en el momento de la oración. Mientras la persona esté consciente de la presencia\n\n## Page 145\n\n_LA PLEGARIA / 123_\n\nde otros a su alrededor, su _kavaná_ no es completa. Es necesario lograr un nivel de plegaria tal que sólo se encuentren allí Dios y uno mismo ( _Likutey Moharan I_ 1, 103)."
+        }
+      ],
+      "search_ok": "skipped_no_query_vector",
+      "limit": 2
+    },
+    {
+      "collection": "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+      "collection_exists": true,
+      "status": "EXISTS_NOT_LOADED",
+      "load_state": "NotLoad",
+      "num_entities": 100,
+      "fields": [
+        {
+          "name": "pk",
+          "dtype": "21",
+          "primary": true,
+          "params": {
+            "max_length": 128
+          }
+        },
+        {
+          "name": "page_number",
+          "dtype": "5",
+          "primary": false,
+          "params": {}
+        },
+        {
+          "name": "text_preview",
+          "dtype": "21",
+          "primary": false,
+          "params": {
+            "max_length": 1024
+          }
+        },
+        {
+          "name": "embedding",
+          "dtype": "101",
+          "primary": false,
+          "params": {
+            "dim": 1536
+          }
+        }
+      ],
+      "vector_field": "embedding",
+      "vector_dim": 1536,
+      "indexes": [
+        {
+          "field_name": "embedding",
+          "params": {
+            "index_type": "HNSW",
+            "metric_type": "COSINE",
+            "params": {
+              "M": 16,
+              "efConstruction": 200
+            }
+          }
+        }
+      ],
+      "index_exists": true,
+      "query_sample_ok": "skipped",
+      "metadata_sample": null,
+      "search_ok": "skipped",
+      "limit": 2
+    }
+  ],
+  "postgres_expected": {
+    "run_id_requested": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_requested": "breslov_test",
+    "run": {
+      "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+      "scope_code": "breslov_test",
+      "status": "completed",
+      "pipeline_version": "ingestion_v2_kitzur_createspace_001"
+    },
+    "v2_pages": 512,
+    "v2_concept_mentions": 19,
+    "knowledge_scope": null
+  },
+  "errors": [],
+  "all_collections": [
+    "JAI_document_embeddings",
+    "JAI_document_embeddings_lab_ingest",
+    "team360_diagnosis_debug_20260614_203636",
+    "team360_diagnosis_debug_20260614_203658",
+    "team360_diagnosis_debug_20260614_210254",
+    "team360_diagnosis_debug_20260614_210515",
+    "team360_diagnosis_debug_20260614_224849",
+    "team360_lab_pgvector_benchmark_openai_small_1536",
+    "team360_sales_diagnosis_knowledge_v1",
+    "tebaai_breslov_bm25_test_v2",
+    "tebaai_breslov_bm25_test_v3",
+    "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+    "tebaai_breslov_chunks_v1",
+    "tebaai_breslov_test_chunks_v1"
+  ]
+}

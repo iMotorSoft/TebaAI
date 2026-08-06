@@ -1,0 +1,206 @@
+{
+  "question": "¿Cuál es la relación entre la Tierra de Israel y la fe, la plegaria y los milagros?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      34,
+      35,
+      36,
+      42,
+      43,
+      59,
+      92,
+      95,
+      188,
+      196,
+      215,
+      216
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 34,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ia de la fe y también la esencia de la plegaria y de los milagros sólo se encuentra en la Tierra de Israel. Ella es el conducto a través del cual ascienden las plegarias, permitiéndole a la persona lograr, mediante sus oraciones, todo aquello que necesita y generar verdaderos milagros y maravillas en el mundo. 4. La fe, la plegaria, los milagros y la Tierra de Israel son un solo concepto y dependen uno del otro. 18 Tishrei 5. Cuando se daña la Tierra de Israel -que está intrínsecamente unida con la fe y con la plegaria- ello da como resultado el exilio. Ese exilio es esencialmente el exilio de la plegaria, cuando es imposible orar o generar milagros en el mundo. 6. Hay personas que ocultan t",
+      "matched_terms": [
+        "israel",
+        "milagros",
+        "tierra de israel",
+        "plegaria",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 35,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "manera la verdad quedará grabada en la persona y merecerá entonces la fe, la plegaria, la Tierra de Israel y los milagros. Mediante ello, llegará la Redención. 9. El consejo que la persona recibe de los Tzadikim es análogo a una relación marital y a una unión sagrada. Pues uno acoge las “gotas” del intelecto del Tzadik junto con el consejo que recibe de él. Ello implica la rectificación de la transgresión sexual. Por otro lado, el consejo de aquellos que se oponen [a los Tzadikim], de aquellos que les impiden a los otros acercarse a ellos y demás, que hablan con astucia para atraer y seducir a la gente, alejándola del punto de la verdad, representa un daño en la pureza sexual. Por lo tanto,",
+      "matched_terms": [
+        "israel",
+        "milagros",
+        "tierra de israel",
+        "plegaria",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 36,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ue la persona se mantenga alejada de la verdad, de la sagrada fe e incapaz de llegar a la Tierra de Israel. Siendo así, es necesario evitar cuidadosamente el consejo de tales personas, Dios no lo permita. En su lugar, uno debe unirse a los verdaderos Tzadikim y a aquellos que siguen sus senderos, dado que todos sus consejos son la “simiente de una verdad inalterada” (Jeremías 2:21). Esta relación implica la rectificación de la pureza sexual y mediante ese consejo, uno merece todo lo bueno, la verdad, la fe, la plegaria y la Tierra de Israel, al igual que la capacidad de realizar milagros. 11. La inmoralidad sexual depende principalmente de los ojos y la mitzvá de los tzitzit funciona como un",
+      "matched_terms": [
+        "israel",
+        "milagros",
+        "tierra de israel",
+        "plegaria",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 43,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ndamente la fe en Dios, pues no creen que el Creador gobierne Su mundo. Más aún, dañan la Tierra de Israel, el lugar de los milagros - produciendo la caída en el exilio en Egipto y otros destierros, y prolongando el presente exilio, que Dios nos salve. 24 Tishrei 10 - “Y estas son las leyes” 10 - “Y estas son las leyes” 10 - “Y estas son las leyes” 10 - “Y estas son las leyes” 10 - “Y estas son las leyes” (Éxodo 21:1) (Éxodo 21:1) (Éxodo 21:1) (Éxodo 21:1) (Éxodo 21:1) 1. Bailar y aplaudir produce un endulzamiento de los juicios severos. 2. El honor más grande de Dios es cuando aquéllos que están lejos de Él se acercan a servirlo. Pues “en ese momento, el Nombre del Santo, bendito sea, se en",
+      "matched_terms": [
+        "israel",
+        "milagros",
+        "tierra de israel",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 42,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ue cada uno eleve sus plegarias a través del portal de su propia tribu [de entre las doce tribus de Israel]; sin embargo, hace falta un gran mérito para ello. Por lo tanto, cada uno debe unir sus plegarias al Tzadik de la generación, pues el Tzadik sabe cómo relacionar los portales con las plegarias y enviar a cada plegaria hacia el portal apropiado. [Esos doce portales están representados por las doce ventanas que es costumbre construir en una sinagoga y que aluden a las doce tribus.] 8. Cada uno debe trabajar para alcanzar el nivel en el cual pueda llegar a derramar su corazón como agua delante de Dios, pues mediante ello llegará el Mashíaj. Que sea pronto y en nuestros días. Amén. 9. Las",
+      "matched_terms": [
+        "israel",
+        "milagros",
+        "plegaria"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 59,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "erarse de sus “vestimentas sucias”, de la misma manera se hace digna de la santidad de la Tierra de Israel.] 9. Incluso después de haber sido iluminados y despertados hacia el arrepentimiento, los pecadores siguen muy lejos de la santidad y pueden experimentar grandes obstáculos. Esas personas deben esforzarse tremendamente para liberarse de las “vestimentas sucias” que han estado llevando (cf. Zacarías 3:4), dado que esas “vestimentas sucias” les impiden retornar al Santo, bendito sea. Esas vestimentas bloquean a las personas como un río que es imposible atravesar. Por lo tanto no te desanimes si ves que, pese a tu deseo de acercarte a Dios, surgen enormes obstáculos que te lo impiden. Pues",
+      "matched_terms": [
+        "israel",
+        "tierra de israel",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 92,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "a las enseñanzas de Torá que son suscitadas de esa manera, la persona se hace digna de la Tierra de Israel. Por el mismo motivo, cuando uno se encuentra en presencia del Tzadik en el momento en el que éste hace descender una lección de Torá y la revela en público, también tiene una parte en la enseñanza que el Tzadik revela; y consecuentemente también merece ir a la Tierra de Israel, como está escrito, “Y Él les dio la Tierra de las naciones” (Salmos 105:44). [Este versículo aparece dos líneas después del versículo que afirma, “Él abrió la roca y fluyó el agua”, reflejando la secuencia enseñada en esta lección. Ver más en esta lección en el Likutey Moharán]. 7. Pero la Tierra de Israel es un",
+      "matched_terms": [
+        "israel",
+        "tierra de israel",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 95,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "16. Cuando uno alcanza el concepto de la Tierra de Israel, puede ser llamado entonces un hombre poderoso. Porque antes de llegar a ese concepto de la Tierra de Israel, es como dice el versículo, “aquel que se ciñe la espada antes de la batalla no debe vanagloriarse como aquel que se la desciñe” (Reyes 1, 20:11). Pero más tarde, cuando sale victorioso, puede entonces ser llamado un guerrero. (Por lo tanto y también en estos días, la mayor victoria en la batalla es poder llegar a la Tierra de Israel en el sentido más literal, tal como los judíos que en la actualidad viajan allí para vivir en sus casas y edificios. Uno debe desear llegar allí aunque deba atravesar dificultades - aunque signifiq",
+      "matched_terms": [
+        "israel",
+        "tierra de israel",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 188,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "miente de Amalek, que era una de las tres mitzvot dadas a los judíos cuando entraron a la Tierra de Israel (Sanedrín 20b). Y esas fuerzas malignas se desmoronan como consecuencia de la elevación de las chispas sagradas que estaban hundidas en las fuerzas de la impureza. Entonces, “cuando uno desciende, el otro automáticamente se eleva” – y ésta es la [segunda] mitzvá, el nombrar un rey [i.e., luego de la aniquilación de Amalek, puede entronizarse un rey judío], dado que nombrar un rey es un aspecto de la fe, que es Maljut. Mediante la designación de un rey, los judíos merecen entonces la [tercera] mitzvá, que es construir el Santo Templo y Jerusalén - es decir la fe. Entonces la mente se ren",
+      "matched_terms": [
+        "israel",
+        "tierra de israel",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 196,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "14 Shvat 4. Ahora bien, hay dos tipos de caridad: la caridad dada fuera de la Tierra de Israel y la caridad dada en la Tierra de Israel. La caridad que se les da a aquellos que habitan en la Tierra de Israel es más grande y más elevada que la que es dada fuera de la Tierra. De manera similar, hay dos tipos de Torá, pues “La Torá que proviene de un aliento no contaminado por el pecado no puede compararse con la Torá que proviene de un aliento contaminado por el pecado” (Shabat 119b). Pues los juicios estrictos son mitigados y el mundo se mantiene sólo gracias al aliento no contaminado por el pecado de los pequeños escolares; dado que mediante ese aliento los Patriarcas se revelan en el mundo,",
+      "matched_terms": [
+        "israel",
+        "tierra de israel",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 215,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "11:6). [La idea aquí es que debido a que Dios creó el mundo entero, Él tenía el derecho de darle la Tierra de Israel a quien quisiese. La frase “el poder de Sus acciones” engloba este concepto]. Cuando aplaudimos se despiertan las veintiocho letras con las cuales se llevó a cabo la creación y obtenemos el poder de purificar el aire de las tierras de las naciones [entre las que nos encontramos] y de expulsar su aire impuro. Ello se debe a que, al aplaudir, la tierra vuelve a estar bajo el dominio del Santo, bendito sea, y Él tiene el poder de dársela a quien quiera. El aire del lugar en el cual ora un judío se purifica y el judío respira así el aire sagrado tal como si estuviese en la Tierra",
+      "matched_terms": [
+        "tierra de israel",
+        "tierra"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 216,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "r, las plegarias de la persona se encuentran “en el aire de la Tierra de Israel”, ella habita en la Tierra de Israel y tiene un Dios (ver Ketuvot 110b). Aplaudir durante la plegaria anula también los pensamientos idólatras y las ideas ateas - que pueden ser llamadas “en contraposición a la fe”, dado que la fe está íntimamente ligada con la plegaria, como se evidencia en la frase “sus manos eran fe” (Éxodo 17:12), que Onkelos traduce como “sus manos estaban extendidas en plegaria”. Así, el remedio para esos pensamientos proviene de las ofrendas diarias constantes - de la Tierra de Israel y de aplaudir. 5. Otra explicación de “Ellos establecieron las plegarias diarias en contraposición a las o",
+      "matched_terms": [
+        "tierra de israel"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

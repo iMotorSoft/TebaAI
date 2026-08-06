@@ -1,0 +1,39 @@
+{
+  "questions": 7,
+  "statuses": [
+    "PASS",
+    "PASS",
+    "PASS",
+    "PASS",
+    "PASS",
+    "PASS",
+    "PASS"
+  ],
+  "hybrid_hits": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "milvus_hits": [
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "fallback": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ]
+}

@@ -1,0 +1,1600 @@
+{
+  "question": "la relacion entre sangre y el habla",
+  "status": "ok",
+  "summary": "2 evidencias principales · 3 relaciones contextuales · 45 coincidencias literales adicionales",
+  "answer_markdown": "La relación entre **la sangre** y el **habla** aparece en las fuentes como una conexión fisiológico-espiritual: se vincula el habla (posible gracias a la garganta/las cuerdas vocales) con el control del “cuello” y, por extensión, con fuerzas que pueden impedir o permitir el habla sagrada.\n\n- En *Likutey Halajot* se describe que cuando el habla “desciende” hacia el exilio de *meitzar hagarón* (la “sequedad de la garganta”), la persona queda incapaz de pronunciar palabras delante de HaShem; el texto explica que el remedio es el **ayuno**, que oculta la santidad asociada a la garganta y así rompe la sujeción al “habla sagrada”, permitiendo luego hablar y clamar a HaShem.\n- En *La Potencia de la Plegaria* se explica que los “ministros” del faraón subyugaron incluso los cuellos, y que las cuerdas vocales (que emiten el habla) estaban bajo su control; además, se asocia el “carnicero” con arterias/venas que llevan **sangre** al cerebro, conectando así sangre y habla a través del sistema del cuello/cuerdas vocales.\n\nEn conjunto, las fuentes sugieren que la **sangre** (en el marco de la anatomía simbólica) y el **habla** (en el marco de la garganta/cuerdas vocales y el habla sagrada) están relacionadas por un mismo eje de control/impedimento o habilitación del habla ante lo divino.",
+  "claims": [
+    {
+      "claim_id": "c1",
+      "text": "La sangre se relaciona con el habla mediante una explicación simbólico-fisiológica: el control del “cuello” (donde las cuerdas vocales emiten el habla) se vincula con el “carnicero” que representa arterias/venas que llevan la sangre al cerebro.",
+      "strength": "strong",
+      "evidence_ids": [
+        "potencia_plegaria-64f6b0e1ee8e"
+      ],
+      "primary_evidence_id": "potencia_plegaria-64f6b0e1ee8e"
+    },
+    {
+      "claim_id": "c2",
+      "text": "El habla sagrada puede verse impedida cuando el habla desciende hacia el exilio de la garganta (*meitzar hagarón*), y el texto presenta el ayuno como remedio para recuperar la capacidad de hablar y clamar a HaShem.",
+      "strength": "medium",
+      "evidence_ids": [
+        "lh-d8946cc49fec"
+      ],
+      "primary_evidence_id": "lh-d8946cc49fec"
+    }
+  ],
+  "primary_evidence_ids": [
+    "potencia_plegaria-64f6b0e1ee8e",
+    "lh-d8946cc49fec"
+  ],
+  "evidence_counts": {
+    "primary": 2,
+    "contextual": 3,
+    "additional_literal": 45
+  },
+  "hits": [
+    {
+      "hit_id": "potencia_plegaria-64f6b0e1ee8e",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 12,
+      "printed_page": null,
+      "quote": "tenía tres ministros importantes: el jefe de los panaderos, el jefe de los coperos \ny el jefe de los carniceros. Estos tres “ministros” corresponden al cuello: el \npanadero representa el esófago, donde el alimento es hecho descender; el \ncopero es un paralelo de la tráquea, pues permite que los ﬂuidos sean absorbidos \nen el cuerpo; y el carnicero es un paralelo de las arterias carótidas y las venas, \nque llevan la sangre al cerebro. Esto nos enseña que el faraón y sus ministros \nsubyugaron al pueblo de Israel al punto en que incluso sus cuellos, a través de \nlos cuales las cuerdas vocales emiten el habla, estaban bajo su control.",
+      "snippet": "…tenía tres ministros importantes: el jefe de los panaderos, el jefe de los coperos \ny el jefe de los carniceros. Estos tres “ministros” corresponden al cuello: el \npanadero representa el esófago, donde el alimento es hecho descender; el \ncopero es un paralelo de la tráquea, pues permite que los ﬂuidos sean absorbidos \nen el cuerpo; y el carnicero es un paralelo de las arterias carótidas y las venas, \nque llevan la sangre al cerebro. Esto nos enseña que el faraón y sus ministros \nsubyugaron al pueblo de Israel al punto en que incluso sus cuellos, a través de \nlos cuales las cuerdas vocales emiten el habla, estaban bajo su control.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre",
+        "habla"
+      ],
+      "matched_concepts": [
+        "sangre",
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "strong",
+      "relation_relevance": "direct_relation",
+      "relation_level": "literal",
+      "is_primary": true,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-d8946cc49fec",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 140,
+      "printed_page": 122,
+      "quote": "122  LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA      HALAJÁ 3:5\nde la garganta.72 De esa manera se impide que emerja el habla sagrada,73 y uno es \nincapaz de pronunciar una sola palabra delante de HaShem.74\nEl Rabí Natán explica que cuando el habla de la persona desciende hacia el \nexilio de Mitzraim/meitzar hagarón, su incapacidad de hablar ante HaShem \n-una “sequedad de la garganta”- significa una emuná incompleta y la \npresencia de las klipot. Pero si ayuna, oculta la parte posterior de la santidad \ny así quiebra toda sujeción de los oficiales del faraón al habla sagrada. Es \ncapaz entonces de hablar y de clamar a HaShem.\nEl remedio para esto es el ayuno. Al privarse de toda comida y bebida, la \npersona oculta la parte posterior de la santidad y así les niega el sustento a las klipot \nasociadas con la garganta. En su lugar, su ayuno trae las aguas de los jasadim, las \nbenevolencias75 para humedecer la garganta y así liberarla del meitzar hagarón, la \nconstricción de la garganta. Esto le permite cumplir con el versículo \n“Clama desde la garganta - ¡no te refrenes!”. Como resultado, su \nemuná se rectifica completamente. Es capaz entonces de comer \nen santidad y, mediante ese comer, llevar HaKadosh Baruj Hu y a Su \ncorrespondiente que se fortalece cuando falta la santidad. \nEquipara a las klipot que son un paralelo de la tráquea, del \nesófago y de las venas yugulares con los tres oﬁ ciales del \nfaraón. La tráquea, que ayuda a mantener los ﬂ uidos del cuerpo \nllevando el aire hacia los pulmones, corresponde al copero del \nfaraón, a cargo de la bebida. El esófago, que lleva el alimento \ndesde la boca hacia el estómago, corresponde al panadero \ndel faraón. Las venas yugulares que pasan a través del cuello \nson responsables de drenar la sangre y así corresponden al \ncarnicero del faraón. El mismo PaRÓH ( ,פרעהfaraón) está \nidentiﬁ cado con la klipá que, tal como sugiere su nombre, \nse encuentra en HaOReF ( ,הערףla parte posterior del cuello) \n(Likutey Torá, Vaieshev; ver también §5 de la lección del Rebe \ny las notas 66 y 68 allí).\n72 El nombre bíblico para Egipto, MiTzRaim ( ,)מצריםestá \netimológicamente relacionado con MeiTzaR ( ,מצרestrecho \no angosto). El Ari zal enseña que “Mitzraim” signiﬁ ca \nmeitzar hagarón, la estrechez de la garganta. La garganta, \nsiendo el pasaje más angosto entre la cabeza y el cuerpo, \nrepresenta la constricción y los juicios severos. En un \nmomento o en una situación de din, la garganta se vuelve el \ncuello de botella, referido aquí como el exilio en Mitzraim \n(Likutey Torá, Vaieshev).\n73 De manera similar, el dejarse llevar por la gula, o el hablar \nu orar de manera impropia (e.g. de manera rutinaria) fortalece \na las klipot. En el cuerpo humano, los órganos del habla se \nencuentran adyacentes a la tráquea, al esófago y a las venas \nyugulares. Esta proximidad les permite a los tres oﬁ ciales del \nfaraón -las klipot asociadas con la garganta- atrapar las letras \ndel habla en la estrechez de la garganta. Es entonces que el \nfaraón, la klipá que se encuentra en la parte posterior del cuello, \ntoma el sustento de las chispas sagradas que se encuentran en \nlas letras de las palabras que no son suﬁ cientemente santas.\n74 Ver la nota 21 más arriba, que el exilio en Egipto signiﬁ có \nel exilio del habla. El Rebe Najmán enseña de manera similar \nque en Egipto la plegaria misma estaba en el exilio. Los judíos \neran incapaces de abrir sus bocas para hablarle a HaShem \n(Sabiduría y Enseñanzas del Rabí Najmán de Breslov #88; ver \ntambién LM I, 9:5).\n75 Ver más arriba, p. 96, nota 52. Los jasadim y las guevurot, las \nrespectivas raíces de Jesed y Guevurá, conforman en conjunto \nla estructura interna de Daat, la seﬁ rá que corresponde a la \ngarganta. La Kabalá describe a los jasadim y a las guevurot de \nDaat como fuerzas de expansión y de restricción. La expansión \n/LNXWH\\\u0003+DODNKRW\u0003(OXFLGDWHG\nLikutey Halajot Explicado\n1RWHV\u0003\t\u00036RXUFHV\nNotas y Fuentes\nąę ýĈŔ ÿĐ ĕ ýĜ øĠ üĘ ĤŅŁ üŃ ęŅĺ Ĥ ýŁ ÿď øĘ ĘŖė Āĕ",
+      "snippet": "122  LIKUTEY HALAJOT\nDISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA      HALAJÁ 3:5\nde la garganta.72 De esa manera se impide que emerja el habla sagrada,73 y uno es \nincapaz de pronunciar una sola palabra delante de HaShem.74\nEl Rabí Natán explica que cuando el habla de la persona desciende hacia el \nexilio de Mitzraim/meitzar hagarón, su incapacidad de hablar ante HaShem \n-una “sequedad de la garganta”- significa una emuná incompleta y la \npresencia de las klipot. Pero si ayuna, oculta la parte posterior de la santidad \ny así quiebra toda sujeción de los oficiales del faraón al habla sagrada. Es \ncapaz entonces de hablar y de clamar a HaShem.\nEl remedio para esto es el ayuno. Al privarse de toda comida y bebida, la \npersona oculta la parte posterior de la santidad y así les niega el sustento a las klipot \nasociadas con la garganta. En su lugar, su ayuno trae las aguas de los jasadim, las…",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre",
+        "hablar"
+      ],
+      "matched_concepts": [
+        "sangre",
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "strong",
+      "relation_relevance": "direct_relation",
+      "relation_level": "literal",
+      "is_primary": true,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-373cf3c6628b",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 235,
+      "printed_page": null,
+      "quote": "79. Desde el comienzo de esta lección… La lección hasta aquí es en “el lenguaje de nuestro\nRebe”, la que el Rabí Natán copió del manuscrito del Rebe Najmán (ver n. 1 más arriba). El texto \nque sigue fue agregado por el Rabí Natán. Aparentemente, es su redacción de la explicación que \nel Rebe dio para la mitzvá de “cubrir la sangre” que lleva a cabo la Shejiná al cubrir la sangre \ndel pueblo judío con amor.",
+      "snippet": "79. Desde el comienzo de esta lección… La lección hasta aquí es en “el lenguaje de nuestro\nRebe”, la que el Rabí Natán copió del manuscrito del Rebe Najmán (ver n. 1 más arriba). El texto \nque sigue fue agregado por el Rabí Natán. Aparentemente, es su redacción de la explicación que \nel Rebe dio para la mitzvá de “cubrir la sangre” que lleva a cabo la Shejiná al cubrir la sangre \ndel pueblo judío con amor.",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre",
+        "lenguaje"
+      ],
+      "matched_concepts": [
+        "sangre",
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "medium",
+      "relation_relevance": "same_fragment_both_terms",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-749780c4864b",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 235,
+      "printed_page": null,
+      "quote": "77. cubrir la sangre. Con las tres pruebas citadas anteriormente, el Rebe Najmán ha demostrado \nque, en un sentido más profundo, la mitzvá de “cubrir la sangre” alude al poder del amor para \nefectuar el perdón. Cuando la persona se siente avergonzada por sus pecados y se arrepiente por \namor, Dios le devuelve ese amor como una cobertura para la “sangre” de su vergüenza y como \nperdón de todas sus malas acciones.\nEsto conecta la vergüenza con la sección de apertura de esta lección, en la cual el Rebe \nNajmán habla de cuidar el brit de toda impuriﬁcación. Antes de que Adam y Java comieran \ndel Árbol del Conocimiento del Bien y del Mal no tenían vestimentas y aun así no se sentían \navergonzados (Génesis 2:25). El Tikuney Zohar (#58, p. 92b) enseña que “la vergüenza” se \naplica en particular a los genitales (ver también Likutey Moharán I, 19:3 y n. 44 allí). En el \ncontexto de nuestra lección, esto enseña que cuando el brit es dañado, el perdón y la rectiﬁcación \nvienen a través de la sangre derramada de la vergüenza.",
+      "snippet": "77. cubrir la sangre. Con las tres pruebas citadas anteriormente, el Rebe Najmán ha demostrado \nque, en un sentido más profundo, la mitzvá de “cubrir la sangre” alude al poder del amor para \nefectuar el perdón. Cuando la persona se siente avergonzada por sus pecados y se arrepiente por \namor, Dios le devuelve ese amor como una cobertura para la “sangre” de su vergüenza y como \nperdón de todas sus malas acciones.\nEsto conecta la vergüenza con la sección de apertura de esta lección, en la cual el Rebe \nNajmán habla de cuidar el brit de toda impuriﬁcación. Antes de que Adam y Java comieran \ndel Árbol del Conocimiento del Bien y del Mal no tenían vestimentas y aun así no se sentían \navergonzados (Génesis 2:25). El Tikuney Zohar (#58, p. 92b) enseña que “la vergüenza” se \naplica en particular a los genitales (ver también Likutey Moharán I, 19:3 y n. 44 allí). En el…",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre"
+      ],
+      "matched_concepts": [
+        "sangre"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "weak",
+      "relation_relevance": "same_page_both_terms",
+      "relation_level": "contextual",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-84afa6d404b2",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 12,
+      "printed_page": null,
+      "quote": "Quizás se debe a que no comprendemos la potencia de la plegaria. ¿Es \nrazonable pensar que podemos abrir nuestros corazones y llegar a un Dios \ninvisible que oye y escucha cada palabra que articulamos? ¿Encontramos tan \ndifícil de comprender que hay un Dios que nos ha creado y que desea que nos \nvolvamos buscando Su ayuda en cada diﬁcultad que experimentamos?\nHaShem es Uno, Quien, aparte de Sus bendiciones, le envía a la gente",
+      "snippet": "Quizás se debe a que no comprendemos la potencia de la plegaria. ¿Es \nrazonable pensar que podemos abrir nuestros corazones y llegar a un Dios \ninvisible que oye y escucha cada palabra que articulamos? ¿Encontramos tan \ndifícil de comprender que hay un Dios que nos ha creado y que desea que nos \nvolvamos buscando Su ayuda en cada diﬁcultad que experimentamos?\nHaShem es Uno, Quien, aparte de Sus bendiciones, le envía a la gente",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "weak",
+      "relation_relevance": "same_page_both_terms",
+      "relation_level": "contextual",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "kitzur-030844974b81",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "Torá.\n\n4. La rectificación para los pensamientos lujuriosos consiste en decir, “Shemá Israel, Adonai Eloheinu Adonai Ejad - Escucha\n\n191\n\n## Page 192\n\nLección 36                                                                               12  Shvat\n\nIsrael, el Señor nuestro Dios, el Señor es Uno”, y “Baruj Shem Kevod Maljutó Leolam Vaed - Bendito sea el nombre de Su Glorioso Reinado por siempre”. La explicación de esto es que el anhelo por el sexo deriva de las impurezas en la sangre -es decir, del bazo- y el bazo está asociado con Lilit, la “esclava malvada” y la madre de la multitud mezclada, que es el Reinado del Mal. Lo opuesto de Lilit es el Reinado del Cielo, la “Dama Real”, “la mujer temerosa de Dios” (Proverbios 31:30), que es un aspecto del Mar de Salomón que se encuentra sobre las doce vacas. Esas doce vacas representan las doce tribus (Zohar I, 241). Cuando la persona acepta el yugo del Reinado del Cielo recitando las doce palabras de los dos versículos del Shemá - que corresponden a las doce tribus y que contienen cuarenta y nueve letras, correspondientes a las cuarenta y nueve letras que conforman los nombres de las doce tribus*- entonces su alma queda incluida en las doce tribus de Israel.\n\n* Or HaGanuz explica que en el futuro diremos, “Baruj HaShem Kevod Maljut Leolam Vaed - Bendito sea Dios, Su Glorioso Reinado por siempre” - llevando a cincuenta el número de letras en los dos versículos del Shemá, que es el valor de la palabra IaM (mar). De manera similar, hay una cuenta alternativa de las cincuenta letras de los nombres de las sagradas doce tribus y esto es Iam shel Shlomo (Mar de Salomón).",
+      "snippet": "Torá.\n\n4. La rectificación para los pensamientos lujuriosos consiste en decir, “Shemá Israel, Adonai Eloheinu Adonai Ejad - Escucha\n\n191\n\n## Page 192\n\nLección 36                                                                               12  Shvat\n\nIsrael, el Señor nuestro Dios, el Señor es Uno”, y “Baruj Shem Kevod Maljutó Leolam Vaed - Bendito sea el nombre de Su Glorioso Reinado por siempre”. La explicación de esto es que el anhelo por el sexo deriva de las impurezas en la sangre -es decir, del bazo- y el bazo está asociado con Lilit, la “esclava malvada” y la madre de la multitud mezclada, que es el Reinado del Mal. Lo opuesto de Lilit es el Reinado del Cielo, la “Dama Real”, “la mujer temerosa de Dios” (Proverbios 31:30), que es un aspecto del Mar de Salomón que se encuentra sobre las doce vacas. Esas doce vacas representan las doce tribus (Zohar I, 241)…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre"
+      ],
+      "matched_concepts": [
+        "sangre"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-046c42b16747",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "do para revelar]. Pero mediante la Rectificación General, la persona tiene permiso para hablar y puede abrir la boca con palabras luminosas de Torá.\n\n9. La transgresión sexual produce epilepsia, Dios nos salve. Pero mediante la pureza sexual se cura.\n\n10. Mientras no se haya logrado la Rectificación General a la perfección se debe evitar beber vino - dado que con ello llegan todos los pecados, Dios no lo permita. Beber vino también es dañino para el sustento y trae pobreza. Por el contrario, aquel que ha merecido la Rectificación General, eleva sus facultades mentales al beber vino y lleva así su propia Rectificación General a un nivel aún más elevado.\n\n## 7 Tevet\n\n11. Aquel que no lleva a cabo sus negocios con fidelidad y que está dominado por el deseo de dinero al punto de robarle a su prójimo, hace que la Presencia Divina se vuelva impura como con sangre menstrual, Dios no lo permita. Esa clase de conducta es análoga a la transgresión sexual y da como resultado la pérdida del sustento, Dios no lo permita.\n\n12. Para rectificar los negocios y los tratos comerciales se debe tener la intención, con cada paso que uno dé en los negocios y con cada palabra que uno diga, de que el dinero obtenido sea para caridad. Ésa es la Rectificación General del ámbito comercial. Pues la caridad corresponde a la totalidad de los GuiDim (vasos sanguíneos), como en, “Siembren (ZiRu) caridad para ustedes” (Hoshea 10:12) y “La semilla de coriandro (ZeRa GaD) es una gota blanca” (Tikuney Zohar #52), aludiendo a la pureza\n\n## Page 147\n\nLección 29                                                                                  8 Tevet\n\nsexual. Pues mediante la caridad, se elevan las facultades mentales y la persona obtiene el sustento.",
+      "snippet": "…do para revelar]. Pero mediante la Rectificación General, la persona tiene permiso para hablar y puede abrir la boca con palabras luminosas de Torá.\n\n9. La transgresión sexual produce epilepsia, Dios nos salve. Pero mediante la pureza sexual se cura.\n\n10. Mientras no se haya logrado la Rectificación General a la perfección se debe evitar beber vino - dado que con ello llegan todos los pecados, Dios no lo permita. Beber vino también es dañino para el sustento y trae pobreza. Por el contrario, aquel que ha merecido la Rectificación General, eleva sus facultades mentales al beber vino y lleva así su propia Rectificación General a un nivel aún más elevado.\n\n## 7 Tevet\n\n11…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre"
+      ],
+      "matched_concepts": [
+        "sangre"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-0b7bf0a89dba",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "na, a través de ello, de refinar la voz de su canto y de su plegaria. Pues la cualidad de la voz de la persona corresponde a la sabiduría contenida en sus exposiciones de Torá y al intelecto de los Trece Principios mediante los cuales expone la Torá.\n\n4. Cuando se refina la voz de la persona entonces, mediante su solo cantar -sin necesidad de hablar- el Santo, bendito sea, la salva en momentos de aflicción. Así alcanza la paz y es capaz de llevar al mundo entero hacia el servicio a Dios.\n\n5. Mediante la pureza sexual, la persona obtiene una “voz”. En otras palabras, se hace digna de que se purifique y se refine su voz para cantar y para orar. Iaacov, quien cuidó la pureza sexual -como está escrito, “El primogénito de mi vigor” (Génesis 49:3; haciendo referencia al hecho de haber cuidado la moralidad sexual antes del matrimonio)- obtuvo una voz, como está escrito, “La voz es la voz de Iaacov” (ibid., 27:22). Cuando el Santo, bendito sea, oye el sonido del clamor o de la canción de esa persona, Él observa para ver quién nos está afligiendo y cuáles de los gentiles de\n\n137\n\n## Page 138\n\nLección 27                                                                                  1 Tevet",
+      "snippet": "…na, a través de ello, de refinar la voz de su canto y de su plegaria. Pues la cualidad de la voz de la persona corresponde a la sabiduría contenida en sus exposiciones de Torá y al intelecto de los Trece Principios mediante los cuales expone la Torá.\n\n4. Cuando se refina la voz de la persona entonces, mediante su solo cantar -sin necesidad de hablar- el Santo, bendito sea, la salva en momentos de aflicción. Así alcanza la paz y es capaz de llevar al mundo entero hacia el servicio a Dios.\n\n5. Mediante la pureza sexual, la persona obtiene una “voz”. En otras palabras, se hace digna de que se purifique y se refine su voz para cantar y para orar…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "hablar",
+        "palabra",
+        "palabras",
+        "voz"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-0c96bfdd840e",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "Pues con cada daño que uno le causa a su alma, también le causa un daño, por así decirlo, a la Presencia Divina. Entonces la Presencia Divina reconforta a la persona, diciendo que Ella buscará estrategias para rectificar todos los daños.\n\n## **260**\n\n1. La principal unificación del Santo, bendito sea, y de la Presencia Divina se efectúa a través de los santos mártires que dan sus vidas por la santificación del Nombre de Dios, como los Diez Mártires que fueron ejecutados por los romanos. Ahora bien, el nombre de la persona es una y la misma cosa que su alma, como está escrito, “Un alma viviente es su nombre” (Génesis 2:19). Por lo tanto, hay Tzadikim que sacrifican su nombre y su reputación en aras de la santificación del Nombre de Dios. En otras palabras, arruinan intencionalmente su propio nombre y reputación, dado que todos hablan e inventan mentiras sobre ellos, y de esa manera su “sangre es derramada”. Ello es equivalente a entregar literalmente la vida -dado que el nombre de la persona es su alma- y su “sangre es derramada” por ello. De esa manera, esos Tzadikim salvan al pueblo judío de lo que les podría haber sucedido, Dios no lo permita, para generar la unificación del Santo, bendito sea, y de la Presencia Divina.\n\n397\n\n## Page 398\n\nLección 261-264                                                                       9 Tamuz\n\n9 Tamuz\n\n## **261**",
+      "snippet": "Pues con cada daño que uno le causa a su alma, también le causa un daño, por así decirlo, a la Presencia Divina. Entonces la Presencia Divina reconforta a la persona, diciendo que Ella buscará estrategias para rectificar todos los daños.\n\n## **260**\n\n1. La principal unificación del Santo, bendito sea, y de la Presencia Divina se efectúa a través de los santos mártires que dan sus vidas por la santificación del Nombre de Dios, como los Diez Mártires que fueron ejecutados por los romanos. Ahora bien, el nombre de la persona es una y la misma cosa que su alma, como está escrito, “Un alma viviente es su nombre” (Génesis 2:19). Por lo tanto, hay Tzadikim que sacrifican su nombre y su reputación en aras de la santificación del Nombre de Dios…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre"
+      ],
+      "matched_concepts": [
+        "sangre"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-10dd753cdbc1",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "ciado con “la luz menor” (Génesis 1:16) y con “Su consejo cae” (Sanedrín 22a)- y ser elevada hacia la grandeza asociada con “las grandes luces” (Génesis 1:16). Entonces la persona merecerá un consejo perfecto y un arrepentimiento completo.\n\n## 8 Adar\n\n8. Éste es también el aspecto del arrepentimiento (TeSHuVaH), que puede también leerse como TaShuV Hei  (Retornar la Hei). En otras palabras, el arrepentimiento implica hacer una Hei a partir de la Dalet. El arrepentimiento depende principalmente del corazón, como está implícito en el versículo, “Su corazón comprenderá y se arrepentirá” (Isaías 6:10). Más específicamente, esto depende de los pensamientos en el corazón de la persona, que ella pueda prevalecer sobre los malos pensamientos y tener sólo buenos pensamientos, constantemente. Debe asentar en su corazón el conocimiento de cuál es su propósito y cuál será su final, y reflexionar sobre métodos y tácticas para retornar a Dios. De esa manera merecerá el arrepentimiento y consecuentemente alcanzará y comprenderá la Torá Oculta del Anciano - es decir, los secretos más profundos de la Torá. Esos secretos son el principal deleite del Mundo que Viene y son un aspecto del “deleite del Shabat”. ShaBaT, a su vez, está conectado con el arrepentimiento, como se revela en el versículo, “Y retornarás (veShaVta) al Señor tu Dios” (Deuteronomio 30:2). Más aún, está escrito en el Tikuney Zohar (#21, 45a), “Y es llamada Kabalá cuando se encuentra entre los dos brazos del Rey”. Esos dos “brazos” son los meses de Nisán y de Tishrei, ambos un tiempo de arrepentimiento. Pues “En el futuro, el pueblo judío será redimido en Nisán” (Rosh HaShaná 11a); y la Redención sólo sucederá gracias al arrepentimiento, como está escrito, “Y vendrá un redentor a Sión y a aquellos\n\n231\n\n## Page 232",
+      "snippet": "…ciado con “la luz menor” (Génesis 1:16) y con “Su consejo cae” (Sanedrín 22a)- y ser elevada hacia la grandeza asociada con “las grandes luces” (Génesis 1:16). Entonces la persona merecerá un consejo perfecto y un arrepentimiento completo.\n\n## 8 Adar\n\n8. Éste es también el aspecto del arrepentimiento (TeSHuVaH), que puede también leerse como TaShuV Hei  (Retornar la Hei). En otras palabras, el arrepentimiento implica hacer una Hei a partir de la Dalet. El arrepentimiento depende principalmente del corazón, como está implícito en el versículo, “Su corazón comprenderá y se arrepentirá” (Isaías 6:10). Más específicamente, esto depende de los pensamientos en el corazón de la persona, que ella pueda prevalecer sobre los malos pensamientos y tener sólo buenos pensamientos, constantemente…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-11256c4d82e4",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "entre nosotros y las naciones es que nosotros nos abstenemos de la inmoralidad sexual, siendo ésta, en esencia, la santidad judía. Pues la persona tiene el poder de alejar su mente de ese deseo y de quebrarlo; ésta es la esencia de nuestra santidad.\n\n2. La pureza sexual es la esencia de la santidad. Uno merece alcanzar esa cualidad mediante el lenguaje sagrado y el habla sagrada, santificando el habla al decir palabras santas. Es por ese motivo que nuestra lengua es llamada el Lenguaje Sagrado, pues “Allí donde encuentres una barrera ante la inmoralidad sexual, allí encontrarás la santidad” (Rashi sobre Levítico 19:2). La perfección del Lenguaje Sagrado significa decir solamente palabras de Torá, de plegaria y hablar con nuestro Creador (hitbodedut). (Y aunque la persona hable con su Creador en su lengua natal, tal como lo hacen en nuestro país, ello también es llamado el Lenguaje Sagrado. En verdad, al expresarnos ante nuestro Creador, debemos hacerlo específicamente en el idioma en el cual acostumbramos a hablar [Likutey Moharán II, 25]. Lo más importante es cuidar el lenguaje para santificarlo con palabras de santidad, que representan la perfección del Lenguaje Sagrado). La perfección del Lenguaje Sagrado también significa cuidarse de no decir cosas malas tales como calumnias, mentiras, frivolidades y demás -todo lo cual daña el Lenguaje Sagrado- de esa manera el habla y la lengua alcanzarán el nivel de “perfección del Lenguaje Sagrado”. Ésta es la clave para subyugar y quebrar todos los deseos - en particular el deseo sexual, que es la principal pasión que es necesario anular.\n\n81\n\n## Page 82\n\nLección 19                                                                             23 Jeshvan\n\n## 23 Jeshvan",
+      "snippet": "…entre nosotros y las naciones es que nosotros nos abstenemos de la inmoralidad sexual, siendo ésta, en esencia, la santidad judía. Pues la persona tiene el poder de alejar su mente de ese deseo y de quebrarlo; ésta es la esencia de nuestra santidad.\n\n2. La pureza sexual es la esencia de la santidad. Uno merece alcanzar esa cualidad mediante el lenguaje sagrado y el habla sagrada, santificando el habla al decir palabras santas. Es por ese motivo que nuestra lengua es llamada el Lenguaje Sagrado, pues “Allí donde encuentres una barrera ante la inmoralidad sexual, allí encontrarás la santidad” (Rashi sobre Levítico 19:2). La perfección del Lenguaje Sagrado significa decir solamente palabras de Torá, de plegaria y hablar con nuestro Creador (hitbodedut)…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "hablar",
+        "lenguaje"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1a02ba438cf9",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "canzan el oído del oyente. De modo que si el aire está calmo, tranquilo y claro, el habla puede ser oída a la distancia. Pero si sopla un viento tormentoso, se vuelve imposible oír incluso el sonido de la voz de otra persona y menos aún sus palabras.\n\nDe la misma manera, cuando el amor reina entre las personas -que es el concepto de “aire calmo y tranquilo”- y cuando hay armonía entre ellas, sus palabras son oídas a la distancia. Eso es así tanto en el nivel individual como en el nivel colectivo. En el nivel individual, las buenas palabras de cada persona son oídas por sus amigos. De manera similar, en el mundo en general, las palabras verdaderas y santas del verdadero Tzadik pueden ser oídas y aceptadas incluso a grandes distancias, como está aludido en el versículo, “Su fama salió hacia todas las provincias” (Esther 9:4) - al punto en que incluso aquellos que están muy lejos vuelven y se acercan a Dios, en la forma de prosélitos y como judíos que retornan a la fe. Pero cuando hay enemistad entre la gente, Dios no lo permita, ese odio es similar al “viento tormentoso”, un viento malo que crea divisiones entre las personas. Como resultado, el aire se vuelve turbulento de modo que el habla no puede ser oída ni siquiera en el lugar [del hablante] ni cerca de él, y menos aún a la distancia. La principal\n\n77\n\n## Page 78\n\nLección 18                                                                             20 Jeshvan\n\nrectificación para crear un “aire calmo y tranquilo” es la caridad dada a los verdaderos Tzadikim y a la gente pobre y recta.\n\n20 Jeshvan\n\n## **18 - “Contó el rabí Ionatán - un canasto”**\n\n## **(Bava Batra 74)**",
+      "snippet": "…canzan el oído del oyente. De modo que si el aire está calmo, tranquilo y claro, el habla puede ser oída a la distancia. Pero si sopla un viento tormentoso, se vuelve imposible oír incluso el sonido de la voz de otra persona y menos aún sus palabras.\n\nDe la misma manera, cuando el amor reina entre las personas -que es el concepto de “aire calmo y tranquilo”- y cuando hay armonía entre ellas, sus palabras son oídas a la distancia. Eso es así tanto en el nivel individual como en el nivel colectivo. En el nivel individual, las buenas palabras de cada persona son oídas por sus amigos…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "voz"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-1b6f539a15ed",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "ejor si no hubiera sido creada”. Pero cuando viene a purificarse y a arrepentirse, entonces se prepara a “ser” en el mundo. Por lo tanto, el arrepentimiento está asociado con el [Nombre Divino] EHIéH (Seré) - es decir, “estoy preparado para existir”.\n\n4. El arrepentimiento también está asociado con el concepto de Keter, dado que KeTeR es una expresión de “esperar”, como está escrito, “Espérame (KaTaR) y hablaré contigo” (Job 36:2).\n\n29\n\n## Page 30\n\n15 Tishrei\n\n## Lección 6\n\n“Esperar” está relacionado con la idea del arrepentimiento, como dijeron nuestros Sabios, de bendita memoria, “Aquel que viene a purificarse es ayudado... es como alguien que viene a comprar aceite perfumado de afarsimon y se le dice que espere” (Ioma 38b-39a). En otras palabras, la persona necesita saber que cuando viene a purificarse y a arrepentirse, “se le dice que espere”. Incluso aunque es necesario que actúe rápidamente para salvar su vida y huir de la oscuridad, sin embargo, no deberá desanimarse cuando vea cuán lejos está de la plegaria y de todas las prácticas sagradas. Pues es necesario esperar antes de alcanzar una completa rectificación y proceder paso a paso, de acuerdo a las instrucciones del verdadero Tzadik, dado que es imposible llegar a la santidad de manera inmediata.\n\n## 15 Tishrei\n\n5. Es necesario trabajar constantemente en el arrepentimiento. Pues incluso en el momento en que la persona está diciendo, “He pecado, he transgredido, he actuado con desenfreno” (plegaria confesional del Vidui), es imposible que lo diga con un corazón puro y sin un motivo ulterior. Así, uno debe arrepentirse de su arrepentimiento anterior - es decir, del “He pecado, he transgredido, he actuado con desenfreno” que había dicho anteriormente.",
+      "snippet": "…ejor si no hubiera sido creada”. Pero cuando viene a purificarse y a arrepentirse, entonces se prepara a “ser” en el mundo. Por lo tanto, el arrepentimiento está asociado con el [Nombre Divino] EHIéH (Seré) - es decir, “estoy preparado para existir”.\n\n4. El arrepentimiento también está asociado con el concepto de Keter, dado que KeTeR es una expresión de “esperar”, como está escrito, “Espérame (KaTaR) y hablaré contigo” (Job 36:2).\n\n29\n\n## Page 30\n\n15 Tishrei\n\n## Lección 6\n\n“Esperar” está relacionado con la idea del arrepentimiento, como dijeron nuestros Sabios, de bendita memoria, “Aquel que viene a purificarse es ayudado... es como alguien que viene a comprar aceite perfumado de afarsimon y se le dice que espere” (Ioma 38b-39a). En otras palabras, la persona necesita saber que cuando viene a purificarse y a arrepentirse, “se le dice que espere”…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "hablar"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-20ae8fe48d2a",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "forma de discordia, en donde “no hay paz en los huesos”. En ese estado, los cuatro elementos básicos [del cuerpo] están en conflicto entre sí y no coexisten de manera armoniosa y equilibrada. La cura, por otro lado, es un aspecto de armonía y de paz.\n\n23. Dijeron nuestros Sabios, de bendita memoria, “Aquel que avergüence a un erudito de Torá se verá afligido por una enfermedad incurable” (Shabat 119b). El medio fundamental para traer la paz -que es la esencia de toda curación- es demostrarles un sincero honor a las personas temerosas de Dios. De esa manera, uno hace retornar el honor a su raíz, que es el temor sagrado y, a su vez, se hace digno de la paz y de la curación.\n\n24. El honor de Dios sólo brilla en el mundo gracias a los Tzadikim. Ellos llevan a la gente hacia la rectitud y trabajan para acercar a aquellos que están lejos de Dios, volviéndolos al arrepentimiento. Todo esto es la fuente principal del honor de Dios. Ésta es la idea que subyace en la elegía fúnebre que debe ser dicha al fallecer los Tzadikim, que Dios nos salve.\n\n25. Hablar con un amigo sobre las enseñanzas morales y el temor al Cielo, despertándolo al arrepentimiento, sirve como rectificación para las emisiones nocturnas (KeRI). [Vemos la expresión de esta realidad en el versículo,] “Si separas lo precioso (IaKaR) de lo vil” (Jeremías 15:19) y dado\n\n## Page 65\n\nLección 15                                                                             10 Jeshvan\n\nque KeRI y IaKaR tienen las mismas letras hebreas [ello indica una conexión conceptual].\n\n## **15 - La Luz Oculta**",
+      "snippet": "…forma de discordia, en donde “no hay paz en los huesos”. En ese estado, los cuatro elementos básicos [del cuerpo] están en conflicto entre sí y no coexisten de manera armoniosa y equilibrada. La cura, por otro lado, es un aspecto de armonía y de paz.\n\n23. Dijeron nuestros Sabios, de bendita memoria, “Aquel que avergüence a un erudito de Torá se verá afligido por una enfermedad incurable” (Shabat 119b). El medio fundamental para traer la paz -que es la esencia de toda curación- es demostrarles un sincero honor a las personas temerosas de Dios. De esa manera, uno hace retornar el honor a su raíz, que es el temor sagrado y, a su vez, se hace digno de la paz y de la curación.\n\n24. El honor de Dios sólo brilla en el mundo gracias a los Tzadikim. Ellos llevan a la gente hacia la rectitud y trabajan para acercar a aquellos que están lejos de Dios, volviéndolos al arrepentimiento…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "hablar"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "kitzur-21f0e230edfa",
+      "work_code": "kitzur",
+      "work_title": "Kitzur",
+      "pdf_page": null,
+      "printed_page": null,
+      "quote": "que son interdependientes; y uno no sabe por dónde empezar, dado que cada una de ellas comienza a partir de la otra.\n\n401\n\n## Page 402\n\nLección 272-274                                                                     12 Tamuz\n\n12 Tamuz\n\n## **272**\n\n1. Es una regla esencial en el servicio a Dios que la persona sólo tome en cuenta el día presente. Ello se aplica a la manera en la cual se ocupa del sustento y de las necesidades materiales, no debiendo pensar de un día para el otro, tal como se enseña en la literatura sagrada; y también se aplica al servicio a Dios, donde sólo hay que considerar el día y la hora presentes. Ello se debe a que cuando la persona desea entrar en el servicio a Dios, siente que es como una carga muy pesada, como si le fuese imposible sobrellevar semejante peso. Pero si piensa que sólo tiene el día de hoy, no le será una carga en absoluto. Más aún, uno nunca debe dejar las cosas de un día para el otro diciendo, “Mañana comenzaré. Mañana recitaré las plegarias con concentración y sentimiento” o cosas similares. Pues la persona no tiene nada en este mundo excepto el día y la hora en la cual se encuentra; mañana es un mundo absolutamente diferente. Ésta es la explicación del versículo, “¡Hoy! Si oyesen Su voz” (Salmos 95:7) - específicamente, “¡Hoy!”.\n\n## **273**\n\n1. Hay Tzadikim muy grandes que les dan a sus hijos almas más elevadas que las 600.000 almas del pueblo judío.\n\n## **274**",
+      "snippet": "…que son interdependientes; y uno no sabe por dónde empezar, dado que cada una de ellas comienza a partir de la otra.\n\n401\n\n## Page 402\n\nLección 272-274                                                                     12 Tamuz\n\n12 Tamuz\n\n## **272**\n\n1. Es una regla esencial en el servicio a Dios que la persona sólo tome en cuenta el día presente. Ello se aplica a la manera en la cual se ocupa del sustento y de las necesidades materiales, no debiendo pensar de un día para el otro, tal como se enseña en la literatura sagrada; y también se aplica al servicio a Dios, donde sólo hay que considerar el día y la hora presentes. Ello se debe a que cuando la persona desea entrar en el servicio a Dios, siente que es como una carga muy pesada, como si le fuese imposible sobrellevar semejante peso. Pero si piensa que sólo tiene el día de hoy, no le será una carga en absoluto…",
+      "source_view": "library_document_chunks",
+      "search_record_type": "chunk",
+      "source_layer": "chunk",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "voz"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": [
+        "pdf_page_null_for_kitzur_chunk"
+      ]
+    },
+    {
+      "hit_id": "lh-add40995a7e0",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 9,
+      "printed_page": null,
+      "quote": "PREFACIO DEL EDITOR\nEl Rebe Najmán era muy insistente en el hecho de que debíamos estudiar \ndiariamente el Shuljan Aruj. “Nunca dejen pasar un día sin estudiar al \nmenos una ley”, dijo (Sabiduría y Enseñanzas del Rabí Najmán de Breslov #29).\nE\nl Rabí Natán, el discípulo más cercano del Rebe, aceptó el mandato del Rebe y se \nadhirió a él asiduamente a lo largo de toda su vida. Finalmente llegó a repasar varias \nveces todo el Shuljan Aruj con sus comentarios.\nPero el Rebe Najmán tenía otro motivo para alentar al Rabí Natán a estudiar \nel Shuljan Aruj - quería que se familiarizara con sus leyes al punto de poder elaborar \njidushim, ideas originales, sobre ellas, basándose en las enseñanzas del Rebe Najmán en \nel Likutey Moharán. El Rabí Natán debía entretejer las leyes y las lecciones de manera \nque demostrasen cómo cada halajá mejora y fortalece la vida de cada individuo, en \ntodo momento y en cada situación. El Rabí Natán se abocó a esta tarea componiendo \nmúltiples discursos sobre la mayor parte de los temas del Shuljan Aruj y generando una \nvisión plena del signiﬁ cado y del espíritu de vivir como un judío.\n Cuando el Rabí Natán envió el primer volumen del Likutey Halajot a la imprenta, \ncomentó, “Yo no escribí esta obra para aquellos que no se preocupan del sentido de la \nvida. Tal persona puede ser comparada con un animal (come, bebe, duerme y es un ser \nabsolutamente ajeno al bienestar de su alma). Esta obra está dirigida a aquel que piensa \nen el propósito ﬁ nal de la vida y posee un profundo anhelo de servir a HaShem - y por lo \ntanto se encuentra bajo el ataque de los ‘enemigos’ externos e internos, que le impiden \nrealizar su objetivo espiritual. Tal persona encontrará fuerza y aliento en mis palabras” \n(Kojvei Or, Anshei Moharán II, 13).\nEn verdad, el Likutey Halajot cumple con esos objetivos mediante una combinación \nde inspiración y guía práctica. También conlleva la subyacente garantía de que al aplicar \nla Torá a la vida de uno, cada persona obtendrá el poder para desarrollar su propia y \núnica relación con HaShem. Cada uno de nosotros puede hacerlo e incluso alcanzar \ngrandezas indescriptibles, con tal de que se aplique al estudio y a la práctica.\n■ ■ ■\nEsta nueva traducción y explicación del Likutey Halajot representa otra joya en la \ncorona de publicaciones de Breslov en español. Al tiempo de que, en el Breslov Research \nPREFACIO\n      LIKUTEY HALAJOT   IX",
+      "snippet": "PREFACIO DEL EDITOR\nEl Rebe Najmán era muy insistente en el hecho de que debíamos estudiar \ndiariamente el Shuljan Aruj. “Nunca dejen pasar un día sin estudiar al \nmenos una ley”, dijo (Sabiduría y Enseñanzas del Rabí Najmán de Breslov #29).\nE\nl Rabí Natán, el discípulo más cercano del Rebe, aceptó el mandato del Rebe y se \nadhirió a él asiduamente a lo largo de toda su vida. Finalmente llegó a repasar varias \nveces todo el Shuljan Aruj con sus comentarios.\nPero el Rebe Najmán tenía otro motivo para alentar al Rabí Natán a estudiar \nel Shuljan Aruj - quería que se familiarizara con sus leyes al punto de poder elaborar \njidushim, ideas originales, sobre ellas, basándose en las enseñanzas del Rebe Najmán en \nel Likutey Moharán. El Rabí Natán debía entretejer las leyes y las lecciones de manera \nque demostrasen cómo cada halajá mejora y fortalece la vida de cada individuo, en…",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-e98f7ee6e6a5",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 11,
+      "printed_page": null,
+      "quote": "SOBRE EL RABÍ NATÁN\n“Si no fuera por el Rabí Natán, ni una página de mis escritos habría \nsobrevivido” (Rebe Najmán).\nA\nunque menos conocido que su famoso mentor, la contribución del Rabí Natán \nSternhartz a la Jasidut de Breslov fue de importancia capital. Siendo el principal \ndiscípulo y escriba del Rebe Najmán, el Rabí Natán registró todas las lecciones dadas por \nsu maestro, publicó sus escritos y también compiló para las futuras generaciones muchas \nanécdotas personales y conversaciones del Rebe. Cuando, luego del fallecimiento del \nRebe, la Jasidut corrió el peligro de disolverse, el Rabí Natán, por sí solo, la mantuvo \nviva y permitió que creciera uniﬁ cando a los jasidim, volviendo a establecer la reunión \nde Rosh HaShaná en Umán y construyendo allí un gran kloiz (sinagoga). Fue maestro \nde muchos discípulos, visitó y ayudó a los jasidim que vivían a lo largo de Ucrania y \nescribió cientos de cartas de aliento y plenas de ideas. De no haber sido por el Rabí \nNatán, no sólo no habríamos tenido registro alguno de las enseñanzas del Rebe sino que \nno habría Jasidut de Breslov, en absoluto.\nEl Rabí Natán nació en Ucrania, en la ciudad de Nemirov, el 22 de enero del año \n1780 (15 de Shvat del 5540). Su padre, el Rabí Naftalí Hertz Sternhartz, era un estudioso \nde la Torá y un acaudalado hombre de negocios. Siendo el mayor de cinco hijos, el Rabí \nNatán fue un diligente estudiante en el jeder local, contrayendo matrimonio, como era \ncostumbre, a la edad de 13 años. Su suegro fue el Rabí Dovid Zvi Orbach, la autoridad \nrabínica más importante de Mohilev, Sharograd y Kremenetz, quien admiraba al joven \nestudioso. Bendecido con una mente brillante, con una fenomenal memoria y con una \ngran dedicación a la Torá y a las mitzvot, el Rabí Natán era, de hecho, un valioso yerno.\nLuego de un tiempo, sin embargo, el Rabí Natán sintió que algo le faltaba en su \nvida espiritual y se preguntó si el movimiento jasídico no podría inspirarlo. Su padre y \nsu suegro eran ambos absolutos opositores a la Jasidut, pero el Rabí Natán era curioso. \nCuando su amigo, Reb Naftalí, le habló sobre un joven maestro jasídico que estaba \natrayendo la atención en el pueblo cercano de Breslov, los dos viajaron a verlo. En ese \nencuentro, el Rabí Natán sintió que el Rebe Najmán les estaba hablando directamente \nrespecto de sus preocupaciones, alentándolos y apoyándolos. Volvió a Nemirov con \nnuevas fuerzas, seguro de que había encontrado a su mentor espiritual.\nDesde ese momento en adelante, el Rabí Natán aprovechó cada oportunidad para \nvisitar al Rebe Najmán. Se volvió su escriba y registró las lecciones que el Rebe daba de \nSOBRE EL RABÍ NATÁN\n      LIKUTEY HALAJOT   XI",
+      "snippet": "SOBRE EL RABÍ NATÁN\n“Si no fuera por el Rabí Natán, ni una página de mis escritos habría \nsobrevivido” (Rebe Najmán).\nA\nunque menos conocido que su famoso mentor, la contribución del Rabí Natán \nSternhartz a la Jasidut de Breslov fue de importancia capital. Siendo el principal \ndiscípulo y escriba del Rebe Najmán, el Rabí Natán registró todas las lecciones dadas por \nsu maestro, publicó sus escritos y también compiló para las futuras generaciones muchas \nanécdotas personales y conversaciones del Rebe. Cuando, luego del fallecimiento del \nRebe, la Jasidut corrió el peligro de disolverse, el Rabí Natán, por sí solo, la mantuvo \nviva y permitió que creciera uniﬁ cando a los jasidim, volviendo a establecer la reunión \nde Rosh HaShaná en Umán y construyendo allí un gran kloiz (sinagoga). Fue maestro \nde muchos discípulos, visitó y ayudó a los jasidim que vivían a lo largo de Ucrania y…",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-42f723c5e2e6",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 13,
+      "printed_page": null,
+      "quote": "4 Se aﬁ rma en Sabiduría y Enseñanzas del Rabí Najmán de Breslov #297: El Rebe nos solía hablar mucho \nsobre cuánto quería que pusiéramos en práctica las lecciones que él ha",
+      "snippet": "4 Se aﬁ rma en Sabiduría y Enseñanzas del Rabí Najmán de Breslov #297: El Rebe nos solía hablar mucho \nsobre cuánto quería que pusiéramos en práctica las lecciones que él ha",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "nominal_reference",
+      "source_layer": "nominal_reference",
+      "zone_type": null,
+      "note_number": "4",
+      "surface_form": "Rabí Najmán",
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "hablar"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_nominal_reference",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-53c1bfdc1e15",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 13,
+      "printed_page": null,
+      "quote": "4 Se aﬁ rma en Sabiduría y Enseñanzas del Rabí Najmán de Breslov #297: El Rebe nos solía hablar mucho \nsobre cuánto quería que pusiéramos en práctica las lecciones que él había revelado. Esto es, “andar con una \nlección” - fundamentar durante un tiempo todo nuestro servicio y acercamiento a la conciencia de HaShem \nen una lección. Tomar la lección y buscar su consejo práctico. Seguirlo durante dos o tres meses, utilizándolo \npara fortalecer nuestra devoción y temor a HaShem. Debemos orar a HaShem y rogarle para que nos ayude \na ser dignos de alcanzar el ideal establecido en esa lección. Cuando se ha completado una lección, se debe \ntrabajar en otra. Así se debe continuar hasta haber completado cada lección. Feliz aquel que lleva a cabo esto.\n      LIKUTEY HALAJOT   XIII",
+      "snippet": "4 Se aﬁ rma en Sabiduría y Enseñanzas del Rabí Najmán de Breslov #297: El Rebe nos solía hablar mucho \nsobre cuánto quería que pusiéramos en práctica las lecciones que él había revelado. Esto es, “andar con una \nlección” - fundamentar durante un tiempo todo nuestro servicio y acercamiento a la conciencia de HaShem \nen una lección. Tomar la lección y buscar su consejo práctico. Seguirlo durante dos o tres meses, utilizándolo \npara fortalecer nuestra devoción y temor a HaShem. Debemos orar a HaShem y rogarle para que nos ayude \na ser dignos de alcanzar el ideal establecido en esa lección. Cuando se ha completado una lección, se debe \ntrabajar en otra. Así se debe continuar hasta haber completado cada lección. Feliz aquel que lleva a cabo esto.\n      LIKUTEY HALAJOT   XIII",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "note_source_unit",
+      "source_layer": "note_source_unit",
+      "zone_type": null,
+      "note_number": "4",
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "hablar"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_numbered_note",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-d803bf726b21",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 13,
+      "printed_page": null,
+      "quote": "SOBRE EL LIKUTEY HALAJOT\nSOBRE EL LIKUTEY HALAJOT\n1\nE\nl Likutey Halajot (Colección de Discursos), presenta las exposiciones de Torá \ndel Rabí Natán de Breslov (1780-1844), el principal discípulo y escriba del Rebe \nNajmán de Breslov. Una obra en ocho volúmenes en hebreo en el original, el Likutey \nHalajot explora la ley judía a través del prisma de las enseñanzas del Rebe Najmán. \nAl mismo tiempo, la obra del Rabí Natán es un comentario sobre las enseñanzas de su \nmaestro y, no menos importante, una guía para su estudio.\nEl Rabí Natán se encontró con el Rebe Najmán por primera vez a ﬁ nales del \nverano del año 1802 y pronto comenzó a transcribir las lecciones orales de Torá del \nRebe. El Rebe Najmán elogió su capacidad y rápidamente reconoció que el Rabí Natán \nsería quien iría a preservar y a transmitir para las generaciones futuras los senderos de su \nmaestro en el servicio a HaShem.2\nPoco tiempo después, el Rebe Najmán concibió otro proyecto para el cual el Rabí \nNatán estaría capacitado de manera única. El Rebe quería que su discípulo más cercano \ngenerara sus propios jidushei Torá, ideas originales de Torá.3 En algún momento del \ninvierno del año 1803 el Rebe comenzó a prepararlo para esa tarea. Además de que el \nRabí Natán debía “andar” con una de las lecciones del Rebe Najmán,4 el Rebe lo instruyó \npara que estudiara el Shuljan Aruj de manera asidua, cada día. En el verano siguiente \nel Rebe expandió su directiva aconsejando al Rabí Natán para que se embarcase en un \nestudio serio de las enseñanzas kabalísticas del Ari zal. Entonces, en el Shabat Jánuca \ndel año 1804, poco más de dos años después de que el Rabí Natán se uniese por primera \n1RWHV\u0003\t\u00036RXUFHV\nNotas y Fuentes\n1 Esta introducción ha sido adaptada en parte de El Castillo de Agua (Dovid Sears, Breslov Research \nInstitute, 2013).\n2 Ver Tzadik #367; también la biografía del Rabí Natán por Jaim Kramer, A Través del Fuego y del Agua: La \nvida del Rabí Natán de Breslov (Breslov Research Institute, 2010).\n3 Iemei Moharnat I, #5 (Diario de un Camino Espiritual, Breslov Research Institute, 2014); A Través del \nFuego y del Agua, capítulos 10 y 11.\n4 Se aﬁ rma en Sabiduría y Enseñanzas del Rabí Najmán de Breslov #297: El Rebe nos solía hablar mucho \nsobre cuánto quería que pusiéramos en práctica las lecciones que él había revelado. Esto es, “andar con una \nlección” - fundamentar durante un tiempo todo nuestro servicio y acercamiento a la conciencia de HaShem \nen una lección. Tomar la lección y buscar su consejo práctico. Seguirlo durante dos o tres meses, utilizándolo \npara fortalecer nuestra devoción y temor a HaShem. Debemos orar a HaShem y rogarle para que nos ayude \na ser dignos de alcanzar el ideal establecido en esa lección. Cuando se ha completado una lección, se debe \ntrabajar en otra. Así se debe continuar hasta haber completado cada lección. Feliz aquel que lleva a cabo esto.\n      LIKUTEY HALAJOT   XIII",
+      "snippet": "SOBRE EL LIKUTEY HALAJOT\nSOBRE EL LIKUTEY HALAJOT\n1\nE\nl Likutey Halajot (Colección de Discursos), presenta las exposiciones de Torá \ndel Rabí Natán de Breslov (1780-1844), el principal discípulo y escriba del Rebe \nNajmán de Breslov. Una obra en ocho volúmenes en hebreo en el original, el Likutey \nHalajot explora la ley judía a través del prisma de las enseñanzas del Rebe Najmán. \nAl mismo tiempo, la obra del Rabí Natán es un comentario sobre las enseñanzas de su \nmaestro y, no menos importante, una guía para su estudio.\nEl Rabí Natán se encontró con el Rebe Najmán por primera vez a ﬁ nales del \nverano del año 1802 y pronto comenzó a transcribir las lecciones orales de Torá del \nRebe. El Rebe Najmán elogió su capacidad y rápidamente reconoció que el Rabí Natán \nsería quien iría a preservar y a transmitir para las generaciones futuras los senderos de su \nmaestro en el servicio a HaShem.2…",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "hablar"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-1e681eb05b1d",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 15,
+      "printed_page": null,
+      "quote": "la mayor parte de los discursos), el Rabí Natán introduce sus propias ideas originales. \nEs aquí donde aprendemos cuál es el objetivo del Rabí Natán y por qué ha conectado \nesta halajá del Shuljan Aruj con esa enseñanza del Rebe. En las secciones siguientes \nse va desarrollando el cuerpo del discurso cuando el Rabí Natán demuestra cómo los \nconceptos del Rebe iluminan el signiﬁ cado profundo de la halajá.7\nAl construir sus discursos, el Rabí Natán hace un uso considerable del mismo \nproceso de asociación empleado copiosamente por el Rebe Najmán en sus lecciones.8 \nEn el centro de esta interpretación-analogía-y-comparación se encuentra el mecanismo \nexegético conocido como bejiná.9 En el pensamiento de Breslov, el término bejiná es \nusado para conectar palabras o ideas aparentemente disímiles, estableciendo una relación \nentre ellas de modo que “A” esté asociada con “B”. En términos más especíﬁ cos, “A” y \n“B” representan dos conceptos complejos. Al aﬁ rmar que “A” es bejiná de “B” se indica \nque en virtud de una característica en común compartida entre ambos, los dos conceptos \ncomplejos pueden ser superpuestos de modo que la característica adicional de uno puede \nser vista también en el otro. En general, esta superposición es demostrada entonces \ntrayendo como referencia una asociación bíblica o kabalística. Es este “asemejar una \ncosa con otra” lo que da fe de la cualidad caleidoscópica de virtualmente todas las \nenseñanzas de Breslov.\nOtra característica deﬁ nitoria del Likutey Halajot es lo que podría llamarse el \nestilo de improvisación del Rabí Natán. En la mayor parte de las homilías y discursos \njasídicos, el autor sigue un plan cuidadosamente establecido o una guía para desarrollar \nsus ideas de manera lineal. En contraste, el pensamiento del Rabí Natán es lateral: un \nacercamiento intuitivo y así espontáneo, similar a la improvisación musical. El Rabí \nNatán establece su tema y se embarca en una cierta línea de pensamiento; luego vuelve \nhacia atrás, en general repitiendo el tema o parte de él, sólo para empezar en una dirección \nnueva y fresca. Aun así, el discurso del Rabí Natán siempre permanece sólidamente \nenraizado en la enseñanza del Rabí Najmán, de modo que sus exploraciones son todas \ncomentarios incisivos sobre las lecciones de su maestro.\nEn el Likutey Halajot el Rabí Natán también demuestra la naturaleza abarcadora y \ngeneral de las lecciones de su maestro y cómo sus construcciones conceptuales dan luz \na tantas otras facetas de la Torá. A través de esas enseñanzas comenzamos a detectar la \nsabiduría Divina inherente a cada elemento de la existencia. Descubrimos la conexión \nde cada uno de los componentes de la creación con su Creador y en particular el lazo \nespecial que nosotros, como judíos, tenemos con HaShem.\n1RWHV\u0003\t\u00036RXUFHV\nNotas y Fuentes\nSOBRE EL LIKUTEY HALAJOT\n7 Las excepciones a este formato se presentan principalmente en los discursos de la Halajá 1 (series alef); \nver más adelante, p. 22, nota 1.\n8 El Rabí Natán oyó que cierta vez dijo el Rebe Najmán, “Mis enseñanzas de Torá están construidas \ntotalmente de bejinot” (Tzadik #350).\n9 Hemos traducido el término bejiná de diversas maneras, incluyendo literalmente, “aspecto” y, \ncontextualmente, “concepto” o “dimensión”. Para “A es bejinat de B”, hemos decidido recurrir a \nformulaciones lingüísticas, incluyendo “el concepto de”, “corresponde a”, “se relaciona con”, “es paralelo \nde”, “es sinónimo de”, y demás.\n   LIKUTEY HALAJOT\nXV",
+      "snippet": "…la mayor parte de los discursos), el Rabí Natán introduce sus propias ideas originales. \nEs aquí donde aprendemos cuál es el objetivo del Rabí Natán y por qué ha conectado \nesta halajá del Shuljan Aruj con esa enseñanza del Rebe. En las secciones siguientes \nse va desarrollando el cuerpo del discurso cuando el Rabí Natán demuestra cómo los \nconceptos del Rebe iluminan el signiﬁ cado profundo de la halajá.7\nAl construir sus discursos, el Rabí Natán hace un uso considerable del mismo \nproceso de asociación empleado copiosamente por el Rebe Najmán en sus lecciones.8 \nEn el centro de esta interpretación-analogía-y-comparación se encuentra el mecanismo \nexegético conocido como bejiná.9 En el pensamiento de Breslov, el término bejiná es \nusado para conectar palabras o ideas aparentemente disímiles, estableciendo una relación \nentre ellas de modo que “A” esté asociada con “B”…",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-d9e69f5ca700",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 16,
+      "printed_page": null,
+      "quote": "CONVENCIONES USADAS \nEN ESTA TRADUCCIÓN\nE\nsta traducción del Likutey Halajot al español incluye varios elementos para ayudar \nal lector en el estudio y en la comprensión del texto y de las ideas del Rabí Natán. \nA continuación presentamos las convenciones y las guías que hemos establecido para \nfacilitar este esfuerzo:\nHalajá\nLa palabra hebrea halajá hace referencia en general a una regla de conducta en \nla Ley Judía. Los jasidim de Breslov utilizan el mismo término para hacer referencia a \nuno de los discursos del Rabí Natán en el Likutey Halajot. Para distinguir entre ambos, \nhemos utilizado la palabra halajá (pl. halajot) en minúscula y en cursiva para indicar una \nley del Shuljan Aruj, y con mayúscula y sin cursiva el término Halajá para identiﬁ car el \ndiscurso del Rabí Natán.\nTraducción\nEl discurso en hebreo original del Rabí Natán se encuentra al comienzo de cada \npágina del texto. Al traducir sus palabras hemos tratado de mantenernos rigurosamente \nﬁ eles al original hebreo, tanto en sentimiento como en signiﬁ cado. Aun así, hay \nexcepciones ocasionales, en particular cuando la sintaxis nos obliga a desviarnos de \nalguna manera. Otras excepciones para hacer notar incluyen la omisión de muchas \nreferencias cruzadas (e.g. “como se mencionó previamente” o “como se explicó más \narriba”) que el Rabí Natán incluye en su texto. Para mantener el ﬂ ujo del idioma, la \nmayoría de estas frases han sido reemplazadas por notas al pie o se han dejado sin \ntraducir, apoyándonos en que el lector recuerde el tratamiento anterior del tema. Dicho \nlo cual, las directivas del Rabí Natán de estudiar la correspondiente lección del Rebe \nNajmán en el Likutey Moharán para comprender mejor los conceptos tomados de allí \nno es meramente formal: realmente quiere y espera que el lector “mire allí”. Cuando el \nRabí Natán presenta una idea kabalística con la frase “como es sabido”, ello también \nha sido en general reemplazado por las notas al pie citando la fuente a la cual está \n1RWHV\u0003\t\u00036RXUFHV\nNotas y Fuentes\n1 Se ha omitido de la traducción, casi por completo, el uso repetido que hace el Rabí Natán de la expresión \njas ve-shalom ( ,חס ושלוםDios no lo permita), que ocasionalmente aparece dos y hasta tres veces dentro de \nuna sola frase. Puede argüirse legítimamente que esta expresión emocional está designada para otorgarle un \nCONVENCIONES USADAS EN ESTA TRADUCCIÓN\n          LIKUTEY HALAJOT\nXVI",
+      "snippet": "CONVENCIONES USADAS \nEN ESTA TRADUCCIÓN\nE\nsta traducción del Likutey Halajot al español incluye varios elementos para ayudar \nal lector en el estudio y en la comprensión del texto y de las ideas del Rabí Natán. \nA continuación presentamos las convenciones y las guías que hemos establecido para \nfacilitar este esfuerzo:\nHalajá\nLa palabra hebrea halajá hace referencia en general a una regla de conducta en \nla Ley Judía. Los jasidim de Breslov utilizan el mismo término para hacer referencia a \nuno de los discursos del Rabí Natán en el Likutey Halajot. Para distinguir entre ambos, \nhemos utilizado la palabra halajá (pl. halajot) en minúscula y en cursiva para indicar una \nley del Shuljan Aruj, y con mayúscula y sin cursiva el término Halajá para identiﬁ car el \ndiscurso del Rabí Natán.\nTraducción\nEl discurso en hebreo original del Rabí Natán se encuentra al comienzo de cada…",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-33d209db1f4d",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 17,
+      "printed_page": null,
+      "quote": "haciendo referencia.1 La traducción del texto del Rabí Natán se presenta en “negritas” y \nla explicación en una fuente regular.\nTérminos hebreos\nLos términos hebreos, aparte de aquellos más comunes, han sido traducidos allí \nen donde se presentan por primera vez (en el texto o en los versículos que acompañan). \nLos términos usados con frecuencia aparecen en el Glosario.\nExplicación\nLa interpolación de texto en la traducción tiene la intención principal de aclarar \npara el lector lo que el Rabí Natán supone que éste conoce pero quizás no. Esto puede \ntener la forma de una explicación tomada de la lección del Rebe Najmán o de alguna otra \nfuente citada en el discurso. Alternativamente, la explicación puede ser el agregado de \nalgunas palabras para conectar dos ideas adyacentes o dos párrafos. Esto se presenta con \nfrecuencia, pues el Rabí Natán comienza en general un párrafo con “Ve-ze” (“ ,הזוy esto \nes”), suponiendo que el lector ha seguido su razonamiento y sabe a lo que “esto” hace \nreferencia. Finalmente, alguna interpolación en el texto facilita simplemente el ﬂ ujo de \nla traducción.\nVersículos\nAl traer un versículo, el Rabí Natán cita en general sólo aquellas pocas palabras \nrelevantes a su interpretación exegética (drush). Claramente supone que el lector está \nfamiliarizado con todo el versículo, con su signiﬁ cado y con el contexto en el cual \naparece. Si bien esto puede ser así para algunas personas, la mayoría de aquellos que \nestudien hoy el Likutey Halajot pueden beneﬁ ciarse con el agregado de información \nadicional. Con ese ﬁ n, hemos presentado el versículo completo (o lo más completo \nposible) junto con el párrafo en el cual aparece por primera vez en el discurso.\nLos versículos y los conceptos han sido traducidos aquí en base al contexto en \nel cual son citados por el Rabí Natán en su discurso. Como resultado, su traducción no \nsiempre concuerda exactamente con la manera en que han sido traducidos en la versión \nal español del Likutey Moharán del Breslov Research Institute.\nPasajes completos\nEn algunos discursos el Rabí Natán cita de un pasaje más extenso en el Tanaj, en \nla Guemará o en el Midrash. Es común que interprete esos extractos parte por parte, en \nel curso de varios párrafos o incluso de varias secciones. Donde éste es el caso, el pasaje \nha sido presentado en su totalidad al comienzo, en una caja fuera del texto.2\nNotas\nMás básicamente, las notas proveen las fuentes de las enseñanzas citadas por el \n1RWHV\u0003\t\u00036RXUFHV\nNotas y Fuentes\nCONVENCIONES USADAS EN ESTA TRADUCCIÓN\n LIKUTEY HALAJOT\naspecto oral al Likutey Halajot -la manera en la cual el orador compromete a su audiencia, algo que se pierde \nfácilmente en la palabra escrita- pero ello es algo que no es fácil de transmitir en una traducción.\n2 Por ejemplo, ver p. 63 más adelante.\nXVII",
+      "snippet": "…haciendo referencia.1 La traducción del texto del Rabí Natán se presenta en “negritas” y \nla explicación en una fuente regular.\nTérminos hebreos\nLos términos hebreos, aparte de aquellos más comunes, han sido traducidos allí \nen donde se presentan por primera vez (en el texto o en los versículos que acompañan). \nLos términos usados con frecuencia aparecen en el Glosario.\nExplicación\nLa interpolación de texto en la traducción tiene la intención principal de aclarar \npara el lector lo que el Rabí Natán supone que éste conoce pero quizás no. Esto puede \ntener la forma de una explicación tomada de la lección del Rebe Najmán o de alguna otra \nfuente citada en el discurso. Alternativamente, la explicación puede ser el agregado de \nalgunas palabras para conectar dos ideas adyacentes o dos párrafos. Esto se presenta con…",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lh-303660c27966",
+      "work_code": "lh",
+      "work_title": "Likutey Halajot",
+      "pdf_page": 20,
+      "printed_page": 2,
+      "quote": "2   LIKUTEY HALAJOT\nINTRODUCCIÓN DEL RABÍ NATÁN\nINTRODUCCIÓN \nDEL RABÍ NATÁN\n1\n \nE\nsta vez daré gracias a HaShem”,2 “pues Él me ha ayudado abundantemente”.3 \n“¿Qué puedo decir cuando es Él Quien habla, Él Quien ha creado?”.4 “¿Quién es \ncomo HaShem, nuestro Dios? Él levanta del polvo al necesitado… Él eleva al indigente \ndel montículo de residuos”5 - a una persona como yo, para haberme acercado al [Rebe \nNajmán, quien es] una luz tan radiante, la luz de las luces, el brillo de los brillos. ¿Quién \npuede relatar la alabanza del Rebe, quién puede expresar su elogio? Y aunque es sabido \nque la gente en general escribe alabanzas y elogios sobre otros, aquel que profundice \nen las sagradas obras del Rebe con un ojo hacia la verdad, quien “provechosamente \nejerza su discernimiento”6 para ponderar profundamente estas enseñanzas que HaShem \nen Su poder me ha permitido exponer en estos volúmenes, comprenderá y reconocerá \nque incluso con todas las alabanzas, encomios y elogios que he escrito sobre el Rebe, ni \nsiquiera he logrado rozar la periferia de su verdadera alabanza. Pues sus virtudes y su \ngrandeza exceden inﬁ nitamente lo que la boca puede expresar y el corazón contemplar.\nPero Aquel que examina el corazón sabe que yo reconozco mi propia falta de valía, \npues, ¿quién soy yo para escribir libros - en especial libros como éstos que tratan con los \ntemas más exaltados, que abren el portal para todos aquellos que buscan arrepentirse, \nque desean salir de la oscuridad hacia la luz, de acercarse a HaShem y deleitarse en la \nLuz de la vida?\nY si en verdad en estos tiempos no es considerado en absoluto algo grande o \nimportante escribir libros, que al menos no genere vergüenza, ridículo ni burla. Pues hoy \nen día hay muchos que se burlan de los nuevos libros, que incluso luego de acercarse lo \nsuﬁ ciente como para determinar si son de valor, ya han conspirado para arrojar la burla \nsobre ellos y llamarlos con términos peyorativos. (Y si aquel que llama a su amigo con \nun sobrenombre peyorativo pierde su porción en el Mundo que Viene,7 ¡cuánto más aún \naquel que utiliza un término despectivo para una obra de Torá, para las palabras del Dios \n1 El lector podrá notar rápidamente el copioso uso \nque hace el Rabí Natán en esta introducción de \nversículos provenientes de todo el Tanaj. Sólo los \nmás obvios han sido referenciados en las notas. \nIndudablemente hay otros más que han pasado \ndesapercibidos, habiendo sido bordados hábilmente \ndentro del texto.\n2 Bereshit 29:35 (“habiendo logrado más que mi \nporción” - cf. Rashi).\n“\n1RWHV\u0003\t\u00036RXUFHV\nNotas y Fuentes",
+      "snippet": "2   LIKUTEY HALAJOT\nINTRODUCCIÓN DEL RABÍ NATÁN\nINTRODUCCIÓN \nDEL RABÍ NATÁN\n1\n \nE\nsta vez daré gracias a HaShem”,2 “pues Él me ha ayudado abundantemente”.3 \n“¿Qué puedo decir cuando es Él Quien habla, Él Quien ha creado?”.4 “¿Quién es \ncomo HaShem, nuestro Dios? Él levanta del polvo al necesitado… Él eleva al indigente \ndel montículo de residuos”5 - a una persona como yo, para haberme acercado al [Rebe \nNajmán, quien es] una luz tan radiante, la luz de las luces, el brillo de los brillos. ¿Quién \npuede relatar la alabanza del Rebe, quién puede expresar su elogio? Y aunque es sabido \nque la gente en general escribe alabanzas y elogios sobre otros, aquel que profundice \nen las sagradas obras del Rebe con un ojo hacia la verdad, quien “provechosamente \nejerza su discernimiento”6 para ponderar profundamente estas enseñanzas que HaShem…",
+      "source_view": "library_likutey_halajot_investigative_search_v1",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-e67ca4f6c0dd",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 14,
+      "printed_page": null,
+      "quote": "La transliteración es una ciencia inexacta. Esto se vuelve inmediatamente \nevidente en una transliteración del hebreo al español, que no tiene reglas \nespecíﬁcas ni precisas y muchas transliteraciones son aproximadas debido a \nuna falta de equivalencias entre los dos alfabetos. En el Likutey Moharán, el \nuso libre que hace el Rebe Najmán de palabras similares y acrónimos hace que \nla coherencia sea más difícil de mantener (ver, por ejemplo, Lección #1 y n. \n91 en este volumen).",
+      "snippet": "La transliteración es una ciencia inexacta. Esto se vuelve inmediatamente \nevidente en una transliteración del hebreo al español, que no tiene reglas \nespecíﬁcas ni precisas y muchas transliteraciones son aproximadas debido a \nuna falta de equivalencias entre los dos alfabetos. En el Likutey Moharán, el \nuso libre que hace el Rebe Najmán de palabras similares y acrónimos hace que \nla coherencia sea más difícil de mantener (ver, por ejemplo, Lección #1 y n. \n91 en este volumen).",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-c1cf849a06be",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 17,
+      "printed_page": null,
+      "quote": "4. Retornen a Mí y Yo retornaré a ustedes. El signiﬁcado simple de las palabras del profeta\nes que si nosotros nos arrepentimos y retornamos a Dios, Él entonces retornará a entregarnos \nSu bien y abundancia (Metzudat David). El Rebe Najmán lee el versículo como enseñando que \nel concepto de teshuvá se aplica también a Dios (ver también Julín 60a; Likutey Moharán II, \n1:14). Las cuarenta y nueve puertas de Biná accesibles al hombre son los ámbitos en los cuales \nlos seres humanos pueden efectuar su arrepentimiento, cada uno en su nivel. Sin embargo, la \npuerta cincuenta pertenece solamente a Dios. El Rabí Natán explica que esta puerta número \ncincuenta es cuando Dios “retorna” al hombre, cuando Él demuestra compasión y amor y se \nacerca al mundo (Likutey Teﬁlot II, 36).\nRetornar a Dios no es un acto único sino un proceso constante. Cuanto más nos dedicamos \nal arrepentimiento, más alto podemos ascender -a través de las cuarenta y nueve puertas- hasta \nque llegamos a estar aptos para recibir la Divinidad. Los pasos que tomamos en este proceso \nse encuentran en la categoría de un despertar. Los kabalistas llaman a esto it’aruta delatata, \nun despertar desde abajo. La persona inicia su devoción y su servicio a Dios y gradualmente \nasciende por las puertas del arrepentimiento hasta que, en recompensa por sus esfuerzos, Dios, \nsi así pudiera decirse, retorna y Se revela a ella. Con el arrepentimiento, sin embargo, también \nhay una categoría conocida como it’aruta dele’eila, un despertar desde arriba. Esto es cuando \nDios pone en movimiento la teshuvá de la persona enviándole pensamientos de arrepentimiento \ny disponiendo las cosas para que la persona vuelva hacia Él. Dios espera entonces que la persona \navance a través de las cuarenta y nueve puertas de la teshuvá.\nEl Rabí Natán yuxtapone este versículo de Malaji -en el cual Dios dice: “Retornen a Mí \ny Yo retornaré a ustedes”- con lo que los judíos Le dicen a Dios en el Libro de Lamentaciones \n(5:21): “Haznos retornar a Ti, oh Dios, y nosotros retornaremos”. Él lee esto como un debate \nentre Dios y los judíos (Torat Natán #1). Sin embargo, el Rabí Natán escribe que la clave del \narrepentimiento y del servicio a Dios es el despertar desde abajo (ver Likutey Halajot, Teﬁlín \n5:35). Aquí subyace la gran importancia del recitado de los salmos, como el Rebe Najmán \nexplicará más adelante.",
+      "snippet": "4. Retornen a Mí y Yo retornaré a ustedes. El signiﬁcado simple de las palabras del profeta\nes que si nosotros nos arrepentimos y retornamos a Dios, Él entonces retornará a entregarnos \nSu bien y abundancia (Metzudat David). El Rebe Najmán lee el versículo como enseñando que \nel concepto de teshuvá se aplica también a Dios (ver también Julín 60a; Likutey Moharán II, \n1:14). Las cuarenta y nueve puertas de Biná accesibles al hombre son los ámbitos en los cuales \nlos seres humanos pueden efectuar su arrepentimiento, cada uno en su nivel. Sin embargo, la \npuerta cincuenta pertenece solamente a Dios. El Rabí Natán explica que esta puerta número \ncincuenta es cuando Dios “retorna” al hombre, cuando Él demuestra compasión y amor y se \nacerca al mundo (Likutey Teﬁlot II, 36).\nRetornar a Dios no es un acto único sino un proceso constante. Cuanto más nos dedicamos…",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-d23e1fe5a8b8",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 19,
+      "printed_page": null,
+      "quote": "inconsciencia producida por excusas y justiﬁcaciones. También es posible que el origen de la \nfalta de motivación sea una falta de fe, el hecho de no creer que la falta de arrepentimiento lleva \na enfrentar los juicios en este mundo y en el próximo. El segundo obstáculo es la incapacidad \nde encontrar el camino a la propia puerta. De modo que, aunque la persona esté genuinamente \nmotivada al arrepentimiento y Le ruegue a Dios que la haga retornar, es posible que sus plegarias \nno sean respondidas a no ser que las dirija hacia la puerta del arrepentimiento de su alma. \nFinalmente, explica el Rebe, que incluso el hecho de encontrar la puerta no es garantía debido a \nun tercer obstáculo. Sucede que uno conoce su tribu y la letra del nombre que es su puerta, pero \nal llegar hasta allí y elevar una plegaria, encuentra que el portal está cerrado. Algunas personas \nencuentran que, no importa cuánto esfuerzo hayan puesto en arrepentirse, de una manera o de \notra, para ellas, su portal siempre parece cerrado.\nEl Rabí Natán escribe que el principal motivo por el cual la gente está lejos del \narrepentimiento y del retorno a Dios es que aunque “todos desean ser temerosos de Dios”, todos \ndesean también que Dios comience el proceso del arrepentimiento, como en “¡Haznos retornar \na Ti, oh Dios!” (ver más arriba, n. 4). Es importante saber que Dios ama a cada judío y que lo \nquiere cerca. Todo lo que pide es que nosotros clamemos a Él -recitando salmos, súplicas y \npalabras de arrepentimiento- como en “Tomen palabras con ustedes y retornen a Dios” (Hoshea \n14:3). Lo único que Él pide de nosotros son palabras (Tana debe Eliahu Zuta 22). De hecho, \nagrega el Rabí Natán, las palabras también provienen de Dios. Lo que sucede es que nosotros \ntenemos que hacer el esfuerzo de “tomarlas” y decírselas a Él (Torat Natán #5).\nCon respecto a sus propios esfuerzos para acercarse a Dios, el Rebe Najmán relata que \na veces se sentía tan desanimado que abandonaba sus conversaciones con Dios durante varios \ndías. Pero entonces se reprochaba diciéndose que debía avergonzarse de criticar los caminos de \nDios. Se decía a sí mismo: “Dios es verdaderamente misericordioso y compasivo... De seguro \nque quiere acercarme a Él” (Alabanza del Tzadik #12).",
+      "snippet": "…inconsciencia producida por excusas y justiﬁcaciones. También es posible que el origen de la \nfalta de motivación sea una falta de fe, el hecho de no creer que la falta de arrepentimiento lleva \na enfrentar los juicios en este mundo y en el próximo. El segundo obstáculo es la incapacidad \nde encontrar el camino a la propia puerta. De modo que, aunque la persona esté genuinamente \nmotivada al arrepentimiento y Le ruegue a Dios que la haga retornar, es posible que sus plegarias \nno sean respondidas a no ser que las dirija hacia la puerta del arrepentimiento de su alma. \nFinalmente, explica el Rebe, que incluso el hecho de encontrar la puerta no es garantía debido a \nun tercer obstáculo. Sucede que uno conoce su tribu y la letra del nombre que es su puerta, pero \nal llegar hasta allí y elevar una plegaria, encuentra que el portal está cerrado. Algunas personas…",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-04d4d19a9458",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 20,
+      "printed_page": null,
+      "quote": "{“Éstas son las últimas palabras de David y las palabras del hombre que fue establecido \nol (arriba), el ungido del Dios de Iaacov y el dulce cantor de Israel” (Samuel 2, 23:1)}.9",
+      "snippet": "{“Éstas son las últimas palabras de David y las palabras del hombre que fue establecido \nol (arriba), el ungido del Dios de Iaacov y el dulce cantor de Israel” (Samuel 2, 23:1)}.9",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-0bc677a08c16",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 20,
+      "printed_page": null,
+      "quote": "10. ULá del arrepentimiento. El Talmud (loc. cit.) lee las palabras “establecido OL (arriba,  ”)על\ncomo enseñando que el rey David estableció ULá ( .)עולהRashi en el Ein Iaacov (Moed Katan \n#7, v.i. ulá) hace notar que OL ( )עלestá etimológicamente relacionado con toELet ( ,)תועלתque \nsigniﬁca “beneﬁcio” o “provecho”. ¿Qué beneﬁcio estableció el rey David? Fue el beneﬁcio \ndel arrepentimiento. Luego del incidente con Batsheva, el rey David lamentó su accionar y \nse arrepintió. Pues para el rey y líder de Israel el hecho de actuar de la manera en que lo hizo \nconstituía una grave desacralización del Nombre de Dios. Uno podría incluso preguntarse si \nen tales casos aún es posible el arrepentimiento. Por lo tanto, enseña el Talmud: Él estableció \nel ulá del arrepentimiento. Al traer esto aquí, el Rebe Najmán demuestra que el rey David está \nintrínsecamente unido con el concepto de la teshuvá.",
+      "snippet": "10. ULá del arrepentimiento. El Talmud (loc. cit.) lee las palabras “establecido OL (arriba,  ”)על\ncomo enseñando que el rey David estableció ULá ( .)עולהRashi en el Ein Iaacov (Moed Katan \n#7, v.i. ulá) hace notar que OL ( )עלestá etimológicamente relacionado con toELet ( ,)תועלתque \nsigniﬁca “beneﬁcio” o “provecho”. ¿Qué beneﬁcio estableció el rey David? Fue el beneﬁcio \ndel arrepentimiento. Luego del incidente con Batsheva, el rey David lamentó su accionar y \nse arrepintió. Pues para el rey y líder de Israel el hecho de actuar de la manera en que lo hizo \nconstituía una grave desacralización del Nombre de Dios. Uno podría incluso preguntarse si \nen tales casos aún es posible el arrepentimiento. Por lo tanto, enseña el Talmud: Él estableció \nel ulá del arrepentimiento. Al traer esto aquí, el Rebe Najmán demuestra que el rey David está…",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-253523e18b49",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 20,
+      "printed_page": null,
+      "quote": "9. las palabras del hombre que fue establecido arriba… El rey David dijo que él fue\n“establecido arriba” - i.e., fue nombrado por Dios para ser rey del pueblo judío. También él \nes llamado el “dulce cantor”, debido al hecho de haber compilado canciones de alabanza a \nDios - i.e., el Libro de los Salmos, que también son las canciones y alabanzas cantadas durante \nel servicio del Templo (Rashi, Metzudat David). El Rabí Natán agrega que el motivo por el \ncual las palabras del rey David son tan eﬁcaces es que la clave para acercarse a Dios es el \nalabarLo constantemente. El articular las palabras de los Tehilim permite por lo tanto que uno \nse arrepienta (como se explica en el Likutey Moharán II, 2:1; ver Torat Natán #2).",
+      "snippet": "9. las palabras del hombre que fue establecido arriba… El rey David dijo que él fue\n“establecido arriba” - i.e., fue nombrado por Dios para ser rey del pueblo judío. También él \nes llamado el “dulce cantor”, debido al hecho de haber compilado canciones de alabanza a \nDios - i.e., el Libro de los Salmos, que también son las canciones y alabanzas cantadas durante \nel servicio del Templo (Rashi, Metzudat David). El Rabí Natán agrega que el motivo por el \ncual las palabras del rey David son tan eﬁcaces es que la clave para acercarse a Dios es el \nalabarLo constantemente. El articular las palabras de los Tehilim permite por lo tanto que uno \nse arrepienta (como se explica en el Likutey Moharán II, 2:1; ver Torat Natán #2).",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-31264ba10b6e",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 20,
+      "printed_page": null,
+      "quote": "Éste es el signiﬁcado de “las palabras del hombre que fue \nestablecido OL (arriba)”, que nuestros Sabios, de bendita memoria, \nexpusieron como: Él estableció ULá (el beneﬁcio) del arrepentimiento",
+      "snippet": "Éste es el signiﬁcado de “las palabras del hombre que fue \nestablecido OL (arriba)”, que nuestros Sabios, de bendita memoria, \nexpusieron como: Él estableció ULá (el beneﬁcio) del arrepentimiento",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "main_text_spanish",
+      "source_layer": "main_text_spanish",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lm_xv-6a418ac89445",
+      "work_code": "lm_xv",
+      "work_title": "Likutey Moharán XV KDP",
+      "pdf_page": 21,
+      "printed_page": null,
+      "quote": "14. gran inspiración y espíritu Divino…merecer la teshuvá al recitar los salmos. El\nLibro de los Salmos contiene las plegarias y las súplicas necesarias que cada persona y cada \ngeneración requiere para acercarse a Dios. Esta cualidad global proviene del muy exaltado \nespíritu Divino que inspiró al rey David al componer sus salmos y compilar los Tehilim. Más \nadelante en este volumen (Lección #101), el Rebe Najmán enseña que cada persona puede \nencontrarse en los Salmos y traducir sus palabras en plegarias signiﬁcativas para sus propias \ny personales necesidades. El Rabí Natán escribe que el rey David fue capaz de instilar en los \nsalmos el espíritu Divino, siendo “el ungido del Dios de Iaacov” (ver Samuel 2, 23:1 utilizado \nen nuestro texto), debido a que representa al Mashíaj, que corresponde a la puerta número \ncincuenta. De ese tremendo nivel cada persona recibe comprensión y reconocimiento de la \ngran importancia de la plegaria y del clamar a Dios, de modo que puede verse capacitada para \nretornar a Él. Pues, en verdad, sólo Dios abre las puertas del arrepentimiento. Es de Dios que \nnosotros recibimos las palabras que utilizamos para hablar con Él. Sin embargo, el recitar los \nSalmos es como si nosotros estuviésemos iniciando el proceso de la teshuvá, por medio de las \nplegarias traídas desde la puerta cincuenta a través del rey David (Torat Natán #1). Y debido \na que los Salmos surgen de un nivel tan elevado, el hecho de recitarlos despierta en nosotros \nun deseo de arrepentimiento y nos llena de conﬁanza en que, en última instancia, podremos \nretornar (Torat Natán #5).",
+      "snippet": "14. gran inspiración y espíritu Divino…merecer la teshuvá al recitar los salmos. El\nLibro de los Salmos contiene las plegarias y las súplicas necesarias que cada persona y cada \ngeneración requiere para acercarse a Dios. Esta cualidad global proviene del muy exaltado \nespíritu Divino que inspiró al rey David al componer sus salmos y compilar los Tehilim. Más \nadelante en este volumen (Lección #101), el Rebe Najmán enseña que cada persona puede \nencontrarse en los Salmos y traducir sus palabras en plegarias signiﬁcativas para sus propias \ny personales necesidades. El Rabí Natán escribe que el rey David fue capaz de instilar en los \nsalmos el espíritu Divino, siendo “el ungido del Dios de Iaacov” (ver Samuel 2, 23:1 utilizado \nen nuestro texto), debido a que representa al Mashíaj, que corresponde a la puerta número \ncincuenta…",
+      "source_view": "library_lm_xv_kdp_search_ready_v3",
+      "search_record_type": "note_or_source_candidate",
+      "source_layer": "note_or_source_candidate",
+      "zone_type": "note_or_source_candidate",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "hablar",
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-bca88e434749",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 6,
+      "printed_page": -4,
+      "quote": "Prefacio del Editor \n“Bueno es alabar a Dios y cantar a Tu Exaltado Nombre” (Salmos 92:2).\nEl Rabí Natán escribe en su Introducción al Likutey Moharán: “Es \nsuperﬂuo hablar de la profundidad de este libro, pues todo aquél que desee \nmirarlo de manera honesta comprenderá por sí mismo su grandeza. Cada \nlección habla sobre las características del hombre, de cómo desarrollar los \nbuenos atributos y mantenerse lejos de los malos. Habla de la Torá, de la \nplegaria y demás mitzvot; y de cómo cada individuo puede alcanzar niveles \nextremadamente elevados”. El Parparaot LeJojmá, en su Introducción, dirige \nal lector hacia otro ámbito dentro de éste: cómo cada uno puede lograr, a partir \nde su posición aparentemente insigniﬁcante en este mundo, niveles que ni \nsiquiera los ángeles pueden alcanzar. Muchos otros Tzadikim han alabado el \nLikutey Moharán de manera similar.\nPor lo tanto, muy agradecidos estamos a Dios por permitirnos continuar \ncon la traducción de este tesoro, que es el magnum opus del Rebe Najmán. \n* * *\nNuestro agradecimiento a Moshé Mykoff por la excelente traducción del \ntexto del Likutey Moharán y especialmente por ordenar sus notas. A Ozer \nBergman por su revisión y sugerencias. Al Rabí Najmán Burstein, al Rabí \nMoshé Kramer y al Rabí Iaacov Meir Shechter quienes ayudaron a aclarar los \npasajes más difíciles del texto.\nLas lecciones del Rebe Najmán se fundan sobre cinco temas principales: \nTorá, plegaria, la interacción entre la Torá y la plegaria, rúaj (espíritu) y el Tzadik. \nTodos estos son conceptos e ideales que pueden ser alcanzados por el hombre \nsi se aboca a ello. Todas las mitzvot que realizamos, todas las buenas acciones \nque llevamos a cabo, nos ayudan a alcanzar los grandes niveles a los cuales \nnos inspira el Rebe. Sea la voluntad del Todopoderoso que pongamos vida y \nespíritu en nuestra Torá, nuestras plegarias y mitzvot, unidos al Tzadik, para que \npodamos merecer contemplar la llegada del Mashíaj, el retorno de los exiliados \ny la reconstrucción del Santo Templo, pronto y en nuestros días, Amén.\nJaim Kramer\nAdar II 5749",
+      "snippet": "Prefacio del Editor \n“Bueno es alabar a Dios y cantar a Tu Exaltado Nombre” (Salmos 92:2).\nEl Rabí Natán escribe en su Introducción al Likutey Moharán: “Es \nsuperﬂuo hablar de la profundidad de este libro, pues todo aquél que desee \nmirarlo de manera honesta comprenderá por sí mismo su grandeza. Cada \nlección habla sobre las características del hombre, de cómo desarrollar los \nbuenos atributos y mantenerse lejos de los malos. Habla de la Torá, de la \nplegaria y demás mitzvot; y de cómo cada individuo puede alcanzar niveles \nextremadamente elevados”. El Parparaot LeJojmá, en su Introducción, dirige \nal lector hacia otro ámbito dentro de éste: cómo cada uno puede lograr, a partir \nde su posición aparentemente insigniﬁcante en este mundo, niveles que ni \nsiquiera los ángeles pueden alcanzar. Muchos otros Tzadikim han alabado el \nLikutey Moharán de manera similar.…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "hablar"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-9505fac0bbea",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 7,
+      "printed_page": -3,
+      "quote": "Introducción del Traductor al Inglés\n En lugar de un prefacio más tradicional del traductor, se le pide al lector \nque considere lo siguiente:\nLuego de la primera edición del Likutey Moharán, el Rebe Najmán \nhabló de los grandes beneﬁcios que traía el estudio de sus enseñanzas, y \nen especial para aquéllos merecedores de desarrollar alguna idea basada \nen sus lecciones. Cuando un seguidor del Rebe le hizo conocer una de \nestas interpretaciones propias, el Rebe sonrió y le dijo, “Puedes doblar \nmi libro de la manera que quieras, mientras no te alejes ni un ápice \ndel Shuljan Aruj” (Tradición oral; cf. Sabiduría y Enseñanzas del Rabí \nNajmán de Breslov 267).\n“Uno no debe nunca enorgullecerse de sus capacidades intelectuales o \nde sus buenas acciones, pues todas nos llegan a través del Tzadik de la \ngeneración. La persona es al Tzadik lo que una pluma es a las manos del \nescriba” (El Libro de los Atributos, Orgullo A15).\nLa traducción de cualquiera de las enseñanzas del Rebe Najmán y, en \nparticular, de su Likutey Moharán, no puede ser otra cosa que “doblar” sus \npalabras. Traducir estos complejos discursos al inglés implica una cierta dosis \nde interpretación e inevitablemente un cierto grado de distorsión. Es por tanto \nmi esperanza que nada de lo que aparezca aquí lleve a que alguien se aleje \nincluso del mínimo principio de la ley judía. Y, mientras que las deﬁciencias \nque de seguro aparecen en esta traducción son mías, todo el crédito le pertenece \nabsolutamente al Tzadik. \nMoshé Mykoff\nAdar I, 5749/1995\nNuevamente, y al ﬁnalizar la traducción de este segundo volumen del \nLikutey Moharán, quisiera hacer mías las palabras de Moshé Mykoff y agregar \nmi esperanza de que en mi caso pueda perdonarse mi osadía al traducir estos \ntextos, llevado por mi amor y agradecimiento al Rebe Najmán. \nGuillermo Beilinson\nSivan, 5768/2008",
+      "snippet": "Introducción del Traductor al Inglés\n En lugar de un prefacio más tradicional del traductor, se le pide al lector \nque considere lo siguiente:\nLuego de la primera edición del Likutey Moharán, el Rebe Najmán \nhabló de los grandes beneﬁcios que traía el estudio de sus enseñanzas, y \nen especial para aquéllos merecedores de desarrollar alguna idea basada \nen sus lecciones. Cuando un seguidor del Rebe le hizo conocer una de \nestas interpretaciones propias, el Rebe sonrió y le dijo, “Puedes doblar \nmi libro de la manera que quieras, mientras no te alejes ni un ápice \ndel Shuljan Aruj” (Tradición oral; cf. Sabiduría y Enseñanzas del Rabí \nNajmán de Breslov 267).\n“Uno no debe nunca enorgullecerse de sus capacidades intelectuales o \nde sus buenas acciones, pues todas nos llegan a través del Tzadik de la \ngeneración. La persona es al Tzadik lo que una pluma es a las manos del…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-56cda3f9c46f",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 13,
+      "printed_page": 3,
+      "quote": "3 \nLIKUTEY MOHARÁN #7\n1\n“VeEile HaMishpatim (Y éstas son las leyes) que pondrás \ndelante de ellos”. \n (Éxodo 21:1)\nEnseñan nuestros Sabios: [Las palabras “delante de ellos” nos \nenseñan que con respecto a todas las leyes de la Torá], la mujer \nse equipara al hombre (Kidushin 35a). Comenta la Mejilta (21:1): “Es \nposible que los alumnos estudien pero no comprendan. [El \nversículo] enseña por lo tanto: “que pondrás delante de ellos” \n- disponlo delante de ellos como una mesa servida.\n¡D\nebes saber! El motivo esencial del exilio es la falta de ÆMuNá \n(fe);2 como está escrito (Cantar de los Cantares 4:8), “Ven, mira desde \nla cumbre de AMaNá”.3 Y emuná es sinónimo de plegaria; como en \n(Éxodo 17:12), “Sus manos estaban emuná”, que Onkelos traduce como, \n“[Sus manos] estaban extendidas en plegaria”.4\n1. Likutey Moharán 7. El Rebe Najmán tuvo una visión en la cual su bisabuelo, el Baal Shem \nTov, se le presentó y le dijo, “Cuando la gente estropea las cosas en la Tierra de Israel, baja al \nexilio. Esto se encuentra aludido en el versículo (Génesis 49:24), ‘Y de allí el Pastor, la Roca \nde Israel’”. El Rebe Najmán explicó esta visión en esta lección y nuevamente en la Lección #9. \nAmbas enseñanzas fueron dadas durante el invierno del año 5563 (1802-03). Ver Tzadik #129; \nUntil The Mashiach, p.93.\nEsta lección comienza con el primer versículo de la porción de la Torá Mishpatim (Leyes). \nEl Rebe Najmán cita un pasaje Talmúdico y la Mejilta, cada uno de los cuales explica lo que \nenseñan las palabras “que pondrás delante de ellos”. El pasaje Talmúdico en Kidushin (también \nen Bava Kama 15a) se centra en la implicación de la palabra “ellos”, que es plural. Por otro \nlado, la Mejilta explica la directiva misma: “que pondrás delante de ellos”. El Rebe Najmán une \nambas explicaciones y las entreteje en su lección.\nEsta lección es leshón Rabeinu zal. Toda lección designada como tal fue o bien: a) \ncopiada palabra por palabra de los manuscritos del Rebe Najmán que el Rabí Natán tenía en \nsu posesión, o bien b) dictada directamente por el Rebe Najmán al Rabí Natán. Las lecciones \nrestantes (excluidas las pocas que fueron asentadas por escrito por algunos de los otros \nseguidores) fueron registradas por el Rabí Natán después de escuchar la enseñanza de boca \ndel Rebe mismo. Primero preparaba la versión escrita y luego se la presentaba al Rebe Najmán \npara su aprobación.\nLIKUTEY MOHARÁN #7:1",
+      "snippet": "3 \nLIKUTEY MOHARÁN #7\n1\n“VeEile HaMishpatim (Y éstas son las leyes) que pondrás \ndelante de ellos”. \n (Éxodo 21:1)\nEnseñan nuestros Sabios: [Las palabras “delante de ellos” nos \nenseñan que con respecto a todas las leyes de la Torá], la mujer \nse equipara al hombre (Kidushin 35a). Comenta la Mejilta (21:1): “Es \nposible que los alumnos estudien pero no comprendan. [El \nversículo] enseña por lo tanto: “que pondrás delante de ellos” \n- disponlo delante de ellos como una mesa servida.\n¡D\nebes saber! El motivo esencial del exilio es la falta de ÆMuNá \n(fe);2 como está escrito (Cantar de los Cantares 4:8), “Ven, mira desde \nla cumbre de AMaNá”.3 Y emuná es sinónimo de plegaria; como en \n(Éxodo 17:12), “Sus manos estaban emuná”, que Onkelos traduce como, \n“[Sus manos] estaban extendidas en plegaria”.4\n1. Likutey Moharán 7. El Rebe Najmán tuvo una visión en la cual su bisabuelo, el Baal Shem…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-02c968b208ef",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 14,
+      "printed_page": 4,
+      "quote": "4\n וְ זֶה בְּ חִ ינַ ת נִ סִּ ים לְ מַ עְ לָ ה מֵ הַ טֶּ בַ ע, כִּ י הַ תְּ פִ לָּ ה לְ מַ עְ לָ ה מֵ הַ טֶּ בַ ע, כִּ י\nהַ טֶּ בַ ע מְ חַ יֵּב כֵּ ן, וְ הַ תְּ פִ לָּ ה מְ שׁ ַ נָּ ה הַ טֶּ בַ ע, וְ זֶה דְּ בַ ר נֵ ס, וְ לָ זֶה צָ רִ יךְ \nאֱ מוּנָ ה, שׁ ֶ יַּאֲ מִ ין שׁ ֶ יֵּשׁ מְ חַ דֵּ שׁ וּבְ יָדוֹ לְ חַ דֵּ שׁ דָּ בָ ר כִּ רְ צוֹנוֹ. \n-וְ עִ קַּ ר  אֱ מוּנָ ה,  בְּ חִ ינַ ת  תְּ פִ לָּ ה,  בְּ חִ ינַ ת  נִ סִּ ים,  אֵ ינוֹ  אֶ לָּ א  בְּ אֶ רֶ ץ\nיִשְׂ רָ אֵ ל,  כְּ מוֹ  שׁ ֶ כָּ תוּב  )תהלים  ל\"ז(:  \"שׁ ְ כָ ן  אֶ רֶ ץ  וּרְ עֵ ה  אֱ מוּנָ ה\". \nוְ שׁ ָ ם עִ קַּ ר עֲ לִ יּוֹת הַ תְּ פִ לּ וֹת, כְּ מוֹ שׁ ֶ כָּ תוּב )בראשית כ\"ח(: \"וְ זֶה שׁ ַ עַ ר \nהַ שּ ׁ ָ מָ יִם\". \nוּבִ שׁ ְ בִ יל זֶה, כְּ שׁ ֶ פָּ גַ ם אַ בְ רָ הָ ם \"בַּ מָּ ה אֵ דַ ע\" )שם ט\"ו(, וּבָ זֶה פָּ גַ ם \nבִּ ירֻ שּ ׁ ַ ת  אֶ רֶ ץ,  שׁ ֶ הִ יא  בְּ חִ ינַ ת  אֱ מוּנָ ה,  בְּ חִ ינַ ת  תְּ פִ לָּ ה,  הָ יָה  גָּ לוּת \n-מִ צְ רַ יִם. וְ דַ וְ קָ א יַעֲ קֹב וּבָ נָיו יָרְ דוּ מִ צְ רַ יִם, כִּ י הֵ ם בְּ חִ ינַ ת שׁ ְ נֵים\nעָ שָׂ ר נֻ סְ חָ אוֹת הַ תְּ פִ לָּ ה. \nוְ הוֹרִ יד אוֹתָ ם בְּ גָ לוּת. וּמִ צְ רַ יִם הוּא הִ פּ וּךְ הַ נִּ סִּ ים, כְּ מוֹ שׁ ֶ כָּ תוּב \n)שמות י\"ד(: \"וּמִ צְ רַ יִם נָ סִ ים לִ קְ רָ אתוֹ\", שׁ ֶ אֵ ין שׁ ָ ם מְ קוֹם הַ נִּ סִּ ים, \n“tantos como las estrellas en los cielos” (Génesis 15:5,6). Y Abraham creyó. Sin embargo, \ncuando se le informó que iba a heredar la Tierra, cuestionó a Dios. Esto fue considerado como un \ndefecto en su fe. Dios dijo entonces (Génesis 15:13), “Sabe con seguridad que tus descendientes \nserán extranjeros en una tierra ajena durante 400 años”.\n9. en Egipto. El exilio comenzó con el nacimiento de Itzjak, pues él era el descendiente de \nAbraham. Itzjak no poseyó la tierra en la cual vivió. Pero el verdadero descenso a Egipto \ntuvo lugar 190 años más tarde (cuando Iaacov tenía 130 años de edad). Los Hijos de Israel \npermanecieron allí 210 años.\n10. Iaacov. Siendo su padre, Iaacov era la raíz de las doce tribus. Esto explica por qué se lo \nincluyó, aunque no se lo numeró entre ellos. En la Lección #9 (Likutey Moharán 9:4) el Rebe \nNajmán explica que uno debe unir sus plegarias al Tzadik de la generación, porque él sabe \ncómo elevar cada plegaria hacia su portal adecuado. Ése era Iaacov. Él conocía la “fuente” de \ncada tribu, es decir, el lugar apropiado para las plegarias que ellos ofrecían.\n11. doce versiones de la plegaria. El Zohar (loc. cit.) explica que cada una de las tribus judías \ntenía su propio y único sendero a través del cual sus plegarias entraban al cielo. En la Kabalá, esto \npuede derivarse del nombre más sagrado de Dios, el Tetragrámaton: IHVH ( .)יהוהUna palabra \nde cuatro letras puede ser permutada de 24 maneras diferentes, a no ser que alguna de las letras \nesté duplicada. Así, el nombre IHVH (con sólo tres letras diferentes) puede ser reordenado de \ndoce maneras distintas, y cada tribu corresponde a una permutación diferente. Éstas son las \ndoce versiones posibles de la plegaria. Ver Likutey Moharán II, 73 para una explicación más \ncompleta y para entender cómo cada persona puede alcanzar su sendero correcto.\n12. huían hacia él. Huir implica poner distancia entre uno y otro. Sin embargo, aquí los egipcios \nLIKUTEY MOHARÁN #7:1",
+      "snippet": "4\n וְ זֶה בְּ חִ ינַ ת נִ סִּ ים לְ מַ עְ לָ ה מֵ הַ טֶּ בַ ע, כִּ י הַ תְּ פִ לָּ ה לְ מַ עְ לָ ה מֵ הַ טֶּ בַ ע, כִּ י\nהַ טֶּ בַ ע מְ חַ יֵּב כֵּ ן, וְ הַ תְּ פִ לָּ ה מְ שׁ ַ נָּ ה הַ טֶּ בַ ע, וְ זֶה דְּ בַ ר נֵ ס, וְ לָ זֶה צָ רִ יךְ \nאֱ מוּנָ ה, שׁ ֶ יַּאֲ מִ ין שׁ ֶ יֵּשׁ מְ חַ דֵּ שׁ וּבְ יָדוֹ לְ חַ דֵּ שׁ דָּ בָ ר כִּ רְ צוֹנוֹ. \n-וְ עִ קַּ ר  אֱ מוּנָ ה,  בְּ חִ ינַ ת  תְּ פִ לָּ ה,  בְּ חִ ינַ ת  נִ סִּ ים,  אֵ ינוֹ  אֶ לָּ א  בְּ אֶ רֶ ץ\nיִשְׂ רָ אֵ ל,  כְּ מוֹ  שׁ ֶ כָּ תוּב  )תהלים  ל\"ז(:  \"שׁ ְ כָ ן  אֶ רֶ ץ  וּרְ עֵ ה  אֱ מוּנָ ה\". \nוְ שׁ ָ ם עִ קַּ ר עֲ לִ יּוֹת הַ תְּ פִ לּ וֹת, כְּ מוֹ שׁ ֶ כָּ תוּב )בראשית כ\"ח(: \"וְ זֶה שׁ ַ עַ ר \nהַ שּ ׁ ָ מָ יִם\". \nוּבִ שׁ ְ בִ יל זֶה, כְּ שׁ ֶ פָּ גַ ם אַ בְ רָ הָ ם \"בַּ מָּ ה אֵ דַ ע\" )שם ט\"ו(, וּבָ זֶה פָּ גַ ם \nבִּ ירֻ שּ ׁ ַ ת  אֶ רֶ ץ,  שׁ ֶ הִ יא  בְּ חִ ינַ ת  אֱ מוּנָ ה,  בְּ חִ ינַ ת  תְּ פִ לָּ ה,  הָ יָה  גָּ לוּת…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-ff9ff7b80054",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 17,
+      "printed_page": 7,
+      "quote": "7 \nPorque [Egipto] no es el lugar de los milagros. Tampoco es el lugar de \nla plegaria, [motivo por el cual Moshé dijo,] “Cuando salga fuera de la \nciudad extenderé mis manos [en plegaria]” (Éxodo 9:29).13\n[Enseñan nuestros Sabios:] “Todos los exilios son denominados \nMiTZRaiM (Egipto), porque ellos MeTZeRiM (les causan angustia \ny sufrimiento) a los judíos” (Bereshit Rabah 16:4). Así, cuando uno daña \nla fe/<los milagros>/la plegaria/la Tierra de Israel, desciende <a las \nprofundidades> del exilio.\nÉste es el signiﬁcado de lo que enseñaron nuestros Sabios (Sanedrín \n97a): “Mashíaj, el hijo de David, no vendrá hasta que tijlé prutá min \nhakis (se haya acabado el [último] centavo en el bolsillo)”.14 Es decir, \nse acaben los ateos que no tienen fe en los milagros y que los explican \ncomo fenómenos naturales.15 Y la quintaesencia de los milagros tiene \nlugar en la Tierra de Israel, pues “La Tierra de Israel bebe primero” \n(Taanit 10a)16 - su bebida proviene de las tehomot (las profundidades),17 \nque connota [lo milagroso y lo asombroso como está indicado en] (Ruth \n1:19), “Toda la ciudad estaba TeHoM (asombrada)”. Porque algo que es \nmilagroso asombra a todos.18\nY esto es (Salmos 42:8), “Un abismo llama a otro abismo”. Pues hay \n“milagros superiores” que corresponden al tehom superior, y hay “milagros \ninferiores” que corresponden al tehom inferior (Shmot Rabah 5:9).19\nnasim (estaban huyendo) hacia él, es decir, hacia el agua. Como explica Rashi (loc. cit.), ello se \ndebía a la gran confusión que cayó sobre el ejército egipcio. Esto en sí mismo fue un milagro. \nY, como se mencionó anteriormente, Israel es la tierra de los nisim (milagros). El lugar de \nla santidad, el sitio del Santo Templo, y es sinónimo de fe. Egipto, por otro lado, representa \ntodo lo contrario a la santidad. Es el lugar de la impureza y de la idolatría. Para quebrar estas \nfalsas creencias, Dios realizó los milagros de las Diez Plagas y del Mar Rojo. Pues Egipto es la \nantítesis misma de la tierra de los milagros (Mei HaNajal). Comparar esto con Likutey Moharán \nI, 9:5 y las notas que acompañan.\n13. mis manos en plegaria. Como explica Rashi (loc. cit.), Egipto estaba plagado de idolatría y \npor tanto era inapropiado para la plegaria. Así es que Moshé enfatizó que iba a “salir” para orar. \nNuevamente vemos la conexión entre la fe, la plegaria, los milagros (este versículo aparece en \nconexión con la plaga milagrosa del granizo) y la Tierra de Israel. Esto está en contraste con \nlas otras tierras, en especial con Egipto. En verdad, como explica el Rebe Najmán, la plegaria \nmisma estuvo en el exilio en Egipto. Los judíos eran incapaces de abrir la boca para hablar con \nDios (Sabiduría y Enseñanzas del Rabí Najmán de Breslov #68).\n14. el último centavo. El Talmud (loc. cit.) comenta acerca de las diﬁcultades que les \nsobrevendrán a los judíos antes de la llegada del Mashíaj. El signiﬁcado simple de “se haya \nacabado el último centavo en el bolsillo” es que la inﬂación hará que el dinero pierda todo su \nLIKUTEY MOHARÁN #7:1",
+      "snippet": "7 \nPorque [Egipto] no es el lugar de los milagros. Tampoco es el lugar de \nla plegaria, [motivo por el cual Moshé dijo,] “Cuando salga fuera de la \nciudad extenderé mis manos [en plegaria]” (Éxodo 9:29).13\n[Enseñan nuestros Sabios:] “Todos los exilios son denominados \nMiTZRaiM (Egipto), porque ellos MeTZeRiM (les causan angustia \ny sufrimiento) a los judíos” (Bereshit Rabah 16:4). Así, cuando uno daña \nla fe/<los milagros>/la plegaria/la Tierra de Israel, desciende <a las \nprofundidades> del exilio.\nÉste es el signiﬁcado de lo que enseñaron nuestros Sabios (Sanedrín \n97a): “Mashíaj, el hijo de David, no vendrá hasta que tijlé prutá min \nhakis (se haya acabado el [último] centavo en el bolsillo)”.14 Es decir, \nse acaben los ateos que no tienen fe en los milagros y que los explican \ncomo fenómenos naturales.15 Y la quintaesencia de los milagros tiene…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "hablar"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-9373bbb6b551",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 19,
+      "printed_page": 9,
+      "quote": "9 \n{“Yo vi el Ángel de la Lluvia. Parecía un egla (toro) y prita sifvatei (sus labios estaban \nabiertos). Se encontraba entre tehom (abismo) y tehom” (Taanit 25b).}\nEl ángel que abarca a todos los milagros, a ambos tehom, “tiene el \naspecto de un EGLa (un toro).”20 Esto corresponde a IGuLim (círculos), \nque es un aspecto de fe; como está escrito (Salmos 89:9), “Tu fe Te \nrodea”.21 Y, “cuyos labios estaban abiertos”, alude a la plegaria; como \nen (Salmos 51:17), “Señor, abre mis labios”.22 Así, [el ángel] abarca todos \nlos milagros.23\nÉste es el signiﬁcado de, “Hasta que TiJLé PRuTá MiN haKiS”. \nPorque hay gente que encubre todos los milagros que están comprendidos \nen el ángel “cuyos labios estaban PRiTá”. Ellos meJaSim (encubren) \n[todos los milagros] con explicaciones naturales. Cuando esto TiJLé \n(se haya acabado), y haya abundante fe en el mundo, entonces vendrá \nMashíaj. Porque la redención depende esencialmente de esta [abundante \nfe]; como está escrito, “Ven, mira desde la cumbre de Amaná”.24\n2.  Pero es imposible llegar a la fe si no es a través de la verdad.25 \nComo expresa el Zohar (III, 198b): “‘Y la justicia será un cinturón para \nsus caderas y la fe, un ceñidor para sus lomos’ (Isaías 11:5).26 ¿Cuál es \nabiertos, las cosas asombrosas que todos pueden percibir como algo claramente fuera de lo \ncomún. Por otra parte, los “milagros inferiores” son milagros ocultos que se presentan como \nsituaciones naturales.\n20. EGLa, un toro. El Maharsha explica que Taurus, el toro, es la constelación de Iar, el mes \nen que dejan de caer las lluvias en la Tierra de Israel. Es por esta razón que el ángel encargado \nde distribuir la lluvia se presenta como un toro. El Midrash (Bereshit Rabah 10:7) enseña que \ncada hoja de hierba tiene una estrella y un ángel que se encargan de ella. Más aún, el ángel \nencargado de la constelación estelar tiene la apariencia de la constelación que controla. En este \ncaso, se presenta como el toro. (Comparar esta interpretación del pasaje Talmúdico con aquélla \nque ofrece el Rebe Najmán antes de la conclusión de la Lección #9).\n21. IGuLim...Te rodea. La fe se asemeja a un círculo. Un círculo es una línea continua sin \nsalientes. No tiene un borde del cual uno pueda aferrarse. De la misma manera, la fe se aplica \nsólo en los casos en los cuales uno no puede comprender, es decir, no hay manera de aferrarlo \ncon la lógica (Parparaot LeJojmá).\n22. abre mis labios. Éstas son las palabras introductorias de la Amidá (Las Dieciocho \nBendiciones), el punto central de cada una de las tres plegarias diarias.\n23. todos los milagros. La plegaria de nuestros labios, junto con la fe en Dios, genera milagros. \nÉste fue el caso de Moshé, quien oró por cada uno de los milagros realizados por Dios, y de \nElisha, como se explicó arriba (n.5). Nuestros Sabios hacen otra conexión más entre la fe y la \nlluvia, diciendo: Las lluvias sólo caen en mérito a aquellos que tienen fe (Taanit 8a).\nLIKUTEY MOHARÁN #7:1,2",
+      "snippet": "9 \n{“Yo vi el Ángel de la Lluvia. Parecía un egla (toro) y prita sifvatei (sus labios estaban \nabiertos). Se encontraba entre tehom (abismo) y tehom” (Taanit 25b).}\nEl ángel que abarca a todos los milagros, a ambos tehom, “tiene el \naspecto de un EGLa (un toro).”20 Esto corresponde a IGuLim (círculos), \nque es un aspecto de fe; como está escrito (Salmos 89:9), “Tu fe Te \nrodea”.21 Y, “cuyos labios estaban abiertos”, alude a la plegaria; como \nen (Salmos 51:17), “Señor, abre mis labios”.22 Así, [el ángel] abarca todos \nlos milagros.23\nÉste es el signiﬁcado de, “Hasta que TiJLé PRuTá MiN haKiS”. \nPorque hay gente que encubre todos los milagros que están comprendidos \nen el ángel “cuyos labios estaban PRiTá”. Ellos meJaSim (encubren) \n[todos los milagros] con explicaciones naturales. Cuando esto TiJLé \n(se haya acabado), y haya abundante fe en el mundo, entonces vendrá \nMashíaj…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-12e12e55c48f",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 20,
+      "printed_page": 10,
+      "quote": "10\n י\"א( – הַ יְנוּ צֶ דֶ ק, הַ יְנוּ אֱ מוּנָ ה. וְ אָ מְ רוּ שׁ ָ ם: 'אֱ מוּנָ ה אִ תְ קְ רִ יאַ ת, כַּ ד\nאִ תְ חַ בַּ ר בַּ הּ אֱ מֶ ת'. \nיְדֵ י הִ תְ קָ רְ בוּת לְ צַ דִּ יקִ ים -אֶ פְ שׁ ָ ר לָ בוֹא לֶ אֱ מֶ ת אֶ לָּ א עַ ל-וְ אִ י\nג \nיְדֵ י שׁ ֶ מְּ קַ בֵּ ל מֵ הֶ ם עֲ צָ תָ ם, נֶ חְ קָ ק בּ וֹ אֱ מֶ ת; -וְ יֵלֵ ךְ בְּ דֶ רֶ ךְ עֲ צָ תָ ם; וְ עַ ל\nכְּ מוֹ שׁ ֶ כָּ תוּב )תהלים נ\"א(: \"הֵ ן אֱ מֶ ת חָ פַ צְ תָּ \" – כְּ שׁ ֶ אַ תָּ ה חָ פֵ ץ אֱ מֶ ת; \n\"בַ טֻּ חוֹת וּבְ סָ תֻ ם חָ כְ מָ ה תוֹדִ יעֵ נִי\"; כִּ י הָ עֵ צוֹת שׁ ֶ מְּ קַ בֵּ ל מֵ הֶ ן הוּא \nבְּ חִ ינַ ת נִשּ ֹׂוּאִ ין וְ זִוּוּג. \nוּכְ שׁ ֶ מְּ קַ בְּ לִ ין עֵ צוֹת מֵ רְ שׁ ָ עִ ים, הוּא בְּ חִ ינַ ת נִשּ ֹׂוּאִ ין בַּ קְּ לִ פָּ ה. \"הַ נָּ חָ שׁ \nהִ שּ ׁ ִ יאַ נִי\" )בראשית ג( – לְ שׁ וֹן נִשּ ֹׂוּאִ ין, עֲ צוֹת הַ נָּ חָ שׁ שׁ ֶ קִּ בְּ לָ ה הוּא \n-יְדֵ י נִשּ ֹׂוּאִ ין הֵ טִ יל בָּ הּ זֻהֲ מָ א. וּבְ מַ עֲ מַ ד הַ ר-בְּ חִ ינַ ת נִשּ ֹׂוּאִ ין, וְ עַ ל\nסִ ינַי פָּ סְ קָ ה זֻהֲ מָ תָ ן )שבת קמו. עין רש\"י שם(, כִּ י שׁ ָ ם קִ בְּ לוּ תַּ רְ יַ\"ג \nעֵ טִ ין דִּ קְ דֻ שּ ׁ ָ ה )זהר יתרו פ\"ב:(, וְ הָ יְתָ ה לָ הֶ ם נִשּ ֹׂוּאִ ין בִּ קְ דֻ שּ ׁ ָ ה. \nוְ לָ מָּ ה  נִ קְ רָ א  עֵ צָ ה  בִּ בְ חִ ינַ ת  נִשּ ֹׂוּאִ ין?  כִּ י  )ברכות  סא.(  'הַ כְּ לָ יוֹת \n31. este veneno desapareció.... Enseña el Talmud (loc. cit.) que de hecho la serpiente cohabitó \ncon Java, envenenándola a ella y por consiguiente a toda la humanidad, a todos sus descendientes. \nPero cuando el pueblo judío estuvo en el Monte Sinaí y recibió directamente de Dios la Torá \n-los 613 “consejos” puros- se limpió de este veneno.\n32. matrimonio de santidad. La Torá nos dice (Éxodo 19:17) que “Moshé sacó al pueblo fuera \ndel campamento rumbo a la Presencia Divina y ellos se detuvieron paralizados a los pies de la \nmontaña”. Rashi comenta citando la Mejilta: “Esto nos dice que la Presencia Divina salió a su \nencuentro tal como el novio sale a recibir a la novia”.\n33. los riñones aconsejan. ¿Dónde se enseña que los riñones aconsejan? El versículo aﬁrma, \n“Bendeciré a Dios, Que me aconseja; incluso de noche me amonestan mis riñones” (Salmos \n16:7; ver Rashi). El Talmud (loc. cit.) hace una lista de 13 partes internas del cuerpo (la lengua, \nlos pulmones, la tráquea, el bazo, etcétera), de las cuales los riñones son los únicos que están \nduplicados. Comenta el Maharsha que esta duplicidad alude a la libertad de elección del \nhombre, a su capacidad de elegir lo correcto de lo incorrecto. Se indica además que la función \nprincipal de los riñones, el procesar y puriﬁcar la sangre “envenenada” del cuerpo, se lleva a \ncabo durante la noche. Esto se encuentra aludido en “...incluso de noche me amonestan mis \nriñones” (Jidushei HaGaonim sobre el Ein Iaacov, loc. cit.).\nEnseña el Midrash: Abraham no tenía maestro, ¿cómo es entonces que estudiaba la Torá? \nLa respuesta es que Dios hacía que sus dos riñones actuasen como dos maestros, y ellos le \nenseñaron Torá y sabiduría, como en [el versículo citado arriba], “Bendeciré... mis riñones...” \n(Bereshit Rabah 61:1).\nLIKUTEY MOHARÁN #7:2,3",
+      "snippet": "10\n י\"א( – הַ יְנוּ צֶ דֶ ק, הַ יְנוּ אֱ מוּנָ ה. וְ אָ מְ רוּ שׁ ָ ם: 'אֱ מוּנָ ה אִ תְ קְ רִ יאַ ת, כַּ ד\nאִ תְ חַ בַּ ר בַּ הּ אֱ מֶ ת'. \nיְדֵ י הִ תְ קָ רְ בוּת לְ צַ דִּ יקִ ים -אֶ פְ שׁ ָ ר לָ בוֹא לֶ אֱ מֶ ת אֶ לָּ א עַ ל-וְ אִ י\nג \nיְדֵ י שׁ ֶ מְּ קַ בֵּ ל מֵ הֶ ם עֲ צָ תָ ם, נֶ חְ קָ ק בּ וֹ אֱ מֶ ת; -וְ יֵלֵ ךְ בְּ דֶ רֶ ךְ עֲ צָ תָ ם; וְ עַ ל\nכְּ מוֹ שׁ ֶ כָּ תוּב )תהלים נ\"א(: \"הֵ ן אֱ מֶ ת חָ פַ צְ תָּ \" – כְּ שׁ ֶ אַ תָּ ה חָ פֵ ץ אֱ מֶ ת; \n\"בַ טֻּ חוֹת וּבְ סָ תֻ ם חָ כְ מָ ה תוֹדִ יעֵ נִי\"; כִּ י הָ עֵ צוֹת שׁ ֶ מְּ קַ בֵּ ל מֵ הֶ ן הוּא \nבְּ חִ ינַ ת נִשּ ֹׂוּאִ ין וְ זִוּוּג. \nוּכְ שׁ ֶ מְּ קַ בְּ לִ ין עֵ צוֹת מֵ רְ שׁ ָ עִ ים, הוּא בְּ חִ ינַ ת נִשּ ֹׂוּאִ ין בַּ קְּ לִ פָּ ה. \"הַ נָּ חָ שׁ \nהִ שּ ׁ ִ יאַ נִי\" )בראשית ג( – לְ שׁ וֹן נִשּ ֹׂוּאִ ין, עֲ צוֹת הַ נָּ חָ שׁ שׁ ֶ קִּ בְּ לָ ה הוּא \n-יְדֵ י נִשּ ֹׂוּאִ ין הֵ טִ יל בָּ הּ זֻהֲ מָ א…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "sangre"
+      ],
+      "matched_concepts": [
+        "sangre"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-566d47c8b834",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 21,
+      "printed_page": 11,
+      "quote": "11 \nentonces la diferencia entre la justicia y la fe?”. La respuesta dada es, \n[la justicia] es llamada fe cuando está unida con la verdad.27\n3.  {“He aquí, Tú quieres la verdad en lo íntimo; en lo recóndito hazme conocer la \nsabiduría” (Salmos 51:8).}\nPero es imposible alcanzar la verdad si no es apegándose a los \nTzadikim y siguiendo sus consejos. La persona que acepta sus consejos \ntiene la verdad grabada profundamente dentro de sí. Como está escrito, \n“He aquí, Tú quieres la verdad” -cuando la verdad es lo que tú deseas28- \n“en lo íntimo; en lo recóndito hazme conocer la sabiduría”. Porque el \nconsejo recibido [de los Tzadikim] es un aspecto del matrimonio y de \nla unión <de santidad>.29\nPero cuando uno acepta el consejo de los malvados, esto corresponde \na un matrimonio <y unión> con la klipá (las “cáscaras”). [Como cuando \nJava dijo en el Jardín del Edén] (Génesis 3:13), “La Serpiente me aconsejó” \n- esto es un eufemismo para el matrimonio.30 Su aceptación del consejo \nde la Serpiente se asemeja a un matrimonio. Mediante <este> matrimonio \nla Serpiente la envenenó [a ella y a todos sus descendientes]. Sin \nembargo, este veneno desapareció con la revelación en el monte Sinaí” \n(Shabat 146a).31 Porque allí ellos recibieron los seiscientos trece consejos \nde santidad (Zohar II, 82b), <un matrimonio de santidad>.32\n¿Y por qué se dice que el consejo corresponde al matrimonio? \nEsto es porque, “los riñones aconsejan” (Berajot 61a),33 y los riñones son \n27. La justicia es llamada fe... El Zohar (loc. cit.) explica que tanto tzedek (justicia) como \nemuná (fe) son formas del juicio. En la terminología de la Kabalá, ambas se relacionan con \nel principio femenino de Maljut. La diferencia entre ellas es que tzedek hace referencia a un \ndecreto severo, cuando el castigo se aplica con rigor. Sin embargo, cuando emet (verdad), el \nprincipio masculino de Tiferet (ver n.57), se une con tzedek, se transforma en fe.\nResumen: La esencia de la fe, que corresponde a la plegaria y a los milagros, se encuentra en la \nTierra de Israel. Su antítesis es Egipto, el exilio, que tipiﬁca un daño en la fe y en los milagros. \nLa redención, la venida de Mashíaj, depende de la fe (§1). La fe se alcanza a través de la verdad. \nCuando la justicia se complementa con la verdad, ella se transforma en fe (§2).\n28. Tú...lo que tú deseas. En el versículo, el rey David está hablándole a Dios. Sin embargo, el \nRebe Najmán lo aplica al deseo de la persona por la verdad; cambiando así la letra T mayúscula \npor una minúscula.\n29. matrimonio y unión de santidad. Esto será explicado más adelante en la lección.\n30. para el matrimonio. La palabra hebrea que signiﬁca “me aconsejó”, HiShiANI, es similar a \nla palabra que signiﬁca “se casó conmigo”, HiSiANI (ver Rashi, Shabat 146a, v.i. kesheba).\nLIKUTEY MOHARÁN #7:2,3",
+      "snippet": "11 \nentonces la diferencia entre la justicia y la fe?”. La respuesta dada es, \n[la justicia] es llamada fe cuando está unida con la verdad.27\n3.  {“He aquí, Tú quieres la verdad en lo íntimo; en lo recóndito hazme conocer la \nsabiduría” (Salmos 51:8).}\nPero es imposible alcanzar la verdad si no es apegándose a los \nTzadikim y siguiendo sus consejos. La persona que acepta sus consejos \ntiene la verdad grabada profundamente dentro de sí. Como está escrito, \n“He aquí, Tú quieres la verdad” -cuando la verdad es lo que tú deseas28- \n“en lo íntimo; en lo recóndito hazme conocer la sabiduría”. Porque el \nconsejo recibido [de los Tzadikim] es un aspecto del matrimonio y de \nla unión <de santidad>.29\nPero cuando uno acepta el consejo de los malvados, esto corresponde \na un matrimonio <y unión> con la klipá (las “cáscaras”). [Como cuando…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-07c0ebb8d9bc",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 22,
+      "printed_page": 12,
+      "quote": "12\n יוֹעֲ צוֹת', וּכְ לָ יוֹת הֵ ם כְּ לֵ י הַ הוֹלָ דָ ה, כְּ לֵ י הַ זֶּרַ ע. נִ מְ צָ א, כְּ שׁ ֶ מְּ קַ בְּ לִ ין\nעֵ צָ ה מֵ אָ דָ ם, כְּ אִ לּ וּ מְ קַ בְּ לִ ין מִ מֶּ נּוּ זֶרַ ע; וְ הַ כּ ֹל לְ פִ י אָ דָ ם, אִ ם רָ שׁ ָ ע \nאוֹ צַ דִּ יק. \nוּבִ שׁ ְ בִ יל זֶה הַ תּ וֹרָ ה מַ תִּ ישׁ כּ ֹחַ )סנהדרין כו:( וְ נִ קְ רֵ את 'תּ וּשׁ ִ יָּה', כִּ י \nהֵ ם תַּ רְ יַ\"ג עֵ טִ ין, כְּ מוֹ שׁ ֶ כָּ תוּב )משלי ח(: \"לִ י עֵ צָ ה וְ תוּשׁ ִ יָּה\". וְ עֵ צוֹת \nהֵ ם בִּ מְ קוֹם נִשּ ֹׂוּאִ ין, בְּ חִ ינַ ת זִוּוּג הַ מַּ תִּ ישׁ כּ ֹחַ . \nוַ עֲ צַ ת הַ צַּ דִּ יק הוּא כֻּ לּ וֹ זֶרַ ע אֱ מֶ ת. וְ זֶה פֵּ רוּשׁ )ירמיה ב(: \"וְ אָ נֹכִ י \nנְ טַ עְ תִּ יךְ שׂוֹרֵ ק\" – בְּ חִ ינַ ת הַ גְּ אֻ לָּ ה, כְּ מוֹ שׁ ֶ כָּ תוּב )זכריה י(: \"אֶ שׁ ְ רְ קָ ה \nיְדֵ י:  \"כֻּ לּ וֹ  זֶרַ ע  אֱ מֶ ת\"  )שם -יְדֵ י  מָ ה?  עַ ל-לָ הֶ ם  וַ אֲ קַ בְּ צֵ ם\",  וְ עַ ל\nיְדֵ י עֲ צַ ת הַ צַּ דִּ יקִ ים -בירמיה סיום הפסוק \"ואנכי נטעתיך\" הנ\"ל( – עַ ל\nזֶה נִ קְ רֵ את אֱ מוּנָ ה, כַּ ד אִ תְ חַ בַּ ר בַּ הּ אֱ מֶ ת, -יְדֵ י-תָּ בוֹא לֶ אֱ מֶ ת. וְ עַ ל\nזֶה תָּ בוֹא הַ גְּ אֻ לָּ ה כַּ נַּ \"ל, כִּ י הוּא מְ קַ בֵּ ל טִ פֵּ י הַ שּ ֵׂ כֶ ל שׁ ֶ ל -יְדֵ י-וְ עַ ל\nיְדֵ י עֵ צָ ה שׁ ֶ מְּ קַ בֵּ ל מִ מֶּ נּוּ. -הַ צַּ דִּ יק עַ ל\nוְ זֶה: \"הֵ ן אֱ מֶ ת חָ פַ צְ תָּ בַ טֻּ חוֹת\" – בַּ כְּ לָ יוֹת; \"חָ כְ מָ ה תוֹדִ יעֵ נִי\" – \ny mujer. Así, para recibir consejo, uno debe llegar a amar al Tzadik y a desear estar junto a él. \nEl Rebe Najmán nos dice (ver Tzadik #471) que el “amor del Tzadik a sus seguidores es muy \ngrande”, pese al continuo desgaste y esfuerzo que debe hacer por ellos (Ibid., #94). Como \nquedará más claro al ﬁnal de la lección, la “simiente enteramente verdadera” del consejo emana \nde un nivel muy elevado (la seﬁrá superior de Jojmá etc., el cerebro). Al Tzadik no le resulta \nfácil hacerlo descender a un nivel en el que esté accesible (las seﬁrot inferiores de Netzaj y Hod, \nlos riñones). Esto en sí mismo socava la fuerza del Tzadik que busca llevar a la gente hacia el \narrepentimiento.\n37. los reuniré. Con respecto a la palabra sorek ( )שורקque tiene el valor numérico de 606 (ver \nApéndice: Tabla de Guematria), Rashi cita un Midrash que enseña: El signiﬁcado de “Yo te \nhabía plantado un sorek” es que Dios les dijo a los judíos, “Yo les he dado otras 606 mitzvot \nademás de las 7 leyes de Noaj” que son universales. Estas 613 mitzvot, a las cuales el Zohar \nllama etzot, son los “consejos” mencionados en la lección.\n38. que acepta de él. El consejo del Tzadik es puro, una absoluta verdad. Cuando la persona \nacepta el consejo del Tzadik, incluso sin comprender el razonamiento que lo sustenta (una \nexpresión de fe), hace que la verdad quede grabada en ella. Esto la llevará hacia el sendero \ncorrecto. Como hemos visto, el deseo de esta persona por la verdad construye su fe, y esto hace \nque sea dirigida de la manera correcta. En última instancia, ello también traerá la redención \n(Parparaot LeJojmá). Esto se une con el comienzo de la lección, conectando la fe con la verdad \ny la aceptación del consejo del Tzadik.\nLIKUTEY MOHARÁN #7:3",
+      "snippet": "12\n יוֹעֲ צוֹת', וּכְ לָ יוֹת הֵ ם כְּ לֵ י הַ הוֹלָ דָ ה, כְּ לֵ י הַ זֶּרַ ע. נִ מְ צָ א, כְּ שׁ ֶ מְּ קַ בְּ לִ ין\nעֵ צָ ה מֵ אָ דָ ם, כְּ אִ לּ וּ מְ קַ בְּ לִ ין מִ מֶּ נּוּ זֶרַ ע; וְ הַ כּ ֹל לְ פִ י אָ דָ ם, אִ ם רָ שׁ ָ ע \nאוֹ צַ דִּ יק. \nוּבִ שׁ ְ בִ יל זֶה הַ תּ וֹרָ ה מַ תִּ ישׁ כּ ֹחַ )סנהדרין כו:( וְ נִ קְ רֵ את 'תּ וּשׁ ִ יָּה', כִּ י \nהֵ ם תַּ רְ יַ\"ג עֵ טִ ין, כְּ מוֹ שׁ ֶ כָּ תוּב )משלי ח(: \"לִ י עֵ צָ ה וְ תוּשׁ ִ יָּה\". וְ עֵ צוֹת \nהֵ ם בִּ מְ קוֹם נִשּ ֹׂוּאִ ין, בְּ חִ ינַ ת זִוּוּג הַ מַּ תִּ ישׁ כּ ֹחַ . \nוַ עֲ צַ ת הַ צַּ דִּ יק הוּא כֻּ לּ וֹ זֶרַ ע אֱ מֶ ת. וְ זֶה פֵּ רוּשׁ )ירמיה ב(: \"וְ אָ נֹכִ י \nנְ טַ עְ תִּ יךְ שׂוֹרֵ ק\" – בְּ חִ ינַ ת הַ גְּ אֻ לָּ ה, כְּ מוֹ שׁ ֶ כָּ תוּב )זכריה י(: \"אֶ שׁ ְ רְ קָ ה \nיְדֵ י:  \"כֻּ לּ וֹ  זֶרַ ע  אֱ מֶ ת\"  )שם -יְדֵ י  מָ ה?  עַ ל-לָ הֶ ם  וַ אֲ קַ בְּ צֵ ם\",  וְ עַ ל…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "lmii-14c4c777c6b9",
+      "work_code": "lmii",
+      "work_title": "Likutey Moharán II",
+      "pdf_page": 24,
+      "printed_page": 14,
+      "quote": "14\n ;יְדֵ י עֵ צָ ה שׁ ֶ אֲ קַ בֵּ ל מֵ הֶ ם-שׁ ֶ אֶ זְכֶּ ה לְ קַ בֵּ ל טִ פֵּ י הַ מּ ֹחַ , טִ פֵּ י הַ שּ ֵׂ כֶ ל, עַ ל\nוְ אָ ז אֶ זְכֶּ ה לֶ אֱ מֶ ת, כִּ י הַ טִּ פֵּ י הַ שֵׂ כֶ ל נִ קְ רָ א \"כֻּ לּ וֹ זֶרַ ע אֱ מֶ ת\".\nיְדֵ י מִ צְ וַ ת צִ יצִ ית הָ אָ דָ ם נִ צּ וֹל מֵ עֲ צַ ת הַ נָּ חָ שׁ , -וְ דַ ע, שׁ ֶ עַ ל\nד \nמִ נִּשּ ֹׂוּאִ ין שׁ ֶ ל רָ שׁ ָ ע, מִ בְּ חִ ינַ ת נִ אוּף, כִּ י צִ יצִ ית שׁ ְ מִ ירָ ה לְ נִ אוּף; \nכַּ מּ וּבָ א בַּ תִּ קּ וּנִים )תקון יח(: \"וַ יִּקַּ ח שׁ ֵ ם וָ יֶפֶ ת אֶ ת הַ שּ ִׂ מְ לָ ה וַ יָּשִׂ ימוּ \nעַ ל שׁ ְ כֶ ם שׁ ְ נֵיהֶ ם\" )בראשית ט( – זֶה בְּ חִ ינַ ת צִ יצִ ית. \"וְ עֶ רְ וַ ת אֲ בִ יהֶ ם \nלֹא רָ אוּ\" – כִּ י צִ יצִ ית מְ כַ סָּ ה עַ ל עֲ רָ יִין. אֲ בָ ל חָ ם, דְּ הוּא יֵצֶ ר הָ רָ ע, \nנָשׁ בַּ עֲ בֵ רָ ה, הוּא אָ רוּר, כְּ מוֹ שׁ ֶ כָּ תוּב )שם(: -דִּ מְ חַ מֵּ ם גּוּפֵ הּ דְּ בַ ר\n\"אָ רוּר כְּ נָ עַ ן\", כְּ מוֹ שׁ ֶ כָּ תוּב )שם ג(: \"אָ רוּר אַ תָּ ה מִ כָּ ל הַ בְּ הֵ מָ ה\". \nוְ הַ שּ ִׂ מְ לָ ה  הַ יְנוּ  צִ יצִ ית,  הוּא  שׁ ְ מִ ירָ ה  מֵ עֲ צַ ת  הַ נָּ חָ שׁ ,  מִ זֻּהֲ מַ ת \nהַ נָּ חָ שׁ . \n41. cubren la desnudez. La mitzvá de los tzitzit requiere colocar los ﬂecos en todas las prendas \nque tengan cuatro esquinas. Esto es para hacerle recordar a la persona todas las otras mitzvot de \nla Torá, como se explica en el texto (§4 más abajo). La vestimenta con tzitzit cubre el cuerpo y \nprotege por lo tanto de la exposición al pecado. Si Noaj hubiera estado cubierto con los tzitzit, \nhabría sido protegido de la inmoralidad de su hijo.\n42. meJaMem...pecado. En hebreo la palabra jam ( )חםsigniﬁca caliente y es la raíz de meJaMem \n( .)מחמםÉste es el motivo por el cual el Rebe Najmán nos dice que Jam es la personiﬁcación de \nla inclinación al mal. Incita al cuerpo a buscar los placeres físicos y lo lleva a pecar.\n43. Canaán. Debido a que Canaán inició esta acción (n.40) fue él quien recibió la maldición. Rashi \n(Génesis 10:13-14) hace notar que este descendiente de Jam continuó con el comportamiento \nilícito de su padre.\n44. todos los animales. El Rebe Najmán cita este versículo sobre la maldición de la Serpiente, \nasemejándola a la maldición hecha a Jam (Canaán). Se dice que ambos encarnan la inclinación \nal mal. Esto se une efectivamente con el concepto de “consejo de los malvados” tratado más \narriba en la lección. La Serpiente y Jam (Canaán) “aconsejaron” promoviendo actos sexuales \nilícitos y ambos fueron inmediatamente condenados por ello. Enseñan nuestros Sabios: La \nSerpiente fue maldecida con un período de gestación de siete años (Bejorot 8b). Tal como su \n“simiente” tarda mucho en aparecer, de la misma manera la verdadera naturaleza de su consejo \npuede apreciarse recién mucho más tarde.\n45. el veneno de la Serpiente. Debido a que los tzitzit protegen de la inmoralidad, \nautomáticamente protegen contra el veneno de la Serpiente, que es inmoralidad y sexualidad \nilícita.\nLIKUTEY MOHARÁN #7:3,4",
+      "snippet": "14\n ;יְדֵ י עֵ צָ ה שׁ ֶ אֲ קַ בֵּ ל מֵ הֶ ם-שׁ ֶ אֶ זְכֶּ ה לְ קַ בֵּ ל טִ פֵּ י הַ מּ ֹחַ , טִ פֵּ י הַ שּ ֵׂ כֶ ל, עַ ל\nוְ אָ ז אֶ זְכֶּ ה לֶ אֱ מֶ ת, כִּ י הַ טִּ פֵּ י הַ שֵׂ כֶ ל נִ קְ רָ א \"כֻּ לּ וֹ זֶרַ ע אֱ מֶ ת\".\nיְדֵ י מִ צְ וַ ת צִ יצִ ית הָ אָ דָ ם נִ צּ וֹל מֵ עֲ צַ ת הַ נָּ חָ שׁ , -וְ דַ ע, שׁ ֶ עַ ל\nד \nמִ נִּשּ ֹׂוּאִ ין שׁ ֶ ל רָ שׁ ָ ע, מִ בְּ חִ ינַ ת נִ אוּף, כִּ י צִ יצִ ית שׁ ְ מִ ירָ ה לְ נִ אוּף; \nכַּ מּ וּבָ א בַּ תִּ קּ וּנִים )תקון יח(: \"וַ יִּקַּ ח שׁ ֵ ם וָ יֶפֶ ת אֶ ת הַ שּ ִׂ מְ לָ ה וַ יָּשִׂ ימוּ \nעַ ל שׁ ְ כֶ ם שׁ ְ נֵיהֶ ם\" )בראשית ט( – זֶה בְּ חִ ינַ ת צִ יצִ ית. \"וְ עֶ רְ וַ ת אֲ בִ יהֶ ם \nלֹא רָ אוּ\" – כִּ י צִ יצִ ית מְ כַ סָּ ה עַ ל עֲ רָ יִין. אֲ בָ ל חָ ם, דְּ הוּא יֵצֶ ר הָ רָ ע, \nנָשׁ בַּ עֲ בֵ רָ ה, הוּא אָ רוּר, כְּ מוֹ שׁ ֶ כָּ תוּב )שם(: -דִּ מְ חַ מֵּ ם גּוּפֵ הּ דְּ בַ ר…",
+      "source_view": "library_lmii_search_ready_v2",
+      "search_record_type": "page_literal",
+      "source_layer": "page_literal",
+      "zone_type": null,
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "literal_same_page",
+      "literal_strength": "medium",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-a0e25fefca61",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 1,
+      "printed_page": null,
+      "quote": "Cómo comprender \nel poder que subyace \ntras las palabras \nde la plegaria",
+      "snippet": "Cómo comprender \nel poder que subyace \ntras las palabras \nde la plegaria",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-b08f81fa90ca",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 9,
+      "printed_page": null,
+      "quote": "La plegaria ha estado con nosotros desde la creación. Adán oró, Noaj \nelevó una oración, al igual que los patriarcas. Quizás su conexión con HaShem \nles fue dada debido a su elevado nivel de espiritualidad, pero… ¿qué relación \ntiene todo esto con nosotros? Sus plegarias eran dichas en sus propias palabras, \nﬂuyendo desde sus corazones. Nuestras plegarias son oraciones establecidas \ndesde el tiempo del segundo Beit HaMikdash (alrededor del año 350 a.e.c.), \nhace cerca de 2400 años. ¿Son acaso relevantes hoy en día?",
+      "snippet": "La plegaria ha estado con nosotros desde la creación. Adán oró, Noaj \nelevó una oración, al igual que los patriarcas. Quizás su conexión con HaShem \nles fue dada debido a su elevado nivel de espiritualidad, pero… ¿qué relación \ntiene todo esto con nosotros? Sus plegarias eran dichas en sus propias palabras, \nﬂuyendo desde sus corazones. Nuestras plegarias son oraciones establecidas \ndesde el tiempo del segundo Beit HaMikdash (alrededor del año 350 a.e.c.), \nhace cerca de 2400 años. ¿Son acaso relevantes hoy en día?",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-3faae5d14509",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 10,
+      "printed_page": null,
+      "quote": "La idea detrás de La Potencia de la Plegaria es la búsqueda del \nsigniﬁcado. En estas páginas se podrá percibir cómo es que existen razones \ndeﬁnidas para el recitado de una plegaria, por qué las oraciones están ordenadas \nde esta manera especíﬁca y qué es lo que podemos alcanzar con nuestras \nplegarias. Mediante una suma de comentarios simples y de ideas provenientes \nde la Kabalá, podremos descubrir el poder que yace detrás de las palabras y \ncomprender la potencia de nuestros esfuerzos.",
+      "snippet": "La idea detrás de La Potencia de la Plegaria es la búsqueda del \nsigniﬁcado. En estas páginas se podrá percibir cómo es que existen razones \ndeﬁnidas para el recitado de una plegaria, por qué las oraciones están ordenadas \nde esta manera especíﬁca y qué es lo que podemos alcanzar con nuestras \nplegarias. Mediante una suma de comentarios simples y de ideas provenientes \nde la Kabalá, podremos descubrir el poder que yace detrás de las palabras y \ncomprender la potencia de nuestros esfuerzos.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra",
+        "palabras"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-18175099a3a2",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 11,
+      "printed_page": null,
+      "quote": "Ello se debió a una combinación de factores. Uno fue la esclavitud y \nla angustia que estaban viviendo. Lo segundo fue que tanto su fe en HaShem \ncomo en la plegaria era débil. La mezcla de ambos factores combinados hizo \nque el orar a HaShem fuese una tarea casi imposible. No tenían la fuerza para \nhablar con HaShem y expresar lo que estaban sintiendo (Shela).",
+      "snippet": "Ello se debió a una combinación de factores. Uno fue la esclavitud y \nla angustia que estaban viviendo. Lo segundo fue que tanto su fe en HaShem \ncomo en la plegaria era débil. La mezcla de ambos factores combinados hizo \nque el orar a HaShem fuese una tarea casi imposible. No tenían la fuerza para \nhablar con HaShem y expresar lo que estaban sintiendo (Shela).",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "hablar"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-89cbc972f3b0",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 11,
+      "printed_page": null,
+      "quote": "El Ari1 explica que la palabra hebrea para designar a Egipto, MiTzRaim, \nproviene de la misma raíz que MeiTzaR (estrechez) y representa el cuello de \nla persona, la parte más estrecha del cuerpo humano. Vemos que el faraón",
+      "snippet": "El Ari1 explica que la palabra hebrea para designar a Egipto, MiTzRaim, \nproviene de la misma raíz que MeiTzaR (estrechez) y representa el cuello de \nla persona, la parte más estrecha del cuerpo humano. Vemos que el faraón",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "palabra"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-fb8f6d77cbf6",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 11,
+      "printed_page": null,
+      "quote": "La mayor parte de la gente considera el Éxodo como el pasaje de la \nnación judía de la esclavitud hacia la libertad. Un hecho poco conocido es que \nel habla, que estaba atrapada en Egipto, también fue liberada entonces, como \nen “libertad de palabra”. La Torá aﬁrma que cuando murió el faraón, “Los hijos \nde Israel gemían a causa de la servidumbre y clamaron, y subió a HaShem \nsu clamor, a causa de su servidumbre” (Éxodo: 23). Pero no encontramos que \nhayan orado. ¿Por qué no?",
+      "snippet": "La mayor parte de la gente considera el Éxodo como el pasaje de la \nnación judía de la esclavitud hacia la libertad. Un hecho poco conocido es que \nel habla, que estaba atrapada en Egipto, también fue liberada entonces, como \nen “libertad de palabra”. La Torá aﬁrma que cuando murió el faraón, “Los hijos \nde Israel gemían a causa de la servidumbre y clamaron, y subió a HaShem \nsu clamor, a causa de su servidumbre” (Éxodo: 23). Pero no encontramos que \nhayan orado. ¿Por qué no?",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla",
+        "palabra"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-9b63a6855b93",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 16,
+      "printed_page": null,
+      "quote": "Al hacer del hombre la entidad suprema del planeta, HaShem le otorgó \ndos cosas que lo distinguen de todos los otros aspectos de la creación: un \ncerebro creativo y pensante y el poder del habla (Rashi sobre Génesis 2:7). Cuando \nHaShem formó el mundo, creó todo con su forma deﬁnitiva, pero lo mantuvo \ntambién en un estado animación suspendida. Por ejemplo, toda la vegetación \nestaba lista para germinar, pero quedó a la espera bajo la superﬁcie de la tierra \ny no creció. ¿Qué hacía falta? El hombre.",
+      "snippet": "Al hacer del hombre la entidad suprema del planeta, HaShem le otorgó \ndos cosas que lo distinguen de todos los otros aspectos de la creación: un \ncerebro creativo y pensante y el poder del habla (Rashi sobre Génesis 2:7). Cuando \nHaShem formó el mundo, creó todo con su forma deﬁnitiva, pero lo mantuvo \ntambién en un estado animación suspendida. Por ejemplo, toda la vegetación \nestaba lista para germinar, pero quedó a la espera bajo la superﬁcie de la tierra \ny no creció. ¿Qué hacía falta? El hombre.",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    },
+    {
+      "hit_id": "potencia_plegaria-48bdca6b936f",
+      "work_code": "potencia_plegaria",
+      "work_title": "La Potencia de la Plegaria",
+      "pdf_page": 17,
+      "printed_page": null,
+      "quote": "Como explica el Rambam,3 cuando los judíos retornaron del exilio \nen Babilonia, estaban conformados por una mezcla de naciones. Hablaban \nvarias lenguas y ya no eran capaces de conversar ni de expresarse en el idioma \nhebreo. Al consagrar el segundo Beit HaMikdash, se estableció una asamblea \nde 120 líderes de la nación. Entre ellos había profetas (i.e., Ezra, Nehemías, \nJagai, Zejaria, Malají) y los eruditos más importantes de la generación. Cuando \nestos miembros de la Gran Asamblea vieron la mezcla de gentes quedaron \nasombrados y descorazonados: ¿Cómo serían capaces alguna vez de orar a \nHaShem como un solo pueblo? Allí fue cuando establecieron el sidur, el libro \nde plegarias que mantuvo a la nación judía sobre una base común durante \nmiles de años, sin importar dónde estuvieran en el exilio. El sidur fue escrito \nen hebreo y, aunque es un texto establecido, contiene asombrosamente todas \nlas necesidades y pedidos de cada judío, para cada día.",
+      "snippet": "Como explica el Rambam,3 cuando los judíos retornaron del exilio \nen Babilonia, estaban conformados por una mezcla de naciones. Hablaban \nvarias lenguas y ya no eran capaces de conversar ni de expresarse en el idioma \nhebreo. Al consagrar el segundo Beit HaMikdash, se estableció una asamblea \nde 120 líderes de la nación. Entre ellos había profetas (i.e., Ezra, Nehemías, \nJagai, Zejaria, Malají) y los eruditos más importantes de la generación. Cuando \nestos miembros de la Gran Asamblea vieron la mezcla de gentes quedaron \nasombrados y descorazonados: ¿Cómo serían capaces alguna vez de orar a \nHaShem como un solo pueblo? Allí fue cuando establecieron el sidur, el libro \nde plegarias que mantuvo a la nación judía sobre una base común durante \nmiles de años, sin importar dónde estuvieran en el exilio. El sidur fue escrito…",
+      "source_view": "library_la_potencia_plegaria_investigative_search_v1",
+      "search_record_type": "fine_zone",
+      "source_layer": "fine_zone",
+      "zone_type": "main_text_spanish",
+      "note_number": null,
+      "surface_form": null,
+      "normalized_reference_name": null,
+      "matched_terms": [
+        "habla"
+      ],
+      "matched_concepts": [
+        "habla"
+      ],
+      "evidence_type": "validated_fine_zone_quote",
+      "literal_strength": "strong",
+      "evidence_strength": "insufficient",
+      "relation_relevance": "single_term_literal",
+      "relation_level": "literal",
+      "is_primary": false,
+      "warnings": []
+    }
+  ],
+  "evidence_matrix": [
+    {
+      "work_code": "kitzur",
+      "hits": 10,
+      "primary_hits": 0,
+      "contextual_hits": 0,
+      "additional_literal_hits": 10
+    },
+    {
+      "work_code": "lmii",
+      "hits": 10,
+      "primary_hits": 0,
+      "contextual_hits": 0,
+      "additional_literal_hits": 10
+    },
+    {
+      "work_code": "lh",
+      "hits": 10,
+      "primary_hits": 1,
+      "contextual_hits": 0,
+      "additional_literal_hits": 9
+    },
+    {
+      "work_code": "lm_xv",
+      "hits": 10,
+      "primary_hits": 0,
+      "contextual_hits": 2,
+      "additional_literal_hits": 8
+    },
+    {
+      "work_code": "potencia_plegaria",
+      "hits": 10,
+      "primary_hits": 1,
+      "contextual_hits": 1,
+      "additional_literal_hits": 8
+    }
+  ],
+  "cross_corpus_matrix": [],
+  "warnings": [
+    "pdf_page_null_for_kitzur_chunk"
+  ],
+  "execution": {
+    "pipeline_version": "investigative_qa_v1_traceable",
+    "model": "openai_gpt-5.4-nano",
+    "used_ai_interpretation": true,
+    "used_ai_rendering": true,
+    "ai_render_validated": true,
+    "used_deterministic_fallback": false,
+    "used_vector": false,
+    "used_external_sources": false,
+    "used_ocr": false,
+    "database": "postgresql",
+    "duration_ms": 7021.06
+  }
+}

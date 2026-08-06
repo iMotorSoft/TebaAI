@@ -1,0 +1,166 @@
+{
+  "question": "¿Cuál es el remedio espiritual recomendado en el Kitzur para una emisión nocturna?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 10 resultado(s) en 10 páginas.",
+  "evidence_summary": {
+    "literal_matches": 10,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      4,
+      6,
+      7,
+      9,
+      20,
+      21,
+      23,
+      85,
+      376,
+      377
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 4,
+      "evidence_type": "direct_factual_match",
+      "score": 1.0,
+      "snippet": "un enfoque distinto y el resultado de sus esfuerzos formó la base de esta obra, el Kitzur Likutey Moharán. El Rebe Najmán quedó muy satisfecho con la nueva versión (A través del Fuego y del Agua, p.98). El Likutey Moharán es un texto muy intrincado. Contiene tanto ideas simples como esotéricas, generalmente en un mismo párrafo. El Rebe puede tomar un texto de la Biblia o del Midrash y luego conect",
+      "matched_terms": [
+        "el kitzur",
+        "en el",
+        "o en",
+        "kitzur"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 6,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "or Este volumen es una colección abreviada de los consejos prácticos contenidos en el libro Likutey Moharán, recopilación de las enseñanzas puras y santas de nuestro grande y santo Rav, la “luz oculta”, el Rebe Najmán de Breslov, que su memoria sea para bendición. Pues el Rebe mismo me ordenó compilar este volumen, siendo que la esencia de sus santas intenciones, en todos sus discursos y en todas",
+      "matched_terms": [
+        "en el",
+        "o en"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 7,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "ico de la enseñanza sobre la cual el Rebe construye el fundamento de su lección en el Likutey Moharán. Así sea que esos tópicos provengan de las Escrituras o de las palabras de los Sabios, todos proceden de los lugares sagrados y fluyen desde la fuente de aguas vivas. Entonces, todo aquel que desee agregar a nuestra selección podrá hacerlo. Pues la persona de conocimiento perfecto podrá encontrar",
+      "matched_terms": [
+        "en el",
+        "o en"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 9,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "omio  31:21), «No será olvidada de la boca de su simiente». Como está explicado en el Zohar (III, 124b): Debido a este libro, el Libro del Zohar, [los judíos] serán redimidos del exilio.  Ahora ven, observa y comprende las ocultas maravillas de nuestra santa Torá. Pues es debido a esto que el Rabí Shimón ben Iojai se basó  en ese versículo: «No será olvidada de la boca de su simiente». Pues, en ve",
+      "matched_terms": [
+        "en el",
+        "o en"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 20,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "llevan a buscar motivos ulteriores en el estudio de Torá. Rectifica entonces la voz de la canción, de modo que ya no es dañada al escuchar el cantar del Otro Lado, que es muy dañino para el servicio a Dios. También merece elevar la canción de santidad y unirse a Dios por medio de las canciones y de las melodías. Entonces realzará y elevará el Reinado de Santidad, merecerá una posición de autoridad",
+      "matched_terms": [
+        "en el",
+        "o en"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 21,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "la expresión verbal de esa prohibición de la Torá que ha transgredido se hunda en el ámbito de la impureza espiritual. Y esto hace que el Reinado de Santidad caiga en el exilio del Otro Lado y que la mala combinación de letras grabada en los huesos ejerza su venganza sobre la persona. Al confesarse delante de un erudito de Torá, la persona extrae las letras grabadas en sus huesos y rectifica todo",
+      "matched_terms": [
+        "en el",
+        "o en"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 23,
+      "evidence_type": "direct_factual_match",
+      "score": 0.6,
+      "snippet": "so de Torá, deberá abrir su corazón delante de él. De esa manera uno se incluye en el Infinito y merece saber que todo lo que le sucede es para su propio bien. Entonces dirá la bendición “Quién es bueno y hace el bien” sobre todas las cosas y ello es un “anticipo del Mundo que Viene”. 10 Tishrei 12. Mediante la humildad uno merece deshacerse de la materialidad y quedar incluido en el Infinito. Tam",
+      "matched_terms": [
+        "en el",
+        "o en"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 85,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "so” -es decir, el lenguaje de las setenta naciones gentiles- lo enfrían con una emisión nocturna, que Dios nos salve. Ello está aludido en la frase “que te enfrió en el camino” (Deuteronomio 25:18). “En el camino” alude a la impureza sexual, como en, “Éste es el camino de una mujer adúltera” (Proverbios 30:20). El “viento tormentoso” entra por medio del Targúm, que está asociado con la fuerza impu",
+      "matched_terms": [
+        "emisión nocturna",
+        "emisión",
+        "nocturna"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 376,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "r la Torá”) forman la palabra MAOT (dinero). 23 Sivan 205 - El Remedio para una Emisión Nocturna 205 - El Remedio para una Emisión Nocturna 205 - El Remedio para una Emisión Nocturna 205 - El Remedio para una Emisión Nocturna 205 - El Remedio para una Emisión Nocturna 1. El remedio para una emisión nocturna, que Dios nos salve, es recitar diez capítulos de los Salmos, en el mismo día en que ello o",
+      "matched_terms": [
+        "emisión nocturna",
+        "emisión",
+        "nocturna"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 377,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "Diez Salmos son un remedio extremadamente poderoso y una rectificación para la emisión nocturna. La persona que merezca recitarlos en el mismo día en que ocurra la emisión no tendrá nada que temer de ese terrible daño, dado que indudablemente habrá sido rectificada con esto. 206 - “Me he extraviado como una oveja perdida” 206 - “Me he extraviado como una oveja perdida” 206 - “Me he extraviado com",
+      "matched_terms": [
+        "emisión nocturna",
+        "emisión",
+        "nocturna"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

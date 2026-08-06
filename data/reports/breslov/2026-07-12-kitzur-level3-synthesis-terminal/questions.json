@@ -1,0 +1,51 @@
+[
+  {
+    "id": "q01_teshuva",
+    "question": "¿Cómo describe el Kitzur Likutey Moharán el proceso de teshuvá: humildad ante insultos, confesión, vergüenza, juicio de sí mismo, Keter y arrepentirse de arrepentimientos anteriores?",
+    "expected_answer_type": "multi_source_comprehension",
+    "expected_pages": [20, 21, 29, 30, 31, 32, 33, 65, 66, 204, 205],
+    "expected_text_fragments": ["La humildad es el elemento crucial del arrepentimiento", "confesarse", "arrepintiéndose de sus anteriores niveles"]
+  },
+  {
+    "id": "q02_pureza_sexual",
+    "question": "¿Cómo se alcanza la pureza sexual mediante Lenguaje Sagrado, apartar pensamientos lujuriosos, tzitzit y rectificación del brit, y qué beneficios trae para plegaria, sabiduría, voz, sustento y rúaj hakodesh?",
+    "expected_answer_type": "multi_source_comprehension",
+    "expected_pages": [17, 36, 81, 82, 136, 137, 140, 145],
+    "expected_text_fragments": ["La pureza sexual es la esencia de la santidad", "Lenguaje Sagrado", "tzitzit"]
+  },
+  {
+    "id": "q03_plegaria_perfecta",
+    "question": "¿Cómo se alcanza la plegaria perfecta: sinceridad y verdad, energía y alegría, unión con verdaderos Tzadikim, eliminación de pensamientos extraños y orgullo, unidad interior y paz?",
+    "expected_answer_type": "multi_source_comprehension",
+    "expected_pages": [17, 18, 25, 41, 60, 61, 292, 293, 331, 332],
+    "expected_text_fragments": ["plegaria perfecta", "verdaderos Tzadikim", "pensamientos ajenos"]
+  },
+  {
+    "id": "q04_hitbodedut",
+    "question": "¿Qué es hitbodedut como plegaria personal, conversación con el Creador y juicio de sí mismo, y qué beneficios tiene: eliminar temores caídos, luz oculta, vergüenza y llevar el mundo al bien?",
+    "expected_answer_type": "multi_source_comprehension",
+    "expected_pages": [65, 66, 166, 167, 202, 203, 237, 466],
+    "expected_text_fragments": ["conversación con el Creador", "se evalúa y se juzga a sí misma", "luz oculta"]
+  },
+  {
+    "id": "q05_shabat",
+    "question": "¿Cómo relaciona el Kitzur la santidad y alegría de Shabat con fe, bendiciones, daat, compasión, alma adicional, comer en Shabat, libertad y elevación de temores caídos?",
+    "expected_answer_type": "multi_source_comprehension",
+    "expected_pages": [159, 160, 328, 341, 343, 344, 404, 461, 462],
+    "expected_text_fragments": ["Shabat", "alegría", "alma adicional"]
+  },
+  {
+    "id": "q06_punto_bueno",
+    "question": "¿Qué enseña la Lección 282 sobre el punto bueno o nekudá tová: buscar bien aun entre pecados, evitar depresión, lograr alegría y plegaria, y juzgar favorablemente?",
+    "expected_answer_type": "multi_source_comprehension",
+    "expected_pages": [407, 408, 409, 410, 411],
+    "expected_text_fragments": ["punto bueno", "juzgar favorablemente", "alegría"]
+  },
+  {
+    "id": "q07_temor_angeles",
+    "question": "¿Cómo se alcanza el temor perfecto a Dios y el dominio sobre los ángeles mediante rectificar deseos de dinero, sexualidad y comida, Tres Festividades, plegaria perfecta y unión a líderes verdaderos?",
+    "expected_answer_type": "multi_source_comprehension",
+    "expected_pages": [419, 420, 421, 422, 423, 424],
+    "expected_text_fragments": ["temor", "ángeles", "Tres Festividades"]
+  }
+]

@@ -1,0 +1,187 @@
+{
+  "question": "¿De qué manera la alegría contribuye a la rectificación espiritual y a la superación de los obstáculos?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      3,
+      22,
+      25,
+      112,
+      117,
+      127,
+      129,
+      152,
+      316,
+      362,
+      438,
+      465
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 112,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "de los verdaderos Tzadikim de la generación. 12 Kislev 8. La audacia sagrada se alcanza mediante la alegría. Pues la alegría y el regocijo son la fuente principal de la audacia y del arrojo para acercarse al servicio a Dios, como en el versículo, “¡El regocijo en Dios es nuestra fortaleza, nuestra audacia!” (Nehemías 8:10). 9. La Torá y la plegaria son el medio para alcanzar la alegría, pues corresponden respectivamente a “haremos” -que es el concepto de lo revelado- y a “oiremos”- que es el concepto de lo oculto. Como enseñaron nuestros Sabios, “‘Una eterna alegría en sus cabezas’ (Isaías 51:11) - esto hace referencia a las dos coronas que fueron puestas sobre la cabeza de cada judío en el",
+      "matched_terms": [
+        "alegría",
+        "regocijo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 117,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "Otro Lado, tanto en el nivel individual como colectivo. De acuerdo a ello, Tishrei es un tiempo de alegría para el pueblo judío, dado que es a través de la alegría que uno alcanza la audacia sagrada, como está escrito, “¡El regocijo en Dios es nuestra fortaleza, nuestra audacia!” (Nehemías 8:10). Más aún, este versículo hace referencia especialmente a Rosh HaShaná (ver Rashi, ad loc.). 15 Kislev 17. Uno debe sentir verdadera vergüenza delante de Dios al hacer algo que esté en contra de Su voluntad, Dios no lo permita, y ni mencionar si comete algún pecado u otra transgresión, Dios no lo quiera. Si uno no posee esa vergüenza sagrada en este mundo, será avergonzado más tarde en el Mundo que V",
+      "matched_terms": [
+        "alegría",
+        "regocijo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 127,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "rar esa luz, sin embargo, la mente corre constantemente tras ella. Al llevar a cabo las mitzvot con alegría, la persona se hace digna de comprender esa luz a través de la combinación de “perseguir y limitarse”, de modo que simultáneamente “la alcanza y no la alcanza”. “De esa manera, se forman Nueve Cámaras que no son luces ni espíritus ni almas. No hay nadie que pueda comprenderlas... no es posible aferrarlas ni conocerlas” (Zohar I, 65a). ¡Feliz la persona digna de que su pensamiento corra detrás de esos conceptos, aunque el intelecto no pueda aprehenderlos debido a que no son alcanzables ni posibles de conocer! Esa percepción es el objetivo final de todo, tal cual está descrito en la ense",
+      "matched_terms": [
+        "alegría",
+        "alegre"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 129,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "resultado nueve - es decir, las Nueve Cámaras. Todo esto se merece al llevar a cabo las mitzvot con alegría. 8. La alegría es el principal factor en la elevación de la santidad. En el futuro, las fuerzas de la impureza serán completamente anuladas debido a la enorme alegría que prevalecerá y el pueblo judío dejará el exilio con regocijo, como está escrito, «Pues con alegría saldrán» (Isaías 55:2). No sólo eso, sino que mediante los gentiles y en contra de su voluntad, serán anuladas las fuerzas de la impureza. Pues los mismos gentiles -y con sus propias manos- sacarán a la Casa de Israel del exilio debido a la gran alegría que entonces prevalecerá, como está escrito, «En ese tiempo, los gent",
+      "matched_terms": [
+        "alegría",
+        "regocijo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 152,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "talidad al intelecto, mediante el cual la persona alcanza percepciones de Divinidad. A través de la alegría de las Tres Festividades, la persona se hace digna de la “Luz del Rostro”, dado que la alegría es la esencia de la “Luz del Rostro”, como está escrito “Un corazón alegre produce un buen rostro” (Proverbios 15:13). 6. Cuantas más mitzvot realice la persona durante el año, mayor será la alegría que experimentará en las Tres Festividades. Para explicar: Las mitzvot son la principal fuente de alegría y ésta se siente primordialmente en el corazón. En el grado en que la persona comprenda en su corazón la grandeza del Creador, Su Unidad y Su Unicidad, así será apropiado que se regocije por c",
+      "matched_terms": [
+        "alegría",
+        "alegre"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 316,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "tarse ni asustarse por ellos. Más bien, es necesario prevalecer con determinación, para poder estar alegres, utilizando todos los métodos tratados en otras instancias del Likutey Moharán. Pues la fuerza interior y la determinación en estas áreas proviene principalmente de la alegría y del regocijo, como en, “Pues la alegría en Dios es tu fortaleza” (Nehemías 8:10). Y cuando la persona se fortalece para estar alegre, los pensamientos confusos la dejan automáticamente. Sin embargo, esto no debe ponerse a prueba mirando constantemente hacia atrás para verificar si en verdad esos pensamientos se han ido. Más bien, es necesario alejar la mente de ellos, por completo. Comprende bien esto. 73 73 73",
+      "matched_terms": [
+        "alegre",
+        "regocijo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 362,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "mentales de la impurificación sexual y de la transgresión. Por el contrario, cuando la persona está alegre, Dios Mismo cuida su pureza sexual - es decir, Dios Mismo la ayuda a mantener su santidad. 170 170 170 170 170 1. Por medio del sufrimiento y de los problemas que aquejan a la persona se anulan su materialidad y su cuerpo. Con ello, se realzan su esencia espiritual y su alma y se vuelven más luminosas. Como resultado, puede llevar consigo a mucha gente, establecerlas y elevarlas hacia su raíz. 171 171 171 171 171 1. Cuando se despierta y se revela una nueva comprensión en el servicio a Dios, ésta tiene dos aspectos. Por un lado tiene el aspecto de “los Tzadikim andarán en ella”, cuando",
+      "matched_terms": [
+        "alegre",
+        "regocijo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 438,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "lo permita. Esto se previene por medio de la alegría - es decir, fortaleciéndose para estar siempre alegres. Ello se debe a que la alegría le da fuerza a los ángeles y a los poderes espirituales que reciben la energía espiritual del alimento y suprime a los demonios y a las fuerzas espirituales impuras para que no tomen de esa energía más de lo que deben. Como resultado, la persona se salva de las emisiones impuras, Dios no lo permita, que a veces son causadas por el alimento cuando los ángeles no son lo suficientemente fuertes - dado que la alegría es el método principal para fortalecer a esos ángeles. 7 Av 13. El poder de los ángeles se intensifica durante el mes de Nisán (ver más en la le",
+      "matched_terms": [
+        "alegre",
+        "regocijo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 465,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "es la verdadera perfección de la alegría! 27 Av 24 24 24 24 24 1. Es una gran mitzvá estar siempre alegres y prevalecer con todas nuestras fuerzas para expulsar la depresión y la tristeza y estar contentos todo el tiempo. La alegría es una cura para todas las enfermedades, dado que todas ellas, que Dios nos salve, son resultado de la depresión y de la melancolía. Uno deberá utilizar toda clase de estratagemas para mantenerse contento y, en la mayoría de los casos, deberá recurrir a la tontería, tal como se explica en otra instancia (ver más arriba, Lección #10:6). Aunque un corazón quebrantado es una cualidad muy buena, la persona sólo debe quebrar su corazón durante una hora por día, al ex",
+      "matched_terms": [
+        "alegre",
+        "regocijo"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 3,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "de su vida una brillante joya que iluminó a todos los que la conocieron con el verdadero mensaje de alegría y amor al Creador.",
+      "matched_terms": [
+        "alegría"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 22,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": "ndolencia con sus rasgos asociados y los deseos negativos [del cuerpo]. De esa manera se alcanza la alegría, el entusiasmo y la diligencia. 9 Tishrei 7. El segundo paso es la caridad que la persona le da al estudioso de Torá. Esto la rescata de los rasgos negativos asociados con el elemento “animal” y con el elemento “humano” - que son las palabras vanas, la calumnia, el orgullo y los rasgos relacionados. 8. El tercer paso es que la persona se confiese delante del estudioso de Torá. Mediante ello, el estudioso la dirige por el sendero correcto de acuerdo a la raíz de su alma. Ello es lo más importante, pues esto la salva de todo. 9. La pobreza es producto de las palabras vanas, de la calumni",
+      "matched_terms": [
+        "alegría"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 25,
+      "evidence_type": "concept_group_match",
+      "score": 0.5,
+      "snippet": ", para proveer lo que falte y orar por él. 2. Cada persona debe llevar a cabo las mitzvot con tanta alegría como para no desear ninguna recompensa por ello en el Mundo que Viene. Más bien, sólo debe desear que el Santo, bendito sea, le envíe otra mitzvá como recompensa por esa mitzvá - dado que su alegría proviene de la mitzvá misma. Mediante esa alegría, la persona puede llegar a saber lo decretado sobre el mundo, así sea antes de que el decreto se haya emitido como después de habérselo emitido y sobre quién recaerá, Dios se apiade. También sabrá cómo orar por el mundo. Pues después de que el decreto final ha sido emitido, los Tzadikim deben investir sus plegarias dentro de cuentos. Todo es",
+      "matched_terms": [
+        "alegría"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "tebaai_breslov_chunks_v1": {
+    "fields": [
+      {
+        "name": "pk",
+        "dtype": "21",
+        "primary": true,
+        "params": {
+          "max_length": 128
+        }
+      },
+      {
+        "name": "chunk_id",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "document_id",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "collection_code",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "language",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 8
+        }
+      },
+      {
+        "name": "title",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 512
+        }
+      },
+      {
+        "name": "source_type",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 32
+        }
+      },
+      {
+        "name": "source_sha256",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "content_sha256",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "chunk_index",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "page_start",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "page_end",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "content_preview",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 1024
+        }
+      },
+      {
+        "name": "embedding",
+        "dtype": "101",
+        "primary": false,
+        "params": {
+          "dim": 1536
+        }
+      }
+    ],
+    "indexes": [
+      {
+        "field_name": "embedding",
+        "params": {
+          "index_type": "HNSW",
+          "metric_type": "COSINE",
+          "params": {
+            "M": 16,
+            "efConstruction": 200
+          }
+        }
+      }
+    ]
+  },
+  "tebaai_breslov_test_chunks_v1": {
+    "fields": [
+      {
+        "name": "pk",
+        "dtype": "21",
+        "primary": true,
+        "params": {
+          "max_length": 128
+        }
+      },
+      {
+        "name": "chunk_id",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "document_id",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "collection_code",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "language",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 8
+        }
+      },
+      {
+        "name": "title",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 512
+        }
+      },
+      {
+        "name": "source_type",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 32
+        }
+      },
+      {
+        "name": "source_sha256",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "content_sha256",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 64
+        }
+      },
+      {
+        "name": "chunk_index",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "page_start",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "page_end",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "content_preview",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 1024
+        }
+      },
+      {
+        "name": "embedding",
+        "dtype": "101",
+        "primary": false,
+        "params": {
+          "dim": 1536
+        }
+      }
+    ],
+    "indexes": [
+      {
+        "field_name": "embedding",
+        "params": {
+          "index_type": "HNSW",
+          "metric_type": "COSINE",
+          "params": {
+            "M": 16,
+            "efConstruction": 200
+          }
+        }
+      }
+    ]
+  },
+  "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1": {
+    "fields": [
+      {
+        "name": "pk",
+        "dtype": "21",
+        "primary": true,
+        "params": {
+          "max_length": 128
+        }
+      },
+      {
+        "name": "page_number",
+        "dtype": "5",
+        "primary": false,
+        "params": {}
+      },
+      {
+        "name": "text_preview",
+        "dtype": "21",
+        "primary": false,
+        "params": {
+          "max_length": 1024
+        }
+      },
+      {
+        "name": "embedding",
+        "dtype": "101",
+        "primary": false,
+        "params": {
+          "dim": 1536
+        }
+      }
+    ],
+    "indexes": [
+      {
+        "field_name": "embedding",
+        "params": {
+          "index_type": "HNSW",
+          "metric_type": "COSINE",
+          "params": {
+            "M": 16,
+            "efConstruction": 200
+          }
+        }
+      }
+    ]
+  }
+}

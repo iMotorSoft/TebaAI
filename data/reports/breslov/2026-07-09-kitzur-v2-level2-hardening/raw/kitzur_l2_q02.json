@@ -1,0 +1,207 @@
+{
+  "question": "¿Qué papel juega la caridad en relación con la pureza sexual y cómo se conectan estos conceptos?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      17,
+      73,
+      74,
+      81,
+      82,
+      83,
+      84,
+      85,
+      122,
+      147,
+      162,
+      217
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 17,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "sación con Su Hacedor. Ésta es el arma principal para ganar la guerra. 2. Aquel que cuida la pureza sexual se vuelve digno de orar. Por el contrario, la persona que daña su pureza sexual se ve privada de la capacidad de orar. 3. Uno debe dar caridad antes de orar. Ello hará que su plegaria sea fluida. Dar caridad también lo salvará de los pensamientos ajenos que suelen surgir durante la plegaria y podrá orar apropiadamente sin desviarse ni a la derecha ni a la izquierda. Sus palabras serán mesuradas. 4. Es imposible alcanzar una plegaria perfecta si no es mediante el cuidado de la pureza sexual a la perfección. Por lo tanto, toda persona debe unir sus plegarias a los verdaderos Tzadikim de l",
+      "matched_terms": [
+        "sexual",
+        "dar caridad",
+        "pureza",
+        "pureza sexual",
+        "caridad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 122,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "Ese deseo está asociado con el bazo; con Lilit [la fuerza de impureza espiritual de la inmoralidad sexual], quien es la madre de la multitud mezclada; y con el juego de un idiota. Pues todo el dinero y los bienes de esos ricos que no se comportan como debieran, que no dan la suficiente caridad considerando la riqueza que poseen, y que están atrapados en el amor por el dinero - todo su dinero y toda su riqueza son como el juego de un idiota. Inicialmente, su dinero juega con ellos, como uno divierte a un niño con monedas, pero subsecuentemente, el dinero los mata. Ése es el significado de la enseñanza, “‘El juego del idiota’ - ¿quién es el idiota? Es otro dios... es la difteria que aflige a",
+      "matched_terms": [
+        "sexual",
+        "pureza sexual",
+        "caridad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 147,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "á 6a). La caridad corresponde a la idea de “El Tzadik se apiada y da” (Salmos 37:21) y al “arco del pacto” - éste es el Tzadik, que guarda el pacto. 14. El principio general en todas las cosas es que primero es necesario corregir cada área por medio de la correspondiente Rectificación General, para rectificar y elevar la mente y por lo tanto hacer descender “blancura” desde allí, para blanquear y limpiar todas las manchas en esa área en particular. Esto sólo es posible mediante la Rectificación General correspondiente a esa área. Por ejemplo, las transgresiones cometidas durante el curso de los tratos comerciales y financieros reciben esa clase de rectificación global mediante la caridad, po",
+      "matched_terms": [
+        "pacto",
+        "caridad",
+        "dar caridad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 74,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "iles retienen cautivo. Pues como resultado de los decretos [antijudíos] de los gentiles, de los impuestos y demás, ellos retienen el bien del pueblo judío al impedir que los judíos cumplan con las mitzvot de Dios. Ese bien que impiden llegar a la existencia es así “retenido cautivo” en su dominio. Al comienzo de su cautiverio ese bien recuerda que proviene de un lugar muy elevado y exaltado. Sin embargo, más tarde, los gentiles abruman a ese bien y lo suprimen dentro de su dominio, hasta que es capturado y encadenado a ellos y olvida su verdadero y exaltado nivel. Pero cuando el “habla judía” sale y queda inscrita en los libros de los gentiles, ese bien la descubre allí en la forma de ideas",
+      "matched_terms": [
+        "estos",
+        "conceptos",
+        "caridad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 162,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ureza sexual. Uno de ellos implica mantener un alto grado de santidad en esta área y es llamado el “pacto superior”. Esto corresponde al “firmamento que divide entre las aguas superiores y las aguas inferiores”. Aquel que ha alcanzado ese nivel puede ser llamado un “hombre libre”, dado que mediante esa santidad alcanza la libertad y produce descendencia [i.e., acerca las almas a Dios; ver Likutey Moharán II, 5, donde se enseña que al quebrar los deseos físicos la persona se vuelve capaz de decir palabras justas]. El segundo nivel de pureza sexual implica cumplir con las leyes de la Torá que indican lo que está prohibido y lo que está permitido en esta área. La persona debe poseer ambos nivel",
+      "matched_terms": [
+        "pacto",
+        "dar caridad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 217,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "ael rectifica las plegarias] también encuentra expresión en el versículo, “Lo veré para recordar el pacto eterno” (Génesis 9:16). “Lo veré” sugiere la Tierra de Israel, como en el versículo, “Los ojos de Dios están constantemente sobre ella” (Deuteronomio 11:2). Ello da como resultado un despertar y una rectificación del “pacto eterno”; y ese pacto corresponde a las dieciocho bendiciones de la plegaria de la Amidá, dado que el Tzadik es llamado la “vida (JaI) [cuyo valor numérico es dieciocho] de los mundos” y el Tzadik es la encarnación definitiva del pacto. 29 Shvat 45 - Aplaudir Durante la Plegaria 45 - Aplaudir Durante la Plegaria 45 - Aplaudir Durante la Plegaria 45 - Aplaudir Durante l",
+      "matched_terms": [
+        "pacto",
+        "dar caridad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 73,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "tionamientos e ideas confusas no son más que absoluta estupidez y locura. Lo que sucede es que la impureza de sus acciones le ha oscurecido el intelecto con ese desatino. Consecuentemente, la luz del Tzadik le está oculta y por ello no siente temor ni amor a Dios. 7. Al comer de la manera apropiada -es decir, al comer lentamente y con moderación, no atiborrándose de comida- se realza el intelecto y se suprime la insensatez. Pero si se come como un glotón y se bebe como un borracho, se fortalece el poder de la insensatez sobre el intelecto. Entonces la luz del Tzadik se le oscurece y la persona es incapaz de recibir de él el temor y el amor a Dios. 8. Los prosélitos se generan debido a la car",
+      "matched_terms": [
+        "pureza",
+        "caridad"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 85,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "o en la frase “que te enfrió en el camino” (Deuteronomio 25:18). “En el camino” alude a la impureza sexual, como en, “Éste es el camino de una mujer adúltera” (Proverbios 30:20). El “viento tormentoso” entra por medio del Targúm, que está asociado con la fuerza impura de noga [la interfase entre la santidad y las tres fuerzas completamente impuras] y por medio de ello, absorbe la vitalidad del jashmal, que está asociado con el Lenguaje Sagrado. Pero mediante la perfección del Lenguaje Sagrado -en otras palabras, al refinar el lenguaje del Targúm, que es el ámbito del sueño- la persona se salva de la emisión nocturna. Por lo tanto, es necesario enfriar el ardiente deseo del cuerpo con palabra",
+      "matched_terms": [
+        "sexual",
+        "pacto",
+        "pureza sexual",
+        "pureza",
+        "lenguaje sagrado"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 81,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "enen nada que ver con nosotros, de manera alguna. Esto es especialmente así en el caso de la pasión sexual, que es el mal que engloba el mal de todas las naciones. Pues la diferencia y la distinción esencial entre nosotros y las naciones es que nosotros nos abstenemos de la inmoralidad sexual, siendo ésta, en esencia, la santidad judía. Pues la persona tiene el poder de alejar su mente de ese deseo y de quebrarlo; ésta es la esencia de nuestra santidad. 2. La pureza sexual es la esencia de la santidad. Uno merece alcanzar esa cualidad mediante el lenguaje sagrado y el habla sagrada, santificando el habla al decir palabras santas. Es por ese motivo que nuestra lengua es llamada el Lenguaje Sa",
+      "matched_terms": [
+        "sexual",
+        "pureza",
+        "pureza sexual",
+        "lenguaje sagrado"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 82,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "23 Jeshvan 3. La pureza sexual conlleva una conexión integral con el espíritu sagrado de profecía (rúaj hakodesh) y con el Lenguaje Sagrado. Mediante la pureza sexual se anula el espíritu de locura  que corresponde al daño sexual, que Dios nos salve. 4. La construcción y la perfección del Lenguaje Sagrado depende principalmente del temor a Dios, tal cual se alude en el versículo, “El temor a Dios es su tesoro” (Isaías 33:6). 5. La pureza sexual y la perfección del Lenguaje Sagrado son interdependientes, pues ninguno puede existir sin el otro. En otras palabras, cuantas más palabras de santidad se digan -lo que está incluido en el concepto del Lenguaje Sagrado- más será la pureza sexual que s",
+      "matched_terms": [
+        "sexual",
+        "pureza",
+        "pureza sexual",
+        "lenguaje sagrado"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 83,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "vitalidad de la persona, tentándola a dañar su pureza sexual. Pues ese deseo es la principal herramienta de la mala inclinación para hacer que la persona transgreda. 8. Ahora bien, debido a nuestros muchos pecados, el arte de la retórica en el Lenguaje Sagrado ha caído terriblemente - al punto en que, en general, el arte de la retórica sólo ha quedado en manos de la gente más baja que se encuentra profundamente hundida en el deseo sexual, que es el mal general y lo diametralmente opuesto a la santidad del Lenguaje Sagrado. Esas personas están aludidas en el versículo, “Tus oradores han pecado contra mí” (Isaías 43:27), que Dios nos salve. Usando su elocuencia, ellos arrastran los corazones d",
+      "matched_terms": [
+        "sexual",
+        "pureza",
+        "pureza sexual",
+        "lenguaje sagrado"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 84,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "perfecciona así su Lenguaje Sagrado y merece guardar la pureza sexual. Todo ello es el significado profundo del hecho de que la serpiente tentó a Eva a través del Árbol del Conocimiento del Bien y del Mal]. Por el contrario, el principal medio para construir y perfeccionar el Lenguaje Sagrado es anular los componentes malos del Targúm y elevar hacia el Lenguaje Sagrado sus componentes buenos. De esa manera, el Lenguaje Sagrado alcanza su estado de perfección y caen así las setenta lenguas, como en la frase “Un lenguaje cae sobre el otro” (Plegarias de las Festividades). Ése es el significado de “El Señor Dios hizo caer un sueño profundo (vaiapel tardema)” (Génesis 2:21). El Ari, de bendita m",
+      "matched_terms": [
+        "sexual",
+        "pureza",
+        "pureza sexual",
+        "lenguaje sagrado"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

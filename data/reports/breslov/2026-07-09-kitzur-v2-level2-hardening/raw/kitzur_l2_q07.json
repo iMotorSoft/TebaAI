@@ -1,0 +1,190 @@
+{
+  "question": "¿Cómo se relaciona la paz con el conocimiento (daat) según el texto?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "comprehension_lookup",
+  "short_conclusion": "Se encontraron 12 ocurrencia(s) en 12 páginas.",
+  "evidence_summary": {
+    "literal_matches": 0,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      15,
+      30,
+      31,
+      49,
+      52,
+      66,
+      94,
+      97,
+      173,
+      181,
+      205,
+      257
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 30,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "tenía en ese momento. Subsecuentemente y luego de haberse arrepentido, alcanzó indudablemente un reconocimiento y una concepción de Dios mucho más perfectos. De acuerdo a la concepción que ahora tiene, su comprensión previa era, en comparación, ciertamente tosca. Así, ahora debe arrepentirse por haber hecho burda la exaltada naturaleza de Dios. ¡Feliz de aquel que merece esta clase de arrepentimiento!  Lección 6 15 Tishrei 30",
+      "matched_terms": [
+        "conocimiento",
+        "comprensión",
+        "relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 52,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "sión, igualmente se anulará la ira Divina y la bondad llegará al mundo. Mediante ello se obtiene el conocimiento, que es análogo a la construcción del Santo Templo. La anulación de la pasión por el dinero también está relacionada con la revelación del Mashíaj, dado que en ese Lección 13 1 Jeshvan 52",
+      "matched_terms": [
+        "conocimiento",
+        "relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 173,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "otro, uno se acerca continuamente a Dios y puede llegar a conocerlo con un grado cada vez mayor de comprensión. Ello se debe a que cuanto más elevado sea el nivel en que se encuentre la persona, menos “vestimentas” ocultarán la Divinidad y menos constricciones habrá. Uno se halla en verdad cerca de Dios y puede amar a Dios mucho más profundamente. 6. Existen “buenos días” y “malos días”. Los “días” son llamados midot (“medidas”, “atributos” o “rasgos”), como en la frase “la medida de mis días” (Salmos 39:5). Esos atributos son la Torá. Pues la Torá está compuesta enteramente de los atributos del Santo, bendito sea, [o de las diversas maneras finitas de relacionarse con Él], dado que la Torá",
+      "matched_terms": [
+        "comprensión",
+        "relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 181,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "boca hablará sabiduría”- hacia la Vav, que está asociada con “Y las meditaciones de mi corazón son comprensión”. De esa manera, la persona se une al punto que se relaciona con su corazón en ese momento en particular, anulando así la vergüenza que se encuentra en el corazón y lo quebranta. 4 Shvat 6. Cada uno debe conversar también con su compañero sobre el temor a Dios, para que su corazón reciba inspiración del “punto” en el cual su amigo es superior a él. Pues el “punto” de cada persona es un aspecto del Tzadik con respecto a otra persona, y ese “punto” irradia en el corazón de su amigo, que es llamado Vav. 7. Todos los puntos que posee la persona son extensiones del Tzadik. El Tzadik es",
+      "matched_terms": [
+        "comprensión",
+        "relaciona"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 257,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": ", cuanto menos conocimiento tenga más deberá trabajar para ganarse la vida. 13. Cuanto mayor sea el nivel de comprensión prevaleciente, más reinará la paz. Ello se debe a que la disputa, la ira y la crueldad surgen de una falta de conocimiento. Cuanto más aumente el conocimiento, más se anulará la ira y más aumentará la compasión, el amor y la paz. Por lo tanto, al dedicarse al estudio de la Torá -con lo cual uno adquiere    Lección 56                                                                                  26 Adar                                                                                                                                                                     257",
+      "matched_terms": [
+        "nivel de comprensión",
+        "falta de conocimiento"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 31,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "radas con su presente percepción de la grandeza de Dios. Y así continúa toda su vida, pasando de un nivel de comprensión al siguiente y arrepintiéndose de sus anteriores niveles de entendimiento. Ésa es la idea del Mundo que Viene, que será “enteramente Shabat”, enteramente arrepentimiento. Pues la esencia del Mundo que Viene es la percepción de la Divinidad [que se experimenta allí]; y cada vez que la persona alcance un nivel adicional de percepción se arrepentirá del nivel anterior de entendimiento. Todo aquel que tenga un cerebro en la cabeza podrá comprender a partir de esto la grandeza del Creador y la grandeza de los Tzadikim. ¡Felices de ellos y felices de aquellos que los siguen! 8.",
+      "matched_terms": [
+        "nivel de comprensión",
+        "comprensión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 15,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "encuentra precisamente en esta área. Pues la buena inclinación incita a la persona a aborrecer todo conocimiento y pensamiento secular al igual que todos los deseos físicos que son pura necedad y locura; e impele a la persona a conectarse sólo con la luz del intelecto sagrado. Pero la mala inclinación incita a la persona hacia lo opuesto, como en, “El insensato no desea la comprensión” (Proverbios 18:2). Ello está personificado en Esaú quien despreció la primogenitura, que es el concepto de la sabiduría y del intelecto sagrado. Es necesario fortalecer la buena inclinación en contra de la mala inclinación, como dijeron nuestros Sabios, de bendita memoria, “La persona debe siempre incitar a la",
+      "matched_terms": [
+        "conocimiento",
+        "comprensión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 66,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "o demás cosas del mundo, sino que sólo Le temerá a Dios. Así elevará el temor a su raíz, que es el conocimiento y merecerá un conocimiento completo en la medida en que llegue a saber qué debe temer en verdad, es decir, sólo el temor de la exaltación del honrado Nombre de Dios. Como resultado de ese conocimiento, alcanzará la comprensión de la Torá Revelada, que está integralmente conectada con el atributo de la humildad, y merecerá la verdadera humildad. A su vez, se hará digna [mediante esa humildad] de elevar una plegaria con total autotrascendencia, anulando al orar su yo y su materialidad, orando sin ningún tipo de interés personal. No se considerará como “algo”. Más bien, anulará su yo",
+      "matched_terms": [
+        "conocimiento",
+        "comprensión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 94,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "alta trae la rectificación de la pureza sexual y hace que uno se vuelva digno de una revelación del conocimiento (daat). Pues inicialmente, al dañar esa área, también se dañó el conocimiento. 14. Es por ese motivo que la Hagadá de Pesaj se recita en voz alta. Pues la Redención de Egipto se produjo gracias a la voz, como está escrito, “[Dios] oyó nuestra voz” (Números 20:16). Y es por ese motivo que es llamada HaGaDá, para aludir a su conexión con la pureza sexual (tikún haBRIT), como en, “Él les habló (vaiaGueD) sobre Su pacto (BRIT)” (Deuteronomio 4:13). La manera más apropiada de cumplir con la mitzvá de recitar la Hagadá es sobre una copa de vino, dado que el vino rectifica el conocimient",
+      "matched_terms": [
+        "conocimiento",
+        "daat"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 97,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "drash Ialkut Tehilim 87). 5. Para que el intelecto de la persona pueda recibir el influjo Divino de conocimiento -que es el espíritu sagrado de profecía- deberá santificar su boca, su nariz, sus ojos y sus oídos. Deberá cuidarse de no decir mentiras y deberá poseer temor a Dios, lo que corresponde a la nariz. También deberá tener fe en los sabios, creyendo en ellos y cumpliendo con todo aquello que ellos digan, que es lo que santifica los oídos. De esa manera, alcanzará ese intelecto, al igual que el estado de completo conocimiento (daat shalem) del cual todo depende. 6. La boca, la nariz, los ojos y los oídos son las siete aberturas de la cabeza y funcionan en estrecha conjunción con la men",
+      "matched_terms": [
+        "conocimiento",
+        "daat"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 49,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": ", el ser un erudito en el Talmud y en los Códigos - que es la Ley Oral. Pero “Aquel que estudia sin comprensión (daat), [y lo hace para vanagloriarse y disputar,] es peor que una res muerta” (Vaikrá Rabah 1:15). Cuando la Ley Oral -que es la Presencia Divina- llega a la boca de ese erudito, ello se denomina “el exilio de la Presencia Divina”. Un erudito de Torá así es un “demonio judío” - no busca la verdad y se vuelve un enemigo y un opositor del verdadero Tzadik.  Lección 12 28 Tishrei                                                                                                                                                                       49",
+      "matched_terms": [
+        "comprensión",
+        "daat"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 205,
+      "evidence_type": "comprehension_match",
+      "score": 1.0,
+      "snippet": "s el significado de “Un cedro cayó cerca de nosotros” - es decir, que el verdadero Tzadik cae de su nivel de comprensión de Dios, Que es llamado el “Lugar del Mundo”. Y aunque el nivel de este Tzadik sigue siendo muy elevado, para él representa una caída. Aquí el Taná habla alabando al Tzadik de la generación. Ese Tzadik siente vergüenza de su nivel como si hubiese cometido un pecado -porque para él estar en ese nivel es considerado una caída- y entonces se arrepiente por ello como si realmente hubiera pecado. Consecuentemente, siente una tremenda vergüenza -que es la luz de los tefilín- y debido a    Lección 38                                                                                2",
+      "matched_terms": [
+        "nivel de comprensión"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [
+    "multi_source_comprehension_requires_reader_synthesis",
+    "query_expansion_used"
+  ],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "question": "¿Qué deben hacer los esposos antes de salir de viaje para evitar ser dañados por el camino?",
+  "route": "book_qa_v2_sql",
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+  "scope_code": "breslov_test",
+  "answer_type": "concept_lookup",
+  "short_conclusion": "Se encontraron 10 resultado(s) en 10 páginas.",
+  "evidence_summary": {
+    "literal_matches": 10,
+    "concept_matches": 0,
+    "relation_matches": 0,
+    "source_references": 0,
+    "pages": [
+      6,
+      46,
+      47,
+      80,
+      85,
+      141,
+      162,
+      279,
+      358,
+      484
+    ]
+  },
+  "sources": [
+    {
+      "page_number": 162,
+      "evidence_type": "direct_factual_match",
+      "score": 0.5,
+      "snippet": "(Génesis 6:12). En otras palabras, al guardar la pureza sexual, no sufrirá por el camino. 8. De manera similar, es necesario dar caridad antes de salir de viaje, como está escrito, “La rectitud irá delante de él y la pondrá en el camino de sus pasos” (Salmos 85:14). Ello se debe a que la caridad hace que la estrella [la fuerza celeste que regula el viaje] haga brillar su influencia, dado que la c",
+      "matched_terms": [
+        "el camino",
+        "evitar",
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 6,
+      "evidence_type": "direct_factual_match",
+      "score": 0.4,
+      "snippet": "a la sombra de su santidad. Todo su anhelo y deseo era llevar a los hombres por el camino de la acción recta: para abrir los ojos de los ciegos y para liberar a aquellos que están atrapados, diciéndoles a los cautivos, “¡Sean libres!” (cf. Isaías 43:6-8); para rescatar a aquellos que están prisioneros de sus deseos y atrapados en la red de las vanidades de este mundo, y para enseñarles el sendero",
+      "matched_terms": [
+        "el camino",
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 46,
+      "evidence_type": "direct_factual_match",
+      "score": 0.4,
+      "snippet": "nor de Dios- merecerá entonces decir palabras radiantes de Torá que le iluminen el camino hacia el perfecto arrepentimiento. De esa manera merecerá profundos niveles de comprensión en la Torá. 3. Pero sólo es posible lograr esa clase de habla radiante quebrando el orgullo y la vanidad. No se debe estudiar la Torá buscando el honor o la disputa, Dios no lo permita, o en aras de recibir una posición",
+      "matched_terms": [
+        "el camino",
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 47,
+      "evidence_type": "direct_factual_match",
+      "score": 0.4,
+      "snippet": "a su boca, las palabras de Torá no sólo no le iluminan el camino para retornar hacia el bien, sino que ella misma se vuelve material y oscura al salir de su boca, que Dios nos salve. 5. El orgullo y la inmoralidad sexual van juntos. Así, cuando uno cuida la pureza sexual se salva del orgullo y se hace digno de la luz que le iluminará el camino hacia el arrepentimiento, hasta que llegue a alcanzar",
+      "matched_terms": [
+        "el camino",
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 80,
+      "evidence_type": "direct_factual_match",
+      "score": 0.4,
+      "snippet": "dolatría y se cree en alguna clase de augurio como en “un ciervo se me cruzó en el camino” (ver Shuljan Aruj, Iore Dea 179:3) o en alguna otra cosa que pueda ser denominada “la costumbre de los Amorreos” [i.e., superstición] -aunque también crea en Dios- su compasión no estará completa y no deberá aceptar una posición de autoridad. Aunque crea que siente compasión por el mundo y que por eso quiere",
+      "matched_terms": [
+        "el camino",
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 85,
+      "evidence_type": "direct_factual_match",
+      "score": 0.4,
+      "snippet": "n nocturna, que Dios nos salve. Ello está aludido en la frase “que te enfrió en el camino” (Deuteronomio 25:18). “En el camino” alude a la impureza sexual, como en, “Éste es el camino de una mujer adúltera” (Proverbios 30:20). El “viento tormentoso” entra por medio del Targúm, que está asociado con la fuerza impura de noga [la interfase entre la santidad y las tres fuerzas completamente impuras] y",
+      "matched_terms": [
+        "el camino",
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 141,
+      "evidence_type": "direct_factual_match",
+      "score": 0.4,
+      "snippet": "pensamientos se abaten sobre la persona y ella los supera, ése es precisamente el camino hacia la rectificación y el arrepentimiento. De esa manera se extraen las chispas de santidad caídas como resultado de su daño a la pureza sexual, mereciendo entonces la rectificación sexual y el refinamiento de su sabiduría y de su voz. A su vez, se hace digna de la paz, y mediante la paz es posible llevar a",
+      "matched_terms": [
+        "el camino",
+        "camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 279,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": "rpos celestes (ver más en la lección del Likutey Moharán) y ¿quién conoce mejor el camino de los cuerpos celestes que aquél que los dirige? Pero el alma debe tener un cuerpo que sea puro y limpio. Ahora bien, el aire del lugar en donde viven los judíos es tan santo como el aire de la Tierra de Israel (ver más en la lección del Likutey Moharán). De acuerdo a ello, todos los frutos y los productos q",
+      "matched_terms": [
+        "el camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 358,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": "como resultado de ello, se enciende súbitamente por Dios y la lleva a andar por el camino del servicio Divino. Dependiendo del número de remordimientos que le lleguen, así será el tiempo en que arda su corazón por Dios. Pues están aquellos cuyos corazones arden súbitamente por Dios y comienzan a andar en Su servicio; pero luego de una hora o algo así, ese fervor se disipa y vuelven a ser como eran",
+      "matched_terms": [
+        "el camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    },
+    {
+      "page_number": 484,
+      "evidence_type": "compound_keyword_match",
+      "score": 0.3,
+      "snippet": "iados. Es lo mismo que sucede con un caballo que se desboca y corre alejándose del camino - el jinete lo sujeta de las riendas y lo fuerza a retornar al sendero. De la misma manera la persona puede aferrar su pensamiento y llevarlo de vuelta al sendero correcto. 51 51 51 51 51 1. La mala inclinación instiga a la persona, una y otra vez, incitándola a la transgresión. Y aunque la persona no la escu",
+      "matched_terms": [
+        "el camino"
+      ],
+      "source_refs_nearby": [],
+      "grounded_in_postgres": true
+    }
+  ],
+  "warnings": [],
+  "method": {
+    "retrieval": "postgres_v2_sql_only",
+    "used_milvus": false,
+    "used_embeddings": false,
+    "used_ai": false,
+    "milvus_disabled": true,
+    "ai_synthesis_enabled": false,
+    "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+    "scope_code": "breslov_test",
+    "run_resolution": "explicit_run_id"
+  }
+}

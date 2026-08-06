@@ -1,0 +1,2093 @@
+{
+  "run_id": "492acd8d-06bd-42ac-a511-f3ec52f97bb3",
+  "scope_code": "breslov_test",
+  "model_runtime": "openai_gpt-5.4-nano",
+  "rows": [
+    {
+      "question_id": "q1_teshuva",
+      "title": "Teshuvá",
+      "long_question": "¿Cómo describe el Kitzur Likutey Moharán el proceso de teshuvá: humildad ante insultos, confesión, vergüenza, juicio de sí mismo, Keter y arrepentirse de arrepentimientos anteriores?",
+      "long": {
+        "query_chars": 182,
+        "approx_query_tokens": 46,
+        "top_k": 20,
+        "chunks_retrieved": 20,
+        "unique_pages": 20,
+        "retrieved_context_chars": 13068,
+        "truncation_detected": "unknown",
+        "status_code": 200,
+        "answer_type": "comprehension_lookup",
+        "warnings": [
+          "multi_source_comprehension_requires_reader_synthesis",
+          "query_expansion_used"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "insultos en silencio",
+          "http": 200,
+          "sources": 9,
+          "pages": [
+            325,
+            326,
+            29,
+            33,
+            82,
+            145,
+            387,
+            395,
+            446
+          ]
+        },
+        {
+          "claim": "confesión verbal",
+          "http": 200,
+          "sources": 6,
+          "pages": [
+            365,
+            20,
+            21,
+            289,
+            299,
+            476
+          ]
+        },
+        {
+          "claim": "juzgarse a sí mismo",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            27,
+            65,
+            58,
+            512,
+            87,
+            7,
+            39,
+            66,
+            67,
+            266,
+            82,
+            93,
+            103,
+            139,
+            148,
+            151,
+            159,
+            164,
+            166,
+            191
+          ]
+        },
+        {
+          "claim": "temores caídos",
+          "http": 200,
+          "sources": 11,
+          "pages": [
+            66,
+            405,
+            461,
+            26,
+            27,
+            65,
+            368,
+            449,
+            506,
+            306,
+            318
+          ]
+        },
+        {
+          "claim": "vergüenza",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            29,
+            33,
+            46,
+            82,
+            100,
+            109,
+            114,
+            115,
+            117,
+            118,
+            180,
+            181,
+            202,
+            203,
+            204
+          ]
+        },
+        {
+          "claim": "arrepentirse del arrepentimiento anterior",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            30,
+            29,
+            46,
+            280,
+            281,
+            31,
+            50,
+            203,
+            234,
+            321,
+            369,
+            388,
+            429,
+            448,
+            466,
+            487,
+            24,
+            32,
+            33,
+            37
+          ]
+        },
+        {
+          "claim": "correr y retornar",
+          "http": 200,
+          "sources": 0,
+          "pages": []
+        },
+        {
+          "claim": "Keter",
+          "http": 200,
+          "sources": 4,
+          "pages": [
+            29,
+            33,
+            128,
+            230
+          ]
+        },
+        {
+          "claim": "EHIéH",
+          "http": 200,
+          "sources": 2,
+          "pages": [
+            29,
+            170
+          ]
+        }
+      ],
+      "page_direct": [
+        {
+          "page": 20,
+          "text_chars": 1922,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 21,
+          "text_chars": 2269,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 29,
+          "text_chars": 2133,
+          "matched_claim_phrases": [
+            "vergüenza",
+            "Keter",
+            "EHIéH"
+          ]
+        },
+        {
+          "page": 30,
+          "text_chars": 1915,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 31,
+          "text_chars": 2251,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 32,
+          "text_chars": 2069,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 33,
+          "text_chars": 1977,
+          "matched_claim_phrases": [
+            "vergüenza",
+            "Keter"
+          ]
+        },
+        {
+          "page": 65,
+          "text_chars": 2305,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 66,
+          "text_chars": 1937,
+          "matched_claim_phrases": [
+            "temores caídos"
+          ]
+        },
+        {
+          "page": 204,
+          "text_chars": 2139,
+          "matched_claim_phrases": [
+            "vergüenza"
+          ]
+        },
+        {
+          "page": 205,
+          "text_chars": 2381,
+          "matched_claim_phrases": [
+            "vergüenza"
+          ]
+        }
+      ],
+      "expected_pages": [
+        20,
+        21,
+        29,
+        30,
+        31,
+        32,
+        33,
+        65,
+        66,
+        204,
+        205
+      ]
+    },
+    {
+      "question_id": "q2_pureza",
+      "title": "Pureza sexual",
+      "long_question": "¿Cómo se alcanza la pureza sexual mediante Lenguaje Sagrado, apartar pensamientos lujuriosos, tzitzit y rectificación del brit, y qué beneficios trae para plegaria, sabiduría, voz, sustento y rúaj hakodesh?",
+      "long": {
+        "query_chars": 206,
+        "approx_query_tokens": 52,
+        "top_k": 20,
+        "chunks_retrieved": 0,
+        "unique_pages": 0,
+        "retrieved_context_chars": 0,
+        "truncation_detected": "unknown",
+        "status_code": 200,
+        "answer_type": "no_evidence",
+        "warnings": [
+          "relation_not_found: 'aria, sabiduría, voz, sustento' y 'rúaj hakodesh' no coexisten en ninguna página",
+          "no_evidence_found"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Lenguaje Sagrado",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            172,
+            200,
+            211,
+            225,
+            288,
+            289,
+            7,
+            14,
+            15,
+            16,
+            45
+          ]
+        },
+        {
+          "claim": "pensamientos lujuriosos",
+          "http": 200,
+          "sources": 16,
+          "pages": [
+            140,
+            191,
+            17,
+            19,
+            26,
+            28,
+            41,
+            45,
+            76,
+            105,
+            106,
+            120,
+            132,
+            136,
+            141,
+            148
+          ]
+        },
+        {
+          "claim": "tzitzit",
+          "http": 200,
+          "sources": 6,
+          "pages": [
+            36,
+            37,
+            39,
+            232,
+            233,
+            241
+          ]
+        },
+        {
+          "claim": "pureza sexual",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            17,
+            35,
+            36,
+            37,
+            47,
+            48,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            89,
+            94,
+            19,
+            46,
+            21,
+            24,
+            38
+          ]
+        },
+        {
+          "claim": "merecer orar",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            25,
+            27,
+            41,
+            5,
+            20,
+            21,
+            28,
+            29,
+            32,
+            33,
+            35,
+            46,
+            50,
+            51,
+            58,
+            17,
+            26,
+            34,
+            40,
+            44
+          ]
+        },
+        {
+          "claim": "rostro radiante",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            118,
+            119,
+            137,
+            334,
+            355,
+            472,
+            97,
+            7,
+            18,
+            68,
+            78,
+            79,
+            87,
+            100,
+            102,
+            109,
+            121,
+            123,
+            125,
+            46
+          ]
+        },
+        {
+          "claim": "sabiduría",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            7,
+            14,
+            15,
+            36,
+            39,
+            45,
+            58,
+            69,
+            80,
+            86,
+            98,
+            122,
+            130,
+            136,
+            137
+          ]
+        },
+        {
+          "claim": "voz para cantar",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            19,
+            20,
+            50,
+            107,
+            131,
+            137,
+            138,
+            141,
+            147,
+            151,
+            166,
+            219,
+            228,
+            230,
+            302
+          ]
+        },
+        {
+          "claim": "sustento",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            36,
+            37,
+            40,
+            47,
+            61,
+            87,
+            103,
+            118,
+            119,
+            120,
+            122,
+            123,
+            124,
+            126,
+            144
+          ]
+        },
+        {
+          "claim": "espíritu sagrado",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            45,
+            82,
+            85,
+            96,
+            97,
+            98,
+            246,
+            320,
+            451,
+            7,
+            15,
+            16,
+            13,
+            40,
+            50,
+            51,
+            101,
+            126,
+            14,
+            55
+          ]
+        }
+      ],
+      "page_direct": [
+        {
+          "page": 17,
+          "text_chars": 2180,
+          "matched_claim_phrases": [
+            "pureza sexual"
+          ]
+        },
+        {
+          "page": 36,
+          "text_chars": 2194,
+          "matched_claim_phrases": [
+            "tzitzit",
+            "pureza sexual",
+            "sabiduría",
+            "sustento"
+          ]
+        },
+        {
+          "page": 81,
+          "text_chars": 2468,
+          "matched_claim_phrases": [
+            "Lenguaje Sagrado",
+            "pureza sexual"
+          ]
+        },
+        {
+          "page": 82,
+          "text_chars": 2025,
+          "matched_claim_phrases": [
+            "Lenguaje Sagrado",
+            "pureza sexual",
+            "espíritu sagrado"
+          ]
+        },
+        {
+          "page": 136,
+          "text_chars": 2132,
+          "matched_claim_phrases": [
+            "pureza sexual",
+            "sabiduría"
+          ]
+        },
+        {
+          "page": 137,
+          "text_chars": 2414,
+          "matched_claim_phrases": [
+            "pureza sexual",
+            "rostro radiante",
+            "sabiduría",
+            "voz para cantar"
+          ]
+        },
+        {
+          "page": 140,
+          "text_chars": 2116,
+          "matched_claim_phrases": [
+            "pensamientos lujuriosos",
+            "pureza sexual"
+          ]
+        },
+        {
+          "page": 145,
+          "text_chars": 2268,
+          "matched_claim_phrases": [
+            "pureza sexual",
+            "sustento"
+          ]
+        }
+      ],
+      "expected_pages": [
+        17,
+        36,
+        81,
+        82,
+        136,
+        137,
+        140,
+        145
+      ]
+    },
+    {
+      "question_id": "q3_plegaria",
+      "title": "Plegaria perfecta",
+      "long_question": "¿Cómo se alcanza la plegaria perfecta: sinceridad y verdad, energía y alegría, unión con verdaderos Tzadikim, eliminación de pensamientos extraños y orgullo, unidad interior y paz?",
+      "long": {
+        "query_chars": 180,
+        "approx_query_tokens": 45,
+        "top_k": 20,
+        "chunks_retrieved": 0,
+        "unique_pages": 0,
+        "retrieved_context_chars": 0,
+        "truncation_detected": "unknown",
+        "status_code": 200,
+        "answer_type": "no_evidence",
+        "warnings": [
+          "relation_not_found: 'ación de pensamientos extraños' y 'orgullo, unidad interior y paz' no coexisten en ninguna página",
+          "no_evidence_found"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "sinceridad",
+          "http": 200,
+          "sources": 10,
+          "pages": [
+            41,
+            114,
+            167,
+            202,
+            274,
+            285,
+            301,
+            338,
+            388,
+            428
+          ]
+        },
+        {
+          "claim": "verdad",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            3,
+            7,
+            9,
+            13,
+            14,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            27,
+            28,
+            30
+          ]
+        },
+        {
+          "claim": "alegría",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            3,
+            22,
+            25,
+            26,
+            27,
+            45,
+            51,
+            112,
+            114,
+            115,
+            117,
+            118,
+            119,
+            121,
+            127
+          ]
+        },
+        {
+          "claim": "verdaderos Tzadikim",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            17,
+            18,
+            21,
+            27,
+            28,
+            36,
+            38,
+            43,
+            44,
+            49,
+            73,
+            74,
+            78,
+            108,
+            110,
+            23,
+            35,
+            34,
+            56,
+            22
+          ]
+        },
+        {
+          "claim": "pensamientos ajenos",
+          "http": 200,
+          "sources": 17,
+          "pages": [
+            17,
+            19,
+            26,
+            28,
+            41,
+            45,
+            76,
+            105,
+            106,
+            120,
+            132,
+            136,
+            140,
+            141,
+            148,
+            215,
+            216
+          ]
+        },
+        {
+          "claim": "orgullo",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            22,
+            44,
+            45,
+            46,
+            47,
+            48,
+            58,
+            70,
+            71,
+            72,
+            116,
+            238,
+            263,
+            312,
+            331
+          ]
+        },
+        {
+          "claim": "plegaria perfecta",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            17,
+            62,
+            114,
+            421,
+            422,
+            423,
+            14,
+            18,
+            35,
+            13,
+            15,
+            19,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            33,
+            34
+          ]
+        },
+        {
+          "claim": "paz general",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            60,
+            61,
+            63,
+            4,
+            35,
+            62,
+            70,
+            71,
+            77,
+            80,
+            82,
+            83,
+            87,
+            96,
+            111
+          ]
+        }
+      ],
+      "page_direct": [
+        {
+          "page": 17,
+          "text_chars": 2180,
+          "matched_claim_phrases": [
+            "verdad",
+            "verdaderos Tzadikim",
+            "plegaria perfecta"
+          ]
+        },
+        {
+          "page": 18,
+          "text_chars": 1903,
+          "matched_claim_phrases": [
+            "verdad",
+            "verdaderos Tzadikim"
+          ]
+        },
+        {
+          "page": 25,
+          "text_chars": 2188,
+          "matched_claim_phrases": [
+            "alegría"
+          ]
+        },
+        {
+          "page": 41,
+          "text_chars": 2394,
+          "matched_claim_phrases": [
+            "sinceridad",
+            "verdad"
+          ]
+        },
+        {
+          "page": 60,
+          "text_chars": 2158,
+          "matched_claim_phrases": [
+            "verdad",
+            "paz general"
+          ]
+        },
+        {
+          "page": 61,
+          "text_chars": 2211,
+          "matched_claim_phrases": [
+            "verdad",
+            "paz general"
+          ]
+        },
+        {
+          "page": 292,
+          "text_chars": 2293,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 293,
+          "text_chars": 2252,
+          "matched_claim_phrases": [
+            "verdad"
+          ]
+        },
+        {
+          "page": 331,
+          "text_chars": 1801,
+          "matched_claim_phrases": [
+            "orgullo"
+          ]
+        },
+        {
+          "page": 332,
+          "text_chars": 2281,
+          "matched_claim_phrases": [
+            "orgullo"
+          ]
+        }
+      ],
+      "expected_pages": [
+        17,
+        18,
+        25,
+        41,
+        60,
+        61,
+        292,
+        293,
+        331,
+        332
+      ]
+    },
+    {
+      "question_id": "q4_hitbodedut",
+      "title": "Hitbodedut",
+      "long_question": "¿Qué es hitbodedut como plegaria personal, conversación con el Creador y juicio de sí mismo, y qué beneficios tiene: eliminar temores caídos, luz oculta, vergüenza y llevar el mundo al bien?",
+      "long": {
+        "query_chars": 190,
+        "approx_query_tokens": 48,
+        "top_k": 20,
+        "chunks_retrieved": 0,
+        "unique_pages": 0,
+        "retrieved_context_chars": 0,
+        "truncation_detected": "unknown",
+        "status_code": 200,
+        "answer_type": "no_evidence",
+        "warnings": [
+          "relation_not_found: 'caídos, luz oculta, vergüenza' y 'llevar el mundo al bien' no coexisten en ninguna página",
+          "no_evidence_found"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "idioma familiar",
+          "http": 200,
+          "sources": 9,
+          "pages": [
+            466,
+            81,
+            191,
+            196,
+            197,
+            225,
+            341,
+            450,
+            332
+          ]
+        },
+        {
+          "claim": "conversación con el Creador",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            65,
+            31,
+            43,
+            67,
+            96,
+            133,
+            150,
+            152,
+            158,
+            202,
+            203,
+            206,
+            264,
+            269,
+            289,
+            66,
+            17,
+            18,
+            321,
+            339
+          ]
+        },
+        {
+          "claim": "noche",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            19,
+            20,
+            176,
+            202,
+            208,
+            230,
+            237,
+            246,
+            261,
+            340,
+            353,
+            359,
+            412,
+            435,
+            447
+          ]
+        },
+        {
+          "claim": "fuera de las zonas habitadas",
+          "http": 200,
+          "sources": 18,
+          "pages": [
+            237,
+            27,
+            196,
+            218,
+            292,
+            323,
+            347,
+            391,
+            494,
+            495,
+            18,
+            57,
+            98,
+            208,
+            234,
+            309,
+            392,
+            278
+          ]
+        },
+        {
+          "claim": "unirse a Dios",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            13,
+            19,
+            20,
+            32,
+            237,
+            250,
+            23,
+            4,
+            7,
+            14,
+            24,
+            36,
+            50,
+            186,
+            189,
+            249,
+            25,
+            26,
+            27,
+            29
+          ]
+        },
+        {
+          "claim": "juzgarse a sí misma",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            65,
+            27,
+            66,
+            512,
+            75,
+            172,
+            250,
+            272,
+            277,
+            7,
+            24,
+            34,
+            51,
+            67,
+            266,
+            83,
+            93,
+            104,
+            181,
+            58
+          ]
+        },
+        {
+          "claim": "temores caídos",
+          "http": 200,
+          "sources": 11,
+          "pages": [
+            66,
+            405,
+            461,
+            26,
+            27,
+            65,
+            368,
+            449,
+            506,
+            306,
+            318
+          ]
+        },
+        {
+          "claim": "luz oculta",
+          "http": 200,
+          "sources": 16,
+          "pages": [
+            6,
+            65,
+            66,
+            67,
+            68,
+            177,
+            9,
+            18,
+            34,
+            41,
+            42,
+            53,
+            73,
+            76,
+            78,
+            79
+          ]
+        },
+        {
+          "claim": "vergüenza",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            29,
+            33,
+            46,
+            82,
+            100,
+            109,
+            114,
+            115,
+            117,
+            118,
+            180,
+            181,
+            202,
+            203,
+            204
+          ]
+        }
+      ],
+      "page_direct": [
+        {
+          "page": 65,
+          "text_chars": 2305,
+          "matched_claim_phrases": [
+            "conversación con el Creador",
+            "juzgarse a sí misma",
+            "luz oculta"
+          ]
+        },
+        {
+          "page": 66,
+          "text_chars": 1937,
+          "matched_claim_phrases": [
+            "temores caídos",
+            "luz oculta"
+          ]
+        },
+        {
+          "page": 166,
+          "text_chars": 2248,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 167,
+          "text_chars": 2245,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 202,
+          "text_chars": 2086,
+          "matched_claim_phrases": [
+            "noche",
+            "vergüenza"
+          ]
+        },
+        {
+          "page": 203,
+          "text_chars": 2574,
+          "matched_claim_phrases": [
+            "vergüenza"
+          ]
+        },
+        {
+          "page": 237,
+          "text_chars": 2322,
+          "matched_claim_phrases": [
+            "noche",
+            "unirse a Dios"
+          ]
+        },
+        {
+          "page": 466,
+          "text_chars": 2396,
+          "matched_claim_phrases": []
+        }
+      ],
+      "expected_pages": [
+        65,
+        66,
+        166,
+        167,
+        202,
+        203,
+        237,
+        466
+      ]
+    },
+    {
+      "question_id": "q5_shabat",
+      "title": "Shabat",
+      "long_question": "¿Cómo relaciona el Kitzur la santidad y alegría de Shabat con fe, bendiciones, daat, compasión, alma adicional, comer en Shabat, libertad y elevación de temores caídos?",
+      "long": {
+        "query_chars": 168,
+        "approx_query_tokens": 42,
+        "top_k": 20,
+        "chunks_retrieved": 0,
+        "unique_pages": 0,
+        "retrieved_context_chars": 0,
+        "truncation_detected": "unknown",
+        "status_code": 200,
+        "answer_type": "no_evidence",
+        "warnings": [
+          "relation_not_found: 'nal, comer en shabat, libertad' y 'elevación de temores caídos' no coexisten en ninguna página",
+          "no_evidence_found"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "encarnación de la fe",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            61,
+            159,
+            160,
+            106,
+            214,
+            217,
+            258,
+            33,
+            34,
+            35,
+            36,
+            37,
+            40,
+            43,
+            57,
+            74,
+            77,
+            78,
+            79,
+            80
+          ]
+        },
+        {
+          "claim": "bendiciones",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            58,
+            128,
+            157,
+            159,
+            160,
+            161,
+            163,
+            209,
+            217,
+            229,
+            233,
+            239,
+            318,
+            329,
+            382
+          ]
+        },
+        {
+          "claim": "pies",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            72,
+            107,
+            119,
+            120,
+            204,
+            209,
+            210,
+            211,
+            221,
+            242,
+            247,
+            249,
+            284,
+            289,
+            328
+          ]
+        },
+        {
+          "claim": "daat",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            49,
+            94,
+            97,
+            144,
+            188,
+            260,
+            269,
+            294,
+            340,
+            341,
+            353,
+            356,
+            443,
+            455,
+            487
+          ]
+        },
+        {
+          "claim": "compasión",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            18,
+            23,
+            62,
+            63,
+            67,
+            78,
+            79,
+            80,
+            90,
+            105,
+            108,
+            138,
+            139,
+            171,
+            183
+          ]
+        },
+        {
+          "claim": "alma adicional",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            165,
+            344,
+            451,
+            3,
+            7,
+            17,
+            22,
+            23,
+            24,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            31,
+            88
+          ]
+        },
+        {
+          "claim": "comer en Shabat",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            261,
+            343,
+            344,
+            403,
+            404,
+            209,
+            341,
+            384,
+            462,
+            398,
+            500,
+            501,
+            63,
+            64,
+            69,
+            28,
+            47,
+            52,
+            73,
+            77
+          ]
+        },
+        {
+          "claim": "alegría del Shabat",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            51,
+            112,
+            115,
+            119,
+            3,
+            22,
+            25,
+            26,
+            27,
+            45,
+            114,
+            117,
+            118,
+            121,
+            127,
+            9,
+            31,
+            33,
+            48,
+            63
+          ]
+        },
+        {
+          "claim": "libertad",
+          "http": 200,
+          "sources": 9,
+          "pages": [
+            89,
+            98,
+            99,
+            162,
+            370,
+            447,
+            456,
+            461,
+            485
+          ]
+        },
+        {
+          "claim": "temores caídos",
+          "http": 200,
+          "sources": 11,
+          "pages": [
+            66,
+            405,
+            461,
+            26,
+            27,
+            65,
+            368,
+            449,
+            506,
+            306,
+            318
+          ]
+        }
+      ],
+      "page_direct": [
+        {
+          "page": 159,
+          "text_chars": 2449,
+          "matched_claim_phrases": [
+            "encarnación de la fe",
+            "bendiciones"
+          ]
+        },
+        {
+          "page": 160,
+          "text_chars": 2337,
+          "matched_claim_phrases": [
+            "encarnación de la fe",
+            "bendiciones"
+          ]
+        },
+        {
+          "page": 328,
+          "text_chars": 2385,
+          "matched_claim_phrases": [
+            "pies"
+          ]
+        },
+        {
+          "page": 341,
+          "text_chars": 2110,
+          "matched_claim_phrases": [
+            "daat",
+            "compasión"
+          ]
+        },
+        {
+          "page": 343,
+          "text_chars": 1945,
+          "matched_claim_phrases": [
+            "comer en Shabat"
+          ]
+        },
+        {
+          "page": 344,
+          "text_chars": 2039,
+          "matched_claim_phrases": [
+            "alma adicional",
+            "comer en Shabat"
+          ]
+        },
+        {
+          "page": 404,
+          "text_chars": 1981,
+          "matched_claim_phrases": []
+        },
+        {
+          "page": 461,
+          "text_chars": 2000,
+          "matched_claim_phrases": [
+            "alegría del Shabat",
+            "libertad",
+            "temores caídos"
+          ]
+        },
+        {
+          "page": 462,
+          "text_chars": 2156,
+          "matched_claim_phrases": []
+        }
+      ],
+      "expected_pages": [
+        159,
+        160,
+        328,
+        341,
+        343,
+        344,
+        404,
+        461,
+        462
+      ]
+    },
+    {
+      "question_id": "q6_punto_bueno",
+      "title": "Punto bueno",
+      "long_question": "¿Qué enseña la Lección 282 sobre el punto bueno o nekudá tová: buscar bien aun entre pecados, evitar depresión, lograr alegría y plegaria, y juzgar favorablemente?",
+      "long": {
+        "query_chars": 163,
+        "approx_query_tokens": 41,
+        "top_k": 20,
+        "chunks_retrieved": 0,
+        "unique_pages": 0,
+        "retrieved_context_chars": 0,
+        "truncation_detected": "unknown",
+        "status_code": 200,
+        "answer_type": "no_evidence",
+        "warnings": [
+          "lesson_number_not_resolved: 282",
+          "no_evidence_found"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Lección 282",
+          "http": 200,
+          "sources": 0,
+          "pages": []
+        },
+        {
+          "claim": "punto bueno",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            407,
+            411,
+            457,
+            482,
+            512,
+            16,
+            21,
+            83,
+            25,
+            35,
+            41,
+            43,
+            45,
+            46,
+            63,
+            77,
+            87,
+            99,
+            105,
+            113
+          ]
+        },
+        {
+          "claim": "puntos buenos",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            135,
+            169,
+            407,
+            408,
+            409,
+            164,
+            165,
+            166,
+            145,
+            163,
+            181,
+            182,
+            200,
+            302,
+            410,
+            53,
+            54,
+            55,
+            62,
+            83
+          ]
+        },
+        {
+          "claim": "impurezas",
+          "http": 200,
+          "sources": 5,
+          "pages": [
+            131,
+            192,
+            193,
+            282,
+            407
+          ]
+        },
+        {
+          "claim": "vida y alegría",
+          "http": 200,
+          "sources": 0,
+          "pages": []
+        },
+        {
+          "claim": "orar",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            17,
+            25,
+            26,
+            27,
+            34,
+            40,
+            41,
+            44,
+            59,
+            60,
+            61,
+            66,
+            67,
+            68,
+            75
+          ]
+        },
+        {
+          "claim": "líder de la plegaria",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            408,
+            409,
+            419,
+            17,
+            18,
+            467,
+            473,
+            498,
+            504,
+            26,
+            30,
+            33,
+            34,
+            13,
+            14,
+            15,
+            19,
+            442,
+            443,
+            36
+          ]
+        },
+        {
+          "claim": "juzgar favorablemente",
+          "http": 200,
+          "sources": 18,
+          "pages": [
+            251,
+            20,
+            27,
+            33,
+            65,
+            66,
+            67,
+            96,
+            156,
+            158,
+            172,
+            264,
+            266,
+            349,
+            356,
+            247,
+            410,
+            424
+          ]
+        }
+      ],
+      "page_direct": [
+        {
+          "page": 407,
+          "text_chars": 2224,
+          "matched_claim_phrases": [
+            "punto bueno",
+            "puntos buenos",
+            "impurezas",
+            "vida y alegría",
+            "orar"
+          ]
+        },
+        {
+          "page": 408,
+          "text_chars": 2253,
+          "matched_claim_phrases": [
+            "Lección 282",
+            "puntos buenos",
+            "orar",
+            "líder de la plegaria"
+          ]
+        },
+        {
+          "page": 409,
+          "text_chars": 2270,
+          "matched_claim_phrases": [
+            "Lección 282",
+            "puntos buenos",
+            "orar"
+          ]
+        },
+        {
+          "page": 410,
+          "text_chars": 2936,
+          "matched_claim_phrases": [
+            "Lección 282"
+          ]
+        },
+        {
+          "page": 411,
+          "text_chars": 2047,
+          "matched_claim_phrases": [
+            "punto bueno",
+            "orar"
+          ]
+        }
+      ],
+      "expected_pages": [
+        407,
+        408,
+        409,
+        410,
+        411
+      ]
+    },
+    {
+      "question_id": "q7_temor_angeles",
+      "title": "Temor y ángeles",
+      "long_question": "¿Cómo se alcanza el temor perfecto a Dios y el dominio sobre los ángeles mediante rectificar deseos de dinero, sexualidad y comida, Tres Festividades, plegaria perfecta y unión a líderes verdaderos?",
+      "long": {
+        "query_chars": 198,
+        "approx_query_tokens": 50,
+        "top_k": 20,
+        "chunks_retrieved": 0,
+        "unique_pages": 0,
+        "retrieved_context_chars": 0,
+        "truncation_detected": "unknown",
+        "status_code": 200,
+        "answer_type": "no_evidence",
+        "warnings": [
+          "relation_not_found: 'estividades, plegaria perfecta' y 'unión a líderes verdaderos' no coexisten en ninguna página",
+          "no_evidence_found"
+        ]
+      },
+      "claims": [
+        {
+          "claim": "dominio sobre los ángeles",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            419,
+            420,
+            421,
+            20,
+            74,
+            91,
+            109,
+            215,
+            252,
+            253,
+            305,
+            306,
+            328,
+            332,
+            388,
+            40,
+            55,
+            72,
+            93,
+            94
+          ]
+        },
+        {
+          "claim": "temor perfecto",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            419,
+            420,
+            421,
+            422,
+            25,
+            26,
+            27,
+            57,
+            59,
+            60,
+            63,
+            64,
+            65,
+            66,
+            67,
+            70,
+            71,
+            72,
+            73,
+            7
+          ]
+        },
+        {
+          "claim": "dinero",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            19,
+            52,
+            53,
+            93,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            133,
+            134
+          ]
+        },
+        {
+          "claim": "placer sexual",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            420,
+            421,
+            423,
+            86,
+            44,
+            50,
+            68,
+            87,
+            110,
+            126,
+            259,
+            272,
+            323,
+            332,
+            343,
+            344,
+            350,
+            370,
+            17,
+            19
+          ]
+        },
+        {
+          "claim": "comida",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            73,
+            86,
+            207,
+            209,
+            221,
+            222,
+            261,
+            305,
+            343,
+            344,
+            345,
+            348,
+            352,
+            404,
+            420
+          ]
+        },
+        {
+          "claim": "Pesaj",
+          "http": 200,
+          "sources": 15,
+          "pages": [
+            4,
+            21,
+            28,
+            62,
+            94,
+            103,
+            105,
+            119,
+            152,
+            154,
+            156,
+            196,
+            209,
+            221,
+            230
+          ]
+        },
+        {
+          "claim": "Shavuot",
+          "http": 200,
+          "sources": 8,
+          "pages": [
+            152,
+            156,
+            258,
+            349,
+            400,
+            421,
+            431,
+            499
+          ]
+        },
+        {
+          "claim": "Sukot",
+          "http": 200,
+          "sources": 7,
+          "pages": [
+            117,
+            152,
+            156,
+            349,
+            421,
+            431,
+            439
+          ]
+        },
+        {
+          "claim": "plegaria perfecta",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            17,
+            62,
+            114,
+            421,
+            422,
+            423,
+            14,
+            18,
+            35,
+            13,
+            15,
+            19,
+            23,
+            24,
+            25,
+            26,
+            27,
+            30,
+            33,
+            34
+          ]
+        },
+        {
+          "claim": "líderes verdaderos",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            108,
+            278,
+            288,
+            306,
+            331,
+            419,
+            420,
+            424,
+            436,
+            452,
+            454,
+            455,
+            460,
+            462,
+            503,
+            17,
+            18,
+            21,
+            23,
+            27
+          ]
+        },
+        {
+          "claim": "almas de Israel",
+          "http": 200,
+          "sources": 20,
+          "pages": [
+            420,
+            53,
+            57,
+            75,
+            90,
+            9,
+            34,
+            35,
+            36,
+            42,
+            43,
+            59,
+            92,
+            95,
+            102,
+            129,
+            165,
+            235,
+            296,
+            309
+          ]
+        }
+      ],
+      "page_direct": [
+        {
+          "page": 419,
+          "text_chars": 2409,
+          "matched_claim_phrases": [
+            "dominio sobre los ángeles",
+            "temor perfecto"
+          ]
+        },
+        {
+          "page": 420,
+          "text_chars": 2140,
+          "matched_claim_phrases": [
+            "dominio sobre los ángeles",
+            "temor perfecto",
+            "dinero",
+            "placer sexual",
+            "comida",
+            "almas de Israel"
+          ]
+        },
+        {
+          "page": 421,
+          "text_chars": 2210,
+          "matched_claim_phrases": [
+            "dominio sobre los ángeles",
+            "temor perfecto",
+            "dinero",
+            "placer sexual",
+            "comida",
+            "Pesaj",
+            "Shavuot",
+            "Sukot",
+            "plegaria perfecta"
+          ]
+        },
+        {
+          "page": 422,
+          "text_chars": 2523,
+          "matched_claim_phrases": [
+            "temor perfecto",
+            "plegaria perfecta"
+          ]
+        },
+        {
+          "page": 423,
+          "text_chars": 2429,
+          "matched_claim_phrases": [
+            "placer sexual",
+            "comida",
+            "plegaria perfecta"
+          ]
+        },
+        {
+          "page": 424,
+          "text_chars": 2197,
+          "matched_claim_phrases": []
+        }
+      ],
+      "expected_pages": [
+        419,
+        420,
+        421,
+        422,
+        423,
+        424
+      ]
+    }
+  ]
+}

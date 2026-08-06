@@ -1,0 +1,37 @@
+{
+  "report": "worktree-reconciliation-v1",
+  "date": "2026-08-06",
+  "branch": "feature/console-backend-core",
+  "head_initial": "a6d3aca379d5872d32ecbc0450c9d74a557977f3",
+  "head_initial_short": "a6d3aca",
+  "last_known_status_doc_date": "2026-08-05",
+  "git": {
+    "staged": 0,
+    "tracked_modified": 17,
+    "tracked_modified_text": 7,
+    "tracked_modified_screenshots": 10,
+    "untracked": 303,
+    "untracked_report_files": 282,
+    "untracked_backend_data": 13,
+    "untracked_astro_public": 5,
+    "untracked_astro_scripts": 1,
+    "untracked_backend_scripts": 2,
+    "diff_check": "PASS",
+    "ignored_relevant": [
+      "SrvRestAstroLS_v1/.dev-logs/",
+      "SrvRestAstroLS_v1/.dev-pids/",
+      "SrvRestAstroLS_v1/.env.backend-dev.local",
+      "SrvRestAstroLS_v1/astro/node_modules/",
+      "SrvRestAstroLS_v1/astro/dist/",
+      "SrvRestAstroLS_v1/astro/playwright-report/",
+      "SrvRestAstroLS_v1/astro/test-results/",
+      "SrvRestAstroLS_v1/backend/.venv/",
+      "data/processed/"
+    ]
+  },
+  "services_observed": {
+    "postgresql": "activo, no reiniciado",
+    "milvus": "activo, no reiniciado",
+    "litellm": "activo, no reiniciado"
+  }
+}

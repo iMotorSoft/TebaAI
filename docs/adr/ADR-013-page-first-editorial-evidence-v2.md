@@ -54,3 +54,25 @@ All optional, under `evidence.editorial`:
 | Frontend check | 0 errors |
 | Frontend tests | 60/60 passed |
 | Frontend build | 8 pages, PASS |
+
+## Corpus reconciliation
+
+### Caso B — Salmos 16:1 (PASS)
+- pdf_page=55, printed_page=37, source_layer=marginal_reference
+- match_type=printed_reference_exact
+- Variants "Salmos 16:1", "Salmo 16:1", "salmos 16:1" all resolve to page 55
+
+### Caso C — Footnote 35 (DATA GAP)
+- Spanish text beginning "El hombre se une a HaShem..." does not exist in corpus
+- Chunk 416: Hebrew original
+- Chunk 417: Spanish ending only
+- Marker .35 at chunk 414
+- Re-ingestion required to recover lost footnote text
+
+### Fixes applied
+- `search_literal_candidates`: added `include_test_candidates` status filter and content ILIKE fallback for NULL `search_text_normalized`
+- `search_printed_reference_candidates`: new targeted SQL search for marginal_source chunks
+- Printed reference detection (`is_printed_reference`) runs before english_name detection
+- `printed_reference_exact` priority tier (15.0), query shape, and source_layer
+- Language filter includes `'mixed'` for marginal chunks
+- `_BIBLICAL_REFERENCE` regex now handles singular/plural book names

@@ -671,7 +671,7 @@ async def test_structural_heading_fixture_returns_page_body_and_evidence(
     assert primary["section"] == "4. CONSTRUYENDO UN MISHKÁN"
     assert primary["associated_chunk_id"] == body_id
     assert "El Rabí Natán concluye su explicación" in primary["quote"]
-    assert response["primary_evidence_ids"] == ["ev-bf5ac6e2fbf46812"]
+    assert response["primary_evidence_ids"] == ["ev-71b37371035d805f"]
 
 
 @pytest.mark.asyncio

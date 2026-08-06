@@ -1,10 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import ContentManager from "../../components/admin/ContentManager.svelte";
+import "../../assets/content-manager.css";
 ---
 
 <Layout>
-  <main class="min-h-screen bg-[var(--ivory-50)]">
-    <ContentManager client:load />
-  </main>
+  <ContentManager client:load />
 </Layout>

@@ -1,34 +1,39 @@
-# Worktree classification — PageFirstPipeline continuation
+# Worktree classification — Content Manager premium UX closure
 
-HEAD inicial real: `8b64455fd3e50951b665e0212a5266a1c28bd156`.
+HEAD inicial real: `dc8c26967f1b0242756b40a019ff0847c3709777`.
 
-## Files in this cycle
+## Files in this cycle (UX premium)
 
 | Paths | Classification | Purpose / state / tests |
 |---|---|---|
-| `backend/modules/library/page_first_pipeline.py` | pipeline reusable | Typed document-agnostic contract, PyMuPDF4LLM physical pages, Unicode/ligatures, conservative headings/footnotes/references and stage orchestration. Unit and real E2E PASS. |
-| `backend/modules/library/page_first_gateway.py` | pipeline adapters + reconciliation | PostgreSQL manifests, chunks/embeddings, isolated attempt-keyed Milvus adapter and exact reconciliation. Unit and real E2E PASS. |
-| `backend/modules/library/content_manager_cleanup.py` | cleanup | Milvus-first manifest compensation, exact PG IDs, audit events and repeat-safe outcomes. Unit and real twice-run cleanup PASS. |
-| `backend/modules/library/content_manager_runtime.py` | worker wiring | Psycopg store, pipeline result/diagnostic and failure compensation. Real worker PASS. |
-| `content_manager_worker.py`, `content-worker-dev.sh` | DEV runner | Explicit DEV/E2E guards, PID/log ownership and one isolated worker. Active at close. |
-| `prepare_content_manager_e2e_scope.py` | isolation setup | Explicit dry-run/apply for `breslov_e2e`; primary is never updated. |
-| `generate_content_manager_e2e_fixture.py` | fixture generator | Generates an authorized temporary 3-page ES/HE/empty PDF; PDF is excluded. |
-| `core/config.py`, `globalVar.py` | configuration | Default-off E2E flag, exact scope/collection/hash and worker polling. |
-| `migration 041` | migration | Reviewed before first application; adds cleanup audit and `ingestion_failed`, then applied with the official runner. |
-| existing Content Manager modules/routes/schemas/audit | existing orchestrator integration | Durable design preserved; minimally extended for real stages, diagnostics and E2E routing. |
-| `tests/test_page_first_pipeline.py`, `test_content_manager_cleanup.py`, `test_content_manager_e2e_isolation.py` | tests | Pipeline/reconciliation/cleanup/isolation coverage; focused 61 PASS, full backend 1555 PASS. |
-| current ADR/status/conventions/report | documentation/report | Records reproducible gates and evidence. |
-
-## Existing scripts inventoried, not copied into the worker
-
-The `ingest_*page_first*.py` scripts mix reusable page concepts with hardcoded document IDs, titles, paths, page ranges, edition IDs and direct SQL. Only conservative document-agnostic concepts were extracted. Existing scripts were preserved unchanged and the worker never invokes shell or subprocess.
+| `astro/src/components/admin/contentManagerClient.ts` | typed API layer | Upload/create/list/get/retry/cancel/diagnostic; scope as deployment constant; auth shared; normalized editorial errors; polling stops at terminal and on destroy. 24 vitest PASS. |
+| `astro/src/components/admin/contentManagerLabels.ts` | editorial vocabulary | All visible strings centralized (i18n-ready), error/warning code mapping, RTL and formatting helpers. Tested with client suite. |
+| `astro/src/components/admin/ContentManager.svelte` | premium list/detail surface | Editorial header with Breslov identity, compact summary, history table/cards, premium empty state, detail with timeline/audit/collapsible diagnostic. Playwright PASS. |
+| `astro/src/components/admin/ContentManagerWizard.svelte` | five-stage wizard | Archivo → Información → Confirmación → Procesamiento → Resultado with real backend states; cancel only in cancellable states; real retry. Playwright PASS. |
+| `astro/src/assets/content-manager.css` | premium CSS layer | Thin layer over existing Breslov tokens; no second design system. |
+| `astro/src/pages/admin/content.astro` | page | Imports premium CSS; no parallel admin shell. |
+| `astro/e2e/content-manager-*.spec.ts` + helpers | E2E + captures | 11 tests PASS (premium real backend, mobile 390, RTL/accessibility, permissions, captures); 13 screenshots across 1440/1024/768/390. |
+| `backend/modules/library/content_manager_cleanup.py` | cleanup fix | Manifest vector IDs now deleted by exact ID in addition to attempt-key query (silently-empty scalar query previously left residuals in the isolated collection). Regression test added; backend 1556 PASS. |
+| `backend/tests/test_content_manager_cleanup.py` | tests | New regression test `test_cleanup_deletes_manifest_vector_when_attempt_query_is_empty`; 6 PASS. |
+| `backend/scripts/content_manager_cleanup_job.py` | DEV runner | Exact manifest cleanup for one job/attempt (Milvus-first, idempotent, DEV+E2E guarded). |
+| `backend/scripts/generate_content_manager_e2e_fixture.py` | fixture generator | Variants v1-v4 deterministic + `unique` (fresh sha per run for a clean idempotency key); PDF excluded. |
+| `docs/content-manager-operativa.md` | operational docs | Route, flow, components, states, polling, retry/cancel, responsive/RTL/accessibility, E2E, scope restriction. |
+| `docs/status_actual.md`, `docs/adr/ADR-022-*` | documentation | UX closure recorded; gates updated. |
+| `data/reports/breslov/2026-08-05-content-manager-v1-dev/` | report | UX inventory, design-system reuse, component map, visual matrix, responsive/mobile/tablet/rtl/accessibility/keyboard/playwright/console results, visual validation, ux-gate results, README, screenshots. |
 
 ## Pre-existing unrelated files preserved and excluded
 
-- Modified `astro/src/components/global.js`, `global.test.ts`, `layouts/PublicLayout.astro`.
-- Modified `backend/tests/test_simple_research_rag.py`.
-- Modified `docs/manual-dev-pro-configuration.md`, `docs/adr/ADR-013-*`, `lat.md/frontend-implementation-policy.md`.
-- Modified historical screenshots under 2026-07-16 and 2026-07-26 reports.
-- Untracked social assets/rendering scripts, historical backend probes and report trees dated 2026-07-09 through 2026-07-31.
+- Modified `astro/src/components/global.js`, `global.test.ts`, `layouts/PublicLayout.astro` (ajenos, no tocados).
+- Modified `backend/tests/test_simple_research_rag.py`, `docs/manual-dev-pro-configuration.md`, `docs/adr/ADR-013-*`, `lat.md/frontend-implementation-policy.md` (ajenos, no tocados).
+- Untracked favicons/social assets, `astro/scripts/`, `backend/data/`, milvus probe scripts y árboles de reportes 2026-07-09..07-31 (ajenos, no tocados).
 
-They were not restored, edited or staged. PID files, logs, local E2E settings and generated PDFs are runtime artifacts and are excluded from commits. No `git add .` is used.
+No se restauraron, editaron ni stagearon. PID files, logs, `.env.backend-dev.local`
+y PDFs generados son artefactos runtime excluidos de los commits. Sin `git add .`.
+
+## Commits
+
+- `413a598` feat(breslov): complete premium Content Manager workflow
+- `1528ef1` test(breslov): validate Content Manager premium UX and accessibility
+- `bd74bbc` docs(breslov): close Content Manager premium UX gate
+
+HEAD final: `bd74bbca2672c464e4c5626d9123352a94e54b2d`. Sin push.

@@ -1,0 +1,4 @@
+{
+  "full": { "passed": 1585, "failed": 0, "warnings": 94 },
+  "note": "backend unchanged this phase; run with clean env (no TEBAAI_AUTH_ENABLED) to keep test_global_var default assertion green"
+}

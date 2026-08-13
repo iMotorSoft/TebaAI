@@ -1,4 +1,4 @@
- <script lang="ts">
+<script lang="ts">
   import { onMount } from "svelte";
   import { BRAND } from "../global.js";
   import {
@@ -9,6 +9,11 @@
     getStoredAccessToken,
     type UserInfo,
   } from "./authClient.ts";
+  import {
+    resolveSafePostLoginDestination,
+    findModuleByDestination,
+    roleCanAccessModule,
+  } from "../modules/moduleRegistry.ts";
 
   let email = $state("");
   let password = $state("");
@@ -19,7 +24,17 @@
   let checking = $state(true);
   let user = $state<UserInfo | null>(null);
 
+  // Intended destination, resolved safely from `?next=` on mount.
+  let destination = $state("/research");
+  let denied = $state(false);
+  let deniedLabel = $state("esa área");
+
   onMount(() => {
+    const raw = typeof window !== "undefined"
+      ? new URLSearchParams(window.location.search).get("next")
+      : null;
+    destination = resolveSafePostLoginDestination(raw);
+
     const stored = getStoredUser();
     const token = getStoredAccessToken();
     if (stored && token) {
@@ -32,9 +47,17 @@
     e.preventDefault();
     loading = true;
     error = null;
+    denied = false;
     try {
       const result = await login(email, password);
-      window.location.assign("/research");
+      const module = findModuleByDestination(destination);
+      if (module && !roleCanAccessModule(result.user.role, module)) {
+        denied = true;
+        deniedLabel = module.label;
+        user = result.user;
+        return;
+      }
+      window.location.assign(destination);
     } catch (err: unknown) {
       error = err instanceof Error ? err.message : "Error desconocido";
     } finally {
@@ -45,6 +68,7 @@
   async function handleLogout() {
     await logout();
     user = null;
+    denied = false;
     error = null;
     verifyMessage = null;
   }
@@ -76,6 +100,19 @@
     <div class="card-body">
       <h2 class="card-title">{BRAND.publicName}</h2>
       <p class="text-sm text-base-content/70">Verificando sesión…</p>
+    </div>
+  </div>
+{:else if denied && user}
+  <div class="card bg-base-100 w-full max-w-sm shadow-xl" role="alert">
+    <div class="card-body">
+      <h2 class="card-title">Acceso no autorizado</h2>
+      <p class="text-sm text-base-content/70">
+        No tenés permisos para acceder a {deniedLabel}. Tu sesión sigue activa.
+      </p>
+      <div class="card-actions mt-6 justify-between">
+        <a href="/research" class="btn btn-ghost btn-sm">Ir a Investigación</a>
+        <a href="/" class="btn btn-outline btn-sm">Volver al inicio</a>
+      </div>
     </div>
   </div>
 {:else if user}

@@ -1,0 +1,25 @@
+{
+  "modules": [
+    {
+      "id": "research",
+      "label": "Investigación",
+      "description": "Consultá, buscá y relacioná las fuentes del corpus de Breslov.",
+      "destination": "/research",
+      "ctaLabel": "Entrar a Investigación",
+      "requiredRoles": null,
+      "enabled": true
+    },
+    {
+      "id": "edition",
+      "label": "Edición",
+      "description": "Administrá las fuentes documentales, su incorporación y revisión.",
+      "destination": "/admin/content",
+      "ctaLabel": "Entrar a Edición",
+      "requiredRoles": ["admin", "editor"],
+      "enabled": true
+    }
+  ],
+  "future_administration": "NOT exposed; addable without restructuring",
+  "allowed_destinations": ["/research", "/admin/content"],
+  "default_post_login_destination": "/research"
+}

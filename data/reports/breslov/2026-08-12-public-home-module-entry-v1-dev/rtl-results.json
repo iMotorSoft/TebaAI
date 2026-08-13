@@ -1,0 +1,6 @@
+{
+  "locales": ["es", "en", "he"],
+  "rtl": "home module labels remain LTR interface; hebrew corpus text uses local RTL",
+  "evidence": "home.spec.ts language fallback test (HE) + existing RTL specs pass",
+  "no_new_hardcoded_spanish": "module registry uses es labels; i18n remains locale-compatible"
+}

@@ -1,0 +1,26 @@
+---
+import ModuleEntry from "./ModuleEntry.svelte";
+import { MODULES } from "../modules/moduleRegistry.ts";
+---
+
+<section class="home-section module-entry-section" id="modulos" aria-labelledby="modules-title">
+  <header class="section-heading narrow">
+    <p class="section-kicker">Áreas de Breslov Research</p>
+    <h2 id="modules-title">Elegí el área a la que querés ingresar</h2>
+  </header>
+  <div class="module-grid">
+    {MODULES.map((mod) => (
+      <article class="module-card">
+        <h3>{mod.label}</h3>
+        <p>{mod.description}</p>
+        <ModuleEntry
+          client:load
+          destination={mod.destination}
+          loginLabel={mod.ctaLabel}
+          authenticatedLabel={mod.ctaLabel}
+          className="module-entry-action"
+        />
+      </article>
+    ))}
+  </div>
+</section>

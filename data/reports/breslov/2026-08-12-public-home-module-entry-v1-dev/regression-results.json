@@ -1,0 +1,18 @@
+{
+  "preserved": {
+    "research": true,
+    "content_manager_v1": true,
+    "content_manager_ux_integration_v2": true,
+    "library_dashboard": true,
+    "e2e_data_hidden": true,
+    "internal_navigation": true
+  },
+  "fixes": {
+    "section_kicker_contrast": "restored #76500b on light backgrounds (investigative-home.css was accidentally dropped import)",
+    "css_import_restored": "index.astro and breslov.astro re-imported investigative-home.css"
+  },
+  "core_untouched": [
+    "ConcretePageFirstPipeline", "worker", "Milvus", "embeddings",
+    "cleanup", "manifest", "duplicate detection", "upload"
+  ]
+}

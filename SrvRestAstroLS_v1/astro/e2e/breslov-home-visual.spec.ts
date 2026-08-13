@@ -26,7 +26,7 @@ test("captures the mobile home and navigation", async ({ page }) => {
   await page.locator(".research-hero").screenshot({ path: path.join(reportRoot, "hero-mobile.png") });
   await page.getByRole("button", { name: "Abrir menú" }).click();
   const mobileNavigation = page.getByRole("navigation", { name: "Navegación móvil" });
-  await expect(mobileNavigation.getByRole("link", { name: "Ingresar", exact: true })).toHaveAttribute("href", "/login");
+  await expect(mobileNavigation.getByRole("button", { name: "Ingresar", exact: true })).toBeVisible();
   await expect(mobileNavigation.getByRole("link", { name: "Acceso", exact: true })).toHaveAttribute("href", "#acceso");
   await page.locator(".home-header").screenshot({ path: path.join(reportRoot, "mobile-menu.png") });
   await page.keyboard.press("Escape");

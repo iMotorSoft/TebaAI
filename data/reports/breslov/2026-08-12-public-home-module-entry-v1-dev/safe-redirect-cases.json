@@ -1,0 +1,20 @@
+{
+  "accepted": [
+    { "input": "/research", "result": "/research" },
+    { "input": "/admin/content", "result": "/admin/content" },
+    { "input": "/research?x=1", "result": "/research" },
+    { "input": "/admin/content#s", "result": "/admin/content" }
+  ],
+  "rejected_to_fallback": [
+    { "input": "", "result": "/research" },
+    { "input": null, "result": "/research" },
+    { "input": "   ", "result": "/research" },
+    { "input": "/unknown", "result": "/research" },
+    { "input": "https://evil.example", "result": "/research" },
+    { "input": "//evil.example", "result": "/research" },
+    { "input": "javascript:alert(1)", "result": "/research" },
+    { "input": "data:text/html,x", "result": "/research" },
+    { "input": "ftp://evil.example", "result": "/research" },
+    { "input": "/\\evil", "result": "/research" }
+  ]
+}

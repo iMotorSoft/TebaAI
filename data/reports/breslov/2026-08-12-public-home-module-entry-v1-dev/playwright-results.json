@@ -1,0 +1,14 @@
+{
+  "new_specs": {
+    "public-home-module-entry.spec.ts": "5 passed",
+    "auth-intended-destination.spec.ts": "7 passed",
+    "module-entry-permissions.spec.ts": "4 passed"
+  },
+  "regression": {
+    "home.spec.ts": "5 passed",
+    "login.spec.ts": "4 passed",
+    "research-content-manager-navigation.spec.ts": "3 passed",
+    "content-manager-library.spec.ts": "2 passed",
+    "content-manager-e2e-visibility.spec.ts": "1 passed"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "flows": {
+    "anonymous_research": "/ → Entrar a Investigación → /login?next=%2Fresearch → login → /research",
+    "anonymous_edition": "/ → Entrar a Edición → /login?next=%2Fadmin%2Fcontent → login → /admin/content",
+    "authenticated_research": "/ → Investigación → /research (direct)",
+    "authenticated_edition_admin": "/ → Edición → /admin/content (direct)",
+    "authenticated_edition_viewer": "/ → Edición → /admin/content → denied (guard)",
+    "unauthorized_edition_post_login": "/login?next=%2Fadmin%2Fcontent → viewer → 403 UX (session alive)"
+  }
+}

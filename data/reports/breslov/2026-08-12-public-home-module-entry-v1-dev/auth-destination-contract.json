@@ -1,0 +1,15 @@
+{
+  "mechanism": "?next= query param",
+  "allowlist": ["/research", "/admin/content"],
+  "default_fallback": "/research",
+  "validation": "resolveSafePostLoginDestination (moduleRegistry.ts)",
+  "rejected": [
+    "external absolute URLs",
+    "protocol-relative (//host)",
+    "scheme-based (javascript:, data:, ftp:)",
+    "backslash tricks",
+    "unknown internal paths",
+    "encoded malicious values"
+  ],
+  "authorization": "post-login role check against module.requiredRoles; never implicit"
+}

@@ -15,7 +15,7 @@ test("home communicates the investigative positioning and verifiable evidence", 
   await expect(page.getByText("Página física e impresa, cuando están disponibles")).toBeVisible();
   await expect(page.getByText("Original, cita, traducción, comentario o nota")).toBeVisible();
   await expect(page.getByRole("heading", { name: "Rigor en la presentación de resultados" })).toBeVisible();
-  await expect(page.locator(".hero-actions").getByRole("link", { name: "Ingresar a Investigación" })).toHaveAttribute("href", "/login");
+  await expect(page.locator(".hero-actions").getByRole("link", { name: "Ingresar a Investigación" })).toHaveAttribute("href", "/login?next=%2Fresearch");
   await expect(page.locator(".hero-actions").getByRole("link", { name: "Solicitar acceso" })).toHaveAttribute("href", "/request-access");
 
   const body = await page.locator("body").innerText();

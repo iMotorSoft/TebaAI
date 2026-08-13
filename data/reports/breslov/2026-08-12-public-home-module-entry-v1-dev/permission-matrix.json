@@ -1,0 +1,10 @@
+{
+  "roles": ["admin", "editor", "viewer"],
+  "matrix": {
+    "admin": { "research": true, "edition": true },
+    "editor": { "research": true, "edition": true },
+    "viewer": { "research": true, "edition": false },
+    "anonymous": { "research": "login", "edition": "login" }
+  },
+  "denial_ux": "403 readable message + Ir a Investigación + Volver al inicio; session preserved"
+}

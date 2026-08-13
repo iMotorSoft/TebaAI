@@ -1,0 +1,6 @@
+{
+  "semantic": "module entries are <a> links with arrow span; cards use <article> + <h3>",
+  "keyboard_focus_visible": "PASS",
+  "color_contrast": "fixed .section-kicker to #76500b on light / gold-400 on navy",
+  "evidence": "home.spec.ts axe test PASS (0 critical/serious)"
+}

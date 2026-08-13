@@ -1,0 +1,5 @@
+{
+  "desktop": { "1440x900": "PASS", "1024x768": "PASS", "modules_equivalent_hierarchy": true },
+  "mobile": { "390x844": "PASS", "no_horizontal_overflow": true, "touch_targets": "PASS" },
+  "evidence": "public-home-module-entry.spec.ts (desktop + mobile overflow check)"
+}

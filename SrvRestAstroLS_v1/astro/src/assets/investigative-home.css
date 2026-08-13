@@ -126,7 +126,7 @@
 .section-heading.narrow { max-width: 740px; }
 .section-heading .section-kicker,
 .rigor-intro .section-kicker,
-.access-section .section-kicker { margin-top: 0; }
+.access-section .section-kicker { margin-top: 0; color: #76500b; }
 .section-heading h2,
 .rigor-intro h2,
 .access-section h2 { margin: 0; color: var(--navy-950); font: 500 clamp(2.2rem, 4vw, 3.75rem)/1.04 var(--serif); letter-spacing: -.035em; }
@@ -206,6 +206,63 @@
 .primary-action.light:hover { background: var(--ivory-100); }
 .secondary-action.light { border-color: rgba(255,255,255,.45); color: #fff; }
 .secondary-action.light:hover { border-color: var(--gold-400); background: rgba(255,255,255,.06); }
+
+/* ── Module entry selector (pre-auth) ─────────────────────────────────── */
+.module-entry-section { border-bottom: 1px solid var(--line); }
+.module-entry-section .section-heading { margin-bottom: 40px; }
+.module-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 34px);
+}
+.module-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid rgba(18,58,96,.22);
+  border-top: 3px solid var(--gold-500);
+  border-radius: 8px;
+  padding: 34px 32px 32px;
+  background: #fffefb;
+  box-shadow: 0 18px 40px rgba(20,34,53,.06);
+}
+.module-card h3 {
+  margin: 0;
+  color: var(--navy-950);
+  font: 500 1.75rem/1.1 var(--serif);
+  letter-spacing: -.02em;
+}
+.module-card p {
+  margin: 0;
+  color: var(--ink-700);
+  font-size: .86rem;
+  line-height: 1.65;
+}
+.module-entry-action {
+  display: inline-flex;
+  align-self: flex-start;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 0 22px;
+  margin-top: 8px;
+  background: var(--navy-950);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 750;
+  transition: background-color .18s ease;
+}
+.module-entry-action:hover { background: var(--navy-800); }
+.module-entry-action span { color: var(--gold-400); }
+
+@media (max-width: 680px) {
+  .module-grid { grid-template-columns: 1fr; }
+  .module-card { padding: 28px 24px; }
+}
+
+
 .home-footer {
   width: min(1380px, calc(100% - 64px));
   margin: auto;

@@ -12,7 +12,7 @@ import SessionAwareAccess from "./SessionAwareAccess.svelte";
     <p class="hero-description">Breslov Research permite consultar obras en español, inglés y hebreo, recuperar citas en su contexto y verificar cada resultado mediante referencias de obra, página y sección.</p>
     <p class="hero-audience">Para investigación, docencia, traducción, edición y revisión bibliográfica.</p>
     <div class="hero-actions">
-      <SessionAwareAccess client:load loginLabel="Ingresar a Investigación" researchLabel="Abrir investigación" className="primary-action" />
+      <SessionAwareAccess client:load loginLabel="Ingresar a Investigación" researchLabel="Abrir investigación" className="primary-action" next="/research" />
       <a class="secondary-action" href="/request-access">Solicitar acceso</a>
     </div>
   </div>

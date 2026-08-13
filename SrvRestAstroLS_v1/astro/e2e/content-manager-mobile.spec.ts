@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import { ADMIN_EMAIL, ADMIN_PASSWORD, loginAsAdmin } from "./content-manager-helpers";
 
 /**
@@ -9,36 +9,48 @@ import { ADMIN_EMAIL, ADMIN_PASSWORD, loginAsAdmin } from "./content-manager-hel
  * table, and the full wizard flow operable at 390×844.
  */
 
-const listJobsFixture = {
-  jobs: [
+const documentsFixture = {
+  documents: [
     {
-      job_id: "11111111-1111-4111-8111-111111111111",
-      upload_id: "22222222-2222-4222-8222-222222222222",
-      document_id: null,
+      document_id: "11111111-1111-4111-8111-111111111111",
       title: "Likutey Moharan — Interior Final",
+      work_family: "Likutey Moharán",
+      canonical_work: null,
       language: "es",
-      status: "completed_with_warnings",
-      current_stage: "completed_with_warnings",
-      created_at: "2026-08-05T12:00:00Z",
-      attempt_number: 1,
+      page_count: 284,
+      document_status: "test_candidate",
+      operational_state: "needs_review",
+      last_activity_at: "2026-08-05T12:00:00Z",
+      has_warnings: true,
+      latest_job_id: "11111111-1111-4111-8111-111111111111",
+      latest_job_status: "completed_with_warnings",
+      latest_job_stage: "completed_with_warnings",
       filename: "likutey-moharan-interior-final.pdf",
-      sha256_short: "a1b2c3d4…",
+      is_test_data: false,
     },
     {
-      job_id: "33333333-3333-4333-8333-333333333333",
-      upload_id: "44444444-4444-4444-8444-444444444444",
-      document_id: null,
+      document_id: "33333333-3333-4333-8333-333333333333",
       title: "Fuente con título hebreo ליקוטי מוהר״ן",
+      work_family: null,
+      canonical_work: null,
       language: "he",
-      status: "completed",
-      current_stage: "completed",
-      created_at: "2026-08-04T09:30:00Z",
-      attempt_number: 1,
+      page_count: null,
+      document_status: "ready",
+      operational_state: "idle",
+      last_activity_at: "2026-08-04T09:30:00Z",
+      has_warnings: false,
+      latest_job_id: "33333333-3333-4333-8333-333333333333",
+      latest_job_status: "completed",
+      latest_job_stage: "completed",
       filename: "hebrew-source.pdf",
-      sha256_short: "e5f6a7b8…",
+      is_test_data: false,
     },
   ],
-  summary: { completed: 1, completed_with_warnings: 1 },
+  summary: {
+    total_documents: 2, ready: 1, test_candidate: 1,
+    processing: 0, with_warnings: 1, failed: 0,
+    languages: { es: 1, he: 1 },
+  },
 };
 
 const uploadFixture = {
@@ -158,13 +170,18 @@ const diagnosticFixture = {
   technical_details: {},
 };
 
-function mockApi(page: import("@playwright/test").Page) {
+function mockApi(page: Page) {
+  void page.route("**/admin/content/documents?*", async (route) => {
+    await route.fulfill({ json: documentsFixture });
+  });
+  void page.route("**/admin/content/summary?*", async (route) => {
+    await route.fulfill({ json: documentsFixture.summary });
+  });
   void page.route("**/admin/content/jobs?*", async (route) => {
-    const method = route.request().method();
-    if (method === "GET") {
-      await route.fulfill({ json: listJobsFixture });
-    } else if (method === "POST") {
+    if (route.request().method() === "POST") {
       await route.fulfill({ json: progressFixture, status: 201 });
+    } else {
+      await route.fulfill({ json: { jobs: [] } });
     }
   });
   void page.route("**/admin/content/jobs/66666666-6666-4666-8666-666666666666?*", async (route) => {

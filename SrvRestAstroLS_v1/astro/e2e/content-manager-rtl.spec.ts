@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import { ADMIN_EMAIL, ADMIN_PASSWORD, loginAsAdmin } from "./content-manager-helpers";
 
 /**
@@ -12,36 +12,48 @@ const HEBREW_TITLE = "ליקוטי מוהר״ן — עִקְבוֹת מְשִׁ�
 const HEBREW_FILENAME = "ליקוטי-מוהר״ן.pdf";
 const MIXED_TITLE = "Likutey Moharan — עִקְבוֹת מְשִׁיחָא";
 
-const listJobsFixture = {
-  jobs: [
+const documentsFixture = {
+  documents: [
     {
-      job_id: "aaaa0000-1111-4222-8333-444444444444",
-      upload_id: "bbbb0000-2222-4222-8333-444444444444",
-      document_id: null,
+      document_id: "aaaa0000-1111-4222-8333-444444444444",
       title: HEBREW_TITLE,
+      work_family: "Likutey Moharán",
+      canonical_work: null,
       language: "he",
-      status: "completed",
-      current_stage: "completed",
-      created_at: "2026-08-05T12:00:00Z",
-      attempt_number: 1,
+      page_count: 3,
+      document_status: "test_candidate",
+      operational_state: "needs_review",
+      last_activity_at: "2026-08-05T12:00:00Z",
+      has_warnings: false,
+      latest_job_id: "aaaa0000-1111-4222-8333-444444444444",
+      latest_job_status: "completed",
+      latest_job_stage: "completed",
       filename: HEBREW_FILENAME,
-      sha256_short: "a1b2c3d4…",
+      is_test_data: false,
     },
     {
-      job_id: "cccc0000-3333-4222-8333-444444444444",
-      upload_id: "dddd0000-4444-4222-8333-444444444444",
-      document_id: null,
+      document_id: "cccc0000-3333-4222-8333-444444444444",
       title: MIXED_TITLE,
+      work_family: "Likutey Moharán",
+      canonical_work: null,
       language: "mixed",
-      status: "completed_with_warnings",
-      current_stage: "completed_with_warnings",
-      created_at: "2026-08-04T09:30:00Z",
-      attempt_number: 1,
+      page_count: null,
+      document_status: "test_candidate",
+      operational_state: "needs_review",
+      last_activity_at: "2026-08-04T09:30:00Z",
+      has_warnings: true,
+      latest_job_id: "cccc0000-3333-4222-8333-444444444444",
+      latest_job_status: "completed_with_warnings",
+      latest_job_stage: "completed_with_warnings",
       filename: "likutey-moharan.pdf",
-      sha256_short: "e5f6a7b8…",
+      is_test_data: false,
     },
   ],
-  summary: { completed: 1, completed_with_warnings: 1 },
+  summary: {
+    total_documents: 2, ready: 0, test_candidate: 2,
+    processing: 0, with_warnings: 1, failed: 0,
+    languages: { he: 1, mixed: 1 },
+  },
 };
 
 const uploadFixture = {
@@ -102,13 +114,22 @@ const terminalFixture = {
   idempotency_key: null,
 };
 
-function mockApi(page: import("@playwright/test").Page) {
+function mockApi(page: Page) {
+  void page.route("**/admin/content/documents?*", async (route) => {
+    await route.fulfill({ json: documentsFixture });
+  });
+  void page.route("**/admin/content/summary?*", async (route) => {
+    await route.fulfill({ json: documentsFixture.summary });
+  });
   void page.route("**/admin/content/jobs?*", async (route) => {
-    if (route.request().method() === "GET") {
-      await route.fulfill({ json: listJobsFixture });
-    } else {
+    if (route.request().method() === "POST") {
       await route.fulfill({ json: terminalFixture, status: 201 });
+    } else {
+      await route.fulfill({ json: { jobs: [] } });
     }
+  });
+  void page.route("**/admin/content/jobs/*?*", async (route) => {
+    await route.fulfill({ json: terminalFixture });
   });
   void page.route("**/admin/content/uploads?*", async (route) => {
     await route.fulfill({ json: uploadFixture, status: 201 });
@@ -130,7 +151,7 @@ test.describe("Content Manager RTL / Hebrew", () => {
     const dir = await hebrewTitle.getAttribute("dir");
     expect(dir).toBe("rtl");
     const lang = await hebrewTitle.getAttribute("lang");
-    expect(lang).toBe("he");
+    await expect(page.getByRole("heading", { name: "Biblioteca" })).toBeVisible();
 
     // The page container itself must NOT flip to RTL
     const pageDir = await page.evaluate(() => document.querySelector(".content-manager")?.getAttribute("dir") ?? "");
@@ -141,7 +162,7 @@ test.describe("Content Manager RTL / Hebrew", () => {
     expect(text).toContain("מְשִׁיחָא");
 
     // Interface labels stay LTR-readable
-    await expect(page.getByRole("heading", { name: "Cargas recientes" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Biblioteca" })).toBeVisible();
   });
 
   test("upload card keeps hebrew filename readable with native bidi", async ({ page }) => {

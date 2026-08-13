@@ -1,0 +1,13 @@
+{
+  "default": "E2E hidden (include_test_data=false)",
+  "identification": "knowledge_scope_code == breslov_e2e",
+  "explicit_toggle": {
+    "label": "Mostrar datos de prueba",
+    "default": false,
+    "on_activate": "include_test_data=true; badge E2E visible"
+  },
+  "backend_filter": "SQL clause excludes breslov_e2e when include_test_data=false",
+  "no_deletion": true,
+  "records_deleted": 0,
+  "tenant_scoping_preserved": true
+}

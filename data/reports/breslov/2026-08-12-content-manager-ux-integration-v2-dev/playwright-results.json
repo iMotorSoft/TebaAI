@@ -1,0 +1,18 @@
+{
+  "new_specs": {
+    "research-content-manager-navigation.spec.ts": "3 passed (admin nav, session preserve, guest hidden)",
+    "content-manager-library.spec.ts": "2 passed (summary indicators + real docs, open/return detail)",
+    "content-manager-e2e-visibility.spec.ts": "1 passed (hidden by default, reveal on demand, hide again)"
+  },
+  "mock_specs_updated": {
+    "content-manager-captures.spec.ts": "1 passed",
+    "content-manager-mobile.spec.ts": "2 passed",
+    "content-manager-rtl.spec.ts": "4 passed"
+  },
+  "premium_real_backend": {
+    "note": "requires PUBLIC_CONTENT_MANAGER_SCOPE=breslov_e2e + .env.backend-dev.local loaded in cleanup process",
+    "wizard": "PASS with env E2E",
+    "permissions": "2 PASS",
+    "retry": "blocked by accumulated E2E test data (documented environmental)"
+  }
+}

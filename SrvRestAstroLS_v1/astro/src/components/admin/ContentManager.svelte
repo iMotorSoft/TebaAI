@@ -9,7 +9,7 @@
    */
   import { onMount, onDestroy } from "svelte";
   import { fetchMe, logout, type UserInfo } from "../auth/authClient.ts";
-  import { listJobs, getJob, getDiagnostic, retryJob, cancelJob, isTerminal, isRetryable, type JobListItem, type JobResponse, type IngestionDiagnostic } from "./contentManagerClient.ts";
+  import { listJobs, getJob, getDiagnostic, retryJob, cancelJob, isTerminal, isRetryable, type JobListItem, type JobResponse, type IngestionDiagnostic, listContentDocuments, getContentSummary, type DocumentListItem, type DocumentListResponse, type ContentSummary } from "./contentManagerClient.ts";
   import {
     STATUS_LABELS,
     STATUS_TONE,
@@ -25,9 +25,11 @@
 
   let user = $state<UserInfo | null>(null);
   let accessState = $state<"checking" | "ok" | "denied" | "error">("checking");
-  let jobs = $state<JobListItem[]>([]);
+  let documents = $state<DocumentListItem[]>([]);
+  let summary = $state<ContentSummary | null>(null);
   let loading = $state(false);
   let error = $state("");
+  let showTestData = $state(false);
 
   // View routing
   let view = $state<"list" | "wizard" | "detail">("list");
@@ -80,7 +82,7 @@
       }
       user = me.user;
       accessState = "ok";
-      await loadJobs();
+      await loadDocuments();
     } else if (me.status === "unauthorized") {
       window.location.assign("/login");
     } else {
@@ -93,16 +95,15 @@
     window.location.assign("/login");
   }
 
-  // ── List ───────────────────────────────────────────────────────────────
-
-  async function loadJobs() {
+  async function loadDocuments() {
     loading = true;
     error = "";
     try {
-      const data = await listJobs();
-      jobs = data.jobs || [];
+      const data = await listContentDocuments({ includeTestData: showTestData });
+      documents = data.documents || [];
+      summary = data.summary;
     } catch (err) {
-      error = err instanceof Error ? err.message : "No se pudieron cargar las cargas recientes.";
+      error = err instanceof Error ? err.message : "No se pudieron cargar los documentos.";
     } finally {
       loading = false;
     }
@@ -115,7 +116,7 @@
 
   function exitWizard() {
     view = "list";
-    void loadJobs();
+    void loadDocuments();
   }
 
   // ── Detail ─────────────────────────────────────────────────────────────
@@ -149,7 +150,7 @@
     stopDetailPolling();
     detailJob = null;
     detailDiagnostic = null;
-    void loadJobs();
+    void loadDocuments();
   }
 
   async function handleDetailRetry() {
@@ -182,30 +183,19 @@
       detailBusy = false;
     }
   }
+  // ── Display helpers ──────────────────────────────────────────────────
 
-  // ── Summary derivation ─────────────────────────────────────────────────
-
-  const PROCESSING_STATUSES = new Set([
-    "uploaded", "validating", "ready_to_ingest", "queued", "claimed",
-    "extracting", "normalizing", "persisting_pages", "building_chunks",
-    "embedding", "indexing", "validating_result",
-  ]);
-
-  let processingCount = $derived(jobs.filter((j) => PROCESSING_STATUSES.has(j.status)).length);
-  let reviewCount = $derived(jobs.filter((j) => j.status === "completed").length);
-  let warningsCount = $derived(jobs.filter((j) => j.status === "completed_with_warnings").length);
-  let failedCount = $derived(jobs.filter((j) => j.status === "failed").length);
+  function jobDir(text: string | null | undefined): { direction: "ltr" | "rtl"; lang: string } {
+    if (!text) return { direction: "ltr", lang: "es" };
+    return contentDirection(text);
+  }
 
   function jobTone(status: string): string {
     return STATUS_TONE[status] || "neutral";
   }
 
-  function jobDir(text: string | null | undefined) {
-    if (!text) return { direction: "ltr", lang: "es" };
-    return contentDirection(text);
-  }
+  // ── Timeline derivation ───────────────────────────────────────────────
 
-  // Timeline derivation from JobResponse fields
   let timeline = $derived(
     detailJob
       ? [
@@ -216,9 +206,33 @@
       : [],
   );
 
-  onDestroy(() => {
-    stopDetailPolling();
-  });
+  // ── Summary from backend ────────────────────────────────────────────────
+
+  let totalDocuments = $derived(summary?.total_documents ?? 0);
+  let readyCount = $derived(summary?.ready ?? 0);
+  let candidateCount = $derived(summary?.test_candidate ?? 0);
+  let processingCount = $derived(summary?.processing ?? 0);
+  let warningsCount = $derived(summary?.with_warnings ?? 0);
+  let failedCount = $derived(summary?.failed ?? 0);
+
+  function operationalTone(state: string): string {
+    if (state === "processing") return "active";
+    if (state === "failed") return "danger";
+    if (state === "needs_review") return "review";
+    if (state === "cancelled") return "muted";
+    return "neutral";
+  }
+
+  function operationalLabel(doc: DocumentListItem): string {
+    if (doc.operational_state === "processing") return "En procesamiento";
+    if (doc.operational_state === "failed") return "Fallido";
+    if (doc.operational_state === "cancelled") return "Cancelado";
+    if (doc.is_test_data) return "Prueba";
+    if (doc.has_warnings) return "Con observaciones";
+    if (doc.document_status === "test_candidate") return "Candidato para revisión";
+    if (doc.document_status === "ready") return "Listo";
+    return doc.operational_state === "idle" ? "Listo" : (doc.latest_job_status || "—");
+  }
 </script>
 
 {#if accessState === "checking"}
@@ -254,7 +268,7 @@
       <div class="cm-header-context">
         <a href="/research">Investigación</a>
         {#if user}
-          <span>{user.name || user.email}</span>
+          <span>{user.username || user.email}</span>
         {/if}
         <button class="cm-signout" on:click={signOut}>Cerrar sesión</button>
       </div>
@@ -262,7 +276,6 @@
 
     <main class="cm-main" id="main-content">
       {#if view === "list"}
-        <!-- ── Editorial heading ─────────────────────────────────────── -->
         <div class="cm-heading">
           <div class="cm-heading-row">
             <div>
@@ -282,25 +295,32 @@
         {/if}
 
         {#if loading}
-          <p class="cm-loading">Cargando cargas recientes…</p>
-        {:else if jobs.length === 0}
-          <!-- ── Empty state ─────────────────────────────────────────── -->
+          <p class="cm-loading">Cargando biblioteca…</p>
+        {:else if documents.length === 0 && !showTestData}
           <div class="cm-empty">
             <div class="cm-empty-mark" aria-hidden="true">✦</div>
-            <h2>Todavía no hay documentos cargados</h2>
+            <h2>Todavía no hay contenidos incorporados</h2>
             <p>Las nuevas fuentes documentales aparecerán aquí junto con su estado de procesamiento.</p>
             <button class="cm-action" on:click={openWizard}>Cargar primer documento</button>
           </div>
         {:else}
-          <!-- ── Compact operational summary ─────────────────────────── -->
-          <div class="cm-summary" aria-label="Resumen operativo">
+          <!-- Summary indicators -->
+          <div class="cm-summary" aria-label="Indicadores de la biblioteca">
+            <div class="cm-summary-item">
+              <strong>{totalDocuments}</strong>
+              <span>Documentos</span>
+            </div>
+            <div class="cm-summary-item" data-tone="review">
+              <strong>{readyCount}</strong>
+              <span>Listos</span>
+            </div>
+            <div class="cm-summary-item" data-tone="review">
+              <strong>{candidateCount}</strong>
+              <span>Candidatos para revisión</span>
+            </div>
             <div class="cm-summary-item" data-tone="active">
               <strong>{processingCount}</strong>
               <span>En procesamiento</span>
-            </div>
-            <div class="cm-summary-item" data-tone="review">
-              <strong>{reviewCount}</strong>
-              <span>Pendientes de revisión</span>
             </div>
             <div class="cm-summary-item" data-tone="warning">
               <strong>{warningsCount}</strong>
@@ -312,45 +332,65 @@
             </div>
           </div>
 
-          <!-- ── Recent loads · desktop table ────────────────────────── -->
-          <h2 class="cm-section-title">Cargas recientes</h2>
+          <!-- Test data toggle -->
+          <div class="cm-filters-bar">
+            <label class="cm-toggle">
+              <input type="checkbox" bind:checked={showTestData} on:change={() => loadDocuments()} />
+              <span>Mostrar datos de prueba</span>
+            </label>
+          </div>
+
+          <!-- Document library · desktop table -->
+          <h2 class="cm-section-title">Biblioteca</h2>
           <div class="cm-table-wrap">
             <table class="cm-table">
               <thead>
                 <tr>
-                  <th scope="col">Documento</th>
+                  <th scope="col">Título</th>
+                  <th scope="col">Familia</th>
                   <th scope="col">Idioma</th>
-                  <th scope="col">Fecha</th>
-                  <th scope="col">Estado</th>
-                  <th scope="col">Etapa</th>
                   <th scope="col">Páginas</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Última actividad</th>
                   <th scope="col" style="text-align: right">Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                {#each jobs as job (job.job_id)}
-                  <tr class="cm-row-actionable" tabindex="0" on:click={() => openDetail(job.job_id)} on:keydown={(e) => { if (e.key === "Enter") openDetail(job.job_id); }} aria-label={`Ver detalle de ${job.title}`}>
+                {#each documents as doc (doc.document_id || doc.latest_job_id || '')}
+                  <tr
+                    class="cm-row-actionable"
+                    tabindex="0"
+                    on:click={() => doc.latest_job_id && openDetail(doc.latest_job_id)}
+                    on:keydown={(e) => { if (e.key === "Enter" && doc.latest_job_id) openDetail(doc.latest_job_id); }}
+                    aria-label={`Ver detalle de ${doc.title}`}
+                  >
                     <td>
-                      <span class="cm-doc-title" dir={jobDir(job.title).direction} lang={jobDir(job.title).lang}>
-                        {job.title}
-                        {#if job.filename}
-                          <small dir={jobDir(job.filename).direction} lang={jobDir(job.filename).lang}>{job.filename}</small>
+                      <span class="cm-doc-title" dir={jobDir(doc.title).direction} lang={jobDir(doc.title).lang}>
+                        {#if doc.is_test_data}
+                          <span class="cm-badge cm-badge--test">E2E</span>
+                        {/if}
+                        {doc.title}
+                        {#if doc.filename}
+                          <small dir={jobDir(doc.filename).direction} lang={jobDir(doc.filename).lang}>{doc.filename}</small>
                         {/if}
                       </span>
                     </td>
-                    <td><span class="cm-meta">{LANGUAGE_LABELS[job.language] || job.language}</span></td>
-                    <td><span class="cm-meta">{formatDate(job.created_at)}</span></td>
+                    <td><span class="cm-meta">{doc.work_family || "—"}</span></td>
+                    <td><span class="cm-meta">{LANGUAGE_LABELS[doc.language] || doc.language}</span></td>
+                    <td><span class="cm-meta">{doc.page_count ?? "—"}</span></td>
                     <td>
-                      <span class="cm-status" data-tone={jobTone(job.status)}>
-                        {STATUS_LABELS[job.status] || job.status}
+                      <span class="cm-status" data-tone={operationalTone(doc.operational_state)}>
+                        {operationalLabel(doc)}
                       </span>
                     </td>
-                    <td><span class="cm-meta">{STATUS_LABELS[job.current_stage || job.status] || job.current_stage || "—"}</span></td>
-                    <td><span class="cm-page-count">{job.attempt_number > 1 ? `intento ${job.attempt_number}` : "—"}</span></td>
-                    <td>
-                      <div class="cm-actions">
-                        <button class="cm-link" on:click={(e) => { e.stopPropagation(); openDetail(job.job_id); }}>Ver detalle</button>
-                      </div>
+                    <td><span class="cm-meta">{formatDate(doc.last_activity_at)}</span></td>
+                    <td style="text-align: right">
+                      {#if doc.latest_job_id}
+                        <button
+                          class="cm-link"
+                          on:click={(e) => { e.stopPropagation(); openDetail(doc.latest_job_id!); }}
+                        >Abrir</button>
+                      {/if}
                     </td>
                   </tr>
                 {/each}
@@ -358,25 +398,34 @@
             </table>
           </div>
 
-          <!-- ── Recent loads · mobile cards ─────────────────────────── -->
-          <h2 class="cm-section-title" style="display: none" data-mobile-title>Cargas recientes</h2>
-          <div class="cm-mobile-cards" aria-label="Cargas recientes">
-            {#each jobs as job (job.job_id)}
+          <!-- Document library · mobile cards -->
+          <h2 class="cm-section-title" style="display: none" data-mobile-title>Biblioteca</h2>
+          <div class="cm-mobile-cards" aria-label="Biblioteca">
+            {#each documents as doc (doc.document_id || doc.latest_job_id || '')}
               <article class="cm-mobile-card">
                 <div class="cm-mc-top">
-                  <h3 class="cm-mc-title" dir={jobDir(job.title).direction} lang={jobDir(job.title).lang}>{job.title}</h3>
-                  <span class="cm-status" data-tone={jobTone(job.status)}>{STATUS_LABELS[job.status] || job.status}</span>
+                  <h3 class="cm-mc-title" dir={jobDir(doc.title).direction} lang={jobDir(doc.title).lang}>
+                    {#if doc.is_test_data}
+                      <span class="cm-badge cm-badge--test">E2E</span>
+                    {/if}
+                    {doc.title}
+                  </h3>
+                  <span class="cm-status" data-tone={operationalTone(doc.operational_state)}>
+                    {operationalLabel(doc)}
+                  </span>
                 </div>
                 <div class="cm-mc-meta">
-                  <span>{LANGUAGE_LABELS[job.language] || job.language}</span>
-                  <span>{formatDate(job.created_at)}</span>
-                  <span>{STATUS_LABELS[job.current_stage || job.status] || job.current_stage || "—"}</span>
-                  {#if job.attempt_number > 1}
-                    <span>Intento {job.attempt_number}</span>
+                  <span>{doc.work_family || "Sin familia"}</span>
+                  <span>{LANGUAGE_LABELS[doc.language] || doc.language}</span>
+                  {#if doc.page_count}
+                    <span>{doc.page_count} págs.</span>
                   {/if}
+                  <span>{formatDate(doc.last_activity_at)}</span>
                 </div>
                 <div class="cm-mc-actions">
-                  <button class="cm-link" on:click={() => openDetail(job.job_id)}>Ver detalle</button>
+                  {#if doc.latest_job_id}
+                    <button class="cm-link" on:click={() => openDetail(doc.latest_job_id!)}>Abrir</button>
+                  {/if}
                 </div>
               </article>
             {/each}

@@ -1,0 +1,31 @@
+{
+  "endpoint": "GET /admin/content/documents",
+  "query": {
+    "knowledge_scope_code": "breslov_primary",
+    "include_test_data": false,
+    "status": null,
+    "language": null,
+    "work_family": null,
+    "search": null,
+    "limit": 50,
+    "offset": 0
+  },
+  "item": {
+    "document_id": "uuid|null",
+    "title": "string",
+    "work_family": "string|null",
+    "canonical_work": "string|null",
+    "language": "string",
+    "page_count": "int|null",
+    "document_status": "string|null",
+    "operational_state": "processing|idle|needs_review|failed|cancelled",
+    "last_activity_at": "iso|null",
+    "has_warnings": "bool",
+    "latest_job_id": "uuid|null",
+    "latest_job_status": "string|null",
+    "latest_job_stage": "string|null",
+    "filename": "string|null",
+    "is_test_data": "bool"
+  },
+  "note": "library_documents is the primary entity; standalone jobs without a valid document appear as processing/E2E rows"
+}

@@ -1,0 +1,32 @@
+{
+  "preserved": {
+    "upload": true,
+    "pipeline": true,
+    "worker": true,
+    "retry": true,
+    "cancel": true,
+    "diagnostic": true,
+    "content_manager_v1": true
+  },
+  "core_untouched": [
+    "ConcretePageFirstPipeline",
+    "worker claim/lease",
+    "cleanup Milvus-first",
+    "Milvus indexing",
+    "embedding generation",
+    "upload validation",
+    "duplicate hashing"
+  ],
+  "regressions": [
+    {
+      "component": "content-manager-premium (wizard real backend)",
+      "cause": "PUBLIC_CONTENT_MANAGER_SCOPE=breslov_e2e not set on Astro DEV (environmental, documented precedent)",
+      "resolution": "PASS with env E2E set"
+    },
+    {
+      "component": "content-manager-premium (retry)",
+      "cause": "accumulated E2E test data + orphaned breslov_primary queued fixtures from prior scope-default runs",
+      "resolution": "documented; cleanup belongs to E2E cleanup procedure (no auto-delete)"
+    }
+  ]
+}

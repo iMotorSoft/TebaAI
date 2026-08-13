@@ -1,0 +1,14 @@
+{
+  "keyboard": {
+    "dropzone_focusable": true,
+    "row_actionable": true,
+    "focus_visible": true
+  },
+  "semantics": {
+    "table": "scope=col headers + aria-label rows",
+    "cards": "article + heading + button",
+    "status_not_color_only": true
+  },
+  "aria_live": "present on processing surface",
+  "evidence": "content-manager-rtl.spec.ts accessibility tests (2 PASS)"
+}

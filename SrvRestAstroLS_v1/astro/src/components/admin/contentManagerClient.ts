@@ -365,3 +365,73 @@ export function isCancellable(stage: IngestionStage | null | undefined): boolean
 export function isRetryable(stage: IngestionStage | null | undefined): boolean {
   return stage === "failed" || stage === "cancelled";
 }
+
+// ── Document-Centric Administrative Views ─────────────────────────────────
+
+export interface ContentSummary {
+  total_documents: number;
+  ready: number;
+  test_candidate: number;
+  processing: number;
+  with_warnings: number;
+  failed: number;
+  languages: Record<string, number>;
+}
+
+export interface DocumentListItem {
+  document_id: string | null;
+  title: string;
+  work_family: string | null;
+  canonical_work: string | null;
+  language: string;
+  page_count: number | null;
+  document_status: string | null;
+  operational_state: "processing" | "idle" | "needs_review" | "failed" | "cancelled";
+  last_activity_at: string | null;
+  has_warnings: boolean;
+  latest_job_id: string | null;
+  latest_job_status: string | null;
+  latest_job_stage: string | null;
+  filename: string | null;
+  is_test_data: boolean;
+}
+
+export interface DocumentListResponse {
+  documents: DocumentListItem[];
+  summary: ContentSummary;
+}
+
+export function getContentSummary(includeTestData = false): Promise<ContentSummary> {
+  const qs = `${scopeQuery()}&include_test_data=${includeTestData}`;
+  return api<ContentSummary>(`/admin/content/summary?${qs}`);
+}
+
+export function listContentDocuments(
+  options: {
+    includeTestData?: boolean;
+    status?: string;
+    language?: string;
+    workFamily?: string;
+    search?: string;
+    limit?: number;
+    offset?: number;
+  } = {},
+): Promise<DocumentListResponse> {
+  const params = new URLSearchParams({ [scopeQueryParam()]: scopeQueryValue() });
+  if (options.includeTestData) params.set("include_test_data", "true");
+  if (options.status) params.set("status", options.status);
+  if (options.language) params.set("language", options.language);
+  if (options.workFamily) params.set("work_family", options.workFamily);
+  if (options.search) params.set("search", options.search);
+  if (options.limit) params.set("limit", String(options.limit));
+  if (options.offset) params.set("offset", String(options.offset));
+  return api<DocumentListResponse>(`/admin/content/documents?${params.toString()}`);
+}
+
+function scopeQueryParam(): string {
+  return "knowledge_scope_code";
+}
+
+function scopeQueryValue(): string {
+  return CONTENT_MANAGER_SCOPE;
+}

@@ -691,3 +691,359 @@ async def _load_timings(conn: AsyncConnection, job_id: str) -> dict[str, float]:
     if isinstance(raw, str):
         return json.loads(raw)
     return raw if isinstance(raw, dict) else {}
+
+
+# ── Document-Centric Administrative Views ──────────────────────────────────
+
+_PROCESSING_STATUSES: frozenset[str] = frozenset({
+    "uploaded", "validating", "ready_to_ingest", "queued", "claimed",
+    "extracting", "normalizing", "persisting_pages", "building_chunks",
+    "embedding", "indexing", "validating_result",
+})
+
+
+def _e2e_clause(alias: str, include_test_data: bool) -> str:
+    """Return the SQL predicate excluding the E2E scope, or empty string."""
+    if include_test_data:
+        return ""
+    return f"AND ({alias}.knowledge_scope_code IS NULL OR {alias}.knowledge_scope_code != 'breslov_e2e')"
+
+
+def _operational_state(
+    *,
+    document_status: str | None,
+    job_status: str | None,
+    is_processing: bool,
+) -> str:
+    """Map document + latest-job state onto an editorial operational state."""
+    if is_processing or (job_status and job_status in _PROCESSING_STATUSES):
+        return "processing"
+    if job_status in ("failed", "validation_failed") or document_status == "ingestion_failed":
+        return "failed"
+    if job_status == "completed_with_warnings":
+        return "needs_review"
+    if job_status == "cancelled":
+        return "cancelled"
+    if document_status == "test_candidate":
+        return "needs_review"
+    if document_status == "ready":
+        return "idle"
+    return "idle"
+
+
+async def get_content_summary(
+    conn: AsyncConnection,
+    *,
+    organization_id: str,
+    workspace_id: str,
+    project_id: str,
+    include_test_data: bool = False,
+) -> ContentSummary:
+    """Aggregated status counts for the administrative library dashboard."""
+    from modules.library.content_manager_schemas import ContentSummary
+
+    params: dict[str, Any] = {
+        "org": organization_id, "ws": workspace_id, "project": project_id,
+        "processing_statuses": list(_PROCESSING_STATUSES),
+    }
+    e2e_docs = _e2e_clause("ks", include_test_data)
+    e2e_jobs = _e2e_clause("jks", include_test_data)
+
+    # Document statuses (library_documents is the primary entity).
+    doc_cur = await conn.execute(
+        f"""
+        SELECT
+            COUNT(*) AS total_documents,
+            COUNT(*) FILTER (WHERE d.status = 'ready') AS ready,
+            COUNT(*) FILTER (WHERE d.status = 'test_candidate') AS test_candidate,
+            COUNT(*) FILTER (WHERE d.status = 'ingestion_failed') AS ingestion_failed,
+            COUNT(*) FILTER (WHERE d.status = 'draft') AS draft
+        FROM library_documents d
+        JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+        WHERE d.organization_id = %(org)s
+          AND d.workspace_id = %(ws)s
+          AND d.project_id = %(project)s
+          {e2e_docs}
+        """,
+        params,
+    )
+    doc_row = await doc_cur.fetchone()
+    doc = dict(doc_row) if doc_row else {}
+
+    # Active jobs (processing) — includes jobs without a document_id yet.
+    proc_cur = await conn.execute(
+        f"""
+        SELECT COUNT(DISTINCT COALESCE(j.document_id::text, j.id::text)) AS processing
+        FROM content_manager_jobs j
+        LEFT JOIN knowledge_scopes jks ON jks.id = j.knowledge_scope_id
+        WHERE j.organization_id = %(org)s
+          AND j.workspace_id = %(ws)s
+          AND j.project_id = %(project)s
+          AND j.status = ANY(%(processing_statuses)s)
+          {e2e_jobs}
+        """,
+        params,
+    )
+    proc_row = await proc_cur.fetchone()
+    processing = int(dict(proc_row).get("processing", 0)) if proc_row else 0
+
+    # Latest job per document, for warnings/failed attribution.
+    latest_cur = await conn.execute(
+        f"""
+        WITH latest AS (
+            SELECT DISTINCT ON (j.document_id) j.document_id, j.status
+            FROM content_manager_jobs j
+            LEFT JOIN knowledge_scopes jks ON jks.id = j.knowledge_scope_id
+            WHERE j.document_id IS NOT NULL
+              AND j.organization_id = %(org)s
+              AND j.workspace_id = %(ws)s
+              AND j.project_id = %(project)s
+              {e2e_jobs}
+            ORDER BY j.document_id, j.created_at DESC
+        )
+        SELECT
+            COUNT(*) FILTER (WHERE status = 'completed_with_warnings') AS with_warnings,
+            COUNT(*) FILTER (WHERE status IN ('failed','validation_failed')) AS job_failed
+        FROM latest
+        """,
+        params,
+    )
+    latest_row = await latest_cur.fetchone()
+    latest = dict(latest_row) if latest_row else {}
+
+    # Language counts from documents.
+    lang_cur = await conn.execute(
+        f"""
+        SELECT COALESCE(d.language, 'unknown') AS lang, COUNT(*) AS cnt
+        FROM library_documents d
+        JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+        WHERE d.organization_id = %(org)s
+          AND d.workspace_id = %(ws)s
+          AND d.project_id = %(project)s
+          {e2e_docs}
+        GROUP BY 1
+        """,
+        params,
+    )
+    lang_rows = await lang_cur.fetchall()
+    languages: dict[str, int] = {}
+    for lr in lang_rows:
+        lr_dict = dict(lr) if not isinstance(lr, dict) else lr
+        languages[str(lr_dict.get("lang", "unknown"))] = int(lr_dict.get("cnt", 0))
+
+    total_documents = int(doc.get("total_documents", 0))
+    failed = int(doc.get("ingestion_failed", 0)) + int(latest.get("job_failed", 0))
+
+    return ContentSummary(
+        total_documents=total_documents,
+        ready=int(doc.get("ready", 0)),
+        test_candidate=int(doc.get("test_candidate", 0)),
+        processing=processing,
+        with_warnings=int(latest.get("with_warnings", 0)),
+        failed=failed,
+        languages=languages,
+    )
+
+
+async def list_content_documents(
+    conn: AsyncConnection,
+    *,
+    organization_id: str,
+    workspace_id: str,
+    project_id: str,
+    include_test_data: bool = False,
+    status_filter: str | None = None,
+    language_filter: str | None = None,
+    work_family_filter: str | None = None,
+    search: str | None = None,
+    limit: int = 50,
+    offset: int = 0,
+) -> DocumentListResponse:
+    """Document-centric listing for the administrative library dashboard.
+
+    Primary entity: library_documents (real documents in the productive
+    scope). Each row joins its latest Content Manager job (if any) for
+    activity and warnings. Active jobs that have not yet produced a document
+    appear as processing rows without a document_id.
+    """
+    from modules.library.content_manager_schemas import (
+        ContentSummary,
+        DocumentListItem,
+        DocumentListResponse,
+    )
+
+    params: dict[str, Any] = {
+        "org": organization_id, "ws": workspace_id, "project": project_id,
+        "limit": limit, "offset": offset,
+        "processing_statuses": list(_PROCESSING_STATUSES),
+    }
+    e2e_docs = _e2e_clause("ks", include_test_data)
+    e2e_jobs = _e2e_clause("jks", include_test_data)
+
+    doc_filters = ""
+    if status_filter:
+        doc_filters += " AND d.status = %(status_filter)s"
+        params["status_filter"] = status_filter
+    if language_filter:
+        doc_filters += " AND d.language = %(lang)s"
+        params["lang"] = language_filter
+    if work_family_filter:
+        doc_filters += (
+            " AND (d.bibliographic_metadata->'canonical_identity_v1'"
+            "->'work_identity'->>'family_label') = %(wf)s"
+        )
+        params["wf"] = work_family_filter
+    if search:
+        doc_filters += " AND d.title ILIKE %(search)s"
+        params["search"] = f"%{search}%"
+
+    query = f"""
+        WITH latest_job AS (
+            SELECT DISTINCT ON (j.document_id)
+                j.document_id,
+                j.id AS job_id,
+                j.status AS job_status,
+                j.current_stage AS job_stage,
+                j.updated_at AS job_updated_at,
+                j.attempt_number,
+                u.original_filename AS job_filename
+            FROM content_manager_jobs j
+            LEFT JOIN content_manager_uploads u ON u.id = j.upload_id
+            LEFT JOIN knowledge_scopes jks ON jks.id = j.knowledge_scope_id
+            WHERE j.document_id IS NOT NULL
+              AND j.organization_id = %(org)s
+              AND j.workspace_id = %(ws)s
+              AND j.project_id = %(project)s
+              {e2e_jobs}
+            ORDER BY j.document_id, j.created_at DESC
+        ),
+        active_jobs AS (
+            SELECT DISTINCT j.document_id
+            FROM content_manager_jobs j
+            LEFT JOIN knowledge_scopes jks ON jks.id = j.knowledge_scope_id
+            WHERE j.organization_id = %(org)s
+              AND j.workspace_id = %(ws)s
+              AND j.project_id = %(project)s
+              AND j.status = ANY(%(processing_statuses)s)
+              {e2e_jobs}
+        ),
+        items AS (
+            SELECT
+                d.id AS document_id,
+                d.title,
+                d.language,
+                d.status AS document_status,
+                d.source_filename AS filename,
+                d.edition,
+                d.created_at,
+                d.updated_at,
+                (d.bibliographic_metadata->'canonical_identity_v1'
+                    ->'work_identity'->>'family_label') AS work_family,
+                (d.bibliographic_metadata->'canonical_identity_v1'
+                    ->'work_identity'->>'canonical_work_label') AS canonical_work,
+                (SELECT count(*) FROM library_pages_v2 p WHERE p.document_id = d.id) AS page_count,
+                lj.job_id AS latest_job_id,
+                lj.job_status AS latest_job_status,
+                lj.job_stage AS latest_job_stage,
+                lj.job_filename,
+                (aj.document_id IS NOT NULL) AS is_processing,
+                ks.knowledge_scope_code
+            FROM library_documents d
+            JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+            LEFT JOIN latest_job lj ON lj.document_id = d.id
+            LEFT JOIN active_jobs aj ON aj.document_id = d.id
+            WHERE d.organization_id = %(org)s
+              AND d.workspace_id = %(ws)s
+              AND d.project_id = %(project)s
+              {e2e_docs}
+              {doc_filters}
+
+            UNION ALL
+
+            SELECT
+                NULL AS document_id,
+                j.title,
+                j.language,
+                NULL AS document_status,
+                u.original_filename AS filename,
+                NULL AS edition,
+                j.created_at,
+                j.updated_at,
+                j.work_family,
+                NULL AS canonical_work,
+                NULL AS page_count,
+                j.id AS latest_job_id,
+                j.status AS latest_job_status,
+                j.current_stage AS latest_job_stage,
+                u.original_filename AS job_filename,
+                (j.status = ANY(%(processing_statuses)s)) AS is_processing,
+                jks.knowledge_scope_code
+            FROM content_manager_jobs j
+            LEFT JOIN content_manager_uploads u ON u.id = j.upload_id
+            LEFT JOIN knowledge_scopes jks ON jks.id = j.knowledge_scope_id
+            WHERE j.organization_id = %(org)s
+              AND j.workspace_id = %(ws)s
+              AND j.project_id = %(project)s
+              AND (
+                  j.document_id IS NULL
+                  OR NOT EXISTS (
+                      SELECT 1 FROM library_documents d2 WHERE d2.id = j.document_id
+                  )
+              )
+              {e2e_jobs}
+        )
+        SELECT *
+        FROM items
+        ORDER BY
+            CASE
+                WHEN is_processing THEN 0
+                WHEN document_status = 'ingestion_failed' OR latest_job_status IN ('failed','validation_failed') THEN 1
+                WHEN latest_job_status = 'completed_with_warnings' THEN 2
+                WHEN document_status = 'test_candidate' THEN 3
+                ELSE 4
+            END,
+            COALESCE(updated_at, created_at) DESC
+        LIMIT %(limit)s OFFSET %(offset)s
+    """
+
+    cur = await conn.execute(query, params)
+    rows = await cur.fetchall()
+
+    items: list[DocumentListItem] = []
+    for row in rows:
+        r = dict(row) if not isinstance(row, dict) else row
+        doc_status = r.get("document_status") or ""
+        job_status = str(r.get("latest_job_status") or "") or None
+        is_processing = bool(r.get("is_processing"))
+
+        items.append(DocumentListItem(
+            document_id=r.get("document_id"),
+            title=str(r.get("title") or ""),
+            work_family=r.get("work_family"),
+            canonical_work=r.get("canonical_work"),
+            language=str(r.get("language") or "unknown"),
+            page_count=r.get("page_count"),
+            document_status=doc_status or None,
+            operational_state=_operational_state(
+                document_status=doc_status or None,
+                job_status=job_status,
+                is_processing=is_processing,
+            ),
+            last_activity_at=r.get("updated_at") or r.get("created_at"),
+            has_warnings=job_status == "completed_with_warnings",
+            latest_job_id=r.get("latest_job_id"),
+            latest_job_status=job_status,
+            latest_job_stage=r.get("latest_job_stage"),
+            filename=r.get("filename") or r.get("job_filename") or r.get("source_filename"),
+            is_test_data=r.get("knowledge_scope_code") == "breslov_e2e",
+        ))
+
+    summary = await get_content_summary(
+        conn,
+        organization_id=organization_id,
+        workspace_id=workspace_id,
+        project_id=project_id,
+        include_test_data=include_test_data,
+    )
+
+    return DocumentListResponse(documents=items, summary=summary)

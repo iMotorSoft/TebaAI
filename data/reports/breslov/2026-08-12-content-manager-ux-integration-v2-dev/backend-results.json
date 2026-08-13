@@ -1,0 +1,7 @@
+{
+  "focal": { "passed": 55, "failed": 0, "deselected": 1528 },
+  "full": { "passed": 1585, "failed": 0, "warnings": 94, "note": "94 warnings preexistentes (DeprecationWarning datetime.utcnow)" },
+  "new_tests": {
+    "test_content_manager_document_views.py": "7 passed (summary/list builders, operational-state mapping, e2e clause)"
+  }
+}

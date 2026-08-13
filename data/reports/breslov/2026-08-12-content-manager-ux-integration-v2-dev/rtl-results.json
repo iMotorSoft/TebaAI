@@ -1,0 +1,6 @@
+{
+  "hebrew_title": "renders dir=rtl locally, page container stays LTR",
+  "hebrew_filename": "native bidi, readable",
+  "evidence": "content-manager-rtl.spec.ts (4 tests PASS)",
+  "niqqud_preserved": true
+}

@@ -1,0 +1,8 @@
+{
+  "viewports": {
+    "1440x900": { "desktop_table": true, "status": "PASS" },
+    "1024x768": { "desktop_table": true, "status": "PASS" },
+    "390x844": { "mobile_cards": true, "no_horizontal_overflow": true, "status": "PASS" }
+  },
+  "evidence": "content-manager-captures.spec.ts (4 viewports) + content-manager-mobile.spec.ts (390×844 no overflow, touch targets ≥40px)"
+}

@@ -66,6 +66,7 @@
 
   let ready = $state(false);
   let accessState = $state<"checking" | "denied" | "error">("checking");
+  let userRole = $state<string>("");
   let inputText = $state("");
   let requestState = $state<RequestState>("idle");
   let requestError = $state<string | null>(null);
@@ -396,6 +397,7 @@
     const result = await fetchMe();
     if (result.status === "ok") {
       ready = true;
+      userRole = result.user.role || "";
       await tick();
       if (!activeTurn) composer?.focus();
       return;
@@ -404,8 +406,6 @@
       location.assign("/login");
       return;
     }
-    // 403 (authenticated without research access) and technical errors
-    // (5xx / network) render a terminal state instead of loading forever.
     accessState = result.status === "forbidden" ? "denied" : "error";
   }
 
@@ -561,6 +561,9 @@
         <button onclick={(event) => openPanel("sources", event)}>Fuentes</button>
       </nav>
       <button class="desktop-action" onclick={(event) => openPanel("filters", event)}>Filtros</button>
+      {#if userRole === "admin" || userRole === "editor"}
+        <a class="desktop-action" href="/admin/content" style="color:var(--gold-500);font-weight:650">Gestor de Contenidos</a>
+      {/if}
       <button class="desktop-action" onclick={newConversation}>Nueva investigación</button>
       <button class="desktop-action" onclick={signOut}>Cerrar sesión</button>
     </header>
@@ -576,8 +579,10 @@
           closePanel();
         }}><small>Turno {index + 1}</small>{turn.question}</button>
       {/each}
+      {#if userRole === "admin" || userRole === "editor"}
+        <a class="aside-link" href="/admin/content">Gestor de Contenidos</a>
+      {/if}
       <a class="aside-link" href="/">Volver al inicio</a>
-      <button class="aside-link" onclick={signOut}>Cerrar sesión</button>
     </aside>
 
     <section class="research-main" aria-live="polite">

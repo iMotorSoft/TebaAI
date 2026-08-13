@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import path from "node:path";
 import os from "node:os";
 import fs from "node:fs";
@@ -25,55 +25,77 @@ import { execFileSync } from "node:child_process";
 
 const SHOT_DIR = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
-  "../../../data/reports/breslov/2026-08-05-content-manager-v1-dev/screenshots",
+  "../../../data/reports/breslov/2026-08-12-content-manager-ux-integration-v2-dev/screenshots",
 );
 
-const jobsFixture = {
-  jobs: [
+const documentsFixture = {
+  documents: [
     {
-      job_id: "aaaaaaaa-1111-4111-8111-111111111111",
-      upload_id: "bbbbbbbb-2222-4222-8222-222222222222",
-      document_id: null,
+      document_id: "11111111-1111-4111-8111-111111111111",
       title: "Likutey Halajot — Interior Final",
+      work_family: "Likutey Halajot",
+      canonical_work: "Likutey Halajot",
       language: "es",
-      status: "completed_with_warnings",
-      current_stage: "completed_with_warnings",
-      created_at: "2026-08-05T12:00:00Z",
-      attempt_number: 1,
+      page_count: 284,
+      document_status: "test_candidate",
+      operational_state: "needs_review",
+      last_activity_at: "2026-08-05T12:00:00Z",
+      has_warnings: false,
+      latest_job_id: "aaaaaaaa-1111-4111-8111-111111111111",
+      latest_job_status: "completed",
+      latest_job_stage: "completed",
       filename: "likutey-halajot-interior-final.pdf",
-      sha256_short: "a1b2c3d4e5f6a7b8…",
+      is_test_data: false,
     },
     {
-      job_id: "cccccccc-3333-4333-8333-333333333333",
-      upload_id: "dddddddd-4444-4444-8444-444444444444",
-      document_id: null,
+      document_id: "22222222-2222-4222-8222-222222222222",
       title: "Likutei Moharan — Lesson 8",
+      work_family: "Likutey Moharán",
+      canonical_work: null,
       language: "he",
-      status: "completed",
-      current_stage: "completed",
-      created_at: "2026-08-04T09:30:00Z",
-      attempt_number: 1,
+      page_count: 442,
+      document_status: "ready",
+      operational_state: "idle",
+      last_activity_at: "2026-08-04T09:30:00Z",
+      has_warnings: false,
+      latest_job_id: "cccccccc-3333-4333-8333-333333333333",
+      latest_job_status: "completed",
+      latest_job_stage: "completed",
       filename: "likutei-moharan-lesson-8.pdf",
-      sha256_short: "e5f6a7b8c9d0e1f2…",
+      is_test_data: false,
     },
     {
-      job_id: "eeeeeeee-5555-4555-8555-555555555555",
-      upload_id: "ffffffff-6666-4666-8666-666666666666",
-      document_id: null,
+      document_id: "33333333-3333-4333-8333-333333333333",
       title: "Fuente con observaciones de idioma",
+      work_family: null,
+      canonical_work: null,
       language: "mixed",
-      status: "failed",
-      current_stage: "failed",
-      created_at: "2026-08-03T15:45:00Z",
-      attempt_number: 2,
+      page_count: null,
+      document_status: "ingestion_failed",
+      operational_state: "failed",
+      last_activity_at: "2026-08-03T15:45:00Z",
+      has_warnings: true,
+      latest_job_id: "eeeeeeee-5555-4555-8555-555555555555",
+      latest_job_status: "failed",
+      latest_job_stage: "failed",
       filename: "fuente-observaciones-idioma.pdf",
-      sha256_short: "c3d4e5f6a7b8c9d0…",
+      is_test_data: false,
     },
   ],
-  summary: { completed: 1, completed_with_warnings: 1, failed: 1 },
+  summary: {
+    total_documents: 3, ready: 1, test_candidate: 1,
+    processing: 0, with_warnings: 0, failed: 1,
+    languages: { es: 1, he: 1, mixed: 1 },
+  },
 };
 
-const emptyJobsFixture = { jobs: [], summary: {} };
+const emptyDocumentsFixture = {
+  documents: [],
+  summary: {
+    total_documents: 0, ready: 0, test_candidate: 0,
+    processing: 0, with_warnings: 0, failed: 0, languages: {},
+  },
+};
 
 const uploadFixture = {
   upload_id: "12345678-1234-4234-8234-1234567890ab",
@@ -183,17 +205,25 @@ const diagnosticFixture = {
   technical_details: { reconciliation: "match" },
 };
 
-function mockApi(page: import("@playwright/test").Page, jobs: unknown) {
-  void page.route("**/admin/content/jobs?*", async (route) => {
-    const method = route.request().method();
-    if (method === "GET") {
-      await route.fulfill({ json: jobs });
-    } else {
-      await route.fulfill({ json: terminalFixture, status: 201 });
-    }
+type DocumentsFixture = { documents: unknown[]; summary: Record<string, unknown> };
+
+function mockApi(page: Page, documents: DocumentsFixture) {
+  void page.route("**/admin/content/documents?*", async (route) => {
+    await route.fulfill({ json: documents });
+  });
+  void page.route("**/admin/content/summary?*", async (route) => {
+    await route.fulfill({ json: documents.summary });
   });
   void page.route("**/admin/content/jobs/*/diagnostic?*", async (route) => {
     await route.fulfill({ json: diagnosticFixture });
+  });
+  void page.route("**/admin/content/jobs?*", async (route) => {
+    const method = route.request().method();
+    if (method === "GET") {
+      await route.fulfill({ json: { jobs: [] } });
+    } else {
+      await route.fulfill({ json: terminalFixture, status: 201 });
+    }
   });
   void page.route("**/admin/content/jobs/*?*", async (route) => {
     if (route.request().url().includes("/diagnostic")) return;
@@ -221,21 +251,21 @@ test.describe("Content Manager evidence captures", () => {
     for (const vp of VIEWPORTS) {
       await page.setViewportSize({ width: vp.width, height: vp.height });
 
-      // History (jobs) — desktop table / mobile cards
-      mockApi(page, jobsFixture);
+      // Library (documents) — desktop table / mobile cards
+      mockApi(page, documentsFixture);
       await page.goto("/admin/content");
-      await expect(page.getByRole("heading", { name: "Cargas recientes" })).toBeVisible({ timeout: 15_000 });
+      await expect(page.getByRole("heading", { name: "Biblioteca" })).toBeVisible({ timeout: 15_000 });
       await page.screenshot({ path: path.join(SHOT_DIR, `history-${vp.name}.png`), fullPage: true });
 
       // Empty state
-      mockApi(page, emptyJobsFixture);
+      mockApi(page, emptyDocumentsFixture);
       await page.goto("/admin/content");
-      await expect(page.getByText("Todavía no hay documentos cargados")).toBeVisible({ timeout: 15_000 });
+      await expect(page.getByText("Todavía no hay contenidos incorporados")).toBeVisible({ timeout: 15_000 });
       await page.screenshot({ path: path.join(SHOT_DIR, `empty-${vp.name}.png`), fullPage: true });
     }
 
     // File selected + valid (desktop)
-    mockApi(page, jobsFixture);
+    mockApi(page, documentsFixture);
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto("/admin/content");
     await page.getByRole("button", { name: "＋ Nueva carga" }).click();
@@ -263,9 +293,6 @@ test.describe("Content Manager evidence captures", () => {
     await page.screenshot({ path: path.join(SHOT_DIR, "diagnostic-expanded-1440.png"), fullPage: true });
 
     // Failed state via the job detail fixture
-    void page.route("**/admin/content/jobs?*", async (route) => {
-      await route.fulfill({ json: jobsFixture });
-    });
     void page.route("**/admin/content/jobs/*?*", async (route) => {
       if (route.request().url().includes("/diagnostic")) {
         await route.fulfill({ json: diagnosticFixture });
@@ -274,7 +301,7 @@ test.describe("Content Manager evidence captures", () => {
       await route.fulfill({ json: failedFixture });
     });
     await page.goto("/admin/content");
-    await page.getByRole("button", { name: "Ver detalle" }).first().click();
+    await page.getByRole("button", { name: "Abrir" }).first().click();
     await expect(page.getByText("Fallido").first()).toBeVisible({ timeout: 15_000 });
     await page.screenshot({ path: path.join(SHOT_DIR, "failed-detail-1440.png"), fullPage: true });
 

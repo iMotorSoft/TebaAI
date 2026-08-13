@@ -29,14 +29,18 @@ from modules.library.book_qa_service import (
 from modules.library.content_manager import (
     cancel_job,
     create_job,
+    get_content_summary,
     get_diagnostic,
     get_job,
+    list_content_documents,
     list_jobs,
     retry_job,
     validate_and_store_upload,
 )
 from modules.library.content_manager_schemas import (
+    ContentSummary,
     CreateJobRequest,
+    DocumentListResponse,
     IngestionDiagnostic,
     JobListResponse,
     JobResponse,
@@ -644,3 +648,80 @@ async def content_manager_diagnostic(
         raise
     except Exception as exc:
         raise HTTPException(status_code=500, detail="Error al obtener el diagnóstico") from exc
+
+
+# ── Document-Centric Administrative Views ──────────────────────────────────
+
+
+@get("/admin/content/summary", status_code=200, guards=[require_auth])
+async def content_manager_summary(
+    request: Request,
+    knowledge_scope_code: str = "breslov_primary",
+    include_test_data: bool = False,
+) -> ContentSummary:
+    """Aggregated status summary for the administrative library dashboard."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_role = payload.get("role", "")
+    user_id = payload.get("sub", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
+            return await get_content_summary(
+                conn,
+                **_content_scope_kwargs(scope),
+                include_test_data=include_test_data,
+            )
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al obtener el resumen") from exc
+
+
+@get("/admin/content/documents", status_code=200, guards=[require_auth])
+async def content_manager_documents(
+    request: Request,
+    knowledge_scope_code: str = "breslov_primary",
+    include_test_data: bool = False,
+    status: str | None = None,
+    language: str | None = None,
+    work_family: str | None = None,
+    search: str | None = None,
+    limit: int = 50,
+    offset: int = 0,
+) -> DocumentListResponse:
+    """Document-centric listing for the administrative library dashboard."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_role = payload.get("role", "")
+    user_id = payload.get("sub", "")
+
+    if user_role not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
+            return await list_content_documents(
+                conn,
+                **_content_scope_kwargs(scope),
+                include_test_data=include_test_data,
+                status_filter=status,
+                language_filter=language,
+                work_family_filter=work_family,
+                search=search,
+                limit=limit,
+                offset=offset,
+            )
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al listar documentos") from exc

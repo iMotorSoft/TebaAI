@@ -156,7 +156,9 @@ test.describe("Content Manager premium UX (real backend)", () => {
 
     // ── History ─────────────────────────────────────────────────────────
     await page.getByRole("button", { name: "← Volver al gestor" }).click();
-    await expect(page.getByRole("heading", { name: "Cargas recientes" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Biblioteca" })).toBeVisible();
+    // The E2E document is hidden by default; enable test data to see it.
+    await page.getByLabel("Mostrar datos de prueba").check();
     await expect(page.getByText("Fuente Premium UX Playwright").first()).toBeVisible();
 
     // ── Exact duplicate (same fixture again) ────────────────────────────
@@ -191,11 +193,12 @@ test.describe("Content Manager premium UX (real backend)", () => {
 
     await loginAsAdmin(page);
     await page.goto("/admin/content");
+    // The cancelled E2E job is hidden by default; enable test data.
+    await page.getByLabel("Mostrar datos de prueba").check();
 
-    const row = page.locator(".cm-table tbody tr", { hasText: "Fuente Retry Playwright" }).first();
+    const row = page.locator(".cm-table tbody tr", { hasText: "Fuente Retry Playwright" }).filter({ hasText: "Cancelado" }).first();
     await expect(row).toBeVisible();
-    await expect(row).toContainText("Cancelado");
-    await row.getByRole("button", { name: "Ver detalle" }).click();
+    await row.getByRole("button", { name: "Abrir" }).click();
     await expect(page.getByText("El procesamiento fue cancelado antes de iniciar las escrituras.")).toBeVisible();
     await expect(page.getByRole("button", { name: "Reintentar" })).toBeVisible();
 

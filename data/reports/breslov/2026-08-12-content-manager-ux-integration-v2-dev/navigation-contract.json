@@ -1,0 +1,22 @@
+{
+  "navigation": {
+    "research_to_manager": {
+      "role_visibility": ["admin", "editor"],
+      "element": "link «Gestor de Contenidos»",
+      "location": "research header desktop + mobile panel",
+      "preserves_session": true
+    },
+    "manager_to_research": {
+      "element": "link «Investigación»",
+      "location": "content manager header",
+      "preserves_session": true
+    },
+    "route_protection": "/admin/content (backend require_auth + role; frontend gate)"
+  },
+  "role_visibility_matrix": {
+    "admin": { "research_shows_manager": true, "manager_accessible": true },
+    "editor": { "research_shows_manager": true, "manager_accessible": true },
+    "viewer": { "research_shows_manager": false, "manager_accessible": false },
+    "guest": { "research_shows_manager": false, "manager_accessible": false }
+  }
+}

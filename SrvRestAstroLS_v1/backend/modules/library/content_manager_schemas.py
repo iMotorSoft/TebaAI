@@ -206,3 +206,42 @@ class DocumentIngestionSummary(BaseModel):
     warnings: list[str] = Field(default_factory=list)
     latest_job_id: UUID | None = None
     created_at: datetime | None = None
+
+
+# ── Document-Centric Administrative Views ─────────────────────────────────
+
+
+class ContentSummary(BaseModel):
+    """Aggregated per-status counts for the administrative library dashboard."""
+    total_documents: int = 0
+    ready: int = 0
+    test_candidate: int = 0
+    processing: int = 0
+    with_warnings: int = 0
+    failed: int = 0
+    languages: dict[str, int] = Field(default_factory=dict)
+
+
+class DocumentListItem(BaseModel):
+    """One row in the administrative document library — a document plus its
+    latest ingestion job status."""
+    document_id: UUID | None = None
+    title: str
+    work_family: str | None = None
+    canonical_work: str | None = None
+    language: str
+    page_count: int | None = None
+    document_status: str | None = None
+    operational_state: str  # "processing" | "idle" | "needs_review" | "failed" | "cancelled"
+    last_activity_at: datetime | None = None
+    has_warnings: bool = False
+    latest_job_id: UUID | None = None
+    latest_job_status: str | None = None
+    latest_job_stage: str | None = None
+    filename: str | None = None
+    is_test_data: bool = False
+
+
+class DocumentListResponse(BaseModel):
+    documents: list[DocumentListItem]
+    summary: ContentSummary

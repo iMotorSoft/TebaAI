@@ -1,0 +1,26 @@
+{
+  "endpoint": "GET /admin/content/summary",
+  "query": {
+    "knowledge_scope_code": "breslov_primary",
+    "include_test_data": false
+  },
+  "response": {
+    "total_documents": 0,
+    "ready": 0,
+    "test_candidate": 0,
+    "processing": 0,
+    "with_warnings": 0,
+    "failed": 0,
+    "languages": { "es": 0, "en": 0, "he": 0, "mixed": 0, "unknown": 0 }
+  },
+  "scope": "tenant-scoped; breslov_e2e excluded by default",
+  "actual_dev": {
+    "total_documents": 23,
+    "ready": 8,
+    "test_candidate": 14,
+    "processing": 1,
+    "with_warnings": 0,
+    "failed": 0,
+    "languages": { "es": 13, "he": 9, "en": 1 }
+  }
+}

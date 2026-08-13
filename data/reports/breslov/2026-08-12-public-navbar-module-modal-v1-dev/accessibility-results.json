@@ -1,0 +1,8 @@
+{
+  "role_dialog": "native <dialog> showModal",
+  "aria_modal": true,
+  "name": "aria-label ¿Dónde querés ingresar?",
+  "focus_visible": "border + box-shadow on cards; button focus ring",
+  "contrast": "navy/ivory/gold WCAG AA",
+  "reduced_motion": "inherited prefers-reduced-motion"
+}

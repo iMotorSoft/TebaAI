@@ -1,0 +1,11 @@
+{
+  "trigger": "navbar Ingresar button (desktop header + mobile menu)",
+  "element": "native <dialog> via showModal()/close()",
+  "title": "¿Dónde querés ingresar?",
+  "subtitle": "Elegí el espacio de trabajo.",
+  "modules": ["Investigación", "Edición"],
+  "administration_visible": false,
+  "close": ["button Cerrar", "Escape", "click outside (backdrop)"],
+  "focus": { "trap": true, "restore": "Ingresar", "initial": "first focusable (Cerrar)" },
+  "semantics": { "role": "dialog (native)", "aria-modal": true, "name": "aria-label" }
+}

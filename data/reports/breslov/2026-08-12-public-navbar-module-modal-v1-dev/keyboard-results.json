@@ -1,0 +1,7 @@
+{
+  "open": "click/Enter/Space on Ingresar → showModal()",
+  "trap": "Tab/Shift+Tab stay within dialog (manual trap closes Chromium wrap gap)",
+  "escape": "closes + focus returns to Ingresar",
+  "close_button": "aria-label Cerrar",
+  "focus_restore": "trigger (Ingresar)"
+}

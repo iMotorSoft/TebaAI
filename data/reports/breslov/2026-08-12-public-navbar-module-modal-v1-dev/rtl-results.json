@@ -1,0 +1,6 @@
+{
+  "locales": ["es", "en", "he"],
+  "rtl_close": "[dir=rtl] .module-modal-close positions to left",
+  "labels": "module registry (es); Home UI remains Spanish with existing language fallback",
+  "no_hardcoded_es_only": "copy centralized in moduleRegistry"
+}

@@ -1,20 +1,25 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { getMe, getStoredAccessToken } from "../auth/authClient.ts";
+  import ModuleModal from "./ModuleModal.svelte";
 
   let { links }: { links: string[][] } = $props();
   let open = $state(false);
-  let authenticated = $state(false);
+  let modalOpen = $state(false);
+  let hydrated = $state(false);
   let menuButton: HTMLButtonElement;
 
-  onMount(async () => {
-    if (!getStoredAccessToken()) return;
-    authenticated = Boolean(await getMe());
+  onMount(() => {
+    hydrated = true;
   });
 
   function close(restoreFocus = false) {
     open = false;
     if (restoreFocus) queueMicrotask(() => menuButton?.focus());
+  }
+
+  function openIngresarModal() {
+    close();
+    modalOpen = true;
   }
 
   function handleKeydown(event: KeyboardEvent) {
@@ -28,7 +33,7 @@
 <svelte:window onkeydown={handleKeydown} />
 
 <div class="mobile-menu">
-  <button bind:this={menuButton} class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-navigation" aria-expanded={open} onclick={() => open = !open}>
+  <button bind:this={menuButton} class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-navigation" aria-expanded={open} disabled={!hydrated} onclick={() => open = !open}>
     <span></span><span></span><span></span>
   </button>
   {#if open}
@@ -37,9 +42,12 @@
         {#each links as link}
           <a href={link[1]} onclick={close}>{link[0]}</a>
         {/each}
-        <a class="mobile-login" href={authenticated ? "/research" : "/login"} onclick={close}>{authenticated ? "Abrir investigación" : "Ingresar"}</a>
+        <button type="button" class="mobile-login" aria-haspopup="dialog" onclick={openIngresarModal}>
+          Ingresar<span aria-hidden="true">→</span>
+        </button>
         <a class="mobile-request" href="/request-access" onclick={close}>Solicitar acceso</a>
       </nav>
     </div>
   {/if}
+  <ModuleModal bind:open={modalOpen} hideTrigger triggerLabel="Ingresar" className="mobile-login" onClose={() => menuButton?.focus()} />
 </div>

@@ -1,0 +1,11 @@
+{
+  "modal_spec": "public-navbar-module-modal.spec.ts: 8 passed",
+  "regression": {
+    "home.spec.ts": "5 passed",
+    "login.spec.ts": "4 passed",
+    "public-home-module-entry.spec.ts": "5 passed",
+    "auth-intended-destination.spec.ts": "7 passed",
+    "module-entry-permissions.spec.ts": "4 passed",
+    "breslov-home-visual.spec.ts": "3 passed"
+  }
+}

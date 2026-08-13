@@ -1,0 +1,15 @@
+{
+  "preserved": {
+    "home_premium": true,
+    "home_module_section": true,
+    "auth_intended_destination": true,
+    "research": true,
+    "content_manager": true,
+    "library_dashboard": true,
+    "e2e_data_hidden": true
+  },
+  "core_untouched": [
+    "ConcretePageFirstPipeline", "worker", "Milvus", "embeddings",
+    "cleanup", "manifest", "duplicate detection", "upload", "auth backend"
+  ]
+}

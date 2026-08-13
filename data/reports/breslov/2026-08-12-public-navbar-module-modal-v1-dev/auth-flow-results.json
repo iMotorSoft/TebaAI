@@ -1,0 +1,6 @@
+{
+  "investigacion": "/research (anonymous: /login?next=%2Fresearch)",
+  "edicion": "/admin/content (anonymous: /login?next=%2Fadmin%2Fcontent)",
+  "safe_redirect": "resolveSafePostLoginDestination reused",
+  "auth_error_preserves_next": true
+}

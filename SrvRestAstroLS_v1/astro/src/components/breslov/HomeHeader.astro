@@ -2,7 +2,7 @@
 import RebbeNajmanIdentity from "./RebbeNajmanIdentity.astro";
 import MobileMenu from "./MobileMenu.svelte";
 import LanguageSelector from "./LanguageSelector.svelte";
-import SessionAwareAccess from "./SessionAwareAccess.svelte";
+import ModuleModal from "./ModuleModal.svelte";
 
 const links = [
   ["Capacidades", "#capacidades"], ["Verificación", "#verificacion"],
@@ -17,7 +17,7 @@ const links = [
   </nav>
   <div class="header-actions">
     <LanguageSelector client:load />
-    <SessionAwareAccess client:load loginLabel="Ingresar" researchLabel="Abrir investigación" className="header-login" />
+    <ModuleModal client:load triggerLabel="Ingresar" className="header-login" />
   </div>
   <MobileMenu client:load links={links} />
 </header>

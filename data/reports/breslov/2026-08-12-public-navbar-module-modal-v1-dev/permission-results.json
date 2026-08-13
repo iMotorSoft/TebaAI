@@ -1,0 +1,7 @@
+{
+  "admin": { "research": "direct", "edition": "direct" },
+  "editor": { "research": "direct", "edition": "direct" },
+  "viewer": { "research": "direct", "edition": "denied (existing guard)" },
+  "anonymous": { "research": "login", "edition": "login" },
+  "no_duplicated_permission_logic_in_modal": true
+}

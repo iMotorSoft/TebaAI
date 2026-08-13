@@ -1,0 +1,6 @@
+{
+  "source": "moduleRegistry.ts MODULES (shared by Home section + navbar modal)",
+  "consumers": ["ModuleSelector.astro", "ModuleModal.svelte"],
+  "per_module": ["id", "label", "description", "destination", "ctaLabel", "requiredRoles", "enabled"],
+  "no_duplicated_copy": true
+}

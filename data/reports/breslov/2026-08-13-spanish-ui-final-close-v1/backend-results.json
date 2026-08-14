@@ -1,10 +1,14 @@
 {
-  "full_suite": "BLOCKED (PostgreSQL connectivity)",
+  "full_suite": "BLOCKED (connection timeout from test process)",
   "focused_content_manager_views": "PASS (7 passed)",
   "historical_this_session": "1585 passed earlier today (before PostgreSQL degraded)",
   "evidence": {
     "isolated_test": "test_hebrew_fts_builder.py::TestTSQueryPostgreSQL::test_to_tsquery_or_correct -> psycopg_pool.PoolTimeout: couldn't get a connection after 10.00 sec (fails alone)",
-    "direct_connect": "psycopg.AsyncConnection.connect -> ConnectionTimeout: connection timeout expired (localhost:5432, ::1 and 127.0.0.1)",
-    "cause": "environmental: PostgreSQL running but not accepting new connections; NOT a code regression (backend code unchanged by UI commits)"
+    "direct_connect": "psycopg.AsyncConnection.connect(host=localhost:5432) -> ConnectionTimeout: connection timeout expired (::1 and 127.0.0.1)"
+  },
+  "cause": "root cause undetermined; connection timeout observed from the test process (not attributed to code)",
+  "provenance": {
+    "focused_content_manager_views_7": "post-commit",
+    "historical_full_suite_1585": "earlier today (pre-commit, before connection degradation)"
   }
 }

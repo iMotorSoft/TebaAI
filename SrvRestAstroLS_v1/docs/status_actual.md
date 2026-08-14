@@ -25,9 +25,14 @@ Gates:
 
 Validación visual ES completa (1440/1024/768/681/680/679/390×844/390×667 PASS),
 accesibilidad (Tab/Shift+Tab wrap, focus trap/restore, Escape/Cerrar/backdrop,
-scroll lock, hydration guard) PASS. Regresión frontend/Playwright PASS;
-backend completo **BLOCKED** (PostgreSQL no acepta conexiones nuevas — ambiental,
-no regresión de código; pasó 1585 más temprano hoy).
+scroll lock, hydration guard) PASS. Frontend post-commit (`pnpm check` 0,
+Vitest 109, build 9) PASS; Playwright **pre-commit** (modal 12×3=36, focalizado
+54; no re-ejecutado post-commit). Backend completo **BLOCKED**: la conectividad
+PostgreSQL no está disponible desde el proceso de test (`ConnectionTimeout` en
+conexión directa y `PoolTimeout` en el test FTS aislado); causa raíz no
+establecida. Pasó 1585 más temprano hoy (antes de la degradación). El commit
+`877da00` incluye código backend de Content Manager (read-model + tests); los
+commits `a7b6e46` y `48ace56` son solo frontend.
 
 Correcciones visuales: menú móvil cierra al abrir el modal; scroll lock del
 Home; guarda de hidratación (disparadores "Ingresar" disabled hasta hidratar).

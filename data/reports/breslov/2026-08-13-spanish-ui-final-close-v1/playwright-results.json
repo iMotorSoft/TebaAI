@@ -3,5 +3,6 @@
   "module_entry_auth_permissions": "PASS",
   "home_login_visual": "PASS",
   "content_manager_readonly": "PASS",
-  "focused_total": "PASS (54)"
+  "focused_total": "PASS (54)",
+  "provenance": "pre-commit only; not re-run post-commit"
 }

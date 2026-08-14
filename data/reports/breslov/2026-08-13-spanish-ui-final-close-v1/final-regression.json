@@ -1,8 +1,26 @@
 {
   "frontend": "PASS",
   "playwright": "PASS",
-  "backend_full": "BLOCKED (PostgreSQL connectivity)",
+  "backend_full": "BLOCKED (connection timeout, root cause undetermined)",
   "lat": "PASS",
   "git_diff_check": "PASS",
-  "overall": "BLOCKED (backend full suite cannot run: PostgreSQL not accepting new connections)"
+  "overall": "BLOCKED (backend full suite: connection timeout; root cause undetermined)",
+  "provenance": {
+    "post_commit": [
+      "pnpm check",
+      "vitest",
+      "build",
+      "focused content-manager views (7 tests)",
+      "lat check",
+      "git diff --check"
+    ],
+    "pre_commit_only": [
+      "playwright modal 12x3",
+      "playwright focused 54",
+      "auth/permissions/CM UI specs"
+    ],
+    "blocked": [
+      "backend full suite (connection timeout, root cause undetermined)"
+    ]
+  }
 }

@@ -1,0 +1,8 @@
+{
+  "frontend": "PASS",
+  "playwright": "PASS",
+  "backend_full": "BLOCKED (PostgreSQL connectivity)",
+  "lat": "PASS",
+  "git_diff_check": "PASS",
+  "overall": "BLOCKED (backend full suite cannot run: PostgreSQL not accepting new connections)"
+}

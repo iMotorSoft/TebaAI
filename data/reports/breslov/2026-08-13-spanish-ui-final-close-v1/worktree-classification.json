@@ -1,0 +1,11 @@
+{
+  "A_content_manager_v2": "content-manager-* specs, content-manager.css, ContentManager.svelte, contentManagerClient.ts, ResearchWorkspace.svelte, backend content_manager*.py, routes.py, ls_iMotorSoft_Srv01.py, test_content_manager_document_views.py",
+  "B_module_entry_v1": "moduleRegistry.ts/.test, ModuleEntry.svelte, ModuleSelector.astro, LoginForm.svelte, SessionAwareAccess.svelte, HeroSection.astro, index/breslov.astro, auth-intended-destination/module-entry-permissions/public-home-module-entry specs, home.spec.ts, breslov-home-visual.spec.ts",
+  "C_navbar_modal_v1": "ModuleModal.svelte, MobileMenu.svelte, HomeHeader.astro, public-navbar-module-modal.spec.ts, investigative-home.css (modal)",
+  "D_visual_final_corrections": "scroll lock, hydration guard, menu-close (committed with C)",
+  "E_tests": "included per-phase",
+  "F_documentation": "status_actual.md",
+  "G_reports": "2026-08-12-*-dev/ + 2026-08-13-spanish-ui-final-close-v1/",
+  "H_runtime": "SrvRestAstroLS_v1/backend/data/ (preexistent)",
+  "I_foreign": "none"
+}

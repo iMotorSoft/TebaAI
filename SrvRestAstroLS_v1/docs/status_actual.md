@@ -2,7 +2,206 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-06 (Worktree reconciliation, conflicto LM II 8 y Promotion Readiness V2)
+Ultima actualizacion: 2026-08-13 (Cierre UI pública Español V1 — commits)
+
+
+## Public Entry Spanish UI Final + Git Close V1 — 2026-08-13 (DEV)
+
+Gates:
+- `TEBAAI_BRESLOV_PUBLIC_ENTRY_ES_VISUAL_FINAL_V1_PASS` → **PASS**
+- `TEBAAI_BRESLOV_UI_SCOPE_RECONCILIATION_V1_PASS` → **PASS**
+- `TEBAAI_BRESLOV_UI_ACCUMULATED_WORKTREE_RECONCILIATION_V1_PASS` → **PASS**
+- `TEBAAI_BRESLOV_PUBLIC_ENTRY_AND_CONTENT_MANAGER_V2_COMMITTED_DEV_READY` → **BLOCKED** (backend full suite — PostgreSQL connectivity)
+
+### Alcance (scope contract)
+
+- UI pública V1: **Español** (IN SCOPE / PASS).
+- UI Inglés / Hebreo / RTL de interfaz: **NOT IN SCOPE** (fase futura
+  `PUBLIC_UI_I18N_ES_EN_HE`).
+- Corpus / Research content: ES + EN + HE preservado (retrieval multilingüe
+  intacto). Distinción: idiomas del corpus ≠ idiomas de la interfaz.
+
+### Resultado
+
+Validación visual ES completa (1440/1024/768/681/680/679/390×844/390×667 PASS),
+accesibilidad (Tab/Shift+Tab wrap, focus trap/restore, Escape/Cerrar/backdrop,
+scroll lock, hydration guard) PASS. Regresión frontend/Playwright PASS;
+backend completo **BLOCKED** (PostgreSQL no acepta conexiones nuevas — ambiental,
+no regresión de código; pasó 1585 más temprano hoy).
+
+Correcciones visuales: menú móvil cierra al abrir el modal; scroll lock del
+Home; guarda de hidratación (disparadores "Ingresar" disabled hasta hidratar).
+
+### Commits
+
+- `877da00` feat(breslov): integrate Content Manager library navigation
+- `a7b6e46` feat(breslov): add module-aware public entry flow
+- `48ace56` feat(breslov): add premium module selector modal
+- docs(breslov): close Spanish public entry UX gates (este cierre)
+
+Worker DEV: inactivo — NOT REQUIRED for this read-only UX closure.
+
+Reporte: `data/reports/breslov/2026-08-13-spanish-ui-final-close-v1/`.
+Próximo paso: módulo Administración (Usuarios / Roles / Permisos) desde base
+limpia.
+
+
+## Public Navbar Module Modal V1 — 2026-08-12 (DEV)
+
+Gates:
+- `TEBAAI_PUBLIC_NAVBAR_MODULE_MODAL_V1_DEV_READY` → **READY**
+- `TEBAAI_PUBLIC_MODULE_MODAL_ACCESSIBILITY_V1_DEV_READY` → **READY**
+- `TEBAAI_PUBLIC_MODULE_MODAL_PREMIUM_UX_V1_PASS` → **PASS**
+- `TEBAAI_PUBLIC_MODULE_ENTRY_MODAL_V1_DEV_READY` → **READY**
+
+Resultado: el CTA «Ingresar» del navbar público abre un modal premium con
+Investigación / Edición, reutilizando `moduleRegistry` y el redirect seguro
+(`resolveSafePostLoginDestination`). La sección inferior de la Home con los dos
+módulos se conserva como presentación de producto.
+
+### Modal
+
+- `ModuleModal.svelte`: `<dialog>` nativo (`showModal`/`close`), role=dialog +
+  aria-modal implícitos, `aria-label`, focus trap manual (cierra el hueco de
+  Chromium en el wrap), Escape, botón Cerrar y click fuera; focus vuelve a
+  «Ingresar».
+- Desktop y móvil usan el mismo componente; los `next` por tarjeta son
+  `/login?next=/research` (anónimo) o `/research` (sesión) y equivalentes para
+  Edición, sin lógica de permisos duplicada.
+- CSS premium (navy/ivory/gold) con `::backdrop` discreto; RTL soportado
+  (`[dir="rtl"]` para el cierre); responsivo 390×844.
+
+### Validaciones
+
+- Frontend: Vitest 109 PASS, `pnpm check` 0 errores, build 9 páginas.
+- Playwright modal 8/8 (apertura, destinos anónimos, Escape+focus, Cerrar,
+  backdrop, teclado/focus-trap, admin directo, móvil sin overflow);
+  regresión home/login/module-entry 28/28.
+- Backend: completo 1585 PASS (94 warnings preexistentes), sin cambios de
+  backend. `lat check` PASS. `git diff --check` PASS.
+
+Reporte: `data/reports/breslov/2026-08-12-public-navbar-module-modal-v1-dev/`.
+Próximo paso: revisión visual humana del modal.
+
+
+## Public Home Module Entry V1 — 2026-08-12 (DEV)
+
+Gates:
+- `TEBAAI_PUBLIC_HOME_MODULE_ENTRY_V1_DEV_READY` → **READY**
+- `TEBAAI_AUTH_INTENDED_DESTINATION_V1_DEV_READY` → **READY**
+- `TEBAAI_MODULE_ENTRY_PERMISSION_FLOW_V1_DEV_READY` → **READY**
+- `TEBAAI_PUBLIC_HOME_MODULE_ENTRY_PREMIUM_UX_V1_PASS` → **PASS**
+- `TEBAAI_BRESLOV_MODULE_ENTRY_FLOW_V1_DEV_READY` → **READY**
+
+Resultado: la Home pública (`/` y `/breslov`) es la puerta de entrada a las
+áreas funcionales. Antes de autenticarse se elige Investigación o Edición; el
+login conserva el destino elegido de forma segura y, tras autenticar, aplica
+autorización antes de redirigir.
+
+### Home como selector pre-auth
+
+- `ModuleSelector` integra dos entradas premium (Investigación / Edición) en la
+  Home, sin romper hero/identidad/responsiveness. No se expone Administración.
+- `moduleRegistry.ts` centraliza módulos (id, label, description, destination,
+  requiredRoles, enabled) + allowlist de destinos + resolver seguro.
+- Roles existentes: `admin`, `editor`, `viewer`. Investigación = cualquier
+  autenticado; Edición = `admin|editor`. No se inventó un rol nuevo.
+
+### Intended destination + seguridad
+
+- `?next=` transporta el destino; `resolveSafePostLoginDestination` solo acepta
+  `/research` y `/admin/content` exactos (rechaza externas, protocol-relative,
+  scheme, backslash y codificadas); fallback histórico `/research`.
+- `LoginForm` lee `next`, valida, y tras login aplica autorización: un
+  `viewer` que pide Edición recibe UX 403 legible («No tenés permisos…») con
+  sesión viva, sin redirect silencioso a `/research`.
+- `/login` directo conserva el fallback histórico. `SessionAwareAccess` y
+  `ModuleEntry` enlazan `/login?next=…` para anónimos y el destino directo para
+  sesión autenticada.
+
+### Validaciones
+
+- Frontend: Vitest 109 PASS (15 nuevos de registry/redirect), `pnpm check`
+  0 errores, build 9 páginas.
+- Playwright nuevos: home module entry 5/5, auth destination 7/7, permissions
+  4/4; regresión home/login/V2 26/26; `home.spec.ts` accesibilidad PASS
+  (corrección de contraste `.section-kicker` a `#76500b` en fondos claros).
+- Backend: completo 1585 PASS (94 warnings preexistentes), sin cambios de
+  backend en esta fase. `lat check` PASS. `git diff --check` PASS.
+
+Reporte: `data/reports/breslov/2026-08-12-public-home-module-entry-v1-dev/`.
+Próximo paso: revisión visual humana de la Home y del flujo de permisos.
+
+
+## Content Manager UX Integration V2 — 2026-08-12 (DEV)
+
+Gates:
+- `TEBAAI_CONTENT_MANAGER_UNIFIED_NAVIGATION_V1_DEV_READY` → **READY**
+- `TEBAAI_CONTENT_MANAGER_LIBRARY_DASHBOARD_V1_DEV_READY` → **READY**
+- `TEBAAI_CONTENT_MANAGER_TEST_DATA_VISIBILITY_V1_DEV_READY` → **READY**
+- `TEBAAI_CONTENT_MANAGER_UX_INTEGRATION_V2_DEV_READY` → **READY**
+
+Resultado: `/admin/content` dejó de ser un monitor de jobs y pasó a ser una
+biblioteca administrativa documental. `/research` y el Gestor de Contenidos
+se navegan como dos áreas del mismo producto, con sesión compartida.
+
+### Navegación unificada
+
+- `/research` muestra «Gestor de Contenidos» solo para roles `admin`/`editor`
+  (header desktop + panel móvil); `viewer`/`guest` no lo ven.
+- El Gestor muestra «Investigación» (ya existía) → vuelve a `/research` con la
+  misma sesión, sin login ni nueva solapa.
+- `/admin/content` sigue protegido por backend (`require_auth` + rol) y por el
+  gate de frontend; no se cambió seguridad por conveniencia.
+
+### Biblioteca administrativa (read model backend)
+
+- `GET /admin/content/summary` — agregados read-only (total/ready/
+  test_candidate/processing/with_warnings/failed/languages), tenant-scoped,
+  excluye `breslov_e2e` por defecto; `include_test_data=true` lo incluye.
+- `GET /admin/content/documents` — listado documental con `library_documents`
+  como entidad primaria (título, familia/obra canónica, idioma, páginas,
+  estado documental, estado operacional, última actividad, último job), más
+  jobs standalone sin documento (uploads en curso / leftovers E2E).
+- El estado operacional se deriva en backend (processing/failed/needs_review/
+  idle/cancelled), sin N+1; Milvus no se consulta para renderizar la lista.
+- Rutas registradas en `ls_iMotorSoft_Srv01.py`.
+
+### Regla de datos E2E
+
+- Identificación por `knowledge_scope_code == breslov_e2e` (metadata
+  estructurada, no heurística de título/filename).
+- Excluidos por defecto de summary y documents; `Mostrar datos de prueba`
+  (OFF por defecto, por entrada) los revela con badge `E2E`.
+- No se eliminó ningún registro; leftovers E2E huérfanos documentados, no
+  reparados (pertenecen al procedimiento de cleanup).
+
+### UI
+
+- `ContentManager.svelte` reestructurado: indicadores compactos (Documentos,
+  Listos, Candidatos, En procesamiento, Con observaciones, Fallidos),
+  tabla «Biblioteca» desktop / cards móvil, acción «Abrir», toggle de datos
+  de prueba, RTL local por título/filename. La entidad principal es Documento;
+  Job/Attempt quedaron como detalle.
+- Reutiliza tokens `app.css` y patrones de `/research`; sin segundo sistema
+  visual.
+
+### Validaciones
+
+- Backend: focalizado 55 PASS, completo 1585 PASS (94 warnings preexistentes).
+- Frontend: `pnpm check` 0 errores, Vitest 94 PASS, build 9 páginas.
+- Playwright nuevos: navegación 3/3, biblioteca 2/2, visibilidad E2E 1/1;
+  specs mock (captures/mobile/rtl) 7/7. `lat check` PASS. `git diff --check`
+  PASS.
+
+Nota ambiental (regresión E2E real): el flujo wizard con backend real exige
+`PUBLIC_CONTENT_MANAGER_SCOPE=breslov_e2e` en el server Astro (precedente ya
+documentado). En este cierre el Astro DEV quedó con scope por defecto
+(`breslov_primary`); el spec `content-manager-premium` requiere el env E2E.
+
+Reporte: `data/reports/breslov/2026-08-12-content-manager-ux-integration-v2-dev/`.
+Próximo paso: revisión visual humana del diseño premium.
+
 
 ## Revisión editorial + legal + decisión de promoción V1 — 2026-08-06 (DEV)
 

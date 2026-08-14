@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-08-14T00:45:49.551208+00:00",
+  "branch": "feature/console-backend-core",
+  "head_initial": "a12229cf3046955e98eab94e99375c0d20fb1775",
+  "commits": [
+    {
+      "hash": "877da008a21ac8d63e04bf463715d93cf8f0482a",
+      "subject": "feat(breslov): integrate Content Manager library navigation"
+    },
+    {
+      "hash": "a7b6e46593918332503a79a379de26f60291808f",
+      "subject": "feat(breslov): add module-aware public entry flow"
+    },
+    {
+      "hash": "48ace56cb2925b7a6c4de9ffdf4b70b2530b5f3e",
+      "subject": "feat(breslov): add premium module selector modal"
+    }
+  ]
+}

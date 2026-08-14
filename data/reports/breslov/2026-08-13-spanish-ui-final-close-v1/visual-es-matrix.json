@@ -1,0 +1,40 @@
+{
+  "breakpoint": "max-width: 680px (two-column -> one-column)",
+  "views": [
+    {
+      "size": "1440x900",
+      "result": "PASS"
+    },
+    {
+      "size": "1024x768",
+      "result": "PASS"
+    },
+    {
+      "size": "768x900",
+      "result": "PASS"
+    },
+    {
+      "size": "681x900",
+      "result": "PASS"
+    },
+    {
+      "size": "680x900",
+      "result": "PASS"
+    },
+    {
+      "size": "679x900",
+      "result": "PASS"
+    },
+    {
+      "size": "390x844",
+      "result": "PASS"
+    },
+    {
+      "size": "390x667",
+      "result": "PASS"
+    }
+  ],
+  "en_ui": "not_in_scope",
+  "he_ui": "not_in_scope",
+  "rtl_ui": "not_in_scope"
+}

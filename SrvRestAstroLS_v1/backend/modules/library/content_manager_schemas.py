@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import enum
 from datetime import datetime
-from typing import Any
+from typing import Any, Literal
 from uuid import UUID
 
 from pydantic import BaseModel, Field
@@ -133,6 +133,16 @@ class JobResponse(BaseModel):
     cleanup_status: str | None = None
     recovery_status: str | None = None
     pipeline_version: str | None = None
+
+
+class PublishResponse(BaseModel):
+    document_id: UUID
+    job_id: UUID
+    status: Literal["ready"] = "ready"
+    published_at: datetime
+    chunks: int
+    embeddings: int
+    vectors: int
     idempotency_key: str | None = None
 
 

@@ -7,8 +7,8 @@
  *
  * The knowledge scope is a deployment-time constant (PUBLIC_CONTENT_MANAGER_SCOPE),
  * never a UI selector: DEV E2E runs set it to `breslov_e2e`; the default is
- * the backend contract `breslov_primary`. This keeps primary ingestion out of
- * reach from the console in this phase.
+ * the backend contract `breslov_primary`. The backend worker still requires
+ * explicit primary-ingestion enablement; the browser cannot enable it.
  */
 
 import { API_BASE_URL } from "../global.js";
@@ -189,6 +189,16 @@ export interface IngestionDiagnostic {
   technical_details: Record<string, unknown>;
 }
 
+export interface PublishResponse {
+  document_id: string;
+  job_id: string;
+  status: "ready";
+  published_at: string;
+  chunks: number;
+  embeddings: number;
+  vectors: number;
+}
+
 export interface CreateJobInput {
   upload_id: string;
   title: string;
@@ -336,6 +346,12 @@ export function cancelJob(jobId: string): Promise<JobResponse> {
 
 export function getDiagnostic(jobId: string): Promise<IngestionDiagnostic> {
   return api<IngestionDiagnostic>(`/admin/content/jobs/${jobId}/diagnostic?${scopeQuery()}`);
+}
+
+export function publishJob(jobId: string): Promise<PublishResponse> {
+  return api<PublishResponse>(`/admin/content/jobs/${jobId}/publish?${scopeQuery()}`, {
+    method: "POST",
+  });
 }
 
 // ── Terminal-state helpers ──────────────────────────────────────────────

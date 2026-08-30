@@ -135,6 +135,9 @@ CONTENT_MANAGER_E2E_SCOPE: str = SETTINGS.content_manager_e2e_scope
 CONTENT_MANAGER_E2E_COLLECTION: str = SETTINGS.content_manager_e2e_collection
 CONTENT_MANAGER_E2E_FIXTURE_SHA256: str = SETTINGS.content_manager_e2e_fixture_sha256
 CONTENT_MANAGER_WORKER_POLL_SECONDS: float = SETTINGS.content_manager_worker_poll_seconds
+CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED: bool = SETTINGS.content_manager_primary_ingestion_enabled
+CONTENT_MANAGER_WORKER_SCOPE: str = SETTINGS.content_manager_worker_scope
+CONTENT_MANAGER_STORAGE_DIR: str = SETTINGS.content_manager_storage_dir
 
 # ── Auth ─────────────────────────────────────────────────────────
 AUTH_ENABLED: bool = SETTINGS.auth_enabled

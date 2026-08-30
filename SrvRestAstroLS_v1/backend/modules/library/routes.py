@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 from uuid import UUID
 
 from litestar import Request, get, post
@@ -32,10 +33,13 @@ from modules.library.content_manager import (
     get_content_summary,
     get_diagnostic,
     get_job,
+    get_publish_candidate,
     list_content_documents,
     list_jobs,
     retry_job,
+    publish_document,
     validate_and_store_upload,
+    MAX_UPLOAD_BYTES,
 )
 from modules.library.content_manager_schemas import (
     ContentSummary,
@@ -44,6 +48,7 @@ from modules.library.content_manager_schemas import (
     IngestionDiagnostic,
     JobListResponse,
     JobResponse,
+    PublishResponse,
     UploadResponse,
 )
 from modules.library.errors import ScopeAccessDeniedError
@@ -70,6 +75,7 @@ from modules.library.query_confirmation import (
     InterpretationStateError,
 )
 from modules.library.simple_research_rag import run_simple_rag
+from modules.library.page_first_gateway import MilvusAttemptIndex
 from globalVar import (
     CONTENT_MANAGER_E2E_COLLECTION,
     CONTENT_MANAGER_E2E_SCOPE,
@@ -449,8 +455,9 @@ async def content_manager_upload(
     if not uploaded_file or not hasattr(uploaded_file, "read"):
         raise HTTPException(status_code=400, detail="Se requiere un archivo PDF")
 
-    file_content = await uploaded_file.read()
+    file_content = await uploaded_file.read(MAX_UPLOAD_BYTES + 1)
     original_filename = getattr(uploaded_file, "filename", "upload.pdf")
+    declared_mime_type = getattr(uploaded_file, "content_type", None)
 
     try:
         async with transaction(pool) as conn:
@@ -459,6 +466,7 @@ async def content_manager_upload(
             )
             result = await validate_and_store_upload(
                 conn, file_content=file_content, original_filename=original_filename,
+                declared_mime_type=declared_mime_type,
                 actor_user_id=user_id, knowledge_scope_id=str(scope.id),
                 **_content_scope_kwargs(scope),
             )
@@ -648,6 +656,45 @@ async def content_manager_diagnostic(
         raise
     except Exception as exc:
         raise HTTPException(status_code=500, detail="Error al obtener el diagnóstico") from exc
+
+
+@post("/admin/content/jobs/{job_id:str}/publish", status_code=200, guards=[require_auth])
+async def content_manager_publish_job(
+    request: Request, job_id: str, knowledge_scope_code: str = "breslov_primary",
+) -> PublishResponse:
+    """Publish a reconciled primary candidate after an exact Milvus recheck."""
+    pool = await get_pg_pool(request)
+    payload = await get_current_user_payload(request)
+    user_id = payload.get("sub", "")
+    if payload.get("role", "") not in ("admin", "editor"):
+        raise PermissionDeniedException("Se requiere rol admin o editor")
+
+    try:
+        async with transaction(pool) as conn:
+            scope = await get_authorized_scope_by_code(
+                conn, user_id=UUID(user_id), knowledge_scope_code=knowledge_scope_code,
+            )
+            candidate = await get_publish_candidate(
+                conn, job_id, **_content_scope_kwargs(scope),
+            )
+        if not candidate:
+            raise HTTPException(status_code=404, detail="Job no encontrado")
+        found_vectors = await asyncio.to_thread(
+            MilvusAttemptIndex(candidate["collection_code"]).list_ids,
+            candidate["vector_ids"],
+        )
+        async with transaction(pool) as conn:
+            return await publish_document(
+                conn, candidate, actor_user_id=user_id, found_vectors=found_vectors,
+            )
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Knowledge scope is unavailable") from exc
+    except HTTPException:
+        raise
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="Error al publicar el documento") from exc
 
 
 # ── Document-Centric Administrative Views ──────────────────────────────────

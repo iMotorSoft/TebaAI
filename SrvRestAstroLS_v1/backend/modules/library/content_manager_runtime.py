@@ -31,7 +31,9 @@ class PsycopgWorkerStore(WorkerStore):
 
     async def recover_expired(self, worker_id: str) -> dict[str, int]:
         async with transaction(self.pool) as conn:
-            return await recover_expired_claims(conn, recovery_actor=worker_id)
+            return await recover_expired_claims(
+                conn, recovery_actor=worker_id, allowed_scope_code=self.allowed_scope_code,
+            )
 
     async def claim(self, worker_id: str) -> ClaimedJob | None:
         async with transaction(self.pool) as conn:

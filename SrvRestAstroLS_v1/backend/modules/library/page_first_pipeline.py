@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Protocol
 from uuid import UUID
 
+from globalVar import CONTENT_MANAGER_WORKER_HEARTBEAT_SECONDS
 from modules.library.content_manager_repository import ClaimedJob, ContentTenantContext
 from modules.library.content_manager_schemas import IngestionStage
 from modules.library.content_manager_worker import Advance, Heartbeat, PageFirstPipeline, PipelineResult
@@ -46,6 +47,8 @@ class PageFirstIngestionRequest:
     collection_code: str
     tenant: ContentTenantContext
     actor_user_id: UUID
+    knowledge_scope_code: str = "breslov_e2e"
+    milvus_collection_code: str = "breslov_e2e"
 
     @property
     def attempt_key(self) -> str:
@@ -156,6 +159,7 @@ def reconcile_resource_sets(
     *, job_id: UUID, attempt_number: int, document_id: UUID,
     chunk_ids: tuple[str, ...], embedding_chunk_ids: tuple[str, ...],
     expected_vector_ids: tuple[str, ...], found_vectors: tuple[dict[str, object], ...],
+    attempt_metadata_required: bool = True,
 ) -> ReconciliationResult:
     """Pure attempt-bounded reconciliation used by unit and real adapters."""
     found_ids = tuple(str(row["pk"]) for row in found_vectors)
@@ -164,8 +168,13 @@ def reconcile_resource_sets(
     orphans = tuple(sorted(set(found_ids) - set(expected_vector_ids)))
     mismatches = tuple(sorted(str(row["pk"]) for row in found_vectors if
         str(row.get("document_id")) != str(document_id)
-        or str(row.get("job_id")) != str(job_id)
-        or int(row.get("attempt_number", -1)) != attempt_number))
+        or (
+            attempt_metadata_required
+            and (
+                str(row.get("job_id")) != str(job_id)
+                or int(row.get("attempt_number", -1)) != attempt_number
+            )
+        )))
     if set(embedding_chunk_ids) != set(chunk_ids):
         mismatches = tuple(sorted(set(mismatches) | {"embedding_chunk_set"}))
     return ReconciliationResult(
@@ -178,6 +187,23 @@ class PipelineConsistencyError(RuntimeError):
     error_code = "pg_milvus_reconciliation_failed"
 
 
+async def await_with_lease_heartbeat(awaitable, heartbeat: Heartbeat):
+    """Keep the durable lease alive while one external stage is in flight."""
+    task = asyncio.ensure_future(awaitable)
+    interval = max(0.01, float(CONTENT_MANAGER_WORKER_HEARTBEAT_SECONDS))
+    try:
+        while True:
+            done, _ = await asyncio.wait({task}, timeout=interval)
+            if done:
+                return await task
+            await heartbeat()
+    except BaseException:
+        if not task.done():
+            task.cancel()
+        await asyncio.gather(task, return_exceptions=True)
+        raise
+
+
 class ConcretePageFirstPipeline(PageFirstPipeline):
     def __init__(self, gateway: PageFirstGateway, *, extractor=None) -> None:
         self.gateway = gateway
@@ -187,7 +213,9 @@ class ConcretePageFirstPipeline(PageFirstPipeline):
         request = await self.gateway.load_request(job)
         await advance(IngestionStage.EXTRACTING, "page_first_extraction_started", 5.0)
         await heartbeat()
-        extracted = await asyncio.to_thread(self.extractor, request.source_path, request.language)
+        extracted = await await_with_lease_heartbeat(
+            asyncio.to_thread(self.extractor, request.source_path, request.language), heartbeat,
+        )
 
         await advance(IngestionStage.NORMALIZING, "physical_pages_extracted", 18.0)
         await heartbeat()
@@ -204,18 +232,24 @@ class ConcretePageFirstPipeline(PageFirstPipeline):
         await heartbeat()
 
         await advance(IngestionStage.EMBEDDING, "page_scoped_chunks_persisted", 62.0)
-        vectors = await self.gateway.embed(tuple(chunk.content for chunk in chunks), request.embedding_model)
+        vectors = await await_with_lease_heartbeat(
+            self.gateway.embed(tuple(chunk.content for chunk in chunks), request.embedding_model), heartbeat,
+        )
         if len(vectors) != len(chunks):
             raise PipelineConsistencyError("Embedding count does not match chunk count")
         embeddings = await self.gateway.persist_embeddings(request, persisted, chunks, vectors)
         await heartbeat()
 
         await advance(IngestionStage.INDEXING, "embeddings_persisted", 78.0)
-        vector_ids = await self.gateway.index_vectors(request, persisted, embeddings)
+        vector_ids = await await_with_lease_heartbeat(
+            self.gateway.index_vectors(request, persisted, embeddings), heartbeat,
+        )
         await heartbeat()
 
         await advance(IngestionStage.VALIDATING_RESULT, "isolated_vectors_indexed", 92.0)
-        reconciliation = await self.gateway.reconcile(request, persisted)
+        reconciliation = await await_with_lease_heartbeat(
+            self.gateway.reconcile(request, persisted), heartbeat,
+        )
         if not reconciliation.consistent:
             raise PipelineConsistencyError(f"Attempt reconciliation failed: {reconciliation}")
         await self.gateway.finalize(request, persisted, reconciliation, extracted)

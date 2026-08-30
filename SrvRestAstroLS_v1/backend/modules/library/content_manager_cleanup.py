@@ -10,7 +10,11 @@ from uuid import UUID
 from psycopg.rows import dict_row
 from psycopg_pool import AsyncConnectionPool
 
-from globalVar import CONTENT_MANAGER_E2E_COLLECTION, CONTENT_MANAGER_E2E_SCOPE
+from globalVar import (
+    CONTENT_MANAGER_E2E_COLLECTION,
+    CONTENT_MANAGER_E2E_SCOPE,
+    MILVUS_COLLECTION_BRESLOV,
+)
 from infrastructure.postgres.transaction import transaction
 from modules.library.page_first_gateway import E2EIsolationError, MilvusAttemptIndex
 
@@ -42,8 +46,12 @@ class ManifestCleanupService:
         manifest = await self._load(job_id, attempt_number)
         if not manifest:
             raise ValueError("Manifest not found")
-        if manifest["scope_code"] != CONTENT_MANAGER_E2E_SCOPE or manifest["collection_code"] != CONTENT_MANAGER_E2E_COLLECTION:
-            raise E2EIsolationError("Cleanup rejected a non-E2E scope or collection")
+        allowed_targets = {
+            (CONTENT_MANAGER_E2E_SCOPE, CONTENT_MANAGER_E2E_COLLECTION),
+            ("breslov_primary", MILVUS_COLLECTION_BRESLOV),
+        }
+        if (manifest["scope_code"], manifest["collection_code"]) not in allowed_targets:
+            raise E2EIsolationError("Cleanup rejected an unknown scope/collection mapping")
         items: list[CleanupItem] = []
         await self._set_status(manifest["manifest_id"], "running")
 
@@ -54,8 +62,11 @@ class ManifestCleanupService:
         # which can silently return zero rows for fresh segments.
         try:
             index = self.index_factory(manifest["collection_code"])
-            found = await asyncio.to_thread(index.list_attempt, manifest["attempt_key"])
-            vector_ids = [str(row["pk"]) for row in found]
+            if manifest["scope_code"] == CONTENT_MANAGER_E2E_SCOPE:
+                found = await asyncio.to_thread(index.list_attempt, manifest["attempt_key"])
+                vector_ids = [str(row["pk"]) for row in found]
+            else:
+                vector_ids = []
             if vector_ids:
                 await asyncio.to_thread(index.delete_ids, vector_ids)
             for vector_id in vector_ids:

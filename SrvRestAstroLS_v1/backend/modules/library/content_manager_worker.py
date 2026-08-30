@@ -78,6 +78,14 @@ class ContentManagerWorker:
         if job is None:
             return False
 
+        logger.info(
+            "Content Manager job claimed job_id=%s attempt=%s worker_id=%s collection=%s",
+            job.job_id,
+            job.attempt_number,
+            self.worker_id,
+            job.collection_code,
+        )
+
         current = IngestionStage.CLAIMED
 
         async def advance(target: IngestionStage, reason: str, progress: float) -> None:
@@ -99,10 +107,25 @@ class ContentManagerWorker:
                 if result.warnings else IngestionStage.COMPLETED
             )
             await advance(terminal, "reconciliation_passed", 100.0)
+            logger.info(
+                "Content Manager job completed job_id=%s attempt=%s document_id=%s "
+                "chunks=%s vectors=%s status=%s",
+                job.job_id,
+                job.attempt_number,
+                result.document_id,
+                len(result.chunk_ids),
+                len(result.vector_ids),
+                terminal.value,
+            )
         except LostWorkerLease:
             raise
         except Exception as exc:
-            logger.exception("Content Manager attempt failed at stage %s", current.value)
+            logger.exception(
+                "Content Manager attempt failed job_id=%s attempt=%s stage=%s",
+                job.job_id,
+                job.attempt_number,
+                current.value,
+            )
             error_code = getattr(exc, "error_code", "pipeline_stage_failed")
             await self.store.record_failure(job, current, str(error_code))
             if current not in {

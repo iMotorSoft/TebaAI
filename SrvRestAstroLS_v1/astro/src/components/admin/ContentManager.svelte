@@ -9,7 +9,7 @@
    */
   import { onMount, onDestroy } from "svelte";
   import { fetchMe, logout, type UserInfo } from "../auth/authClient.ts";
-  import { listJobs, getJob, getDiagnostic, retryJob, cancelJob, isTerminal, isRetryable, type JobListItem, type JobResponse, type IngestionDiagnostic, listContentDocuments, getContentSummary, type DocumentListItem, type DocumentListResponse, type ContentSummary } from "./contentManagerClient.ts";
+  import { listJobs, getJob, getDiagnostic, retryJob, cancelJob, publishJob, CONTENT_MANAGER_SCOPE, isTerminal, isRetryable, type JobListItem, type JobResponse, type IngestionDiagnostic, listContentDocuments, getContentSummary, type DocumentListItem, type DocumentListResponse, type ContentSummary } from "./contentManagerClient.ts";
   import {
     STATUS_LABELS,
     STATUS_TONE,
@@ -38,6 +38,8 @@
   let loadingDetail = $state(false);
   let detailError = $state("");
   let detailBusy = $state(false);
+  let publicationArmed = $state(false);
+  let publicationSuccess = $state(false);
   let detailPollTimer: ReturnType<typeof setInterval> | null = null;
 
   // ── Detail polling: resume live status while the job is not terminal ──
@@ -127,6 +129,8 @@
     detailError = "";
     detailJob = null;
     detailDiagnostic = null;
+    publicationArmed = false;
+    publicationSuccess = false;
     view = "detail";
     try {
       const [job, diag] = await Promise.all([
@@ -179,6 +183,22 @@
       detailJob = job;
     } catch (err) {
       detailError = err instanceof Error ? err.message : "No se pudo cancelar.";
+    } finally {
+      detailBusy = false;
+    }
+  }
+
+  async function handlePublish() {
+    if (!detailJob) return;
+    detailBusy = true;
+    detailError = "";
+    try {
+      await publishJob(detailJob.job_id);
+      publicationSuccess = true;
+      publicationArmed = false;
+      detailDiagnostic = await getDiagnostic(detailJob.job_id);
+    } catch (err) {
+      detailError = err instanceof Error ? err.message : "No se pudo publicar el documento.";
     } finally {
       detailBusy = false;
     }
@@ -556,6 +576,38 @@
                   {detailBusy ? "Cancelando…" : "Cancelar"}
                 </button>
               {/if}
+            </div>
+          {/if}
+
+          {#if CONTENT_MANAGER_SCOPE === "breslov_primary" && isTerminal(d.status) && detailDiagnostic?.document_status === "test_candidate"}
+            <div class="cm-card cm-card--flat" style="margin-bottom: 18px">
+              <div class="cm-card-body">
+                <h2 style="margin: 0 0 6px; color: var(--navy-950); font: 500 1.2rem var(--serif)">Publicación editorial</h2>
+                <p style="margin: 0; color: var(--ink-700); line-height: 1.6; font-size: 0.9rem">
+                  Publicar incorpora este libro al corpus consultable por los usuarios. El backend volverá a verificar PostgreSQL y Milvus antes de aprobarlo.
+                </p>
+                {#if publicationArmed}
+                  <div class="cm-message cm-message--warning" style="margin-top: 14px">
+                    <span class="cm-msg-icon" aria-hidden="true">!</span>
+                    <div>Confirmá únicamente si la metadata y las fuentes del libro fueron revisadas.</div>
+                  </div>
+                  <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px">
+                    <button class="cm-action" on:click={handlePublish} disabled={detailBusy}>
+                      {detailBusy ? "Verificando…" : "Confirmar publicación"}
+                    </button>
+                    <button class="cm-action cm-action--ghost" on:click={() => (publicationArmed = false)} disabled={detailBusy}>Cancelar</button>
+                  </div>
+                {:else}
+                  <button class="cm-action" style="margin-top: 14px" on:click={() => (publicationArmed = true)}>Publicar para consulta</button>
+                {/if}
+              </div>
+            </div>
+          {/if}
+
+          {#if publicationSuccess || detailDiagnostic?.document_status === "ready"}
+            <div class="cm-message cm-message--success" style="margin-bottom: 18px" role="status">
+              <span class="cm-msg-icon" aria-hidden="true">✓</span>
+              <div>Documento publicado. Ya forma parte del corpus consultable.</div>
             </div>
           {/if}
 

@@ -17,6 +17,7 @@ from globalVar import (
     CONTENT_MANAGER_MAX_PDF_PAGES,
     CONTENT_MANAGER_MAX_UPLOAD_BYTES,
     CONTENT_MANAGER_PIPELINE_VERSION,
+    CONTENT_MANAGER_STORAGE_DIR,
     CONTENT_MANAGER_UPLOAD_TTL_HOURS,
     EMBEDDINGS_MODEL_ALIAS,
 )
@@ -31,6 +32,7 @@ from modules.library.content_manager_schemas import (
     JobListResponse,
     JobProgress,
     JobResponse,
+    PublishResponse,
     UploadLimits,
     UploadResponse,
     UploadValidationError,
@@ -42,7 +44,11 @@ from modules.library.content_manager_schemas import (
 MAX_UPLOAD_BYTES = CONTENT_MANAGER_MAX_UPLOAD_BYTES
 MAX_PDF_PAGES = CONTENT_MANAGER_MAX_PDF_PAGES
 UPLOAD_TTL_HOURS = CONTENT_MANAGER_UPLOAD_TTL_HOURS
-TEMP_DIR = pathlib.Path(tempfile.gettempdir()) / "tebaai_content_manager"
+TEMP_DIR = (
+    pathlib.Path(CONTENT_MANAGER_STORAGE_DIR)
+    if CONTENT_MANAGER_STORAGE_DIR
+    else pathlib.Path(tempfile.gettempdir()) / "tebaai_content_manager"
+)
 
 
 # ── Stage display mapping ─────────────────────────────────────────────────
@@ -107,19 +113,24 @@ def _compute_sha256(file_path: str) -> str:
     return h.hexdigest()
 
 
-def _count_pdf_pages(file_path: str) -> int:
-    """Count PDF pages using a lightweight header parse (no full render)."""
+def _inspect_pdf(file_path: str) -> int:
+    """Open the PDF parser and reject corrupt, empty or encrypted documents."""
     try:
         import fitz  # PyMuPDF
-    except ImportError:
-        return 0
+    except ImportError as exc:
+        raise RuntimeError("PyMuPDF no está disponible para validar el PDF.") from exc
     try:
         doc = fitz.open(file_path)
-        count = doc.page_count
+    except Exception as exc:
+        raise ValueError("El archivo PDF está corrupto o no se puede abrir.") from exc
+    try:
+        if doc.needs_pass or doc.is_encrypted:
+            raise ValueError("El PDF está protegido o cifrado y no puede procesarse.")
+        if doc.page_count <= 0:
+            raise ValueError("El PDF no contiene páginas válidas.")
+        return doc.page_count
+    finally:
         doc.close()
-        return count
-    except Exception:
-        return 0
 
 
 def _validate_magic_bytes(file_path: str) -> bool:
@@ -146,6 +157,7 @@ async def validate_and_store_upload(
     *,
     file_content: bytes,
     original_filename: str,
+    declared_mime_type: str | None = None,
     actor_user_id: str,
     organization_id: str | None = None,
     workspace_id: str | None = None,
@@ -155,6 +167,13 @@ async def validate_and_store_upload(
     """Validate a PDF upload, store it temporarily, detect duplicates."""
     warnings: list[str] = []
     errors: list[UploadValidationError] = []
+
+    if pathlib.Path(original_filename).suffix.casefold() != ".pdf":
+        raise ValueError("La extensión del archivo debe ser .pdf.")
+    if declared_mime_type and declared_mime_type.casefold() not in {
+        "application/pdf", "application/x-pdf",
+    }:
+        raise ValueError("El tipo MIME del archivo no corresponde a un PDF.")
 
     # -- Size check --
     if len(file_content) == 0:
@@ -181,10 +200,8 @@ async def validate_and_store_upload(
         file_sha256 = _compute_sha256(str(temp_path))
 
         # -- Page count --
-        page_count = _count_pdf_pages(str(temp_path))
-        if page_count == 0:
-            warnings.append("No se pudo detectar la cantidad de páginas.")
-        elif page_count > MAX_PDF_PAGES:
+        page_count = _inspect_pdf(str(temp_path))
+        if page_count > MAX_PDF_PAGES:
             raise ValueError(
                 f"El PDF supera el límite de {MAX_PDF_PAGES} páginas "
                 f"({page_count} detectadas)."
@@ -625,6 +642,137 @@ async def get_diagnostic(
     return diag
 
 
+async def get_publish_candidate(
+    conn: AsyncConnection,
+    job_id: str,
+    *,
+    organization_id: str,
+    workspace_id: str,
+    project_id: str,
+) -> dict[str, Any] | None:
+    """Load a fully reconciled primary candidate without changing its status."""
+    async with conn.cursor(row_factory=dict_row) as cur:
+        await cur.execute(
+            """
+            SELECT j.id AS job_id,j.document_id,j.status AS job_status,j.collection_code,
+                   d.status AS document_status,ks.knowledge_scope_code,
+                   m.reconciliation,
+                   (SELECT count(*) FROM library_document_chunks c
+                    WHERE c.document_id=j.document_id) AS chunks,
+                   (SELECT count(*) FROM library_chunk_embeddings e
+                    JOIN library_document_chunks c ON c.id=e.chunk_id
+                    WHERE c.document_id=j.document_id) AS embeddings
+            FROM content_manager_jobs j
+            JOIN library_documents d ON d.id=j.document_id
+            JOIN knowledge_scopes ks ON ks.id=j.knowledge_scope_id
+            JOIN content_manager_ingestion_manifests m
+              ON m.job_id=j.id AND m.attempt_number=j.attempt_number
+            WHERE j.id=%s AND j.organization_id=%s AND j.workspace_id=%s AND j.project_id=%s
+            """,
+            (job_id, organization_id, workspace_id, project_id),
+        )
+        row = await cur.fetchone()
+        if not row:
+            return None
+        await cur.execute(
+            """SELECT resource_id FROM content_manager_manifest_resources
+               WHERE manifest_id=(
+                 SELECT id FROM content_manager_ingestion_manifests
+                 WHERE job_id=%s AND attempt_number=(
+                   SELECT attempt_number FROM content_manager_jobs WHERE id=%s
+                 )
+               ) AND resource_type='vector' AND cleaned_at IS NULL
+               ORDER BY resource_id""",
+            (job_id, job_id),
+        )
+        row["vector_ids"] = [item["resource_id"] for item in await cur.fetchall()]
+
+    if row["knowledge_scope_code"] != "breslov_primary":
+        raise ValueError("Solo se pueden publicar candidatos del corpus primario.")
+    if row["job_status"] not in {"completed", "completed_with_warnings"}:
+        raise ValueError("El procesamiento debe finalizar antes de publicar.")
+    if row["document_status"] != "test_candidate":
+        raise ValueError("El documento no está en estado candidato para publicación.")
+    reconciliation = row.get("reconciliation") or {}
+    if not reconciliation.get("consistent"):
+        raise ValueError("La reconciliación PostgreSQL/Milvus no está aprobada.")
+    chunks = int(row["chunks"] or 0)
+    embeddings = int(row["embeddings"] or 0)
+    vectors = len(row["vector_ids"])
+    if not chunks or chunks != embeddings or chunks != vectors:
+        raise ValueError("Los recursos del documento no están completos para publicación.")
+    return dict(row)
+
+
+async def publish_document(
+    conn: AsyncConnection,
+    candidate: dict[str, Any],
+    *,
+    actor_user_id: str,
+    found_vectors: list[dict[str, Any]],
+) -> PublishResponse:
+    """CAS-promote a candidate after exact Milvus IDs were revalidated."""
+    expected = set(candidate["vector_ids"])
+    found = {str(row["pk"]) for row in found_vectors}
+    if found != expected or any(
+        str(row.get("document_id")) != str(candidate["document_id"])
+        for row in found_vectors
+    ):
+        raise ValueError("La verificación final de Milvus no coincide con PostgreSQL.")
+
+    published_at = _utcnow()
+    async with conn.cursor() as cur:
+        await cur.execute(
+            """
+            UPDATE library_documents
+            SET status='ready',updated_at=%s,
+                metadata=COALESCE(metadata,'{}'::jsonb) || %s::jsonb
+            WHERE id=%s AND status='test_candidate'
+            """,
+            (
+                published_at,
+                json.dumps({
+                    "published_by": actor_user_id,
+                    "published_at": published_at.isoformat(),
+                    "publication_source": "content_manager",
+                }),
+                candidate["document_id"],
+            ),
+        )
+        if cur.rowcount != 1:
+            raise ValueError("El estado del documento cambió antes de publicar.")
+        await cur.execute(
+            """
+            UPDATE content_manager_jobs
+            SET diagnostic=jsonb_set(COALESCE(diagnostic,'{}'::jsonb),
+                    '{document_status}','\"ready\"'::jsonb,true),
+                technical_details=COALESCE(technical_details,'{}'::jsonb) || %s::jsonb,
+                updated_at=%s
+            WHERE id=%s AND document_id=%s
+            """,
+            (
+                json.dumps({
+                    "publication": {
+                        "status": "ready",
+                        "actor_user_id": actor_user_id,
+                        "published_at": published_at.isoformat(),
+                    }
+                }),
+                published_at,
+                candidate["job_id"],
+                candidate["document_id"],
+            ),
+        )
+    return PublishResponse(
+        document_id=candidate["document_id"],
+        job_id=candidate["job_id"],
+        published_at=published_at,
+        chunks=int(candidate["chunks"]),
+        embeddings=int(candidate["embeddings"]),
+        vectors=len(found),
+    )
+
+
 # ── Helpers ───────────────────────────────────────────────────────────────
 
 
@@ -995,13 +1143,7 @@ async def list_content_documents(
         SELECT *
         FROM items
         ORDER BY
-            CASE
-                WHEN is_processing THEN 0
-                WHEN document_status = 'ingestion_failed' OR latest_job_status IN ('failed','validation_failed') THEN 1
-                WHEN latest_job_status = 'completed_with_warnings' THEN 2
-                WHEN document_status = 'test_candidate' THEN 3
-                ELSE 4
-            END,
+            CASE WHEN is_processing THEN 0 ELSE 1 END,
             COALESCE(updated_at, created_at) DESC
         LIMIT %(limit)s OFFSET %(offset)s
     """

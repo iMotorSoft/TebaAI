@@ -19,7 +19,9 @@ from globalVar import (
     CONTENT_MANAGER_E2E_ENABLED,
     CONTENT_MANAGER_E2E_FIXTURE_SHA256,
     CONTENT_MANAGER_E2E_SCOPE,
+    CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED,
     EMBEDDINGS_DIMENSION,
+    MILVUS_COLLECTION_BRESLOV,
     MILVUS_HOST,
     MILVUS_PORT,
     TEBAAI_ENV,
@@ -29,6 +31,7 @@ from infrastructure.postgres.transaction import transaction
 from modules.embeddings.client import embed_batch
 from modules.library.chunking import paragraph_chunks
 from modules.library.content_manager_repository import ClaimedJob
+from modules.library.hybrid_search import resolve_milvus_collection_code_for_scope
 from modules.library.pdf_ligature_normalization import normalize_pdf_search_text
 from modules.library.page_first_pipeline import (
     ExtractedDocument,
@@ -58,21 +61,28 @@ class E2EIsolationError(RuntimeError):
 
 
 class MilvusAttemptIndex:
-    """Milvus adapter whose E2E schema carries an explicit attempt key."""
+    """Milvus adapter for isolated attempts and exact-ID primary writes."""
 
     def __init__(self, collection_name: str) -> None:
         self.collection_name = collection_name
         self.client = MilvusClient(uri=f"http://{MILVUS_HOST}:{MILVUS_PORT}")
 
     def ensure(self) -> None:
-        if self.collection_name != CONTENT_MANAGER_E2E_COLLECTION:
-            raise E2EIsolationError("Content Manager worker may only create the isolated E2E collection")
+        if self.collection_name not in {CONTENT_MANAGER_E2E_COLLECTION, MILVUS_COLLECTION_BRESLOV}:
+            raise E2EIsolationError("Content Manager worker rejected an unknown Milvus collection")
         if self.collection_name in self.client.list_collections():
             fields = {item["name"] for item in self.client.describe_collection(self.collection_name)["fields"]}
-            if not {"attempt_key", "job_id", "attempt_number"}.issubset(fields):
-                raise E2EIsolationError("Existing E2E collection has an incompatible schema")
+            required = {field.name for field in BRESLOV_FIELDS}
+            if not required.issubset(fields):
+                raise E2EIsolationError("Existing Content Manager collection has an incompatible schema")
+            if self.collection_name == CONTENT_MANAGER_E2E_COLLECTION and not {
+                "attempt_key", "job_id", "attempt_number"
+            }.issubset(fields):
+                raise E2EIsolationError("Existing E2E collection has an incompatible attempt schema")
             self.client.load_collection(self.collection_name)
             return
+        if self.collection_name == MILVUS_COLLECTION_BRESLOV:
+            raise E2EIsolationError("The productive Milvus collection must be provisioned before worker startup")
         create_connection()
         fields = list(BRESLOV_FIELDS) + [
             FieldSchema(name="attempt_key", dtype=DataType.VARCHAR, max_length=96),
@@ -95,12 +105,24 @@ class MilvusAttemptIndex:
 
     def list_attempt(self, attempt_key: str) -> list[dict]:
         self.ensure()
+        if self.collection_name != CONTENT_MANAGER_E2E_COLLECTION:
+            raise E2EIsolationError("Attempt-key queries are only available in the isolated E2E schema")
         return self.client.query(
             collection_name=self.collection_name,
             filter=f'attempt_key == "{attempt_key}"',
             output_fields=["pk", "chunk_id", "document_id", "attempt_key", "job_id", "attempt_number"],
             limit=16384,
             consistency_level="Strong",
+        )
+
+    def list_ids(self, ids: list[str]) -> list[dict]:
+        self.ensure()
+        if not ids:
+            return []
+        return self.client.get(
+            collection_name=self.collection_name,
+            ids=ids,
+            output_fields=["pk", "chunk_id", "document_id", "collection_code"],
         )
 
     def delete_ids(self, ids: list[str]) -> int:
@@ -138,7 +160,8 @@ class PostgresMilvusPageFirstGateway:
                 row = await cur.fetchone()
         if not row:
             raise E2EIsolationError("Job/upload tenant chain is invalid")
-        self._assert_e2e(job, row["knowledge_scope_code"], row["sha256"])
+        scope_code = row["knowledge_scope_code"]
+        self._assert_write_allowed(job, scope_code, row["sha256"])
         path = Path(row["temp_path"] or "")
         if not path.is_file() or _file_sha(path) != row["sha256"]:
             raise E2EIsolationError("Validated fixture is missing or its hash changed")
@@ -148,8 +171,19 @@ class PostgresMilvusPageFirstGateway:
             language=job.language, work_family=row["work_family"],
             ingestion_profile=job.ingestion_profile, pipeline_version=job.pipeline_version,
             embedding_model=job.embedding_model, collection_code=job.collection_code,
+            knowledge_scope_code=scope_code,
+            milvus_collection_code=resolve_milvus_collection_code_for_scope(scope_code) or scope_code,
             tenant=job.tenant, actor_user_id=row["actor_user_id"],
         )
+
+    def _assert_write_allowed(self, job: ClaimedJob, scope_code: str, source_sha256: str) -> None:
+        if scope_code == CONTENT_MANAGER_E2E_SCOPE:
+            self._assert_e2e(job, scope_code, source_sha256)
+            return
+        if scope_code != "breslov_primary" or job.collection_code != MILVUS_COLLECTION_BRESLOV:
+            raise E2EIsolationError("Content Manager worker rejected a mismatched primary scope/collection")
+        if not CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED:
+            raise E2EIsolationError("Primary Content Manager ingestion is disabled")
 
     def _assert_e2e(self, job: ClaimedJob, scope_code: str, source_sha256: str) -> None:
         if TEBAAI_ENV != "development" or not CONTENT_MANAGER_E2E_ENABLED:
@@ -169,8 +203,14 @@ class PostgresMilvusPageFirstGateway:
         page_ids = tuple(_uuid(run_id, f"page:{page.page_number}") for page in extracted.pages)
         async with transaction(self.pool) as conn:
             async with conn.cursor(row_factory=dict_row) as cur:
+                legacy_code = (
+                    "breslov_test"
+                    if request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE
+                    else "breslov"
+                )
                 await cur.execute(
-                    "SELECT id FROM library_collections_legacy WHERE code='breslov_test' LIMIT 1"
+                    "SELECT id FROM library_collections_legacy WHERE code=%s LIMIT 1",
+                    (legacy_code,),
                 )
                 legacy = await cur.fetchone()
                 if not legacy:
@@ -189,14 +229,18 @@ class PostgresMilvusPageFirstGateway:
                     (document_id, legacy["id"], request.title, extracted.language,
                      request.source_path.name, request.source_path.stat().st_size, request.source_sha256,
                      _json({"content_manager_job_id": str(request.job_id), "attempt": request.attempt_number}),
-                     _json({"work_family": request.work_family, "e2e_fixture": True}), request.actor_user_id,
+                     _json({
+                         "work_family": request.work_family,
+                         "content_manager_ingestion": True,
+                         "e2e_fixture": request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE,
+                     }), request.actor_user_id,
                      request.tenant.organization_id, request.tenant.workspace_id, request.tenant.project_id,
                      request.tenant.knowledge_scope_id, extracted.content_sha256),
                 )
                 await cur.execute(
                     """INSERT INTO library_ingestion_runs_v2(run_id,document_id,pipeline_version,scope_code,status)
                        VALUES(%s,%s,%s,%s,'started') ON CONFLICT(run_id) DO NOTHING""",
-                    (run_id, document_id, request.pipeline_version, CONTENT_MANAGER_E2E_SCOPE),
+                    (run_id, document_id, request.pipeline_version, request.knowledge_scope_code),
                 )
                 await cur.execute(
                     """
@@ -251,7 +295,15 @@ class PostgresMilvusPageFirstGateway:
                 global_index += 1
         async with transaction(self.pool) as conn:
             async with conn.cursor() as cur:
-                legacy = await cur.execute("SELECT id FROM library_collections_legacy WHERE code='breslov_test' LIMIT 1")
+                legacy_code = (
+                    "breslov_test"
+                    if request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE
+                    else "breslov"
+                )
+                legacy = await cur.execute(
+                    "SELECT id FROM library_collections_legacy WHERE code=%s LIMIT 1",
+                    (legacy_code,),
+                )
                 legacy_row = await legacy.fetchone()
                 legacy_id = legacy_row["id"]
                 for chunk in result:
@@ -299,7 +351,7 @@ class PostgresMilvusPageFirstGateway:
                     """INSERT INTO library_embedding_runs(id,collection_code,milvus_collection,
                        embedding_provider,embedding_model,embedding_dimension,status,chunks_total,metadata)
                        VALUES(%s,%s,%s,'litellm',%s,%s,'running',%s,%s::jsonb) ON CONFLICT(id) DO NOTHING""",
-                    (run_id, CONTENT_MANAGER_E2E_SCOPE, request.collection_code, request.embedding_model,
+                    (run_id, request.milvus_collection_code, request.collection_code, request.embedding_model,
                      EMBEDDINGS_DIMENSION, len(items), _json({"job_id": str(request.job_id), "attempt": request.attempt_number})),
                 )
                 for item in items:
@@ -325,21 +377,38 @@ class PostgresMilvusPageFirstGateway:
         index = MilvusAttemptIndex(request.collection_code)
         rows = [{
             "pk": item.chunk.chunk_uid, "chunk_id": str(item.chunk.chunk_id),
-            "document_id": str(persisted.document_id), "collection_code": CONTENT_MANAGER_E2E_SCOPE,
+            "document_id": str(persisted.document_id), "collection_code": request.milvus_collection_code,
             "language": item.chunk.language, "title": request.title, "source_type": "pdf",
             "source_sha256": request.source_sha256, "content_sha256": item.chunk.content_sha256,
             "chunk_index": item.chunk.chunk_index, "page_start": item.chunk.page_number,
             "page_end": item.chunk.page_number, "content_preview": item.chunk.content[:1024],
-            "embedding": list(item.vector), "attempt_key": request.attempt_key,
-            "job_id": str(request.job_id), "attempt_number": request.attempt_number,
+            "embedding": list(item.vector),
         } for item in embeddings]
-        vector_ids = await asyncio.to_thread(index.upsert, rows)
+        if request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE:
+            for row in rows:
+                row.update({
+                    "attempt_key": request.attempt_key,
+                    "job_id": str(request.job_id),
+                    "attempt_number": request.attempt_number,
+                })
+        vector_ids = tuple(str(row["pk"]) for row in rows)
+        # IDs are deterministic and recorded before the external write. A crash
+        # after Milvus accepts the batch can therefore be compensated exactly.
         async with transaction(self.pool) as conn:
             async with conn.cursor() as cur:
                 await _record_resources(cur, persisted.manifest_id, [("vector", item) for item in vector_ids])
+        await asyncio.to_thread(index.upsert, rows)
+        async with transaction(self.pool) as conn:
+            async with conn.cursor() as cur:
                 await cur.execute(
-                    """UPDATE library_chunk_embeddings SET vector_status='indexed_test'
-                       WHERE id = ANY(%s::uuid[])""", ([str(item.embedding_id) for item in embeddings],),
+                    """UPDATE library_chunk_embeddings SET vector_status=%s
+                       WHERE id = ANY(%s::uuid[])""",
+                    (
+                        "indexed_test"
+                        if request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE
+                        else "indexed",
+                        [str(item.embedding_id) for item in embeddings],
+                    ),
                 )
         return vector_ids
 
@@ -365,7 +434,11 @@ class PostgresMilvusPageFirstGateway:
                     (persisted.document_id, expected["embedding"] or [str(UUID(int=0))]),
                 )
                 pg_rows = await cur.fetchall()
-        found = await asyncio.to_thread(MilvusAttemptIndex(request.collection_code).list_attempt, request.attempt_key)
+        index = MilvusAttemptIndex(request.collection_code)
+        if request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE:
+            found = await asyncio.to_thread(index.list_attempt, request.attempt_key)
+        else:
+            found = await asyncio.to_thread(index.list_ids, expected["vector"])
         result = reconcile_resource_sets(
             job_id=request.job_id, attempt_number=request.attempt_number,
             document_id=persisted.document_id,
@@ -373,6 +446,7 @@ class PostgresMilvusPageFirstGateway:
             embedding_chunk_ids=tuple(row["chunk_id"] for row in pg_rows),
             expected_vector_ids=tuple(expected["vector"]),
             found_vectors=tuple(found),
+            attempt_metadata_required=request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE,
         )
         if duplicates:
             return ReconciliationResult(

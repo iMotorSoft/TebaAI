@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import re
 from functools import lru_cache
+from pathlib import Path
 from typing import Literal
 from urllib.parse import quote, urlparse, urlunparse
 
@@ -134,6 +135,9 @@ class AppSettings(BaseSettings):
     content_manager_e2e_collection: str = "tebaai_content_manager_e2e_v1"
     content_manager_e2e_fixture_sha256: str = ""
     content_manager_worker_poll_seconds: float = 1.0
+    content_manager_primary_ingestion_enabled: bool = False
+    content_manager_worker_scope: Literal["breslov_e2e", "breslov_primary"] = "breslov_e2e"
+    content_manager_storage_dir: str = ""
 
     # ── Auth ────────────────────────────────────────────────────
     auth_enabled: bool = False
@@ -273,6 +277,19 @@ class AppSettings(BaseSettings):
                 raise ValueError(
                     "TEBAAI_CONTENT_MANAGER_E2E_ENABLED is allowed only in development."
                 )
+        if self.content_manager_worker_scope == "breslov_primary":
+            if not self.content_manager_primary_ingestion_enabled:
+                raise ValueError(
+                    "TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED=true is required "
+                    "when TEBAAI_CONTENT_MANAGER_WORKER_SCOPE=breslov_primary."
+                )
+            if self.is_production:
+                storage_dir = Path(self.content_manager_storage_dir)
+                if not self.content_manager_storage_dir or not storage_dir.is_absolute():
+                    raise ValueError(
+                        "Production primary ingestion requires an absolute "
+                        "TEBAAI_CONTENT_MANAGER_STORAGE_DIR."
+                    )
         return self
 
     @model_validator(mode="after")

@@ -38,6 +38,7 @@ class ClaimedJob:
     embedding_model: str
     collection_code: str
     tenant: ContentTenantContext
+    requested_status: str = "test_candidate"
 
 
 async def claim_next_job(
@@ -196,7 +197,9 @@ async def transition_claimed_job(
             )
 
 
-async def recover_expired_claims(conn: AsyncConnection, *, recovery_actor: str) -> dict[str, int]:
+async def recover_expired_claims(
+    conn: AsyncConnection, *, recovery_actor: str, allowed_scope_code: str,
+) -> dict[str, int]:
     """Requeue untouched claims; fail stale jobs that own persisted resources."""
     now = datetime.now(timezone.utc)
     async with conn.cursor(row_factory=dict_row) as cur:
@@ -210,11 +213,13 @@ async def recover_expired_claims(conn: AsyncConnection, *, recovery_actor: str) 
                        AND r.was_preexisting = false AND r.cleaned_at IS NULL
                    ) AS has_partial_writes
             FROM content_manager_jobs j
+            JOIN knowledge_scopes ks ON ks.id=j.knowledge_scope_id
             WHERE j.lease_expires_at < %(now)s
+              AND ks.knowledge_scope_code = %(scope)s
               AND j.status NOT IN ('completed','completed_with_warnings','failed','cancelled')
             FOR UPDATE SKIP LOCKED
             """,
-            {"now": now},
+            {"now": now, "scope": allowed_scope_code},
         )
         rows = await cur.fetchall()
         counts = {"requeued": 0, "manual_review_required": 0}
@@ -255,4 +260,5 @@ def _claimed_job(row: dict[str, Any], worker_id: str, lease_expires: datetime) -
             organization_id=row["organization_id"], workspace_id=row["workspace_id"],
             project_id=row["project_id"], knowledge_scope_id=row["knowledge_scope_id"],
         ),
+        requested_status=row["requested_status"],
     )

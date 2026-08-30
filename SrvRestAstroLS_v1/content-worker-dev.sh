@@ -50,6 +50,7 @@ start(){
     [[ "${TEBAAI_CONTENT_MANAGER_E2E_ENABLED:-false}" == "true" ]] || _die "explicit E2E enablement is required"
     [[ -n "${TEBAAI_CONTENT_MANAGER_E2E_FIXTURE_SHA256:-}" ]] || _die "authorized fixture hash is required"
   elif [[ "$worker_scope" == "breslov_primary" ]]; then
+    [[ "${TEBAAI_ENV:-development}" == "development" ]] || _die "worker is DEV-only"
     [[ "${TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED:-false}" == "true" ]] || _die "explicit primary enablement is required"
     [[ -n "${TEBAAI_CONTENT_MANAGER_STORAGE_DIR:-}" ]] || _die "primary storage directory is required"
     [[ "${TEBAAI_CONTENT_MANAGER_STORAGE_DIR}" == /* ]] || _die "primary storage directory must be absolute"

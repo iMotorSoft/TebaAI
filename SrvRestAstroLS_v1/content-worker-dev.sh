@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Safe DEV launcher for the isolated Content Manager worker.
+# Safe DEV launcher for an explicitly scoped Content Manager worker.
 set -Eeuo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 BACKEND_DIR="$SCRIPT_DIR/backend"
@@ -11,10 +11,19 @@ LOG_FILE="$LOG_DIR/content-worker.log"
 ENV_FILE="$SCRIPT_DIR/.env.backend-dev.local"
 PYTHON="$BACKEND_DIR/.venv/bin/python"
 
+# Explicit process environment overrides the unversioned local E2E file for a
+# controlled primary golden run.
+_explicit_primary_enabled="${TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED-}"
+_explicit_worker_scope="${TEBAAI_CONTENT_MANAGER_WORKER_SCOPE-}"
+_explicit_storage_dir="${TEBAAI_CONTENT_MANAGER_STORAGE_DIR-}"
+
 _log(){ printf '[content-worker-dev] %s\n' "$*"; }
 _die(){ _log "ERROR: $*"; exit 1; }
 mkdir -p "$PID_DIR" "$LOG_DIR"
 if [[ -f "$ENV_FILE" ]]; then set -a; source "$ENV_FILE"; set +a; fi
+[[ -z "$_explicit_primary_enabled" ]] || export TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED="$_explicit_primary_enabled"
+[[ -z "$_explicit_worker_scope" ]] || export TEBAAI_CONTENT_MANAGER_WORKER_SCOPE="$_explicit_worker_scope"
+[[ -z "$_explicit_storage_dir" ]] || export TEBAAI_CONTENT_MANAGER_STORAGE_DIR="$_explicit_storage_dir"
 
 _pid(){ [[ -f "$PID_FILE" ]] && read -r p <"$PID_FILE" && [[ "$p" =~ ^[0-9]+$ ]] && printf '%s' "$p"; }
 _alive(){ kill -0 "$1" 2>/dev/null; }
@@ -35,9 +44,18 @@ start(){
     _log "already active PID $p"; return 0
   fi
   rm -f "$PID_FILE"
-  [[ "${TEBAAI_ENV:-development}" == "development" ]] || _die "worker is DEV-only"
-  [[ "${TEBAAI_CONTENT_MANAGER_E2E_ENABLED:-false}" == "true" ]] || _die "explicit E2E enablement is required"
-  [[ -n "${TEBAAI_CONTENT_MANAGER_E2E_FIXTURE_SHA256:-}" ]] || _die "authorized fixture hash is required"
+  local worker_scope="${TEBAAI_CONTENT_MANAGER_WORKER_SCOPE:-breslov_e2e}"
+  if [[ "$worker_scope" == "breslov_e2e" ]]; then
+    [[ "${TEBAAI_ENV:-development}" == "development" ]] || _die "worker is DEV-only"
+    [[ "${TEBAAI_CONTENT_MANAGER_E2E_ENABLED:-false}" == "true" ]] || _die "explicit E2E enablement is required"
+    [[ -n "${TEBAAI_CONTENT_MANAGER_E2E_FIXTURE_SHA256:-}" ]] || _die "authorized fixture hash is required"
+  elif [[ "$worker_scope" == "breslov_primary" ]]; then
+    [[ "${TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED:-false}" == "true" ]] || _die "explicit primary enablement is required"
+    [[ -n "${TEBAAI_CONTENT_MANAGER_STORAGE_DIR:-}" ]] || _die "primary storage directory is required"
+    [[ "${TEBAAI_CONTENT_MANAGER_STORAGE_DIR}" == /* ]] || _die "primary storage directory must be absolute"
+  else
+    _die "unsupported worker scope: $worker_scope"
+  fi
   cd "$BACKEND_DIR"
   nohup "$PYTHON" "$BACKEND_DIR/scripts/content_manager_worker.py" >>"$LOG_FILE" 2>&1 &
   printf '%s\n' "$!" >"$PID_FILE"

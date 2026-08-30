@@ -61,6 +61,12 @@ done
 
 LOCAL_ENV_FILE="$SCRIPT_DIR/.env.backend-dev.local"
 
+# Explicit process environment overrides the unversioned local file for a
+# controlled primary golden run.
+_explicit_primary_enabled="${TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED-}"
+_explicit_worker_scope="${TEBAAI_CONTENT_MANAGER_WORKER_SCOPE-}"
+_explicit_storage_dir="${TEBAAI_CONTENT_MANAGER_STORAGE_DIR-}"
+
 if [[ -f "$LOCAL_ENV_FILE" ]]; then
   _log "Loading local overrides from .env.backend-dev.local"
 
@@ -69,6 +75,9 @@ if [[ -f "$LOCAL_ENV_FILE" ]]; then
   source "$LOCAL_ENV_FILE"
   set +a
 fi
+[[ -z "$_explicit_primary_enabled" ]] || export TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED="$_explicit_primary_enabled"
+[[ -z "$_explicit_worker_scope" ]] || export TEBAAI_CONTENT_MANAGER_WORKER_SCOPE="$_explicit_worker_scope"
+[[ -z "$_explicit_storage_dir" ]] || export TEBAAI_CONTENT_MANAGER_STORAGE_DIR="$_explicit_storage_dir"
 
 PID_DIR="$SCRIPT_DIR/.dev-pids"
 LOG_DIR="$SCRIPT_DIR/.dev-logs"

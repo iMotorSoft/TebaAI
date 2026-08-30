@@ -406,7 +406,7 @@ class PostgresMilvusPageFirstGateway:
                     (
                         "indexed_test"
                         if request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE
-                        else "indexed",
+                        else "indexed_production",
                         [str(item.embedding_id) for item in embeddings],
                     ),
                 )

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Exact manifest cleanup for Content Manager E2E jobs.
+"""Exact manifest cleanup for Content Manager jobs.
 
 Compensates the resources of one job/attempt via the official
-ManifestCleanupService (Milvus-first, idempotent, audit-logged). Only E2E
-scope/collection manifests are accepted; primary resources are rejected.
+ManifestCleanupService (Milvus-first, idempotent, audit-logged). Only known
+E2E or primary scope/collection mappings are accepted.
 """
 
 from __future__ import annotations
@@ -16,14 +16,21 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from globalVar import CONTENT_MANAGER_E2E_ENABLED, CONTENT_MANAGER_E2E_SCOPE, TEBAAI_ENV
+from globalVar import (
+    CONTENT_MANAGER_E2E_ENABLED,
+    CONTENT_MANAGER_E2E_SCOPE,
+    CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED,
+    TEBAAI_ENV,
+)
 from infrastructure.postgres.pool import close_pool, create_pool_from_settings, open_pool
 from modules.library.content_manager_cleanup import ManifestCleanupService
 
 
 async def cleanup(job_id: str, attempt: int, *, second_run: bool = False) -> dict:
-    if TEBAAI_ENV != "development" or not CONTENT_MANAGER_E2E_ENABLED:
-        raise SystemExit("E2E cleanup requires explicit DEV E2E enablement")
+    if TEBAAI_ENV != "development":
+        raise SystemExit("Content Manager cleanup is DEV-only")
+    if not CONTENT_MANAGER_E2E_ENABLED and not CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED:
+        raise SystemExit("Content Manager cleanup requires explicit scope enablement")
     pool = create_pool_from_settings()
     await open_pool(pool)
     try:

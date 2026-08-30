@@ -1,0 +1,83 @@
+{
+  "date": "2026-08-30",
+  "environment": "DEV",
+  "scope": "breslov_primary",
+  "fixture_sha256": "d7678313f6e054bc3305fc69336acfde616e38dc266bcb7d022cd107cab020b9",
+  "editor": {
+    "upload": "PASS",
+    "publish": "PASS",
+    "viewer_upload_denied_http": 403,
+    "temporary_user_deactivated": true
+  },
+  "golden": {
+    "document_id": "ca7d6c5c-8023-5a52-96f8-761b214d7cb4",
+    "job_id": "4efe5f26-4884-4522-9a05-c508d783181e",
+    "attempt": 1,
+    "job_status": "completed_with_warnings",
+    "document_status": "ready",
+    "pages": 3,
+    "textual_pages": 2,
+    "empty_pages": 1,
+    "pg_chunks": 2,
+    "pg_embeddings": 2,
+    "milvus_vectors": 2,
+    "pg_missing": 0,
+    "milvus_missing": 0,
+    "milvus_orphans": 0,
+    "duplicate_vectors": 0,
+    "page_integrity": "match",
+    "collection": "tebaai_breslov_chunks_v1",
+    "publication": {
+      "pre_status": "test_candidate",
+      "verification": "PASS",
+      "post_status": "ready",
+      "actor": "editor",
+      "source": "content_manager"
+    }
+  },
+  "questions": {
+    "q1_literal": {
+      "query": "¿Qué referencia impresa aparece en este documento?",
+      "result": "PASS",
+      "answer": "La referencia impresa que aparece en el documento es Salmos 16:1.",
+      "document_id": "ca7d6c5c-8023-5a52-96f8-761b214d7cb4",
+      "page": 1,
+      "chunk_id": "7a519d82-7230-576c-a66f-df8f2f26e433",
+      "retrieval": {"semantic": true, "literal": true, "semantic_hits": 2, "literal_hits": 1},
+      "citation": "book/title + page 1 + source fragment"
+    },
+    "q2_semantic": {
+      "query": "¿Qué pasaje bíblico se cita en la fuente?",
+      "result": "PASS",
+      "answer": "La fuente menciona la referencia bíblica impresa Salmos 16:1; no se incluye el texto del pasaje.",
+      "document_id": "ca7d6c5c-8023-5a52-96f8-761b214d7cb4",
+      "page": 1,
+      "chunk_id": "7a519d82-7230-576c-a66f-df8f2f26e433",
+      "retrieval": {"semantic": true, "literal": false, "semantic_hits": 2, "literal_hits": 0},
+      "citation": "book/title + page 1 + source fragment"
+    },
+    "q3_negative": {
+      "query": "¿Cuál es la receta de cocina para preparar kimchi en Marte?",
+      "result": "PASS_NO_HALLUCINATION",
+      "answer": "No aparece una receta de kimchi (ni una preparación en Marte) en las fuentes recuperadas.",
+      "evidence_count": 2,
+      "retrieval": {"semantic": true, "literal": false, "primary_match_type": null}
+    }
+  },
+  "concurrency": {
+    "result": "PASS",
+    "jobs": [
+      {"job_id": "0f4c571b-6d42-41d7-819a-55925103d914", "document_id": "4d0a6665-c0ec-57f5-badf-186f4f3d7058", "status": "completed_with_warnings", "chunks": 2, "vectors": 2, "reconciled": true},
+      {"job_id": "52efb50a-6438-48c4-a814-6614d4bea752", "document_id": "3a616dfe-ec03-50fe-85b5-6c4b0c89e8a4", "status": "completed_with_warnings", "chunks": 2, "vectors": 2, "reconciled": true}
+    ],
+    "cleanup": "official_manifest_cleanup_completed"
+  },
+  "historical_jobs": {
+    "total": 6,
+    "cancelled": 6,
+    "retried": 0,
+    "manual_review": 0,
+    "classification": "SAFE_TO_CANCEL"
+  },
+  "gate": "TEBAAI_BRESLOV_EDITOR_UPLOAD_TO_USER_QUERY_PRODUCTION_CANDIDATE_V1_PASS"
+}

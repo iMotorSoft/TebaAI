@@ -2,9 +2,120 @@
 
 Fecha: 2026-08-30  
 Rama: `feature/console-backend-core`  
-HEAD inicial: `2b36cd9c09a414613ae0ee15159f98690d730304`
+HEAD inicial de este cierre: `58365104e0b34e9a79cd91f77aa91dadd79f5f43`
 
-## Veredicto ejecutivo
+## Cierre production candidate — evidencia DEV
+
+**VEREDICTO: `PRODUCTION_CANDIDATE_PASS`**
+
+**Gate: `TEBAAI_BRESLOV_EDITOR_UPLOAD_TO_USER_QUERY_PRODUCTION_CANDIDATE_V1_PASS` → PASS**
+
+La evidencia reproducible está en [`golden_evidence.json`](./golden_evidence.json).
+El circuito completo se ejecutó con backend, PostgreSQL, Milvus, worker,
+PyMuPDF4LLM, LiteLLM, frontend real y Chromium; no se usaron mocks para cerrar
+el gate. Un editor temporal subió el PDF golden, lo publicó mediante la acción
+editorial normal y un viewer temporal consultó el mismo documento. El viewer
+recibió respuestas grounded para las preguntas literal y semántica, con el
+mismo libro/página/chunk como fuente, y rechazó una pregunta sin evidencia sin
+inventar contenido. El viewer recibió `403` al intentar subir.
+
+### Golden path
+
+```text
+Editor login        ✅
+Editor RBAC         ✅ (viewer upload = 403)
+PDF upload          ✅
+Worker durable      ✅
+Extraction          ✅ (3 páginas, 2 textuales)
+Chunks PostgreSQL   ✅ (2)
+Vectors Milvus      ✅ (2; faltantes 0, huérfanos 0, duplicados 0)
+Publication         ✅ (test_candidate → ready, verificación PG↔Milvus)
+Viewer login        ✅
+Literal retrieval   ✅
+Semantic retrieval  ✅
+Grounded answer     ✅
+Citation            ✅ (título/libro + página 1 + fragmento)
+Negative grounding  ✅ (sin alucinación)
+```
+
+Evidencia principal: `document_id=ca7d6c5c-8023-5a52-96f8-761b214d7cb4`,
+`job_id=4efe5f26-4884-4522-9a05-c508d783181e`, intento 1, SHA-256 del fixture
+`d7678313f6e054bc3305fc69336acfde616e38dc266bcb7d022cd107cab020b9`.
+Q1 y Q2 recuperaron el chunk `7a519d82-7230-576c-a66f-df8f2f26e433` en la
+página 1 y citaron `Salmos 16:1`. Dos PDFs concurrentes también terminaron y
+fueron reconciliados/limpiados por el manifest oficial.
+
+### Jobs históricos
+
+Los seis jobs primarios antiguos tenían `document_id=NULL`, sin chunks,
+embeddings, vectores ni archivo fuente. Fueron clasificados individualmente
+como `SAFE_TO_CANCEL` y cancelados mediante la API oficial, sin borrar
+evidencia ni tocar el corpus. Resultado: total 6, cancelados 6, reintentos 0,
+revisión manual 0. Sus IDs se conservan en la tabla histórica de este informe.
+
+### Gaps después del cierre
+
+```text
+DEV candidate P0: 0
+DEV candidate P1: 0
+DEV candidate P2: 3 (métricas, refinamiento bibliográfico y cosmética menor)
+```
+
+La producción sigue sin modificarse y no forma parte de este gate. Los gaps de
+producción son una ventana de despliegue/validación: publicar el HEAD, aplicar
+040/041 tras backup, provisionar storage/worker/configuración, ejecutar smoke
+RBAC y realizar el golden upload/query productivo con rollback preparado.
+Hasta entonces, la readiness productiva efectiva no es `PRODUCTION_READY`.
+
+### Tests de cierre
+
+```text
+Backend regression: 1595 PASS (94 warnings preexistentes)
+Backend focal post-fix: 65 PASS
+Content Manager focal histórico: 87 PASS
+Frontend unit: 109 PASS
+Frontend check: 0 errors / 0 warnings (9 hints)
+Frontend build: PASS (9 páginas)
+Golden E2E real: PASS (editor → publicación → viewer → QA)
+Concurrencia real: 2/2 PASS
+Negative/RBAC: PASS (viewer upload 403; no-evidence sin alucinación)
+git diff --check: PASS
+```
+
+### Score
+
+| Dimensión | DEV candidate | PRO actual |
+|---|---:|---:|
+| Editor UX | 100 | 92 |
+| Upload | 100 | 95 |
+| Ingestion | 100 | 95 |
+| Data integrity | 100 | 96 |
+| Retrieval | 100 | 94 |
+| Conversational QA | 100 | 90 |
+| Citations | 100 | 90 |
+| Auth/RBAC | 100 | 93 |
+| Failure recovery | 100 | 92 |
+| Observability | 100 | 78 |
+| Deployment | 100 | 45 |
+| Production validation | 100 | 25 |
+
+```text
+DEV production candidate readiness: 100%
+Actual production readiness: 82% (promedio de dimensiones; no anula gates P0)
+P0 productivos: 3  (deploy/configuración, worker/storage, validación productiva)
+P1 productivos: 2  (rollback/observabilidad operativa, decisión sesión/CSRF)
+P2: 3
+```
+
+El detalle de DEV vs PRO y el plan de despliegue controlado permanecen abajo;
+ningún deploy, push, migración ni cambio productivo fue ejecutado.
+
+## Baseline histórico previo al cierre
+
+La siguiente sección conserva la fotografía inicial solicitada para auditoría;
+sus cifras y bloqueos no representan el estado posterior al golden path.
+
+## Veredicto ejecutivo (baseline)
 
 **NEAR_READY — 75%.** El flujo de ingesta real existe y funciona en DEV, pero
 el gate histórico terminaba en un candidato aislado. No demostraba que un libro

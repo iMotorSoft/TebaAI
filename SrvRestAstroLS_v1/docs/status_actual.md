@@ -8,23 +8,25 @@ Ultima actualizacion: 2026-08-30 (Readiness editor PDF → consulta de usuario)
 ## Editor upload → user query production candidate — 2026-08-30 (DEV)
 
 Gate:
-- `TEBAAI_BRESLOV_EDITOR_UPLOAD_TO_USER_QUERY_PRODUCTION_CANDIDATE_V1_PASS` → **BLOCKED**
+- `TEBAAI_BRESLOV_EDITOR_UPLOAD_TO_USER_QUERY_PRODUCTION_CANDIDATE_V1_PASS` → **PASS**
 
-Resultado: el baseline `TEBAAI_PDF_UPLOAD_INGESTION_CONSOLE_V1_DEV_READY`
-era correcto para una ingesta real aislada que terminaba en
-`test_candidate`, pero no demostraba publicación ni consulta del libro nuevo.
-Se agregó el runtime primario default-off, storage productivo explícito,
-heartbeat en operaciones largas, cleanup por IDs exactos, validación PDF
-reforzada y promoción editorial separada `test_candidate → ready` después de
-reconciliar PostgreSQL/Milvus.
+Resultado: el golden path real en DEV quedó demostrado con un editor temporal y
+un viewer temporal: upload de PDF, worker durable, extracción PyMuPDF4LLM,
+chunks/embeddings, reconciliación PostgreSQL↔Milvus, publicación editorial
+`test_candidate → ready`, retrieval literal/semántico, respuesta grounded,
+cita verificable y pregunta sin evidencia sin alucinación. Un viewer recibió
+403 al intentar subir. Dos PDFs concurrentes también fueron reconciliados y
+limpiados con el manifest oficial.
 
-El E2E real aislado (upload, worker, PyMuPDF4LLM, LiteLLM y Milvus) pasa; retry,
-cancel, cleanup y permisos pasan. El gate mayor sigue bloqueado hasta ejecutar
-en DEV una ingesta golden en `breslov_primary`, publicar, consultar ese libro
-como usuario y validar grounding/cita/no-evidencia. No se escribió producción.
-La superficie pública productiva responde, pero las rutas Content Manager
-siguen ausentes (404) y el frontend servido no contiene Edición. Antes de
-activar el worker deben reconciliarse seis jobs primarios históricos en cola.
+Se corrigió el estado PostgreSQL de embeddings primarios (`indexed_production`)
+y los launchers DEV ahora permiten una ejecución primaria explícita y acotada,
+sin cambiar el default-off ni producción. Los seis jobs primarios históricos
+fueron investigados y cancelados mediante la API oficial (`SAFE_TO_CANCEL`),
+sin reconstruir el corpus.
+
+No se escribió producción. La superficie pública productiva sigue sin el
+Content Manager (rutas 404); quedan únicamente ventana de deploy, configuración
+de worker/storage, backup/rollback y validación productiva para el gate final.
 
 Reporte: `data/reports/breslov/2026-08-30-editor-upload-to-user-query-readiness-v1/`.
 

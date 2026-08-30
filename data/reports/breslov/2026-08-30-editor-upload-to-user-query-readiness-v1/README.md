@@ -218,16 +218,16 @@ Production
 | P2 | Refinamiento bibliográfico avanzado | no impide cita mínima libro/página/chunk | backlog tras contrato mínimo |
 | P2 | Ajustes visuales menores | UX premium previa conserva gate | revisión humana post-golden |
 
-Jobs que deben reconciliarse, sin haber sido alterados:
+Jobs históricos reconciliados en DEV:
 
-```text
-090af924-9a5c-4169-a112-2dce62d49774
-9af4b368-4bf1-4ebf-8578-f88fa44c0563
-70939c6f-88d5-41d9-b4ef-a6570b9466f0
-f68184fb-c87c-4a21-976f-83480865bd7d
-084b8b0d-6644-46bd-ae31-329f344bb62e
-349fda79-aaa0-4ce3-b679-2f6687abb545
-```
+| job_id | document_id | creado | PG/chunks | Milvus | source | clasificación | acción |
+|---|---|---|---:|---:|---|---|---|
+| `090af924-9a5c-4169-a112-2dce62d49774` | NULL | 2026-08-06 | 0 | 0 | ausente | SAFE_TO_CANCEL | cancelled vía API |
+| `9af4b368-4bf1-4ebf-8578-f88fa44c0563` | NULL | 2026-08-12 | 0 | 0 | ausente | SAFE_TO_CANCEL | cancelled vía API |
+| `70939c6f-88d5-41d9-b4ef-a6570b9466f0` | NULL | 2026-08-12 | 0 | 0 | ausente | SAFE_TO_CANCEL | cancelled vía API |
+| `f68184fb-c87c-4a21-976f-83480865bd7d` | NULL | 2026-08-12 | 0 | 0 | ausente | SAFE_TO_CANCEL | cancelled vía API |
+| `084b8b0d-6644-46bd-ae31-329f344bb62e` | NULL | 2026-08-12 | 0 | 0 | ausente | SAFE_TO_CANCEL | cancelled vía API |
+| `349fda79-aaa0-4ce3-b679-2f6687abb545` | NULL | 2026-08-12 | 0 | 0 | ausente | SAFE_TO_CANCEL | cancelled vía API |
 
 ## DEV vs PRO
 

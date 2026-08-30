@@ -189,6 +189,18 @@ Acciones: **"Abrir diagnóstico"**, **"Probar en Investigación"**,
 **"Volver al gestor"**. Si se permite probar, mostrar:
 **"Este documento todavía no fue aprobado."**
 
+#### Decisión editorial posterior
+
+Cuando el despliegue habilite explícitamente la ingesta del scope primario,
+el resultado reconciliado puede ofrecer una segunda decisión separada:
+**"Publicar para consulta"**.
+
+Esta acción nunca forma parte de la confirmación de carga, debe exigir una
+confirmación editorial explícita y solo puede promover un `test_candidate`
+cuyos chunks, embeddings y vectores hayan sido reconciliados exactamente. La
+UI no debe mostrarla en scopes E2E ni sugerir que completar la ingesta equivale
+a publicar.
+
 ### Resultado con advertencias
 
 Tratamiento visual prudente, no alarmista. Título:

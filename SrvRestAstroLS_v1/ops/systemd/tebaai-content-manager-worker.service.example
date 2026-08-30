@@ -1,0 +1,23 @@
+[Unit]
+Description=Teba AI Content Manager primary ingestion worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tebaai
+Group=tebaai
+WorkingDirectory=/opt/tebaai/SrvRestAstroLS_v1/backend
+EnvironmentFile=/etc/tebaai/backend.env
+Environment=TEBAAI_CONTENT_MANAGER_WORKER_SCOPE=breslov_primary
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/local/bin/uv run python scripts/content_manager_worker.py
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=90
+KillSignal=SIGTERM
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

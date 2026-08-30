@@ -1,4 +1,4 @@
-# Gestor de Contenidos — documentación operativa (DEV)
+# Gestor de Contenidos — documentación operativa
 
 Ruta: `/admin/content` (protegida por rol admin/editor; backend guarda con
 `require_auth` + roles y scope autorizado).
@@ -29,7 +29,9 @@ Cinco etapas guiadas:
    completar; resumen real (páginas, páginas con contenido, fragmentos,
    registros de búsqueda); acciones: Abrir diagnóstico, Probar en
    Investigación (navega a `/research`; nota "Este documento todavía no fue
-   aprobado."), Volver al gestor, Reintentar (job fallido/cancelado).
+   aprobado."), Volver al gestor, Reintentar (job fallido/cancelado). En scope
+   primario, un candidato reconciliado ofrece una decisión posterior y
+   confirmada: **Publicar para consulta**.
 
 ## Componentes reutilizados
 
@@ -95,11 +97,39 @@ Suites `astro/e2e/content-manager-*.spec.ts` (Playwright chromium):
 - `rtl`: hebreo/niqqud/filename + accesibilidad (teclado, focus, aria-live).
 - `captures`: 13 capturas de evidencia en 1440/1024/768/390.
 
-## Restricción de scope
+## Restricción de scope y modo primario
 
-El worker DEV solo procesa `breslov_e2e` (claim filtrado) y el gateway exige
+El modo por defecto solo procesa `breslov_e2e` (claim filtrado) y el gateway exige
 DEV + flag E2E + sha de fixture autorizado + colección
 `tebaai_content_manager_e2e_v1`. El frontend fija el scope por configuración
 de despliegue (`PUBLIC_CONTENT_MANAGER_SCOPE`, default `breslov_primary`); no
-existe selector de scope/colección en la UI. No se habilitan ingestas reales
-(`breslov_primary`), promoción a ready, publicación ni edición manual.
+existe selector de scope/colección en la UI.
+
+El modo primario es default-off y requiere en el proceso worker:
+
+```text
+TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED=true
+TEBAAI_CONTENT_MANAGER_WORKER_SCOPE=breslov_primary
+TEBAAI_CONTENT_MANAGER_STORAGE_DIR=/ruta/absoluta/persistente
+```
+
+El backend que recibe uploads debe usar el mismo storage persistente y tener
+acceso de escritura; el worker necesita leer y eliminar esos archivos. En
+producción `TEBAAI_POSTGRES_AUTO_MIGRATE=false`. El scope E2E nunca se habilita
+fuera de DEV. No se debe iniciar el worker primario mientras existan jobs
+históricos en cola sin una decisión individual documentada.
+
+## Publicación y rollback
+
+`POST /admin/content/jobs/{job_id}/publish` exige rol `admin|editor`, scope
+autorizado, job terminal, documento `test_candidate`, manifest consistente y
+coincidencia exacta PostgreSQL↔Milvus. Solo entonces cambia a `ready`.
+
+Rollback operativo antes de publicar: detener el worker y desactivar el flag;
+los candidatos no participan del retrieval normal. Después de publicar, no se
+debe borrar ni degradar el documento automáticamente: conservarlo o ejecutar
+un plan específico respaldado y auditado para ese `document_id`.
+
+La unidad de servicio de referencia está en
+`ops/systemd/tebaai-content-manager-worker.service.example`; debe adaptarse a
+paths, usuario y archivo de entorno del host.

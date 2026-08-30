@@ -112,6 +112,27 @@ Sin shell administrativo paralelo ni segundo design system.
 - Los gates del Content Manager V1 quedan cerrados en DEV; no se habilita
   ingesta `breslov_primary`, promoción a ready, publicación ni edición manual.
 
+## Continuación hacia publicación primaria — 2026-08-30
+
+La consola conserva el contrato de dos pasos: procesar deja el documento en
+`test_candidate`; publicar es una acción editorial posterior y explícita. El
+runtime ahora admite `breslov_primary` solo con
+`TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED=true`, un worker fijado por
+scope y, en producción, storage absoluto persistente. La configuración queda
+default-off.
+
+Antes de promover, backend vuelve a comprobar por IDs exactos que PostgreSQL y
+Milvus contienen el mismo documento y la misma cantidad no nula de chunks,
+embeddings y vectores. La promoción usa compare-and-swap
+`test_candidate → ready` y registra actor y timestamp. Los IDs vectoriales se
+persisten en el manifest antes del upsert externo para que una interrupción sea
+compensable sin consultas globales ni borrados por alias.
+
+Esta continuación no habilita producción ni cierra el gate editor→consulta.
+Quedan obligatorias una ingesta primaria golden en DEV, su consulta grounded
+con cita, la reconciliación de jobs primarios históricos y un deploy
+autorizado. El flujo E2E aislado anterior sigue siendo el default seguro.
+
 ## Rollback
 
 Tras aplicar 041 no se elimina una migración versionada: cualquier rollback de

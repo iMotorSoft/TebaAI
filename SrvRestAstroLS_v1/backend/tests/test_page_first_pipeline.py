@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 from pathlib import Path
 from uuid import uuid4
 
@@ -9,7 +10,8 @@ from modules.library.content_manager_schemas import IngestionStage
 from modules.library.content_manager_worker import PipelineResult
 from modules.library.page_first_pipeline import (
     ConcretePageFirstPipeline, ExtractedDocument, PersistedChunk, PersistedDocument,
-    PersistedEmbedding, ReconciliationResult, analyze_page, reconcile_resource_sets,
+    PersistedEmbedding, ReconciliationResult, analyze_page, await_with_lease_heartbeat,
+    reconcile_resource_sets,
 )
 from tests.test_content_manager_orchestration import make_job
 
@@ -29,6 +31,24 @@ def test_empty_physical_page_is_preserved_without_false_signals() -> None:
     page = analyze_page(3, "  \n")
     assert page.is_empty
     assert page.headings == page.footnote_numbers == page.printed_references == ()
+
+
+@pytest.mark.asyncio
+async def test_long_external_stage_renews_worker_lease(monkeypatch) -> None:
+    import modules.library.page_first_pipeline as module
+    monkeypatch.setattr(module, "CONTENT_MANAGER_WORKER_HEARTBEAT_SECONDS", 0.01)
+    beats = 0
+
+    async def heartbeat():
+        nonlocal beats
+        beats += 1
+
+    async def slow_stage():
+        await asyncio.sleep(0.04)
+        return "done"
+
+    assert await await_with_lease_heartbeat(slow_stage(), heartbeat) == "done"
+    assert beats >= 2
 
 
 @pytest.mark.parametrize("requested,expected", [("es", "es"), ("he", "he"), ("auto", "he")])

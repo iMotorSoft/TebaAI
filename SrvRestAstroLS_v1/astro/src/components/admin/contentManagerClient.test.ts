@@ -11,6 +11,7 @@ import {
   retryJob,
   cancelJob,
   getDiagnostic,
+  publishJob,
   CONTENT_MANAGER_SCOPE,
   ContentManagerApiError,
 } from "./contentManagerClient.ts";
@@ -147,6 +148,9 @@ describe("client endpoints", () => {
     expect(fetches[2].url).toContain("/admin/content/jobs/j1/cancel?");
     await getDiagnostic("j1");
     expect(fetches[3].url).toContain("/admin/content/jobs/j1/diagnostic?");
+    await publishJob("j1");
+    expect(fetches[4].url).toContain("/admin/content/jobs/j1/publish?");
+    expect(fetches[4].init.method).toBe("POST");
   });
 
   it("redirects to login on 401", async () => {

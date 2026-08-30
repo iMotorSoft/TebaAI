@@ -71,6 +71,7 @@ async function waitTerminal(jobId: string, token: string, timeoutMs = 120_000): 
 }
 
 test.describe("Content Manager premium UX (real backend)", () => {
+  test.setTimeout(180_000);
   test.skip(!ADMIN_EMAIL || !ADMIN_PASSWORD, "TEBAAI_E2E_ADMIN_EMAIL/PASSWORD not set");
 
   test("five-stage wizard completes with real counts and diagnostic", async ({ page }) => {

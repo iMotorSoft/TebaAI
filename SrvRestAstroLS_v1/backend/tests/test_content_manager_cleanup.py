@@ -3,7 +3,7 @@ from uuid import uuid4
 import pytest
 from modules.library.content_manager_cleanup import CleanupItem, ManifestCleanupService
 from modules.library.page_first_gateway import E2EIsolationError
-from globalVar import CONTENT_MANAGER_E2E_COLLECTION, CONTENT_MANAGER_E2E_SCOPE
+from globalVar import CONTENT_MANAGER_E2E_COLLECTION, CONTENT_MANAGER_E2E_SCOPE, MILVUS_COLLECTION_BRESLOV
 
 class FakeIndex:
     rows=[]; fail=False; deleted=[]; query_blind=False
@@ -87,7 +87,15 @@ async def test_cleanup_can_preserve_validated_temporary_for_retry():
     assert not any(item.resource_type=='temporary_file' for item in result.items)
 
 @pytest.mark.asyncio
-async def test_cleanup_rejects_primary_scope():
-    data=manifest(); data['scope_code']='breslov_primary'; data['collection_code']='tebaai_breslov_chunks_v1'
+async def test_cleanup_rejects_unknown_scope_collection_mapping():
+    data=manifest(); data['scope_code']='unknown'; data['collection_code']='unknown_vectors'
     service=Service(data)
     with pytest.raises(E2EIsolationError): await service.cleanup(data['job_id'],1)
+
+@pytest.mark.asyncio
+async def test_primary_cleanup_uses_manifest_vector_ids_exactly():
+    FakeIndex.rows=[{'pk':'v1'}]; FakeIndex.deleted=[]; FakeIndex.fail=False
+    data=manifest(); data['scope_code']='breslov_primary'; data['collection_code']=MILVUS_COLLECTION_BRESLOV
+    service=Service(data); result=await service.cleanup(data['job_id'],1)
+    assert result.status=='completed'
+    assert FakeIndex.deleted==['v1']

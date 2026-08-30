@@ -16,8 +16,12 @@ const BACKEND_PYTHON =
   process.env.TEBAAI_BACKEND_PYTHON ?? path.join(BACKEND_DIR, ".venv", "bin", "python");
 
 /** Run a backend script with the project venv; falls back to `uv run python`. */
-function runBackend(args: string[], timeoutMs: number): string {
-  const env = { ...process.env } as Record<string, string>;
+function runBackend(
+  args: string[],
+  timeoutMs: number,
+  envOverrides: Record<string, string> = {},
+): string {
+  const env = { ...process.env, ...envOverrides } as Record<string, string>;
   try {
     return execFileSync(BACKEND_PYTHON, args, { cwd: BACKEND_DIR, env, encoding: "utf-8", timeout: timeoutMs });
   } catch (err) {
@@ -132,6 +136,7 @@ export function runCleanup(jobId: string, attempt = 1): string {
     return runBackend(
       ["scripts/content_manager_cleanup_job.py", jobId, String(attempt), "--json"],
       90_000,
+      { TEBAAI_CONTENT_MANAGER_E2E_ENABLED: "true" },
     );
   } catch (err) {
     const e = err as { stdout?: Buffer; stderr?: Buffer; message?: string };

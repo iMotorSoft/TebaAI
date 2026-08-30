@@ -48,3 +48,34 @@ def test_gateway_guard_rejects_primary_and_fixture_mismatch(monkeypatch):
     with pytest.raises(E2EIsolationError): gateway._assert_e2e(job('tebaai_breslov_chunks_v1'),'breslov_primary','a'*64)
     with pytest.raises(E2EIsolationError): gateway._assert_e2e(job(),'breslov_e2e','b'*64)
     gateway._assert_e2e(job(),'breslov_e2e','a'*64)
+
+
+def test_primary_worker_is_default_off_and_requires_explicit_enablement(monkeypatch):
+    monkeypatch.setenv('TEBAAI_CONTENT_MANAGER_WORKER_SCOPE','breslov_primary')
+    monkeypatch.delenv('TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED',raising=False)
+    with pytest.raises(ValueError,match='PRIMARY_INGESTION_ENABLED'):
+        AppSettings()
+
+
+def test_production_primary_worker_requires_absolute_storage(monkeypatch):
+    monkeypatch.setenv('TEBAAI_ENV','production')
+    monkeypatch.setenv('TEBAAI_POSTGRES_AUTO_MIGRATE','false')
+    monkeypatch.setenv('TEBAAI_JWT_SECRET','x'*32)
+    monkeypatch.setenv('TEBAAI_CONTENT_MANAGER_WORKER_SCOPE','breslov_primary')
+    monkeypatch.setenv('TEBAAI_CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED','true')
+    monkeypatch.setenv('TEBAAI_CONTENT_MANAGER_STORAGE_DIR','relative/uploads')
+    with pytest.raises(ValueError,match='absolute'):
+        AppSettings()
+    monkeypatch.setenv('TEBAAI_CONTENT_MANAGER_STORAGE_DIR','/var/lib/tebaai/uploads')
+    assert AppSettings().content_manager_worker_scope == 'breslov_primary'
+
+
+def test_gateway_primary_guard_is_explicit_and_mapping_bounded(monkeypatch):
+    import modules.library.page_first_gateway as module
+    monkeypatch.setattr(module,'CONTENT_MANAGER_PRIMARY_INGESTION_ENABLED',True)
+    monkeypatch.setattr(module,'MILVUS_COLLECTION_BRESLOV','tebaai_breslov_chunks_v1')
+    primary=job('tebaai_breslov_chunks_v1')
+    gateway=PostgresMilvusPageFirstGateway(None)
+    gateway._assert_write_allowed(primary,'breslov_primary','a'*64)
+    with pytest.raises(E2EIsolationError):
+        gateway._assert_write_allowed(primary,'another_scope','a'*64)

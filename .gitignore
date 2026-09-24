@@ -45,6 +45,9 @@ Thumbs.db
 SrvRestAstroLS_v1/.dev-pids/
 SrvRestAstroLS_v1/.dev-logs/
 
+# Backend-generated local data and reports
+SrvRestAstroLS_v1/backend/data/
+
 # Generated reports and heavy data
 data/source/*
 !data/source/README.md

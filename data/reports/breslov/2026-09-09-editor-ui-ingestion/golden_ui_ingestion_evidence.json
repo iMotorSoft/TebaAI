@@ -1,0 +1,101 @@
+{
+  "date": "2026-09-09",
+  "environment": "DEV",
+  "branch": "feature/console-backend-core",
+  "baseline": "READY_FOR_INGESTION_TEST",
+  "verdict": "PRODUCTION_CANDIDATE_PASS",
+  "gate": "TEBAAI_BRESLOV_EDITOR_UPLOAD_TO_USER_QUERY_PRODUCTION_CANDIDATE_V1_PASS",
+  "gate_result": "PASS",
+  "runtime": {
+    "frontend": "http://127.0.0.1:3008",
+    "backend": "http://127.0.0.1:7008",
+    "scope": "breslov_primary",
+    "collection": "tebaai_breslov_chunks_v1"
+  },
+  "fixture": {
+    "filename": "cuaderno-aurora-indigo-ui-dev.pdf",
+    "sha256": "4fa55bdbe710ceb8cbb1634727ee477e166aee8127c1ceb81086cd12709aa5e5",
+    "pages": 2,
+    "bytes": 1531
+  },
+  "editor": {
+    "login": "PASS",
+    "upload_ui": "PASS",
+    "metadata_ui": "PASS",
+    "confirmation_ui": "PASS",
+    "processing_ui": "PASS",
+    "candidate_ui": "PASS",
+    "publish_ui": "PASS",
+    "ready_ui": "PASS"
+  },
+  "document_id": "693d990b-5d7b-5216-b0e2-2cffd0b709eb",
+  "job_id": "33fac3b2-1f02-41cb-94ba-4173c605c59f",
+  "attempt": 1,
+  "counts": {
+    "pages": 2,
+    "pg_chunks": 2,
+    "pg_embeddings": 2,
+    "milvus_vectors": 2,
+    "missing": 0,
+    "orphans": 0,
+    "duplicates": 0
+  },
+  "publication_state": "ready",
+  "questions": {
+    "Q1": {
+      "kind": "literal",
+      "text": "brújula-azul-47 identifica esta edición de prueba editorial",
+      "status": "complete",
+      "document_matches": 2,
+      "primary_document_id": "693d990b-5d7b-5216-b0e2-2cffd0b709eb",
+      "primary_evidence_id": "ev-61af798feed3b81d",
+      "pdf_page": 2,
+      "fragment": "La brújula-azul-47 identifica esta edición de prueba editorial."
+    },
+    "Q2": {
+      "kind": "semantic",
+      "text": "¿Qué práctica ayuda a ordenar la atención antes del estudio?",
+      "status": "complete",
+      "document_matches": 2,
+      "primary_document_id": "693d990b-5d7b-5216-b0e2-2cffd0b709eb",
+      "primary_evidence_id": "ev-91e5fc132a6d812a",
+      "pdf_page": 1,
+      "fragment": "La práctica de respiración lenta ordena la atención antes del estudio."
+    },
+    "Q3": {
+      "kind": "negative",
+      "text": "¿Qué fecha exacta de inauguración tuvo el observatorio zafiro-omega-991?",
+      "status": "complete",
+      "grounding_behavior": "refusal",
+      "answer": "No aparece en las fuentes recuperadas una mención al observatorio zafiro-omega-991 ni a su fecha de inauguración, por lo que no es posible determinar una fecha exacta con evidencia disponible.",
+      "new_document_primary": false
+    }
+  },
+  "viewer": {
+    "login": "PASS",
+    "q1_q2_grounding": "PASS",
+    "citation": "book + PDF page + canonical fragment + evidence id visible in Sources panel",
+    "upload_denial": {
+      "status": 403,
+      "detail": "Se requiere rol admin o editor"
+    }
+  },
+  "constraints": {
+    "sql_required": false,
+    "manual_milvus_manipulation": false,
+    "document_specific_worker": false,
+    "publication_outside_ui": false,
+    "production_modified": false
+  },
+  "validation": {
+    "browser": "Playwright Chromium ad hoc real browser flow",
+    "critical_5xx": 0,
+    "expected_console_event": "403 from intentional viewer upload denial",
+    "ui_flow": "EDITOR_LOGIN -> UPLOAD_UI -> METADATA -> CONFIRMATION -> PROCESSING -> CANDIDATE -> PUBLISH_UI -> READY -> VIEWER_LOGIN -> Q1/Q2/Q3"
+  },
+  "root_cause_and_fix": {
+    "initial_attempt": "The inherited Astro process had PUBLIC_CONTENT_MANAGER_SCOPE=breslov_e2e while the worker was explicitly primary, so the UI-created job remained queued and was not claimed.",
+    "minimal_fix": "Restarted Astro with PUBLIC_CONTENT_MANAGER_SCOPE=breslov_primary and restarted the DEV backend/worker through canonical launchers with explicit primary scope and persistent DEV storage.",
+    "repeated_flow": "PASS"
+  }
+}

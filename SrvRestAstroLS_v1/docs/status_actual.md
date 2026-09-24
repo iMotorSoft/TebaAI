@@ -2,7 +2,23 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-08-30 (Readiness editor PDF → consulta de usuario)
+Ultima actualizacion: 2026-09-09 (Ingesta editorial UI completa en DEV)
+
+## Editor UI → user query — cierre real 2026-09-09 (DEV)
+
+Estado vigente: **PRODUCTION_CANDIDATE_PASS**.
+El mismo PDF atravesó desde la UI el flujo editor → upload → metadata →
+procesamiento automático → candidato → publicación editorial y fue consultado
+por un viewer distinto. `document_id=693d990b-5d7b-5216-b0e2-2cffd0b709eb`,
+`job_id=33fac3b2-1f02-41cb-94ba-4173c605c59f`, 2 páginas, 2 chunks, 2
+embeddings y 2 vectores; faltantes, huérfanos y duplicados: 0. Q1 literal y Q2
+semántica recuperaron el documento con libro, página, fragmento y evidence ID.
+Q3 negativa rechazó determinar una fecha sin evidencia. El viewer recibió 403
+al intentar upload. No se usó SQL, no se manipuló Milvus manualmente, no se
+usó worker específico por documento ni se publicó fuera de la UI. Producción
+no fue modificada.
+Evidencia: `data/reports/breslov/2026-09-09-editor-ui-ingestion/golden_ui_ingestion_evidence.json`.
+Likutey Halajot (Interior Final) permanece `test_candidate`, pendiente de revisión editorial/legal; no se promovió.
 
 
 ## Editor upload → user query production candidate — 2026-08-30 (DEV)

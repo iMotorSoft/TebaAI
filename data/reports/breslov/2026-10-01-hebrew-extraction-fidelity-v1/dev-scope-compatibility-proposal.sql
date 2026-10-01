@@ -1,0 +1,4 @@
+-- SUPERSEDED: preliminary proposal was not executed.
+-- Inspection proved the legacy object is an index, not a constraint.
+-- Canonical migration 042_scope_legacy_source_uniqueness.sql was applied
+-- only to DEV after explicit user authorization. See dev-schema-applied.json.

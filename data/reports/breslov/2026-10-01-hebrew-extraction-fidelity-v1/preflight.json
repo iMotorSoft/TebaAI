@@ -1,0 +1,23 @@
+{
+  "environment": "development",
+  "e2e_active_jobs": 1,
+  "ready_baseline": [
+    10,
+    5106
+  ],
+  "pg": "PASS",
+  "milvus": "PASS",
+  "collection": "tebaai_content_manager_e2e_v1",
+  "fields": [
+    {
+      "name": "embedding",
+      "params": {
+        "dim": 1536
+      }
+    }
+  ],
+  "embedding_dimension": 1536,
+  "embedding_model": "openai_text_embedding_3_small",
+  "fallback": false,
+  "login_status": 201
+}

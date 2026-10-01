@@ -1,0 +1,20 @@
+{
+  "environment": "development",
+  "constraints_before": [],
+  "duplicates_under_proposed_key": [],
+  "existing_pdf_records": [
+    {
+      "id": "cbfd6458-aad2-43df-986a-4b3350e6f8a7",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_code": "breslov_primary"
+    },
+    {
+      "id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+      "status": "ready",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "knowledge_scope_code": "breslov_primary"
+    }
+  ],
+  "applied": false
+}

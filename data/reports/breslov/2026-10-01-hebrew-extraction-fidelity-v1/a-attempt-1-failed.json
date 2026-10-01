@@ -1,0 +1,43 @@
+{
+  "job_id": "87f96d22-9713-42a3-a808-d0cd75fd2387",
+  "upload_id": "3f82bdb1-de4b-4466-ae2e-5335fcd6b96f",
+  "document_id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+  "title": "Un Día en la Vida de un Jasid de Breslov",
+  "language": "auto",
+  "status": "failed",
+  "progress": {
+    "current_stage": "failed",
+    "progress_percent": 0.0,
+    "stage_display": "No se pudo completar el procesamiento",
+    "is_terminal": true,
+    "stage_states": {
+      "failed": "failed",
+      "queued": "active",
+      "claimed": "done",
+      "indexing": "done",
+      "embedding": "done",
+      "extracting": "done",
+      "validating": "done",
+      "normalizing": "done",
+      "building_chunks": "done",
+      "ready_to_ingest": "done",
+      "persisting_pages": "done",
+      "validating_result": "pending"
+    }
+  },
+  "error_code": "pipeline_stage_failed",
+  "error_message": "La etapa indexing no pudo completarse.",
+  "warning_codes": [],
+  "attempt_number": 1,
+  "ingestion_profile": "auto",
+  "created_at": "2026-10-01T12:53:47.791368Z",
+  "started_at": "2026-10-01T12:53:53.669251Z",
+  "finished_at": "2026-10-01T13:09:59.573421Z",
+  "worker_id": "ubuntu24:64698",
+  "claimed_at": "2026-10-01T12:53:53.669251Z",
+  "lease_expires_at": null,
+  "heartbeat_at": "2026-10-01T13:02:51.608220Z",
+  "cleanup_status": "completed",
+  "recovery_status": "cleaned",
+  "pipeline_version": "content_page_first_v1"
+}

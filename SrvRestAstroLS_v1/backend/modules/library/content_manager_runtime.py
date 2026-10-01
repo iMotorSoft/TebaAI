@@ -25,11 +25,19 @@ from modules.library.content_manager_worker import PipelineResult, WorkerStore
 
 
 class PsycopgWorkerStore(WorkerStore):
-    def __init__(self, pool: AsyncConnectionPool, *, allowed_scope_code: str = CONTENT_MANAGER_E2E_SCOPE) -> None:
+    def __init__(
+        self, pool: AsyncConnectionPool, *,
+        allowed_scope_code: str = CONTENT_MANAGER_E2E_SCOPE,
+        job_id: UUID | None = None,
+    ) -> None:
         self.pool = pool
         self.allowed_scope_code = allowed_scope_code
+        self.job_id = job_id
 
     async def recover_expired(self, worker_id: str) -> dict[str, int]:
+        if self.job_id is not None:
+            # A targeted validation must not recover unrelated attempts.
+            return {"requeued": 0, "manual_review_required": 0}
         async with transaction(self.pool) as conn:
             return await recover_expired_claims(
                 conn, recovery_actor=worker_id, allowed_scope_code=self.allowed_scope_code,
@@ -40,6 +48,7 @@ class PsycopgWorkerStore(WorkerStore):
             return await claim_next_job(
                 conn, worker_id=worker_id, lease_seconds=CONTENT_MANAGER_WORKER_LEASE_SECONDS,
                 allowed_scope_code=self.allowed_scope_code,
+                job_id=self.job_id,
             )
 
     async def transition(self, job, current, target, reason, progress_percent) -> None:

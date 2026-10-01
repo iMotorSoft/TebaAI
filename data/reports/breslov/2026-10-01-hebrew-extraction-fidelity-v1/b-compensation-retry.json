@@ -1,0 +1,14 @@
+{
+  "job_id": "a968ec45-8a10-4ec8-a899-2dd07017104f",
+  "attempt": 2,
+  "status": "failed",
+  "preserved_upload_for_retry": true,
+  "items": [
+    {
+      "resource_type": "vector",
+      "resource_id": "attempt",
+      "result": "failed",
+      "error": "MilvusException"
+    }
+  ]
+}

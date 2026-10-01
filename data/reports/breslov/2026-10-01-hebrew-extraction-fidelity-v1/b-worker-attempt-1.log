@@ -1,0 +1,16 @@
+2026-10-01 10:14:23,453 INFO Worker active for scope breslov_e2e
+2026-10-01 10:14:23,940 INFO Content Manager job claimed job_id=44f3c32f-1980-457d-ae50-f3d57a2465d3 attempt=1 worker_id=ubuntu24:81914 collection=tebaai_content_manager_e2e_v1
+2026-10-01 10:15:38,637 ERROR Content Manager attempt failed job_id=44f3c32f-1980-457d-ae50-f3d57a2465d3 attempt=1 stage=persisting_pages
+Traceback (most recent call last):
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/content_manager_worker.py", line 101, in run_once
+    result = await self.pipeline.run(job, advance=advance, heartbeat=heartbeat)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/page_first_pipeline.py", line 225, in run
+    persisted = await self.gateway.persist_document_and_pages(request, extracted)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py", line 218, in persist_document_and_pages
+    await cur.execute(
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/psycopg/cursor_async.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UniqueViolation: duplicate key value violates unique constraint "uq_library_documents_collection_sha256"
+DETAIL:  Key (collection_id, source_sha256)=(e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a, 8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46) already exists.

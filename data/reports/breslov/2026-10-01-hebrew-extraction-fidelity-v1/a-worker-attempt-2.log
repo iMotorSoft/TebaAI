@@ -1,0 +1,22 @@
+2026-10-01 10:11:43,434 INFO Worker active for scope breslov_e2e
+2026-10-01 10:11:43,916 INFO Content Manager job claimed job_id=a36d47cc-8322-4aad-bdf5-fdc67cf551b9 attempt=2 worker_id=ubuntu24:80342 collection=tebaai_content_manager_e2e_v1
+2026-10-01 10:12:19,668 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:20,738 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:22,362 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:23,943 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:25,346 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:26,587 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:27,976 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:29,391 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:30,688 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:32,267 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:33,713 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:35,045 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:37,083 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:38,417 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:39,572 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:41,069 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:42,618 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:44,053 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:12:45,043 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:14:20,822 INFO Content Manager job completed job_id=a36d47cc-8322-4aad-bdf5-fdc67cf551b9 attempt=2 document_id=10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4 chunks=296 vectors=296 status=completed_with_warnings

@@ -4,11 +4,13 @@
 from __future__ import annotations
 
 import asyncio
+import argparse
 import logging
 import os
 import socket
 import sys
 from pathlib import Path
+from uuid import UUID
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -31,6 +33,10 @@ logger = logging.getLogger("tebaai.content-manager-worker")
 
 
 async def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--job-id", type=UUID, help="Claim only this queued job; skip unrelated recovery")
+    parser.add_argument("--once", action="store_true", help="Process at most one job")
+    args = parser.parse_args()
     if CONTENT_MANAGER_WORKER_SCOPE == CONTENT_MANAGER_E2E_SCOPE:
         if TEBAAI_ENV != "development" or not CONTENT_MANAGER_E2E_ENABLED:
             raise SystemExit("Isolated Content Manager worker requires explicit DEV E2E enablement")
@@ -44,13 +50,17 @@ async def main() -> None:
     await open_pool(pool)
     worker = ContentManagerWorker(
         worker_id=worker_id,
-        store=PsycopgWorkerStore(pool, allowed_scope_code=CONTENT_MANAGER_WORKER_SCOPE),
+        store=PsycopgWorkerStore(pool, allowed_scope_code=CONTENT_MANAGER_WORKER_SCOPE, job_id=args.job_id),
         pipeline=ConcretePageFirstPipeline(PostgresMilvusPageFirstGateway(pool)),
     )
     logger.info("Worker active for scope %s", CONTENT_MANAGER_WORKER_SCOPE)
     try:
         while True:
             processed = await worker.run_once()
+            if args.once:
+                if not processed:
+                    raise SystemExit("No queued job matched the requested scope/ID")
+                break
             if not processed:
                 await asyncio.sleep(CONTENT_MANAGER_WORKER_POLL_SECONDS)
     finally:

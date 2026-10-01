@@ -1,0 +1,43 @@
+{
+  "job_id": "44f3c32f-1980-457d-ae50-f3d57a2465d3",
+  "upload_id": "c42eabf7-ce9f-42d9-9ae6-55736eed607d",
+  "document_id": null,
+  "title": "La Potencia de la Plegaria",
+  "language": "auto",
+  "status": "failed",
+  "progress": {
+    "current_stage": "failed",
+    "progress_percent": 0.0,
+    "stage_display": "No se pudo completar el procesamiento",
+    "is_terminal": true,
+    "stage_states": {
+      "failed": "failed",
+      "queued": "active",
+      "claimed": "done",
+      "indexing": "pending",
+      "embedding": "pending",
+      "extracting": "done",
+      "validating": "done",
+      "normalizing": "done",
+      "building_chunks": "pending",
+      "ready_to_ingest": "done",
+      "persisting_pages": "done",
+      "validating_result": "pending"
+    }
+  },
+  "error_code": "pipeline_stage_failed",
+  "error_message": "La etapa persisting_pages no pudo completarse.",
+  "warning_codes": [],
+  "attempt_number": 1,
+  "ingestion_profile": "auto",
+  "created_at": "2026-10-01T13:14:22.197430Z",
+  "started_at": "2026-10-01T13:14:23.476798Z",
+  "finished_at": "2026-10-01T13:15:39.972002Z",
+  "worker_id": "ubuntu24:81914",
+  "claimed_at": "2026-10-01T13:14:23.476798Z",
+  "lease_expires_at": null,
+  "heartbeat_at": "2026-10-01T13:15:37.648393Z",
+  "cleanup_status": "not_required",
+  "recovery_status": "failed_recoverable",
+  "pipeline_version": "content_page_first_v1"
+}

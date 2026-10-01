@@ -1,0 +1,28 @@
+$ astro build
+11:55:44 [types] Generated 125ms
+11:55:44 [build] output: "static"
+11:55:44 [build] mode: "static"
+11:55:44 [build] directory: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/astro/dist/
+11:55:44 [build] Collecting build info...
+11:55:44 [build] ✓ Completed in 635ms.
+11:55:44 [build] Building static entrypoints...
+/*! 🌼 daisyUI 5.5.23 */
+11:55:52 [vite] ✓ built in 7.77s
+11:55:56 [vite] ✓ built in 3.41s
+11:55:56 [build] Rearranging server assets...
+
+ generating static routes
+11:55:56   ├─ /admin/content/index.html (+24ms)
+11:55:56   ├─ /admin/users/index.html (+4ms)
+11:55:56   ├─ /breslov/index.html (+61ms)
+11:55:56   ├─ /library/relation-qa/index.html (+4ms)
+11:55:56   ├─ /library/search/index.html (+6ms)
+11:55:56   ├─ /login/index.html (+4ms)
+11:55:56   ├─ /request-access/index.html (+3ms)
+11:55:56   ├─ /research/index.html (+26ms)
+11:55:56   ├─ /index.html (+57ms)
+11:55:56 ✓ Completed in 374ms.
+
+11:55:56 [build] ✓ Completed in 11.69s.
+11:55:56 [build] 9 page(s) built in 12.70s
+11:55:56 [build] Complete!

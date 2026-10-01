@@ -2,7 +2,22 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-09-09 (Ingesta editorial UI completa en DEV)
+Ultima actualizacion: 2026-10-01 (Fidelidad de extracción hebrea en DEV)
+
+## Fidelidad de extracción hebrea — 2026-10-01 (DEV)
+
+Gate `TEBAAI_BRESLOV_HEBREW_EXTRACTION_FIDELITY_V1_PASS`: **PASS**.
+A / PDF 187 y B / PDF 416: originales completos reingestados en `breslov_e2e`,
+canónico = PG, vectores regenerados/reconciliados, API = DOM; Chromium
+respuesta/cita/evidencia desktop/móvil PASS. Ambos defectos nacen en PyMuPDF raw;
+fix acotado por metadata/geometría. Nueva evidencia posterior justificó aislar
+las celdas de ecuaciones en citas Relation QA con bdi, sin CSS ni alterar datos.
+Backend 200 tests PASS; frontend 43, check/build PASS. Migración 042 autorizada
+solo DEV. Corpus ready local intacto (10 docs/5106 chunks); fuentes corregidas
+siguen test_candidate. Tras caída Milvus, el usuario recuperó el servicio;
+continuación secuencial con límites CPU/RAM e I/O bajo. No corpus/deploy
+productivo; gate RTL abierto y gate productivo principal cerrado.
+Evidencia, recursos y fase productiva separada preparada: [reporte](../../data/reports/breslov/2026-10-01-hebrew-extraction-fidelity-v1/README.md).
 
 ## Editor UI → user query — cierre real 2026-09-09 (DEV)
 

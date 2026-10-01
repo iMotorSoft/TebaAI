@@ -1,0 +1,46 @@
+{
+  "job_id": "c490f9c6-4752-459c-ad08-9d6706cde0a1",
+  "upload_id": "c42eabf7-ce9f-42d9-9ae6-55736eed607d",
+  "document_id": "47205536-f4d3-5e84-9a1b-75aaac73ca41",
+  "title": "La Potencia de la Plegaria",
+  "language": "auto",
+  "status": "completed_with_warnings",
+  "progress": {
+    "current_stage": "completed_with_warnings",
+    "progress_percent": 100.0,
+    "stage_display": "Documento procesado con observaciones",
+    "is_terminal": true,
+    "stage_states": {
+      "queued": "pending",
+      "claimed": "done",
+      "indexing": "done",
+      "embedding": "done",
+      "extracting": "done",
+      "validating": "pending",
+      "normalizing": "done",
+      "building_chunks": "done",
+      "ready_to_ingest": "pending",
+      "persisting_pages": "done",
+      "validating_result": "done",
+      "completed_with_warnings": "done"
+    }
+  },
+  "error_code": null,
+  "error_message": null,
+  "warning_codes": [
+    "physical_empty_pages_detected",
+    "empty_pages_preserved"
+  ],
+  "attempt_number": 3,
+  "ingestion_profile": "auto",
+  "created_at": "2026-10-01T14:04:54.819929Z",
+  "started_at": "2026-10-01T14:04:57.647127Z",
+  "finished_at": "2026-10-01T14:36:54.684091Z",
+  "worker_id": "ubuntu24:100023",
+  "claimed_at": "2026-10-01T14:04:57.647127Z",
+  "lease_expires_at": null,
+  "heartbeat_at": "2026-10-01T14:36:30.486029Z",
+  "cleanup_status": "not_required",
+  "recovery_status": "requeued",
+  "pipeline_version": "content_page_first_v1"
+}

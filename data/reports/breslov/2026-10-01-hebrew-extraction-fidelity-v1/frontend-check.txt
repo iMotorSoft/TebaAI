@@ -1,0 +1,47 @@
+$ astro check
+11:55:00 [types] Generated 287ms
+11:55:00 [check] Getting diagnostics for Astro files in /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/astro...
+[96me2e/content-manager-captures.spec.ts[0m:[93m15[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'execFileSync' is declared but its value is never read.
+
+[7m15[0m import { execFileSync } from "node:child_process";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96me2e/content-manager-captures.spec.ts[0m:[93m13[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'E2E_SCOPE' is declared but its value is never read.
+
+[7m13[0m   E2E_SCOPE,
+[7m  [0m [93m  ~~~~~~~~~[0m
+[96me2e/content-manager-captures.spec.ts[0m:[93m12[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'authorizeFixtureSha' is declared but its value is never read.
+
+[7m12[0m   authorizeFixtureSha,
+[7m  [0m [93m  ~~~~~~~~~~~~~~~~~~~[0m
+[96me2e/content-manager-captures.spec.ts[0m:[93m11[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'sha256OfFile' is declared but its value is never read.
+
+[7m11[0m   sha256OfFile,
+[7m  [0m [93m  ~~~~~~~~~~~~[0m
+[96me2e/content-manager-captures.spec.ts[0m:[93m10[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'generateFixture' is declared but its value is never read.
+
+[7m10[0m   generateFixture,
+[7m  [0m [93m  ~~~~~~~~~~~~~~~[0m
+[96me2e/content-manager-captures.spec.ts[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'os' is declared but its value is never read.
+
+[7m3[0m import os from "node:os";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96me2e/content-manager-rtl.spec.ts[0m:[93m153[0m:[93m11[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m153[0m     const lang = await hebrewTitle.getAttribute("lang");
+[7m   [0m [93m          ~~~~[0m
+
+[96me2e/research-interpretation-confirmation.spec.ts[0m:[93m12[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'reportRoot' is declared but its value is never read.
+
+[7m12[0m const reportRoot = path.dirname(screenshots);
+[7m  [0m [93m      ~~~~~~~~~~[0m
+
+[96msrc/components/auth/authClient.ts[0m:[93m94[0m:[93m16[0m - [93mwarning[0m[90m ts(6133): [0m'apiGet' is declared but its value is never read.
+
+[7m94[0m async function apiGet<T>(url: string, token: string): Promise<T> {
+[7m  [0m [93m               ~~~~~~[0m
+
+Result (92 files):
+- 0 errors
+- 0 warnings
+- 9 hints

@@ -32,6 +32,18 @@ def make_job() -> ClaimedJob:
     )
 
 
+@pytest.mark.asyncio
+async def test_targeted_worker_does_not_recover_unrelated_jobs() -> None:
+    from modules.library.content_manager_runtime import PsycopgWorkerStore
+
+    class ForbiddenPool:
+        def connection(self):
+            raise AssertionError("Targeted processing must not touch unrelated recovery")
+
+    store = PsycopgWorkerStore(ForbiddenPool(), job_id=uuid4())
+    assert await store.recover_expired("targeted-worker") == {"requeued": 0, "manual_review_required": 0}
+
+
 @pytest.mark.parametrize(
     ("current", "target"),
     [(current, target) for current, targets in ALLOWED_TRANSITIONS.items() for target in targets],

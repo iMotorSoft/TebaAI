@@ -1,0 +1,24 @@
+{
+  "environment": "development",
+  "authorization": "user: si, DEV only",
+  "applied": [
+    "042_scope_legacy_source_uniqueness.sql"
+  ],
+  "indexes_before": [
+    {
+      "indexname": "uq_library_documents_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_collection_sha256 ON public.library_documents USING btree (collection_id, source_sha256)"
+    }
+  ],
+  "indexes_after": [
+    {
+      "indexname": "uq_library_documents_scope_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_scope_collection_sha256 ON public.library_documents USING btree (knowledge_scope_id, collection_id, source_sha256) WHERE (knowledge_scope_id IS NOT NULL)"
+    },
+    {
+      "indexname": "uq_library_documents_unscoped_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_unscoped_collection_sha256 ON public.library_documents USING btree (collection_id, source_sha256) WHERE (knowledge_scope_id IS NULL)"
+    }
+  ],
+  "content_changes": false
+}

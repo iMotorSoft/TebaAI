@@ -1,0 +1,31 @@
+Running as unit: tebaai-hebrew-dev-regression-complete.scope; invocation ID: 159421a729ec4f01a20a56ee56e688e8
+...............................F........................................ [ 36%]
+........................................................................ [ 72%]
+........................................................                 [100%]
+=================================== FAILURES ===================================
+_________________ test_long_external_stage_renews_worker_lease _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f97b6287e30>
+
+    @pytest.mark.asyncio
+    async def test_long_external_stage_renews_worker_lease(monkeypatch) -> None:
+        import modules.library.page_first_pipeline as module
+        monkeypatch.setattr(module, "CONTENT_MANAGER_WORKER_HEARTBEAT_SECONDS", 0.01)
+        beats = 0
+
+        async def heartbeat():
+            nonlocal beats
+            beats += 1
+
+        async def slow_stage():
+            await asyncio.sleep(0.04)
+            return "done"
+
+        assert await await_with_lease_heartbeat(slow_stage(), heartbeat) == "done"
+>       assert beats >= 2
+E       assert 1 >= 2
+
+tests/test_page_first_pipeline.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_page_first_pipeline.py::test_long_external_stage_renews_worker_lease
+1 failed, 199 passed in 34.61s

@@ -1,0 +1,12 @@
+{
+  "stopped_task_process": 54465,
+  "reason": "Broad PDF search left running; terminated with SIGTERM",
+  "active_task_workers": 0,
+  "active_task_test_runners": 0,
+  "active_task_headless_browsers": 0,
+  "meminfo": "MemTotal:       16251972 kB\nMemFree:          188224 kB\nMemAvailable:    7488800 kB\nBuffers:         1588192 kB\nCached:          6003156 kB\nSwapCached:        41488 kB\nActive:          7677384 kB\nInactive:        6288700 kB\nActive(anon):    5521832 kB\nInactive(anon):  1616964 kB\nActive(file):    2155552 kB\nInactive(file):  4671736 kB\nUnevictable:      446604 kB\nMlocked:             120 kB\nSwapTotal:      31250428 kB\nSwapFree:       29188236 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:            129160 kB\nWriteback:             0 kB\nAnonPages:       6798436 kB\nMapped:          1992940 kB\nShmem:           1073296 kB\nKReclaimable:     814028 kB\nSlab:            1193044 kB\nSReclaimable:     814028 kB\nSUnreclaim:       379016 kB\nKernelStack:       36368 kB\nPageTables:       147568 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    39376412 kB\nCommitted_AS:   49470356 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      122152 kB\nVmallocChunk:          0 kB\nPercpu:            10496 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    190464 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      298388 kB\nDirectMap2M:    11112448 kB\nDirectMap1G:     5242880 kB\n",
+  "io_pressure": "some avg10=48.11 avg60=72.05 avg300=82.19 total=4266854145\nfull avg10=41.69 avg60=62.53 avg300=71.38 total=3490959989\n",
+  "memory_pressure": "some avg10=0.20 avg60=0.78 avg300=2.43 total=236326620\nfull avg10=0.18 avg60=0.67 avg300=2.08 total=191550987\n",
+  "loadavg": "11.78 15.22 16.89 3/2267 97555\n",
+  "next_execution": "Sequential; CPU/memory cgroup limits and idle IO priority"
+}

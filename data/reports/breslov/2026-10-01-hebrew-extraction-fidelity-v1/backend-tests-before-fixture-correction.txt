@@ -1,0 +1,41 @@
+Running as unit: tebaai-hebrew-dev-tests-final.scope; invocation ID: 2cbc96006cfa4ec7926356ed2a1fb7eb
+.....................FF................................................. [ 36%]
+........................................................................ [ 72%]
+.......................................................                  [100%]
+=================================== FAILURES ===================================
+_______ test_header_analysis_only_runs_for_converter_that_uses_it[True] ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x75044dcc60c0>
+layout = True
+
+    @pytest.mark.parametrize("layout", [True, False])
+    def test_header_analysis_only_runs_for_converter_that_uses_it(monkeypatch, layout):
+        import pymupdf4llm
+        from modules.library.pdf_hebrew_fidelity import document_header_info
+        calls = []
+        marker = object()
+        monkeypatch.setattr(pymupdf4llm, "_use_layout", layout)
+>       monkeypatch.setattr(pymupdf4llm, "IdentifyHeaders", lambda doc: calls.append(doc) or marker)
+E       AttributeError: <module 'pymupdf4llm' from '/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymupdf4llm/__init__.py'> has no attribute 'IdentifyHeaders'
+
+tests/test_pdf_hebrew_fidelity.py:116: AttributeError
+_______ test_header_analysis_only_runs_for_converter_that_uses_it[False] _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x75044dcf55e0>
+layout = False
+
+    @pytest.mark.parametrize("layout", [True, False])
+    def test_header_analysis_only_runs_for_converter_that_uses_it(monkeypatch, layout):
+        import pymupdf4llm
+        from modules.library.pdf_hebrew_fidelity import document_header_info
+        calls = []
+        marker = object()
+        monkeypatch.setattr(pymupdf4llm, "_use_layout", layout)
+>       monkeypatch.setattr(pymupdf4llm, "IdentifyHeaders", lambda doc: calls.append(doc) or marker)
+E       AttributeError: <module 'pymupdf4llm' from '/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymupdf4llm/__init__.py'> has no attribute 'IdentifyHeaders'
+
+tests/test_pdf_hebrew_fidelity.py:116: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_pdf_hebrew_fidelity.py::test_header_analysis_only_runs_for_converter_that_uses_it[True]
+FAILED tests/test_pdf_hebrew_fidelity.py::test_header_analysis_only_runs_for_converter_that_uses_it[False]
+2 failed, 197 passed in 18.76s

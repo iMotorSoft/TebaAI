@@ -315,14 +315,15 @@ def extract_pdf_page_first(path: Path, requested_language: str = "auto") -> Extr
     if not path.is_file():
         raise FileNotFoundError("Validated upload temporary file is unavailable")
     import pymupdf as fitz
-    import pymupdf4llm
+    from modules.library.pdf_hebrew_fidelity import document_header_info, page_markdown
 
     with fitz.open(path) as document:
         page_count = document.page_count
-    pages = tuple(
-        analyze_page(index + 1, pymupdf4llm.to_markdown(str(path), pages=[index]), requested_language)
-        for index in range(page_count)
-    )
+        header_info = document_header_info(document)
+        pages = tuple(
+            analyze_page(index + 1, page_markdown(document, index, hdr_info=header_info)[0], requested_language)
+            for index in range(page_count)
+        )
     content = "\n\n".join(f"## Page {page.page_number}\n\n{page.original_markdown}" for page in pages)
     warnings: list[str] = []
     if not any(not page.is_empty for page in pages):

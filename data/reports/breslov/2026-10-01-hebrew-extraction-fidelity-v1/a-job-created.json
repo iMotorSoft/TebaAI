@@ -1,0 +1,42 @@
+{
+  "job_id": "a36d47cc-8322-4aad-bdf5-fdc67cf551b9",
+  "upload_id": "3f82bdb1-de4b-4466-ae2e-5335fcd6b96f",
+  "document_id": null,
+  "title": "Un Día en la Vida de un Jasid de Breslov",
+  "language": "auto",
+  "status": "queued",
+  "progress": {
+    "current_stage": "queued",
+    "progress_percent": 0.0,
+    "stage_display": "En cola de procesamiento",
+    "is_terminal": false,
+    "stage_states": {
+      "queued": "pending",
+      "claimed": "pending",
+      "indexing": "pending",
+      "embedding": "pending",
+      "extracting": "pending",
+      "validating": "pending",
+      "normalizing": "pending",
+      "building_chunks": "pending",
+      "ready_to_ingest": "pending",
+      "persisting_pages": "pending",
+      "validating_result": "pending"
+    }
+  },
+  "error_code": null,
+  "error_message": null,
+  "warning_codes": [],
+  "attempt_number": 2,
+  "ingestion_profile": "auto",
+  "created_at": "2026-10-01T13:11:42.184084Z",
+  "started_at": null,
+  "finished_at": null,
+  "worker_id": null,
+  "claimed_at": null,
+  "lease_expires_at": null,
+  "heartbeat_at": null,
+  "cleanup_status": "not_required",
+  "recovery_status": "requeued",
+  "pipeline_version": "content_page_first_v1"
+}

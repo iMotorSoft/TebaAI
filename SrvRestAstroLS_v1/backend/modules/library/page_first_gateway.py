@@ -381,7 +381,10 @@ class PostgresMilvusPageFirstGateway:
             "language": item.chunk.language, "title": request.title, "source_type": "pdf",
             "source_sha256": request.source_sha256, "content_sha256": item.chunk.content_sha256,
             "chunk_index": item.chunk.chunk_index, "page_start": item.chunk.page_number,
-            "page_end": item.chunk.page_number, "content_preview": item.chunk.content[:1024],
+            "page_end": item.chunk.page_number,
+            # Milvus VARCHAR max_length counts UTF-8 bytes, not characters.
+            # Only the derived preview is bounded; citations use PostgreSQL.
+            "content_preview": item.chunk.content.encode("utf-8")[:1024].decode("utf-8", errors="ignore"),
             "embedding": list(item.vector),
         } for item in embeddings]
         if request.knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE:

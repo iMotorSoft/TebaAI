@@ -47,6 +47,7 @@ async def claim_next_job(
     worker_id: str,
     lease_seconds: int,
     allowed_scope_code: str,
+    job_id: UUID | None = None,
 ) -> ClaimedJob | None:
     """Atomically claim one queued job; concurrent workers skip the locked row."""
     now = datetime.now(timezone.utc)
@@ -60,6 +61,7 @@ async def claim_next_job(
                 JOIN knowledge_scopes ks ON ks.id=j.knowledge_scope_id
                 WHERE j.status = 'queued'
                   AND ks.knowledge_scope_code = %(scope)s
+                  AND (%(job_id)s::uuid IS NULL OR j.id = %(job_id)s::uuid)
                   AND (j.lease_expires_at IS NULL OR j.lease_expires_at <= %(now)s)
                 ORDER BY j.created_at, j.id
                 FOR UPDATE SKIP LOCKED
@@ -74,7 +76,7 @@ async def claim_next_job(
             WHERE j.id = candidate.id
             RETURNING j.*
             """,
-            {"now": now, "worker": worker_id, "lease": lease_expires, "scope": allowed_scope_code},
+            {"now": now, "worker": worker_id, "lease": lease_expires, "scope": allowed_scope_code, "job_id": job_id},
         )
         row = await cur.fetchone()
         if not row:

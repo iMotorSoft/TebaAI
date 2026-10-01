@@ -1,0 +1,184 @@
+{
+  "question": "¿Qué valores numéricos tienen las letras hebreas según la GUEMATRIA?",
+  "language": "es",
+  "knowledge_scope_code": "breslov_e2e",
+  "concepts": {
+    "concept_a": {
+      "label": "6 = ו",
+      "variants": [
+        "6 = ו"
+      ]
+    },
+    "concept_b": {
+      "label": "1 = א",
+      "variants": [
+        "1 = א"
+      ]
+    }
+  },
+  "answer": {
+    "short_conclusion": "No se encontró una relación literal directa entre \"6 = ו\" y \"1 = א\"; hay coocurrencia en 1 fragmento(s) y 1 mención(es) literal(es) de cada concepto por separado. Requiere lectura editorial para determinar si la conexión es conceptual.",
+    "editorial_answer_markdown": "No se encontró una relación literal directa entre \"6 = ו\" y \"1 = א\"; hay coocurrencia en 1 fragmento(s) y 1 mención(es) literal(es) de cada concepto por separado. Requiere lectura editorial para determinar si la conexión es conceptual.\n\n---\nSíntesis determinística automática (no IA). Las fuentes deben revisarse editorialmente antes de citar como conclusión.\n---\n\nFuentes principales:\n- [src_b9d937c3f5a65bcf8643ffe5fb2ad1b9] La Potencia de la Plegaria, p. 416 (cooccurrence_same_chunk).\n- [src_202da91f98dc54e1b014cd65e3cc4d05] La Potencia de la Plegaria, p. 413 (literal_phrase).",
+    "literal_relation_found": false,
+    "ai_inference_used": false,
+    "editorial_certainty": "low"
+  },
+  "evidence_summary": {
+    "literal_phrase": 1,
+    "literal_relation": 0,
+    "explicit_reference": 0,
+    "biblical_citation": 0,
+    "rabbinic_source": 0,
+    "breslov_text": 0,
+    "editorial_explanation": 0,
+    "footnote_reference": 0,
+    "marginal_source": 0,
+    "internal_cross_reference": 0,
+    "source_hebrew": 0,
+    "cooccurrence_same_chunk": 1,
+    "cooccurrence_same_page": 1,
+    "cooccurrence_same_section": 0,
+    "paraphrase": 0,
+    "thematic_relation": 0,
+    "derash_interpretation": 0,
+    "remez_hint": 0,
+    "ai_inference": 0,
+    "ambiguous": 0,
+    "not_found": 0,
+    "excluded_false_positive": 0
+  },
+  "sources": [
+    {
+      "source_id": "src_b9d937c3f5a65bcf8643ffe5fb2ad1b9",
+      "document_id": "47205536-f4d3-5e84-9a1b-75aaac73ca41",
+      "document_title": "La Potencia de la Plegaria",
+      "document_status": "test_candidate",
+      "page_number": 416,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "es",
+      "chunk_id": "b9d937c3-f5a6-5bcf-8643-ffe5fb2ad1b9",
+      "evidence_type": "cooccurrence_same_chunk",
+      "evidence_types": [
+        "cooccurrence_same_chunk",
+        "cooccurrence_same_page"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "cooccurrence_same_chunk+ilike_fallback",
+      "score": 0.85,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "## **NUMEROLOGÍA DE LAS LETRAS HEBREAS - GUEMATRIA** 300 = ש ; 70 = ע ; 20 = כ,ך ; 6 = ו ; 1 = א 400 = ת ; 80 = פ,ף ; 30 = ל ; 7 = ז ; 2 = ב 90 = צ,ץ ; 40 = מ,ם ; 8 = ח ; 3 = ג 100 = ק ; 50 = נ,ן ; 9 = ט ; 4 = ד 200 = ר ; 60 = ס ; 10 = י ; 5 = ה valores alternativos para las 5 letras fnales, _MaNTzPaJ:_ 900 = ץ ; 800 = ף ; 700 = ן ; 600 = ם ; 500 = ך",
+      "source_refs": [],
+      "internal_cross_refs": []
+    },
+    {
+      "source_id": "src_202da91f98dc54e1b014cd65e3cc4d05",
+      "document_id": "47205536-f4d3-5e84-9a1b-75aaac73ca41",
+      "document_title": "La Potencia de la Plegaria",
+      "document_status": "test_candidate",
+      "page_number": 413,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "es",
+      "chunk_id": "202da91f-98dc-54e1-b014-cd65e3cc4d05",
+      "evidence_type": "literal_phrase",
+      "evidence_types": [
+        "literal_phrase"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "ilike_fallback",
+      "score": 0.75,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "## **GUEMATRIA DEL SANTO NOMBRE DE DIOS** _IHVH_ = 26 = יהוה _EHIÉ_ = 21 = אהיה _ELOHIM_ = 86 = אלהים ## **EXPANSIONES DEL SANTO NOMBRE DE DIOS** **IHVH – Expansión del Tetragrámaton – יהוה** |_Expansión_|_Partzuf_|_Nombre Valor_|_Nombre Valor_|_Expansión_| |---|---|---|---|---| |IUD HI VIV HI|Aba -_Jojmá_|AB|72עב|יוד הי ויו הי| |IUD HI VAV HI|Ima -_Biná_|SaG|63סג|יוד הי ואו הי| |IUD HA VAV HA|Zeir Anpin|MaH|45מה|יוד הא ואו הא| |IUD HH VV HH|Nukva -_Maljut_|BaN|52בן|יוד הה וו הה| **EHIH – Expans…",
+      "source_refs": [],
+      "internal_cross_refs": []
+    }
+  ],
+  "source_map": [
+    {
+      "source_id": "src_b9d937c3f5a65bcf8643ffe5fb2ad1b9",
+      "document_id": "47205536-f4d3-5e84-9a1b-75aaac73ca41",
+      "document_title": "La Potencia de la Plegaria",
+      "document_status": "test_candidate",
+      "page_number": 416,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "es",
+      "chunk_id": "b9d937c3-f5a6-5bcf-8643-ffe5fb2ad1b9",
+      "evidence_type": "cooccurrence_same_chunk",
+      "evidence_types": [
+        "cooccurrence_same_chunk",
+        "cooccurrence_same_page"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "cooccurrence_same_chunk+ilike_fallback",
+      "score": 0.85,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "## **NUMEROLOGÍA DE LAS LETRAS HEBREAS - GUEMATRIA** 300 = ש ; 70 = ע ; 20 = כ,ך ; 6 = ו ; 1 = א 400 = ת ; 80 = פ,ף ; 30 = ל ; 7 = ז ; 2 = ב 90 = צ,ץ ; 40 = מ,ם ; 8 = ח ; 3 = ג 100 = ק ; 50 = נ,ן ; 9 = ט ; 4 = ד 200 = ר ; 60 = ס ; 10 = י ; 5 = ה valores alternativos para las 5 letras fnales, _MaNTzPaJ:_ 900 = ץ ; 800 = ף ; 700 = ן ; 600 = ם ; 500 = ך",
+      "source_refs": [],
+      "internal_cross_refs": []
+    },
+    {
+      "source_id": "src_202da91f98dc54e1b014cd65e3cc4d05",
+      "document_id": "47205536-f4d3-5e84-9a1b-75aaac73ca41",
+      "document_title": "La Potencia de la Plegaria",
+      "document_status": "test_candidate",
+      "page_number": 413,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "es",
+      "chunk_id": "202da91f-98dc-54e1-b014-cd65e3cc4d05",
+      "evidence_type": "literal_phrase",
+      "evidence_types": [
+        "literal_phrase"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "ilike_fallback",
+      "score": 0.75,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "## **GUEMATRIA DEL SANTO NOMBRE DE DIOS** _IHVH_ = 26 = יהוה _EHIÉ_ = 21 = אהיה _ELOHIM_ = 86 = אלהים ## **EXPANSIONES DEL SANTO NOMBRE DE DIOS** **IHVH – Expansión del Tetragrámaton – יהוה** |_Expansión_|_Partzuf_|_Nombre Valor_|_Nombre Valor_|_Expansión_| |---|---|---|---|---| |IUD HI VIV HI|Aba -_Jojmá_|AB|72עב|יוד הי ויו הי| |IUD HI VAV HI|Ima -_Biná_|SaG|63סג|יוד הי ואו הי| |IUD HA VAV HA|Zeir Anpin|MaH|45מה|יוד הא ואו הא| |IUD HH VV HH|Nukva -_Maljut_|BaN|52בן|יוד הה וו הה| **EHIH – Expans…",
+      "source_refs": [],
+      "internal_cross_refs": []
+    }
+  ],
+  "warnings": [
+    "milvus_not_routed_for_requested_scope",
+    "no_literal_relation: no citar como doctrina literal",
+    "cooccurrence_only: coocurrencia no equivale a relación explícita",
+    "test_candidate_read_only: no constituye promoción productiva",
+    "deterministic_fallback: la síntesis editorial automática no pudo completarse; se muestra una síntesis determinística basada en fuentes recuperadas. Revisar editorialmente antes de citar como conclusión."
+  ],
+  "method": {
+    "retrieval": [
+      "postgresql_ilike_fallback",
+      "postgresql_cooccurrence"
+    ],
+    "llm_model": "",
+    "embedding_model": "openai_text_embedding_3_small",
+    "used_pg_as_canonical": true,
+    "used_milvus": false,
+    "used_ai": false,
+    "ai_synthesis_status": "skipped",
+    "ai_synthesis_attempts": 0,
+    "fallback_used": true,
+    "fallback_reason": null,
+    "synthesis_mode": "deterministic_fallback"
+  },
+  "debug": null
+}

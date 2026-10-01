@@ -1,0 +1,14 @@
+{
+  "execution": "sequential",
+  "unit": "tebaai-hebrew-dev-reingest.scope",
+  "MemoryMax_bytes": 1610612736,
+  "CPUQuota_percent_of_one_core": 50,
+  "TasksMax": 64,
+  "IOWeight": 10,
+  "nice": 15,
+  "ionice_class": 3,
+  "numeric_library_threads": 1,
+  "observed_memory_peak_bytes_at_last_sample": 609628160,
+  "worker_exit": 0,
+  "next_step": "Read-only storage audit, then one Chromium; no concurrent test/worker/browser"
+}

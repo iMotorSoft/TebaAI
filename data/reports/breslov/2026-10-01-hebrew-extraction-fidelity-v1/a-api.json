@@ -1,0 +1,238 @@
+{
+  "question": "¿Qué plegaria se dice antes de recitar תהלים en días de semana?",
+  "language": "he",
+  "knowledge_scope_code": "breslov_e2e",
+  "concepts": {
+    "concept_a": {
+      "label": "יְהִי רָצוֹן מִלְּפָנֶיָך",
+      "variants": [
+        "יְהִי רָצוֹן מִלְּפָנֶיָך"
+      ]
+    },
+    "concept_b": {
+      "label": "אֲבוֹתֵינוּ",
+      "variants": [
+        "אֲבוֹתֵינוּ"
+      ]
+    }
+  },
+  "answer": {
+    "short_conclusion": "No se encontró una relación literal directa entre \"יְהִי רָצוֹן מִלְּפָנֶיָך\" y \"אֲבוֹתֵינוּ\"; hay coocurrencia en 2 fragmento(s) y 1 mención(es) literal(es) de cada concepto por separado. Requiere lectura editorial para determinar si la conexión es conceptual.",
+    "editorial_answer_markdown": "No se encontró una relación literal directa entre \"יְהִי רָצוֹן מִלְּפָנֶיָך\" y \"אֲבוֹתֵינוּ\"; hay coocurrencia en 2 fragmento(s) y 1 mención(es) literal(es) de cada concepto por separado. Requiere lectura editorial para determinar si la conexión es conceptual.\n\n---\nSíntesis determinística automática (no IA). Las fuentes deben revisarse editorialmente antes de citar como conclusión.\n---\n\nFuentes principales:\n- [src_3225caec225b5a9d914cb610705ce52f] Un Día en la Vida de un Jasid de Breslov, p. 145 (cooccurrence_same_chunk).\n- [src_c781e1ae2b9657048aad8d5de7c32bc6] Un Día en la Vida de un Jasid de Breslov, p. 187 (cooccurrence_same_chunk).\n- [src_ab09cc6709525daaaf4eec29c14fb1cc] Un Día en la Vida de un Jasid de Breslov, p. 151 (literal_phrase).",
+    "literal_relation_found": false,
+    "ai_inference_used": false,
+    "editorial_certainty": "low"
+  },
+  "evidence_summary": {
+    "literal_phrase": 1,
+    "literal_relation": 0,
+    "explicit_reference": 0,
+    "biblical_citation": 0,
+    "rabbinic_source": 0,
+    "breslov_text": 0,
+    "editorial_explanation": 0,
+    "footnote_reference": 0,
+    "marginal_source": 0,
+    "internal_cross_reference": 0,
+    "source_hebrew": 0,
+    "cooccurrence_same_chunk": 2,
+    "cooccurrence_same_page": 2,
+    "cooccurrence_same_section": 0,
+    "paraphrase": 0,
+    "thematic_relation": 0,
+    "derash_interpretation": 0,
+    "remez_hint": 0,
+    "ai_inference": 0,
+    "ambiguous": 0,
+    "not_found": 0,
+    "excluded_false_positive": 0
+  },
+  "sources": [
+    {
+      "source_id": "src_3225caec225b5a9d914cb610705ce52f",
+      "document_id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+      "document_title": "Un Día en la Vida de un Jasid de Breslov",
+      "document_status": "test_candidate",
+      "page_number": 145,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "he",
+      "chunk_id": "3225caec-225b-5a9d-914c-b610705ce52f",
+      "evidence_type": "cooccurrence_same_chunk",
+      "evidence_types": [
+        "cooccurrence_same_chunk",
+        "cooccurrence_same_page"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "cooccurrence_same_chunk+ilike_fallback",
+      "score": 0.85,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "ֶה לִהְיוֹת תָּמִיד כִּרְצוֹנְָך הַטּוֹב מֵﬠַתָּה וְﬠַד עוֹלָם. כְּחַסְדְָּך חַיֵּינִי, וְאֶשְׁמְרָה ﬠֵדוּת פִּיָך, לֵב טָהוֹר בְּרָא לִי אֱֹלהִים, וְרוּחַ נָכוֹן חַדֵּשׁ **==> picture [31 x 11] intentionally omitted <==** וּבְכֵן, יְהִי רָצוֹן מִלְּפָנֶיָך, יְיָ אֱֹלהֵינוּ וֵאֹלהֵי אֲבוֹתֵינוּ, אֲדוֹן הַשִּׂמְחָה וְהַחֶדְוָה, אֲשֶׁר לְפָנֶיָך אֵין שׁוּם ﬠַצְבוּת כְּלָל לְעוֹלָם, כְּמוֹ שֶׁכָּתוּב: הוֹד וְהָדָר לְפָנָיו, עֹז וְחֶדְוָה בִּמְקוֹמוֹ, שֶׁתַּﬠַזְרֵנִי בְּרַחֲמֶיָך הָﬠֲצוּמִים וּתְזַכֵּנִי לִהְיוֹת בְּשִׂמְחָה תָּמִיד. מְשַׂמֵּחַ נַפְשׁוֹת ﬠ…",
+      "source_refs": [],
+      "internal_cross_refs": []
+    },
+    {
+      "source_id": "src_c781e1ae2b9657048aad8d5de7c32bc6",
+      "document_id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+      "document_title": "Un Día en la Vida de un Jasid de Breslov",
+      "document_status": "test_candidate",
+      "page_number": 187,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "he",
+      "chunk_id": "c781e1ae-2b96-5704-8aad-8d5de7c32bc6",
+      "evidence_type": "cooccurrence_same_chunk",
+      "evidence_types": [
+        "cooccurrence_same_chunk",
+        "cooccurrence_same_page"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "cooccurrence_same_chunk+ilike_fallback",
+      "score": 0.85,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "יְהִי רָצוֹן מִלְּפָנֶיָך יְיָ אֱֹלהֵינוּ וֵאֹלהֵי אֲבוֹתֵינוּ, הַבּוֹחֵר בְּדָוִד ﬠַבְדּוֹ וּבְזַרְעוֹ אַחֲרָיו וְהַבּוֹחֵר בְּשִׁירוֹת וְתִשְׁבָּחוֹת, שֶׁתֵּפֶן בְּרַחֲמִים אֶל קְרִיאַת מִזְמוֹרֵי תְּהִלִּים שֶׁאֶקְרָא כְּאִלּוּ אֲמָרָם דָּוִד הַמֶּלְֶך, ﬠָלָיו הַשָּׁלוֹם, בְּﬠַצְמוֹ זְכוּתוֹ יָגֵן ﬠָלֵינוּ, וְיַﬠֲמָד לָנוּ זְכוּת פְּסוּקֵי תְּהִלִּים וּזְכוּת תֵּבוֹתֵיהֶם וְאוֹתִיּוֹתֵיהֶם וּנְקֻדּוֹתֵיהֶם וְטַﬠֲמֵיהֶם וְהַשֵּׁמוֹת הַיּוֹצְאִים מֵהֶם מֵרָאשֵׁי תֵּבוֹת וּמִסּוֹפֵי תֵּבוֹת לְכַפֵּר פְּשָׁﬠֵינוּ וַﬠֲווֹנוֹתֵינוּ וְחַטּוֹאתֵינוּ וּלְזַמֵּר ﬠָרִיצִים וּלְהַכְרִ…",
+      "source_refs": [],
+      "internal_cross_refs": []
+    },
+    {
+      "source_id": "src_ab09cc6709525daaaf4eec29c14fb1cc",
+      "document_id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+      "document_title": "Un Día en la Vida de un Jasid de Breslov",
+      "document_status": "test_candidate",
+      "page_number": 151,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "he",
+      "chunk_id": "ab09cc67-0952-5daa-af4e-ec29c14fb1cc",
+      "evidence_type": "literal_phrase",
+      "evidence_types": [
+        "literal_phrase"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "ilike_fallback",
+      "score": 0.75,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "…, לְרַצּוֹת וּלְפַיֵּס אוֹתְָך, שֶׁתְּקַבֵּל בְּרַחֲמֶיָך הָרַבִּים וּבַחֲסָדֶיָך הָﬠֲצוּמִים אֶת אֵלּוּ הָﬠֲשָׂרָה קַפִּיטְל תְּהִלִּים שֶׁאָמַרְתִּי לְפָנֶיָך, כְּאִלּוּ אֲמָרָם דָּוִד הַמֶּלְֶך, ﬠָלָיו הַשָּׁלוֹם, בְּﬠַצְמוֹ, וְאַף־ﬠַל־ פִּי שֶׁאֵינִי יוֹדֵﬠַ לְכַוֵּן שׁוּם כַּוָּנָה מֵהַכַּוָּנוֹת הָﬠֲצוּמוֹת וְהַנּוֹרָאוֹת, שֶׁיֵּשׁ בְּאֵלּוּ **==> picture [81 x 12] intentionally omitted <==** יְהִי רָצוֹן מִלְּפָנֶיָך, יְיָ אֱֹלהַי וֵאֹלהֵי אֲבוֹתַי, שֶׁתְּהֵא חֲשׁוּבָה לְפָנֶיָך הָאֲמִירָה בְּפֶה לְבַד. כְּאִלּוּ הִשַּׂגְתִּי וְכִוַּנְתִּי כָּל הַסּוֹדוֹת וְה…",
+      "source_refs": [],
+      "internal_cross_refs": []
+    }
+  ],
+  "source_map": [
+    {
+      "source_id": "src_3225caec225b5a9d914cb610705ce52f",
+      "document_id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+      "document_title": "Un Día en la Vida de un Jasid de Breslov",
+      "document_status": "test_candidate",
+      "page_number": 145,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "he",
+      "chunk_id": "3225caec-225b-5a9d-914c-b610705ce52f",
+      "evidence_type": "cooccurrence_same_chunk",
+      "evidence_types": [
+        "cooccurrence_same_chunk",
+        "cooccurrence_same_page"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "cooccurrence_same_chunk+ilike_fallback",
+      "score": 0.85,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "ֶה לִהְיוֹת תָּמִיד כִּרְצוֹנְָך הַטּוֹב מֵﬠַתָּה וְﬠַד עוֹלָם. כְּחַסְדְָּך חַיֵּינִי, וְאֶשְׁמְרָה ﬠֵדוּת פִּיָך, לֵב טָהוֹר בְּרָא לִי אֱֹלהִים, וְרוּחַ נָכוֹן חַדֵּשׁ **==> picture [31 x 11] intentionally omitted <==** וּבְכֵן, יְהִי רָצוֹן מִלְּפָנֶיָך, יְיָ אֱֹלהֵינוּ וֵאֹלהֵי אֲבוֹתֵינוּ, אֲדוֹן הַשִּׂמְחָה וְהַחֶדְוָה, אֲשֶׁר לְפָנֶיָך אֵין שׁוּם ﬠַצְבוּת כְּלָל לְעוֹלָם, כְּמוֹ שֶׁכָּתוּב: הוֹד וְהָדָר לְפָנָיו, עֹז וְחֶדְוָה בִּמְקוֹמוֹ, שֶׁתַּﬠַזְרֵנִי בְּרַחֲמֶיָך הָﬠֲצוּמִים וּתְזַכֵּנִי לִהְיוֹת בְּשִׂמְחָה תָּמִיד. מְשַׂמֵּחַ נַפְשׁוֹת ﬠ…",
+      "source_refs": [],
+      "internal_cross_refs": []
+    },
+    {
+      "source_id": "src_c781e1ae2b9657048aad8d5de7c32bc6",
+      "document_id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+      "document_title": "Un Día en la Vida de un Jasid de Breslov",
+      "document_status": "test_candidate",
+      "page_number": 187,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "he",
+      "chunk_id": "c781e1ae-2b96-5704-8aad-8d5de7c32bc6",
+      "evidence_type": "cooccurrence_same_chunk",
+      "evidence_types": [
+        "cooccurrence_same_chunk",
+        "cooccurrence_same_page"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "cooccurrence_same_chunk+ilike_fallback",
+      "score": 0.85,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "יְהִי רָצוֹן מִלְּפָנֶיָך יְיָ אֱֹלהֵינוּ וֵאֹלהֵי אֲבוֹתֵינוּ, הַבּוֹחֵר בְּדָוִד ﬠַבְדּוֹ וּבְזַרְעוֹ אַחֲרָיו וְהַבּוֹחֵר בְּשִׁירוֹת וְתִשְׁבָּחוֹת, שֶׁתֵּפֶן בְּרַחֲמִים אֶל קְרִיאַת מִזְמוֹרֵי תְּהִלִּים שֶׁאֶקְרָא כְּאִלּוּ אֲמָרָם דָּוִד הַמֶּלְֶך, ﬠָלָיו הַשָּׁלוֹם, בְּﬠַצְמוֹ זְכוּתוֹ יָגֵן ﬠָלֵינוּ, וְיַﬠֲמָד לָנוּ זְכוּת פְּסוּקֵי תְּהִלִּים וּזְכוּת תֵּבוֹתֵיהֶם וְאוֹתִיּוֹתֵיהֶם וּנְקֻדּוֹתֵיהֶם וְטַﬠֲמֵיהֶם וְהַשֵּׁמוֹת הַיּוֹצְאִים מֵהֶם מֵרָאשֵׁי תֵּבוֹת וּמִסּוֹפֵי תֵּבוֹת לְכַפֵּר פְּשָׁﬠֵינוּ וַﬠֲווֹנוֹתֵינוּ וְחַטּוֹאתֵינוּ וּלְזַמֵּר ﬠָרִיצִים וּלְהַכְרִ…",
+      "source_refs": [],
+      "internal_cross_refs": []
+    },
+    {
+      "source_id": "src_ab09cc6709525daaaf4eec29c14fb1cc",
+      "document_id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+      "document_title": "Un Día en la Vida de un Jasid de Breslov",
+      "document_status": "test_candidate",
+      "page_number": 151,
+      "section": "",
+      "chapter": "",
+      "subtitle": "",
+      "node_path": "",
+      "block_type": "page_first_v1",
+      "language": "he",
+      "chunk_id": "ab09cc67-0952-5daa-af4e-ec29c14fb1cc",
+      "evidence_type": "literal_phrase",
+      "evidence_types": [
+        "literal_phrase"
+      ],
+      "editorial_role": "page_text",
+      "retrieval_method": "ilike_fallback",
+      "score": 0.75,
+      "citable": true,
+      "is_final_citation": true,
+      "snippet": "…, לְרַצּוֹת וּלְפַיֵּס אוֹתְָך, שֶׁתְּקַבֵּל בְּרַחֲמֶיָך הָרַבִּים וּבַחֲסָדֶיָך הָﬠֲצוּמִים אֶת אֵלּוּ הָﬠֲשָׂרָה קַפִּיטְל תְּהִלִּים שֶׁאָמַרְתִּי לְפָנֶיָך, כְּאִלּוּ אֲמָרָם דָּוִד הַמֶּלְֶך, ﬠָלָיו הַשָּׁלוֹם, בְּﬠַצְמוֹ, וְאַף־ﬠַל־ פִּי שֶׁאֵינִי יוֹדֵﬠַ לְכַוֵּן שׁוּם כַּוָּנָה מֵהַכַּוָּנוֹת הָﬠֲצוּמוֹת וְהַנּוֹרָאוֹת, שֶׁיֵּשׁ בְּאֵלּוּ **==> picture [81 x 12] intentionally omitted <==** יְהִי רָצוֹן מִלְּפָנֶיָך, יְיָ אֱֹלהַי וֵאֹלהֵי אֲבוֹתַי, שֶׁתְּהֵא חֲשׁוּבָה לְפָנֶיָך הָאֲמִירָה בְּפֶה לְבַד. כְּאִלּוּ הִשַּׂגְתִּי וְכִוַּנְתִּי כָּל הַסּוֹדוֹת וְה…",
+      "source_refs": [],
+      "internal_cross_refs": []
+    }
+  ],
+  "warnings": [
+    "milvus_not_routed_for_requested_scope",
+    "no_literal_relation: no citar como doctrina literal",
+    "cooccurrence_only: coocurrencia no equivale a relación explícita",
+    "test_candidate_read_only: no constituye promoción productiva",
+    "deterministic_fallback: la síntesis editorial automática no pudo completarse; se muestra una síntesis determinística basada en fuentes recuperadas. Revisar editorialmente antes de citar como conclusión."
+  ],
+  "method": {
+    "retrieval": [
+      "postgresql_ilike_fallback",
+      "postgresql_cooccurrence"
+    ],
+    "llm_model": "",
+    "embedding_model": "openai_text_embedding_3_small",
+    "used_pg_as_canonical": true,
+    "used_milvus": false,
+    "used_ai": false,
+    "ai_synthesis_status": "skipped",
+    "ai_synthesis_attempts": 0,
+    "fallback_used": true,
+    "fallback_reason": null,
+    "synthesis_mode": "deterministic_fallback"
+  },
+  "debug": null
+}

@@ -1,0 +1,42 @@
+{
+  "job_id": "c490f9c6-4752-459c-ad08-9d6706cde0a1",
+  "upload_id": "c42eabf7-ce9f-42d9-9ae6-55736eed607d",
+  "document_id": null,
+  "title": "La Potencia de la Plegaria",
+  "language": "auto",
+  "status": "queued",
+  "progress": {
+    "current_stage": "queued",
+    "progress_percent": 0.0,
+    "stage_display": "En cola de procesamiento",
+    "is_terminal": false,
+    "stage_states": {
+      "queued": "pending",
+      "claimed": "pending",
+      "indexing": "pending",
+      "embedding": "pending",
+      "extracting": "pending",
+      "validating": "pending",
+      "normalizing": "pending",
+      "building_chunks": "pending",
+      "ready_to_ingest": "pending",
+      "persisting_pages": "pending",
+      "validating_result": "pending"
+    }
+  },
+  "error_code": null,
+  "error_message": null,
+  "warning_codes": [],
+  "attempt_number": 3,
+  "ingestion_profile": "auto",
+  "created_at": "2026-10-01T14:04:54.819929Z",
+  "started_at": null,
+  "finished_at": null,
+  "worker_id": null,
+  "claimed_at": null,
+  "lease_expires_at": null,
+  "heartbeat_at": null,
+  "cleanup_status": "not_required",
+  "recovery_status": "requeued",
+  "pipeline_version": "content_page_first_v1"
+}

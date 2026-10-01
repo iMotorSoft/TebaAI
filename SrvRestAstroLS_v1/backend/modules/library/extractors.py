@@ -73,7 +73,19 @@ def _extract_pdf(path: pathlib.Path, metadata: dict) -> tuple[str, TextFormat, E
         )
 
     try:
-        md_text = pymupdf4llm.to_markdown(str(path))
+        import pymupdf
+        from modules.library.pdf_hebrew_fidelity import document_header_info, page_markdown
+
+        repairs = []
+        pages = []
+        with pymupdf.open(path) as document:
+            header_info = document_header_info(document)
+            for page in document:
+                page_text, changes = page_markdown(document, page.number, hdr_info=header_info)
+                pages.append(page_text)
+                repairs.extend(dict(change, page_number=page.number + 1) for change in changes)
+        md_text = "\n\n".join(pages)
+        metadata["hebrew_boundary_repairs"] = repairs
         metadata["extraction_library"] = "pymupdf4llm"
         metadata["extraction_version"] = getattr(pymupdf4llm, "__version__", "unknown")
         metadata["page_markers"] = False
@@ -105,10 +117,12 @@ def extract_pdf_with_page_markers(
         import pymupdf4llm
     except ImportError:
         raise ExtractionError("pymupdf4llm is required for page-by-page extraction")
+    from modules.library.pdf_hebrew_fidelity import document_header_info, page_markdown
 
     doc = fitz.open(pdf_path)
     total_pages = doc.page_count
     page_to = page_to or total_pages
+    header_info = document_header_info(doc)
     doc.close()
 
     pages_md: list[str] = []
@@ -117,7 +131,8 @@ def extract_pdf_with_page_markers(
 
     for pg in range(page_from, page_to + 1):
         # PyMuPDF4LLM uses 0-indexed pages internally
-        pg_md = pymupdf4llm.to_markdown(pdf_path, pages=[pg - 1])
+        with fitz.open(pdf_path) as document:
+            pg_md, _ = page_markdown(document, pg - 1, hdr_info=header_info)
         marker = marker_template.format(page=pg)
         page_block = f"{marker}\n\n{pg_md}"
         start = char_offset

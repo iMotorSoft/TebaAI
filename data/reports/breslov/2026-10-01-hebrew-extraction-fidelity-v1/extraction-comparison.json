@@ -1,0 +1,26 @@
+[
+  {
+    "case": "a",
+    "physical_pdf_page": 187,
+    "source_sha256": "d98e4d4c96a36c701aa055e1a9b8ce230dec24f3b45f35455828f6fe30f69c13",
+    "first_bad_stage": "PyMuPDF raw text extraction",
+    "synthetic_spaces_removed": 294,
+    "physical_cell_gutters": 0,
+    "repair_groups": 18,
+    "cached_headers_same_output": true,
+    "before_sha256": "cbb869106f9504551d4b1a91d5db15852638e3303e2d810fd41cd03f46614d8a",
+    "after_sha256": "00ce9d7341d1de33d67889f2130fb69c48fcb0947b924c64e4dc6915aca1eb42"
+  },
+  {
+    "case": "b",
+    "physical_pdf_page": 416,
+    "source_sha256": "8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46",
+    "first_bad_stage": "PyMuPDF raw text extraction",
+    "synthetic_spaces_removed": 0,
+    "physical_cell_gutters": 21,
+    "repair_groups": 6,
+    "cached_headers_same_output": true,
+    "before_sha256": "91bd1c7ecd1935a8d1673b880722331853714ba5a0883237a96340fbf101b815",
+    "after_sha256": "0cabf67d9b50598317b9a0d96fb3effaae99045a4f65c33a103aeaafbd716c99"
+  }
+]

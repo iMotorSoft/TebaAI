@@ -38,13 +38,18 @@ async def test_long_external_stage_renews_worker_lease(monkeypatch) -> None:
     import modules.library.page_first_pipeline as module
     monkeypatch.setattr(module, "CONTENT_MANAGER_WORKER_HEARTBEAT_SECONDS", 0.01)
     beats = 0
+    renewed_twice = asyncio.Event()
 
     async def heartbeat():
         nonlocal beats
         beats += 1
+        if beats >= 2:
+            renewed_twice.set()
 
     async def slow_stage():
-        await asyncio.sleep(0.04)
+        # Keep the external stage pending until actual renewals occur;
+        # a 40ms wall-clock window flakes under CPU quotas or host load.
+        await asyncio.wait_for(renewed_twice.wait(), timeout=5)
         return "done"
 
     assert await await_with_lease_heartbeat(slow_stage(), heartbeat) == "done"

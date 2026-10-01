@@ -1,0 +1,89 @@
+2026-10-01 09:53:53,634 INFO Worker active for scope breslov_e2e
+2026-10-01 09:53:54,444 INFO Content Manager job claimed job_id=87f96d22-9713-42a3-a808-d0cd75fd2387 attempt=1 worker_id=ubuntu24:64698 collection=tebaai_content_manager_e2e_v1
+2026-10-01 10:01:05,499 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:07,101 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:08,745 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:10,102 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:11,710 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:13,619 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:15,346 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:16,767 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:18,212 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:19,700 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:20,746 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:22,437 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:23,787 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:25,223 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:26,703 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:28,209 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:29,736 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:31,187 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:01:32,235 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-01 10:02:56,761 [ERROR][_log_rpc_error]: RPC error: [upsert_rows], <MilvusException: (code=1100, message=length of varchar field content_preview exceeds max length, row number: 7, length: 1060, max length: 1024: invalid parameter)>, <elapsed:24187.8ms>
+Traceback:
+Traceback (most recent call last):
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 518, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 565, in handler
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 456, in handler
+    raise e from e
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 419, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 121, in handler
+    return func(self, collection_name, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 1106, in upsert_rows
+    check_status(response.status)
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/client/utils.py", line 76, in check_status
+    raise MilvusException(status.code, status.reason, status.error_code)
+pymilvus.exceptions.MilvusException: <MilvusException: (code=1100, message=length of varchar field content_preview exceeds max length, row number: 7, length: 1060, max length: 1024: invalid parameter)>
+ (decorators.py:472)
+2026-10-01 10:02:56,762 ERROR Content Manager attempt failed job_id=87f96d22-9713-42a3-a808-d0cd75fd2387 attempt=1 stage=indexing
+Traceback (most recent call last):
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/content_manager_worker.py", line 101, in run_once
+    result = await self.pipeline.run(job, advance=advance, heartbeat=heartbeat)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/page_first_pipeline.py", line 244, in run
+    vector_ids = await await_with_lease_heartbeat(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/page_first_pipeline.py", line 198, in await_with_lease_heartbeat
+    return await task
+           ^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py", line 400, in index_vectors
+    await asyncio.to_thread(index.upsert, rows)
+  File "/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py", line 102, in upsert
+    self.client.upsert(collection_name=self.collection_name, data=rows)
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/milvus_client/milvus_client.py", line 324, in upsert
+    res = conn.upsert_rows(
+          ^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 521, in handler
+    raise e from e
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 518, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 565, in handler
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 456, in handler
+    raise e from e
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 419, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/decorators.py", line 121, in handler
+    return func(self, collection_name, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/client/grpc_handler.py", line 1106, in upsert_rows
+    check_status(response.status)
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/pymilvus/client/utils.py", line 76, in check_status
+    raise MilvusException(status.code, status.reason, status.error_code)
+pymilvus.exceptions.MilvusException: <MilvusException: (code=1100, message=length of varchar field content_preview exceeds max length, row number: 7, length: 1060, max length: 1024: invalid parameter)>

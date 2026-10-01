@@ -42,6 +42,12 @@ Only an active, authorized scope may serve normal retrieval. Draft, archived or 
 
 Every document operation preserves scope, document identity, content hash, canonical text role, lifecycle status and chunk-set version.
 
+The legacy source uniqueness key must not reject the same PDF in a different
+knowledge scope. Migration `042_scope_legacy_source_uniqueness.sql` preserves
+the compatibility uniqueness of `(knowledge_scope_id, collection_id,
+source_sha256)` for scoped records and `(collection_id, source_sha256)` for
+historical unscoped records. Existing documents are not merged or rewritten.
+
 Source quality and promotion remain governed by the documented library workflow; ingestion success alone does not make a document production evidence.
 
 ## Chunks

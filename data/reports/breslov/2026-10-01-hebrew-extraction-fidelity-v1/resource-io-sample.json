@@ -1,0 +1,62 @@
+[
+  {
+    "pid": "4948",
+    "name": "brave",
+    "read_bytes_delta": 516096,
+    "write_bytes_delta": 811008
+  },
+  {
+    "pid": "6387",
+    "name": "brave",
+    "read_bytes_delta": 57344,
+    "write_bytes_delta": 98304
+  },
+  {
+    "pid": "15647",
+    "name": "codex",
+    "read_bytes_delta": 0,
+    "write_bytes_delta": 81920
+  },
+  {
+    "pid": "81926",
+    "name": "firefox",
+    "read_bytes_delta": 0,
+    "write_bytes_delta": 16384
+  },
+  {
+    "pid": "3614",
+    "name": "pipewire",
+    "read_bytes_delta": 0,
+    "write_bytes_delta": 0
+  },
+  {
+    "pid": "3615",
+    "name": "pipewire",
+    "read_bytes_delta": 0,
+    "write_bytes_delta": 0
+  },
+  {
+    "pid": "3617",
+    "name": "wireplumber",
+    "read_bytes_delta": 0,
+    "write_bytes_delta": 0
+  },
+  {
+    "pid": "3618",
+    "name": "pipewire-pulse",
+    "read_bytes_delta": 0,
+    "write_bytes_delta": 0
+  },
+  {
+    "pid": "3619",
+    "name": "gnome-keyring-d",
+    "read_bytes_delta": 0,
+    "write_bytes_delta": 0
+  },
+  {
+    "pid": "3625",
+    "name": "dbus-daemon",
+    "read_bytes_delta": 0,
+    "write_bytes_delta": 0
+  }
+]

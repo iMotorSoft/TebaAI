@@ -1,0 +1,40 @@
+{
+  "document_id": "47205536-f4d3-5e84-9a1b-75aaac73ca41",
+  "job_id": "c490f9c6-4752-459c-ad08-9d6706cde0a1",
+  "attempt_number": 3,
+  "job_status": "completed_with_warnings",
+  "document_status": "test_candidate",
+  "pipeline_version": "content_page_first_v1",
+  "scope": "breslov_e2e",
+  "collection_code": "tebaai_content_manager_e2e_v1",
+  "pdf_pages": 416,
+  "canonical_pages": 416,
+  "textual_pages": 412,
+  "empty_pages": 4,
+  "headings": 603,
+  "footnotes": 108,
+  "printed_references": 491,
+  "chunks": 908,
+  "embeddings": 908,
+  "pg_embedding_count": 908,
+  "milvus_entity_count": 908,
+  "pg_missing": 0,
+  "milvus_missing": 0,
+  "milvus_orphan": 0,
+  "duplicates": 0,
+  "duration_seconds": 1917.036964,
+  "page_integrity": "match",
+  "warnings": [
+    "physical_empty_pages_detected",
+    "empty_pages_preserved"
+  ],
+  "errors": [],
+  "stage_timings": {},
+  "cleanup_result": "not_required",
+  "technical_details": {
+    "upload_id": "c42eabf7-ce9f-42d9-9ae6-55736eed607d",
+    "attempt_number": 3,
+    "created_at": "2026-10-01 14:04:54.819929+00:00",
+    "finished_at": "2026-10-01 14:36:54.684091+00:00"
+  }
+}

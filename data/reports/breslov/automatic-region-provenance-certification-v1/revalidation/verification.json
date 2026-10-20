@@ -1,0 +1,18 @@
+{
+  "preexisting_files_checked": 662,
+  "preexisting_files_changed": [],
+  "artifact_byte_equality": {
+    "page167-results.json": true,
+    "page55-results.json": true,
+    "page56-results.json": true,
+    "holdout-results.json": true,
+    "stability-results.json": true,
+    "evaluation-summary.json": true
+  },
+  "failure_details_equal_to_baseline": true,
+  "failure_details_sha256": "3d5ad1a0c11a1ccb6213a3da1c3701b8c977366172871856c1c6e90abbd51c06",
+  "branch": "feature/console-backend-core",
+  "head": "1fa9290bdc7840e7277a998aa3ca66345c6080ee",
+  "verdict": "TEBAAI_BRESLOV_AUTOMATIC_REGION_PROVENANCE_CERTIFICATION_V1_FAIL",
+  "READY_FOR_C_REINGEST": "NO"
+}

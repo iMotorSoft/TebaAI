@@ -1,0 +1,34 @@
+{
+  "gate": "TEBAAI_BRESLOV_AUTOMATIC_REGION_PROVENANCE_CERTIFICATION_V3_FAIL",
+  "focal": {
+    "passed": 146,
+    "failed": 0,
+    "log": "tests-focused.txt"
+  },
+  "related": {
+    "passed": 692,
+    "failed": 0,
+    "warnings": 10,
+    "log": "tests-related.txt"
+  },
+  "full": {
+    "passed": 1830,
+    "failed": 18,
+    "warnings": 94,
+    "seconds": 35.35,
+    "exit_code": 1,
+    "command": "cd SrvRestAstroLS_v1/backend && uv run pytest -q",
+    "log": "tests-backend-full.txt"
+  },
+  "new_v3_tests": 28,
+  "new_backend_regressions": 0,
+  "baseline_failure_comparison": "baseline-failure-comparison.json",
+  "full_failure_details_byte_identical": true,
+  "git_diff_check": "PASS",
+  "frontend": "UNCHANGED_NOT_RUN",
+  "lat_check": "UNCHANGED_NOT_APPLICABLE",
+  "determinism_three_runs": "PASS",
+  "real_IR_native_page_box_line_permutation": "FAIL",
+  "permutation_evidence": "permutation-analysis.json",
+  "holdout_one_shot": "evaluate_holdout.py after seal_holdout.py; do not reopen or reseal to tune V3"
+}

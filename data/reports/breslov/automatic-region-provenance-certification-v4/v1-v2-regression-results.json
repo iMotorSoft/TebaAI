@@ -1,0 +1,47 @@
+{
+  "v1_unsafe_regression": [
+    {
+      "region_id": "region-cbabcc634980c627e2d2280b",
+      "page": 80,
+      "v1": "CERTIFIED",
+      "v4_status": "UNRESOLVED",
+      "v4_zone": "footer"
+    },
+    {
+      "region_id": "region-5c800da9132cbc4511454e79",
+      "page": 80,
+      "v1": "CERTIFIED",
+      "v4_status": "UNRESOLVED",
+      "v4_zone": "footer"
+    },
+    {
+      "region_id": "region-4208ec6381b2a5e29276d00e",
+      "page": 140,
+      "v1": "CERTIFIED",
+      "v4_status": "UNRESOLVED",
+      "v4_zone": "editorial_heading"
+    },
+    {
+      "region_id": "region-9a246f83b66e789817d4e727",
+      "page": 200,
+      "v1": "CERTIFIED",
+      "v4_status": "UNRESOLVED",
+      "v4_zone": "footer"
+    },
+    {
+      "region_id": "region-6bcfd2e337fb9ad3f7934fe4",
+      "page": 200,
+      "v1": "CERTIFIED",
+      "v4_status": "UNRESOLVED",
+      "v4_zone": "footer"
+    }
+  ],
+  "any_v4_certified": false,
+  "v3_holdout_development_regression": {
+    "correct_certifications": 100,
+    "unsafe_false_certifications": 0,
+    "unsafe_false_provenance_certifications": 0,
+    "false_body_certifications": 0
+  },
+  "conclusion": "All five V1 unsafe zones remain UNRESOLVED under V4; no unsafe certification reappears."
+}

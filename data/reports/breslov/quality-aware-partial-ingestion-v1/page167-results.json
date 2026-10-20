@@ -1,0 +1,153 @@
+{
+  "physical_page": 167,
+  "printed_page": 149,
+  "printed_page_provenance": "existing visual golden, not extractor metadata",
+  "Spanish_body": "ACCEPTED",
+  "Spanish_notes": "PLATFORM_EXTRACTION_ERROR",
+  "Hebrew_body": "PLATFORM_EXTRACTION_ERROR",
+  "page_aggregate": "PARTIAL",
+  "corrupt_Hebrew_indexed": "NO (offline candidate chunks only)",
+  "good_Spanish_indexed": "NO real index; YES offline body chunks",
+  "good_Spanish_notes_indexed": "NO",
+  "reason": "Current Markdown changes note order: continuation65/66 precedes64/65. Raw native notes remain reliable.",
+  "candidate_chunks": 2,
+  "metadata": {
+    "quality_policy_version": "region-quality-v1",
+    "quality": "PARTIAL",
+    "regions": [
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "header",
+        "bbox": [
+          50,
+          43,
+          447,
+          58
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "regional-ocr-hebrew-search-v1/page167-regions.json"
+        ],
+        "candidate_sha256": "fdfb46b8b0a29819a490171a530a2ba484e4bf9f1f8988e02cc486beb7d28f62",
+        "candidate_length": 34
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "hebrew_and_transition",
+        "bbox": [
+          50,
+          65,
+          447,
+          258
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "regional-ocr-hebrew-search-v1/page167-regions.json"
+        ],
+        "candidate_sha256": "a2824ab411ab3c8a66ba4088cc61cde5dc9c6282759e855dfb9b10b9834bc5e8",
+        "candidate_length": 1046
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "spanish_body",
+        "bbox": [
+          50,
+          265,
+          447,
+          546
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "regional-ocr-hebrew-search-v1/page167-regions.json"
+        ],
+        "candidate_sha256": "d98f7641c572f59ce611bac9f2eb55fdfdcd06d6dc1b8ffd48f31c3d3ab07f96",
+        "candidate_length": 1854
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "notes_heading",
+        "bbox": [
+          50,
+          553,
+          447,
+          567
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "regional-ocr-hebrew-search-v1/page167-regions.json"
+        ],
+        "candidate_sha256": "ad88735b740f55f9de50143bc47c599ac46e2c00e103e56810fe859bde3cd979",
+        "candidate_length": 42
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "spanish_notes",
+        "bbox": [
+          50,
+          573,
+          447,
+          651
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "known_broken_column_order",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [
+          "known_broken_column_order"
+        ],
+        "evidence_refs": [
+          "regional-ocr-hebrew-search-v1/page167-regions.json"
+        ],
+        "candidate_sha256": "8cfca3fd4f2a7fbc2cf5c63217f8818580cc086172b105f3ffd6c129698caf45",
+        "candidate_length": 796
+      }
+    ]
+  },
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "scope": "offline selected golden; no worker integration"
+}

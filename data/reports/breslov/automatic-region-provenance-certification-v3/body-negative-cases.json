@@ -1,0 +1,87 @@
+{
+  "tests": "backend/tests/test_automatic_region_certification_v3.py::test_body_negatives_fail_closed",
+  "cases": [
+    {
+      "case": "missing_rules",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "off_center_caption",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "missing_notes_separator",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "missing_note_anchors",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "missing_native",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "reverse_direction",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "overlap",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "narrow_column",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "conflicting_source_order",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "mixed_direction",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "note_sized_text",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "interleaved_font_sizes",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "header",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "footer",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "section_heading",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    },
+    {
+      "case": "footnote",
+      "expected": "NOT_MAIN_BODY_CERTIFIED",
+      "result": "PASS"
+    }
+  ],
+  "final_focal_log": "tests-focused.txt",
+  "scope": "Deterministic proof-removal/negative-role controls, not an exhaustive arbitrary-caption taxonomy."
+}

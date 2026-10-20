@@ -1,0 +1,16 @@
+{
+  "gate": "TEBAAI_BRESLOV_REGION_MARKDOWN_PROVENANCE_AND_EDITORIAL_BOUNDARIES_V1",
+  "status": "PASS",
+  "verdict": "TEBAAI_BRESLOV_REGION_MARKDOWN_PROVENANCE_AND_EDITORIAL_BOUNDARIES_V1_PASS",
+  "NEXT_GATE": "TEBAAI_BRESLOV_QUALITY_ENFORCEMENT_WORKER_E2E_V1",
+  "READY_FOR_C_REINGEST": "NO",
+  "worker_modified": false,
+  "production_modified": false,
+  "PostgreSQL_writes": false,
+  "Milvus_writes": false,
+  "publication_changes": false,
+  "OCR": false,
+  "visibility_modified": false,
+  "commit": false,
+  "push": false
+}

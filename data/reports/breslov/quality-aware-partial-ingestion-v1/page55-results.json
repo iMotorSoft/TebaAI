@@ -1,0 +1,27 @@
+{
+  "classification": {
+    "quality_policy_version": "region-quality-v1",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "pdf_page": 55,
+    "region_id": "corrupt_markdown_sample",
+    "bbox": null,
+    "coordinate_system": null,
+    "classification": "PLATFORM_EXTRACTION_ERROR",
+    "remediation": "QUARANTINE_REQUIRED",
+    "reason": [
+      "replacement_character",
+      "text_order_structure_not_verified"
+    ],
+    "source_method": "pymupdf4llm",
+    "diagnostic_summary": [],
+    "evidence_refs": [
+      "historical-extraction-solution-audit-v1/closure/trace.json"
+    ],
+    "candidate_sha256": "7ee51a4bbb0ee8b469f09222989a8355fdb05124b2afc8e932d349075fb7ca88",
+    "candidate_length": 38
+  },
+  "scope": "one corrupt Markdown paragraph; bbox correspondence unproven",
+  "raw_cause": "layout flags omit CID fallback; Cc becomes U+FFFD (existing audit)",
+  "whole_page_blocked": false,
+  "good_regions_preservation": "NOT_VALIDATED"
+}

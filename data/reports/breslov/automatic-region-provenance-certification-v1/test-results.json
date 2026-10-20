@@ -1,0 +1,27 @@
+{
+  "focal": {
+    "passed": 91,
+    "failed": 0,
+    "command": "uv run pytest -q tests/test_automatic_region_certification.py tests/test_region_markdown_provenance.py tests/test_region_quality.py"
+  },
+  "related": {
+    "passed": 613,
+    "failed": 0,
+    "log": "tests-related.txt"
+  },
+  "baseline_full": {
+    "passed": 1747,
+    "failed": 18,
+    "warnings": 94
+  },
+  "final_full": {
+    "passed": 1775,
+    "failed": 18,
+    "warnings": 94
+  },
+  "new_tests": 28,
+  "new_backend_regressions": 0,
+  "gate_acceptance": "FAIL; passing contract/unit tests do not prove goal goldens/holdout acceptance",
+  "frontend": "NOT_RUN (untouched)",
+  "lat_check": "NOT_APPLICABLE (LAT/@lat untouched)"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "NOT_RUN",
+  "reason": "Runtime has no approved source-bound positive certificate issuer/transport; offline certificates are manually reviewed golden inputs. See enforcement-point.md.",
+  "real_e2e": false,
+  "expected_vectors": null,
+  "actual_vectors": null,
+  "quarantined_vectors": null,
+  "orphans": null,
+  "duplicates": null
+}

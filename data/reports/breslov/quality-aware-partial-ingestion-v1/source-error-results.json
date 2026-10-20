@@ -1,0 +1,25 @@
+{
+  "synthetic_only": true,
+  "metadata": {
+    "quality_policy_version": "region-quality-v1",
+    "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "pdf_page": 1,
+    "region_id": "source-error",
+    "bbox": null,
+    "coordinate_system": null,
+    "classification": "SOURCE_PDF_ERROR",
+    "remediation": "SOURCE_ERROR",
+    "reason": [
+      "visible_source_defect"
+    ],
+    "source_method": "pymupdf4llm",
+    "diagnostic_summary": [],
+    "evidence_refs": [
+      "synthetic-contract-only"
+    ],
+    "candidate_sha256": "8227d953a3995eb4aa768220c92c8c1afaa753d3109705ea5d6d1def6f179c4c",
+    "candidate_length": 31
+  },
+  "indexed": false,
+  "autofixed": false
+}

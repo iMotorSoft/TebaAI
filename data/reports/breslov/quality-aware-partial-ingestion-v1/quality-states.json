@@ -1,0 +1,20 @@
+{
+  "quality_policy_version": "region-quality-v1",
+  "region": [
+    "ACCEPTED",
+    "PLATFORM_EXTRACTION_ERROR",
+    "SOURCE_PDF_ERROR",
+    "UNRESOLVED"
+  ],
+  "aggregate": [
+    "FULL",
+    "PARTIAL",
+    "UNUSABLE"
+  ],
+  "remediation": [
+    "SAFE_RECONNECT",
+    "QUARANTINE_REQUIRED",
+    "SOURCE_ERROR",
+    "UNRESOLVED"
+  ]
+}

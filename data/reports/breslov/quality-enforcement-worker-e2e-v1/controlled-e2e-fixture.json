@@ -1,0 +1,16 @@
+{
+  "status": "NOT_RUN",
+  "reason": "Runtime has no approved source-bound positive certificate issuer/transport; offline certificates are manually reviewed golden inputs. See enforcement-point.md.",
+  "real_e2e": false,
+  "pdf_created": false,
+  "uploaded": false,
+  "fixture_document_id": null,
+  "fixture_job_id": null,
+  "planned_regions": [
+    "GOOD_A",
+    "BAD_B",
+    "GOOD_C"
+  ],
+  "planned_bad_signal": "U+FFFD corruption via the existing classifier; not quality=\"bad\"",
+  "contract_string_probe": "contract-boundary-probe.json (not a PDF fixture)"
+}

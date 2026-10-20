@@ -1,0 +1,1274 @@
+{
+  "same_region_ids": false,
+  "ordered_only_ids": [
+    "region-41281cce1038e6102b5ccfac",
+    "region-68c6b0422138ff8b680e099d",
+    "region-7e3083a649ad5d7b0c8dfbf9",
+    "region-f367c00a0096d99e5cb59ed8"
+  ],
+  "permuted_only_ids": [
+    "region-22a1c3616c797eeff52ea078",
+    "region-3bcbe53d6900deda33b43cfe",
+    "region-492a77209ecd1db70532c0c1",
+    "region-e030e9b7a24135ea087fe29d"
+  ],
+  "changed_regions": 11,
+  "differences": [
+    {
+      "region_id": "region-0b6b3380e440ba2cd860a557",
+      "page": 55,
+      "note": 33,
+      "changes": {
+        "provenance_status": {
+          "ordered": "CERTIFIED",
+          "permuted": "UNRESOLVED"
+        },
+        "quality_status": {
+          "ordered": "ACCEPTED",
+          "permuted": "UNRESOLVED"
+        },
+        "reason_codes": {
+          "ordered": [
+            "NATIVE_VISIBLE_TEXT_ORDER_EQUIVALENT"
+          ],
+          "permuted": [
+            "DIRECTION_UNPROVEN",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ]
+        },
+        "continuation_status": {
+          "ordered": "COMPLETE",
+          "permuted": "UNRESOLVED_CONTINUATION"
+        },
+        "editorial_unit_id": {
+          "ordered": "editorial-406e00393f3d2fae834f1699",
+          "permuted": null
+        },
+        "continuation_state": {
+          "ordered": "COMPLETE_LOCAL",
+          "permuted": "CONTINUATION_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "region_id": "region-019856217e36825f686180c6",
+      "page": 56,
+      "note": 35,
+      "changes": {
+        "provenance_status": {
+          "ordered": "CERTIFIED",
+          "permuted": "UNRESOLVED"
+        },
+        "reason_codes": {
+          "ordered": [
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "permuted": [
+            "DIRECTION_UNPROVEN",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ]
+        },
+        "continuation_status": {
+          "ordered": "COMPLETE",
+          "permuted": "UNRESOLVED_CONTINUATION"
+        },
+        "editorial_unit_id": {
+          "ordered": "editorial-62e9dbc2a6e6bef0e9593a01",
+          "permuted": null
+        },
+        "continuation_state": {
+          "ordered": "COMPLETE_LOCAL",
+          "permuted": "CONTINUATION_UNRESOLVED"
+        }
+      }
+    },
+    {
+      "region_id": "region-b92a9b8b173ca5a0c0244ab0",
+      "page": 56,
+      "note": null,
+      "changes": {
+        "reason_codes": {
+          "ordered": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING"
+          ],
+          "permuted": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "region_id": "region-c35e8d2b27d16eb9da8f34c1",
+      "page": 57,
+      "note": null,
+      "changes": {
+        "reason_codes": {
+          "ordered": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "permuted": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "region_id": "region-9272176b9b8192e6925f626d",
+      "page": 80,
+      "note": null,
+      "changes": {
+        "reason_codes": {
+          "ordered": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "permuted": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "region_id": "region-cbabcc634980c627e2d2280b",
+      "page": 80,
+      "note": null,
+      "changes": {
+        "reason_codes": {
+          "ordered": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "permuted": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "region_id": "region-211304b14f6b0356c016a131",
+      "page": 140,
+      "note": null,
+      "changes": {
+        "reason_codes": {
+          "ordered": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "permuted": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "region_id": "region-5584e245b77d8acfa4a406c5",
+      "page": 167,
+      "note": 66,
+      "changes": {
+        "provenance_status": {
+          "ordered": "CERTIFIED",
+          "permuted": "UNRESOLVED"
+        },
+        "quality_status": {
+          "ordered": "ACCEPTED",
+          "permuted": "UNRESOLVED"
+        },
+        "reason_codes": {
+          "ordered": [
+            "CROSS_PAGE_IDENTITY_PROVEN"
+          ],
+          "permuted": [
+            "DIRECTION_UNPROVEN",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "PAGE_BOUNDARY"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "PAGE_BOUNDARY"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        },
+        "continuation_status": {
+          "ordered": "CROSS_PAGE_COMPLETE",
+          "permuted": "UNRESOLVED_CONTINUATION"
+        },
+        "editorial_unit_id": {
+          "ordered": "editorial-4dc8ad8ef31a643009554e65",
+          "permuted": null
+        },
+        "continuation_state": {
+          "ordered": "CONTINUES_NEXT_PAGE",
+          "permuted": "CONTINUATION_UNRESOLVED"
+        },
+        "continuation_proof": {
+          "ordered": [
+            {
+              "name": "CONTINUATION_PROOF",
+              "passed": true,
+              "evidence": [
+                "ADJACENT_SAME_DOCUMENT",
+                "TWO_RULE_NOTES_PANEL",
+                "IDENTICAL_FONT_SIZE_FAMILY",
+                "UNMARKED_LEADING_SEGMENT",
+                "NEXT_CONSECUTIVE_MARKER",
+                "DISJOINT_COLUMN_FLOW",
+                "NATIVE_LTR_ORDER"
+              ]
+            }
+          ],
+          "permuted": []
+        },
+        "linked_region_ids": {
+          "ordered": [
+            "region-68c6b0422138ff8b680e099d"
+          ],
+          "permuted": []
+        }
+      }
+    },
+    {
+      "region_id": "region-7203fd8371a2231d4e0cc6c5",
+      "page": 168,
+      "note": null,
+      "changes": {
+        "reason_codes": {
+          "ordered": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING"
+          ],
+          "permuted": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "region_id": "region-a3edb256e0096e87bf6cb2e8",
+      "page": 168,
+      "note": null,
+      "changes": {
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "region_id": "region-b8754205fb9fdcfa9af6124e",
+      "page": 200,
+      "note": null,
+      "changes": {
+        "reason_codes": {
+          "ordered": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "permuted": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ]
+        },
+        "proofs": {
+          "ordered": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "permuted": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "finding": "V2 recomputes native/source tokens using selected lines in incoming container order; V3 does not canonicalize that input before delegating. Native-backed multi-line note proofs can fail closed after permutation; cross-page discovery can consequently differ. No post-holdout fix permitted."
+}

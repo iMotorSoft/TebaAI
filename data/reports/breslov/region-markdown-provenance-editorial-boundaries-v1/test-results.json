@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "focused": {"passed": 63, "failed": 0, "log": "tests-focused.txt"},
+  "related": {"passed": 585, "failed": 0, "log": "tests-related.txt", "previous_baseline": 555, "new_tests": 30},
+  "full_backend_suite": {
+    "executed": false,
+    "reason": "Isolated new offline adapter/tests only. No existing shared extraction/Markdown module, worker, runtime caller, repository, configuration or API modified. Complete previous related suite rerun with new regressions."
+  },
+  "real_source_validation": "PASS: required PDF SHA verified; small committed IR matches actual extraction; full required pages55/56/167 plus supporting note-only continuations57/168",
+  "goldens": {
+    "167_body_notes_columns_hebrew_isolation": "PASS",
+    "55_exact_exclusion_neighbor_sequence": "PASS",
+    "56_complete35_and36_with_terminal36_on57": "PASS",
+    "167_terminal66_on168": "PASS"
+  },
+  "generic_tests": ["single block", "multi-line block", "column flow", "note block", "Markdown decoration", "mixed accepted/quarantined neighbors", "duplicate text", "neighboring notes", "RTL declared column direction without reversal", "unknown numeric starts unresolved", "unrelated footer rejected", "unsafe serializer hyphenation unaccepted", "invalid geometry unresolved"],
+  "fresh_PDF_runs": 3,
+  "idempotence": "PASS",
+  "note_geometry_input_permutation": "PASS",
+  "repeated_report_JSON_hashes": "IDENTICAL (two complete validator executions)",
+  "git_diff_check": "PASS",
+  "new_file_whitespace_check": "PASS",
+  "diff_review": "New adapter/tests/fixtures/report reviewed; all tracked diff belongs to initial worktree and untouched",
+  "frontend_checks": "NOT APPLICABLE: no frontend changes",
+  "lat_check": "NOT APPLICABLE: no LAT or @lat changes",
+  "worker_E2E": "NOT RUN (explicitly next gate)",
+  "service_connections_or_writes": false
+}

@@ -1,0 +1,10 @@
+{
+  "version": "automatic-region-holdout-v1",
+  "sealed_before_implementation": true,
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "physical_pages": [70, 80, 90, 100, 110, 120, 130, 140, 150, 180, 190, 200],
+  "selection": "Fixed systematic sample away from goldens and their continuation pages; no outcome inspection. Categories are to be inventoried, not presumed present.",
+  "annotation_protocol": "Annotate source layout independently before running certificates. Text and labelled numbered footnotes with pure Latin direction may be certifiable; mixed, unsupported and unknown zones require unresolved. Native text equality is necessary but not sufficient for quality. Review any certification against exact source identity and editorial boundaries. No V1 rule changes after holdout evaluation.",
+  "target_categories": ["simple body", "notes", "columns", "Hebrew", "mixed layout"],
+  "no_tuning_after_evaluation": true
+}

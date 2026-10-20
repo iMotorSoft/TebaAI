@@ -1,0 +1,25 @@
+{
+  "status": "NOT_RUN",
+  "reason": "Runtime has no approved source-bound positive certificate issuer/transport; offline certificates are manually reviewed golden inputs. See enforcement-point.md.",
+  "real_e2e": false,
+  "GOOD_A": {
+    "canonical": null,
+    "chunk": null,
+    "vector": null,
+    "retrievable": null,
+    "citable": null
+  },
+  "BAD_B": {
+    "canonical": null,
+    "chunk": null,
+    "vector": null,
+    "retrievable": null,
+    "citable": null,
+    "quarantine_metadata": null
+  },
+  "GOOD_C": {
+    "preserved": null
+  },
+  "page_quality": null,
+  "document_quality": null
+}

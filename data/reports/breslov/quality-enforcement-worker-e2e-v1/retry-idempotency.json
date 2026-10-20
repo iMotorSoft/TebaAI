@@ -1,0 +1,12 @@
+{
+  "status": "NOT_RUN",
+  "reason": "Runtime has no approved source-bound positive certificate issuer/transport; offline certificates are manually reviewed golden inputs. See enforcement-point.md.",
+  "real_e2e": false,
+  "official_retry_executed": false,
+  "quality_same": null,
+  "canonical_same": null,
+  "chunks_same": null,
+  "vectors_same": null,
+  "quarantine_duplicates": null,
+  "official_contract": "retry only failed/cancelled + retained upload + verified cleanup; successful attempts cannot be retried"
+}

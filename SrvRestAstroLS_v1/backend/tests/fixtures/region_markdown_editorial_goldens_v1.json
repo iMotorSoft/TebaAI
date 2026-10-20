@@ -1,0 +1,27 @@
+{
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "manual_review": "Read-only PDF crops, physical 167 and 56, at 2x; LTR notes read complete left column then right. Expected text retains extractor glyph/ligature representation, not spelling repair. The 56/167 ends are exact PAGE-LOCAL ends; real final editorial ends of 36/66 are separately checked on 57/168.",
+  "167": [
+    {"number": 60, "start": "60 Ver Pri Etz Jaim, Shaar HaTefi lá 3.", "end": "60 Ver Pri Etz Jaim, Shaar HaTefi lá 3.", "columns": [0], "source_lines": [[18, 0]]},
+    {"number": 61, "start": "61 Ver §1 más arriba.", "end": "61 Ver §1 más arriba.", "columns": [0], "source_lines": [[18, 1]]},
+    {"number": 62, "start": "62 Pri Etz Jaim, op. cit.", "end": "62 Pri Etz Jaim, op. cit.", "columns": [0], "source_lines": [[18, 2]]},
+    {"number": 63, "start": "63 Una cita entre paréntesis aquí dice: Estudia más esto en las", "end": "4.10.", "columns": [0], "source_lines": [[18, 3], [18, 4], [18, 5]]},
+    {"number": 64, "start": "64 Ver §1 y §4 más arriba.", "end": "64 Ver §1 y §4 más arriba.", "columns": [0], "source_lines": [[18, 6]]},
+    {"number": 65, "start": "65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim", "end": "Natán hará referencia esto a continuación.", "columns": [0, 1], "source_lines": [[18, 7], [19, 0], [19, 1], [19, 2], [19, 3], [19, 4]]},
+    {"number": 66, "start": "66 Comentando sobre el versículo (Proverbios 27:5) “La", "end": "enseña que la “amonestación franca” hace referencia a las", "columns": [1], "source_lines": [[19, 5], [19, 6], [19, 7]]}
+  ],
+  "56": [
+    {"number": 35, "start": "35 Ver §1 más arriba. Escribe el Rabí Natán en otra instancia:", "end": "sienten muy distantes de Él (LH, Nesiat Kapaim 5:6).", "columns": [0, 1], "source_lines": [[5, 0], [5, 1], [5, 2], [5, 3], [5, 4], [6, 0], [6, 1]]},
+    {"number": 36, "start": "36 Birur (pl. birurim; lit. “tamizar”) hace referencia a la", "end": "aprisionadas entre las klipot, las fuerzas malignas del Otro", "columns": [1], "source_lines": [[6, 2], [6, 3], [6, 4]]}
+  ],
+  "continuations": {
+    "57": {"from_page": 56, "number": 36, "note_zone_bbox": [45, 560, 450, 650], "start": "Lado. En el momento de la Creación, las sefi rot-recipientes", "end": "dirigidos hacia la santidad.", "source_lines": [[6, 0], [6, 1], [6, 2], [6, 3], [6, 4], [6, 5], [6, 6], [6, 7], [6, 8], [7, 0], [7, 1], [7, 2]], "next_note": 37},
+    "168": {"from_page": 167, "number": 66, "note_zone_bbox": null, "start": "guevurot, a la raíz de la sefi rá de Guevurá (Shaar HaPesukim,", "end": "amonestación (Sanedrín 107b y Maharsha, v.i. s’mol dojé).", "source_lines": [[8, 0], [8, 1], [8, 2], [8, 3]], "next_note": 67}
+  },
+  "55": {
+    "bad_source_lines": [[15, 0]],
+    "bad_region_text": "Notas y Fuentes���������������",
+    "previous_good_tail": "modelo de la bondad- “no tropezaré”, sino que podré recordar siempre a HaShem.",
+    "next_good_start": "33 Anteriormente hemos visto que el punto bueno de la"
+  }
+}

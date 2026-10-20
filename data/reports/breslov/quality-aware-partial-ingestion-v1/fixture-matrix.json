@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "case": "fully_good",
+      "kind": "synthetic",
+      "status": "PASS"
+    },
+    {
+      "case": "page167",
+      "kind": "real current Markdown",
+      "status": "PARTIAL; notes requirement BLOCKED"
+    },
+    {
+      "case": "page55",
+      "kind": "real corrupt sample",
+      "status": "PASS sample exclusion; neighbors NOT_VALIDATED"
+    },
+    {
+      "case": "page56",
+      "kind": "real current Markdown",
+      "status": "PARTIAL_SAFE_RECONNECT"
+    },
+    {
+      "case": "source_error",
+      "kind": "synthetic",
+      "status": "PASS"
+    },
+    {
+      "case": "unresolved",
+      "kind": "synthetic",
+      "status": "PASS"
+    }
+  ],
+  "counts_scope": "selected classified samples, not whole pages55/56 nor full PDF; E2E none",
+  "accepted_regions": 3,
+  "platform_extraction_errors": 5,
+  "source_pdf_errors": 1,
+  "unresolved_regions": 1,
+  "full_pages": 1,
+  "partial_pages": 2,
+  "unusable_pages": 2,
+  "document_sample_aggregate": "PARTIAL"
+}

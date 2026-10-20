@@ -1,0 +1,14 @@
+{
+  "status": "NOT_RUN",
+  "reason": "Runtime has no approved source-bound positive certificate issuer/transport; offline certificates are manually reviewed golden inputs. See enforcement-point.md.",
+  "real_e2e": false,
+  "fixture_document_id": null,
+  "documents": null,
+  "pages": null,
+  "accepted_regions": null,
+  "quarantined_regions": null,
+  "chunks": null,
+  "jobs": null,
+  "publication_status": null,
+  "note": "No fixture uploaded; null means unmeasured, not zero. Separate generic read-only reachability probe is in service-preflight.json."
+}

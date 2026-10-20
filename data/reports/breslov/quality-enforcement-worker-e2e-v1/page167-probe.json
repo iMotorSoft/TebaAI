@@ -1,0 +1,6 @@
+{
+  "status": "NOT_RUN",
+  "official_page_only_pipeline": "REAL_PAGE_PROBE_NOT_SUPPORTED",
+  "reason": "Controlled E2E has not passed; no page-only selector in official worker request. Prior offline golden is not rerun or relabeled as worker evidence.",
+  "full_C_reingested": false
+}

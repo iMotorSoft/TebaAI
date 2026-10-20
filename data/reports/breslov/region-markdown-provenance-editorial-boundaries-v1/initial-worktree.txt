@@ -1,0 +1,32 @@
+ M SrvRestAstroLS_v1/astro/src/components/library/RelationQAPanel.svelte
+ M SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.test.ts
+ M SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.ts
+ M SrvRestAstroLS_v1/astro/src/components/research/SourcePanel.svelte
+ M SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.test.ts
+ M SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.ts
+ M SrvRestAstroLS_v1/backend/modules/library/pdf_hebrew_fidelity.py
+ M SrvRestAstroLS_v1/backend/tests/test_pdf_hebrew_fidelity.py
+ M SrvRestAstroLS_v1/docs/status_actual.md
+?? SrvRestAstroLS_v1/astro/src/components/library/DirectionalSourceText.svelte
+?? SrvRestAstroLS_v1/backend/infrastructure/postgres/dev_content_reset.py
+?? SrvRestAstroLS_v1/backend/modules/library/data/pdf_font_unicode_profiles.json
+?? SrvRestAstroLS_v1/backend/modules/library/pdf_font_unicode.py
+?? SrvRestAstroLS_v1/backend/modules/library/pdf_text_reconstruction.py
+?? SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py
+?? SrvRestAstroLS_v1/backend/modules/library/region_quality.py
+?? SrvRestAstroLS_v1/backend/scripts/dev_content_reset.py
+?? SrvRestAstroLS_v1/backend/tests/fixtures/likutey_halajot_reconstruction_v1.json
+?? SrvRestAstroLS_v1/backend/tests/test_dev_content_reset.py
+?? SrvRestAstroLS_v1/backend/tests/test_pdf_font_unicode.py
+?? SrvRestAstroLS_v1/backend/tests/test_pdf_text_reconstruction.py
+?? SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py
+?? SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py
+?? SrvRestAstroLS_v1/backend/tests/test_region_quality.py
+?? data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/
+?? data/reports/breslov/2026-10-01-hebrew-extraction-fidelity-v1/browser-error.png
+?? data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/
+?? data/reports/breslov/hebrew-holdout-ocr-quality-v1/
+?? data/reports/breslov/hebrew-ocr-orthographic-search-v1/
+?? data/reports/breslov/historical-extraction-solution-audit-v1/
+?? data/reports/breslov/quality-aware-partial-ingestion-v1/
+?? data/reports/breslov/regional-ocr-hebrew-search-v1/

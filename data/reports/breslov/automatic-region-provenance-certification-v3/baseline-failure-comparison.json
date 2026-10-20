@@ -1,0 +1,91 @@
+{
+  "baseline_v2": {
+    "passed": 1802,
+    "failed": 18,
+    "warnings": 94
+  },
+  "v3": {
+    "passed": 1830,
+    "failed": 18,
+    "warnings": 94
+  },
+  "same_failed_test_nodes": true,
+  "failure_detail_blocks_byte_identical": true,
+  "baseline_failure_detail_sha256": "ff85a8184f3b63893ce5f09fca1be65a5094630d5cde015e78090c6f99f278a0",
+  "v3_failure_detail_sha256": "ff85a8184f3b63893ce5f09fca1be65a5094630d5cde015e78090c6f99f278a0",
+  "new_failures": 0,
+  "failures": [
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_psalm_19_requires_the_requested_book_and_chapter",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_blood_speech_uses_a_controlled_mediated_chain",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_scorpion_discovers_only_textually_grounded_neighbors",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_azamra_uses_controlled_multilingual_named_teaching",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_postgres_single_concept_retrieval_remains_grounded",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_blood_speech_traceability_and_final_per_work_limit",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_hebrew_literal_variants_resolve_same_physical_page",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_source_layer_followup_answers_the_current_question_directly",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\\u05ea\\u05b0\\u05bc\\u05d4\\u05b4\\u05dc\\u05b8\\u05bc\\u05ea\\u05b4\\u05d9 \\u05d0\\u05b6\\u05d7\\u05b0\\u05d8\\u05b8\\u05dd \\u05dc\\u05b8\\u05da\\u05b0]",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\\u05ea\\u05d4\\u05dc\\u05ea\\u05d9 \\u05d0\\u05d7\\u05d8\\u05dd \\u05dc\\u05da]",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\\u05ea \\u05b0\\u05bc \\u05d4\\u05b4 \\u05dc\\u05b8\\u05bc \\u05ea \\u05b4 \\u05d9 \\u05d0\\u05b6 \\u05d7\\u05b0 \\u05d8 \\u05b8 \\u05dd \\u05dc\\u05b8 \\u05da]",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\\u05ea \\u05b0\\u05bc \\u05d4\\u05b4 \\u05dc\\u05b8\\u05bc \\u05ea \\u05b4 \\u05d9 \\u05d0\\u05b6 \\u05d7\\u05b0 \\u05d8 \\u05b8 \\u05dd \\u05dc\\u05b8 \\u05da donde esta]",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[donde esta \\u05ea \\u05b0\\u05bc \\u05d4\\u05b4 \\u05dc\\u05b8\\u05bc \\u05ea \\u05b4 \\u05d9 \\u05d0\\u05b6 \\u05d7\\u05b0 \\u05d8 \\u05b8 \\u05dd \\u05dc\\u05b8 \\u05da]",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\\u05d0\\u05d9\\u05e4\\u05d4 \\u05ea \\u05b0\\u05bc \\u05d4\\u05b4 \\u05dc\\u05b8\\u05bc \\u05ea \\u05b4 \\u05d9 \\u05d0\\u05b6 \\u05d7\\u05b0 \\u05d8 \\u05b8 \\u05dd \\u05dc\\u05b8 \\u05da]",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_investigative_qa_v1.py::test_exact_pdf_copypaste_audit_excludes_spanish_instruction",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_named_topics.py::test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[tisha beav]",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    },
+    {
+      "nodeid": "tests/test_named_topics.py::test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[Tisha B'Av]",
+      "classification": "PREEXISTING_BASELINE_FAILURE"
+    }
+  ]
+}

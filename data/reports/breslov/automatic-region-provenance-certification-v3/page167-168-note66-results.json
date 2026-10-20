@@ -1,0 +1,3979 @@
+{
+  "note": 66,
+  "first_page": 167,
+  "next_page": 168,
+  "first_segment": {
+    "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "pdf_page": 167,
+    "region_id": "region-5584e245b77d8acfa4a406c5",
+    "bbox": [
+      255.44964599609375,
+      622.315673828125,
+      444.1102600097656,
+      647.127197265625
+    ],
+    "zone_type": "note",
+    "direction": "LTR",
+    "source_block_ids": [
+      19
+    ],
+    "source_line_ids": [
+      [
+        19,
+        5
+      ],
+      [
+        19,
+        6
+      ],
+      [
+        19,
+        7
+      ]
+    ],
+    "markdown_ranges": [
+      [
+        3599,
+        3779
+      ]
+    ],
+    "mapping_method": "FORWARD_IR_SERIALIZATION",
+    "provenance_status": "CERTIFIED",
+    "quality_status": "ACCEPTED",
+    "reason_codes": [
+      "CROSS_PAGE_IDENTITY_PROVEN"
+    ],
+    "note_number": 66,
+    "end_reason": "PAGE_BOUNDARY",
+    "continuation_of": null,
+    "certificate_version": "automatic-region-certification-v3",
+    "proofs": [
+      {
+        "name": "zone",
+        "passed": true,
+        "evidence": [
+          "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+          "EXPLICIT_NOTE_ANCHORS",
+          "MAPPED_NOTE_FLOW"
+        ]
+      },
+      {
+        "name": "direction",
+        "passed": true,
+        "evidence": [
+          "LTR_STRONG_SCRIPT",
+          "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+        ]
+      },
+      {
+        "name": "ownership",
+        "passed": true,
+        "evidence": [
+          "UNIQUE_SOURCE_IDENTITIES",
+          "DISJOINT_SOURCE_LINE_GEOMETRY",
+          "FORWARD_MARKDOWN_RANGES"
+        ]
+      },
+      {
+        "name": "local_boundary",
+        "passed": true,
+        "evidence": [
+          "PAGE_BOUNDARY"
+        ]
+      },
+      {
+        "name": "order",
+        "passed": true,
+        "evidence": [
+          "CONSECUTIVE_MARKERS",
+          "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+        ]
+      },
+      {
+        "name": "continuation",
+        "passed": false,
+        "evidence": []
+      }
+    ],
+    "local_boundary": "KNOWN",
+    "continuation_status": "CROSS_PAGE_COMPLETE",
+    "body_proof": [],
+    "editorial_unit_id": "editorial-4dc8ad8ef31a643009554e65",
+    "continuation_state": "CONTINUES_NEXT_PAGE",
+    "continuation_proof": [
+      {
+        "name": "CONTINUATION_PROOF",
+        "passed": true,
+        "evidence": [
+          "ADJACENT_SAME_DOCUMENT",
+          "TWO_RULE_NOTES_PANEL",
+          "IDENTICAL_FONT_SIZE_FAMILY",
+          "UNMARKED_LEADING_SEGMENT",
+          "NEXT_CONSECUTIVE_MARKER",
+          "DISJOINT_COLUMN_FLOW",
+          "NATIVE_LTR_ORDER"
+        ]
+      }
+    ],
+    "linked_region_ids": [
+      "region-68c6b0422138ff8b680e099d"
+    ]
+  },
+  "next_page_continuation": [
+    {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 168,
+      "region_id": "region-68c6b0422138ff8b680e099d",
+      "bbox": [
+        53.14808654785156,
+        568.2884521484375,
+        241.80322265625,
+        603.589599609375
+      ],
+      "zone_type": "note",
+      "direction": "LTR",
+      "source_block_ids": [
+        8
+      ],
+      "source_line_ids": [
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          3
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          2954,
+          3219
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "CERTIFIED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "CROSS_PAGE_IDENTITY_PROVEN"
+      ],
+      "note_number": 66,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "continuation_of": "region-5584e245b77d8acfa4a406c5",
+      "certificate_version": "automatic-region-certification-v3",
+      "proofs": [],
+      "local_boundary": "KNOWN",
+      "continuation_status": "CROSS_PAGE_COMPLETE",
+      "body_proof": [],
+      "editorial_unit_id": "editorial-4dc8ad8ef31a643009554e65",
+      "continuation_state": "CONTINUED_FROM_PREVIOUS",
+      "continuation_proof": [
+        {
+          "name": "CONTINUATION_PROOF",
+          "passed": true,
+          "evidence": [
+            "ADJACENT_SAME_DOCUMENT",
+            "TWO_RULE_NOTES_PANEL",
+            "IDENTICAL_FONT_SIZE_FAMILY",
+            "UNMARKED_LEADING_SEGMENT",
+            "NEXT_CONSECUTIVE_MARKER",
+            "DISJOINT_COLUMN_FLOW",
+            "NATIVE_LTR_ORDER"
+          ]
+        }
+      ],
+      "linked_region_ids": [
+        "region-5584e245b77d8acfa4a406c5"
+      ]
+    }
+  ],
+  "continuation_relation": "CERTIFIED",
+  "editorial_unit_id_stable": "YES",
+  "eventual_completion": "CROSS_PAGE_COMPLETE",
+  "false_completion_on_first_page": "NO",
+  "pages": [
+    {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 167,
+      "markdown": "����� ������ **149** \n\n<#���>>��ח **�** ������ד � ����� ����� \n\n������������������������������ **�** �������������������������������������������� **�** �������������������� **�** �� **�** ������������������������������������������������������������������������������������������������������������ ������������������������������������������������������������������������������������������������������� **�** .�������������������� \n\n��������������������������������������������������������������������������������������� **�** ���������������������� **� �** ��������������������������������� ������ **�** ������������������������� **� �** �������������������������������������������� **� �** ����������������������� **�** �������������������������������������������������������������������������������������������������������� **�** ���� ��� **�** ������������������������������������������������ ��������������������������������������������������������������������������������������������������������������� **�** \n\n~~_���������������������������Likutey Halajot Explicado_~~ \n\n**protección extra para elevarlos de las fuerzas externas adyacentes a ellos.**[60] **Pues los pies están conceptualmente asociados con** _Maljut_ y **la sabiduría inferior, el propósito de las mencionadas constricciones de la sabiduría Divina.**[61] **Debemos** cortar y **separar los “pies”** de la garra de **los Cuatro Reinos y elevarlos al aspecto del** _**Or HaPanim**_ que brilla **durante los** _**Shalosh Regalim**_ **. Y** del _Or HaPanim_ **traemos** la protección **, el concepto de los zapatos, que protegen a los pies de las fuerzas externas.** \n\n**Éste es el signifi cado de “Así** como es con **los** _**tefilin**_ **” - que** son una revelación del _**Or HaPanim**_ **, como es sabido** a partir de la Kabalá[62] **- “así** es con **los zapatos”. Del** _Or HaPanim_ asociado con los _tefilin_ , que protege a _Maljut_ /la sabiduría inferior **, proviene el concepto de los zapatos como la protección de los pies** .[63] \n\n**Por lo tanto la persona debe colocarse el zapato derecho primero, dado que el lado derecho, que es** _**jesed**_ **, es el principal. Con esto separamos** a _Maljut_ **de los** Cuatro Reinos y **la construimos.**[64] \n\n**Así, con respecto a los cordones, la izquierda** tiene **precedencia; similar a los** _**tefilin**_ **, donde se comienza ajustando** la correa de **los** _**tefilin**_ **en el brazo izquierdo. El motivo por el cual el atar los** _**tefilin**_ **en el brazo izquierdo precede** el colocarse los _tefilin_ de la cabeza **es que la recepción del** _**jesed**_ **sólo es posible a través de la amonestación** del Tzadik **. Mira** la lección del Rebe **, donde esto está explicado.**[65] **Y la amonestación corresponde a las** _**guevurot**_ **,** las severidades **, que están asociadas con la izquierda** .[66] \n\n**Esto se relaciona** con la exposición de _Jazal_ sobre _iadja_ como enseñando \n\n## ~~_Notas y Fuentes���������������_~~ \n\n> 60 Ver _Pri Etz Jaim, Shaar HaTefi lá_ 3. \n\n> 61 Ver §1 más arriba. \n\n> 62 _Pri Etz Jaim_ , op. cit. \n\n> 63 Una cita entre paréntesis aquí dice: Estudia más esto en las leyes pertenecientes a la _jalitza_ que aparecen en el LH, _Guitin_ 4.10. \n\n> 64 Ver §1 y §4 más arriba. \n\n> 65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim se refrena en general de amonestar al pueblo judío (ver LM I, 22:1), el Rebe Najmán enseña que el sufrimiento que le produce el judío al Tzadik al pecar ocasionalmente lo lleva a expresar una amonestación que humilla a su audiencia. El Rabí Natán hará referencia esto a continuación. \n\n> 66 Comentando sobre el versículo (Proverbios 27:5) “La amonestación franca es mejor que el amor oculto”, el Ari _zal_ enseña que la “amonestación franca” hace referencia a las \n\n",
+      "page_aggregate": "PARTIAL",
+      "certificates": [
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-aad7be7388e0c6eb3d6a17a8",
+          "bbox": [
+            369.9049987792969,
+            46.17702102661133,
+            443.469970703125,
+            55.95378112792969
+          ],
+          "zone_type": "header",
+          "direction": "UNRESOLVED",
+          "source_block_ids": [
+            0
+          ],
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              0,
+              23
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-bdf3b35d994b533d8893e596",
+          "bbox": [
+            25.070499420166016,
+            46.26249313354492,
+            160.2469940185547,
+            55.754493713378906
+          ],
+          "zone_type": "header",
+          "direction": "RTL",
+          "source_block_ids": [
+            0
+          ],
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              23,
+              64
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-50d74497681841fd5cdf4077",
+          "bbox": [
+            56.4793701171875,
+            69.71330261230469,
+            442.0295104980469,
+            127.05249786376953
+          ],
+          "zone_type": "text",
+          "direction": "UNRESOLVED",
+          "source_block_ids": [
+            9,
+            10
+          ],
+          "source_line_ids": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              2
+            ],
+            [
+              10,
+              3
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              64,
+              431
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "PROVENANCE_OVERLAP",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "OWNERSHIP_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": false,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-63e508f183039b646217fa15",
+          "bbox": [
+            56.48040008544922,
+            135.49388122558594,
+            442.0472106933594,
+            227.6981964111328
+          ],
+          "zone_type": "text",
+          "direction": "UNRESOLVED",
+          "source_block_ids": [
+            11,
+            12,
+            13
+          ],
+          "source_line_ids": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              12,
+              4
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              6
+            ],
+            [
+              12,
+              7
+            ],
+            [
+              13,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              431,
+              1015
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "PROVENANCE_OVERLAP",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "OWNERSHIP_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": false,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-42907a8b6e803abed4f59a9e",
+          "bbox": [
+            209.875,
+            247.31297302246094,
+            289.0232238769531,
+            255.3709716796875
+          ],
+          "zone_type": "text",
+          "direction": "LTR",
+          "source_block_ids": [
+            14
+          ],
+          "source_line_ids": [
+            [
+              14,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              1015,
+              1076
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-6d2d124c6cae1c3648d1d8da",
+          "bbox": [
+            56.692901611328125,
+            269.0009765625,
+            445.193115234375,
+            348.8809814453125
+          ],
+          "zone_type": "MAIN_BODY",
+          "direction": "LTR",
+          "source_block_ids": [
+            5
+          ],
+          "source_line_ids": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              1076,
+              1637
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "SUPPORTED_RULED_MAIN_PANEL",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": true,
+              "evidence": [
+                "SOURCE_IDS_GEOMETRY_NATIVE_HORIZONTAL_DIRECTION"
+              ]
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-d6baf8fb522ed5f2537c1b4d",
+          "bbox": [
+            56.692962646484375,
+            354.0359802246094,
+            445.16595458984375,
+            401.9759826660156
+          ],
+          "zone_type": "text",
+          "direction": "LTR",
+          "source_block_ids": [
+            5
+          ],
+          "source_line_ids": [
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              1637,
+              2015
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "ORDER_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-a330eb2be0fd33a5b5c6fb59",
+          "bbox": [
+            56.692901611328125,
+            406.9599609375,
+            445.15301513671875,
+            440.8099670410156
+          ],
+          "zone_type": "MAIN_BODY",
+          "direction": "LTR",
+          "source_block_ids": [
+            6
+          ],
+          "source_line_ids": [
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2015,
+              2236
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "SUPPORTED_RULED_MAIN_PANEL",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": true,
+              "evidence": [
+                "SOURCE_IDS_GEOMETRY_NATIVE_HORIZONTAL_DIRECTION"
+              ]
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-e33afca209bbe9a1c31481e0",
+          "bbox": [
+            56.69281005859375,
+            445.50494384765625,
+            445.1650085449219,
+            527.6550903320312
+          ],
+          "zone_type": "MAIN_BODY",
+          "direction": "LTR",
+          "source_block_ids": [
+            7
+          ],
+          "source_line_ids": [
+            [
+              7,
+              0
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              7,
+              6
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2236,
+              2851
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "SUPPORTED_RULED_MAIN_PANEL",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": true,
+              "evidence": [
+                "SOURCE_IDS_GEOMETRY_NATIVE_HORIZONTAL_DIRECTION"
+              ]
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-f7f1faa5f7cba237dafcf95e",
+          "bbox": [
+            85.09300231933594,
+            532.2835693359375,
+            445.076904296875,
+            542.5581665039062
+          ],
+          "zone_type": "MAIN_BODY",
+          "direction": "LTR",
+          "source_block_ids": [
+            8
+          ],
+          "source_line_ids": [
+            [
+              8,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2851,
+              2933
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "reason_codes": [
+            "SUPPORTED_RULED_MAIN_PANEL",
+            "ALL_BODY_PROOFS_PRESENT"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": true,
+              "evidence": [
+                "SOURCE_IDS_GEOMETRY_NATIVE_HORIZONTAL_DIRECTION"
+              ]
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-5b921f4d5aa7a05a7ea2ae97",
+          "bbox": [
+            226.1719970703125,
+            556.3569946289062,
+            274.1430358886719,
+            563.4559936523438
+          ],
+          "zone_type": "notes_heading",
+          "direction": "LTR",
+          "source_block_ids": [
+            17
+          ],
+          "source_line_ids": [
+            [
+              17,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2933,
+              2975
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-ce12d3949ae8134ad2feac97",
+          "bbox": [
+            56.692901611328125,
+            575.8474731445312,
+            172.32040405273438,
+            584.1499633789062
+          ],
+          "zone_type": "note",
+          "direction": "LTR",
+          "source_block_ids": [
+            18
+          ],
+          "source_line_ids": [
+            [
+              18,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2975,
+              3021
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "DIRECTION_UNPROVEN",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": 60,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ],
+          "local_boundary": "KNOWN",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-ff638d2fa960caae1234972e",
+          "bbox": [
+            56.69365692138672,
+            586.3224487304688,
+            120.91690826416016,
+            592.9948120117188
+          ],
+          "zone_type": "note",
+          "direction": "LTR",
+          "source_block_ids": [
+            18
+          ],
+          "source_line_ids": [
+            [
+              18,
+              1
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3021,
+              3047
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "reason_codes": [
+            "NATIVE_VISIBLE_TEXT_ORDER_EQUIVALENT"
+          ],
+          "note_number": 61,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ],
+          "local_boundary": "KNOWN",
+          "continuation_status": "COMPLETE",
+          "body_proof": [],
+          "editorial_unit_id": "editorial-530918ea6031bff7877b7067",
+          "continuation_state": "COMPLETE_LOCAL",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-d4281d9ff87c57b4485d776c",
+          "bbox": [
+            56.69365692138672,
+            595.3224487304688,
+            127.93991088867188,
+            602.1339721679688
+          ],
+          "zone_type": "note",
+          "direction": "LTR",
+          "source_block_ids": [
+            18
+          ],
+          "source_line_ids": [
+            [
+              18,
+              2
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3047,
+              3080
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "reason_codes": [
+            "NATIVE_VISIBLE_TEXT_ORDER_EQUIVALENT"
+          ],
+          "note_number": 62,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ],
+          "local_boundary": "KNOWN",
+          "continuation_status": "COMPLETE",
+          "body_proof": [],
+          "editorial_unit_id": "editorial-fe24538549110bfdb7f29474",
+          "continuation_state": "COMPLETE_LOCAL",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-d585babd21a30922107ee33f",
+          "bbox": [
+            56.69364929199219,
+            604.3224487304688,
+            245.35171508789062,
+            627.6325073242188
+          ],
+          "zone_type": "note",
+          "direction": "LTR",
+          "source_block_ids": [
+            18
+          ],
+          "source_line_ids": [
+            [
+              18,
+              3
+            ],
+            [
+              18,
+              4
+            ],
+            [
+              18,
+              5
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3080,
+              3222
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "reason_codes": [
+            "NATIVE_VISIBLE_TEXT_ORDER_EQUIVALENT"
+          ],
+          "note_number": 63,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ],
+          "local_boundary": "KNOWN",
+          "continuation_status": "COMPLETE",
+          "body_proof": [],
+          "editorial_unit_id": "editorial-69bb526d3b7b33681e406c4e",
+          "continuation_state": "COMPLETE_LOCAL",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-4c3c4f7d968c08e4291a7228",
+          "bbox": [
+            56.69364929199219,
+            631.3224487304688,
+            135.91690063476562,
+            638.1486206054688
+          ],
+          "zone_type": "note",
+          "direction": "LTR",
+          "source_block_ids": [
+            18
+          ],
+          "source_line_ids": [
+            [
+              18,
+              6
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3222,
+              3253
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "reason_codes": [
+            "NATIVE_VISIBLE_TEXT_ORDER_EQUIVALENT"
+          ],
+          "note_number": 64,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ],
+          "local_boundary": "KNOWN",
+          "continuation_status": "COMPLETE",
+          "body_proof": [],
+          "editorial_unit_id": "editorial-fc9d2a28624678eb441915e7",
+          "continuation_state": "COMPLETE_LOCAL",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-70f1fd4a3c8fe711425a6884",
+          "bbox": [
+            56.69364929199219,
+            577.31201171875,
+            444.1117858886719,
+            647.1339721679688
+          ],
+          "zone_type": "note",
+          "direction": "LTR",
+          "source_block_ids": [
+            18,
+            19
+          ],
+          "source_line_ids": [
+            [
+              18,
+              7
+            ],
+            [
+              19,
+              0
+            ],
+            [
+              19,
+              1
+            ],
+            [
+              19,
+              2
+            ],
+            [
+              19,
+              3
+            ],
+            [
+              19,
+              4
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3253,
+              3599
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "DIRECTION_UNPROVEN",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": 65,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_NOTE_MARKER"
+              ]
+            }
+          ],
+          "local_boundary": "KNOWN",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 167,
+          "region_id": "region-5584e245b77d8acfa4a406c5",
+          "bbox": [
+            255.44964599609375,
+            622.315673828125,
+            444.1102600097656,
+            647.127197265625
+          ],
+          "zone_type": "note",
+          "direction": "LTR",
+          "source_block_ids": [
+            19
+          ],
+          "source_line_ids": [
+            [
+              19,
+              5
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              19,
+              7
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3599,
+              3779
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "reason_codes": [
+            "CROSS_PAGE_IDENTITY_PROVEN"
+          ],
+          "note_number": 66,
+          "end_reason": "PAGE_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_PRECEDING_NOTES_SEPARATOR",
+                "EXPLICIT_NOTE_ANCHORS",
+                "MAPPED_NOTE_FLOW"
+              ]
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": true,
+              "evidence": [
+                "PAGE_BOUNDARY"
+              ]
+            },
+            {
+              "name": "order",
+              "passed": true,
+              "evidence": [
+                "CONSECUTIVE_MARKERS",
+                "DISJOINT_ONE_OR_TWO_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "KNOWN",
+          "continuation_status": "CROSS_PAGE_COMPLETE",
+          "body_proof": [],
+          "editorial_unit_id": "editorial-4dc8ad8ef31a643009554e65",
+          "continuation_state": "CONTINUES_NEXT_PAGE",
+          "continuation_proof": [
+            {
+              "name": "CONTINUATION_PROOF",
+              "passed": true,
+              "evidence": [
+                "ADJACENT_SAME_DOCUMENT",
+                "TWO_RULE_NOTES_PANEL",
+                "IDENTICAL_FONT_SIZE_FAMILY",
+                "UNMARKED_LEADING_SEGMENT",
+                "NEXT_CONSECUTIVE_MARKER",
+                "DISJOINT_COLUMN_FLOW",
+                "NATIVE_LTR_ORDER"
+              ]
+            }
+          ],
+          "linked_region_ids": [
+            "region-68c6b0422138ff8b680e099d"
+          ]
+        }
+      ]
+    },
+    {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 168,
+      "markdown": "DISCURSO SOBRE EL LEVANTARSE EN LA MAÑANA      HALAJÁ 4:9 \n\n**150** LIKUTEY HALAJOT \n\n��������������������������������������������������������������������������� ���������������������� **�** ���������������������������� **� �** �������������������������������������� **�** ����������������� ����������������������������������������������������� �������������������������������������������������������������� **� �** ���������������������������������������������������������������������������� **�** ������������������������� ������������������������������������������������������������� ���������������������� ���������������������� **� � �** ������������������������������������������������������������������������������������������ **�** \n\n## ~~_���������������������������Likutey Halajot Explicado_~~ \n\nque debemos colocarnos los _tefilin_ del brazo en el _**iad keá**_ **,** el brazo débil.[67] **Estudia la lección** del Rebe, donde enseña **que esto alude a la amonestación. Ocasionalmente,** la amonestación **implica la humillación - ésta** _**majé**_ **,** empalidece, **el** _**panim**_ **del otro, como está escrito sobre Eli que no amonestaba a sus hijos, “El no los** _**jiá**_ **”.**[68] \n\n“Le dije que… sus hijos iban trayendo la vergüenza sobre ellos y él no los amonestó ( _jiá_ )”. (Shmuel 1, 3:13) \n\n**Ahora bien,** en las enseñanzas de la Kabalá **, los** _**tefilin**_ **signifi can** _**mojín**_ **,** los elementos de la conciencia **que son el medio principal para traer una percepción de Divinidad, tal cual se trata en la lección** del Rebe **. Esencialmente,** tal percepción implica la constricción de la sabiduría Divina en sabiduría inferior, y así **está conceptualmente relacionada con los** _**tefilin**_ **, como saben aquellos que comprenden las palabras** del Rebe **. Pues los** _**tefilin**_ **de la cabeza y del brazo corresponden a la sabiduría superior y a la sabiduría inferior. El color negro** de las cajas **de los** _**tefilin**_ y de las correas **alude igualmente a** esta constricción **, similar a la negrura mencionada previamente, en** el resumen de **esa lección.**[69] \n\n**Por lo tanto debemos comenzar a ajustar los** _**tefilin**_ **del brazo sobre** el brazo **izquierdo, el** _**iad keá**_ **,** que alude a _majé_ . Esto con el objetivo de **traer el aspecto de la amonestación, mediante el cual se revela** _**jesed**_ **,** proveniente del lado derecho **. Con este** _**jesed**_ **separamos a** _**Maljut**_ **/la sabiduría inferior** cercenándolo de los Cuatro Reinos y de esa manera merecemos percepciones de Divinidad **.** \n\n## **LEYES DE CONDUCTA EN EL CUARTO DE BAÑO** \n\nLa persona no debe limpiarse utilizando la mano derecha. (ibid. 3:10) \n\n## **9** ■ **EXPELIENDO LO SUPERFLUO** \n\nHabiendo explicado que el propósito espiritual de usar zapatos es proteger a _Maljut_ /la sabiduría inferior de las fuerzas externas, el Rabí Natán demuestra \n\n## ~~_Notas y Fuentes���������������_~~ \n\n> _guevurot_ , a la raíz de la _sefi rá_ de _Guevurá_ ( _Shaar HaPesukim, Mishlei_ ). Las _guevurot_ (también conocidas como _dinim_ , juicios) están asociadas con el lado izquierdo, al igual que la amonestación ( _Sanedrín_ 107b y Maharsha, _v.i. s’mol dojé_ ). \n\n> 67 Con respecto al uso de los _tefi lín_ del brazo, la Torá afi rma ( _Shemot_ 13:16), “Serán una señal sobre _iadJaH_ ( ,ידכהtu mano)” - deletreado con una _hei_ agregada ( ,)הen lugar de la escritura más común _iadJa_ ( .)ידך _Jazal_ exponen esto como enseñando que los _tefi lín_ del brazo se colocan en la _iad keiHáH_ ( ,יד כההla mano débil), que para la mayoría de la gente es el brazo izquierdo ( _Menajot_ 37a). \n\n> 68 La palabra hebrea _jiHáH_ ( )כההsignifi ca “amonestación”. La palabra _maJHéH_ ( ,)מכההde la raíz _KaHáH_ ( ,)כההsignifi ca “debilitar” o “empalidecer”. El versículo citado por el Rabí Natán del libro de Shmuel puede leerse así como “Aunque sus hijos se estaban deshonrando a sí mismos, él no los humillaba”. \n\n> 69 Ver también la nota 11 más arriba. \n\n",
+      "page_aggregate": "PARTIAL",
+      "certificates": [
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-1bbbe380a1c0039585a41ad6",
+          "bbox": [
+            196.69110107421875,
+            45.43232727050781,
+            439.87506103515625,
+            53.840328216552734
+          ],
+          "zone_type": "header",
+          "direction": "LTR",
+          "source_block_ids": [
+            0
+          ],
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              0,
+              60
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-4afc15595e315a9dc308d532",
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            139.81028747558594,
+            54.539546966552734
+          ],
+          "zone_type": "header",
+          "direction": "LTR",
+          "source_block_ids": [
+            0
+          ],
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              60,
+              86
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-897095498a904f93f4e8ea1c",
+          "bbox": [
+            51.67059326171875,
+            70.42228698730469,
+            439.40521240234375,
+            161.54136657714844
+          ],
+          "zone_type": "text",
+          "direction": "UNRESOLVED",
+          "source_block_ids": [
+            11
+          ],
+          "source_line_ids": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              5
+            ],
+            [
+              11,
+              6
+            ],
+            [
+              11,
+              7
+            ],
+            [
+              11,
+              8
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              86,
+              742
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "PROVENANCE_OVERLAP",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING",
+            "OWNERSHIP_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": false,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-aa1802ec5df889b2f0ba4b46",
+          "bbox": [
+            207.04100036621094,
+            173.37596130371094,
+            286.1892395019531,
+            181.4339599609375
+          ],
+          "zone_type": "editorial_heading",
+          "direction": "LTR",
+          "source_block_ids": [
+            12
+          ],
+          "source_line_ids": [
+            [
+              12,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              742,
+              806
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-9ab0d373ee64529e4e5ace90",
+          "bbox": [
+            53.85829162597656,
+            196.48483276367188,
+            367.68231201171875,
+            254.6759796142578
+          ],
+          "zone_type": "text",
+          "direction": "LTR",
+          "source_block_ids": [
+            1
+          ],
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              806,
+              1204
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "ORDER_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-7203fd8371a2231d4e0cc6c5",
+          "bbox": [
+            373.2279968261719,
+            196.97898864746094,
+            441.7079772949219,
+            252.13897705078125
+          ],
+          "zone_type": "text",
+          "direction": "LTR",
+          "source_block_ids": [
+            10
+          ],
+          "source_line_ids": [
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              10,
+              4
+            ],
+            [
+              10,
+              5
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              1204,
+              1319
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "BODY_ZONE_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": true,
+              "evidence": [
+                "SOURCE_IDS_GEOMETRY_NATIVE_HORIZONTAL_DIRECTION"
+              ]
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-7daf869545411d48bfd78987",
+          "bbox": [
+            53.858306884765625,
+            259.2399597167969,
+            442.3322448730469,
+            365.4999694824219
+          ],
+          "zone_type": "text",
+          "direction": "LTR",
+          "source_block_ids": [
+            2
+          ],
+          "source_line_ids": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              8
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              1319,
+              2125
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "ORDER_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-1b3090b159b1812cd1eaa258",
+          "bbox": [
+            53.858306884765625,
+            370.4849548339844,
+            442.3302917480469,
+            428.3349609375
+          ],
+          "zone_type": "text",
+          "direction": "LTR",
+          "source_block_ids": [
+            3
+          ],
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2125,
+              2591
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "ORDER_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-af3abfbfe1ae14900d82dca0",
+          "bbox": [
+            116.22699737548828,
+            441.51995849609375,
+            377.0040283203125,
+            451.2989807128906
+          ],
+          "zone_type": "editorial_heading",
+          "direction": "LTR",
+          "source_block_ids": [
+            4
+          ],
+          "source_line_ids": [
+            [
+              4,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2591,
+              2639
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-9f718db09ae41026cbb9f2d3",
+          "bbox": [
+            82.25830078125,
+            464.0589599609375,
+            332.9082336425781,
+            484.87896728515625
+          ],
+          "zone_type": "text",
+          "direction": "LTR",
+          "source_block_ids": [
+            5
+          ],
+          "source_line_ids": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2639,
+              2711
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+            "ORDER_PROOF_MISSING"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-f016d101db12e17ef358b26c",
+          "bbox": [
+            53.858299255371094,
+            500.4189758300781,
+            217.84808349609375,
+            507.6590576171875
+          ],
+          "zone_type": "editorial_heading",
+          "direction": "LTR",
+          "source_block_ids": [
+            6
+          ],
+          "source_line_ids": [
+            [
+              6,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2711,
+              2752
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-a3edb256e0096e87bf6cb2e8",
+          "bbox": [
+            82.25810241699219,
+            517.7280883789062,
+            411.35003662109375,
+            539.76806640625
+          ],
+          "zone_type": "MAIN_BODY",
+          "direction": "LTR",
+          "source_block_ids": [
+            7
+          ],
+          "source_line_ids": [
+            [
+              7,
+              0
+            ],
+            [
+              7,
+              1
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2752,
+              2912
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "reason_codes": [
+            "SUPPORTED_RULED_MAIN_PANEL",
+            "ALL_BODY_PROOFS_PRESENT"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [
+            {
+              "name": "BODY_ZONE_PROOF",
+              "passed": true,
+              "evidence": [
+                "TWO_NATIVE_RULES",
+                "CENTERED_UPPER_CAPTION",
+                "ANCHORED_LOWER_NOTES_SEPARATOR",
+                "MAIN_PANEL_WIDTH_AND_TYPOGRAPHY"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_PROOF",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "ORDER_PROOF",
+              "passed": true,
+              "evidence": [
+                "SOURCE_IDS_GEOMETRY_NATIVE_HORIZONTAL_DIRECTION"
+              ]
+            },
+            {
+              "name": "BOUNDARY_PROOF",
+              "passed": true,
+              "evidence": [
+                "FORWARD_MARKDOWN_RANGES",
+                "NO_CONFLICTING_BOX"
+              ]
+            }
+          ],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-07d4d93994ee8161c45be2fe",
+          "bbox": [
+            223.33799743652344,
+            550.593994140625,
+            271.30902099609375,
+            557.6919555664062
+          ],
+          "zone_type": "notes_heading",
+          "direction": "LTR",
+          "source_block_ids": [
+            15
+          ],
+          "source_line_ids": [
+            [
+              15,
+              0
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2912,
+              2954
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "ZONE_AMBIGUOUS",
+            "DIRECTION_UNPROVEN",
+            "BOUNDARY_UNPROVEN",
+            "COLUMN_AMBIGUOUS",
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "LAYOUT_UNSUPPORTED",
+            "CORRUPT_TEXT_SIGNAL",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "note_number": null,
+          "end_reason": "BOX_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [
+            {
+              "name": "zone",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "direction",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "ownership",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_SOURCE_IDENTITIES",
+                "DISJOINT_SOURCE_LINE_GEOMETRY",
+                "FORWARD_MARKDOWN_RANGES"
+              ]
+            },
+            {
+              "name": "local_boundary",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "order",
+              "passed": false,
+              "evidence": []
+            },
+            {
+              "name": "continuation",
+              "passed": false,
+              "evidence": []
+            }
+          ],
+          "local_boundary": "UNRESOLVED",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-68c6b0422138ff8b680e099d",
+          "bbox": [
+            53.14808654785156,
+            568.2884521484375,
+            241.80322265625,
+            603.589599609375
+          ],
+          "zone_type": "note",
+          "direction": "LTR",
+          "source_block_ids": [
+            8
+          ],
+          "source_line_ids": [
+            [
+              8,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              8,
+              3
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              2954,
+              3219
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "CERTIFIED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "CROSS_PAGE_IDENTITY_PROVEN"
+          ],
+          "note_number": 66,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": "region-5584e245b77d8acfa4a406c5",
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [],
+          "local_boundary": "KNOWN",
+          "continuation_status": "CROSS_PAGE_COMPLETE",
+          "body_proof": [],
+          "editorial_unit_id": "editorial-4dc8ad8ef31a643009554e65",
+          "continuation_state": "CONTINUED_FROM_PREVIOUS",
+          "continuation_proof": [
+            {
+              "name": "CONTINUATION_PROOF",
+              "passed": true,
+              "evidence": [
+                "ADJACENT_SAME_DOCUMENT",
+                "TWO_RULE_NOTES_PANEL",
+                "IDENTICAL_FONT_SIZE_FAMILY",
+                "UNMARKED_LEADING_SEGMENT",
+                "NEXT_CONSECUTIVE_MARKER",
+                "DISJOINT_COLUMN_FLOW",
+                "NATIVE_LTR_ORDER"
+              ]
+            }
+          ],
+          "linked_region_ids": [
+            "region-5584e245b77d8acfa4a406c5"
+          ]
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-f367c00a0096d99e5cb59ed8",
+          "bbox": [
+            53.14808654785156,
+            569.7567138671875,
+            440.5573425292969,
+            648.5909423828125
+          ],
+          "zone_type": "note",
+          "direction": "UNRESOLVED",
+          "source_block_ids": [
+            8,
+            9
+          ],
+          "source_line_ids": [
+            [
+              8,
+              4
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              8,
+              6
+            ],
+            [
+              8,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              1
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3219,
+              3643
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "INDEPENDENT_SEGMENT_PROOFS_REQUIRED"
+          ],
+          "note_number": 67,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [],
+          "local_boundary": "KNOWN",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-7e3083a649ad5d7b0c8dfbf9",
+          "bbox": [
+            251.90487670898438,
+            586.28173828125,
+            440.56866455078125,
+            630.5828857421875
+          ],
+          "zone_type": "note",
+          "direction": "UNRESOLVED",
+          "source_block_ids": [
+            9
+          ],
+          "source_line_ids": [
+            [
+              9,
+              2
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              9,
+              4
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              6
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3643,
+              3959
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "INDEPENDENT_SEGMENT_PROOFS_REQUIRED"
+          ],
+          "note_number": 68,
+          "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [],
+          "local_boundary": "KNOWN",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        },
+        {
+          "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+          "pdf_page": 168,
+          "region_id": "region-41281cce1038e6102b5ccfac",
+          "bbox": [
+            251.9063720703125,
+            632.7567138671875,
+            363.9712219238281,
+            638.0777587890625
+          ],
+          "zone_type": "note",
+          "direction": "UNRESOLVED",
+          "source_block_ids": [
+            9
+          ],
+          "source_line_ids": [
+            [
+              9,
+              7
+            ]
+          ],
+          "markdown_ranges": [
+            [
+              3959,
+              4001
+            ]
+          ],
+          "mapping_method": "FORWARD_IR_SERIALIZATION",
+          "provenance_status": "UNRESOLVED",
+          "quality_status": "UNRESOLVED",
+          "reason_codes": [
+            "INDEPENDENT_SEGMENT_PROOFS_REQUIRED"
+          ],
+          "note_number": 69,
+          "end_reason": "PAGE_BOUNDARY",
+          "continuation_of": null,
+          "certificate_version": "automatic-region-certification-v3",
+          "proofs": [],
+          "local_boundary": "KNOWN",
+          "continuation_status": "UNRESOLVED_CONTINUATION",
+          "body_proof": [],
+          "editorial_unit_id": null,
+          "continuation_state": "CONTINUATION_UNRESOLVED",
+          "continuation_proof": [],
+          "linked_region_ids": []
+        }
+      ]
+    }
+  ]
+}

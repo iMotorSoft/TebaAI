@@ -1,0 +1,38 @@
+{
+  "gate": "TEBAAI_BRESLOV_AUTOMATIC_REGION_PROVENANCE_CERTIFICATION_V2_FAIL",
+  "READY_FOR_C_REINGEST": "NO",
+  "CERTIFICATES_READY_FOR_WORKER_INTEGRATION": "NO",
+  "focal": {
+    "command": "cd SrvRestAstroLS_v1/backend && uv run pytest -q tests/test_automatic_region_certification_v2.py tests/test_automatic_region_certification.py tests/test_region_markdown_provenance.py tests/test_region_quality.py",
+    "passed": 118,
+    "failed": 0,
+    "log": "tests-focused.txt"
+  },
+  "related": {
+    "command": "cd SrvRestAstroLS_v1/backend && uv run pytest -q tests/test_automatic_region_certification*.py tests/test_region_*.py tests/test_content_manager_*.py tests/test_page_first_*.py tests/test_editorial_*.py tests/test_simple_research_rag.py tests/test_canonical_editorial_evidence_selection.py tests/test_pdf_*.py tests/test_hebrew_lexical_normalizer.py tests/test_hebrew_pipeline_contract.py tests/test_hebrew_tex_decoder.py tests/test_likutey_moharan_ii_layout.py tests/test_library.py",
+    "passed": 664,
+    "failed": 0,
+    "warnings": 10,
+    "log": "tests-related.txt"
+  },
+  "full": {
+    "command": "cd SrvRestAstroLS_v1/backend && uv run pytest -q",
+    "passed": 1802,
+    "failed": 18,
+    "warnings": 94,
+    "seconds": 41.22,
+    "exit_code": 1,
+    "log": "tests-backend-full.txt"
+  },
+  "baseline": {"passed": 1775, "failed": 18, "warnings": 94},
+  "new_v2_tests": 27,
+  "new_backend_regressions": 0,
+  "same_failed_nodes_and_byte_identical_details": true,
+  "baseline_comparison": "baseline-failure-comparison.json",
+  "development_reproduction": "cd SrvRestAstroLS_v1/backend && uv run python ../../data/reports/breslov/automatic-region-provenance-certification-v2/development.py",
+  "holdout_evaluation": "One-shot evaluate_holdout.py completed after seal_holdout.py; do not reseal or reopen for V2 tuning",
+  "git_diff_check": "PASS",
+  "frontend": "NOT_RUN_UNCHANGED",
+  "lat_check": "NOT_APPLICABLE_UNCHANGED",
+  "worker_integration": "NOT_RUN_NOT_AUTHORIZED"
+}

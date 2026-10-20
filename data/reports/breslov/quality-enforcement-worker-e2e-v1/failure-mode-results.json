@@ -1,0 +1,8 @@
+{
+  "status": "NOT_RUN",
+  "reason": "Runtime has no approved source-bound positive certificate issuer/transport; offline certificates are manually reviewed golden inputs. See enforcement-point.md.",
+  "real_e2e": false,
+  "controlled_failure_forced": false,
+  "ready_with_uncontrolled_content_prevented": null,
+  "contract_probe_only": "Without certificates classifier rejects all three candidate strings, not proof about job state."
+}

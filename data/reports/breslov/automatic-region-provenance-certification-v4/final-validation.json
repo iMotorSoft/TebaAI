@@ -1,0 +1,13 @@
+{
+  "git_diff_check": "PASS",
+  "v4_focused_tests": "11 passed",
+  "full_backend": "1841 passed, 18 failed (18 byte-identical preexisting)",
+  "lint": "not applicable (no frontend/LAT changes)",
+  "frontend_build": "not applicable",
+  "ocr": false,
+  "search_changes": false,
+  "worker_integration": false,
+  "db_writes": false,
+  "milvus_writes": false,
+  "c_reingest": false
+}

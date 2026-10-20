@@ -1,0 +1,14 @@
+{
+  "branch": "feature/console-backend-core",
+  "HEAD_initial": "1fa9290bdc7840e7277a998aa3ca66345c6080ee",
+  "HEAD_final": "1fa9290bdc7840e7277a998aa3ca66345c6080ee",
+  "preexisting_files_hashed": 627,
+  "preexisting_files_changed": [],
+  "preexisting_worktree_preserved": true,
+  "git_diff_check": "PASS",
+  "explicit_new_source_docs_json_whitespace": "PASS; raw pytest logs exempt, unchanged",
+  "genericity_AST_check": "PASS",
+  "V1_rules_unchanged_after_holdout": true,
+  "commit": false,
+  "push": false
+}

@@ -1,0 +1,781 @@
+{
+  "manual_golden": [
+    {
+      "number": 60,
+      "start": "60 Ver Pri Etz Jaim, Shaar HaTefi lá 3.",
+      "end": "60 Ver Pri Etz Jaim, Shaar HaTefi lá 3.",
+      "columns": [
+        0
+      ],
+      "source_lines": [
+        [
+          18,
+          0
+        ]
+      ]
+    },
+    {
+      "number": 61,
+      "start": "61 Ver §1 más arriba.",
+      "end": "61 Ver §1 más arriba.",
+      "columns": [
+        0
+      ],
+      "source_lines": [
+        [
+          18,
+          1
+        ]
+      ]
+    },
+    {
+      "number": 62,
+      "start": "62 Pri Etz Jaim, op. cit.",
+      "end": "62 Pri Etz Jaim, op. cit.",
+      "columns": [
+        0
+      ],
+      "source_lines": [
+        [
+          18,
+          2
+        ]
+      ]
+    },
+    {
+      "number": 63,
+      "start": "63 Una cita entre paréntesis aquí dice: Estudia más esto en las",
+      "end": "4.10.",
+      "columns": [
+        0
+      ],
+      "source_lines": [
+        [
+          18,
+          3
+        ],
+        [
+          18,
+          4
+        ],
+        [
+          18,
+          5
+        ]
+      ]
+    },
+    {
+      "number": 64,
+      "start": "64 Ver §1 y §4 más arriba.",
+      "end": "64 Ver §1 y §4 más arriba.",
+      "columns": [
+        0
+      ],
+      "source_lines": [
+        [
+          18,
+          6
+        ]
+      ]
+    },
+    {
+      "number": 65,
+      "start": "65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim",
+      "end": "Natán hará referencia esto a continuación.",
+      "columns": [
+        0,
+        1
+      ],
+      "source_lines": [
+        [
+          18,
+          7
+        ],
+        [
+          19,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          19,
+          4
+        ]
+      ]
+    },
+    {
+      "number": 66,
+      "start": "66 Comentando sobre el versículo (Proverbios 27:5) “La",
+      "end": "enseña que la “amonestación franca” hace referencia a las",
+      "columns": [
+        1
+      ],
+      "source_lines": [
+        [
+          19,
+          5
+        ],
+        [
+          19,
+          6
+        ],
+        [
+          19,
+          7
+        ]
+      ]
+    }
+  ],
+  "direction_evidence": "visual crop: LTR complete left then right",
+  "old_order_bug_reproduced": true,
+  "corrected_order": [
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66
+  ],
+  "cross_column_note": 65,
+  "note66_terminal_page": 168,
+  "notes": [
+    {
+      "region_id": "region-ce12d3949ae8134ad2feac97",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.692901611328125,
+        575.8474731445312,
+        172.32040405273438,
+        584.1499633789062
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.692901611328125,
+            575.8474731445312,
+            172.32040405273438,
+            584.1499633789062
+          ],
+          "source_line_ids": [
+            [
+              18,
+              0
+            ]
+          ],
+          "source_sequence": 38,
+          "column": 0,
+          "source_text_sha256": "9470703e3bdac049c242a127c287be685cc3fa599efcf3f5538b7b56993d2734",
+          "source_text_length": 39
+        }
+      ],
+      "role": "footnote",
+      "note_number": 60,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 2979,
+      "markdown_end": 3025,
+      "canonical_start": 2618,
+      "canonical_end": 2659,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "ff08b7efe2d3bf9caf54f2f6490457a4554f6484939b4439dc6205757d4afbe7",
+      "markdown_sha256": "2f4386888a25c3c642b72c1d1fad682b038b4075bf80cb05c8c71838610ec1be"
+    },
+    {
+      "region_id": "region-ff638d2fa960caae1234972e",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69365692138672,
+        586.3224487304688,
+        120.91690826416016,
+        592.9948120117188
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.69365692138672,
+            586.3224487304688,
+            120.91690826416016,
+            592.9948120117188
+          ],
+          "source_line_ids": [
+            [
+              18,
+              1
+            ]
+          ],
+          "source_sequence": 39,
+          "column": 0,
+          "source_text_sha256": "87625940ca5d9fae532be03cc862f0678375ce5ca554c404f1f2f8eda6fc2d64",
+          "source_text_length": 21
+        }
+      ],
+      "role": "footnote",
+      "note_number": 61,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3025,
+      "markdown_end": 3051,
+      "canonical_start": 2659,
+      "canonical_end": 2682,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "789f527b7a4e333fc3f9e45aeadab6769db3d366d4a1584b6a3e4356ca876d69",
+      "markdown_sha256": "da86a84ba84b183b8e13f02c318f9acb9c56e47d10053e36655beb9d6295c65e"
+    },
+    {
+      "region_id": "region-d4281d9ff87c57b4485d776c",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69365692138672,
+        595.3224487304688,
+        127.93991088867188,
+        602.1339721679688
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.69365692138672,
+            595.3224487304688,
+            127.93991088867188,
+            602.1339721679688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              2
+            ]
+          ],
+          "source_sequence": 40,
+          "column": 0,
+          "source_text_sha256": "e5e7ce26f3f39632ab10a5b6e3f2c89773831414627d075302e96578bb3091da",
+          "source_text_length": 25
+        }
+      ],
+      "role": "footnote",
+      "note_number": 62,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3051,
+      "markdown_end": 3084,
+      "canonical_start": 2682,
+      "canonical_end": 2709,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "b3bd2dd40acdc9d02de28e7a26452d885823e110fca3288a6913d886f889fbe1",
+      "markdown_sha256": "6bd1fc40868daf1a1d61470fc84b1be32ff437ce2dd2ea13cb822eed2443d284"
+    },
+    {
+      "region_id": "region-d585babd21a30922107ee33f",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69364929199219,
+        604.3224487304688,
+        245.35171508789062,
+        627.6325073242188
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.693660736083984,
+            604.3224487304688,
+            245.35171508789062,
+            611.1339721679688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              3
+            ]
+          ],
+          "source_sequence": 41,
+          "column": 0,
+          "source_text_sha256": "2b26d412538d5cd03a20d832002032776f85ff89751af5fb9d3608c38e337bb2",
+          "source_text_length": 63
+        },
+        {
+          "bbox": [
+            56.693660736083984,
+            613.3224487304688,
+            245.32691955566406,
+            620.1486206054688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              4
+            ]
+          ],
+          "source_sequence": 42,
+          "column": 0,
+          "source_text_sha256": "83f548e8314a900ace5c89eb2b23f39cba6fae77eb3882295d632f0d36bf5edc",
+          "source_text_length": 63
+        },
+        {
+          "bbox": [
+            56.69364929199219,
+            622.4616088867188,
+            71.69364929199219,
+            627.6325073242188
+          ],
+          "source_line_ids": [
+            [
+              18,
+              5
+            ]
+          ],
+          "source_sequence": 43,
+          "column": 0,
+          "source_text_sha256": "1a9d69b1affd61d834a74ef6350eba19d6a3952209aafd8f6e321c005bcf14cb",
+          "source_text_length": 5
+        }
+      ],
+      "role": "footnote",
+      "note_number": 63,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3084,
+      "markdown_end": 3226,
+      "canonical_start": 2709,
+      "canonical_end": 2844,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "83cb37519882069191ea22894892a4b69b8994df6c804d2532773f716634e658",
+      "markdown_sha256": "8105076069e77799678ebd275281087c3fd8a1ca5c2b45322c02321f4345fbb4"
+    },
+    {
+      "region_id": "region-4c3c4f7d968c08e4291a7228",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69364929199219,
+        631.3224487304688,
+        135.91690063476562,
+        638.1486206054688
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.69364929199219,
+            631.3224487304688,
+            135.91690063476562,
+            638.1486206054688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              6
+            ]
+          ],
+          "source_sequence": 44,
+          "column": 0,
+          "source_text_sha256": "ef4c6dc66da48eca563bbf3ce70e6ad5bd1d28c1aace2829d386ad9fe4293c16",
+          "source_text_length": 26
+        }
+      ],
+      "role": "footnote",
+      "note_number": 64,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3226,
+      "markdown_end": 3257,
+      "canonical_start": 2844,
+      "canonical_end": 2872,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "369bfa560a79be1c654f723b06d10a8f5aafe7a2cecf41d933b52cf503e14433",
+      "markdown_sha256": "e0b2115d40819c271c0c82fe64956fbdf6111a1873f789cea62103769336d9f6"
+    },
+    {
+      "region_id": "region-70f1fd4a3c8fe711425a6884",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69364929199219,
+        577.31201171875,
+        444.1117858886719,
+        647.1339721679688
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.69364929199219,
+            640.3224487304688,
+            245.3472137451172,
+            647.1339721679688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              7
+            ]
+          ],
+          "source_sequence": 45,
+          "column": 0,
+          "source_text_sha256": "ca06823a907d9548bb4bf5e650ba258e24d9b1b9b03927a5d988b82da138dc28",
+          "source_text_length": 57
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            577.31201171875,
+            444.0968017578125,
+            584.141845703125
+          ],
+          "source_line_ids": [
+            [
+              19,
+              0
+            ]
+          ],
+          "source_sequence": 46,
+          "column": 1,
+          "source_text_sha256": "73177d34e3c94bb3a314fab2d189d46bbe1a2e7b8cca705af51a3c414333c9ea",
+          "source_text_length": 58
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            586.31201171875,
+            444.10430908203125,
+            593.141845703125
+          ],
+          "source_line_ids": [
+            [
+              19,
+              1
+            ]
+          ],
+          "source_sequence": 47,
+          "column": 1,
+          "source_text_sha256": "9f25c2aa4b5d7d6b29dce462d08dab7de92dc6e58bf94e13557d3e616af01b91",
+          "source_text_length": 57
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            595.31201171875,
+            444.1117858886719,
+            602.141845703125
+          ],
+          "source_line_ids": [
+            [
+              19,
+              2
+            ]
+          ],
+          "source_sequence": 48,
+          "column": 1,
+          "source_text_sha256": "6d264bf3e277a3d2fd6bfacbd9d3c27fb93322f7ce92ea61f8e329b9f10daf1a",
+          "source_text_length": 61
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            604.315673828125,
+            444.1109924316406,
+            611.127197265625
+          ],
+          "source_line_ids": [
+            [
+              19,
+              3
+            ]
+          ],
+          "source_sequence": 49,
+          "column": 1,
+          "source_text_sha256": "1a9362ef0fe20936fc67bbb997208abea986e76fd8780b226eb32452479ad295",
+          "source_text_length": 61
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            613.315673828125,
+            381.65191650390625,
+            618.625732421875
+          ],
+          "source_line_ids": [
+            [
+              19,
+              4
+            ]
+          ],
+          "source_sequence": 50,
+          "column": 1,
+          "source_text_sha256": "bf574f9d49c62e358a7c6dda0f80e21f171d5b9a331b84a88f1ba0a11b680971",
+          "source_text_length": 42
+        }
+      ],
+      "role": "footnote",
+      "note_number": 65,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3257,
+      "markdown_end": 3603,
+      "canonical_start": 2872,
+      "canonical_end": 3215,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "a4393e553dce3b7417e399634167ecbeded654db75ab8d6cef8a3f1fadaaed36",
+      "markdown_sha256": "8ae0117dc2b9aed956e90167949f81aa209d3db3e53f5e9bef83e5a2df82523e"
+    },
+    {
+      "region_id": "region-5584e245b77d8acfa4a406c5",
+      "pdf_page": 167,
+      "source_bbox": [
+        255.44964599609375,
+        622.315673828125,
+        444.1102600097656,
+        647.127197265625
+      ],
+      "parts": [
+        {
+          "bbox": [
+            255.44964599609375,
+            622.315673828125,
+            444.0918273925781,
+            629.127197265625
+          ],
+          "source_line_ids": [
+            [
+              19,
+              5
+            ]
+          ],
+          "source_sequence": 51,
+          "column": 1,
+          "source_text_sha256": "638eded716f468d96c1f06aa3fe6bcc62c70152f05d3cc802b16ab4806220850",
+          "source_text_length": 54
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            631.31201171875,
+            444.07989501953125,
+            638.141845703125
+          ],
+          "source_line_ids": [
+            [
+              19,
+              6
+            ]
+          ],
+          "source_sequence": 52,
+          "column": 1,
+          "source_text_sha256": "f1e78e645971dc74c8c629f9901e471edd3464fdb27b288128f5b4776954c832",
+          "source_text_length": 60
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            640.315673828125,
+            444.1102600097656,
+            647.127197265625
+          ],
+          "source_line_ids": [
+            [
+              19,
+              7
+            ]
+          ],
+          "source_sequence": 53,
+          "column": 1,
+          "source_text_sha256": "b5d101b5786f37ab7864636ecc61d8360c8f8f959477da2cf082cd7866f76df9",
+          "source_text_length": 57
+        }
+      ],
+      "role": "footnote",
+      "note_number": 66,
+      "end_reason": "PAGE_BOUNDARY",
+      "markdown_start": 3603,
+      "markdown_end": 3783,
+      "canonical_start": 3215,
+      "canonical_end": 3390,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "b9c2714ae37c607b953b409207fd27340be3679d0ca97fae609ce2165daa4d56",
+      "markdown_sha256": "11c194f258e726d1c2903085f46a76a3803473558cb2293d7a4fa05358023c81"
+    }
+  ],
+  "note66_continuation": {
+    "region_id": "region-68c6b0422138ff8b680e099d",
+    "pdf_page": 168,
+    "source_bbox": [
+      53.14808654785156,
+      568.2884521484375,
+      241.80322265625,
+      603.589599609375
+    ],
+    "parts": [
+      {
+        "bbox": [
+          53.149600982666016,
+          568.2884521484375,
+          241.7805938720703,
+          576.5909423828125
+        ],
+        "source_line_ids": [
+          [
+            8,
+            0
+          ]
+        ],
+        "source_sequence": 0,
+        "column": 0,
+        "source_text_sha256": "48c3fc398420adf56b50589c8a1df340ddcb4ee00a0d112ab08669f4e0d95969",
+        "source_text_length": 62
+      },
+      {
+        "bbox": [
+          53.14884948730469,
+          578.763427734375,
+          241.7798309326172,
+          585.589599609375
+        ],
+        "source_line_ids": [
+          [
+            8,
+            1
+          ]
+        ],
+        "source_sequence": 1,
+        "column": 0,
+        "source_text_sha256": "c80ef25b3193b9d795f6898705ba9e4f773928ad76f92910e92e03355c498a27",
+        "source_text_length": 53
+      },
+      {
+        "bbox": [
+          53.14808654785156,
+          587.759765625,
+          241.80322265625,
+          594.589599609375
+        ],
+        "source_line_ids": [
+          [
+            8,
+            2
+          ]
+        ],
+        "source_sequence": 2,
+        "column": 0,
+        "source_text_sha256": "46502fd97821c7f428a075e33df6e8b51bd302d6e51cd41e1e24f702691ab717",
+        "source_text_length": 63
+      },
+      {
+        "bbox": [
+          53.14808654785156,
+          596.763427734375,
+          229.84133911132812,
+          603.589599609375
+        ],
+        "source_line_ids": [
+          [
+            8,
+            3
+          ]
+        ],
+        "source_sequence": 3,
+        "column": 0,
+        "source_text_sha256": "ce2e6edbc24325b84d596214592efe1e048a8c7b735cc292123fa5815c745556",
+        "source_text_length": 57
+      }
+    ],
+    "role": "footnote",
+    "note_number": 66,
+    "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+    "markdown_start": 0,
+    "markdown_end": 265,
+    "canonical_start": 0,
+    "canonical_end": 240,
+    "mapping_method": "FORWARD_IR_SERIALIZATION",
+    "status": "MAPPED",
+    "transformations": [
+      "MARKDOWN_DECORATION",
+      "EDITORIAL_GROUPING"
+    ],
+    "transformation_status": "ALLOWLIST_ONLY",
+    "transformation_warning": null,
+    "continuation_of": "region-5584e245b77d8acfa4a406c5",
+    "canonical_sha256": "7d392ab3bb11dbe379bdf0aeec02dbf43cb0270301894bb384f2162ee8980d10",
+    "markdown_sha256": "e1835ddd8c7fd5d982c7d30f2da23fa4741285c67370ea10ea2b42557c022fff"
+  },
+  "terminal_boundary_golden": {
+    "from_page": 167,
+    "number": 66,
+    "note_zone_bbox": null,
+    "start": "guevurot, a la raíz de la sefi rá de Guevurá (Shaar HaPesukim,",
+    "end": "amonestación (Sanedrín 107b y Maharsha, v.i. s’mol dojé).",
+    "source_lines": [
+      [
+        8,
+        0
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        3
+      ]
+    ],
+    "next_note": 67
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,613 @@
+{
+  "scope": "Offline candidate ONLY, never a corpus/index/citation guarantee",
+  "page167": {
+    "quality_policy_version": "region-quality-v1",
+    "quality": "PARTIAL",
+    "regions": [
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-aad7be7388e0c6eb3d6a17a8",
+        "bbox": [
+          369.9049987792969,
+          46.17702102661133,
+          443.469970703125,
+          55.95378112792969
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "bec79361a6d8e57ca9d7e22aa3aba9ea6022c35c1b8dae9798c77f5a61db3ac6",
+        "candidate_length": 23
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-bdf3b35d994b533d8893e596",
+        "bbox": [
+          25.070499420166016,
+          46.26249313354492,
+          160.2469940185547,
+          55.754493713378906
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "2e7fe94a900c792d19d8bd63b9aa6dd1b1336a756e2f96e726b13edf1f0744dc",
+        "candidate_length": 41
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-0d9b5cdbf8a79e22555e5eb6",
+        "bbox": [
+          56.4793701171875,
+          69.71330261230469,
+          442.0295104980469,
+          127.05249786376953
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "11443831104f2141679c32b75a6d4971a94f55d03fccd8bf87a47c3e36fbd0c3",
+        "candidate_length": 367
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-a0597be7efe49f03d3c5ab5e",
+        "bbox": [
+          56.48040008544922,
+          135.49388122558594,
+          442.0472106933594,
+          227.6981964111328
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "a6dfa43966c44f9f8e3acd5a7704fa5ee2949597050130953155743d064420d4",
+        "candidate_length": 588
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-42907a8b6e803abed4f59a9e",
+        "bbox": [
+          209.875,
+          247.31297302246094,
+          289.0232238769531,
+          255.3709716796875
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+        "candidate_length": 61
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-6d2d124c6cae1c3648d1d8da",
+        "bbox": [
+          56.692901611328125,
+          269.0009765625,
+          445.193115234375,
+          348.8809814453125
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "7cde577ec4cf69f9bcbe34265d5e9cc1c7cb862949c90dda516f915ec30223bb",
+        "candidate_length": 561
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-d6baf8fb522ed5f2537c1b4d",
+        "bbox": [
+          56.692962646484375,
+          354.0359802246094,
+          445.16595458984375,
+          401.9759826660156
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "4a9aa46d74dc9305f8d94042087687bb0536562dd6dd69a31c5c9132455a44fc",
+        "candidate_length": 378
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-a330eb2be0fd33a5b5c6fb59",
+        "bbox": [
+          56.692901611328125,
+          406.9599609375,
+          445.15301513671875,
+          440.8099670410156
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "cbdf472a16d98a5e1bea80aed8a9bb6b7fada99da089a11200036d7f2e5cb20f",
+        "candidate_length": 221
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-e33afca209bbe9a1c31481e0",
+        "bbox": [
+          56.69281005859375,
+          445.50494384765625,
+          445.1650085449219,
+          527.6550903320312
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "59f34d068afdc42fac1fb6a52e572e3624e75e1efdd214bd6c52f68022d9e928",
+        "candidate_length": 615
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-f7f1faa5f7cba237dafcf95e",
+        "bbox": [
+          85.09300231933594,
+          532.2835693359375,
+          445.076904296875,
+          542.5581665039062
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "5a0a79b0c266c1dcdf14ff88ac74d5f666d5b01cf8777d50d617f14022fc4bab",
+        "candidate_length": 82
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-5b921f4d5aa7a05a7ea2ae97",
+        "bbox": [
+          226.1719970703125,
+          556.3569946289062,
+          274.1430358886719,
+          563.4559936523438
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "PLATFORM_EXTRACTION_ERROR",
+        "remediation": "QUARANTINE_REQUIRED",
+        "reason": [
+          "replacement_character",
+          "text_order_structure_not_verified"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "ad88735b740f55f9de50143bc47c599ac46e2c00e103e56810fe859bde3cd979",
+        "candidate_length": 42
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-ce12d3949ae8134ad2feac97",
+        "bbox": [
+          56.692901611328125,
+          575.8474731445312,
+          172.32040405273438,
+          584.1499633789062
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "2f4386888a25c3c642b72c1d1fad682b038b4075bf80cb05c8c71838610ec1be",
+        "candidate_length": 46
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-ff638d2fa960caae1234972e",
+        "bbox": [
+          56.69365692138672,
+          586.3224487304688,
+          120.91690826416016,
+          592.9948120117188
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "da86a84ba84b183b8e13f02c318f9acb9c56e47d10053e36655beb9d6295c65e",
+        "candidate_length": 26
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-d4281d9ff87c57b4485d776c",
+        "bbox": [
+          56.69365692138672,
+          595.3224487304688,
+          127.93991088867188,
+          602.1339721679688
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "6bd1fc40868daf1a1d61470fc84b1be32ff437ce2dd2ea13cb822eed2443d284",
+        "candidate_length": 33
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-d585babd21a30922107ee33f",
+        "bbox": [
+          56.69364929199219,
+          604.3224487304688,
+          245.35171508789062,
+          627.6325073242188
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "8105076069e77799678ebd275281087c3fd8a1ca5c2b45322c02321f4345fbb4",
+        "candidate_length": 142
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-4c3c4f7d968c08e4291a7228",
+        "bbox": [
+          56.69364929199219,
+          631.3224487304688,
+          135.91690063476562,
+          638.1486206054688
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "e0b2115d40819c271c0c82fe64956fbdf6111a1873f789cea62103769336d9f6",
+        "candidate_length": 31
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-70f1fd4a3c8fe711425a6884",
+        "bbox": [
+          56.69364929199219,
+          577.31201171875,
+          444.1117858886719,
+          647.1339721679688
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "8ae0117dc2b9aed956e90167949f81aa209d3db3e53f5e9bef83e5a2df82523e",
+        "candidate_length": 346
+      },
+      {
+        "quality_policy_version": "region-quality-v1",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "pdf_page": 167,
+        "region_id": "region-5584e245b77d8acfa4a406c5",
+        "bbox": [
+          255.44964599609375,
+          622.315673828125,
+          444.1102600097656,
+          647.127197265625
+        ],
+        "coordinate_system": "PDF points; top-left; unrotated",
+        "classification": "ACCEPTED",
+        "remediation": null,
+        "reason": [
+          "verified_text_order_structure"
+        ],
+        "source_method": "pymupdf4llm",
+        "diagnostic_summary": [],
+        "evidence_refs": [
+          "source-raw-IR",
+          "manual-editorial-golden-v1"
+        ],
+        "candidate_sha256": "11c194f258e726d1c2903085f46a76a3803473558cb2293d7a4fa05358023c81",
+        "candidate_length": 180
+      }
+    ]
+  },
+  "known_bad_text_indexed_candidate": 0,
+  "known_bad_text_citable_candidate": 0,
+  "good_text_lost_due_neighbor_failure": 0,
+  "quarantined_regions_untracked": 0,
+  "counters_verified_by": "exact unit IDs, original slices, ordered sequence; no count-only comparison",
+  "unapproved_transformations": [
+    {
+      "region_id": "region-c8a008f9885ca4081f13f2a1",
+      "pdf_page": 56,
+      "source_bbox": [
+        54.31060028076172,
+        512.916015625,
+        442.7830505371094,
+        570.7659912109375
+      ],
+      "parts": [
+        {
+          "bbox": [
+            82.71060180664062,
+            512.916015625,
+            442.7767639160156,
+            522.7760009765625
+          ],
+          "source_line_ids": [
+            [
+              4,
+              0
+            ]
+          ],
+          "source_sequence": 21,
+          "column": null,
+          "source_text_sha256": "ea70d33e9312dfce203cf509ad2c91b7a53d8ca8d8fb89815f643b08c7d05267",
+          "source_text_length": 69
+        },
+        {
+          "bbox": [
+            54.31060028076172,
+            524.916015625,
+            442.7806701660156,
+            534.7760009765625
+          ],
+          "source_line_ids": [
+            [
+              4,
+              1
+            ]
+          ],
+          "source_sequence": 22,
+          "column": null,
+          "source_text_sha256": "04510e337220083d515d3152f508e29343a94ed244a93016f011bf23284c68e5",
+          "source_text_length": 76
+        },
+        {
+          "bbox": [
+            54.31060028076172,
+            536.6259765625,
+            439.8235778808594,
+            546.7659912109375
+          ],
+          "source_line_ids": [
+            [
+              4,
+              2
+            ]
+          ],
+          "source_sequence": 23,
+          "column": null,
+          "source_text_sha256": "00daba145e7066e4bf4656e7acd2e9b0e129900610fcc192125dbe46d0bf3f30",
+          "source_text_length": 74
+        },
+        {
+          "bbox": [
+            54.31060791015625,
+            548.6259765625,
+            442.7830505371094,
+            558.0360107421875
+          ],
+          "source_line_ids": [
+            [
+              4,
+              3
+            ]
+          ],
+          "source_sequence": 24,
+          "column": null,
+          "source_text_sha256": "5c0606d36cb7f9a8945e5b34f4150ff1b6091e029003fd7e17df22871bfcd99b",
+          "source_text_length": 75
+        },
+        {
+          "bbox": [
+            54.311004638671875,
+            560.6060180664062,
+            439.82281494140625,
+            570.7659912109375
+          ],
+          "source_line_ids": [
+            [
+              4,
+              4
+            ]
+          ],
+          "source_sequence": 25,
+          "column": null,
+          "source_text_sha256": "ccb04a031ae18daa9332f6e77499160e5e281c742eb4bd8de3e2259e113c477f",
+          "source_text_length": 81
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 2719,
+      "markdown_end": 3143,
+      "canonical_start": 2540,
+      "canonical_end": 2921,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "UNRESOLVED",
+      "transformation_warning": "serializer_line_end_hyphenation_requires_review",
+      "continuation_of": null,
+      "canonical_sha256": "806f408e6ac730ad68fc399ba5cc7d13483a139eba9dd610f009326445925c23",
+      "markdown_sha256": "e3bcb6f91985837ad563c6f40a0561c459fa874c3913251eb0b1afd12efe8be8"
+    }
+  ],
+  "worker_modified": false,
+  "corpus_writes": false,
+  "READY_FOR_C_REINGEST": "NO"
+}

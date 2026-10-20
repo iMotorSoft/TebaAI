@@ -1,0 +1,11 @@
+{
+  "v4_full_backend": "1841 passed, 18 failed, 94 warnings",
+  "v3_full_backend": "1830 passed, 18 failed, 94 warnings",
+  "delta_passed": 11,
+  "delta_passed_source": "11 new V4 tests",
+  "failing_node_ids_v4": 18,
+  "failing_node_ids_v3": 18,
+  "node_ids_identical": true,
+  "new_regressions": 0,
+  "baseline_failures_left_untouched": true
+}

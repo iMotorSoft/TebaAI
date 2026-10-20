@@ -1,0 +1,11 @@
+{
+  "added": [
+    "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v4.py",
+    "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v4.py",
+    "data/reports/breslov/automatic-region-provenance-certification-v4/"
+  ],
+  "modified_existing_untracked_preserved": [
+    "SrvRestAstroLS_v1/backend/modules/library/region_markdown_provenance.py"
+  ],
+  "explanation": "region_markdown_provenance.py gains backward-compatible note_start/leading_note parameters used only by V4; defaults preserve V1/V2/V3 behaviour."
+}

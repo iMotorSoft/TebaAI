@@ -1,0 +1,23 @@
+{
+  "status": "NOT_MEASURED",
+  "scope": "No controlled E2E fixture; no existing-corpus safety claim",
+  "required_for_pass": {
+    "known_bad_text_in_canonical": 0,
+    "known_bad_text_in_chunks": 0,
+    "known_bad_text_in_vectors": 0,
+    "known_bad_text_retrievable": 0,
+    "known_bad_text_citable": 0,
+    "good_neighbor_text_lost": 0,
+    "quarantined_regions_untracked": 0
+  },
+  "observed": {
+    "known_bad_text_in_canonical": null,
+    "known_bad_text_in_chunks": null,
+    "known_bad_text_in_vectors": null,
+    "known_bad_text_retrievable": null,
+    "known_bad_text_citable": null,
+    "good_neighbor_text_lost": null,
+    "quarantined_regions_untracked": null
+  },
+  "note": "Required zeros are not observed zeros. No indexing from this phase does not prove enforcement."
+}

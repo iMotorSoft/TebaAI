@@ -1,0 +1,51 @@
+{
+  "five_v1_unsafe_eliminated": true,
+  "unsafe_false_provenance_certifications": 0,
+  "all_golden_local_boundaries_columns_order_match": true,
+  "certified_development_regions": [
+    {
+      "page": 55,
+      "region_id": "region-0b6b3380e440ba2cd860a557",
+      "note": 33
+    },
+    {
+      "page": 56,
+      "region_id": "region-019856217e36825f686180c6",
+      "note": 35
+    },
+    {
+      "page": 167,
+      "region_id": "region-ff638d2fa960caae1234972e",
+      "note": 61
+    },
+    {
+      "page": 167,
+      "region_id": "region-d4281d9ff87c57b4485d776c",
+      "note": 62
+    },
+    {
+      "page": 167,
+      "region_id": "region-d585babd21a30922107ee33f",
+      "note": 63
+    },
+    {
+      "page": 167,
+      "region_id": "region-4c3c4f7d968c08e4291a7228",
+      "note": 64
+    }
+  ],
+  "known_good_body_supported": false,
+  "page55_both_neighbors_accepted": false,
+  "cross_page_36_66_resolved": false,
+  "regression_pages": [
+    55,
+    56,
+    57,
+    80,
+    140,
+    167,
+    168,
+    200
+  ],
+  "scope": "Five false zones and existing editorial goldens; not exhaustive rendered-glyph review"
+}

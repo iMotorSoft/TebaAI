@@ -1,0 +1,27 @@
+{
+  "runtime_environment": "development",
+  "services": {
+    "postgres": {
+      "configured_host_is_loopback": true,
+      "tcp_probe": "reachable"
+    },
+    "milvus": {
+      "configured_host_is_loopback": true,
+      "tcp_probe": "reachable"
+    },
+    "litellm": {
+      "configured_host_is_loopback": true,
+      "tcp_probe": "reachable"
+    }
+  },
+  "embedding_alias": "openai_text_embedding_3_small",
+  "dimension": 1536,
+  "model_call": "NOT_RUN",
+  "milvus_collection_probe": "NOT_RUN",
+  "reason": "Stopped before service-dependent E2E because runtime certificate trust/transport is absent; TCP is not a functional preflight PASS.",
+  "postgres_read_only_probe": {
+    "database": "tebaai",
+    "version": "18.4 (Debian 18.4-1.pgdg13+1)",
+    "required_tables_present": 4
+  }
+}

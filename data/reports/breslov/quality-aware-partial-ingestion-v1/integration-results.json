@@ -1,0 +1,22 @@
+{
+  "gate": "TEBAAI_BRESLOV_QUALITY_AWARE_PARTIAL_INGESTION_V1",
+  "status": "BLOCKED",
+  "offline_gate": "TEBAAI_BRESLOV_QUALITY_AWARE_PARTIAL_INGESTION_OFFLINE_V1_PASS NOT_EMITTED",
+  "contract_tests": "PASS; see tests.txt",
+  "pipeline_integration": "NOT_STARTED (offline prerequisite unmet)",
+  "small_real_E2E": "NOT_RUN",
+  "READY_FOR_C_REINGEST": "NO",
+  "blockers": [
+    "generic source-region to Markdown provenance absent",
+    "page167 note order broken despite reliable native columns",
+    "page56 numbered starts restored, full editorial boundaries not restored"
+  ],
+  "quality_policy_version": "region-quality-v1",
+  "production_modified": false,
+  "production_services_touched": false,
+  "PG_writes": false,
+  "Milvus_writes": false,
+  "C_reingested": false,
+  "OCR_integrated": false,
+  "orthographic_expansion_integrated": false
+}

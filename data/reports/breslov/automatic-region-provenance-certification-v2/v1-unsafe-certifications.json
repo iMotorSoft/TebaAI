@@ -1,0 +1,702 @@
+[
+  {
+    "region_id": "region-cbabcc634980c627e2d2280b",
+    "page": 80,
+    "V1_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 80,
+      "region_id": "region-cbabcc634980c627e2d2280b",
+      "bbox": [
+        53.8582763671875,
+        613.5304565429688,
+        242.5028533935547,
+        647.3419799804688
+      ],
+      "zone_type": "footer",
+      "direction": "LTR",
+      "source_block_ids": [
+        11
+      ],
+      "source_line_ids": [
+        [
+          11,
+          0
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          3
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          3181,
+          3390
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "CERTIFIED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "QUALITY_EVIDENCE_INSUFFICIENT"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v1"
+    },
+    "V2_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 80,
+      "region_id": "region-cbabcc634980c627e2d2280b",
+      "bbox": [
+        53.8582763671875,
+        613.5304565429688,
+        242.5028533935547,
+        647.3419799804688
+      ],
+      "zone_type": "footer",
+      "direction": "LTR",
+      "source_block_ids": [
+        11
+      ],
+      "source_line_ids": [
+        [
+          11,
+          0
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          3
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          3181,
+          3390
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "UNRESOLVED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "ZONE_AMBIGUOUS",
+        "BOUNDARY_UNPROVEN",
+        "COLUMN_AMBIGUOUS",
+        "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+        "LAYOUT_UNSUPPORTED",
+        "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v2",
+      "proofs": [
+        {
+          "name": "zone",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "direction",
+          "passed": true,
+          "evidence": [
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+          ]
+        },
+        {
+          "name": "ownership",
+          "passed": true,
+          "evidence": [
+            "UNIQUE_SOURCE_IDENTITIES",
+            "DISJOINT_SOURCE_LINE_GEOMETRY",
+            "FORWARD_MARKDOWN_RANGES"
+          ]
+        },
+        {
+          "name": "local_boundary",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "order",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "continuation",
+          "passed": false,
+          "evidence": []
+        }
+      ],
+      "local_boundary": "UNRESOLVED",
+      "continuation_status": "UNRESOLVED_CONTINUATION"
+    },
+    "correct_decision": "UNRESOLVED until note zone/ownership/boundaries proven",
+    "root_cause": "EXTRACTOR_CLASS_IS_NOT_EDITORIAL_ZONE_PROOF",
+    "why_v1_certified": "Recognized extractor class + LTR + unique identity; no independent zone proof",
+    "missing_proof": "Editorial note-zone and ownership certificate; local box bounds do not prove editorial boundaries",
+    "proof_strengthened": "Explicit composed note zone; non-note labels never sufficient",
+    "V2_expected_decision": "UNRESOLVED"
+  },
+  {
+    "region_id": "region-5c800da9132cbc4511454e79",
+    "page": 80,
+    "V1_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 80,
+      "region_id": "region-5c800da9132cbc4511454e79",
+      "bbox": [
+        252.61354064941406,
+        613.5372314453125,
+        441.24603271484375,
+        636.8582763671875
+      ],
+      "zone_type": "footer",
+      "direction": "LTR",
+      "source_block_ids": [
+        12
+      ],
+      "source_line_ids": [
+        [
+          12,
+          0
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          12,
+          2
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          3390,
+          3538
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "CERTIFIED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "QUALITY_EVIDENCE_INSUFFICIENT"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v1"
+    },
+    "V2_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 80,
+      "region_id": "region-5c800da9132cbc4511454e79",
+      "bbox": [
+        252.61354064941406,
+        613.5372314453125,
+        441.24603271484375,
+        636.8582763671875
+      ],
+      "zone_type": "footer",
+      "direction": "LTR",
+      "source_block_ids": [
+        12
+      ],
+      "source_line_ids": [
+        [
+          12,
+          0
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          12,
+          2
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          3390,
+          3538
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "UNRESOLVED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "ZONE_AMBIGUOUS",
+        "BOUNDARY_UNPROVEN",
+        "COLUMN_AMBIGUOUS",
+        "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+        "LAYOUT_UNSUPPORTED",
+        "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v2",
+      "proofs": [
+        {
+          "name": "zone",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "direction",
+          "passed": true,
+          "evidence": [
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+          ]
+        },
+        {
+          "name": "ownership",
+          "passed": true,
+          "evidence": [
+            "UNIQUE_SOURCE_IDENTITIES",
+            "DISJOINT_SOURCE_LINE_GEOMETRY",
+            "FORWARD_MARKDOWN_RANGES"
+          ]
+        },
+        {
+          "name": "local_boundary",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "order",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "continuation",
+          "passed": false,
+          "evidence": []
+        }
+      ],
+      "local_boundary": "UNRESOLVED",
+      "continuation_status": "UNRESOLVED_CONTINUATION"
+    },
+    "correct_decision": "UNRESOLVED until note zone/ownership/boundaries proven",
+    "root_cause": "EXTRACTOR_CLASS_IS_NOT_EDITORIAL_ZONE_PROOF",
+    "why_v1_certified": "Recognized extractor class + LTR + unique identity; no independent zone proof",
+    "missing_proof": "Editorial note-zone and ownership certificate; local box bounds do not prove editorial boundaries",
+    "proof_strengthened": "Explicit composed note zone; non-note labels never sufficient",
+    "V2_expected_decision": "UNRESOLVED"
+  },
+  {
+    "region_id": "region-4208ec6381b2a5e29276d00e",
+    "page": 140,
+    "V1_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 140,
+      "region_id": "region-4208ec6381b2a5e29276d00e",
+      "bbox": [
+        252.61581420898438,
+        451.396728515625,
+        330.9263000488281,
+        458.222900390625
+      ],
+      "zone_type": "editorial_heading",
+      "direction": "LTR",
+      "source_block_ids": [
+        5
+      ],
+      "source_line_ids": [
+        [
+          5,
+          0
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          2896,
+          2931
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "CERTIFIED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "QUALITY_EVIDENCE_INSUFFICIENT"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v1"
+    },
+    "V2_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 140,
+      "region_id": "region-4208ec6381b2a5e29276d00e",
+      "bbox": [
+        252.61581420898438,
+        451.396728515625,
+        330.9263000488281,
+        458.222900390625
+      ],
+      "zone_type": "editorial_heading",
+      "direction": "LTR",
+      "source_block_ids": [
+        5
+      ],
+      "source_line_ids": [
+        [
+          5,
+          0
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          2896,
+          2931
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "UNRESOLVED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "ZONE_AMBIGUOUS",
+        "BOUNDARY_UNPROVEN",
+        "COLUMN_AMBIGUOUS",
+        "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+        "LAYOUT_UNSUPPORTED",
+        "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v2",
+      "proofs": [
+        {
+          "name": "zone",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "direction",
+          "passed": true,
+          "evidence": [
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+          ]
+        },
+        {
+          "name": "ownership",
+          "passed": true,
+          "evidence": [
+            "UNIQUE_SOURCE_IDENTITIES",
+            "DISJOINT_SOURCE_LINE_GEOMETRY",
+            "FORWARD_MARKDOWN_RANGES"
+          ]
+        },
+        {
+          "name": "local_boundary",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "order",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "continuation",
+          "passed": false,
+          "evidence": []
+        }
+      ],
+      "local_boundary": "UNRESOLVED",
+      "continuation_status": "UNRESOLVED_CONTINUATION"
+    },
+    "correct_decision": "UNRESOLVED until note zone/ownership/boundaries proven",
+    "root_cause": "EXTRACTOR_CLASS_IS_NOT_EDITORIAL_ZONE_PROOF",
+    "why_v1_certified": "Recognized extractor class + LTR + unique identity; no independent zone proof",
+    "missing_proof": "Editorial note-zone and ownership certificate; local box bounds do not prove editorial boundaries",
+    "proof_strengthened": "Explicit composed note zone; non-note labels never sufficient",
+    "V2_expected_decision": "UNRESOLVED"
+  },
+  {
+    "region_id": "region-9a246f83b66e789817d4e727",
+    "page": 200,
+    "V1_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 200,
+      "region_id": "region-9a246f83b66e789817d4e727",
+      "bbox": [
+        252.614501953125,
+        459.205810546875,
+        320.58843994140625,
+        464.52685546875
+      ],
+      "zone_type": "footer",
+      "direction": "LTR",
+      "source_block_ids": [
+        2
+      ],
+      "source_line_ids": [
+        [
+          2,
+          1
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          2440,
+          2465
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "CERTIFIED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "QUALITY_EVIDENCE_INSUFFICIENT"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v1"
+    },
+    "V2_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 200,
+      "region_id": "region-9a246f83b66e789817d4e727",
+      "bbox": [
+        252.614501953125,
+        459.205810546875,
+        320.58843994140625,
+        464.52685546875
+      ],
+      "zone_type": "footer",
+      "direction": "LTR",
+      "source_block_ids": [
+        2
+      ],
+      "source_line_ids": [
+        [
+          2,
+          1
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          2440,
+          2465
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "UNRESOLVED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "ZONE_AMBIGUOUS",
+        "BOUNDARY_UNPROVEN",
+        "COLUMN_AMBIGUOUS",
+        "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+        "LAYOUT_UNSUPPORTED",
+        "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v2",
+      "proofs": [
+        {
+          "name": "zone",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "direction",
+          "passed": true,
+          "evidence": [
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+          ]
+        },
+        {
+          "name": "ownership",
+          "passed": true,
+          "evidence": [
+            "UNIQUE_SOURCE_IDENTITIES",
+            "DISJOINT_SOURCE_LINE_GEOMETRY",
+            "FORWARD_MARKDOWN_RANGES"
+          ]
+        },
+        {
+          "name": "local_boundary",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "order",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "continuation",
+          "passed": false,
+          "evidence": []
+        }
+      ],
+      "local_boundary": "UNRESOLVED",
+      "continuation_status": "UNRESOLVED_CONTINUATION"
+    },
+    "correct_decision": "UNRESOLVED until note zone/ownership/boundaries proven",
+    "root_cause": "EXTRACTOR_CLASS_IS_NOT_EDITORIAL_ZONE_PROOF",
+    "why_v1_certified": "Recognized extractor class + LTR + unique identity; no independent zone proof",
+    "missing_proof": "Editorial note-zone and ownership certificate; local box bounds do not prove editorial boundaries",
+    "proof_strengthened": "Explicit composed note zone; non-note labels never sufficient",
+    "V2_expected_decision": "UNRESOLVED"
+  },
+  {
+    "region_id": "region-6bcfd2e337fb9ad3f7934fe4",
+    "page": 200,
+    "V1_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 200,
+      "region_id": "region-6bcfd2e337fb9ad3f7934fe4",
+      "bbox": [
+        53.85850143432617,
+        459.3517150878906,
+        110.10625457763672,
+        464.5335998535156
+      ],
+      "zone_type": "footer",
+      "direction": "LTR",
+      "source_block_ids": [
+        2
+      ],
+      "source_line_ids": [
+        [
+          2,
+          0
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          2465,
+          2488
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "CERTIFIED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "QUALITY_EVIDENCE_INSUFFICIENT"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v1"
+    },
+    "V2_result": {
+      "document_sha": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "pdf_page": 200,
+      "region_id": "region-6bcfd2e337fb9ad3f7934fe4",
+      "bbox": [
+        53.85850143432617,
+        459.3517150878906,
+        110.10625457763672,
+        464.5335998535156
+      ],
+      "zone_type": "footer",
+      "direction": "LTR",
+      "source_block_ids": [
+        2
+      ],
+      "source_line_ids": [
+        [
+          2,
+          0
+        ]
+      ],
+      "markdown_ranges": [
+        [
+          2465,
+          2488
+        ]
+      ],
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "provenance_status": "UNRESOLVED",
+      "quality_status": "UNRESOLVED",
+      "reason_codes": [
+        "ZONE_AMBIGUOUS",
+        "BOUNDARY_UNPROVEN",
+        "COLUMN_AMBIGUOUS",
+        "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+        "LAYOUT_UNSUPPORTED",
+        "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+      ],
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "continuation_of": null,
+      "certificate_version": "automatic-region-certification-v2",
+      "proofs": [
+        {
+          "name": "zone",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "direction",
+          "passed": true,
+          "evidence": [
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_TOKEN_ORDER"
+          ]
+        },
+        {
+          "name": "ownership",
+          "passed": true,
+          "evidence": [
+            "UNIQUE_SOURCE_IDENTITIES",
+            "DISJOINT_SOURCE_LINE_GEOMETRY",
+            "FORWARD_MARKDOWN_RANGES"
+          ]
+        },
+        {
+          "name": "local_boundary",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "order",
+          "passed": false,
+          "evidence": []
+        },
+        {
+          "name": "continuation",
+          "passed": false,
+          "evidence": []
+        }
+      ],
+      "local_boundary": "UNRESOLVED",
+      "continuation_status": "UNRESOLVED_CONTINUATION"
+    },
+    "correct_decision": "UNRESOLVED until note zone/ownership/boundaries proven",
+    "root_cause": "EXTRACTOR_CLASS_IS_NOT_EDITORIAL_ZONE_PROOF",
+    "why_v1_certified": "Recognized extractor class + LTR + unique identity; no independent zone proof",
+    "missing_proof": "Editorial note-zone and ownership certificate; local box bounds do not prove editorial boundaries",
+    "proof_strengthened": "Explicit composed note zone; non-note labels never sufficient",
+    "V2_expected_decision": "UNRESOLVED"
+  }
+]

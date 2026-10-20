@@ -229,6 +229,20 @@ def extract_pdf_columns_with_page_markers(
     return combined, page_meta, xmeta
 
 
+def extract_pdf_with_region_certificates(
+    pdf_path: str, *, pages: list[int] | None = None,
+) -> list[dict]:
+    """Opt-in live extraction capability; NOT used by the worker/default path.
+
+    Physical page numbers are one-based. Markdown ranges belong exclusively to
+    the returned page-local Markdown, never to previously persisted content.
+    Unsupported evidence is serialized as UNRESOLVED, not accepted by default.
+    """
+    from modules.library.automatic_region_certification import extract_pdf_region_certificates
+
+    return [page.to_dict() for page in extract_pdf_region_certificates(pdf_path, pages=pages)]
+
+
 def resolve_page_range_from_markers(
     char_start: int,
     char_end: int,

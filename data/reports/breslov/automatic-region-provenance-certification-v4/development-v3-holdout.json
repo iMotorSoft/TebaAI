@@ -1,0 +1,29 @@
+{
+  "safety_pass": true,
+  "utility_pass": true,
+  "metrics": {
+    "pages": 30,
+    "regions": 363,
+    "correct_certifications": 100,
+    "correct_unresolved": 228,
+    "correct_accepted": 36,
+    "unsafe_false_certifications": 0,
+    "unsafe_false_provenance_certifications": 0,
+    "false_body_certifications": 0,
+    "unsafe_false_continuations": 0,
+    "false_editorial_completions": 0,
+    "body_supported_count": 70,
+    "body_correctly_certified": 60,
+    "body_accepted": 11,
+    "body_left_unresolved": 10,
+    "notes_supported_count": 69,
+    "notes_correctly_certified": 40,
+    "notes_left_unresolved": 29,
+    "cross_page_units": 4,
+    "correctly_linked": 3,
+    "cross_page_left_unresolved": 1,
+    "body_supported_coverage": "60/70",
+    "cross_page_supported_coverage": "3/4",
+    "seconds": 26.694802851000077
+  }
+}

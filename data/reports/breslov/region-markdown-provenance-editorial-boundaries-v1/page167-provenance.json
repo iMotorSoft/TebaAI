@@ -1,0 +1,1567 @@
+{
+  "physical_page": 167,
+  "printed_page": 149,
+  "printed_page_provenance": "prior visual golden",
+  "Spanish_body_provenance": "PASS",
+  "Spanish_notes_provenance": "PASS",
+  "Spanish_notes_boundaries": "PASS",
+  "Spanish_notes_order": "PASS",
+  "column_ownership": "PASS",
+  "Hebrew_region_independently_addressable": "YES",
+  "page_aggregate_candidate": "PARTIAL",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "body_region_ids": [
+    "region-6d2d124c6cae1c3648d1d8da",
+    "region-a330eb2be0fd33a5b5c6fb59",
+    "region-d6baf8fb522ed5f2537c1b4d",
+    "region-e33afca209bbe9a1c31481e0",
+    "region-f7f1faa5f7cba237dafcf95e"
+  ],
+  "hebrew_region_ids": [
+    "region-0d9b5cdbf8a79e22555e5eb6",
+    "region-a0597be7efe49f03d3c5ab5e"
+  ],
+  "units": [
+    {
+      "region_id": "region-aad7be7388e0c6eb3d6a17a8",
+      "pdf_page": 167,
+      "source_bbox": [
+        369.9049987792969,
+        46.17702102661133,
+        443.469970703125,
+        55.95378112792969
+      ],
+      "parts": [
+        {
+          "bbox": [
+            369.9049987792969,
+            46.17702102661133,
+            443.469970703125,
+            55.95378112792969
+          ],
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "source_sequence": 0,
+          "column": null,
+          "source_text_sha256": "951e56fac83330c9c8c18587986091e2645ac3549212247237e93553ba4d83b5",
+          "source_text_length": 14
+        }
+      ],
+      "role": "page-header",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 0,
+      "markdown_end": 23,
+      "canonical_start": 0,
+      "canonical_end": 16,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "f2295496de427e8196a5a0cdf8c1c74a355563b1bed6a9f28cf887df50ce8edf",
+      "markdown_sha256": "bec79361a6d8e57ca9d7e22aa3aba9ea6022c35c1b8dae9798c77f5a61db3ac6"
+    },
+    {
+      "region_id": "region-bdf3b35d994b533d8893e596",
+      "pdf_page": 167,
+      "source_bbox": [
+        25.070499420166016,
+        46.26249313354492,
+        160.2469940185547,
+        55.754493713378906
+      ],
+      "parts": [
+        {
+          "bbox": [
+            25.070499420166016,
+            46.26249313354492,
+            160.2469940185547,
+            55.754493713378906
+          ],
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "source_sequence": 1,
+          "column": null,
+          "source_text_sha256": "e87d986f8d876853cb7424fc01d4911fd0b28bc06f8d8b7720b1681eed28832b",
+          "source_text_length": 29
+        }
+      ],
+      "role": "page-header",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 23,
+      "markdown_end": 64,
+      "canonical_start": 16,
+      "canonical_end": 47,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "a7b40361a9e212394e27af4e732b5ef27a3acf8ce44f900a615e18d15ec5d48e",
+      "markdown_sha256": "2e7fe94a900c792d19d8bd63b9aa6dd1b1336a756e2f96e726b13edf1f0744dc"
+    },
+    {
+      "region_id": "region-0d9b5cdbf8a79e22555e5eb6",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.4793701171875,
+        69.71330261230469,
+        442.0295104980469,
+        127.05249786376953
+      ],
+      "parts": [
+        {
+          "bbox": [
+            371.0826416015625,
+            69.91010284423828,
+            371.0949401855469,
+            70.9310073852539
+          ],
+          "source_line_ids": [
+            [
+              9,
+              0
+            ]
+          ],
+          "source_sequence": 24,
+          "column": null,
+          "source_text_sha256": "83d544ccc223c057d2bf80d3f2a32982c32c3c0db8e2674820da5064783fb097",
+          "source_text_length": 1
+        },
+        {
+          "bbox": [
+            108.4260025024414,
+            69.71330261230469,
+            441.9896545410156,
+            81.81651306152344
+          ],
+          "source_line_ids": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              1
+            ]
+          ],
+          "source_sequence": 25,
+          "column": null,
+          "source_text_sha256": "7bb29c9d330f688f9e146423f31d0bf58c4ee4243591f3ea70668d5603d3862b",
+          "source_text_length": 96
+        },
+        {
+          "bbox": [
+            56.4793701171875,
+            88.28459167480469,
+            441.9991149902344,
+            100.38951110839844
+          ],
+          "source_line_ids": [
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              1
+            ]
+          ],
+          "source_sequence": 26,
+          "column": null,
+          "source_text_sha256": "c4bc399d4155100a41da06752c43e632ab485077119eebb437ff85d283f55edf",
+          "source_text_length": 111
+        },
+        {
+          "bbox": [
+            56.48030090332031,
+            102.60398864746094,
+            441.9904479980469,
+            114.70719909667969
+          ],
+          "source_line_ids": [
+            [
+              10,
+              2
+            ]
+          ],
+          "source_sequence": 27,
+          "column": null,
+          "source_text_sha256": "d1e596e3423781151ea7cbe7a5cb20f7aff5bcd32b98345c460e4277efa1e841",
+          "source_text_length": 104
+        },
+        {
+          "bbox": [
+            359.7526550292969,
+            118.24600219726562,
+            442.0295104980469,
+            127.05249786376953
+          ],
+          "source_line_ids": [
+            [
+              10,
+              3
+            ]
+          ],
+          "source_sequence": 28,
+          "column": null,
+          "source_text_sha256": "5532ac8af5f360cefdf3c5a23b4a412c403cbe348c79a72586e66ec101d479ad",
+          "source_text_length": 21
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 64,
+      "markdown_end": 431,
+      "canonical_start": 47,
+      "canonical_end": 386,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "2bad29e479a409211cbfe139cfa19917c19ff70f5bbd149854973391234a5a72",
+      "markdown_sha256": "11443831104f2141679c32b75a6d4971a94f55d03fccd8bf87a47c3e36fbd0c3"
+    },
+    {
+      "region_id": "region-a0597be7efe49f03d3c5ab5e",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.48040008544922,
+        135.49388122558594,
+        442.0472106933594,
+        227.6981964111328
+      ],
+      "parts": [
+        {
+          "bbox": [
+            366.9532470703125,
+            135.69068908691406,
+            366.9655456542969,
+            136.71157836914062
+          ],
+          "source_line_ids": [
+            [
+              11,
+              0
+            ]
+          ],
+          "source_sequence": 30,
+          "column": null,
+          "source_text_sha256": "83d544ccc223c057d2bf80d3f2a32982c32c3c0db8e2674820da5064783fb097",
+          "source_text_length": 1
+        },
+        {
+          "bbox": [
+            56.48040008544922,
+            135.49388122558594,
+            442.0054016113281,
+            147.5970916748047
+          ],
+          "source_line_ids": [
+            [
+              11,
+              0
+            ]
+          ],
+          "source_sequence": 29,
+          "column": null,
+          "source_text_sha256": "c4bc399d4155100a41da06752c43e632ab485077119eebb437ff85d283f55edf",
+          "source_text_length": 111
+        },
+        {
+          "bbox": [
+            319.6942138671875,
+            149.8110809326172,
+            442.0472106933594,
+            161.5083770751953
+          ],
+          "source_line_ids": [
+            [
+              11,
+              1
+            ]
+          ],
+          "source_sequence": 31,
+          "column": null,
+          "source_text_sha256": "b8bf9f17bf1dc861affe8c10e318a541276e9613854404c89be5e8e17f8dfdd4",
+          "source_text_length": 33
+        },
+        {
+          "bbox": [
+            56.48040008544922,
+            168.38389587402344,
+            442.0029602050781,
+            180.4871063232422
+          ],
+          "source_line_ids": [
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              12,
+              3
+            ]
+          ],
+          "source_sequence": 32,
+          "column": null,
+          "source_text_sha256": "d1e596e3423781151ea7cbe7a5cb20f7aff5bcd32b98345c460e4277efa1e841",
+          "source_text_length": 104
+        },
+        {
+          "bbox": [
+            56.49267578125,
+            182.7010955810547,
+            442.0028991699219,
+            194.80430603027344
+          ],
+          "source_line_ids": [
+            [
+              12,
+              4
+            ],
+            [
+              12,
+              5
+            ]
+          ],
+          "source_sequence": 33,
+          "column": null,
+          "source_text_sha256": "e4fc45bd7d1d4cb9d15ccefa29f70ba88bbc37bc6752d6d77333fbb3d3472297",
+          "source_text_length": 109
+        },
+        {
+          "bbox": [
+            243.46861267089844,
+            197.01951599121094,
+            441.99676513671875,
+            209.1227264404297
+          ],
+          "source_line_ids": [
+            [
+              12,
+              6
+            ],
+            [
+              12,
+              7
+            ]
+          ],
+          "source_sequence": 34,
+          "column": null,
+          "source_text_sha256": "f5956080970b71c0d01a3fde710e531eb278b073592796b364bc770cb175618b",
+          "source_text_length": 52
+        },
+        {
+          "bbox": [
+            71.619140625,
+            215.59498596191406,
+            441.98565673828125,
+            227.6981964111328
+          ],
+          "source_line_ids": [
+            [
+              13,
+              0
+            ]
+          ],
+          "source_sequence": 35,
+          "column": null,
+          "source_text_sha256": "2f997c96d72189425b1226c71cd1da5dac48a6b6083783ff2d680e5a66040483",
+          "source_text_length": 112
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 431,
+      "markdown_end": 1019,
+      "canonical_start": 386,
+      "canonical_end": 916,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "26c93d185bcc57636fac38615e4f1d97737e3511f2181178ab6cc995d61adc50",
+      "markdown_sha256": "a6dfa43966c44f9f8e3acd5a7704fa5ee2949597050130953155743d064420d4"
+    },
+    {
+      "region_id": "region-42907a8b6e803abed4f59a9e",
+      "pdf_page": 167,
+      "source_bbox": [
+        209.875,
+        247.31297302246094,
+        289.0232238769531,
+        255.3709716796875
+      ],
+      "parts": [
+        {
+          "bbox": [
+            209.875,
+            247.31297302246094,
+            289.0232238769531,
+            255.3709716796875
+          ],
+          "source_line_ids": [
+            [
+              14,
+              0
+            ]
+          ],
+          "source_sequence": 36,
+          "column": null,
+          "source_text_sha256": "3dfbafd38db17ebbc803ecf63938214fccb107d136af81b6e697c7465a0c5e15",
+          "source_text_length": 52
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 1019,
+      "markdown_end": 1080,
+      "canonical_start": 916,
+      "canonical_end": 970,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "82abd23ffbb77bc18e9b07aaec0ba971decedb14cf1c721846eb53923a8c50d8",
+      "markdown_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb"
+    },
+    {
+      "region_id": "region-6d2d124c6cae1c3648d1d8da",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.692901611328125,
+        269.0009765625,
+        445.193115234375,
+        348.8809814453125
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.692901611328125,
+            269.0009765625,
+            445.1650085449219,
+            279.1409912109375
+          ],
+          "source_line_ids": [
+            [
+              5,
+              0
+            ]
+          ],
+          "source_sequence": 2,
+          "column": null,
+          "source_text_sha256": "be4e66f04ba0f18baa3d4387d0cd8e1143a2d97f4534a1c8a7a89ccf0ce4ea4c",
+          "source_text_length": 83
+        },
+        {
+          "bbox": [
+            56.6929931640625,
+            280.9903564453125,
+            445.1630554199219,
+            291.21917724609375
+          ],
+          "source_line_ids": [
+            [
+              5,
+              1
+            ]
+          ],
+          "source_sequence": 3,
+          "column": null,
+          "source_text_sha256": "01a460bae681c0f6e7b357c32ec880186403c4be9494f79a22f2a77069e7f7c2",
+          "source_text_length": 79
+        },
+        {
+          "bbox": [
+            56.6929931640625,
+            293.0009765625,
+            445.1650085449219,
+            303.1409912109375
+          ],
+          "source_line_ids": [
+            [
+              5,
+              2
+            ]
+          ],
+          "source_sequence": 4,
+          "column": null,
+          "source_text_sha256": "3c71e3c4f32335f5ef07c028b44078c7eae99dcda7ba491082bf0b04e18e216b",
+          "source_text_length": 79
+        },
+        {
+          "bbox": [
+            56.693023681640625,
+            305.2509765625,
+            445.193115234375,
+            315.1409912109375
+          ],
+          "source_line_ids": [
+            [
+              5,
+              3
+            ]
+          ],
+          "source_sequence": 5,
+          "column": null,
+          "source_text_sha256": "3c43be5235224a2dbc8b424bcdb1e67f66a59c96e5b7939c311205f0df1d659e",
+          "source_text_length": 83
+        },
+        {
+          "bbox": [
+            56.69303894042969,
+            317.1505126953125,
+            444.39202880859375,
+            327.1409912109375
+          ],
+          "source_line_ids": [
+            [
+              5,
+              4
+            ]
+          ],
+          "source_sequence": 6,
+          "column": null,
+          "source_text_sha256": "7954087bceeeb0d27e9f55e7396f77bbf6e79d6789d653f5c0a0b0b6dc3421b3",
+          "source_text_length": 71
+        },
+        {
+          "bbox": [
+            56.693023681640625,
+            329.1809997558594,
+            445.1619567871094,
+            339.1510009765625
+          ],
+          "source_line_ids": [
+            [
+              5,
+              5
+            ]
+          ],
+          "source_sequence": 7,
+          "column": null,
+          "source_text_sha256": "f902851a17693c3cfea4ffcdffeccbb36cb53d71873b81faa795c6df84ea458c",
+          "source_text_length": 81
+        },
+        {
+          "bbox": [
+            56.693016052246094,
+            341.281005859375,
+            138.84002685546875,
+            348.8809814453125
+          ],
+          "source_line_ids": [
+            [
+              5,
+              6
+            ]
+          ],
+          "source_sequence": 8,
+          "column": null,
+          "source_text_sha256": "81ffeaed2f444923f1b6bfa5fb63854bc0dbd2e9e969cc72ebaefe57c4ad6df5",
+          "source_text_length": 17
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 1080,
+      "markdown_end": 1641,
+      "canonical_start": 970,
+      "canonical_end": 1471,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "ed3211568c9822ab480afdcd1b2cc6d5e87ea2ad0e1563a8aa61d7dacce54439",
+      "markdown_sha256": "7cde577ec4cf69f9bcbe34265d5e9cc1c7cb862949c90dda516f915ec30223bb"
+    },
+    {
+      "region_id": "region-d6baf8fb522ed5f2537c1b4d",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.692962646484375,
+        354.0359802246094,
+        445.16595458984375,
+        401.9759826660156
+      ],
+      "parts": [
+        {
+          "bbox": [
+            85.093017578125,
+            354.0359802246094,
+            445.072998046875,
+            365.9859924316406
+          ],
+          "source_line_ids": [
+            [
+              5,
+              7
+            ]
+          ],
+          "source_sequence": 9,
+          "column": null,
+          "source_text_sha256": "fdbacb54202564d9a8c8315ec39604a86d1c013242053d89e59ea7a7ff0aceb2",
+          "source_text_length": 81
+        },
+        {
+          "bbox": [
+            56.692962646484375,
+            367.8359680175781,
+            445.16595458984375,
+            377.9759826660156
+          ],
+          "source_line_ids": [
+            [
+              5,
+              8
+            ]
+          ],
+          "source_sequence": 10,
+          "column": null,
+          "source_text_sha256": "66b6284ea8287ca35d553d32a07d4a46a6b52dd084cf70452af8744aecc7ba9e",
+          "source_text_length": 83
+        },
+        {
+          "bbox": [
+            56.693023681640625,
+            379.7948303222656,
+            445.1650085449219,
+            390.1533203125
+          ],
+          "source_line_ids": [
+            [
+              5,
+              9
+            ]
+          ],
+          "source_sequence": 11,
+          "column": null,
+          "source_text_sha256": "7dba1f17a1b99a6aff60cdae3a2a5d46e88f75d3bdc82b326bec686dd9478e6e",
+          "source_text_length": 84
+        },
+        {
+          "bbox": [
+            56.693023681640625,
+            391.8359680175781,
+            391.9508056640625,
+            401.9759826660156
+          ],
+          "source_line_ids": [
+            [
+              5,
+              10
+            ]
+          ],
+          "source_sequence": 12,
+          "column": null,
+          "source_text_sha256": "b4d07774c569fffbff206d6d5e4370b3958f774d3df0bf8b5791e7fa398f1424",
+          "source_text_length": 71
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 1641,
+      "markdown_end": 2019,
+      "canonical_start": 1471,
+      "canonical_end": 1795,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "9172bb055ac94c7d3c9935760f2c5fa0c93277e3d1d9fee797b875ac472ef37c",
+      "markdown_sha256": "4a9aa46d74dc9305f8d94042087687bb0536562dd6dd69a31c5c9132455a44fc"
+    },
+    {
+      "region_id": "region-a330eb2be0fd33a5b5c6fb59",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.692901611328125,
+        406.9599609375,
+        445.15301513671875,
+        440.8099670410156
+      ],
+      "parts": [
+        {
+          "bbox": [
+            85.09290313720703,
+            406.9599609375,
+            445.15301513671875,
+            416.8099670410156
+          ],
+          "source_line_ids": [
+            [
+              6,
+              0
+            ]
+          ],
+          "source_sequence": 13,
+          "column": null,
+          "source_text_sha256": "0c2b021486760b816a3ed809290592cab7a785dd066f01b505c71b765d4310b8",
+          "source_text_length": 70
+        },
+        {
+          "bbox": [
+            56.692901611328125,
+            418.6593322753906,
+            444.4068908691406,
+            428.8881530761719
+          ],
+          "source_line_ids": [
+            [
+              6,
+              1
+            ]
+          ],
+          "source_sequence": 14,
+          "column": null,
+          "source_text_sha256": "98f3e26450dba3b43c7f3559651e9c01cae8b7dc98f91092150baf8e759af829",
+          "source_text_length": 79
+        },
+        {
+          "bbox": [
+            56.692901611328125,
+            430.8290100097656,
+            247.7128448486328,
+            440.8099670410156
+          ],
+          "source_line_ids": [
+            [
+              6,
+              2
+            ]
+          ],
+          "source_sequence": 15,
+          "column": null,
+          "source_text_sha256": "0acea067ec757cdb6c6760207966f62631f2371e30b6a8b380c9b7bd163b22b3",
+          "source_text_length": 42
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 2019,
+      "markdown_end": 2240,
+      "canonical_start": 1795,
+      "canonical_end": 1990,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "963606ae0622097e3e3f26dba7f6ed4f0da7eb7c78e0f4f866bab195ca21b435",
+      "markdown_sha256": "cbdf472a16d98a5e1bea80aed8a9bb6b7fada99da089a11200036d7f2e5cb20f"
+    },
+    {
+      "region_id": "region-e33afca209bbe9a1c31481e0",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69281005859375,
+        445.50494384765625,
+        445.1650085449219,
+        527.6550903320312
+      ],
+      "parts": [
+        {
+          "bbox": [
+            85.09290313720703,
+            445.50494384765625,
+            445.1629638671875,
+            455.65496826171875
+          ],
+          "source_line_ids": [
+            [
+              7,
+              0
+            ]
+          ],
+          "source_sequence": 16,
+          "column": null,
+          "source_text_sha256": "fad3a6ba3d1d8bf99ddb018ba0530634e5f7c7cc19b9d9f348658ff3831c19c8",
+          "source_text_length": 73
+        },
+        {
+          "bbox": [
+            56.69287109375,
+            457.7949523925781,
+            445.1638488769531,
+            467.64495849609375
+          ],
+          "source_line_ids": [
+            [
+              7,
+              1
+            ]
+          ],
+          "source_sequence": 17,
+          "column": null,
+          "source_text_sha256": "3f016f4659a5446747ce036bacaf2e2941a46625cc628339c346abe04d51f07e",
+          "source_text_length": 79
+        },
+        {
+          "bbox": [
+            56.69281005859375,
+            469.7949523925781,
+            445.1609191894531,
+            479.65496826171875
+          ],
+          "source_line_ids": [
+            [
+              7,
+              2
+            ]
+          ],
+          "source_sequence": 18,
+          "column": null,
+          "source_text_sha256": "ea96f6dd35aa33dcecaad91c34ea1a81b9400eb5d10244813d634f9d4aceb111",
+          "source_text_length": 82
+        },
+        {
+          "bbox": [
+            56.692840576171875,
+            481.46380615234375,
+            445.16278076171875,
+            491.8222961425781
+          ],
+          "source_line_ids": [
+            [
+              7,
+              3
+            ]
+          ],
+          "source_sequence": 19,
+          "column": null,
+          "source_text_sha256": "56b843840d7fbf825ba16e621f3e56325bb8c1ee54ee18eccfa4f8782e42f148",
+          "source_text_length": 85
+        },
+        {
+          "bbox": [
+            56.692840576171875,
+            493.50494384765625,
+            445.1648254394531,
+            502.9149475097656
+          ],
+          "source_line_ids": [
+            [
+              7,
+              4
+            ]
+          ],
+          "source_sequence": 20,
+          "column": null,
+          "source_text_sha256": "81cb8169c348aec207ef04dd3aebbb5f9e75ac4f25487b015ea9fb7d2df6f5cc",
+          "source_text_length": 79
+        },
+        {
+          "bbox": [
+            56.692840576171875,
+            505.50506591796875,
+            445.1650085449219,
+            515.6550903320312
+          ],
+          "source_line_ids": [
+            [
+              7,
+              5
+            ]
+          ],
+          "source_sequence": 21,
+          "column": null,
+          "source_text_sha256": "b8c63fbfad379992051b5902f7604d84b2bfc0d41973dc55baef37d296e85ef5",
+          "source_text_length": 80
+        },
+        {
+          "bbox": [
+            56.693023681640625,
+            517.5050659179688,
+            223.54383850097656,
+            527.6550903320312
+          ],
+          "source_line_ids": [
+            [
+              7,
+              6
+            ]
+          ],
+          "source_sequence": 22,
+          "column": null,
+          "source_text_sha256": "3f7c9a05a9dd9e62917005d35bb445fb41564caa66e867b0aff5a08ea6a5b005",
+          "source_text_length": 37
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 2240,
+      "markdown_end": 2855,
+      "canonical_start": 1990,
+      "canonical_end": 2513,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "8bd581a7d339af1607c2e960ba7619446b9c13cca794abc4fa64f37b910fdf79",
+      "markdown_sha256": "59f34d068afdc42fac1fb6a52e572e3624e75e1efdd214bd6c52f68022d9e928"
+    },
+    {
+      "region_id": "region-f7f1faa5f7cba237dafcf95e",
+      "pdf_page": 167,
+      "source_bbox": [
+        85.09300231933594,
+        532.2835693359375,
+        445.076904296875,
+        542.5581665039062
+      ],
+      "parts": [
+        {
+          "bbox": [
+            85.09300231933594,
+            532.2835693359375,
+            445.076904296875,
+            542.5581665039062
+          ],
+          "source_line_ids": [
+            [
+              8,
+              0
+            ]
+          ],
+          "source_sequence": 23,
+          "column": null,
+          "source_text_sha256": "789923ed133223da12ab8e132283b86606f8ca76c9db546fee84844c24e07ab6",
+          "source_text_length": 71
+        }
+      ],
+      "role": "text",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 2855,
+      "markdown_end": 2937,
+      "canonical_start": 2513,
+      "canonical_end": 2586,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "061dea99887ca826eb3366ddf98e996aa85d0837e7dcb11bb4437a137af9af40",
+      "markdown_sha256": "5a0a79b0c266c1dcdf14ff88ac74d5f666d5b01cf8777d50d617f14022fc4bab"
+    },
+    {
+      "region_id": "region-5b921f4d5aa7a05a7ea2ae97",
+      "pdf_page": 167,
+      "source_bbox": [
+        226.1719970703125,
+        556.3569946289062,
+        274.1430358886719,
+        563.4559936523438
+      ],
+      "parts": [
+        {
+          "bbox": [
+            226.1719970703125,
+            556.3569946289062,
+            274.1430358886719,
+            563.4559936523438
+          ],
+          "source_line_ids": [
+            [
+              17,
+              0
+            ]
+          ],
+          "source_sequence": 37,
+          "column": null,
+          "source_text_sha256": "025a4802d0d0b77bbc174a916d0c6bc3de0a7192c7d87f41587cce7fa32850f0",
+          "source_text_length": 30
+        }
+      ],
+      "role": "section-header",
+      "note_number": null,
+      "end_reason": "BOX_BOUNDARY",
+      "markdown_start": 2937,
+      "markdown_end": 2979,
+      "canonical_start": 2586,
+      "canonical_end": 2618,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "672d847398f0b32fda3fa371a2c9c6db86f295e7b39c6d1eb5b50523420b8a8f",
+      "markdown_sha256": "ad88735b740f55f9de50143bc47c599ac46e2c00e103e56810fe859bde3cd979"
+    },
+    {
+      "region_id": "region-ce12d3949ae8134ad2feac97",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.692901611328125,
+        575.8474731445312,
+        172.32040405273438,
+        584.1499633789062
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.692901611328125,
+            575.8474731445312,
+            172.32040405273438,
+            584.1499633789062
+          ],
+          "source_line_ids": [
+            [
+              18,
+              0
+            ]
+          ],
+          "source_sequence": 38,
+          "column": 0,
+          "source_text_sha256": "9470703e3bdac049c242a127c287be685cc3fa599efcf3f5538b7b56993d2734",
+          "source_text_length": 39
+        }
+      ],
+      "role": "footnote",
+      "note_number": 60,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 2979,
+      "markdown_end": 3025,
+      "canonical_start": 2618,
+      "canonical_end": 2659,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "ff08b7efe2d3bf9caf54f2f6490457a4554f6484939b4439dc6205757d4afbe7",
+      "markdown_sha256": "2f4386888a25c3c642b72c1d1fad682b038b4075bf80cb05c8c71838610ec1be"
+    },
+    {
+      "region_id": "region-ff638d2fa960caae1234972e",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69365692138672,
+        586.3224487304688,
+        120.91690826416016,
+        592.9948120117188
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.69365692138672,
+            586.3224487304688,
+            120.91690826416016,
+            592.9948120117188
+          ],
+          "source_line_ids": [
+            [
+              18,
+              1
+            ]
+          ],
+          "source_sequence": 39,
+          "column": 0,
+          "source_text_sha256": "87625940ca5d9fae532be03cc862f0678375ce5ca554c404f1f2f8eda6fc2d64",
+          "source_text_length": 21
+        }
+      ],
+      "role": "footnote",
+      "note_number": 61,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3025,
+      "markdown_end": 3051,
+      "canonical_start": 2659,
+      "canonical_end": 2682,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "789f527b7a4e333fc3f9e45aeadab6769db3d366d4a1584b6a3e4356ca876d69",
+      "markdown_sha256": "da86a84ba84b183b8e13f02c318f9acb9c56e47d10053e36655beb9d6295c65e"
+    },
+    {
+      "region_id": "region-d4281d9ff87c57b4485d776c",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69365692138672,
+        595.3224487304688,
+        127.93991088867188,
+        602.1339721679688
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.69365692138672,
+            595.3224487304688,
+            127.93991088867188,
+            602.1339721679688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              2
+            ]
+          ],
+          "source_sequence": 40,
+          "column": 0,
+          "source_text_sha256": "e5e7ce26f3f39632ab10a5b6e3f2c89773831414627d075302e96578bb3091da",
+          "source_text_length": 25
+        }
+      ],
+      "role": "footnote",
+      "note_number": 62,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3051,
+      "markdown_end": 3084,
+      "canonical_start": 2682,
+      "canonical_end": 2709,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "b3bd2dd40acdc9d02de28e7a26452d885823e110fca3288a6913d886f889fbe1",
+      "markdown_sha256": "6bd1fc40868daf1a1d61470fc84b1be32ff437ce2dd2ea13cb822eed2443d284"
+    },
+    {
+      "region_id": "region-d585babd21a30922107ee33f",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69364929199219,
+        604.3224487304688,
+        245.35171508789062,
+        627.6325073242188
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.693660736083984,
+            604.3224487304688,
+            245.35171508789062,
+            611.1339721679688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              3
+            ]
+          ],
+          "source_sequence": 41,
+          "column": 0,
+          "source_text_sha256": "2b26d412538d5cd03a20d832002032776f85ff89751af5fb9d3608c38e337bb2",
+          "source_text_length": 63
+        },
+        {
+          "bbox": [
+            56.693660736083984,
+            613.3224487304688,
+            245.32691955566406,
+            620.1486206054688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              4
+            ]
+          ],
+          "source_sequence": 42,
+          "column": 0,
+          "source_text_sha256": "83f548e8314a900ace5c89eb2b23f39cba6fae77eb3882295d632f0d36bf5edc",
+          "source_text_length": 63
+        },
+        {
+          "bbox": [
+            56.69364929199219,
+            622.4616088867188,
+            71.69364929199219,
+            627.6325073242188
+          ],
+          "source_line_ids": [
+            [
+              18,
+              5
+            ]
+          ],
+          "source_sequence": 43,
+          "column": 0,
+          "source_text_sha256": "1a9d69b1affd61d834a74ef6350eba19d6a3952209aafd8f6e321c005bcf14cb",
+          "source_text_length": 5
+        }
+      ],
+      "role": "footnote",
+      "note_number": 63,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3084,
+      "markdown_end": 3226,
+      "canonical_start": 2709,
+      "canonical_end": 2844,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "83cb37519882069191ea22894892a4b69b8994df6c804d2532773f716634e658",
+      "markdown_sha256": "8105076069e77799678ebd275281087c3fd8a1ca5c2b45322c02321f4345fbb4"
+    },
+    {
+      "region_id": "region-4c3c4f7d968c08e4291a7228",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69364929199219,
+        631.3224487304688,
+        135.91690063476562,
+        638.1486206054688
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.69364929199219,
+            631.3224487304688,
+            135.91690063476562,
+            638.1486206054688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              6
+            ]
+          ],
+          "source_sequence": 44,
+          "column": 0,
+          "source_text_sha256": "ef4c6dc66da48eca563bbf3ce70e6ad5bd1d28c1aace2829d386ad9fe4293c16",
+          "source_text_length": 26
+        }
+      ],
+      "role": "footnote",
+      "note_number": 64,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3226,
+      "markdown_end": 3257,
+      "canonical_start": 2844,
+      "canonical_end": 2872,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "369bfa560a79be1c654f723b06d10a8f5aafe7a2cecf41d933b52cf503e14433",
+      "markdown_sha256": "e0b2115d40819c271c0c82fe64956fbdf6111a1873f789cea62103769336d9f6"
+    },
+    {
+      "region_id": "region-70f1fd4a3c8fe711425a6884",
+      "pdf_page": 167,
+      "source_bbox": [
+        56.69364929199219,
+        577.31201171875,
+        444.1117858886719,
+        647.1339721679688
+      ],
+      "parts": [
+        {
+          "bbox": [
+            56.69364929199219,
+            640.3224487304688,
+            245.3472137451172,
+            647.1339721679688
+          ],
+          "source_line_ids": [
+            [
+              18,
+              7
+            ]
+          ],
+          "source_sequence": 45,
+          "column": 0,
+          "source_text_sha256": "ca06823a907d9548bb4bf5e650ba258e24d9b1b9b03927a5d988b82da138dc28",
+          "source_text_length": 57
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            577.31201171875,
+            444.0968017578125,
+            584.141845703125
+          ],
+          "source_line_ids": [
+            [
+              19,
+              0
+            ]
+          ],
+          "source_sequence": 46,
+          "column": 1,
+          "source_text_sha256": "73177d34e3c94bb3a314fab2d189d46bbe1a2e7b8cca705af51a3c414333c9ea",
+          "source_text_length": 58
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            586.31201171875,
+            444.10430908203125,
+            593.141845703125
+          ],
+          "source_line_ids": [
+            [
+              19,
+              1
+            ]
+          ],
+          "source_sequence": 47,
+          "column": 1,
+          "source_text_sha256": "9f25c2aa4b5d7d6b29dce462d08dab7de92dc6e58bf94e13557d3e616af01b91",
+          "source_text_length": 57
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            595.31201171875,
+            444.1117858886719,
+            602.141845703125
+          ],
+          "source_line_ids": [
+            [
+              19,
+              2
+            ]
+          ],
+          "source_sequence": 48,
+          "column": 1,
+          "source_text_sha256": "6d264bf3e277a3d2fd6bfacbd9d3c27fb93322f7ce92ea61f8e329b9f10daf1a",
+          "source_text_length": 61
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            604.315673828125,
+            444.1109924316406,
+            611.127197265625
+          ],
+          "source_line_ids": [
+            [
+              19,
+              3
+            ]
+          ],
+          "source_sequence": 49,
+          "column": 1,
+          "source_text_sha256": "1a9362ef0fe20936fc67bbb997208abea986e76fd8780b226eb32452479ad295",
+          "source_text_length": 61
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            613.315673828125,
+            381.65191650390625,
+            618.625732421875
+          ],
+          "source_line_ids": [
+            [
+              19,
+              4
+            ]
+          ],
+          "source_sequence": 50,
+          "column": 1,
+          "source_text_sha256": "bf574f9d49c62e358a7c6dda0f80e21f171d5b9a331b84a88f1ba0a11b680971",
+          "source_text_length": 42
+        }
+      ],
+      "role": "footnote",
+      "note_number": 65,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3257,
+      "markdown_end": 3603,
+      "canonical_start": 2872,
+      "canonical_end": 3215,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "a4393e553dce3b7417e399634167ecbeded654db75ab8d6cef8a3f1fadaaed36",
+      "markdown_sha256": "8ae0117dc2b9aed956e90167949f81aa209d3db3e53f5e9bef83e5a2df82523e"
+    },
+    {
+      "region_id": "region-5584e245b77d8acfa4a406c5",
+      "pdf_page": 167,
+      "source_bbox": [
+        255.44964599609375,
+        622.315673828125,
+        444.1102600097656,
+        647.127197265625
+      ],
+      "parts": [
+        {
+          "bbox": [
+            255.44964599609375,
+            622.315673828125,
+            444.0918273925781,
+            629.127197265625
+          ],
+          "source_line_ids": [
+            [
+              19,
+              5
+            ]
+          ],
+          "source_sequence": 51,
+          "column": 1,
+          "source_text_sha256": "638eded716f468d96c1f06aa3fe6bcc62c70152f05d3cc802b16ab4806220850",
+          "source_text_length": 54
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            631.31201171875,
+            444.07989501953125,
+            638.141845703125
+          ],
+          "source_line_ids": [
+            [
+              19,
+              6
+            ]
+          ],
+          "source_sequence": 52,
+          "column": 1,
+          "source_text_sha256": "f1e78e645971dc74c8c629f9901e471edd3464fdb27b288128f5b4776954c832",
+          "source_text_length": 60
+        },
+        {
+          "bbox": [
+            255.44964599609375,
+            640.315673828125,
+            444.1102600097656,
+            647.127197265625
+          ],
+          "source_line_ids": [
+            [
+              19,
+              7
+            ]
+          ],
+          "source_sequence": 53,
+          "column": 1,
+          "source_text_sha256": "b5d101b5786f37ab7864636ecc61d8360c8f8f959477da2cf082cd7866f76df9",
+          "source_text_length": 57
+        }
+      ],
+      "role": "footnote",
+      "note_number": 66,
+      "end_reason": "PAGE_BOUNDARY",
+      "markdown_start": 3603,
+      "markdown_end": 3783,
+      "canonical_start": 3215,
+      "canonical_end": 3390,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "b9c2714ae37c607b953b409207fd27340be3679d0ca97fae609ce2165daa4d56",
+      "markdown_sha256": "11c194f258e726d1c2903085f46a76a3803473558cb2293d7a4fa05358023c81"
+    }
+  ],
+  "offset_unit": "Python Unicode code points, page-local, half-open; before exclusion"
+}

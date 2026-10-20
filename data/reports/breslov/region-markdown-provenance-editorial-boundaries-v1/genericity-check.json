@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "filename_hardcoding": false,
+  "page_number_hardcoding": false,
+  "note_number_hardcoding": false,
+  "substring_or_regex_mapping": false,
+  "source": "modules/library/region_markdown_provenance.py",
+  "source_sha256": "180dfe0eb6ec0285099d2e275318a2bd4236f418018af95b76dc780cccbef1b8",
+  "method": "AST constants + source review + generic synthetic and duplicate-text tests",
+  "supported_layout_contract": "text boxes; certified bottom note zone; disjoint columns; explicit direction. Unresolved layouts raise UnresolvedLayout; no drops.",
+  "note57_zone": "Explicit manual geometry certificate in fixture, because extractor labels ALL its notes text. Not an automatic universal zone detector."
+}

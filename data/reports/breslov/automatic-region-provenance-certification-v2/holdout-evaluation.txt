@@ -1,0 +1,25 @@
+{
+  "pages": 18,
+  "regions": 240,
+  "correct_certified": 8,
+  "correct_unresolved": 146,
+  "correct_accepted": 7,
+  "correct_platform_errors": 0,
+  "correct_source_errors": 0,
+  "unsafe_false_certifications": 0,
+  "unsafe_false_provenance_certifications": 0,
+  "certifiable_good_regions": 111,
+  "certified_good_regions": 8,
+  "safe_good_regions_left_unresolved": 103,
+  "supported_region_coverage_percent": 7.207207207207207,
+  "useful_supported_regions": true,
+  "required_class_utility_pass": false,
+  "certified_classes": [
+    "note",
+    "supported_columns"
+  ],
+  "seconds": 15.711924616998658,
+  "coverage_denominator": "Independently annotated good source units, including units not separately discovered; not all emitted candidates.",
+  "scope": "Exact source identities, zones, note boundaries, column flow, continuation and source/native text comparison. No claim of exhaustive rendered glyph fidelity."
+}
+TEBAAI_BRESLOV_AUTOMATIC_REGION_PROVENANCE_CERTIFICATION_V2_FAIL

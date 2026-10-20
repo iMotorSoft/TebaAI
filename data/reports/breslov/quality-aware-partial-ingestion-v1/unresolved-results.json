@@ -1,0 +1,25 @@
+{
+  "synthetic_only": true,
+  "metadata": {
+    "quality_policy_version": "region-quality-v1",
+    "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "pdf_page": 1,
+    "region_id": "unresolved",
+    "bbox": null,
+    "coordinate_system": null,
+    "classification": "UNRESOLVED",
+    "remediation": "UNRESOLVED",
+    "reason": [
+      "text_order_structure_not_verified",
+      "source_or_extraction_unresolved"
+    ],
+    "source_method": "pymupdf4llm",
+    "diagnostic_summary": [],
+    "evidence_refs": [
+      "synthetic-contract-only"
+    ],
+    "candidate_sha256": "f754212522043bcd2eff71c10eb0269086f16aff84620c314d03af4135724eda",
+    "candidate_length": 33
+  },
+  "indexed": false
+}

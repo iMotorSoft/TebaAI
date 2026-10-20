@@ -1,0 +1,17 @@
+{
+  "gate": "TEBAAI_BRESLOV_QUALITY_ENFORCEMENT_WORKER_E2E_V1",
+  "status": "BLOCKED",
+  "verdict": "TEBAAI_BRESLOV_QUALITY_ENFORCEMENT_WORKER_E2E_V1_BLOCKED",
+  "blocker": "Runtime has no approved source-bound positive certificate issuer/transport; offline certificates are manually reviewed golden inputs. See enforcement-point.md.",
+  "full_backend_suite": "FAIL (independent baseline failures, not the structural blocker)",
+  "worker_modified": false,
+  "controlled_e2e": "NOT_RUN",
+  "READY_FOR_C_REINGEST": "NO",
+  "full_C_reingest": false,
+  "SI_960_full_reactivation": false,
+  "OCR_integrated": false,
+  "orthographic_expansion_integrated": false,
+  "commit": false,
+  "push": false,
+  "production_modified": false
+}

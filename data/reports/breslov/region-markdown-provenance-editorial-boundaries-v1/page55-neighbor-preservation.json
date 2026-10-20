@@ -1,0 +1,548 @@
+{
+  "physical_page": 55,
+  "bad_region_isolated": "YES",
+  "previous_good_neighbor_preserved": "YES",
+  "next_good_neighbor_preserved": "YES",
+  "good_neighbor_sequence_unchanged": "YES",
+  "bad_region": {
+    "region_id": "region-b5a3422442cfb35c5802b67a",
+    "pdf_page": 55,
+    "source_bbox": [
+      226.4149932861328,
+      555.2809448242188,
+      274.38604736328125,
+      562.3800048828125
+    ],
+    "parts": [
+      {
+        "bbox": [
+          226.4149932861328,
+          555.2809448242188,
+          274.38604736328125,
+          562.3800048828125
+        ],
+        "source_line_ids": [
+          [
+            15,
+            0
+          ]
+        ],
+        "source_sequence": 52,
+        "column": null,
+        "source_text_sha256": "025a4802d0d0b77bbc174a916d0c6bc3de0a7192c7d87f41587cce7fa32850f0",
+        "source_text_length": 30
+      }
+    ],
+    "role": "text",
+    "note_number": null,
+    "end_reason": "BOX_BOUNDARY",
+    "markdown_start": 2828,
+    "markdown_end": 2867,
+    "canonical_start": 2686,
+    "canonical_end": 2718,
+    "mapping_method": "FORWARD_IR_SERIALIZATION",
+    "status": "MAPPED",
+    "transformations": [
+      "MARKDOWN_DECORATION",
+      "EDITORIAL_GROUPING"
+    ],
+    "transformation_status": "ALLOWLIST_ONLY",
+    "transformation_warning": null,
+    "continuation_of": null,
+    "canonical_sha256": "672d847398f0b32fda3fa371a2c9c6db86f295e7b39c6d1eb5b50523420b8a8f",
+    "markdown_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18"
+  },
+  "previous_region": {
+    "region_id": "region-305c5f7fce876bca7d9585ef",
+    "pdf_page": 55,
+    "source_bbox": [
+      56.69285583496094,
+      422.0849914550781,
+      445.1599426269531,
+      539.93505859375
+    ],
+    "parts": [
+      {
+        "bbox": [
+          86.64690399169922,
+          422.0849914550781,
+          445.0799255371094,
+          431.93499755859375
+        ],
+        "source_line_ids": [
+          [
+            7,
+            0
+          ]
+        ],
+        "source_sequence": 19,
+        "column": null,
+        "source_text_sha256": "68e8fede249581469214912f15b5c4899b96b9798a3494907f9a9ad75ca7d37a",
+        "source_text_length": 80
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          433.79498291015625,
+          444.4285583496094,
+          446.3899841308594
+        ],
+        "source_line_ids": [
+          [
+            7,
+            1
+          ],
+          [
+            16,
+            0
+          ]
+        ],
+        "source_sequence": 20,
+        "column": null,
+        "source_text_sha256": "00801e4f8aada71e376a26195316f6343f35d6390a21bf6fbc84fb64cb517d50",
+        "source_text_length": 77
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          443.9949951171875,
+          444.4278259277344,
+          455.9899597167969
+        ],
+        "source_line_ids": [
+          [
+            7,
+            2
+          ],
+          [
+            16,
+            1
+          ]
+        ],
+        "source_sequence": 21,
+        "column": null,
+        "source_text_sha256": "087d0025ab23c70c526099b2e49efed60f3e3882ccdff6e36fa56d4fcdbb539f",
+        "source_text_length": 79
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          456.6540222167969,
+          444.4269104003906,
+          467.94500732421875
+        ],
+        "source_line_ids": [
+          [
+            7,
+            3
+          ],
+          [
+            16,
+            2
+          ]
+        ],
+        "source_sequence": 22,
+        "column": null,
+        "source_text_sha256": "25324248b6ec5e54e2e26b0eb84be7ddfc4a5c11eaa4fd20eb8b2057ccec30f6",
+        "source_text_length": 86
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          467.8619689941406,
+          406.67498779296875,
+          479.2049865722656
+        ],
+        "source_line_ids": [
+          [
+            7,
+            4
+          ],
+          [
+            16,
+            3
+          ]
+        ],
+        "source_sequence": 23,
+        "column": null,
+        "source_text_sha256": "d74fdc2a702227d75554274aa16c2499bb916f46b814918cfb092a80cf10905d",
+        "source_text_length": 72
+      },
+      {
+        "bbox": [
+          357.33099365234375,
+          477.6539611816406,
+          398.7239990234375,
+          484.2300109863281
+        ],
+        "source_line_ids": [
+          [
+            16,
+            4
+          ]
+        ],
+        "source_sequence": 53,
+        "column": null,
+        "source_text_sha256": "13776e1e06ab89bb199bbc990e5a918c8ab225ce5b4da46775080e1d91c4e0c3",
+        "source_text_length": 12
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          481.79498291015625,
+          351.69488525390625,
+          491.93499755859375
+        ],
+        "source_line_ids": [
+          [
+            7,
+            5
+          ]
+        ],
+        "source_sequence": 24,
+        "column": null,
+        "source_text_sha256": "df0de0ca8ebb55bcc82fd8ea119d624cabd36e53ce9937b1dba6942560278c98",
+        "source_text_length": 55
+      },
+      {
+        "bbox": [
+          56.69288635253906,
+          493.79498291015625,
+          445.0748596191406,
+          503.93499755859375
+        ],
+        "source_line_ids": [
+          [
+            7,
+            6
+          ]
+        ],
+        "source_sequence": 25,
+        "column": null,
+        "source_text_sha256": "7d7ce871969d78ff0ad43789f059719df55c18eea2291d302a03a9ee16647590",
+        "source_text_length": 79
+      },
+      {
+        "bbox": [
+          56.69287109375,
+          505.5936584472656,
+          445.07989501953125,
+          516.01318359375
+        ],
+        "source_line_ids": [
+          [
+            7,
+            7
+          ]
+        ],
+        "source_sequence": 26,
+        "column": null,
+        "source_text_sha256": "d9373cd35c4f92d575ef29372a138ba0ee9ff7a03861b5acb518703d2277441a",
+        "source_text_length": 84
+      },
+      {
+        "bbox": [
+          56.69285583496094,
+          517.9540405273438,
+          445.1599426269531,
+          527.93505859375
+        ],
+        "source_line_ids": [
+          [
+            7,
+            8
+          ]
+        ],
+        "source_sequence": 27,
+        "column": null,
+        "source_text_sha256": "a0692172a57ff7d976a26550946c5ac1bc9d6ad2ca0aae998d5e92276ea07091",
+        "source_text_length": 77
+      },
+      {
+        "bbox": [
+          56.6929931640625,
+          529.7950439453125,
+          442.2021789550781,
+          539.93505859375
+        ],
+        "source_line_ids": [
+          [
+            7,
+            9
+          ]
+        ],
+        "source_sequence": 28,
+        "column": null,
+        "source_text_sha256": "c69a54036df052d34163f8f40fc747b7ad1ef91f6aebd6a9e1e7fcd3cff29d7b",
+        "source_text_length": 78
+      }
+    ],
+    "role": "text",
+    "note_number": null,
+    "end_reason": "BOX_BOUNDARY",
+    "markdown_start": 1976,
+    "markdown_end": 2828,
+    "canonical_start": 1895,
+    "canonical_end": 2686,
+    "mapping_method": "FORWARD_IR_SERIALIZATION",
+    "status": "MAPPED",
+    "transformations": [
+      "MARKDOWN_DECORATION",
+      "EDITORIAL_GROUPING"
+    ],
+    "transformation_status": "ALLOWLIST_ONLY",
+    "transformation_warning": null,
+    "continuation_of": null,
+    "canonical_sha256": "768fba7049851db58ebca1649d03b757c7e52166597a0fbd358e2bb3e0463bd0",
+    "markdown_sha256": "ddd861658e6da5e29b383dbccb5a140d3b9dbe490fa90a0d07644b86893a6a23"
+  },
+  "next_region": {
+    "region_id": "region-0b6b3380e440ba2cd860a557",
+    "pdf_page": 55,
+    "source_bbox": [
+      56.692901611328125,
+      576.5595703125,
+      444.1000061035156,
+      646.3857421875
+    ],
+    "parts": [
+      {
+        "bbox": [
+          56.692901611328125,
+          576.5595703125,
+          245.34341430664062,
+          583.37109375
+        ],
+        "source_line_ids": [
+          [
+            12,
+            0
+          ]
+        ],
+        "source_sequence": 36,
+        "column": 0,
+        "source_text_sha256": "38f540ad1859ee6885691a926c3395f10628630938403683393d78e316e110cc",
+        "source_text_length": 53
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          585.5595703125,
+          245.33290100097656,
+          592.37109375
+        ],
+        "source_line_ids": [
+          [
+            12,
+            1
+          ]
+        ],
+        "source_sequence": 37,
+        "column": 0,
+        "source_text_sha256": "d64d8142ad2930d9a4a73d8b5caadcd96db1b9c1ed08d00f61c70880b1310a95",
+        "source_text_length": 57
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          594.5595703125,
+          245.3404083251953,
+          601.3857421875
+        ],
+        "source_line_ids": [
+          [
+            12,
+            2
+          ]
+        ],
+        "source_sequence": 38,
+        "column": 0,
+        "source_text_sha256": "f155cdbb107eff0eaca9b9a4dfd63109106ed0fe143b96245259cd4ed55057b3",
+        "source_text_length": 61
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          603.5595703125,
+          245.3472137451172,
+          610.37109375
+        ],
+        "source_line_ids": [
+          [
+            12,
+            3
+          ]
+        ],
+        "source_sequence": 39,
+        "column": 0,
+        "source_text_sha256": "3652d7385e4020c0b2b6a3654ac735f4ce96e529605f7d238dc6a6349f20ab58",
+        "source_text_length": 56
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          612.5595703125,
+          245.34046936035156,
+          619.3857421875
+        ],
+        "source_line_ids": [
+          [
+            12,
+            4
+          ]
+        ],
+        "source_sequence": 40,
+        "column": 0,
+        "source_text_sha256": "559451a119995909e83ad984b6d546caa2ff14d50058e3edafde0a9a526d057e",
+        "source_text_length": 54
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          621.5595703125,
+          245.34796142578125,
+          628.37109375
+        ],
+        "source_line_ids": [
+          [
+            12,
+            5
+          ]
+        ],
+        "source_sequence": 41,
+        "column": 0,
+        "source_text_sha256": "2343cbfc1f8c0c736bbf75266ec407bfd0c416a91c75a7fdbd35e0203cc8a575",
+        "source_text_length": 61
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          630.5595703125,
+          245.33590698242188,
+          637.3857421875
+        ],
+        "source_line_ids": [
+          [
+            12,
+            6
+          ]
+        ],
+        "source_sequence": 42,
+        "column": 0,
+        "source_text_sha256": "0ff2a33e1de1eefc750912b466a6fab7721a250897c308c2166fd9297e3dd5ed",
+        "source_text_length": 60
+      },
+      {
+        "bbox": [
+          56.692901611328125,
+          639.555908203125,
+          245.3313751220703,
+          646.3857421875
+        ],
+        "source_line_ids": [
+          [
+            12,
+            7
+          ]
+        ],
+        "source_sequence": 43,
+        "column": 0,
+        "source_text_sha256": "79af91c1e22294a680d53bd7a474a5243ba66dad9bc652e1761802b67787f960",
+        "source_text_length": 58
+      },
+      {
+        "bbox": [
+          255.4488983154297,
+          576.5595703125,
+          444.1000061035156,
+          583.3857421875
+        ],
+        "source_line_ids": [
+          [
+            13,
+            0
+          ]
+        ],
+        "source_sequence": 44,
+        "column": 1,
+        "source_text_sha256": "e5f8e9fd17190767a81717368acdb4460c0814040849065c4a298db2dfbf4053",
+        "source_text_length": 61
+      },
+      {
+        "bbox": [
+          255.4488983154297,
+          585.5595703125,
+          444.0937805175781,
+          592.3857421875
+        ],
+        "source_line_ids": [
+          [
+            13,
+            1
+          ]
+        ],
+        "source_sequence": 45,
+        "column": 1,
+        "source_text_sha256": "3ac89371c7d9138eae212237e1509c456c73c94cfd171aa7b917ba0fb489ec68",
+        "source_text_length": 61
+      },
+      {
+        "bbox": [
+          255.4488983154297,
+          594.5595703125,
+          355.2212829589844,
+          601.37109375
+        ],
+        "source_line_ids": [
+          [
+            13,
+            2
+          ]
+        ],
+        "source_sequence": 46,
+        "column": 1,
+        "source_text_sha256": "ac527d749470f003fec32fd5bc1f0a5837ad618ade2e7e23477e2e91d43af534",
+        "source_text_length": 32
+      }
+    ],
+    "role": "footnote",
+    "note_number": 33,
+    "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+    "markdown_start": 2867,
+    "markdown_end": 3499,
+    "canonical_start": 2718,
+    "canonical_end": 3344,
+    "mapping_method": "FORWARD_IR_SERIALIZATION",
+    "status": "MAPPED",
+    "transformations": [
+      "MARKDOWN_DECORATION",
+      "EDITORIAL_GROUPING"
+    ],
+    "transformation_status": "ALLOWLIST_ONLY",
+    "transformation_warning": null,
+    "continuation_of": null,
+    "canonical_sha256": "71f5c2e6ed5682bf21d9dca8d4a4ba554de291ac39325605dc8c4984a49bdaaf",
+    "markdown_sha256": "4c53dea579080a7b56ce00a00b514edede5058ec46cb32e8a96614fbbf8ecd36"
+  },
+  "manual_golden": {
+    "bad_source_lines": [
+      [
+        15,
+        0
+      ]
+    ],
+    "bad_region_text": "Notas y Fuentes���������������",
+    "previous_good_tail": "modelo de la bondad- “no tropezaré”, sino que podré recordar siempre a HaShem.",
+    "next_good_start": "33 Anteriormente hemos visto que el punto bueno de la"
+  },
+  "native_heading_spans": [
+    "1RWHV\u0003\t\u00036RXUFHV",
+    "Notas y Fuentes"
+  ],
+  "layout_heading": "Notas y Fuentes���������������",
+  "Cc_to_U_FFFD_present": true,
+  "repair_attempted": false,
+  "full_original_slice_sequence_equal_after_single_region_exclusion": true,
+  "preserved_sequence_sha256": "02c1b6da51046c194b89a222736939f0ac889b21c098417fd670b6fa49f35ca1",
+  "scope": "Corrupt notes heading isolated. Verified good preceding tail and entire following note33 preserved. Entire previous box unchanged, NOT certified flawless: its independent marginal/body interleaving remains out of scope."
+}

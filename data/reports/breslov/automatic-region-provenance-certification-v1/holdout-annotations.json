@@ -1,0 +1,5004 @@
+{
+  "annotation_stage": "before automatic holdout evaluation",
+  "annotation_scope": "editorial zones and known raw structural ambiguity, NOT exhaustive visual glyph or rendered-quality validation",
+  "certifiable_definition": "source structural unit can be identified by reviewer; not a positive quality certificate supplied to extraction",
+  "pages": [
+    {
+      "pdf_page": 70,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            193.85589599609375,
+            45.43232727050781,
+            439.26385498046875,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            132.79428100585938,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            52.132232666015625,
+            70.42228698730469,
+            439.87005615234375,
+            152.93211364746094
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              8,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            207.04100036621094,
+            169.5089569091797,
+            286.1892395019531,
+            177.56695556640625
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            53.85820007324219,
+            193.4579620361328,
+            442.33331298828125,
+            249.34796142578125
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            82.25823974609375,
+            259.126953125,
+            411.3421936035156,
+            292.8069763183594
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            360.47198486328125,
+            277.0579528808594,
+            441.83197021484375,
+            351.3140563964844
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              13,
+              0
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              13,
+              4
+            ],
+            [
+              13,
+              5
+            ],
+            [
+              13,
+              6
+            ],
+            [
+              13,
+              7
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            53.856964111328125,
+            300.7769775390625,
+            354.93597412109375,
+            394.9469909667969
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            360.4720153808594,
+            363.45806884765625,
+            442.7279968261719,
+            389.7140808105469
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              14,
+              0
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              14,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            53.856964111328125,
+            399.58221435546875,
+            442.3299560546875,
+            421.7709655761719
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              8
+            ],
+            [
+              3,
+              9
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            223.33799743652344,
+            447.385986328125,
+            271.30902099609375,
+            454.4849853515625
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              12,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 11,
+          "bbox": [
+            53.858299255371094,
+            468.66143798828125,
+            242.52919006347656,
+            646.4876098632812
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              4,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              4,
+              19
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 12,
+          "bbox": [
+            252.6143035888672,
+            468.65472412109375,
+            441.27734375,
+            556.4808959960938
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 13,
+          "bbox": [
+            252.61502075195312,
+            558.6547241210938,
+            441.2727966308594,
+            646.4808959960938
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              5,
+              19
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 80,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            183.5430908203125,
+            45.43232727050781,
+            438.73504638671875,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            132.79428100585938,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            51.879638671875,
+            70.42185974121094,
+            439.6653747558594,
+            243.21693420410156
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              6,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            207.74899291992188,
+            260.0749816894531,
+            286.897216796875,
+            268.13299560546875
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              7,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            53.858001708984375,
+            281.3819580078125,
+            442.3229675292969,
+            315.52197265625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            53.85797119140625,
+            320.2169494628906,
+            442.337158203125,
+            426.3569641113281
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              11
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            53.85700988769531,
+            431.3409729003906,
+            442.3310546875,
+            477.19097900390625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              1,
+              14
+            ],
+            [
+              1,
+              15
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            53.858154296875,
+            482.06597900390625,
+            442.3312072753906,
+            576.0260009765625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            223.33799743652344,
+            592.2630004882812,
+            271.30902099609375,
+            599.3619995117188
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              10,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            53.8582763671875,
+            613.5304565429688,
+            242.5028533935547,
+            647.3419799804688
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              3
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            252.61354064941406,
+            613.5372314453125,
+            441.24603271484375,
+            636.8582763671875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              12,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 90,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            189.21270751953125,
+            45.43232727050781,
+            439.06866455078125,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            132.79428100585938,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            51.194671630859375,
+            69.86546325683594,
+            438.9385681152344,
+            155.08506774902344
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            51.18450927734375,
+            161.00132751464844,
+            438.935791015625,
+            246.4863739013672
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              3,
+              9
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              3,
+              11
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              3,
+              13
+            ],
+            [
+              3,
+              14
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            207.04100036621094,
+            263.0619812011719,
+            286.1892395019531,
+            271.1199951171875
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            53.85797119140625,
+            284.36895751953125,
+            442.3370361328125,
+            402.50897216796875
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            366.1419982910156,
+            286.7559814453125,
+            443.0619812011719,
+            322.61199951171875
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              6,
+              3
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            53.858001708984375,
+            407.2039489746094,
+            442.33404541015625,
+            489.3439636230469
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              1,
+              14
+            ],
+            [
+              1,
+              15
+            ],
+            [
+              1,
+              16
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            53.858306884765625,
+            494.0379638671875,
+            442.3354187011719,
+            564.177978515625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            53.85829162597656,
+            613.388427734375,
+            441.25640869140625,
+            647.214599609375
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              9,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              10,
+              2
+            ],
+            [
+              9,
+              3
+            ]
+          ],
+          "review_note": "native column-merge/mixed or numeric corruption: do not certify"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            223.33799743652344,
+            591.8379516601562,
+            271.30902099609375,
+            598.9369506835938
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              8,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 100,
+      "boxes": []
+    },
+    {
+      "pdf_page": 110,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            196.29910278320312,
+            45.43232727050781,
+            439.4830627441406,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            132.79428100585938,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            51.11187744140625,
+            69.37089538574219,
+            438.858154296875,
+            163.5037078857422
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              7,
+              0
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              9,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            206.96400451660156,
+            180.3629608154297,
+            286.11224365234375,
+            188.42098999023438
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            53.857933044433594,
+            207.58396911621094,
+            442.2478332519531,
+            263.4739685058594
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            53.85820007324219,
+            268.6189880371094,
+            442.3352966308594,
+            364.5589904785156
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              12,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              10,
+              2
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              10,
+              4
+            ],
+            [
+              12,
+              4
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              6
+            ],
+            [
+              12,
+              7
+            ]
+          ],
+          "review_note": "native column-merge/mixed or numeric corruption: do not certify"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            53.858001708984375,
+            369.5429992675781,
+            442.33026123046875,
+            415.4711608886719
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              12,
+              8
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              12,
+              10
+            ],
+            [
+              12,
+              11
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            223.33799743652344,
+            439.427978515625,
+            271.30902099609375,
+            446.5269775390625
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            53.858299255371094,
+            461.00946044921875,
+            242.52684020996094,
+            494.83563232421875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              3
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            53.858306884765625,
+            497.00579833984375,
+            242.53594970703125,
+            602.8356323242188
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              5,
+              15
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            53.85905075073242,
+            605.0094604492188,
+            242.52310180664062,
+            647.8356323242188
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              16
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              5,
+              19
+            ],
+            [
+              5,
+              20
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 11,
+          "bbox": [
+            252.61578369140625,
+            461.0162048339844,
+            441.27362060546875,
+            538.3262939453125
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 12,
+          "bbox": [
+            252.61581420898438,
+            542.0162353515625,
+            441.24530029296875,
+            557.8424072265625
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              6,
+              9
+            ],
+            [
+              6,
+              10
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 13,
+          "bbox": [
+            252.61656188964844,
+            560.0162353515625,
+            441.2720642089844,
+            611.8424072265625
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              6,
+              11
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              6,
+              14
+            ],
+            [
+              6,
+              15
+            ],
+            [
+              6,
+              16
+            ]
+          ],
+          "review_note": "native column-merge/mixed or numeric corruption: do not certify"
+        },
+        {
+          "source_box_index": 14,
+          "bbox": [
+            252.61734008789062,
+            614.0125732421875,
+            441.2794189453125,
+            647.8277587890625
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              6,
+              17
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              6,
+              19
+            ],
+            [
+              6,
+              20
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 120,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            198.10789489746094,
+            45.43232727050781,
+            441.2918395996094,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            139.81028747558594,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            92.68270111083984,
+            69.10698699951172,
+            421.8806457519531,
+            81.45137786865234
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              12,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            144.2729949951172,
+            87.85325622558594,
+            438.87860107421875,
+            99.5505599975586
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              13,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            51.148956298828125,
+            106.48088073730469,
+            438.9150695800781,
+            161.71726989746094
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              14,
+              0
+            ],
+            [
+              14,
+              1
+            ],
+            [
+              14,
+              2
+            ],
+            [
+              14,
+              3
+            ],
+            [
+              14,
+              4
+            ],
+            [
+              14,
+              5
+            ],
+            [
+              14,
+              6
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            51.173553466796875,
+            168.2362518310547,
+            438.9026794433594,
+            209.37623596191406
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              15,
+              0
+            ],
+            [
+              15,
+              1
+            ],
+            [
+              15,
+              2
+            ],
+            [
+              15,
+              3
+            ],
+            [
+              15,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            206.7100067138672,
+            226.0979766845703,
+            285.8582458496094,
+            234.15597534179688
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            82.25798797607422,
+            247.69497680664062,
+            414.1850891113281,
+            317.7189636230469
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            53.858001708984375,
+            329.9849853515625,
+            305.4280700683594,
+            339.53497314453125
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            53.858123779296875,
+            355.77496337890625,
+            442.2401428222656,
+            389.91497802734375
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            53.85797119140625,
+            394.4076232910156,
+            442.33099365234375,
+            476.74896240234375
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 11,
+          "bbox": [
+            53.85797119140625,
+            481.4439697265625,
+            353.9150390625,
+            527.593994140625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              10
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              4,
+              12
+            ],
+            [
+              4,
+              13
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 12,
+          "bbox": [
+            359.4570007324219,
+            477.60894775390625,
+            441.7049865722656,
+            523.0650024414062
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 13,
+          "bbox": [
+            53.858001708984375,
+            529.6939697265625,
+            442.3310241699219,
+            563.583984375
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              14
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              4,
+              16
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 14,
+          "bbox": [
+            223.33700561523438,
+            580.2599487304688,
+            271.30804443359375,
+            587.3590698242188
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              8,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 15,
+          "bbox": [
+            53.85810089111328,
+            601.5354614257812,
+            242.51235961914062,
+            635.3616333007812
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              9,
+              3
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 16,
+          "bbox": [
+            53.85735321044922,
+            637.5317993164062,
+            242.52597045898438,
+            644.3616333007812
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 17,
+          "bbox": [
+            252.61334228515625,
+            610.5250244140625,
+            441.2777099609375,
+            644.3402099609375
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              10,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 18,
+          "bbox": [
+            252.61334228515625,
+            601.5250244140625,
+            406.6189270019531,
+            608.3548583984375
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              10,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 130,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            198.10789489746094,
+            45.43232727050781,
+            441.2918395996094,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            139.81028747558594,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            51.170440673828125,
+            69.94676208496094,
+            438.93133544921875,
+            174.17137145996094
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              8,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              8,
+              6
+            ],
+            [
+              8,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            68.91690063476562,
+            180.24195861816406,
+            438.95220947265625,
+            192.34584045410156
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              8,
+              10
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            207.0399932861328,
+            209.2029571533203,
+            286.188232421875,
+            217.260986328125
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            53.858001708984375,
+            230.5099639892578,
+            442.33001708984375,
+            287.9199523925781
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            53.85797119140625,
+            293.52496337890625,
+            442.3389587402344,
+            337.2349853515625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            53.8580322265625,
+            344.4689636230469,
+            442.3320617675781,
+            426.3289794921875
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            53.85810852050781,
+            431.01397705078125,
+            442.3320007324219,
+            453.15399169921875
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            223.33799743652344,
+            472.03997802734375,
+            271.30902099609375,
+            479.13800048828125
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              7,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            53.857513427734375,
+            494.7681579589844,
+            242.5133819580078,
+            646.9676513671875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              9,
+              4
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              6
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              9,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              9,
+              12
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              9,
+              16
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 11,
+          "bbox": [
+            252.61427307128906,
+            496.14605712890625,
+            441.2777099609375,
+            637.9612426757812
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              10,
+              4
+            ],
+            [
+              10,
+              5
+            ],
+            [
+              10,
+              6
+            ],
+            [
+              10,
+              7
+            ],
+            [
+              10,
+              8
+            ],
+            [
+              10,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 12,
+          "bbox": [
+            252.61581420898438,
+            640.1497192382812,
+            441.2623291015625,
+            646.9758911132812
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              10,
+              16
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 140,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            198.10789489746094,
+            45.43232727050781,
+            441.2918395996094,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            139.81028747558594,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            51.188934326171875,
+            69.15647888183594,
+            438.9168395996094,
+            138.7084197998047
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              2
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              10,
+              5
+            ],
+            [
+              10,
+              7
+            ],
+            [
+              10,
+              6
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            51.16986083984375,
+            144.15977478027344,
+            438.89166259765625,
+            156.2629852294922
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              10,
+              8
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            207.04100036621094,
+            173.1219940185547,
+            286.1892395019531,
+            181.17999267578125
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              6,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            53.834598541259766,
+            194.58802795410156,
+            442.3080139160156,
+            216.56906127929688
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            82.23457336425781,
+            224.2579803466797,
+            411.3346252441406,
+            293.7779846191406
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            53.83453369140625,
+            302.0579833984375,
+            442.2170104980469,
+            395.9861755371094
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              11,
+              3
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            223.33799743652344,
+            430.12109375,
+            271.30902099609375,
+            437.219970703125
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            53.85829162597656,
+            451.3884582519531,
+            242.51937866210938,
+            575.214599609375
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              4,
+              12
+            ],
+            [
+              4,
+              13
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            53.85905456542969,
+            577.388427734375,
+            242.51475524902344,
+            647.199951171875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              4,
+              14
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              4,
+              21
+            ]
+          ],
+          "review_note": "native column-merge/mixed or numeric corruption: do not certify"
+        },
+        {
+          "source_box_index": 11,
+          "bbox": [
+            252.61581420898438,
+            451.396728515625,
+            330.9263000488281,
+            458.222900390625
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 12,
+          "bbox": [
+            252.61581420898438,
+            460.39306640625,
+            441.2833557128906,
+            602.208251953125
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              5,
+              16
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 13,
+          "bbox": [
+            252.6172637939453,
+            604.396728515625,
+            441.2683410644531,
+            647.222900390625
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              17
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              5,
+              19
+            ],
+            [
+              5,
+              20
+            ],
+            [
+              5,
+              21
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 150,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            198.10789489746094,
+            45.43232727050781,
+            441.2918395996094,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            139.81028747558594,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            87.74526977539062,
+            69.84878540039062,
+            438.6839294433594,
+            116.64908599853516
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            207.04100036621094,
+            127.93096160888672,
+            286.1892395019531,
+            135.98809814453125
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            53.858001708984375,
+            151.54298400878906,
+            442.2413635253906,
+            257.50299072265625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "review_note": "native column-merge/mixed or numeric corruption: do not certify"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            53.858001708984375,
+            262.37799072265625,
+            442.33001708984375,
+            308.3379821777344
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              9
+            ],
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              1,
+              12
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            53.858154296875,
+            312.8316345214844,
+            442.2481689453125,
+            359.25115966796875
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            223.33799743652344,
+            377.5389709472656,
+            271.30902099609375,
+            384.6369934082031
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              7,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            53.85829162597656,
+            398.2604675292969,
+            242.52159118652344,
+            459.0866394042969
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              8,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              8,
+              6
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            53.85902404785156,
+            461.2604675292969,
+            242.5110321044922,
+            520.570556640625
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              8,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            53.860504150390625,
+            524.260498046875,
+            242.5117950439453,
+            540.086669921875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              8,
+              14
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 11,
+          "bbox": [
+            53.861236572265625,
+            542.260498046875,
+            242.508056640625,
+            565.570556640625
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              8,
+              16
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              8,
+              18
+            ]
+          ],
+          "review_note": "native column-merge/mixed or numeric corruption: do not certify"
+        },
+        {
+          "source_box_index": 12,
+          "bbox": [
+            53.861236572265625,
+            569.260498046875,
+            242.5237579345703,
+            603.072021484375
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              8,
+              19
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              8,
+              21
+            ],
+            [
+              8,
+              22
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 13,
+          "bbox": [
+            53.8597412109375,
+            605.260498046875,
+            242.5215606689453,
+            648.086669921875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              8,
+              23
+            ],
+            [
+              8,
+              24
+            ],
+            [
+              8,
+              25
+            ],
+            [
+              8,
+              26
+            ],
+            [
+              8,
+              27
+            ]
+          ],
+          "review_note": "native column-merge/mixed or numeric corruption: do not certify"
+        },
+        {
+          "source_box_index": 14,
+          "bbox": [
+            252.61573791503906,
+            398.2672119140625,
+            441.2750549316406,
+            495.0787353515625
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              9,
+              4
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              6
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              9,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 15,
+          "bbox": [
+            252.61424255371094,
+            497.2672119140625,
+            441.27935791015625,
+            594.0936279296875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              11
+            ],
+            [
+              9,
+              12
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              9,
+              18
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              9,
+              21
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 16,
+          "bbox": [
+            252.61569213867188,
+            596.2674560546875,
+            441.2657470703125,
+            648.0936279296875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              22
+            ],
+            [
+              9,
+              23
+            ],
+            [
+              9,
+              24
+            ],
+            [
+              9,
+              25
+            ],
+            [
+              9,
+              26
+            ],
+            [
+              9,
+              27
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 180,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            193.14788818359375,
+            45.43232727050781,
+            440.77984619140625,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            139.81028747558594,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            51.42300033569336,
+            70.18638610839844,
+            439.13848876953125,
+            96.44700622558594
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            51.389617919921875,
+            102.75688171386719,
+            439.1656494140625,
+            250.7760772705078
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              10,
+              3
+            ],
+            [
+              10,
+              4
+            ],
+            [
+              10,
+              6
+            ],
+            [
+              10,
+              5
+            ],
+            [
+              10,
+              7
+            ],
+            [
+              10,
+              8
+            ],
+            [
+              10,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              10,
+              18
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            207.04100036621094,
+            267.8639831542969,
+            286.1892395019531,
+            275.9219970703125
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            363.3070068359375,
+            288.82598876953125,
+            443.34698486328125,
+            340.9659729003906
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              11,
+              3
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              11,
+              5
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            53.858001708984375,
+            289.4319763183594,
+            357.76824951171875,
+            383.6919860839844
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            363.3070068359375,
+            351.82598876953125,
+            438.33697509765625,
+            394.44097900390625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              12,
+              2
+            ],
+            [
+              12,
+              3
+            ],
+            [
+              12,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            53.85820007324219,
+            388.386962890625,
+            357.76715087890625,
+            445.7969665527344
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            363.3070068359375,
+            405.82598876953125,
+            442.5070495605469,
+            457.44097900390625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              13,
+              0
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              13,
+              4
+            ],
+            [
+              13,
+              5
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            53.85820388793945,
+            451.511962890625,
+            442.33123779296875,
+            508.6319580078125
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              13,
+              5
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "review_note": "native column-merge/mixed or numeric corruption: do not certify"
+        },
+        {
+          "source_box_index": 11,
+          "bbox": [
+            53.85820007324219,
+            513.9359741210938,
+            442.33123779296875,
+            584.1959838867188
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              3,
+              9
+            ],
+            [
+              3,
+              10
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 12,
+          "bbox": [
+            223.33799743652344,
+            599.0659790039062,
+            271.30902099609375,
+            606.1649780273438
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              7,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 13,
+          "bbox": [
+            252.61428833007812,
+            622.1976928710938,
+            441.2613830566406,
+            647.0092163085938
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              9,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 14,
+          "bbox": [
+            53.858299255371094,
+            622.3436279296875,
+            242.50282287597656,
+            647.0306396484375
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              8,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              8,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 190,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            192.43910217285156,
+            45.43232727050781,
+            440.071044921875,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            139.81028747558594,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            51.43560028076172,
+            69.80577087402344,
+            439.1809997558594,
+            203.2963409423828
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              7,
+              0
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              8,
+              2
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              8,
+              6
+            ],
+            [
+              8,
+              7
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            207.0399932861328,
+            220.3839569091797,
+            286.188232421875,
+            228.44198608398438
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              5,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            53.858299255371094,
+            239.56298828125,
+            442.332275390625,
+            275.50299072265625
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            53.858306884765625,
+            289.88299560546875,
+            193.29800415039062,
+            297.12298583984375
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            82.25800323486328,
+            313.5229797363281,
+            411.34796142578125,
+            383.0429992675781
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            53.85693359375,
+            391.322998046875,
+            442.33099365234375,
+            509.1830139160156
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            53.85693359375,
+            513.8670043945312,
+            442.33294677734375,
+            644.0069580078125
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              4,
+              10
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              4,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              4,
+              16
+            ],
+            [
+              4,
+              17
+            ],
+            [
+              4,
+              18
+            ],
+            [
+              4,
+              19
+            ],
+            [
+              4,
+              20
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    },
+    {
+      "pdf_page": 200,
+      "boxes": [
+        {
+          "source_box_index": 0,
+          "bbox": [
+            192.43910217285156,
+            45.43232727050781,
+            440.071044921875,
+            53.840328216552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 1,
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            139.81028747558594,
+            54.539546966552734
+          ],
+          "expected_zone": "header",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              0,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 2,
+          "bbox": [
+            52.142974853515625,
+            71.13114929199219,
+            439.8758544921875,
+            112.13938903808594
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 3,
+          "bbox": [
+            52.136322021484375,
+            118.74443054199219,
+            439.8856506347656,
+            188.93345642089844
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": false,
+          "source_line_ids": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 4,
+          "bbox": [
+            207.0399932861328,
+            205.26597595214844,
+            286.188232421875,
+            213.323974609375
+          ],
+          "expected_zone": "editorial_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              6,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 5,
+          "bbox": [
+            53.85798645019531,
+            226.48097229003906,
+            373.2359924316406,
+            296.05096435546875
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 6,
+          "bbox": [
+            378.7799987792969,
+            227.21498107910156,
+            441.4759826660156,
+            291.8710021972656
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 7,
+          "bbox": [
+            53.85797119140625,
+            301.3159484863281,
+            442.33612060546875,
+            417.1959533691406
+          ],
+          "expected_zone": "body",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              1,
+              14
+            ],
+            [
+              1,
+              15
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 8,
+          "bbox": [
+            223.33799743652344,
+            437.77496337890625,
+            271.30902099609375,
+            444.87396240234375
+          ],
+          "expected_zone": "notes_heading",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              9,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 9,
+          "bbox": [
+            252.614501953125,
+            459.205810546875,
+            320.58843994140625,
+            464.52685546875
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              1
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        },
+        {
+          "source_box_index": 10,
+          "bbox": [
+            53.85850143432617,
+            459.3517150878906,
+            110.10625457763672,
+            464.5335998535156
+          ],
+          "expected_zone": "note",
+          "expected_certifiable": true,
+          "source_line_ids": [
+            [
+              2,
+              0
+            ]
+          ],
+          "review_note": "manual structural source-IR annotation; no visible glyph-quality assertion"
+        }
+      ]
+    }
+  ]
+}

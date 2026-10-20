@@ -1,0 +1,25 @@
+{
+  "gate": "TEBAAI_BRESLOV_AUTOMATIC_REGION_PROVENANCE_CERTIFICATION_V1_FAIL",
+  "READY_FOR_C_REINGEST": "NO",
+  "holdout": {
+    "regions_discovered": 148,
+    "regions_certified": 44,
+    "regions_unresolved": 104,
+    "accepted": 2,
+    "platform_errors": 8,
+    "source_errors": 0,
+    "quality_unresolved": 138,
+    "pages": 12,
+    "correct_certifications": 39,
+    "correct_unresolved": 28,
+    "unsafe_false_certifications": 5,
+    "good_certifiable_regions_left_unresolved": 76,
+    "scope": "annotated structural ownership/zones only; NOT exhaustive visible glyph quality"
+  },
+  "goldens_all_pass": false,
+  "worker_ready": false,
+  "engine_versions": {
+    "pymupdf": "1.27.2.3",
+    "pymupdf4llm": "1.27.2.3"
+  }
+}

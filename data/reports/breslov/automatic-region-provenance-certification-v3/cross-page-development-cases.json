@@ -1,0 +1,114 @@
+{
+  "actual": [
+    {
+      "page": 55,
+      "region_id": "region-0b6b3380e440ba2cd860a557",
+      "note": 33,
+      "state": "COMPLETE_LOCAL",
+      "linked": []
+    },
+    {
+      "page": 55,
+      "region_id": "region-b3198d8c99db768b36849279",
+      "note": 34,
+      "state": "CONTINUATION_UNRESOLVED",
+      "linked": []
+    },
+    {
+      "page": 56,
+      "region_id": "region-019856217e36825f686180c6",
+      "note": 35,
+      "state": "COMPLETE_LOCAL",
+      "linked": []
+    },
+    {
+      "page": 56,
+      "region_id": "region-8f49f5c02f0a3874fc4164ed",
+      "note": 36,
+      "state": "CONTINUATION_UNRESOLVED",
+      "linked": []
+    },
+    {
+      "page": 167,
+      "region_id": "region-ce12d3949ae8134ad2feac97",
+      "note": 60,
+      "state": "CONTINUATION_UNRESOLVED",
+      "linked": []
+    },
+    {
+      "page": 167,
+      "region_id": "region-ff638d2fa960caae1234972e",
+      "note": 61,
+      "state": "COMPLETE_LOCAL",
+      "linked": []
+    },
+    {
+      "page": 167,
+      "region_id": "region-d4281d9ff87c57b4485d776c",
+      "note": 62,
+      "state": "COMPLETE_LOCAL",
+      "linked": []
+    },
+    {
+      "page": 167,
+      "region_id": "region-d585babd21a30922107ee33f",
+      "note": 63,
+      "state": "COMPLETE_LOCAL",
+      "linked": []
+    },
+    {
+      "page": 167,
+      "region_id": "region-4c3c4f7d968c08e4291a7228",
+      "note": 64,
+      "state": "COMPLETE_LOCAL",
+      "linked": []
+    },
+    {
+      "page": 167,
+      "region_id": "region-70f1fd4a3c8fe711425a6884",
+      "note": 65,
+      "state": "CONTINUATION_UNRESOLVED",
+      "linked": []
+    },
+    {
+      "page": 167,
+      "region_id": "region-5584e245b77d8acfa4a406c5",
+      "note": 66,
+      "state": "CONTINUES_NEXT_PAGE",
+      "linked": [
+        "region-68c6b0422138ff8b680e099d"
+      ]
+    },
+    {
+      "page": 168,
+      "region_id": "region-68c6b0422138ff8b680e099d",
+      "note": 66,
+      "state": "CONTINUED_FROM_PREVIOUS",
+      "linked": [
+        "region-5584e245b77d8acfa4a406c5"
+      ]
+    },
+    {
+      "page": 168,
+      "region_id": "region-f367c00a0096d99e5cb59ed8",
+      "note": 67,
+      "state": "CONTINUATION_UNRESOLVED",
+      "linked": []
+    },
+    {
+      "page": 168,
+      "region_id": "region-7e3083a649ad5d7b0c8dfbf9",
+      "note": 68,
+      "state": "CONTINUATION_UNRESOLVED",
+      "linked": []
+    },
+    {
+      "page": 168,
+      "region_id": "region-41281cce1038e6102b5ccfac",
+      "note": 69,
+      "state": "CONTINUATION_UNRESOLVED",
+      "linked": []
+    }
+  ],
+  "synthetic_controls": "27 V3 tests include same-page, absent marker, unrelated successor, missing end, duplicate owner, font mismatch and page gaps"
+}

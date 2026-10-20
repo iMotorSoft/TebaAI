@@ -1,0 +1,626 @@
+{
+  "physical_page": 56,
+  "note35_start": "PASS",
+  "note35_end": "PASS",
+  "note36_start": "PASS",
+  "note36_end": "PASS",
+  "editorial_order": "PASS",
+  "offset_stability": "PASS",
+  "Markdown_decoration_preserves_provenance": "PASS",
+  "manual_golden": [
+    {
+      "number": 35,
+      "start": "35 Ver §1 más arriba. Escribe el Rabí Natán en otra instancia:",
+      "end": "sienten muy distantes de Él (LH, Nesiat Kapaim 5:6).",
+      "columns": [
+        0,
+        1
+      ],
+      "source_lines": [
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "number": 36,
+      "start": "36 Birur (pl. birurim; lit. “tamizar”) hace referencia a la",
+      "end": "aprisionadas entre las klipot, las fuerzas malignas del Otro",
+      "columns": [
+        1
+      ],
+      "source_lines": [
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "region_id": "region-019856217e36825f686180c6",
+      "pdf_page": 56,
+      "source_bbox": [
+        53.858299255371094,
+        602.2568969726562,
+        441.2676696777344,
+        645.0867309570312
+      ],
+      "parts": [
+        {
+          "bbox": [
+            53.858299255371094,
+            602.2605590820312,
+            242.51260375976562,
+            608.9329223632812
+          ],
+          "source_line_ids": [
+            [
+              5,
+              0
+            ]
+          ],
+          "source_sequence": 26,
+          "column": 0,
+          "source_text_sha256": "eec42a0bb29dc63574bf193b12fbcdc51cb08ec9ffc5e6e54a9f863d66f39c73",
+          "source_text_length": 62
+        },
+        {
+          "bbox": [
+            53.858299255371094,
+            611.2605590820312,
+            242.50283813476562,
+            616.5816040039062
+          ],
+          "source_line_ids": [
+            [
+              5,
+              1
+            ]
+          ],
+          "source_sequence": 27,
+          "column": 0,
+          "source_text_sha256": "1dc434bfea0c28e1d502d21e8ce91cd3330b694c587785a6674c7ec4aeb840b1",
+          "source_text_length": 49
+        },
+        {
+          "bbox": [
+            53.858299255371094,
+            620.2605590820312,
+            242.5223846435547,
+            627.0867309570312
+          ],
+          "source_line_ids": [
+            [
+              5,
+              2
+            ]
+          ],
+          "source_sequence": 28,
+          "column": 0,
+          "source_text_sha256": "6e96692a812c9062b58a01ff4d244f143e6b19401beed24d11b25e7a7e5778e6",
+          "source_text_length": 62
+        },
+        {
+          "bbox": [
+            53.858299255371094,
+            629.2605590820312,
+            242.52084350585938,
+            636.0720825195312
+          ],
+          "source_line_ids": [
+            [
+              5,
+              3
+            ]
+          ],
+          "source_sequence": 29,
+          "column": 0,
+          "source_text_sha256": "8e889d8076655062bf51ec789cbe9838b48ae09e3eee5e100409840d389cd674",
+          "source_text_length": 60
+        },
+        {
+          "bbox": [
+            53.858299255371094,
+            638.2605590820312,
+            242.50733947753906,
+            645.0867309570312
+          ],
+          "source_line_ids": [
+            [
+              5,
+              4
+            ]
+          ],
+          "source_sequence": 30,
+          "column": 0,
+          "source_text_sha256": "7c97f3e17b1375bb4f614cb055268fc436428b758e3be174c18d973f1ca7093e",
+          "source_text_length": 57
+        },
+        {
+          "bbox": [
+            252.61428833007812,
+            602.2568969726562,
+            441.2676696777344,
+            609.0867309570312
+          ],
+          "source_line_ids": [
+            [
+              6,
+              0
+            ]
+          ],
+          "source_sequence": 31,
+          "column": 1,
+          "source_text_sha256": "ac59abd88b4ba5c7b26c261ef385bc84355d5b524a4584752f93de77c3a78aa9",
+          "source_text_length": 62
+        },
+        {
+          "bbox": [
+            252.61428833007812,
+            609.8872680664062,
+            413.4300537109375,
+            618.0867309570312
+          ],
+          "source_line_ids": [
+            [
+              6,
+              1
+            ]
+          ],
+          "source_sequence": 32,
+          "column": 1,
+          "source_text_sha256": "137d9230e2104f8d98358f9e2f22235824b7c8bd221786160e81d3f5c39d04ec",
+          "source_text_length": 52
+        }
+      ],
+      "role": "footnote",
+      "note_number": 35,
+      "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+      "markdown_start": 3182,
+      "markdown_end": 3599,
+      "canonical_start": 2953,
+      "canonical_end": 3365,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "01a0fdcca6ddb919d2f74b433943a33a7774e96148907428a57beaff46194843",
+      "markdown_sha256": "e19eeb2613566867a3ccd28b503ca10b5d679fe2b92ac946db40e0f6dc3792cf"
+    },
+    {
+      "region_id": "region-8f49f5c02f0a3874fc4164ed",
+      "pdf_page": 56,
+      "source_bbox": [
+        252.6143035888672,
+        620.2605590820312,
+        441.2749938964844,
+        645.0867309570312
+      ],
+      "parts": [
+        {
+          "bbox": [
+            252.61431884765625,
+            620.2605590820312,
+            441.2749938964844,
+            627.0720825195312
+          ],
+          "source_line_ids": [
+            [
+              6,
+              2
+            ]
+          ],
+          "source_sequence": 33,
+          "column": 1,
+          "source_text_sha256": "9c5efb10bafcf43d7d05c83fd98264a73bede88f526008e6dfa4331beb3d635c",
+          "source_text_length": 59
+        },
+        {
+          "bbox": [
+            252.6143035888672,
+            627.7855834960938,
+            441.2490234375,
+            636.0880737304688
+          ],
+          "source_line_ids": [
+            [
+              6,
+              3
+            ]
+          ],
+          "source_sequence": 34,
+          "column": 1,
+          "source_text_sha256": "b33caeffcf64b47d680c3930f0583b944828724d5cea5fde77d8371d51fb633b",
+          "source_text_length": 65
+        },
+        {
+          "bbox": [
+            252.6150360107422,
+            638.2605590820312,
+            441.25787353515625,
+            645.0867309570312
+          ],
+          "source_line_ids": [
+            [
+              6,
+              4
+            ]
+          ],
+          "source_sequence": 35,
+          "column": 1,
+          "source_text_sha256": "4626b45795be8cd139fe395acb8b669ff4b9203bac1bbd8f63ad1d7949168427",
+          "source_text_length": 60
+        }
+      ],
+      "role": "footnote",
+      "note_number": 36,
+      "end_reason": "PAGE_BOUNDARY",
+      "markdown_start": 3599,
+      "markdown_end": 3798,
+      "canonical_start": 3365,
+      "canonical_end": 3553,
+      "mapping_method": "FORWARD_IR_SERIALIZATION",
+      "status": "MAPPED",
+      "transformations": [
+        "MARKDOWN_DECORATION",
+        "EDITORIAL_GROUPING"
+      ],
+      "transformation_status": "ALLOWLIST_ONLY",
+      "transformation_warning": null,
+      "continuation_of": null,
+      "canonical_sha256": "79c43e332a9fd36b8dd6be132b56556ed277a3054929e56cecf62bdf303fa3e4",
+      "markdown_sha256": "21b21690d0d5ac06f2260bf3432a39ed62514618ddc78cfde988c326825e3e0b"
+    }
+  ],
+  "note36_terminal_page": 57,
+  "note36_continuation": {
+    "region_id": "region-919d60928a11a6b2425df019",
+    "pdf_page": 57,
+    "source_bbox": [
+      56.45057678222656,
+      563.1864624023438,
+      443.86279296875,
+      643.4729614257812
+    ],
+    "parts": [
+      {
+        "bbox": [
+          56.450599670410156,
+          563.1864624023438,
+          245.08909606933594,
+          571.4889526367188
+        ],
+        "source_line_ids": [
+          [
+            6,
+            0
+          ]
+        ],
+        "source_sequence": 0,
+        "column": 0,
+        "source_text_sha256": "21859a6e52eb25bfb3965aa64c0ea2dad1927882fa7edb806102e82ce21c7072",
+        "source_text_length": 60
+      },
+      {
+        "bbox": [
+          56.451324462890625,
+          573.6614379882812,
+          245.0988311767578,
+          580.4729614257812
+        ],
+        "source_line_ids": [
+          [
+            6,
+            1
+          ]
+        ],
+        "source_sequence": 1,
+        "column": 0,
+        "source_text_sha256": "b67c79aaeea6e182046dcf8f030f57305a4d5bfcf4b2730dc98940591eb58cf5",
+        "source_text_length": 58
+      },
+      {
+        "bbox": [
+          56.451324462890625,
+          582.6614379882812,
+          245.0890655517578,
+          589.4729614257812
+        ],
+        "source_line_ids": [
+          [
+            6,
+            2
+          ]
+        ],
+        "source_sequence": 2,
+        "column": 0,
+        "source_text_sha256": "2bc0a9327db98c1d89ae8d9b9a8a251114e4f0deebf7d48fb1c9fb787734d153",
+        "source_text_length": 60
+      },
+      {
+        "bbox": [
+          56.451316833496094,
+          591.6614379882812,
+          245.09963989257812,
+          598.4876098632812
+        ],
+        "source_line_ids": [
+          [
+            6,
+            3
+          ]
+        ],
+        "source_sequence": 3,
+        "column": 0,
+        "source_text_sha256": "83643af9eac4aa2b4511e46b56f0e6c90a5205cc115cf8175198492f7386443a",
+        "source_text_length": 57
+      },
+      {
+        "bbox": [
+          56.451316833496094,
+          600.6614379882812,
+          245.10716247558594,
+          607.4729614257812
+        ],
+        "source_line_ids": [
+          [
+            6,
+            4
+          ]
+        ],
+        "source_sequence": 4,
+        "column": 0,
+        "source_text_sha256": "3074c7642c4a7e5143f8a742ca4930c10236ba9838f5cf874a610670a2e4c0bc",
+        "source_text_length": 55
+      },
+      {
+        "bbox": [
+          56.451316833496094,
+          609.6614379882812,
+          245.10714721679688,
+          616.4729614257812
+        ],
+        "source_line_ids": [
+          [
+            6,
+            5
+          ]
+        ],
+        "source_sequence": 5,
+        "column": 0,
+        "source_text_sha256": "b0a09fdbab70a92d3fd101af90e263d41e35f2501f9423a66965254574d477ad",
+        "source_text_length": 60
+      },
+      {
+        "bbox": [
+          56.451316833496094,
+          618.6577758789062,
+          245.11163330078125,
+          625.4876098632812
+        ],
+        "source_line_ids": [
+          [
+            6,
+            6
+          ]
+        ],
+        "source_sequence": 6,
+        "column": 0,
+        "source_text_sha256": "c4004f32b62b39864a47c8ef31730783ef95ebbb114e12a8325c6151286c5951",
+        "source_text_length": 60
+      },
+      {
+        "bbox": [
+          56.451316833496094,
+          627.6614379882812,
+          245.0823211669922,
+          634.4876098632812
+        ],
+        "source_line_ids": [
+          [
+            6,
+            7
+          ]
+        ],
+        "source_sequence": 7,
+        "column": 0,
+        "source_text_sha256": "dd3697829668a8712d107dbd6bc97e7b42630580d414eed2bbf7f07ff88a5766",
+        "source_text_length": 63
+      },
+      {
+        "bbox": [
+          56.45057678222656,
+          636.6614379882812,
+          245.08384704589844,
+          643.4729614257812
+        ],
+        "source_line_ids": [
+          [
+            6,
+            8
+          ]
+        ],
+        "source_sequence": 8,
+        "column": 0,
+        "source_text_sha256": "bf22ab8676c237a3c62970e6622dad8c2e486a450629f7bd4ea12ea087e297c4",
+        "source_text_length": 62
+      },
+      {
+        "bbox": [
+          255.20733642578125,
+          564.6547241210938,
+          443.86279296875,
+          571.4808959960938
+        ],
+        "source_line_ids": [
+          [
+            7,
+            0
+          ]
+        ],
+        "source_sequence": 9,
+        "column": 1,
+        "source_text_sha256": "08280ce906c6b3346369593961d6c2aafe8af9e0badf9a67bd22f1b38d85d812",
+        "source_text_length": 62
+      },
+      {
+        "bbox": [
+          255.20733642578125,
+          573.6547241210938,
+          443.8525085449219,
+          580.4808959960938
+        ],
+        "source_line_ids": [
+          [
+            7,
+            1
+          ]
+        ],
+        "source_sequence": 10,
+        "column": 1,
+        "source_text_sha256": "2125cc6cb73655457de835a61a51963d046ffde46799ca8a6c235a376a096419",
+        "source_text_length": 59
+      },
+      {
+        "bbox": [
+          255.20733642578125,
+          582.6547241210938,
+          335.6147155761719,
+          589.4808959960938
+        ],
+        "source_line_ids": [
+          [
+            7,
+            2
+          ]
+        ],
+        "source_sequence": 11,
+        "column": 1,
+        "source_text_sha256": "78da77acdebbe067d56f63482ef0ef41d070c8be9c11ff1809a701ed31c4bf72",
+        "source_text_length": 28
+      }
+    ],
+    "role": "footnote",
+    "note_number": 36,
+    "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+    "markdown_start": 0,
+    "markdown_end": 713,
+    "canonical_start": 0,
+    "canonical_end": 697,
+    "mapping_method": "FORWARD_IR_SERIALIZATION",
+    "status": "MAPPED",
+    "transformations": [
+      "MARKDOWN_DECORATION",
+      "EDITORIAL_GROUPING"
+    ],
+    "transformation_status": "ALLOWLIST_ONLY",
+    "transformation_warning": null,
+    "continuation_of": "region-8f49f5c02f0a3874fc4164ed",
+    "canonical_sha256": "6ef691a2edccc2db2acf53681014446badd7c6814004e00ddf729fd8fea2ffc6",
+    "markdown_sha256": "b34bc2e4e1235408fcbffed18e7726f0970dc95f51156735a900810adeaac2cc"
+  },
+  "terminal_boundary_golden": {
+    "from_page": 56,
+    "number": 36,
+    "note_zone_bbox": [
+      45,
+      560,
+      450,
+      650
+    ],
+    "start": "Lado. En el momento de la Creación, las sefi rot-recipientes",
+    "end": "dirigidos hacia la santidad.",
+    "source_lines": [
+      [
+        6,
+        0
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        2
+      ]
+    ],
+    "next_note": 37
+  },
+  "important": "Page56 boundary is NOT note36 termination. Continuation owns 12 lines on57, ends before37, without absorbing37/38."
+}

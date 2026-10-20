@@ -1,0 +1,55 @@
+{
+  "scope": "Existing classifier + runtime type boundary ONLY; no PDF/upload/job/worker execution",
+  "quality_policy_version": "region-quality-v1",
+  "classifications_without_external_certificates": {
+    "GOOD_A": "UNRESOLVED",
+    "BAD_B": "UNRESOLVED",
+    "GOOD_C": "UNRESOLVED"
+  },
+  "bad_region_reasons": [
+    "replacement_character",
+    "text_order_structure_not_verified",
+    "missing_evidence_provenance",
+    "source_or_extraction_unresolved"
+  ],
+  "aggregate_without_external_certificates": "UNUSABLE",
+  "accepted_units": 0,
+  "job_fields": [
+    "administrative_notes",
+    "ingestion_profile",
+    "knowledge_scope_code",
+    "language",
+    "requested_status",
+    "title",
+    "upload_id",
+    "work_family"
+  ],
+  "worker_request_fields": [
+    "actor_user_id",
+    "attempt_number",
+    "collection_code",
+    "embedding_model",
+    "ingestion_profile",
+    "job_id",
+    "knowledge_scope_code",
+    "language",
+    "milvus_collection_code",
+    "pipeline_version",
+    "source_path",
+    "source_sha256",
+    "tenant",
+    "title",
+    "upload_id",
+    "work_family"
+  ],
+  "extracted_page_fields": [
+    "footnote_numbers",
+    "headings",
+    "language",
+    "original_markdown",
+    "page_number",
+    "printed_references",
+    "search_text_normalized"
+  ],
+  "conclusion": "The existing contract does not certify clean text. Runtime has no certificate transport. Supplying positive flags without evidence would change the safety contract."
+}

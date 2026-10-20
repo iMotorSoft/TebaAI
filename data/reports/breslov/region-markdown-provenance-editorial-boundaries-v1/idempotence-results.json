@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "fresh_PDF_extractions": 3,
+  "run_digests": [
+    "4072bcf09453c973efa088bdaf855b1d89cb9ef218b3cc21a871c679e0494cd2",
+    "4072bcf09453c973efa088bdaf855b1d89cb9ef218b3cc21a871c679e0494cd2",
+    "4072bcf09453c973efa088bdaf855b1d89cb9ef218b3cc21a871c679e0494cd2"
+  ],
+  "equal_region_ids_boundaries_order_offsets_ownership": true,
+  "input_permutation": {
+    "55": "PASS (note geometry only; non-note sequence retained)",
+    "56": "PASS (note geometry only; non-note sequence retained)",
+    "57": "PASS (note geometry only; non-note sequence retained)",
+    "167": "PASS (note geometry only; non-note sequence retained)",
+    "168": "PASS (note geometry only; non-note sequence retained)"
+  },
+  "engine_versions": {
+    "pymupdf": "1.27.2.3",
+    "pymupdf4llm": "1.27.2.3"
+  },
+  "small_fixture_matches_real_IR": true
+}

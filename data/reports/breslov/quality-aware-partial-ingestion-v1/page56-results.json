@@ -1,0 +1,36 @@
+{
+  "decision": "SAFE_RECONNECT",
+  "recovered_start_numbers": [
+    38,
+    35,
+    36
+  ],
+  "original_offsets": [
+    {
+      "number": 38,
+      "start": 61,
+      "body_start": 68
+    },
+    {
+      "number": 35,
+      "start": 3182,
+      "body_start": 3187
+    },
+    {
+      "number": 36,
+      "start": 3603,
+      "body_start": 3608
+    }
+  ],
+  "capability": "numbered starts accept blockquote and emphasis wrappers without changing original",
+  "historical_raw": "notes35/36 recognized (existing closure trace)",
+  "full_note_acceptance": "NOT_DEMONSTRATED",
+  "recovery": "PARTIAL",
+  "remaining": [
+    "terminal region bound",
+    "anchor/next heading",
+    "chunk role propagation",
+    "literal citation E2E"
+  ],
+  "permanent_quarantine": false
+}

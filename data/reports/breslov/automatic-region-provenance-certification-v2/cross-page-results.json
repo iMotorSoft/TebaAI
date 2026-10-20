@@ -1,0 +1,21 @@
+{
+  "same_page_complete_units": 6,
+  "cross_page_units_certified": 0,
+  "unresolved_continuation": 5,
+  "incorrect_truncations": 0,
+  "known_continuations": [
+    {
+      "note": 36,
+      "from": 56,
+      "end": 57,
+      "status": "UNRESOLVED_CONTINUATION"
+    },
+    {
+      "note": 66,
+      "from": 167,
+      "end": 168,
+      "status": "UNRESOLVED_CONTINUATION"
+    }
+  ],
+  "limitation": "No automatic cross-page owner linking; local boundary known, editorial completion withheld"
+}

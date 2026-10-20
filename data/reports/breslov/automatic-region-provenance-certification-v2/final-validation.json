@@ -1,0 +1,42 @@
+{
+  "preexisting_worktree_preserved": true,
+  "seal_verified_after_evaluation": [
+    {
+      "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json",
+      "unchanged": true
+    },
+    {
+      "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+      "unchanged": true
+    },
+    {
+      "path": "data/reports/breslov/automatic-region-provenance-certification-v2/seal_holdout.py",
+      "unchanged": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v2.py",
+      "unchanged": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification.py",
+      "unchanged": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/region_markdown_provenance.py",
+      "unchanged": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v2.py",
+      "unchanged": true
+    },
+    {
+      "path": "data/reports/breslov/automatic-region-provenance-certification-v2/evaluate_holdout.py",
+      "unchanged": true
+    }
+  ],
+  "json_valid": true,
+  "git_diff_check": true,
+  "new_source_docs_whitespace": "PASS",
+  "final_diff_review": "PASS; existing tracked diff unchanged; new source, tests and evaluator reviewed",
+  "HEAD": "1fa9290bdc7840e7277a998aa3ca66345c6080ee"
+}

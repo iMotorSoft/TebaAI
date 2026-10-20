@@ -1,0 +1,21 @@
+{
+  "v4_real_permutation_pass": true,
+  "seed": 321,
+  "pages": [
+    55,
+    56,
+    57,
+    80,
+    140,
+    167,
+    168,
+    200
+  ],
+  "certificates_ordered": 109,
+  "certificates_permuted": 109,
+  "same_region_ids": true,
+  "changed_regions": 0,
+  "v3_real_permutation_pass": false,
+  "root_cause_fixed": "V2 selected-line/native-token order was not canonical; V4 canonicalizes pages, boxes and textlines before any proof, so ORDER_PROOF and continuation discovery are order-invariant.",
+  "note": "Permutation evidence regenerated from the V4 module after the sealed holdout; no V4 rule changed for it."
+}

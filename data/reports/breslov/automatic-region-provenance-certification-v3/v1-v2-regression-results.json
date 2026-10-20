@@ -1,0 +1,40 @@
+{
+  "five_v1_cases": [
+    {
+      "page": 80,
+      "region_id": "region-cbabcc634980c627e2d2280b",
+      "v3_status": "UNRESOLVED",
+      "safe": true
+    },
+    {
+      "page": 80,
+      "region_id": "region-5c800da9132cbc4511454e79",
+      "v3_status": "UNRESOLVED",
+      "safe": true
+    },
+    {
+      "page": 140,
+      "region_id": "region-4208ec6381b2a5e29276d00e",
+      "v3_status": "UNRESOLVED",
+      "safe": true
+    },
+    {
+      "page": 200,
+      "region_id": "region-9a246f83b66e789817d4e727",
+      "v3_status": "UNRESOLVED",
+      "safe": true
+    },
+    {
+      "page": 200,
+      "region_id": "region-6bcfd2e337fb9ad3f7934fe4",
+      "v3_status": "UNRESOLVED",
+      "safe": true
+    }
+  ],
+  "all_five_safe": true,
+  "v2_regression_pages": 18,
+  "v2_certified": 20,
+  "v2_source_annotation_mismatches": [],
+  "unsafe_false_provenance_certifications": 0,
+  "scope": "Exact frozen V2 source unit annotations; development now, not V3 holdout."
+}

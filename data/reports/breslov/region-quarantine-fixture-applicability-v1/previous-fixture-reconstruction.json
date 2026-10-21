@@ -1,0 +1,182 @@
+[
+  {
+    "case": "A",
+    "fixture_input": {
+      "case": "A",
+      "path": "SrvRestAstroLS_v1/backend/../../data/reports/breslov/region-quarantine-worker-e2e-v1/fixtures/case-A.pdf",
+      "sha256": "9ef232e502afbb6fbf1878e24886c567323e26f64dea662cfcc7432afe2814c1",
+      "physical_pages": 1,
+      "expected_region_publication": [
+        "ACCEPTED"
+      ],
+      "texts": [
+        "Quarantineworker alfariver trusted neighboring Spanish source region."
+      ],
+      "expected_accepted": 1,
+      "expected_quarantined": 0
+    },
+    "table": [
+      {
+        "REGION": "region-b987f6d6e41f693b447c0b6d",
+        "fixture_text": "Quarantineworker alfariver trusted neighboring Spanish source region.",
+        "FIXTURE_INTENT": "GOOD",
+        "CERTIFIER_STATUS": "UNRESOLVED",
+        "PROVENANCE_STATUS": "UNRESOLVED",
+        "PUBLICATION_STATUS": "QUARANTINED",
+        "DOWNSTREAM_RESULT": "NOT_SEARCHABLE",
+        "bbox": [
+          40.0,
+          92.40234375,
+          394.77984619140625,
+          102.080078125
+        ],
+        "candidate_sha256": "6fa91f6a06485c11b325cd3eb7c0d3901b406e16da731635495157582bc24945"
+      }
+    ],
+    "source_evidence": "data/reports/breslov/region-quarantine-worker-e2e-v1/worker-integration-results.json"
+  },
+  {
+    "case": "C",
+    "fixture_input": {
+      "case": "C",
+      "path": "SrvRestAstroLS_v1/backend/../../data/reports/breslov/region-quarantine-worker-e2e-v1/fixtures/case-C.pdf",
+      "sha256": "742e430008fd306fde3f7103ec3c7166341687ea766957db22caaf106e5e8295",
+      "physical_pages": 1,
+      "expected_region_publication": [
+        "ACCEPTED",
+        "QUARANTINED",
+        "ACCEPTED"
+      ],
+      "texts": [
+        "Quarantineworker alfariver trusted neighboring Spanish source region.",
+        "אב�גד ש�לום",
+        "Quarantineworker omegagarden accepted neighboring citation evidence."
+      ],
+      "expected_accepted": 2,
+      "expected_quarantined": 1
+    },
+    "table": [
+      {
+        "REGION": "region-148a10a56820652a1b3f6b84",
+        "fixture_text": "Quarantineworker alfariver trusted neighboring Spanish source region.",
+        "FIXTURE_INTENT": "GOOD",
+        "CERTIFIER_STATUS": "UNRESOLVED",
+        "PROVENANCE_STATUS": "UNRESOLVED",
+        "PUBLICATION_STATUS": "QUARANTINED",
+        "DOWNSTREAM_RESULT": "NOT_SEARCHABLE",
+        "bbox": [
+          40.0,
+          92.40234375,
+          394.77984619140625,
+          102.080078125
+        ],
+        "candidate_sha256": "6fa91f6a06485c11b325cd3eb7c0d3901b406e16da731635495157582bc24945"
+      },
+      {
+        "REGION": "region-910cae72c2ac50b9c2129fe2",
+        "fixture_text": "אב�גד ש�לום",
+        "FIXTURE_INTENT": "BAD",
+        "CERTIFIER_STATUS": "UNRESOLVED",
+        "PROVENANCE_STATUS": "UNRESOLVED",
+        "PUBLICATION_STATUS": "QUARANTINED",
+        "DOWNSTREAM_RESULT": "NOT_SEARCHABLE",
+        "bbox": [
+          40.0,
+          240.87890625,
+          107.80999755859375,
+          250.83984375
+        ],
+        "candidate_sha256": "c61c4837c07f06e7d8564f1dea01e80f7e6c9c319f135072c9262cd0400453ff"
+      },
+      {
+        "REGION": "region-a75d5f80647303e64c3039f1",
+        "fixture_text": "Quarantineworker omegagarden accepted neighboring citation evidence.",
+        "FIXTURE_INTENT": "GOOD",
+        "CERTIFIER_STATUS": "UNRESOLVED",
+        "PROVENANCE_STATUS": "UNRESOLVED",
+        "PUBLICATION_STATUS": "QUARANTINED",
+        "DOWNSTREAM_RESULT": "NOT_SEARCHABLE",
+        "bbox": [
+          40.0,
+          392.40234375,
+          407.99981689453125,
+          402.080078125
+        ],
+        "candidate_sha256": "c6084e2497a66ccfba563051897a2f623dacdbf047aa2046e1d0bf521a9cff6f"
+      }
+    ],
+    "source_evidence": "data/reports/breslov/region-quarantine-worker-e2e-v1/worker-integration-results.json"
+  },
+  {
+    "case": "D",
+    "fixture_input": {
+      "case": "D",
+      "path": "SrvRestAstroLS_v1/backend/../../data/reports/breslov/region-quarantine-worker-e2e-v1/fixtures/case-D.pdf",
+      "sha256": "e98072047aee500d06eb76492db977f239503bab78dd9207513ad9bfccc88aa1",
+      "physical_pages": 1,
+      "expected_region_publication": [
+        "QUARANTINED",
+        "ACCEPTED",
+        "QUARANTINED"
+      ],
+      "texts": [
+        "אב�גד ש�לום",
+        "Quarantineworker alfariver trusted neighboring Spanish source region.",
+        "אב�גד ש�לום"
+      ],
+      "expected_accepted": 1,
+      "expected_quarantined": 2
+    },
+    "table": [
+      {
+        "REGION": "region-c59ffc64b4e2dbd636ba9956",
+        "fixture_text": "אב�גד ש�לום",
+        "FIXTURE_INTENT": "BAD",
+        "CERTIFIER_STATUS": "UNRESOLVED",
+        "PROVENANCE_STATUS": "UNRESOLVED",
+        "PUBLICATION_STATUS": "QUARANTINED",
+        "DOWNSTREAM_RESULT": "NOT_SEARCHABLE",
+        "bbox": [
+          40.0,
+          90.87890625,
+          107.80999755859375,
+          100.83984375
+        ],
+        "candidate_sha256": "c61c4837c07f06e7d8564f1dea01e80f7e6c9c319f135072c9262cd0400453ff"
+      },
+      {
+        "REGION": "region-c86272cd0e9e6c48aea767b7",
+        "fixture_text": "Quarantineworker alfariver trusted neighboring Spanish source region.",
+        "FIXTURE_INTENT": "GOOD",
+        "CERTIFIER_STATUS": "UNRESOLVED",
+        "PROVENANCE_STATUS": "UNRESOLVED",
+        "PUBLICATION_STATUS": "QUARANTINED",
+        "DOWNSTREAM_RESULT": "NOT_SEARCHABLE",
+        "bbox": [
+          40.0,
+          242.40234375,
+          394.77984619140625,
+          252.080078125
+        ],
+        "candidate_sha256": "6fa91f6a06485c11b325cd3eb7c0d3901b406e16da731635495157582bc24945"
+      },
+      {
+        "REGION": "region-fded65f99595bb717e03ccdd",
+        "fixture_text": "אב�גד ש�לום",
+        "FIXTURE_INTENT": "BAD",
+        "CERTIFIER_STATUS": "UNRESOLVED",
+        "PROVENANCE_STATUS": "UNRESOLVED",
+        "PUBLICATION_STATUS": "QUARANTINED",
+        "DOWNSTREAM_RESULT": "NOT_SEARCHABLE",
+        "bbox": [
+          40.0,
+          390.87890625,
+          107.80999755859375,
+          400.83984375
+        ],
+        "candidate_sha256": "c61c4837c07f06e7d8564f1dea01e80f7e6c9c319f135072c9262cd0400453ff"
+      }
+    ],
+    "source_evidence": "data/reports/breslov/region-quarantine-worker-e2e-v1/worker-integration-results.json"
+  }
+]

@@ -1,0 +1,17 @@
+.........................................................                [100%]
+=============================== warnings summary ===============================
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+tests/test_region_source_access.py::test_source_route_refuses_arbitrary_filesystem_path
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/source', handler='library_original_source'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'page' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+57 passed, 4 warnings in 1.59s

@@ -1,0 +1,2 @@
+# Preserve raw pytest assertion excerpts; authored files retain normal checks.
+tests-backend-full.txt whitespace=-blank-at-eol

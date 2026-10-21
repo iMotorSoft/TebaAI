@@ -1,0 +1,29 @@
+{
+  "evidence_mode": "Frozen previous actual E2E; NOT rerun. Source was accessible before authorized cleanup; not claimed currently persisted.",
+  "source": "data/reports/breslov/region-quarantine-worker-e2e-v1/real-source-case.json",
+  "accepted_region_ids": [
+    "region-3966f836b4af769e75f15087",
+    "region-524dccc828e94a7a86cbb0af",
+    "region-cbfea71908b4b80f24173eb6"
+  ],
+  "REAL_ACCEPTED_CERTIFIED": 3,
+  "SURVIVED_TO_CHUNKS": 3,
+  "SURVIVED_TO_EMBEDDINGS": 3,
+  "SURVIVED_TO_VECTORS": 3,
+  "SURVIVED_TO_RETRIEVAL": 3,
+  "SURVIVED_TO_CITATIONS": 3,
+  "REAL_ACCEPTED_LOSS": 0,
+  "BAD_HEBREW_CHUNKS": 0,
+  "BAD_HEBREW_EMBEDDINGS": 0,
+  "BAD_HEBREW_VECTORS": 0,
+  "BAD_HEBREW_RETRIEVAL_HITS": 0,
+  "BAD_HEBREW_TEXTUAL_CITATIONS": 0,
+  "BAD_HEBREW_VISUAL_SOURCE_AVAILABLE": true,
+  "REAL_PARTIAL_PAGE_SEARCHABLE": true,
+  "FULL_DOCUMENT_REJECTED_DUE_TO_SINGLE_BAD_REGION": false,
+  "limits": [
+    "Original physical pages 54–56 only",
+    "Backend authenticated full PDF, not browser viewer",
+    "Canonical citation builder, not generative QA"
+  ]
+}

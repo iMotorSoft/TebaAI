@@ -1,0 +1,154 @@
+{
+  "controls": [
+    {
+      "control": "valid",
+      "boundary": {
+        "A": [
+          "ACCEPTED",
+          "CERTIFIED"
+        ],
+        "B": [
+          "UNRESOLVED",
+          "UNRESOLVED"
+        ],
+        "C": [
+          "ACCEPTED",
+          "CERTIFIED"
+        ]
+      },
+      "stages": {
+        "chunks": [
+          "A",
+          "C"
+        ],
+        "vectors": [
+          "A",
+          "C"
+        ]
+      },
+      "visual_regions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "actual_metrics": {
+        "GOOD_NEIGHBOR_LOSS": 0,
+        "BAD_REGION_LEAK": 0,
+        "SOURCE_PRESERVATION_FAIL": 0
+      }
+    },
+    {
+      "control": "deliberate_worker_loss",
+      "boundary": {
+        "A": [
+          "ACCEPTED",
+          "CERTIFIED"
+        ],
+        "B": [
+          "UNRESOLVED",
+          "UNRESOLVED"
+        ],
+        "C": [
+          "ACCEPTED",
+          "CERTIFIED"
+        ]
+      },
+      "stages": {
+        "chunks": [
+          "A",
+          "C"
+        ],
+        "vectors": [
+          "A"
+        ]
+      },
+      "visual_regions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "actual_metrics": {
+        "GOOD_NEIGHBOR_LOSS": 1,
+        "BAD_REGION_LEAK": 0,
+        "SOURCE_PRESERVATION_FAIL": 0
+      }
+    },
+    {
+      "control": "deliberate_bad_publication",
+      "boundary": {
+        "A": [
+          "ACCEPTED",
+          "CERTIFIED"
+        ],
+        "B": [
+          "UNRESOLVED",
+          "UNRESOLVED"
+        ],
+        "C": [
+          "ACCEPTED",
+          "CERTIFIED"
+        ]
+      },
+      "stages": {
+        "chunks": [
+          "A",
+          "B",
+          "C"
+        ],
+        "vectors": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "visual_regions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "actual_metrics": {
+        "GOOD_NEIGHBOR_LOSS": 0,
+        "BAD_REGION_LEAK": 1,
+        "SOURCE_PRESERVATION_FAIL": 0
+      }
+    },
+    {
+      "control": "source_missing",
+      "boundary": {
+        "A": [
+          "ACCEPTED",
+          "CERTIFIED"
+        ],
+        "B": [
+          "UNRESOLVED",
+          "UNRESOLVED"
+        ],
+        "C": [
+          "ACCEPTED",
+          "CERTIFIED"
+        ]
+      },
+      "stages": {
+        "chunks": [
+          "A",
+          "C"
+        ],
+        "vectors": [
+          "A",
+          "C"
+        ]
+      },
+      "visual_regions": [
+        "A",
+        "C"
+      ],
+      "actual_metrics": {
+        "GOOD_NEIGHBOR_LOSS": 0,
+        "BAD_REGION_LEAK": 0,
+        "SOURCE_PRESERVATION_FAIL": 1
+      }
+    }
+  ],
+  "test_evidence": "focused-tests.txt; tests/test_region_fixture_applicability.py::test_metric_truth_table and test_negative_control_*",
+  "production_mutated": false
+}

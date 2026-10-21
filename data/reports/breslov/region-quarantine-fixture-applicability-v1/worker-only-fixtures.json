@@ -1,0 +1,110 @@
+[
+  {
+    "case": "mixed",
+    "partial": true,
+    "regions": [
+      {
+        "id": "region-0",
+        "text": "Applicability region 0 isolated searchable sentinel mixed.",
+        "quality": "ACCEPTED",
+        "provenance": "CERTIFIED",
+        "publish": true
+      },
+      {
+        "id": "region-1",
+        "text": "Applicability region 1 isolated searchable sentinel mixed.",
+        "quality": "QUARANTINED",
+        "provenance": "CERTIFIED",
+        "publish": false
+      },
+      {
+        "id": "region-2",
+        "text": "Applicability region 2 isolated searchable sentinel mixed.",
+        "quality": "ACCEPTED",
+        "provenance": "CERTIFIED",
+        "publish": true
+      }
+    ]
+  },
+  {
+    "case": "all-good",
+    "partial": false,
+    "regions": [
+      {
+        "id": "region-0",
+        "text": "Applicability region 0 isolated searchable sentinel all-good.",
+        "quality": "ACCEPTED",
+        "provenance": "CERTIFIED",
+        "publish": true
+      },
+      {
+        "id": "region-1",
+        "text": "Applicability region 1 isolated searchable sentinel all-good.",
+        "quality": "ACCEPTED",
+        "provenance": "CERTIFIED",
+        "publish": true
+      },
+      {
+        "id": "region-2",
+        "text": "Applicability region 2 isolated searchable sentinel all-good.",
+        "quality": "ACCEPTED",
+        "provenance": "CERTIFIED",
+        "publish": true
+      }
+    ]
+  },
+  {
+    "case": "all-bad",
+    "partial": false,
+    "regions": [
+      {
+        "id": "region-0",
+        "text": "Applicability region 0 isolated searchable sentinel all-bad.",
+        "quality": "UNRESOLVED",
+        "provenance": "UNRESOLVED",
+        "publish": false
+      },
+      {
+        "id": "region-1",
+        "text": "Applicability region 1 isolated searchable sentinel all-bad.",
+        "quality": "QUARANTINED",
+        "provenance": "UNRESOLVED",
+        "publish": false
+      },
+      {
+        "id": "region-2",
+        "text": "Applicability region 2 isolated searchable sentinel all-bad.",
+        "quality": "UNRESOLVED",
+        "provenance": "UNRESOLVED",
+        "publish": false
+      }
+    ]
+  },
+  {
+    "case": "accepted-uncertified",
+    "partial": true,
+    "regions": [
+      {
+        "id": "region-0",
+        "text": "Applicability region 0 isolated searchable sentinel accepted-uncertified.",
+        "quality": "ACCEPTED",
+        "provenance": "CERTIFIED",
+        "publish": true
+      },
+      {
+        "id": "region-1",
+        "text": "Applicability region 1 isolated searchable sentinel accepted-uncertified.",
+        "quality": "ACCEPTED",
+        "provenance": "UNRESOLVED",
+        "publish": false
+      },
+      {
+        "id": "region-2",
+        "text": "Applicability region 2 isolated searchable sentinel accepted-uncertified.",
+        "quality": "ACCEPTED",
+        "provenance": "CERTIFIED",
+        "publish": true
+      }
+    ]
+  }
+]

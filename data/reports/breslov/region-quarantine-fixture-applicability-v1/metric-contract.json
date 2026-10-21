@@ -1,0 +1,29 @@
+{
+  "GOOD_NEIGHBOR_LOSS": "Count distinct region IDs delivered at publication/worker boundary with quality ACCEPTED AND provenance CERTIFIED missing at ANY required downstream stage.",
+  "BAD_REGION_LEAK": "Count distinct nonpublishable or unknown region IDs observed at ANY searchable stage.",
+  "CERTIFIER_RECALL_MISS": "Author-intended GOOD with frozen actual quality UNRESOLVED. Intent-relative mismatch, not a source-quality determination.",
+  "SOURCE_PRESERVATION_FAIL": "Nonpublishable boundary regions without available visual source.",
+  "partial_page_searchable": "At least one ACCEPTED+CERTIFIED region survives all required searchable stages AND another same-page region is nonpublishable.",
+  "type_1": "Declared internal classification -> actual publication, worker, pipeline, chunk builder; deterministic I/O doubles.",
+  "type_2": "Raw source -> actual certifier -> publication -> worker; derive worker expectations from frozen actual certifier verdicts, never author intent.",
+  "required_type_1_stages": [
+    "canonical",
+    "chunks",
+    "embedding_inputs",
+    "embeddings",
+    "vectors"
+  ],
+  "required_real_stages": [
+    "chunks",
+    "embeddings",
+    "vectors",
+    "retrieval",
+    "citations"
+  ],
+  "negative_controls": [
+    "accepted missing at each downstream stage",
+    "unresolved deliberately passed searchable",
+    "same-count substitution",
+    "quarantined visual source missing"
+  ]
+}

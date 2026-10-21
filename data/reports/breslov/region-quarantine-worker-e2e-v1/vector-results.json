@@ -1,0 +1,44 @@
+{
+  "bad_region_vectors": 0,
+  "actual_vectors": 3,
+  "independent_attempt_queries": true,
+  "pg_chunk_ids_equal_milvus_chunk_ids": true,
+  "cleanup": [
+    {
+      "job_id": "12fac2ca-ed53-4478-a3d4-6caa3e6767d2",
+      "first": "completed",
+      "second": "completed",
+      "durable_source_removed": true
+    },
+    {
+      "job_id": "8532977b-367d-42ec-bb98-6e0257ac8304",
+      "first": "completed",
+      "second": "completed",
+      "durable_source_removed": true
+    },
+    {
+      "job_id": "ab836475-4fb0-4819-9048-d03958ce057a",
+      "first": "completed",
+      "second": "completed",
+      "durable_source_removed": true
+    },
+    {
+      "job_id": "c4db9a8e-7d76-4c81-8cbb-7685b61f65ee",
+      "first": "completed",
+      "second": "completed",
+      "durable_source_removed": true
+    },
+    {
+      "job_id": "4e179d47-99ab-4863-95f4-4ae067736953",
+      "first": "completed",
+      "second": "completed",
+      "durable_source_removed": true
+    },
+    {
+      "job_id": "5007815d-5142-4af2-9513-1b82da30a4f7",
+      "first": "completed",
+      "second": "completed",
+      "durable_source_removed": true
+    }
+  ]
+}

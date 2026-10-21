@@ -1,0 +1,13 @@
+{
+  "result": "PASS_UNIT_FAULT_INJECTION",
+  "tests": [
+    "test_publication_exception_fails_before_any_persistence",
+    "test_actual_worker_marks_publication_failure_explicitly_and_never_falls_back",
+    "test_gateway_rejects_tampered_canonical_and_source"
+  ],
+  "actual_worker_orchestrator": true,
+  "stores": "FakeStore/FakeGateway for deterministic unexpected-error injection; not a real PostgreSQL failure job.",
+  "no_unfiltered_fallback": true,
+  "uncertified_chunks": 0,
+  "uncertified_vectors": 0
+}

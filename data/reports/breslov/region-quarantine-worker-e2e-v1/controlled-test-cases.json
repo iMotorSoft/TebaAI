@@ -1,0 +1,82 @@
+[
+  {
+    "case": "A",
+    "path": "SrvRestAstroLS_v1/backend/../../data/reports/breslov/region-quarantine-worker-e2e-v1/fixtures/case-A.pdf",
+    "sha256": "9ef232e502afbb6fbf1878e24886c567323e26f64dea662cfcc7432afe2814c1",
+    "physical_pages": 1,
+    "expected_region_publication": [
+      "ACCEPTED"
+    ],
+    "texts": [
+      "Quarantineworker alfariver trusted neighboring Spanish source region."
+    ],
+    "expected_accepted": 1,
+    "expected_quarantined": 0
+  },
+  {
+    "case": "B",
+    "path": "SrvRestAstroLS_v1/backend/../../data/reports/breslov/region-quarantine-worker-e2e-v1/fixtures/case-B.pdf",
+    "sha256": "a0d06111e8912f75a007e63eb053e9288c3e84ef87ca8b59396cf3417a52e484",
+    "physical_pages": 1,
+    "expected_region_publication": [
+      "QUARANTINED"
+    ],
+    "texts": [
+      "אב�גד ש�לום"
+    ],
+    "expected_accepted": 0,
+    "expected_quarantined": 1
+  },
+  {
+    "case": "C",
+    "path": "SrvRestAstroLS_v1/backend/../../data/reports/breslov/region-quarantine-worker-e2e-v1/fixtures/case-C.pdf",
+    "sha256": "742e430008fd306fde3f7103ec3c7166341687ea766957db22caaf106e5e8295",
+    "physical_pages": 1,
+    "expected_region_publication": [
+      "ACCEPTED",
+      "QUARANTINED",
+      "ACCEPTED"
+    ],
+    "texts": [
+      "Quarantineworker alfariver trusted neighboring Spanish source region.",
+      "אב�גד ש�לום",
+      "Quarantineworker omegagarden accepted neighboring citation evidence."
+    ],
+    "expected_accepted": 2,
+    "expected_quarantined": 1
+  },
+  {
+    "case": "D",
+    "path": "SrvRestAstroLS_v1/backend/../../data/reports/breslov/region-quarantine-worker-e2e-v1/fixtures/case-D.pdf",
+    "sha256": "e98072047aee500d06eb76492db977f239503bab78dd9207513ad9bfccc88aa1",
+    "physical_pages": 1,
+    "expected_region_publication": [
+      "QUARANTINED",
+      "ACCEPTED",
+      "QUARANTINED"
+    ],
+    "texts": [
+      "אב�גד ש�לום",
+      "Quarantineworker alfariver trusted neighboring Spanish source region.",
+      "אב�גד ש�לום"
+    ],
+    "expected_accepted": 1,
+    "expected_quarantined": 2
+  },
+  {
+    "case": "E",
+    "path": "SrvRestAstroLS_v1/backend/../../data/reports/breslov/region-quarantine-worker-e2e-v1/fixtures/case-E.pdf",
+    "sha256": "834e2787b96ee9adafbf1050205ae292edda235393cde73bdaec77452f953f14",
+    "physical_pages": 1,
+    "expected_region_publication": [
+      "QUARANTINED",
+      "QUARANTINED"
+    ],
+    "texts": [
+      "אב�גד ש�לום",
+      "אב�גד ש�לום"
+    ],
+    "expected_accepted": 0,
+    "expected_quarantined": 2
+  }
+]

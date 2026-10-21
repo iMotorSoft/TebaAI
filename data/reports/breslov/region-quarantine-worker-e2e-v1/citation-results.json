@@ -1,0 +1,655 @@
+{
+  "bad_region_textual_citations": 0,
+  "accepted_citations": [
+    {
+      "evidence_id": "ev-864db934dad8591f",
+      "chunk_id": "acb2342e-7ed3-5eed-b334-9aa5ad9ab2fb",
+      "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+      "work": "region-quarantine-worker-e2e-v1-REAL",
+      "title": "region-quarantine-worker-e2e-v1-REAL",
+      "pdf_page": 1,
+      "printed_page": null,
+      "section": null,
+      "language": "es",
+      "markdown": "> 30 A partir del _Shuljan Aruj_ vemos que el momento más auspicioso para levantarse de dormir es en las horas más profunda de la mañana, para que “sea uno quien despierte el alba” y no que el día comience antes de que uno despierte. Aun así, para el que está espiritualmente dormido, la “mañana” es _toda vez_ que se despierte con una nueva conciencia.",
+      "source_layer": "canonical_page",
+      "attribution_status": "not_confirmed",
+      "semantic_score": null,
+      "literal_score": null,
+      "combined_score": null,
+      "retrieval_sources": null,
+      "literal_match_type": "semantic_only",
+      "associated_chunk_id": null,
+      "heading_original": null,
+      "heading_normalized": null,
+      "content_node_id": null,
+      "page_id": null,
+      "heading_text": null,
+      "heading_level": null,
+      "heading_source": "none",
+      "section_path": [],
+      "exact_quote": "es _toda vez_ que se despierte con una nueva conciencia.",
+      "context_before": "en las horas más profunda de la mañana, para que “sea uno quien despierte el alba” y no que el día comience antes de que uno despierte. Aun así, para el que está espiritualmente dormido, la “mañana”",
+      "context_after": null,
+      "start_offset": 297,
+      "end_offset": 353,
+      "location_precision": "exact",
+      "block_id": null,
+      "paragraph_index": null,
+      "matched_variant": "es _toda vez_ que se despierte con una nueva conciencia.",
+      "canonical_page_source": "assembled_from_chunks",
+      "page_resolution_method": "chunk_page_start",
+      "page_resolution_confidence": 1.0,
+      "region_id": "region-3966f836b4af769e75f15087",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1",
+      "publication_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/pages/1/publication"
+    },
+    {
+      "evidence_id": "ev-5e94927e450e5575",
+      "chunk_id": "a396adb0-f80c-5460-a65d-8115ff160c90",
+      "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+      "work": "region-quarantine-worker-e2e-v1-REAL",
+      "title": "region-quarantine-worker-e2e-v1-REAL",
+      "pdf_page": 2,
+      "printed_page": null,
+      "section": null,
+      "language": "es",
+      "markdown": "> 33 Anteriormente hemos visto que el punto bueno de la persona es en sí mismo Divinidad (ver §2 más arriba). Por lo tanto, en un nivel más profundo, el encontrar y conectarse con el punto bueno conecta literalmente a la persona con HaShem. De este modo está claro cómo la glosa del Rama tiene la intención de ser una explicación de las palabras del _Shuljan Aruj_ . Para despertar, la persona tiene que buscar su punto bueno, que es algo que posee todo judío - pues, como se explicó anteriormente, es imposible que la persona no haya hecho nunca algo bueno en su vida. Y debido a ese bien, tiene a HaShem delante de sí, siempre.",
+      "source_layer": "canonical_page",
+      "attribution_status": "not_confirmed",
+      "semantic_score": null,
+      "literal_score": null,
+      "combined_score": null,
+      "retrieval_sources": null,
+      "literal_match_type": "semantic_only",
+      "associated_chunk_id": null,
+      "heading_original": null,
+      "heading_normalized": null,
+      "content_node_id": null,
+      "page_id": null,
+      "heading_text": null,
+      "heading_level": null,
+      "heading_source": "none",
+      "section_path": [],
+      "exact_quote": "anteriormente, es imposible que la persona no haya hecho nunca algo bueno en su vida. Y debido a ese bien, tiene a HaShem delante de s",
+      "context_before": "ama tiene la intención de ser una explicación de las palabras del _Shuljan Aruj_ . Para despertar, la persona tiene que buscar su punto bueno, que es algo que posee todo judío - pues, como se explicó",
+      "context_after": "í, siempre.",
+      "start_offset": 484,
+      "end_offset": 618,
+      "location_precision": "exact",
+      "block_id": null,
+      "paragraph_index": null,
+      "matched_variant": "anteriormente, es imposible que la persona no haya hecho nunca algo bueno en su vida. Y debido a ese bien, tiene a HaShem delante de s",
+      "canonical_page_source": "assembled_from_chunks",
+      "page_resolution_method": "chunk_page_start",
+      "page_resolution_confidence": 1.0,
+      "region_id": "region-524dccc828e94a7a86cbb0af",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2",
+      "publication_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/pages/2/publication"
+    },
+    {
+      "evidence_id": "ev-1c975e596111656d",
+      "chunk_id": "079063e0-39d4-5d6d-987f-eb82871464da",
+      "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+      "work": "region-quarantine-worker-e2e-v1-REAL",
+      "title": "region-quarantine-worker-e2e-v1-REAL",
+      "pdf_page": 3,
+      "printed_page": null,
+      "section": null,
+      "language": "es",
+      "markdown": "> 35 Ver §1 más arriba. Escribe el Rabí Natán en otra instancia: El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción. Esto lo vemos de manera empírica. Escuchar música inspira el anhelo. Genera el deseo de una mayor cercanía con HaShem, incluso en aquellos que están en un nivel espiritual muy bajo y que se sienten muy distantes de Él (LH, _Nesiat Kapaim_ 5:6).",
+      "source_layer": "canonical_page",
+      "attribution_status": "not_confirmed",
+      "semantic_score": null,
+      "literal_score": null,
+      "combined_score": null,
+      "retrieval_sources": null,
+      "literal_match_type": "semantic_only",
+      "associated_chunk_id": null,
+      "heading_original": null,
+      "heading_normalized": null,
+      "content_node_id": null,
+      "page_id": null,
+      "heading_text": null,
+      "heading_level": null,
+      "heading_source": "none",
+      "section_path": [],
+      "exact_quote": "n en un nivel espiritual muy bajo y que se sienten muy distantes de",
+      "context_before": "incipalmente a través de la melodía y de la canción. Esto lo vemos de manera empírica. Escuchar música inspira el anhelo. Genera el deseo de una mayor cercanía con HaShem, incluso en aquellos que está",
+      "context_after": "Él (LH, _Nesiat Kapaim_ 5:6).",
+      "start_offset": 317,
+      "end_offset": 384,
+      "location_precision": "exact",
+      "block_id": null,
+      "paragraph_index": null,
+      "matched_variant": "n en un nivel espiritual muy bajo y que se sienten muy distantes de",
+      "canonical_page_source": "assembled_from_chunks",
+      "page_resolution_method": "chunk_page_start",
+      "page_resolution_confidence": 1.0,
+      "region_id": "region-cbfea71908b4b80f24173eb6",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3",
+      "publication_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/pages/3/publication"
+    }
+  ],
+  "path": "Actual search hits -> existing fetch_canonical_chunks -> existing build_evidence_v1; source and publication links resolved via authenticated routes.",
+  "generative_answer_e2e": false,
+  "browser_viewer_e2e": false,
+  "quarantined_source_references": [
+    {
+      "bbox": [
+        40.0,
+        92.40234375,
+        394.77984619140625,
+        102.080078125
+      ],
+      "pdf_page": 1,
+      "region_id": "region-b987f6d6e41f693b447c0b6d",
+      "source_sha256": "9ef232e502afbb6fbf1878e24886c567323e26f64dea662cfcc7432afe2814c1",
+      "source_reference": "/library/documents/1098c979-8e23-5f63-8fa4-0caefa0d12a0/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        90.87890625,
+        107.80999755859375,
+        100.83984375
+      ],
+      "pdf_page": 1,
+      "region_id": "region-2cf1c9ddd41267a7822a9630",
+      "source_sha256": "a0d06111e8912f75a007e63eb053e9288c3e84ef87ca8b59396cf3417a52e484",
+      "source_reference": "/library/documents/9bab627b-fa33-53bf-b4eb-608d0d46e2bd/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        92.40234375,
+        394.77984619140625,
+        102.080078125
+      ],
+      "pdf_page": 1,
+      "region_id": "region-148a10a56820652a1b3f6b84",
+      "source_sha256": "742e430008fd306fde3f7103ec3c7166341687ea766957db22caaf106e5e8295",
+      "source_reference": "/library/documents/c1b3ebfd-163d-5773-aa9f-aff2452c3501/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        240.87890625,
+        107.80999755859375,
+        250.83984375
+      ],
+      "pdf_page": 1,
+      "region_id": "region-910cae72c2ac50b9c2129fe2",
+      "source_sha256": "742e430008fd306fde3f7103ec3c7166341687ea766957db22caaf106e5e8295",
+      "source_reference": "/library/documents/c1b3ebfd-163d-5773-aa9f-aff2452c3501/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        392.40234375,
+        407.99981689453125,
+        402.080078125
+      ],
+      "pdf_page": 1,
+      "region_id": "region-a75d5f80647303e64c3039f1",
+      "source_sha256": "742e430008fd306fde3f7103ec3c7166341687ea766957db22caaf106e5e8295",
+      "source_reference": "/library/documents/c1b3ebfd-163d-5773-aa9f-aff2452c3501/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        90.87890625,
+        107.80999755859375,
+        100.83984375
+      ],
+      "pdf_page": 1,
+      "region_id": "region-c59ffc64b4e2dbd636ba9956",
+      "source_sha256": "e98072047aee500d06eb76492db977f239503bab78dd9207513ad9bfccc88aa1",
+      "source_reference": "/library/documents/72d1f8d9-5f6a-5f43-9c0d-9def2af3bd0b/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        242.40234375,
+        394.77984619140625,
+        252.080078125
+      ],
+      "pdf_page": 1,
+      "region_id": "region-c86272cd0e9e6c48aea767b7",
+      "source_sha256": "e98072047aee500d06eb76492db977f239503bab78dd9207513ad9bfccc88aa1",
+      "source_reference": "/library/documents/72d1f8d9-5f6a-5f43-9c0d-9def2af3bd0b/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        390.87890625,
+        107.80999755859375,
+        400.83984375
+      ],
+      "pdf_page": 1,
+      "region_id": "region-fded65f99595bb717e03ccdd",
+      "source_sha256": "e98072047aee500d06eb76492db977f239503bab78dd9207513ad9bfccc88aa1",
+      "source_reference": "/library/documents/72d1f8d9-5f6a-5f43-9c0d-9def2af3bd0b/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        90.87890625,
+        107.80999755859375,
+        100.83984375
+      ],
+      "pdf_page": 1,
+      "region_id": "region-4dfe52a2e6b5d1ba6d493196",
+      "source_sha256": "834e2787b96ee9adafbf1050205ae292edda235393cde73bdaec77452f953f14",
+      "source_reference": "/library/documents/2805e845-468d-5169-b159-400d91e2e466/source#page=1"
+    },
+    {
+      "bbox": [
+        40.0,
+        240.87890625,
+        107.80999755859375,
+        250.83984375
+      ],
+      "pdf_page": 1,
+      "region_id": "region-8cf29a1e0162fb048b5ed6fc",
+      "source_sha256": "834e2787b96ee9adafbf1050205ae292edda235393cde73bdaec77452f953f14",
+      "source_reference": "/library/documents/2805e845-468d-5169-b159-400d91e2e466/source#page=1"
+    },
+    {
+      "bbox": [
+        193.85589599609375,
+        45.43232727050781,
+        439.26385498046875,
+        53.840328216552734
+      ],
+      "pdf_page": 1,
+      "region_id": "region-bbbd7163f16dc52c8acbe8da",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        53.858299255371094,
+        47.827545166015625,
+        132.79428100585938,
+        54.539546966552734
+      ],
+      "pdf_page": 1,
+      "region_id": "region-53e46a7158d6f187117366e4",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        52.05072021484375,
+        69.73515319824219,
+        439.82525634765625,
+        205.67884826660156
+      ],
+      "pdf_page": 1,
+      "region_id": "region-ef842b7b8b150ad74d27c4c8",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        207.0399932861328,
+        222.5099639892578,
+        286.188232421875,
+        230.5679931640625
+      ],
+      "pdf_page": 1,
+      "region_id": "region-16b48267973f93981428575e",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        53.858299255371094,
+        243.72596740722656,
+        442.3342590332031,
+        265.8759765625
+      ],
+      "pdf_page": 1,
+      "region_id": "region-ad30d73d8d786c427875fe2f",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        53.85821533203125,
+        270.5599365234375,
+        442.3302917480469,
+        400.699951171875
+      ],
+      "pdf_page": 1,
+      "region_id": "region-15bd834fd44c987d3e7e38ee",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        53.858001708984375,
+        405.2749328613281,
+        442.3331298828125,
+        488.1349792480469
+      ],
+      "pdf_page": 1,
+      "region_id": "region-8f5ebe2e0fcf88664a2c6a4e",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        223.33799743652344,
+        528.4830932617188,
+        271.30902099609375,
+        535.5819702148438
+      ],
+      "pdf_page": 1,
+      "region_id": "region-c5e0951692603f3533fcde20",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        53.85829162597656,
+        549.3477783203125,
+        441.26898193359375,
+        646.1807250976562
+      ],
+      "pdf_page": 1,
+      "region_id": "region-4ff0d3f7dcd196f16a82c3d7",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        252.61428833007812,
+        585.3477783203125,
+        441.27337646484375,
+        637.1739501953125
+      ],
+      "pdf_page": 1,
+      "region_id": "region-74b57fad8508d9c1d9fb7d4f",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=1"
+    },
+    {
+      "bbox": [
+        375.5740051269531,
+        46.17702102661133,
+        444.3479919433594,
+        55.95378112792969
+      ],
+      "pdf_page": 2,
+      "region_id": "region-505946d7c217d9d253e44960",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        24.1653995513916,
+        46.27225875854492,
+        159.3419952392578,
+        55.764259338378906
+      ],
+      "pdf_page": 2,
+      "region_id": "region-30b263f4acb4b7d0cf3932c8",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        54.270198822021484,
+        69.71348571777344,
+        442.0448913574219,
+        160.8320770263672
+      ],
+      "pdf_page": 2,
+      "region_id": "region-cbf531abe26526985c17d05c",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        209.875,
+        177.6909637451172,
+        289.0232238769531,
+        185.74798583984375
+      ],
+      "pdf_page": 2,
+      "region_id": "region-eed8f08a422b64a710034f25",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        85.09249877929688,
+        199.7482147216797,
+        414.18853759765625,
+        269.7882080078125
+      ],
+      "pdf_page": 2,
+      "region_id": "region-10799c6fbd1181faed4e1755",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        56.691986083984375,
+        275.45697021484375,
+        445.1639404296875,
+        383.39697265625
+      ],
+      "pdf_page": 2,
+      "region_id": "region-fb9cd712990367fa1a2a21b4",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        85.09290313720703,
+        391.0859680175781,
+        414.18280029296875,
+        413.8559875488281
+      ],
+      "pdf_page": 2,
+      "region_id": "region-a53f07b56f295ce6b624ab09",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        56.69285583496094,
+        422.0849914550781,
+        445.1599426269531,
+        539.93505859375
+      ],
+      "pdf_page": 2,
+      "region_id": "region-2506271e14f50b6c70039956",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        226.4149932861328,
+        555.2809448242188,
+        274.38604736328125,
+        562.3800048828125
+      ],
+      "pdf_page": 2,
+      "region_id": "region-339bed4d97ad5b75f0d53bc1",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        255.4488983154297,
+        603.5595703125,
+        444.1214599609375,
+        644.86962890625
+      ],
+      "pdf_page": 2,
+      "region_id": "region-57ae39f73bbd020dd7e5b71e",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=2"
+    },
+    {
+      "bbox": [
+        193.85589599609375,
+        45.43232727050781,
+        439.26385498046875,
+        53.840328216552734
+      ],
+      "pdf_page": 3,
+      "region_id": "region-1524845d728cd7b921b6d4a8",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        53.858299255371094,
+        47.827545166015625,
+        132.79428100585938,
+        54.539546966552734
+      ],
+      "pdf_page": 3,
+      "region_id": "region-27fc20c8450b093cf49207f6",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        51.4312744140625,
+        69.15605163574219,
+        439.15802001953125,
+        95.5026626586914
+      ],
+      "pdf_page": 3,
+      "region_id": "region-37b070d74bbd27175ccbd7e3",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        51.4189453125,
+        97.07707214355469,
+        439.1677551269531,
+        215.4178009033203
+      ],
+      "pdf_page": 3,
+      "region_id": "region-acedabea7979dfa0298e4d18",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        207.04100036621094,
+        232.1039581298828,
+        286.1892395019531,
+        240.1619873046875
+      ],
+      "pdf_page": 3,
+      "region_id": "region-5f580145ad8ea4f53484ce08",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        359.05499267578125,
+        252.96299743652344,
+        437.7509765625,
+        336.81903076171875
+      ],
+      "pdf_page": 3,
+      "region_id": "region-b5d7666c20aa7b03c7827f09",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        54.310821533203125,
+        255.99655151367188,
+        353.5118103027344,
+        338.1929626464844
+      ],
+      "pdf_page": 3,
+      "region_id": "region-c3e30f8ea3bda171b4c0bfaf",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        54.31080627441406,
+        342.887939453125,
+        442.7868347167969,
+        413.0279541015625
+      ],
+      "pdf_page": 3,
+      "region_id": "region-da64334f5717c9429cc3e17f",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        54.31080627441406,
+        426.2979736328125,
+        196.86061096191406,
+        435.84796142578125
+      ],
+      "pdf_page": 3,
+      "region_id": "region-f07d0592b7cab0e66c27786b",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        82.71060180664062,
+        445.9169616699219,
+        411.8084716796875,
+        504.6369934082031
+      ],
+      "pdf_page": 3,
+      "region_id": "region-c273a03af4fd3365dfe0406c",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        54.31060028076172,
+        512.916015625,
+        442.7830505371094,
+        570.7659912109375
+      ],
+      "pdf_page": 3,
+      "region_id": "region-9850bb1030fa45c28e4c7bf9",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        222.85299682617188,
+        582.9089965820312,
+        270.82403564453125,
+        590.0069580078125
+      ],
+      "pdf_page": 3,
+      "region_id": "region-c03c7a29e6fe5ccd9ba23feb",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    },
+    {
+      "bbox": [
+        252.6143035888672,
+        620.2605590820312,
+        441.2749938964844,
+        645.0867309570312
+      ],
+      "pdf_page": 3,
+      "region_id": "region-89def35fde3eff0007c3f2f1",
+      "source_sha256": "837de508224d84240e98ea705169c538f6097793eff258058ff1f06a9d282111",
+      "source_reference": "/library/documents/5b631659-4153-5b07-bd19-0aa2351b5e72/source#page=3"
+    }
+  ]
+}

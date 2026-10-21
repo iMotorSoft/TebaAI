@@ -1,0 +1,664 @@
+{
+  "bad_region_hits": 0,
+  "method": "Authenticated /library/search, real PostgreSQL phrase and Milvus hybrid, no retrieval mocks.",
+  "results": [
+    {
+      "case": "A",
+      "phrase": [
+        {
+          "region_id": "region-b987f6d6e41f693b447c0b6d",
+          "page": 1,
+          "query_sha256": "7980ef5c5b623e51a90cf337d5920043bb11b9b769a8b33dada61e71e9349438",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        }
+      ],
+      "hybrid": []
+    },
+    {
+      "case": "B",
+      "phrase": [
+        {
+          "region_id": "region-2cf1c9ddd41267a7822a9630",
+          "page": 1,
+          "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        }
+      ],
+      "hybrid": []
+    },
+    {
+      "case": "C",
+      "phrase": [
+        {
+          "region_id": "region-148a10a56820652a1b3f6b84",
+          "page": 1,
+          "query_sha256": "7980ef5c5b623e51a90cf337d5920043bb11b9b769a8b33dada61e71e9349438",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-910cae72c2ac50b9c2129fe2",
+          "page": 1,
+          "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-a75d5f80647303e64c3039f1",
+          "page": 1,
+          "query_sha256": "548c1468be205862c373741d24ed4fa5eca76c5a66de3f49e47a401fcad88d0f",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        }
+      ],
+      "hybrid": []
+    },
+    {
+      "case": "D",
+      "phrase": [
+        {
+          "region_id": "region-c59ffc64b4e2dbd636ba9956",
+          "page": 1,
+          "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-c86272cd0e9e6c48aea767b7",
+          "page": 1,
+          "query_sha256": "7980ef5c5b623e51a90cf337d5920043bb11b9b769a8b33dada61e71e9349438",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-fded65f99595bb717e03ccdd",
+          "page": 1,
+          "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        }
+      ],
+      "hybrid": []
+    },
+    {
+      "case": "E",
+      "phrase": [
+        {
+          "region_id": "region-4dfe52a2e6b5d1ba6d493196",
+          "page": 1,
+          "query_sha256": "c171aa04683a3f7ac7060844882f75a7dd6398bef7eca8243a7c27c3a1ef0780",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-8cf29a1e0162fb048b5ed6fc",
+          "page": 1,
+          "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        }
+      ],
+      "hybrid": []
+    },
+    {
+      "case": "REAL",
+      "phrase": [
+        {
+          "region_id": "region-bbbd7163f16dc52c8acbe8da",
+          "page": 1,
+          "query_sha256": "9511073d906c193928deb2fc145f484a3c65f744e0cab9a8b3d6ced9139c86b4",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-53e46a7158d6f187117366e4",
+          "page": 1,
+          "query_sha256": "c15e7161ec342fa2a82382b894197e8a2dc21b29580d7aebca5f40af11a6a0b3",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-ef842b7b8b150ad74d27c4c8",
+          "page": 1,
+          "query_sha256": "b3df18107316cb6e1d48c7c82bdd5bba2705b17259fc86e0029e6ed44b6d4669",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-16b48267973f93981428575e",
+          "page": 1,
+          "query_sha256": "8ad0c6d5bbc02ed1c49d1f3e79d1cbfa37096811d3b615795dbb7abc49a913c4",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-ad30d73d8d786c427875fe2f",
+          "page": 1,
+          "query_sha256": "3fdc9f1ae253306d196d40f3a0883a55acd060ecec1d8e4da1e01f57ee0f4fde",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-15bd834fd44c987d3e7e38ee",
+          "page": 1,
+          "query_sha256": "b18934cb27123f4bccad4bab2d625bc5b70a3fee7d274117e7a069f26bd9dff3",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-8f5ebe2e0fcf88664a2c6a4e",
+          "page": 1,
+          "query_sha256": "38c267c18971de93e958f630aba15ec1332c2891897388bfc764a63d67df7f55",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-c5e0951692603f3533fcde20",
+          "page": 1,
+          "query_sha256": "b1d2c0838691c65658d89464b099dd482dbd1b8a5743a6523a0b059650cca0c1",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-4ff0d3f7dcd196f16a82c3d7",
+          "page": 1,
+          "query_sha256": "6e39680bde6fb0429c832f4387031baa937af16d462e197139a925bc1b385970",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-74b57fad8508d9c1d9fb7d4f",
+          "page": 1,
+          "query_sha256": "1ca52a7936c213f38d99594a999138e79e495e1958a649e0282738d2c8703706",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-505946d7c217d9d253e44960",
+          "page": 2,
+          "query_sha256": "175847c8289466c3b3a47ea456ddc90df18c135db7dfc696bf92383fdcb867f1",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-30b263f4acb4b7d0cf3932c8",
+          "page": 2,
+          "query_sha256": "3691948e41df0f48d1412ee80d8a0841b98c758d7e16b79961b2284a93812951",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-cbf531abe26526985c17d05c",
+          "page": 2,
+          "query_sha256": "c1140c2fa358f971de8a1e9eab53f0a05a32bd8601ea56ec1464f2d7124c49c0",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-eed8f08a422b64a710034f25",
+          "page": 2,
+          "query_sha256": "8ad0c6d5bbc02ed1c49d1f3e79d1cbfa37096811d3b615795dbb7abc49a913c4",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-10799c6fbd1181faed4e1755",
+          "page": 2,
+          "query_sha256": "295c8aacf53419df631645919ec19be657fbf757d6fbd5d489531eaebe0530a3",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-fb9cd712990367fa1a2a21b4",
+          "page": 2,
+          "query_sha256": "35c43b4d841131425a53ba59bd684b656c4aeea47562263cb616fcbbb9d5443b",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-a53f07b56f295ce6b624ab09",
+          "page": 2,
+          "query_sha256": "289436813e3c6451a08d7e31f47bd8dff35588f70da00b427fe1ca9ae2ad4dcc",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-2506271e14f50b6c70039956",
+          "page": 2,
+          "query_sha256": "450f9ce5e9f80be7702524ae57119b449aa966cd5e7c4661c2bb32cdb3b91c02",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-339bed4d97ad5b75f0d53bc1",
+          "page": 2,
+          "query_sha256": "b1d2c0838691c65658d89464b099dd482dbd1b8a5743a6523a0b059650cca0c1",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-57ae39f73bbd020dd7e5b71e",
+          "page": 2,
+          "query_sha256": "2dba09de9e444ec87d1cbf6f528110aed8dd8b1d91ecbf8167538767ba02538c",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-1524845d728cd7b921b6d4a8",
+          "page": 3,
+          "query_sha256": "90c065140f4c907f439b75bcc9272517f2f44a3de91fa2ecb050401e9a8b7fc4",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-27fc20c8450b093cf49207f6",
+          "page": 3,
+          "query_sha256": "e8d0a02efc411e27166dbc2b5773a02efe986774797d1b41369dd237e6143e86",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-37b070d74bbd27175ccbd7e3",
+          "page": 3,
+          "query_sha256": "e74d2b52b271e98450400cb60f72d53718f53ec39b8c5a5daab1cc791fc0d1da",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-acedabea7979dfa0298e4d18",
+          "page": 3,
+          "query_sha256": "fa36546cbae46f60e9ca9ba2c921459d65dab7415fe93b69a3c0f844f57f1a58",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-5f580145ad8ea4f53484ce08",
+          "page": 3,
+          "query_sha256": "8ad0c6d5bbc02ed1c49d1f3e79d1cbfa37096811d3b615795dbb7abc49a913c4",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-b5d7666c20aa7b03c7827f09",
+          "page": 3,
+          "query_sha256": "eb7d2b4b6d642e2c371187299c756317562ee4157d3c44cf04438116b9646297",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-c3e30f8ea3bda171b4c0bfaf",
+          "page": 3,
+          "query_sha256": "edc0453944c9ec0e9a743c0eedc0209cb9b60c0c73ee8ad5084e49f943d0527e",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-da64334f5717c9429cc3e17f",
+          "page": 3,
+          "query_sha256": "04d16580f87511d6289bcccc9f78ebc9adc5e8f81a758134ed8a442d8bab980b",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-f07d0592b7cab0e66c27786b",
+          "page": 3,
+          "query_sha256": "b8773d1bf9703345734369c06a95867f23b4f45845c59fe5c02a54400714528a",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-c273a03af4fd3365dfe0406c",
+          "page": 3,
+          "query_sha256": "3d9bf3c9383ae8728212363d2ff247df1595f23559a35f06e259d9ee7efc6fd2",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-9850bb1030fa45c28e4c7bf9",
+          "page": 3,
+          "query_sha256": "7ab472b3c0aaef911801f169140d9115c3ce25caa6d7b4ddfa731ed237a94f13",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-c03c7a29e6fe5ccd9ba23feb",
+          "page": 3,
+          "query_sha256": "b1d2c0838691c65658d89464b099dd482dbd1b8a5743a6523a0b059650cca0c1",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-89def35fde3eff0007c3f2f1",
+          "page": 3,
+          "query_sha256": "901b6fcfe1eef027d54890b8f755ee0c55c385cb3340a28cad557836eef38f9d",
+          "expected": "no quarantined unit",
+          "returned_hits": 0,
+          "quarantined_region_hits": 0
+        },
+        {
+          "region_id": "region-3966f836b4af769e75f15087",
+          "page": 1,
+          "expected": "accepted hit",
+          "query": "es _toda vez_ que se despierte con una nueva conciencia.",
+          "chunk_ids": [
+            "acb2342e-7ed3-5eed-b334-9aa5ad9ab2fb"
+          ],
+          "hit": true
+        },
+        {
+          "region_id": "region-524dccc828e94a7a86cbb0af",
+          "page": 2,
+          "expected": "accepted hit",
+          "query": "anteriormente, es imposible que la persona no haya hecho nunca algo bueno en su vida. Y debido a ese bien, tiene a HaShem delante de s",
+          "chunk_ids": [
+            "a396adb0-f80c-5460-a65d-8115ff160c90"
+          ],
+          "hit": true
+        },
+        {
+          "region_id": "region-cbfea71908b4b80f24173eb6",
+          "page": 3,
+          "expected": "accepted hit",
+          "query": "n en un nivel espiritual muy bajo y que se sienten muy distantes de",
+          "chunk_ids": [
+            "079063e0-39d4-5d6d-987f-eb82871464da"
+          ],
+          "hit": true
+        }
+      ],
+      "hybrid": [
+        {
+          "region_id": "region-3966f836b4af769e75f15087",
+          "query": "es _toda vez_ que se despierte con una nueva conciencia.",
+          "vector_signal_hits": 3,
+          "results": [
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "acb2342e-7ed3-5eed-b334-9aa5ad9ab2fb",
+              "chunk_index": 0,
+              "language": "es",
+              "page_start": 1,
+              "page_end": 1,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.7237,
+              "fts_rank": 298.0,
+              "vector_score": 0.4917,
+              "hybrid_score": 0.7237,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...de que uno despierte. Aun así, para el que está espiritualmente dormido, la “mañana” es _toda vez_ que se despierte con una nueva conciencia.",
+              "highlighted_excerpt": "...de que uno despierte. Aun así, para el que está espiritualmente dormido, la “mañana” <mark>es _toda vez_ que se despierte con una nueva conciencia.</mark>",
+              "content_length": 353
+            },
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "a396adb0-f80c-5460-a65d-8115ff160c90",
+              "chunk_index": 1,
+              "language": "es",
+              "page_start": 2,
+              "page_end": 2,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1636,
+              "fts_rank": null,
+              "vector_score": 0.3635,
+              "hybrid_score": 0.1636,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "> 33 Anteriormente hemos visto que el punto bueno de la persona es en sí mismo Divinidad (ver §2 más arriba). Por lo tanto, en un nivel más profundo, el encontrar y conectarse con el punto bueno conecta literalmente a la persona con HaShem. De este modo está claro cómo la glosa del Rama tiene la int",
+              "highlighted_excerpt": "&gt; 33 Anteriormente hemos visto que el punto bueno de la persona <mark>es en sí mismo Divinidad (ver §2 más arriba). Por lo tan</mark>to, en un nivel más profundo, el encontrar y conectarse con el punto bueno conecta literalmente a la persona con HaShem. De este modo está claro cómo ...",
+              "content_length": 629
+            },
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "079063e0-39d4-5d6d-987f-eb82871464da",
+              "chunk_index": 2,
+              "language": "es",
+              "page_start": 3,
+              "page_end": 3,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1368,
+              "fts_rank": null,
+              "vector_score": 0.3039,
+              "hybrid_score": 0.1368,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "> 35 Ver §1 más arriba. Escribe el Rabí Natán en otra instancia: El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción. Esto lo vemos de manera empírica. Escuchar música inspira el anhelo. Genera el deseo de una mayor cercanía con HaShem, incluso en ",
+              "highlighted_excerpt": "&gt; 35 Ver §1 más arriba. <mark>Escribe el Rabí Natán en otra instancia: El hombre se un</mark>e a HaShem desde este mundo físico principalmente a través de la melodía y de la canción. Esto lo vemos de manera empírica. Escuchar música inspira el...",
+              "content_length": 414
+            }
+          ]
+        },
+        {
+          "region_id": "region-524dccc828e94a7a86cbb0af",
+          "query": "anteriormente, es imposible que la persona no haya hecho nunca algo bueno en su vida. Y debido a ese bien, tiene a HaShem delante de s",
+          "vector_signal_hits": 3,
+          "results": [
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "a396adb0-f80c-5460-a65d-8115ff160c90",
+              "chunk_index": 1,
+              "language": "es",
+              "page_start": 2,
+              "page_end": 2,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.7431,
+              "fts_rank": 485.0,
+              "vector_score": 0.621,
+              "hybrid_score": 0.7431,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...punto bueno, que es algo que posee todo judío - pues, como se explicó anteriormente, es imposible que la persona no haya hecho nunca algo bueno en su vida. Y debido a ese bien, tiene a HaShem delante de sí, siempre.",
+              "highlighted_excerpt": "...punto bueno, que es algo que posee todo judío - pues, como se explicó <mark>anteriormente, es imposible que la persona no haya hecho nunca algo bueno en su vida. Y debido a ese bien, tiene a HaShem delante de s</mark>í, siempre.",
+              "content_length": 629
+            },
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "079063e0-39d4-5d6d-987f-eb82871464da",
+              "chunk_index": 2,
+              "language": "es",
+              "page_start": 3,
+              "page_end": 3,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1941,
+              "fts_rank": null,
+              "vector_score": 0.4313,
+              "hybrid_score": 0.1941,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "> 35 Ver §1 más arriba. Escribe el Rabí Natán en otra instancia: El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción. Esto lo vemos de manera empírica. Escuchar música inspira el anhelo. Genera el deseo de una mayor cercanía con HaShem, incluso en ",
+              "highlighted_excerpt": "&gt; 35 Ver §1 más arriba. Escribe el Rabí Natán en otra instancia: El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción. Esto lo vemos de manera empírica. Escuchar música inspira el anhelo. Genera el deseo de una mayor cercanía con HaShem, incluso en ",
+              "content_length": 414
+            },
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "acb2342e-7ed3-5eed-b334-9aa5ad9ab2fb",
+              "chunk_index": 0,
+              "language": "es",
+              "page_start": 1,
+              "page_end": 1,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1355,
+              "fts_rank": null,
+              "vector_score": 0.3011,
+              "hybrid_score": 0.1355,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "> 30 A partir del _Shuljan Aruj_ vemos que el momento más auspicioso para levantarse de dormir es en las horas más profunda de la mañana, para que “sea uno quien despierte el alba” y no que el día comience antes de que uno despierte. Aun así, para el que está espiritualmente dormido, la “mañana” es ",
+              "highlighted_excerpt": "&gt; 30 A partir del _Shuljan Aruj_ vemos que el momento más auspicioso para levantarse de dormir es en las horas más profunda de la mañana, para que “sea uno quien despierte el alba” y no que el día comience antes de que uno despierte. Aun así, para el que está espiritualmente dormido, la “mañana” es ",
+              "content_length": 353
+            }
+          ]
+        },
+        {
+          "region_id": "region-cbfea71908b4b80f24173eb6",
+          "query": "n en un nivel espiritual muy bajo y que se sienten muy distantes de",
+          "vector_signal_hits": 3,
+          "results": [
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "079063e0-39d4-5d6d-987f-eb82871464da",
+              "chunk_index": 2,
+              "language": "es",
+              "page_start": 3,
+              "page_end": 3,
+              "chapter": null,
+              "section": null,
+              "match_type": "hybrid",
+              "rank": 0.7138,
+              "fts_rank": 318.0,
+              "vector_score": 0.4251,
+              "hybrid_score": 0.7138,
+              "source_signals": [
+                "fts",
+                "vector"
+              ],
+              "plain_excerpt": "...anhelo. Genera el deseo de una mayor cercanía con HaShem, incluso en aquellos que están en un nivel espiritual muy bajo y que se sienten muy distantes de Él (LH, _Nesiat Kapaim_ 5:6).",
+              "highlighted_excerpt": "...anhelo. Genera el deseo de una mayor cercanía con HaShem, incluso en aquellos que está<mark>n en un nivel espiritual muy bajo y que se sienten muy distantes de</mark> Él (LH, _Nesiat Kapaim_ 5:6).",
+              "content_length": 414
+            },
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "a396adb0-f80c-5460-a65d-8115ff160c90",
+              "chunk_index": 1,
+              "language": "es",
+              "page_start": 2,
+              "page_end": 2,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1545,
+              "fts_rank": null,
+              "vector_score": 0.3434,
+              "hybrid_score": 0.1545,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "> 33 Anteriormente hemos visto que el punto bueno de la persona es en sí mismo Divinidad (ver §2 más arriba). Por lo tanto, en un nivel más profundo, el encontrar y conectarse con el punto bueno conecta literalmente a la persona con HaShem. De este modo está claro cómo la glosa del Rama tiene la int",
+              "highlighted_excerpt": "&gt; 33 A<mark>nteriormente hemos visto que el punto bueno de la persona es en sí </mark>mismo Divinidad (ver §2 más arriba). Por lo tanto, en un nivel más profundo, el encontrar y conectarse con el punto bueno conecta literalmente a la pe...",
+              "content_length": 629
+            },
+            {
+              "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+              "document_title": "region-quarantine-worker-e2e-v1-REAL",
+              "author": null,
+              "knowledge_scope_code": "breslov_e2e",
+              "chunk_id": "acb2342e-7ed3-5eed-b334-9aa5ad9ab2fb",
+              "chunk_index": 0,
+              "language": "es",
+              "page_start": 1,
+              "page_end": 1,
+              "chapter": null,
+              "section": null,
+              "match_type": "vector",
+              "rank": 0.1119,
+              "fts_rank": null,
+              "vector_score": 0.2486,
+              "hybrid_score": 0.1119,
+              "source_signals": [
+                "vector"
+              ],
+              "plain_excerpt": "> 30 A partir del _Shuljan Aruj_ vemos que el momento más auspicioso para levantarse de dormir es en las horas más profunda de la mañana, para que “sea uno quien despierte el alba” y no que el día comience antes de que uno despierte. Aun así, para el que está espiritualmente dormido, la “mañana” es ",
+              "highlighted_excerpt": "&gt; 30 A partir del _Shulja<mark>n Aruj_ vemos que el momento más auspicioso para levantarse de dorm</mark>ir es en las horas más profunda de la mañana, para que “sea uno quien despierte el alba” y no que el día comience antes de que uno despierte. Aun así,...",
+              "content_length": 353
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "accepted_real_region_queries_pass": true,
+  "accepted_real_hybrid_vector_signals": [
+    3,
+    3,
+    3
+  ],
+  "query_limitations": "Negative query ownership is checked against quarantined region IDs; shared fragments would not prove a leak. Raw full accented phrase probes from attempt-2 missed because existing phrase query unaccents query but not stored normalized text. Final ASCII substring selection was frozen before final run; no search normalization/quality tuning."
+}

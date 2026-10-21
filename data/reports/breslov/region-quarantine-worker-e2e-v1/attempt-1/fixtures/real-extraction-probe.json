@@ -1,0 +1,1170 @@
+[
+  {
+    "publication_version": "region-publication-v1",
+    "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+    "pdf_page": 1,
+    "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+    "page_status": "PARTIAL",
+    "contains_quarantined_regions": true,
+    "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+    "regions": [
+      {
+        "region_id": "region-461f0bcbe6226f3db055bd02",
+        "bbox": [
+          193.85589599609375,
+          45.43232727050781,
+          439.26385498046875,
+          53.840328216552734
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "LAYOUT_UNSUPPORTED"
+        ],
+        "candidate_sha256": "9734c8e52c5212548ffb60f4ac607b02b234fd2a039206f9f9e71e00432da752",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-461f0bcbe6226f3db055bd02",
+          "bbox": [
+            193.85589599609375,
+            45.43232727050781,
+            439.26385498046875,
+            53.840328216552734
+          ]
+        }
+      },
+      {
+        "region_id": "region-0bed39f271cef0c5432280b4",
+        "bbox": [
+          53.858299255371094,
+          47.827545166015625,
+          132.79428100585938,
+          54.539546966552734
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "LAYOUT_UNSUPPORTED"
+        ],
+        "candidate_sha256": "463808d2a376e62b98f04786a0d827277742c0f81c2448273d702c525002df28",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-0bed39f271cef0c5432280b4",
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            132.79428100585938,
+            54.539546966552734
+          ]
+        }
+      },
+      {
+        "region_id": "region-3fe21ad61249f866ae67d359",
+        "bbox": [
+          52.05072021484375,
+          69.73515319824219,
+          439.82525634765625,
+          205.67884826660156
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "DIRECTION_UNRESOLVED",
+          "INVALID_UNICODE_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING",
+          "OWNERSHIP_PROOF_MISSING",
+          "ORDER_PROOF_MISSING",
+          "BOUNDARY_PROOF_MISSING"
+        ],
+        "candidate_sha256": "ad5e3d4a005a355ede9134cd3a98a3cbdbcf976b84859aee97944684245629ac",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-3fe21ad61249f866ae67d359",
+          "bbox": [
+            52.05072021484375,
+            69.73515319824219,
+            439.82525634765625,
+            205.67884826660156
+          ]
+        }
+      },
+      {
+        "region_id": "region-982a2831fc8809794d1ed538",
+        "bbox": [
+          207.0399932861328,
+          222.5099639892578,
+          286.188232421875,
+          230.5679931640625
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "INVALID_UNICODE_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING"
+        ],
+        "candidate_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-982a2831fc8809794d1ed538",
+          "bbox": [
+            207.0399932861328,
+            222.5099639892578,
+            286.188232421875,
+            230.5679931640625
+          ]
+        }
+      },
+      {
+        "region_id": "region-91038d1e3c6628e9ef7a9ae1",
+        "bbox": [
+          53.858299255371094,
+          243.72596740722656,
+          442.3342590332031,
+          265.8759765625
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "82c6452070d1299751c3c155d85ba8fe923cabb9282afdb8412f4e14a61014da",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-91038d1e3c6628e9ef7a9ae1",
+          "bbox": [
+            53.858299255371094,
+            243.72596740722656,
+            442.3342590332031,
+            265.8759765625
+          ]
+        }
+      },
+      {
+        "region_id": "region-32e4950f7a6f1cd8391092e2",
+        "bbox": [
+          53.85821533203125,
+          270.5599365234375,
+          442.3302917480469,
+          400.699951171875
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "73a3e26266c01b1505162f98f4b8416b9deb1f343516196692986bd1c1b2d921",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-32e4950f7a6f1cd8391092e2",
+          "bbox": [
+            53.85821533203125,
+            270.5599365234375,
+            442.3302917480469,
+            400.699951171875
+          ]
+        }
+      },
+      {
+        "region_id": "region-a9c4fd1ad99989dd2cf3fb68",
+        "bbox": [
+          53.858001708984375,
+          405.2749328613281,
+          442.3331298828125,
+          488.1349792480469
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "9d677beb206f24f5f63987c6ae32476a065843bccc2a3c5ab728aa1daf53169c",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-a9c4fd1ad99989dd2cf3fb68",
+          "bbox": [
+            53.858001708984375,
+            405.2749328613281,
+            442.3331298828125,
+            488.1349792480469
+          ]
+        }
+      },
+      {
+        "region_id": "region-34da60caa204f1460237f10b",
+        "bbox": [
+          223.33799743652344,
+          528.4830932617188,
+          271.30902099609375,
+          535.5819702148438
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "INVALID_UNICODE_REPLACEMENT",
+          "NATIVE_TO_LAYOUT_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING"
+        ],
+        "candidate_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-34da60caa204f1460237f10b",
+          "bbox": [
+            223.33799743652344,
+            528.4830932617188,
+            271.30902099609375,
+            535.5819702148438
+          ]
+        }
+      },
+      {
+        "region_id": "region-41a6a32f1319dd845436802c",
+        "bbox": [
+          53.85829162597656,
+          549.3545532226562,
+          242.5216064453125,
+          601.1660766601562
+        ],
+        "quality_status": "ACCEPTED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "ACCEPTED",
+        "reason_codes": [
+          "CANONICAL_NATIVE_ORDER_PROVEN"
+        ],
+        "candidate_sha256": "c1607c724afe94f507cd6787456320c8557c16450d3c38172b95bf803405a83a",
+        "textually_citable": true,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-41a6a32f1319dd845436802c",
+          "bbox": [
+            53.85829162597656,
+            549.3545532226562,
+            242.5216064453125,
+            601.1660766601562
+          ]
+        }
+      },
+      {
+        "region_id": "region-ab1561434ee03034fd518c4b",
+        "bbox": [
+          53.85829162597656,
+          549.3477783203125,
+          441.26898193359375,
+          646.1807250976562
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CANONICAL_NATIVE_ORDER_PROVEN",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "ad8f7ff6a18864bddbcb9ddc0cae02a7e29c72a327306211d497fdb91471866c",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-ab1561434ee03034fd518c4b",
+          "bbox": [
+            53.85829162597656,
+            549.3477783203125,
+            441.26898193359375,
+            646.1807250976562
+          ]
+        }
+      },
+      {
+        "region_id": "region-8b9f39838ab17aedacea18ef",
+        "bbox": [
+          252.61428833007812,
+          585.3477783203125,
+          441.27337646484375,
+          637.1739501953125
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+          "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+        ],
+        "candidate_sha256": "40a8ab72c683f496082e189872c104ef4c7e415ef028ff9e298250546c535509",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 1,
+          "region_id": "region-8b9f39838ab17aedacea18ef",
+          "bbox": [
+            252.61428833007812,
+            585.3477783203125,
+            441.27337646484375,
+            637.1739501953125
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "publication_version": "region-publication-v1",
+    "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+    "pdf_page": 2,
+    "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+    "page_status": "PARTIAL",
+    "contains_quarantined_regions": true,
+    "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+    "regions": [
+      {
+        "region_id": "region-98e79f3678e8c0862ea0fcf7",
+        "bbox": [
+          375.5740051269531,
+          46.17702102661133,
+          444.3479919433594,
+          55.95378112792969
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "DIRECTION_UNRESOLVED",
+          "INVALID_UNICODE_REPLACEMENT",
+          "LAYOUT_UNSUPPORTED"
+        ],
+        "candidate_sha256": "c5ddd42863414c7c900e1795748677d2571421cdc4c2a9704706475a1df3a222",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-98e79f3678e8c0862ea0fcf7",
+          "bbox": [
+            375.5740051269531,
+            46.17702102661133,
+            444.3479919433594,
+            55.95378112792969
+          ]
+        }
+      },
+      {
+        "region_id": "region-ff37d68697564894111653c1",
+        "bbox": [
+          24.1653995513916,
+          46.27225875854492,
+          159.3419952392578,
+          55.764259338378906
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "INVALID_UNICODE_REPLACEMENT",
+          "LAYOUT_UNSUPPORTED"
+        ],
+        "candidate_sha256": "5d7eae2dfca58e09a7571f5419fe2eca653308cb43542fdd6a8335673d744ebb",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-ff37d68697564894111653c1",
+          "bbox": [
+            24.1653995513916,
+            46.27225875854492,
+            159.3419952392578,
+            55.764259338378906
+          ]
+        }
+      },
+      {
+        "region_id": "region-4f21db83173c744a215a511b",
+        "bbox": [
+          54.270198822021484,
+          69.71348571777344,
+          442.0448913574219,
+          160.8320770263672
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "DIRECTION_UNRESOLVED",
+          "INVALID_UNICODE_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING",
+          "ORDER_PROOF_MISSING"
+        ],
+        "candidate_sha256": "5b83d5c6f7f3edd8963d5325db5ea443893b6463eccfeacfd4897a91b4c830ed",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-4f21db83173c744a215a511b",
+          "bbox": [
+            54.270198822021484,
+            69.71348571777344,
+            442.0448913574219,
+            160.8320770263672
+          ]
+        }
+      },
+      {
+        "region_id": "region-2777aa93bbac92e45132388f",
+        "bbox": [
+          209.875,
+          177.6909637451172,
+          289.0232238769531,
+          185.74798583984375
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "INVALID_UNICODE_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING"
+        ],
+        "candidate_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-2777aa93bbac92e45132388f",
+          "bbox": [
+            209.875,
+            177.6909637451172,
+            289.0232238769531,
+            185.74798583984375
+          ]
+        }
+      },
+      {
+        "region_id": "region-5442720b8a8c8d8d4e38905c",
+        "bbox": [
+          85.09249877929688,
+          199.7482147216797,
+          414.18853759765625,
+          269.7882080078125
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "c053891b74c5e8919bd1b107397d708b2f657a9fe41a404261556c8ec223ed01",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-5442720b8a8c8d8d4e38905c",
+          "bbox": [
+            85.09249877929688,
+            199.7482147216797,
+            414.18853759765625,
+            269.7882080078125
+          ]
+        }
+      },
+      {
+        "region_id": "region-e16c261de6f79918a2b88c07",
+        "bbox": [
+          56.691986083984375,
+          275.45697021484375,
+          445.1639404296875,
+          383.39697265625
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "2cd38398c01085e989e64603d58771a00233f18aac83e5efc894dd066331ca02",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-e16c261de6f79918a2b88c07",
+          "bbox": [
+            56.691986083984375,
+            275.45697021484375,
+            445.1639404296875,
+            383.39697265625
+          ]
+        }
+      },
+      {
+        "region_id": "region-7dd0caf766db62e386d2e502",
+        "bbox": [
+          85.09290313720703,
+          391.0859680175781,
+          414.18280029296875,
+          413.8559875488281
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "e59bd3a855a209ef358f3c1e4e855ced7df0114f22ff90a8d8f8e55a43baff1e",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-7dd0caf766db62e386d2e502",
+          "bbox": [
+            85.09290313720703,
+            391.0859680175781,
+            414.18280029296875,
+            413.8559875488281
+          ]
+        }
+      },
+      {
+        "region_id": "region-e7029dd7a05c55499b7d4e29",
+        "bbox": [
+          56.69285583496094,
+          422.0849914550781,
+          445.1599426269531,
+          539.93505859375
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "OWNERSHIP_PROOF_MISSING",
+          "ORDER_PROOF_MISSING",
+          "BOUNDARY_PROOF_MISSING"
+        ],
+        "candidate_sha256": "ddd861658e6da5e29b383dbccb5a140d3b9dbe490fa90a0d07644b86893a6a23",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-e7029dd7a05c55499b7d4e29",
+          "bbox": [
+            56.69285583496094,
+            422.0849914550781,
+            445.1599426269531,
+            539.93505859375
+          ]
+        }
+      },
+      {
+        "region_id": "region-9aca20d62c58b2e17345114f",
+        "bbox": [
+          226.4149932861328,
+          555.2809448242188,
+          274.38604736328125,
+          562.3800048828125
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "INVALID_UNICODE_REPLACEMENT",
+          "NATIVE_TO_LAYOUT_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING"
+        ],
+        "candidate_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-9aca20d62c58b2e17345114f",
+          "bbox": [
+            226.4149932861328,
+            555.2809448242188,
+            274.38604736328125,
+            562.3800048828125
+          ]
+        }
+      },
+      {
+        "region_id": "region-6791582efd5ddacf1147b7d8",
+        "bbox": [
+          56.692901611328125,
+          576.5595703125,
+          444.1000061035156,
+          646.3857421875
+        ],
+        "quality_status": "ACCEPTED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "ACCEPTED",
+        "reason_codes": [
+          "CANONICAL_NATIVE_ORDER_PROVEN"
+        ],
+        "candidate_sha256": "4c53dea579080a7b56ce00a00b514edede5058ec46cb32e8a96614fbbf8ecd36",
+        "textually_citable": true,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-6791582efd5ddacf1147b7d8",
+          "bbox": [
+            56.692901611328125,
+            576.5595703125,
+            444.1000061035156,
+            646.3857421875
+          ]
+        }
+      },
+      {
+        "region_id": "region-0ada41ccc536bec09d89feb3",
+        "bbox": [
+          255.4488983154297,
+          603.5595703125,
+          444.1214599609375,
+          644.86962890625
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+          "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+        ],
+        "candidate_sha256": "0d8dc9c195d233dcbb18a707821ee89d289fedcc5f5a7a74c8e115be848e2512",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 2,
+          "region_id": "region-0ada41ccc536bec09d89feb3",
+          "bbox": [
+            255.4488983154297,
+            603.5595703125,
+            444.1214599609375,
+            644.86962890625
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "publication_version": "region-publication-v1",
+    "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+    "pdf_page": 3,
+    "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+    "page_status": "PARTIAL",
+    "contains_quarantined_regions": true,
+    "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+    "regions": [
+      {
+        "region_id": "region-1225d41bb21e8d44db553602",
+        "bbox": [
+          193.85589599609375,
+          45.43232727050781,
+          439.26385498046875,
+          53.840328216552734
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "LAYOUT_UNSUPPORTED"
+        ],
+        "candidate_sha256": "52f47405a289c436b8f12afc1c6bcfc4d1ec303e91c073f9bbab3307cfa1d3ed",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-1225d41bb21e8d44db553602",
+          "bbox": [
+            193.85589599609375,
+            45.43232727050781,
+            439.26385498046875,
+            53.840328216552734
+          ]
+        }
+      },
+      {
+        "region_id": "region-39ef4739efcf5d16bb2438e1",
+        "bbox": [
+          53.858299255371094,
+          47.827545166015625,
+          132.79428100585938,
+          54.539546966552734
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "LAYOUT_UNSUPPORTED"
+        ],
+        "candidate_sha256": "8650a81f351d1ac8ca113bf137a88f745d5a93c7bf20c3aae9a75197f59e16ee",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-39ef4739efcf5d16bb2438e1",
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            132.79428100585938,
+            54.539546966552734
+          ]
+        }
+      },
+      {
+        "region_id": "region-6d7c896e97488604d39b3b61",
+        "bbox": [
+          51.4312744140625,
+          69.15605163574219,
+          439.15802001953125,
+          95.5026626586914
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "DIRECTION_UNRESOLVED",
+          "INVALID_UNICODE_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING",
+          "ORDER_PROOF_MISSING"
+        ],
+        "candidate_sha256": "6e1c4a0b1b07644ec80b0779d84560916dbeba283617757e2de90cafc96c7d8d",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-6d7c896e97488604d39b3b61",
+          "bbox": [
+            51.4312744140625,
+            69.15605163574219,
+            439.15802001953125,
+            95.5026626586914
+          ]
+        }
+      },
+      {
+        "region_id": "region-a0204c4830bcbe4c10706aaf",
+        "bbox": [
+          51.4189453125,
+          97.07707214355469,
+          439.1677551269531,
+          215.4178009033203
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "DIRECTION_UNRESOLVED",
+          "INVALID_UNICODE_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING",
+          "OWNERSHIP_PROOF_MISSING",
+          "ORDER_PROOF_MISSING",
+          "BOUNDARY_PROOF_MISSING"
+        ],
+        "candidate_sha256": "55df9ec2be5d830bce36978e8d9a18716d90af8911dee3cc6587e32f13219b7f",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-a0204c4830bcbe4c10706aaf",
+          "bbox": [
+            51.4189453125,
+            97.07707214355469,
+            439.1677551269531,
+            215.4178009033203
+          ]
+        }
+      },
+      {
+        "region_id": "region-b828894376f802cd8dc45f02",
+        "bbox": [
+          207.04100036621094,
+          232.1039581298828,
+          286.1892395019531,
+          240.1619873046875
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "INVALID_UNICODE_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING"
+        ],
+        "candidate_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-b828894376f802cd8dc45f02",
+          "bbox": [
+            207.04100036621094,
+            232.1039581298828,
+            286.1892395019531,
+            240.1619873046875
+          ]
+        }
+      },
+      {
+        "region_id": "region-13cb1b2a95a4f3509e7b9f1b",
+        "bbox": [
+          359.05499267578125,
+          252.96299743652344,
+          437.7509765625,
+          336.81903076171875
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "ZONE_UNRESOLVED",
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "BODY_ZONE_PROOF_MISSING"
+        ],
+        "candidate_sha256": "6a7ad484d12bcf0ae0d224dcd5eaca9b39090f5fff78dea69d901d58f0fcfc3e",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-13cb1b2a95a4f3509e7b9f1b",
+          "bbox": [
+            359.05499267578125,
+            252.96299743652344,
+            437.7509765625,
+            336.81903076171875
+          ]
+        }
+      },
+      {
+        "region_id": "region-9b01aefd99b123916a4ea87e",
+        "bbox": [
+          54.310821533203125,
+          255.99655151367188,
+          353.5118103027344,
+          338.1929626464844
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "007691a505d22331339659d6be7893720036f5bd3df2815c3757e3171b1c81b2",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-9b01aefd99b123916a4ea87e",
+          "bbox": [
+            54.310821533203125,
+            255.99655151367188,
+            353.5118103027344,
+            338.1929626464844
+          ]
+        }
+      },
+      {
+        "region_id": "region-0c86ae8d53b908d4aec86a4e",
+        "bbox": [
+          54.31080627441406,
+          342.887939453125,
+          442.7868347167969,
+          413.0279541015625
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "9cb9646a6910ea1803aa7213f70af62500f6edf5b2ff1439623f47b44d4e6e48",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-0c86ae8d53b908d4aec86a4e",
+          "bbox": [
+            54.31080627441406,
+            342.887939453125,
+            442.7868347167969,
+            413.0279541015625
+          ]
+        }
+      },
+      {
+        "region_id": "region-0e6edaeef1e78323d8063591",
+        "bbox": [
+          54.31080627441406,
+          426.2979736328125,
+          196.86061096191406,
+          435.84796142578125
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "LAYOUT_UNSUPPORTED"
+        ],
+        "candidate_sha256": "5f25c67f774b9eaf6667f6dc67a707698f6bcae270b40a5491a9a08e534590b0",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-0e6edaeef1e78323d8063591",
+          "bbox": [
+            54.31080627441406,
+            426.2979736328125,
+            196.86061096191406,
+            435.84796142578125
+          ]
+        }
+      },
+      {
+        "region_id": "region-1b064f684fe253c1bacaa119",
+        "bbox": [
+          82.71060180664062,
+          445.9169616699219,
+          411.8084716796875,
+          504.6369934082031
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "d842b1b197782a9492235eebb0c51dc7a729626bf780a692244072fe4094cee4",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-1b064f684fe253c1bacaa119",
+          "bbox": [
+            82.71060180664062,
+            445.9169616699219,
+            411.8084716796875,
+            504.6369934082031
+          ]
+        }
+      },
+      {
+        "region_id": "region-2463898a9fc6f085182621b7",
+        "bbox": [
+          54.31060028076172,
+          512.916015625,
+          442.7830505371094,
+          570.7659912109375
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CENTERED_EDITORIAL_CAPTION",
+          "MAIN_CONTENT_BAND",
+          "EXPLICIT_NOTES_BOUNDARY",
+          "ALL_BODY_PROOFS_PRESENT",
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "OWNERSHIP_CERTIFICATE_MISMATCH"
+        ],
+        "candidate_sha256": "e3bcb6f91985837ad563c6f40a0561c459fa874c3913251eb0b1afd12efe8be8",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-2463898a9fc6f085182621b7",
+          "bbox": [
+            54.31060028076172,
+            512.916015625,
+            442.7830505371094,
+            570.7659912109375
+          ]
+        }
+      },
+      {
+        "region_id": "region-6de48a5205c036faae05e7d8",
+        "bbox": [
+          222.85299682617188,
+          582.9089965820312,
+          270.82403564453125,
+          590.0069580078125
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "INVALID_UNICODE_REPLACEMENT",
+          "NATIVE_TO_LAYOUT_REPLACEMENT",
+          "BODY_ZONE_PROOF_MISSING"
+        ],
+        "candidate_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-6de48a5205c036faae05e7d8",
+          "bbox": [
+            222.85299682617188,
+            582.9089965820312,
+            270.82403564453125,
+            590.0069580078125
+          ]
+        }
+      },
+      {
+        "region_id": "region-f4284ec532dad6a2703e5430",
+        "bbox": [
+          53.858299255371094,
+          602.2568969726562,
+          441.2676696777344,
+          645.0867309570312
+        ],
+        "quality_status": "ACCEPTED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "ACCEPTED",
+        "reason_codes": [
+          "CANONICAL_NATIVE_ORDER_PROVEN"
+        ],
+        "candidate_sha256": "e19eeb2613566867a3ccd28b503ca10b5d679fe2b92ac946db40e0f6dc3792cf",
+        "textually_citable": true,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-f4284ec532dad6a2703e5430",
+          "bbox": [
+            53.858299255371094,
+            602.2568969726562,
+            441.2676696777344,
+            645.0867309570312
+          ]
+        }
+      },
+      {
+        "region_id": "region-e84a52399b391eca78b8d273",
+        "bbox": [
+          252.6143035888672,
+          620.2605590820312,
+          441.2749938964844,
+          645.0867309570312
+        ],
+        "quality_status": "UNRESOLVED",
+        "provenance_status": "UNRESOLVED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+          "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+        ],
+        "candidate_sha256": "21b21690d0d5ac06f2260bf3432a39ed62514618ddc78cfde988c326825e3e0b",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "sha256:942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "source_sha256": "942283fa5393859f461de35cd0afeb2e7957809fc3122ff895aba14c43fb92d6",
+          "pdf_page": 3,
+          "region_id": "region-e84a52399b391eca78b8d273",
+          "bbox": [
+            252.6143035888672,
+            620.2605590820312,
+            441.2749938964844,
+            645.0867309570312
+          ]
+        }
+      }
+    ]
+  }
+]

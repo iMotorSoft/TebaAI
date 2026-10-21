@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend
+configfile: pyproject.toml
+plugins: anyio-4.14.0, asyncio-1.4.0, Faker-40.23.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 248 items
+
+tests/test_region_publication.py .....................                   [  8%]
+tests/test_region_worker_enforcement.py ............                     [ 13%]
+tests/test_region_source_access.py ...                                   [ 14%]
+tests/test_page_first_pipeline.py .............                          [ 19%]
+tests/test_content_manager_orchestration.py ............................ [ 31%]
+.............                                                            [ 36%]
+tests/test_content_manager_cleanup.py .......                            [ 39%]
+tests/test_content_manager_upload_security.py ...                        [ 40%]
+tests/test_content_manager_e2e_isolation.py .......                      [ 43%]
+tests/test_content_manager_publication.py ..                             [ 43%]
+tests/test_page_first_evidence.py ...........................            [ 54%]
+tests/test_simple_research_rag.py ...................................... [ 70%]
+...................................................                      [ 90%]
+tests/test_pdf_hebrew_fidelity.py .......................                [100%]
+
+=============================== warnings summary ===============================
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+tests/test_region_source_access.py::test_source_route_refuses_arbitrary_filesystem_path
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/source', handler='library_original_source'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'page' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 248 passed, 4 warnings in 4.97s ========================

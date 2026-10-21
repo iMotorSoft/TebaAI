@@ -1,0 +1,5 @@
+{
+  "bad_region_chunks": 0,
+  "published_chunks": 3,
+  "evidence": "Actual PostgreSQL rows; every chunk region belongs to persisted ACCEPTED publication; real worker manifest reconciled."
+}

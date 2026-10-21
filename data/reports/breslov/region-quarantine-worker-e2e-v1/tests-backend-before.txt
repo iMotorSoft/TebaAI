@@ -1,0 +1,616 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.14.0, asyncio-1.4.0, Faker-40.23.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 1931 items
+
+tests/test_ai_model_routing.py .                                         [  0%]
+tests/test_ai_note_continuity_analyzer.py .                              [  0%]
+tests/test_annotation_preseal_validation.py .......                      [  0%]
+tests/test_apply_markdown_structural_chunks.py ...........               [  1%]
+tests/test_auth_dependencies.py .....                                    [  1%]
+tests/test_auth_password.py ........                                     [  1%]
+tests/test_auth_service.py ...............                               [  2%]
+tests/test_auth_tokens.py .........                                      [  2%]
+tests/test_auto_vector_backend.py .                                      [  3%]
+tests/test_automatic_region_certification.py ........................... [  4%]
+.                                                                        [  4%]
+tests/test_automatic_region_certification_v2.py ........................ [  5%]
+...                                                                      [  5%]
+tests/test_automatic_region_certification_v3.py ........................ [  7%]
+....                                                                     [  7%]
+tests/test_automatic_region_certification_v4.py ...........              [  7%]
+tests/test_automatic_region_certification_v5.py .....                    [  8%]
+tests/test_bibliographic_planner.py .................................... [  9%]
+.                                                                        [ 10%]
+tests/test_bibliographic_structure_audit.py .............                [ 10%]
+tests/test_book_qa_v2_comprehension_http.py ......                       [ 11%]
+tests/test_book_qa_v2_discovery_http.py .......                          [ 11%]
+tests/test_book_qa_v2_http.py .....                                      [ 11%]
+tests/test_breslov_corpus_scope_integrity_v1.py ...                      [ 11%]
+tests/test_breslov_lemma_layer_analysis.py ...............               [ 12%]
+tests/test_breslov_test_hybrid_integrity.py ..........                   [ 13%]
+tests/test_canonical_document_model_inventory.py .........               [ 13%]
+tests/test_canonical_editorial_evidence_selection.py ................... [ 14%]
+..                                                                       [ 14%]
+tests/test_canonical_work_edition_source_metadata.py ................... [ 15%]
+........                                                                 [ 16%]
+tests/test_citation_format.py ........                                   [ 16%]
+tests/test_compare_chunking_strategies.py .............................. [ 18%]
+........                                                                 [ 18%]
+tests/test_config.py ................................................... [ 21%]
+.                                                                        [ 21%]
+tests/test_consumer_region_certificates_v5.py ........                   [ 21%]
+tests/test_content_manager_cleanup.py .......                            [ 21%]
+tests/test_content_manager_document_views.py .......                     [ 22%]
+tests/test_content_manager_e2e_isolation.py .......                      [ 22%]
+tests/test_content_manager_orchestration.py ............................ [ 24%]
+.............                                                            [ 24%]
+tests/test_content_manager_publication.py ..                             [ 24%]
+tests/test_content_manager_upload_security.py ...                        [ 25%]
+tests/test_conversation_analyzer.py ...........................          [ 26%]
+tests/test_corpus_v2_integrity.py ..........                             [ 26%]
+tests/test_cross_corpus_potencia_qa.py ..                                [ 27%]
+tests/test_dev_content_reset.py ..............                           [ 27%]
+tests/test_editorial_evidence_granularity_v1.py ............             [ 28%]
+tests/test_editorial_evidence_v2.py .................................... [ 30%]
+                                                                         [ 30%]
+tests/test_editorial_source_layer.py ..........................          [ 31%]
+tests/test_enrich_chunk_page_metadata.py .......                         [ 31%]
+tests/test_evaluation.py .....................                           [ 33%]
+tests/test_global_var.py ...........                                     [ 33%]
+tests/test_globalvar_embeddings_config.py ...........                    [ 34%]
+tests/test_globalvar_postgres_config.py ................................ [ 35%]
+................                                                         [ 36%]
+tests/test_hebrew_fts_builder.py .................                       [ 37%]
+tests/test_hebrew_lexical_normalizer.py ................................ [ 39%]
+....................                                                     [ 40%]
+tests/test_hebrew_pipeline_contract.py ............                      [ 40%]
+tests/test_hebrew_tex_decoder.py ....................................... [ 42%]
+.......                                                                  [ 43%]
+tests/test_hybrid_breslov_test_isolation.py .........                    [ 43%]
+tests/test_index_breslov_test_markdown_chunks_milvus.py ........         [ 44%]
+tests/test_infrastructure_postgres.py .........................          [ 45%]
+tests/test_ingest_test_candidate.py ............                         [ 46%]
+tests/test_ingest_test_candidate_books.py ..........                     [ 46%]
+tests/test_investigative_model.py .....                                  [ 46%]
+tests/test_investigative_qa_v1.py ..FFF.F.......................FF...... [ 48%]
+.........................................FFF.FFFFFFF                     [ 51%]
+tests/test_investigative_qa_v1_golden.py ..                              [ 51%]
+tests/test_la_potencia_plegaria_final_ingestion.py ..                    [ 51%]
+tests/test_language_priority_contract.py ..........                      [ 52%]
+tests/test_library.py ........................                           [ 53%]
+tests/test_library_search_hybrid_milvus_alias.py .....                   [ 53%]
+tests/test_library_synthesis_qa_v1_batch.py ..                           [ 53%]
+tests/test_likutey_halajot_lmii8_conflict_v1.py .......                  [ 54%]
+tests/test_likutey_halajot_nominal_reference_catalog.py ....             [ 54%]
+tests/test_likutey_halajot_promotion_readiness.py ......                 [ 54%]
+tests/test_likutey_halajot_reference_resolution.py ...                   [ 54%]
+tests/test_likutey_moharan_ii_layout.py ......                           [ 55%]
+tests/test_likutey_moharan_xv_kdp_layout_profile.py .                    [ 55%]
+tests/test_lm_xv_kdp_fine_zone_detector.py ..                            [ 55%]
+tests/test_lm_xv_kdp_page_first_column_aware.py ...                      [ 55%]
+tests/test_lm_xv_kdp_structural_detector.py ..                           [ 55%]
+tests/test_markdown_chunking_strategy_comparison.py ..............       [ 56%]
+tests/test_milvus_test_indexing.py .............                         [ 56%]
+tests/test_milvus_vector_backend.py .                                    [ 57%]
+tests/test_multilingual_query.py ....................................... [ 59%]
+................................                                         [ 60%]
+tests/test_named_topics.py ............................................F [ 63%]
+F                                                                        [ 63%]
+tests/test_page_chunk_mapping_audit.py ................                  [ 63%]
+tests/test_page_first_evidence.py ...........................            [ 65%]
+tests/test_page_first_pipeline.py .............                          [ 65%]
+tests/test_page_first_utf8_preview.py .....                              [ 66%]
+tests/test_page_mapping_failure_diagnosis.py ............                [ 66%]
+tests/test_page_mapping_markdown_chunks.py ..........                    [ 67%]
+tests/test_page_markers_extraction.py .............                      [ 68%]
+tests/test_paseto_v4_public.py ...........                               [ 68%]
+tests/test_pdf_books_preflight.py ..........                             [ 69%]
+tests/test_pdf_font_unicode.py ..........                                [ 69%]
+tests/test_pdf_hebrew_fidelity.py .......................                [ 70%]
+tests/test_pdf_ligature_normalization.py ..............                  [ 71%]
+tests/test_pdf_text_reconstruction.py ....................               [ 72%]
+tests/test_pdf_text_visibility.py ..........................             [ 73%]
+tests/test_pdf_visibility_conservative_regression.py .......             [ 74%]
+tests/test_pgvector_vector_backend.py .                                  [ 74%]
+tests/test_promotion_decision_governance.py ...............              [ 75%]
+tests/test_query_confirmation.py ....................................... [ 77%]
+...                                                                      [ 77%]
+tests/test_query_resolution.py ............................              [ 78%]
+tests/test_region_markdown_provenance.py ..............................  [ 80%]
+tests/test_region_publication.py .....................                   [ 81%]
+tests/test_region_quality.py .................................           [ 83%]
+tests/test_relation_qa.py ....................................           [ 84%]
+tests/test_relation_qa_http.py .......                                   [ 85%]
+tests/test_relation_qa_level4_integration.py ......                      [ 85%]
+tests/test_research_guest_provisioning.py .....                          [ 85%]
+tests/test_research_schemas.py ..................                        [ 86%]
+tests/test_scope_authorization.py ...                                    [ 87%]
+tests/test_scope_source_uniqueness_migration.py .                        [ 87%]
+tests/test_sijot_aware_chunk_apply.py ...........                        [ 87%]
+tests/test_sijot_page_mapping_enrichment.py ................             [ 88%]
+tests/test_simple_research_rag.py ...................................... [ 90%]
+...................................................                      [ 93%]
+tests/test_synthesis_qa_level4_claims.py ...................             [ 94%]
+tests/test_synthesis_qa_level4_output.py ...........                     [ 94%]
+tests/test_synthesis_qa_level4_relations.py .........                    [ 95%]
+tests/test_synthesis_qa_v1_vector_integration.py .                       [ 95%]
+tests/test_text_quality.py .........................                     [ 96%]
+tests/test_user_tenant_memberships.py .....                              [ 96%]
+tests/test_v5_evaluator_semantics.py ............................F.F     [ 98%]
+tests/test_validate_litellm_model.py .                                   [ 98%]
+tests/test_vector_backend_contract.py .                                  [ 98%]
+tests/test_work_identity.py .............................                [ 99%]
+tests/test_zone_candidate_promotion_validator.py ..                      [100%]
+
+=================================== FAILURES ===================================
+__________ test_real_psalm_19_requires_the_requested_book_and_chapter __________
+
+    def test_real_psalm_19_requires_the_requested_book_and_chapter() -> None:
+        response = run_real(QaRequest(
+            question="salmo 19",
+            works=["potencia_plegaria"],
+            ai={"enabled": False},
+        ))
+        assert response["intent"] == "biblical_reference_lookup"
+>       assert response["primary_evidence_ids"]
+E       assert []
+
+tests/test_investigative_qa_v1.py:77: AssertionError
+___________ test_real_blood_speech_uses_a_controlled_mediated_chain ____________
+
+    def test_real_blood_speech_uses_a_controlled_mediated_chain() -> None:
+        response = run_real(QaRequest(
+            question="dame la relación entre sangre y el habla",
+            works=["potencia_plegaria"],
+            ai={"enabled": False},
+        ))
+>       claim = response["claims"][0]
+                ^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests/test_investigative_qa_v1.py:92: IndexError
+________ test_real_scorpion_discovers_only_textually_grounded_neighbors ________
+
+    def test_real_scorpion_discovers_only_textually_grounded_neighbors() -> None:
+        response = run_real(QaRequest(
+            question="el término escorpión con qué está relacionado",
+            works=["lmii"],
+            ai={"enabled": False},
+        ))
+        assert response["intent"] == "discover_relations"
+>       assert response["relations"]
+E       assert []
+
+tests/test_investigative_qa_v1.py:111: AssertionError
+_________ test_real_azamra_uses_controlled_multilingual_named_teaching _________
+
+    def test_real_azamra_uses_controlled_multilingual_named_teaching() -> None:
+        response = run_real(QaRequest(
+            question="azamra",
+            works=["potencia_plegaria", "lmi", "lmii"],
+            ai={"enabled": False},
+        ))
+        assert response["intent"] == "named_teaching_lookup"
+        assert response["named_topic"]["canonical_id"] == "teaching.azamra"
+        assert {"Azamra", "Azamrá", "אזמרה", "אֲזַמְּרָה", "I will sing", "cantaré"}.issubset(
+            set(response["named_topic"]["variants_searched"])
+        )
+>       assert response["primary_evidence_ids"]
+E       assert []
+
+tests/test_investigative_qa_v1.py:153: AssertionError
+_________ test_real_postgres_single_concept_retrieval_remains_grounded _________
+
+    def test_real_postgres_single_concept_retrieval_remains_grounded() -> None:
+        response = run_real(QaRequest(question="¿Dónde aparece plegaria?", works=["potencia_plegaria", "lh"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:333: AssertionError
+_________ test_real_blood_speech_traceability_and_final_per_work_limit _________
+
+    def test_real_blood_speech_traceability_and_final_per_work_limit() -> None:
+        response = run_real(QaRequest(question="la relacion entre sangre y el habla", ai={"enabled": False}, max_hits_per_work=5))
+        hit_ids = [hit["hit_id"] for hit in response["hits"]]
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:342: AssertionError
+_________ test_real_hebrew_literal_variants_resolve_same_physical_page _________
+
+    def test_real_hebrew_literal_variants_resolve_same_physical_page() -> None:
+        variants = [
+            "dónde aparece תְּהִלָּתִי אֶחְטָם לָךְ",
+            "dónde aparece תהלתי אחטם לך",
+            "אחטם לך",
+            "איפה מופיע תהלתי אחטם לך",
+        ]
+        responses = [run_real(QaRequest(question=value, works=["lmi"], ai={"enabled": False})) for value in variants]
+>       primaries = [next(hit for hit in response["hits"] if hit["hit_id"] == response["primary_evidence_ids"][0]) for response in responses]
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/test_investigative_qa_v1.py:657: StopIteration
+____ test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order _____
+
+    def test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order() -> None:
+        response = run_real(QaRequest(question="תהלתי אחטם לך", works=["lmi"], ai={"enabled": False}))
+>       primary = next(hit for hit in response["hits"] if hit["hit_id"] == response["primary_evidence_ids"][0])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/test_investigative_qa_v1.py:673: StopIteration
+____ test_real_source_layer_followup_answers_the_current_question_directly _____
+
+    def test_real_source_layer_followup_answers_the_current_question_directly() -> None:
+        response = run_real(QaRequest(
+            question="¿Es parte de la lección del Rebe, una cita o una nota?",
+            conversation={"history": [{"question": "איפה מופיע הפסוק והיו עיני ולבי שם"}]},
+            ai={"enabled": False},
+        ))
+>       primary = next(hit for hit in response["hits"] if hit["hit_id"] in response["primary_evidence_ids"])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/test_investigative_qa_v1.py:685: StopIteration
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05b0\u05bc\u05d4\u05b4\u05dc\u05b8\u05bc\u05ea\u05b4\u05d9 \u05d0\u05b6\u05d7\u05b0\u05d8\u05b8\u05dd \u05dc\u05b8\u05da\u05b0] _
+
+question = 'תְּהִלָּתִי אֶחְטָם לָךְ'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05d4\u05dc\u05ea\u05d9 \u05d0\u05d7\u05d8\u05dd \u05dc\u05da] _
+
+question = 'תהלתי אחטם לך'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da] _
+
+question = 'ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da donde esta] _
+
+question = 'ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך donde esta'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[donde esta \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da] _
+
+question = 'donde esta ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05d0\u05d9\u05e4\u05d4 \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da] _
+
+question = 'איפה ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_________ test_exact_pdf_copypaste_audit_excludes_spanish_instruction __________
+
+    def test_exact_pdf_copypaste_audit_excludes_spanish_instruction() -> None:
+        response = run_real(QaRequest(
+            question=f"{PDF_SPACED_LITERAL} donde esta",
+            works=["lmi"],
+            ai={"enabled": False},
+        ))
+        interpretation = response["interpretation"]
+        assert interpretation["literal_raw"] == PDF_SPACED_LITERAL
+        assert interpretation["instruction"] == "donde esta"
+        assert interpretation["instruction_language"] == "es"
+>       assert interpretation["literal_reconstructed"] == "תְּהִלָּתִי אֶחְטָם לָך"
+E       AssertionError: assert 'תְּהִלָּתִיאֶחְטָםלָך' == 'תְּהִלָּתִי אֶחְטָם לָך'
+E         
+E         - תְּהִלָּתִי אֶחְטָם לָך
+E         ?            -       -
+E         + תְּהִלָּתִיאֶחְטָםלָך
+
+tests/test_investigative_qa_v1.py:745: AssertionError
+_ test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[tisha beav] _
+
+query = 'tisha beav'
+
+    @pytest.mark.parametrize("query", ["tisha beav", "Tisha B'Av"])
+    def test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence(query: str) -> None:
+        response = _run_real(query)
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_named_topics.py:131: AssertionError
+_ test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[Tisha B'Av] _
+
+query = "Tisha B'Av"
+
+    @pytest.mark.parametrize("query", ["tisha beav", "Tisha B'Av"])
+    def test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence(query: str) -> None:
+        response = _run_real(query)
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_named_topics.py:131: AssertionError
+________ test_runner_import_is_certifier_free_and_uses_corrected_audit _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76778c473770>
+
+    def test_runner_import_is_certifier_free_and_uses_corrected_audit(monkeypatch):
+        import runpy
+        monkeypatch.syspath_prepend(str(support.RUNNER.parent))
+        namespace = runpy.run_path(str(support.RUNNER), run_name='evaluator_import_test')
+        c = case('reciprocal_relation')
+        assert support.evaluate(namespace['source_audit'],c)['passed']
+>       assert not any('automatic_region_certification_v5' in name for name in sys.modules)
+E       assert not True
+E        +  where True = any(<generator object test_runner_import_is_certifier_free_and_uses_corrected_audit.<locals>.<genexpr> at 0x76778c5e4520>)
+
+tests/test_v5_evaluator_semantics.py:125: AssertionError
+______ test_runner_uses_standalone_evaluator_without_top_level_v5_import _______
+
+    def test_runner_uses_standalone_evaluator_without_top_level_v5_import():
+        tree = ast.parse(support.RUNNER.read_text())
+        assert any(isinstance(n,ast.ImportFrom) and n.module == 'evaluator'
+                   and any(a.name=='source_audit' for a in n.names) for n in tree.body)
+        assert not any(isinstance(n,ast.ImportFrom) and 'certification_v5' in (n.module or '') for n in tree.body)
+>       assert not any('automatic_region_certification_v5' in name for name in sys.modules)
+E       assert not True
+E        +  where True = any(<generator object test_runner_uses_standalone_evaluator_without_top_level_v5_import.<locals>.<genexpr> at 0x76778c39cad0>)
+
+tests/test_v5_evaluator_semantics.py:142: AssertionError
+=============================== warnings summary ===============================
+tests/test_apply_markdown_structural_chunks.py: 10 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/scripts/chunk_documents.py:220: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "created_at": datetime.datetime.utcnow(),
+
+tests/test_apply_markdown_structural_chunks.py: 10 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/scripts/chunk_documents.py:221: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "updated_at": datetime.datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:38: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    password_changed_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:39: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    created_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:40: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    updated_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestCreateUser::test_creates_user
+tests/test_research_guest_provisioning.py::test_creates_active_viewer_with_canonical_hasher
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/auth/domain.py:36: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+tests/test_auth_tokens.py::TestAccessToken::test_create_and_decode
+tests/test_auth_tokens.py::TestAccessToken::test_requires_access_type
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_issuer
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_audience
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 15 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_auth_tokens.py::TestAccessToken::test_create_and_decode
+tests/test_auth_tokens.py::TestAccessToken::test_requires_access_type
+tests/test_auth_tokens.py::TestAccessToken::test_invalid_signature
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_issuer
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_audience
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:368: InsecureKeyLengthWarning: The HMAC key is 15 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    decoded = self.decode_complete(
+
+tests/test_auth_tokens.py::TestAccessToken::test_invalid_signature
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 11 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'limit' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'document_id' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'status' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'scope_code' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'document_id' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'pipeline_version' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'scope_code' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_ingest_test_candidate.py: 6 warnings
+tests/test_library.py: 4 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:177: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+tests/test_ingest_test_candidate.py::test_metadata_json_parses_and_is_persisted
+tests/test_ingest_test_candidate.py::test_dry_run_does_not_write
+tests/test_ingest_test_candidate.py::test_existing_ready_document_is_not_changed
+tests/test_ingest_test_candidate.py::test_apply_uses_existing_scope_without_creating_legacy_collection
+tests/test_library.py::TestDomain::test_library_document_text_create
+tests/test_library.py::TestService::test_ingest_document_dry_run
+tests/test_library.py::TestService::test_ingest_duplicate_raises
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:255: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    created_at=datetime.utcnow(),
+
+tests/test_ingest_test_candidate.py::test_repository_serializes_bibliographic_metadata
+tests/test_ingest_test_candidate.py::test_missing_legacy_scope_mapping_fails_closed
+tests/test_ingest_test_candidate.py::test_existing_ready_document_is_not_changed
+tests/test_library.py::TestDomain::test_library_collection_create
+tests/test_library.py::TestDomain::test_library_collection_create_lowercases_code
+tests/test_library.py::TestRepository::test_get_or_create_collection_new
+tests/test_scope_authorization.py::test_legacy_alias_resolves_from_collection_metadata
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:78: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_investigative_qa_v1.py::test_real_psalm_19_requires_the_requested_book_and_chapter
+FAILED tests/test_investigative_qa_v1.py::test_real_blood_speech_uses_a_controlled_mediated_chain
+FAILED tests/test_investigative_qa_v1.py::test_real_scorpion_discovers_only_textually_grounded_neighbors
+FAILED tests/test_investigative_qa_v1.py::test_real_azamra_uses_controlled_multilingual_named_teaching
+FAILED tests/test_investigative_qa_v1.py::test_real_postgres_single_concept_retrieval_remains_grounded
+FAILED tests/test_investigative_qa_v1.py::test_real_blood_speech_traceability_and_final_per_work_limit
+FAILED tests/test_investigative_qa_v1.py::test_real_hebrew_literal_variants_resolve_same_physical_page
+FAILED tests/test_investigative_qa_v1.py::test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order
+FAILED tests/test_investigative_qa_v1.py::test_real_source_layer_followup_answers_the_current_question_directly
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05b0\u05bc\u05d4\u05b4\u05dc\u05b8\u05bc\u05ea\u05b4\u05d9 \u05d0\u05b6\u05d7\u05b0\u05d8\u05b8\u05dd \u05dc\u05b8\u05da\u05b0]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05d4\u05dc\u05ea\u05d9 \u05d0\u05d7\u05d8\u05dd \u05dc\u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da donde esta]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[donde esta \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05d0\u05d9\u05e4\u05d4 \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_exact_pdf_copypaste_audit_excludes_spanish_instruction
+FAILED tests/test_named_topics.py::test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[tisha beav]
+FAILED tests/test_named_topics.py::test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[Tisha B'Av]
+FAILED tests/test_v5_evaluator_semantics.py::test_runner_import_is_certifier_free_and_uses_corrected_audit
+FAILED tests/test_v5_evaluator_semantics.py::test_runner_uses_standalone_evaluator_without_top_level_v5_import
+================ 20 failed, 1911 passed, 94 warnings in 42.38s =================

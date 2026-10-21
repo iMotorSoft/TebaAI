@@ -1,0 +1,3 @@
+2026-10-21 10:59:18,855 INFO Worker active for scope breslov_e2e
+2026-10-21 10:59:18,936 INFO Content Manager job claimed job_id=b5de0e5f-a37f-4287-8ffa-4bc7ea63819b attempt=1 worker_id=ubuntu24:120222 collection=tebaai_content_manager_e2e_v1
+2026-10-21 10:59:20,704 INFO Content Manager job completed job_id=b5de0e5f-a37f-4287-8ffa-4bc7ea63819b attempt=1 document_id=d06ffb50-f7d5-50cd-874c-f940981fca07 chunks=0 vectors=0 status=completed_with_warnings

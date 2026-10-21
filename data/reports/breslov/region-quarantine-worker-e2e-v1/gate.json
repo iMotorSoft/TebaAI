@@ -1,0 +1,110 @@
+{
+  "gate": "TEBAAI_BRESLOV_REGION_QUARANTINE_WORKER_E2E_V1_FAIL",
+  "reason": "Frozen controlled GOOD expectations fail for actual PDFs A/C/D: four expected GOOD units are UNRESOLVED upstream under the unchanged certifier. Real Breslov ACCEPTED+CERTIFIED neighbors are all preserved. No expected label/certification change is permitted.",
+  "BAD_HEBREW_SEARCHABLE": "NO",
+  "BAD_HEBREW_CHUNKS": 0,
+  "BAD_HEBREW_EMBEDDINGS": 0,
+  "BAD_HEBREW_VECTORS": 0,
+  "BAD_HEBREW_RETRIEVAL_HITS": 0,
+  "BAD_HEBREW_TEXTUAL_CITATIONS": 0,
+  "BAD_HEBREW_VISUAL_SOURCE_AVAILABLE": "YES",
+  "GOOD_NEIGHBOR_LOSS": 4,
+  "accepted_certified_neighbor_loss": 0,
+  "PARTIAL_PAGE_SEARCHABLE": "NO",
+  "real_breslov_partial_page_searchable": "YES",
+  "FULL_DOCUMENT_REJECTED_DUE_TO_SINGLE_BAD_REGION": "NO",
+  "REGION_LEVEL_QUARANTINE_READY": "NO",
+  "WORKER_REGION_ENFORCEMENT_READY": "NO",
+  "DURABLE_VISUAL_SOURCE_READY": "YES",
+  "FULL_C_REINGEST_READY": "NO",
+  "PostgreSQL_controlled_writes": "YES",
+  "Milvus_controlled_writes": "YES",
+  "existing_corpus_changed": "NO",
+  "controlled_cleanup": "PASS",
+  "production_touched": false,
+  "full_c_reingest": false,
+  "focused_tests": 248,
+  "full_backend": {
+    "baseline_summary": "================ 20 failed, 1911 passed, 94 warnings in 42.38s =================",
+    "final_summary": "================ 20 failed, 1926 passed, 98 warnings in 35.11s =================",
+    "baseline_failures": 20,
+    "new_failures": 0,
+    "same_baseline_node_ids": true,
+    "result": "PASS_BASELINE_COMPARISON"
+  },
+  "expected_controlled_comparison": [
+    {
+      "case": "A",
+      "expected": [
+        "ACCEPTED"
+      ],
+      "actual": [
+        "QUARANTINED"
+      ],
+      "pass": false,
+      "expected_good_lost": 1,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    },
+    {
+      "case": "B",
+      "expected": [
+        "QUARANTINED"
+      ],
+      "actual": [
+        "QUARANTINED"
+      ],
+      "pass": true,
+      "expected_good_lost": 0,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    },
+    {
+      "case": "C",
+      "expected": [
+        "ACCEPTED",
+        "QUARANTINED",
+        "ACCEPTED"
+      ],
+      "actual": [
+        "QUARANTINED",
+        "QUARANTINED",
+        "QUARANTINED"
+      ],
+      "pass": false,
+      "expected_good_lost": 2,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    },
+    {
+      "case": "D",
+      "expected": [
+        "QUARANTINED",
+        "ACCEPTED",
+        "QUARANTINED"
+      ],
+      "actual": [
+        "QUARANTINED",
+        "QUARANTINED",
+        "QUARANTINED"
+      ],
+      "pass": false,
+      "expected_good_lost": 1,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    },
+    {
+      "case": "E",
+      "expected": [
+        "QUARANTINED",
+        "QUARANTINED"
+      ],
+      "actual": [
+        "QUARANTINED",
+        "QUARANTINED"
+      ],
+      "pass": true,
+      "expected_good_lost": 0,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    }
+  ],
+  "COMMIT": "YES",
+  "PUSH": "YES",
+  "git_actions": "Authorized for methodologically valid FAIL; verify separate git-close evidence."
+}

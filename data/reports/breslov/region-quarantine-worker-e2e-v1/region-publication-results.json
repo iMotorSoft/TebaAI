@@ -1,0 +1,81 @@
+{
+  "controlled_real_pdf_expectations": [
+    {
+      "case": "A",
+      "expected": [
+        "ACCEPTED"
+      ],
+      "actual": [
+        "QUARANTINED"
+      ],
+      "pass": false,
+      "expected_good_lost": 1,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    },
+    {
+      "case": "B",
+      "expected": [
+        "QUARANTINED"
+      ],
+      "actual": [
+        "QUARANTINED"
+      ],
+      "pass": true,
+      "expected_good_lost": 0,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    },
+    {
+      "case": "C",
+      "expected": [
+        "ACCEPTED",
+        "QUARANTINED",
+        "ACCEPTED"
+      ],
+      "actual": [
+        "QUARANTINED",
+        "QUARANTINED",
+        "QUARANTINED"
+      ],
+      "pass": false,
+      "expected_good_lost": 2,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    },
+    {
+      "case": "D",
+      "expected": [
+        "QUARANTINED",
+        "ACCEPTED",
+        "QUARANTINED"
+      ],
+      "actual": [
+        "QUARANTINED",
+        "QUARANTINED",
+        "QUARANTINED"
+      ],
+      "pass": false,
+      "expected_good_lost": 1,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    },
+    {
+      "case": "E",
+      "expected": [
+        "QUARANTINED",
+        "QUARANTINED"
+      ],
+      "actual": [
+        "QUARANTINED",
+        "QUARANTINED"
+      ],
+      "pass": true,
+      "expected_good_lost": 0,
+      "reason": "unchanged certifier produces UNRESOLVED for unsupported synthetic layout; not relabelled"
+    }
+  ],
+  "quarantined_regions": 43,
+  "accepted_certified_regions": 3,
+  "accepted_certified_region_loss": 0,
+  "expected_controlled_good_lost": 4,
+  "quarantine_audit_metadata_preserved": true,
+  "bad_canonical_occurrences": 0,
+  "policy_criteria_changed": false
+}

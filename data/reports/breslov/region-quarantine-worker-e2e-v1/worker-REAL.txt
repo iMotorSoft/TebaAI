@@ -1,0 +1,5 @@
+2026-10-21 11:03:30,801 INFO Worker active for scope breslov_e2e
+2026-10-21 11:03:30,844 INFO Content Manager job claimed job_id=5007815d-5142-4af2-9513-1b82da30a4f7 attempt=1 worker_id=ubuntu24:123678 collection=tebaai_content_manager_e2e_v1
+2026-10-21 11:03:33,614 INFO regional_embedding_dispatch count=3 content_sha256=['adc79fa2f3d0b09897767139a755c1bfdc026d066c9f448173000f83aa8b8690', 'b96111e501586b495f91dcacdf2798aec3c6ea73efc56af8ff69be132688c36f', 'b99c73c026987d832d71d009788cd4e26d688dec67bbace8b39dcb8c863428e8']
+2026-10-21 11:03:34,924 INFO HTTP Request: POST http://127.0.0.1:4000/v1/embeddings "HTTP/1.1 200 OK"
+2026-10-21 11:03:38,392 INFO Content Manager job completed job_id=5007815d-5142-4af2-9513-1b82da30a4f7 attempt=1 document_id=5b631659-4153-5b07-bd19-0aa2351b5e72 chunks=3 vectors=3 status=completed_with_warnings

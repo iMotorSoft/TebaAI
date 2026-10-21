@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "case": "A",
+      "visual_source_available": true,
+      "physical_pages": 1,
+      "cache_control": "private, no-store",
+      "content_type": "application/pdf"
+    },
+    {
+      "case": "B",
+      "visual_source_available": true,
+      "physical_pages": 1,
+      "cache_control": "private, no-store",
+      "content_type": "application/pdf"
+    },
+    {
+      "case": "C",
+      "visual_source_available": true,
+      "physical_pages": 1,
+      "cache_control": "private, no-store",
+      "content_type": "application/pdf"
+    },
+    {
+      "case": "D",
+      "visual_source_available": true,
+      "physical_pages": 1,
+      "cache_control": "private, no-store",
+      "content_type": "application/pdf"
+    },
+    {
+      "case": "E",
+      "visual_source_available": true,
+      "physical_pages": 1,
+      "cache_control": "private, no-store",
+      "content_type": "application/pdf"
+    },
+    {
+      "case": "REAL",
+      "visual_source_available": true,
+      "physical_pages": 3,
+      "cache_control": "private, no-store",
+      "content_type": "application/pdf"
+    }
+  ],
+  "hash_checked_after_worker_upload_cleanup": true,
+  "unauthenticated_source_status": 401,
+  "cross_scope_security": "Focused route/repository tests return 403; arbitrary filesystem paths return 404.",
+  "durable_source_removed_only_on_controlled_document_cleanup": true
+}

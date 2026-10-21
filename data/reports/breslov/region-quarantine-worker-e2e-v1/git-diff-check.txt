@@ -1,0 +1,10 @@
+git diff --check
+exit=0
+
+git diff --cached --check
+exit=0
+
+git diff 704ae24597e916b56ddec8a71fd0a30d34793aab HEAD --check
+exit=0
+
+Raw pytest logs preserve assertion-diff whitespace; report-local .gitattributes exempts only those three generated logs from blank-at-eol checks. Authored code/tests/docs remain fully checked.

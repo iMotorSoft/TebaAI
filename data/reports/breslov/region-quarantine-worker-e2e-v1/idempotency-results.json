@@ -1,0 +1,53 @@
+{
+  "method": "Normal create_job idempotency + duplicate targeted delivery of completed job.",
+  "cases": {
+    "A": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    },
+    "B": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    },
+    "C": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    },
+    "D": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    },
+    "E": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    },
+    "REAL": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    }
+  },
+  "duplicate_documents": 0,
+  "duplicate_canonical_regions": 0,
+  "duplicate_chunks": 0,
+  "duplicate_vectors": 0,
+  "result": "PASS",
+  "crash_retry_real_e2e": false
+}

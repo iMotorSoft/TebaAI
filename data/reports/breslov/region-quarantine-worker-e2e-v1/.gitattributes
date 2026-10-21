@@ -1,0 +1,5 @@
+# Preserve raw pytest output, including whitespace in assertion diff excerpts.
+# Only generated console logs opt out of trailing-whitespace diagnostics.
+tests-backend-before.txt whitespace=-blank-at-eol
+tests-backend-full.txt whitespace=-blank-at-eol
+tests-backend-initial-integration.txt whitespace=-blank-at-eol

@@ -1,0 +1,16 @@
+{
+  "gate": "FAIL",
+  "focused_tests": "248 PASS",
+  "full_backend": "1926 PASS / same 20 baseline failures / 0 new failures",
+  "git_diff_check": "PASS",
+  "secret_scan": "PASS",
+  "existing_corpus_changed": false,
+  "controlled_cleanup": "PASS",
+  "production_touched": false,
+  "full_c_reingest": false,
+  "e2e": "Actual six targeted worker jobs; controlled expectations A/C/D FAIL; real Breslov certified region path PASS.",
+  "citation_scope": "Actual canonical evidence builder + protected source handlers; not generative/browser E2E.",
+  "failure_injection_scope": "Unit worker orchestrator with fake stores, not a real failing PostgreSQL job.",
+  "readiness": "NO; see gate.json",
+  "git_close": "See git-close.json after actual commit/push verification."
+}

@@ -1,0 +1,25 @@
+{
+  "branch": "feature/console-backend-core",
+  "gate": "TEBAAI_BRESLOV_REGION_QUARANTINE_WORKER_E2E_V1_FAIL",
+  "authorization": "User explicitly authorizes commit/push for methodologically valid FAIL",
+  "remote_before": "704ae24597e916b56ddec8a71fd0a30d34793aab",
+  "commits_before_evidence_commit": [
+    {
+      "sha": "23b4b9fe35a9c5402096850bfd7cceff83906180",
+      "subject": "chore(breslov): version existing worker certification dependencies"
+    },
+    {
+      "sha": "a85cd554d30b6052e8cadce29406a82b0ef04237",
+      "subject": "feat(breslov): enforce region publication in ingestion worker"
+    }
+  ],
+  "evidence_commit": "This report commit: docs(breslov): record region quarantine worker e2e failure",
+  "preliminary_remote_refetch": "MATCH_EXPECTED",
+  "preliminary_fast_forward_check": "PASS",
+  "post_push_verification_at_report_creation": "NOT_YET_RUN",
+  "post_push_evidence": "git-close-postpush.json is generated locally after push (ignored to avoid self-referential commit hashes); final response reports actual local/remote/ls-remote equality. Remote auditors can independently inspect branch refs.",
+  "force_push": false,
+  "preexisting_worktree_preserved": true,
+  "unrelated_paths_staged": false,
+  "production_touched": false
+}

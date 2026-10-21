@@ -1,0 +1,9 @@
+{
+  "identical_full_row_hashes_including_vectors": {
+    "before": true,
+    "after": true,
+    "after-cleanup": true
+  },
+  "existing_corpus_changed": false,
+  "audit_rows_retained": "Normal manifest cleanup intentionally retains controlled jobs/uploads/attempt audit rows; exact run IDs excluded, never real corpus."
+}

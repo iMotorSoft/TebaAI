@@ -1,0 +1,2195 @@
+[
+  {
+    "case": "A",
+    "worker_exit": 0,
+    "status": "completed_with_warnings",
+    "error_code": null,
+    "document_id": "dbff1a3c-b2bd-5914-ada1-ef921bdb3ec8",
+    "canonical_bad_text_occurrences": 0,
+    "bad_chunks": 0,
+    "bad_embeddings": 0,
+    "bad_vectors": 0,
+    "bad_retrieval_hits": 0,
+    "bad_textual_citations": 0,
+    "accepted_region_loss": 0,
+    "published_chunks": 0,
+    "embeddings": 0,
+    "visual_source_available": true,
+    "page_results": [
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              40.0,
+              92.40234375,
+              394.77984619140625,
+              102.080078125
+            ],
+            "region_id": "region-670a04c7165651f255682459",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "6fa91f6a06485c11b325cd3eb7c0d3901b406e16da731635495157582bc24945",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                92.40234375,
+                394.77984619140625,
+                102.080078125
+              ],
+              "pdf_page": 1,
+              "region_id": "region-670a04c7165651f255682459",
+              "source_sha256": "fba24e7580e1ef1bf4b6e8e30f8f2591ad2b215520b9341b46c1ddbf64d2c824",
+              "source_reference": "/library/documents/dbff1a3c-b2bd-5914-ada1-ef921bdb3ec8/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 1,
+        "source_id": "dbff1a3c-b2bd-5914-ada1-ef921bdb3ec8",
+        "document_id": "dbff1a3c-b2bd-5914-ada1-ef921bdb3ec8",
+        "page_status": "UNUSABLE",
+        "source_sha256": "fba24e7580e1ef1bf4b6e8e30f8f2591ad2b215520b9341b46c1ddbf64d2c824",
+        "partial_source": false,
+        "source_reference": "/library/documents/dbff1a3c-b2bd-5914-ada1-ef921bdb3ec8/source#page=1",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      }
+    ],
+    "retrieval": [
+      {
+        "region_id": "region-670a04c7165651f255682459",
+        "page": 1,
+        "query_sha256": "7980ef5c5b623e51a90cf337d5920043bb11b9b769a8b33dada61e71e9349438",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      }
+    ],
+    "citations": [],
+    "frozen_controlled_expectation": [
+      "ACCEPTED"
+    ],
+    "vectors": 0,
+    "embedding_dispatch_lines": [],
+    "bad_embedding_request_proof": "Only accepted region chunks reach embed; log hashes equal persisted chunk hashes; zero-chunk branch skips embed.",
+    "idempotency": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    }
+  },
+  {
+    "case": "B",
+    "worker_exit": 0,
+    "status": "completed_with_warnings",
+    "error_code": null,
+    "document_id": "74385ce4-a5c1-5243-b845-3a8928ebaddb",
+    "canonical_bad_text_occurrences": 0,
+    "bad_chunks": 0,
+    "bad_embeddings": 0,
+    "bad_vectors": 0,
+    "bad_retrieval_hits": 0,
+    "bad_textual_citations": 0,
+    "accepted_region_loss": 0,
+    "published_chunks": 0,
+    "embeddings": 0,
+    "visual_source_available": true,
+    "page_results": [
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              40.0,
+              90.87890625,
+              107.80999755859375,
+              100.83984375
+            ],
+            "region_id": "region-35a3ebb6496a6f464187ea79",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "DIRECTION_UNPROVEN",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "CORRUPT_TEXT_SIGNAL",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+              "BODY_ZONE_PROOF_MISSING",
+              "ORDER_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "c61c4837c07f06e7d8564f1dea01e80f7e6c9c319f135072c9262cd0400453ff",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                90.87890625,
+                107.80999755859375,
+                100.83984375
+              ],
+              "pdf_page": 1,
+              "region_id": "region-35a3ebb6496a6f464187ea79",
+              "source_sha256": "6b7d68863c9a5cb134020ce95dbb8557b12b1858d38ad3d684ef793140666d4c",
+              "source_reference": "/library/documents/74385ce4-a5c1-5243-b845-3a8928ebaddb/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 1,
+        "source_id": "74385ce4-a5c1-5243-b845-3a8928ebaddb",
+        "document_id": "74385ce4-a5c1-5243-b845-3a8928ebaddb",
+        "page_status": "UNUSABLE",
+        "source_sha256": "6b7d68863c9a5cb134020ce95dbb8557b12b1858d38ad3d684ef793140666d4c",
+        "partial_source": false,
+        "source_reference": "/library/documents/74385ce4-a5c1-5243-b845-3a8928ebaddb/source#page=1",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      }
+    ],
+    "retrieval": [
+      {
+        "region_id": "region-35a3ebb6496a6f464187ea79",
+        "page": 1,
+        "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      }
+    ],
+    "citations": [],
+    "frozen_controlled_expectation": [
+      "QUARANTINED"
+    ],
+    "vectors": 0,
+    "embedding_dispatch_lines": [],
+    "bad_embedding_request_proof": "Only accepted region chunks reach embed; log hashes equal persisted chunk hashes; zero-chunk branch skips embed.",
+    "idempotency": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    }
+  },
+  {
+    "case": "C",
+    "worker_exit": 0,
+    "status": "completed_with_warnings",
+    "error_code": null,
+    "document_id": "2e02230c-3592-5c82-83da-ffd0c94aeedf",
+    "canonical_bad_text_occurrences": 0,
+    "bad_chunks": 0,
+    "bad_embeddings": 0,
+    "bad_vectors": 0,
+    "bad_retrieval_hits": 0,
+    "bad_textual_citations": 0,
+    "accepted_region_loss": 0,
+    "published_chunks": 0,
+    "embeddings": 0,
+    "visual_source_available": true,
+    "page_results": [
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              40.0,
+              92.40234375,
+              394.77984619140625,
+              102.080078125
+            ],
+            "region_id": "region-d9b4e074bb9c4867a4675154",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "6fa91f6a06485c11b325cd3eb7c0d3901b406e16da731635495157582bc24945",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                92.40234375,
+                394.77984619140625,
+                102.080078125
+              ],
+              "pdf_page": 1,
+              "region_id": "region-d9b4e074bb9c4867a4675154",
+              "source_sha256": "8af32343c865d2950e60304e13941d0d14f8a42fb7ada7fccb7eefe29293f1ce",
+              "source_reference": "/library/documents/2e02230c-3592-5c82-83da-ffd0c94aeedf/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              40.0,
+              240.87890625,
+              107.80999755859375,
+              250.83984375
+            ],
+            "region_id": "region-af78fc006f592fe2cf82d50b",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "DIRECTION_UNPROVEN",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "CORRUPT_TEXT_SIGNAL",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+              "BODY_ZONE_PROOF_MISSING",
+              "ORDER_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "c61c4837c07f06e7d8564f1dea01e80f7e6c9c319f135072c9262cd0400453ff",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                240.87890625,
+                107.80999755859375,
+                250.83984375
+              ],
+              "pdf_page": 1,
+              "region_id": "region-af78fc006f592fe2cf82d50b",
+              "source_sha256": "8af32343c865d2950e60304e13941d0d14f8a42fb7ada7fccb7eefe29293f1ce",
+              "source_reference": "/library/documents/2e02230c-3592-5c82-83da-ffd0c94aeedf/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              40.0,
+              392.40234375,
+              407.99981689453125,
+              402.080078125
+            ],
+            "region_id": "region-5d44841b645f56e642198948",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "c6084e2497a66ccfba563051897a2f623dacdbf047aa2046e1d0bf521a9cff6f",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                392.40234375,
+                407.99981689453125,
+                402.080078125
+              ],
+              "pdf_page": 1,
+              "region_id": "region-5d44841b645f56e642198948",
+              "source_sha256": "8af32343c865d2950e60304e13941d0d14f8a42fb7ada7fccb7eefe29293f1ce",
+              "source_reference": "/library/documents/2e02230c-3592-5c82-83da-ffd0c94aeedf/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 1,
+        "source_id": "2e02230c-3592-5c82-83da-ffd0c94aeedf",
+        "document_id": "2e02230c-3592-5c82-83da-ffd0c94aeedf",
+        "page_status": "UNUSABLE",
+        "source_sha256": "8af32343c865d2950e60304e13941d0d14f8a42fb7ada7fccb7eefe29293f1ce",
+        "partial_source": false,
+        "source_reference": "/library/documents/2e02230c-3592-5c82-83da-ffd0c94aeedf/source#page=1",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      }
+    ],
+    "retrieval": [
+      {
+        "region_id": "region-d9b4e074bb9c4867a4675154",
+        "page": 1,
+        "query_sha256": "7980ef5c5b623e51a90cf337d5920043bb11b9b769a8b33dada61e71e9349438",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-af78fc006f592fe2cf82d50b",
+        "page": 1,
+        "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-5d44841b645f56e642198948",
+        "page": 1,
+        "query_sha256": "548c1468be205862c373741d24ed4fa5eca76c5a66de3f49e47a401fcad88d0f",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      }
+    ],
+    "citations": [],
+    "frozen_controlled_expectation": [
+      "ACCEPTED",
+      "QUARANTINED",
+      "ACCEPTED"
+    ],
+    "vectors": 0,
+    "embedding_dispatch_lines": [],
+    "bad_embedding_request_proof": "Only accepted region chunks reach embed; log hashes equal persisted chunk hashes; zero-chunk branch skips embed.",
+    "idempotency": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    }
+  },
+  {
+    "case": "D",
+    "worker_exit": 0,
+    "status": "completed_with_warnings",
+    "error_code": null,
+    "document_id": "25a552ec-58fd-514c-883b-95eac1804c52",
+    "canonical_bad_text_occurrences": 0,
+    "bad_chunks": 0,
+    "bad_embeddings": 0,
+    "bad_vectors": 0,
+    "bad_retrieval_hits": 0,
+    "bad_textual_citations": 0,
+    "accepted_region_loss": 0,
+    "published_chunks": 0,
+    "embeddings": 0,
+    "visual_source_available": true,
+    "page_results": [
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              40.0,
+              90.87890625,
+              107.80999755859375,
+              100.83984375
+            ],
+            "region_id": "region-7273d3c20368bbde65160c23",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "DIRECTION_UNPROVEN",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "CORRUPT_TEXT_SIGNAL",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "c61c4837c07f06e7d8564f1dea01e80f7e6c9c319f135072c9262cd0400453ff",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                90.87890625,
+                107.80999755859375,
+                100.83984375
+              ],
+              "pdf_page": 1,
+              "region_id": "region-7273d3c20368bbde65160c23",
+              "source_sha256": "608446ff615da6a75b83a6aa5c57bc0bdba93fca76c49265a12d64cbc778c61f",
+              "source_reference": "/library/documents/25a552ec-58fd-514c-883b-95eac1804c52/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              40.0,
+              242.40234375,
+              394.77984619140625,
+              252.080078125
+            ],
+            "region_id": "region-f26dc1a8d7ade3304e9a9f00",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "6fa91f6a06485c11b325cd3eb7c0d3901b406e16da731635495157582bc24945",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                242.40234375,
+                394.77984619140625,
+                252.080078125
+              ],
+              "pdf_page": 1,
+              "region_id": "region-f26dc1a8d7ade3304e9a9f00",
+              "source_sha256": "608446ff615da6a75b83a6aa5c57bc0bdba93fca76c49265a12d64cbc778c61f",
+              "source_reference": "/library/documents/25a552ec-58fd-514c-883b-95eac1804c52/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              40.0,
+              390.87890625,
+              107.80999755859375,
+              400.83984375
+            ],
+            "region_id": "region-7586b73ce34638e104a5ff01",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "DIRECTION_UNPROVEN",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "CORRUPT_TEXT_SIGNAL",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "c61c4837c07f06e7d8564f1dea01e80f7e6c9c319f135072c9262cd0400453ff",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                390.87890625,
+                107.80999755859375,
+                400.83984375
+              ],
+              "pdf_page": 1,
+              "region_id": "region-7586b73ce34638e104a5ff01",
+              "source_sha256": "608446ff615da6a75b83a6aa5c57bc0bdba93fca76c49265a12d64cbc778c61f",
+              "source_reference": "/library/documents/25a552ec-58fd-514c-883b-95eac1804c52/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 1,
+        "source_id": "25a552ec-58fd-514c-883b-95eac1804c52",
+        "document_id": "25a552ec-58fd-514c-883b-95eac1804c52",
+        "page_status": "UNUSABLE",
+        "source_sha256": "608446ff615da6a75b83a6aa5c57bc0bdba93fca76c49265a12d64cbc778c61f",
+        "partial_source": false,
+        "source_reference": "/library/documents/25a552ec-58fd-514c-883b-95eac1804c52/source#page=1",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      }
+    ],
+    "retrieval": [
+      {
+        "region_id": "region-7273d3c20368bbde65160c23",
+        "page": 1,
+        "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-f26dc1a8d7ade3304e9a9f00",
+        "page": 1,
+        "query_sha256": "7980ef5c5b623e51a90cf337d5920043bb11b9b769a8b33dada61e71e9349438",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-7586b73ce34638e104a5ff01",
+        "page": 1,
+        "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      }
+    ],
+    "citations": [],
+    "frozen_controlled_expectation": [
+      "QUARANTINED",
+      "ACCEPTED",
+      "QUARANTINED"
+    ],
+    "vectors": 0,
+    "embedding_dispatch_lines": [],
+    "bad_embedding_request_proof": "Only accepted region chunks reach embed; log hashes equal persisted chunk hashes; zero-chunk branch skips embed.",
+    "idempotency": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    }
+  },
+  {
+    "case": "E",
+    "worker_exit": 0,
+    "status": "completed_with_warnings",
+    "error_code": null,
+    "document_id": "55f2721c-1a47-572c-ae9c-ce5ebed0de20",
+    "canonical_bad_text_occurrences": 0,
+    "bad_chunks": 0,
+    "bad_embeddings": 0,
+    "bad_vectors": 0,
+    "bad_retrieval_hits": 0,
+    "bad_textual_citations": 0,
+    "accepted_region_loss": 0,
+    "published_chunks": 0,
+    "embeddings": 0,
+    "visual_source_available": true,
+    "page_results": [
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              40.0,
+              90.87890625,
+              107.80999755859375,
+              100.83984375
+            ],
+            "region_id": "region-bbe4608729b56db1cba65031",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "DIRECTION_UNPROVEN",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "CORRUPT_TEXT_SIGNAL",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "d77549f4f2f27284478732f0b02346c13fec99074a5c2cc23a8bdeab41c1be5d",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                90.87890625,
+                107.80999755859375,
+                100.83984375
+              ],
+              "pdf_page": 1,
+              "region_id": "region-bbe4608729b56db1cba65031",
+              "source_sha256": "cd94842829ac6e9c745f5f093bdd5f98100f809629af300034c9b175aa105975",
+              "source_reference": "/library/documents/55f2721c-1a47-572c-ae9c-ce5ebed0de20/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              40.0,
+              240.87890625,
+              107.80999755859375,
+              250.83984375
+            ],
+            "region_id": "region-59715dd69fb3133d5c97383e",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "DIRECTION_UNPROVEN",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "CORRUPT_TEXT_SIGNAL",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+              "BODY_ZONE_PROOF_MISSING",
+              "ORDER_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "c61c4837c07f06e7d8564f1dea01e80f7e6c9c319f135072c9262cd0400453ff",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                240.87890625,
+                107.80999755859375,
+                250.83984375
+              ],
+              "pdf_page": 1,
+              "region_id": "region-59715dd69fb3133d5c97383e",
+              "source_sha256": "cd94842829ac6e9c745f5f093bdd5f98100f809629af300034c9b175aa105975",
+              "source_reference": "/library/documents/55f2721c-1a47-572c-ae9c-ce5ebed0de20/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 1,
+        "source_id": "55f2721c-1a47-572c-ae9c-ce5ebed0de20",
+        "document_id": "55f2721c-1a47-572c-ae9c-ce5ebed0de20",
+        "page_status": "UNUSABLE",
+        "source_sha256": "cd94842829ac6e9c745f5f093bdd5f98100f809629af300034c9b175aa105975",
+        "partial_source": false,
+        "source_reference": "/library/documents/55f2721c-1a47-572c-ae9c-ce5ebed0de20/source#page=1",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      }
+    ],
+    "retrieval": [
+      {
+        "region_id": "region-bbe4608729b56db1cba65031",
+        "page": 1,
+        "query_sha256": "c171aa04683a3f7ac7060844882f75a7dd6398bef7eca8243a7c27c3a1ef0780",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-59715dd69fb3133d5c97383e",
+        "page": 1,
+        "query_sha256": "909eca160ee69c2329c71c69bd01ee2e403353ceabf03e0d7dc9458d07638056",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      }
+    ],
+    "citations": [],
+    "frozen_controlled_expectation": [
+      "QUARANTINED",
+      "QUARANTINED"
+    ],
+    "vectors": 0,
+    "embedding_dispatch_lines": [],
+    "bad_embedding_request_proof": "Only accepted region chunks reach embed; log hashes equal persisted chunk hashes; zero-chunk branch skips embed.",
+    "idempotency": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    }
+  },
+  {
+    "case": "REAL",
+    "worker_exit": 0,
+    "status": "completed_with_warnings",
+    "error_code": null,
+    "document_id": "aabc60ee-c729-5371-8703-8dcc6ed4d454",
+    "canonical_bad_text_occurrences": 0,
+    "bad_chunks": 0,
+    "bad_embeddings": 0,
+    "bad_vectors": 0,
+    "bad_retrieval_hits": 0,
+    "bad_textual_citations": 0,
+    "accepted_region_loss": 0,
+    "published_chunks": 3,
+    "embeddings": 3,
+    "visual_source_available": true,
+    "page_results": [
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              193.85589599609375,
+              45.43232727050781,
+              439.26385498046875,
+              53.840328216552734
+            ],
+            "region_id": "region-bd065225c35550de8d26d7ec",
+            "reason_codes": [
+              "QUALITY_EVIDENCE_INSUFFICIENT",
+              "LAYOUT_UNSUPPORTED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "9734c8e52c5212548ffb60f4ac607b02b234fd2a039206f9f9e71e00432da752",
+            "visual_reference": {
+              "bbox": [
+                193.85589599609375,
+                45.43232727050781,
+                439.26385498046875,
+                53.840328216552734
+              ],
+              "pdf_page": 1,
+              "region_id": "region-bd065225c35550de8d26d7ec",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              53.858299255371094,
+              47.827545166015625,
+              132.79428100585938,
+              54.539546966552734
+            ],
+            "region_id": "region-62eb59362fc88c0111591c68",
+            "reason_codes": [
+              "QUALITY_EVIDENCE_INSUFFICIENT",
+              "LAYOUT_UNSUPPORTED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "463808d2a376e62b98f04786a0d827277742c0f81c2448273d702c525002df28",
+            "visual_reference": {
+              "bbox": [
+                53.858299255371094,
+                47.827545166015625,
+                132.79428100585938,
+                54.539546966552734
+              ],
+              "pdf_page": 1,
+              "region_id": "region-62eb59362fc88c0111591c68",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              52.05072021484375,
+              69.73515319824219,
+              439.82525634765625,
+              205.67884826660156
+            ],
+            "region_id": "region-1fdf678d159ca7ce53227394",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "DIRECTION_UNRESOLVED",
+              "INVALID_UNICODE_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING",
+              "OWNERSHIP_PROOF_MISSING",
+              "ORDER_PROOF_MISSING",
+              "BOUNDARY_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "ad5e3d4a005a355ede9134cd3a98a3cbdbcf976b84859aee97944684245629ac",
+            "visual_reference": {
+              "bbox": [
+                52.05072021484375,
+                69.73515319824219,
+                439.82525634765625,
+                205.67884826660156
+              ],
+              "pdf_page": 1,
+              "region_id": "region-1fdf678d159ca7ce53227394",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              207.0399932861328,
+              222.5099639892578,
+              286.188232421875,
+              230.5679931640625
+            ],
+            "region_id": "region-76be6790f83e8f90764c5c7b",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "INVALID_UNICODE_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+            "visual_reference": {
+              "bbox": [
+                207.0399932861328,
+                222.5099639892578,
+                286.188232421875,
+                230.5679931640625
+              ],
+              "pdf_page": 1,
+              "region_id": "region-76be6790f83e8f90764c5c7b",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              53.858299255371094,
+              243.72596740722656,
+              442.3342590332031,
+              265.8759765625
+            ],
+            "region_id": "region-276a183a9559c38800d102ff",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "82c6452070d1299751c3c155d85ba8fe923cabb9282afdb8412f4e14a61014da",
+            "visual_reference": {
+              "bbox": [
+                53.858299255371094,
+                243.72596740722656,
+                442.3342590332031,
+                265.8759765625
+              ],
+              "pdf_page": 1,
+              "region_id": "region-276a183a9559c38800d102ff",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              53.85821533203125,
+              270.5599365234375,
+              442.3302917480469,
+              400.699951171875
+            ],
+            "region_id": "region-1473dc687f672afdb65f92d3",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "73a3e26266c01b1505162f98f4b8416b9deb1f343516196692986bd1c1b2d921",
+            "visual_reference": {
+              "bbox": [
+                53.85821533203125,
+                270.5599365234375,
+                442.3302917480469,
+                400.699951171875
+              ],
+              "pdf_page": 1,
+              "region_id": "region-1473dc687f672afdb65f92d3",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              53.858001708984375,
+              405.2749328613281,
+              442.3331298828125,
+              488.1349792480469
+            ],
+            "region_id": "region-0c465bc8ee053d1810b60884",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "9d677beb206f24f5f63987c6ae32476a065843bccc2a3c5ab728aa1daf53169c",
+            "visual_reference": {
+              "bbox": [
+                53.858001708984375,
+                405.2749328613281,
+                442.3331298828125,
+                488.1349792480469
+              ],
+              "pdf_page": 1,
+              "region_id": "region-0c465bc8ee053d1810b60884",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              223.33799743652344,
+              528.4830932617188,
+              271.30902099609375,
+              535.5819702148438
+            ],
+            "region_id": "region-84add28bccf302d723c1b14c",
+            "reason_codes": [
+              "INVALID_UNICODE_REPLACEMENT",
+              "NATIVE_TO_LAYOUT_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18",
+            "visual_reference": {
+              "bbox": [
+                223.33799743652344,
+                528.4830932617188,
+                271.30902099609375,
+                535.5819702148438
+              ],
+              "pdf_page": 1,
+              "region_id": "region-84add28bccf302d723c1b14c",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              53.85829162597656,
+              549.3545532226562,
+              242.5216064453125,
+              601.1660766601562
+            ],
+            "region_id": "region-2ac854551bf72785757a2504",
+            "reason_codes": [
+              "CANONICAL_NATIVE_ORDER_PROVEN"
+            ],
+            "quality_status": "ACCEPTED",
+            "candidate_sha256": "c1607c724afe94f507cd6787456320c8557c16450d3c38172b95bf803405a83a",
+            "visual_reference": {
+              "bbox": [
+                53.85829162597656,
+                549.3545532226562,
+                242.5216064453125,
+                601.1660766601562
+              ],
+              "pdf_page": 1,
+              "region_id": "region-2ac854551bf72785757a2504",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": true,
+            "publication_status": "ACCEPTED"
+          },
+          {
+            "bbox": [
+              53.85829162597656,
+              549.3477783203125,
+              441.26898193359375,
+              646.1807250976562
+            ],
+            "region_id": "region-bb4b5141fc613a5f10efb7d1",
+            "reason_codes": [
+              "CANONICAL_NATIVE_ORDER_PROVEN",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "ad8f7ff6a18864bddbcb9ddc0cae02a7e29c72a327306211d497fdb91471866c",
+            "visual_reference": {
+              "bbox": [
+                53.85829162597656,
+                549.3477783203125,
+                441.26898193359375,
+                646.1807250976562
+              ],
+              "pdf_page": 1,
+              "region_id": "region-bb4b5141fc613a5f10efb7d1",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              252.61428833007812,
+              585.3477783203125,
+              441.27337646484375,
+              637.1739501953125
+            ],
+            "region_id": "region-f70025a5e65616c22189d336",
+            "reason_codes": [
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "40a8ab72c683f496082e189872c104ef4c7e415ef028ff9e298250546c535509",
+            "visual_reference": {
+              "bbox": [
+                252.61428833007812,
+                585.3477783203125,
+                441.27337646484375,
+                637.1739501953125
+              ],
+              "pdf_page": 1,
+              "region_id": "region-f70025a5e65616c22189d336",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 1,
+        "source_id": "aabc60ee-c729-5371-8703-8dcc6ed4d454",
+        "document_id": "aabc60ee-c729-5371-8703-8dcc6ed4d454",
+        "page_status": "PARTIAL",
+        "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+        "partial_source": true,
+        "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=1",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      },
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              375.5740051269531,
+              46.17702102661133,
+              444.3479919433594,
+              55.95378112792969
+            ],
+            "region_id": "region-ac36fce2963723ab1f976103",
+            "reason_codes": [
+              "DIRECTION_UNRESOLVED",
+              "INVALID_UNICODE_REPLACEMENT",
+              "LAYOUT_UNSUPPORTED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "c5ddd42863414c7c900e1795748677d2571421cdc4c2a9704706475a1df3a222",
+            "visual_reference": {
+              "bbox": [
+                375.5740051269531,
+                46.17702102661133,
+                444.3479919433594,
+                55.95378112792969
+              ],
+              "pdf_page": 2,
+              "region_id": "region-ac36fce2963723ab1f976103",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              24.1653995513916,
+              46.27225875854492,
+              159.3419952392578,
+              55.764259338378906
+            ],
+            "region_id": "region-e2c754eba56dfa6fc27ee020",
+            "reason_codes": [
+              "INVALID_UNICODE_REPLACEMENT",
+              "LAYOUT_UNSUPPORTED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "5d7eae2dfca58e09a7571f5419fe2eca653308cb43542fdd6a8335673d744ebb",
+            "visual_reference": {
+              "bbox": [
+                24.1653995513916,
+                46.27225875854492,
+                159.3419952392578,
+                55.764259338378906
+              ],
+              "pdf_page": 2,
+              "region_id": "region-e2c754eba56dfa6fc27ee020",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              54.270198822021484,
+              69.71348571777344,
+              442.0448913574219,
+              160.8320770263672
+            ],
+            "region_id": "region-2669addf416b23345aecb6a1",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "DIRECTION_UNRESOLVED",
+              "INVALID_UNICODE_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING",
+              "ORDER_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "5b83d5c6f7f3edd8963d5325db5ea443893b6463eccfeacfd4897a91b4c830ed",
+            "visual_reference": {
+              "bbox": [
+                54.270198822021484,
+                69.71348571777344,
+                442.0448913574219,
+                160.8320770263672
+              ],
+              "pdf_page": 2,
+              "region_id": "region-2669addf416b23345aecb6a1",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              209.875,
+              177.6909637451172,
+              289.0232238769531,
+              185.74798583984375
+            ],
+            "region_id": "region-df1922fb0b849c2dd7552bf3",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "INVALID_UNICODE_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+            "visual_reference": {
+              "bbox": [
+                209.875,
+                177.6909637451172,
+                289.0232238769531,
+                185.74798583984375
+              ],
+              "pdf_page": 2,
+              "region_id": "region-df1922fb0b849c2dd7552bf3",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              85.09249877929688,
+              199.7482147216797,
+              414.18853759765625,
+              269.7882080078125
+            ],
+            "region_id": "region-1d87b7ac2f80f2460cf3a76c",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "c053891b74c5e8919bd1b107397d708b2f657a9fe41a404261556c8ec223ed01",
+            "visual_reference": {
+              "bbox": [
+                85.09249877929688,
+                199.7482147216797,
+                414.18853759765625,
+                269.7882080078125
+              ],
+              "pdf_page": 2,
+              "region_id": "region-1d87b7ac2f80f2460cf3a76c",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              56.691986083984375,
+              275.45697021484375,
+              445.1639404296875,
+              383.39697265625
+            ],
+            "region_id": "region-def15ea922e2e6f15d5fc36a",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "2cd38398c01085e989e64603d58771a00233f18aac83e5efc894dd066331ca02",
+            "visual_reference": {
+              "bbox": [
+                56.691986083984375,
+                275.45697021484375,
+                445.1639404296875,
+                383.39697265625
+              ],
+              "pdf_page": 2,
+              "region_id": "region-def15ea922e2e6f15d5fc36a",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              85.09290313720703,
+              391.0859680175781,
+              414.18280029296875,
+              413.8559875488281
+            ],
+            "region_id": "region-9a05c633ce838d44a75ac395",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "e59bd3a855a209ef358f3c1e4e855ced7df0114f22ff90a8d8f8e55a43baff1e",
+            "visual_reference": {
+              "bbox": [
+                85.09290313720703,
+                391.0859680175781,
+                414.18280029296875,
+                413.8559875488281
+              ],
+              "pdf_page": 2,
+              "region_id": "region-9a05c633ce838d44a75ac395",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              56.69285583496094,
+              422.0849914550781,
+              445.1599426269531,
+              539.93505859375
+            ],
+            "region_id": "region-affea9135134e63adaafc97b",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "QUALITY_EVIDENCE_INSUFFICIENT",
+              "OWNERSHIP_PROOF_MISSING",
+              "ORDER_PROOF_MISSING",
+              "BOUNDARY_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "ddd861658e6da5e29b383dbccb5a140d3b9dbe490fa90a0d07644b86893a6a23",
+            "visual_reference": {
+              "bbox": [
+                56.69285583496094,
+                422.0849914550781,
+                445.1599426269531,
+                539.93505859375
+              ],
+              "pdf_page": 2,
+              "region_id": "region-affea9135134e63adaafc97b",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              226.4149932861328,
+              555.2809448242188,
+              274.38604736328125,
+              562.3800048828125
+            ],
+            "region_id": "region-a083e7a79c525e221226c154",
+            "reason_codes": [
+              "INVALID_UNICODE_REPLACEMENT",
+              "NATIVE_TO_LAYOUT_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18",
+            "visual_reference": {
+              "bbox": [
+                226.4149932861328,
+                555.2809448242188,
+                274.38604736328125,
+                562.3800048828125
+              ],
+              "pdf_page": 2,
+              "region_id": "region-a083e7a79c525e221226c154",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              56.692901611328125,
+              576.5595703125,
+              444.1000061035156,
+              646.3857421875
+            ],
+            "region_id": "region-15d3aa1f00d5c19707498d6e",
+            "reason_codes": [
+              "CANONICAL_NATIVE_ORDER_PROVEN"
+            ],
+            "quality_status": "ACCEPTED",
+            "candidate_sha256": "4c53dea579080a7b56ce00a00b514edede5058ec46cb32e8a96614fbbf8ecd36",
+            "visual_reference": {
+              "bbox": [
+                56.692901611328125,
+                576.5595703125,
+                444.1000061035156,
+                646.3857421875
+              ],
+              "pdf_page": 2,
+              "region_id": "region-15d3aa1f00d5c19707498d6e",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": true,
+            "publication_status": "ACCEPTED"
+          },
+          {
+            "bbox": [
+              255.4488983154297,
+              603.5595703125,
+              444.1214599609375,
+              644.86962890625
+            ],
+            "region_id": "region-a664d0c2e69028e71cca5f5e",
+            "reason_codes": [
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "0d8dc9c195d233dcbb18a707821ee89d289fedcc5f5a7a74c8e115be848e2512",
+            "visual_reference": {
+              "bbox": [
+                255.4488983154297,
+                603.5595703125,
+                444.1214599609375,
+                644.86962890625
+              ],
+              "pdf_page": 2,
+              "region_id": "region-a664d0c2e69028e71cca5f5e",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 2,
+        "source_id": "aabc60ee-c729-5371-8703-8dcc6ed4d454",
+        "document_id": "aabc60ee-c729-5371-8703-8dcc6ed4d454",
+        "page_status": "PARTIAL",
+        "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+        "partial_source": true,
+        "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=2",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      },
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              193.85589599609375,
+              45.43232727050781,
+              439.26385498046875,
+              53.840328216552734
+            ],
+            "region_id": "region-ac68e5fcb711ff6031a4dc98",
+            "reason_codes": [
+              "QUALITY_EVIDENCE_INSUFFICIENT",
+              "LAYOUT_UNSUPPORTED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "52f47405a289c436b8f12afc1c6bcfc4d1ec303e91c073f9bbab3307cfa1d3ed",
+            "visual_reference": {
+              "bbox": [
+                193.85589599609375,
+                45.43232727050781,
+                439.26385498046875,
+                53.840328216552734
+              ],
+              "pdf_page": 3,
+              "region_id": "region-ac68e5fcb711ff6031a4dc98",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              53.858299255371094,
+              47.827545166015625,
+              132.79428100585938,
+              54.539546966552734
+            ],
+            "region_id": "region-3b069197b03aef0b55db145a",
+            "reason_codes": [
+              "QUALITY_EVIDENCE_INSUFFICIENT",
+              "LAYOUT_UNSUPPORTED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "8650a81f351d1ac8ca113bf137a88f745d5a93c7bf20c3aae9a75197f59e16ee",
+            "visual_reference": {
+              "bbox": [
+                53.858299255371094,
+                47.827545166015625,
+                132.79428100585938,
+                54.539546966552734
+              ],
+              "pdf_page": 3,
+              "region_id": "region-3b069197b03aef0b55db145a",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              51.4312744140625,
+              69.15605163574219,
+              439.15802001953125,
+              95.5026626586914
+            ],
+            "region_id": "region-cac53c8ac2fbebfd6efa7b85",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "DIRECTION_UNRESOLVED",
+              "INVALID_UNICODE_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING",
+              "ORDER_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "6e1c4a0b1b07644ec80b0779d84560916dbeba283617757e2de90cafc96c7d8d",
+            "visual_reference": {
+              "bbox": [
+                51.4312744140625,
+                69.15605163574219,
+                439.15802001953125,
+                95.5026626586914
+              ],
+              "pdf_page": 3,
+              "region_id": "region-cac53c8ac2fbebfd6efa7b85",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              51.4189453125,
+              97.07707214355469,
+              439.1677551269531,
+              215.4178009033203
+            ],
+            "region_id": "region-17d2ccf61ea5965cefefc976",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "DIRECTION_UNRESOLVED",
+              "INVALID_UNICODE_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING",
+              "OWNERSHIP_PROOF_MISSING",
+              "ORDER_PROOF_MISSING",
+              "BOUNDARY_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "55df9ec2be5d830bce36978e8d9a18716d90af8911dee3cc6587e32f13219b7f",
+            "visual_reference": {
+              "bbox": [
+                51.4189453125,
+                97.07707214355469,
+                439.1677551269531,
+                215.4178009033203
+              ],
+              "pdf_page": 3,
+              "region_id": "region-17d2ccf61ea5965cefefc976",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              207.04100036621094,
+              232.1039581298828,
+              286.1892395019531,
+              240.1619873046875
+            ],
+            "region_id": "region-a4b3fe3c152c798f4ffee2a4",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "INVALID_UNICODE_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+            "visual_reference": {
+              "bbox": [
+                207.04100036621094,
+                232.1039581298828,
+                286.1892395019531,
+                240.1619873046875
+              ],
+              "pdf_page": 3,
+              "region_id": "region-a4b3fe3c152c798f4ffee2a4",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              359.05499267578125,
+              252.96299743652344,
+              437.7509765625,
+              336.81903076171875
+            ],
+            "region_id": "region-5130f6bdd5b6bff8ad926dd3",
+            "reason_codes": [
+              "ZONE_UNRESOLVED",
+              "QUALITY_EVIDENCE_INSUFFICIENT",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "6a7ad484d12bcf0ae0d224dcd5eaca9b39090f5fff78dea69d901d58f0fcfc3e",
+            "visual_reference": {
+              "bbox": [
+                359.05499267578125,
+                252.96299743652344,
+                437.7509765625,
+                336.81903076171875
+              ],
+              "pdf_page": 3,
+              "region_id": "region-5130f6bdd5b6bff8ad926dd3",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              54.310821533203125,
+              255.99655151367188,
+              353.5118103027344,
+              338.1929626464844
+            ],
+            "region_id": "region-34c9bd20a65179055f8171fa",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "007691a505d22331339659d6be7893720036f5bd3df2815c3757e3171b1c81b2",
+            "visual_reference": {
+              "bbox": [
+                54.310821533203125,
+                255.99655151367188,
+                353.5118103027344,
+                338.1929626464844
+              ],
+              "pdf_page": 3,
+              "region_id": "region-34c9bd20a65179055f8171fa",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              54.31080627441406,
+              342.887939453125,
+              442.7868347167969,
+              413.0279541015625
+            ],
+            "region_id": "region-fed819ef2a09fcbf7c73f9b6",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "9cb9646a6910ea1803aa7213f70af62500f6edf5b2ff1439623f47b44d4e6e48",
+            "visual_reference": {
+              "bbox": [
+                54.31080627441406,
+                342.887939453125,
+                442.7868347167969,
+                413.0279541015625
+              ],
+              "pdf_page": 3,
+              "region_id": "region-fed819ef2a09fcbf7c73f9b6",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              54.31080627441406,
+              426.2979736328125,
+              196.86061096191406,
+              435.84796142578125
+            ],
+            "region_id": "region-ec461dfd4e1921eeaaa2bf32",
+            "reason_codes": [
+              "QUALITY_EVIDENCE_INSUFFICIENT",
+              "LAYOUT_UNSUPPORTED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "5f25c67f774b9eaf6667f6dc67a707698f6bcae270b40a5491a9a08e534590b0",
+            "visual_reference": {
+              "bbox": [
+                54.31080627441406,
+                426.2979736328125,
+                196.86061096191406,
+                435.84796142578125
+              ],
+              "pdf_page": 3,
+              "region_id": "region-ec461dfd4e1921eeaaa2bf32",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              82.71060180664062,
+              445.9169616699219,
+              411.8084716796875,
+              504.6369934082031
+            ],
+            "region_id": "region-1ff02b575038f54a22668e7e",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "d842b1b197782a9492235eebb0c51dc7a729626bf780a692244072fe4094cee4",
+            "visual_reference": {
+              "bbox": [
+                82.71060180664062,
+                445.9169616699219,
+                411.8084716796875,
+                504.6369934082031
+              ],
+              "pdf_page": 3,
+              "region_id": "region-1ff02b575038f54a22668e7e",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              54.31060028076172,
+              512.916015625,
+              442.7830505371094,
+              570.7659912109375
+            ],
+            "region_id": "region-8b8553d993e5a48ce9f721ac",
+            "reason_codes": [
+              "CENTERED_EDITORIAL_CAPTION",
+              "MAIN_CONTENT_BAND",
+              "EXPLICIT_NOTES_BOUNDARY",
+              "ALL_BODY_PROOFS_PRESENT",
+              "QUALITY_EVIDENCE_INSUFFICIENT",
+              "OWNERSHIP_CERTIFICATE_MISMATCH"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "e3bcb6f91985837ad563c6f40a0561c459fa874c3913251eb0b1afd12efe8be8",
+            "visual_reference": {
+              "bbox": [
+                54.31060028076172,
+                512.916015625,
+                442.7830505371094,
+                570.7659912109375
+              ],
+              "pdf_page": 3,
+              "region_id": "region-8b8553d993e5a48ce9f721ac",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              222.85299682617188,
+              582.9089965820312,
+              270.82403564453125,
+              590.0069580078125
+            ],
+            "region_id": "region-45ef6b08e7a3cbdf94f3026b",
+            "reason_codes": [
+              "INVALID_UNICODE_REPLACEMENT",
+              "NATIVE_TO_LAYOUT_REPLACEMENT",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18",
+            "visual_reference": {
+              "bbox": [
+                222.85299682617188,
+                582.9089965820312,
+                270.82403564453125,
+                590.0069580078125
+              ],
+              "pdf_page": 3,
+              "region_id": "region-45ef6b08e7a3cbdf94f3026b",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          },
+          {
+            "bbox": [
+              53.858299255371094,
+              602.2568969726562,
+              441.2676696777344,
+              645.0867309570312
+            ],
+            "region_id": "region-3ac0bd873173bc941609f11b",
+            "reason_codes": [
+              "CANONICAL_NATIVE_ORDER_PROVEN"
+            ],
+            "quality_status": "ACCEPTED",
+            "candidate_sha256": "e19eeb2613566867a3ccd28b503ca10b5d679fe2b92ac946db40e0f6dc3792cf",
+            "visual_reference": {
+              "bbox": [
+                53.858299255371094,
+                602.2568969726562,
+                441.2676696777344,
+                645.0867309570312
+              ],
+              "pdf_page": 3,
+              "region_id": "region-3ac0bd873173bc941609f11b",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "CERTIFIED",
+            "textually_citable": true,
+            "publication_status": "ACCEPTED"
+          },
+          {
+            "bbox": [
+              252.6143035888672,
+              620.2605590820312,
+              441.2749938964844,
+              645.0867309570312
+            ],
+            "region_id": "region-cdc1cbf5d5741969df3a5087",
+            "reason_codes": [
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "21b21690d0d5ac06f2260bf3432a39ed62514618ddc78cfde988c326825e3e0b",
+            "visual_reference": {
+              "bbox": [
+                252.6143035888672,
+                620.2605590820312,
+                441.2749938964844,
+                645.0867309570312
+              ],
+              "pdf_page": 3,
+              "region_id": "region-cdc1cbf5d5741969df3a5087",
+              "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+              "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 3,
+        "source_id": "aabc60ee-c729-5371-8703-8dcc6ed4d454",
+        "document_id": "aabc60ee-c729-5371-8703-8dcc6ed4d454",
+        "page_status": "PARTIAL",
+        "source_sha256": "897c796ce3d9007863c88c5105a92da6afa363ca77c359f6954dbac2995a1d32",
+        "partial_source": true,
+        "source_reference": "/library/documents/aabc60ee-c729-5371-8703-8dcc6ed4d454/source#page=3",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      }
+    ],
+    "retrieval": [
+      {
+        "region_id": "region-bd065225c35550de8d26d7ec",
+        "page": 1,
+        "query_sha256": "9511073d906c193928deb2fc145f484a3c65f744e0cab9a8b3d6ced9139c86b4",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-62eb59362fc88c0111591c68",
+        "page": 1,
+        "query_sha256": "c15e7161ec342fa2a82382b894197e8a2dc21b29580d7aebca5f40af11a6a0b3",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-1fdf678d159ca7ce53227394",
+        "page": 1,
+        "query_sha256": "b3df18107316cb6e1d48c7c82bdd5bba2705b17259fc86e0029e6ed44b6d4669",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-76be6790f83e8f90764c5c7b",
+        "page": 1,
+        "query_sha256": "8ad0c6d5bbc02ed1c49d1f3e79d1cbfa37096811d3b615795dbb7abc49a913c4",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-276a183a9559c38800d102ff",
+        "page": 1,
+        "query_sha256": "3fdc9f1ae253306d196d40f3a0883a55acd060ecec1d8e4da1e01f57ee0f4fde",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-1473dc687f672afdb65f92d3",
+        "page": 1,
+        "query_sha256": "b18934cb27123f4bccad4bab2d625bc5b70a3fee7d274117e7a069f26bd9dff3",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-0c465bc8ee053d1810b60884",
+        "page": 1,
+        "query_sha256": "38c267c18971de93e958f630aba15ec1332c2891897388bfc764a63d67df7f55",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-84add28bccf302d723c1b14c",
+        "page": 1,
+        "query_sha256": "b1d2c0838691c65658d89464b099dd482dbd1b8a5743a6523a0b059650cca0c1",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-bb4b5141fc613a5f10efb7d1",
+        "page": 1,
+        "query_sha256": "6e39680bde6fb0429c832f4387031baa937af16d462e197139a925bc1b385970",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-f70025a5e65616c22189d336",
+        "page": 1,
+        "query_sha256": "1ca52a7936c213f38d99594a999138e79e495e1958a649e0282738d2c8703706",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-ac36fce2963723ab1f976103",
+        "page": 2,
+        "query_sha256": "175847c8289466c3b3a47ea456ddc90df18c135db7dfc696bf92383fdcb867f1",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-e2c754eba56dfa6fc27ee020",
+        "page": 2,
+        "query_sha256": "3691948e41df0f48d1412ee80d8a0841b98c758d7e16b79961b2284a93812951",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-2669addf416b23345aecb6a1",
+        "page": 2,
+        "query_sha256": "c1140c2fa358f971de8a1e9eab53f0a05a32bd8601ea56ec1464f2d7124c49c0",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-df1922fb0b849c2dd7552bf3",
+        "page": 2,
+        "query_sha256": "8ad0c6d5bbc02ed1c49d1f3e79d1cbfa37096811d3b615795dbb7abc49a913c4",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-1d87b7ac2f80f2460cf3a76c",
+        "page": 2,
+        "query_sha256": "295c8aacf53419df631645919ec19be657fbf757d6fbd5d489531eaebe0530a3",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-def15ea922e2e6f15d5fc36a",
+        "page": 2,
+        "query_sha256": "35c43b4d841131425a53ba59bd684b656c4aeea47562263cb616fcbbb9d5443b",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-9a05c633ce838d44a75ac395",
+        "page": 2,
+        "query_sha256": "289436813e3c6451a08d7e31f47bd8dff35588f70da00b427fe1ca9ae2ad4dcc",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-affea9135134e63adaafc97b",
+        "page": 2,
+        "query_sha256": "450f9ce5e9f80be7702524ae57119b449aa966cd5e7c4661c2bb32cdb3b91c02",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-a083e7a79c525e221226c154",
+        "page": 2,
+        "query_sha256": "b1d2c0838691c65658d89464b099dd482dbd1b8a5743a6523a0b059650cca0c1",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-a664d0c2e69028e71cca5f5e",
+        "page": 2,
+        "query_sha256": "2dba09de9e444ec87d1cbf6f528110aed8dd8b1d91ecbf8167538767ba02538c",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-ac68e5fcb711ff6031a4dc98",
+        "page": 3,
+        "query_sha256": "90c065140f4c907f439b75bcc9272517f2f44a3de91fa2ecb050401e9a8b7fc4",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-3b069197b03aef0b55db145a",
+        "page": 3,
+        "query_sha256": "e8d0a02efc411e27166dbc2b5773a02efe986774797d1b41369dd237e6143e86",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-cac53c8ac2fbebfd6efa7b85",
+        "page": 3,
+        "query_sha256": "e74d2b52b271e98450400cb60f72d53718f53ec39b8c5a5daab1cc791fc0d1da",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-17d2ccf61ea5965cefefc976",
+        "page": 3,
+        "query_sha256": "fa36546cbae46f60e9ca9ba2c921459d65dab7415fe93b69a3c0f844f57f1a58",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-a4b3fe3c152c798f4ffee2a4",
+        "page": 3,
+        "query_sha256": "8ad0c6d5bbc02ed1c49d1f3e79d1cbfa37096811d3b615795dbb7abc49a913c4",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-5130f6bdd5b6bff8ad926dd3",
+        "page": 3,
+        "query_sha256": "eb7d2b4b6d642e2c371187299c756317562ee4157d3c44cf04438116b9646297",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-34c9bd20a65179055f8171fa",
+        "page": 3,
+        "query_sha256": "edc0453944c9ec0e9a743c0eedc0209cb9b60c0c73ee8ad5084e49f943d0527e",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-fed819ef2a09fcbf7c73f9b6",
+        "page": 3,
+        "query_sha256": "04d16580f87511d6289bcccc9f78ebc9adc5e8f81a758134ed8a442d8bab980b",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-ec461dfd4e1921eeaaa2bf32",
+        "page": 3,
+        "query_sha256": "b8773d1bf9703345734369c06a95867f23b4f45845c59fe5c02a54400714528a",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-1ff02b575038f54a22668e7e",
+        "page": 3,
+        "query_sha256": "3d9bf3c9383ae8728212363d2ff247df1595f23559a35f06e259d9ee7efc6fd2",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-8b8553d993e5a48ce9f721ac",
+        "page": 3,
+        "query_sha256": "7ab472b3c0aaef911801f169140d9115c3ce25caa6d7b4ddfa731ed237a94f13",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-45ef6b08e7a3cbdf94f3026b",
+        "page": 3,
+        "query_sha256": "b1d2c0838691c65658d89464b099dd482dbd1b8a5743a6523a0b059650cca0c1",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-cdc1cbf5d5741969df3a5087",
+        "page": 3,
+        "query_sha256": "901b6fcfe1eef027d54890b8f755ee0c55c385cb3340a28cad557836eef38f9d",
+        "expected": "no quarantined unit",
+        "returned_hits": 0,
+        "quarantined_region_hits": 0
+      },
+      {
+        "region_id": "region-2ac854551bf72785757a2504",
+        "page": 1,
+        "expected": "accepted hit",
+        "query": "> 30 A partir del _Shuljan Aruj_ vemos que el momento más auspicioso para levantarse de dormir es en las horas más profunda de la mañana, para que “sea uno quien despierte el alba” y no que el día comience antes de que uno despierte. Aun así, para el que está espiritualmente dormido, la “mañana” es ",
+        "chunk_ids": [],
+        "hit": false
+      },
+      {
+        "region_id": "region-15d3aa1f00d5c19707498d6e",
+        "page": 2,
+        "expected": "accepted hit",
+        "query": "> 33 Anteriormente hemos visto que el punto bueno de la persona es en sí mismo Divinidad (ver §2 más arriba). Por lo tanto, en un nivel más profundo, el encontrar y conectarse con el punto bueno conecta literalmente a la persona con HaShem. De este modo está claro cómo la glosa del Rama tiene la int",
+        "chunk_ids": [],
+        "hit": false
+      },
+      {
+        "region_id": "region-3ac0bd873173bc941609f11b",
+        "page": 3,
+        "expected": "accepted hit",
+        "query": "> 35 Ver §1 más arriba. Escribe el Rabí Natán en otra instancia: El hombre se une a HaShem desde este mundo físico principalmente a través de la melodía y de la canción. Esto lo vemos de manera empírica. Escuchar música inspira el anhelo. Genera el deseo de una mayor cercanía con HaShem, incluso en ",
+        "chunk_ids": [],
+        "hit": false
+      }
+    ],
+    "citations": [],
+    "frozen_controlled_expectation": null,
+    "accepted_retrieval_misses": 3,
+    "vectors": 3,
+    "embedding_dispatch_lines": [
+      "2026-10-21 10:56:21,678 INFO regional_embedding_dispatch count=3 content_sha256=['adc79fa2f3d0b09897767139a755c1bfdc026d066c9f448173000f83aa8b8690', 'b96111e501586b495f91dcacdf2798aec3c6ea73efc56af8ff69be132688c36f', 'b99c73c026987d832d71d009788cd4e26d688dec67bbace8b39dcb8c863428e8']"
+    ],
+    "bad_embedding_request_proof": "Only accepted region chunks reach embed; log hashes equal persisted chunk hashes; zero-chunk branch skips embed.",
+    "idempotency": {
+      "same_job": true,
+      "completed_job_unclaimable": true,
+      "chunk_ids_unchanged": true,
+      "pages_unchanged": true,
+      "vectors_unchanged": true
+    }
+  }
+]

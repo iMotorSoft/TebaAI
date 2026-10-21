@@ -1,0 +1,35 @@
+{
+  "environment": "development",
+  "production_touched": false,
+  "postgres": {
+    "db": "tebaai",
+    "version": "PostgreSQL 18.4 (Debian 18.4-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit"
+  },
+  "milvus": {
+    "collections": [
+      "team360_lab_pgvector_benchmark_openai_small_1536",
+      "team360_diagnosis_debug_20260614_203658",
+      "tebaai_breslov_chunks_v1",
+      "tebaai_breslov_bookqa_v2_kitzur_test_pages_v1",
+      "tebaai_breslov_chunks_v2_dev",
+      "tebaai_content_manager_e2e_v1",
+      "team360_diagnosis_debug_20260614_203636",
+      "team360_diagnosis_debug_20260614_210515",
+      "team360_sales_diagnosis_knowledge_v1",
+      "tebaai_breslov_test_chunks_v1",
+      "team360_diagnosis_debug_20260614_210254",
+      "team360_diagnosis_debug_20260614_224849",
+      "tebaai_breslov_bm25_test_v2",
+      "tebaai_breslov_bm25_test_v3",
+      "JAI_document_embeddings",
+      "JAI_document_embeddings_lab_ingest"
+    ]
+  },
+  "embedding": {
+    "http_status": 200,
+    "returned_model": "openai_text_embedding_3_small",
+    "dimension": 1536,
+    "fallback_header": "0",
+    "model_id_present": true
+  }
+}

@@ -1,0 +1,6 @@
+# Local reproducible PDF fixtures; do not publish original source extracts/fonts.
+/fixtures/*.pdf
+/attempt-*/fixtures/*.pdf
+__pycache__/
+# Filled only after the final report commit is pushed; not self-referential.
+/git-close-postpush.json

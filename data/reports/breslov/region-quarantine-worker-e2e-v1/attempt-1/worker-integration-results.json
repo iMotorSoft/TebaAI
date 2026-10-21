@@ -1,0 +1,75 @@
+[
+  {
+    "case": "A",
+    "worker_exit": 0,
+    "status": "completed_with_warnings",
+    "error_code": null,
+    "document_id": "24245d3c-4188-5914-8550-d6933c641e58",
+    "canonical_bad_text_occurrences": 0,
+    "bad_chunks": 0,
+    "bad_embeddings": 0,
+    "bad_vectors": 0,
+    "bad_retrieval_hits": 0,
+    "bad_textual_citations": 0,
+    "accepted_region_loss": 0,
+    "published_chunks": 0,
+    "embeddings": 0,
+    "visual_source_available": true,
+    "page_results": [
+      {
+        "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+        "regions": [
+          {
+            "bbox": [
+              40.0,
+              92.40234375,
+              394.77984619140625,
+              102.080078125
+            ],
+            "region_id": "region-6abf478696cc705f6bb6a212",
+            "reason_codes": [
+              "ZONE_AMBIGUOUS",
+              "BOUNDARY_UNPROVEN",
+              "COLUMN_AMBIGUOUS",
+              "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+              "LAYOUT_UNSUPPORTED",
+              "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED",
+              "BODY_ZONE_PROOF_MISSING"
+            ],
+            "quality_status": "UNRESOLVED",
+            "candidate_sha256": "6fa91f6a06485c11b325cd3eb7c0d3901b406e16da731635495157582bc24945",
+            "visual_reference": {
+              "bbox": [
+                40.0,
+                92.40234375,
+                394.77984619140625,
+                102.080078125
+              ],
+              "pdf_page": 1,
+              "region_id": "region-6abf478696cc705f6bb6a212",
+              "source_sha256": "e8d902475770ae3ee6a88df7e4f581cf9ceb4273f2dcfb6303a5a859125255c6",
+              "source_reference": "/library/documents/24245d3c-4188-5914-8550-d6933c641e58/source#page=1"
+            },
+            "provenance_status": "UNRESOLVED",
+            "textually_citable": false,
+            "publication_status": "QUARANTINED"
+          }
+        ],
+        "pdf_page": 1,
+        "source_id": "24245d3c-4188-5914-8550-d6933c641e58",
+        "document_id": "24245d3c-4188-5914-8550-d6933c641e58",
+        "page_status": "UNUSABLE",
+        "source_sha256": "e8d902475770ae3ee6a88df7e4f581cf9ceb4273f2dcfb6303a5a859125255c6",
+        "partial_source": false,
+        "source_reference": "/library/documents/24245d3c-4188-5914-8550-d6933c641e58/source#page=1",
+        "publication_version": "region-publication-v1",
+        "contains_quarantined_regions": true
+      }
+    ],
+    "retrieval": [],
+    "citations": [],
+    "frozen_controlled_expectation": [
+      "ACCEPTED"
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "bad_region_embedding_requests": 0,
+  "actual_embeddings": 3,
+  "dispatch_log_lines": [
+    "2026-10-21 11:03:33,614 INFO regional_embedding_dispatch count=3 content_sha256=['adc79fa2f3d0b09897767139a755c1bfdc026d066c9f448173000f83aa8b8690', 'b96111e501586b495f91dcacdf2798aec3c6ea73efc56af8ff69be132688c36f', 'b99c73c026987d832d71d009788cd4e26d688dec67bbace8b39dcb8c863428e8']"
+  ],
+  "evidence": "Dispatch hashes match actual PostgreSQL chunk hashes; zero accepted chunks bypass embed. No manual embedding-store writes."
+}

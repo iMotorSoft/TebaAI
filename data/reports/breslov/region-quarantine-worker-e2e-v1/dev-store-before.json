@@ -1,0 +1,46 @@
+{
+  "postgres": {
+    "library_documents": {
+      "total_count": 3,
+      "existing_count": 3,
+      "existing_full_rows_sha256": "666d2bcece3361053dc340055fbaee906b9ab292260501137711722617a1af28"
+    },
+    "library_document_texts": {
+      "total_count": 3,
+      "existing_count": 3,
+      "existing_full_rows_sha256": "08a9822efdee9977a0d72e4c7a1abe448fb58ad83a05a019a8edd2ca7965452e"
+    },
+    "library_pages_v2": {
+      "total_count": 896,
+      "existing_count": 896,
+      "existing_full_rows_sha256": "a12e84f61b0a9986a3d68f267d2fddd8555c5f192f42bc94d1a7fdf49685edf3"
+    },
+    "library_document_chunks": {
+      "total_count": 2146,
+      "existing_count": 2146,
+      "existing_full_rows_sha256": "838159729e5338939172e0b333bdcf36b7c521dea809b01c443826cfb79ab818"
+    },
+    "library_chunk_embeddings": {
+      "total_count": 2146,
+      "existing_count": 2146,
+      "existing_full_rows_sha256": "c2d835c8e9aa9d157301ca42b329199cc5334b2849597952f5f02160d29a9c99"
+    },
+    "content_manager_jobs": {
+      "total_count": 16,
+      "existing_count": 16,
+      "existing_full_rows_sha256": "464dbb2be5654ab439d9b64f7003ab934a9b18058832b3dabefb9155acec1955"
+    }
+  },
+  "milvus": {
+    "tebaai_breslov_chunks_v1": {
+      "live_count": 2146,
+      "existing_count": 2146,
+      "existing_full_rows_sha256": "28c006d2117aca9b170d9e5505ff7552ebbec4dcc182317d234845e321cb99da"
+    },
+    "tebaai_content_manager_e2e_v1": {
+      "live_count": 0,
+      "existing_count": 0,
+      "existing_full_rows_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  }
+}

@@ -771,6 +771,11 @@ def build_evidence_v1(
         **v1_evidence,
     }
 
+    publication = chunk.get("metadata") or {}
+    if publication.get("region_id") and publication.get("source_reference"):
+        existing.update({"region_id": publication["region_id"],
+                         "source_reference": publication["source_reference"],
+                         "publication_reference": f"/library/documents/{page_ref.document_id}/pages/{page_ref.pdf_page}/publication"})
     return existing
 
 

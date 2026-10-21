@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import asyncio
 from uuid import UUID
+from pathlib import Path
+
+from litestar.response import File
 
 from litestar import Request, get, post
 from litestar.exceptions import (
@@ -56,6 +59,8 @@ from modules.library.hybrid_search import search_chunks_hybrid
 from modules.library.relation_qa_schemas import RelationQARequest, RelationQAResponse
 from modules.library.relation_qa_service import run_relation_qa
 from modules.library.repository import get_authorized_scope_by_code
+from modules.library.source_repository import get_authorized_source, get_page_publication
+from modules.library.durable_source import source_path
 from modules.library.schemas import (
     LibrarySearchRequest,
     LibrarySearchResponse,
@@ -378,6 +383,9 @@ async def library_search(
                 raw_results = await search_chunks_hybrid(
                     conn, knowledge_scope_code=knowledge_scope_code,
                     query=data.query, top_k=data.top_k, language=data.language,
+                    milvus_collection=(CONTENT_MANAGER_E2E_COLLECTION
+                                       if knowledge_scope_code == CONTENT_MANAGER_E2E_SCOPE
+                                       else MILVUS_COLLECTION_BRESLOV),
                 )
             else:
                 raw_results = await search_chunks_text(
@@ -418,6 +426,38 @@ async def library_search(
         query=data.query, collection=knowledge_scope_code,
         mode=data.mode, language=data.language, total=len(results), results=results,
     )
+
+
+@get("/library/documents/{document_id:uuid}/source", guards=[require_auth])
+async def library_original_source(request: Request, document_id: UUID) -> File:
+    payload = await get_current_user_payload(request)
+    pool = await get_pg_pool(request)
+    try:
+        async with transaction(pool) as conn:
+            row = await get_authorized_source(conn, user_id=UUID(payload["sub"]), document_id=document_id)
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Source unavailable") from exc
+    # Only serve worker-owned durable files, not arbitrary DB paths or uploads.
+    path = source_path(document_id)
+    if not row["source_path"] or Path(row["source_path"]).resolve() != path or not path.is_file():
+        raise HTTPException(status_code=404, detail="Source unavailable")
+    return File(path=path, media_type="application/pdf", filename="original.pdf",
+                content_disposition_type="inline", headers={"Cache-Control": "private, no-store"})
+
+
+@get("/library/documents/{document_id:uuid}/pages/{page:int}/publication", guards=[require_auth])
+async def library_page_publication(request: Request, document_id: UUID, page: int) -> dict:
+    payload = await get_current_user_payload(request)
+    pool = await get_pg_pool(request)
+    try:
+        async with transaction(pool) as conn:
+            await get_authorized_source(conn, user_id=UUID(payload["sub"]), document_id=document_id)
+            metadata = await get_page_publication(conn, document_id, page)
+    except ScopeAccessDeniedError as exc:
+        raise PermissionDeniedException("Source unavailable") from exc
+    if not metadata:
+        raise HTTPException(status_code=404, detail="Physical page unavailable")
+    return metadata
 
 
 # ── Content Manager V1 ────────────────────────────────────────────────────

@@ -21,7 +21,7 @@ from modules.library.routes import (
     content_manager_upload, content_manager_create_job, content_manager_list_jobs,
     content_manager_get_job, content_manager_retry_job, content_manager_cancel_job,
     content_manager_diagnostic, content_manager_summary, content_manager_documents,
-    content_manager_publish_job,
+    content_manager_publish_job, library_original_source, library_page_publication,
 )
 from routes.health import health
 from routes.ready import ready
@@ -52,6 +52,8 @@ app = Litestar(
         book_qa_runs,
         book_qa_runs_latest,
         library_search,
+        library_original_source,
+        library_page_publication,
         relation_qa,
         investigative_qa_v1,
         content_manager_upload,

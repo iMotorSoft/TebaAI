@@ -17,6 +17,7 @@ from globalVar import (
 )
 from infrastructure.postgres.transaction import transaction
 from modules.library.page_first_gateway import E2EIsolationError, MilvusAttemptIndex
+from modules.library.durable_source import remove_source
 
 
 @dataclass(frozen=True)
@@ -162,6 +163,8 @@ class ManifestCleanupService:
                         (resource_id, str(manifest["job_id"]), str(manifest["attempt_number"])),
                     )
                 result = "deleted" if cur.rowcount else "already_absent"
+        if resource_type == "document" and result == "deleted":
+            await asyncio.to_thread(remove_source, UUID(resource_id))
         return CleanupItem(resource_type, resource_id, result)
 
     async def _delete_temp(self, manifest, upload_id: str) -> CleanupItem:

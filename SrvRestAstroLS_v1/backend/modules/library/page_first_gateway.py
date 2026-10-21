@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import logging
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
@@ -31,6 +32,7 @@ from infrastructure.postgres.transaction import transaction
 from modules.embeddings.client import embed_batch
 from modules.library.chunking import paragraph_chunks
 from modules.library.content_manager_repository import ClaimedJob
+from modules.library.durable_source import preserve_source, source_reference
 from modules.library.hybrid_search import resolve_milvus_collection_code_for_scope
 from modules.library.pdf_ligature_normalization import normalize_pdf_search_text
 from modules.library.page_first_pipeline import (
@@ -197,6 +199,7 @@ class PostgresMilvusPageFirstGateway:
         self, request: PageFirstIngestionRequest, extracted: ExtractedDocument,
     ) -> PersistedDocument:
         document_id = _uuid(request.tenant.knowledge_scope_id, f"{request.source_sha256}:{request.pipeline_version}")
+        validate_publication(request, extracted)
         text_id = _uuid(document_id, "canonical-markdown")
         run_id = _uuid(document_id, request.attempt_key)
         manifest_id = _uuid(request.job_id, f"manifest:{request.attempt_number}")
@@ -266,7 +269,8 @@ class PostgresMilvusPageFirstGateway:
                         (page_id, run_id, document_id, page.page_number, page.original_markdown,
                          len(page.original_markdown), _json({"language": page.language,
                          "headings": list(page.headings), "footnotes": list(page.footnote_numbers),
-                         "printed_references": list(page.printed_references), "is_empty": page.is_empty})),
+                         "printed_references": list(page.printed_references), "is_empty": page.is_empty,
+                         "region_publication": publication_metadata(page, document_id)})),
                     )
                 await cur.execute(
                     """INSERT INTO content_manager_ingestion_manifests(
@@ -282,17 +286,8 @@ class PostgresMilvusPageFirstGateway:
         return PersistedDocument(document_id, text_id, run_id, manifest_id, page_ids)
 
     async def persist_chunks(self, request, persisted, extracted) -> tuple[PersistedChunk, ...]:
-        result: list[PersistedChunk] = []
-        global_index = 0
-        for page in extracted.pages:
-            for local_index, raw in enumerate(paragraph_chunks(page.original_markdown, 1400, 150, 1)):
-                content = raw["content"]
-                content_sha = _sha(content)
-                chunk_id = _uuid(persisted.document_id, f"chunk:{request.pipeline_version}:{page.page_number}:{local_index}:{content_sha}")
-                chunk_uid = hashlib.sha256(str(chunk_id).encode()).hexdigest()[:24]
-                result.append(PersistedChunk(chunk_id, chunk_uid, page.page_number, global_index,
-                                             content, content_sha, page.language))
-                global_index += 1
+        validate_publication(request, extracted)
+        result = build_region_chunks(request, persisted, extracted)
         async with transaction(self.pool) as conn:
             async with conn.cursor() as cur:
                 legacy_code = (
@@ -325,7 +320,9 @@ class PostgresMilvusPageFirstGateway:
                          chunk.chunk_index, chunk.chunk_uid, chunk.language, chunk.content, chunk.content_sha256,
                          len(chunk.content), max(1, len(chunk.content)//4), len(chunk.content),
                          chunk.page_number, chunk.page_number,
-                         _json({"job_id": str(request.job_id), "attempt": request.attempt_number}),
+                         _json({"job_id": str(request.job_id), "attempt": request.attempt_number,
+                                "region_id": chunk.region_id,
+                                "source_reference": source_reference(persisted.document_id, chunk.page_number)}),
                          normalize_pdf_search_text(chunk.content), request.tenant.knowledge_scope_id,
                          request.tenant.organization_id, request.tenant.workspace_id, request.tenant.project_id,
                          max(1, len(chunk.content)//4), request.ingestion_profile,
@@ -336,6 +333,9 @@ class PostgresMilvusPageFirstGateway:
         return tuple(result)
 
     async def embed(self, texts: tuple[str, ...], model: str) -> tuple[tuple[float, ...], ...]:
+        logging.getLogger(__name__).info(
+            "regional_embedding_dispatch count=%s content_sha256=%s", len(texts), [_sha(text) for text in texts],
+        )
         vectors = await asyncio.to_thread(embed_batch, list(texts), model)
         if any(len(vector) != EMBEDDINGS_DIMENSION for vector in vectors):
             raise RuntimeError("Embedding dimension mismatch")
@@ -464,9 +464,12 @@ class PostgresMilvusPageFirstGateway:
     async def finalize(self, request, persisted, reconciliation, extracted) -> None:
         if not reconciliation.consistent:
             raise RuntimeError("Cannot finalize inconsistent attempt")
+        durable = await asyncio.to_thread(
+            preserve_source, request.source_path, persisted.document_id, request.source_sha256,
+        )
         async with transaction(self.pool) as conn:
             async with conn.cursor() as cur:
-                await cur.execute("UPDATE library_documents SET status='test_candidate',updated_at=now() WHERE id=%s AND status='draft'", (persisted.document_id,))
+                await cur.execute("UPDATE library_documents SET status='test_candidate',source_path=%s,updated_at=now() WHERE id=%s AND status='draft'", (str(durable), persisted.document_id))
                 if cur.rowcount != 1:
                     raise RuntimeError("Document did not remain a draft candidate")
                 await cur.execute("UPDATE library_ingestion_runs_v2 SET status='completed',finished_at=now(),metrics_json=%s::jsonb,warnings_json=%s::jsonb WHERE run_id=%s",
@@ -482,6 +485,46 @@ class PostgresMilvusPageFirstGateway:
         async with transaction(self.pool) as conn:
             await conn.execute("UPDATE content_manager_uploads SET cleanup_status='completed',cleaned_at=now(),temp_path=NULL WHERE id=%s", (request.upload_id,))
             await conn.execute("UPDATE content_manager_manifest_resources SET cleaned_at=now() WHERE manifest_id=%s AND resource_type='temporary_file'", (persisted.manifest_id,))
+
+
+def validate_publication(request, extracted) -> None:
+    """Defense in depth: no adapter can persist a legacy/unfiltered page."""
+    for page in extracted.pages:
+        published = page.publication
+        if (published is None or published.source_sha256 != request.source_sha256
+                or published.pdf_page != page.page_number
+                or published.canonical_markdown != page.original_markdown
+                or normalize_pdf_search_text(page.original_markdown) != page.search_text_normalized):
+            raise ValueError("Unbound regional publication; ingestion stopped")
+    canonical = "\n\n".join(f"## Page {page.page_number}\n\n{page.original_markdown}" for page in extracted.pages)
+    if canonical != extracted.content_markdown or _sha(canonical) != extracted.content_sha256:
+        raise ValueError("Canonical document differs from regional publication")
+
+
+def publication_metadata(page, document_id) -> dict:
+    from dataclasses import replace
+    publication = replace(page.publication, source_reference=source_reference(document_id, page.page_number))
+    return {**publication.metadata(), "document_id": str(document_id),
+            "source_id": str(document_id),
+            "partial_source": publication.status.value == "PARTIAL"}
+
+
+def build_region_chunks(request, persisted, extracted) -> list[PersistedChunk]:
+    """Overlap resets for EVERY region; never join across a quarantined gap."""
+    result = []
+    for page in extracted.pages:
+        if page.publication is None:
+            raise ValueError("Regional publication is required before chunk creation")
+        for region_id, markdown in page.publication.evidence_units:
+            for local_index, raw in enumerate(paragraph_chunks(markdown, 1400, 150, 1)):
+                content = raw["content"]
+                content_sha = _sha(content)
+                chunk_id = _uuid(persisted.document_id,
+                    f"chunk:{request.pipeline_version}:{page.page_number}:{region_id}:{local_index}:{content_sha}")
+                chunk_uid = hashlib.sha256(str(chunk_id).encode()).hexdigest()[:24]
+                result.append(PersistedChunk(chunk_id, chunk_uid, page.page_number, len(result),
+                                             content, content_sha, page.language, region_id))
+    return result
 
 
 def _file_sha(path: Path) -> str:

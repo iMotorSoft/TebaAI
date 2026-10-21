@@ -21,6 +21,7 @@ from modules.library.content_manager_repository import ClaimedJob, ContentTenant
 from modules.library.content_manager_schemas import IngestionStage
 from modules.library.content_manager_worker import Advance, Heartbeat, PageFirstPipeline, PipelineResult
 from modules.library.pdf_ligature_normalization import normalize_pdf_search_text
+from modules.library.region_publication import PublishedPage, publish_certified_page
 
 _HEBREW_RE = re.compile(r"[\u0590-\u05ff]")
 _MARKDOWN_HEADING_RE = re.compile(r"^#{1,6}\s+(.+?)\s*$", re.MULTILINE)
@@ -64,6 +65,7 @@ class ExtractedPage:
     headings: tuple[str, ...]
     footnote_numbers: tuple[int, ...]
     printed_references: tuple[str, ...]
+    publication: PublishedPage | None = None
 
     @property
     def is_empty(self) -> bool:
@@ -97,6 +99,7 @@ class PersistedChunk:
     content: str
     content_sha256: str
     language: str
+    region_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -207,7 +210,7 @@ async def await_with_lease_heartbeat(awaitable, heartbeat: Heartbeat):
 class ConcretePageFirstPipeline(PageFirstPipeline):
     def __init__(self, gateway: PageFirstGateway, *, extractor=None) -> None:
         self.gateway = gateway
-        self.extractor = extractor or extract_pdf_page_first
+        self.extractor = extractor or extract_pdf_region_published
 
     async def run(self, job: ClaimedJob, *, advance: Advance, heartbeat: Heartbeat) -> PipelineResult:
         request = await self.gateway.load_request(job)
@@ -227,14 +230,14 @@ class ConcretePageFirstPipeline(PageFirstPipeline):
 
         await advance(IngestionStage.BUILDING_CHUNKS, "canonical_pages_persisted", 45.0)
         chunks = await self.gateway.persist_chunks(request, persisted, extracted)
-        if not chunks:
+        if not chunks and not any(page.publication for page in extracted.pages):
             raise PipelineConsistencyError("No textual chunks were produced")
         await heartbeat()
 
         await advance(IngestionStage.EMBEDDING, "page_scoped_chunks_persisted", 62.0)
         vectors = await await_with_lease_heartbeat(
             self.gateway.embed(tuple(chunk.content for chunk in chunks), request.embedding_model), heartbeat,
-        )
+        ) if chunks else ()
         if len(vectors) != len(chunks):
             raise PipelineConsistencyError("Embedding count does not match chunk count")
         embeddings = await self.gateway.persist_embeddings(request, persisted, chunks, vectors)
@@ -311,7 +314,57 @@ def analyze_page(page_number: int, markdown: str, requested_language: str = "aut
     )
 
 
+def document_from_certificates(certified_pages, requested_language: str = "auto") -> ExtractedDocument:
+    """Fail closed before canonical persistence; rejected text never leaves this boundary.
+
+    The certifier owns Markdown offsets. Never slice the legacy page serializer
+    using its ranges. Keep evidence units separate all the way through chunking.
+    """
+    from dataclasses import replace
+
+    pages = []
+    for certified in certified_pages:
+        publication = publish_certified_page(
+            certified, source_reference=f"sha256:{certified.provenance.source_sha256}",
+        )
+        page = analyze_page(publication.pdf_page, publication.canonical_markdown, requested_language)
+        pages.append(replace(page, publication=publication,
+                             original_markdown=publication.canonical_markdown,
+                             search_text_normalized=normalize_pdf_search_text(publication.canonical_markdown)))
+    if not pages or len({page.page_number for page in pages}) != len(pages):
+        raise PipelineConsistencyError("Missing or duplicate certified physical pages")
+    content = "\n\n".join(f"## Page {page.page_number}\n\n{page.original_markdown}" for page in pages)
+    warnings = []
+    if any(page.publication.status.value != "FULL" for page in pages):
+        warnings.append("quarantined_regions_preserved_visually")
+    return ExtractedDocument(
+        pages=tuple(pages), content_markdown=content,
+        content_sha256=hashlib.sha256(content.encode("utf-8")).hexdigest(),
+        language=detect_language(content, requested_language), warnings=tuple(warnings),
+    )
+
+
+def extract_pdf_region_published(path: Path, requested_language: str = "auto") -> ExtractedDocument:
+    """Mandatory production worker boundary; never falls back to legacy text."""
+    if not path.is_file():
+        raise FileNotFoundError("Validated upload temporary file is unavailable")
+    from modules.library.automatic_region_certification_v5 import extract_pdf_region_certificates
+    import pymupdf
+
+    certified = extract_pdf_region_certificates(path)
+    # A missing page is an extraction failure, not permission to ingest unfiltered.
+    with pymupdf.open(path) as document:
+        if {p.provenance.pdf_page for p in certified} != set(range(1, len(document) + 1)):
+            raise PipelineConsistencyError("Certification omitted physical pages")
+    return document_from_certificates(certified, requested_language)
+
+
 def extract_pdf_page_first(path: Path, requested_language: str = "auto") -> ExtractedDocument:
+    """Legacy extraction API for existing offline consumers, NOT the worker path.
+
+    Kept compatible with existing converter/geometry tests. The durable worker
+    uses extract_pdf_region_published and its gateway rejects unfiltered pages.
+    """
     if not path.is_file():
         raise FileNotFoundError("Validated upload temporary file is unavailable")
     import pymupdf as fitz

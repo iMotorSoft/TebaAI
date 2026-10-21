@@ -2447,6 +2447,9 @@ async def run_simple_rag(
                 "canonical_page_source",
                 "page_resolution_method",
                 "page_resolution_confidence",
+                "region_id",
+                "source_reference",
+                "publication_reference",
                 "heading_original",
             ):
                 if v1_key in v1 and v1[v1_key] is not None:

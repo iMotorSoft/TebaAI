@@ -1,0 +1,84 @@
+[
+  {
+    "sql": "SELECT current_database() AS database, current_setting('transaction_read_only') AS read_only, current_setting('transaction_isolation') AS isolation, version() AS version",
+    "params": null
+  },
+  {
+    "sql": "SELECT id,title,status,source_filename,source_path,source_uri,source_sha256,source_size_bytes,version_label,chunk_set_version,organization_id,workspace_id,project_id,knowledge_scope_id,collection_id,document_code,metadata,bibliographic_metadata,created_at,updated_at,archived_at FROM library_documents ORDER BY id",
+    "params": null
+  },
+  {
+    "sql": "SELECT id,knowledge_scope_code,organization_id,workspace_id,status FROM knowledge_scopes ORDER BY id",
+    "params": null
+  },
+  {
+    "sql": "SELECT * FROM library_ingestion_runs_v2 WHERE document_id=%s ORDER BY created_at,run_id",
+    "params": [
+      "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa"
+    ]
+  },
+  {
+    "sql": "SELECT page_id,run_id,document_id,page_number,char_count,extraction_method,confidence,layout_notes,md5(text) AS text_md5 FROM library_pages_v2 WHERE document_id=%s ORDER BY run_id,page_number",
+    "params": [
+      "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa"
+    ]
+  },
+  {
+    "sql": "SELECT id,document_id,document_text_id,chunk_uid,chunk_index,content_sha256,content_length,page_start,page_end,chunk_set_version,metadata,bibliographic_metadata,reference_label,citable,created_at FROM library_document_chunks WHERE document_id=%s ORDER BY id",
+    "params": [
+      "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa"
+    ]
+  },
+  {
+    "sql": "SELECT id,document_id,content_sha256,content_length,page_count,text_format,text_role,extraction_method,extraction_metadata,created_at FROM library_document_texts WHERE document_id=%s ORDER BY created_at",
+    "params": [
+      "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa"
+    ]
+  },
+  {
+    "sql": "SELECT e.* FROM library_chunk_embeddings e JOIN library_document_chunks c ON c.id=e.chunk_id WHERE c.document_id=%s ORDER BY e.id",
+    "params": [
+      "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa"
+    ]
+  },
+  {
+    "sql": "SELECT * FROM library_embedding_runs ORDER BY started_at,id",
+    "params": null
+  },
+  {
+    "sql": "SELECT id,upload_id,document_id,title,status,current_stage,attempt_number,requested_status,created_at,started_at,finished_at,cleanup_status,collection_code,pipeline_version,diagnostic,technical_details FROM content_manager_jobs ORDER BY created_at,id",
+    "params": null
+  },
+  {
+    "sql": "SELECT id,job_id,attempt_number,status,started_at,finished_at,cleanup_status,recovery_action,failure_stage,error_code FROM content_manager_job_attempts ORDER BY started_at,id",
+    "params": null
+  },
+  {
+    "sql": "SELECT * FROM content_manager_ingestion_manifests ORDER BY started_at,id",
+    "params": null
+  },
+  {
+    "sql": "SELECT * FROM content_manager_manifest_resources ORDER BY manifest_id,resource_type,resource_id",
+    "params": null
+  },
+  {
+    "sql": "SELECT id,filename,original_filename,sha256,page_count,temp_path,existing_document_id,cleanup_status,created_at FROM content_manager_uploads ORDER BY created_at,id",
+    "params": null
+  },
+  {
+    "sql": "SELECT c.id,c.document_id FROM library_document_chunks c LEFT JOIN library_documents d ON d.id=c.document_id WHERE d.id IS NULL",
+    "params": null
+  },
+  {
+    "sql": "SELECT p.page_id,p.document_id,p.run_id FROM library_pages_v2 p LEFT JOIN library_documents d ON d.id=p.document_id LEFT JOIN library_ingestion_runs_v2 r ON r.run_id=p.run_id WHERE d.id IS NULL OR r.run_id IS NULL",
+    "params": null
+  },
+  {
+    "sql": "SELECT conrelid::regclass::text AS table_name,conname,pg_get_constraintdef(oid) AS definition FROM pg_constraint WHERE conrelid IN ('library_documents'::regclass,'library_document_chunks'::regclass,'library_pages_v2'::regclass) ORDER BY 1,2",
+    "params": null
+  },
+  {
+    "sql": "SELECT table_name, count(*) AS rows, md5(string_agg(row_hash, '' ORDER BY row_hash)) AS digest FROM (SELECT 'documents' AS table_name,md5(to_jsonb(d)::text) AS row_hash FROM library_documents d UNION ALL SELECT 'chunks',md5(to_jsonb(c)::text) FROM library_document_chunks c UNION ALL SELECT 'pages',md5(to_jsonb(p)::text) FROM library_pages_v2 p UNION ALL SELECT 'jobs',md5(to_jsonb(j)::text) FROM content_manager_jobs j UNION ALL SELECT 'embeddings',md5(to_jsonb(e)::text) FROM library_chunk_embeddings e UNION ALL SELECT 'runs',md5(to_jsonb(r)::text) FROM library_ingestion_runs_v2 r) s GROUP BY table_name ORDER BY table_name",
+    "params": null
+  }
+]

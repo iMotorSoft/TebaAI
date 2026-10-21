@@ -1,0 +1,78 @@
+"""Offline report consistency/safety tests. Never import the live inventory helper."""
+import ast
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).parent
+
+
+def load(name):
+    return json.loads((ROOT / name).read_text())
+
+
+def test_current_identity_and_source():
+    identity = load('current-c-identity.json')
+    pg = load('postgres-before.json')
+    source = load('current-c-source-inventory.json')
+    assert identity['id'] == pg['selected_document_id']
+    assert identity['pages'] == len(pg['pages']) == 284
+    assert identity['active_chunks'] == len(pg['chunks']) == 942
+    assert identity['active_vectors'] == len(pg['embeddings']) == 942
+    assert source['external_original_verified']
+    original = next(r for r in source['references'] if r['exists'])
+    assert original['sha256'] == identity['source_sha256'] == source['approved_sha256']
+    assert original['pages'] == 284
+    assert not identity['source_durable']
+    assert identity['source_path'] is None
+
+
+def test_vector_chunk_identity_not_just_counts():
+    pg = load('postgres-before.json')
+    mv = load('current-c-milvus-inventory.json')
+    chunks = {c['id']: c for c in pg['chunks']}
+    vectors = {v['pk']: v for v in mv['pk_chunk_map']}
+    assert {v['chunk_id'] for v in vectors.values()} == set(chunks)
+    for e in pg['embeddings']:
+        v = vectors[e['milvus_primary_key']]
+        assert v['chunk_id'] == e['chunk_id']
+        assert v['content_sha256'] == e['content_sha256'] == chunks[e['chunk_id']]['content_sha256']
+        assert v['embedding_dimension'] == e['embedding_dimension'] == 1536
+    for field in ('missing_chunk_ids', 'extra_chunk_ids', 'missing_tracking_pks', 'extra_tracking_pks', 'metadata_mismatches', 'orphan_vectors_loaded_collections'):
+        assert mv[field] == []
+
+
+def test_inventory_queries_only_select_and_read_only_session():
+    queries = load('queries-before.json')
+    assert queries
+    assert all(q['sql'].lstrip().upper().startswith('SELECT ') for q in queries)
+    text = (ROOT / 'inventory_readonly.py').read_text()
+    assert 'default_transaction_read_only=on' in text
+    assert 'REPEATABLE READ READ ONLY' in text
+    tree = ast.parse(text)
+    forbidden = {'upsert', 'insert', 'delete', 'flush', 'load_collection', 'release_collection', 'create_collection', 'ensure_collection', 'preserve_source', 'claim_next_job', 'run_worker'}
+    # sys.path.insert configures import resolution, not a store insertion.
+    assert not any(isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute)
+                   and n.func.attr in forbidden and ast.unparse(n.func) != 'sys.path.insert'
+                   for n in ast.walk(tree))
+    assert not any(isinstance(n, ast.Call) and isinstance(n.func, ast.Name) and n.func.id in forbidden for n in ast.walk(tree))
+
+
+def test_history_distinguishes_current_and_deleted():
+    inv = load('current-c-run-inventory.json')
+    assert len(inv['current_runs']) == 1
+    assert inv['current_runs'][0]['active']
+    assert all(not r['active'] for r in inv['historical_known_generations'])
+    assert inv['historical_generations_without_recoverable_run_id'] == 2
+    assert len([r for r in inv['historical_known_generations'] if r['run_id'] is None]) == 2
+
+
+def test_gaps_prevent_execution_and_phases_complete():
+    matrix = load('generation-capability-matrix.json')
+    assert not matrix['execution_ready']
+    by_name = {c['capability']: c for c in matrix['capabilities']}
+    assert by_name['visibility switch']['classification'] == 'MISSING'
+    assert by_name['retrieval isolation']['classification'] == 'MISSING'
+    plan = (ROOT / 'C_CONTROLLED_REINGEST_EXECUTION_PLAN.md').read_text()
+    for phase in range(10):
+        assert f'## Phase {phase} —' in plan
+    assert 'No NEW ID/job exists in this gate' in plan

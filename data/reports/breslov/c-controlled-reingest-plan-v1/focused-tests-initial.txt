@@ -1,0 +1,21 @@
+..F.......................                                               [100%]
+=================================== FAILURES ===================================
+___________ test_inventory_queries_only_select_and_read_only_session ___________
+
+    def test_inventory_queries_only_select_and_read_only_session():
+        queries = load('queries-before.json')
+        assert queries
+        assert all(q['sql'].lstrip().upper().startswith('SELECT ') for q in queries)
+        text = (ROOT / 'inventory_readonly.py').read_text()
+        assert 'default_transaction_read_only=on' in text
+        assert 'REPEATABLE READ READ ONLY' in text
+        tree = ast.parse(text)
+        forbidden = {'upsert', 'insert', 'delete', 'flush', 'load_collection', 'release_collection', 'create_collection', 'ensure_collection', 'preserve_source', 'claim_next_job', 'run_worker'}
+>       assert not any(isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute) and n.func.attr in forbidden for n in ast.walk(tree))
+E       assert not True
+E        +  where True = any(<generator object test_inventory_queries_only_select_and_read_only_session.<locals>.<genexpr> at 0x76f86ee36ce0>)
+
+../../data/reports/breslov/c-controlled-reingest-plan-v1/test_plan_contracts.py:53: AssertionError
+=========================== short test summary info ============================
+FAILED ::test_inventory_queries_only_select_and_read_only_session - assert no...
+1 failed, 25 passed in 0.52s

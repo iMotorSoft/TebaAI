@@ -1,0 +1,117 @@
+{
+  "current_runs": [
+    {
+      "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+      "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+      "status": "completed",
+      "created_at": "2026-10-11 15:56:28.408406+00:00",
+      "source_hash": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "page_count": 284,
+      "chunk_count": 942,
+      "vector_count": 942,
+      "active": true,
+      "visible": true,
+      "superseded_by": null,
+      "cleanup_status": "not_required",
+      "job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed",
+      "pipeline_version": "content_page_first_v1",
+      "attribution": "pages.run_id + job/attempt chunk metadata + sole manifest + embedding tracking/vector mapping; no chunk run FK"
+    }
+  ],
+  "historical_known_generations": [
+    {
+      "run_id": "a5220a7c-11f8-40ac-a1fd-0ca6732f0508",
+      "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+      "status": "completed (historical report)",
+      "created_at": "2026-07-30 18:21:15.685015+00:00",
+      "source_hash": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "page_count": 284,
+      "chunk_count": 268,
+      "vector_count": 268,
+      "active": false,
+      "visible": false,
+      "superseded_by": null,
+      "cleanup_status": "absent current DEV; prior total DEV reset report records removal",
+      "evidence": [
+        "../2026-08-03-likutey-halajot-promotion-readiness-v1-dev/document-identity.json",
+        "../2026-08-06-likutey-halajot-promotion-readiness-v2/pg-milvus-reconciliation.json",
+        "../2026-10-01-clean-corpus-hebrew-ingestion-v1/total-dev-reset-result.json"
+      ]
+    },
+    {
+      "run_id": null,
+      "document_id": "37b5842d-517d-49d1-bab0-3584f409f355",
+      "status": "historical test_candidate document; ingestion run identifier unavailable, no persisted run rows in July 30 backup",
+      "created_at": null,
+      "source_hash": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "page_count": 284,
+      "chunk_count": 0,
+      "vector_count": 0,
+      "embedding_tracking_rows": 0,
+      "content_nodes": 268,
+      "active": false,
+      "visible": false,
+      "superseded_by": null,
+      "cleanup_status": "historical July 30 purge, absent current DEV",
+      "evidence": [
+        "../2026-07-30-likutey-halajot-page-first-reingest-v2-dev/backup-manifest.json",
+        "../2026-07-30-likutey-halajot-page-first-reingest-v2-dev/README.md",
+        "../2026-07-30-structural-heading-literal-dev/postgres-probe.json"
+      ]
+    },
+    {
+      "run_id": null,
+      "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+      "status": "historical test_candidate document; ingestion run identifier unavailable, no persisted run rows in July 30 backup",
+      "created_at": null,
+      "source_hash": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "page_count": 284,
+      "chunk_count": 2652,
+      "vector_count": 0,
+      "embedding_tracking_rows": 2222,
+      "content_nodes": 0,
+      "active": false,
+      "visible": false,
+      "superseded_by": null,
+      "cleanup_status": "historical July 30 purge, absent current DEV",
+      "evidence": [
+        "../2026-07-30-likutey-halajot-page-first-reingest-v2-dev/backup-manifest.json",
+        "../2026-07-30-likutey-halajot-page-first-reingest-v2-dev/README.md",
+        "../2026-07-30-structural-heading-literal-dev/postgres-probe.json"
+      ]
+    }
+  ],
+  "live_C_run_count": 1,
+  "known_report_backed_C_run_count": 1,
+  "historical_generations_without_recoverable_run_id": 2,
+  "limitations": "No invented history: pre-reset DB rows no longer present. All known archived same-source generations identified, no assertion that deleted/unlogged attempts can be reconstructed. Source-report index included. E2E subset PDFs have distinct hashes and are not full C generations. Historical PDF glyph/text runs are not ingestion runs.",
+  "other_embedding_runs": [
+    {
+      "id": "15c32ba4-0856-533c-afdc-0c368b17e578",
+      "collection_code": "breslov",
+      "milvus_collection": "tebaai_breslov_chunks_v1",
+      "embedding_provider": "litellm",
+      "embedding_model": "openai_text_embedding_3_small",
+      "embedding_dimension": 1536,
+      "status": "completed",
+      "chunks_total": 942,
+      "chunks_embedded": 942,
+      "chunks_indexed": 942,
+      "error_message": null,
+      "metadata": {
+        "job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed",
+        "attempt": 1
+      },
+      "started_at": "2026-10-11 15:57:47.578559+00:00",
+      "finished_at": "2026-10-11 15:57:57.564257+00:00",
+      "organization_id": null,
+      "workspace_id": null,
+      "project_id": null,
+      "knowledge_scope_id": null,
+      "target": null,
+      "run_type": null,
+      "chunk_set_version": null,
+      "document_ids": null
+    }
+  ]
+}

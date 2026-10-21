@@ -1,0 +1,97 @@
+{
+  "capabilities": [
+    {
+      "capability": "parallel inactive generation",
+      "classification": "PARTIAL",
+      "assessment": "Distinct pipeline-version UUID exists; same-source upload admission rejects duplicates; inactive status not globally enforced",
+      "evidence": "page_first_gateway.py:198-204; content_manager.py:344"
+    },
+    {
+      "capability": "generation identity",
+      "classification": "EXISTS",
+      "assessment": "document UUID5 scope+source+pipeline; run UUID5 document+job:attempt; manifest links all",
+      "evidence": "page_first_gateway.py:198-281"
+    },
+    {
+      "capability": "visibility switch",
+      "classification": "MISSING",
+      "assessment": "promotion only activates a candidate; no atomic OLD deactivation/reverse operation; statuses ignored on some readers",
+      "evidence": "content_manager.py:728; text_search.py:84; hybrid_search.py:199"
+    },
+    {
+      "capability": "old generation retention",
+      "classification": "PARTIAL",
+      "assessment": "Independent documents/PKs can coexist, archived status exists; retention policy/cleanup ownership hold missing",
+      "evidence": "durable_source.py; content_manager_cleanup.py; live constraints"
+    },
+    {
+      "capability": "rollback",
+      "classification": "PARTIAL",
+      "assessment": "Retained OLD can conceptually be reactivated without reembedding; reverse-switch operation/read coherence missing",
+      "evidence": "C_ROLLBACK_RUNBOOK.md"
+    },
+    {
+      "capability": "source durability",
+      "classification": "PARTIAL",
+      "assessment": "Atomic hash-checked preservation + source API implemented for new worker; OLD lacks source_path/durable file",
+      "evidence": "durable_source.py; page_first_gateway.py:464-484; source-before.json"
+    },
+    {
+      "capability": "region-level status",
+      "classification": "EXISTS",
+      "assessment": "FULL/PARTIAL/UNUSABLE and per-region metadata in page layout_notes for new worker; OLD legacy has none",
+      "evidence": "region_publication.py; page_first_gateway.py:267"
+    },
+    {
+      "capability": "chunk generation isolation",
+      "classification": "PARTIAL",
+      "assessment": "Separate document/pipeline hash IDs work; same-version retry shares document/text and ownership guard insufficient",
+      "evidence": "page_first_gateway.py:198-204,510-523"
+    },
+    {
+      "capability": "vector generation isolation",
+      "classification": "PARTIAL",
+      "assessment": "Separate chunk_uid PK/doc identity available; primary vectors lack run/attempt; normal vector query filters scope only",
+      "evidence": "page_first_gateway.py:380-396; hybrid_search.py:85-96"
+    },
+    {
+      "capability": "retrieval isolation",
+      "classification": "MISSING",
+      "assessment": "text_search no status filtering; hybrid vector fallback even absent enrichment; research may include test candidates",
+      "evidence": "text_search.py:84,120,152; hybrid_search.py:107-137; simple_research_repository.py:618"
+    },
+    {
+      "capability": "citation generation identity",
+      "classification": "PARTIAL",
+      "assessment": "document/chunk/page IDs and source reference exist; evidence IDs change across generations; enforce active predicate and retain lineage",
+      "evidence": "source_repository.py; simple_research_repository.py:560-629"
+    },
+    {
+      "capability": "region reconciliation",
+      "classification": "PARTIAL",
+      "assessment": "regional metadata+geometry exist; exhaustive OLD-to-NEW semantic reconciliation harness not implemented; OLD lacks region lineage",
+      "evidence": "region_publication.py; C_RECONCILIATION_CONTRACT.md"
+    },
+    {
+      "capability": "controlled same-source new-version admission",
+      "classification": "MISSING",
+      "assessment": "Ordinary EXACT_DUPLICATE returns conflict, no controlled path",
+      "evidence": "content_manager.py:344-345"
+    },
+    {
+      "capability": "generation-safe retry and cleanup",
+      "classification": "PARTIAL",
+      "assessment": "Deterministic IDs/upsert/manifests exist; preexisting-resource ownership and collision behavior must be proven safe",
+      "evidence": "page_first_gateway.py:542; content_manager_cleanup.py"
+    },
+    {
+      "capability": "offline dry-run to publication",
+      "classification": "PARTIAL",
+      "assessment": "Pure extraction/publication functions exist; full worker is not dry-run safe, no full-C dry-run performed",
+      "evidence": "page_first_pipeline.py:318; region_publication.py"
+    }
+  ],
+  "prerequisite_gate": "TEBAAI_BRESLOV_C_PARALLEL_GENERATION_SAFETY_V1",
+  "execution_ready": false,
+  "production_implementation_changed": false
+}

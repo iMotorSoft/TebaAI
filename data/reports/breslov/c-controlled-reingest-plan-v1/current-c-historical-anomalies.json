@@ -1,0 +1,208 @@
+{
+  "C_duplicate_current_documents": 0,
+  "C_multiple_active_generations": 0,
+  "C_current_hidden_failed_cancelled_runs": [],
+  "C_current_orphan_chunks": [],
+  "C_current_orphan_vectors_loaded": [],
+  "historical_C_multiple_representations": [
+    {
+      "run_id": null,
+      "document_id": "37b5842d-517d-49d1-bab0-3584f409f355",
+      "status": "historical test_candidate document; ingestion run identifier unavailable, no persisted run rows in July 30 backup",
+      "created_at": null,
+      "source_hash": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "page_count": 284,
+      "chunk_count": 0,
+      "vector_count": 0,
+      "embedding_tracking_rows": 0,
+      "content_nodes": 268,
+      "active": false,
+      "visible": false,
+      "superseded_by": null,
+      "cleanup_status": "historical July 30 purge, absent current DEV",
+      "evidence": [
+        "../2026-07-30-likutey-halajot-page-first-reingest-v2-dev/backup-manifest.json",
+        "../2026-07-30-likutey-halajot-page-first-reingest-v2-dev/README.md",
+        "../2026-07-30-structural-heading-literal-dev/postgres-probe.json"
+      ]
+    },
+    {
+      "run_id": null,
+      "document_id": "47768aac-704e-4296-9649-53b9ea037096",
+      "status": "historical test_candidate document; ingestion run identifier unavailable, no persisted run rows in July 30 backup",
+      "created_at": null,
+      "source_hash": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "page_count": 284,
+      "chunk_count": 2652,
+      "vector_count": 0,
+      "embedding_tracking_rows": 2222,
+      "content_nodes": 0,
+      "active": false,
+      "visible": false,
+      "superseded_by": null,
+      "cleanup_status": "historical July 30 purge, absent current DEV",
+      "evidence": [
+        "../2026-07-30-likutey-halajot-page-first-reingest-v2-dev/backup-manifest.json",
+        "../2026-07-30-likutey-halajot-page-first-reingest-v2-dev/README.md",
+        "../2026-07-30-structural-heading-literal-dev/postgres-probe.json"
+      ]
+    }
+  ],
+  "historical_page_first_generation": {
+    "run_id": "a5220a7c-11f8-40ac-a1fd-0ca6732f0508",
+    "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+    "status": "completed (historical report)",
+    "created_at": "2026-07-30 18:21:15.685015+00:00",
+    "source_hash": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "page_count": 284,
+    "chunk_count": 268,
+    "vector_count": 268,
+    "active": false,
+    "visible": false,
+    "superseded_by": null,
+    "cleanup_status": "absent current DEV; prior total DEV reset report records removal",
+    "evidence": [
+      "../2026-08-03-likutey-halajot-promotion-readiness-v1-dev/document-identity.json",
+      "../2026-08-06-likutey-halajot-promotion-readiness-v2/pg-milvus-reconciliation.json",
+      "../2026-10-01-clean-corpus-hebrew-ingestion-v1/total-dev-reset-result.json"
+    ]
+  },
+  "historical_missing_run_ids": "known debt, not ambiguity about current authority",
+  "non_C_orphan_job_references": [
+    {
+      "job_id": "477f2e6f-0244-4d77-ba2f-9e89254816f9",
+      "document_id": "24245d3c-4188-5914-8550-d6933c641e58",
+      "title": "region-quarantine-worker-e2e-v1-A",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "0a260a6c-eaaf-4cd1-8e73-9944de6c6e9c",
+      "document_id": "dbff1a3c-b2bd-5914-ada1-ef921bdb3ec8",
+      "title": "region-quarantine-worker-e2e-v1-A",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "bb45f646-b33e-43dd-86e2-2600e03f91f1",
+      "document_id": "74385ce4-a5c1-5243-b845-3a8928ebaddb",
+      "title": "region-quarantine-worker-e2e-v1-B",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "e494a616-a6b7-4bd9-a585-fb8361dfd5f1",
+      "document_id": "2e02230c-3592-5c82-83da-ffd0c94aeedf",
+      "title": "region-quarantine-worker-e2e-v1-C",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "bda6674c-0e6c-4e25-8eba-48e03efdc2c6",
+      "document_id": "25a552ec-58fd-514c-883b-95eac1804c52",
+      "title": "region-quarantine-worker-e2e-v1-D",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "063d0bad-34a5-4cfc-abdc-74c017a4813c",
+      "document_id": "55f2721c-1a47-572c-ae9c-ce5ebed0de20",
+      "title": "region-quarantine-worker-e2e-v1-E",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "cf8224ff-4e16-440d-9c1f-a8c485dffad9",
+      "document_id": "aabc60ee-c729-5371-8703-8dcc6ed4d454",
+      "title": "region-quarantine-worker-e2e-v1-REAL",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "5f740dbf-9f24-48fa-b531-b424e1bbfa71",
+      "document_id": "43483fdb-38f3-5d10-b644-d5247a096dac",
+      "title": "region-quarantine-worker-e2e-v1-A",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "bef274e5-ba4e-43b7-a47d-b81f93f5ce09",
+      "document_id": "daddead9-622f-54da-8cb6-531a849a88a1",
+      "title": "region-quarantine-worker-e2e-v1-B",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "e168fce0-4c16-41c4-9eb8-329d891cc956",
+      "document_id": "0058f62c-f757-5f1a-a2d1-edecdd7ffacc",
+      "title": "region-quarantine-worker-e2e-v1-C",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "b5de0e5f-a37f-4287-8ffa-4bc7ea63819b",
+      "document_id": "d06ffb50-f7d5-50cd-874c-f940981fca07",
+      "title": "region-quarantine-worker-e2e-v1-D",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "3b46ef8f-1b2b-4b23-ae19-cc14f03d4152",
+      "document_id": "75438f46-59f4-5a7b-92ac-0371127a4817",
+      "title": "region-quarantine-worker-e2e-v1-E",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "a623f3c8-03d3-4594-8db8-d25d7f3ca26e",
+      "document_id": "39b6c0bc-07b5-5c40-bfb4-5e507e8c4321",
+      "title": "region-quarantine-worker-e2e-v1-REAL",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "12fac2ca-ed53-4478-a3d4-6caa3e6767d2",
+      "document_id": "1098c979-8e23-5f63-8fa4-0caefa0d12a0",
+      "title": "region-quarantine-worker-e2e-v1-A",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "8532977b-367d-42ec-bb98-6e0257ac8304",
+      "document_id": "9bab627b-fa33-53bf-b4eb-608d0d46e2bd",
+      "title": "region-quarantine-worker-e2e-v1-B",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "ab836475-4fb0-4819-9048-d03958ce057a",
+      "document_id": "c1b3ebfd-163d-5773-aa9f-aff2452c3501",
+      "title": "region-quarantine-worker-e2e-v1-C",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "c4db9a8e-7d76-4c81-8cbb-7685b61f65ee",
+      "document_id": "72d1f8d9-5f6a-5f43-9c0d-9def2af3bd0b",
+      "title": "region-quarantine-worker-e2e-v1-D",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "4e179d47-99ab-4863-95f4-4ae067736953",
+      "document_id": "2805e845-468d-5169-b159-400d91e2e466",
+      "title": "region-quarantine-worker-e2e-v1-E",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    },
+    {
+      "job_id": "5007815d-5142-4af2-9513-1b82da30a4f7",
+      "document_id": "5b631659-4153-5b07-bd19-0aa2351b5e72",
+      "title": "region-quarantine-worker-e2e-v1-REAL",
+      "status": "completed_with_warnings",
+      "cleanup_status": "completed"
+    }
+  ],
+  "interpretation": "19 cleaned regional E2E jobs retain historical document IDs; manifests have document_id NULL, cleanup completed. They are not hidden active C generations. Same-title C fixture is not full corpus C. No cleanup performed.",
+  "unloaded_vector_inventory_limitation": "one unloaded tebaai_breslov_bm25_test_v2 reports row_count=0; no load/flush or strong-query proof asserted; revalidate read-only availability before execution"
+}

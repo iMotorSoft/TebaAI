@@ -1,6 +1,13 @@
 # Logical snapshot contract — immediately before future ingestion
 
-This is a design, not a restore backup or permission to modify stores. Current inventory uses `inventory_readonly.py before/after`, `globalVar.POSTGRES_DSN`, local DEV guards, psycopg 3 async, connection-level `default_transaction_read_only=on`, `REPEATABLE READ READ ONLY`, and explicit rollback. Exact executed SELECTs/parameters are in queries-before.json and queries-after.json. Schema discovery was also a SELECT over information_schema.columns. No lifecycle/migration/application import.
+**Refresh 2026-10-22:** the snapshot was re-executed read-only against current DEV
+(`inventory_readonly.py before/after` plus the new `indexes_readonly.py` probe);
+results are byte-identical to the 2026-10-21 run except the capture timestamps. The
+contract additionally records the live uniqueness indexes on `library_documents`
+(now part of the sealed snapshot, because they define what a candidate generation
+may look like) and the absence of any active-generation pointer.
+
+This is a design, not a restore backup or permission to modify stores. Current inventory uses `inventory_readonly.py before/after`, `indexes_readonly.py`, `globalVar.POSTGRES_DSN`, local DEV guards, psycopg 3 async, connection-level `default_transaction_read_only=on`, `REPEATABLE READ READ ONLY`, and explicit rollback. Exact executed SELECTs/parameters are in queries-before.json and queries-after.json; the index/constraint probe is in indexes-readonly.json. Schema discovery was also a SELECT over information_schema.columns. No lifecycle/migration/application import.
 
 ## Scope/seal
 
@@ -29,6 +36,8 @@ SELECT r.* FROM content_manager_manifest_resources r
  JOIN content_manager_ingestion_manifests m ON m.id=r.manifest_id WHERE m.document_id=%(did)s;
 SELECT * FROM library_document_references WHERE document_id=%(did)s;
 SELECT * FROM knowledge_scopes WHERE id=(SELECT knowledge_scope_id FROM library_documents WHERE id=%(did)s);
+SELECT indexname, indexdef FROM pg_indexes
+ WHERE schemaname='public' AND tablename='library_documents' ORDER BY indexname;
 ```
 
 Read related structured page/source/citation nodes if present by document/run FK after schema inventory, not title heuristics. Preserve complete original Markdown/search fields/metadata; the planning report only hashes page text and does not export full chunk text. Export raw snapshots to access-controlled offline storage; sanitize public evidence. No auth/session/password tables are needed. Seal row counts and deterministic ordered row/content SHA256, schema/FK/index definitions, source files and all artifact hashes. Commit no store writes; rollback read-only transaction.
@@ -42,6 +51,14 @@ An unloaded collection cannot be assumed live-empty from stats alone; current bm
 ## Source, pages, regions, viewer and citations
 
 Read source via filesystem `sha256sum -- <approved path>` and a read-only PyMuPDF open/page count. Verify durable OLD reference and NEW future reference separately. Expected PDF is external `/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf`; 284 pages, 4550267 bytes. Current OLD source_path/source_uri NULL and durable file absent: approved prerequisite must repair OLD durability before taking execution snapshot. Do not call preserve_source in this planning gate.
+
+The snapshot must also record that **no active-generation pointer exists** today
+(`library_documents` has no active-run column, `library_ingestion_runs_v2` has no
+`superseded_by`, and `chunk_set_version` is hardcoded to 1 by the page-first
+gateway). "Current C" is therefore an *observed* state (one `ready` document, one
+completed run, all chunks/vectors attributable to it), not a stored invariant. The
+future snapshot must seal the pointer that the prerequisite introduces, otherwise
+"which generation is active" stays an inference.
 
 Export `layout_notes.region_publication` and region geometry/certificates where persisted; OLD currently has none, so record LEGACY_UNCLASSIFIED and explicit unknown regions. Build/seal source geometry/lineage for matching in a future offline harness, not fake persisted region IDs. Preserve chunk->page/source/citation mappings, reference labels, bibliographic metadata, current status/version, viewer/source routes and editorial entity evidence IDs (derived in code, not a standalone citation table). Route format is `/library/documents/{document_id}/source#page={physical_page}`; publication metadata route `/library/documents/{document_id}/pages/{page}/publication` must be generation-bound. Archive cited OLD evidence lineage; do not assume IDs survive NEW.
 

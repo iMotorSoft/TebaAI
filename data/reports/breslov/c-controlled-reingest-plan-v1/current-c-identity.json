@@ -74,5 +74,5 @@
   },
   "region_publication_persisted_pages": 0,
   "visibility_basis": "single persisted C document ready, all chunks/vectors attributable to its sole job/attempt/run; no active-run pointer exists",
-  "evidence": "postgres-before.json / milvus-before.json / source-before.json"
+  "evidence": "postgres-before.json / milvus-before.json / source-before.json / indexes-readonly.json"
 }

@@ -1,8 +1,14 @@
 {
-  "expected": "49b1674674316b4696529b4491d5010552fd3ef4",
-  "local_head": "49b1674674316b4696529b4491d5010552fd3ef4",
-  "origin_tracking_head": "49b1674674316b4696529b4491d5010552fd3ef4",
-  "ls_remote": "49b1674674316b4696529b4491d5010552fd3ef4",
+  "expected_in_brief": "49b1674674316b4696529b4491d5010552fd3ef4",
+  "local_head": "490be6748fdb90ad644b9a6296faa5d1c33ea4e1",
+  "origin_tracking_head": "490be6748fdb90ad644b9a6296faa5d1c33ea4e1",
+  "ls_remote": "490be6748fdb90ad644b9a6296faa5d1c33ea4e1",
   "fetch": "git fetch origin feature/console-backend-core succeeded",
-  "remote_moved": false
+  "remote_moved_vs_brief": true,
+  "remote_moved_cause": "490be6748fdb90ad644b9a6296faa5d1c33ea4e1 is the previous execution of this same planning gate (commit subject: 'docs(breslov): plan controlled C reingestion'), already pushed and reviewed. The remote is not ahead of, or divergent from, the local branch: local == tracking == ls-remote.",
+  "divergence": "NONE",
+  "merge_rebase_force": "NOT_USED",
+  "decision": "REMOTE_MOVED_BY_PRIOR_RUN_OF_THIS_GATE_ONLY — not a blocker; publication remains a fast-forward of the same branch. An unrelated remote movement would have blocked the push.",
+  "pre_push_recheck_required": true,
+  "expected_pre_push_head": "490be6748fdb90ad644b9a6296faa5d1c33ea4e1"
 }

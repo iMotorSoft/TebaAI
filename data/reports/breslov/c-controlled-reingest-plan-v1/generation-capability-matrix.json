@@ -1,95 +1,126 @@
 {
+  "captured_at": "2026-10-22",
+  "mode": "PLAN / INVENTORY / PREFLIGHT ONLY — read-only",
+  "note": "Classification refreshed after TEBAAI_BRESLOV_C_PARALLEL_GENERATION_SAFETY_V1_BLOCKED and TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V1_BLOCKED. Re-verified against live DEV schema (indexes-readonly.json) and current backend sources.",
   "capabilities": [
     {
       "capability": "parallel inactive generation",
       "classification": "PARTIAL",
-      "assessment": "Distinct pipeline-version UUID exists; same-source upload admission rejects duplicates; inactive status not globally enforced",
-      "evidence": "page_first_gateway.py:198-204; content_manager.py:344"
+      "assessment": "Generation identity primitives exist (document UUID5 scope+source+pipeline, run UUID5 document+job:attempt, manifest, job/attempt) but a coexisting same-source generation cannot be admitted: live unique index uq_library_documents_scope_collection_sha256 (knowledge_scope_id, collection_id, source_sha256) rejects a second physical document row. Coexistence inside one document row is not implemented either.",
+      "evidence": "indexes-readonly.json; db/migrations/042_scope_legacy_source_uniqueness.sql; modules/library/page_first_gateway.py:198-204"
     },
     {
       "capability": "generation identity",
-      "classification": "EXISTS",
-      "assessment": "document UUID5 scope+source+pipeline; run UUID5 document+job:attempt; manifest links all",
-      "evidence": "page_first_gateway.py:198-281"
+      "classification": "PARTIAL",
+      "assessment": "Document/run/job/attempt/manifest identity exists and is attributable, but there is no explicit generation identity that separates two generations of the same logical source inside the retrieval model; chunk_set_version is hardcoded to 1 and retrieval does not gate on it.",
+      "evidence": "modules/library/page_first_gateway.py:198-281,510-523; current-c-run-inventory.json"
+    },
+    {
+      "capability": "active generation pointer",
+      "classification": "MISSING",
+      "assessment": "No active-run column, no active_generation column, no superseded_by. 'Current C' is an observed state (one ready document + one completed run), not a stored invariant; unknown active identity cannot be resolved fail-closed.",
+      "evidence": "indexes-readonly.json (library_documents columns/constraints); current-c-identity.json visibility_basis"
     },
     {
       "capability": "visibility switch",
       "classification": "MISSING",
-      "assessment": "promotion only activates a candidate; no atomic OLD deactivation/reverse operation; statuses ignored on some readers",
-      "evidence": "content_manager.py:728; text_search.py:84; hybrid_search.py:199"
+      "assessment": "content_manager.publish_document activates a candidate only; no operation deactivates the previous generation and no atomic reverse pair exists. Status-based isolation is false: text_search has no status filter and hybrid_search filters by scope only.",
+      "evidence": "modules/library/content_manager.py:728; modules/library/text_search.py (no status predicate); modules/library/hybrid_search.py:85-96"
     },
     {
       "capability": "old generation retention",
       "classification": "PARTIAL",
-      "assessment": "Independent documents/PKs can coexist, archived status exists; retention policy/cleanup ownership hold missing",
-      "evidence": "durable_source.py; content_manager_cleanup.py; live constraints"
+      "assessment": "Rows, chunks, embeddings and vectors can physically coexist and archived status exists, but no retention/ownership hold prevents generic cleanup from touching a retained generation, and the cleanup/publication race is still open.",
+      "evidence": "modules/library/content_manager_cleanup.py; modules/library/durable_source.py; ../c-parallel-generation-safety-v1/README.md"
     },
     {
       "capability": "rollback",
       "classification": "PARTIAL",
-      "assessment": "Retained OLD can conceptually be reactivated without reembedding; reverse-switch operation/read coherence missing",
-      "evidence": "C_ROLLBACK_RUNBOOK.md"
+      "assessment": "Retained OLD could be reactivated without reembedding, but the reverse operation does not exist and the page-publication route resolves the newest completed run, so a reverse switch would not restore the published page view of OLD.",
+      "evidence": "C_ROLLBACK_RUNBOOK.md; modules/library/source_repository.py:29-36"
     },
     {
       "capability": "source durability",
       "classification": "PARTIAL",
-      "assessment": "Atomic hash-checked preservation + source API implemented for new worker; OLD lacks source_path/durable file",
-      "evidence": "durable_source.py; page_first_gateway.py:464-484; source-before.json"
+      "assessment": "Atomic hash-checked preservation and a source API exist for the new worker (durable_source.preserve_source, gateway usage), and the external original matches the approved SHA with 284 pages, but OLD has source_path=NULL, source_uri=NULL and no deterministic durable file; storage retention/backup/viewer access are unproven.",
+      "evidence": "modules/library/durable_source.py; current-c-source-inventory.json; source-before.json"
     },
     {
       "capability": "region-level status",
       "classification": "EXISTS",
-      "assessment": "FULL/PARTIAL/UNUSABLE and per-region metadata in page layout_notes for new worker; OLD legacy has none",
-      "evidence": "region_publication.py; page_first_gateway.py:267"
+      "assessment": "FULL/PARTIAL/UNUSABLE page aggregate and per-region ACCEPTED/QUARANTINED publication metadata (region-publication-v1) are produced by the regional pipeline and persisted in page layout_notes. OLD C carries none (legacy unclassified extraction).",
+      "evidence": "modules/library/region_publication.py; current-c-identity.json region_publication_persisted_pages=0; ../region-level-hebrew-quarantine-v1/gate.json"
     },
     {
       "capability": "chunk generation isolation",
       "classification": "PARTIAL",
-      "assessment": "Separate document/pipeline hash IDs work; same-version retry shares document/text and ownership guard insufficient",
-      "evidence": "page_first_gateway.py:198-204,510-523"
+      "assessment": "Chunks are document-owned with no run FK and no generation column; chunk_set_version is constant 1. The new INSERT-collision guard refuses to adopt preexisting resources (safe failure) but no generation discriminator exists to hold OLD and NEW chunks apart in the same document.",
+      "evidence": "modules/library/page_first_gateway.py:198-204,510-523; current-c-postgres-inventory.json"
     },
     {
       "capability": "vector generation isolation",
       "classification": "PARTIAL",
-      "assessment": "Separate chunk_uid PK/doc identity available; primary vectors lack run/attempt; normal vector query filters scope only",
-      "evidence": "page_first_gateway.py:380-396; hybrid_search.py:85-96"
+      "assessment": "Vector PK is derived from chunk identity and document_id is present as metadata, so a PG-selected active document set is filterable, but primary vectors carry no run/attempt/generation field and the normal vector query filters by scope only. PG hydration now drops unauthorizable or misattributed hits, which is a defensive improvement, not isolation.",
+      "evidence": "modules/library/hybrid_search.py:85-137; current-c-milvus-inventory.json"
     },
     {
       "capability": "retrieval isolation",
       "classification": "MISSING",
-      "assessment": "text_search no status filtering; hybrid vector fallback even absent enrichment; research may include test candidates",
-      "evidence": "text_search.py:84,120,152; hybrid_search.py:107-137; simple_research_repository.py:618"
+      "assessment": "text_search.py has no document-status predicate; hybrid_search.py filters by scope only; simple_research_repository.py allows 'ready' plus opt-in 'test_candidate'; relation_qa_repository.py filters by status allow-list. No route shares one active-generation predicate, so an ingested-but-inactive candidate is retrievable on at least the lexical path.",
+      "evidence": "modules/library/text_search.py; modules/library/hybrid_search.py; modules/library/simple_research_repository.py:24-31,121-122; modules/library/relation_qa_repository.py:39-85"
+    },
+    {
+      "capability": "page publication route isolation",
+      "classification": "MISSING",
+      "assessment": "source_repository.get_page_publication selects the newest completed run of a document (ORDER BY r.finished_at DESC LIMIT 1). A candidate run that completes before cutover therefore replaces OLD's published region metadata.",
+      "evidence": "modules/library/source_repository.py:29-36"
     },
     {
       "capability": "citation generation identity",
       "classification": "PARTIAL",
-      "assessment": "document/chunk/page IDs and source reference exist; evidence IDs change across generations; enforce active predicate and retain lineage",
-      "evidence": "source_repository.py; simple_research_repository.py:560-629"
-    },
-    {
-      "capability": "region reconciliation",
-      "classification": "PARTIAL",
-      "assessment": "regional metadata+geometry exist; exhaustive OLD-to-NEW semantic reconciliation harness not implemented; OLD lacks region lineage",
-      "evidence": "region_publication.py; C_RECONCILIATION_CONTRACT.md"
+      "assessment": "Citations resolve through document_id + chunk_id + editorial entity, and evidence ids v2 are chunk/entity derived, so they legitimately change between generations; no generation discriminator is carried into citation metadata and lineage retention is not implemented.",
+      "evidence": "modules/library/source_repository.py; modules/library/simple_research_repository.py:560-629"
     },
     {
       "capability": "controlled same-source new-version admission",
       "classification": "MISSING",
-      "assessment": "Ordinary EXACT_DUPLICATE returns conflict, no controlled path",
-      "evidence": "content_manager.py:344-345"
+      "assessment": "Ordinary upload returns EXACT_DUPLICATE and no authorized path exists to admit a second generation of the same approved source. The live uniqueness index also rejects the physical insert.",
+      "evidence": "modules/library/content_manager.py:344-345; indexes-readonly.json"
     },
     {
       "capability": "generation-safe retry and cleanup",
       "classification": "PARTIAL",
-      "assessment": "Deterministic IDs/upsert/manifests exist; preexisting-resource ownership and collision behavior must be proven safe",
-      "evidence": "page_first_gateway.py:542; content_manager_cleanup.py"
+      "assessment": "Deterministic ids, upserts and manifests exist; a new INSERT-collision guard aborts instead of adopting preexisting resources and cleanup refuses already-ready/archived documents, but manifest ownership does not prove preexisting-resource ownership, cleanup has no shared publication lock, and interrupted candidates are not certified invisible or cleanup-safe.",
+      "evidence": "modules/library/page_first_gateway.py:510-523; modules/library/content_manager_cleanup.py; ../c-parallel-generation-safety-v1/README.md"
     },
     {
       "capability": "offline dry-run to publication",
       "classification": "PARTIAL",
-      "assessment": "Pure extraction/publication functions exist; full worker is not dry-run safe, no full-C dry-run performed",
-      "evidence": "page_first_pipeline.py:318; region_publication.py"
+      "assessment": "Pure extract_pdf_region_published / publish_certified_page exist and run in memory, but the worker pipeline persists pages/chunks and dispatches embeddings, so no safe end-to-end dry-run switch exists. No full-C dry-run was performed in this planning gate.",
+      "evidence": "modules/library/page_first_pipeline.py; modules/library/region_publication.py"
+    },
+    {
+      "capability": "reconciliation harness",
+      "classification": "MISSING",
+      "assessment": "No tool emits region/page/document reconciliation for OLD vs NEW, and no A/B/C query fixture set is sealed. The contract exists only as a design in this report.",
+      "evidence": "C_RECONCILIATION_CONTRACT.md"
+    },
+    {
+      "capability": "atomic reversible switch",
+      "classification": "MISSING",
+      "assessment": "No compare-and-swap over an active generation identity, no visibility epoch, no reader epoch pinning, no audited reverse primitive. A partially applied switch is observable today.",
+      "evidence": "cutover-design.md; modules/library/content_manager.py:728"
     }
+  ],
+  "blocking_gaps": [
+    "MISSING_LOGICAL_IDENTITY_AND_ACTIVE_GENERATION_POINTER",
+    "MISSING_SAME_SOURCE_GENERATION_ADMISSION_UNDER_LIVE_UNIQUENESS_INDEX",
+    "MISSING_UNIFIED_ACTIVE_GENERATION_VISIBILITY",
+    "MISSING_PAGE_PUBLICATION_GENERATION_ISOLATION",
+    "MISSING_ATOMIC_ACTIVE_GENERATION_SWITCH",
+    "MISSING_GENERATION_SAFE_RETRY_AND_CLEANUP",
+    "MISSING_RECONCILIATION_HARNESS",
+    "CURRENT_C_DURABLE_SOURCE_REFERENCE_MISSING"
   ],
   "prerequisite_gate": "TEBAAI_BRESLOV_C_PARALLEL_GENERATION_SAFETY_V1",
   "execution_ready": false,

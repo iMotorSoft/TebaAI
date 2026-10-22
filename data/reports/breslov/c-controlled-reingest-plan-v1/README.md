@@ -2,7 +2,16 @@
 
 **PLAN / INVENTORY / PREFLIGHT ONLY — no C reingestion.**
 
-Planning PASS; execution NOT READY. Required next gate: `TEBAAI_BRESLOV_C_PARALLEL_GENERATION_SAFETY_V1`.
+Planning PASS; execution NOT READY. Required next gate: `TEBAAI_BRESLOV_C_PARALLEL_GENERATION_SAFETY_V1`
+(with the logical-identity/active-pointer foundation work it already declared).
+
+Refresh 2026-10-22: second execution of this planning gate after two prerequisite
+attempts closed **BLOCKED** (`c-parallel-generation-safety-v1`,
+`parallel-generation-foundation-v1`). Current C was re-inventoried read-only and is
+**byte-identical** to the first run (same document, run, job/attempt, 284 pages,
+942 chunks, 942 vectors, same content digests). The refresh adds two structural
+findings that change the candidate design: the live same-source uniqueness index
+and the page-publication "newest completed run" hijack.
 
 - [Report and current C identity/history/gaps](REPORT.md)
 - [Future execution phases 0–9](C_CONTROLLED_REINGEST_EXECUTION_PLAN.md)
@@ -15,16 +24,18 @@ Planning PASS; execution NOT READY. Required next gate: `TEBAAI_BRESLOV_C_PARALL
 - [Capability matrix](generation-capability-matrix.json)
 - [Recommendation](recommendation.md)
 
-Evidence: current-c-*.json summaries; postgres-before/after.json, milvus-before/after.json, source-before/after.json raw sanitized inventories; queries-before/after.json exact bound SELECTs; historical-report-index.json; worktree-before.json; gate.json; focused-tests*.txt; final-validation.json; secret-scan.json; git-diff-check.txt. git-close.json, if present, records verified Git publication (post-commit evidence, not part of that commit).
+Evidence: current-c-*.json summaries; postgres-before/after.json, milvus-before/after.json, source-before/after.json raw sanitized inventories; queries-before/after.json exact bound SELECTs; indexes-readonly.json live index/constraint probe; historical-report-index.json; worktree-before.json / worktree-after.json; remote-precheck.json; gate.json; focused-tests*.txt; final-validation.json; secret-scan.json; git-diff-check.txt.
 
 Safe inventory command (no worker/lifecycle, local DEV guards, server-enforced read-only):
 
 ```bash
 cd SrvRestAstroLS_v1/backend
+export TEBAAI_CONTENT_MANAGER_STORAGE_DIR="$PWD"
 .venv/bin/python ../../data/reports/breslov/c-controlled-reingest-plan-v1/inventory_readonly.py before
+.venv/bin/python ../../data/reports/breslov/c-controlled-reingest-plan-v1/indexes_readonly.py
 ```
 
-It only writes local evidence files and must not be confused with an ingestion command. Do not overwrite sealed evidence for a future execution: use a new report directory/version. Offline regression command:
+These only write local evidence files and must not be confused with an ingestion command. Do not overwrite sealed evidence for a future execution: use a new report directory/version. Offline regression command:
 
 ```bash
 cd SrvRestAstroLS_v1/backend

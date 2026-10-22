@@ -204,5 +204,6 @@
     }
   ],
   "interpretation": "19 cleaned regional E2E jobs retain historical document IDs; manifests have document_id NULL, cleanup completed. They are not hidden active C generations. Same-title C fixture is not full corpus C. No cleanup performed.",
-  "unloaded_vector_inventory_limitation": "one unloaded tebaai_breslov_bm25_test_v2 reports row_count=0; no load/flush or strong-query proof asserted; revalidate read-only availability before execution"
+  "unloaded_vector_inventory_limitation": "one unloaded tebaai_breslov_bm25_test_v2 reports row_count=0; no load/flush or strong-query proof asserted; revalidate read-only availability before execution",
+  "refresh_note": "Live anomaly counters re-observed 2026-10-22; historical sections preserved from the archived-report reconstruction of the previous plan run (no new historical rows exist in current DEV)."
 }

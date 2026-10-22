@@ -87,6 +87,60 @@
   "limitations": "No invented history: pre-reset DB rows no longer present. All known archived same-source generations identified, no assertion that deleted/unlogged attempts can be reconstructed. Source-report index included. E2E subset PDFs have distinct hashes and are not full C generations. Historical PDF glyph/text runs are not ingestion runs.",
   "other_embedding_runs": [
     {
+      "id": "a6a074f6-ae7a-505c-9987-858b749ce579",
+      "collection_code": "breslov",
+      "milvus_collection": "tebaai_breslov_chunks_v1",
+      "embedding_provider": "litellm",
+      "embedding_model": "openai_text_embedding_3_small",
+      "embedding_dimension": 1536,
+      "status": "completed",
+      "chunks_total": 296,
+      "chunks_embedded": 296,
+      "chunks_indexed": 296,
+      "error_message": null,
+      "metadata": {
+        "job_id": "7a1662c8-5b3e-4478-a3e6-3a5834c425d5",
+        "attempt": 1
+      },
+      "started_at": "2026-10-11 15:41:42.804212+00:00",
+      "finished_at": "2026-10-11 15:41:46.769435+00:00",
+      "organization_id": null,
+      "workspace_id": null,
+      "project_id": null,
+      "knowledge_scope_id": null,
+      "target": null,
+      "run_type": null,
+      "chunk_set_version": null,
+      "document_ids": null
+    },
+    {
+      "id": "52e60782-2b4a-5169-b3c3-c4d23b0d2121",
+      "collection_code": "breslov",
+      "milvus_collection": "tebaai_breslov_chunks_v1",
+      "embedding_provider": "litellm",
+      "embedding_model": "openai_text_embedding_3_small",
+      "embedding_dimension": 1536,
+      "status": "completed",
+      "chunks_total": 908,
+      "chunks_embedded": 908,
+      "chunks_indexed": 908,
+      "error_message": null,
+      "metadata": {
+        "job_id": "daf1f8eb-c9f1-4fb6-a99e-7f264d4ed93e",
+        "attempt": 1
+      },
+      "started_at": "2026-10-11 15:48:59.807416+00:00",
+      "finished_at": "2026-10-11 15:49:05.153780+00:00",
+      "organization_id": null,
+      "workspace_id": null,
+      "project_id": null,
+      "knowledge_scope_id": null,
+      "target": null,
+      "run_type": null,
+      "chunk_set_version": null,
+      "document_ids": null
+    },
+    {
       "id": "15c32ba4-0856-533c-afdc-0c368b17e578",
       "collection_code": "breslov",
       "milvus_collection": "tebaai_breslov_chunks_v1",
@@ -113,5 +167,6 @@
       "chunk_set_version": null,
       "document_ids": null
     }
-  ]
+  ],
+  "refresh_note": "Current section re-observed from the 2026-10-22 read-only snapshot; historical sections remain archived-report based and were not re-derived (no rows exist for them in current DEV)."
 }

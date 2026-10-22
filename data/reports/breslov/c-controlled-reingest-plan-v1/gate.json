@@ -2,13 +2,17 @@
   "gate": "TEBAAI_BRESLOV_C_CONTROLLED_REINGEST_PLAN_V1",
   "result": "TEBAAI_BRESLOV_C_CONTROLLED_REINGEST_PLAN_V1_PASS",
   "mode": "PLAN / INVENTORY / PREFLIGHT ONLY",
+  "run": "refresh-2026-10-22 (second execution of this planning gate; first was 490be6748fdb90ad644b9a6296faa5d1c33ea4e1)",
   "PLAN_READY": "YES",
   "PREREQUISITE_IMPLEMENTATION_REQUIRED": "YES",
   "MISSING_PRIMITIVE": [
-    "MISSING_CONTROLLED_SAME_SOURCE_NEW_VERSION_ADMISSION",
+    "MISSING_LOGICAL_IDENTITY_AND_ACTIVE_GENERATION_POINTER",
+    "MISSING_SAME_SOURCE_GENERATION_ADMISSION_UNDER_LIVE_UNIQUENESS_INDEX",
     "MISSING_UNIFIED_ACTIVE_GENERATION_VISIBILITY",
+    "MISSING_PAGE_PUBLICATION_GENERATION_ISOLATION",
     "MISSING_ATOMIC_ACTIVE_GENERATION_SWITCH",
     "MISSING_GENERATION_SAFE_RETRY_AND_CLEANUP",
+    "MISSING_RECONCILIATION_HARNESS",
     "CURRENT_C_DURABLE_SOURCE_REFERENCE_MISSING"
   ],
   "READY_FOR_C_REINGEST_EXECUTION_GATE": "NO",
@@ -35,6 +39,9 @@
   "chunks_modified": 0,
   "vectors_modified": 0,
   "production_touched": false,
+  "current_c_unchanged_since_previous_plan_run": true,
+  "current_c_content_digests_identical_to_2026_10_21_snapshot": true,
+  "git_remote_moved_vs_brief": "yes — by the previous execution of this same gate; local == tracking == ls-remote, no divergence",
   "COMMIT_POLICY": "YES if validation PASS",
   "PUSH_POLICY": "YES only if pre-push remote unchanged"
 }

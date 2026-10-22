@@ -1,10 +1,24 @@
 # Cutover design — blocked until prerequisite implementation
 
+**Refresh 2026-10-22:** two new blocking facts were confirmed read-only and change
+the admissible designs: (a) the live unique index
+`uq_library_documents_scope_collection_sha256 (knowledge_scope_id, collection_id, source_sha256)`
+forbids a second physical document row for the same tenant/collection/source, so
+"separate document UUID only" is not implementable as written; (b) the
+page-publication route selects the newest **completed** run of a document, so a
+candidate run that completes before cutover silently replaces the published page view
+of OLD. Both must be closed by the prerequisite, not by the cutover procedure.
+
 ## Existing vs missing
 
 `content_manager.publish_document` (content_manager.py) checks candidate reconciliation then updates that document to ready. It does not deactivate a prior same-source document and supplies no atomic reverse pair. library_documents has ready/test_candidate/archived statuses; no active-run pointer or superseded_by column. Chunk_set_version exists but the page-first gateway writes 1 and retrieval does not gate on it. Therefore do not invent a run-active flag or perform two publication requests.
 
-Reuse separate document identities with immutable pipeline versions and existing statuses. Every reader must enforce generation visibility consistently first; otherwise even archived OLD can leak through lexical/hybrid search. Unified authorization/visibility must apply to candidate exclusion, vector prefilter and PG hydration, relation/research branches, citation construction, page selection and cached results. Direct diagnostic inspection of inactive NEW must be explicit, authorized and excluded from ordinary user query parameters. Source access for retained OLD citations may remain explicitly inspectable under authorized archival policy without making OLD searchable.
+Reuse separate document identities with immutable pipeline versions and existing statuses **only if** the prerequisite has migrated the same-source uniqueness constraint to logical-source level, or a generation-scoped model inside the single document row if it has not. Every reader must enforce generation visibility consistently first; otherwise even archived OLD can leak through lexical/hybrid search. Unified authorization/visibility must apply to candidate exclusion, vector prefilter and PG hydration, relation/research branches, citation construction, page selection and cached results. Direct diagnostic inspection of inactive NEW must be explicit, authorized and excluded from ordinary user query parameters. Source access for retained OLD citations may remain explicitly inspectable under authorized archival policy without making OLD searchable.
+
+The switch itself must be a single compare-and-swap over the **active generation
+identity**, whatever its physical carrier is (document row or generation column). Two
+independent status updates — even inside the same request — are not a switch, and a
+"newest completed run" heuristic is not an active pointer.
 
 ## Desired invariant
 
@@ -23,10 +37,10 @@ Any committed dual eligibility or zero eligibility caused by partial state is an
 
 Acquire tenant/source lock; lock OLD+NEW rows in deterministic ID order. Read and compare expected active OLD identity/run/version, candidate completed immutable reconciliation seal, source durability, manifest ownership, tenant equality and active cardinality. Atomically archive OLD and ready NEW plus append audit/reversal metadata in one PG transaction with compare-and-swap semantics. Reject stale approvals or a third active generation. A repeated identical request returns its recorded committed result; it cannot increment generations or embed again. Both changes and audit roll back if any assertion fails. The exact implementation/API and schema for audit/seals must be delivered by prerequisite; no such command is runnable today.
 
-Milvus stores both document-specific PK sets; no visibility bits/aliases are dual-written there. Filter query candidates to the PG-selected active document IDs before top-k, then revalidate PG hydration; semantic search cannot consume candidate slots and hide OLD during build. Avoid stale active-ID cache: pin generation/epoch once per request, execute consistent PG reads and bind vector filter/citations to it, revalidate before response or discard stale responses. Conversation/citation caches cannot reuse inactive evidence as normal results. Existing archived source lookup may require a deliberate historical-inspection path; source references must stay resolvable through retention.
+Milvus stores both document-specific PK sets; no visibility bits/aliases are dual-written there. Filter query candidates to the PG-selected active document IDs (and, in the same-document model, to the PG-selected active chunk generation set) before top-k, then revalidate PG hydration; semantic search cannot consume candidate slots and hide OLD during build. Avoid stale active-ID cache: pin generation/epoch once per request, execute consistent PG reads and bind vector filter/citations to it, revalidate before response or discard stale responses. Conversation/citation caches cannot reuse inactive evidence as normal results. Existing archived source lookup may require a deliberate historical-inspection path; source references must stay resolvable through retention. The page-publication route must resolve the **active** generation, never the newest completed run.
 
 Lost network response -> read audit/visibility state. Before commit, OLD remains authoritative; after commit, NEW is authoritative; rollback only by reverse transaction. Current architecture lacks these controls, so any partial switch recovery today is a blocking gap, not a supported workaround. No embedding, ingestion, vector mutation or OLD cleanup is part of cutover.
 
 ## Verification required in prerequisite
 
-Concurrency: simultaneous promotion, stale job retry, racing readers/cleanup, lease recovery, process death before/between updates/after commit, lost response and retry, stale caches, guessed candidate IDs, include_test_candidates opt-in and page metadata selecting latest run. Demonstrate one visible generation and zero mixed evidence throughout. Reverse switch must succeed with OLD retained and no external reembedding. Fault tests use fixtures/disposable stores, never current C without separate approval.
+Concurrency: simultaneous promotion, stale job retry, racing readers/cleanup, lease recovery, process death before/between updates/after commit, lost response and retry, stale caches, guessed candidate IDs, include_test_candidates opt-in, page metadata selecting latest run, and a candidate that completes its run before cutover (must remain invisible on the page-publication route). Demonstrate one visible generation and zero mixed evidence throughout. Reverse switch must succeed with OLD retained and no external reembedding. Fault tests use fixtures/disposable stores, never current C without separate approval.

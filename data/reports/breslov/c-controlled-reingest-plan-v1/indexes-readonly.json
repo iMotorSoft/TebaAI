@@ -1,0 +1,681 @@
+{
+  "captured_at": "2026-10-22T12:14:24.371712+00:00",
+  "queries": [
+    {
+      "sql": "SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname='public' AND tablename = ANY(%s) ORDER BY tablename, indexname",
+      "params": [
+        [
+          "library_documents",
+          "library_document_chunks",
+          "library_document_texts",
+          "library_pages_v2",
+          "library_ingestion_runs_v2",
+          "library_chunk_embeddings",
+          "content_manager_jobs",
+          "content_manager_ingestion_manifests",
+          "content_manager_manifest_resources",
+          "content_manager_job_attempts",
+          "content_manager_uploads"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname='public' AND tablename = ANY(%s) AND indexdef LIKE 'CREATE UNIQUE%%' ORDER BY tablename, indexname",
+      "params": [
+        [
+          "library_documents",
+          "library_document_chunks",
+          "library_document_texts",
+          "library_pages_v2",
+          "library_ingestion_runs_v2",
+          "library_chunk_embeddings",
+          "content_manager_jobs",
+          "content_manager_ingestion_manifests",
+          "content_manager_manifest_resources",
+          "content_manager_job_attempts",
+          "content_manager_uploads"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT conrelid::regclass::text AS table_name, conname, pg_get_constraintdef(oid) AS definition FROM pg_constraint WHERE conrelid::regclass::text = ANY(%s) AND contype IN ('c','u') ORDER BY 1,2",
+      "params": [
+        [
+          "library_documents",
+          "library_document_chunks",
+          "library_document_texts",
+          "library_pages_v2",
+          "library_ingestion_runs_v2",
+          "library_chunk_embeddings",
+          "content_manager_jobs",
+          "content_manager_ingestion_manifests",
+          "content_manager_manifest_resources",
+          "content_manager_job_attempts",
+          "content_manager_uploads"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT indexname, indexdef FROM pg_indexes WHERE schemaname='public' AND tablename='library_documents' AND indexdef LIKE '%source_sha256%' ORDER BY indexname",
+      "params": null
+    },
+    {
+      "sql": "SELECT status, count(*) AS documents FROM library_documents GROUP BY status ORDER BY status",
+      "params": null
+    },
+    {
+      "sql": "SELECT count(*) AS chunks_without_document FROM library_document_chunks c LEFT JOIN library_documents d ON d.id=c.document_id WHERE d.id IS NULL",
+      "params": null
+    },
+    {
+      "sql": "SELECT count(*) AS pages_without_run FROM library_pages_v2 p LEFT JOIN library_ingestion_runs_v2 r ON r.run_id=p.run_id WHERE r.run_id IS NULL",
+      "params": null
+    }
+  ],
+  "indexes": [
+    {
+      "tablename": "content_manager_ingestion_manifests",
+      "indexname": "content_manager_ingestion_manifests_job_id_attempt_number_key",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_ingestion_manifests_job_id_attempt_number_key ON public.content_manager_ingestion_manifests USING btree (job_id, attempt_number)"
+    },
+    {
+      "tablename": "content_manager_ingestion_manifests",
+      "indexname": "content_manager_ingestion_manifests_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_ingestion_manifests_pkey ON public.content_manager_ingestion_manifests USING btree (id)"
+    },
+    {
+      "tablename": "content_manager_job_attempts",
+      "indexname": "content_manager_job_attempts_job_id_attempt_number_key",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_job_attempts_job_id_attempt_number_key ON public.content_manager_job_attempts USING btree (job_id, attempt_number)"
+    },
+    {
+      "tablename": "content_manager_job_attempts",
+      "indexname": "content_manager_job_attempts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_job_attempts_pkey ON public.content_manager_job_attempts USING btree (id)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "content_manager_jobs_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_jobs_pkey ON public.content_manager_jobs USING btree (id)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "idx_cm_jobs_claimable",
+      "indexdef": "CREATE INDEX idx_cm_jobs_claimable ON public.content_manager_jobs USING btree (status, lease_expires_at, created_at)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "idx_cm_jobs_document",
+      "indexdef": "CREATE INDEX idx_cm_jobs_document ON public.content_manager_jobs USING btree (document_id)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "idx_cm_jobs_org",
+      "indexdef": "CREATE INDEX idx_cm_jobs_org ON public.content_manager_jobs USING btree (organization_id)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "idx_cm_jobs_status",
+      "indexdef": "CREATE INDEX idx_cm_jobs_status ON public.content_manager_jobs USING btree (status)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "idx_cm_jobs_upload",
+      "indexdef": "CREATE INDEX idx_cm_jobs_upload ON public.content_manager_jobs USING btree (upload_id)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "uq_cm_jobs_active_idempotency",
+      "indexdef": "CREATE UNIQUE INDEX uq_cm_jobs_active_idempotency ON public.content_manager_jobs USING btree (idempotency_key) WHERE (status <> ALL (ARRAY['failed'::text, 'cancelled'::text, 'validation_failed'::text]))"
+    },
+    {
+      "tablename": "content_manager_manifest_resources",
+      "indexname": "content_manager_manifest_resources_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_manifest_resources_pkey ON public.content_manager_manifest_resources USING btree (manifest_id, resource_type, resource_id)"
+    },
+    {
+      "tablename": "content_manager_manifest_resources",
+      "indexname": "idx_cm_manifest_resources_type",
+      "indexdef": "CREATE INDEX idx_cm_manifest_resources_type ON public.content_manager_manifest_resources USING btree (manifest_id, resource_type)"
+    },
+    {
+      "tablename": "content_manager_uploads",
+      "indexname": "content_manager_uploads_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_uploads_pkey ON public.content_manager_uploads USING btree (id)"
+    },
+    {
+      "tablename": "content_manager_uploads",
+      "indexname": "idx_cm_uploads_org",
+      "indexdef": "CREATE INDEX idx_cm_uploads_org ON public.content_manager_uploads USING btree (organization_id)"
+    },
+    {
+      "tablename": "content_manager_uploads",
+      "indexname": "idx_cm_uploads_sha256",
+      "indexdef": "CREATE INDEX idx_cm_uploads_sha256 ON public.content_manager_uploads USING btree (sha256)"
+    },
+    {
+      "tablename": "library_chunk_embeddings",
+      "indexname": "ix_library_chunk_embeddings_content_sha256",
+      "indexdef": "CREATE INDEX ix_library_chunk_embeddings_content_sha256 ON public.library_chunk_embeddings USING btree (content_sha256)"
+    },
+    {
+      "tablename": "library_chunk_embeddings",
+      "indexname": "ix_library_chunk_embeddings_embedding_run_id",
+      "indexdef": "CREATE INDEX ix_library_chunk_embeddings_embedding_run_id ON public.library_chunk_embeddings USING btree (embedding_run_id)"
+    },
+    {
+      "tablename": "library_chunk_embeddings",
+      "indexname": "ix_library_chunk_embeddings_metadata",
+      "indexdef": "CREATE INDEX ix_library_chunk_embeddings_metadata ON public.library_chunk_embeddings USING gin (metadata)"
+    },
+    {
+      "tablename": "library_chunk_embeddings",
+      "indexname": "ix_library_chunk_embeddings_status",
+      "indexdef": "CREATE INDEX ix_library_chunk_embeddings_status ON public.library_chunk_embeddings USING btree (status)"
+    },
+    {
+      "tablename": "library_chunk_embeddings",
+      "indexname": "library_chunk_embeddings_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_chunk_embeddings_pkey ON public.library_chunk_embeddings USING btree (id)"
+    },
+    {
+      "tablename": "library_chunk_embeddings",
+      "indexname": "uq_library_chunk_embeddings_chunk_model_version",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_chunk_embeddings_chunk_model_version ON public.library_chunk_embeddings USING btree (chunk_id, embedding_model_alias, COALESCE(chunk_set_version, 0))"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "idx_library_chunks_document_page",
+      "indexdef": "CREATE INDEX idx_library_chunks_document_page ON public.library_document_chunks USING btree (document_id, page_start, page_end)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "idx_library_chunks_reference_label",
+      "indexdef": "CREATE INDEX idx_library_chunks_reference_label ON public.library_document_chunks USING btree (reference_label) WHERE (reference_label IS NOT NULL)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "idx_library_chunks_search_text_trgm",
+      "indexdef": "CREATE INDEX idx_library_chunks_search_text_trgm ON public.library_document_chunks USING gin (search_text_normalized gin_trgm_ops)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "idx_library_chunks_search_vector_es",
+      "indexdef": "CREATE INDEX idx_library_chunks_search_vector_es ON public.library_document_chunks USING gin (search_vector_es)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "idx_library_chunks_search_vector_simple",
+      "indexdef": "CREATE INDEX idx_library_chunks_search_vector_simple ON public.library_document_chunks USING gin (search_vector_simple)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "ix_library_document_chunks_block_type",
+      "indexdef": "CREATE INDEX ix_library_document_chunks_block_type ON public.library_document_chunks USING btree (block_type)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "ix_library_document_chunks_citable",
+      "indexdef": "CREATE INDEX ix_library_document_chunks_citable ON public.library_document_chunks USING btree (citable)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "ix_library_document_chunks_collection_id",
+      "indexdef": "CREATE INDEX ix_library_document_chunks_collection_id ON public.library_document_chunks USING btree (collection_id)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "ix_library_document_chunks_content_sha256",
+      "indexdef": "CREATE INDEX ix_library_document_chunks_content_sha256 ON public.library_document_chunks USING btree (content_sha256)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "ix_library_document_chunks_document_id",
+      "indexdef": "CREATE INDEX ix_library_document_chunks_document_id ON public.library_document_chunks USING btree (document_id)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "ix_library_document_chunks_ingestion_profile",
+      "indexdef": "CREATE INDEX ix_library_document_chunks_ingestion_profile ON public.library_document_chunks USING btree (ingestion_profile)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "ix_library_document_chunks_language",
+      "indexdef": "CREATE INDEX ix_library_document_chunks_language ON public.library_document_chunks USING btree (language)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "ix_library_document_chunks_metadata",
+      "indexdef": "CREATE INDEX ix_library_document_chunks_metadata ON public.library_document_chunks USING gin (metadata)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "library_document_chunks_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_document_chunks_pkey ON public.library_document_chunks USING btree (id)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "library_document_chunks_uid_unique",
+      "indexdef": "CREATE UNIQUE INDEX library_document_chunks_uid_unique ON public.library_document_chunks USING btree (chunk_uid)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "uq_library_chunks_doc_chunk",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_chunks_doc_chunk ON public.library_document_chunks USING btree (document_id, chunk_index)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "uq_library_document_chunks_text_index",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_document_chunks_text_index ON public.library_document_chunks USING btree (document_text_id, chunk_index)"
+    },
+    {
+      "tablename": "library_document_texts",
+      "indexname": "ix_library_document_texts_content_sha256",
+      "indexdef": "CREATE INDEX ix_library_document_texts_content_sha256 ON public.library_document_texts USING btree (content_sha256)"
+    },
+    {
+      "tablename": "library_document_texts",
+      "indexname": "ix_library_document_texts_document_id",
+      "indexdef": "CREATE INDEX ix_library_document_texts_document_id ON public.library_document_texts USING btree (document_id)"
+    },
+    {
+      "tablename": "library_document_texts",
+      "indexname": "ix_library_document_texts_extraction_metadata",
+      "indexdef": "CREATE INDEX ix_library_document_texts_extraction_metadata ON public.library_document_texts USING gin (extraction_metadata)"
+    },
+    {
+      "tablename": "library_document_texts",
+      "indexname": "ix_library_document_texts_role",
+      "indexdef": "CREATE INDEX ix_library_document_texts_role ON public.library_document_texts USING btree (text_role)"
+    },
+    {
+      "tablename": "library_document_texts",
+      "indexname": "library_document_texts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_document_texts_pkey ON public.library_document_texts USING btree (id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_bibliographic_metadata",
+      "indexdef": "CREATE INDEX ix_library_documents_bibliographic_metadata ON public.library_documents USING gin (bibliographic_metadata)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_collection_id",
+      "indexdef": "CREATE INDEX ix_library_documents_collection_id ON public.library_documents USING btree (collection_id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_doc_code",
+      "indexdef": "CREATE INDEX ix_library_documents_doc_code ON public.library_documents USING btree (knowledge_scope_id, document_code) WHERE (document_code IS NOT NULL)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_language",
+      "indexdef": "CREATE INDEX ix_library_documents_language ON public.library_documents USING btree (language)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_metadata",
+      "indexdef": "CREATE INDEX ix_library_documents_metadata ON public.library_documents USING gin (metadata)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_org",
+      "indexdef": "CREATE INDEX ix_library_documents_org ON public.library_documents USING btree (organization_id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_project",
+      "indexdef": "CREATE INDEX ix_library_documents_project ON public.library_documents USING btree (project_id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_scope",
+      "indexdef": "CREATE INDEX ix_library_documents_scope ON public.library_documents USING btree (knowledge_scope_id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_source_sha256",
+      "indexdef": "CREATE INDEX ix_library_documents_source_sha256 ON public.library_documents USING btree (source_sha256)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_status",
+      "indexdef": "CREATE INDEX ix_library_documents_status ON public.library_documents USING btree (status)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_title_lower",
+      "indexdef": "CREATE INDEX ix_library_documents_title_lower ON public.library_documents USING btree (lower(title))"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_ws",
+      "indexdef": "CREATE INDEX ix_library_documents_ws ON public.library_documents USING btree (workspace_id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "library_documents_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_documents_pkey ON public.library_documents USING btree (id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "uq_library_documents_scope_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_scope_collection_sha256 ON public.library_documents USING btree (knowledge_scope_id, collection_id, source_sha256) WHERE (knowledge_scope_id IS NOT NULL)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "uq_library_documents_unscoped_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_unscoped_collection_sha256 ON public.library_documents USING btree (collection_id, source_sha256) WHERE (knowledge_scope_id IS NULL)"
+    },
+    {
+      "tablename": "library_ingestion_runs_v2",
+      "indexname": "library_ingestion_runs_v2_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_ingestion_runs_v2_pkey ON public.library_ingestion_runs_v2 USING btree (run_id)"
+    },
+    {
+      "tablename": "library_pages_v2",
+      "indexname": "idx_pages_v2_doc",
+      "indexdef": "CREATE INDEX idx_pages_v2_doc ON public.library_pages_v2 USING btree (document_id)"
+    },
+    {
+      "tablename": "library_pages_v2",
+      "indexname": "idx_pages_v2_doc_page",
+      "indexdef": "CREATE INDEX idx_pages_v2_doc_page ON public.library_pages_v2 USING btree (document_id, page_number)"
+    },
+    {
+      "tablename": "library_pages_v2",
+      "indexname": "library_pages_v2_document_id_page_number_run_id_key",
+      "indexdef": "CREATE UNIQUE INDEX library_pages_v2_document_id_page_number_run_id_key ON public.library_pages_v2 USING btree (document_id, page_number, run_id)"
+    },
+    {
+      "tablename": "library_pages_v2",
+      "indexname": "library_pages_v2_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_pages_v2_pkey ON public.library_pages_v2 USING btree (page_id)"
+    }
+  ],
+  "unique_indexes": [
+    {
+      "tablename": "content_manager_ingestion_manifests",
+      "indexname": "content_manager_ingestion_manifests_job_id_attempt_number_key",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_ingestion_manifests_job_id_attempt_number_key ON public.content_manager_ingestion_manifests USING btree (job_id, attempt_number)"
+    },
+    {
+      "tablename": "content_manager_ingestion_manifests",
+      "indexname": "content_manager_ingestion_manifests_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_ingestion_manifests_pkey ON public.content_manager_ingestion_manifests USING btree (id)"
+    },
+    {
+      "tablename": "content_manager_job_attempts",
+      "indexname": "content_manager_job_attempts_job_id_attempt_number_key",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_job_attempts_job_id_attempt_number_key ON public.content_manager_job_attempts USING btree (job_id, attempt_number)"
+    },
+    {
+      "tablename": "content_manager_job_attempts",
+      "indexname": "content_manager_job_attempts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_job_attempts_pkey ON public.content_manager_job_attempts USING btree (id)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "content_manager_jobs_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_jobs_pkey ON public.content_manager_jobs USING btree (id)"
+    },
+    {
+      "tablename": "content_manager_jobs",
+      "indexname": "uq_cm_jobs_active_idempotency",
+      "indexdef": "CREATE UNIQUE INDEX uq_cm_jobs_active_idempotency ON public.content_manager_jobs USING btree (idempotency_key) WHERE (status <> ALL (ARRAY['failed'::text, 'cancelled'::text, 'validation_failed'::text]))"
+    },
+    {
+      "tablename": "content_manager_manifest_resources",
+      "indexname": "content_manager_manifest_resources_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_manifest_resources_pkey ON public.content_manager_manifest_resources USING btree (manifest_id, resource_type, resource_id)"
+    },
+    {
+      "tablename": "content_manager_uploads",
+      "indexname": "content_manager_uploads_pkey",
+      "indexdef": "CREATE UNIQUE INDEX content_manager_uploads_pkey ON public.content_manager_uploads USING btree (id)"
+    },
+    {
+      "tablename": "library_chunk_embeddings",
+      "indexname": "library_chunk_embeddings_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_chunk_embeddings_pkey ON public.library_chunk_embeddings USING btree (id)"
+    },
+    {
+      "tablename": "library_chunk_embeddings",
+      "indexname": "uq_library_chunk_embeddings_chunk_model_version",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_chunk_embeddings_chunk_model_version ON public.library_chunk_embeddings USING btree (chunk_id, embedding_model_alias, COALESCE(chunk_set_version, 0))"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "library_document_chunks_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_document_chunks_pkey ON public.library_document_chunks USING btree (id)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "library_document_chunks_uid_unique",
+      "indexdef": "CREATE UNIQUE INDEX library_document_chunks_uid_unique ON public.library_document_chunks USING btree (chunk_uid)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "uq_library_chunks_doc_chunk",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_chunks_doc_chunk ON public.library_document_chunks USING btree (document_id, chunk_index)"
+    },
+    {
+      "tablename": "library_document_chunks",
+      "indexname": "uq_library_document_chunks_text_index",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_document_chunks_text_index ON public.library_document_chunks USING btree (document_text_id, chunk_index)"
+    },
+    {
+      "tablename": "library_document_texts",
+      "indexname": "library_document_texts_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_document_texts_pkey ON public.library_document_texts USING btree (id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "library_documents_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_documents_pkey ON public.library_documents USING btree (id)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "uq_library_documents_scope_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_scope_collection_sha256 ON public.library_documents USING btree (knowledge_scope_id, collection_id, source_sha256) WHERE (knowledge_scope_id IS NOT NULL)"
+    },
+    {
+      "tablename": "library_documents",
+      "indexname": "uq_library_documents_unscoped_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_unscoped_collection_sha256 ON public.library_documents USING btree (collection_id, source_sha256) WHERE (knowledge_scope_id IS NULL)"
+    },
+    {
+      "tablename": "library_ingestion_runs_v2",
+      "indexname": "library_ingestion_runs_v2_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_ingestion_runs_v2_pkey ON public.library_ingestion_runs_v2 USING btree (run_id)"
+    },
+    {
+      "tablename": "library_pages_v2",
+      "indexname": "library_pages_v2_document_id_page_number_run_id_key",
+      "indexdef": "CREATE UNIQUE INDEX library_pages_v2_document_id_page_number_run_id_key ON public.library_pages_v2 USING btree (document_id, page_number, run_id)"
+    },
+    {
+      "tablename": "library_pages_v2",
+      "indexname": "library_pages_v2_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_pages_v2_pkey ON public.library_pages_v2 USING btree (page_id)"
+    }
+  ],
+  "check_constraints": [
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "conname": "content_manager_ingestion_manifests_job_id_attempt_number_key",
+      "definition": "UNIQUE (job_id, attempt_number)"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "conname": "content_manager_job_attempts_attempt_number_check",
+      "definition": "CHECK ((attempt_number > 0))"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "conname": "content_manager_job_attempts_job_id_attempt_number_key",
+      "definition": "UNIQUE (job_id, attempt_number)"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "conname": "chk_cm_cleanup_status",
+      "definition": "CHECK ((cleanup_status = ANY (ARRAY['not_required'::text, 'pending'::text, 'running'::text, 'completed'::text, 'completed_with_warnings'::text, 'failed'::text])))"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "conname": "chk_cm_requested_test_candidate",
+      "definition": "CHECK ((requested_status = 'test_candidate'::text))"
+    },
+    {
+      "table_name": "content_manager_manifest_resources",
+      "conname": "content_manager_manifest_resources_resource_type_check",
+      "definition": "CHECK ((resource_type = ANY (ARRAY['document'::text, 'document_text'::text, 'ingestion_run'::text, 'embedding_run'::text, 'page'::text, 'chunk'::text, 'embedding'::text, 'vector'::text, 'temporary_file'::text])))"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "conname": "library_chunk_embeddings_status_valid",
+      "definition": "CHECK ((status = ANY (ARRAY['indexed'::text, 'failed'::text, 'skipped'::text])))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "chk_chunk_set_version_positive",
+      "definition": "CHECK (((chunk_set_version IS NULL) OR (chunk_set_version >= 0)))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "chk_library_chunks_page_end_positive",
+      "definition": "CHECK (((page_end IS NULL) OR (page_end > 0)))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "chk_library_chunks_page_range",
+      "definition": "CHECK (((page_start IS NULL) OR (page_end IS NULL) OR (page_end >= page_start)))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "chk_library_chunks_page_start_positive",
+      "definition": "CHECK (((page_start IS NULL) OR (page_start > 0)))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "library_document_chunks_chars_order",
+      "definition": "CHECK (((char_end IS NULL) OR (char_start IS NULL) OR (char_end >= char_start)))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "library_document_chunks_chars_valid",
+      "definition": "CHECK (((char_start IS NULL) OR (char_start >= 0)))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "library_document_chunks_content_not_empty",
+      "definition": "CHECK ((content <> ''::text))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "library_document_chunks_index_positive",
+      "definition": "CHECK ((chunk_index >= 0))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "library_document_chunks_language_valid",
+      "definition": "CHECK ((language = ANY (ARRAY['es'::text, 'en'::text, 'he'::text, 'mixed'::text, 'unknown'::text])))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "library_document_chunks_length_positive",
+      "definition": "CHECK ((content_length > 0))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "library_document_chunks_sha256_not_empty",
+      "definition": "CHECK ((content_sha256 <> ''::text))"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "conname": "library_document_chunks_uid_unique",
+      "definition": "UNIQUE (chunk_uid)"
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_language_valid",
+      "definition": "CHECK ((language = ANY (ARRAY['es'::text, 'en'::text, 'he'::text])))"
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_sha256_not_empty",
+      "definition": "CHECK ((source_sha256 <> ''::text))"
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_source_type_valid",
+      "definition": "CHECK ((source_type = ANY (ARRAY['book'::text, 'article'::text, 'pdf'::text, 'markdown'::text, 'text'::text, 'other'::text])))"
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_status_valid",
+      "definition": "CHECK ((status = ANY (ARRAY['draft'::text, 'ready'::text, 'test_candidate'::text, 'archived'::text, 'error'::text, 'ingestion_failed'::text])))"
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_title_not_empty",
+      "definition": "CHECK ((title <> ''::text))"
+    },
+    {
+      "table_name": "library_document_texts",
+      "conname": "library_document_texts_content_not_empty",
+      "definition": "CHECK ((content <> ''::text))"
+    },
+    {
+      "table_name": "library_document_texts",
+      "conname": "library_document_texts_format_valid",
+      "definition": "CHECK ((text_format = ANY (ARRAY['markdown'::text, 'plain_text'::text])))"
+    },
+    {
+      "table_name": "library_document_texts",
+      "conname": "library_document_texts_length_positive",
+      "definition": "CHECK ((content_length >= 0))"
+    },
+    {
+      "table_name": "library_document_texts",
+      "conname": "library_document_texts_sha256_not_empty",
+      "definition": "CHECK ((content_sha256 <> ''::text))"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "conname": "library_pages_v2_document_id_page_number_run_id_key",
+      "definition": "UNIQUE (document_id, page_number, run_id)"
+    }
+  ],
+  "c_document_indexes_on_sha": [
+    {
+      "indexname": "ix_library_documents_source_sha256",
+      "indexdef": "CREATE INDEX ix_library_documents_source_sha256 ON public.library_documents USING btree (source_sha256)"
+    },
+    {
+      "indexname": "uq_library_documents_scope_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_scope_collection_sha256 ON public.library_documents USING btree (knowledge_scope_id, collection_id, source_sha256) WHERE (knowledge_scope_id IS NOT NULL)"
+    },
+    {
+      "indexname": "uq_library_documents_unscoped_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_unscoped_collection_sha256 ON public.library_documents USING btree (collection_id, source_sha256) WHERE (knowledge_scope_id IS NULL)"
+    }
+  ],
+  "document_status_counts": [
+    {
+      "status": "ready",
+      "documents": 3
+    }
+  ],
+  "chunk_orphan_check": [
+    {
+      "chunks_without_document": 0
+    }
+  ],
+  "page_orphan_check": [
+    {
+      "pages_without_run": 0
+    }
+  ]
+}

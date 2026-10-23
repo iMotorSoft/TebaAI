@@ -90,7 +90,7 @@ _________ test_real_postgres_single_concept_retrieval_remains_grounded _________
         response = run_real(QaRequest(question="¿Dónde aparece plegaria?", works=["potencia_plegaria", "lh"], ai={"enabled": False}))
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -102,7 +102,7 @@ _________ test_real_blood_speech_traceability_and_final_per_work_limit _________
         hit_ids = [hit["hit_id"] for hit in response["hits"]]
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -160,7 +160,7 @@ question = 'תְּהִלָּתִי אֶחְטָם לָךְ'
         response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -181,7 +181,7 @@ question = 'תהלתי אחטם לך'
         response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -202,7 +202,7 @@ question = 'ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
         response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -223,7 +223,7 @@ question = 'ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך donde esta'
         response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -244,7 +244,7 @@ question = 'donde esta ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
         response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -265,7 +265,7 @@ question = 'איפה ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
         response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -284,7 +284,7 @@ _________ test_exact_pdf_copypaste_audit_excludes_spanish_instruction __________
         assert interpretation["instruction_language"] == "es"
 >       assert interpretation["literal_reconstructed"] == "תְּהִלָּתִי אֶחְטָם לָך"
 E       AssertionError: assert 'תְּהִלָּתִיאֶחְטָםלָך' == 'תְּהִלָּתִי אֶחְטָם לָך'
-E         
+E
 E         - תְּהִלָּתִי אֶחְטָם לָך
 E         ?            -       -
 E         + תְּהִלָּתִיאֶחְטָםלָך
@@ -299,7 +299,7 @@ query = 'tisha beav'
         response = _run_real(query)
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 
@@ -313,7 +313,7 @@ query = "Tisha B'Av"
         response = _run_real(query)
 >       assert response["status"] == "ok"
 E       AssertionError: assert 'no_evidence' == 'ok'
-E         
+E
 E         - ok
 E         + no_evidence
 

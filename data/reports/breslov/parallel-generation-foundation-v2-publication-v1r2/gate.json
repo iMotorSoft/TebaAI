@@ -1,18 +1,18 @@
 {
   "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
-  "result": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2_PENDING_PUBLICATION",
-  "decision": "PENDING",
+  "result": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2_PASS",
+  "decision": "PASS",
   "branch": "feature/console-backend-core",
   "authoritative_base": "9882b569e55513dc179eccdc1c465bf31b25cb6a",
   "candidate_paths": 17,
   "missing_required_files": 0,
   "ambiguous_candidate_files": 0,
   "FOUNDATION_V2_CLOSURE_COMPLETE": true,
-  "FOUNDATION_V2_PUBLISHED": "NO",
-  "COMMIT": "NO",
-  "PUSH": "NO",
-  "PUBLISHED_SHA": null,
-  "REMOTE_SHA": null,
+  "FOUNDATION_V2_PUBLISHED": "YES",
+  "COMMIT": "YES",
+  "PUSH": "YES",
+  "PUBLISHED_SHA": "f6c9775e54677eaf77d984b5683ceebfc886a543",
+  "REMOTE_SHA": "f6c9775e54677eaf77d984b5683ceebfc886a543",
   "CURRENT_C_PRESERVED": "YES",
   "CURRENT_C_DOCUMENT": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
   "CURRENT_C_LOGICAL_DOCUMENT": "db200a31-b547-5668-d968-06d0ec36ad95",
@@ -24,11 +24,5 @@
   "POINTER_CHANGED": "NO",
   "READY_FOR_C_PARALLEL_GENERATION_SAFETY_V2": "NO",
   "READY_FOR_C_REINGEST_EXECUTION": "NO",
-  "failed_conditions": [
-    "commit_created",
-    "push_fast_forward",
-    "remote_sha_matches",
-    "fresh_clone_pass",
-    "fresh_clone_sha_matches"
-  ]
+  "failed_conditions": []
 }

@@ -1,8 +1,8 @@
 {
   "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
-  "status": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2_PENDING_PUBLICATION",
-  "decision": "PENDING",
-  "validated_at": "2026-10-23T14:35:13.871047+00:00",
+  "status": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2_PASS",
+  "decision": "PASS",
+  "validated_at": "2026-10-23T14:37:32.061829+00:00",
   "conditions": {
     "authoritative_git_base": true,
     "candidate_closure_complete": true,
@@ -35,21 +35,15 @@
     "reader_relation-qa_pass": true,
     "reader_viewer_pass": true,
     "reader_citation-source_pass": true,
-    "commit_created": false,
-    "push_fast_forward": false,
-    "remote_sha_matches": false,
-    "fresh_clone_pass": false,
-    "fresh_clone_sha_matches": false
+    "commit_created": true,
+    "push_fast_forward": true,
+    "remote_sha_matches": true,
+    "fresh_clone_pass": true,
+    "fresh_clone_sha_matches": true
   },
-  "failed_conditions": [
-    "commit_created",
-    "push_fast_forward",
-    "remote_sha_matches",
-    "fresh_clone_pass",
-    "fresh_clone_sha_matches"
-  ],
-  "published_sha": null,
-  "verified_commit": null,
-  "product_tree_hash": null,
+  "failed_conditions": [],
+  "published_sha": "f6c9775e54677eaf77d984b5683ceebfc886a543",
+  "verified_commit": "f6c9775e54677eaf77d984b5683ceebfc886a543",
+  "product_tree_hash": "a2c4de8d92dd7f27c0df20379a164f7905bebf63b2d95220914dec4a85e82a1f",
   "gate_json": "gate.json"
 }

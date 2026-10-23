@@ -1,0 +1,19 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "commit_sha": "f6c9775e54677eaf77d984b5683ceebfc886a543",
+  "product_commit_sha": "1f4b3bc003eb12709a74c53fda17ade2606c05e7",
+  "base_sha": "9882b569e55513dc179eccdc1c465bf31b25cb6a",
+  "branch": "feature/console-backend-core",
+  "parent": "1f4b3bc003eb12709a74c53fda17ade2606c05e7",
+  "message": "docs(breslov): normalize V1R2 evidence log whitespace",
+  "author": "iMotorSoft <mario.rojas@alquimiablue.com>",
+  "committed_at": "2026-10-23T11:35:45-03:00",
+  "product_paths": 17,
+  "report_paths": 79,
+  "staged_paths_at_freeze_snapshot": 96,
+  "product_hash_mismatches": 0,
+  "frozen_manifest_sha256": "9a43cdeaba4a6798d23dedfcb349904ece01581777cadfe7b329393a04a515cd",
+  "product_tree_hash": "a2c4de8d92dd7f27c0df20379a164f7905bebf63b2d95220914dec4a85e82a1f",
+  "verified_clone_sha": "f6c9775e54677eaf77d984b5683ceebfc886a543",
+  "evidence_report_only_descendant": true
+}

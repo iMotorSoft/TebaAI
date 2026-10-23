@@ -1,0 +1,163 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "method": "imports + call sites + schema + migration discovery + tests + reader paths + cleanup + durable-source dependency audit",
+  "roots": {
+    "foundation_product": [
+      "SrvRestAstroLS_v1/backend/modules/library/content_manager.py",
+      "SrvRestAstroLS_v1/backend/modules/library/content_manager_cleanup.py",
+      "SrvRestAstroLS_v1/backend/modules/library/generation.py"
+    ],
+    "migration": [
+      "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql"
+    ],
+    "readers": [
+      "SrvRestAstroLS_v1/backend/modules/library/hybrid_search.py",
+      "SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py",
+      "SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py",
+      "SrvRestAstroLS_v1/backend/modules/library/source_repository.py",
+      "SrvRestAstroLS_v1/backend/modules/library/text_search.py"
+    ],
+    "page_first_gateway": [
+      "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py"
+    ],
+    "rollback": [
+      "SrvRestAstroLS_v1/backend/modules/library/generation.py"
+    ],
+    "tests_and_harness": [
+      "SrvRestAstroLS_v1/backend/tests/test_content_manager_cleanup.py",
+      "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+      "SrvRestAstroLS_v1/backend/tests/test_generation_rollback_remediation.py",
+      "SrvRestAstroLS_v1/backend/tests/test_library_search_hybrid_milvus_alias.py",
+      "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_order.py",
+      "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_postgres.py",
+      "SrvRestAstroLS_v1/backend/tests/test_parallel_generation_safety_prerequisites.py"
+    ]
+  },
+  "transitive_dependencies": {
+    "infrastructure.postgres.transaction": {
+      "path": "SrvRestAstroLS_v1/backend/infrastructure/postgres/transaction.py",
+      "status": "TRACKED_UNCHANGED",
+      "required": true
+    },
+    "infrastructure.postgres.migrations": {
+      "path": "SrvRestAstroLS_v1/backend/infrastructure/postgres/migrations.py",
+      "status": "TRACKED_UNCHANGED",
+      "required": true,
+      "note": "auto-discovers db/migrations/*.sql, including 043"
+    },
+    "tests.test_region_publication (certified_fixture)": {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_region_publication.py",
+      "status": "TRACKED_UNCHANGED",
+      "required": true
+    },
+    "globalVar (settings facade)": {
+      "path": "SrvRestAstroLS_v1/backend/globalVar.py",
+      "status": "TRACKED_UNCHANGED",
+      "required": true
+    }
+  },
+  "foundation_components": {
+    "migration_043": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql"
+    },
+    "logical_document_identity": {
+      "present": true,
+      "implementation": "library_logical_documents + generation.ensure_logical_document"
+    },
+    "document_logical_mapping": {
+      "present": true,
+      "implementation": "library_documents.logical_document_id + composite FK"
+    },
+    "generation_identity": {
+      "present": true,
+      "implementation": "library_document_generations + generation.register_generation"
+    },
+    "generation_statuses": {
+      "present": true,
+      "implementation": "BUILDING/CANDIDATE/ACTIVE/INACTIVE/FAILED"
+    },
+    "active_generation_pointer": {
+      "present": true,
+      "implementation": "library_logical_document_active_generations"
+    },
+    "activation_audit": {
+      "present": true,
+      "implementation": "library_generation_activation_audit"
+    },
+    "visibility_mechanism": {
+      "present": true,
+      "implementation": "library_visible_documents view"
+    },
+    "generation_service": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/modules/library/generation.py"
+    },
+    "activate_generation_cas": {
+      "present": true,
+      "implementation": "generation.activate_generation"
+    },
+    "cutover_semantics": {
+      "present": true,
+      "implementation": "OPERATION_CUTOVER, CANDIDATE only"
+    },
+    "rollback_semantics": {
+      "present": true,
+      "implementation": "OPERATION_ROLLBACK, retained immediate previous ACTIVE"
+    },
+    "retention_cleanup_protection": {
+      "present": true,
+      "implementation": "generation_cleanup_protected_generations + content_manager_cleanup guards"
+    },
+    "page_first_gateway_ordering": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py"
+    },
+    "text_search_filtering": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/modules/library/text_search.py"
+    },
+    "hybrid_vector_filtering": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/modules/library/hybrid_search.py"
+    },
+    "research_filtering": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py"
+    },
+    "relation_qa_filtering": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py"
+    },
+    "source_viewer_resolution": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/modules/library/source_repository.py"
+    },
+    "citation_source_consistency": {
+      "present": true,
+      "implementation": "readers + source_repository share library_visible_documents / active pointer"
+    },
+    "content_manager_integration": {
+      "present": true,
+      "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager.py"
+    },
+    "durable_source_interaction": {
+      "present": true,
+      "implementation": "source_repository serves ACTIVE document source_path; C source certified separately"
+    },
+    "foundation_tests": {
+      "present": true,
+      "count": 7
+    },
+    "publication_harness": {
+      "present": true,
+      "paths": [
+        "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_order.py",
+        "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_postgres.py"
+      ]
+    }
+  },
+  "complete": true,
+  "missing_required_files": 0,
+  "ambiguous_candidate_files": 0
+}

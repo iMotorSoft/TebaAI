@@ -1,0 +1,85 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "method": "static scan of frozen production modules for latest-completed/finished-at selection patterns, followed by explicit classification",
+  "patterns": [
+    "latest[^\\n]{0,80}(completed|successful|finished)",
+    "most recent[^\\n]{0,80}(completed|successful|finished)",
+    "ORDER BY[^\\n;]{0,160}(finished_at|completed_at|created_at)[^\\n;]{0,40}DESC[^\\n;]{0,40}LIMIT\\s+1",
+    "ORDER BY[^\\n;]{0,160}finished_at[^\\n;]{0,60}DESC"
+  ],
+  "findings": [
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py",
+      "line": 165,
+      "snippet": "ORDER BY r.finished_at DESC NULLS LAST, r.created_at DESC",
+      "classification": "EXPLICITLY_RUN_SCOPED_QA_DISCOVERY",
+      "reason": "Book QA V2 run listing ordered by run finish time; returns run metadata for an authenticated, explicitly scoped QA feature. It is not used by document/viewer/source/search/citation resolution and never decides normal document visibility."
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py",
+      "line": 210,
+      "snippet": "ORDER BY r.finished_at DESC NULLS LAST, r.created_at DESC LIMIT 1",
+      "classification": "EXPLICITLY_RUN_SCOPED_QA_DISCOVERY",
+      "reason": "get_latest_book_qa_run(document_id=...) is only reachable from the authenticated Book QA discovery endpoints with an explicit document_id and no run_id. It selects a QA ingestion run, not a visible document. The Foundation test asserts it does not feed the viewer."
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/repository.py",
+      "line": 371,
+      "snippet": "\"SELECT * FROM library_document_texts WHERE document_id = %(document_id)s ORDER BY created_at DESC LIMIT 1\",",
+      "classification": "DOCUMENT_TEXT_VERSION_SELECTION_NOT_DOCUMENT_VISIBILITY",
+      "reason": "Selects the newest extraction text row for an explicit physical document_id. It does not select a document or generation and has no production call site in the frozen tree."
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/source_repository.py",
+      "line": 8,
+      "snippet": "from \"the most recent completed run\". A candidate generation that completes",
+      "classification": "DOCSTRING_ONLY",
+      "reason": "Docstring states that the historical most-recent-completed-run rule is forbidden; implementation uses the ACTIVE pointer."
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/generation.py",
+      "line": 11,
+      "snippet": "It is never inferred from ``created_at``, ``finished_at``, \"latest completed run\"",
+      "classification": "DOCSTRING_ONLY",
+      "reason": "Docstring states the normative rule: the active generation is never inferred from created_at, finished_at or the latest completed run."
+    }
+  ],
+  "unresolved": [],
+  "UNRESOLVED_USER_VISIBLE_LATEST_FALLBACKS": 0,
+  "NORMAL_READERS_REQUIRE_LATEST_COMPLETED": "NO",
+  "reader_visibility_evidence": {
+    "text_search.py": {
+      "uses_library_visible_documents": true,
+      "uses_active_pointer": false,
+      "reads_library_documents_status_directly": false
+    },
+    "hybrid_search.py": {
+      "uses_library_visible_documents": true,
+      "uses_active_pointer": true,
+      "reads_library_documents_status_directly": false
+    },
+    "simple_research_repository.py": {
+      "uses_library_visible_documents": true,
+      "uses_active_pointer": false,
+      "reads_library_documents_status_directly": false
+    },
+    "relation_qa_repository.py": {
+      "uses_library_visible_documents": true,
+      "uses_active_pointer": false,
+      "reads_library_documents_status_directly": false
+    },
+    "source_repository.py": {
+      "uses_library_visible_documents": true,
+      "uses_active_pointer": true,
+      "reads_library_documents_status_directly": false
+    }
+  },
+  "book_qa": {
+    "endpoint": "/library/book-qa and /library/book-qa/runs[/latest]",
+    "authenticated": true,
+    "explicitly_run_or_document_scoped": true,
+    "frontend_callsites": [],
+    "used_by_viewer_source_search_or_citation": false
+  },
+  "PASS": true
+}

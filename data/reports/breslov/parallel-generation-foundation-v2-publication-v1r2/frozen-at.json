@@ -1,0 +1,11 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "frozen_at_utc": "2026-10-23T14:22:43.170154+00:00",
+  "branch": "feature/console-backend-core",
+  "authoritative_base": "9882b569e55513dc179eccdc1c465bf31b25cb6a",
+  "candidate_count": 17,
+  "report_harness_count": 18,
+  "manifest_sha256": "9a43cdeaba4a6798d23dedfcb349904ece01581777cadfe7b329393a04a515cd",
+  "hashes_file_sha256": "c1902bc6a27f8a50db8dc81700a81dcbd8c2e0fdc96759071e9a8f9e54874fe8",
+  "post_freeze_rule": "no product/test/fixture/expected-outcome edits and no report-aggregation-logic edits after this point; any edit invalidates the gate"
+}

@@ -28,6 +28,9 @@ def test_resolve_milvus_collection_code_none_passthrough() -> None:
 async def test_hybrid_search_uses_milvus_alias_for_breslov_primary(monkeypatch) -> None:
     calls: dict[str, object] = {}
 
+    async def fake_active_documents(*args, **kwargs):
+        return ["doc-2"]
+
     async def fake_search_chunks_text(conn, **kwargs):
         calls["fts_scope"] = kwargs["knowledge_scope_code"]
         return [
@@ -77,6 +80,7 @@ async def test_hybrid_search_uses_milvus_alias_for_breslov_primary(monkeypatch) 
     monkeypatch.setattr(hybrid_search, "ensure_collection", lambda *args, **kwargs: None)
     monkeypatch.setattr(hybrid_search, "search_vectors", fake_search_vectors)
     monkeypatch.setattr(hybrid_search, "fetch_one", fake_fetch_one)
+    monkeypatch.setattr(hybrid_search, "resolve_active_document_ids", fake_active_documents)
 
     results = await hybrid_search.search_chunks_hybrid(
         object(),
@@ -88,6 +92,9 @@ async def test_hybrid_search_uses_milvus_alias_for_breslov_primary(monkeypatch) 
 
     assert calls["fts_scope"] == "breslov_primary"
     assert calls["enrich_scope"] == "breslov_primary"
-    assert calls["milvus_expr"] == 'collection_code == "breslov"'
+    # The Milvus alias is preserved and the lane is restricted to the
+    # documents that carry the ACTIVE generation.
+    assert 'collection_code == "breslov"' in calls["milvus_expr"]
+    assert 'document_id == "doc-2"' in calls["milvus_expr"]
     assert "breslov_primary" not in str(calls["milvus_expr"])
     assert any("vector" in row["source_signals"] for row in results)

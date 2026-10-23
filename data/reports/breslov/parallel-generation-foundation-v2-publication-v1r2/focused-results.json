@@ -1,0 +1,589 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "xml": "focused.xml",
+  "totals": {
+    "tests": 63,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "files": [
+    "tests/test_generation_foundation.py",
+    "tests/test_generation_rollback_remediation.py",
+    "tests/test_page_first_gateway_generation_order.py",
+    "tests/test_page_first_gateway_generation_postgres.py",
+    "tests/test_parallel_generation_safety_prerequisites.py",
+    "tests/test_content_manager_cleanup.py",
+    "tests/test_library_search_hybrid_milvus_alias.py"
+  ],
+  "cases": [
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_foundation_objects_exist",
+      "nodeid": "tests.test_generation_foundation::test_foundation_objects_exist",
+      "file": null,
+      "time": 0.053,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_current_c_is_backfilled_as_the_active_generation",
+      "nodeid": "tests.test_generation_foundation::test_current_c_is_backfilled_as_the_active_generation",
+      "file": null,
+      "time": 0.022,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_second_active_generation_is_rejected_by_the_database",
+      "nodeid": "tests.test_generation_foundation::test_second_active_generation_is_rejected_by_the_database",
+      "file": null,
+      "time": 0.156,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_cross_document_pointer_is_rejected_by_the_database",
+      "nodeid": "tests.test_generation_foundation::test_cross_document_pointer_is_rejected_by_the_database",
+      "file": null,
+      "time": 0.1,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_candidate_generation_is_invisible_to_normal_readers",
+      "nodeid": "tests.test_generation_foundation::test_candidate_generation_is_invisible_to_normal_readers",
+      "file": null,
+      "time": 0.111,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_completed_candidate_does_not_steal_the_page_publication",
+      "nodeid": "tests.test_generation_foundation::test_completed_candidate_does_not_steal_the_page_publication",
+      "file": null,
+      "time": 0.1,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_explicit_generation_inspection_reaches_the_candidate",
+      "nodeid": "tests.test_generation_foundation::test_explicit_generation_inspection_reaches_the_candidate",
+      "file": null,
+      "time": 0.135,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_reader_fails_closed_when_the_pointer_is_broken",
+      "nodeid": "tests.test_generation_foundation::test_reader_fails_closed_when_the_pointer_is_broken",
+      "file": null,
+      "time": 0.155,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_atomic_cutover_and_rollback",
+      "nodeid": "tests.test_generation_foundation::test_atomic_cutover_and_rollback",
+      "file": null,
+      "time": 0.155,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_stale_expected_active_generation_is_rejected",
+      "nodeid": "tests.test_generation_foundation::test_stale_expected_active_generation_is_rejected",
+      "file": null,
+      "time": 0.133,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_only_candidate_generations_can_be_activated",
+      "nodeid": "tests.test_generation_foundation::test_only_candidate_generations_can_be_activated",
+      "file": null,
+      "time": 0.1,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_activation_is_idempotent",
+      "nodeid": "tests.test_generation_foundation::test_activation_is_idempotent",
+      "file": null,
+      "time": 0.134,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_switch_is_audited",
+      "nodeid": "tests.test_generation_foundation::test_switch_is_audited",
+      "file": null,
+      "time": 0.177,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_active_and_retained_generations_are_cleanup_protected",
+      "nodeid": "tests.test_generation_foundation::test_active_and_retained_generations_are_cleanup_protected",
+      "file": null,
+      "time": 0.1,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_foundation",
+      "name": "test_candidate_cleanup_does_not_touch_the_active_generation",
+      "nodeid": "tests.test_generation_foundation::test_candidate_cleanup_does_not_touch_the_active_generation",
+      "file": null,
+      "time": 0.111,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_cutover_rollback_audit_and_cleanup",
+      "nodeid": "tests.test_generation_rollback_remediation::test_cutover_rollback_audit_and_cleanup",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_invalid_status[BUILDING-CUTOVER]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_invalid_status[BUILDING-CUTOVER]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_invalid_status[BUILDING-ROLLBACK]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_invalid_status[BUILDING-ROLLBACK]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_invalid_status[FAILED-CUTOVER]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_invalid_status[FAILED-CUTOVER]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_invalid_status[FAILED-ROLLBACK]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_invalid_status[FAILED-ROLLBACK]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_cross_document[CUTOVER]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_cross_document[CUTOVER]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_cross_document[ROLLBACK]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_cross_document[ROLLBACK]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_rollback_eligibility_fail_closed[arbitrary]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_rollback_eligibility_fail_closed[arbitrary]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_rollback_eligibility_fail_closed[never_active]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_rollback_eligibility_fail_closed[never_active]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_rollback_eligibility_fail_closed[unretained]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_rollback_eligibility_fail_closed[unretained]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_rollback_eligibility_fail_closed[historical]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_rollback_eligibility_fail_closed[historical]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_rollback_eligibility_fail_closed[no_edge]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_rollback_eligibility_fail_closed[no_edge]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_rollback_eligibility_fail_closed[rejected_history]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_rollback_eligibility_fail_closed[rejected_history]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_rollback_eligibility_fail_closed[wrong_source]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_rollback_eligibility_fail_closed[wrong_source]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_inactive_is_not_cutover_candidate",
+      "nodeid": "tests.test_generation_rollback_remediation::test_inactive_is_not_cutover_candidate",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_candidate_is_not_rollback_target",
+      "nodeid": "tests.test_generation_rollback_remediation::test_candidate_is_not_rollback_target",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_stale_cutover_and_stale_rollback",
+      "nodeid": "tests.test_generation_rollback_remediation::test_stale_cutover_and_stale_rollback",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_idempotency_safe",
+      "nodeid": "tests.test_generation_rollback_remediation::test_idempotency_safe",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_no_policy_bypass[UNKNOWN]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_no_policy_bypass[UNKNOWN]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_no_policy_bypass[BACKFILL]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_no_policy_bypass[BACKFILL]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_no_policy_bypass[REGISTER]",
+      "nodeid": "tests.test_generation_rollback_remediation::test_no_policy_bypass[REGISTER]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_generation_rollback_remediation",
+      "name": "test_postgres_rollback_contract",
+      "nodeid": "tests.test_generation_rollback_remediation::test_postgres_rollback_contract",
+      "file": null,
+      "time": 0.089,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_page_first_gateway_generation_order",
+      "name": "test_generation_requires_resolved_logical_link_and_run",
+      "nodeid": "tests.test_page_first_gateway_generation_order::test_generation_requires_resolved_logical_link_and_run",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_page_first_gateway_generation_postgres",
+      "name": "test_real_gateway_fk_retry_failure_cleanup[None]",
+      "nodeid": "tests.test_page_first_gateway_generation_postgres::test_real_gateway_fk_retry_failure_cleanup[None]",
+      "file": null,
+      "time": 0.076,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_page_first_gateway_generation_postgres",
+      "name": "test_real_gateway_fk_retry_failure_cleanup[before]",
+      "nodeid": "tests.test_page_first_gateway_generation_postgres::test_real_gateway_fk_retry_failure_cleanup[before]",
+      "file": null,
+      "time": 0.083,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_page_first_gateway_generation_postgres",
+      "name": "test_real_gateway_fk_retry_failure_cleanup[at]",
+      "nodeid": "tests.test_page_first_gateway_generation_postgres::test_real_gateway_fk_retry_failure_cleanup[at]",
+      "file": null,
+      "time": 0.085,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_hybrid_never_emits_unauthorized_or_misattributed_vector[None]",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_hybrid_never_emits_unauthorized_or_misattributed_vector[None]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical1]",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical1]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical2]",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical2]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_hybrid_uses_only_canonical_identity_and_chunk_index",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_hybrid_uses_only_canonical_identity_and_chunk_index",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[ready]",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[ready]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[archived]",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[archived]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[None]",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[None]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[unrecognized]",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[unrecognized]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_gateway_identity_collision_is_rejected_before_ownership_claim",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_gateway_identity_collision_is_rejected_before_ownership_claim",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_parallel_generation_safety_prerequisites",
+      "name": "test_search_http_cannot_serialize_unrehydrated_vector",
+      "nodeid": "tests.test_parallel_generation_safety_prerequisites::test_search_http_cannot_serialize_unrehydrated_vector",
+      "file": null,
+      "time": 0.485,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_content_manager_cleanup",
+      "name": "test_manifest_cleanup_is_ordered_and_complete",
+      "nodeid": "tests.test_content_manager_cleanup::test_manifest_cleanup_is_ordered_and_complete",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_content_manager_cleanup",
+      "name": "test_cleanup_repeated_treats_absent_vector_as_success",
+      "nodeid": "tests.test_content_manager_cleanup::test_cleanup_repeated_treats_absent_vector_as_success",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_content_manager_cleanup",
+      "name": "test_cleanup_deletes_manifest_vector_when_attempt_query_is_empty",
+      "nodeid": "tests.test_content_manager_cleanup::test_cleanup_deletes_manifest_vector_when_attempt_query_is_empty",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_content_manager_cleanup",
+      "name": "test_cleanup_stops_before_postgres_when_milvus_fails",
+      "nodeid": "tests.test_content_manager_cleanup::test_cleanup_stops_before_postgres_when_milvus_fails",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_content_manager_cleanup",
+      "name": "test_cleanup_can_preserve_validated_temporary_for_retry",
+      "nodeid": "tests.test_content_manager_cleanup::test_cleanup_can_preserve_validated_temporary_for_retry",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_content_manager_cleanup",
+      "name": "test_cleanup_rejects_unknown_scope_collection_mapping",
+      "nodeid": "tests.test_content_manager_cleanup::test_cleanup_rejects_unknown_scope_collection_mapping",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_content_manager_cleanup",
+      "name": "test_primary_cleanup_uses_manifest_vector_ids_exactly",
+      "nodeid": "tests.test_content_manager_cleanup::test_primary_cleanup_uses_manifest_vector_ids_exactly",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_library_search_hybrid_milvus_alias",
+      "name": "test_resolve_milvus_collection_code_breslov_primary_alias",
+      "nodeid": "tests.test_library_search_hybrid_milvus_alias::test_resolve_milvus_collection_code_breslov_primary_alias",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_library_search_hybrid_milvus_alias",
+      "name": "test_resolve_milvus_collection_code_breslov_passthrough",
+      "nodeid": "tests.test_library_search_hybrid_milvus_alias::test_resolve_milvus_collection_code_breslov_passthrough",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_library_search_hybrid_milvus_alias",
+      "name": "test_resolve_milvus_collection_code_other_scope_passthrough",
+      "nodeid": "tests.test_library_search_hybrid_milvus_alias::test_resolve_milvus_collection_code_other_scope_passthrough",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_library_search_hybrid_milvus_alias",
+      "name": "test_resolve_milvus_collection_code_none_passthrough",
+      "nodeid": "tests.test_library_search_hybrid_milvus_alias::test_resolve_milvus_collection_code_none_passthrough",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_library_search_hybrid_milvus_alias",
+      "name": "test_hybrid_search_uses_milvus_alias_for_breslov_primary",
+      "nodeid": "tests.test_library_search_hybrid_milvus_alias::test_hybrid_search_uses_milvus_alias_for_breslov_primary",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    }
+  ],
+  "PASS": true
+}

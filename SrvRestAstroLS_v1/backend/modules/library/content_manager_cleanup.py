@@ -53,6 +53,18 @@ class ManifestCleanupService:
         }
         if (manifest["scope_code"], manifest["collection_code"]) not in allowed_targets:
             raise E2EIsolationError("Cleanup rejected an unknown scope/collection mapping")
+        # Check before ANY external delete, not only the final PG document
+        # DELETE. Published/retained generations must not lose their vectors.
+        # This admission check is not a publication/cleanup concurrency fence;
+        # a versioned lifecycle still needs a shared lock and retention hold.
+        if manifest.get("document_status") not in {"draft", "ingestion_failed", "test_candidate", "absent"}:
+            raise E2EIsolationError("Cleanup rejected a published, retained or unknown document state")
+        # A generation that is ACTIVE, or retained as a rollback generation,
+        # must never be physically deleted by a generic cleanup.
+        if manifest.get("generation_status") == "ACTIVE":
+            raise E2EIsolationError("Cleanup rejected the ACTIVE generation of a logical document")
+        if manifest.get("generation_retention_hold"):
+            raise E2EIsolationError("Cleanup rejected a generation retained for rollback")
         items: list[CleanupItem] = []
         await self._set_status(manifest["manifest_id"], "running")
 
@@ -103,10 +115,15 @@ class ManifestCleanupService:
             async with conn.cursor(row_factory=dict_row) as cur:
                 await cur.execute(
                     """
-                    SELECT m.id manifest_id,m.document_id,m.job_id,m.attempt_number,j.collection_code,ks.knowledge_scope_code scope_code
+                    SELECT m.id manifest_id,m.document_id,m.job_id,m.attempt_number,j.collection_code,ks.knowledge_scope_code scope_code,
+                           COALESCE(d.status,'absent') AS document_status,
+                           g.status AS generation_status,
+                           COALESCE(g.retention_hold,false) AS generation_retention_hold
                     FROM content_manager_ingestion_manifests m
                     JOIN content_manager_jobs j ON j.id=m.job_id
                     JOIN knowledge_scopes ks ON ks.id=j.knowledge_scope_id
+                    LEFT JOIN library_documents d ON d.id=m.document_id
+                    LEFT JOIN library_document_generations g ON g.document_id=m.document_id
                     WHERE m.job_id=%s AND m.attempt_number=%s
                     """, (job_id, attempt_number),
                 )

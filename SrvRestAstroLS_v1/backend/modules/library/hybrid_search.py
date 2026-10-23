@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import html
-from typing import Any
+from typing import Any, Sequence
 
 from psycopg import AsyncConnection
 
 from infrastructure.milvus.client import ensure_collection, search_vectors
 from infrastructure.postgres.transaction import fetch_all, fetch_one
 from modules.embeddings.client import embed_text
+from modules.library.generation import resolve_active_document_ids
 from modules.library.text_search import search_chunks_text
 
 HYBRID_WEIGHTS = {
@@ -53,10 +54,25 @@ async def search_chunks_hybrid(
     vector_limit: int = VECTOR_LIMIT,
     milvus_collection: str = "tebaai_breslov_chunks_v1",
     weights: dict[str, float] | None = None,
+    document_ids: Sequence[str] | None = None,
 ) -> list[dict[str, Any]]:
     """Hybrid search scoped by knowledge_scope_code.
-    Uses knowledge_scopes for PG FTS filter and Milvus collection_code filter."""
+    Uses knowledge_scopes for PG FTS filter and Milvus collection_code filter.
+
+    Visibility is generation aware: the vector lane only accepts documents that
+    carry the ACTIVE generation, resolved from the active pointer. An empty
+    active set means "nothing is active" and yields no vector hits; it never
+    falls back to any available generation. ``document_ids`` addresses a
+    specific generation administratively.
+    """
     w = weights or HYBRID_WEIGHTS
+
+    explicit_ids = [str(item) for item in document_ids] if document_ids is not None else None
+    visible_document_ids = explicit_ids
+    if visible_document_ids is None:
+        visible_document_ids = await resolve_active_document_ids(
+            conn, knowledge_scope_code=knowledge_scope_code
+        )
 
     # 1. FTS search via knowledge_scopes
     fts_results = await search_chunks_text(
@@ -66,6 +82,7 @@ async def search_chunks_hybrid(
         top_k=fts_limit,
         mode="auto",
         language=language,
+        document_ids=explicit_ids,
     )
     fts_by_chunk: dict[str, dict] = {}
     for r in fts_results:
@@ -79,22 +96,32 @@ async def search_chunks_hybrid(
     try:
         from infrastructure.milvus.client import create_connection
         create_connection()
-        query_vec = embed_text(query)
-        ensure_collection(milvus_collection, dimension=len(query_vec))
         milvus_collection_code = resolve_milvus_collection_code_for_scope(knowledge_scope_code)
         milvus_expr = (
             f'collection_code == "{milvus_collection_code}"'
             if milvus_collection_code
             else None
         )
-        milvus_hits = search_vectors(
-            collection_name=milvus_collection,
-            query_embedding=query_vec,
-            top_k=vector_limit,
-            expr=milvus_expr,
-            output_fields=["chunk_id", "document_id", "title", "content_preview", "chunk_index", "content_sha256",
-                           "page_start", "page_end"],
-        )
+        if not visible_document_ids:
+            # Fail closed: without an active generation there is no vector lane.
+            milvus_hits = []
+        else:
+            query_vec = embed_text(query)
+            ensure_collection(milvus_collection, dimension=len(query_vec))
+            document_filter = " or ".join(
+                f'document_id == "{document_id}"' for document_id in visible_document_ids
+            )
+            milvus_expr = (
+                f"({milvus_expr}) and ({document_filter})" if milvus_expr else f"({document_filter})"
+            )
+            milvus_hits = search_vectors(
+                collection_name=milvus_collection,
+                query_embedding=query_vec,
+                top_k=vector_limit,
+                expr=milvus_expr,
+                output_fields=["chunk_id", "document_id", "title", "content_preview", "chunk_index", "content_sha256",
+                               "page_start", "page_end"],
+            )
     except Exception:
         milvus_hits = []
 
@@ -105,14 +132,22 @@ async def search_chunks_hybrid(
         if not cid:
             continue
         vec_score = hit.get("distance", 0.0) or 0.0
-        pg_data = await _enrich_chunk(conn, cid, knowledge_scope_code)
+        pg_data = await _enrich_chunk(
+            conn, cid, knowledge_scope_code, document_ids=explicit_ids
+        )
+        # Milvus is only a candidate index. Never emit its metadata when PG
+        # cannot authorize/rehydrate the chunk, or attributes it elsewhere.
+        if not pg_data or not pg_data.get("document_id"):
+            continue
+        if hit.get("document_id") and str(hit["document_id"]) != str(pg_data["document_id"]):
+            continue
         entry: dict[str, Any] = {
             "chunk_id": cid,
-            "document_id": pg_data.get("document_id") or hit.get("document_id", ""),
-            "document_title": pg_data.get("document_title") or hit.get("title", ""),
+            "document_id": pg_data["document_id"],
+            "document_title": pg_data.get("document_title") or "",
             "author": pg_data.get("author"),
             "knowledge_scope_code": knowledge_scope_code,
-            "chunk_index": pg_data.get("chunk_index") or hit.get("chunk_index", 0),
+            "chunk_index": pg_data.get("chunk_index", 0),
             "language": pg_data.get("language", language),
             "page_start": pg_data.get("page_start"),
             "page_end": pg_data.get("page_end"),
@@ -191,21 +226,40 @@ async def search_chunks_hybrid(
     return results
 
 
-async def _enrich_chunk(conn: AsyncConnection, chunk_id: str, knowledge_scope_code: str) -> dict[str, Any]:
-    """Enrich Milvus result with PG data, scoped by knowledge_scopes."""
+async def _enrich_chunk(
+    conn: AsyncConnection,
+    chunk_id: str,
+    knowledge_scope_code: str,
+    document_ids: Sequence[str] | None = None,
+) -> dict[str, Any]:
+    """Enrich Milvus result with PG data, scoped by knowledge_scopes.
+
+    Only documents that carry the ACTIVE generation can be hydrated, so an
+    inactive or candidate generation can never be served from the vector lane.
+    Administrative callers may address one generation explicitly.
+    """
+    if document_ids is None:
+        join = "JOIN library_visible_documents d ON d.id = ch.document_id"
+        extra: dict[str, Any] = {}
+    else:
+        join = (
+            "JOIN library_documents d ON d.id = ch.document_id "
+            "AND ch.document_id = ANY(%(document_ids)s::uuid[])"
+        )
+        extra = {"document_ids": [str(item) for item in document_ids]}
     row = await fetch_one(
         conn,
-        """
+        f"""
         SELECT d.id AS document_id, d.title AS document_title, d.author,
                ks.knowledge_scope_code, ch.chunk_index, ch.language,
                ch.page_start, ch.page_end, ch.chapter, ch.section,
                ch.reference_label, ch.content, ch.content_length
         FROM library_document_chunks ch
-        JOIN library_documents d ON d.id = ch.document_id
+        {join}
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ch.id = %(chunk_id)s AND ks.knowledge_scope_code = %(code)s
         """,
-        {"chunk_id": chunk_id, "code": knowledge_scope_code},
+        {"chunk_id": chunk_id, "code": knowledge_scope_code, **extra},
     )
     if row:
         return dict(row)

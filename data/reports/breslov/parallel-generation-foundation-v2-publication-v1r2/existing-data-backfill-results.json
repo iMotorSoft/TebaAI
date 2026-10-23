@@ -1,0 +1,35 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "backfill": {
+    "documents_with_logical_identity": 3,
+    "documents_without_logical_identity": 0,
+    "logical_with_multiple_active_generations": 0,
+    "active_generations_without_pointer": 0,
+    "pointers_to_non_active_generation": 0,
+    "pointers_cross_logical": 0,
+    "generation_document_logical_mismatch": 0,
+    "active_generations_without_unambiguous_run": 0,
+    "visible_view_count": 3,
+    "visible_mismatch": 0,
+    "current_c_mapping": {
+      "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+      "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+      "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "generation_status": "ACTIVE",
+      "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+      "pointer_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b"
+    },
+    "current_c_correct": true
+  },
+  "checks": {
+    "every_document_has_logical_identity_or_legacy_ready": true,
+    "no_logical_with_two_active": true,
+    "no_active_without_pointer": true,
+    "no_pointer_to_non_active": true,
+    "no_cross_logical_pointer": true,
+    "no_generation_document_mismatch": true,
+    "no_visible_mismatch": true,
+    "current_c_maps_deterministically": true
+  },
+  "PASS": true
+}

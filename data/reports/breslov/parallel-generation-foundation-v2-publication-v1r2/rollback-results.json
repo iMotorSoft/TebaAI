@@ -1,0 +1,28 @@
+{
+  "operation": "ROLLBACK",
+  "result": "APPLIED",
+  "from": "a5119249-170c-41cc-85c1-cbd1ee7cc0ed",
+  "to": "22e838e7-8cf3-4f96-838c-83bc4cd58c5a",
+  "after": {
+    "statuses": {
+      "22e838e7-8cf3-4f96-838c-83bc4cd58c5a": "ACTIVE",
+      "a5119249-170c-41cc-85c1-cbd1ee7cc0ed": "INACTIVE"
+    },
+    "retention_hold": {
+      "22e838e7-8cf3-4f96-838c-83bc4cd58c5a": true,
+      "a5119249-170c-41cc-85c1-cbd1ee7cc0ed": true
+    },
+    "active_count": 1,
+    "active": [
+      "22e838e7-8cf3-4f96-838c-83bc4cd58c5a"
+    ],
+    "pointer": "22e838e7-8cf3-4f96-838c-83bc4cd58c5a",
+    "pointer_expected": "a5119249-170c-41cc-85c1-cbd1ee7cc0ed"
+  },
+  "NEW_INACTIVE": true,
+  "OLD_ACTIVE": true,
+  "pointer_is_old": true,
+  "PASS": true,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C"
+}

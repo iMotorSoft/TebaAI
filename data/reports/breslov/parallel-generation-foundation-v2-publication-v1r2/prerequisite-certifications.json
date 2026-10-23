@@ -1,0 +1,219 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "prerequisites": {
+    "rollback_remediation_v2": {
+      "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_ROLLBACK_REMEDIATION_V2_PASS",
+      "frozen_file_count": 494,
+      "missing": [],
+      "unexplained_mismatches": [],
+      "superseded_by_later_pass": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py",
+          "superseded_by": "page-first-gateway-generation-order-remediation-v1",
+          "frozen_hash_in_this_gate": "88866250fc7bd938d6ce5209e6b00c9167ac86ab5ffcc8da2de4ab98bf0eac42",
+          "current_hash": "960abc223072b6c8264d458127624f0ecafddcef501dfd3d3a9b164de0e9061d",
+          "later_gate_hash": "960abc223072b6c8264d458127624f0ecafddcef501dfd3d3a9b164de0e9061d",
+          "matches_later_gate": true
+        },
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+          "superseded_by": "foundation-v2-publication-preflight-remediation-v2",
+          "frozen_hash_in_this_gate": "aac7ee1a1f60e8d81f6486cdbe60be1c8049c5a02b9157589be685aa044a008c",
+          "current_hash": "4ccdea753686c2fb52425a05b5166081539441010db33aad465a49ff7a7e79dc",
+          "later_gate_hash": "4ccdea753686c2fb52425a05b5166081539441010db33aad465a49ff7a7e79dc",
+          "matches_later_gate": true
+        }
+      ],
+      "PASS": true
+    },
+    "page_first_gateway_order_v1": {
+      "gate": "TEBAAI_BRESLOV_PAGE_FIRST_GATEWAY_GENERATION_ORDER_REMEDIATION_V1_PASS",
+      "frozen_file_count": 478,
+      "missing": [],
+      "unexplained_mismatches": [],
+      "superseded_by_later_pass": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+          "superseded_by": "foundation-v2-publication-preflight-remediation-v2",
+          "frozen_hash_in_this_gate": "aac7ee1a1f60e8d81f6486cdbe60be1c8049c5a02b9157589be685aa044a008c",
+          "current_hash": "4ccdea753686c2fb52425a05b5166081539441010db33aad465a49ff7a7e79dc",
+          "later_gate_hash": "4ccdea753686c2fb52425a05b5166081539441010db33aad465a49ff7a7e79dc",
+          "matches_later_gate": true
+        }
+      ],
+      "PASS": true
+    },
+    "publication_preflight_remediation_v2": {
+      "gate": "TEBAAI_BRESLOV_FOUNDATION_V2_PUBLICATION_PREFLIGHT_REMEDIATION_V2",
+      "frozen_file_count": 11,
+      "missing": [],
+      "unexplained_mismatches": [],
+      "superseded_by_later_pass": [],
+      "PASS": true
+    },
+    "c_durable_source_restoration_certification_v1": {
+      "final_validation_status": "TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_CERTIFICATION_V1_PASS",
+      "gate_result": "TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_CERTIFICATION_V1_PASS",
+      "PASS": true
+    }
+  },
+  "candidate_frozen_hash_coverage": {
+    "candidate_count": 17,
+    "covered_by_prior_pass_manifest": 17,
+    "new_in_v1r2": 0,
+    "paths": [
+      {
+        "path": "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql",
+        "current_sha256": "9df48a72c59cde6fcde2e71269b03ac8afc67882943ca7a1bd86dd9671d6e369",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager.py",
+        "current_sha256": "713ef1ea5a548bd9609e0abb6221eb0754739618b0bf48df0102649a4f5fb806",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager_cleanup.py",
+        "current_sha256": "3b865eb56f9c8bfd306d1efa5ad94538f2d9b312021dcc5c268689cf2e80a88d",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/generation.py",
+        "current_sha256": "33b59585831e9858aed5a31f731db43a07f26e299cebaaf3ed0cf8abb59a8613",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/hybrid_search.py",
+        "current_sha256": "97ec6aadb655936a833b55fcc1920a05b9ae1545177cd223cc8d6ec381668a13",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py",
+        "current_sha256": "960abc223072b6c8264d458127624f0ecafddcef501dfd3d3a9b164de0e9061d",
+        "matching_frozen_manifests": [
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py",
+        "current_sha256": "e178137ac386b5c3a0c1af59d660db24180a7e86166d61dc77f1d1c9a58f0a6c",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py",
+        "current_sha256": "bd6ae5ea41c180e9d9716d6993e099c4c62a66756339784ee95e6a818d3f4409",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/source_repository.py",
+        "current_sha256": "8a07469875e11e0c246020c0728b6623039cbf3e8cb3ba4b41e5ee3ac9134ea0",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/modules/library/text_search.py",
+        "current_sha256": "eaa54906397af3b4e942c3f7d9b93343130fb7a599306bab1e739d568cda95c8",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/tests/test_content_manager_cleanup.py",
+        "current_sha256": "0031024e7cf809ffe06b5fb3ceedc4926b40f44f2d4733a2f2b31f47e2fba780",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+        "current_sha256": "4ccdea753686c2fb52425a05b5166081539441010db33aad465a49ff7a7e79dc",
+        "matching_frozen_manifests": [
+          "preflight_v2"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/tests/test_generation_rollback_remediation.py",
+        "current_sha256": "ff12c4f8c98200f368b9f5726cd64b507f1079dfe3d80fbaafccf228c183ddc1",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/tests/test_library_search_hybrid_milvus_alias.py",
+        "current_sha256": "ff0a03eca21cb218caf2cc63b1d2f0b8a06caf658c1037db409b33539e7ed6b4",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_order.py",
+        "current_sha256": "112cd9e11ebe6269c66bbc0ac563c5ce723b3f17d0dec0f9f6d9974c25880a86",
+        "matching_frozen_manifests": [
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_postgres.py",
+        "current_sha256": "a6889e9156158a8b640cfee3d9cb976a9f9aed7735bba86147e2155f3640a9bc",
+        "matching_frozen_manifests": [
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      },
+      {
+        "path": "SrvRestAstroLS_v1/backend/tests/test_parallel_generation_safety_prerequisites.py",
+        "current_sha256": "017d0305337bf4e8f2d2b60f3cf5975831f6e2011b24810916313a9956c15795",
+        "matching_frozen_manifests": [
+          "rollback_v2",
+          "page_first_v1"
+        ],
+        "new_in_v1r2": false
+      }
+    ]
+  },
+  "supersession_chain_explained_not_unreviewed": true,
+  "READY_FOR_FOUNDATION_V2_PUBLICATION_V1R2": true,
+  "PASS": true
+}

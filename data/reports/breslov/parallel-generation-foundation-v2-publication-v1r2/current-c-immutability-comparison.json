@@ -1,0 +1,25 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "CURRENT_C_DOCUMENT": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "CURRENT_C_LOGICAL": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "CURRENT_C_ACTIVE_GENERATION": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+  "CURRENT_C_CHUNKS": 942,
+  "CURRENT_C_VECTORS": 942,
+  "CURRENT_C_SOURCE_SHA256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "field_differences": [],
+  "checks": {
+    "same_document": true,
+    "same_logical_document": true,
+    "active_generation_unchanged": true,
+    "chunks_942": true,
+    "vectors_942": true,
+    "embeddings_942": true,
+    "source_sha_unchanged": true,
+    "chunk_digest_unchanged": true,
+    "page_digest_unchanged": true,
+    "embedding_digest_unchanged": true,
+    "no_field_differences": true
+  },
+  "CURRENT_C_PRESERVED": "YES",
+  "PASS": true
+}

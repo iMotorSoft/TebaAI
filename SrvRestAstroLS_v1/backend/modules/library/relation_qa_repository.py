@@ -32,11 +32,16 @@ _SELECT_FIELDS = """
            COALESCE(ch.bibliographic_metadata, '{}'::jsonb) AS bibliographic_metadata,
            ch.chunk_index
     FROM library_document_chunks ch
-    JOIN library_documents d ON d.id = ch.document_id
+    JOIN library_visible_documents d ON d.id = ch.document_id
 """
 
 
 def _statuses(include_test_candidates: bool) -> list[str]:
+    """Kept for call compatibility. Visibility is generation aware now.
+
+    Normal readers only see the ACTIVE generation; a candidate generation is
+    never reachable through a status allow-list.
+    """
     return ["ready", "test_candidate"] if include_test_candidates else ["ready"]
 
 
@@ -66,7 +71,6 @@ async def search_fts_chunks(
 ) -> list[dict[str, Any]]:
     """Run websearch FTS per variant using only controlled vector columns."""
     results: dict[str, dict[str, Any]] = {}
-    statuses = _statuses(include_test_candidates)
     per_variant = max(3, min(limit, 12))
 
     for variant in variants:
@@ -82,7 +86,6 @@ async def search_fts_chunks(
             _SELECT_FIELDS
             + f"""
             WHERE ch.knowledge_scope_id = %(scope_id)s
-              AND d.status = ANY(%(statuses)s)
               AND ch.{vector_column} @@ websearch_to_tsquery(
                     %(config)s::regconfig, %(query)s
                   )
@@ -95,7 +98,6 @@ async def search_fts_chunks(
             """,
             {
                 "scope_id": str(knowledge_scope_id),
-                "statuses": statuses,
                 "config": config,
                 "query": term,
                 "limit": per_variant,
@@ -125,14 +127,12 @@ async def search_ilike_chunks(
         _SELECT_FIELDS
         + """
         WHERE ch.knowledge_scope_id = %(scope_id)s
-          AND d.status = ANY(%(statuses)s)
           AND ch.content ILIKE ANY(%(patterns)s)
         ORDER BY ch.page_start NULLS LAST, ch.chunk_index
         LIMIT %(limit)s
         """,
         {
             "scope_id": str(knowledge_scope_id),
-            "statuses": _statuses(include_test_candidates),
             "patterns": patterns,
             "limit": limit,
         },
@@ -160,14 +160,12 @@ async def search_relation_pattern_chunks(
         _SELECT_FIELDS
         + """
         WHERE ch.knowledge_scope_id = %(scope_id)s
-          AND d.status = ANY(%(statuses)s)
           AND ch.content ILIKE ANY(%(patterns)s)
         ORDER BY ch.page_start NULLS LAST, ch.chunk_index
         LIMIT %(limit)s
         """,
         {
             "scope_id": str(knowledge_scope_id),
-            "statuses": _statuses(include_test_candidates),
             "patterns": like_patterns,
             "limit": limit,
         },
@@ -197,7 +195,6 @@ async def search_cooccurrence_chunks(
         _SELECT_FIELDS
         + """
         WHERE ch.knowledge_scope_id = %(scope_id)s
-          AND d.status = ANY(%(statuses)s)
           AND ch.content ILIKE ANY(%(a_patterns)s)
           AND ch.content ILIKE ANY(%(b_patterns)s)
         ORDER BY ch.page_start NULLS LAST, ch.chunk_index
@@ -205,7 +202,6 @@ async def search_cooccurrence_chunks(
         """,
         {
             "scope_id": str(knowledge_scope_id),
-            "statuses": _statuses(include_test_candidates),
             "a_patterns": a_patterns,
             "b_patterns": b_patterns,
             "limit": limit,
@@ -232,12 +228,10 @@ async def get_chunks_by_ids(
         _SELECT_FIELDS
         + """
         WHERE ch.knowledge_scope_id = %(scope_id)s
-          AND d.status = ANY(%(statuses)s)
           AND ch.id = ANY(%(chunk_ids)s::uuid[])
         """,
         {
             "scope_id": str(knowledge_scope_id),
-            "statuses": _statuses(include_test_candidates),
             "chunk_ids": list(chunk_ids),
         },
     )

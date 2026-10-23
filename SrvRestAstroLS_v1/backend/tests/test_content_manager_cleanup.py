@@ -31,7 +31,7 @@ class Service(ManifestCleanupService):
 
 def manifest():
     job=uuid4()
-    return {'manifest_id':uuid4(),'document_id':uuid4(),'job_id':job,'attempt_number':1,
+    return {'manifest_id':uuid4(),'document_id':uuid4(),'document_status':'test_candidate','job_id':job,'attempt_number':1,
         'scope_code':CONTENT_MANAGER_E2E_SCOPE,'collection_code':CONTENT_MANAGER_E2E_COLLECTION,
         'attempt_key':f'{job}:1','resources':{'vector':['v1'],'embedding':['e1'],
         'chunk':['c1'],'page':['p1'],'document_text':['t1'],'ingestion_run':['r1'],

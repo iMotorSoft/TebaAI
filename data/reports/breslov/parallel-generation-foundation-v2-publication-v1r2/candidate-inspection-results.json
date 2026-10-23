@@ -1,0 +1,16 @@
+{
+  "explicit_candidate_document_ids": [
+    "e55282d8-59a7-4287-a31f-0a5a213242c5"
+  ],
+  "explicit_candidate_chunk_ids": [
+    "d3b589cc-4be9-4e50-b5e4-bfd3d01c6b15"
+  ],
+  "generation_evidence_chunks": 1,
+  "generation_evidence_pages": 1,
+  "normal_candidate_visibility": [],
+  "EXPLICIT_CANDIDATE_INSPECTION": true,
+  "NORMAL_CANDIDATE_VISIBILITY": true,
+  "PASS": true,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C"
+}

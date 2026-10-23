@@ -1,0 +1,93 @@
+{
+  "before_cutover": {
+    "citation": {
+      "old_citation_documents": [
+        "002fc871-4607-45b9-be10-bb1f42129650"
+      ],
+      "new_citation_documents": [],
+      "old_citation_visible": true,
+      "new_citation_visible": false
+    },
+    "source": {
+      "old": {
+        "allowed": true,
+        "document_id": "002fc871-4607-45b9-be10-bb1f42129650",
+        "source_path": null,
+        "source_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      "new": {
+        "allowed": false,
+        "document_id": null,
+        "source_path": null,
+        "source_sha256": null
+      }
+    }
+  },
+  "PASS_before": true,
+  "after_cutover": {
+    "citation": {
+      "old_citation_documents": [],
+      "new_citation_documents": [
+        "e55282d8-59a7-4287-a31f-0a5a213242c5"
+      ],
+      "old_citation_visible": false,
+      "new_citation_visible": true
+    },
+    "source": {
+      "old": {
+        "allowed": false,
+        "document_id": null,
+        "source_path": null,
+        "source_sha256": null
+      },
+      "new": {
+        "allowed": true,
+        "document_id": "e55282d8-59a7-4287-a31f-0a5a213242c5",
+        "source_path": null,
+        "source_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      }
+    }
+  },
+  "PASS_after": true,
+  "after_rollback": {
+    "citation": {
+      "old_citation_documents": [
+        "002fc871-4607-45b9-be10-bb1f42129650"
+      ],
+      "new_citation_documents": [],
+      "old_citation_visible": true,
+      "new_citation_visible": false
+    },
+    "source": {
+      "old": {
+        "allowed": true,
+        "document_id": "002fc871-4607-45b9-be10-bb1f42129650",
+        "source_path": null,
+        "source_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      "new": {
+        "allowed": false,
+        "document_id": null,
+        "source_path": null,
+        "source_sha256": null
+      }
+    }
+  },
+  "PASS_after_rollback": true,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C",
+  "PASS": true,
+  "PASS_derivation": {
+    "rule": "all phase checks must be true",
+    "phases": [
+      "PASS_before",
+      "PASS_after",
+      "PASS_after_rollback"
+    ],
+    "values": {
+      "PASS_before": true,
+      "PASS_after": true,
+      "PASS_after_rollback": true
+    }
+  }
+}

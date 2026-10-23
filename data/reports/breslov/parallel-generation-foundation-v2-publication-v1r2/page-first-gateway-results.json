@@ -1,0 +1,51 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scope": "page-first gateway ordering remediation + corrected real-PostgreSQL publication fixture/harness",
+  "cases": [
+    {
+      "classname": "tests.test_page_first_gateway_generation_order",
+      "name": "test_generation_requires_resolved_logical_link_and_run",
+      "nodeid": "tests.test_page_first_gateway_generation_order::test_generation_requires_resolved_logical_link_and_run",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_page_first_gateway_generation_postgres",
+      "name": "test_real_gateway_fk_retry_failure_cleanup[None]",
+      "nodeid": "tests.test_page_first_gateway_generation_postgres::test_real_gateway_fk_retry_failure_cleanup[None]",
+      "file": null,
+      "time": 0.076,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_page_first_gateway_generation_postgres",
+      "name": "test_real_gateway_fk_retry_failure_cleanup[before]",
+      "nodeid": "tests.test_page_first_gateway_generation_postgres::test_real_gateway_fk_retry_failure_cleanup[before]",
+      "file": null,
+      "time": 0.083,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_page_first_gateway_generation_postgres",
+      "name": "test_real_gateway_fk_retry_failure_cleanup[at]",
+      "nodeid": "tests.test_page_first_gateway_generation_postgres::test_real_gateway_fk_retry_failure_cleanup[at]",
+      "file": null,
+      "time": 0.085,
+      "outcome": "PASS",
+      "detail": null
+    }
+  ],
+  "total": 4,
+  "passed": 4,
+  "failed": 0,
+  "errors": 0,
+  "fixture_errors": 0,
+  "fk_errors": 0,
+  "binding_errors": 0,
+  "indeterminate_datatype_errors": 0,
+  "PASS": true
+}

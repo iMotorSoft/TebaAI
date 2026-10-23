@@ -38,6 +38,14 @@ from modules.library.content_manager_schemas import (
     UploadValidationError,
     UploadValidationStatus,
 )
+from modules.library.generation import (
+    OPERATION_CUTOVER,
+    GenerationError,
+    activate_generation,
+    get_generation_by_document,
+    resolve_active_generation_id,
+    resolve_document_logical_id,
+)
 
 # ── Typed configuration ─────────────────────────────────────────────────
 
@@ -771,6 +779,30 @@ async def publish_document(
         embeddings=int(candidate["embeddings"]),
         vectors=len(found),
     )
+
+
+async def _activate_candidate_generation(
+    conn, *, document_id: str, actor_user_id: str,
+) -> dict[str, Any]:
+    """Promote the candidate generation of a document to the active one."""
+    logical_id = await resolve_document_logical_id(conn, document_id)
+    if not logical_id:
+        raise ValueError("El documento no tiene identidad lógica de generación.")
+    generation = await get_generation_by_document(conn, document_id)
+    if not generation:
+        raise ValueError("El documento no tiene una generación registrada.")
+    expected = await resolve_active_generation_id(conn, logical_id)
+    try:
+        return await activate_generation(
+            conn,
+            logical_document_id=logical_id,
+            expected_active_generation_id=expected,
+            new_generation_id=generation["id"],
+            operation=OPERATION_CUTOVER,
+            actor_id=actor_user_id,
+        )
+    except GenerationError as exc:
+        raise ValueError(f"La promoción atómica de la generación falló: {exc}") from exc
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────

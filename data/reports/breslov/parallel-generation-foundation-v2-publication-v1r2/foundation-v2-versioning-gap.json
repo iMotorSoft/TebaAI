@@ -1,0 +1,80 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "paths": [
+    {
+      "path": "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql",
+      "versioning": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager_cleanup.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/generation.py",
+      "versioning": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/hybrid_search.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/source_repository.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/text_search.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_content_manager_cleanup.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+      "versioning": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_generation_rollback_remediation.py",
+      "versioning": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_library_search_hybrid_milvus_alias.py",
+      "versioning": "TRACKED_MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_order.py",
+      "versioning": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_postgres.py",
+      "versioning": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_parallel_generation_safety_prerequisites.py",
+      "versioning": "UNTRACKED"
+    }
+  ],
+  "summary": {
+    "TRACKED_UNCHANGED": 0,
+    "TRACKED_MODIFIED": 10,
+    "UNTRACKED": 7,
+    "MISSING": 0
+  },
+  "MISSING_REQUIRED_FILES": 0
+}

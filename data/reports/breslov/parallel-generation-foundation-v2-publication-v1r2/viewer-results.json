@@ -1,0 +1,48 @@
+{
+  "before_cutover": {
+    "old_document_publication": {
+      "marker": "OLDGENERATIONEVIDENCE",
+      "page_status": "FULL"
+    },
+    "new_document_publication": null,
+    "resolved_document": "002fc871-4607-45b9-be10-bb1f42129650",
+    "resolved_marker": "OLDGENERATIONEVIDENCE"
+  },
+  "PASS_before": true,
+  "after_cutover": {
+    "old_document_publication": null,
+    "new_document_publication": {
+      "marker": "NEWGENERATIONEVIDENCE",
+      "page_status": "FULL"
+    },
+    "resolved_document": "e55282d8-59a7-4287-a31f-0a5a213242c5",
+    "resolved_marker": "NEWGENERATIONEVIDENCE"
+  },
+  "PASS_after": true,
+  "after_rollback": {
+    "old_document_publication": {
+      "marker": "OLDGENERATIONEVIDENCE",
+      "page_status": "FULL"
+    },
+    "new_document_publication": null,
+    "resolved_document": "002fc871-4607-45b9-be10-bb1f42129650",
+    "resolved_marker": "OLDGENERATIONEVIDENCE"
+  },
+  "PASS_after_rollback": true,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C",
+  "PASS": true,
+  "PASS_derivation": {
+    "rule": "all phase checks must be true",
+    "phases": [
+      "PASS_before",
+      "PASS_after",
+      "PASS_after_rollback"
+    ],
+    "values": {
+      "PASS_before": true,
+      "PASS_after": true,
+      "PASS_after_rollback": true
+    }
+  }
+}

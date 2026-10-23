@@ -1,0 +1,11 @@
+{
+  "rejected": true,
+  "error": "Stale expected active generation: the active generation changed",
+  "active_after": [
+    "a5119249-170c-41cc-85c1-cbd1ee7cc0ed"
+  ],
+  "pointer_after": "a5119249-170c-41cc-85c1-cbd1ee7cc0ed",
+  "PASS": true,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C"
+}

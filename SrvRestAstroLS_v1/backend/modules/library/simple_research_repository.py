@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Sequence
 
 from psycopg import AsyncConnection
 
@@ -15,25 +15,50 @@ async def resolve_ready_documents(
     knowledge_scope_code: str,
     work_codes: list[str] | None = None,
     include_test_candidates: bool = False,
+    candidate_document_ids: Sequence[str] = (),
 ) -> list[dict[str, Any]]:
-    """Resolve explicit work filters without treating default UI scope as a filter."""
+    """Resolve explicit work filters without treating default UI scope as a filter.
+
+    Only documents that carry the ACTIVE generation are normal-reader visible.
+    ``candidate_document_ids`` is the explicit administrative opt-in: a caller
+    must name the candidate generation documents it wants to inspect. The
+    ``include_test_candidates`` flag alone never widens visibility.
+    """
     rows = await fetch_all(
         conn,
         """
         SELECT d.id AS document_id, d.document_code, d.title, d.language,
                d.source_filename, d.source_sha256, d.status, d.edition,
                d.metadata, d.bibliographic_metadata
-        FROM library_documents d
+        FROM library_visible_documents d
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(scope)s
-          AND (
-                d.status = 'ready'
-                OR (%(include_test)s AND d.status = 'test_candidate')
-          )
         ORDER BY d.title
         """,
-        {"scope": knowledge_scope_code, "include_test": include_test_candidates},
+        {"scope": knowledge_scope_code},
     )
+    if candidate_document_ids:
+        candidate_rows = await fetch_all(
+            conn,
+            """
+            SELECT d.id AS document_id, d.document_code, d.title, d.language,
+                   d.source_filename, d.source_sha256, d.status, d.edition,
+                   d.metadata, d.bibliographic_metadata
+            FROM library_documents d
+            JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
+            WHERE ks.knowledge_scope_code = %(scope)s
+              AND d.id = ANY(%(candidate_ids)s::uuid[])
+            ORDER BY d.title
+            """,
+            {
+                "scope": knowledge_scope_code,
+                "candidate_ids": [str(item) for item in candidate_document_ids],
+            },
+        )
+        known = {str(row["document_id"]) for row in rows}
+        rows.extend(
+            row for row in candidate_rows if str(row["document_id"]) not in known
+        )
     if not work_codes:
         return rows
 
@@ -72,6 +97,7 @@ async def search_structural_heading_candidates(
     document_ids: list[str] | None,
     top_k: int,
     include_test_candidates: bool = False,
+    candidate_document_ids: Sequence[str] = (),
 ) -> list[dict[str, Any]]:
     """Return a bounded set of existing title/heading fields for Python classification.
 
@@ -98,7 +124,7 @@ async def search_structural_heading_candidates(
             d.status AS document_status,
             body.id AS associated_chunk_id
         FROM library_document_chunks ch
-        JOIN library_documents d ON d.id = ch.document_id
+        JOIN library_visible_documents d ON d.id = ch.document_id
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         LEFT JOIN LATERAL (
             SELECT candidate.id
@@ -117,10 +143,6 @@ async def search_structural_heading_candidates(
             LIMIT 1
         ) body ON true
         WHERE ks.knowledge_scope_code = %(scope)s
-          AND (
-                d.status = 'ready'
-                OR (%(include_test)s AND d.status = 'test_candidate')
-          )
           AND ch.language = ANY(%(languages)s::text[])
           AND (
                 %(document_ids)s::uuid[] IS NULL
@@ -137,8 +159,7 @@ async def search_structural_heading_candidates(
                 )
                 OR ch.search_text_normalized ILIKE '%%' || %(query)s || '%%'
                 OR (
-                    %(include_test)s
-                    AND d.status = 'test_candidate'
+                    ch.document_id = ANY(%(candidate_document_ids)s::uuid[])
                     AND ch.search_text_normalized IS NULL
                     AND length(ch.content) <= 320
                     AND public.unaccent(lower(ch.content))
@@ -172,6 +193,7 @@ async def search_structural_heading_candidates(
             "languages": languages,
             "document_ids": document_ids or None,
             "include_test": include_test_candidates,
+            "candidate_document_ids": [str(item) for item in candidate_document_ids],
             "limit": top_k,
         },
     )
@@ -252,14 +274,10 @@ async def search_printed_reference_candidates(
             true AS exact_match,
             2 AS exact_variant_count
         FROM library_document_chunks ch
-        JOIN library_documents d ON d.id = ch.document_id
+        JOIN library_visible_documents d ON d.id = ch.document_id
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         CROSS JOIN ref
         WHERE ks.knowledge_scope_code = %(scope)s
-          AND (
-                d.status = 'ready'
-                OR (%(include_test)s AND d.status = 'test_candidate')
-          )
           AND ch.citable = true
           AND (
                 ch.evidence_role = 'marginal_citation'
@@ -298,6 +316,7 @@ async def search_literal_candidates(
     hebrew_compact: str = "",
     hebrew_fallback_compacts: list[str] | None = None,
     include_test_candidates: bool = False,
+    candidate_document_ids: Sequence[str] = (),
 ) -> list[dict[str, Any]]:
     """Run phrase, FTS and trigram signals over canonical PostgreSQL chunks."""
     chunks = await fetch_all(
@@ -368,14 +387,10 @@ async def search_literal_candidates(
                 ) FILTER (WHERE q.ordinal <= 2) AS trigram_score
             FROM library_document_chunks ch
             JOIN normalized_text nt ON nt.id = ch.id
-            JOIN library_documents d ON d.id = ch.document_id
+            JOIN library_visible_documents d ON d.id = ch.document_id
             JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
             CROSS JOIN query_variants q
             WHERE ks.knowledge_scope_code = %(scope)s
-              AND (
-                    d.status = 'ready'
-                    OR (%(include_test)s AND d.status = 'test_candidate')
-              )
               AND ch.citable = true
               AND ch.language = ANY(%(languages)s::text[])
               AND (
@@ -425,10 +440,11 @@ async def search_literal_candidates(
             "languages": languages,
             "document_ids": document_ids or None,
             "include_test": include_test_candidates,
+            "candidate_document_ids": [str(item) for item in candidate_document_ids],
             "limit": top_k,
         },
     )
-    if not hebrew_compact or not include_test_candidates:
+    if not hebrew_compact or not candidate_document_ids:
         return chunks
     nodes = await fetch_all(
         conn,
@@ -463,7 +479,7 @@ async def search_literal_candidates(
         JOIN knowledge_scopes ks
           ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(scope)s
-          AND d.status = 'test_candidate'
+          AND d.id = ANY(%(candidate_document_ids)s::uuid[])
           AND n.citable = true
           AND (
                 %(document_ids)s::uuid[] IS NULL
@@ -536,11 +552,10 @@ async def search_source_lesson_candidates(
             'source_lesson_exact'::text AS literal_match_type
         FROM library_content_units_v2 u
         JOIN library_content_nodes_v2 n ON n.content_unit_id=u.content_unit_id
-        JOIN library_documents d ON d.id=u.document_id
+        JOIN library_visible_documents d ON d.id=u.document_id
         JOIN knowledge_scopes ks ON ks.id=d.knowledge_scope_id
         WHERE ks.knowledge_scope_code=%(scope)s
           AND d.id=ANY(%(document_ids)s::uuid[])
-          AND d.status IN ('ready', 'test_candidate')
           AND n.citable=true
           AND u.canonical_ref LIKE %(reference)s
         ORDER BY u.canonical_ref, n.node_order, n.content_node_id
@@ -561,6 +576,7 @@ async def fetch_canonical_chunks(
     knowledge_scope_code: str,
     chunk_ids: list[str],
     include_test_candidates: bool = False,
+    candidate_document_ids: Sequence[str] = (),
 ) -> list[dict[str, Any]]:
     """Rehydrate selected IDs from PostgreSQL, including complete canonical Markdown."""
     if not chunk_ids:
@@ -575,16 +591,11 @@ async def fetch_canonical_chunks(
             coalesce(
                 (
                     SELECT canonical_document.title
-                    FROM library_documents canonical_document
+                    FROM library_visible_documents canonical_document
                     WHERE canonical_document.source_sha256 = d.source_sha256
-                      AND (
-                            canonical_document.status = 'ready'
-                            OR canonical_document.document_code IS NOT NULL
-                      )
                     ORDER BY
-                        CASE WHEN canonical_document.status = 'ready' THEN 0 ELSE 1 END,
                         CASE WHEN canonical_document.document_code IS NOT NULL THEN 0 ELSE 1 END,
-                        canonical_document.created_at DESC
+                        canonical_document.id
                     LIMIT 1
                 ),
                 d.title
@@ -611,13 +622,9 @@ async def fetch_canonical_chunks(
             ch.metadata,
             ch.bibliographic_metadata
         FROM library_document_chunks ch
-        JOIN library_documents d ON d.id = ch.document_id
+        JOIN library_visible_documents d ON d.id = ch.document_id
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(scope)s
-          AND (
-                d.status = 'ready'
-                OR (%(include_test)s AND d.status = 'test_candidate')
-          )
           AND ch.citable = true
           AND ch.id = ANY(%(chunk_ids)s::uuid[])
         """,
@@ -625,9 +632,10 @@ async def fetch_canonical_chunks(
             "scope": knowledge_scope_code,
             "chunk_ids": chunk_ids,
             "include_test": include_test_candidates,
+            "candidate_document_ids": [str(item) for item in candidate_document_ids],
         },
     )
-    if not include_test_candidates:
+    if not candidate_document_ids:
         return chunks
     nodes = await fetch_all(
         conn,
@@ -685,11 +693,15 @@ async def fetch_canonical_chunks(
         LEFT JOIN library_page_anchors_v2 p
           ON p.page_anchor_id = n.page_anchor_id
         WHERE ks.knowledge_scope_code = %(scope)s
-          AND d.status = 'test_candidate'
+          AND d.id = ANY(%(candidate_document_ids)s::uuid[])
           AND n.citable = true
           AND n.content_node_id = ANY(%(chunk_ids)s::uuid[])
         """,
-        {"scope": knowledge_scope_code, "chunk_ids": chunk_ids},
+        {
+            "scope": knowledge_scope_code,
+            "chunk_ids": chunk_ids,
+            "candidate_document_ids": [str(item) for item in candidate_document_ids],
+        },
     )
     return [*chunks, *nodes]
 

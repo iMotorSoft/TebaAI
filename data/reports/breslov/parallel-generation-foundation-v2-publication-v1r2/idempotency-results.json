@@ -1,0 +1,7 @@
+{
+  "result": "IDEMPOTENT",
+  "PASS": true,
+  "active_count": 1,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C"
+}

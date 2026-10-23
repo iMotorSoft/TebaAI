@@ -1,0 +1,138 @@
+{
+  "captured_at_utc": "2026-10-23T13:47:17.897853+00:00",
+  "read_only": true,
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "document": {
+    "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+    "status": "ready",
+    "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+    "source_size_bytes": 4550267,
+    "title": "Likutey Halajot \u2014 Interior Final",
+    "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+    "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+    "created_at": "2026-10-11 15:56:28.408406+00:00",
+    "updated_at": "2026-10-23 12:12:54.684605+00:00"
+  },
+  "logical": {
+    "id": "db200a31-b547-5668-d968-06d0ec36ad95",
+    "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+    "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+    "title": "Likutey Halajot \u2014 Interior Final",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+    "source_size_bytes": 4550267,
+    "created_at": "2026-10-11 15:56:28.408406+00:00",
+    "updated_at": "2026-10-11 15:57:59.977447+00:00"
+  },
+  "generations": [
+    {
+      "id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+      "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+      "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+      "job_id": null,
+      "attempt_number": null,
+      "pipeline_version": "content_page_first_v1",
+      "status": "ACTIVE",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "retention_hold": true,
+      "activated_at": "2026-10-11 15:57:59.977447+00:00",
+      "deactivated_at": null,
+      "created_at": "2026-10-11 15:56:28.408406+00:00"
+    }
+  ],
+  "active_pointer": {
+    "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+    "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+    "expected_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+    "operation": "BACKFILL",
+    "activated_at": "2026-10-22 13:07:58.275718+00:00",
+    "activated_by": null
+  },
+  "chunks": {
+    "count": 942,
+    "digest": "b6520f85b180de35206410fd3fac3b7accbf9b48c30376101c6001c9da2a419c",
+    "citable_count": 942,
+    "page_span": [
+      1,
+      283
+    ]
+  },
+  "embeddings": {
+    "count": 942,
+    "digest": "5f544667cf5615cd34c120db897c86081110c111bbfdb8b838351a76ec1a2e8f",
+    "models": [
+      "litellm/openai_text_embedding_3_small"
+    ],
+    "dimensions": [
+      1536
+    ]
+  },
+  "pages": {
+    "count": 284,
+    "digest": "d83f7e407179b4853fc374eea35e32a53ce3798d533c1b7dfa91fcb140f5b87d"
+  },
+  "runs": [
+    {
+      "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+      "status": "completed",
+      "pipeline_version": "content_page_first_v1",
+      "finished_at": "2026-10-11 15:57:57.564257+00:00"
+    }
+  ],
+  "visible_in_library_visible_documents": 1,
+  "viewer_publication": {
+    "page_number": 1,
+    "resolved": false,
+    "value": null
+  },
+  "representative_chunks": [
+    {
+      "id": "bb2598b2-ecc4-5962-b3f0-7ad592cc49fb",
+      "content": "THE ROSENBERG EDITION\n\n_**Likutey  Likutey HalakhotHalajot**_ \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd _Rab\u00edReb Noson of Nat\u00e1n de BreslovBreslov_ \ufffd\ufffd\ufffd\ufffd\ufffd",
+      "chunk_index": 0
+    },
+    {
+      "id": "3059c1a6-0ea6-5524-86b7-1b37267ccf20",
+      "content": "THE ROSENBERG EDITION\n\n\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd _Rab\u00edReb Noson of Nat\u00e1n de BreslovBreslov_ \ufffd\ufffd\ufffd\ufffd\ufffd UANAN E TLUCIDATEDRADUCCI\u00d3N AENGLISHL ESPA\u00d1OL  TRANSLATION, EFULLYXPLICADA ANNOTATED, AND SOURCED CON NOTAS Y FUENTES\n\n**ORAJ JOAIMRACH CHAIM** Hashkamat HabokerHashkam ~~at H~~ Levant\u00e1ndose por la Ma\u00f1anaaBoker \u2014 Rising in the Morning",
+      "chunk_index": 1
+    },
+    {
+      "id": "c2451c52-2473-5535-88bd-5a09e4acafbb",
+      "content": "# _**Likutey Halajot**_\n\n_Explicado y Anotado por_ Mosh\u00e9 Mykoff _con_ Dov Grant\n\n_Traducci\u00f3n al Espa\u00f1ol_ Guillermo Beilinson\n\nPublicado por:h Breslov Research Institute Jerusalem / Nueva York",
+      "chunk_index": 2
+    }
+  ],
+  "source": {
+    "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "approved_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "source_sha_matches_approved": true,
+    "managed_source_exists": true,
+    "managed_source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "managed_sha_matches_approved": true
+  },
+  "milvus": {
+    "reachable": true,
+    "collection": "tebaai_breslov_chunks_v1",
+    "document_vector_count": 942
+  },
+  "expected": {
+    "active_generation": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+    "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+    "chunks": 942,
+    "vectors": 942
+  },
+  "matches_expected": {
+    "active_generation": true,
+    "single_generation_active": true,
+    "run_id": true,
+    "chunks_942": true,
+    "vectors_942": true,
+    "embeddings_942": true
+  }
+}

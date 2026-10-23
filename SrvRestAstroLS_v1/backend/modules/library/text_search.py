@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import html
-from typing import Any
+from typing import Any, Sequence
 
 from psycopg import AsyncConnection
 from psycopg.rows import dict_row
@@ -14,6 +14,23 @@ from infrastructure.postgres.transaction import fetch_all, fetch_one
 SEARCH_MODES = ("auto", "fts", "phrase", "trigram", "hybrid")
 
 
+def _document_join(document_ids: Sequence[str] | None) -> tuple[str, dict[str, Any]]:
+    """Visibility source for chunk queries.
+
+    Normal readers join ``library_visible_documents``: the documents that carry
+    the ACTIVE generation selected by the active pointer. Administrative or
+    reconciliation code may pass explicit document ids to address one
+    generation directly; nothing else may widen the visible set.
+    """
+    if document_ids is None:
+        return "JOIN library_visible_documents d ON d.id = ch.document_id", {}
+    return (
+        "JOIN library_documents d ON d.id = ch.document_id "
+        "AND ch.document_id = ANY(%(document_ids)s::uuid[])",
+        {"document_ids": [str(item) for item in document_ids]},
+    )
+
+
 # @lat: [[library-retrieval-models-policy#Textual / Literal Search]]
 async def search_chunks_text(
     conn: AsyncConnection,
@@ -22,10 +39,13 @@ async def search_chunks_text(
     top_k: int = 10,
     mode: str = "auto",
     language: str = "es",
+    document_ids: Sequence[str] | None = None,
 ) -> list[dict[str, Any]]:
     """Search chunks by text across multiple modes.
     Uses knowledge_scopes as the primary filter.
     knowledge_scope_code maps to knowledge_scopes.knowledge_scope_code.
+    Only documents carrying the ACTIVE generation are visible; pass
+    ``document_ids`` to address a specific generation administratively.
     """
     if mode not in SEARCH_MODES:
         raise ValueError(f"Invalid mode '{mode}'. Choose from: {', '.join(SEARCH_MODES)}")
@@ -42,19 +62,19 @@ async def search_chunks_text(
     if mode == "auto":
         if " " in norm_q.strip() and len(norm_q.strip()) > 3:
             # Multi-word: try phrase first, fall back to fts
-            results = await _search_phrase(conn, knowledge_scope_code, norm_q, query, top_k)
+            results = await _search_phrase(conn, knowledge_scope_code, norm_q, query, top_k, document_ids)
             if len(results) >= top_k:
                 return results
-            fts_results = await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k)
+            fts_results = await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k, document_ids)
             return _merge(results, fts_results, top_k)
         else:
-            return await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k)
+            return await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k, document_ids)
     elif mode == "fts":
-        return await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k)
+        return await _search_fts(conn, knowledge_scope_code, norm_q, query, top_k, document_ids)
     elif mode == "phrase":
-        return await _search_phrase(conn, knowledge_scope_code, norm_q, query, top_k)
+        return await _search_phrase(conn, knowledge_scope_code, norm_q, query, top_k, document_ids)
     elif mode == "trigram":
-        return await _search_trigram(conn, knowledge_scope_code, norm_q, query, top_k)
+        return await _search_trigram(conn, knowledge_scope_code, norm_q, query, top_k, document_ids)
     return []
 
 
@@ -64,11 +84,13 @@ async def _search_fts(
     norm_q: str,
     raw_q: str,
     top_k: int,
+    document_ids: Sequence[str] | None = None,
 ) -> list[dict[str, Any]]:
     """Full Text Search using tsvector, scoped by knowledge_scope_code."""
+    join, extra = _document_join(document_ids)
     rows = await fetch_all(
         conn,
-        """
+        f"""
         SELECT
             d.id AS document_id, d.title AS document_title, d.author,
             ks.knowledge_scope_code AS scope_code,
@@ -79,7 +101,7 @@ async def _search_fts(
             ts_rank_cd(ch.search_vector_simple, plainto_tsquery('simple', %(norm_q)s)) AS rank_simple,
             ch.content, ch.content_length
         FROM library_document_chunks ch
-        JOIN library_documents d ON d.id = ch.document_id
+        {join}
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(code)s
           AND (
@@ -89,7 +111,7 @@ async def _search_fts(
         ORDER BY rank_es DESC, rank_simple DESC
         LIMIT %(limit)s
         """,
-        {"code": knowledge_scope_code, "norm_q": norm_q, "limit": top_k},
+        {"code": knowledge_scope_code, "norm_q": norm_q, "limit": top_k, **extra},
     )
     return [_build_result(r, raw_q, "fts") for r in rows]
 
@@ -100,12 +122,14 @@ async def _search_phrase(
     norm_q: str,
     raw_q: str,
     top_k: int,
+    document_ids: Sequence[str] | None = None,
 ) -> list[dict[str, Any]]:
     """Exact phrase search using ILIKE on normalized text, scoped by knowledge_scope_code."""
+    join, extra = _document_join(document_ids)
     like_pattern = f"%{norm_q}%"
     rows = await fetch_all(
         conn,
-        """
+        f"""
         SELECT
             d.id AS document_id, d.title AS document_title, d.author,
             ks.knowledge_scope_code AS scope_code,
@@ -115,14 +139,14 @@ async def _search_phrase(
             POSITION(%(norm_q)s IN ch.search_text_normalized) AS pos,
             ch.content, ch.content_length
         FROM library_document_chunks ch
-        JOIN library_documents d ON d.id = ch.document_id
+        {join}
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(code)s
           AND ch.search_text_normalized ILIKE %(pattern)s
         ORDER BY POSITION(%(norm_q)s IN ch.search_text_normalized)
         LIMIT %(limit)s
         """,
-        {"code": knowledge_scope_code, "norm_q": norm_q, "pattern": like_pattern, "limit": top_k},
+        {"code": knowledge_scope_code, "norm_q": norm_q, "pattern": like_pattern, "limit": top_k, **extra},
     )
     return [_build_result(r, raw_q, "phrase") for r in rows]
 
@@ -133,11 +157,13 @@ async def _search_trigram(
     norm_q: str,
     raw_q: str,
     top_k: int,
+    document_ids: Sequence[str] | None = None,
 ) -> list[dict[str, Any]]:
     """Trigram similarity search, scoped by knowledge_scope_code."""
+    join, extra = _document_join(document_ids)
     rows = await fetch_all(
         conn,
-        """
+        f"""
         SELECT
             d.id AS document_id, d.title AS document_title, d.author,
             ks.knowledge_scope_code AS scope_code,
@@ -147,14 +173,14 @@ async def _search_trigram(
             similarity(ch.search_text_normalized, %(norm_q)s) AS sim,
             ch.content, ch.content_length
         FROM library_document_chunks ch
-        JOIN library_documents d ON d.id = ch.document_id
+        {join}
         JOIN knowledge_scopes ks ON ks.id = d.knowledge_scope_id
         WHERE ks.knowledge_scope_code = %(code)s
           AND similarity(ch.search_text_normalized, %(norm_q)s) > 0.1
         ORDER BY sim DESC
         LIMIT %(limit)s
         """,
-        {"code": knowledge_scope_code, "norm_q": norm_q, "limit": top_k},
+        {"code": knowledge_scope_code, "norm_q": norm_q, "limit": top_k, **extra},
     )
     return [_build_result(r, raw_q, "trigram") for r in rows]
 

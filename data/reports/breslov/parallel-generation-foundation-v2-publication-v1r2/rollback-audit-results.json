@@ -1,0 +1,12 @@
+{
+  "audit": {
+    "operation": "ROLLBACK",
+    "result": "APPLIED",
+    "from_generation_id": "a5119249-170c-41cc-85c1-cbd1ee7cc0ed",
+    "to_generation_id": "22e838e7-8cf3-4f96-838c-83bc4cd58c5a",
+    "expected_generation_id": "a5119249-170c-41cc-85c1-cbd1ee7cc0ed"
+  },
+  "PASS": true,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C"
+}

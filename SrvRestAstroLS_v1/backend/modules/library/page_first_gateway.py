@@ -227,7 +227,7 @@ class PostgresMilvusPageFirstGateway:
                         canonical_text_role,chunk_set_version)
                     VALUES(%s,%s,%s,%s,'pdf',%s,'application/pdf',%s,%s,'draft',%s::jsonb,%s::jsonb,%s,
                            %s,%s,%s,%s,%s,'candidate',1)
-                    ON CONFLICT(id) DO NOTHING
+                    ON CONFLICT(id) DO NOTHING RETURNING id
                     """,
                     (document_id, legacy["id"], request.title, extracted.language,
                      request.source_path.name, request.source_path.stat().st_size, request.source_sha256,
@@ -240,10 +240,26 @@ class PostgresMilvusPageFirstGateway:
                      request.tenant.organization_id, request.tenant.workspace_id, request.tenant.project_id,
                      request.tenant.knowledge_scope_id, extracted.content_sha256),
                 )
+                # A document UUID owns canonical text/chunks across attempts.
+                # A conflicting INSERT must never claim those resources for a
+                # new manifest: compensation could otherwise destroy OLD.
+                # Retry must first clean its failed attempt via the manifest;
+                # resuming an existing generation requires a separate contract.
+                if not await cur.fetchone():
+                    raise E2EIsolationError("Document generation already exists; refusing resource ownership collision")
+                # The generation's immediate run FK requires its parent first.
+                # Keep registration and all parents in this same transaction.
                 await cur.execute(
                     """INSERT INTO library_ingestion_runs_v2(run_id,document_id,pipeline_version,scope_code,status)
                        VALUES(%s,%s,%s,%s,'started') ON CONFLICT(run_id) DO NOTHING""",
                     (run_id, document_id, request.pipeline_version, request.knowledge_scope_code),
+                )
+                await self._register_generation(
+                    cur,
+                    request=request,
+                    document_id=document_id,
+                    run_id=run_id,
+                    collection_id=legacy["id"],
                 )
                 await cur.execute(
                     """
@@ -284,6 +300,65 @@ class PostgresMilvusPageFirstGateway:
                 await _record_resources(cur, manifest_id, resources)
                 await cur.execute("UPDATE content_manager_jobs SET document_id=%s WHERE id=%s", (document_id, request.job_id))
         return PersistedDocument(document_id, text_id, run_id, manifest_id, page_ids)
+
+    async def _register_generation(
+        self, cur, *, request, document_id, run_id, collection_id,
+    ) -> None:
+        """Bind the new physical document to its logical document and generation.
+
+        A logical document is the tenant-scoped identity of an approved source.
+        Every physical document produced for that source is one explicit
+        generation of it. The generation starts as BUILDING and is invisible to
+        every normal reader until it is promoted.
+        """
+        await cur.execute(
+            """
+            INSERT INTO library_logical_documents(
+                id,collection_id,knowledge_scope_id,organization_id,workspace_id,project_id,
+                title,source_sha256,source_filename,source_size_bytes,metadata)
+            VALUES (gen_random_uuid(),%s,%s,%s,%s,%s,%s,%s,%s,%s,%s::jsonb)
+            ON CONFLICT DO NOTHING
+            """,
+            (
+                str(collection_id), str(request.tenant.knowledge_scope_id),
+                str(request.tenant.organization_id), str(request.tenant.workspace_id),
+                str(request.tenant.project_id), request.title, request.source_sha256,
+                request.source_path.name, request.source_path.stat().st_size,
+                _json({"content_manager_ingestion": True}),
+            ),
+        )
+        await cur.execute(
+            """
+            SELECT id FROM library_logical_documents
+            WHERE collection_id=%s AND source_sha256=%s
+              AND knowledge_scope_id IS NOT DISTINCT FROM %s
+            """,
+            (str(collection_id), request.source_sha256, str(request.tenant.knowledge_scope_id)),
+        )
+        logical = await cur.fetchone()
+        if not logical:
+            raise RuntimeError("Logical document could not be resolved for the generation")
+        logical_id = str(logical["id"])
+        # The composite FK requires this exact (document, logical) pair to
+        # exist before registration; a later UPDATE cannot satisfy it.
+        await cur.execute(
+            "UPDATE library_documents SET logical_document_id=%s WHERE id=%s",
+            (logical_id, str(document_id)),
+        )
+        await cur.execute(
+            """
+            INSERT INTO library_document_generations(
+                id,logical_document_id,document_id,run_id,job_id,attempt_number,
+                pipeline_version,status,source_sha256,metadata)
+            VALUES (gen_random_uuid(),%s,%s,%s,%s,%s,%s,'BUILDING',%s,%s::jsonb)
+            ON CONFLICT (document_id) DO NOTHING
+            """,
+            (
+                logical_id, str(document_id), str(run_id), str(request.job_id),
+                request.attempt_number, request.pipeline_version, request.source_sha256,
+                _json({"registered_by": "page_first_gateway"}),
+            ),
+        )
 
     async def persist_chunks(self, request, persisted, extracted) -> tuple[PersistedChunk, ...]:
         validate_publication(request, extracted)
@@ -472,6 +547,15 @@ class PostgresMilvusPageFirstGateway:
                 await cur.execute("UPDATE library_documents SET status='test_candidate',source_path=%s,updated_at=now() WHERE id=%s AND status='draft'", (str(durable), persisted.document_id))
                 if cur.rowcount != 1:
                     raise RuntimeError("Document did not remain a draft candidate")
+                await cur.execute(
+                    """
+                    UPDATE library_document_generations
+                    SET status='CANDIDATE',
+                        metadata=COALESCE(metadata,'{}'::jsonb) || %s::jsonb
+                    WHERE document_id=%s AND status='BUILDING'
+                    """,
+                    (_json({"candidate_at": datetime.now(timezone.utc).isoformat()}), str(persisted.document_id)),
+                )
                 await cur.execute("UPDATE library_ingestion_runs_v2 SET status='completed',finished_at=now(),metrics_json=%s::jsonb,warnings_json=%s::jsonb WHERE run_id=%s",
                     (_json({"pages": len(extracted.pages), "chunks": reconciliation.expected_chunks,
                             "embeddings": reconciliation.expected_embeddings, "vectors": reconciliation.found_vectors}),

@@ -1,0 +1,16 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "synthetic_scope_code": "gen_foundation_v2_test",
+  "before": {
+    "scopes": 1,
+    "documents": 2,
+    "collections": 1
+  },
+  "after": {
+    "scopes": 0,
+    "documents": 0,
+    "collections": 0
+  },
+  "autocommit": true,
+  "PASS": true
+}

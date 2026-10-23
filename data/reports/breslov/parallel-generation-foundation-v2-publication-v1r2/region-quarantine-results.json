@@ -1,0 +1,2058 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scope": "existing region certification/publication/quarantine suites; V5 consumer test is preexisting evidence and is not republished",
+  "totals": {
+    "tests": 227,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "WORKER_GOOD_NEIGHBOR_LOSS": 0,
+  "WORKER_BAD_REGION_LEAK": 0,
+  "cases": [
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_controlled_cases_filter_before_canonical_and_chunking[texts0-statuses0-FULL-expected0]",
+      "nodeid": "tests.test_region_publication::test_controlled_cases_filter_before_canonical_and_chunking[texts0-statuses0-FULL-expected0]",
+      "file": null,
+      "time": 0.035,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_controlled_cases_filter_before_canonical_and_chunking[texts1-statuses1-UNUSABLE-expected1]",
+      "nodeid": "tests.test_region_publication::test_controlled_cases_filter_before_canonical_and_chunking[texts1-statuses1-UNUSABLE-expected1]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_controlled_cases_filter_before_canonical_and_chunking[texts2-statuses2-PARTIAL-expected2]",
+      "nodeid": "tests.test_region_publication::test_controlled_cases_filter_before_canonical_and_chunking[texts2-statuses2-PARTIAL-expected2]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_controlled_cases_filter_before_canonical_and_chunking[texts3-statuses3-PARTIAL-expected3]",
+      "nodeid": "tests.test_region_publication::test_controlled_cases_filter_before_canonical_and_chunking[texts3-statuses3-PARTIAL-expected3]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_controlled_cases_filter_before_canonical_and_chunking[texts4-statuses4-UNUSABLE-expected4]",
+      "nodeid": "tests.test_region_publication::test_controlled_cases_filter_before_canonical_and_chunking[texts4-statuses4-UNUSABLE-expected4]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_every_nonaccepted_status_is_excluded[QUARANTINED]",
+      "nodeid": "tests.test_region_publication::test_every_nonaccepted_status_is_excluded[QUARANTINED]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_every_nonaccepted_status_is_excluded[UNRESOLVED]",
+      "nodeid": "tests.test_region_publication::test_every_nonaccepted_status_is_excluded[UNRESOLVED]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_every_nonaccepted_status_is_excluded[SOURCE_PDF_ERROR]",
+      "nodeid": "tests.test_region_publication::test_every_nonaccepted_status_is_excluded[SOURCE_PDF_ERROR]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_every_nonaccepted_status_is_excluded[PLATFORM_EXTRACTION_ERROR]",
+      "nodeid": "tests.test_region_publication::test_every_nonaccepted_status_is_excluded[PLATFORM_EXTRACTION_ERROR]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_every_nonaccepted_status_is_excluded[UNKNOWN]",
+      "nodeid": "tests.test_region_publication::test_every_nonaccepted_status_is_excluded[UNKNOWN]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_every_nonaccepted_status_is_excluded[accepted]",
+      "nodeid": "tests.test_region_publication::test_every_nonaccepted_status_is_excluded[accepted]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes0]",
+      "nodeid": "tests.test_region_publication::test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes0]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes1]",
+      "nodeid": "tests.test_region_publication::test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes1]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes2]",
+      "nodeid": "tests.test_region_publication::test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes2]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes3]",
+      "nodeid": "tests.test_region_publication::test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes3]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes4]",
+      "nodeid": "tests.test_region_publication::test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes4]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes5]",
+      "nodeid": "tests.test_region_publication::test_bad_certificate_never_suppresses_independent_accepted_neighbors[changes5]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_missing_certificate_quarantines_only_its_region",
+      "nodeid": "tests.test_region_publication::test_missing_certificate_quarantines_only_its_region",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_publication_is_deterministic_and_keeps_source_inventory_immutable",
+      "nodeid": "tests.test_region_publication::test_publication_is_deterministic_and_keeps_source_inventory_immutable",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_source_reference_is_required",
+      "nodeid": "tests.test_region_publication::test_source_reference_is_required",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_publication",
+      "name": "test_overlapping_markdown_cannot_become_textual_evidence",
+      "nodeid": "tests.test_region_publication::test_overlapping_markdown_cannot_become_textual_evidence",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_full_good_page_normal_canonical_and_chunks",
+      "nodeid": "tests.test_region_quality::test_full_good_page_normal_canonical_and_chunks",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_generic_encoding_errors_reject_even_with_claimed_certificate[\\ufffd damaged-replacement_character]",
+      "nodeid": "tests.test_region_quality::test_generic_encoding_errors_reject_even_with_claimed_certificate[\\ufffd damaged-replacement_character]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_generic_encoding_errors_reject_even_with_claimed_certificate[broken\\x03Latin font-unexpected_control_character]",
+      "nodeid": "tests.test_region_quality::test_generic_encoding_errors_reject_even_with_claimed_certificate[broken\\x03Latin font-unexpected_control_character]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_declared_diagnostics_fail_closed[mojibake]",
+      "nodeid": "tests.test_region_quality::test_declared_diagnostics_fail_closed[mojibake]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_declared_diagnostics_fail_closed[pseudo_script]",
+      "nodeid": "tests.test_region_quality::test_declared_diagnostics_fail_closed[pseudo_script]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_declared_diagnostics_fail_closed[unsafe_column_merge]",
+      "nodeid": "tests.test_region_quality::test_declared_diagnostics_fail_closed[unsafe_column_merge]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_declared_diagnostics_fail_closed[known_broken_order]",
+      "nodeid": "tests.test_region_quality::test_declared_diagnostics_fail_closed[known_broken_order]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_declared_diagnostics_fail_closed[material_digit_corruption]",
+      "nodeid": "tests.test_region_quality::test_declared_diagnostics_fail_closed[material_digit_corruption]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_declared_diagnostics_fail_closed[visual_uncertainty]",
+      "nodeid": "tests.test_region_quality::test_declared_diagnostics_fail_closed[visual_uncertainty]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_partial_preserves_good_neighbors_without_evidence_crossing_gap",
+      "nodeid": "tests.test_region_quality::test_partial_preserves_good_neighbors_without_evidence_crossing_gap",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_source_error_recorded_no_autofix_document_continues",
+      "nodeid": "tests.test_region_quality::test_source_error_recorded_no_autofix_document_continues",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_insufficient_evidence_is_unresolved_not_platform_error[changes0]",
+      "nodeid": "tests.test_region_quality::test_insufficient_evidence_is_unresolved_not_platform_error[changes0]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_insufficient_evidence_is_unresolved_not_platform_error[changes1]",
+      "nodeid": "tests.test_region_quality::test_insufficient_evidence_is_unresolved_not_platform_error[changes1]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_insufficient_evidence_is_unresolved_not_platform_error[changes2]",
+      "nodeid": "tests.test_region_quality::test_insufficient_evidence_is_unresolved_not_platform_error[changes2]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_insufficient_evidence_is_unresolved_not_platform_error[changes3]",
+      "nodeid": "tests.test_region_quality::test_insufficient_evidence_is_unresolved_not_platform_error[changes3]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_insufficient_evidence_is_unresolved_not_platform_error[changes4]",
+      "nodeid": "tests.test_region_quality::test_insufficient_evidence_is_unresolved_not_platform_error[changes4]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_insufficient_evidence_is_unresolved_not_platform_error[changes5]",
+      "nodeid": "tests.test_region_quality::test_insufficient_evidence_is_unresolved_not_platform_error[changes5]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_unusable_and_empty_inventory_never_full",
+      "nodeid": "tests.test_region_quality::test_unusable_and_empty_inventory_never_full",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_reconnect_is_action_not_quality_bypass",
+      "nodeid": "tests.test_region_quality::test_reconnect_is_action_not_quality_bypass",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_notes_35_36_recognized_without_mutating_original_or_offsets",
+      "nodeid": "tests.test_region_quality::test_notes_35_36_recognized_without_mutating_original_or_offsets",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_idempotence_metadata_and_policy_version",
+      "nodeid": "tests.test_region_quality::test_idempotence_metadata_and_policy_version",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_invalid_provenance_rejected[changes0]",
+      "nodeid": "tests.test_region_quality::test_invalid_provenance_rejected[changes0]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_invalid_provenance_rejected[changes1]",
+      "nodeid": "tests.test_region_quality::test_invalid_provenance_rejected[changes1]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_invalid_provenance_rejected[changes2]",
+      "nodeid": "tests.test_region_quality::test_invalid_provenance_rejected[changes2]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_invalid_provenance_rejected[changes3]",
+      "nodeid": "tests.test_region_quality::test_invalid_provenance_rejected[changes3]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_invalid_provenance_rejected[changes4]",
+      "nodeid": "tests.test_region_quality::test_invalid_provenance_rejected[changes4]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_invalid_provenance_rejected[changes5]",
+      "nodeid": "tests.test_region_quality::test_invalid_provenance_rejected[changes5]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_noncanonical_sources_never_accepted[visual_ocr_fallback]",
+      "nodeid": "tests.test_region_quality::test_noncanonical_sources_never_accepted[visual_ocr_fallback]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_noncanonical_sources_never_accepted[native_raw_diagnostic]",
+      "nodeid": "tests.test_region_quality::test_noncanonical_sources_never_accepted[native_raw_diagnostic]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_noncanonical_sources_never_accepted[unknown]",
+      "nodeid": "tests.test_region_quality::test_noncanonical_sources_never_accepted[unknown]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_real_page56_existing_audit_contract_recovers_both_starts",
+      "nodeid": "tests.test_region_quality::test_real_page56_existing_audit_contract_recovers_both_starts",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_real_page167_body_retained_rejected_notes_tracked_offline",
+      "nodeid": "tests.test_region_quality::test_real_page167_body_retained_rejected_notes_tracked_offline",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_quality",
+      "name": "test_duplicate_and_cross_page_regions_rejected",
+      "nodeid": "tests.test_region_quality::test_duplicate_and_cross_page_regions_rejected",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_source_access",
+      "name": "test_source_repository_rejects_inconsistent_document_tenant",
+      "nodeid": "tests.test_region_source_access::test_source_repository_rejects_inconsistent_document_tenant",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_source_access",
+      "name": "test_source_route_no_public_exposure_or_cross_scope_read",
+      "nodeid": "tests.test_region_source_access::test_source_route_no_public_exposure_or_cross_scope_read",
+      "file": null,
+      "time": 0.248,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_source_access",
+      "name": "test_source_route_refuses_arbitrary_filesystem_path",
+      "nodeid": "tests.test_region_source_access::test_source_route_refuses_arbitrary_filesystem_path",
+      "file": null,
+      "time": 0.045,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts0-statuses0-FULL-1]",
+      "nodeid": "tests.test_region_worker_enforcement::test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts0-statuses0-FULL-1]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts1-statuses1-UNUSABLE-0]",
+      "nodeid": "tests.test_region_worker_enforcement::test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts1-statuses1-UNUSABLE-0]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts2-statuses2-PARTIAL-2]",
+      "nodeid": "tests.test_region_worker_enforcement::test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts2-statuses2-PARTIAL-2]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts3-statuses3-PARTIAL-1]",
+      "nodeid": "tests.test_region_worker_enforcement::test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts3-statuses3-PARTIAL-1]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts4-statuses4-UNUSABLE-0]",
+      "nodeid": "tests.test_region_worker_enforcement::test_actual_pipeline_chunk_builder_embeds_only_accepted_regions[texts4-statuses4-UNUSABLE-0]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_publication_exception_fails_before_any_persistence",
+      "nodeid": "tests.test_region_worker_enforcement::test_publication_exception_fails_before_any_persistence",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_gateway_rejects_tampered_canonical_and_source",
+      "nodeid": "tests.test_region_worker_enforcement::test_gateway_rejects_tampered_canonical_and_source",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_region_chunk_ids_and_quarantine_metadata_are_deterministic",
+      "nodeid": "tests.test_region_worker_enforcement::test_region_chunk_ids_and_quarantine_metadata_are_deterministic",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_durable_source_survives_upload_cleanup_and_is_hash_checked",
+      "nodeid": "tests.test_region_worker_enforcement::test_durable_source_survives_upload_cleanup_and_is_hash_checked",
+      "file": null,
+      "time": 0.963,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_default_worker_never_uses_legacy_page_extractor",
+      "nodeid": "tests.test_region_worker_enforcement::test_default_worker_never_uses_legacy_page_extractor",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_actual_worker_marks_publication_failure_explicitly_and_never_falls_back",
+      "nodeid": "tests.test_region_worker_enforcement::test_actual_worker_marks_publication_failure_explicitly_and_never_falls_back",
+      "file": null,
+      "time": 0.043,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_worker_enforcement",
+      "name": "test_failed_source_copy_keeps_upload",
+      "nodeid": "tests.test_region_worker_enforcement::test_failed_source_copy_keeps_upload",
+      "file": null,
+      "time": 0.307,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_worker_obeys_declared_boundary[case0]",
+      "nodeid": "tests.test_region_fixture_applicability::test_worker_obeys_declared_boundary[case0]",
+      "file": null,
+      "time": 0.013,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_worker_obeys_declared_boundary[case1]",
+      "nodeid": "tests.test_region_fixture_applicability::test_worker_obeys_declared_boundary[case1]",
+      "file": null,
+      "time": 0.013,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_worker_obeys_declared_boundary[case2]",
+      "nodeid": "tests.test_region_fixture_applicability::test_worker_obeys_declared_boundary[case2]",
+      "file": null,
+      "time": 0.007,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_worker_obeys_declared_boundary[case3]",
+      "nodeid": "tests.test_region_fixture_applicability::test_worker_obeys_declared_boundary[case3]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_metric_truth_table[ACCEPTED-CERTIFIED-True-True-expected0]",
+      "nodeid": "tests.test_region_fixture_applicability::test_metric_truth_table[ACCEPTED-CERTIFIED-True-True-expected0]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_metric_truth_table[ACCEPTED-CERTIFIED-False-True-expected1]",
+      "nodeid": "tests.test_region_fixture_applicability::test_metric_truth_table[ACCEPTED-CERTIFIED-False-True-expected1]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_metric_truth_table[UNRESOLVED-CERTIFIED-False-True-expected2]",
+      "nodeid": "tests.test_region_fixture_applicability::test_metric_truth_table[UNRESOLVED-CERTIFIED-False-True-expected2]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_metric_truth_table[UNRESOLVED-CERTIFIED-True-True-expected3]",
+      "nodeid": "tests.test_region_fixture_applicability::test_metric_truth_table[UNRESOLVED-CERTIFIED-True-True-expected3]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_metric_truth_table[QUARANTINED-UNRESOLVED-False-True-expected4]",
+      "nodeid": "tests.test_region_fixture_applicability::test_metric_truth_table[QUARANTINED-UNRESOLVED-False-True-expected4]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_metric_truth_table[QUARANTINED-UNRESOLVED-False-False-expected5]",
+      "nodeid": "tests.test_region_fixture_applicability::test_metric_truth_table[QUARANTINED-UNRESOLVED-False-False-expected5]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_metric_truth_table[ACCEPTED-UNRESOLVED-True-True-expected6]",
+      "nodeid": "tests.test_region_fixture_applicability::test_metric_truth_table[ACCEPTED-UNRESOLVED-True-True-expected6]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_negative_control_detects_loss_at_each_required_stage[canonical]",
+      "nodeid": "tests.test_region_fixture_applicability::test_negative_control_detects_loss_at_each_required_stage[canonical]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_negative_control_detects_loss_at_each_required_stage[chunks]",
+      "nodeid": "tests.test_region_fixture_applicability::test_negative_control_detects_loss_at_each_required_stage[chunks]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_negative_control_detects_loss_at_each_required_stage[embedding_inputs]",
+      "nodeid": "tests.test_region_fixture_applicability::test_negative_control_detects_loss_at_each_required_stage[embedding_inputs]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_negative_control_detects_loss_at_each_required_stage[embeddings]",
+      "nodeid": "tests.test_region_fixture_applicability::test_negative_control_detects_loss_at_each_required_stage[embeddings]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_negative_control_detects_loss_at_each_required_stage[vectors]",
+      "nodeid": "tests.test_region_fixture_applicability::test_negative_control_detects_loss_at_each_required_stage[vectors]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_negative_control_detects_loss_at_each_required_stage[retrieval]",
+      "nodeid": "tests.test_region_fixture_applicability::test_negative_control_detects_loss_at_each_required_stage[retrieval]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_negative_control_detects_loss_at_each_required_stage[citations]",
+      "nodeid": "tests.test_region_fixture_applicability::test_negative_control_detects_loss_at_each_required_stage[citations]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_negative_control_bad_publication_and_equal_count_substitution",
+      "nodeid": "tests.test_region_fixture_applicability::test_negative_control_bad_publication_and_equal_count_substitution",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_frozen_synthetic_evidence_has_upstream_mismatches_not_worker_losses",
+      "nodeid": "tests.test_region_fixture_applicability::test_frozen_synthetic_evidence_has_upstream_mismatches_not_worker_losses",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_fixture_applicability",
+      "name": "test_frozen_real_evidence_keeps_three_accepted_regions_and_partial_pages",
+      "nodeid": "tests.test_region_fixture_applicability::test_frozen_real_evidence_keeps_three_accepted_regions_and_partial_pages",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_real_complete_page_local_note_boundaries[56]",
+      "nodeid": "tests.test_region_markdown_provenance::test_real_complete_page_local_note_boundaries[56]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_real_complete_page_local_note_boundaries[167]",
+      "nodeid": "tests.test_region_markdown_provenance::test_real_complete_page_local_note_boundaries[167]",
+      "file": null,
+      "time": 0.006,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_current_serializer_reproduces_wrong_order_then_adapter_corrects_it",
+      "nodeid": "tests.test_region_markdown_provenance::test_current_serializer_reproduces_wrong_order_then_adapter_corrects_it",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_167_body_hebrew_and_notes_have_independent_exact_owners",
+      "nodeid": "tests.test_region_markdown_provenance::test_167_body_hebrew_and_notes_have_independent_exact_owners",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_55_exclusion_preserves_both_good_neighbors_and_entire_sequence",
+      "nodeid": "tests.test_region_markdown_provenance::test_55_exclusion_preserves_both_good_neighbors_and_entire_sequence",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_idempotence_three_runs_and_immutable_input[55]",
+      "nodeid": "tests.test_region_markdown_provenance::test_idempotence_three_runs_and_immutable_input[55]",
+      "file": null,
+      "time": 0.006,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_idempotence_three_runs_and_immutable_input[56]",
+      "nodeid": "tests.test_region_markdown_provenance::test_idempotence_three_runs_and_immutable_input[56]",
+      "file": null,
+      "time": 0.007,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_idempotence_three_runs_and_immutable_input[167]",
+      "nodeid": "tests.test_region_markdown_provenance::test_idempotence_three_runs_and_immutable_input[167]",
+      "file": null,
+      "time": 0.008,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_note_geometry_permutation_does_not_change_ownership[55]",
+      "nodeid": "tests.test_region_markdown_provenance::test_note_geometry_permutation_does_not_change_ownership[55]",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_note_geometry_permutation_does_not_change_ownership[56]",
+      "nodeid": "tests.test_region_markdown_provenance::test_note_geometry_permutation_does_not_change_ownership[56]",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_note_geometry_permutation_does_not_change_ownership[167]",
+      "nodeid": "tests.test_region_markdown_provenance::test_note_geometry_permutation_does_not_change_ownership[167]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_duplicate_text_is_owned_by_identity_not_first_substring",
+      "nodeid": "tests.test_region_markdown_provenance::test_duplicate_text_is_owned_by_identity_not_first_substring",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_markdown_decoration_emphasis_quote_brackets_and_multiline[0]",
+      "nodeid": "tests.test_region_markdown_provenance::test_markdown_decoration_emphasis_quote_brackets_and_multiline[0]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_markdown_decoration_emphasis_quote_brackets_and_multiline[2]",
+      "nodeid": "tests.test_region_markdown_provenance::test_markdown_decoration_emphasis_quote_brackets_and_multiline[2]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_markdown_decoration_emphasis_quote_brackets_and_multiline[16]",
+      "nodeid": "tests.test_region_markdown_provenance::test_markdown_decoration_emphasis_quote_brackets_and_multiline[16]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_markdown_decoration_emphasis_quote_brackets_and_multiline[18]",
+      "nodeid": "tests.test_region_markdown_provenance::test_markdown_decoration_emphasis_quote_brackets_and_multiline[18]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_rtl_column_order_is_explicit_and_not_reversal",
+      "nodeid": "tests.test_region_markdown_provenance::test_rtl_column_order_is_explicit_and_not_reversal",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unsupported_layout_is_explicit_unresolved_not_silent_drop[no_owner]",
+      "nodeid": "tests.test_region_markdown_provenance::test_unsupported_layout_is_explicit_unresolved_not_silent_drop[no_owner]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unsupported_layout_is_explicit_unresolved_not_silent_drop[duplicate_identity]",
+      "nodeid": "tests.test_region_markdown_provenance::test_unsupported_layout_is_explicit_unresolved_not_silent_drop[duplicate_identity]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unsupported_layout_is_explicit_unresolved_not_silent_drop[overlap]",
+      "nodeid": "tests.test_region_markdown_provenance::test_unsupported_layout_is_explicit_unresolved_not_silent_drop[overlap]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unsupported_layout_is_explicit_unresolved_not_silent_drop[unsupported]",
+      "nodeid": "tests.test_region_markdown_provenance::test_unsupported_layout_is_explicit_unresolved_not_silent_drop[unsupported]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unsupported_layout_is_explicit_unresolved_not_silent_drop[direction]",
+      "nodeid": "tests.test_region_markdown_provenance::test_unsupported_layout_is_explicit_unresolved_not_silent_drop[direction]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unsupported_layout_is_explicit_unresolved_not_silent_drop[geometry]",
+      "nodeid": "tests.test_region_markdown_provenance::test_unsupported_layout_is_explicit_unresolved_not_silent_drop[geometry]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unsupported_layout_is_explicit_unresolved_not_silent_drop[unrecognized_number]",
+      "nodeid": "tests.test_region_markdown_provenance::test_unsupported_layout_is_explicit_unresolved_not_silent_drop[unrecognized_number]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_existing_quality_contract_consumes_only_exact_owned_units",
+      "nodeid": "tests.test_region_markdown_provenance::test_existing_quality_contract_consumes_only_exact_owned_units",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unapproved_serializer_hyphenation_cannot_be_certified_safe",
+      "nodeid": "tests.test_region_markdown_provenance::test_unapproved_serializer_hyphenation_cannot_be_certified_safe",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_real_cross_page_continuation_reaches_true_editorial_end[57]",
+      "nodeid": "tests.test_region_markdown_provenance::test_real_cross_page_continuation_reaches_true_editorial_end[57]",
+      "file": null,
+      "time": 0.009,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_real_cross_page_continuation_reaches_true_editorial_end[168]",
+      "nodeid": "tests.test_region_markdown_provenance::test_real_cross_page_continuation_reaches_true_editorial_end[168]",
+      "file": null,
+      "time": 0.011,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_continuation_without_owner_or_zone_is_unresolved",
+      "nodeid": "tests.test_region_markdown_provenance::test_continuation_without_owner_or_zone_is_unresolved",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_region_markdown_provenance",
+      "name": "test_unrelated_footer_cannot_be_absorbed_by_last_note",
+      "nodeid": "tests.test_region_markdown_provenance::test_unrelated_footer_cannot_be_absorbed_by_last_note",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_consumer_region_certificates_v5",
+      "name": "test_consumer_boundary_dispatches_to_v5_and_never_calls_v1",
+      "nodeid": "tests.test_consumer_region_certificates_v5::test_consumer_boundary_dispatches_to_v5_and_never_calls_v1",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_consumer_region_certificates_v5",
+      "name": "test_consumer_boundary_fails_closed_without_v1_fallback",
+      "nodeid": "tests.test_consumer_region_certificates_v5::test_consumer_boundary_fails_closed_without_v1_fallback",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_consumer_region_certificates_v5",
+      "name": "test_consumer_output_is_identical_to_direct_v5",
+      "nodeid": "tests.test_consumer_region_certificates_v5::test_consumer_output_is_identical_to_direct_v5",
+      "file": null,
+      "time": 0.185,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_consumer_region_certificates_v5",
+      "name": "test_consumer_certificates_are_explicitly_v5",
+      "nodeid": "tests.test_consumer_region_certificates_v5::test_consumer_certificates_are_explicitly_v5",
+      "file": null,
+      "time": 0.078,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_consumer_region_certificates_v5",
+      "name": "test_consumer_preserves_cross_page_continuation",
+      "nodeid": "tests.test_consumer_region_certificates_v5::test_consumer_preserves_cross_page_continuation",
+      "file": null,
+      "time": 0.173,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_consumer_region_certificates_v5",
+      "name": "test_consumer_fail_closed_keeps_unresolved_output",
+      "nodeid": "tests.test_consumer_region_certificates_v5::test_consumer_fail_closed_keeps_unresolved_output",
+      "file": null,
+      "time": 0.086,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_consumer_region_certificates_v5",
+      "name": "test_consumer_preserves_one_based_unique_page_contract",
+      "nodeid": "tests.test_consumer_region_certificates_v5::test_consumer_preserves_one_based_unique_page_contract",
+      "file": null,
+      "time": 0.008,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_consumer_region_certificates_v5",
+      "name": "test_worker_does_not_use_the_opt_in_consumer_boundary",
+      "nodeid": "tests.test_consumer_region_certificates_v5::test_worker_does_not_use_the_opt_in_consumer_boundary",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_automatic_note_certificate_has_real_computed_quality_and_serializes",
+      "nodeid": "tests.test_automatic_region_certification::test_automatic_note_certificate_has_real_computed_quality_and_serializes",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_missing_native_evidence_never_accepts_clean_text",
+      "nodeid": "tests.test_automatic_region_certification::test_missing_native_evidence_never_accepts_clean_text",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_direction_counts_all_strong_characters[\\u05e9\\u05dc\\u05d5\\u05dd-RTL]",
+      "nodeid": "tests.test_automatic_region_certification::test_direction_counts_all_strong_characters[\\u05e9\\u05dc\\u05d5\\u05dd-RTL]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_direction_counts_all_strong_characters[Hola-LTR]",
+      "nodeid": "tests.test_automatic_region_certification::test_direction_counts_all_strong_characters[Hola-LTR]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_direction_counts_all_strong_characters[Hola \\u05e9\\u05dc\\u05d5\\u05dd-MIXED]",
+      "nodeid": "tests.test_automatic_region_certification::test_direction_counts_all_strong_characters[Hola \\u05e9\\u05dc\\u05d5\\u05dd-MIXED]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_direction_counts_all_strong_characters[123 !!!-UNRESOLVED]",
+      "nodeid": "tests.test_automatic_region_certification::test_direction_counts_all_strong_characters[123 !!!-UNRESOLVED]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_direction_counts_all_strong_characters[\\ufffd\\ufffd\\ufffd\\ufffd-UNRESOLVED]",
+      "nodeid": "tests.test_automatic_region_certification::test_direction_counts_all_strong_characters[\\ufffd\\ufffd\\ufffd\\ufffd-UNRESOLVED]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_direction_counts_all_strong_characters[\\u05e9 abcdef-MIXED]",
+      "nodeid": "tests.test_automatic_region_certification::test_direction_counts_all_strong_characters[\\u05e9 abcdef-MIXED]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_required_evidence_removal_fails_closed[zone]",
+      "nodeid": "tests.test_automatic_region_certification::test_required_evidence_removal_fails_closed[zone]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_required_evidence_removal_fails_closed[script]",
+      "nodeid": "tests.test_automatic_region_certification::test_required_evidence_removal_fails_closed[script]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_required_evidence_removal_fails_closed[identity]",
+      "nodeid": "tests.test_automatic_region_certification::test_required_evidence_removal_fails_closed[identity]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_required_evidence_removal_fails_closed[opacity]",
+      "nodeid": "tests.test_automatic_region_certification::test_required_evidence_removal_fails_closed[opacity]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_required_evidence_removal_fails_closed[occlusion]",
+      "nodeid": "tests.test_automatic_region_certification::test_required_evidence_removal_fails_closed[occlusion]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_required_evidence_removal_fails_closed[text]",
+      "nodeid": "tests.test_automatic_region_certification::test_required_evidence_removal_fails_closed[text]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_required_evidence_removal_fails_closed[order]",
+      "nodeid": "tests.test_automatic_region_certification::test_required_evidence_removal_fails_closed[order]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_duplicate_text_ownership_is_not_substring_lookup",
+      "nodeid": "tests.test_automatic_region_certification::test_duplicate_text_ownership_is_not_substring_lookup",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_real_ir_three_runs_and_full_input_permutation[55]",
+      "nodeid": "tests.test_automatic_region_certification::test_real_ir_three_runs_and_full_input_permutation[55]",
+      "file": null,
+      "time": 0.018,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_real_ir_three_runs_and_full_input_permutation[56]",
+      "nodeid": "tests.test_automatic_region_certification::test_real_ir_three_runs_and_full_input_permutation[56]",
+      "file": null,
+      "time": 0.014,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_real_ir_three_runs_and_full_input_permutation[167]",
+      "nodeid": "tests.test_automatic_region_certification::test_real_ir_three_runs_and_full_input_permutation[167]",
+      "file": null,
+      "time": 0.019,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_automatic_labelled_note_columns_and_page_local_boundaries[56]",
+      "nodeid": "tests.test_automatic_region_certification::test_automatic_labelled_note_columns_and_page_local_boundaries[56]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_automatic_labelled_note_columns_and_page_local_boundaries[167]",
+      "nodeid": "tests.test_automatic_region_certification::test_automatic_labelled_note_columns_and_page_local_boundaries[167]",
+      "file": null,
+      "time": 0.008,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_text_is_not_assumed_body_even_when_it_looks_good",
+      "nodeid": "tests.test_automatic_region_certification::test_text_is_not_assumed_body_even_when_it_looks_good",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_unlabelled_continuation_is_not_reinvented_as_body",
+      "nodeid": "tests.test_automatic_region_certification::test_unlabelled_continuation_is_not_reinvented_as_body",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_unsupported_layout_retains_inventory_and_fails_closed",
+      "nodeid": "tests.test_automatic_region_certification::test_unsupported_layout_retains_inventory_and_fails_closed",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_reversed_numeric_column_order_is_not_certified",
+      "nodeid": "tests.test_automatic_region_certification::test_reversed_numeric_column_order_is_not_certified",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_native_replacement_is_attributed_only_with_visible_differential",
+      "nodeid": "tests.test_automatic_region_certification::test_native_replacement_is_attributed_only_with_visible_differential",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_source_errors_are_not_invented",
+      "nodeid": "tests.test_automatic_region_certification::test_source_errors_are_not_invented",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification",
+      "name": "test_api_runs_live_canonical_extraction_without_ocr",
+      "nodeid": "tests.test_automatic_region_certification::test_api_runs_live_canonical_extraction_without_ocr",
+      "file": null,
+      "time": 0.073,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_complete_simple_note_is_useful_but_terminal_note_is_not_complete",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_complete_simple_note_is_useful_but_terminal_note_is_not_complete",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_missing_required_proof_fails_closed[separator]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_missing_required_proof_fails_closed[separator]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_missing_required_proof_fails_closed[anchor]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_missing_required_proof_fails_closed[anchor]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_missing_required_proof_fails_closed[direction]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_missing_required_proof_fails_closed[direction]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_missing_required_proof_fails_closed[boundary]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_missing_required_proof_fails_closed[boundary]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_missing_required_proof_fails_closed[overlap]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_missing_required_proof_fails_closed[overlap]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_missing_required_proof_fails_closed[column]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_missing_required_proof_fails_closed[column]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_missing_required_proof_fails_closed[layout]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_missing_required_proof_fails_closed[layout]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_missing_required_proof_fails_closed[native]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_missing_required_proof_fails_closed[native]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_extractor_labels_never_prove_editorial_zone[page-footer]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_extractor_labels_never_prove_editorial_zone[page-footer]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_extractor_labels_never_prove_editorial_zone[section-header]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_extractor_labels_never_prove_editorial_zone[section-header]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_extractor_labels_never_prove_editorial_zone[page-header]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_extractor_labels_never_prove_editorial_zone[page-header]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_extractor_labels_never_prove_editorial_zone[text]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_extractor_labels_never_prove_editorial_zone[text]",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_real_development_ir_determinism_and_permutations[55]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_real_development_ir_determinism_and_permutations[55]",
+      "file": null,
+      "time": 0.019,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_real_development_ir_determinism_and_permutations[56]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_real_development_ir_determinism_and_permutations[56]",
+      "file": null,
+      "time": 0.018,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_real_development_ir_determinism_and_permutations[57]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_real_development_ir_determinism_and_permutations[57]",
+      "file": null,
+      "time": 0.098,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_real_development_ir_determinism_and_permutations[167]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_real_development_ir_determinism_and_permutations[167]",
+      "file": null,
+      "time": 0.031,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_real_development_ir_determinism_and_permutations[168]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_real_development_ir_determinism_and_permutations[168]",
+      "file": null,
+      "time": 0.026,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_known_cross_page_notes_never_false_complete[56-36]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_known_cross_page_notes_never_false_complete[56-36]",
+      "file": null,
+      "time": 0.006,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_known_cross_page_notes_never_false_complete[167-66]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_known_cross_page_notes_never_false_complete[167-66]",
+      "file": null,
+      "time": 0.008,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_continuation_page_without_marker_is_not_reinvented",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_continuation_page_without_marker_is_not_reinvented",
+      "file": null,
+      "time": 0.014,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_supported_two_column_note_has_complete_boundary",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_supported_two_column_note_has_complete_boundary",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_all_five_real_v1_unsafe_zones_are_development_regressions[80-region_ids0]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_all_five_real_v1_unsafe_zones_are_development_regressions[80-region_ids0]",
+      "file": null,
+      "time": 0.031,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_all_five_real_v1_unsafe_zones_are_development_regressions[140-region_ids1]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_all_five_real_v1_unsafe_zones_are_development_regressions[140-region_ids1]",
+      "file": null,
+      "time": 0.037,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_all_five_real_v1_unsafe_zones_are_development_regressions[200-region_ids2]",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_all_five_real_v1_unsafe_zones_are_development_regressions[200-region_ids2]",
+      "file": null,
+      "time": 0.023,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_generic_cross_page_segments_without_marker_remain_unresolved",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_generic_cross_page_segments_without_marker_remain_unresolved",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v2",
+      "name": "test_rtl_and_mixed_do_not_gain_direction_from_script_alone",
+      "nodeid": "tests.test_automatic_region_certification_v2::test_rtl_and_mixed_do_not_gain_direction_from_script_alone",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_requires_composed_structure_not_central_text",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_requires_composed_structure_not_central_text",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[rules]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[rules]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[caption]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[caption]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[separator]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[separator]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[anchor]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[anchor]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[native]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[native]",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[direction]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[direction]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[overlap]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[overlap]",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[column]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[column]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[order]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[order]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[mixed]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[mixed]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[small]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[small]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[mixed_sizes]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[mixed_sizes]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[header]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[header]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[footer]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[footer]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[heading]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[heading]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_body_negatives_fail_closed[note]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_body_negatives_fail_closed[note]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_cross_page_identity_without_merging_page_text",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_cross_page_identity_without_merging_page_text",
+      "file": null,
+      "time": 0.007,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_continuation_negatives_never_link_or_complete[gap]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_continuation_negatives_never_link_or_complete[gap]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_continuation_negatives_never_link_or_complete[font]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_continuation_negatives_never_link_or_complete[font]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_continuation_negatives_never_link_or_complete[new_marker]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_continuation_negatives_never_link_or_complete[new_marker]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_continuation_negatives_never_link_or_complete[wrong_marker]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_continuation_negatives_never_link_or_complete[wrong_marker]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_continuation_negatives_never_link_or_complete[separator]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_continuation_negatives_never_link_or_complete[separator]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_continuation_negatives_never_link_or_complete[direction]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_continuation_negatives_never_link_or_complete[direction]",
+      "file": null,
+      "time": 0.005,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_continuation_negatives_never_link_or_complete[duplicate]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_continuation_negatives_never_link_or_complete[duplicate]",
+      "file": null,
+      "time": 0.006,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_continuation_negatives_never_link_or_complete[no_end]",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_continuation_negatives_never_link_or_complete[no_end]",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_three_runs_and_page_box_line_permutation",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_three_runs_and_page_box_line_permutation",
+      "file": null,
+      "time": 0.019,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v3",
+      "name": "test_duplicate_pages_are_rejected",
+      "nodeid": "tests.test_automatic_region_certification_v3::test_duplicate_pages_are_rejected",
+      "file": null,
+      "time": 0.001,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_generic_body_is_certified_by_caption_band_without_rules",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_generic_body_is_certified_by_caption_band_without_rules",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_body_without_visible_native_trace_certifies_but_never_accepts",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_body_without_visible_native_trace_certifies_but_never_accepts",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_three_digit_note_start_is_mapped_and_certified",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_three_digit_note_start_is_mapped_and_certified",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_text_class_note_zone_is_mapped_by_separator_not_extractor_class",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_text_class_note_zone_is_mapped_by_separator_not_extractor_class",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_cross_page_continuation_links_without_merging_page_text",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_cross_page_continuation_links_without_merging_page_text",
+      "file": null,
+      "time": 0.009,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_permutation_of_pages_boxes_and_lines_is_invariant",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_permutation_of_pages_boxes_and_lines_is_invariant",
+      "file": null,
+      "time": 0.016,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_duplicate_pages_are_rejected",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_duplicate_pages_are_rejected",
+      "file": null,
+      "time": 0.002,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_generic_body_negatives_fail_closed[no_caption]",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_generic_body_negatives_fail_closed[no_caption]",
+      "file": null,
+      "time": 0.004,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_generic_body_negatives_fail_closed[caption_not_centered]",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_generic_body_negatives_fail_closed[caption_not_centered]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_generic_body_negatives_fail_closed[caption_not_smaller]",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_generic_body_negatives_fail_closed[caption_not_smaller]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v4",
+      "name": "test_generic_body_negatives_fail_closed[single_body_line]",
+      "nodeid": "tests.test_automatic_region_certification_v4::test_generic_body_negatives_fail_closed[single_body_line]",
+      "file": null,
+      "time": 0.003,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v5",
+      "name": "test_synthetic_weak_continuation_is_not_proven",
+      "nodeid": "tests.test_automatic_region_certification_v5::test_synthetic_weak_continuation_is_not_proven",
+      "file": null,
+      "time": 0.008,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v5",
+      "name": "test_missing_native_evidence_fails_closed",
+      "nodeid": "tests.test_automatic_region_certification_v5::test_missing_native_evidence_fails_closed",
+      "file": null,
+      "time": 0.008,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v5",
+      "name": "test_page_box_and_line_permutation_is_invariant",
+      "nodeid": "tests.test_automatic_region_certification_v5::test_page_box_and_line_permutation_is_invariant",
+      "file": null,
+      "time": 0.02,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v5",
+      "name": "test_repeated_run_is_identical",
+      "nodeid": "tests.test_automatic_region_certification_v5::test_repeated_run_is_identical",
+      "file": null,
+      "time": 0.015,
+      "outcome": "PASS",
+      "detail": null
+    },
+    {
+      "classname": "tests.test_automatic_region_certification_v5",
+      "name": "test_non_note_certificates_are_never_cross_page",
+      "nodeid": "tests.test_automatic_region_certification_v5::test_non_note_certificates_are_never_cross_page",
+      "file": null,
+      "time": 0.008,
+      "outcome": "PASS",
+      "detail": null
+    }
+  ],
+  "PASS": true
+}

@@ -1,0 +1,12 @@
+{
+  "logical_document_id": "831179f9-2cb7-42b3-82e5-d22bd67e9473",
+  "old_generation_id": "1920a623-ddc7-42ba-8842-f5b56d374cb9",
+  "new_generation_id": "f05be037-baef-481c-9edb-89ed46646f35",
+  "generation_ids_distinct": true,
+  "same_logical_document": true,
+  "pointer": "1920a623-ddc7-42ba-8842-f5b56d374cb9",
+  "pointer_is_old": true,
+  "PASS": true,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C"
+}

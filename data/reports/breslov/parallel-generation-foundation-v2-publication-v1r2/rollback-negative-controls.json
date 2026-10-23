@@ -1,0 +1,68 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "controls": [
+    {
+      "control": "cutover_target_building",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "CUTOVER requires a CANDIDATE generation; got BUILDING"
+    },
+    {
+      "control": "cutover_target_failed",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "CUTOVER requires a CANDIDATE generation; got FAILED"
+    },
+    {
+      "control": "cutover_target_arbitrary_inactive",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "CUTOVER requires a CANDIDATE generation; got INACTIVE"
+    },
+    {
+      "control": "rollback_target_never_active_inactive",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "Rollback requires the retained immediate previous active generation"
+    },
+    {
+      "control": "stale_expected_active_generation",
+      "outcome": "REJECTED",
+      "exception": "GenerationConflictError",
+      "message": "Stale expected active generation: the active generation changed"
+    },
+    {
+      "control": "stale_rollback",
+      "outcome": "REJECTED",
+      "exception": "GenerationConflictError",
+      "message": "Stale expected active generation: the active generation changed"
+    },
+    {
+      "control": "cross_document_pointer",
+      "outcome": "REJECTED_BY_DATABASE",
+      "exception": "ForeignKeyViolation",
+      "sqlstate": "23503",
+      "constraint": "library_logical_document_active_generations_generation_fkey",
+      "message": "insert or update on table \"library_logical_document_active_generations\" violates foreign key constraint \"library_logical_document_active_generations_generation_fkey\"\nDETAIL:  Key (logical_document_id, generation_id)=(3a8ce613-20d1-45ce-8059-35bc1d72fad8, 224d3eff-975f-422c-8f70-f10a5240135e) is not present in table \"library_document_generations\"."
+    },
+    {
+      "control": "rollback_target_non_immediate_historical",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "Rollback requires the retained immediate previous active generation"
+    }
+  ],
+  "required_controls": [
+    "cross_document_pointer",
+    "cutover_target_arbitrary_inactive",
+    "cutover_target_building",
+    "cutover_target_failed",
+    "rollback_target_never_active_inactive",
+    "rollback_target_non_immediate_historical",
+    "stale_expected_active_generation",
+    "stale_rollback"
+  ],
+  "missing_controls": [],
+  "accepted_controls": [],
+  "PASS": true
+}

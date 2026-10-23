@@ -1,0 +1,9 @@
+{
+  "initial_active_count": 1,
+  "initial_active_is_old": true,
+  "second_active_rejected": true,
+  "second_active_error": "UniqueViolation",
+  "PASS": true,
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2",
+  "scenario": "synthetic OLD ACTIVE / NEW CANDIDATE; real DEV PostgreSQL; read-only C"
+}

@@ -1,0 +1,17 @@
+{
+  "gate": "TEBAAI_BRESLOV_HEBREW_RTL_RENDERING_V2",
+  "frozen_at": "2026-11-01T15:04:17.979732+00:00",
+  "base_head": "0d3064d7a1181ff40bfae150af1c81546d9920cb",
+  "file_count": 9,
+  "paths": [
+    "SrvRestAstroLS_v1/astro/src/components/library/DirectionalSourceText.svelte",
+    "SrvRestAstroLS_v1/astro/src/components/library/RelationQAPanel.svelte",
+    "SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.ts",
+    "SrvRestAstroLS_v1/astro/src/components/research/SourcePanel.svelte",
+    "SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.ts",
+    "SrvRestAstroLS_v1/backend/modules/library/pdf_hebrew_fidelity.py",
+    "SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.test.ts",
+    "SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.test.ts",
+    "SrvRestAstroLS_v1/backend/tests/test_pdf_hebrew_fidelity.py"
+  ]
+}

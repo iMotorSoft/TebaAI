@@ -11,13 +11,14 @@ function isolateHebrewRuns(element: Element): void {
   const nodes: Text[] = [];
   while (walker.nextNode()) nodes.push(walker.currentNode as Text);
   for (const node of nodes) {
-    if (!/[\u0590-\u05ff]/u.test(node.data) || node.parentElement?.closest("bdi,code,pre")) continue;
-    const parts = node.data.split(/([\u0590-\u05ff][\u0590-\u05ff\u0591-\u05c7\s'"״׳:;,.!?()§\d-]*)/gu).filter(Boolean);
-    if (parts.length < 2) continue;
+    if (!/[\u0590-\u05ff\ufb1d-\ufb4f]/u.test(node.data) || node.parentElement?.closest("bdi,code,pre")) continue;
+    // PDF presentation forms are letters too. Keep surrounding LTR spaces,
+    // parentheses and sentence punctuation OUTSIDE the RTL island.
+    const parts = node.data.split(/([\u0590-\u05ff\ufb1d-\ufb4f]+(?:[ \t]+[\u0590-\u05ff\ufb1d-\ufb4f]+)*)/gu).filter(Boolean);
     const fragment = document.createDocumentFragment();
     for (const part of parts) {
-      if (/[\u0590-\u05ff]/u.test(part)) {
-        const bdi = document.createElement("bdi"); bdi.lang = "he"; bdi.dir = "rtl"; bdi.textContent = part; fragment.append(bdi);
+      if (/[\u0590-\u05ff\ufb1d-\ufb4f]/u.test(part)) {
+        const bdi = document.createElement("bdi"); bdi.lang = "he"; bdi.dir = "auto"; bdi.textContent = part; fragment.append(bdi);
       } else fragment.append(document.createTextNode(part));
     }
     node.replaceWith(fragment);
@@ -28,10 +29,11 @@ function applyTrustedDirections(root: DocumentFragment): void {
   for (const element of root.querySelectorAll(DIRECTIONAL_BLOCKS)) {
     const text = normalizeDisplayText(element.textContent ?? "");
     const language = detectLanguage(text), lang = languageAttribute(text);
-    element.setAttribute("dir", textDirection(text));
-    if (lang) element.setAttribute("lang", lang); else element.removeAttribute("lang");
-    if (language === "he") element.classList.add("research-hebrew-text");
-    else if (language === "mixed") { element.classList.add("research-mixed-text"); isolateHebrewRuns(element); }
+    const mixedHebrew = /[\u0590-\u05ff\ufb1d-\ufb4f]/u.test(text) && /[A-Za-zÀ-ÖØ-öø-ÿ]/u.test(text);
+    element.setAttribute("dir", mixedHebrew ? "auto" : textDirection(text));
+    if (lang && !mixedHebrew) element.setAttribute("lang", lang); else element.removeAttribute("lang");
+    if (mixedHebrew || language === "mixed") { element.classList.add("research-mixed-text"); isolateHebrewRuns(element); }
+    else if (language === "he") element.classList.add("research-hebrew-text");
   }
 }
 

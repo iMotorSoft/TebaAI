@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { sourceTextRuns } from './sourceTextRuns';
+import { sourceTextDirection, sourceTextRuns } from './sourceTextRuns';
 
 describe('source numeric equation isolation', () => {
+  it.each(['6 = ו', '80 = פ,ף', '1 = אַ', '500 = ך'])('keeps numeric side first visually: %s', cell => {
+    expect(sourceTextDirection(cell)).toBe('ltr');
+  });
+  it.each(['שלום עולם', 'Texto español 80', ' ; ', 'Salmos 16:1', 'ו1'])('uses auto outside exact numeric cells: %s', text => {
+    expect(sourceTextDirection(text)).toBe('auto');
+  });
   it('keeps cells isolated when API folds the original table rows', () => {
     const text = 'GUEMATRIA 300 = ש ; 6 = ו ; 1 = א 400 = ת ; 80 = פ,ף ; 30 = ל';
     const runs = sourceTextRuns(text);

@@ -1,0 +1,60 @@
+{
+  "gate": "TEBAAI_BRESLOV_HEBREW_RTL_RENDERING_V2",
+  "result": "PASS",
+  "date": "2026-11-01",
+  "branch": "feature/console-backend-core",
+  "authoritative_head": "0d3064d7a1181ff40bfae150af1c81546d9920cb",
+  "base_check": {
+    "local_head": "0d3064d7a1181ff40bfae150af1c81546d9920cb",
+    "tracking_head": "0d3064d7a1181ff40bfae150af1c81546d9920cb",
+    "ls_remote_head": "0d3064d7a1181ff40bfae150af1c81546d9920cb",
+    "match": true
+  },
+  "worktree": {
+    "ambiguous_paths": 0,
+    "candidate_files": 9,
+    "preexisting_unrelated_preserved": true
+  },
+  "automated": {
+    "backend_hebrew_fidelity": { "command": "uv run pytest tests/test_pdf_hebrew_fidelity.py -q", "passed": 23, "failed": 0, "errors": 0 },
+    "frontend_rtl_equations": { "command": "pnpm vitest run sourceTextRuns.test.ts markdownRenderer.test.ts textDirection.test.ts", "passed": 55, "failed": 0 },
+    "pnpm_check": { "errors": 0, "warnings": 0, "hints": 9, "hints_attributable_to_fix": 0 },
+    "git_diff_check": "PASS"
+  },
+  "real_browser": {
+    "engine": "Chromium via @playwright/test",
+    "base_url": "http://127.0.0.1:3008",
+    "backend": "http://127.0.0.1:7008",
+    "desktop_viewport": "1440x900",
+    "mobile_viewport": "390x844",
+    "console_errors": 0,
+    "http_5xx": 0,
+    "a_p187": { "desktop": "PASS", "mobile": "PASS" },
+    "b_p416": { "desktop": "PASS", "mobile": "PASS" },
+    "presentation_forms_isolation": "PASS",
+    "gemmatria_equation_direction": "PASS",
+    "ltr_regression": "PASS"
+  },
+  "frozen_bytes": { "post_freeze_mutations": 0, "verified": true },
+  "corpus": {
+    "a": { "document": "Un Día en la Vida de un Jasid de Breslov", "page": 187, "chunk_id": "f741e872-1850-5bb7-8d73-a7e121f4084d" },
+    "b": { "document": "La Potencia de la Plegaria", "page": 416, "chunk_id": "9ad96286-7e98-5583-8e96-279e3603430a" },
+    "c_hebrew_text_certified": false,
+    "c_reason": "180238 U+FFFD in published C chunks; C is not used as positive textual-Hebrew evidence"
+  },
+  "commit": { "authorized": true, "performed": true, "push": false },
+  "not_modified": [
+    "Foundation V2",
+    "migration 043",
+    "generation lifecycle",
+    "rollback",
+    "page_first_gateway",
+    "region_publication.py",
+    "worker quarantine semantics",
+    "V5 certifier",
+    "CURRENT C chunks/vectors",
+    "durable source",
+    "search/retrieval policy",
+    "status_actual.md"
+  ]
+}

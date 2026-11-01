@@ -1,0 +1,126 @@
+{
+  "gate": "TEBAAI_BRESLOV_HEBREW_RTL_RENDERING_V2",
+  "validated_at": "2026-11-01T15:28:30.645745+00:00",
+  "result": "PASS",
+  "checks": [
+    {
+      "id": "a_p187_desktop",
+      "page": "A p187",
+      "viewport": "1440x900",
+      "result": "PASS",
+      "observed": {
+        "stored_match": true,
+        "phrase": true,
+        "no_artificial_spaces": true,
+        "bdi_dir": "auto",
+        "computed_direction": "rtl",
+        "replacement_chars": 0
+      },
+      "screenshot": "screenshots/a-p187-desktop-hebrew.png"
+    },
+    {
+      "id": "a_p187_mobile",
+      "page": "A p187",
+      "viewport": "390x844",
+      "result": "PASS",
+      "observed": {
+        "stored_match": true,
+        "block_overflow": false,
+        "document_overflow": false
+      },
+      "screenshot": "screenshots/a-p187-mobile.png"
+    },
+    {
+      "id": "b_p416_desktop",
+      "page": "B p416",
+      "viewport": "1440x900",
+      "result": "PASS",
+      "observed": {
+        "cells": 27,
+        "cells_ok": 27,
+        "dirs": [
+          "ltr"
+        ],
+        "sample": "6 = ו / 1 = א / 400 = ת / 80 = פ,ף"
+      },
+      "screenshot": "screenshots/b-p416-desktop-equations.png"
+    },
+    {
+      "id": "b_p416_mobile",
+      "page": "B p416",
+      "viewport": "390x844",
+      "result": "PASS",
+      "observed": {
+        "cells": 27,
+        "cells_ok": 27,
+        "document_overflow": false
+      },
+      "screenshot": "screenshots/b-p416-mobile-equations.png"
+    },
+    {
+      "id": "niqqud_base_attachment",
+      "page": "A p187",
+      "viewport": "1440x900 + 390x844",
+      "result": "PASS",
+      "observed": {
+        "stored_text_unchanged": true,
+        "artificial_internal_spaces": false,
+        "visual_review": "niqqud sits on its base glyph in screenshots/a-p187-first-line-zoom.png"
+      },
+      "screenshot": "screenshots/a-p187-first-line-zoom.png"
+    },
+    {
+      "id": "presentation_forms_isolation",
+      "page": "A p187 stored run + A answer markdown + PDF 145 stored run",
+      "viewport": "1440x900",
+      "result": "PASS",
+      "observed": {
+        "surviving_presentation_forms_in_stored_run": [
+          "U+FB20"
+        ],
+        "answer_islands": 5,
+        "answer_islands_hebrew_only": true,
+        "punctuation_inside_island": 0,
+        "nfc_note": "NFC decomposes most U+FB1D-U+FB4F to base+niqqud; U+FB20 (alternative ayin) has no decomposition and is the real stored case"
+      },
+      "screenshot": "screenshots/presentation-answer.png"
+    },
+    {
+      "id": "ltr_punctuation_not_swallowed",
+      "page": "p answer markdown (Spanish with Hebrew quotes)",
+      "viewport": "1440x900",
+      "result": "PASS",
+      "observed": {
+        "hebrew_islands": 4,
+        "punctuation_inside_island": 0,
+        "paragraph_dir": "auto"
+      },
+      "screenshot": "screenshots/presentation-answer.png"
+    },
+    {
+      "id": "ltr_regression",
+      "page": "Spanish-only evidence + /admin/content",
+      "viewport": "1440x900",
+      "result": "PASS",
+      "observed": {
+        "spanish_evidence_direction": "ltr",
+        "spanish_answer_dir": "ltr",
+        "admin_body_direction": "ltr",
+        "admin_table_direction": "ltr",
+        "admin_rtl_elements": 1,
+        "admin_rtl_note": "the single dir=rtl node is the isolated Hebrew brand span, not a global direction"
+      },
+      "screenshot": "screenshots/ltr-regression-admin.png"
+    },
+    {
+      "id": "bidi_spill",
+      "page": "all QA surfaces",
+      "viewport": "both",
+      "result": "PASS",
+      "observed": {
+        "document_overflow": false
+      },
+      "screenshot": "screenshots/a-p187-desktop.png"
+    }
+  ]
+}

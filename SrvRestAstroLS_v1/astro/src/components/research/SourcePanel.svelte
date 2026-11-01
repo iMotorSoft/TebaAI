@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Hit, ResearchResponse } from "./investigativeQaClient.ts";
+  import DirectionalSourceText from "../library/DirectionalSourceText.svelte";
   import { evidenceLabels, literalKindLabel, relevanceLabels, relationTypeLabels, sourceLayerConfidenceLabels, sourceLayerLabels, warningLabel, attributionLabels } from "./researchLabels.ts";
   import { isHebrewText, languageAttribute, normalizeDisplayText, textDirection } from "./textDirection.ts";
 
@@ -29,7 +30,7 @@
         {#if active.physical_pdf_page === null && active.embedded_page_marker}<div class="evidence-meta">Página canónica: no disponible · Marcador interno detectado: {active.embedded_page_marker}</div>{/if}
         {#if active.physical_file_name}<div class="evidence-meta" dir="ltr">Documento físico: {active.physical_file_name}</div>{/if}
         <h3>{activeIsHebrew ? "Texto original en hebreo" : "Fragmento recuperado"}</h3>
-        <blockquote tabindex="0" class:research-hebrew-text={activeIsHebrew} lang={active.language} dir={active.direction} data-display-normalization={active.display_normalization ?? undefined}>{activeText}</blockquote>
+        <blockquote tabindex="0" class:research-hebrew-text={activeIsHebrew} lang={active.language} dir={active.direction} data-display-normalization={active.display_normalization ?? undefined}><DirectionalSourceText text={activeText} /></blockquote>
         <h3>Naturaleza del fragmento</h3>
         <p>{sourceLayerLabels[active.source_layer]} <small>(confianza {sourceLayerConfidenceLabels[active.source_layer_confidence]})</small></p>
         <dl>
@@ -44,13 +45,13 @@
           {#if active.next_heading}<div><dt>Próximo encabezado editorial</dt><dd>{active.next_heading}</dd></div>{/if}
           {#if active.heading_original && active.heading_original !== active.heading_text}<div><dt>Encabezado original</dt><dd>{active.heading_original}</dd></div>{/if}
           {#if active.heading_normalized}<div><dt>Variante normalizada</dt><dd>{active.heading_normalized}</dd></div>{/if}
-          {#if active.exact_quote}<div><dt>Cita exacta</dt><dd>{active.exact_quote}</dd></div>{/if}
+          {#if active.exact_quote}<div><dt>Cita exacta</dt><dd><DirectionalSourceText text={active.exact_quote} /></dd></div>{/if}
           {#if active.section_path && active.section_path.length}
             <div><dt>Ruta de sección</dt><dd>{active.section_path.join(' ▸ ')}</dd></div>
           {/if}
           {#if active.location_precision}<div><dt>Precisión de localización</dt><dd>{active.location_precision}</dd></div>{/if}
-          {#if active.context_before}<div><dt>Contexto anterior</dt><dd>{active.context_before}</dd></div>{/if}
-          {#if active.context_after}<div><dt>Contexto posterior</dt><dd>{active.context_after}</dd></div>{/if}
+          {#if active.context_before}<div><dt>Contexto anterior</dt><dd><DirectionalSourceText text={active.context_before} /></dd></div>{/if}
+          {#if active.context_after}<div><dt>Contexto posterior</dt><dd><DirectionalSourceText text={active.context_after} /></dd></div>{/if}
           {#if active.page_id}<div><dt>ID de página canónica</dt><dd dir="ltr">{active.page_id}</dd></div>{/if}
           {#if active.page_resolution_method}<div><dt>Método de resolución</dt><dd>{active.page_resolution_method}</dd></div>{/if}
           {#if active.associated_chunk_id}<div><dt>Chunk de contexto asociado</dt><dd dir="ltr">{active.associated_chunk_id}</dd></div>{/if}
@@ -69,7 +70,7 @@
             <h3>Traducción / ampliación</h3>
             {#each active.parallel_texts as parallel}
               <p class="source-text-label">{sourceLayerLabels[parallel.source_layer]} · {parallel.language.toUpperCase()}</p>
-              <blockquote tabindex="0" lang={parallel.language} dir="ltr">{parallel.text}</blockquote>
+              <blockquote tabindex="0" lang={parallel.language} dir="ltr"><DirectionalSourceText text={parallel.text} /></blockquote>
               <p class="evidence-meta" dir="ltr">PDF p. {parallel.physical_pdf_page ?? "—"}{parallel.printed_page !== null ? ` · Página impresa ${parallel.printed_page}` : ""}</p>
             {/each}
           </section>

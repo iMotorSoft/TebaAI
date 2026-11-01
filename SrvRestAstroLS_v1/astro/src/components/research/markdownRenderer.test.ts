@@ -20,6 +20,22 @@ describe("renderSafeMarkdown", () => {
     const template = document.createElement("template"); template.innerHTML = html;
     expect(template.content.textContent?.trim()).toBe(source); expect(html).toContain("<bdi"); expect(html).toContain('dir="auto"');
   });
+  it.each([
+    'En días de semana (בימות החול), antes de recitar תהלים se dice una plegaria.',
+    'יְהִי רָצוֹן מִלְּפָנֶיךָ aparece en Un Día en la Vida [ev-123].',
+    'La fórmula **יְהִי רָצוֹן מִלְּפָנֶיךָ** termina aquí (PDF 187).',
+  ])("isolates real PDF forms without swallowing LTR boundaries: %s", (source) => {
+    const template = document.createElement('template');
+    template.innerHTML = renderSafeMarkdown(source);
+    expect(template.content.textContent?.trim()).toBe(source.replace(/\*\*/g, ''));
+    const runs = [...template.content.querySelectorAll('bdi')];
+    expect(runs.length).toBeGreaterThan(0);
+    for (const run of runs) {
+      expect(run.getAttribute('dir')).toBe('auto');
+      expect(run.textContent).not.toMatch(/^[\s()]|[\s(),.]$/u);
+    }
+    expect(template.content.querySelector('p')?.getAttribute('dir')).toBe('auto');
+  });
   it("does not trust direction or language supplied by Markdown HTML", () => {
     const html = renderSafeMarkdown('<blockquote dir="rtl" lang="he" onclick="x()">texto español</blockquote>');
     expect(html).toContain('dir="ltr"'); expect(html).toContain('lang="es"'); expect(html).not.toContain("onclick");

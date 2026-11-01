@@ -1,3 +1,9 @@
+export function sourceTextDirection(text: string): "ltr" | "auto" {
+  // Digits are weak bidi characters: dir=auto would select Hebrew and flip
+  // the number/equality sides. The PDF's explicit numeric equation is LTR.
+  return /^[0-9]+\s*=\s*[\u05d0-\u05ea]\p{M}*(?:\s*,\s*[\u05d0-\u05ea]\p{M}*)?$/u.test(text) ? "ltr" : "auto";
+}
+
 /** Isolate equation cells in source text that already has explicit table delimiters.
  * The runs concatenate byte-for-byte to the source; no text is normalized.
  */

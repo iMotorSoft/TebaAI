@@ -37,7 +37,34 @@ def repair_markdown(markdown: str, raw: dict) -> tuple[str, list[dict]]:
             source = "".join(char["c"] for char in chars).strip()
             removed: set[int] = set()
             gutters: set[int] = set()
+            moved_marks: dict[int, int] = {}
             for index, char in enumerate(chars):
+                # Some PDF fonts emit a zero-advance vowel BEFORE its base.
+                # Require the mark at the following RTL base's right edge,
+                # also near the preceding base's left edge. Never cross a real
+                # word space or infer attachment from Hebrew vocabulary.
+                if _mark(char["c"]) and char["bbox"][0] == char["bbox"][2]:
+                    previous = next((i for i in range(index - 1, -1, -1)
+                                     if not _mark(chars[i]["c"]) and not (chars[i]["c"].isspace() and chars[i].get("synthetic"))), None)
+                    following = next((i for i in range(index + 1, len(chars))
+                                      if not _mark(chars[i]["c"]) and not (chars[i]["c"].isspace() and chars[i].get("synthetic"))), None)
+                    if previous is not None and following is not None:
+                        left, right = chars[previous], chars[following]
+                        x = char["bbox"][0]
+                        tolerance = char["size"] * 0.03
+                        if (_hebrew(left["c"]) and _hebrew(right["c"])
+                            and right["bbox"][0] < left["bbox"][0]
+                            and abs(x - right["bbox"][2]) <= char["size"] * 0.005
+                            and abs(x - left["bbox"][0]) <= tolerance
+                            # Holam naturally sits at a base's left edge too.
+                            # A shared edge alone is ambiguous (לֹא, קֹדֶם).
+                            # Require overlap beyond font jitter, or a separate
+                            # vowel already demonstrably on the preceding base.
+                            and (char["c"] != "\u05b9"
+                                 or x - left["bbox"][0] > char["size"] * 0.015
+                                 or any("\u05b0" <= chars[k]["c"] <= "\u05b8"
+                                        for k in range(previous + 1, index)))):
+                            moved_marks[index] = following
                 if char["c"] == " " and char.get("synthetic") and index and _mark(chars[index - 1]["c"]):
                     left = next((c for c in reversed(chars[:index]) if not _mark(c["c"])), None)
                     right = next((c for c in chars[index + 1:] if not _mark(c["c"])), None)
@@ -55,9 +82,13 @@ def repair_markdown(markdown: str, raw: dict) -> tuple[str, list[dict]]:
                 boundaries = [(previous.end() - 1, following.start()) for previous, following in zip(cells, cells[1:])]
                 if all(chars[right]["bbox"][0] - chars[left]["bbox"][2] >= chars[right]["size"] for left, right in boundaries):
                     gutters = {right for _, right in boundaries}
-            if not removed and not gutters:
+            if not removed and not gutters and not moved_marks:
                 continue
-            corrected = "".join((" ; " if i in gutters else "") + c["c"] for i, c in enumerate(chars) if i not in removed).strip()
+            attachments: dict[int, str] = {}
+            for mark_index, base_index in moved_marks.items():
+                attachments[base_index] = attachments.get(base_index, "") + chars[mark_index]["c"]
+            corrected = "".join((" ; " if i in gutters else "") + c["c"] + attachments.get(i, "")
+                                for i, c in enumerate(chars) if i not in removed and i not in moved_marks).strip()
             if gutters:
                 # Each demonstrated cell gets an explicit delimiter, including
                 # cells whose PDF already carries a space across the gutter.
@@ -82,6 +113,7 @@ def repair_markdown(markdown: str, raw: dict) -> tuple[str, list[dict]]:
             changes.append({
                 "source": source, "corrected": corrected,
                 "synthetic_spaces_removed": len(removed),
+                "niqqud_attachments_corrected": len(moved_marks),
                 "cell_gutters": len(gutters), "matches": 1,
             })
     return markdown, changes

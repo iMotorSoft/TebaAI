@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import re
+import unicodedata
+from collections import Counter
 
 import pytest
 
@@ -11,18 +13,40 @@ from modules.library.pdf_hebrew_fidelity import repair_markdown
 FIXTURES = Path(__file__).parent / "fixtures" / "hebrew_pdf_fidelity"
 
 
+def expected_markdown(fixture, case):
+    expected = fixture["markdown_after"]
+    if case == "a":
+        # PDF 187 visually reviewed: 18 misplaced vowels in the old golden.
+        # Keep the original fixture as evidence of the pre-fix extraction.
+        for old, corrected in {
+            "מִלְּפָנֶיָך": "מִלְּפָנֶיךָ", "אֱֹלהֵינוּ": "אֱלֹהֵינוּ",
+            "וֵאֹלהֵי": "וֵאלֹהֵי", "הַמֶּלְֶך": "הַמֶּלֶךְ",
+            "יִמָּשְֶׁך": "יִמָּשֶׁךְ", "וְלִסְֹלחַ": "וְלִסְלֹחַ",
+            "לְפָנֶיָך": "לְפָנֶיךָ", "חַטָּאתְָך": "חַטָּאתְךָ",
+            "שֶׁתַּאֲרִיְך": "שֶׁתַּאֲרִיךְ", "אַפְָּך": "אַפְּךָ",
+            "אֵלֶיָך": "אֵלֶיךָ", "כְָּך": "כָּךְ",
+        }.items():
+            expected = expected.replace(old, corrected)
+    return expected
+
+
 @pytest.mark.parametrize("case", ["a", "b"])
-def test_real_pdf_pages_preserve_all_non_whitespace_characters(case):
+def test_real_pdf_pages_preserve_letters_and_every_mark(case):
     fixture = json.loads((FIXTURES / f"case_{case}.json").read_text())
     before = fixture["markdown_before"]
     after, changes = repair_markdown(before, fixture["raw"])
     assert changes
-    assert after == fixture["markdown_after"]
-    # Only source-backed whitespace and explicit cell delimiters may change.
-    assert re.sub(r"[\s;]", "", before) == re.sub(r"[\s;]", "", after)
+    assert after == expected_markdown(fixture, case)
+    # Vowels may move to their geometrically proven base; none may disappear.
+    bases = lambda text: ''.join(c for c in text if not c.isspace() and c != ';' and not unicodedata.combining(c))
+    assert bases(before) == bases(after)
+    assert Counter(c for c in before if unicodedata.combining(c)) == Counter(c for c in after if unicodedata.combining(c))
     assert repair_markdown(after, fixture["raw"])[0] == after
     if case == "a":
-        assert "יְהִי רָצוֹן מִלְּפָנֶיָך" in after
+        assert "יְהִי רָצוֹן מִלְּפָנֶיךָ" in after
+        assert "אֱלֹהֵינוּ" in after and "הַמֶּלֶךְ" in after
+        assert "לֹא" in after and "קֹדֶם" in after and "מְלֹאת" in after
+        assert sum(c["niqqud_attachments_corrected"] for c in changes) == 18
         assert "יהי רצון שאומרים קודם אמירת תהלים בימות החול:" in after
         assert sum(c["synthetic_spaces_removed"] for c in changes) == 294
     else:
@@ -95,7 +119,7 @@ def test_all_canonical_pdf_entrypoints_use_real_source_geometry(case, tmp_path):
     with pymupdf.open(source) as document, pymupdf.open() as single:
         single.insert_pdf(document, from_page=fixture["pdf_page"] - 1, to_page=fixture["pdf_page"] - 1)
         single.save(path)
-    expected = fixture["markdown_after"].strip()
+    expected = expected_markdown(fixture, case).strip()
     content, fmt, method, metadata = extract_text(str(path))
     assert content.strip() == expected
     assert fmt.value == "markdown" and method.value == "pymupdf4llm"

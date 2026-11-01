@@ -3,7 +3,7 @@
   import { getStoredAccessToken, getStoredUser, getMe } from "../auth/authClient.ts";
   import { askRelationQA, type RelationQARequest, type RelationQAResponse } from "./relationQaClient.ts";
 
-  import { sourceTextRuns } from "./sourceTextRuns.ts";
+  import { sourceTextDirection, sourceTextRuns } from "./sourceTextRuns.ts";
 
   let token = $state<string | null>(getStoredAccessToken());
   let user = $state(getStoredUser());
@@ -316,7 +316,7 @@
                     {#if source.snippet}
                       <div class="mt-2 text-base-content/80 border-l-2 border-base-300 pl-3 italic">
                         {#each sourceTextRuns(source.snippet) as cell}
-                          <bdi dir="auto">{cell}</bdi>
+                          <bdi dir={sourceTextDirection(cell)} class:whitespace-nowrap={sourceTextDirection(cell) === "ltr"}>{cell}</bdi>
                         {/each}
                       </div>
                     {/if}

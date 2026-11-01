@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-11-01T15:27:57.441203+00:00",
+  "file_count": 9,
+  "changed": [],
+  "missing": [],
+  "unchanged": true,
+  "files": [
+    {
+      "path": "SrvRestAstroLS_v1/astro/src/components/library/DirectionalSourceText.svelte",
+      "frozen": "565e2843fcd4f912ba24b7fb6ab4f0ff39e1ecc4fc532cb2116026bdd918b92e",
+      "current": "565e2843fcd4f912ba24b7fb6ab4f0ff39e1ecc4fc532cb2116026bdd918b92e",
+      "match": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/astro/src/components/library/RelationQAPanel.svelte",
+      "frozen": "aaffcacec4ae84ac41e4101596f228a12186b4f71ef12e2692ac976ddcf83a33",
+      "current": "aaffcacec4ae84ac41e4101596f228a12186b4f71ef12e2692ac976ddcf83a33",
+      "match": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.ts",
+      "frozen": "740c0342e3b9da0623bfa058774fe451f3518eb592c2ba320015ea45825f501f",
+      "current": "740c0342e3b9da0623bfa058774fe451f3518eb592c2ba320015ea45825f501f",
+      "match": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/astro/src/components/research/SourcePanel.svelte",
+      "frozen": "d88e8e0f6fe1d2c517e5252ac02dfe998d38257fd93ea4880bc7ee3fe5266ea7",
+      "current": "d88e8e0f6fe1d2c517e5252ac02dfe998d38257fd93ea4880bc7ee3fe5266ea7",
+      "match": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.ts",
+      "frozen": "d5edc018d4f4b654d2f5e7127be95f6619fcd1ca9e09dad9a26bd0e5f9348f09",
+      "current": "d5edc018d4f4b654d2f5e7127be95f6619fcd1ca9e09dad9a26bd0e5f9348f09",
+      "match": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/pdf_hebrew_fidelity.py",
+      "frozen": "fbe9fa8f85cf04872fb110f9dfa619ff86cf9bee70c48544faaae01e07128b44",
+      "current": "fbe9fa8f85cf04872fb110f9dfa619ff86cf9bee70c48544faaae01e07128b44",
+      "match": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.test.ts",
+      "frozen": "78c9c756698bca2e010d50950a067d23b7dfc07aa3ac9a84528ee5cf26d46ff1",
+      "current": "78c9c756698bca2e010d50950a067d23b7dfc07aa3ac9a84528ee5cf26d46ff1",
+      "match": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.test.ts",
+      "frozen": "bc2df39b779ffa4149f634bb3e776d860f3cadff30a061046ee5628f7d7ecdcd",
+      "current": "bc2df39b779ffa4149f634bb3e776d860f3cadff30a061046ee5628f7d7ecdcd",
+      "match": true
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_pdf_hebrew_fidelity.py",
+      "frozen": "0926d18da55540e97d9a34c310cdd24a2e8a52824bc3aaba27668b2edd964263",
+      "current": "0926d18da55540e97d9a34c310cdd24a2e8a52824bc3aaba27668b2edd964263",
+      "match": true
+    }
+  ]
+}

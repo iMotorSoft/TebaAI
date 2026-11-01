@@ -2,7 +2,236 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-10-01 (Fidelidad de extracción hebrea en DEV)
+Ultima actualizacion: 2026-11-01 (Foundation V2 + RTL publicados; C textual unsafe)
+
+## Estado vigente — 2026-11-01 (DEV)
+
+Resumen operativo. Lo que sigue responde: qué funciona, qué está certificado,
+qué sigue inseguro, cuál es el estado Git autoritativo y cuál es el próximo
+bloqueo real.
+
+### Git autoritativo
+
+| Campo | Valor |
+| --- | --- |
+| Branch | `feature/console-backend-core` |
+| Authoritative HEAD | `05ab67ebfb652a460155eab1d3560ae55bd88bb0` |
+| Local = tracking = remoto | `YES` (verificado 2026-11-01) |
+
+Publicado en `origin` en el mismo HEAD:
+
+- `TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2_PASS`
+- `TEBAAI_BRESLOV_HEBREW_RTL_RENDERING_V2_PASS` (commit `05ab67e`)
+
+```text
+FOUNDATION_V2_PUBLISHED = YES
+FOUNDATION_V2_AUTHORITATIVE = YES
+```
+
+### Biblioteca / ingesta documental — DEV operativo
+
+En DEV el flujo documental está operativo de punta a punta: upload de PDF,
+ingesta, publicación editorial, indexación y retrieval.
+
+| Documento | Páginas | Chunks | Vectores |
+| --- | --- | --- | --- |
+| Un Día en la Vida de un Jasid de Breslov | 196 | 296 | 296 |
+| La Potencia de la Plegaria | 416 | 908 | 908 |
+| Likutey Halajot — Interior Final (C) | 284 | 942 | 942 |
+| **Total** | **896** | **2146** | **2146** |
+
+```text
+PG ↔ Milvus = 2146 / 2146
+```
+
+```text
+DEV = operational
+PRODUCTION = not deployed/open for Library Manager
+```
+
+### Cerrado y certificado
+
+**Foundation V2** — `TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2_PASS`.
+Identidad lógica explícita documento/generación, puntero activo persistido,
+aislamiento de candidatos, cutover CAS, rollback seguro, visibilidad del reader
+por generación activa, conciencia de generación en viewer/fuente y protección de
+cleanup/retención. No es trabajo pendiente.
+
+**Durable source de C** — `DURABLE SOURCE C = CERTIFIED`.
+
+| Campo | Valor |
+| --- | --- |
+| Document | `ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa` |
+| SHA aprobado | `440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a` |
+| Managed source | `backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf` |
+| SHA externo = durable = servido | `YES` |
+| Fuente autenticada | `200` |
+| Fuente sin autenticar | `401` |
+| Páginas | `284` |
+
+**Hebrew RTL / niqqud** — `TEBAAI_BRESLOV_HEBREW_RTL_RENDERING_V2_PASS`
+(commit `05ab67ebfb652a460155eab1d3560ae55bd88bb0`, publicado en `origin`).
+
+| Validación | Resultado |
+| --- | --- |
+| Fidelidad backend | 23 PASS |
+| RTL frontend | 55 PASS |
+| `pnpm check` | 0 errores / 0 warnings |
+| A p187 desktop / mobile 390×844 | PASS / PASS |
+| B p416 desktop / mobile 390×844 | PASS / PASS |
+| Celdas de gematría con aislamiento LTR | 27/27 correctas |
+| Niqqud/base attachment | PASS |
+| Aislamiento de presentation forms | PASS |
+| Regresión LTR | PASS |
+
+```text
+C_HEBREW_TEXT_CERTIFIED = NO
+```
+
+### C actual — advertencia crítica
+
+C es `Likutey Halajot — Interior Final`:
+
+```text
+status = ready
+searchable in DEV = YES
+chunks = 942
+vectors = 942
+active generation = 1a8af56b-fc17-d9f9-ffc2-9efde54aa95b
+U+FFFD en chunks publicados de C = 180238
+```
+
+```text
+SAFE_FOR_TEXTUAL_HEBREW_RETRIEVAL = NO
+```
+
+C es hoy técnicamente consultable en DEV, pero su representación textual
+publicada contiene corrupción hebrea severa. El PDF original durable es correcto
+y está disponible, pero la generación indexada actual de C no debe considerarse
+contenido hebreo textual certificado. Esto no implica que C sea inutilizable en
+todos los sentidos: puede existir contenido español u otro contenido aceptado;
+el riesgo es específicamente el texto hebreo.
+
+### Cuarentena por región
+
+Diseño y código de cuarentena a nivel de región: **implementados**.
+
+```text
+ACCEPTED + CERTIFIED  → publicación / búsqueda
+QUARANTINED           → sin publicación textual, búsqueda, vector ni cita
+mixed page            → puede permanecer PARTIAL
+una región mala       → no rechaza el documento completo
+```
+
+Estado de certificación actual:
+
+```text
+REGION_LEVEL_QUARANTINE_READY = NO
+WORKER_REGION_ENFORCEMENT_READY = NO
+```
+
+Motivo: `TEBAAI_BRESLOV_REGION_QUARANTINE_WORKER_E2E_V1 = FAIL`. V5 devolvió
+`UNRESOLVED` para cuatro unidades sintéticas que debían ser GOOD; el worker las
+cuarentenó correctamente. No es fuga de regiones malas: el comportamiento de
+seguridad se mantiene.
+
+| Fuga de hebreo malo | Valor |
+| --- | --- |
+| chunks | 0 |
+| embeddings | 0 |
+| vectores | 0 |
+| retrieval | 0 |
+| citas | 0 |
+
+La certificación sigue abierta.
+
+### Reingesta de C
+
+```text
+C_REINGEST_EXECUTED = NO
+READY_FOR_C_REINGEST_EXECUTION = NO
+```
+
+La publicación de Foundation V2 no autoriza por sí sola la reingesta de C.
+Trabajo restante, en orden:
+
+1. cerrar los prerrequisitos de seguridad de generación paralela / cuarentena de C;
+2. reingesta controlada de un candidato de C;
+3. reconciliar candidato contra OLD;
+4. cutover atómico solo después de que el candidato pase;
+5. retener OLD para rollback.
+
+### Producción
+
+```text
+DEV library path = operational
+Production Library Manager = not enabled/deployed
+```
+
+Limitaciones de producción:
+
+- rutas y gate todavía cerrados;
+- ventana de despliegue/configuración de worker pendiente.
+
+Un PASS en DEV no implica readiness productiva.
+
+### Riesgos abiertos (priorizados)
+
+1. Corrupción textual actual de C: 180238 `U+FFFD`.
+2. Cuarentena por región: E2E/certificación todavía abiertos.
+3. Reingesta controlada de C todavía no autorizada.
+4. Despliegue del Library Manager en producción todavía pendiente.
+
+### Próximo paso
+
+```text
+NEXT PRIORITY = C safety/quarantine → controlled reingestion
+```
+
+Los frentes RTL, Foundation V2 y durable source están cerrados; no son el
+siguiente trabajo.
+
+---
+
+## Historial — snapshots de fases anteriores
+
+Las secciones siguientes conservan el estado tal como se observó en su fecha.
+No todas describen el estado vigente al 2026-11-01.
+
+## Corpus limpio DEV + tres libros Breslov — gate abierto (snapshot 2026-10-11)
+
+`TEBAAI_BRESLOV_CLEAN_CORPUS_HEBREW_INGESTION_V1_PASS`: **NO emitido / BLOCKED**.
+Reset integral DEV autorizado, corpus cero verificado y plataforma preservada;
+A/B/C cargados y publicados secuencialmente por UI. Inventario observado:
+3 docs ready, 896 páginas y 2146 chunks/vectores; colecciones históricas TebaAI
+vacías. A/B: PASS acotado a páginas críticas 187/416, no QA exhaustivo.
+C (284 páginas): extracción hebrea corrupta; fuentes sin ToUnicode y texto
+antiguo oculto por rectángulos blancos. Recuperación por hash de font probada
+solo en memoria, todavía no integrada. No reingestar con un fix incompleto.
+Continuación: backend focalizado 47 PASS; frontend focalizado 35 PASS,
+check/build PASS. Producción intacta; sin commit/push.
+Evidencia y próximos pasos: [reporte vigente](../../data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-continuation.md).
+Los gates y conteos de las secciones anteriores son snapshots de esas fases.
+
+C, candidato aislado de visibilidad: 671 runs conocidos emparejados; 385
+excluidos en fixtures por cobertura completa de trace + tinta/orden/opacidad,
+286 retenidos sin prueba suficiente. No conectado al extractor canónico;
+orden lógico/niqqud y preservación visual real siguen BLOCKED. Sin reingesta,
+reset ni escrituras PG/Milvus/PROD. Backend focal 91 PASS (26 nuevos), frontend
+35 PASS, check/build PASS. Detalle y capturas:
+[visibilidad candidata](../../data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md).
+
+C, reconstrucción textual offline: gate intermedio
+`TEBAAI_BRESLOV_LIKUTEY_HALAJOT_TEXT_RECONSTRUCTION_V1_BLOCKED`.
+Filtro A congelado (385/286); ambiguos: 197 full con una overlay y 89 full
+más overlays parciales, todos KEEP. B experimental conserva codepoints en
+5 fixtures reales y recupera un fragmento niqqud por geometría (equivalencia
+NFD, sin normalización global), pero persisten referencias RTL/LTR, U+FFFD,
+orden de bloques y columnas. Markdown/viewer aislados; Chromium desktop/móvil
+10 checks DOM PASS, fidelidad FAIL. Supresión visible sin certificado.
+Backend focal 118 PASS (+27), frontend focal 35/suite 128 PASS, check/build PASS.
+Sin integración, reingesta ni acceso PG/Milvus/PROD; READY_FOR_C_REINGEST=NO.
+[Reporte de reconstrucción y límites](../../data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md).
 
 ## Fidelidad de extracción hebrea — 2026-10-01 (DEV)
 

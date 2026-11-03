@@ -1,0 +1,41 @@
+{
+  "postgres": "AVAILABLE",
+  "database": "tebaai",
+  "milvus": "AVAILABLE",
+  "collection_present": true,
+  "generation_constraints": [
+    {
+      "conname": "library_document_generations_document_logical_fkey",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (document_id, logical_document_id) REFERENCES library_documents(id, logical_document_id)"
+    },
+    {
+      "conname": "library_document_generations_job_id_fkey",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (job_id) REFERENCES content_manager_jobs(id)"
+    },
+    {
+      "conname": "library_document_generations_logical_document_id_fkey",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (logical_document_id) REFERENCES library_logical_documents(id) ON DELETE CASCADE"
+    },
+    {
+      "conname": "library_document_generations_run_id_fkey",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    }
+  ],
+  "status": "FAIL_PRODUCT_REGISTRATION",
+  "initial_probe_correction": "Direct empty MILVUS_URI was not a valid probe; canonical infrastructure client connected successfully.",
+  "fixture_suites": {
+    "PASS": 24,
+    "FAIL": 0,
+    "ERROR": 13,
+    "SKIP": 0
+  },
+  "note": "Service availability passed; actual product registration failed before freeze. No fixture/product changes made."
+}

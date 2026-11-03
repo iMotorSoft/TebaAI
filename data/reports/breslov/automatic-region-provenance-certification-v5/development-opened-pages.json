@@ -1,0 +1,9 @@
+{
+  "reason": "V4/V5 development probes and source review before sealed holdout selection",
+  "pages": [
+    16, 17, 56, 57, 108, 109, 132, 133, 153, 154, 164, 165,
+    167, 168, 178, 179, 184, 185, 194, 195, 206, 207, 226, 227,
+    229, 230, 234, 235, 237, 238, 249, 250
+  ],
+  "note": "These pages must never enter the V5 sealed holdout; they are development evidence only."
+}

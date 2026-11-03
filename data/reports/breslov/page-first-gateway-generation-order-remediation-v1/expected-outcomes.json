@@ -1,0 +1,23 @@
+{
+  "gateway_initial_status": "BUILDING",
+  "completion_status": "CANDIDATE",
+  "completion_run_status": "completed",
+  "completion_is_active": false,
+  "registration_creates_pointer": false,
+  "fk_errors": 0,
+  "binding_errors": 0,
+  "retry_committed_document": "REJECTED_SAFELY_EXISTING_CONTRACT",
+  "retry_failed_attempt": "SUCCEEDS_AFTER_ROLLBACK",
+  "insert_failure": "CONTROLLED_NotNullViolation",
+  "failure_parent_counts": {
+    "docs": 0,
+    "logicals": 0,
+    "generations": 0,
+    "runs": 0,
+    "pointers": 0
+  },
+  "cleanup_remaining": 0,
+  "rollback": "retained immediate previous only",
+  "new_full_fail_nodes": 0,
+  "new_full_error_nodes": 0
+}

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_region_source_access.py",
+    "tests/test_scope_authorization.py",
+    "tests/test_auth_dependencies.py",
+    "tests/test_region_worker_enforcement.py::test_durable_source_survives_upload_cleanup_and_is_hash_checked",
+    "tests/test_region_worker_enforcement.py::test_failed_source_copy_keeps_upload",
+    "tests/test_canonical_work_edition_source_metadata.py",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "exit_code": 0,
+  "PASS": 40,
+  "FAIL": 0,
+  "ERROR": 0,
+  "SKIP": 0,
+  "failure_node_ids": [],
+  "error_node_ids": [],
+  "focused_pass": true
+}

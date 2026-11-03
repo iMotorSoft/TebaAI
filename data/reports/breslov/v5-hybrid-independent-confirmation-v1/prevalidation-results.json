@@ -1,0 +1,1444 @@
+{
+  "status": "PASS",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "gate_pages": 121,
+  "canonical_errors": 82,
+  "checks": [
+    {
+      "check": "page_3_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 3,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_4_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 4,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_5_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 5,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_6_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 6,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_7_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 7,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_8_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 8,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_9_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 9,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_10_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 10,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_11_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 11,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_12_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 12,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_16_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 16,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_17_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 17,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_19_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 19,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_29_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 29,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_31_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 31,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_33_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 33,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_35_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 35,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_36_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 36,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_37_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 37,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_38_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 38,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_39_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 39,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_42_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 42,
+        "units": 4,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_43_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 43,
+        "units": 4,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_44_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 44,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_53_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 53,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_56_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 56,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_57_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 57,
+        "units": 3,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_60_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 60,
+        "units": 3,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_61_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 61,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_64_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 64,
+        "units": 3,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_65_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 65,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_70_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 70,
+        "units": 3,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_71_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 71,
+        "units": 7,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_72_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 72,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_73_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 73,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_74_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 74,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_79_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 79,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_99_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 99,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_101_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 101,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_102_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 102,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_103_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 103,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_104_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 104,
+        "units": 7,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_105_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 105,
+        "units": 8,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_108_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 108,
+        "units": 6,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_109_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 109,
+        "units": 4,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_115_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 115,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_116_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 116,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_117_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 117,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_118_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 118,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_119_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 119,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_122_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 122,
+        "units": 6,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_123_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 123,
+        "units": 9,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_124_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 124,
+        "units": 7,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_130_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 130,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_131_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 131,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_134_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 134,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_139_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 139,
+        "units": 6,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_140_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 140,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_141_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 141,
+        "units": 6,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_144_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 144,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_145_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 145,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_146_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 146,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_147_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 147,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_149_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 149,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_150_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 150,
+        "units": 9,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_151_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 151,
+        "units": 6,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_152_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 152,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_156_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 156,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_157_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 157,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_158_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 158,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_159_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 159,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_164_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 164,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_165_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 165,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_167_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 167,
+        "units": 7,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_168_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 168,
+        "units": 4,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_182_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 182,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_188_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 188,
+        "units": 3,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_191_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 191,
+        "units": 4,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_193_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 193,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_196_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 196,
+        "units": 1,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_201_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 201,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_202_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 202,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_203_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 203,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_204_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 204,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_206_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 206,
+        "units": 5,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_207_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 207,
+        "units": 7,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_209_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 209,
+        "units": 6,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_210_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 210,
+        "units": 6,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_213_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 213,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_226_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 226,
+        "units": 4,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_227_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 227,
+        "units": 4,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_248_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 248,
+        "units": 2,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_256_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 256,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_257_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 257,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_258_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 258,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_259_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 259,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_260_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 260,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_261_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 261,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_262_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 262,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_263_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 263,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_264_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 264,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_265_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 265,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_266_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 266,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_267_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 267,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_268_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 268,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_269_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 269,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_270_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 270,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_271_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 271,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_272_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 272,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_273_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 273,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_274_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 274,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_275_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 275,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_276_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 276,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_277_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 277,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_278_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 278,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_279_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 279,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_280_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 280,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_281_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 281,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_282_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 282,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_283_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 283,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "page_284_source_units_and_unique_ownership",
+      "ok": true,
+      "detail": {
+        "page": 284,
+        "units": 0,
+        "duplicate_ownership": false
+      }
+    },
+    {
+      "check": "positive_42_43_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 42,
+        "to": 43,
+        "note": 7,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 7,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 7,
+        "leading_first_line_marked": false,
+        "leading_head": "y eleva sus puntos buenos, los cuales son llevados hacia él y ",
+        "next_explicit_marker": 8,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_60_61_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 60,
+        "to": 61,
+        "note": 49,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 49,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "su capacidad de hablar, utiliza entonces esta capacidad para",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 49,
+        "leading_first_line_marked": false,
+        "leading_head": "decir palabras de santidad y elevar a toda la materialidad en la ",
+        "next_explicit_marker": 50,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_64_65_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 64,
+        "to": 65,
+        "note": 58,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 58,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "Torá de la misma expresión al describir la “reacción” de Dios",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 58,
+        "leading_first_line_marked": false,
+        "leading_head": "al ver la “recién nacida” luz de la Creación: “Dios vio que la ",
+        "next_explicit_marker": 59,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_70_71_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 70,
+        "to": 71,
+        "note": 74,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 74,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 74,
+        "leading_first_line_marked": false,
+        "leading_head": "un despertar recíproco desde arriba (itaruta deleila), de modo ",
+        "next_explicit_marker": 75,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_73_74_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 73,
+        "to": 74,
+        "note": 86,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 86,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 86,
+        "leading_first_line_marked": false,
+        "leading_head": "con el esplendor y los colores superiores. La conexión que ",
+        "next_explicit_marker": 87,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_104_105_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 104,
+        "to": 105,
+        "note": 7,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 7,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "mucho más sutil y difundida del taavat mamón es la persona",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 7,
+        "leading_first_line_marked": false,
+        "leading_head": "que se preocupa y se angustia por no tener sufi ciente dinero. Su ",
+        "next_explicit_marker": 8,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_122_123_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 122,
+        "to": 123,
+        "note": 12,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 12,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 12,
+        "leading_first_line_marked": false,
+        "leading_head": "de modo que en virtud de esa unión se revela en la creación una ",
+        "next_explicit_marker": 13,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_123_124_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 123,
+        "to": 124,
+        "note": 20,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 20,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 20,
+        "leading_first_line_marked": false,
+        "leading_head": "por qué considera a la gula y no a la inmoralidad ni a la avaricia ",
+        "next_explicit_marker": 21,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_130_131_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 130,
+        "to": 131,
+        "note": 44,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 44,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 44,
+        "leading_first_line_marked": false,
+        "leading_head": "HaShem estableció dos grandes luminarias en el cielo para ",
+        "next_explicit_marker": 45,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_139_140_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 139,
+        "to": 140,
+        "note": 71,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 71,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 71,
+        "leading_first_line_marked": false,
+        "leading_head": "correspondiente que se fortalece cuando falta la santidad. ",
+        "next_explicit_marker": 72,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_149_150_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 149,
+        "to": 150,
+        "note": 8,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 8,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 8,
+        "leading_first_line_marked": false,
+        "leading_head": "precisión el carácter de una persona y sus rasgos de personalidad ",
+        "next_explicit_marker": 9,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "positive_150_151_source_continuity",
+      "ok": true,
+      "detail": {
+        "from": 150,
+        "to": 151,
+        "note": 16,
+        "adjacent": true,
+        "terminal_is_last_note": true,
+        "terminal_marker": 16,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "terminal_tail": "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+        "terminal_ends_terminal_punctuation": false,
+        "leading_note": 16,
+        "leading_first_line_marked": false,
+        "leading_head": "Grecia y Roma). También sabemos que siempre que los judíos ",
+        "next_explicit_marker": 17,
+        "next_marker_is_n_plus_one": true,
+        "leading_end_reason": "NEXT_NOTE_IN_COLUMN_FLOW"
+      }
+    },
+    {
+      "check": "negative_108_109_note_8_separate",
+      "ok": true,
+      "detail": {
+        "from": 108,
+        "to": 109,
+        "note": 8,
+        "units_found": 0,
+        "end_reasons": [],
+        "leading_note": 31,
+        "leading_first_line_marked": false,
+        "separate": true
+      }
+    },
+    {
+      "check": "negative_164_165_note_63_separate",
+      "ok": true,
+      "detail": {
+        "from": 164,
+        "to": 165,
+        "note": 63,
+        "units_found": 0,
+        "end_reasons": [],
+        "leading_note": 57,
+        "leading_first_line_marked": false,
+        "separate": true
+      }
+    },
+    {
+      "check": "negative_226_227_note_78_separate",
+      "ok": true,
+      "detail": {
+        "from": 226,
+        "to": 227,
+        "note": 78,
+        "units_found": 0,
+        "end_reasons": [],
+        "leading_note": 77,
+        "leading_first_line_marked": false,
+        "separate": true
+      }
+    },
+    {
+      "check": "virgin_156_157_no_continuation",
+      "ok": true,
+      "detail": {
+        "from": 156,
+        "to": 157,
+        "note": 34,
+        "terminal_note": 33,
+        "terminal_last_marker": 34,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "leading_note": 35,
+        "leading_first_line_marked": true,
+        "leading_head": "35 La revelación de MaLJut ( )מלכותes la revelación de la gloria 36 Ver §5 allí.",
+        "note_34_inline_in_terminal_line": true,
+        "no_true_continuation": true
+      }
+    },
+    {
+      "check": "virgin_157_158_no_continuation",
+      "ok": true,
+      "detail": {
+        "from": 157,
+        "to": 158,
+        "note": 37,
+        "terminal_note": 37,
+        "terminal_last_marker": 37,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "leading_note": 38,
+        "leading_first_line_marked": true,
+        "leading_head": "38 El Rebe trata esto en profundidad en el LM I, 22:5, donde informado de todas las percepciones que",
+        "note_34_inline_in_terminal_line": false,
+        "no_true_continuation": true
+      }
+    },
+    {
+      "check": "virgin_209_210_no_continuation",
+      "ok": true,
+      "detail": {
+        "from": 209,
+        "to": 210,
+        "note": 22,
+        "terminal_note": 22,
+        "terminal_last_marker": 22,
+        "terminal_end_reason": "PAGE_BOUNDARY",
+        "leading_note": 23,
+        "leading_first_line_marked": true,
+        "leading_head": "23 Ver §9 de la lección del Rebe (también §11 más adelante) ",
+        "note_34_inline_in_terminal_line": false,
+        "no_true_continuation": true
+      }
+    }
+  ],
+  "failures": [],
+  "note": "Source-only. The certifier was not imported or executed."
+}

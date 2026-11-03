@@ -1,0 +1,129 @@
+{
+  "document_distribution": [
+    {
+      "scope": "breslov_e2e",
+      "status": "test_candidate",
+      "count": 2
+    },
+    {
+      "scope": "breslov_primary",
+      "status": "archived",
+      "count": 1
+    },
+    {
+      "scope": "breslov_primary",
+      "status": "ready",
+      "count": 10
+    },
+    {
+      "scope": "breslov_primary",
+      "status": "test_candidate",
+      "count": 14
+    },
+    {
+      "scope": "unscoped",
+      "status": "archived",
+      "count": 4
+    }
+  ],
+  "jobs_distribution": [
+    {
+      "scope": "breslov_e2e",
+      "status": "cancelled",
+      "count": 24
+    },
+    {
+      "scope": "breslov_e2e",
+      "status": "completed_with_warnings",
+      "count": 35
+    },
+    {
+      "scope": "breslov_e2e",
+      "status": "failed",
+      "count": 9
+    },
+    {
+      "scope": "breslov_e2e",
+      "status": "queued",
+      "count": 1
+    },
+    {
+      "scope": "breslov_primary",
+      "status": "cancelled",
+      "count": 10
+    },
+    {
+      "scope": "breslov_primary",
+      "status": "completed",
+      "count": 1
+    },
+    {
+      "scope": "breslov_primary",
+      "status": "completed_with_warnings",
+      "count": 3
+    },
+    {
+      "scope": "breslov_primary",
+      "status": "failed",
+      "count": 2
+    }
+  ],
+  "chunks_by_scope": [
+    {
+      "scope": "breslov_primary",
+      "count": 5964
+    },
+    {
+      "scope": "breslov_e2e",
+      "count": 1204
+    }
+  ],
+  "pages_by_document": [
+    {
+      "document_id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+      "count": 196
+    },
+    {
+      "document_id": "132a791a-d12b-45bc-9b34-dd143605de12",
+      "count": 284
+    },
+    {
+      "document_id": "47205536-f4d3-5e84-9a1b-75aaac73ca41",
+      "count": 416
+    },
+    {
+      "document_id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+      "count": 442
+    },
+    {
+      "document_id": "693d990b-5d7b-5216-b0e2-2cffd0b709eb",
+      "count": 2
+    },
+    {
+      "document_id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+      "count": 9
+    },
+    {
+      "document_id": "ca7d6c5c-8023-5a52-96f8-761b214d7cb4",
+      "count": 3
+    },
+    {
+      "document_id": "dffa06db-0740-401e-92a8-aa9ccd6b68dd",
+      "count": 512
+    }
+  ],
+  "roles": [
+    {
+      "role": "viewer",
+      "count": 70
+    },
+    {
+      "role": "editor",
+      "count": 6
+    },
+    {
+      "role": "admin",
+      "count": 3
+    }
+  ]
+}

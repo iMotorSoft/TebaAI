@@ -1,0 +1,12 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_ROLLBACK_REMEDIATION_V1",
+  "result": "INVALID",
+  "token": "TEBAAI_BRESLOV_PARALLEL_GENERATION_ROLLBACK_REMEDIATION_V1_INVALID",
+  "reason": "TEST_HARNESS_CHANGED_AFTER_OBSERVED_FAILURE: independent PostgreSQL fixture initially reused one parameter in UUID/text columns and raised AmbiguousParameter before lifecycle execution. Binding split into two parameters; expectations unchanged. Original failed attempt preserved in focused-attempt-1.txt/xml. Strict user methodology requires INVALID, not PASS.",
+  "functional_evidence_passes": true,
+  "publication_authorized": false,
+  "READY_FOR_FOUNDATION_V2_PUBLICATION_REVALIDATION": false,
+  "READY_FOR_C_PARALLEL_GENERATION_SAFETY_V2": false,
+  "READY_FOR_C_REINGEST_EXECUTION": false,
+  "C_REINGEST_EXECUTED": false
+}

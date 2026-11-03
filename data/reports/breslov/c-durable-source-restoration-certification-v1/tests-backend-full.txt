@@ -1,0 +1,193 @@
+$ /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python -m pytest -q --tb=no -rfE -p no:cacheprovider
+
+........................................................................ [  3%]
+........................................................................ [  7%]
+........................................................................ [ 10%]
+........................................................................ [ 14%]
+........................................................................ [ 17%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 28%]
+........................................................................ [ 32%]
+........................................................................ [ 35%]
+........................................................................ [ 39%]
+........................................................................ [ 42%]
+........................................................................ [ 46%]
+.......FFF.F.......................FF................................... [ 49%]
+............FFF.FFFFFFF................................................. [ 53%]
+........................................................................ [ 57%]
+........................................................................ [ 60%]
+.............................FF......................................... [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 71%]
+........................................................................ [ 74%]
+........................................................................ [ 78%]
+........................................................................ [ 82%]
+........................................................................ [ 85%]
+........................................................................ [ 89%]
+........................................................................ [ 92%]
+........................................................................ [ 96%]
+......................................F.F............................... [ 99%]
+..                                                                       [100%]
+=============================== warnings summary ===============================
+tests/test_apply_markdown_structural_chunks.py: 10 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/scripts/chunk_documents.py:220: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "created_at": datetime.datetime.utcnow(),
+
+tests/test_apply_markdown_structural_chunks.py: 10 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/scripts/chunk_documents.py:221: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "updated_at": datetime.datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:38: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    password_changed_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:39: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    created_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:40: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    updated_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestCreateUser::test_creates_user
+tests/test_research_guest_provisioning.py::test_creates_active_viewer_with_canonical_hasher
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/auth/domain.py:36: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+tests/test_auth_tokens.py::TestAccessToken::test_create_and_decode
+tests/test_auth_tokens.py::TestAccessToken::test_requires_access_type
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_issuer
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_audience
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 15 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_auth_tokens.py::TestAccessToken::test_create_and_decode
+tests/test_auth_tokens.py::TestAccessToken::test_requires_access_type
+tests/test_auth_tokens.py::TestAccessToken::test_invalid_signature
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_issuer
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_audience
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:368: InsecureKeyLengthWarning: The HMAC key is 15 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    decoded = self.decode_complete(
+
+tests/test_auth_tokens.py::TestAccessToken::test_invalid_signature
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 11 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'document_id' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'status' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'limit' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'scope_code' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'document_id' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'pipeline_version' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'scope_code' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_ingest_test_candidate.py: 6 warnings
+tests/test_library.py: 4 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:177: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+tests/test_ingest_test_candidate.py::test_metadata_json_parses_and_is_persisted
+tests/test_ingest_test_candidate.py::test_dry_run_does_not_write
+tests/test_ingest_test_candidate.py::test_existing_ready_document_is_not_changed
+tests/test_ingest_test_candidate.py::test_apply_uses_existing_scope_without_creating_legacy_collection
+tests/test_library.py::TestDomain::test_library_document_text_create
+tests/test_library.py::TestService::test_ingest_document_dry_run
+tests/test_library.py::TestService::test_ingest_duplicate_raises
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:255: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    created_at=datetime.utcnow(),
+
+tests/test_ingest_test_candidate.py::test_repository_serializes_bibliographic_metadata
+tests/test_ingest_test_candidate.py::test_missing_legacy_scope_mapping_fails_closed
+tests/test_ingest_test_candidate.py::test_existing_ready_document_is_not_changed
+tests/test_library.py::TestDomain::test_library_collection_create
+tests/test_library.py::TestDomain::test_library_collection_create_lowercases_code
+tests/test_library.py::TestRepository::test_get_or_create_collection_new
+tests/test_scope_authorization.py::test_legacy_alias_resolves_from_collection_metadata
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:78: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+tests/test_region_source_access.py::test_source_route_refuses_arbitrary_filesystem_path
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/source', handler='library_original_source'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'page' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_investigative_qa_v1.py::test_real_psalm_19_requires_the_requested_book_and_chapter
+FAILED tests/test_investigative_qa_v1.py::test_real_blood_speech_uses_a_controlled_mediated_chain
+FAILED tests/test_investigative_qa_v1.py::test_real_scorpion_discovers_only_textually_grounded_neighbors
+FAILED tests/test_investigative_qa_v1.py::test_real_azamra_uses_controlled_multilingual_named_teaching
+FAILED tests/test_investigative_qa_v1.py::test_real_postgres_single_concept_retrieval_remains_grounded
+FAILED tests/test_investigative_qa_v1.py::test_real_blood_speech_traceability_and_final_per_work_limit
+FAILED tests/test_investigative_qa_v1.py::test_real_hebrew_literal_variants_resolve_same_physical_page
+FAILED tests/test_investigative_qa_v1.py::test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order
+FAILED tests/test_investigative_qa_v1.py::test_real_source_layer_followup_answers_the_current_question_directly
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05b0\u05bc\u05d4\u05b4\u05dc\u05b8\u05bc\u05ea\u05b4\u05d9 \u05d0\u05b6\u05d7\u05b0\u05d8\u05b8\u05dd \u05dc\u05b8\u05da\u05b0]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05d4\u05dc\u05ea\u05d9 \u05d0\u05d7\u05d8\u05dd \u05dc\u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da donde esta]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[donde esta \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05d0\u05d9\u05e4\u05d4 \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_exact_pdf_copypaste_audit_excludes_spanish_instruction
+FAILED tests/test_named_topics.py::test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[tisha beav]
+FAILED tests/test_named_topics.py::test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[Tisha B'Av]
+FAILED tests/test_v5_evaluator_semantics.py::test_runner_import_is_certifier_free_and_uses_corrected_audit
+FAILED tests/test_v5_evaluator_semantics.py::test_runner_uses_standalone_evaluator_without_top_level_v5_import
+20 failed, 1998 passed, 98 warnings in 43.22s

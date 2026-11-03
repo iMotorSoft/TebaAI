@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "rollback": {
+    "result": "IDEMPOTENT",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "from_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "to_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "expected_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "operation": "ROLLBACK"
+  },
+  "cutover": {
+    "result": "IDEMPOTENT",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "from_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "to_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "expected_generation_id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+    "operation": "CUTOVER"
+  },
+  "duplicate_audit": false
+}

@@ -1,0 +1,105 @@
+{
+  "version": "v5-hybrid-independent-confirmation-v1-candidate-lineage",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "named_candidates": [
+    {
+      "from": 44,
+      "to": 45,
+      "note": 12,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "eligible": false,
+      "reason": "MIXED_VIRGINITY: page 44 never previously opened"
+    },
+    {
+      "from": 78,
+      "to": 79,
+      "note": 101,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "eligible": false,
+      "reason": "MIXED_VIRGINITY and inline next marker 102, structurally ambiguous"
+    },
+    {
+      "from": 133,
+      "to": 134,
+      "note": 51,
+      "classification": "USED_TO_DEBUG_V5",
+      "eligible": false,
+      "reason": "page 133 is in the V5 development probe set"
+    },
+    {
+      "from": 140,
+      "to": 141,
+      "note": 75,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "eligible": false,
+      "reason": "MIXED_VIRGINITY: page 141 never previously opened"
+    },
+    {
+      "from": 210,
+      "to": 211,
+      "note": 28,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "eligible": false,
+      "reason": "MIXED_VIRGINITY: page 210 never previously opened"
+    }
+  ],
+  "source_adjudication": {
+    "44->45": "note 12 terminal 'El' continues 'tormento del alma...' (unmarked leading).",
+    "78->79": "note 101 terminal 'Korbán' continues 'Pesaj...' with inline marker 102.",
+    "133->134": "note 51 terminal 'destructoras' continues 'que gobiernan...'.",
+    "140->141": "note 75 terminal 'La expansión' continues 'de los jasadim...'.",
+    "210->211": "note 28 terminal 'cuya guía' continues 'moral instila...'."
+  },
+  "eligible_positive_count": 12,
+  "eligible_positive_pairs": [
+    [
+      42,
+      43
+    ],
+    [
+      60,
+      61
+    ],
+    [
+      64,
+      65
+    ],
+    [
+      70,
+      71
+    ],
+    [
+      73,
+      74
+    ],
+    [
+      104,
+      105
+    ],
+    [
+      122,
+      123
+    ],
+    [
+      123,
+      124
+    ],
+    [
+      130,
+      131
+    ],
+    [
+      139,
+      140
+    ],
+    [
+      149,
+      150
+    ],
+    [
+      150,
+      151
+    ]
+  ],
+  "canonical_errors": 82
+}

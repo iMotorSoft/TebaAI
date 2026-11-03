@@ -1,0 +1,47 @@
+{
+  "scope": "Read-only snapshot; no controlled worker E2E was run",
+  "test_ids": [],
+  "isolated_records_created": false,
+  "postgres": {
+    "database": "tebaai",
+    "tables": {
+      "content_manager_jobs": {
+        "count": 3,
+        "sha256": "74e40370f18f01541a8ec91498b1d9b1e93cccc8cbe744590e866ee5b18bccb0"
+      },
+      "library_chunk_embeddings": {
+        "count": 2146,
+        "sha256": "57fe5d7ecf689852f6b6dfb6e16fa9218bf48fe2ea5802a362dcf09f1456e1a2"
+      },
+      "library_document_chunks": {
+        "count": 2146,
+        "sha256": "2103bef760ae68c6614e641a6df21111451ecddefd40f8ef4dc14d9380a89e7a"
+      },
+      "library_document_texts": {
+        "count": 3,
+        "sha256": "896cedac3c95d1b5d39a52b66e9d7c1825291e78031581bf827c2939bd5510dd"
+      },
+      "library_documents": {
+        "count": 3,
+        "sha256": "1370cc7015dc663c9408daf56a00dca5acf508b114c50d859f460e2823d747d9"
+      },
+      "library_pages_v2": {
+        "count": 896,
+        "sha256": "203d9cc3b77071c752b69f19a523f156a669dda6124cb4163b13659954adbf2d"
+      }
+    },
+    "schema_sha256": "877393680e59f1c158560fddf37d84fd27ab7da0dd1a23ec632f6ebd442b0058"
+  },
+  "milvus": {
+    "tebaai_breslov_chunks_v1": {
+      "state": "Loaded",
+      "live_count": 2146,
+      "identity_sha256": "009de252761660bfa31143cd7f4ccf638147cca6998778d54d4c862e143b5df2"
+    },
+    "tebaai_content_manager_e2e_v1": {
+      "state": "Loaded",
+      "live_count": 0,
+      "identity_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  }
+}

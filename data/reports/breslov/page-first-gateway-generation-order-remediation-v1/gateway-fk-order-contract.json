@@ -1,0 +1,711 @@
+{
+  "source": "live DEV pg_constraint + migration 043",
+  "constraints": [
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_created_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL created_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_document_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL document_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_document_logical_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (document_id, logical_document_id) REFERENCES library_documents(id, logical_document_id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_document_unique",
+      "contype": "u",
+      "definition": "UNIQUE (document_id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_job_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (job_id) REFERENCES content_manager_jobs(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_logical_document_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (logical_document_id) REFERENCES library_logical_documents(id) ON DELETE CASCADE",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_logical_document_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL logical_document_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_logical_id_unique",
+      "contype": "u",
+      "definition": "UNIQUE (logical_document_id, id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_logical_pipeline_unique",
+      "contype": "u",
+      "definition": "UNIQUE (logical_document_id, pipeline_version)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_metadata_not_null",
+      "contype": "n",
+      "definition": "NOT NULL metadata",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_pipeline_version_not_null",
+      "contype": "n",
+      "definition": "NOT NULL pipeline_version",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_retention_hold_not_null",
+      "contype": "n",
+      "definition": "NOT NULL retention_hold",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_run_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_sha256_not_empty",
+      "contype": "c",
+      "definition": "CHECK ((source_sha256 <> ''::text))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_source_sha256_not_null",
+      "contype": "n",
+      "definition": "NOT NULL source_sha256",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_status_not_null",
+      "contype": "n",
+      "definition": "NOT NULL status",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_status_valid",
+      "contype": "c",
+      "definition": "CHECK ((status = ANY (ARRAY['BUILDING'::text, 'CANDIDATE'::text, 'ACTIVE'::text, 'INACTIVE'::text, 'FAILED'::text])))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_bibliographic_metadata_not_null",
+      "contype": "n",
+      "definition": "NOT NULL bibliographic_metadata",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_canonical_text_role_not_null",
+      "contype": "n",
+      "definition": "NOT NULL canonical_text_role",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_collection_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL collection_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_created_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL created_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_created_by_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (created_by) REFERENCES users(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_knowledge_scope_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_language_not_null",
+      "contype": "n",
+      "definition": "NOT NULL language",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_language_valid",
+      "contype": "c",
+      "definition": "CHECK ((language = ANY (ARRAY['es'::text, 'en'::text, 'he'::text])))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_logical_document_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (logical_document_id) REFERENCES library_logical_documents(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_metadata_not_null",
+      "contype": "n",
+      "definition": "NOT NULL metadata",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_organization_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_project_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_sha256_not_empty",
+      "contype": "c",
+      "definition": "CHECK ((source_sha256 <> ''::text))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_source_sha256_not_null",
+      "contype": "n",
+      "definition": "NOT NULL source_sha256",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_source_type_not_null",
+      "contype": "n",
+      "definition": "NOT NULL source_type",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_source_type_valid",
+      "contype": "c",
+      "definition": "CHECK ((source_type = ANY (ARRAY['book'::text, 'article'::text, 'pdf'::text, 'markdown'::text, 'text'::text, 'other'::text])))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_status_not_null",
+      "contype": "n",
+      "definition": "NOT NULL status",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_status_valid",
+      "contype": "c",
+      "definition": "CHECK ((status = ANY (ARRAY['draft'::text, 'ready'::text, 'test_candidate'::text, 'archived'::text, 'error'::text, 'ingestion_failed'::text])))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_title_not_empty",
+      "contype": "c",
+      "definition": "CHECK ((title <> ''::text))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_title_not_null",
+      "contype": "n",
+      "definition": "NOT NULL title",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_updated_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL updated_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "library_documents_workspace_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_documents",
+      "conname": "uq_library_documents_id_logical_document",
+      "contype": "u",
+      "definition": "UNIQUE (id, logical_document_id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "conname": "library_generation_activation_audi_logical_document_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL logical_document_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "conname": "library_generation_activation_audit_created_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL created_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "conname": "library_generation_activation_audit_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "conname": "library_generation_activation_audit_operation_not_null",
+      "contype": "n",
+      "definition": "NOT NULL operation",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "conname": "library_generation_activation_audit_operation_valid",
+      "contype": "c",
+      "definition": "CHECK ((operation = ANY (ARRAY['CUTOVER'::text, 'ROLLBACK'::text, 'BACKFILL'::text, 'REGISTER'::text])))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "conname": "library_generation_activation_audit_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "conname": "library_generation_activation_audit_result_not_null",
+      "contype": "n",
+      "definition": "NOT NULL result",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "conname": "library_generation_activation_audit_result_valid",
+      "contype": "c",
+      "definition": "CHECK ((result = ANY (ARRAY['APPLIED'::text, 'REJECTED'::text, 'IDEMPOTENT'::text])))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_created_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL created_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_document_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL document_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_metrics_json_not_null",
+      "contype": "n",
+      "definition": "NOT NULL metrics_json",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_pipeline_version_not_null",
+      "contype": "n",
+      "definition": "NOT NULL pipeline_version",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (run_id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_run_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL run_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_scope_code_not_null",
+      "contype": "n",
+      "definition": "NOT NULL scope_code",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_started_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL started_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_status_not_null",
+      "contype": "n",
+      "definition": "NOT NULL status",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "conname": "library_ingestion_runs_v2_warnings_json_not_null",
+      "contype": "n",
+      "definition": "NOT NULL warnings_json",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_ge_logical_document_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL logical_document_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_genera_logical_document_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (logical_document_id) REFERENCES library_logical_documents(id) ON DELETE CASCADE",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_generati_generation_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL generation_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_generatio_activated_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL activated_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_generations_generation_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (logical_document_id, generation_id) REFERENCES library_document_generations(logical_document_id, id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_generations_metadata_not_null",
+      "contype": "n",
+      "definition": "NOT NULL metadata",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_generations_operation_not_null",
+      "contype": "n",
+      "definition": "NOT NULL operation",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_generations_operation_valid",
+      "contype": "c",
+      "definition": "CHECK ((operation = ANY (ARRAY['BACKFILL'::text, 'CUTOVER'::text, 'ROLLBACK'::text, 'REGISTER'::text])))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_generations_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (logical_document_id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_collection_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (collection_id) REFERENCES library_collections_legacy(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_collection_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL collection_id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_created_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL created_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_id_not_null",
+      "contype": "n",
+      "definition": "NOT NULL id",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_knowledge_scope_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_metadata_not_null",
+      "contype": "n",
+      "definition": "NOT NULL metadata",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_organization_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_project_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_sha256_not_empty",
+      "contype": "c",
+      "definition": "CHECK ((source_sha256 <> ''::text))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_source_sha256_not_null",
+      "contype": "n",
+      "definition": "NOT NULL source_sha256",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_title_not_empty",
+      "contype": "c",
+      "definition": "CHECK ((title <> ''::text))",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_title_not_null",
+      "contype": "n",
+      "definition": "NOT NULL title",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_updated_at_not_null",
+      "contype": "n",
+      "definition": "NOT NULL updated_at",
+      "condeferrable": false,
+      "condeferred": false
+    },
+    {
+      "table_name": "library_logical_documents",
+      "conname": "library_logical_documents_workspace_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)",
+      "condeferrable": false,
+      "condeferred": false
+    }
+  ],
+  "fk_required_partial_order": [
+    "logical_document before document/logical linkage",
+    "document before linkage and run",
+    "linkage before generation",
+    "run before generation",
+    "generation before active pointer",
+    "activation audit via existing service only"
+  ],
+  "actual_gateway_order": [
+    "document (nullable logical FK)",
+    "run",
+    "resolve/create logical_document",
+    "document/logical linkage",
+    "generation BUILDING"
+  ],
+  "explanation": "Schema requires a partial order, not logical INSERT before physical INSERT: document logical_id is initially nullable. Both parents exist before generation; no deferred constraints.",
+  "active_pointer": "not created by registration or completion; explicit existing activation primitive only",
+  "activation_audit": "no FK declared in 043; only the activation service writes it"
+}

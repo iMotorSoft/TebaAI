@@ -1,0 +1,16 @@
+{
+  "checks": [
+    {
+      "result": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "operation": "CUTOVER",
+      "target": "e464b3e2-a1cd-424b-9370-c955194fced6"
+    },
+    {
+      "result": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "operation": "ROLLBACK",
+      "target": "e464b3e2-a1cd-424b-9370-c955194fced6"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "path": "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql",
+      "status": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/generation.py",
+      "status": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager_cleanup.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/hybrid_search.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/source_repository.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/text_search.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+      "status": "UNTRACKED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_content_manager_cleanup.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_library_search_hybrid_milvus_alias.py",
+      "status": "MODIFIED"
+    },
+    {
+      "path": "data/reports/breslov/parallel-generation-foundation-v2/REPORT.md",
+      "status": "UNTRACKED"
+    },
+    {
+      "path": "data/reports/breslov/parallel-generation-foundation-v2/gate.json",
+      "status": "UNTRACKED"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "name": "natural",
+    "document_id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+    "chunk_id": "045c39b8-4e46-400c-99f8-31f0fcff4c7f",
+    "page_start": 186,
+    "page_end": 187,
+    "canonical_DB_equals_API_quote": true,
+    "canonical_DB_equals_API_paragraph": true,
+    "sha256": "df1bf8730e40f44dc63a031736c035aaae2f06206c6bb93ab3b92fe2a85c4998",
+    "DOM_equals_NFC_API_display": true,
+    "display_snippet_is_full_canonical_text": false,
+    "fallback": false
+  },
+  {
+    "name": "numbers",
+    "document_id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+    "chunk_id": "b29a1432-2a34-422e-a748-d6174a94008f",
+    "page_start": 412,
+    "page_end": 412,
+    "canonical_DB_equals_API_quote": true,
+    "canonical_DB_equals_API_paragraph": true,
+    "sha256": "8773765312f6c54def346621a1b9b1f77fdff4690a9531eae3a0961e4a5f6984",
+    "DOM_equals_NFC_API_display": true,
+    "display_snippet_is_full_canonical_text": false,
+    "fallback": false
+  }
+]

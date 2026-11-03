@@ -1,0 +1,21 @@
+{
+  "measured_at": "2026-10-23T12:10:29.046245+00:00",
+  "approved_external_source": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf",
+  "expected_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "expected_size_bytes": 4550267,
+  "expected_pages": 284,
+  "exists": true,
+  "actual_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "actual_size_bytes": 4550267,
+  "actual_pages": 284,
+  "sha_match": true,
+  "size_match": true,
+  "pages_match": true,
+  "source_sha_match": "YES",
+  "source_size_match": "YES",
+  "source_page_count_match": "YES",
+  "identity": "PASS",
+  "read_only_check": "external source is only opened for reading; never written, moved or renamed",
+  "external_mtime_ns": 1783380382726289605,
+  "writable_by_process_user": true
+}

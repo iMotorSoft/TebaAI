@@ -1,0 +1,35 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend
+configfile: pyproject.toml
+plugins: anyio-4.14.0, asyncio-1.4.0, Faker-40.23.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 425 items
+
+tests/test_hebrew_tex_decoder.py ....................................... [  9%]
+.......                                                                  [ 10%]
+tests/test_hebrew_lexical_normalizer.py ................................ [ 18%]
+....................                                                     [ 23%]
+tests/test_hebrew_pipeline_contract.py ............                      [ 25%]
+tests/test_likutey_moharan_ii_layout.py ......                           [ 27%]
+tests/test_likutey_moharan_xv_kdp_layout_profile.py .                    [ 27%]
+tests/test_lm_xv_kdp_page_first_column_aware.py ...                      [ 28%]
+tests/test_canonical_editorial_evidence_selection.py ................... [ 32%]
+..                                                                       [ 33%]
+tests/test_page_first_evidence.py ...........................            [ 39%]
+tests/test_editorial_evidence_v2.py .................................... [ 48%]
+                                                                         [ 48%]
+tests/test_pdf_ligature_normalization.py ..............                  [ 51%]
+tests/test_page_first_pipeline.py .............                          [ 54%]
+tests/test_pdf_hebrew_fidelity.py .......................                [ 59%]
+tests/test_pdf_font_unicode.py ..........                                [ 62%]
+tests/test_pdf_text_reconstruction.py ....................               [ 66%]
+tests/test_pdf_text_visibility.py ..........................             [ 72%]
+tests/test_pdf_visibility_conservative_regression.py .......             [ 74%]
+tests/test_simple_research_rag.py ...................................... [ 83%]
+...................................................                      [ 95%]
+tests/test_editorial_evidence_granularity_v1.py ............             [ 98%]
+tests/test_likutey_halajot_reference_resolution.py ...                   [ 99%]
+tests/test_likutey_halajot_nominal_reference_catalog.py ....             [100%]
+
+============================= 425 passed in 7.93s ==============================

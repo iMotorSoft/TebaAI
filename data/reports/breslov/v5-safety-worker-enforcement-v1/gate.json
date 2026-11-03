@@ -1,0 +1,22 @@
+{
+  "gate": "TEBAAI_BRESLOV_V5_SAFETY_AND_WORKER_ENFORCEMENT_V1_INVALID",
+  "status": "INVALID",
+  "reason": "POST_OBSERVATION_ACCEPTANCE_HARNESS_CHANGE_DURING_PHASE_A_FREEZE",
+  "PHASE_A": "INVALID",
+  "PHASE_B": "NOT_EXECUTED",
+  "DECISION": "OPTION_B",
+  "POSITIVE_INDEPENDENT_CONFIRMATION": "NOT_AVAILABLE",
+  "INDEPENDENT_SAFETY_CONFIRMATION": "NOT_ACCEPTED_INVALID_ATTEMPT",
+  "observed_safety_pages": 85,
+  "observed_safety_metrics_all_zero": true,
+  "observed_positive_regressions": "4/4",
+  "negative_regressions": "NOT_VALIDATED_HARNESS_ERROR",
+  "CERTIFICATES_READY_FOR_WORKER_INTEGRATION": "NO",
+  "WORKER_ENFORCEMENT_READY": "NO",
+  "READY_FOR_C_REINGEST": "NO",
+  "COMMIT": "NO",
+  "PUSH": "NO",
+  "postgres_writes": 0,
+  "milvus_writes": 0,
+  "worker_integration_executed": false
+}

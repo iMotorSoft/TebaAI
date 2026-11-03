@@ -1,0 +1,55 @@
+[
+  {
+    "label": "buggy_untyped_marker",
+    "sql": "SELECT jsonb_build_object('region_publication', jsonb_build_object('page_status', 'FULL', 'marker', %s))",
+    "params": [
+      "'OLDGENERATIONEVIDENCE'"
+    ],
+    "outcome": "IndeterminateDatatype",
+    "exception_class": "IndeterminateDatatype",
+    "exception_message": "could not determine data type of parameter $1"
+  },
+  {
+    "label": "typed_marker_text",
+    "sql": "SELECT jsonb_build_object('region_publication', jsonb_build_object('page_status', 'FULL', 'marker', %s::text))",
+    "params": [
+      "'OLDGENERATIONEVIDENCE'"
+    ],
+    "result": [
+      {
+        "region_publication": {
+          "marker": "OLDGENERATIONEVIDENCE",
+          "page_status": "FULL"
+        }
+      }
+    ],
+    "outcome": "OK"
+  },
+  {
+    "label": "typed_marker_int",
+    "sql": "SELECT jsonb_build_object('region_publication', jsonb_build_object('page_status', 'FULL', 'marker', %s::int))",
+    "params": [
+      "'12'"
+    ],
+    "result": [
+      {
+        "region_publication": {
+          "marker": 12,
+          "page_status": "FULL"
+        }
+      }
+    ],
+    "outcome": "OK"
+  },
+  {
+    "label": "control_plain_select",
+    "sql": "SELECT %s",
+    "params": [
+      "'OLDGENERATIONEVIDENCE'"
+    ],
+    "result": [
+      "OLDGENERATIONEVIDENCE"
+    ],
+    "outcome": "OK"
+  }
+]

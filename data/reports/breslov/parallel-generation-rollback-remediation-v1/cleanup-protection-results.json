@@ -1,0 +1,16 @@
+{
+  "technical_result": "PASS",
+  "evidence": [
+    "focused-tests.txt",
+    "focused.xml"
+  ],
+  "test_nodes": [
+    "tests/test_generation_rollback_remediation.py::test_cutover_rollback_audit_and_cleanup",
+    "tests/test_generation_rollback_remediation.py::test_postgres_rollback_contract"
+  ],
+  "gate_result": "INVALID",
+  "after_cutover_old": "INACTIVE + retention_hold=true",
+  "after_rollback_new": "INACTIVE + retention_hold=true",
+  "generic_cleanup": "REJECTED by existing ManifestCleanupService before vector access",
+  "cleanup_production_code_modified": false
+}

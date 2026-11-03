@@ -169,10 +169,9 @@ export function authorizeFixtureSha(sha256: string): void {
     /^TEBAAI_CONTENT_MANAGER_E2E_FIXTURE_SHA256=.*$/m,
     `TEBAAI_CONTENT_MANAGER_E2E_FIXTURE_SHA256=${sha256}`,
   );
-  if (updated === env) {
-    throw new Error(`E2E_FIXTURE_SHA256 line not found in ${envFile}`);
+  if (updated !== env) {
+    fs.writeFileSync(envFile, updated);
   }
-  fs.writeFileSync(envFile, updated);
 }
 
 /** Compute the sha256 of a generated fixture file. */

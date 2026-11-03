@@ -1,0 +1,31 @@
+{
+  "technical_result": "PASS",
+  "evidence": [
+    "focused-tests.txt",
+    "focused.xml"
+  ],
+  "test_nodes": [
+    "tests/test_generation_rollback_remediation.py::test_cutover_rollback_audit_and_cleanup",
+    "tests/test_generation_rollback_remediation.py::test_postgres_rollback_contract",
+    "tests/test_generation_rollback_remediation.py::test_idempotency_safe"
+  ],
+  "gate_result": "INVALID",
+  "applied_sequence": [
+    {
+      "operation": "CUTOVER",
+      "from": "OLD",
+      "to": "NEW",
+      "expected": "OLD",
+      "result": "APPLIED"
+    },
+    {
+      "operation": "ROLLBACK",
+      "from": "NEW",
+      "to": "OLD",
+      "expected": "NEW",
+      "result": "APPLIED"
+    }
+  ],
+  "timestamp": "created_at persisted by existing table default; asserted non-null in PostgreSQL",
+  "duplicate_audit_on_idempotent": false
+}

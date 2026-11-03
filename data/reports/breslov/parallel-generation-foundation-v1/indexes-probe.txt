@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX uq_library_documents_scope_collection_sha256 ON public.library_documents USING btree (knowledge_scope_id, collection_id, source_sha256) WHERE (knowledge_scope_id IS NOT NULL)

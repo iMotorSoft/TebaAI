@@ -1,0 +1,184 @@
+{
+  "harness": "foundation_v2_publication_preflight",
+  "label": "prefreeze1",
+  "run_suffix": "gen_publication_preflight_v2_prefreeze1_0c11d1e9",
+  "database": "tebaai",
+  "fixture_errors": [],
+  "fk_errors": [],
+  "binding_errors": [],
+  "indeterminate_datatype_errors": [],
+  "setup_errors": [],
+  "cleanup_errors": [],
+  "fixture_identifier": {
+    "scope_code": "gen_publication_preflight_v2_prefreeze1_0c11d1e9_prefreeze1",
+    "collection_code": "gen_publication_preflight_v2_prefreeze1_0c11d1e9_prefreeze1",
+    "logical_document_id": "ea51873e-43ee-4269-b305-4aba137db53b",
+    "source_sha256": "a78a66faeed74c99ec55496740dee1d60a2bbbae2d964405d286ee322f47dee3",
+    "nodes": {
+      "old": {
+        "document_id": "c5de1784-b897-49c3-91d9-44c7c78db2d6",
+        "run_id": "ef2f4464-f134-4328-9bea-f0416dd0cc87",
+        "generation_id": "e67fbc09-d170-4d24-8745-8b98450e9fe1",
+        "status": "ACTIVE",
+        "marker": "acd3b8PREFLIGHTV2OLDEV"
+      },
+      "new": {
+        "document_id": "8f5f2c55-6fb4-4527-8ebb-d0288df563a4",
+        "run_id": "2147fc7a-a11e-4632-8386-0eff8e7c1e8a",
+        "generation_id": "47fa0592-6c65-4a95-a2f8-97be6b88f457",
+        "status": "CANDIDATE",
+        "marker": "acd3b8PREFLIGHTV2NEWEV"
+      },
+      "alt": {
+        "document_id": "13c96421-9c0b-40e5-be29-d159f294c66f",
+        "run_id": "b6dc0a1c-6cf5-43bc-b68a-b37ea0413cbf",
+        "generation_id": "4f82864f-6a4b-4c4f-b0c2-f8edbb666f93",
+        "status": "CANDIDATE",
+        "marker": "acd3b8PREFLIGHTV2ALTEV"
+      },
+      "inactive": {
+        "document_id": "ad457e7e-6209-4558-ac0d-a05fb81600ff",
+        "run_id": "b4bb4c50-7119-4b4f-80cd-0933a83dfde1",
+        "generation_id": "b59b234a-67b1-40b3-a66d-72afb237f523",
+        "status": "INACTIVE",
+        "marker": "acd3b8PREFLIGHTV2INACTIVEEV"
+      }
+    }
+  },
+  "initial": {
+    "statuses": {
+      "e67fbc09-d170-4d24-8745-8b98450e9fe1": "ACTIVE",
+      "47fa0592-6c65-4a95-a2f8-97be6b88f457": "CANDIDATE",
+      "4f82864f-6a4b-4c4f-b0c2-f8edbb666f93": "CANDIDATE",
+      "b59b234a-67b1-40b3-a66d-72afb237f523": "INACTIVE"
+    },
+    "pointer": "e67fbc09-d170-4d24-8745-8b98450e9fe1",
+    "pointer_expected": "e67fbc09-d170-4d24-8745-8b98450e9fe1",
+    "visible_documents": [
+      "c5de1784-b897-49c3-91d9-44c7c78db2d6"
+    ]
+  },
+  "initial_ok": true,
+  "cutover": {
+    "result": "APPLIED",
+    "logical_document_id": "ea51873e-43ee-4269-b305-4aba137db53b",
+    "from_generation_id": "e67fbc09-d170-4d24-8745-8b98450e9fe1",
+    "to_generation_id": "47fa0592-6c65-4a95-a2f8-97be6b88f457",
+    "expected_generation_id": "e67fbc09-d170-4d24-8745-8b98450e9fe1",
+    "operation": "CUTOVER",
+    "after": {
+      "statuses": {
+        "4f82864f-6a4b-4c4f-b0c2-f8edbb666f93": "CANDIDATE",
+        "b59b234a-67b1-40b3-a66d-72afb237f523": "INACTIVE",
+        "e67fbc09-d170-4d24-8745-8b98450e9fe1": "INACTIVE",
+        "47fa0592-6c65-4a95-a2f8-97be6b88f457": "ACTIVE"
+      },
+      "pointer": "47fa0592-6c65-4a95-a2f8-97be6b88f457",
+      "pointer_expected": "e67fbc09-d170-4d24-8745-8b98450e9fe1",
+      "visible_documents": [
+        "8f5f2c55-6fb4-4527-8ebb-d0288df563a4"
+      ]
+    },
+    "ok": true
+  },
+  "rollback": {
+    "result": "APPLIED",
+    "logical_document_id": "ea51873e-43ee-4269-b305-4aba137db53b",
+    "from_generation_id": "47fa0592-6c65-4a95-a2f8-97be6b88f457",
+    "to_generation_id": "e67fbc09-d170-4d24-8745-8b98450e9fe1",
+    "expected_generation_id": "47fa0592-6c65-4a95-a2f8-97be6b88f457",
+    "operation": "ROLLBACK",
+    "after": {
+      "statuses": {
+        "4f82864f-6a4b-4c4f-b0c2-f8edbb666f93": "CANDIDATE",
+        "b59b234a-67b1-40b3-a66d-72afb237f523": "INACTIVE",
+        "47fa0592-6c65-4a95-a2f8-97be6b88f457": "INACTIVE",
+        "e67fbc09-d170-4d24-8745-8b98450e9fe1": "ACTIVE"
+      },
+      "pointer": "e67fbc09-d170-4d24-8745-8b98450e9fe1",
+      "pointer_expected": "47fa0592-6c65-4a95-a2f8-97be6b88f457",
+      "visible_documents": [
+        "c5de1784-b897-49c3-91d9-44c7c78db2d6"
+      ]
+    },
+    "ok": true
+  },
+  "negative_controls": [
+    {
+      "control": "cutover_target_building",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "CUTOVER requires a CANDIDATE generation; got BUILDING"
+    },
+    {
+      "control": "cutover_target_failed",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "CUTOVER requires a CANDIDATE generation; got FAILED"
+    },
+    {
+      "control": "cutover_target_arbitrary_inactive",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "CUTOVER requires a CANDIDATE generation; got INACTIVE"
+    },
+    {
+      "control": "rollback_target_never_active_inactive",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "Rollback requires the retained immediate previous active generation"
+    },
+    {
+      "control": "stale_expected_active_generation",
+      "outcome": "REJECTED",
+      "exception": "GenerationConflictError",
+      "message": "Stale expected active generation: the active generation changed"
+    },
+    {
+      "control": "stale_rollback",
+      "outcome": "REJECTED",
+      "exception": "GenerationConflictError",
+      "message": "Stale expected active generation: the active generation changed"
+    },
+    {
+      "control": "cross_document_pointer",
+      "outcome": "REJECTED_BY_DATABASE",
+      "exception": "ForeignKeyViolation",
+      "sqlstate": "23503",
+      "constraint": "library_logical_document_active_generations_generation_fkey",
+      "message": "insert or update on table \"library_logical_document_active_generations\" violates foreign key constraint \"library_logical_document_active_generations_generation_fkey\"\nDETAIL:  Key (logical_document_id, generation_id)=(ad84f8ab-4f1a-40a5-86e8-075387328430, e67fbc09-d170-4d24-8745-8b98450e9fe1) is not present in table \"library_document_generations\"."
+    },
+    {
+      "control": "rollback_target_non_immediate_historical",
+      "outcome": "REJECTED",
+      "exception": "GenerationPreconditionError",
+      "message": "Rollback requires the retained immediate previous active generation"
+    }
+  ],
+  "negative_controls_ok": true,
+  "cleanup": {
+    "remaining": {
+      "knowledge_scopes": 0,
+      "library_collections_legacy": 0,
+      "library_logical_documents": 0,
+      "library_documents": 0,
+      "library_document_generations": 0,
+      "library_logical_document_active_generations": 0,
+      "library_generation_activation_audit": 0,
+      "library_document_chunks": 0,
+      "library_pages_v2": 0,
+      "library_ingestion_runs_v2": 0,
+      "library_document_texts": 0
+    },
+    "clean": true
+  },
+  "counts": {
+    "fixture_errors": 0,
+    "fk_errors": 0,
+    "binding_errors": 0,
+    "indeterminate_datatype_errors": 0,
+    "setup_errors": 0,
+    "cleanup_errors": 0
+  },
+  "ok": true
+}

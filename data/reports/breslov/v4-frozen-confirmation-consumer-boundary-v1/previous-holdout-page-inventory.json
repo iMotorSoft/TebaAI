@@ -1,0 +1,567 @@
+{
+  "source_pdf_pages": 284,
+  "opened_pages": [
+    1,
+    2,
+    3,
+    10,
+    12,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    70,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    80,
+    81,
+    82,
+    83,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    100,
+    104,
+    105,
+    110,
+    111,
+    112,
+    120,
+    122,
+    123,
+    124,
+    130,
+    131,
+    140,
+    143,
+    149,
+    150,
+    151,
+    156,
+    161,
+    162,
+    163,
+    166,
+    167,
+    168,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    180,
+    190,
+    200,
+    211,
+    212,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    241,
+    242,
+    243,
+    244,
+    248
+  ],
+  "page_sources": {
+    "1": [
+      "data/reports/breslov/2026-08-30-editor-upload-to-user-query-readiness-v1/golden_evidence.json",
+      "data/reports/breslov/2026-09-09-editor-ui-ingestion/golden_ui_ingestion_evidence.json",
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-api.json",
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-browser-api.json"
+    ],
+    "2": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/2026-09-09-editor-ui-ingestion/golden_ui_ingestion_evidence.json"
+    ],
+    "3": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json"
+    ],
+    "10": [
+      "data/reports/breslov/2026-07-16-research-workspace-v1/traceability_golden_batch.json"
+    ],
+    "12": [
+      "data/reports/breslov/2026-07-16-research-workspace-v1/traceability_golden_batch.json"
+    ],
+    "19": [
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-api.json",
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-browser-api.json"
+    ],
+    "21": [
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-api.json",
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-browser-api.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "22": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "23": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "24": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "25": [
+      "data/reports/breslov/2026-07-16-research-workspace-v1/traceability_golden_batch.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "26": [
+      "data/reports/breslov/2026-07-16-research-workspace-v1/traceability_golden_batch.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "27": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "28": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "37": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json"
+    ],
+    "41": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json",
+      "data/reports/breslov/regional-ocr-hebrew-search-v1/ocr-results.json"
+    ],
+    "42": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "43": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "44": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json"
+    ],
+    "45": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "46": [
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-api.json",
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-browser-api.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "47": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "48": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "49": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "50": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "51": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "52": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "53": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json"
+    ],
+    "55": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/cross-page-development-cases.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/permutation-analysis.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/stability-results.json",
+      "data/reports/breslov/hebrew-holdout-ocr-quality-v1/ocr-quality-fixtures.json",
+      "data/reports/breslov/hebrew-holdout-ocr-quality-v1/ocr-quality-results.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-comparison.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-goldens.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-page55-results.json",
+      "data/reports/breslov/regional-ocr-hebrew-search-v1/ocr-results.json"
+    ],
+    "56": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-boundary-checks.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/cross-page-development-cases.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/permutation-analysis.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/stability-results.json",
+      "data/reports/breslov/regional-ocr-hebrew-search-v1/ocr-results.json"
+    ],
+    "57": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/supporting-pages-results.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/permutation-analysis.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/stability-results.json"
+    ],
+    "58": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "59": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "60": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "61": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "62": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "63": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "64": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "65": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "66": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "67": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "68": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "70": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json"
+    ],
+    "72": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json"
+    ],
+    "73": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "74": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "75": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "76": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "77": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "80": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/v1-unsafe-certifications.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/permutation-analysis.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/stability-results.json"
+    ],
+    "81": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "82": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "83": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "85": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "86": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "87": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "88": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "89": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "90": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "91": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "100": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json"
+    ],
+    "104": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "105": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "110": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json"
+    ],
+    "111": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "112": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "120": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json"
+    ],
+    "122": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "123": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "124": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "130": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "131": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "140": [
+      "data/reports/breslov/2026-07-16-research-workspace-v1/traceability_golden_batch.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/v1-unsafe-certifications.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/permutation-analysis.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/stability-results.json"
+    ],
+    "143": [
+      "data/reports/breslov/hebrew-holdout-ocr-quality-v1/ocr-quality-fixtures.json",
+      "data/reports/breslov/hebrew-holdout-ocr-quality-v1/ocr-quality-results.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-comparison.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-goldens.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-page143-results.json",
+      "data/reports/breslov/regional-ocr-hebrew-search-v1/ocr-results.json"
+    ],
+    "149": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "150": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "151": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "156": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json"
+    ],
+    "161": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "162": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "163": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "166": [
+      "data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/api-goldens.json"
+    ],
+    "167": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-boundary-checks.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/cross-page-development-cases.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/permutation-analysis.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/stability-results.json",
+      "data/reports/breslov/hebrew-holdout-ocr-quality-v1/ocr-quality-fixtures.json",
+      "data/reports/breslov/hebrew-holdout-ocr-quality-v1/ocr-quality-results.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-comparison.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-goldens.json",
+      "data/reports/breslov/hebrew-ocr-orthographic-search-v1/ocr-page167-results.json",
+      "data/reports/breslov/regional-ocr-hebrew-search-v1/manual-golden.json",
+      "data/reports/breslov/regional-ocr-hebrew-search-v1/ocr-results.json"
+    ],
+    "168": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/supporting-pages-results.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/cross-page-development-cases.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/permutation-analysis.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/stability-results.json"
+    ],
+    "171": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "172": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "173": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "174": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "175": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "176": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "177": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "180": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json"
+    ],
+    "190": [
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-api.json",
+      "data/reports/breslov/2026-10-01-hebrew-rtl-rendering-v1/golden-browser-api.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json"
+    ],
+    "200": [
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-annotations.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v2/v1-unsafe-certifications.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/permutation-analysis.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/stability-results.json"
+    ],
+    "211": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "212": [
+      "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json"
+    ],
+    "215": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "216": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "217": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "218": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "219": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "220": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "221": [
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+      "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json"
+    ],
+    "241": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "242": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "243": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "244": [
+      "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json"
+    ],
+    "248": [
+      "data/reports/breslov/2026-07-16-research-workspace-v1/traceability_golden_batch.json"
+    ]
+  }
+}

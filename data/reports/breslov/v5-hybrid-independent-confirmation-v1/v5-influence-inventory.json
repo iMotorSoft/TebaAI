@@ -1,0 +1,2282 @@
+{
+  "version": "v5-hybrid-independent-confirmation-v1-influence-inventory",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "sources": [
+    "automatic-region-provenance-certification-v1/holdout-definition.json",
+    "automatic-region-provenance-certification-v1/holdout-annotations.json",
+    "automatic-region-provenance-certification-v2/holdout-v2-definition.json",
+    "automatic-region-provenance-certification-v2/development-pages.json",
+    "automatic-region-provenance-certification-v3/holdout-v3-definition.json",
+    "automatic-region-provenance-certification-v3/development-pages.json",
+    "automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+    "automatic-region-provenance-certification-v4/development-v3-holdout.json",
+    "v4-frozen-confirmation-consumer-boundary-v1/holdout-definition.json",
+    "automatic-region-provenance-certification-v5/holdout-selection.json",
+    "automatic-region-provenance-certification-v5/development-opened-pages.json",
+    "v5-frozen-revalidation-v1/holdout-source-discovery.json",
+    "tests/test_automatic_region_certification_v5.py",
+    "tests/test_consumer_region_certificates_v5.py"
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "classification": "USED_IN_V5_TESTS",
+      "v5_influence": "V5_CONSUMER_TEST",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 2,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 3,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 4,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 5,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 6,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 7,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 8,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 9,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 10,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 11,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 12,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 13,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 14,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 15,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 16,
+      "classification": "USED_AS_V5_DEVELOPMENT_REGRESSION",
+      "v5_influence": "V5_DEVELOPMENT_REGRESSION",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 17,
+      "classification": "USED_AS_V5_DEVELOPMENT_REGRESSION",
+      "v5_influence": "V5_DEVELOPMENT_REGRESSION",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 18,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 19,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 20,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 21,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 22,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 23,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 24,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 25,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 26,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 27,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 28,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 29,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 30,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 31,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 32,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 33,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 34,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 35,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 36,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 37,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 38,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 39,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 40,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 41,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 42,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 43,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 44,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 45,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 46,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 47,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 48,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 49,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 50,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 51,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 52,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 53,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 54,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 55,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "PRIOR_CERTIFIER_DEVELOPMENT"
+      ]
+    },
+    {
+      "page": 56,
+      "classification": "USED_AS_V5_DEVELOPMENT_REGRESSION",
+      "v5_influence": "V5_DEVELOPMENT_REGRESSION",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "PRIOR_CERTIFIER_DEVELOPMENT"
+      ]
+    },
+    {
+      "page": 57,
+      "classification": "USED_AS_V5_DEVELOPMENT_REGRESSION",
+      "v5_influence": "V5_DEVELOPMENT_REGRESSION",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "PRIOR_CERTIFIER_DEVELOPMENT"
+      ]
+    },
+    {
+      "page": 58,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 59,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 60,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 61,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 62,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 63,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 64,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 65,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 66,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 67,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 68,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 69,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 70,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT"
+      ]
+    },
+    {
+      "page": 71,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 72,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 73,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 74,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 75,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 76,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 77,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 78,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 79,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 80,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT",
+        "PRIOR_CERTIFIER_DEVELOPMENT"
+      ]
+    },
+    {
+      "page": 81,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 82,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 83,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 84,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 85,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 86,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 87,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 88,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 89,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 90,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT",
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 91,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 92,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 93,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 94,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 95,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 96,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 97,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 98,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 99,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 100,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT"
+      ]
+    },
+    {
+      "page": 101,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 102,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 103,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 104,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 105,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 106,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 107,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 108,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 109,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 110,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT"
+      ]
+    },
+    {
+      "page": 111,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 112,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 113,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 114,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 115,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 116,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 117,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 118,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 119,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 120,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT"
+      ]
+    },
+    {
+      "page": 121,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 122,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 123,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 124,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 125,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 126,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 127,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 128,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 129,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 130,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT",
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 131,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 132,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 133,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 134,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 135,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 136,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 137,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 138,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 139,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 140,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT",
+        "PRIOR_CERTIFIER_DEVELOPMENT"
+      ]
+    },
+    {
+      "page": 141,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 142,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 143,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 144,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 145,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 146,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 147,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 148,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 149,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 150,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT",
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 151,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 152,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 153,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 154,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 155,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 156,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 157,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 158,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 159,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 160,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 161,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 162,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 163,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 164,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 165,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 166,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 167,
+      "classification": "USED_AS_V5_DEVELOPMENT_REGRESSION",
+      "v5_influence": "V5_DEVELOPMENT_REGRESSION",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "PRIOR_CERTIFIER_DEVELOPMENT"
+      ]
+    },
+    {
+      "page": 168,
+      "classification": "USED_AS_V5_DEVELOPMENT_REGRESSION",
+      "v5_influence": "V5_DEVELOPMENT_REGRESSION",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "PRIOR_CERTIFIER_DEVELOPMENT"
+      ]
+    },
+    {
+      "page": 169,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 170,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 171,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 172,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 173,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 174,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 175,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 176,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 177,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 178,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 179,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 180,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT"
+      ]
+    },
+    {
+      "page": 181,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 182,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 183,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 184,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 185,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 186,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 187,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 188,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 189,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 190,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT"
+      ]
+    },
+    {
+      "page": 191,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 192,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 193,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 194,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 195,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 196,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 197,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 198,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 199,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 200,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V1_HOLDOUT",
+        "PRIOR_CERTIFIER_DEVELOPMENT"
+      ]
+    },
+    {
+      "page": 201,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 202,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 203,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 204,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 205,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 206,
+      "classification": "USED_AS_V5_DEVELOPMENT_REGRESSION",
+      "v5_influence": "V5_DEVELOPMENT_REGRESSION",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 207,
+      "classification": "USED_AS_V5_DEVELOPMENT_REGRESSION",
+      "v5_influence": "V5_DEVELOPMENT_REGRESSION",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 208,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 209,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 210,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 211,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 212,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V2_HOLDOUT"
+      ]
+    },
+    {
+      "page": 213,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 214,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 215,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 216,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 217,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 218,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 219,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 220,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 221,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_HOLDOUT"
+      ]
+    },
+    {
+      "page": 222,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 223,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 224,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 225,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 226,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 227,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V4_FROZEN_CONFIRMATION_HOLDOUT"
+      ]
+    },
+    {
+      "page": 228,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 229,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 230,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 231,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 232,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 233,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 234,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 235,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 236,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 237,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 238,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 239,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 240,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 241,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 242,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 243,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 244,
+      "classification": "ONLY_PREVIOUSLY_OBSERVED",
+      "v5_influence": "NONE_DETECTED",
+      "previously_opened": true,
+      "prior_gate_observations": [
+        "V3_HOLDOUT"
+      ]
+    },
+    {
+      "page": 245,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 246,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 247,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 248,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 249,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 250,
+      "classification": "USED_TO_DEBUG_V5",
+      "v5_influence": "V5_DEVELOPMENT_OR_MANUAL_REVIEW",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 251,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 252,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 253,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 254,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 255,
+      "classification": "USED_IN_V5_HOLDOUT",
+      "v5_influence": "SEALED_V5_HOLDOUT",
+      "previously_opened": true,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 256,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 257,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 258,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 259,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 260,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 261,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 262,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 263,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 264,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 265,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 266,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 267,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 268,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 269,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 270,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 271,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 272,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 273,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 274,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 275,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 276,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 277,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 278,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 279,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 280,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 281,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 282,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 283,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    },
+    {
+      "page": 284,
+      "classification": "VIRGIN",
+      "v5_influence": "NONE",
+      "previously_opened": false,
+      "prior_gate_observations": []
+    }
+  ],
+  "summary": {
+    "USED_IN_V5_HOLDOUT": 32,
+    "USED_TO_DEBUG_V5": 37,
+    "USED_IN_V5_TESTS": 1,
+    "USED_AS_V5_DEVELOPMENT_REGRESSION": 8,
+    "ONLY_PREVIOUSLY_OBSERVED": 121,
+    "VIRGIN": 85
+  }
+}

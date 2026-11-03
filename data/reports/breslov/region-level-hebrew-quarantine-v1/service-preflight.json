@@ -1,0 +1,10 @@
+{
+  "environment": "development",
+  "postgres_enabled": true,
+  "embedding_key_present": true,
+  "embedding_model": "openai_text_embedding_3_small",
+  "dimension": 1536,
+  "postgres_tcp": "reachable",
+  "milvus_tcp": "reachable",
+  "litellm_tcp": "reachable"
+}

@@ -1,0 +1,39 @@
+{
+  "source": "certification-preflight-results.json",
+  "label": "certification",
+  "run_suffix": "gen_publication_preflight_v2_certification_6b5ac0ea",
+  "scope_code": "gen_publication_preflight_v2_certification_6b5ac0ea_certification",
+  "collection_code": "gen_publication_preflight_v2_certification_6b5ac0ea_certification",
+  "logical_document_id": "1f537d84-ec86-4369-be38-2c172cdd58e4",
+  "source_sha256": "10847015425ef3fbc56b0db124f793f990e3af25849ea5d47935dadc2a690572",
+  "nodes": {
+    "old": {
+      "document_id": "38f26a82-23d2-409e-8b36-d778452dae66",
+      "run_id": "628409f7-90b4-407c-9541-863bdcb4cc47",
+      "generation_id": "783640f9-f97d-4ed6-b55f-5911719746bd",
+      "status": "ACTIVE",
+      "marker": "2c1edbPREFLIGHTV2OLDEV"
+    },
+    "new": {
+      "document_id": "cfd65afd-65b5-4406-b49f-2a9144659481",
+      "run_id": "0103fb65-0622-40e6-b432-5f4ee1b555c6",
+      "generation_id": "d27bc5c5-b5e5-425d-be96-710c55d1c3ab",
+      "status": "CANDIDATE",
+      "marker": "2c1edbPREFLIGHTV2NEWEV"
+    },
+    "alt": {
+      "document_id": "8b43e638-837a-4c42-b1b6-4b9b804b95eb",
+      "run_id": "0787ec13-b9db-47c5-b265-c33575630849",
+      "generation_id": "e5510bac-a1b5-4cf9-a273-bd041a9c287c",
+      "status": "CANDIDATE",
+      "marker": "2c1edbPREFLIGHTV2ALTEV"
+    },
+    "inactive": {
+      "document_id": "8a65cca9-ba6f-40ad-9683-9d0f5def7d7f",
+      "run_id": "609ad45a-1e37-469a-b591-57d97349d11d",
+      "generation_id": "28379735-cd9d-4a2b-8155-9e054b84acd1",
+      "status": "INACTIVE",
+      "marker": "2c1edbPREFLIGHTV2INACTIVEEV"
+    }
+  }
+}

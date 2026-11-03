@@ -1,0 +1,97 @@
+{
+  "status": "SEALED",
+  "version": "automatic-region-provenance-certification-v5-holdout-v1",
+  "scope": "SAFETY_ONLY_FRESH",
+  "physical_pages": [
+    121,
+    129,
+    135,
+    142,
+    148,
+    155,
+    160,
+    181,
+    186,
+    187,
+    189,
+    192,
+    197,
+    198,
+    199,
+    214,
+    222,
+    224,
+    228,
+    232,
+    236,
+    245,
+    246,
+    247,
+    251,
+    252,
+    253,
+    254,
+    183,
+    239,
+    240,
+    255
+  ],
+  "page_count": 32,
+  "cross_page_positives": [],
+  "cross_page_negatives": [
+    [
+      186,
+      187,
+      108,
+      109
+    ],
+    [
+      197,
+      198,
+      137,
+      138
+    ],
+    [
+      198,
+      199,
+      139,
+      140
+    ],
+    [
+      245,
+      246,
+      2,
+      3
+    ],
+    [
+      246,
+      247,
+      3,
+      4
+    ],
+    [
+      251,
+      252,
+      11,
+      12
+    ],
+    [
+      252,
+      253,
+      13,
+      14
+    ],
+    [
+      253,
+      254,
+      18,
+      19
+    ]
+  ],
+  "cross_page_negative_count": 8,
+  "annotation_validation": "PASS",
+  "definition_sha256": "e1da86d3bdcf98fb6ffe6c4fa319f60ea133996a59c89a4b44ec6b694d602359",
+  "inventory_sha256": "5c48d8d5f1747a35ce9cc196def8f1618a43e608b403436e15cb92f1ee8d1263",
+  "selection_sha256": "ece98e42e87682a893e1dfdd4f10e8ee23cf522df2db33de85e4f9f592deba4d",
+  "validation_sha256": "135eec43c473ad89c15f84412dde3f622a3a18d492e632a2c339de715c86d51b"
+}

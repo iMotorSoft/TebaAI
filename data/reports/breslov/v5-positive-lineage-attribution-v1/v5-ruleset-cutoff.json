@@ -1,0 +1,64 @@
+{
+  "V5_RULESET_CUTOFF": "2026-10-20T16:58:35.211535+00:00",
+  "meaning": "Earliest located explicit SHA-256 record of the current complete ruleset. Observed state cutoff, not approved freeze and not claimed exact time of first implementation. Timestamp is corroborated report metadata, not trusted timestamping.",
+  "confidence": "MEDIUM",
+  "current_ruleset_sha256": "afdc4a994c9a299aecc5c208bbdeedd657f9e4e74f483ba58ab171affbd7257a",
+  "evidence": [
+    {
+      "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+      "locator": "line 2; observed candidate state, NOT approved freeze",
+      "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+      "timestamp": "2026-10-20T16:58:35.211535+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/REPORT.md",
+      "locator": "hashes and BLOCKED-before-holdout statement",
+      "sha256": "af816eed0017d34ff557adce8ff34c66df30ff2bc1d804b10089a0b95ba440e9",
+      "timestamp": "2026-10-20T16:57:21.235134+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-frozen-manifest.json",
+      "locator": "/files/SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py",
+      "sha256": "badbeabf35de8520bb82e6f28c34bc30d6f190f47cb997c8c7dfe336799ae9b7",
+      "timestamp": "2026-10-21T11:58:08.513389+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-frozen-at.json",
+      "locator": "embedded timestamp 2026-10-21T11:58:08.514321+00:00",
+      "sha256": "20674539886055cccf465f5ba3930c75de042899669160050f62c36bb4e1189a",
+      "timestamp": "2026-10-21T11:58:08.514389+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    }
+  ],
+  "earliest_behavior_observation": {
+    "timestamp": "2026-10-20T12:59:45.612713+00:00",
+    "evidence": {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-first-open.json",
+      "locator": "/start_unix",
+      "sha256": "2257acfb7b23adab96805416f5ee15ec63a4f08cba26db28bffb2130bfa954e9",
+      "timestamp": "2026-10-20T12:59:45.612523+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    "limitation": "Historical V5 executed on earlier 32-page safety set; not the current 85/12. No contemporaneous code hash for that early ruleset located; later module write corroborated by mtime and REPORT unused-import-removal note."
+  },
+  "files": [
+    {
+      "artifact": "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py",
+      "locator": null,
+      "sha256": "afdc4a994c9a299aecc5c208bbdeedd657f9e4e74f483ba58ab171affbd7257a",
+      "timestamp": "2026-10-20T13:36:45.141831+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v5.py",
+      "locator": null,
+      "sha256": "a0cc29a4a52335ec86345d820efdb6df9d45ddab2ec99852e78ca04d0bc513c2",
+      "timestamp": "2026-10-20T13:18:07.369764+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    }
+  ],
+  "no_new_freeze_created": true
+}

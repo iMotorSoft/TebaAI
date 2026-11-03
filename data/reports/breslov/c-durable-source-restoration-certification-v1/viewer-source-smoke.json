@@ -1,0 +1,54 @@
+{
+  "measured_at": "2026-10-23T12:58:45.345173+00:00",
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "viewer_active_pointer": {
+    "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+    "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+    "operation": "BACKFILL",
+    "status": "ACTIVE",
+    "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937"
+  },
+  "viewer_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+  "viewer_generation_is_expected_active": true,
+  "viewer_generation_status": "ACTIVE",
+  "page_publication_responses": {
+    "1": {
+      "status": 404,
+      "body_sha256": "c9a4769ad82986007097b3e84118f41ab0ed91fbf28aab314a3f22f752546282",
+      "body_bytes": 56,
+      "body_preview": null
+    },
+    "187": {
+      "status": 404,
+      "body_sha256": "c9a4769ad82986007097b3e84118f41ab0ed91fbf28aab314a3f22f752546282",
+      "body_bytes": 56,
+      "body_preview": null
+    },
+    "284": {
+      "status": 404,
+      "body_sha256": "c9a4769ad82986007097b3e84118f41ab0ed91fbf28aab314a3f22f752546282",
+      "body_bytes": 56,
+      "body_preview": null
+    }
+  },
+  "page_publication_all_200": false,
+  "page_publication_note": "region publication metadata is optional for C; 404 here means no layout region_publication is stored, not that the source is unavailable",
+  "source_endpoint_resolves_pdf": true,
+  "source_endpoint_status": 200,
+  "chunks_now": {
+    "chunks": 942,
+    "content_digest": "44b6f860b32110304a64b195a794fdbb"
+  },
+  "chunks_before": {
+    "chunks": 942,
+    "content_digest": "44b6f860b32110304a64b195a794fdbb",
+    "row_digest": "589789b3bf591d2ae6006b845ad03b35",
+    "max_updated_at": "2026-10-11T15:56:28.982046+00:00"
+  },
+  "textual_retrieval_identity_unchanged": true,
+  "read_only": true,
+  "token_persisted": false,
+  "VIEWER_SOURCE_SMOKE": "PASS"
+}

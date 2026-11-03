@@ -1,0 +1,53 @@
+{
+  "version": "v5-hybrid-independent-confirmation-v1-development-contract",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "positive": [
+    {
+      "from": 206,
+      "to": 207,
+      "note": 5,
+      "expected": "LINK"
+    },
+    {
+      "from": 56,
+      "to": 57,
+      "note": 36,
+      "expected": "LINK"
+    },
+    {
+      "from": 167,
+      "to": 168,
+      "note": 66,
+      "expected": "LINK"
+    },
+    {
+      "from": 16,
+      "to": 17,
+      "note": 1,
+      "expected": "LINK"
+    }
+  ],
+  "negative": [
+    {
+      "from": 108,
+      "to": 109,
+      "note": 8,
+      "expected": "NO_LINK"
+    },
+    {
+      "from": 164,
+      "to": 165,
+      "note": 63,
+      "expected": "NO_LINK"
+    },
+    {
+      "from": 226,
+      "to": 227,
+      "note": 78,
+      "expected": "NO_LINK"
+    }
+  ],
+  "expected_result": "7/7",
+  "evidence_class": "DEVELOPMENT_REGRESSION_ONLY",
+  "note": "206->207 note 5 is a definitive true continuation and expected LINK."
+}

@@ -1,0 +1,62 @@
+{
+  "certified_at": "2026-10-23T12:18:52.593408+00:00",
+  "frozen_at": "2026-10-23T12:18:25.882753+00:00",
+  "hash_entries_checked": 40,
+  "hash_mismatches": [],
+  "frozen_hashes_unchanged": true,
+  "durable_file": {
+    "path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "size_bytes": 4550267,
+    "mtime_ns": 1792757574412651976,
+    "inode": 38142447,
+    "pages": 284,
+    "mtime_matches_freeze": true,
+    "inode_matches_freeze": true
+  },
+  "external_source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "source_metadata": {
+    "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "status": "ready",
+    "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "source_size_bytes": 4550267,
+    "source_mime_type": "application/pdf",
+    "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+    "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+    "updated_at": "2026-10-23 12:12:54.684605+00:00"
+  },
+  "source_metadata_matches_freeze": true,
+  "active_pointer": {
+    "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+    "operation": "BACKFILL"
+  },
+  "active_pointer_matches_freeze": true,
+  "generations": [
+    {
+      "id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "status": "ACTIVE"
+    }
+  ],
+  "chunks": 942,
+  "chunk_digest": "589789b3bf591d2ae6006b845ad03b35",
+  "milvus": {
+    "status": "OK",
+    "entities_for_c": 942,
+    "chunk_id_digest": "3dfe6cd2de1e3d2488313bc18fbc5f5e"
+  },
+  "authenticated": {
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 4550267,
+    "sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "pages": 284
+  },
+  "unauthenticated": {
+    "status": 401,
+    "body": "{\"status_code\":401,\"detail\":\"Missing or invalid Authorization header\"}"
+  },
+  "authenticated_ok": true,
+  "unauthenticated_blocked": true,
+  "frozen_certification_pass": true
+}

@@ -1,0 +1,18 @@
+{
+  "comparisons": {
+    "document_metadata_sha256": true,
+    "fingerprints": true,
+    "vectors_sha256": true,
+    "historical_live_runs": true,
+    "generation_document_count_by_scope_and_source": true,
+    "active_chunk_count_observed": true,
+    "active_vector_count_observed": true
+  },
+  "current_c_content_unchanged": true,
+  "global_content_hashes_equal": true,
+  "current_c_postgresql_writes_by_gate": 0,
+  "current_c_milvus_writes_by_gate": 0,
+  "c_reingest_executed": false,
+  "production_touched": false,
+  "limitations": "Digest comparison is not a restorable vector export or an audit of other processes."
+}

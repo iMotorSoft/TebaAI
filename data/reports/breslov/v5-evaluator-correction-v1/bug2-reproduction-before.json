@@ -1,0 +1,111 @@
+{
+  "name": "cross_page_complete",
+  "metrics": {
+    "unsafe_false_certifications": 0,
+    "unsafe_false_provenance_certifications": 0,
+    "false_body_certifications": 0,
+    "false_cross_page_links": 1,
+    "false_editorial_completions": 1,
+    "false_identity_proven": 0,
+    "inconsistent_identity_state": 0
+  },
+  "mismatches": {
+    "false_cross_page_links": {
+      "expected": 0,
+      "actual": 1
+    },
+    "false_editorial_completions": {
+      "expected": 0,
+      "actual": 1
+    },
+    "valid_cross_page_relations": {
+      "expected": 1,
+      "actual": 0
+    }
+  },
+  "passed": false,
+  "violations": [
+    {
+      "kind": "false_completion",
+      "row": {
+        "pdf_page": 10,
+        "region_id": "a",
+        "zone_type": "note",
+        "note_number": 7,
+        "source_line_ids": [
+          [
+            10,
+            0
+          ]
+        ],
+        "provenance_status": "CERTIFIED",
+        "quality_status": "ACCEPTED",
+        "linked_region_ids": [
+          "b"
+        ],
+        "editorial_unit_id": "unit",
+        "identity_state": "IDENTITY_PROVEN",
+        "continuation_state": "CONTINUES_NEXT_PAGE",
+        "continuation_status": "CROSS_PAGE_COMPLETE",
+        "identity_proof": [
+          {
+            "name": "synthetic_identity",
+            "passed": true,
+            "evidence": [
+              "synthetic"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "false_link",
+      "row": {
+        "pdf_page": 11,
+        "region_id": "b",
+        "zone_type": "note",
+        "note_number": 7,
+        "source_line_ids": [
+          [
+            11,
+            0
+          ]
+        ],
+        "provenance_status": "CERTIFIED",
+        "quality_status": "ACCEPTED",
+        "linked_region_ids": [
+          "a"
+        ],
+        "editorial_unit_id": "unit",
+        "identity_state": "IDENTITY_PROVEN",
+        "continuation_state": "CONTINUED_FROM_PREVIOUS",
+        "continuation_status": "CROSS_PAGE_COMPLETE",
+        "identity_proof": [
+          {
+            "name": "synthetic_identity",
+            "passed": true,
+            "evidence": [
+              "synthetic"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "from": 10,
+      "to": 11,
+      "note": 7,
+      "target_region": "b",
+      "source_ok": true
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "note": 7,
+      "target_region": "a",
+      "source_ok": false
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "scope": "PATH + backend venv; scoped filesystem search; not entire host",
+  "engines": [
+    {
+      "name": "tesseract",
+      "availability": "NOT_AVAILABLE",
+      "version_model": null,
+      "hebrew_support": "not verified in DEV",
+      "local_or_api": "local",
+      "cost": "not measured; no run",
+      "latency_ms": null,
+      "dependencies": "executable/package and Hebrew model assets not validated",
+      "privacy": "local execution would avoid PDF egress"
+    },
+    {
+      "name": "easyocr",
+      "availability": "NOT_AVAILABLE",
+      "version_model": null,
+      "hebrew_support": "not verified in DEV",
+      "local_or_api": "local",
+      "cost": "not measured; no run",
+      "latency_ms": null,
+      "dependencies": "executable/package and Hebrew model assets not validated",
+      "privacy": "local execution would avoid PDF egress"
+    },
+    {
+      "name": "paddleocr",
+      "availability": "NOT_AVAILABLE",
+      "version_model": null,
+      "hebrew_support": "not verified in DEV",
+      "local_or_api": "local",
+      "cost": "not measured; no run",
+      "latency_ms": null,
+      "dependencies": "executable/package and Hebrew model assets not validated",
+      "privacy": "local execution would avoid PDF egress"
+    },
+    {
+      "name": "rapidocr",
+      "availability": "NOT_AVAILABLE",
+      "version_model": null,
+      "hebrew_support": "not verified in DEV",
+      "local_or_api": "local",
+      "cost": "not measured; no run",
+      "latency_ms": null,
+      "dependencies": "executable/package and Hebrew model assets not validated",
+      "privacy": "local execution would avoid PDF egress"
+    },
+    {
+      "name": "surya",
+      "availability": "NOT_AVAILABLE",
+      "version_model": null,
+      "hebrew_support": "not verified in DEV",
+      "local_or_api": "local",
+      "cost": "not measured; no run",
+      "latency_ms": null,
+      "dependencies": "executable/package and Hebrew model assets not validated",
+      "privacy": "local execution would avoid PDF egress"
+    },
+    {
+      "name": "docling",
+      "availability": "NOT_AVAILABLE",
+      "version_model": null,
+      "hebrew_support": "not verified in DEV",
+      "local_or_api": "local",
+      "cost": "not measured; no run",
+      "latency_ms": null,
+      "dependencies": "executable/package and Hebrew model assets not validated",
+      "privacy": "local execution would avoid PDF egress"
+    },
+    {
+      "name": "pytesseract",
+      "availability": "NOT_AVAILABLE",
+      "version_model": null,
+      "hebrew_support": "not verified in DEV",
+      "local_or_api": "local",
+      "cost": "not measured; no run",
+      "latency_ms": null,
+      "dependencies": "executable/package and Hebrew model assets not validated",
+      "privacy": "local execution would avoid PDF egress"
+    },
+    {
+      "name": "PyMuPDF OCR bridge",
+      "availability": "NOT_AVAILABLE",
+      "version_model": "1.27.2.3",
+      "hebrew_support": "requires external Tesseract + Hebrew traineddata",
+      "local_or_api": "local",
+      "cost": "not measured",
+      "latency_ms": null,
+      "dependencies": "Tesseract absent from PATH",
+      "privacy": "local"
+    },
+    {
+      "name": "vision/API OCR",
+      "availability": "NOT_AVAILABLE",
+      "version_model": null,
+      "hebrew_support": "not verified",
+      "local_or_api": "API",
+      "cost": "unknown",
+      "latency_ms": null,
+      "dependencies": "no verified OCR endpoint/model/access; no network probe performed",
+      "privacy": "PDF region egress requires provider/privacy review; not sent"
+    },
+    {
+      "name": "PyMuPDF rasterizer",
+      "availability": "ALREADY_AVAILABLE",
+      "version_model": "1.27.2.3",
+      "hebrew_support": "renders glyphs; NOT an OCR engine",
+      "local_or_api": "local",
+      "cost": "local CPU",
+      "latency_ms": null,
+      "dependencies": "existing pymupdf",
+      "privacy": "local"
+    }
+  ],
+  "installations": false,
+  "api_calls": false
+}

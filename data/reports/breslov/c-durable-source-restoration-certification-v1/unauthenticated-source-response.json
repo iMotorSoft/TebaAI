@@ -1,0 +1,17 @@
+{
+  "measured_at": "2026-10-23T12:58:44.793011+00:00",
+  "endpoint": "http://127.0.0.1:7008/library/documents/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/source",
+  "http_method": "GET",
+  "authorization_header_sent": false,
+  "status": 401,
+  "content_type": "application/json",
+  "body_text": "{\"status_code\":401,\"detail\":\"Missing or invalid Authorization header\"}",
+  "expected_in": [
+    401,
+    403
+  ],
+  "blocked": true,
+  "public_source_leak": false,
+  "public_source_leak_expected": "NO",
+  "acceptable": true
+}

@@ -1,0 +1,38 @@
+{
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "postgresql_writes": 0,
+  "milvus_writes": 0,
+  "reingest": false,
+  "extraction": false,
+  "embeddings": false,
+  "vector_rebuild": false,
+  "pointer_modified": false,
+  "generation_status_modified": false,
+  "fixture_snapshots_equal": true,
+  "before": {
+    "library_documents": "977e099690423e747923e354efa65a2bf3eacf32ebf374e8f53d4f1d5eaaa9de",
+    "library_ingestion_runs_v2": "c643d8f1901ddfcfadeb45b93db6768ad7442c91c4521e2863f8381e410f6056",
+    "library_logical_documents": "1b763c5a322a5c25a7f773537c42be8f90bd9aff483e4802891761a572e54624",
+    "library_document_generations": "c44f0e42fb0d57e23a04bbf5d0a87fdaca16b85457d42e5ba3585673e215a652",
+    "library_logical_document_active_generations": "b96235e00f8614d4d53bebb0c466d890bbc4de2fbd0e9ae44223b4f049c4f500",
+    "library_generation_activation_audit": "df2b06fd5f2b8e8e3d66c5c355151d97c5b492fd84953cbc8fc8cf7c2f22dfe6"
+  },
+  "after": {
+    "library_documents": "977e099690423e747923e354efa65a2bf3eacf32ebf374e8f53d4f1d5eaaa9de",
+    "library_ingestion_runs_v2": "c643d8f1901ddfcfadeb45b93db6768ad7442c91c4521e2863f8381e410f6056",
+    "library_logical_documents": "1b763c5a322a5c25a7f773537c42be8f90bd9aff483e4802891761a572e54624",
+    "library_document_generations": "c44f0e42fb0d57e23a04bbf5d0a87fdaca16b85457d42e5ba3585673e215a652",
+    "library_logical_document_active_generations": "b96235e00f8614d4d53bebb0c466d890bbc4de2fbd0e9ae44223b4f049c4f500",
+    "library_generation_activation_audit": "df2b06fd5f2b8e8e3d66c5c355151d97c5b492fd84953cbc8fc8cf7c2f22dfe6"
+  },
+  "after_full_backend": {
+    "library_documents": "977e099690423e747923e354efa65a2bf3eacf32ebf374e8f53d4f1d5eaaa9de",
+    "library_ingestion_runs_v2": "c643d8f1901ddfcfadeb45b93db6768ad7442c91c4521e2863f8381e410f6056",
+    "library_logical_documents": "1b763c5a322a5c25a7f773537c42be8f90bd9aff483e4802891761a572e54624",
+    "library_document_generations": "c44f0e42fb0d57e23a04bbf5d0a87fdaca16b85457d42e5ba3585673e215a652",
+    "library_logical_document_active_generations": "b96235e00f8614d4d53bebb0c466d890bbc4de2fbd0e9ae44223b4f049c4f500",
+    "library_generation_activation_audit": "df2b06fd5f2b8e8e3d66c5c355151d97c5b492fd84953cbc8fc8cf7c2f22dfe6"
+  },
+  "after_full_backend_equal": true
+}

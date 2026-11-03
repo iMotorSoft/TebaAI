@@ -1,0 +1,29 @@
+{
+  "mixed_page_PASS": true,
+  "region_contract_v2_PASS": true,
+  "worker_enforcement_PASS": true,
+  "real_c_dry_run_PASS": true,
+  "real_c_pages_55_56_PASS": true,
+  "visual_source_PASS": true,
+  "real_c_totals": {
+    "regions": 3210,
+    "accepted": 347,
+    "quarantined": 2863,
+    "accepted_loss": 0,
+    "canonical_u_fffd": 0,
+    "canonical_chars": 97226
+  },
+  "real_c_status_distribution": {
+    "UNUSABLE": 138,
+    "PARTIAL": 146
+  },
+  "real_c_document": {
+    "page_count": 284,
+    "content_chars": 101376,
+    "content_u_fffd": 0,
+    "content_sha256": "185f0c214e91658672ff331e069e5948ba1192df8a414390ef99b75734540b3b",
+    "warnings": [
+      "quarantined_regions_preserved_visually"
+    ]
+  }
+}

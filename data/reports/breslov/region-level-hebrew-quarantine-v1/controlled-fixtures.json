@@ -1,0 +1,436 @@
+[
+  {
+    "case": 1,
+    "texts": [
+      "GOOD_A vecino aceptado alfa"
+    ],
+    "declared_quality_statuses": [
+      "ACCEPTED"
+    ],
+    "page_status": "FULL",
+    "accepted_region_ids": [
+      "region-0"
+    ],
+    "chunk_count": 1,
+    "bad_region_chunk_count": 0,
+    "accepted_region_loss": 0,
+    "metadata": {
+      "publication_version": "region-publication-v1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pdf_page": 1,
+      "source_reference": "controlled-fixture.pdf",
+      "page_status": "FULL",
+      "contains_quarantined_regions": false,
+      "notice": null,
+      "regions": [
+        {
+          "region_id": "region-0",
+          "bbox": [
+            20,
+            20,
+            300,
+            40
+          ],
+          "quality_status": "ACCEPTED",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "ACCEPTED",
+          "reason_codes": [],
+          "candidate_sha256": "d00e2b0487174388a4afb10637500f7f55d6de11198bdb80a165bb31d494c413",
+          "textually_citable": true,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-0",
+            "bbox": [
+              20,
+              20,
+              300,
+              40
+            ]
+          }
+        }
+      ]
+    },
+    "quality_evidence": "Declared internal fixture verdicts, not an extraction-quality proof",
+    "pdf_exists": false
+  },
+  {
+    "case": 2,
+    "texts": [
+      "BAD_HEBREW אב�גד quarantineunique"
+    ],
+    "declared_quality_statuses": [
+      "UNRESOLVED"
+    ],
+    "page_status": "UNUSABLE",
+    "accepted_region_ids": [],
+    "chunk_count": 0,
+    "bad_region_chunk_count": 0,
+    "accepted_region_loss": 0,
+    "metadata": {
+      "publication_version": "region-publication-v1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pdf_page": 1,
+      "source_reference": "controlled-fixture.pdf",
+      "page_status": "UNUSABLE",
+      "contains_quarantined_regions": true,
+      "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+      "regions": [
+        {
+          "region_id": "region-0",
+          "bbox": [
+            20,
+            20,
+            300,
+            40
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "QUARANTINED",
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "candidate_sha256": "4af2a35fd2b77d8caa289a4cd07bb54c1b6e9751fab970370b3b67a81253311f",
+          "textually_citable": false,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-0",
+            "bbox": [
+              20,
+              20,
+              300,
+              40
+            ]
+          }
+        }
+      ]
+    },
+    "quality_evidence": "Declared internal fixture verdicts, not an extraction-quality proof",
+    "pdf_exists": false
+  },
+  {
+    "case": 3,
+    "texts": [
+      "GOOD_A vecino aceptado alfa",
+      "BAD_HEBREW אב�גד quarantineunique",
+      "GOOD_B nota aceptada omega"
+    ],
+    "declared_quality_statuses": [
+      "ACCEPTED",
+      "PLATFORM_EXTRACTION_ERROR",
+      "ACCEPTED"
+    ],
+    "page_status": "PARTIAL",
+    "accepted_region_ids": [
+      "region-0",
+      "region-2"
+    ],
+    "chunk_count": 2,
+    "bad_region_chunk_count": 0,
+    "accepted_region_loss": 0,
+    "metadata": {
+      "publication_version": "region-publication-v1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pdf_page": 1,
+      "source_reference": "controlled-fixture.pdf",
+      "page_status": "PARTIAL",
+      "contains_quarantined_regions": true,
+      "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+      "regions": [
+        {
+          "region_id": "region-0",
+          "bbox": [
+            20,
+            20,
+            300,
+            40
+          ],
+          "quality_status": "ACCEPTED",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "ACCEPTED",
+          "reason_codes": [],
+          "candidate_sha256": "d00e2b0487174388a4afb10637500f7f55d6de11198bdb80a165bb31d494c413",
+          "textually_citable": true,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-0",
+            "bbox": [
+              20,
+              20,
+              300,
+              40
+            ]
+          }
+        },
+        {
+          "region_id": "region-1",
+          "bbox": [
+            20,
+            60,
+            300,
+            80
+          ],
+          "quality_status": "PLATFORM_EXTRACTION_ERROR",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "QUARANTINED",
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "candidate_sha256": "4af2a35fd2b77d8caa289a4cd07bb54c1b6e9751fab970370b3b67a81253311f",
+          "textually_citable": false,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-1",
+            "bbox": [
+              20,
+              60,
+              300,
+              80
+            ]
+          }
+        },
+        {
+          "region_id": "region-2",
+          "bbox": [
+            20,
+            100,
+            300,
+            120
+          ],
+          "quality_status": "ACCEPTED",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "ACCEPTED",
+          "reason_codes": [],
+          "candidate_sha256": "568a6035c1be720c7eeea56f638f4dee3014efb07dec96e0a64eb37c33341157",
+          "textually_citable": true,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-2",
+            "bbox": [
+              20,
+              100,
+              300,
+              120
+            ]
+          }
+        }
+      ]
+    },
+    "quality_evidence": "Declared internal fixture verdicts, not an extraction-quality proof",
+    "pdf_exists": false
+  },
+  {
+    "case": 4,
+    "texts": [
+      "BAD_HEBREW אב�גד quarantineunique",
+      "BAD_HEBREW אב�גד quarantineunique",
+      "GOOD_A vecino aceptado alfa"
+    ],
+    "declared_quality_statuses": [
+      "SOURCE_PDF_ERROR",
+      "UNRESOLVED",
+      "ACCEPTED"
+    ],
+    "page_status": "PARTIAL",
+    "accepted_region_ids": [
+      "region-2"
+    ],
+    "chunk_count": 1,
+    "bad_region_chunk_count": 0,
+    "accepted_region_loss": 0,
+    "metadata": {
+      "publication_version": "region-publication-v1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pdf_page": 1,
+      "source_reference": "controlled-fixture.pdf",
+      "page_status": "PARTIAL",
+      "contains_quarantined_regions": true,
+      "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+      "regions": [
+        {
+          "region_id": "region-0",
+          "bbox": [
+            20,
+            20,
+            300,
+            40
+          ],
+          "quality_status": "SOURCE_PDF_ERROR",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "QUARANTINED",
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "candidate_sha256": "4af2a35fd2b77d8caa289a4cd07bb54c1b6e9751fab970370b3b67a81253311f",
+          "textually_citable": false,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-0",
+            "bbox": [
+              20,
+              20,
+              300,
+              40
+            ]
+          }
+        },
+        {
+          "region_id": "region-1",
+          "bbox": [
+            20,
+            60,
+            300,
+            80
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "QUARANTINED",
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "candidate_sha256": "4af2a35fd2b77d8caa289a4cd07bb54c1b6e9751fab970370b3b67a81253311f",
+          "textually_citable": false,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-1",
+            "bbox": [
+              20,
+              60,
+              300,
+              80
+            ]
+          }
+        },
+        {
+          "region_id": "region-2",
+          "bbox": [
+            20,
+            100,
+            300,
+            120
+          ],
+          "quality_status": "ACCEPTED",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "ACCEPTED",
+          "reason_codes": [],
+          "candidate_sha256": "d00e2b0487174388a4afb10637500f7f55d6de11198bdb80a165bb31d494c413",
+          "textually_citable": true,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-2",
+            "bbox": [
+              20,
+              100,
+              300,
+              120
+            ]
+          }
+        }
+      ]
+    },
+    "quality_evidence": "Declared internal fixture verdicts, not an extraction-quality proof",
+    "pdf_exists": false
+  },
+  {
+    "case": 5,
+    "texts": [
+      "BAD_HEBREW אב�גד quarantineunique",
+      "BAD_HEBREW אב�גד quarantineunique"
+    ],
+    "declared_quality_statuses": [
+      "UNRESOLVED",
+      "PLATFORM_EXTRACTION_ERROR"
+    ],
+    "page_status": "UNUSABLE",
+    "accepted_region_ids": [],
+    "chunk_count": 0,
+    "bad_region_chunk_count": 0,
+    "accepted_region_loss": 0,
+    "metadata": {
+      "publication_version": "region-publication-v1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pdf_page": 1,
+      "source_reference": "controlled-fixture.pdf",
+      "page_status": "UNUSABLE",
+      "contains_quarantined_regions": true,
+      "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+      "regions": [
+        {
+          "region_id": "region-0",
+          "bbox": [
+            20,
+            20,
+            300,
+            40
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "QUARANTINED",
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "candidate_sha256": "4af2a35fd2b77d8caa289a4cd07bb54c1b6e9751fab970370b3b67a81253311f",
+          "textually_citable": false,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-0",
+            "bbox": [
+              20,
+              20,
+              300,
+              40
+            ]
+          }
+        },
+        {
+          "region_id": "region-1",
+          "bbox": [
+            20,
+            60,
+            300,
+            80
+          ],
+          "quality_status": "PLATFORM_EXTRACTION_ERROR",
+          "provenance_status": "CERTIFIED",
+          "publication_status": "QUARANTINED",
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "candidate_sha256": "4af2a35fd2b77d8caa289a4cd07bb54c1b6e9751fab970370b3b67a81253311f",
+          "textually_citable": false,
+          "visual_reference": {
+            "source_reference": "controlled-fixture.pdf",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "pdf_page": 1,
+            "region_id": "region-1",
+            "bbox": [
+              20,
+              60,
+              300,
+              80
+            ]
+          }
+        }
+      ]
+    },
+    "quality_evidence": "Declared internal fixture verdicts, not an extraction-quality proof",
+    "pdf_exists": false
+  }
+]

@@ -1,0 +1,256 @@
+{
+  "result": "PASS",
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "before": {
+    "document": [
+      {
+        "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+        "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+        "title": "Likutey Halajot \u2014 Interior Final",
+        "subtitle": null,
+        "language": "es",
+        "source_type": "pdf",
+        "source_path": null,
+        "source_uri": null,
+        "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+        "source_mime_type": "application/pdf",
+        "source_size_bytes": 4550267,
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "bibliographic_ref": null,
+        "author": null,
+        "publisher": null,
+        "publication_year": null,
+        "version_label": null,
+        "status": "ready",
+        "metadata": {
+          "attempt": 1,
+          "published_at": "2026-10-11T15:57:59.977447+00:00",
+          "published_by": "965d0a0e-923c-47aa-8743-7a9ee261555a",
+          "publication_source": "content_manager",
+          "content_manager_job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed"
+        },
+        "created_by": "965d0a0e-923c-47aa-8743-7a9ee261555a",
+        "created_at": "2026-10-11 15:56:28.408406+00:00",
+        "updated_at": "2026-10-11 15:57:59.977447+00:00",
+        "bibliographic_metadata": {
+          "e2e_fixture": false,
+          "work_family": "Likutey Halajot",
+          "content_manager_ingestion": true
+        },
+        "organization_id": "9b6406e1-66c1-49ae-80e0-0e4a6ccb324f",
+        "workspace_id": "b4a32c1c-dcdc-486e-86e7-51714f9a45f4",
+        "project_id": "2a95333c-fe1c-4f3d-83b8-5f2411ab0160",
+        "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+        "document_code": null,
+        "content_sha256": "fe2f7846c4a77cf4218365ef9b275a54747b5b9c0ba748aab26fcaef6e732c45",
+        "canonical_text_role": "candidate",
+        "editor": null,
+        "translator": null,
+        "edition": null,
+        "archived_at": null,
+        "chunk_set_version": 1,
+        "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95"
+      }
+    ],
+    "logical": [
+      {
+        "id": "db200a31-b547-5668-d968-06d0ec36ad95",
+        "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+        "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+        "organization_id": "9b6406e1-66c1-49ae-80e0-0e4a6ccb324f",
+        "workspace_id": "b4a32c1c-dcdc-486e-86e7-51714f9a45f4",
+        "project_id": "2a95333c-fe1c-4f3d-83b8-5f2411ab0160",
+        "title": "Likutey Halajot \u2014 Interior Final",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+        "source_size_bytes": 4550267,
+        "metadata": {
+          "backfilled": true,
+          "backfill_source": "migration-043"
+        },
+        "created_at": "2026-10-11 15:56:28.408406+00:00",
+        "updated_at": "2026-10-11 15:57:59.977447+00:00"
+      }
+    ],
+    "generations": [
+      {
+        "id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+        "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+        "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+        "job_id": null,
+        "attempt_number": null,
+        "pipeline_version": "content_page_first_v1",
+        "status": "ACTIVE",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "retention_hold": true,
+        "metadata": {
+          "backfilled": true,
+          "ambiguous_run": false,
+          "completed_runs": 1,
+          "document_status": "ready"
+        },
+        "created_at": "2026-10-11 15:56:28.408406+00:00",
+        "activated_at": "2026-10-11 15:57:59.977447+00:00",
+        "deactivated_at": null
+      }
+    ],
+    "pointer": [
+      {
+        "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+        "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "expected_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "operation": "BACKFILL",
+        "activated_at": "2026-10-22 13:07:58.275718+00:00",
+        "activated_by": null,
+        "metadata": {
+          "backfill_source": "migration-043"
+        }
+      }
+    ],
+    "audit": [
+      {
+        "id": "796fb5c1-ac34-4612-8511-001ef9547dac",
+        "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+        "from_generation_id": null,
+        "to_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "expected_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "operation": "BACKFILL",
+        "result": "APPLIED",
+        "reason": "migration-043 deterministic backfill",
+        "actor_id": null,
+        "created_at": "2026-10-22 13:07:58.275718+00:00"
+      }
+    ]
+  },
+  "after": {
+    "document": [
+      {
+        "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+        "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+        "title": "Likutey Halajot \u2014 Interior Final",
+        "subtitle": null,
+        "language": "es",
+        "source_type": "pdf",
+        "source_path": null,
+        "source_uri": null,
+        "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+        "source_mime_type": "application/pdf",
+        "source_size_bytes": 4550267,
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "bibliographic_ref": null,
+        "author": null,
+        "publisher": null,
+        "publication_year": null,
+        "version_label": null,
+        "status": "ready",
+        "metadata": {
+          "attempt": 1,
+          "published_at": "2026-10-11T15:57:59.977447+00:00",
+          "published_by": "965d0a0e-923c-47aa-8743-7a9ee261555a",
+          "publication_source": "content_manager",
+          "content_manager_job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed"
+        },
+        "created_by": "965d0a0e-923c-47aa-8743-7a9ee261555a",
+        "created_at": "2026-10-11 15:56:28.408406+00:00",
+        "updated_at": "2026-10-11 15:57:59.977447+00:00",
+        "bibliographic_metadata": {
+          "e2e_fixture": false,
+          "work_family": "Likutey Halajot",
+          "content_manager_ingestion": true
+        },
+        "organization_id": "9b6406e1-66c1-49ae-80e0-0e4a6ccb324f",
+        "workspace_id": "b4a32c1c-dcdc-486e-86e7-51714f9a45f4",
+        "project_id": "2a95333c-fe1c-4f3d-83b8-5f2411ab0160",
+        "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+        "document_code": null,
+        "content_sha256": "fe2f7846c4a77cf4218365ef9b275a54747b5b9c0ba748aab26fcaef6e732c45",
+        "canonical_text_role": "candidate",
+        "editor": null,
+        "translator": null,
+        "edition": null,
+        "archived_at": null,
+        "chunk_set_version": 1,
+        "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95"
+      }
+    ],
+    "logical": [
+      {
+        "id": "db200a31-b547-5668-d968-06d0ec36ad95",
+        "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+        "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+        "organization_id": "9b6406e1-66c1-49ae-80e0-0e4a6ccb324f",
+        "workspace_id": "b4a32c1c-dcdc-486e-86e7-51714f9a45f4",
+        "project_id": "2a95333c-fe1c-4f3d-83b8-5f2411ab0160",
+        "title": "Likutey Halajot \u2014 Interior Final",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+        "source_size_bytes": 4550267,
+        "metadata": {
+          "backfilled": true,
+          "backfill_source": "migration-043"
+        },
+        "created_at": "2026-10-11 15:56:28.408406+00:00",
+        "updated_at": "2026-10-11 15:57:59.977447+00:00"
+      }
+    ],
+    "generations": [
+      {
+        "id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+        "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+        "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+        "job_id": null,
+        "attempt_number": null,
+        "pipeline_version": "content_page_first_v1",
+        "status": "ACTIVE",
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "retention_hold": true,
+        "metadata": {
+          "backfilled": true,
+          "ambiguous_run": false,
+          "completed_runs": 1,
+          "document_status": "ready"
+        },
+        "created_at": "2026-10-11 15:56:28.408406+00:00",
+        "activated_at": "2026-10-11 15:57:59.977447+00:00",
+        "deactivated_at": null
+      }
+    ],
+    "pointer": [
+      {
+        "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+        "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "expected_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "operation": "BACKFILL",
+        "activated_at": "2026-10-22 13:07:58.275718+00:00",
+        "activated_by": null,
+        "metadata": {
+          "backfill_source": "migration-043"
+        }
+      }
+    ],
+    "audit": [
+      {
+        "id": "796fb5c1-ac34-4612-8511-001ef9547dac",
+        "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+        "from_generation_id": null,
+        "to_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "expected_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+        "operation": "BACKFILL",
+        "result": "APPLIED",
+        "reason": "migration-043 deterministic backfill",
+        "actor_id": null,
+        "created_at": "2026-10-22 13:07:58.275718+00:00"
+      }
+    ]
+  },
+  "postgresql_writes_by_gate": 0,
+  "milvus_writes_by_gate": 0,
+  "pointer_modified": false,
+  "reingest": false,
+  "extraction": false,
+  "embedding_generation": false,
+  "vector_rebuild": false
+}

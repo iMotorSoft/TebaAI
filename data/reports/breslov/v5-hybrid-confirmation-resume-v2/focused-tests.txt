@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend
+configfile: pyproject.toml
+plugins: anyio-4.14.0, asyncio-1.4.0, Faker-40.23.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 38 items
+
+tests/test_v5_evaluator_semantics.py ...............................     [ 81%]
+tests/test_annotation_preseal_validation.py .......                      [100%]
+
+============================== 38 passed in 0.78s ==============================

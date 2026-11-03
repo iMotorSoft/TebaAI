@@ -1,0 +1,19 @@
+{
+  "gate": "TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_V1",
+  "status": "FAIL",
+  "validated_at": "2026-10-23T12:16:59.904755+00:00",
+  "failed_conditions": [
+    "product_code_changes_zero"
+  ],
+  "conditions_evaluated": 51,
+  "current_c_preserved": true,
+  "durable_source_ready": false,
+  "ready_for_foundation_v2_publication_v1r2": false,
+  "foundation_v2_published": "NO",
+  "ready_for_c_parallel_generation_safety_v2": "NO",
+  "ready_for_c_reingest_execution": "NO",
+  "c_reingest_executed": "NO",
+  "commit": "NO",
+  "push": "NO",
+  "evidence_directory": "data/reports/breslov/c-durable-source-restoration-v1/"
+}

@@ -1,0 +1,177 @@
+1fa9290 (HEAD -> feature/console-backend-core) fix(breslov): preserve Hebrew extraction fidelity
+f8bd7e6 (origin/feature/console-backend-core) docs(breslov): record editor UI ingestion production candidate
+5048f6b fix(breslov): keep primary worker launcher dev-only
+416402d docs(breslov): record historical job resolution
+623e3f5 docs(breslov): close dev production candidate gate
+da549d6 fix(breslov): run primary golden worker in dev
+5836510 docs(breslov): record production readiness gap
+b657f19 test(breslov): validate guarded upload and publication
+f136349 feat(breslov): guard primary ingestion and publication
+2b36cd9 docs(breslov): correct final validation provenance
+6a64a66 docs(breslov): close Spanish public entry UX gates
+48ace56 feat(breslov): add premium module selector modal
+a7b6e46 feat(breslov): add module-aware public entry flow
+877da00 feat(breslov): integrate Content Manager library navigation
+a12229c feat(breslov): add Likutey Halajot editorial and legal review package
+1aa31c7 docs(breslov): close Milvus-dependent readiness validations
+ab87731 docs(breslov): complete Likutey Halajot promotion readiness v2
+9b89011 fix(breslov): resolve Likutey Halajot LM II 8 identity conflict
+c02f869 test(breslov): lock Likutey Halajot LM II 8 metadata integrity
+4c41e50 docs(breslov): commit pending report evidence and read-only probes
+4387f96 docs(breslov): record corpus reconciliation cases in ADR-013
+f4603b4 test(breslov): align primary evidence id expectation to v2
+a6d3aca docs(breslov): record worktree classification for premium UX closure
+bd74bbc docs(breslov): close Content Manager premium UX gate
+1528ef1 test(breslov): validate Content Manager premium UX and accessibility
+413a598 feat(breslov): complete premium Content Manager workflow
+5577d68 feat(breslov): complete premium Content Manager workflow with Breslov visual identity
+dc8c269 docs(breslov): close Content Manager ingestion orchestration gate
+1bba32a test(breslov): isolate Content Manager write validation from primary corpus
+0b364cc feat(breslov): extract reusable page-first ingestion pipeline
+8b64455 docs(breslov): record remaining Content Manager orchestration blockers
+c93d9ea test(breslov): validate content ingestion orchestration safety
+a275ea3 feat(breslov): add durable content ingestion orchestration foundation
+95e360a docs(breslov): record Content Manager v1 development blockers
+a4a8ad4 test(breslov): audit Content Manager development blockers
+330e291 docs(breslov): open Content Manager v1 development baseline
+5938bb4 feat(breslov): add controlled premium content ingestion manager
+aa12722 docs(breslov): establish Content Manager premium UX policy
+c1516ab docs(breslov): close editorial evidence identity contract v1
+8d7c0c1 fix(breslov): make editorial evidence identities granular and stable
+31a1f65 docs(breslov): close PDF ligature literal normalization v1
+9431d0e fix(breslov): normalize PDF ligatures for literal evidence
+fa25b16 docs(breslov): close canonical metadata model v1
+2ae4711 feat(breslov): add canonical work edition and source metadata
+8240931 docs(breslov): record blocked corpus scope identity review
+9e88eee docs(breslov): audit Likutey Halajot promotion readiness v1
+34b1e17 docs(breslov): close canonical editorial evidence selection v1
+b8d5a26 fix(breslov): make canonical editorial evidence selection deterministic
+f85c2e4 docs(breslov): close research access and record heading selection review
+a90bf44 fix(breslov): preserve exact footnote evidence and close page-first v2
+e31520d feat(breslov): add native page-first Likutey Halajot ingestion v2
+0f67be1 fix(breslov): reconcile printed references and footnote markers against real corpus
+2e100c8 feat(breslov): add page-first editorial evidence v2
+3574d12 feat(breslov): add bibliographic query planner v1
+e791f1c feat(breslov): add page-first evidence contract v1
+71af4a2 fix(breslov): recover structural section heading literals
+e8b57e7 fix(breslov): recover short English proper-name literals
+294e4ac feat(breslov): add premium research analyzing state
+f4fefa7 fix(breslov): add cross-language retrieval for multilingual simple RAG
+126b678 fix(breslov): normalize and prioritize Hebrew literal retrieval
+302d3c5 feat(breslov): add simple grounded RAG research pipeline
+ed5f161 fix(breslov): align primary claim evidence strength
+6405d33 fix(breslov): close production investigative intent regressions
+c06c77a fix(breslov): ground AI intent and relation evidence
+d932640 feat(breslov): add social preview metadata for WhatsApp
+4b517c7 fix(breslov): close production deployment regressions
+866a687 fix(breslov): interpret colloquial relational queries before analysis
+dcbf2d7 feat(breslov): add pre-retrieval interpretation confirmation
+b6ad378 feat(breslov): add multilingual named-topic resolution
+379ad8b test(breslov): add literal evidence UI and regression coverage
+4a29218 fix(breslov): finalize literal evidence source layer and single-summary rendering
+659f9d0 fix(breslov): clean literal evidence snippets and clarify source attribution
+7e25c95 fix(breslov): complete AI-first structural reference retrieval
+307b13d feat(breslov): add AI-first structured query understanding gate
+facd2f7 fix(breslov): prioritize verified literal phrase retrieval
+e40f103 fix(breslov): resolve canonical work and section identity
+3ddab13 fix(breslov): simplify research workspace empty state
+27f8a3c feat(breslov): reposition public home for investigative research
+b0ce7c8 fix(breslov): resolve typo-aware relational queries correctly
+1a2a8ca feat(breslov): add typo tolerance and concept suggestions
+8f99d4f fix(breslov): restore login session navigation and actions
+f015640 fix(breslov): answer source-layer follow-ups directly
+619b2bc docs(breslov): document research workspace validation status
+5c81163 test(breslov): validate Hebrew retrieval and source-layer tracing
+35e266f feat(breslov): add multilingual investigative research workspace
+7e90661 test(breslov): complete authenticated home e2e validation
+b4ae60b feat(breslov): add premium Breslov Research home
+7f83047 test(breslov): validate investigative QA with live LiteLLM grounding
+b9feaab feat(breslov): add grounded conversational investigative QA API
+13a070a test(breslov): complete Potencia cross corpus QA
+865a5fa test(breslov): add Potencia cross corpus QA
+fe86d37 feat(breslov): ingest La Potencia de la Plegaria final search
+4f30ef7 feat(breslov): add LM XV KDP fine zone detector
+0d4a731 feat(breslov): add LM XV KDP structural detector
+688e1d8 feat(breslov): ingest LM XV KDP page first column aware
+edb809b test(breslov): add LM XV KDP layout profile
+f52730e test(breslov): guard LM XV KDP preflight source
+8e3881e test(breslov): add cross-corpus investigative qa
+eb2ce10 feat(breslov): add final investigative search
+bf80309 feat(breslov): resolve nominal references investigatively
+6a977fa feat(breslov): add nominal reference extraction
+f9bbe1b feat(breslov): add likutey halajot note source granularity
+1e1b148 test(breslov): validate likutey halajot fine zones
+9cf9046 feat(breslov): add likutey halajot fine zone detector
+2301d60 feat(breslov): add likutey halajot structural detector
+d22f3ed feat(breslov): ingest likutey halajot page first
+1b1846a feat(breslov): finalize lmii search ready ingestion
+bb77a18 feat(breslov): store ai zone candidates
+d8904e1 feat(breslov): validate ai zone candidates
+38dbf20 feat(breslov): add ai zone detection routing
+5628c79 feat(breslov): promote lmii structural titles
+c6e0db3 feat(breslov): add lmii structural detector
+8492816 feat(breslov): add page-first lmii full ingestion
+d40bef2 feat(breslov): add lmii note marker status
+e1ff5ca feat(breslov): improve lmii investigative document model
+e7d5357 fix(breslov): repair litellm note continuity adjudication
+2273754 feat(breslov): add ai-assisted note continuity for lmii
+c3df5e6 feat(breslov): extend likutey moharan ii lesson7 layout ingestion
+32428da feat(breslov): add likutey moharan ii layout aware profile
+d7188dd feat(breslov): implement content node investigative model
+885b8aa feat(breslov): establish canonical document model v2
+ec5b8d7 feat(breslov): final closure corpus v2 vector layer and synthesis qa
+7fe4206 feat(breslov): rebuild corpus vector v2 and validate level4 synthesis
+5984fb0 feat(breslov): close vector layer v2 dual backend
+e4cdb73 docs(breslov): record library search hybrid acid closure
+e20cce6 test(breslov): add library search hybrid acid batch
+b2b0355 fix(breslov): resolve milvus collection code alias for hybrid search
+2a7f534 fix(breslov): improve book qa v2 comprehension ranking
+75230c8 test(breslov): add kitzur book qa v2 level 2 acid batch
+17c4077 fix(breslov): improve book qa v2 factual lookup and lesson regex
+ae3606e fix(breslov): add lesson-aware book qa retrieval
+511d14c test(breslov): add kitzur book qa v2 level 1 acid batch
+a1ff999 feat(breslov): add book qa v2 run discovery
+b6084fd feat(breslov): add book qa v2 sql endpoint
+c3dbc43 test(breslov): diagnose book qa hybrid embedding stability
+8cb48f8 test(breslov): validate book qa v2 hybrid retrieval
+de604fe test(breslov): add book qa v2 sql prototype
+b80acbb test(breslov): run kitzur ingestion v2 pilot
+598eef3 test(breslov): probe kitzur createspace page mapping
+db5c6a1 feat(breslov): add ingestion v2 tables and jardin pilot
+0dc8af2 docs(breslov): design ingestion v2 architecture
+5b47447 test(breslov): add book qa acid test for El Jardín de las Almas
+a70cc9b test(breslov): add milvus 2.6 acid validation report
+fd78fd4 fix(breslov): expose relation qa milvus fallback diagnostics
+acbd292 fix(breslov): improve relation qa synthesis fallback and concepts
+131c364 docs(breslov): record relation qa editorial acid batch closure
+e50c058 test(breslov): add relation qa editorial acid batch
+7c5dfef docs: add Breslov retrieval repair and layout evidence
+c917c4e feat(library): add layout-aware extraction and Hebrew normalization
+7ac96af fix(ui): render Relation QA response as investigative analysis, not FTS search
+bc3f860 feat(breslov): implement Relation QA endpoint + editorial QA acid batch
+5d73c37 chore(koren): remove Koren/Yevamot test corpus from Breslov environment
+ecf0659 docs(breslov): close ES/EN productive promotion and cleanup
+c27d986 feat(metadata): complete ES/EN bibliographic metadata for Cruzando el Puente and Un Día en la Vida
+fa0ffea feat(retrieval): add Breslov research source map prototype
+851dcce fix(config): normalize LiteLLM master key via globalVar
+7741c5d docs(library): document Likutey Halakhot local text sources
+e76c9d2 feat(library): add Hebrew PDF/Sefaria tooling and tests
+1780e90 feat(library): analyze Breslov lemma and shoresh layer
+36fce16 feat(library): validate Breslov test hybrid integrity
+7487740 feat(library): index Breslov markdown chunks in Milvus test
+e6b28c7 feat(library): apply structural markdown chunks for Breslov test books
+a01a17b feat(library): compare markdown chunking strategies for Breslov test books
+c585ce1 feat(library): ingest Breslov test books as canonical markdown
+65af4cd feat(library): add preflight for additional Breslov test books
+dbd41fb feat(library): validate isolated hybrid search for breslov test
+7e4be52 feat(library): index breslov test chunks in Milvus
+ee4a774 feat(library): apply Sijot-aware chunks to breslov test
+3290b4a feat(library): add page-aware chunk mapping audit
+e6e1a93 feat(library): add bibliographic metadata audit tool
+5c15dc4 feat(eval): add bibliographic search validation harness
+d2d1e92 feat(library): expose bibliographic text search API
+8717052 feat(library): add PostgreSQL full text search for chunks
+98a5856 feat(library): add chunking, embeddings, and Milvus vector indexing
+a4cc863 feat(library): add CLI document ingestion to PostgreSQL
+2d957d4 chore: add pymupdf4llm backend dependency
+54201e5 (origin/ux/team360-console-design-handoff, origin/main, origin/feature/knowledge-ingestion-service, origin/docs/knowledge-documents-foundation, ux/team360-console-design-handoff, main, feature/knowledge-ingestion-service, docs/knowledge-documents-foundation) Actualizar dependencias frontend y backend

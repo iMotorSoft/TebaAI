@@ -1,0 +1,221 @@
+{
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "runs": [
+    {
+      "page": 143,
+      "region": "R143_line",
+      "bbox": [
+        190,
+        67,
+        444,
+        83
+      ],
+      "coordinate_system": "unrotated PDF points; top-left origin",
+      "engine": "Tesseract",
+      "version": "5.3.4",
+      "language": "heb",
+      "dpi": 300,
+      "rotation": 0,
+      "preprocessing": "raw RGB render",
+      "config": {
+        "oem": 1,
+        "psm": 6
+      },
+      "source_method": "visual_ocr",
+      "command": [
+        "/home/issajar/.local/opt/tebaai-ocr-v1/usr/bin/tesseract",
+        "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/reports/breslov/hebrew-ocr-orthographic-search-v1/crops/R143_line-300.png",
+        "stdout",
+        "--tessdata-dir",
+        "/home/issajar/.local/opt/tebaai-ocr-v1/usr/share/tesseract-ocr/5/tessdata",
+        "-l",
+        "heb",
+        "--oem",
+        "1",
+        "--psm",
+        "6",
+        "--dpi",
+        "300"
+      ],
+      "raw_output": "שחוזֶרין בָּכֶל פּעִם אֶל הָאוּת הֶראשון, פַּמְבאָר שֶם, עין שם.\n",
+      "logical_output": "שחוזֶרין בָּכֶל פּעִם אֶל הָאוּת הֶראשון, פַּמְבאָר שֶם, עין שם.",
+      "postprocessing": "remove Unicode Cf bidi controls only; no reverse/reordering",
+      "stderr": "",
+      "metrics": {
+        "base_letter_accuracy": 0.972973,
+        "base_letter_reference_count": 37,
+        "base_letter_edit_distance": 1,
+        "word_order_accuracy": 0.9,
+        "word_boundary_accuracy": 1.0,
+        "number_accuracy": null,
+        "punctuation_accuracy": 1.0,
+        "niqqud_accuracy": null,
+        "niqqud_reference_count": null,
+        "unexpected_character_count": 0,
+        "replacement_character_count": 0
+      }
+    },
+    {
+      "page": 143,
+      "region": "R143_line",
+      "bbox": [
+        190,
+        67,
+        444,
+        83
+      ],
+      "coordinate_system": "unrotated PDF points; top-left origin",
+      "engine": "Tesseract",
+      "version": "5.3.4",
+      "language": "heb",
+      "dpi": 300,
+      "rotation": 0,
+      "preprocessing": "raw RGB render",
+      "config": {
+        "oem": 1,
+        "psm": 7
+      },
+      "source_method": "visual_ocr",
+      "command": [
+        "/home/issajar/.local/opt/tebaai-ocr-v1/usr/bin/tesseract",
+        "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/reports/breslov/hebrew-ocr-orthographic-search-v1/crops/R143_line-300.png",
+        "stdout",
+        "--tessdata-dir",
+        "/home/issajar/.local/opt/tebaai-ocr-v1/usr/share/tesseract-ocr/5/tessdata",
+        "-l",
+        "heb",
+        "--oem",
+        "1",
+        "--psm",
+        "7",
+        "--dpi",
+        "300"
+      ],
+      "raw_output": "שחוזֶרין בָּכֶל פּעִם אֶל הָאוּת הֶראשון, פַּמְבאָר שֶם, עין שם.\n",
+      "logical_output": "שחוזֶרין בָּכֶל פּעִם אֶל הָאוּת הֶראשון, פַּמְבאָר שֶם, עין שם.",
+      "postprocessing": "remove Unicode Cf bidi controls only; no reverse/reordering",
+      "stderr": "",
+      "metrics": {
+        "base_letter_accuracy": 0.972973,
+        "base_letter_reference_count": 37,
+        "base_letter_edit_distance": 1,
+        "word_order_accuracy": 0.9,
+        "word_boundary_accuracy": 1.0,
+        "number_accuracy": null,
+        "punctuation_accuracy": 1.0,
+        "niqqud_accuracy": null,
+        "niqqud_reference_count": null,
+        "unexpected_character_count": 0,
+        "replacement_character_count": 0
+      }
+    },
+    {
+      "page": 143,
+      "region": "R143_line",
+      "bbox": [
+        190,
+        67,
+        444,
+        83
+      ],
+      "coordinate_system": "unrotated PDF points; top-left origin",
+      "engine": "Tesseract",
+      "version": "5.3.4",
+      "language": "heb",
+      "dpi": 400,
+      "rotation": 0,
+      "preprocessing": "raw RGB render",
+      "config": {
+        "oem": 1,
+        "psm": 6
+      },
+      "source_method": "visual_ocr",
+      "command": [
+        "/home/issajar/.local/opt/tebaai-ocr-v1/usr/bin/tesseract",
+        "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/reports/breslov/hebrew-ocr-orthographic-search-v1/crops/R143_line-400.png",
+        "stdout",
+        "--tessdata-dir",
+        "/home/issajar/.local/opt/tebaai-ocr-v1/usr/share/tesseract-ocr/5/tessdata",
+        "-l",
+        "heb",
+        "--oem",
+        "1",
+        "--psm",
+        "6",
+        "--dpi",
+        "400"
+      ],
+      "raw_output": "שחוזֶרין בָּכֶל פּעַם אֶל הָאוּת הֶרְאשון, כַּמְבאָר שֶם, עיַן שֶם.\n",
+      "logical_output": "שחוזֶרין בָּכֶל פּעַם אֶל הָאוּת הֶרְאשון, כַּמְבאָר שֶם, עיַן שֶם.",
+      "postprocessing": "remove Unicode Cf bidi controls only; no reverse/reordering",
+      "stderr": "",
+      "metrics": {
+        "base_letter_accuracy": 1.0,
+        "base_letter_reference_count": 37,
+        "base_letter_edit_distance": 0,
+        "word_order_accuracy": 1.0,
+        "word_boundary_accuracy": 1.0,
+        "number_accuracy": null,
+        "punctuation_accuracy": 1.0,
+        "niqqud_accuracy": null,
+        "niqqud_reference_count": null,
+        "unexpected_character_count": 0,
+        "replacement_character_count": 0
+      }
+    },
+    {
+      "page": 143,
+      "region": "R143_line",
+      "bbox": [
+        190,
+        67,
+        444,
+        83
+      ],
+      "coordinate_system": "unrotated PDF points; top-left origin",
+      "engine": "Tesseract",
+      "version": "5.3.4",
+      "language": "heb",
+      "dpi": 400,
+      "rotation": 0,
+      "preprocessing": "raw RGB render",
+      "config": {
+        "oem": 1,
+        "psm": 7
+      },
+      "source_method": "visual_ocr",
+      "command": [
+        "/home/issajar/.local/opt/tebaai-ocr-v1/usr/bin/tesseract",
+        "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/reports/breslov/hebrew-ocr-orthographic-search-v1/crops/R143_line-400.png",
+        "stdout",
+        "--tessdata-dir",
+        "/home/issajar/.local/opt/tebaai-ocr-v1/usr/share/tesseract-ocr/5/tessdata",
+        "-l",
+        "heb",
+        "--oem",
+        "1",
+        "--psm",
+        "7",
+        "--dpi",
+        "400"
+      ],
+      "raw_output": "שחוזֶרין בָּכֶל פּעַם אֶל הָאוּת הֶרְאשון, כַּמְבאָר שֶם, עיַן שֶם.\n",
+      "logical_output": "שחוזֶרין בָּכֶל פּעַם אֶל הָאוּת הֶרְאשון, כַּמְבאָר שֶם, עיַן שֶם.",
+      "postprocessing": "remove Unicode Cf bidi controls only; no reverse/reordering",
+      "stderr": "",
+      "metrics": {
+        "base_letter_accuracy": 1.0,
+        "base_letter_reference_count": 37,
+        "base_letter_edit_distance": 0,
+        "word_order_accuracy": 1.0,
+        "word_boundary_accuracy": 1.0,
+        "number_accuracy": null,
+        "punctuation_accuracy": 1.0,
+        "niqqud_accuracy": null,
+        "niqqud_reference_count": null,
+        "unexpected_character_count": 0,
+        "replacement_character_count": 0
+      }
+    }
+  ]
+}

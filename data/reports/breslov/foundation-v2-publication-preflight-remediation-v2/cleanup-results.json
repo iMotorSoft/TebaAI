@@ -1,0 +1,19 @@
+{
+  "cleanup": {
+    "remaining": {
+      "knowledge_scopes": 0,
+      "library_collections_legacy": 0,
+      "library_logical_documents": 0,
+      "library_documents": 0,
+      "library_document_generations": 0,
+      "library_logical_document_active_generations": 0,
+      "library_generation_activation_audit": 0,
+      "library_document_chunks": 0,
+      "library_pages_v2": 0,
+      "library_ingestion_runs_v2": 0,
+      "library_document_texts": 0
+    },
+    "clean": true
+  },
+  "result": "PASS"
+}

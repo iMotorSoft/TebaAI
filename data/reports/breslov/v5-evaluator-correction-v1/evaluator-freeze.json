@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "version": "v5-evaluator-correction-v1",
+  "purpose": "Evaluator review freeze only; not a V5 execution seal",
+  "files": {
+    "data/reports/breslov/v5-hybrid-independent-confirmation-v1/run_gate.py": "7ac802832ab1c2a2fc171dc5e3f0cc8b19ca5d906d01c7147cdba17f329cf47b",
+    "data/reports/breslov/v5-hybrid-independent-confirmation-v1/evaluator.py": "2cbf8db787f48f98ec3492c632ed8bcfde485267d959fb9da1167150f16480f9",
+    "SrvRestAstroLS_v1/backend/tests/test_v5_evaluator_semantics.py": "756d08537bca76c9e84372ebaa80de0b097fc5dce6bb5bb1ca9a5ce7c8e60542",
+    "data/reports/breslov/v5-evaluator-correction-v1/synthetic_support.py": "dbbf75bf8797595cfc6d1c6d7fe6730441225d186c6dc0116133374e51f42d9b",
+    "data/reports/breslov/v5-evaluator-correction-v1/validate_evaluator.py": "eb99e03c1f7a58b00167fd4a5cf2575056822dae5783a5e96e68bbfa0b9f8988",
+    "data/reports/breslov/v5-evaluator-correction-v1/legacy_evaluator.py": "93a2ba82a4038173bd827edcd72e72a81639b274a8684e791d4549c537387406",
+    "data/reports/breslov/v5-evaluator-correction-v1/synthetic-evaluator-cases.json": "4165644fc88e63220397199581d050b0a40a36487f0b9b29888447266ee05a07",
+    "data/reports/breslov/v5-evaluator-correction-v1/evaluator-semantics-contract.md": "9f35394a3b9cc4ff7f593c0d2cd2d50890f97e7f7ef99d884b609873a092219a"
+  }
+}

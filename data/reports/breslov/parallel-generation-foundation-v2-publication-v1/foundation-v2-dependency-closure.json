@@ -1,0 +1,6 @@
+{
+  "status": "INCOMPLETE_NOT_APPROVED",
+  "MISSING_REQUIRED_DEPENDENCIES": null,
+  "reason": "ROLLBACK_REJECTS_PREVIOUSLY_ACTIVE_GENERATION",
+  "note": "Runtime imports generation.py and migration/view dependencies identified, but complete closure was not certified after discovery of defect."
+}

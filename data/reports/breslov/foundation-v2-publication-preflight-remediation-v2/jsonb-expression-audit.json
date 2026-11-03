@@ -1,0 +1,41 @@
+{
+  "occurrences": [
+    {
+      "location": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py:227",
+      "expression": "jsonb_build_object('region_publication', jsonb_build_object('page_status','FULL','marker', %s))",
+      "classification": "FIX_REQUIRED",
+      "resolution": "marker bound with %s::text"
+    },
+    {
+      "location": "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_postgres.py:104",
+      "expression": "to_jsonb(t)::text",
+      "classification": "SAFE_TYPED",
+      "reason": "to_jsonb over a table row; no bind"
+    },
+    {
+      "location": "SrvRestAstroLS_v1/backend/infrastructure/postgres/dev_content_reset.py:21",
+      "expression": "to_jsonb(t) row",
+      "classification": "SAFE_TYPED",
+      "reason": "table row, no untyped bind"
+    },
+    {
+      "location": "SrvRestAstroLS_v1/backend/modules/library/content_manager.py:755",
+      "expression": "jsonb_set(COALESCE(diagnostic,'{}'::jsonb), '{document_status}', '\"ready\"'::jsonb, true)",
+      "classification": "SAFE_TYPED",
+      "reason": "jsonb literals fully cast; no untyped bind"
+    },
+    {
+      "location": "SrvRestAstroLS_v1/backend/modules/library/content_manager_repository.py:160",
+      "expression": "jsonb_set(COALESCE(stage_states,'{}'::jsonb), ARRAY[%(current)s], '\"done\"'::jsonb, true)",
+      "classification": "SAFE_TYPED",
+      "reason": "ARRAY[text] resolves the bind, value is a jsonb literal cast; target_state uses ::jsonb"
+    },
+    {
+      "location": "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql:222",
+      "expression": "jsonb_build_object('backfill_source','migration-043')",
+      "classification": "SAFE_TYPED",
+      "reason": "literal-only arguments"
+    }
+  ],
+  "UNRESOLVED_AMBIGUOUS_JSONB_BINDS": 0
+}

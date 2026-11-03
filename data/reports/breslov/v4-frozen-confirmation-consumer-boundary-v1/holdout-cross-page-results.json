@@ -1,0 +1,36 @@
+{
+  "holdout": "V4_FROZEN_CONFIRMATION_HOLDOUT_V1",
+  "supported_cross_page_units": 3,
+  "linked": 0,
+  "unresolved": 3,
+  "items": [
+    {
+      "from": 108,
+      "to": 109,
+      "note": 31,
+      "terminal_region": "region-1e9d943201bc3011f53d0ccc",
+      "terminal_status": "UNRESOLVED",
+      "continuation_region": null,
+      "linked": false
+    },
+    {
+      "from": 164,
+      "to": 165,
+      "note": 57,
+      "terminal_region": "region-df0716de07385b3dade94e9b",
+      "terminal_status": "UNRESOLVED",
+      "continuation_region": null,
+      "linked": false
+    },
+    {
+      "from": 226,
+      "to": 227,
+      "note": 77,
+      "terminal_region": "region-25cb928a2daef11614aed982",
+      "terminal_status": "UNRESOLVED",
+      "continuation_region": null,
+      "linked": false
+    }
+  ],
+  "note": "Consumer-boundary cross-page behavior is separately proven with the synthetic two-page fixture and is not a substitute for holdout utility."
+}

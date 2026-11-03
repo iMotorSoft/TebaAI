@@ -1,0 +1,20 @@
+{
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "review_method": "assistant transcription and reinspection of visible original raster; not embedded text or OCR; human editorial signoff pending",
+  "scope": "short fragment benchmark; not a transcription or certificate of entire page. Base-only lines do not score niqqud.",
+  "regions": [
+    {"id":"R167_A", "page":167, "printed_page":149, "bbox":[360,43,447,59], "text":"149 ליקוטי הלכות", "line":true},
+    {"id":"R167_B", "page":167, "bbox":[50,65,447,214], "text":"", "scored":false, "purpose":"main body logical sequence/context control"},
+    {"id":"R167_B_line1", "page":167, "bbox":[105,67,444,83], "text":"רגלים כנ\"ל, ומשם נמשכין בחינת מנעלים שהם שומרין את הרגלין מהחיצונים.", "line":true},
+    {"id":"R167_B_line2", "page":167, "bbox":[54,133,444,148], "text":"ועל־כן צריכין לנעל של ימין תחלה, כי עקר הוא בחינת ימין שהוא חסד, שעל־ידי־זה קוצרין", "line":true},
+    {"id":"R167_B_line3", "page":167, "bbox":[288,147,444,163], "text":"אותה מהם ובונין אותה כנ\"ל.", "line":true},
+    {"id":"R167_C", "page":167, "bbox":[150,86,444,101], "text":"וזהו: \"כתפלין\", שהם אור הפנים, כידוע (פרי עץ חיים שער התפלין פרק ג),", "line":true, "purpose":"punctuated reference line including pointed fragment"},
+    {"id":"R167_C_niqqud", "page":167, "bbox":[300,86,348,101], "text":"אוֹר הַפָּנִים,", "pointed":true, "line":true},
+    {"id":"R167_D", "page":167, "bbox":[50,265,447,546], "text":"", "scored":false, "language":"spa", "purpose":"native-good Spanish control; not proposed for OCR"},
+    {"id":"R167_E_left", "page":167, "bbox":[50,573,249,651], "text":"", "scored":false, "language":"spa", "purpose":"left notes column"},
+    {"id":"R167_E_right", "page":167, "bbox":[252,573,447,651], "text":"", "scored":false, "language":"spa", "purpose":"right notes column; reference LM I, 22:1"},
+    {"id":"R167_E_combined", "page":167, "bbox":[50,573,447,651], "text":"", "scored":false, "language":"spa", "purpose":"two-column adversarial control only; never a primary OCR solution"},
+    {"id":"R55_A", "page":55, "printed_page":37, "bbox":[360,43,447,59], "text":"37 ליקוטי הלכות", "line":true, "purpose":"exclusively Cc-to-FFFD affected Hebrew header; not folio resolver fix"},
+    {"id":"R143_line", "page":143, "printed_page":125, "bbox":[190,67,444,83], "text":"שחוזרין בכל פעם אל האות הראשון, כמבאר שם, עין שם.", "line":true, "purpose":"additional serif Hebrew punctuation/base line"}
+  ]
+}

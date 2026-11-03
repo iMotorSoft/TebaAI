@@ -1,0 +1,3359 @@
+{
+  "schema": "forensic-positive-lineage-v1",
+  "pairs": [
+    {
+      "pair": "42->43",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 7,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "42": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+          "locator": "physical source page 42",
+          "sha256": "ca48b189e6a788f5dd7c76346a78ad8ef2f0b93b1e7fec9ed7b29d6b918e6b71",
+          "timestamp": "2026-10-18T15:53:30.480315+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "43": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+          "locator": "physical source page 43",
+          "sha256": "ca48b189e6a788f5dd7c76346a78ad8ef2f0b93b1e7fec9ed7b29d6b918e6b71",
+          "timestamp": "2026-10-18T15:53:30.480315+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "42": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+            "locator": "physical source page 42",
+            "sha256": "ca48b189e6a788f5dd7c76346a78ad8ef2f0b93b1e7fec9ed7b29d6b918e6b71",
+            "timestamp": "2026-10-18T15:53:30.480315+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "43": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+            "locator": "physical source page 43",
+            "sha256": "ca48b189e6a788f5dd7c76346a78ad8ef2f0b93b1e7fec9ed7b29d6b918e6b71",
+            "timestamp": "2026-10-18T15:53:30.480315+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json",
+          "locator": "page 42 note 7 and page 43 continuation; not merely physical_pages adjacency",
+          "sha256": "ea1103d593695c0b243c27d51fc1e5175c70460e0005b6b45dc87093b66d5869",
+          "timestamp": "2026-10-18T16:00:22.306182+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V2 certifier holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra ",
+        "leading_head": "y eleva sus puntos buenos, los cuales son llevados hacia él y ",
+        "next_explicit_marker": 8,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "42": "b703c71856ea9ecd86343db816a28e0bb748ff55edd8579b03e4e015ba4e5077",
+          "43": "7a666a7cdb54068f29aa09f774785c3a583c3af46d69501079ce15b1cd5c8e7e"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json",
+          "page_token_counts": [
+            4,
+            6
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 10,
+              "context": "2c106a\",\n  \"physical_pages\": [\n    21,\n    22,\n    23,\n    24,\n    41,\n    42,\n    43,\n    61,\n    62,\n    63,\n    81,\n    82,\n    83,\n    161,\n    162,\n    163,\n    211,\n    212\n  ],\n "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 9,
+              "context": "Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf'\nPAGES = [21,22,23,24,41,42,43,61,62,63,81,82,83,161,162,163,211,212]\n\ndef main():\n    with pymupdf.open(SOURCE) as doc:\n        p"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 23,
+              "context": "   25,\n    26,\n    27,\n    28,\n    30,\n    32,\n    34,\n    40,\n    41,\n    42,\n    43,\n    45,\n    46,\n    47,\n    48,\n    49,\n    50,\n    51,\n    52,\n    54,\n    55,\n    56,\n    57,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 20,
+              "context": "   22,\n    23,\n    24,\n    25,\n    26,\n    27,\n    28,\n    37,\n    41,\n    42,\n    43,\n    44,\n    45,\n    46,\n    47,\n    48,\n    49,\n    50,\n    51,\n    52,\n    53,\n    55,\n    56,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 38,
+              "context": "n`.\n\nExcluded pairs (same unresolved proof/threshold influence reason):\n\n- 42→43, note 7\n- 60→61, note 49\n- 64→65, note 58\n- 70→71, note 74\n- 73→74, note 86\n- 104→105, note 7\n- 122"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "ed after evaluator invalidity, so final eligibility is not claimed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisti"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            2,
+            3
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 236,
+              "context": " 130, 140, 150, 180, 190, 200},\n        \"V2_HOLDOUT\": {21, 22, 23, 24, 41, 42, 43, 61, 62, 63, 81, 82, 83, 161, 162, 163, 211, 212},\n        \"V3_HOLDOUT\": {25, 26, 27, 28, 45, 46, 4"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 56,
+              "context": " \"eligible_positive_count\": 12,\n  \"eligible_positive_pairs\": [\n    [\n      42,\n      43\n    ],\n    [\n      60,\n      61\n    ],\n    [\n      64,\n      65\n    ],\n    [\n      70,\n      71\n   "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 57,
+              "context": "   25,\n    26,\n    27,\n    28,\n    30,\n    32,\n    34,\n    40,\n    41,\n    42,\n    43,\n    45,\n    46,\n    47,\n    48,\n    49,\n    50,\n    51,\n    52,\n    54,\n    55,\n    56,\n    57,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/0"
+    },
+    {
+      "pair": "60->61",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 49,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "60": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 60",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "61": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+          "locator": "physical source page 61",
+          "sha256": "ca48b189e6a788f5dd7c76346a78ad8ef2f0b93b1e7fec9ed7b29d6b918e6b71",
+          "timestamp": "2026-10-18T15:53:30.480315+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "60": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 60",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "61": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+            "locator": "physical source page 61",
+            "sha256": "ca48b189e6a788f5dd7c76346a78ad8ef2f0b93b1e7fec9ed7b29d6b918e6b71",
+            "timestamp": "2026-10-18T15:53:30.480315+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B; earlier endpoint observations are recorded separately",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V4/V2 certifier holdouts",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "su capacidad de hablar, utiliza entonces esta capacidad para ",
+        "leading_head": "decir palabras de santidad y elevar a toda la materialidad en la ",
+        "next_explicit_marker": 50,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "60": "d4ad6f6a0359f0094448c6323c96102c4a965289506a2188d48ba4f961f84cc5",
+          "61": "7dcf363a9594d0c026fef0adc2bcfade19c75bc9fd529d6b1ab64ce5462bd812"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v1/page167-results.json",
+          "page_token_counts": [
+            4,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 886,
+              "context": "   \"quality_unresolved\": 12\n  },\n  \"notes_automatically_discovered\": [\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66\n  ],\n  \"page_local_boundaries\": \"PASS\",\n  \"column_ownership"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/page167-results.json",
+          "page_token_counts": [
+            4,
+            5
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 1717,
+              "context": "uation; no supported body family certificate\",\n  \"notes_discovered\": [\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66\n  ],\n  \"notes_certified\": [\n    61,\n    62,\n    63,\n    64\n"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "   50,\n    51,\n    52,\n    54,\n    55,\n    56,\n    57,\n    58,\n    59,\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    69,\n    70,\n    71,\n    73,\n    74,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 37,
+              "context": "   50,\n    51,\n    52,\n    53,\n    55,\n    56,\n    57,\n    58,\n    59,\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    70,\n    72,\n    73,\n    74,\n    75,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "irs (same unresolved proof/threshold influence reason):\n\n- 42→43, note 7\n- 60→61, note 49\n- 64→65, note 58\n- 70→71, note 74\n- 73→74, note 86\n- 104→105, note 7\n- 122→123, note 12\n- "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "r evaluator invalidity, so final eligibility is not claimed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting posi"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 60,
+              "context": "  \"eligible_positive_pairs\": [\n    [\n      42,\n      43\n    ],\n    [\n      60,\n      61\n    ],\n    [\n      64,\n      65\n    ],\n    [\n      70,\n      71\n    ],\n    [\n      73,\n      74\n   "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 73,
+              "context": "   50,\n    51,\n    52,\n    54,\n    55,\n    56,\n    57,\n    58,\n    59,\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    69,\n    70,\n    71,\n    73,\n    74,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/1"
+    },
+    {
+      "pair": "64->65",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 58,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "64": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+          "locator": "physical source page 64",
+          "sha256": "c5e0af1df741dcd09214cecb5e25b3556f40ed58d611073b3921e80c604aef50",
+          "timestamp": "2026-10-18T16:37:32.064481+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "65": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+          "locator": "physical source page 65",
+          "sha256": "c5e0af1df741dcd09214cecb5e25b3556f40ed58d611073b3921e80c604aef50",
+          "timestamp": "2026-10-18T16:37:32.064481+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "64": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+            "locator": "physical source page 64",
+            "sha256": "c5e0af1df741dcd09214cecb5e25b3556f40ed58d611073b3921e80c604aef50",
+            "timestamp": "2026-10-18T16:37:32.064481+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "65": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+            "locator": "physical source page 65",
+            "sha256": "c5e0af1df741dcd09214cecb5e25b3556f40ed58d611073b3921e80c604aef50",
+            "timestamp": "2026-10-18T16:37:32.064481+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/seal_holdout.py",
+          "locator": "CROSS tuple with matching physical pages and note",
+          "sha256": "4a8e4f1a0a677fbb0fd376deddb8ff837966eb4587da1c8a17d746f2c9b6331c",
+          "timestamp": "2026-10-19T00:39:17.010279+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V3 certifier holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "Torá de la misma expresión al describir la “reacción” de Dios ",
+        "leading_head": "al ver la “recién nacida” luz de la Creación: “Dios vio que la ",
+        "next_explicit_marker": 59,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "64": "507b12c63655559742693a0ba675394d18f727d0bac3ba470764b6bfa3b95c6c",
+          "65": "5869b2d723d35b8a3acf7f1557139c47c2e852304b1bd72de7ea4f0906399b38"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v1/page167-results.json",
+          "page_token_counts": [
+            6,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 890,
+              "context": "\n  \"notes_automatically_discovered\": [\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66\n  ],\n  \"page_local_boundaries\": \"PASS\",\n  \"column_ownership\": \"PASS\",\n  \"note_order\": \"PASS"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/page167-results.json",
+          "page_token_counts": [
+            7,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 1721,
+              "context": " certificate\",\n  \"notes_discovered\": [\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66\n  ],\n  \"notes_certified\": [\n    61,\n    62,\n    63,\n    64\n  ],\n  \"RTL\": \"UNRESOLVED\",\n  \"R"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/false-continuation-analysis.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 5,
+              "context": "*0**.\n- Sealed holdout editorial units linked: **0/4** (43 on 58→59, 58 on 64→65, 86 on 73→74, 123 on 86→87).\n- Development 66 on 167→168: reciprocal deterministic identity demonst"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json",
+          "page_token_counts": [
+            4,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 14,
+              "context": "   26,\n    27,\n    28,\n    45,\n    46,\n    47,\n    48,\n    58,\n    59,\n    64,\n    65,\n    73,\n    74,\n    85,\n    86,\n    87,\n    88,\n    171,\n    172,\n    173,\n    174,\n    215,\n    2"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 9,
+              "context": "LIKUTEY HALAJOT (Interior Final).pdf'\nPAGES=[25,26,27,28,45,46,47,48,58,59,64,65,73,74,85,86,87,88,171,172,173,174,215,216,217,218,241,242,243,244]\n\ndef main():\n    with pymupdf.op"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/seal_holdout.py",
+          "page_token_counts": [
+            4,
+            5
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 21,
+              "context": ",12],244:[11]}\nLEADING={45:12,59:43,65:58,74:86,87:123}\nCROSS=[(58,59,43),(64,65,58),(73,74,86),(86,87,123)]\n\n\ndef unit(parts,zone,good,*,note=None,state='CONTINUATION_UNRESOLVED',"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 43,
+              "context": "   55,\n    56,\n    57,\n    58,\n    59,\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    69,\n    70,\n    71,\n    73,\n    74,\n    75,\n    76,\n    77,\n    78,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 41,
+              "context": "   55,\n    56,\n    57,\n    58,\n    59,\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    70,\n    72,\n    73,\n    74,\n    75,\n    76,\n    77,\n    80,\n    81,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 40,
+              "context": "ved proof/threshold influence reason):\n\n- 42→43, note 7\n- 60→61, note 49\n- 64→65, note 58\n- 70→71, note 74\n- 73→74, note 86\n- 104→105, note 7\n- 122→123, note 12\n- 123→124, note 20\n"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "ator invalidity, so final eligibility is not claimed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive co"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 237,
+              "context": " 211, 212},\n        \"V3_HOLDOUT\": {25, 26, 27, 28, 45, 46, 47, 48, 58, 59, 64, 65, 73, 74, 85, 86, 87, 88, 171, 172, 173, 174, 215, 216, 217, 218, 241, 242, 243, 244},\n        \"V4_H"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 64,
+              "context": "   [\n      42,\n      43\n    ],\n    [\n      60,\n      61\n    ],\n    [\n      64,\n      65\n    ],\n    [\n      70,\n      71\n    ],\n    [\n      73,\n      74\n    ],\n    [\n      104,\n      105\n "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 77,
+              "context": "   55,\n    56,\n    57,\n    58,\n    59,\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    69,\n    70,\n    71,\n    73,\n    74,\n    75,\n    76,\n    77,\n    78,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/2"
+    },
+    {
+      "pair": "70->71",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 74,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "70": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+          "locator": "physical source page 70",
+          "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+          "timestamp": "2026-10-16T13:33:15.082623+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "71": {
+          "artifact": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-source-inventory.json",
+          "locator": "physical source page 71",
+          "sha256": "225f4bb5bef4cdc290f4fc7b56b95ba7dd65a1e726d2e64995cac46810d618f5",
+          "timestamp": "2026-10-20T12:04:49.992658+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "70": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+            "locator": "physical source page 70",
+            "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+            "timestamp": "2026-10-16T13:33:15.082623+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "71": {
+            "artifact": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-source-inventory.json",
+            "locator": "physical source page 71",
+            "sha256": "225f4bb5bef4cdc290f4fc7b56b95ba7dd65a1e726d2e64995cac46810d618f5",
+            "timestamp": "2026-10-20T12:04:49.992658+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B; earlier endpoint observations are recorded separately",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V1/V4 certifier holdouts",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "el Kriat Shemá). Típicamente, este ascenso de energía evoca ",
+        "leading_head": "un despertar recíproco desde arriba (itaruta deleila), de modo ",
+        "next_explicit_marker": 75,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "70": "9370ab432079dc181188edb4c1928fd1e66d201439f7baafeb28382fec7a20f0",
+          "71": "56b1b782e6d88ca3addb6f9cf757dafe4220d3d942b100a7e6ccfa153ee771bb"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 49,
+              "context": "   61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    69,\n    70,\n    71,\n    73,\n    74,\n    75,\n    76,\n    77,\n    78,\n    80,\n    81,\n    82,\n    83,\n    84,\n    85,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 41,
+              "context": "ld influence reason):\n\n- 42→43, note 7\n- 60→61, note 49\n- 64→65, note 58\n- 70→71, note 74\n- 73→74, note 86\n- 104→105, note 7\n- 122→123, note 12\n- 123→124, note 20\n- 130→131, note 4"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "validity, so final eligibility is not claimed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 68,
+              "context": "   [\n      60,\n      61\n    ],\n    [\n      64,\n      65\n    ],\n    [\n      70,\n      71\n    ],\n    [\n      73,\n      74\n    ],\n    [\n      104,\n      105\n    ],\n    [\n      122,\n      123"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 83,
+              "context": "   61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    69,\n    70,\n    71,\n    73,\n    74,\n    75,\n    76,\n    77,\n    78,\n    80,\n    81,\n    82,\n    83,\n    84,\n    85,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/3"
+    },
+    {
+      "pair": "73->74",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 86,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "73": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+          "locator": "physical source page 73",
+          "sha256": "c5e0af1df741dcd09214cecb5e25b3556f40ed58d611073b3921e80c604aef50",
+          "timestamp": "2026-10-18T16:37:32.064481+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "74": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+          "locator": "physical source page 74",
+          "sha256": "c5e0af1df741dcd09214cecb5e25b3556f40ed58d611073b3921e80c604aef50",
+          "timestamp": "2026-10-18T16:37:32.064481+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "73": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+            "locator": "physical source page 73",
+            "sha256": "c5e0af1df741dcd09214cecb5e25b3556f40ed58d611073b3921e80c604aef50",
+            "timestamp": "2026-10-18T16:37:32.064481+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "74": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+            "locator": "physical source page 74",
+            "sha256": "c5e0af1df741dcd09214cecb5e25b3556f40ed58d611073b3921e80c604aef50",
+            "timestamp": "2026-10-18T16:37:32.064481+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v3/seal_holdout.py",
+          "locator": "CROSS tuple with matching physical pages and note",
+          "sha256": "4a8e4f1a0a677fbb0fd376deddb8ff837966eb4587da1c8a17d746f2c9b6331c",
+          "timestamp": "2026-10-19T00:39:17.010279+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V3 certifier holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "86 Ver §4 más arriba, donde el Rabí Natán conecta peer ",
+        "leading_head": "con el esplendor y los colores superiores. La conexión que ",
+        "next_explicit_marker": 87,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "73": "3b00d9533c14a6c977324dd29b057e849d92101e05c4fb00f4791fb968c0f972",
+          "74": "f1407e2bff3ba0323ee58359df530901462cffc103ee5b959a5c692abd6f1014"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/false-continuation-analysis.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 5,
+              "context": "d holdout editorial units linked: **0/4** (43 on 58→59, 58 on 64→65, 86 on 73→74, 123 on 86→87).\n- Development 66 on 167→168: reciprocal deterministic identity demonstrated; end be"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json",
+          "page_token_counts": [
+            4,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 16,
+              "context": "   28,\n    45,\n    46,\n    47,\n    48,\n    58,\n    59,\n    64,\n    65,\n    73,\n    74,\n    85,\n    86,\n    87,\n    88,\n    171,\n    172,\n    173,\n    174,\n    215,\n    216,\n    217,\n   "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 9,
+              "context": "Y HALAJOT (Interior Final).pdf'\nPAGES=[25,26,27,28,45,46,47,48,58,59,64,65,73,74,85,86,87,88,171,172,173,174,215,216,217,218,241,242,243,244]\n\ndef main():\n    with pymupdf.open(SOU"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/seal_holdout.py",
+          "page_token_counts": [
+            4,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 21,
+              "context": "1]}\nLEADING={45:12,59:43,65:58,74:86,87:123}\nCROSS=[(58,59,43),(64,65,58),(73,74,86),(86,87,123)]\n\n\ndef unit(parts,zone,good,*,note=None,state='CONTINUATION_UNRESOLVED',basis='Sour"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 51,
+              "context": "   63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    69,\n    70,\n    71,\n    73,\n    74,\n    75,\n    76,\n    77,\n    78,\n    80,\n    81,\n    82,\n    83,\n    84,\n    85,\n    86,\n    87,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 48,
+              "context": "   62,\n    63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    70,\n    72,\n    73,\n    74,\n    75,\n    76,\n    77,\n    80,\n    81,\n    82,\n    83,\n    85,\n    86,\n    87,\n    88,\n    89,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 42,
+              "context": "on):\n\n- 42→43, note 7\n- 60→61, note 49\n- 64→65, note 58\n- 70→71, note 74\n- 73→74, note 86\n- 104→105, note 7\n- 122→123, note 12\n- 123→124, note 20\n- 130→131, note 44\n- 139→140, note"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "y, so final eligibility is not claimed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract has min"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            3,
+            3
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 237,
+              "context": "2},\n        \"V3_HOLDOUT\": {25, 26, 27, 28, 45, 46, 47, 48, 58, 59, 64, 65, 73, 74, 85, 86, 87, 88, 171, 172, 173, 174, 215, 216, 217, 218, 241, 242, 243, 244},\n        \"V4_HOLDOUT\":"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 72,
+              "context": "   [\n      64,\n      65\n    ],\n    [\n      70,\n      71\n    ],\n    [\n      73,\n      74\n    ],\n    [\n      104,\n      105\n    ],\n    [\n      122,\n      123\n    ],\n    [\n      123,\n      1"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 85,
+              "context": "   63,\n    64,\n    65,\n    66,\n    67,\n    68,\n    69,\n    70,\n    71,\n    73,\n    74,\n    75,\n    76,\n    77,\n    78,\n    80,\n    81,\n    82,\n    83,\n    84,\n    85,\n    86,\n    87,\n  "
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/4"
+    },
+    {
+      "pair": "104->105",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 7,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "104": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 104",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "105": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 105",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "104": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 104",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "105": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 105",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "locator": "CROSS tuple with matching physical pages and note",
+          "sha256": "236d0dddc163117e28e3dcc4c72ed407a579afc4394b79505576560f83532f3b",
+          "timestamp": "2026-10-19T16:41:30.202030+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V4 certifier holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "mucho más sutil y difundida del taavat mamón es la persona ",
+        "leading_head": "que se preocupa y se angustia por no tener sufi ciente dinero. Su ",
+        "next_explicit_marker": 8,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "104": "6d57220552fb5cb207acdd6af600a480d1e55a91d997b43dee04bae8b9652711",
+          "105": "91ce0607955583efcc75cd97bfc86cc2335e214a24a10988bdc208a923be2b70"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "page_token_counts": [
+            5,
+            6
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 18,
+              "context": "   66,\n    67,\n    68,\n    75,\n    76,\n    77,\n    89,\n    90,\n    91,\n    104,\n    105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "page_token_counts": [
+            5,
+            5
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 18,
+              "context": "   66,\n    67,\n    68,\n    75,\n    76,\n    77,\n    89,\n    90,\n    91,\n    104,\n    105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 9,
+              "context": "JOT (Interior Final).pdf'\nPAGES=[49,50,51,52,60,66,67,68,75,76,77,89,90,91,104,105,111,112,122,123,124,\n       130,131,149,150,151,175,176,177,219,220,221]\n\ndef main():\n    with pymu"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 11,
+              "context": "40d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a'\nCROSS = [(104, 105, 7), (111, 112, 42), (122, 123, 12), (123, 124, 20),\n         (130, 131, 44), (149, 150, 8), (150, "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 77,
+              "context": "  91,\n    92,\n    93,\n    94,\n    95,\n    96,\n    97,\n    98,\n    100,\n    104,\n    105,\n    106,\n    107,\n    108,\n    109,\n    110,\n    111,\n    112,\n    113,\n    114,\n    120,\n    122,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 65,
+              "context": "  83,\n    85,\n    86,\n    87,\n    88,\n    89,\n    90,\n    91,\n    100,\n    104,\n    105,\n    110,\n    111,\n    112,\n    120,\n    122,\n    123,\n    124,\n    130,\n    131,\n    140,\n    143,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 43,
+              "context": "te 7\n- 60→61, note 49\n- 64→65, note 58\n- 70→71, note 74\n- 73→74, note 86\n- 104→105, note 7\n- 122→123, note 12\n- 123→124, note 20\n- 130→131, note 44\n- 139→140, note 71\n- 149→150, note"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "inal eligibility is not claimed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract has minimum_corr"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            3,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 238,
+              "context": "    \"V4_HOLDOUT\": {49, 50, 51, 52, 60, 66, 67, 68, 75, 76, 77, 89, 90, 91, 104, 105, 111, 112, 122, 123, 124, 130, 131, 149, 150, 151, 175, 176, 177, 219, 220, 221},\n        \"V4_FROZE"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 76,
+              "context": "   [\n      70,\n      71\n    ],\n    [\n      73,\n      74\n    ],\n    [\n      104,\n      105\n    ],\n    [\n      122,\n      123\n    ],\n    [\n      123,\n      124\n    ],\n    [\n      130,\n      1"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 111,
+              "context": "  91,\n    92,\n    93,\n    94,\n    95,\n    96,\n    97,\n    98,\n    100,\n    104,\n    105,\n    106,\n    107,\n    108,\n    109,\n    110,\n    111,\n    112,\n    113,\n    114,\n    120,\n    121,"
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/5"
+    },
+    {
+      "pair": "122->123",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 12,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "122": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 122",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "123": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 123",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "122": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 122",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "123": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 123",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "locator": "CROSS tuple with matching physical pages and note",
+          "sha256": "236d0dddc163117e28e3dcc4c72ed407a579afc4394b79505576560f83532f3b",
+          "timestamp": "2026-10-19T16:41:30.202030+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V4 certifier holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente, ",
+        "leading_head": "de modo que en virtud de esa unión se revela en la creación una ",
+        "next_explicit_marker": 13,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "122": "f59b6ca1c01b6267ef0b4769c951b463df446575397fc12de6bc24c1bd603410",
+          "123": "93e5787bce8e7b8d89cecc32554e2e0360c53f23383528b16f43d6fa0226d2fd"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "page_token_counts": [
+            4,
+            6
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 22,
+              "context": "6,\n    77,\n    89,\n    90,\n    91,\n    104,\n    105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "page_token_counts": [
+            4,
+            6
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 22,
+              "context": "6,\n    77,\n    89,\n    90,\n    91,\n    104,\n    105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 9,
+              "context": "nal).pdf'\nPAGES=[49,50,51,52,60,66,67,68,75,76,77,89,90,91,104,105,111,112,122,123,124,\n       130,131,149,150,151,175,176,177,219,220,221]\n\ndef main():\n    with pymupdf.open(SOURCE)"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 11,
+              "context": "50e98ae32c20663751bb01cea82c106a'\nCROSS = [(104, 105, 7), (111, 112, 42), (122, 123, 12), (123, 124, 20),\n         (130, 131, 44), (149, 150, 8), (150, 151, 16)]\nLEADING = {next_page:"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 89,
+              "context": "   108,\n    109,\n    110,\n    111,\n    112,\n    113,\n    114,\n    120,\n    122,\n    123,\n    124,\n    125,\n    126,\n    127,\n    128,\n    130,\n    131,\n    136,\n    137,\n    138,\n    139,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 71,
+              "context": "    91,\n    100,\n    104,\n    105,\n    110,\n    111,\n    112,\n    120,\n    122,\n    123,\n    124,\n    130,\n    131,\n    140,\n    143,\n    149,\n    150,\n    151,\n    156,\n    161,\n    162,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 44,
+              "context": " 49\n- 64→65, note 58\n- 70→71, note 74\n- 73→74, note 86\n- 104→105, note 7\n- 122→123, note 12\n- 123→124, note 20\n- 130→131, note 44\n- 139→140, note 71\n- 149→150, note 8\n- 150→151, note"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 39,
+              "context": "ibility is not claimed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract has minimum_correct_links"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            2,
+            3
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 238,
+              "context": "9, 50, 51, 52, 60, 66, 67, 68, 75, 76, 77, 89, 90, 91, 104, 105, 111, 112, 122, 123, 124, 130, 131, 149, 150, 151, 175, 176, 177, 219, 220, 221},\n        \"V4_FROZEN_CONFIRMATION_HOLDO"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 80,
+              "context": " [\n      73,\n      74\n    ],\n    [\n      104,\n      105\n    ],\n    [\n      122,\n      123\n    ],\n    [\n      123,\n      124\n    ],\n    [\n      130,\n      131\n    ],\n    [\n      139,\n      1"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 124,
+              "context": "   109,\n    110,\n    111,\n    112,\n    113,\n    114,\n    120,\n    121,\n    122,\n    123,\n    124,\n    125,\n    126,\n    127,\n    128,\n    129,\n    130,\n    131,\n    132,\n    133,\n    135,"
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/6"
+    },
+    {
+      "pair": "123->124",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 20,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "123": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 123",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "124": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 124",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "123": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 123",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "124": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 124",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "locator": "CROSS tuple with matching physical pages and note",
+          "sha256": "236d0dddc163117e28e3dcc4c72ed407a579afc4394b79505576560f83532f3b",
+          "timestamp": "2026-10-19T16:41:30.202030+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V4 certifier holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "20 Ver la nota 67 en la lección del Rebe Najmán, que explica ",
+        "leading_head": "por qué considera a la gula y no a la inmoralidad ni a la avaricia ",
+        "next_explicit_marker": 21,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "123": "93e5787bce8e7b8d89cecc32554e2e0360c53f23383528b16f43d6fa0226d2fd",
+          "124": "be8b380de4e225e315379775ad69f710ead8f49cf1c44475a24285f811f01909"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "page_token_counts": [
+            6,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 23,
+              "context": ",\n    89,\n    90,\n    91,\n    104,\n    105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,\n    221\n"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "page_token_counts": [
+            6,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 23,
+              "context": ",\n    89,\n    90,\n    91,\n    104,\n    105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,\n    221\n"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 9,
+              "context": ".pdf'\nPAGES=[49,50,51,52,60,66,67,68,75,76,77,89,90,91,104,105,111,112,122,123,124,\n       130,131,149,150,151,175,176,177,219,220,221]\n\ndef main():\n    with pymupdf.open(SOURCE) as "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 11,
+              "context": "51bb01cea82c106a'\nCROSS = [(104, 105, 7), (111, 112, 42), (122, 123, 12), (123, 124, 20),\n         (130, 131, 44), (149, 150, 8), (150, 151, 16)]\nLEADING = {next_page: number for _, n"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 90,
+              "context": "   109,\n    110,\n    111,\n    112,\n    113,\n    114,\n    120,\n    122,\n    123,\n    124,\n    125,\n    126,\n    127,\n    128,\n    130,\n    131,\n    136,\n    137,\n    138,\n    139,\n    140,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 72,
+              "context": "   100,\n    104,\n    105,\n    110,\n    111,\n    112,\n    120,\n    122,\n    123,\n    124,\n    130,\n    131,\n    140,\n    143,\n    149,\n    150,\n    151,\n    156,\n    161,\n    162,\n    163,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 45,
+              "context": "8\n- 70→71, note 74\n- 73→74, note 86\n- 104→105, note 7\n- 122→123, note 12\n- 123→124, note 20\n- 130→131, note 44\n- 139→140, note 71\n- 149→150, note 8\n- 150→151, note 16\n\n## Ordering an"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 40,
+              "context": "s not claimed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract has minimum_correct_links=3 (not a"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            3,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 238,
+              "context": ", 51, 52, 60, 66, 67, 68, 75, 76, 77, 89, 90, 91, 104, 105, 111, 112, 122, 123, 124, 130, 131, 149, 150, 151, 175, 176, 177, 219, 220, 221},\n        \"V4_FROZEN_CONFIRMATION_HOLDOUT\": "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 84,
+              "context": "\n      104,\n      105\n    ],\n    [\n      122,\n      123\n    ],\n    [\n      123,\n      124\n    ],\n    [\n      130,\n      131\n    ],\n    [\n      139,\n      140\n    ],\n    [\n      149,\n      1"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 125,
+              "context": "   110,\n    111,\n    112,\n    113,\n    114,\n    120,\n    121,\n    122,\n    123,\n    124,\n    125,\n    126,\n    127,\n    128,\n    129,\n    130,\n    131,\n    132,\n    133,\n    135,\n    136,"
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/7"
+    },
+    {
+      "pair": "130->131",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 44,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "130": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+          "locator": "physical source page 130",
+          "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+          "timestamp": "2026-10-16T13:33:15.082623+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "131": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 131",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "130": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+            "locator": "physical source page 130",
+            "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+            "timestamp": "2026-10-16T13:33:15.082623+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "131": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 131",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "locator": "CROSS tuple with matching physical pages and note",
+          "sha256": "236d0dddc163117e28e3dcc4c72ed407a579afc4394b79505576560f83532f3b",
+          "timestamp": "2026-10-19T16:41:30.202030+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V1/V4 certifier holdouts",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que ",
+        "leading_head": "HaShem estableció dos grandes luminarias en el cielo para ",
+        "next_explicit_marker": 45,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "130": "63cb5f0815069bcdfd9ab0a8379622eea84fc947ddaca75ad86600990005d22f",
+          "131": "8de914d18ea2be18fb6c473b284c4006c1f534bab9b5384d89580c14a203698f"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "page_token_counts": [
+            4,
+            9
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 25,
+              "context": "    91,\n    104,\n    105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,\n    221\n  ],\n  \"source_sha"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "page_token_counts": [
+            4,
+            8
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 25,
+              "context": "    91,\n    104,\n    105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,\n    221\n  ],\n  \"source_sha"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 10,
+              "context": "50,51,52,60,66,67,68,75,76,77,89,90,91,104,105,111,112,122,123,124,\n       130,131,149,150,151,175,176,177,219,220,221]\n\ndef main():\n    with pymupdf.open(SOURCE) as doc:\n        par"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 12,
+              "context": " [(104, 105, 7), (111, 112, 42), (122, 123, 12), (123, 124, 20),\n         (130, 131, 44), (149, 150, 8), (150, 151, 16)]\nLEADING = {next_page: number for _, next_page, number in CROSS"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 96,
+              "context": "   120,\n    122,\n    123,\n    124,\n    125,\n    126,\n    127,\n    128,\n    130,\n    131,\n    136,\n    137,\n    138,\n    139,\n    140,\n    143,\n    149,\n    150,\n    151,\n    161,\n    162,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 74,
+              "context": "   105,\n    110,\n    111,\n    112,\n    120,\n    122,\n    123,\n    124,\n    130,\n    131,\n    140,\n    143,\n    149,\n    150,\n    151,\n    156,\n    161,\n    162,\n    163,\n    166,\n    167,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 46,
+              "context": "- 73→74, note 86\n- 104→105, note 7\n- 122→123, note 12\n- 123→124, note 20\n- 130→131, note 44\n- 139→140, note 71\n- 149→150, note 8\n- 150→151, note 16\n\n## Ordering and freeze\n\n1. Branch"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 40,
+              "context": "imed.\nPairs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract has minimum_correct_links=3 (not a majority"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            3,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 238,
+              "context": "60, 66, 67, 68, 75, 76, 77, 89, 90, 91, 104, 105, 111, 112, 122, 123, 124, 130, 131, 149, 150, 151, 175, 176, 177, 219, 220, 221},\n        \"V4_FROZEN_CONFIRMATION_HOLDOUT\": {13, 14, 1"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 88,
+              "context": "\n      122,\n      123\n    ],\n    [\n      123,\n      124\n    ],\n    [\n      130,\n      131\n    ],\n    [\n      139,\n      140\n    ],\n    [\n      149,\n      150\n    ],\n    [\n      150,\n      1"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 132,
+              "context": "   122,\n    123,\n    124,\n    125,\n    126,\n    127,\n    128,\n    129,\n    130,\n    131,\n    132,\n    133,\n    135,\n    136,\n    137,\n    138,\n    139,\n    140,\n    142,\n    143,\n    148,"
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/8"
+    },
+    {
+      "pair": "139->140",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 71,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "139": {
+          "artifact": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-source-inventory.json",
+          "locator": "physical source page 139",
+          "sha256": "225f4bb5bef4cdc290f4fc7b56b95ba7dd65a1e726d2e64995cac46810d618f5",
+          "timestamp": "2026-10-20T12:04:49.992658+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "140": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+          "locator": "physical source page 140",
+          "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+          "timestamp": "2026-10-16T13:33:15.082623+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "139": {
+            "artifact": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-source-inventory.json",
+            "locator": "physical source page 139",
+            "sha256": "225f4bb5bef4cdc290f4fc7b56b95ba7dd65a1e726d2e64995cac46810d618f5",
+            "timestamp": "2026-10-20T12:04:49.992658+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "140": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+            "locator": "physical source page 140",
+            "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+            "timestamp": "2026-10-16T13:33:15.082623+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B; earlier endpoint observations are recorded separately",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V4 frozen confirmation / V1 holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá ",
+        "leading_head": "correspondiente que se fortalece cuando falta la santidad. ",
+        "next_explicit_marker": 72,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "139": "799eeef8196116def9d3515a37e41650b97e3a0092b76e8bc9f7adc0b8314930",
+          "140": "e4ed64d1f693ad17e31e20c26dd845227b222d177a7506e878b4e1b589b75490"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-annotation-sanity.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 22,
+              "context": ",\n      198,\n      137,\n      138\n    ],\n    [\n      198,\n      199,\n      139,\n      140\n    ],\n    [\n      245,\n      246,\n      2,\n      3\n    ],\n    [\n      246,\n      247,\n      3,\n   "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-definition.json",
+          "page_token_counts": [
+            4,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 32020,
+              "context": "       137,\n        138\n      ],\n      [\n        198,\n        199,\n        139,\n        140\n      ],\n      [\n        245,\n        246,\n        2,\n        3\n      ],\n      [\n        246,\n     "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-results.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 23,
+              "context": ",\n      198,\n      137,\n      138\n    ],\n    [\n      198,\n      199,\n      139,\n      140\n    ],\n    [\n      245,\n      246,\n      2,\n      3\n    ],\n    [\n      246,\n      247,\n      3,\n   "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-seal.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 57,
+              "context": ",\n      198,\n      137,\n      138\n    ],\n    [\n      198,\n      199,\n      139,\n      140\n    ],\n    [\n      245,\n      246,\n      2,\n      3\n    ],\n    [\n      246,\n      247,\n      3,\n   "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 57,
+              "context": ",\n      198,\n      137,\n      138\n    ],\n    [\n      198,\n      199,\n      139,\n      140\n    ],\n    [\n      245,\n      246,\n      2,\n      3\n    ],\n    [\n      246,\n      247,\n      3,\n   "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 24,
+              "context": "VES = [\n    [186, 187, 108, 109],\n    [197, 198, 137, 138],\n    [198, 199, 139, 140],\n    [245, 246, 2, 3],\n    [246, 247, 3, 4],\n    [251, 252, 11, 12],\n    [252, 253, 13, 14],\n    ["
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 101,
+              "context": "   126,\n    127,\n    128,\n    130,\n    131,\n    136,\n    137,\n    138,\n    139,\n    140,\n    143,\n    149,\n    150,\n    151,\n    161,\n    162,\n    163,\n    164,\n    165,\n    166,\n    167,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            3,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 47,
+              "context": "104→105, note 7\n- 122→123, note 12\n- 123→124, note 20\n- 130→131, note 44\n- 139→140, note 71\n- 149→150, note 8\n- 150→151, note 16\n\n## Ordering and freeze\n\n1. Branch/HEAD/status/staged"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 40,
+              "context": "rs: 42→43, 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract has minimum_correct_links=3 (not a majority rule);\nf"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            3
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 92,
+              "context": "\n      123,\n      124\n    ],\n    [\n      130,\n      131\n    ],\n    [\n      139,\n      140\n    ],\n    [\n      149,\n      150\n    ],\n    [\n      150,\n      151\n    ]\n  ],\n  \"canonical_errors\""
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 140,
+              "context": "   130,\n    131,\n    132,\n    133,\n    135,\n    136,\n    137,\n    138,\n    139,\n    140,\n    142,\n    143,\n    148,\n    149,\n    150,\n    151,\n    153,\n    154,\n    155,\n    160,\n    161,"
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/9"
+    },
+    {
+      "pair": "149->150",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 8,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "149": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 149",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "150": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+          "locator": "physical source page 150",
+          "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+          "timestamp": "2026-10-16T13:33:15.082623+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "149": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 149",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "150": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+            "locator": "physical source page 150",
+            "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+            "timestamp": "2026-10-16T13:33:15.082623+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "locator": "CROSS tuple with matching physical pages and note",
+          "sha256": "236d0dddc163117e28e3dcc4c72ed407a579afc4394b79505576560f83532f3b",
+          "timestamp": "2026-10-19T16:41:30.202030+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V4 certifier holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "8 El Zohar (II, 70-78) enseña que es posible detectar con ",
+        "leading_head": "precisión el carácter de una persona y sus rasgos de personalidad ",
+        "next_explicit_marker": 9,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "149": "1f270cf6e1b39bb7732aa1dc6f8e5b73a135425393e717f0fb5dd1de3987eaee",
+          "150": "802c947d59a84653700583f696200169c4cbabb40f2d60817a8f002df3e4cb34"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "page_token_counts": [
+            4,
+            6
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 27,
+              "context": "   105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,\n    221\n  ],\n  \"source_sha256\": \"440d4fd3486"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "page_token_counts": [
+            4,
+            6
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 27,
+              "context": "   105,\n    111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,\n    221\n  ],\n  \"source_sha256\": \"440d4fd3486"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 10,
+              "context": ",60,66,67,68,75,76,77,89,90,91,104,105,111,112,122,123,124,\n       130,131,149,150,151,175,176,177,219,220,221]\n\ndef main():\n    with pymupdf.open(SOURCE) as doc:\n        parsed=pars"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 12,
+              "context": " (111, 112, 42), (122, 123, 12), (123, 124, 20),\n         (130, 131, 44), (149, 150, 8), (150, 151, 16)]\nLEADING = {next_page: number for _, next_page, number in CROSS}\nCAPTION = 'Lik"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 104,
+              "context": "   130,\n    131,\n    136,\n    137,\n    138,\n    139,\n    140,\n    143,\n    149,\n    150,\n    151,\n    161,\n    162,\n    163,\n    164,\n    165,\n    166,\n    167,\n    168,\n    169,\n    170,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 78,
+              "context": "   120,\n    122,\n    123,\n    124,\n    130,\n    131,\n    140,\n    143,\n    149,\n    150,\n    151,\n    156,\n    161,\n    162,\n    163,\n    166,\n    167,\n    168,\n    171,\n    172,\n    173,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 48,
+              "context": "22→123, note 12\n- 123→124, note 20\n- 130→131, note 44\n- 139→140, note 71\n- 149→150, note 8\n- 150→151, note 16\n\n## Ordering and freeze\n\n1. Branch/HEAD/status/staged inventory inspecte"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 40,
+              "context": ", 60→61, 64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract has minimum_correct_links=3 (not a majority rule);\nfrozen run"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            2,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 238,
+              "context": ", 68, 75, 76, 77, 89, 90, 91, 104, 105, 111, 112, 122, 123, 124, 130, 131, 149, 150, 151, 175, 176, 177, 219, 220, 221},\n        \"V4_FROZEN_CONFIRMATION_HOLDOUT\": {13, 14, 15, 20, 40,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 96,
+              "context": "\n      130,\n      131\n    ],\n    [\n      139,\n      140\n    ],\n    [\n      149,\n      150\n    ],\n    [\n      150,\n      151\n    ]\n  ],\n  \"canonical_errors\": 82\n}\n"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 145,
+              "context": "   136,\n    137,\n    138,\n    139,\n    140,\n    142,\n    143,\n    148,\n    149,\n    150,\n    151,\n    153,\n    154,\n    155,\n    160,\n    161,\n    162,\n    163,\n    164,\n    165,\n    166,"
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/10"
+    },
+    {
+      "pair": "150->151",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "note": 16,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "first_source_observation": {
+        "150": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+          "locator": "physical source page 150",
+          "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+          "timestamp": "2026-10-16T13:33:15.082623+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "151": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "locator": "physical source page 151",
+          "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+          "timestamp": "2026-10-19T16:34:48.993393+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        }
+      },
+      "first_project_reference": {
+        "endpoints": {
+          "150": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v1/holdout-definition.json",
+            "locator": "physical source page 150",
+            "sha256": "43c7cd642498f184e180642f6aa92b49c5242d50f669b037fe25cba0a2100729",
+            "timestamp": "2026-10-16T13:33:15.082623+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "151": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+            "locator": "physical source page 151",
+            "sha256": "00a0649026c90bdd394425ce39969b93a87c4aee45399b4f0569e77623d94152",
+            "timestamp": "2026-10-19T16:34:48.993393+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          }
+        },
+        "earliest_located_pair_declaration": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "locator": "CROSS tuple with matching physical pages and note",
+          "sha256": "236d0dddc163117e28e3dcc4c72ed407a579afc4394b79505576560f83532f3b",
+          "timestamp": "2026-10-19T16:41:30.202030+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "limitation": "Earliest located attributable references, not a claim that all older human observations are recoverable. File timestamps alone do not establish first discovery."
+      },
+      "first_v5_related_reference": {
+        "broad_observation_inventory": {
+          "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "locator": "inherited prior source observation, NOT use to design V5",
+          "sha256": "ca540c3d76e9d0354a03a2707698c0d17661e1fb41d313ed83c4fc1e0e8ebe67",
+          "timestamp": "2026-10-20T12:45:31.537270+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "pair_as_candidate": {
+          "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "locator": "ELIGIBLE_B",
+          "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+          "timestamp": "2026-10-20T17:12:34.691643+00:00",
+          "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+        },
+        "distinction": "Listing inherited pages in previous-opened inventory is not V5 design/debug/output evidence."
+      },
+      "present_in_v5_tests": "NO_ATTRIBUTABLE_CASE_IN_CURRENT_TESTS",
+      "present_in_v5_fixtures": "NO_ATTRIBUTABLE_CASE_IN_PRESERVED_FIXTURES",
+      "present_in_v5_reports": "YES: historical page inventory and later hybrid candidate contracts; not a V5 result",
+      "present_in_v5_debug_artifacts": "NONE_ATTRIBUTABLE_LOCATED; completeness not established",
+      "present_in_v5_holdout": "NO: endpoints disjoint from original 32 physical pages",
+      "present_in_development_regressions": "NO: disjoint from seven declared cases",
+      "V5_output_observed": "NO",
+      "V5_output_observed_basis": [
+        "User authoritative state: current 12-candidate exposure to V5 = NO",
+        "Original V5 holdout, regression, consumer and determinism outputs concern other physical pages; synthetic evaluator reports are not V5 corpus output",
+        "Hybrid and correction reports explicitly record no V5/candidate execution"
+      ],
+      "USED_BY_EVALUATOR": "NO_REAL_PAIR_EXECUTION_RECORDED; synthetic semantics only",
+      "used_to_change_v5": "UNKNOWN",
+      "V1_V4_observation": "V4 certifier holdout",
+      "evidence_for_used": [],
+      "evidence_for_not_used": [
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+            "locator": "/pages",
+            "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+            "timestamp": "2026-10-20T12:52:28.223617+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Supporting declared inventory disjointness only; insufficient alone"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+            "locator": "line 2; observed candidate state, NOT approved freeze",
+            "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+            "timestamp": "2026-10-20T16:58:35.211535+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Current-state hash predates hybrid candidate contract; earlier source endpoints still existed"
+        },
+        {
+          "evidence": {
+            "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+            "locator": null,
+            "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+            "timestamp": "2026-10-21T12:12:49.810790+00:00",
+            "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+          },
+          "role": "Later changes isolated to evaluator; no real candidate output"
+        }
+      ],
+      "uncertainties": [
+        "Candidates/endpoints were observed in source evidence before V5 creation. Later hybrid selection is not first source discovery.",
+        "Pre-stabilization V5 edit/proof history is not in reachable Git history, and no intermediate source snapshots were located.",
+        "Original development inventory lacks a complete-development attestation and is narrower than later v5_manual ranges. Absence cannot resolve pre-cutoff influence."
+      ],
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "confidence_scope": "High confidence UNKNOWN is required by available evidence; not a high-confidence claim of independence or use.",
+      "rationale": "No attributable V5 shaping event found, but none of the sufficient positive non-use chains is established. Older V1-V4 use does not itself disqualify; it defeats only a claim of first discovery after V5. Inventory completeness and pre-cutoff ordering remain unresolved.",
+      "source_text_correlation": {
+        "terminal_tail": "pueblo judío estuvo subyugado (Babilonia, Media/Persia, ",
+        "leading_head": "Grecia y Roma). También sabemos que siempre que los judíos ",
+        "next_explicit_marker": 17,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "150": "802c947d59a84653700583f696200169c4cbabb40f2d60817a8f002df3e4cb34",
+          "151": "8627b9a8748c086596e1d53ae323f91b98b198e66525a8043b275a72b5ab6e70"
+        }
+      },
+      "search_evidence": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "page_token_counts": [
+            6,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 28,
+              "context": "   111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,\n    221\n  ],\n  \"source_sha256\": \"440d4fd348604920179d"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "page_token_counts": [
+            6,
+            4
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 28,
+              "context": "   111,\n    112,\n    122,\n    123,\n    124,\n    130,\n    131,\n    149,\n    150,\n    151,\n    175,\n    176,\n    177,\n    219,\n    220,\n    221\n  ],\n  \"source_sha256\": \"440d4fd348604920179d"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/inspect_source.py",
+          "page_token_counts": [
+            1,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 10,
+              "context": "66,67,68,75,76,77,89,90,91,104,105,111,112,122,123,124,\n       130,131,149,150,151,175,176,177,219,220,221]\n\ndef main():\n    with pymupdf.open(SOURCE) as doc:\n        parsed=parse_do"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/seal_holdout.py",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 12,
+              "context": ", (122, 123, 12), (123, 124, 20),\n         (130, 131, 44), (149, 150, 8), (150, 151, 16)]\nLEADING = {next_page: number for _, next_page, number in CROSS}\nCAPTION = 'Likutey Halajot Ex"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v5/previous-opened-pages.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 105,
+              "context": "   131,\n    136,\n    137,\n    138,\n    139,\n    140,\n    143,\n    149,\n    150,\n    151,\n    161,\n    162,\n    163,\n    164,\n    165,\n    166,\n    167,\n    168,\n    169,\n    170,\n    171,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/previous-holdout-page-inventory.json",
+          "page_token_counts": [
+            2,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 79,
+              "context": "   122,\n    123,\n    124,\n    130,\n    131,\n    140,\n    143,\n    149,\n    150,\n    151,\n    156,\n    161,\n    162,\n    163,\n    166,\n    167,\n    168,\n    171,\n    172,\n    173,\n    174,"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/REPORT.md",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 49,
+              "context": "123→124, note 20\n- 130→131, note 44\n- 139→140, note 71\n- 149→150, note 8\n- 150→151, note 16\n\n## Ordering and freeze\n\n1. Branch/HEAD/status/staged inventory inspected; staged files: z"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/REPORT.md",
+          "page_token_counts": [
+            2,
+            0
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 40,
+              "context": "64→65, 70→71, 73→74, 104→105, 122→123,\n123→124, 130→131, 139→140, 149→150, 150→151.\n\nExisting positive contract has minimum_correct_links=3 (not a majority rule);\nfrozen runner label"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+          "page_token_counts": [
+            4,
+            3
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 238,
+              "context": " 75, 76, 77, 89, 90, 91, 104, 105, 111, 112, 122, 123, 124, 130, 131, 149, 150, 151, 175, 176, 177, 219, 220, 221},\n        \"V4_FROZEN_CONFIRMATION_HOLDOUT\": {13, 14, 15, 20, 40, 54, "
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+          "page_token_counts": [
+            2,
+            1
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 100,
+              "context": "\n      139,\n      140\n    ],\n    [\n      149,\n      150\n    ],\n    [\n      150,\n      151\n    ]\n  ],\n  \"canonical_errors\": 82\n}\n"
+            }
+          ],
+          "pair_variant_total": 1
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/previous-opened-pages.json",
+          "page_token_counts": [
+            1,
+            2
+          ],
+          "pair_variant_hits": [
+            {
+              "line": 146,
+              "context": "   137,\n    138,\n    139,\n    140,\n    142,\n    143,\n    148,\n    149,\n    150,\n    151,\n    153,\n    154,\n    155,\n    160,\n    161,\n    162,\n    163,\n    164,\n    165,\n    166,\n    167,"
+            }
+          ],
+          "pair_variant_total": 1
+        }
+      ],
+      "second_pass_reference": "candidate-lineage-second-pass.json#/pairs/11"
+    }
+  ]
+}

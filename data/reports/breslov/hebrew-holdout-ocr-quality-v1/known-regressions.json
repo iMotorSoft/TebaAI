@@ -1,0 +1,40 @@
+{
+  "not_holdout": true,
+  "focal_without_manual_guard": {
+    "exact": false,
+    "no_niqqud": false,
+    "variant_candidate_found": true,
+    "variant": false,
+    "safest_match_type": null,
+    "original_query": "פירוש",
+    "expanded_variants": [
+      {
+        "text": "פרוש",
+        "variant_type": "orthographic",
+        "original_query_preserved": true,
+        "rule_id": "פירוש->פרוש"
+      }
+    ],
+    "canonical_source": "פֵּרוּשׁ",
+    "canonical_sha256": "39da0d9402603c4f6d9924b9d986e3e59bdc76956cf61b1ffc2aa289ea98f98e"
+  },
+  "focal_with_legacy_manual_guard": {
+    "exact": false,
+    "no_niqqud": false,
+    "variant_candidate_found": true,
+    "variant": true,
+    "safest_match_type": "orthographic_variant",
+    "original_query": "פירוש",
+    "expanded_variants": [
+      {
+        "text": "פרוש",
+        "variant_type": "orthographic",
+        "original_query_preserved": true,
+        "rule_id": "פירוש->פרוש"
+      }
+    ],
+    "canonical_source": "פֵּרוּשׁ",
+    "canonical_sha256": "39da0d9402603c4f6d9924b9d986e3e59bdc76956cf61b1ffc2aa289ea98f98e"
+  },
+  "note": "Legacy manual-guard regression only. Automatic equivalence is NOT demonstrated."
+}

@@ -1,0 +1,120 @@
+{
+  "gate": "TEBAAI_BRESLOV_PAGE167_HYBRID_EXTRACTION_BENCHMARK_V1",
+  "status": "BLOCKED",
+  "reason": "no runnable Hebrew OCR engine; no OCR comparison or accuracy evidence",
+  "pdf_visual_good": true,
+  "native_hebrew": "FAIL",
+  "historical_decoder": "FAIL",
+  "experimental_reconstruction": "PARTIAL",
+  "recommended_extraction_source": "UNRESOLVED",
+  "ocr_base_letters": null,
+  "ocr_word_order": null,
+  "ocr_numbers": null,
+  "ocr_punctuation": null,
+  "ocr_niqqud": null,
+  "ocr_search_suitable": null,
+  "ocr_display_suitable": null,
+  "fragment_checks": [
+    {
+      "fragment_id": "heading",
+      "region": "A_header",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": false,
+        "historical": false,
+        "reconstruction": true
+      },
+      "ocr": null
+    },
+    {
+      "fragment_id": "line1",
+      "region": "B_hebrew_main",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": false,
+        "historical": false,
+        "reconstruction": true
+      },
+      "ocr": null
+    },
+    {
+      "fragment_id": "line2",
+      "region": "B_hebrew_main",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": false,
+        "historical": false,
+        "reconstruction": true
+      },
+      "ocr": null
+    },
+    {
+      "fragment_id": "line3",
+      "region": "B_hebrew_main",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": false,
+        "historical": false,
+        "reconstruction": true
+      },
+      "ocr": null
+    },
+    {
+      "fragment_id": "pointed",
+      "region": "B_hebrew_main",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": false,
+        "historical": false,
+        "reconstruction": false
+      },
+      "ocr": null
+    },
+    {
+      "fragment_id": "folio",
+      "region": "A_header",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": true,
+        "historical": true,
+        "reconstruction": true
+      },
+      "ocr": null
+    },
+    {
+      "fragment_id": "parenthetical",
+      "region": "B_hebrew_main",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": false,
+        "historical": false,
+        "reconstruction": false
+      },
+      "ocr": null
+    },
+    {
+      "fragment_id": "mixed_reference",
+      "region": "E_notes_right",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": true,
+        "historical": true,
+        "reconstruction": false
+      },
+      "ocr": null
+    },
+    {
+      "fragment_id": "spanish_control",
+      "region": "D_spanish_body",
+      "measurement": "normalized ordered fragment present; not whole-region accuracy",
+      "matches": {
+        "native": true,
+        "historical": true,
+        "reconstruction": true
+      },
+      "ocr": null
+    }
+  ],
+  "notes": "Original geometry has distinct left block29 and right block30. Reconstruction groups same seqno/baseline across columns and merges lines; NOT certified.",
+  "visual_scope": "assistant-reviewed raster; legible sampled regions; not editorial proof of all wording"
+}

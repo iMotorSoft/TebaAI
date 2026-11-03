@@ -1,0 +1,29 @@
+{
+  "focused": {
+    "PASS": 24,
+    "FAIL": 0,
+    "ERROR": 13,
+    "SKIP": 0
+  },
+  "failing_node_ids": [],
+  "error_node_ids": [
+    "tests/test_generation_foundation.py::test_second_active_generation_is_rejected_by_the_database",
+    "tests/test_generation_foundation.py::test_cross_document_pointer_is_rejected_by_the_database",
+    "tests/test_generation_foundation.py::test_candidate_generation_is_invisible_to_normal_readers",
+    "tests/test_generation_foundation.py::test_completed_candidate_does_not_steal_the_page_publication",
+    "tests/test_generation_foundation.py::test_explicit_generation_inspection_reaches_the_candidate",
+    "tests/test_generation_foundation.py::test_reader_fails_closed_when_the_pointer_is_broken",
+    "tests/test_generation_foundation.py::test_atomic_cutover_and_rollback",
+    "tests/test_generation_foundation.py::test_stale_expected_active_generation_is_rejected",
+    "tests/test_generation_foundation.py::test_only_candidate_generations_can_be_activated",
+    "tests/test_generation_foundation.py::test_activation_is_idempotent",
+    "tests/test_generation_foundation.py::test_switch_is_audited",
+    "tests/test_generation_foundation.py::test_active_and_retained_generations_are_cleanup_protected",
+    "tests/test_generation_foundation.py::test_candidate_cleanup_does_not_touch_the_active_generation"
+  ],
+  "full_backend_baseline": "NOT_RUN_EARLY_STOP",
+  "full_backend_frozen": "NOT_RUN_NO_FREEZE",
+  "new_fail_node_ids": null,
+  "new_error_node_ids": null,
+  "known_reproduced_full_baseline_nodes": null
+}

@@ -1,0 +1,118 @@
+{
+  "total_candidates": 12,
+  "PROVEN_USED": 0,
+  "PROVEN_NOT_USED": 0,
+  "UNKNOWN": 12,
+  "ELIGIBLE_V5_UNTUNED_POSITIVES": [],
+  "candidate_pairs_with_known_V5_output_exposure": 0,
+  "pairs": [
+    {
+      "pair": "42->43",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V2 certifier holdout"
+    },
+    {
+      "pair": "60->61",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V4/V2 certifier holdouts"
+    },
+    {
+      "pair": "64->65",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V3 certifier holdout"
+    },
+    {
+      "pair": "70->71",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V1/V4 certifier holdouts"
+    },
+    {
+      "pair": "73->74",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V3 certifier holdout"
+    },
+    {
+      "pair": "104->105",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V4 certifier holdout"
+    },
+    {
+      "pair": "122->123",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V4 certifier holdout"
+    },
+    {
+      "pair": "123->124",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V4 certifier holdout"
+    },
+    {
+      "pair": "130->131",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V1/V4 certifier holdouts"
+    },
+    {
+      "pair": "139->140",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V4 frozen confirmation / V1 holdout"
+    },
+    {
+      "pair": "149->150",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V4 certifier holdout"
+    },
+    {
+      "pair": "150->151",
+      "classification": "UNKNOWN",
+      "confidence": "HIGH",
+      "V5_OUTPUT_OBSERVED": "NO",
+      "truth": "TRUE_CONTINUATION",
+      "expected": "LINK",
+      "key_evidence": "V4 certifier holdout"
+    }
+  ]
+}

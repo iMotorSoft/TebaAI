@@ -1,0 +1,714 @@
+{
+  "SCHEMA_AVAILABLE": "YES",
+  "EXPECTED_TYPES": "YES",
+  "columns": [
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "upload_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "actor_user_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "title",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "language",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "work_family",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "administrative_notes",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "ingestion_profile",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "requested_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "current_stage",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "progress_percent",
+      "data_type": "real"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "stage_states",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "error_code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "error_message",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "warning_codes",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "attempt_number",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "diagnostic",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "stage_timings",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "technical_details",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "started_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "finished_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "expires_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "pipeline_version",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "document_schema_version",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "embedding_model",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "collection_code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "idempotency_key",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "claimed_by",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "claimed_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "lease_expires_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "heartbeat_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "recovery_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "cleanup_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "name",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "default_language",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "is_active",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "logical_document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "run_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "job_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "attempt_number",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "pipeline_version",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "source_sha256",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "retention_hold",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "activated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "deactivated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "collection_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "title",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "subtitle",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "language",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "source_type",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "source_path",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "source_uri",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "source_filename",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "source_mime_type",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "source_size_bytes",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "source_sha256",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "bibliographic_ref",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "author",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "publisher",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "publication_year",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "version_label",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "created_by",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "bibliographic_metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "document_code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "content_sha256",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "canonical_text_role",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "editor",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "translator",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "edition",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "archived_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "chunk_set_version",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "logical_document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "logical_document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "from_generation_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "to_generation_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "expected_generation_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "operation",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "result",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "reason",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "actor_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "logical_document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "generation_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "expected_generation_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "operation",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "activated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "activated_by",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "collection_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "title",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "source_sha256",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "source_filename",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "source_size_bytes",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_document_logical_fkey",
+      "definition": "FOREIGN KEY (document_id, logical_document_id) REFERENCES library_documents(id, logical_document_id)"
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_job_id_fkey",
+      "definition": "FOREIGN KEY (job_id) REFERENCES content_manager_jobs(id)"
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_logical_document_id_fkey",
+      "definition": "FOREIGN KEY (logical_document_id) REFERENCES library_logical_documents(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "library_document_generations",
+      "conname": "library_document_generations_run_id_fkey",
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_genera_logical_document_id_fkey",
+      "definition": "FOREIGN KEY (logical_document_id) REFERENCES library_logical_documents(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "conname": "library_logical_document_active_generations_generation_fkey",
+      "definition": "FOREIGN KEY (logical_document_id, generation_id) REFERENCES library_document_generations(logical_document_id, id)"
+    }
+  ],
+  "indexes": [
+    {
+      "indexname": "library_document_generations_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_document_generations_pkey ON public.library_document_generations USING btree (id)"
+    },
+    {
+      "indexname": "library_document_generations_document_unique",
+      "indexdef": "CREATE UNIQUE INDEX library_document_generations_document_unique ON public.library_document_generations USING btree (document_id)"
+    },
+    {
+      "indexname": "library_document_generations_logical_pipeline_unique",
+      "indexdef": "CREATE UNIQUE INDEX library_document_generations_logical_pipeline_unique ON public.library_document_generations USING btree (logical_document_id, pipeline_version)"
+    },
+    {
+      "indexname": "library_document_generations_logical_id_unique",
+      "indexdef": "CREATE UNIQUE INDEX library_document_generations_logical_id_unique ON public.library_document_generations USING btree (logical_document_id, id)"
+    },
+    {
+      "indexname": "uq_library_document_generations_single_active",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_document_generations_single_active ON public.library_document_generations USING btree (logical_document_id) WHERE (status = 'ACTIVE'::text)"
+    },
+    {
+      "indexname": "ix_library_document_generations_logical",
+      "indexdef": "CREATE INDEX ix_library_document_generations_logical ON public.library_document_generations USING btree (logical_document_id, status)"
+    }
+  ]
+}

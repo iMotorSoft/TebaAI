@@ -1,0 +1,16 @@
+{
+  "certifying": false,
+  "constructible": [
+    "OLD",
+    "NEW",
+    "ARBITRARY",
+    "NEVER",
+    "BUILDING",
+    "FAILED",
+    "G1",
+    "G2",
+    "B",
+    "CROSS"
+  ],
+  "negative_controls_operational": true
+}

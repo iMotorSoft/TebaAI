@@ -1,0 +1,2616 @@
+{
+  "gate": "TEBAAI_BRESLOV_LIKUTEY_HALAJOT_TEXT_RECONSTRUCTION_V1_BLOCKED",
+  "ready_for_c_reingest": false,
+  "source_unchanged": true,
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "visibility_rule_unchanged": true,
+  "historical_runs": 671,
+  "suppressed": 385,
+  "retained_ambiguous": 286,
+  "families": {
+    "full_trace_shared_ink_single_overlay": 197,
+    "full_trace_shared_ink_plus_partial_overlays": 89
+  },
+  "certified_visible_false_positives": null,
+  "samples": [
+    {
+      "page": 2,
+      "line_count": 25,
+      "unresolved_lines": 0,
+      "diagnostics": {},
+      "goldens": [
+        {
+          "expected": "ליקוטי",
+          "exact_match": true
+        },
+        {
+          "expected": "הלכות",
+          "exact_match": true
+        }
+      ],
+      "niqqud_fragment_equivalent": null,
+      "codepoint_conservation": true
+    },
+    {
+      "page": 41,
+      "line_count": 62,
+      "unresolved_lines": 8,
+      "diagnostics": {
+        "unmapped_unicode": 2,
+        "mirrored_punctuation_requires_inverse_bidi": 7,
+        "mixed_direction_requires_segment_reconstruction": 3
+      },
+      "goldens": [
+        {
+          "expected": "Likutey Halajot Explicado",
+          "exact_match": true
+        }
+      ],
+      "niqqud_fragment_equivalent": null,
+      "codepoint_conservation": true
+    },
+    {
+      "page": 55,
+      "line_count": 59,
+      "unresolved_lines": 4,
+      "diagnostics": {
+        "unmapped_unicode": 2,
+        "mirrored_punctuation_requires_inverse_bidi": 3
+      },
+      "goldens": [
+        {
+          "expected": "וְזֶה פֵּרוּשׁ הַפָּסוּק",
+          "exact_match": false
+        },
+        {
+          "expected": "Salmos 16:1",
+          "exact_match": true
+        }
+      ],
+      "niqqud_fragment_equivalent": true,
+      "codepoint_conservation": true
+    },
+    {
+      "page": 56,
+      "line_count": 58,
+      "unresolved_lines": 4,
+      "diagnostics": {
+        "mirrored_punctuation_requires_inverse_bidi": 2,
+        "unmapped_unicode": 2
+      },
+      "goldens": [
+        {
+          "expected": "MELODÍAS Y PLEGARIAS",
+          "exact_match": true
+        }
+      ],
+      "niqqud_fragment_equivalent": null,
+      "codepoint_conservation": true
+    },
+    {
+      "page": 143,
+      "line_count": 71,
+      "unresolved_lines": 10,
+      "diagnostics": {
+        "unmapped_unicode": 2,
+        "mirrored_punctuation_requires_inverse_bidi": 9,
+        "mixed_direction_requires_segment_reconstruction": 4
+      },
+      "goldens": [
+        {
+          "expected": "Likutey Halajot Explicado",
+          "exact_match": true
+        }
+      ],
+      "niqqud_fragment_equivalent": null,
+      "codepoint_conservation": true
+    }
+  ],
+  "suppression_review_queue": [
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 4,
+          "bbox": [
+            222.31100463867188,
+            483.06298828125,
+            278.0039978027344,
+            494.3459777832031
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 21,
+      "seqno": 3,
+      "bbox": [
+        226.23599243164062,
+        486.1466369628906,
+        272.59912109375,
+        492.796630859375
+      ],
+      "page": 13,
+      "text": "���������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        49,
+        82,
+        87,
+        72,
+        86,
+        3,
+        9,
+        3,
+        54,
+        82,
+        88,
+        85,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-13-21.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 6,
+          "bbox": [
+            219.4759979248047,
+            570.2509765625,
+            275.16900634765625,
+            581.5339965820312
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 31,
+      "seqno": 5,
+      "bbox": [
+        223.4010009765625,
+        573.3356323242188,
+        269.7641296386719,
+        579.9856567382812
+      ],
+      "page": 20,
+      "text": "���������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        49,
+        82,
+        87,
+        72,
+        86,
+        3,
+        9,
+        3,
+        54,
+        82,
+        88,
+        85,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-20-31.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 14,
+          "bbox": [
+            219.4759979248047,
+            616.8359985351562,
+            275.16900634765625,
+            628.1189575195312
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 30,
+      "seqno": 13,
+      "bbox": [
+        223.4010009765625,
+        619.920654296875,
+        269.7641296386719,
+        626.5706787109375
+      ],
+      "page": 26,
+      "text": "���������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        49,
+        82,
+        87,
+        72,
+        86,
+        3,
+        9,
+        3,
+        54,
+        82,
+        88,
+        85,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-26-30.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 27,
+          "bbox": [
+            157.35000610351562,
+            182.3900146484375,
+            261.23199462890625,
+            213.5159912109375
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 0,
+      "seqno": 0,
+      "bbox": [
+        158.4510040283203,
+        187.0933837890625,
+        259.68212890625,
+        208.5433807373047
+      ],
+      "page": 37,
+      "text": "Halakhah 1",
+      "font": "Palatino-Bold",
+      "glyph_ids": [
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        68,
+        75,
+        3,
+        20
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-37-0.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 16,
+          "bbox": [
+            222.31100463867188,
+            551.6399536132812,
+            278.0039978027344,
+            562.9229736328125
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 65,
+      "seqno": 15,
+      "bbox": [
+        226.23599243164062,
+        554.7236328125,
+        272.59912109375,
+        561.3736572265625
+      ],
+      "page": 45,
+      "text": "���������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        49,
+        82,
+        87,
+        72,
+        86,
+        3,
+        9,
+        3,
+        54,
+        82,
+        88,
+        85,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-45-65.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 7,
+          "bbox": [
+            205.9239959716797,
+            210.23397827148438,
+            288.1679992675781,
+            221.42398071289062
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 48,
+      "seqno": 6,
+      "bbox": [
+        206.81100463867188,
+        212.0516357421875,
+        285.959228515625,
+        218.70162963867188
+      ],
+      "page": 50,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-50-48.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 17,
+          "bbox": [
+            208.98800659179688,
+            176.3399658203125,
+            291.23199462890625,
+            187.52896118164062
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 66,
+      "seqno": 16,
+      "bbox": [
+        209.875,
+        178.15863037109375,
+        289.0232238769531,
+        184.80862426757812
+      ],
+      "page": 55,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-55-66.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 17,
+          "bbox": [
+            208.98800659179688,
+            267.25799560546875,
+            291.23199462890625,
+            278.4469909667969
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 78,
+      "seqno": 16,
+      "bbox": [
+        209.875,
+        269.07562255859375,
+        289.0232238769531,
+        275.7256164550781
+      ],
+      "page": 61,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-61-78.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 7,
+          "bbox": [
+            205.68699645996094,
+            231.593994140625,
+            287.9309997558594,
+            242.78298950195312
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 93,
+      "seqno": 6,
+      "bbox": [
+        206.57400512695312,
+        233.41262817382812,
+        285.72222900390625,
+        240.0626220703125
+      ],
+      "page": 66,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-66-93.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 19,
+          "bbox": [
+            208.98800659179688,
+            209.97299194335938,
+            291.23199462890625,
+            221.1619873046875
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 160,
+      "seqno": 18,
+      "bbox": [
+        209.875,
+        211.7916259765625,
+        289.0232238769531,
+        218.44161987304688
+      ],
+      "page": 71,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-71-160.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 18,
+          "bbox": [
+            222.31100463867188,
+            457.032958984375,
+            278.0039978027344,
+            468.31597900390625
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 147,
+      "seqno": 17,
+      "bbox": [
+        226.23599243164062,
+        460.11761474609375,
+        272.59912109375,
+        466.7676086425781
+      ],
+      "page": 77,
+      "text": "���������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        49,
+        82,
+        87,
+        72,
+        86,
+        3,
+        9,
+        3,
+        54,
+        82,
+        88,
+        85,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-77-147.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 19,
+          "bbox": [
+            208.98800659179688,
+            207.26998901367188,
+            291.23199462890625,
+            218.458984375
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 113,
+      "seqno": 18,
+      "bbox": [
+        209.875,
+        209.087646484375,
+        289.0232238769531,
+        215.73764038085938
+      ],
+      "page": 83,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-83-113.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 19,
+          "bbox": [
+            208.98800659179688,
+            209.4019775390625,
+            291.23199462890625,
+            220.59197998046875
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 101,
+      "seqno": 18,
+      "bbox": [
+        209.875,
+        211.22064208984375,
+        289.0232238769531,
+        217.87063598632812
+      ],
+      "page": 89,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-89-101.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 7,
+          "bbox": [
+            206.1529998779297,
+            244.45297241210938,
+            288.39801025390625,
+            255.64297485351562
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 53,
+      "seqno": 6,
+      "bbox": [
+        207.0399932861328,
+        246.27264404296875,
+        286.188232421875,
+        252.92263793945312
+      ],
+      "page": 94,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-94-53.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 27,
+          "bbox": [
+            158.38999938964844,
+            185.31597900390625,
+            261.70501708984375,
+            209.82797241210938
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 0,
+      "seqno": 0,
+      "bbox": [
+        159.8679962158203,
+        187.0933837890625,
+        261.09912109375,
+        208.5433807373047
+      ],
+      "page": 101,
+      "text": "Halakhah 2",
+      "font": "Palatino-Bold",
+      "glyph_ids": [
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        68,
+        75,
+        3,
+        21
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-101-0.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 18,
+          "bbox": [
+            208.98800659179688,
+            166.5999755859375,
+            291.23199462890625,
+            177.78900146484375
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 56,
+      "seqno": 17,
+      "bbox": [
+        209.875,
+        168.41766357421875,
+        289.0232238769531,
+        175.06765747070312
+      ],
+      "page": 109,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-109-56.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 7,
+          "bbox": [
+            206.1529998779297,
+            160.9239501953125,
+            288.39801025390625,
+            172.11297607421875
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 173,
+      "seqno": 6,
+      "bbox": [
+        207.0399932861328,
+        162.74163818359375,
+        286.188232421875,
+        169.39163208007812
+      ],
+      "page": 114,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-114-173.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 6,
+          "bbox": [
+            206.1540069580078,
+            141.94097900390625,
+            288.39801025390625,
+            153.1309814453125
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 50,
+      "seqno": 5,
+      "bbox": [
+        207.04100036621094,
+        143.7606201171875,
+        286.1892395019531,
+        150.41061401367188
+      ],
+      "page": 124,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-124-50.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 19,
+          "bbox": [
+            208.98800659179688,
+            247.3809814453125,
+            291.23199462890625,
+            258.5699768066406
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 75,
+      "seqno": 18,
+      "bbox": [
+        209.875,
+        249.1976318359375,
+        289.0232238769531,
+        255.84762573242188
+      ],
+      "page": 129,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-129-75.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 7,
+          "bbox": [
+            206.1529998779297,
+            261.72998046875,
+            288.39801025390625,
+            272.91998291015625
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 79,
+      "seqno": 6,
+      "bbox": [
+        207.0399932861328,
+        263.54864501953125,
+        286.188232421875,
+        270.1986389160156
+      ],
+      "page": 134,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-134-79.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 6,
+          "bbox": [
+            206.1540069580078,
+            171.77099609375,
+            288.39801025390625,
+            182.96096801757812
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 118,
+      "seqno": 5,
+      "bbox": [
+        207.04100036621094,
+        173.58966064453125,
+        286.1892395019531,
+        180.23965454101562
+      ],
+      "page": 140,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-140-118.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 18,
+          "bbox": [
+            208.98800659179688,
+            189.26998901367188,
+            291.23199462890625,
+            200.458984375
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 85,
+      "seqno": 17,
+      "bbox": [
+        209.875,
+        191.087646484375,
+        289.0232238769531,
+        197.73764038085938
+      ],
+      "page": 149,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-149-85.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 6,
+          "bbox": [
+            206.1529998779297,
+            231.78897094726562,
+            288.39801025390625,
+            242.97897338867188
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 59,
+      "seqno": 5,
+      "bbox": [
+        207.0399932861328,
+        233.60763549804688,
+        286.188232421875,
+        240.25762939453125
+      ],
+      "page": 154,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-154-59.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 8,
+          "bbox": [
+            206.1529998779297,
+            245.25396728515625,
+            288.39801025390625,
+            256.4429626464844
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 85,
+      "seqno": 7,
+      "bbox": [
+        207.0399932861328,
+        247.07162475585938,
+        286.188232421875,
+        253.72161865234375
+      ],
+      "page": 160,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-160-85.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 18,
+          "bbox": [
+            208.98800659179688,
+            246.95498657226562,
+            291.23199462890625,
+            258.1449890136719
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 46,
+      "seqno": 17,
+      "bbox": [
+        209.875,
+        248.77264404296875,
+        289.0232238769531,
+        255.42263793945312
+      ],
+      "page": 165,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-165-46.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 20,
+          "bbox": [
+            208.7519989013672,
+            204.85897827148438,
+            290.9960021972656,
+            216.04898071289062
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 82,
+      "seqno": 19,
+      "bbox": [
+        209.63900756835938,
+        206.67864990234375,
+        288.7872314453125,
+        213.32864379882812
+      ],
+      "page": 171,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-171-82.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 8,
+          "bbox": [
+            206.1529998779297,
+            216.907958984375,
+            288.39801025390625,
+            228.09796142578125
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 53,
+      "seqno": 7,
+      "bbox": [
+        207.0399932861328,
+        218.72564697265625,
+        286.188232421875,
+        225.37564086914062
+      ],
+      "page": 176,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-176-53.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 21,
+          "bbox": [
+            208.98800659179688,
+            251.39596557617188,
+            291.23199462890625,
+            262.5859680175781
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 84,
+      "seqno": 20,
+      "bbox": [
+        209.875,
+        253.213623046875,
+        289.0232238769531,
+        259.8636169433594
+      ],
+      "page": 181,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-181-84.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 18,
+          "bbox": [
+            208.98800659179688,
+            248.08798217773438,
+            291.23199462890625,
+            259.2769775390625
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 75,
+      "seqno": 17,
+      "bbox": [
+        209.875,
+        249.90664672851562,
+        289.0232238769531,
+        256.556640625
+      ],
+      "page": 187,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-187-75.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 6,
+          "bbox": [
+            206.1540069580078,
+            251.6309814453125,
+            288.39801025390625,
+            262.8199768066406
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 54,
+      "seqno": 5,
+      "bbox": [
+        207.04100036621094,
+        253.44964599609375,
+        286.1892395019531,
+        260.0996398925781
+      ],
+      "page": 192,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-192-54.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 8,
+          "bbox": [
+            206.1540069580078,
+            226.82797241210938,
+            288.39801025390625,
+            238.01797485351562
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 86,
+      "seqno": 7,
+      "bbox": [
+        207.04100036621094,
+        228.64663696289062,
+        286.1892395019531,
+        235.296630859375
+      ],
+      "page": 198,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-198-86.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 5,
+          "bbox": [
+            206.1540069580078,
+            115.948974609375,
+            288.39801025390625,
+            127.13897705078125
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 2,
+      "seqno": 4,
+      "bbox": [
+        207.04100036621094,
+        117.76860809326172,
+        286.1892395019531,
+        124.41860961914062
+      ],
+      "page": 208,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-208-2.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 18,
+          "bbox": [
+            208.98800659179688,
+            249.5059814453125,
+            291.23199462890625,
+            260.6949768066406
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 24,
+      "seqno": 17,
+      "bbox": [
+        209.875,
+        251.32363891601562,
+        289.0232238769531,
+        257.9736328125
+      ],
+      "page": 213,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-213-24.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 18,
+          "bbox": [
+            208.98800659179688,
+            220.59197998046875,
+            291.23199462890625,
+            231.78097534179688
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 24,
+      "seqno": 17,
+      "bbox": [
+        209.875,
+        222.41064453125,
+        289.0232238769531,
+        229.06063842773438
+      ],
+      "page": 219,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-219-24.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 5,
+          "bbox": [
+            206.1540069580078,
+            232.35498046875,
+            288.39801025390625,
+            243.54498291015625
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 2,
+      "seqno": 4,
+      "bbox": [
+        207.04100036621094,
+        234.17462158203125,
+        286.1892395019531,
+        240.82461547851562
+      ],
+      "page": 224,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-224-2.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 23,
+          "bbox": [
+            222.31100463867188,
+            556.740966796875,
+            278.0039978027344,
+            568.0239868164062
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 27,
+      "seqno": 22,
+      "bbox": [
+        226.23599243164062,
+        559.8257446289062,
+        272.59912109375,
+        566.4757690429688
+      ],
+      "page": 229,
+      "text": "���������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        49,
+        82,
+        87,
+        72,
+        86,
+        3,
+        9,
+        3,
+        54,
+        82,
+        88,
+        85,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-229-27.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 18,
+          "bbox": [
+            208.98800659179688,
+            194.3709716796875,
+            291.23199462890625,
+            205.56097412109375
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 26,
+      "seqno": 17,
+      "bbox": [
+        209.875,
+        196.19064331054688,
+        289.0232238769531,
+        202.84063720703125
+      ],
+      "page": 235,
+      "text": "���������������������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        47,
+        76,
+        78,
+        88,
+        87,
+        72,
+        92,
+        3,
+        43,
+        68,
+        79,
+        68,
+        78,
+        75,
+        82,
+        87,
+        3,
+        40,
+        79,
+        88,
+        70,
+        76,
+        71,
+        68,
+        87,
+        72,
+        71
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-235-26.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 6,
+          "bbox": [
+            219.4759979248047,
+            581.4029541015625,
+            275.16900634765625,
+            592.6869506835938
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 49,
+      "seqno": 5,
+      "bbox": [
+        223.4010009765625,
+        584.4877319335938,
+        269.7641296386719,
+        591.1377563476562
+      ],
+      "page": 244,
+      "text": "���������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        49,
+        82,
+        87,
+        72,
+        86,
+        3,
+        9,
+        3,
+        54,
+        82,
+        88,
+        85,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-244-49.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 6,
+          "bbox": [
+            219.4759979248047,
+            604.7890014648438,
+            275.16900634765625,
+            616.0719604492188
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 59,
+      "seqno": 5,
+      "bbox": [
+        223.4010009765625,
+        607.8737182617188,
+        269.7641296386719,
+        614.5237426757812
+      ],
+      "page": 250,
+      "text": "���������������",
+      "font": "Optima-Italic",
+      "glyph_ids": [
+        49,
+        82,
+        87,
+        72,
+        86,
+        3,
+        9,
+        3,
+        54,
+        82,
+        88,
+        85,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-250-59.png",
+      "visual_review": "PENDING"
+    },
+    {
+      "status": "occluded",
+      "overlays": [
+        {
+          "seqno": 19,
+          "bbox": [
+            182.8350067138672,
+            176.03900146484375,
+            313.1730041503906,
+            211.8909912109375
+          ],
+          "fill": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "opacity": 1.0,
+          "overlap": "full",
+          "area_ratio": 1.0,
+          "paint_ink_contained": true
+        }
+      ],
+      "run_index": 0,
+      "seqno": 0,
+      "bbox": [
+        195.28900146484375,
+        184.9674072265625,
+        301.1222229003906,
+        206.4174041748047
+      ],
+      "page": 275,
+      "text": "Appendices",
+      "font": "Palatino-Bold",
+      "glyph_ids": [
+        36,
+        83,
+        83,
+        72,
+        81,
+        71,
+        76,
+        70,
+        72,
+        86
+      ],
+      "expected_visible": "NO",
+      "crop": "suppressed-275-0.png",
+      "visual_review": "PENDING"
+    }
+  ],
+  "suppressed_category_availability": {
+    "hebrew": 0,
+    "marks": 0,
+    "numbers": 2,
+    "reference_candidate": 0,
+    "header_geometry": 0,
+    "body_geometry": 385
+  },
+  "normalization_changed": false,
+  "paragraph_structure_certified": false,
+  "desktop_certified": false,
+  "mobile_certified": false
+}

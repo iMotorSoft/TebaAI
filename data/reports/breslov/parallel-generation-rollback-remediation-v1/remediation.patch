@@ -1,0 +1,115 @@
+--- data/reports/breslov/parallel-generation-rollback-remediation-v1/generation-before.py	2026-10-22 17:17:51.783661387 -0300
++++ SrvRestAstroLS_v1/backend/modules/library/generation.py	2026-10-22 17:18:54.846804928 -0300
+@@ -51,7 +51,7 @@
+     GENERATION_FAILED,
+ )
+ 
+-#: Only a reconciled candidate may be promoted by an atomic switch.
++#: Cutover promotes only a reconciled candidate; rollback has a separate policy.
+ SWITCHABLE_STATUS = GENERATION_CANDIDATE
+ 
+ OPERATION_CUTOVER = "CUTOVER"
+@@ -476,13 +476,16 @@
+ 
+     * the logical document exists;
+     * the new generation belongs to that logical document;
+-    * the new generation is switchable (``CANDIDATE``);
++    * CUTOVER targets CANDIDATE; ROLLBACK targets retained INACTIVE with
++      authoritative prior activation and the immediate predecessor switch edge;
+     * the new generation is not the current active generation;
+     * the current active generation equals ``expected_active_generation_id``.
+ 
+     The caller owns the transaction so a switch can be committed together with
+     the rest of the operation (for example the document publication).
+     """
++    if operation not in (OPERATION_CUTOVER, OPERATION_ROLLBACK):
++        raise GenerationPreconditionError("Activation requires CUTOVER or ROLLBACK")
+     logical = str(logical_document_id)
+     new_id = str(new_generation_id)
+     expected = _uuid(expected_active_generation_id)
+@@ -498,13 +501,20 @@
+     pointer = await fetch_one(
+         conn,
+         """
+-        SELECT generation_id FROM library_logical_document_active_generations
++        SELECT generation_id, expected_generation_id
++        FROM library_logical_document_active_generations
+         WHERE logical_document_id=%(logical)s FOR UPDATE
+         """,
+         {"logical": logical},
+     )
+     current = str(pointer["generation_id"]) if pointer else None
+ 
++    # Preserve existing CUTOVER retry semantics. ROLLBACK must check CAS even
++    # when the requested target is already active (a stale rollback is rejected).
++    if operation == OPERATION_ROLLBACK and current != expected:
++        raise GenerationConflictError(
++            "Stale expected active generation: the active generation changed"
++        )
+     if current == new_id:
+         return {
+             "result": RESULT_IDEMPOTENT,
+@@ -528,7 +538,7 @@
+         conn,
+         """
+         SELECT * FROM library_document_generations
+-        WHERE id=%(id)s AND logical_document_id=%(logical)s
++        WHERE id=%(id)s AND logical_document_id=%(logical)s FOR UPDATE
+         """,
+         {"id": new_id, "logical": logical},
+     )
+@@ -536,11 +546,42 @@
+         raise GenerationPreconditionError(
+             "The target generation does not belong to this logical document"
+         )
+-    if str(target["status"]) != SWITCHABLE_STATUS:
++    required_status = (
++        GENERATION_INACTIVE if operation == OPERATION_ROLLBACK else SWITCHABLE_STATUS
++    )
++    if str(target["status"]) != required_status:
+         raise GenerationPreconditionError(
+-            f"Only a {SWITCHABLE_STATUS} generation can be activated; "
+-            f"got {target['status']}"
++            f"{operation} requires a {required_status} generation; got {target['status']}"
+         )
++    if operation == OPERATION_ROLLBACK:
++        if (
++            not target["retention_hold"]
++            or not pointer
++            or _uuid(pointer["expected_generation_id"]) != new_id
++        ):
++            raise GenerationPreconditionError(
++                "Rollback requires the retained immediate previous active generation"
++            )
++        history = await fetch_one(
++            conn,
++            """
++            SELECT EXISTS (
++                SELECT 1 FROM library_generation_activation_audit
++                WHERE logical_document_id=%(logical)s AND to_generation_id=%(id)s
++                  AND result='APPLIED'
++            ) AND EXISTS (
++                SELECT 1 FROM library_generation_activation_audit
++                WHERE logical_document_id=%(logical)s AND from_generation_id=%(id)s
++                  AND to_generation_id=%(current)s AND result='APPLIED'
++                  AND operation IN ('CUTOVER', 'ROLLBACK')
++            ) AS eligible
++            """,
++            {"logical": logical, "id": new_id, "current": current},
++        )
++        if not history or not history["eligible"]:
++            raise GenerationPreconditionError(
++                "Rollback requires successful prior activation and switch history"
++            )
+     if target["source_sha256"] != (
+         await fetch_one(
+             conn,
+@@ -557,7 +598,7 @@
+             conn,
+             """
+             UPDATE library_document_generations
+-            SET status='INACTIVE', deactivated_at=now()
++            SET status='INACTIVE', deactivated_at=now(), retention_hold=true
+             WHERE id=%(id)s AND status='ACTIVE'
+             """,
+             {"id": current},

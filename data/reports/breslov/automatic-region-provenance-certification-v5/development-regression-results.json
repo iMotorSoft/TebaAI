@@ -1,0 +1,161 @@
+{
+  "status": "PASS",
+  "positives": 4,
+  "negatives": 3,
+  "failures": [],
+  "rows": [
+    {
+      "kind": "positive",
+      "ok": true,
+      "detail": {
+        "source": 206,
+        "target": 207,
+        "note": 5,
+        "identity_state": "IDENTITY_PROVEN",
+        "linked_page": 207,
+        "linked_note": 5,
+        "same_editorial_id": true,
+        "proofs": [
+          "Proof(name='ADJACENT_SAME_DOCUMENT', passed=True, evidence=('SAME_SOURCE_SHA256', 'PHYSICALLY_ADJACENT_PAGES'))",
+          "Proof(name='TERMINAL_PAGE_BOUNDARY', passed=True, evidence=('PAGE_BOUNDARY_END_REASON',))",
+          "Proof(name='TERMINAL_IS_LAST_NOTE', passed=True, evidence=('LAST_NOTE_IN_CANONICAL_READING_ORDER',))",
+          "Proof(name='LEADING_IS_FIRST_NOTE', passed=True, evidence=('FIRST_NOTE_IN_CANONICAL_READING_ORDER',))",
+          "Proof(name='LEADING_IS_UNMARKED', passed=True, evidence=('UNMARKED_LEADING_SEGMENT',))",
+          "Proof(name='SAME_NOTE_NUMBER', passed=True, evidence=('CONTINUATION_OWNER_NOTE_NUMBER',))",
+          "Proof(name='NEXT_MARKER_CONSECUTIVE', passed=True, evidence=('NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE',))",
+          "Proof(name='LEADING_ENDS_AT_NEXT_MARKER', passed=True, evidence=('NEXT_NOTE_IN_COLUMN_FLOW',))",
+          "Proof(name='OWNERSHIP_BOTH', passed=True, evidence=('UNIQUE_DISJOINT_SOURCE_IDENTITIES',))",
+          "Proof(name='DIRECTION_BOTH', passed=True, evidence=('LTR_STRONG_SCRIPT', 'VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER'))",
+          "Proof(name='STYLE_COMPATIBLE', passed=True, evidence=('IDENTICAL_FONT_SIZE_FAMILY',))",
+          "Proof(name='CANONICAL_ORDER_BOTH', passed=True, evidence=('CANONICAL_SOURCE_ID_GEOMETRY_ORDER',))",
+          "Proof(name='NOTES_SEPARATOR_BOTH', passed=True, evidence=('UNIQUE_NOTES_SEPARATOR_EACH_PAGE',))",
+          "Proof(name='COLUMN_LINEAGE', passed=True, evidence=('TERMINAL_IN_LAST_NOTE_COLUMN', 'LEADING_IN_FIRST_NOTE_COLUMN'))",
+          "Proof(name='NOTE_ZONE_FRAME', passed=True, evidence=('TERMINAL_REACHES_NOTE_ZONE_BOTTOM', 'LEADING_STARTS_AT_NOTE_ZONE_TOP'))"
+        ]
+      }
+    },
+    {
+      "kind": "positive",
+      "ok": true,
+      "detail": {
+        "source": 56,
+        "target": 57,
+        "note": 36,
+        "identity_state": "IDENTITY_PROVEN",
+        "linked_page": 57,
+        "linked_note": 36,
+        "same_editorial_id": true,
+        "proofs": [
+          "Proof(name='ADJACENT_SAME_DOCUMENT', passed=True, evidence=('SAME_SOURCE_SHA256', 'PHYSICALLY_ADJACENT_PAGES'))",
+          "Proof(name='TERMINAL_PAGE_BOUNDARY', passed=True, evidence=('PAGE_BOUNDARY_END_REASON',))",
+          "Proof(name='TERMINAL_IS_LAST_NOTE', passed=True, evidence=('LAST_NOTE_IN_CANONICAL_READING_ORDER',))",
+          "Proof(name='LEADING_IS_FIRST_NOTE', passed=True, evidence=('FIRST_NOTE_IN_CANONICAL_READING_ORDER',))",
+          "Proof(name='LEADING_IS_UNMARKED', passed=True, evidence=('UNMARKED_LEADING_SEGMENT',))",
+          "Proof(name='SAME_NOTE_NUMBER', passed=True, evidence=('CONTINUATION_OWNER_NOTE_NUMBER',))",
+          "Proof(name='NEXT_MARKER_CONSECUTIVE', passed=True, evidence=('NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE',))",
+          "Proof(name='LEADING_ENDS_AT_NEXT_MARKER', passed=True, evidence=('NEXT_NOTE_IN_COLUMN_FLOW',))",
+          "Proof(name='OWNERSHIP_BOTH', passed=True, evidence=('UNIQUE_DISJOINT_SOURCE_IDENTITIES',))",
+          "Proof(name='DIRECTION_BOTH', passed=True, evidence=('LTR_STRONG_SCRIPT', 'VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER'))",
+          "Proof(name='STYLE_COMPATIBLE', passed=True, evidence=('IDENTICAL_FONT_SIZE_FAMILY',))",
+          "Proof(name='CANONICAL_ORDER_BOTH', passed=True, evidence=('CANONICAL_SOURCE_ID_GEOMETRY_ORDER',))",
+          "Proof(name='NOTES_SEPARATOR_BOTH', passed=True, evidence=('UNIQUE_NOTES_SEPARATOR_EACH_PAGE',))",
+          "Proof(name='COLUMN_LINEAGE', passed=True, evidence=('TERMINAL_IN_LAST_NOTE_COLUMN', 'LEADING_IN_FIRST_NOTE_COLUMN'))",
+          "Proof(name='NOTE_ZONE_FRAME', passed=True, evidence=('TERMINAL_REACHES_NOTE_ZONE_BOTTOM', 'LEADING_STARTS_AT_NOTE_ZONE_TOP'))"
+        ]
+      }
+    },
+    {
+      "kind": "positive",
+      "ok": true,
+      "detail": {
+        "source": 167,
+        "target": 168,
+        "note": 66,
+        "identity_state": "IDENTITY_PROVEN",
+        "linked_page": 168,
+        "linked_note": 66,
+        "same_editorial_id": true,
+        "proofs": [
+          "Proof(name='ADJACENT_SAME_DOCUMENT', passed=True, evidence=('SAME_SOURCE_SHA256', 'PHYSICALLY_ADJACENT_PAGES'))",
+          "Proof(name='TERMINAL_PAGE_BOUNDARY', passed=True, evidence=('PAGE_BOUNDARY_END_REASON',))",
+          "Proof(name='TERMINAL_IS_LAST_NOTE', passed=True, evidence=('LAST_NOTE_IN_CANONICAL_READING_ORDER',))",
+          "Proof(name='LEADING_IS_FIRST_NOTE', passed=True, evidence=('FIRST_NOTE_IN_CANONICAL_READING_ORDER',))",
+          "Proof(name='LEADING_IS_UNMARKED', passed=True, evidence=('UNMARKED_LEADING_SEGMENT',))",
+          "Proof(name='SAME_NOTE_NUMBER', passed=True, evidence=('CONTINUATION_OWNER_NOTE_NUMBER',))",
+          "Proof(name='NEXT_MARKER_CONSECUTIVE', passed=True, evidence=('NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE',))",
+          "Proof(name='LEADING_ENDS_AT_NEXT_MARKER', passed=True, evidence=('NEXT_NOTE_IN_COLUMN_FLOW',))",
+          "Proof(name='OWNERSHIP_BOTH', passed=True, evidence=('UNIQUE_DISJOINT_SOURCE_IDENTITIES',))",
+          "Proof(name='DIRECTION_BOTH', passed=True, evidence=('LTR_STRONG_SCRIPT', 'VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER'))",
+          "Proof(name='STYLE_COMPATIBLE', passed=True, evidence=('IDENTICAL_FONT_SIZE_FAMILY',))",
+          "Proof(name='CANONICAL_ORDER_BOTH', passed=True, evidence=('CANONICAL_SOURCE_ID_GEOMETRY_ORDER',))",
+          "Proof(name='NOTES_SEPARATOR_BOTH', passed=True, evidence=('UNIQUE_NOTES_SEPARATOR_EACH_PAGE',))",
+          "Proof(name='COLUMN_LINEAGE', passed=True, evidence=('TERMINAL_IN_LAST_NOTE_COLUMN', 'LEADING_IN_FIRST_NOTE_COLUMN'))",
+          "Proof(name='NOTE_ZONE_FRAME', passed=True, evidence=('TERMINAL_REACHES_NOTE_ZONE_BOTTOM', 'LEADING_STARTS_AT_NOTE_ZONE_TOP'))"
+        ]
+      }
+    },
+    {
+      "kind": "positive",
+      "ok": true,
+      "detail": {
+        "source": 16,
+        "target": 17,
+        "note": 1,
+        "identity_state": "IDENTITY_PROVEN",
+        "linked_page": 17,
+        "linked_note": 1,
+        "same_editorial_id": true,
+        "proofs": [
+          "Proof(name='ADJACENT_SAME_DOCUMENT', passed=True, evidence=('SAME_SOURCE_SHA256', 'PHYSICALLY_ADJACENT_PAGES'))",
+          "Proof(name='TERMINAL_PAGE_BOUNDARY', passed=True, evidence=('PAGE_BOUNDARY_END_REASON',))",
+          "Proof(name='TERMINAL_IS_LAST_NOTE', passed=True, evidence=('LAST_NOTE_IN_CANONICAL_READING_ORDER',))",
+          "Proof(name='LEADING_IS_FIRST_NOTE', passed=True, evidence=('FIRST_NOTE_IN_CANONICAL_READING_ORDER',))",
+          "Proof(name='LEADING_IS_UNMARKED', passed=True, evidence=('UNMARKED_LEADING_SEGMENT',))",
+          "Proof(name='SAME_NOTE_NUMBER', passed=True, evidence=('CONTINUATION_OWNER_NOTE_NUMBER',))",
+          "Proof(name='NEXT_MARKER_CONSECUTIVE', passed=True, evidence=('NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE',))",
+          "Proof(name='LEADING_ENDS_AT_NEXT_MARKER', passed=True, evidence=('NEXT_NOTE_IN_COLUMN_FLOW',))",
+          "Proof(name='OWNERSHIP_BOTH', passed=True, evidence=('UNIQUE_DISJOINT_SOURCE_IDENTITIES',))",
+          "Proof(name='DIRECTION_BOTH', passed=True, evidence=('LTR_STRONG_SCRIPT', 'VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER'))",
+          "Proof(name='STYLE_COMPATIBLE', passed=True, evidence=('IDENTICAL_FONT_SIZE_FAMILY',))",
+          "Proof(name='CANONICAL_ORDER_BOTH', passed=True, evidence=('CANONICAL_SOURCE_ID_GEOMETRY_ORDER',))",
+          "Proof(name='NOTES_SEPARATOR_BOTH', passed=True, evidence=('UNIQUE_NOTES_SEPARATOR_EACH_PAGE',))",
+          "Proof(name='COLUMN_LINEAGE', passed=True, evidence=('TERMINAL_IN_LAST_NOTE_COLUMN', 'LEADING_IN_FIRST_NOTE_COLUMN'))",
+          "Proof(name='NOTE_ZONE_FRAME', passed=True, evidence=('TERMINAL_REACHES_NOTE_ZONE_BOTTOM', 'LEADING_STARTS_AT_NOTE_ZONE_TOP'))"
+        ]
+      }
+    },
+    {
+      "kind": "negative",
+      "ok": true,
+      "detail": {
+        "source": 108,
+        "target": 109,
+        "note": 8,
+        "linked": [],
+        "identity_states": []
+      }
+    },
+    {
+      "kind": "negative",
+      "ok": true,
+      "detail": {
+        "source": 164,
+        "target": 165,
+        "note": 63,
+        "linked": [],
+        "identity_states": []
+      }
+    },
+    {
+      "kind": "negative",
+      "ok": true,
+      "detail": {
+        "source": 226,
+        "target": 227,
+        "note": 78,
+        "linked": [],
+        "identity_states": []
+      }
+    }
+  ]
+}

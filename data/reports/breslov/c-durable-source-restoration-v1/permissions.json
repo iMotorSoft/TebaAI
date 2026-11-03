@@ -1,0 +1,50 @@
+{
+  "measured_at": "2026-10-23T12:13:54.165120+00:00",
+  "durable_root": {
+    "path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend",
+    "owner": "issajar",
+    "group": "issajar",
+    "uid": 1000,
+    "gid": 1000,
+    "mode_octal": "0o775",
+    "is_symlink": false,
+    "read_by_service_user": true
+  },
+  "sources_dir": {
+    "path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources",
+    "owner": "issajar",
+    "group": "issajar",
+    "uid": 1000,
+    "gid": 1000,
+    "mode_octal": "0o775",
+    "is_symlink": false,
+    "read_by_service_user": true
+  },
+  "document_dir": {
+    "path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "owner": "issajar",
+    "group": "issajar",
+    "uid": 1000,
+    "gid": 1000,
+    "mode_octal": "0o700",
+    "is_symlink": false,
+    "read_by_service_user": true
+  },
+  "durable_file": {
+    "path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "owner": "issajar",
+    "group": "issajar",
+    "uid": 1000,
+    "gid": 1000,
+    "mode_octal": "0o600",
+    "is_symlink": false,
+    "read_by_service_user": true
+  },
+  "file_mode_octal": "0o600",
+  "file_group_or_other_writable": false,
+  "directory_group_or_other_writable": false,
+  "service_user": "issajar",
+  "service_can_read": true,
+  "global_permissions_loosened_for_gate": false,
+  "acceptable": true
+}

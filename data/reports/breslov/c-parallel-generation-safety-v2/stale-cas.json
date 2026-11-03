@@ -1,0 +1,28 @@
+{
+  "operation": "CUTOVER",
+  "expected_active": "10c552da-af10-47d9-964d-485f24a22faf",
+  "target": "10c552da-af10-47d9-964d-485f24a22faf",
+  "rejected": true,
+  "error_type": "GenerationConflictError",
+  "error": "Stale expected active generation: the active generation changed",
+  "state_after": {
+    "statuses": {
+      "10c552da-af10-47d9-964d-485f24a22faf": "INACTIVE",
+      "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162": "ACTIVE"
+    },
+    "retention_hold": {
+      "10c552da-af10-47d9-964d-485f24a22faf": true,
+      "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162": false
+    },
+    "active_count": 1,
+    "active": [
+      "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162"
+    ],
+    "pointer": "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162",
+    "pointer_expected": "10c552da-af10-47d9-964d-485f24a22faf",
+    "pointer_operation": "CUTOVER"
+  },
+  "NEW_STILL_ACTIVE": true,
+  "POINTER_STILL_NEW": true,
+  "PASS": true
+}

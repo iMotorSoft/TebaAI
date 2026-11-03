@@ -1,0 +1,1118 @@
+{
+  "gate": "TEBAAI_BRESLOV_HEBREW_ORTHOGRAPHIC_SEARCH_VARIANTS_V1",
+  "status": "BLOCKED",
+  "reason": "small curated development set, no independent holdout/full-corpus false-positive evaluation; semantic-only sufficiency not certified",
+  "rows": [
+    {
+      "id": "P01",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": true,
+      "variant": true,
+      "safest_match_type": "orthographic_variant",
+      "original_query": "פירוש",
+      "expanded_variants": [
+        {
+          "text": "פרוש",
+          "variant_type": "orthographic",
+          "original_query_preserved": true,
+          "rule_id": "פירוש->פרוש"
+        }
+      ],
+      "canonical_source": "פֵּרוּשׁ",
+      "canonical_sha256": "39da0d9402603c4f6d9924b9d986e3e59bdc76956cf61b1ffc2aa289ea98f98e",
+      "semantic": {
+        "id": "P01",
+        "target_rank": 1,
+        "target_cosine": 0.47394826881347235,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 0.47394826881347235
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.38580596994654537
+          },
+          {
+            "canonical": "תפלין",
+            "cosine": 0.3669471809943518
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "P02",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": true,
+      "variant": true,
+      "safest_match_type": "orthographic_variant",
+      "original_query": "עיקר",
+      "expanded_variants": [
+        {
+          "text": "עקר",
+          "variant_type": "orthographic",
+          "original_query_preserved": true,
+          "rule_id": "עיקר->עקר"
+        }
+      ],
+      "canonical_source": "עקר",
+      "canonical_sha256": "460f20b3a684777162364656e26415e7bbc3ac2304cdb2b8f4369fd1af603129",
+      "semantic": {
+        "id": "P02",
+        "target_rank": 1,
+        "target_cosine": 0.6499235026050826,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "עקר",
+            "cosine": 0.6499235026050826
+          },
+          {
+            "canonical": "עִבּוּר",
+            "cosine": 0.41540170359417344
+          },
+          {
+            "canonical": "בבקר",
+            "cosine": 0.312785434726114
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "P03",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": true,
+      "variant": true,
+      "safest_match_type": "orthographic_variant",
+      "original_query": "תחילה",
+      "expanded_variants": [
+        {
+          "text": "תחלה",
+          "variant_type": "orthographic",
+          "original_query_preserved": true,
+          "rule_id": "תחילה->תחלה"
+        }
+      ],
+      "canonical_source": "תחלה",
+      "canonical_sha256": "277c8f1e649d43b506316339d7fea5eaaf86066c606501f65d2e2eea80a2cf08",
+      "semantic": {
+        "id": "P03",
+        "target_rank": 1,
+        "target_cosine": 0.6489669443767518,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "תחלה",
+            "cosine": 0.6489669443767518
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.3338223054623203
+          },
+          {
+            "canonical": "שהוא",
+            "cosine": 0.32315473753733054
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "P04",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": true,
+      "variant": true,
+      "safest_match_type": "orthographic_variant",
+      "original_query": "תפילין",
+      "expanded_variants": [
+        {
+          "text": "תפלין",
+          "variant_type": "orthographic",
+          "original_query_preserved": true,
+          "rule_id": "תפילין->תפלין"
+        }
+      ],
+      "canonical_source": "תפלין",
+      "canonical_sha256": "45ce6b0ce2b027c77f2a64f8359db76a3c453777c8798f130d09d917ecccb955",
+      "semantic": {
+        "id": "P04",
+        "target_rank": 1,
+        "target_cosine": 0.6892931239870681,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "תפלין",
+            "cosine": 0.6892931239870681
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.3715040312045765
+          },
+          {
+            "canonical": "חִדּוּשִׁין",
+            "cosine": 0.29975345517494206
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "P05",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": true,
+      "variant": true,
+      "safest_match_type": "orthographic_variant",
+      "original_query": "בבוקר",
+      "expanded_variants": [
+        {
+          "text": "בבקר",
+          "variant_type": "orthographic",
+          "original_query_preserved": true,
+          "rule_id": "בבוקר->בבקר"
+        }
+      ],
+      "canonical_source": "בבקר",
+      "canonical_sha256": "b56a2385c718573a8a14cb66d76fc935777716c72a88aa3fb5c7d69b3d861edd",
+      "semantic": {
+        "id": "P05",
+        "target_rank": 1,
+        "target_cosine": 0.4471578354899136,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "בבקר",
+            "cosine": 0.4471578354899136
+          },
+          {
+            "canonical": "כל",
+            "cosine": 0.31830690898687564
+          },
+          {
+            "canonical": "עִבּוּר",
+            "cosine": 0.30189870618091336
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "P06",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": true,
+      "variant": true,
+      "safest_match_type": "orthographic_variant",
+      "original_query": "תפילה",
+      "expanded_variants": [
+        {
+          "text": "תפלה",
+          "variant_type": "orthographic",
+          "original_query_preserved": true,
+          "rule_id": "תפילה->תפלה"
+        }
+      ],
+      "canonical_source": "תְּפִלָּה",
+      "canonical_sha256": "4547de836215ead610f006f1c407e5f25e85dada3dd470195d03edc426cfcec2",
+      "semantic": {
+        "id": "P06",
+        "target_rank": 2,
+        "target_cosine": 0.4999172831152983,
+        "found_at_1": false,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "תפלין",
+            "cosine": 0.543482704735745
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.4999172831152983
+          },
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 0.3212580159877167
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "P07",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": true,
+      "variant": true,
+      "safest_match_type": "orthographic_variant",
+      "original_query": "חידושין",
+      "expanded_variants": [
+        {
+          "text": "חדושין",
+          "variant_type": "orthographic",
+          "original_query_preserved": true,
+          "rule_id": "חידושין->חדושין"
+        }
+      ],
+      "canonical_source": "חִדּוּשִׁין",
+      "canonical_sha256": "9cd859d0b41525d417b03add40d165f8b92ec66ad6a5cb6998666acec263dd25",
+      "semantic": {
+        "id": "P07",
+        "target_rank": 1,
+        "target_cosine": 0.48502577094725624,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "חִדּוּשִׁין",
+            "cosine": 0.48502577094725624
+          },
+          {
+            "canonical": "שהוא",
+            "cosine": 0.33843720615915923
+          },
+          {
+            "canonical": "לנגד",
+            "cosine": 0.2814354844777465
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "P08",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": true,
+      "variant": true,
+      "safest_match_type": "orthographic_variant",
+      "original_query": "עיבור",
+      "expanded_variants": [
+        {
+          "text": "עבור",
+          "variant_type": "orthographic",
+          "original_query_preserved": true,
+          "rule_id": "עיבור->עבור"
+        }
+      ],
+      "canonical_source": "עִבּוּר",
+      "canonical_sha256": "86bf045ff6814629c71dc9ace5681f9bd09ebd6fcc530bafa335b3317b6076e8",
+      "semantic": {
+        "id": "P08",
+        "target_rank": 1,
+        "target_cosine": 0.41976054639372196,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "עִבּוּר",
+            "cosine": 0.41976054639372196
+          },
+          {
+            "canonical": "עקר",
+            "cosine": 0.37507143865422915
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.3271325517480938
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "E01",
+      "expected_positive": true,
+      "exact": true,
+      "no_niqqud": true,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": "exact",
+      "original_query": "פֵּרוּשׁ",
+      "expanded_variants": [],
+      "canonical_source": "פֵּרוּשׁ",
+      "canonical_sha256": "39da0d9402603c4f6d9924b9d986e3e59bdc76956cf61b1ffc2aa289ea98f98e",
+      "semantic": {
+        "id": "E01",
+        "target_rank": 1,
+        "target_cosine": 1.0,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 1.0
+          },
+          {
+            "canonical": "אוֹר הַפָּנִים",
+            "cosine": 0.42993785101209325
+          },
+          {
+            "canonical": "חִדּוּשִׁין",
+            "cosine": 0.3776884411266664
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "E02",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": true,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": "niqqud_insensitive",
+      "original_query": "פרוש",
+      "expanded_variants": [],
+      "canonical_source": "פֵּרוּשׁ",
+      "canonical_sha256": "39da0d9402603c4f6d9924b9d986e3e59bdc76956cf61b1ffc2aa289ea98f98e",
+      "semantic": {
+        "id": "E02",
+        "target_rank": 1,
+        "target_cosine": 0.4609839975536779,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 0.4609839975536779
+          },
+          {
+            "canonical": "תפלין",
+            "cosine": 0.38899238013423976
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.3622296482694936
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "E03",
+      "expected_positive": true,
+      "exact": false,
+      "no_niqqud": true,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": "niqqud_insensitive",
+      "original_query": "אור הפנים",
+      "expanded_variants": [],
+      "canonical_source": "אוֹר הַפָּנִים",
+      "canonical_sha256": "ab96a79fc27e6fb10684a0e91a426a872fd5b67434f47fc8c494e4690946ad33",
+      "semantic": {
+        "id": "E03",
+        "target_rank": 1,
+        "target_cosine": 0.5906676245145144,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "אוֹר הַפָּנִים",
+            "cosine": 0.5906676245145144
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.3386985190605121
+          },
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 0.33441782415852356
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      }
+    },
+    {
+      "id": "N01",
+      "expected_positive": false,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": null,
+      "original_query": "לנגדי",
+      "expanded_variants": [],
+      "canonical_source": "לנגד",
+      "canonical_sha256": "07949b882ed733ede6c33f8157ed51c1e7acdd11eed76106e62cf0386a964a20",
+      "semantic": {
+        "id": "N01",
+        "target_rank": 1,
+        "target_cosine": 0.9219100712377764,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "לנגד",
+            "cosine": 0.9219100712377764
+          },
+          {
+            "canonical": "בעצמי",
+            "cosine": 0.37980235509175847
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.37386463586531454
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      }
+    },
+    {
+      "id": "N02",
+      "expected_positive": false,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": null,
+      "original_query": "בעצמו",
+      "expanded_variants": [],
+      "canonical_source": "בעצמי",
+      "canonical_sha256": "8024ca46c4814cf3e7a128fa25d08e867c8e33c78090f93b68683d1459446218",
+      "semantic": {
+        "id": "N02",
+        "target_rank": 1,
+        "target_cosine": 0.706958697423343,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "בעצמי",
+            "cosine": 0.706958697423343
+          },
+          {
+            "canonical": "עִבּוּר",
+            "cosine": 0.4001158115101964
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.3925743065070957
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      }
+    },
+    {
+      "id": "N03",
+      "expected_positive": false,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": null,
+      "original_query": "מימיני",
+      "expanded_variants": [],
+      "canonical_source": "ממנו",
+      "canonical_sha256": "b502c8752032e4a8fd9946fa01f4750fe1b7a04de04d59d10f17cde37b65bab8",
+      "semantic": {
+        "id": "N03",
+        "target_rank": 1,
+        "target_cosine": 0.38972285679849694,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "ממנו",
+            "cosine": 0.38972285679849694
+          },
+          {
+            "canonical": "בעצמי",
+            "cosine": 0.3486679905138428
+          },
+          {
+            "canonical": "תפלין",
+            "cosine": 0.3437666520846917
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      }
+    },
+    {
+      "id": "N04",
+      "expected_positive": false,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": null,
+      "original_query": "שהיא",
+      "expanded_variants": [],
+      "canonical_source": "שהוא",
+      "canonical_sha256": "d2add73ca6f4bd12c0bbc36f836f7b3f40aabea138a8f203dd49d99e50db708f",
+      "semantic": {
+        "id": "N04",
+        "target_rank": 1,
+        "target_cosine": 0.802223496660772,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "שהוא",
+            "cosine": 0.802223496660772
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.509682282843989
+          },
+          {
+            "canonical": "בעצמי",
+            "cosine": 0.3837359411726724
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      }
+    },
+    {
+      "id": "N05",
+      "expected_positive": false,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": null,
+      "original_query": "אותו",
+      "expanded_variants": [],
+      "canonical_source": "את",
+      "canonical_sha256": "27d1390493ee27d9c988180a7d1e2518397f025a4334c6db6571743536fe7a03",
+      "semantic": {
+        "id": "N05",
+        "target_rank": 1,
+        "target_cosine": 0.5145272142547289,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "את",
+            "cosine": 0.5145272142547289
+          },
+          {
+            "canonical": "שהוא",
+            "cosine": 0.4773872536273064
+          },
+          {
+            "canonical": "ממנו",
+            "cosine": 0.3398214341005298
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      }
+    },
+    {
+      "id": "N06",
+      "expected_positive": false,
+      "exact": false,
+      "no_niqqud": false,
+      "variant_candidate_found": false,
+      "variant": false,
+      "safest_match_type": null,
+      "original_query": "יכול",
+      "expanded_variants": [],
+      "canonical_source": "כל",
+      "canonical_sha256": "09583963fb8e7cc79457da0d38b010076a5fc3331b22f814fcf04d154d494469",
+      "semantic": {
+        "id": "N06",
+        "target_rank": 3,
+        "target_cosine": 0.3788537677223904,
+        "found_at_1": false,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "תחלה",
+            "cosine": 0.4127068549746657
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.3872583760249415
+          },
+          {
+            "canonical": "כל",
+            "cosine": 0.3788537677223904
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      }
+    }
+  ],
+  "semantic_preflight": {
+    "status": "PASS_LOCAL_FIXTURE_EMBEDDINGS",
+    "scope": "isolated in-memory exact cosine ranking of fixture snippets; not live corpus recall/Milvus ANN",
+    "alias": "openai_text_embedding_3_small",
+    "dimension": 1536,
+    "gateway_configured": true,
+    "fallback_status": "VERIFIED: configured expected upstream; matching model ID; attempted fallbacks=0",
+    "rows": [
+      {
+        "id": "P01",
+        "target_rank": 1,
+        "target_cosine": 0.47394826881347235,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 0.47394826881347235
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.38580596994654537
+          },
+          {
+            "canonical": "תפלין",
+            "cosine": 0.3669471809943518
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "P02",
+        "target_rank": 1,
+        "target_cosine": 0.6499235026050826,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "עקר",
+            "cosine": 0.6499235026050826
+          },
+          {
+            "canonical": "עִבּוּר",
+            "cosine": 0.41540170359417344
+          },
+          {
+            "canonical": "בבקר",
+            "cosine": 0.312785434726114
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "P03",
+        "target_rank": 1,
+        "target_cosine": 0.6489669443767518,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "תחלה",
+            "cosine": 0.6489669443767518
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.3338223054623203
+          },
+          {
+            "canonical": "שהוא",
+            "cosine": 0.32315473753733054
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "P04",
+        "target_rank": 1,
+        "target_cosine": 0.6892931239870681,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "תפלין",
+            "cosine": 0.6892931239870681
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.3715040312045765
+          },
+          {
+            "canonical": "חִדּוּשִׁין",
+            "cosine": 0.29975345517494206
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "P05",
+        "target_rank": 1,
+        "target_cosine": 0.4471578354899136,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "בבקר",
+            "cosine": 0.4471578354899136
+          },
+          {
+            "canonical": "כל",
+            "cosine": 0.31830690898687564
+          },
+          {
+            "canonical": "עִבּוּר",
+            "cosine": 0.30189870618091336
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "P06",
+        "target_rank": 2,
+        "target_cosine": 0.4999172831152983,
+        "found_at_1": false,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "תפלין",
+            "cosine": 0.543482704735745
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.4999172831152983
+          },
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 0.3212580159877167
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "P07",
+        "target_rank": 1,
+        "target_cosine": 0.48502577094725624,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "חִדּוּשִׁין",
+            "cosine": 0.48502577094725624
+          },
+          {
+            "canonical": "שהוא",
+            "cosine": 0.33843720615915923
+          },
+          {
+            "canonical": "לנגד",
+            "cosine": 0.2814354844777465
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "P08",
+        "target_rank": 1,
+        "target_cosine": 0.41976054639372196,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "עִבּוּר",
+            "cosine": 0.41976054639372196
+          },
+          {
+            "canonical": "עקר",
+            "cosine": 0.37507143865422915
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.3271325517480938
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "E01",
+        "target_rank": 1,
+        "target_cosine": 1.0,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 1.0
+          },
+          {
+            "canonical": "אוֹר הַפָּנִים",
+            "cosine": 0.42993785101209325
+          },
+          {
+            "canonical": "חִדּוּשִׁין",
+            "cosine": 0.3776884411266664
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "E02",
+        "target_rank": 1,
+        "target_cosine": 0.4609839975536779,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 0.4609839975536779
+          },
+          {
+            "canonical": "תפלין",
+            "cosine": 0.38899238013423976
+          },
+          {
+            "canonical": "תְּפִלָּה",
+            "cosine": 0.3622296482694936
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "E03",
+        "target_rank": 1,
+        "target_cosine": 0.5906676245145144,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "אוֹר הַפָּנִים",
+            "cosine": 0.5906676245145144
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.3386985190605121
+          },
+          {
+            "canonical": "פֵּרוּשׁ",
+            "cosine": 0.33441782415852356
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": true
+      },
+      {
+        "id": "N01",
+        "target_rank": 1,
+        "target_cosine": 0.9219100712377764,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "לנגד",
+            "cosine": 0.9219100712377764
+          },
+          {
+            "canonical": "בעצמי",
+            "cosine": 0.37980235509175847
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.37386463586531454
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      },
+      {
+        "id": "N02",
+        "target_rank": 1,
+        "target_cosine": 0.706958697423343,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "בעצמי",
+            "cosine": 0.706958697423343
+          },
+          {
+            "canonical": "עִבּוּר",
+            "cosine": 0.4001158115101964
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.3925743065070957
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      },
+      {
+        "id": "N03",
+        "target_rank": 1,
+        "target_cosine": 0.38972285679849694,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "ממנו",
+            "cosine": 0.38972285679849694
+          },
+          {
+            "canonical": "בעצמי",
+            "cosine": 0.3486679905138428
+          },
+          {
+            "canonical": "תפלין",
+            "cosine": 0.3437666520846917
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      },
+      {
+        "id": "N04",
+        "target_rank": 1,
+        "target_cosine": 0.802223496660772,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "שהוא",
+            "cosine": 0.802223496660772
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.509682282843989
+          },
+          {
+            "canonical": "בעצמי",
+            "cosine": 0.3837359411726724
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      },
+      {
+        "id": "N05",
+        "target_rank": 1,
+        "target_cosine": 0.5145272142547289,
+        "found_at_1": true,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "את",
+            "cosine": 0.5145272142547289
+          },
+          {
+            "canonical": "שהוא",
+            "cosine": 0.4773872536273064
+          },
+          {
+            "canonical": "ממנו",
+            "cosine": 0.3398214341005298
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      },
+      {
+        "id": "N06",
+        "target_rank": 3,
+        "target_cosine": 0.3788537677223904,
+        "found_at_1": false,
+        "found_at_3": true,
+        "top3": [
+          {
+            "canonical": "תחלה",
+            "cosine": 0.4127068549746657
+          },
+          {
+            "canonical": "את",
+            "cosine": 0.3872583760249415
+          },
+          {
+            "canonical": "כל",
+            "cosine": 0.3788537677223904
+          }
+        ],
+        "match_type": "semantic",
+        "expected_positive": false
+      }
+    ],
+    "configured_upstream": [
+      "openai/text-embedding-3-small"
+    ],
+    "configured_model_ids": [
+      "dcd1d69b94a0d921c1fd9d2af975700c18ef8063b97e8bf847279dbd2c56b636"
+    ],
+    "probe_http": 200,
+    "batch_http": 200,
+    "returned_model": "openai_text_embedding_3_small",
+    "response_headers": {
+      "x-litellm-model-id": "dcd1d69b94a0d921c1fd9d2af975700c18ef8063b97e8bf847279dbd2c56b636",
+      "x-litellm-attempted-retries": "0",
+      "x-litellm-attempted-fallbacks": "0"
+    },
+    "input_count": 31,
+    "usage": {
+      "completion_tokens": 0,
+      "prompt_tokens": 205,
+      "total_tokens": 205,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "vectors_persisted": false
+  },
+  "metrics": {
+    "positive_count": 11,
+    "negative_count": 6,
+    "exact_recall": 0.09090909090909091,
+    "no_niqqud_recall": 0.2727272727272727,
+    "controlled_cascade_recall": 1.0,
+    "false_positive_count": 0,
+    "variant_false_positive_count": 0
+  },
+  "ranking_contract": [
+    "exact",
+    "niqqud_insensitive",
+    "orthographic_variant",
+    "semantic"
+  ],
+  "ranking_validation": "lexical precedence checked by tests; no end-to-end ranking claim",
+  "canonical_mutations": 0,
+  "query_mutations": 0,
+  "production_integration": false
+}

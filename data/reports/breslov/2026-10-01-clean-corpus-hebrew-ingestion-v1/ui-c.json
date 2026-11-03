@@ -1,0 +1,32 @@
+{
+  "phase": "c",
+  "base": "http://127.0.0.1:3008",
+  "mocked_responses": 0,
+  "scope_overrides": 0,
+  "console_errors": [],
+  "http_5xx": [],
+  "started_at": "2026-10-11T15:55:17.091Z",
+  "source": {
+    "label": "C",
+    "title": "Likutey Halajot — Interior Final",
+    "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf",
+    "exists": true,
+    "sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "pages": 284,
+    "size_bytes": 4550267
+  },
+  "job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed",
+  "publication": {
+    "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed",
+    "status": "ready",
+    "published_at": "2026-10-11T15:57:59.977447Z",
+    "chunks": 942,
+    "embeddings": 942,
+    "vectors": 942,
+    "idempotency_key": null
+  },
+  "ingestion": "UI_ONLY",
+  "status": "PASS",
+  "finished_at": "2026-10-11T15:58:00.230Z"
+}

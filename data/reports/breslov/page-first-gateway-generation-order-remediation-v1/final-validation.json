@@ -1,0 +1,54 @@
+{
+  "result": "PASS",
+  "branch": "feature/console-backend-core",
+  "checks": {
+    "original_gateway_ordering_reproduced": true,
+    "generation_before_run_fixed": true,
+    "generation_before_document_logical_link_fixed": true,
+    "generation_inserted_after_valid_run": true,
+    "generation_inserted_after_valid_link": true,
+    "real_postgresql_synthetic_fixture": "PASS",
+    "fk_errors": 0,
+    "binding_errors": 0,
+    "first_generation_lifecycle_correct": true,
+    "retry_existing_contract": "PASS",
+    "failure_transaction_safe": true,
+    "raw_fk_status_bypass": false,
+    "rollback_regression": "PASS",
+    "current_c_pg_writes": 0,
+    "current_c_milvus_writes": 0,
+    "focused_tests": "PASS",
+    "new_foundation_failures": 0,
+    "new_full_fail_nodes": 0,
+    "new_full_error_nodes": 0,
+    "gateway_jsonb_issues_separate": true,
+    "frozen_hashes_unchanged": true,
+    "git_diff_check": "PASS",
+    "secret_scan": "PASS",
+    "preexisting_worktree_preserved": true
+  },
+  "all_json_valid": true,
+  "focused": {
+    "PASS": 56,
+    "FAIL": 0,
+    "ERROR": 0
+  },
+  "foundation": {
+    "PASS": 41,
+    "FAIL": 0,
+    "ERROR": 13
+  },
+  "full_backend": {
+    "PASS": 1985,
+    "FAIL": 20,
+    "ERROR": 13
+  },
+  "new_fail_node_ids": [],
+  "new_error_node_ids": [],
+  "limitations": [
+    "Full Foundation not certified; separate 13 JSONB fixture errors remain.",
+    "First-stage registration and completion tested, not extraction/embedding/vector ingestion.",
+    "Committed retry rejects safely rather than resuming; policy preserved.",
+    "Next pipeline identity tested with synthetic job metadata; worker/new-job scheduling not certified."
+  ]
+}

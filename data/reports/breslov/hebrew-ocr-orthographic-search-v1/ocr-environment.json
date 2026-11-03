@@ -1,0 +1,55 @@
+{
+  "engine": "Tesseract",
+  "version": "tesseract 5.3.4\n leptonica-1.82.0\n  libgif 5.2.1 : libjpeg 8d (libjpeg-turbo 2.1.5) : libpng 1.6.43 : libtiff 4.5.1 : zlib 1.3 : libwebp 1.3.2 : libopenjp2 2.5.0\n Found AVX2\n Found AVX\n Found FMA\n Found SSE4.1\n Found OpenMP 201511\n Found libarchive 3.7.2 zlib/1.3 liblzma/5.4.5 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.5\n Found libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.10\n",
+  "languages": "List of available languages in \"/home/issajar/.local/opt/tebaai-ocr-v1/usr/share/tesseract-ocr/5/tessdata/\" (2):\nheb\nspa\n",
+  "packages": [
+    {
+      "file": "liblept5_1.82.0-3build4_amd64.deb",
+      "fields": "Package: liblept5\nVersion: 1.82.0-3build4\nArchitecture: amd64\n",
+      "sha256": "c2bb81d58f032b09917c0d50994cce905287a1596304a4e99681a03601456ea8",
+      "source": "Ubuntu noble/universe http://archive.ubuntu.com/ubuntu (apt configured repository)"
+    },
+    {
+      "file": "libtesseract5_5.3.4-1build5_amd64.deb",
+      "fields": "Package: libtesseract5\nVersion: 5.3.4-1build5\nArchitecture: amd64\n",
+      "sha256": "a38438115dc203b5abc1e6a6b24eb5273ba82161a11faa2f619bf5f7622efb14",
+      "source": "Ubuntu noble/universe http://archive.ubuntu.com/ubuntu (apt configured repository)"
+    },
+    {
+      "file": "tesseract-ocr-heb_1%3a4.1.0-2_all.deb",
+      "fields": "Package: tesseract-ocr-heb\nVersion: 1:4.1.0-2\nArchitecture: all\n",
+      "sha256": "04dd4367da7f13dc368fa6dde7289619a62294f7dd7f4d3d1b578abed0e49b1d",
+      "source": "Ubuntu noble/universe http://archive.ubuntu.com/ubuntu (apt configured repository)"
+    },
+    {
+      "file": "tesseract-ocr-spa_1%3a4.1.0-2_all.deb",
+      "fields": "Package: tesseract-ocr-spa\nVersion: 1:4.1.0-2\nArchitecture: all\n",
+      "sha256": "90fb9f7a7025469f3b294894615ff5d464e6d8ec1c7e84194da665d5016bdfd8",
+      "source": "Ubuntu noble/universe http://archive.ubuntu.com/ubuntu (apt configured repository)"
+    },
+    {
+      "file": "tesseract-ocr_5.3.4-1build5_amd64.deb",
+      "fields": "Package: tesseract-ocr\nVersion: 5.3.4-1build5\nArchitecture: amd64\n",
+      "sha256": "2dfac382d77215aee0c3de4a2a2205505d5f2195e72e79b54ad32154fc08da77",
+      "source": "Ubuntu noble/universe http://archive.ubuntu.com/ubuntu (apt configured repository)"
+    }
+  ],
+  "binary": "/home/issajar/.local/opt/tebaai-ocr-v1/usr/bin/tesseract",
+  "traineddata": {
+    "heb": {
+      "path": "/home/issajar/.local/opt/tebaai-ocr-v1/usr/share/tesseract-ocr/5/tessdata/heb.traineddata",
+      "sha256": "11f9e43ab227f786352a50f75c94c2e9906f1baba86d93276da19da7ce0904db",
+      "package_version": "1:4.1.0-2"
+    },
+    "spa": {
+      "path": "/home/issajar/.local/opt/tebaai-ocr-v1/usr/share/tesseract-ocr/5/tessdata/spa.traineddata",
+      "sha256": "6f2e04d02774a18f01bed44b1111f2cd7f3ba7ac9dc4373cd3f898a40ea6b464",
+      "package_version": "1:4.1.0-2"
+    }
+  },
+  "installation_scope": "user-local DEV only; no system package installation",
+  "OMP_THREAD_LIMIT": 1,
+  "api_ocr": "NOT TESTED",
+  "second_engine": "NOT TESTED",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a"
+}

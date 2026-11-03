@@ -1,0 +1,52 @@
+{
+  "result": "PASS",
+  "switch": {
+    "result": "APPLIED",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "from_generation_id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+    "to_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "expected_generation_id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+    "operation": "ROLLBACK"
+  },
+  "old": {
+    "id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "document_id": "ce1cc1a3-b1b8-4fb4-9457-35a21745a8d6",
+    "run_id": null,
+    "job_id": null,
+    "attempt_number": null,
+    "pipeline_version": "OLD",
+    "status": "ACTIVE",
+    "source_sha256": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "retention_hold": true,
+    "metadata": {},
+    "created_at": "2026-10-22 20:33:44.484882+00:00",
+    "activated_at": "2026-10-22 20:33:45.543183+00:00",
+    "deactivated_at": null
+  },
+  "new": {
+    "id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "document_id": "241c90f5-6328-4cfe-a55c-26e6ded02633",
+    "run_id": null,
+    "job_id": null,
+    "attempt_number": null,
+    "pipeline_version": "NEW",
+    "status": "INACTIVE",
+    "source_sha256": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "retention_hold": true,
+    "metadata": {},
+    "created_at": "2026-10-22 20:33:44.484882+00:00",
+    "activated_at": "2026-10-22 20:33:44.546497+00:00",
+    "deactivated_at": "2026-10-22 20:33:45.543183+00:00"
+  },
+  "reingest_calls": 0,
+  "extraction_calls": 0,
+  "embedding_calls": 0,
+  "vector_rebuild_calls": 0,
+  "basis": "Python call profiler around real rollback: only modules.library.generation functions allowed",
+  "observed_library_calls": [
+    "modules.library.generation._uuid",
+    "modules.library.generation.activate_generation"
+  ]
+}

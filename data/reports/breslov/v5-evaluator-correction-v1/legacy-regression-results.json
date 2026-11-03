@@ -1,0 +1,69 @@
+{
+  "source": "previous stored synthetic evaluator audit; never corpus results",
+  "results": [
+    {
+      "name": "stored_resume_synthetic_audit",
+      "before": {
+        "unsafe_false_certifications": 0,
+        "unsafe_false_provenance_certifications": 0,
+        "false_body_certifications": 0,
+        "false_cross_page_links": 1,
+        "false_editorial_completions": 1,
+        "false_identity_proven": 0,
+        "inconsistent_identity_state": 0
+      },
+      "after": {
+        "unsafe_false_certifications": 0,
+        "unsafe_false_provenance_certifications": 0,
+        "false_body_certifications": 0,
+        "false_cross_page_links": 0,
+        "false_editorial_completions": 0,
+        "false_identity_proven": 0,
+        "inconsistent_identity_state": 0,
+        "unsafe_false_identity_proven": 0,
+        "missed_true_links": 0,
+        "missing_reciprocal_links": 0,
+        "valid_cross_page_relations": 1
+      },
+      "existing_metric_deltas": {
+        "unsafe_false_certifications": 0,
+        "unsafe_false_provenance_certifications": 0,
+        "false_body_certifications": 0,
+        "false_cross_page_links": -1,
+        "false_editorial_completions": -1,
+        "false_identity_proven": 0,
+        "inconsistent_identity_state": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "unsafe_false_provenance_certifications",
+      "before": 1,
+      "after": 1,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "unsafe_false_certifications",
+      "before": 1,
+      "after": 1,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "false_identity_proven",
+      "before": 1,
+      "after": 1,
+      "delta": 0,
+      "passed": true
+    },
+    {
+      "name": "inconsistent_identity_state",
+      "before": 1,
+      "after": 1,
+      "delta": 0,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,25 @@
+{
+  "comparison": "NO_PRIOR_HASH",
+  "same_tree_as_historical_pass": "UNPROVEN",
+  "present_historical_files": [
+    "data/reports/breslov/parallel-generation-foundation-v2/REPORT.md",
+    "data/reports/breslov/parallel-generation-foundation-v2/gate.json"
+  ],
+  "historical_gate_json_parseable": false,
+  "historical_gate_issue": "Python True/False literals instead of JSON true/false",
+  "missing_referenced_evidence": [
+    "final-validation.json",
+    "reader-path-inventory.json",
+    "reader-visibility-matrix.json",
+    "cas-contract.md",
+    "cutover-results.json",
+    "rollback-results.json",
+    "current-c-before-foundation.json",
+    "current-c-after-foundation.json",
+    "tests-backend-full.txt",
+    "backend-results.json",
+    "baseline-failure-comparison.json",
+    "secret-scan.json"
+  ],
+  "note": "Historical evidence preserved byte-for-byte; claimed 1959 pass / 20 failures cannot be independently tied to current bytes."
+}

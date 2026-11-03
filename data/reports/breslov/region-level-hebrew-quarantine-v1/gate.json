@@ -1,0 +1,25 @@
+{
+  "gate": "TEBAAI_BRESLOV_REGION_LEVEL_HEBREW_QUARANTINE_V1",
+  "status": "BLOCKED",
+  "verdict": "TEBAAI_BRESLOV_REGION_LEVEL_HEBREW_QUARANTINE_V1_BLOCKED",
+  "reason": "Incomplete implementation: offline consumer tested, worker integration/durable visual source/real E2E not implemented or executed. No product PASS or zero-leak claim.",
+  "runtime_enforcement_changed": false,
+  "metrics_live": {
+    "BAD_HEBREW_SEARCHABLE": null,
+    "BAD_HEBREW_CHUNKS": null,
+    "BAD_HEBREW_VECTORS": null,
+    "BAD_HEBREW_RETRIEVAL_HITS": null,
+    "BAD_HEBREW_TEXTUAL_CITATIONS": null,
+    "BAD_HEBREW_VISUAL_SOURCE_AVAILABLE": null,
+    "GOOD_NEIGHBOR_LOSS": null,
+    "PARTIAL_PAGE_SEARCHABLE": null,
+    "FULL_DOCUMENT_REJECTED_DUE_TO_SINGLE_BAD_REGION": null
+  },
+  "offline_results": "region-publication-results.json",
+  "REGION_LEVEL_QUARANTINE_READY": "NO",
+  "FULL_C_REINGEST_READY": "NO",
+  "READY_FOR_FULL_C_REINGEST": "NO",
+  "COMMIT": "NO",
+  "PUSH": "NO",
+  "production_modified": false
+}

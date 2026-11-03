@@ -1,0 +1,55 @@
+{
+  "gate": "PASS",
+  "cases": [
+    {
+      "page": 80,
+      "region_id": "region-cbabcc634980c627e2d2280b",
+      "v1_decision": "CERTIFIED",
+      "v4_decision": "UNRESOLVED",
+      "v4_quality": "UNRESOLVED",
+      "v4_note_number": null,
+      "v4_certificate_version": "automatic-region-certification-v4",
+      "passed": true
+    },
+    {
+      "page": 80,
+      "region_id": "region-5c800da9132cbc4511454e79",
+      "v1_decision": "CERTIFIED",
+      "v4_decision": "UNRESOLVED",
+      "v4_quality": "UNRESOLVED",
+      "v4_note_number": null,
+      "v4_certificate_version": "automatic-region-certification-v4",
+      "passed": true
+    },
+    {
+      "page": 140,
+      "region_id": "region-4208ec6381b2a5e29276d00e",
+      "v1_decision": "CERTIFIED",
+      "v4_decision": "UNRESOLVED",
+      "v4_quality": "UNRESOLVED",
+      "v4_note_number": null,
+      "v4_certificate_version": "automatic-region-certification-v4",
+      "passed": true
+    },
+    {
+      "page": 200,
+      "region_id": "region-9a246f83b66e789817d4e727",
+      "v1_decision": "CERTIFIED",
+      "v4_decision": "UNRESOLVED",
+      "v4_quality": "UNRESOLVED",
+      "v4_note_number": null,
+      "v4_certificate_version": "automatic-region-certification-v4",
+      "passed": true
+    },
+    {
+      "page": 200,
+      "region_id": "region-6bcfd2e337fb9ad3f7934fe4",
+      "v1_decision": "CERTIFIED",
+      "v4_decision": "UNRESOLVED",
+      "v4_quality": "UNRESOLVED",
+      "v4_note_number": null,
+      "v4_certificate_version": "automatic-region-certification-v4",
+      "passed": true
+    }
+  ]
+}

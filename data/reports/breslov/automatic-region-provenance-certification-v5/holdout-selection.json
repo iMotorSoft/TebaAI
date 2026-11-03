@@ -1,0 +1,94 @@
+{
+  "version": "automatic-region-provenance-certification-v5-holdout-v1",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "physical_pages": [
+    121,
+    129,
+    135,
+    142,
+    148,
+    155,
+    160,
+    181,
+    186,
+    187,
+    189,
+    192,
+    197,
+    198,
+    199,
+    214,
+    222,
+    224,
+    228,
+    232,
+    236,
+    245,
+    246,
+    247,
+    251,
+    252,
+    253,
+    254,
+    183,
+    239,
+    240,
+    255
+  ],
+  "page_count": 32,
+  "scope": "SAFETY_ONLY_FRESH",
+  "cross_page_positives": [],
+  "cross_page_negatives": [
+    [
+      186,
+      187,
+      108,
+      109
+    ],
+    [
+      197,
+      198,
+      137,
+      138
+    ],
+    [
+      198,
+      199,
+      139,
+      140
+    ],
+    [
+      245,
+      246,
+      2,
+      3
+    ],
+    [
+      246,
+      247,
+      3,
+      4
+    ],
+    [
+      251,
+      252,
+      11,
+      12
+    ],
+    [
+      252,
+      253,
+      13,
+      14
+    ],
+    [
+      253,
+      254,
+      18,
+      19
+    ]
+  ],
+  "cross_page_negative_count": 8,
+  "cross_page_positive_source": "development-regression-only",
+  "notes": "No fresh cross-page positives remain: every source-only true continuation candidate was opened during V4/V5 development. The sealed holdout therefore tests safety, column lineage, full-width note continuations, one-unit/two-column notes and no-note pages."
+}

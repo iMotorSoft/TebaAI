@@ -1,0 +1,23 @@
+{
+  "generic_pdf": {
+    "pages": [
+      1
+    ],
+    "identity": true,
+    "certificate_versions": [
+      "automatic-region-certification-v4"
+    ]
+  },
+  "cross_page_fixture": {
+    "pages": [
+      1,
+      2
+    ],
+    "identity": true,
+    "certificate_versions": [
+      "automatic-region-certification-v4"
+    ]
+  },
+  "consumer_returns_to_dict": true,
+  "v1_imported": false
+}

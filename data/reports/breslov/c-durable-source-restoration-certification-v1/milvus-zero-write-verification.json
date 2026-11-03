@@ -1,0 +1,16 @@
+{
+  "measured_at": "2026-10-23T12:58:50.437082+00:00",
+  "mechanism": "read-only Milvus query() plus get_collection_stats(); the static contract proves the harness contains no insert/upsert/delete call",
+  "entities_before": 942,
+  "entities_after": 942,
+  "chunk_identity_digest_before": "52106cca5cc4ae93b614a56e83d10724",
+  "chunk_identity_digest_after": "52106cca5cc4ae93b614a56e83d10724",
+  "content_sha_digest_before": "fe84917b644dd7226ae8f9d8b2057994",
+  "content_sha_digest_after": "fe84917b644dd7226ae8f9d8b2057994",
+  "inserts": 0,
+  "upserts": 0,
+  "deletes": 0,
+  "vector_count_changed": false,
+  "vector_state_changed": false,
+  "MILVUS_ZERO_WRITE": "PASS"
+}

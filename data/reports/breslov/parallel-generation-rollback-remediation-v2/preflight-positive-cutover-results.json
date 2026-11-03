@@ -1,0 +1,44 @@
+{
+  "result": "PASS",
+  "switch": {
+    "result": "APPLIED",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "from_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "to_generation_id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+    "expected_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "operation": "CUTOVER"
+  },
+  "old": {
+    "id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "document_id": "ce1cc1a3-b1b8-4fb4-9457-35a21745a8d6",
+    "run_id": null,
+    "job_id": null,
+    "attempt_number": null,
+    "pipeline_version": "OLD",
+    "status": "INACTIVE",
+    "source_sha256": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "retention_hold": true,
+    "metadata": {},
+    "created_at": "2026-10-22 20:33:44.484882+00:00",
+    "activated_at": "2026-10-22 20:33:44.533830+00:00",
+    "deactivated_at": "2026-10-22 20:33:44.546497+00:00"
+  },
+  "new": {
+    "id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "document_id": "241c90f5-6328-4cfe-a55c-26e6ded02633",
+    "run_id": null,
+    "job_id": null,
+    "attempt_number": null,
+    "pipeline_version": "NEW",
+    "status": "ACTIVE",
+    "source_sha256": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "retention_hold": false,
+    "metadata": {},
+    "created_at": "2026-10-22 20:33:44.484882+00:00",
+    "activated_at": "2026-10-22 20:33:44.546497+00:00",
+    "deactivated_at": null
+  },
+  "initial_pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+}

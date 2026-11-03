@@ -1,0 +1,40 @@
+{
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed",
+  "attempt_number": 1,
+  "job_status": "completed_with_warnings",
+  "document_status": "ready",
+  "pipeline_version": "content_page_first_v1",
+  "scope": "breslov_primary",
+  "collection_code": "tebaai_breslov_chunks_v1",
+  "pdf_pages": 284,
+  "canonical_pages": 284,
+  "textual_pages": 268,
+  "empty_pages": 16,
+  "headings": 258,
+  "footnotes": 290,
+  "printed_references": 455,
+  "chunks": 942,
+  "embeddings": 942,
+  "pg_embedding_count": 942,
+  "milvus_entity_count": 942,
+  "pg_missing": 0,
+  "milvus_missing": 0,
+  "milvus_orphan": 0,
+  "duplicates": 0,
+  "duration_seconds": 157.876991,
+  "page_integrity": "match",
+  "warnings": [
+    "physical_empty_pages_detected",
+    "empty_pages_preserved"
+  ],
+  "errors": [],
+  "stage_timings": {},
+  "cleanup_result": "not_required",
+  "technical_details": {
+    "upload_id": "e79fc58d-5bc4-48ad-9f9a-90248e201c8e",
+    "attempt_number": 1,
+    "created_at": "2026-10-11 15:55:18.968676+00:00",
+    "finished_at": "2026-10-11 15:57:57.784139+00:00"
+  }
+}

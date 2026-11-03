@@ -1,0 +1,17 @@
+{
+  "fixture": "synthetic-two-page",
+  "pair": [
+    1,
+    2
+  ],
+  "linked": true,
+  "same_editorial_unit": true,
+  "first_region": "region-6aefe257a9e3538c0fbca53b",
+  "second_region": "region-20e088917a0b77e8d7a2ba62",
+  "first_state": "CONTINUES_NEXT_PAGE",
+  "second_state": "CONTINUED_FROM_PREVIOUS",
+  "certificate_versions": [
+    "automatic-region-certification-v4",
+    "automatic-region-certification-v4"
+  ]
+}

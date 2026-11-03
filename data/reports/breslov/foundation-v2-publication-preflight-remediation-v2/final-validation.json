@@ -1,0 +1,83 @@
+{
+  "result": "FAIL",
+  "reason": "FAIL_SOURCE_DURABILITY_DEFECT",
+  "semantics": {
+    "GATE": "TEBAAI_BRESLOV_FOUNDATION_V2_PUBLICATION_PREFLIGHT_REMEDIATION_V2",
+    "RESULT": "FAIL",
+    "PUBLICATION_PREFLIGHT_READY": "NO",
+    "READY_FOR_FOUNDATION_V2_PUBLICATION_V1R2": "NO",
+    "FOUNDATION_V2_PUBLISHED": "NO",
+    "INDETERMINATE_DATATYPE_REMEDIATED": "YES",
+    "TARGETED_V1R1_ERROR_NODES_REMAINING": 0,
+    "PUBLICATION_FIXTURE_ERRORS": 0,
+    "PAGE_FIRST_GATEWAY_FIX_PRESERVED": "YES",
+    "ROLLBACK_FIX_PRESERVED": "YES",
+    "APPROVED_EXTERNAL_SHA_MATCH": "YES",
+    "DURABLE_SOURCE_PRESENT": "NO",
+    "DURABLE_SOURCE_RESOLVABLE": "NO",
+    "DURABLE_BYTES_MATCH_APPROVED": "NO",
+    "AUTHENTICATED_ACCESS": "FAIL",
+    "UNAUTHENTICATED_BLOCKED": "YES",
+    "CURRENT_C_PRESERVED": "YES",
+    "REPORT_CONTRADICTIONS": 0,
+    "INVALID_JSON_FILES": 0,
+    "POST_FREEZE_MODIFICATIONS": 0,
+    "COMMIT": "NO",
+    "PUSH": "NO"
+  },
+  "counts": {
+    "targeted_pre_fix": {
+      "PASS": 2,
+      "FAIL": 0,
+      "ERROR": 13
+    },
+    "pre_freeze_run_1": {
+      "fixture_errors": 0,
+      "fk_errors": 0,
+      "binding_errors": 0,
+      "indeterminate_datatype_errors": 0,
+      "setup_errors": 0,
+      "cleanup_errors": 0
+    },
+    "pre_freeze_run_2": {
+      "fixture_errors": 0,
+      "fk_errors": 0,
+      "binding_errors": 0,
+      "indeterminate_datatype_errors": 0,
+      "setup_errors": 0,
+      "cleanup_errors": 0
+    },
+    "certification": {
+      "fixture_errors": 0,
+      "fk_errors": 0,
+      "binding_errors": 0,
+      "indeterminate_datatype_errors": 0,
+      "setup_errors": 0,
+      "cleanup_errors": 0
+    },
+    "targeted_post_freeze": {
+      "PASS": 13,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "focused": {
+      "PASS": 63,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "foundation": {
+      "PASS": 75,
+      "FAIL": 0,
+      "ERROR": 0
+    },
+    "full_backend": {
+      "PASS": 1998,
+      "FAIL": 20,
+      "ERROR": 0
+    }
+  },
+  "new_fail_node_ids": [],
+  "new_error_node_ids": [],
+  "targeted_error_nodes_remaining": 0,
+  "generated_at": "2026-10-23T00:48:28.238100+00:00"
+}

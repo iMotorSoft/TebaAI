@@ -238,7 +238,9 @@ def extract_pdf_with_region_certificates(
     the returned page-local Markdown, never to previously persisted content.
     Unsupported evidence is serialized as UNRESOLVED, not accepted by default.
     """
-    from modules.library.automatic_region_certification import extract_pdf_region_certificates
+    from modules.library.automatic_region_certification_v5 import (
+        extract_pdf_region_certificates,
+    )
 
     return [page.to_dict() for page in extract_pdf_region_certificates(pdf_path, pages=pages)]
 

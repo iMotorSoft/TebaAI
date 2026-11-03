@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "baseline": "IDENTITY_PROVEN",
+  "checks": [
+    {
+      "name": "terminal_not_page_boundary",
+      "ok": true,
+      "state": "IDENTITY_UNRESOLVED"
+    },
+    {
+      "name": "leading_is_marked",
+      "ok": true,
+      "state": "IDENTITY_UNRESOLVED"
+    },
+    {
+      "name": "wrong_note_number",
+      "ok": true,
+      "state": "IDENTITY_REJECTED"
+    },
+    {
+      "name": "missing_native_evidence",
+      "ok": true,
+      "state": "IDENTITY_UNRESOLVED"
+    },
+    {
+      "name": "not_same_document",
+      "ok": true,
+      "state": "IDENTITY_UNRESOLVED"
+    }
+  ]
+}

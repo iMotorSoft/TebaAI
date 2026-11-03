@@ -1,0 +1,60 @@
+{
+  "approved_external_source": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf",
+  "expected_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "expected_size_bytes": 4550267,
+  "expected_pages": 284,
+  "measurement": "independent, current run",
+  "external_exists": true,
+  "actual_external_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "actual_external_size_bytes": 4550267,
+  "actual_external_pages": 284,
+  "durable_expected_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+  "durable_source_present": false,
+  "durable_stored_bytes_sha256": null,
+  "durable_stored_bytes_size": null,
+  "database": {
+    "document": {
+      "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+      "title": "Likutey Halajot \u2014 Interior Final",
+      "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+      "source_size_bytes": 4550267,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "source_path": null,
+      "status": "ready",
+      "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95"
+    },
+    "catalog": {
+      "total": 3,
+      "with_path": 0
+    }
+  },
+  "database_source_path": null,
+  "database_source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "database_source_size_bytes": 4550267,
+  "durable_reference_resolves": false,
+  "durable_bytes_match_approved": false,
+  "approved_external_sha_match": true,
+  "unauthenticated_request": {
+    "status": 401,
+    "body": "{\"status_code\":401,\"detail\":\"Missing or invalid Authorization header\"}"
+  },
+  "authenticated_session": {
+    "status": 201,
+    "token_present": true
+  },
+  "authenticated_request": {
+    "status": 404,
+    "body": "{\"status_code\":404,\"detail\":\"Source unavailable\"}"
+  },
+  "authenticated_access": "FAIL",
+  "unauthenticated_blocked": true,
+  "decision": {
+    "APPROVED_EXTERNAL_SHA_MATCH": "YES",
+    "DURABLE_SOURCE_PRESENT": "NO",
+    "DURABLE_SOURCE_RESOLVABLE": "NO",
+    "DURABLE_BYTES_MATCH_APPROVED": "NO",
+    "AUTHENTICATED_ACCESS": "FAIL",
+    "UNAUTHENTICATED_BLOCKED": "YES"
+  },
+  "durable_source_ok": false
+}

@@ -1,0 +1,83 @@
+{
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "before": {
+    "captured_at": "2026-10-23T00:42:38.872357+00:00",
+    "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+    "documents": {
+      "digest": "3d3d220aee7a9f8c3ea5156a59dde938",
+      "documents": 1
+    },
+    "texts": {
+      "digest": "458ac26c1a4e6cef2f15ec0829ae6e36",
+      "texts": 1
+    },
+    "pages": {
+      "digest": "1a7564a797e8dd5e357f2a5a0e1dcdd6",
+      "pages": 284
+    },
+    "chunks": {
+      "digest": "589789b3bf591d2ae6006b845ad03b35",
+      "chunks": 942
+    },
+    "generations": {
+      "digest": "71020f288fa6bd661441000d4b95fbd3",
+      "generations": 1
+    },
+    "active_pointer": {
+      "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "expected_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "operation": "BACKFILL"
+    },
+    "audit_rows": 1,
+    "milvus": {
+      "status": "DISABLED"
+    }
+  },
+  "after": {
+    "captured_at": "2026-10-23T00:48:07.246840+00:00",
+    "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+    "documents": {
+      "digest": "3d3d220aee7a9f8c3ea5156a59dde938",
+      "documents": 1
+    },
+    "texts": {
+      "digest": "458ac26c1a4e6cef2f15ec0829ae6e36",
+      "texts": 1
+    },
+    "pages": {
+      "digest": "1a7564a797e8dd5e357f2a5a0e1dcdd6",
+      "pages": 284
+    },
+    "chunks": {
+      "digest": "589789b3bf591d2ae6006b845ad03b35",
+      "chunks": 942
+    },
+    "generations": {
+      "digest": "71020f288fa6bd661441000d4b95fbd3",
+      "generations": 1
+    },
+    "active_pointer": {
+      "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "expected_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "operation": "BACKFILL"
+    },
+    "audit_rows": 1,
+    "milvus": {
+      "status": "DISABLED"
+    }
+  },
+  "differences": {},
+  "postgresql_writes": 0,
+  "milvus_writes": 0,
+  "milvus_entities_unchanged": true,
+  "reingest": "NO",
+  "extraction": "NO",
+  "embeddings": "NO",
+  "vector_rebuild": "NO",
+  "active_pointer_modified": "NO",
+  "readonly_ok": true,
+  "method": "read-only SELECT digests before/after; no write statement in any executed script"
+}

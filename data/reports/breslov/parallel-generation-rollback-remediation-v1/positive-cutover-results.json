@@ -1,0 +1,16 @@
+{
+  "technical_result": "PASS",
+  "evidence": [
+    "focused-tests.txt",
+    "focused.xml"
+  ],
+  "test_nodes": [
+    "tests/test_generation_rollback_remediation.py::test_cutover_rollback_audit_and_cleanup",
+    "tests/test_generation_rollback_remediation.py::test_postgres_rollback_contract"
+  ],
+  "gate_result": "INVALID",
+  "result": "APPLIED",
+  "old": "INACTIVE",
+  "new": "ACTIVE",
+  "pointer": "NEW"
+}

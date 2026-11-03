@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "Book B / PDF physical page 416 critical sample",
+  "ingestion": "UI only, ready, attempt 1",
+  "integrity": "416 pages / 908 chunks / 908 vectors; missing=orphans=duplicates=0",
+  "critical_sample": "Separate source equation cells retained in canonical PG; no artificial ו1 or ת80; exact PG/API/DOM comparison",
+  "browser": "Chromium desktop/mobile citation and preview compared to original PDF; numeric-side position measured in live browser",
+  "queries": "Viewer literal and semantic recover B; semantic lane ok; partial simple_rag results are not a complete-answer quality claim",
+  "frontend_fix": "Source preview/exact citation/context reuse equation isolation; LTR only for numeric equation cells; nowrap justified by mobile screenshots",
+  "evidence": ["b-integrity.json", "b-browser.json", "b-critical-browser.json", "b-pdf-416.png", "b-critical-citation-desktop.png", "b-critical-citation-mobile.png"]
+}

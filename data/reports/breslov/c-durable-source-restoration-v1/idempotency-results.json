@@ -1,0 +1,63 @@
+{
+  "executed_at": "2026-10-23T12:13:34.036897+00:00",
+  "second_run_result": "NOOP_ALREADY_RESTORED",
+  "noop_already_restored": true,
+  "durable_bytes_already_match": true,
+  "metadata_already_correct": true,
+  "duplicate_source_records_created": 0,
+  "new_generation_created": false,
+  "new_run_created": false,
+  "content_writes": 0,
+  "counts_before": {
+    "documents": 3,
+    "generations_for_c": 1,
+    "ingestion_runs_for_c": 1,
+    "chunks_for_c": 942
+  },
+  "counts_after": {
+    "documents": 3,
+    "generations_for_c": 1,
+    "ingestion_runs_for_c": 1,
+    "chunks_for_c": 942
+  },
+  "monitor": {
+    "instrumentation_process": "same process that performed the restoration",
+    "patched_targets": [
+      "modules.library.extractors.extract_text",
+      "modules.library.extractors._extract_pdf",
+      "modules.library.extractors.extract_pdf_with_page_markers",
+      "modules.library.extractors.extract_pdf_columns_with_page_markers",
+      "modules.library.extractors.extract_pdf_with_region_certificates",
+      "modules.library.page_first_pipeline.extract_pdf_page_first",
+      "modules.library.page_first_pipeline.extract_pdf_region_published",
+      "modules.library.generation.ensure_logical_document",
+      "modules.library.generation.register_generation",
+      "modules.library.generation.set_generation_status",
+      "modules.library.generation.activate_generation",
+      "modules.library.generation.switch_generation",
+      "modules.embeddings.client.embed_text",
+      "modules.embeddings.client.embed_batch",
+      "pymilvus.MilvusClient.insert",
+      "pymilvus.MilvusClient.upsert",
+      "pymilvus.MilvusClient.delete",
+      "psycopg.AsyncCursor.execute"
+    ],
+    "install_errors": [],
+    "counters": {
+      "ingest_calls": 0,
+      "extract_calls": 0,
+      "chunk_generation_calls": 0,
+      "embedding_calls": 0,
+      "vector_insert_delete_calls": 0,
+      "generation_activation_calls": 0
+    },
+    "sql_write_statements_observed": [],
+    "allowed_write_prefixes": [
+      "UPDATE library_documents"
+    ],
+    "unexpected_sql_writes": [],
+    "zero_forbidden_operations": true,
+    "zero_unexpected_sql_writes": true,
+    "limitations": "In-process instrumentation covers the product entrypoints patched above; cross-process vector safety is additionally evidenced by read-only Milvus population digests before/after."
+  }
+}

@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/../../data/reports/breslov/parallel-generation-rollback-remediation-v2/lifecycle_harness.py", line 222, in <module>
+    asyncio.run(run())
+  File "/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/../../data/reports/breslov/parallel-generation-rollback-remediation-v2/lifecycle_harness.py", line 148, in run
+    await assert_generic_cleanup_rejected(new)
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_generation_rollback_remediation.py", line 213, in assert_generic_cleanup_rejected
+    with pytest.raises(E2EIsolationError, match="retained for rollback"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/_pytest/raises.py", line 711, in __exit__
+    raise AssertionError(self._fail_reason) from None
+AssertionError: Regex pattern did not match.
+  Expected regex: 'retained for rollback'
+  Actual message: 'Cleanup rejected the ACTIVE generation of a logical document'

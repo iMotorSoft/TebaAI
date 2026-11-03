@@ -1,0 +1,47 @@
+{
+  "provider": "PostgreSQL",
+  "database": "tebaai",
+  "table": "library_documents",
+  "target_document": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "rows_modified": 1,
+  "authorized_mutation": "source_path for C only (plus updated_at)",
+  "statement": "UPDATE library_documents SET source_path=<canonical durable path>, updated_at=now() WHERE id=<C> AND source_path IS NULL AND source_sha256=<approved hash>",
+  "row_before": {
+    "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "status": "ready",
+    "source_path": null,
+    "source_uri": null,
+    "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "source_size_bytes": 4550267,
+    "source_mime_type": "application/pdf",
+    "updated_at": "2026-10-11 15:57:59.977447+00:00"
+  },
+  "row_after": {
+    "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "status": "ready",
+    "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "source_uri": null,
+    "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "source_size_bytes": 4550267,
+    "source_mime_type": "application/pdf",
+    "updated_at": "2026-10-23 12:12:54.684605+00:00"
+  },
+  "unexpected_rows_modified": 0,
+  "other_c_rows_modified": 0,
+  "synthetic_rows_created": 0,
+  "milvus_writes": 0,
+  "counts_before": {
+    "documents": 3,
+    "generations_for_c": 1,
+    "ingestion_runs_for_c": 1,
+    "chunks_for_c": 942
+  },
+  "counts_after": {
+    "documents": 3,
+    "generations_for_c": 1,
+    "ingestion_runs_for_c": 1,
+    "chunks_for_c": 942
+  }
+}

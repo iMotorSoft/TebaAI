@@ -1,0 +1,11 @@
+{
+  "status": "NOT_RUN",
+  "worker_integration": "NOT_IMPLEMENTED",
+  "reason": "Only offline publication consumer implemented; durable PDF source and runtime certificate/evidence-unit handoff remain pending. This is incomplete engineering, not a service failure.",
+  "document_id": null,
+  "job_id": null,
+  "source_hash_test_document": null,
+  "test_marker": null,
+  "controlled_dev_writes": false,
+  "no_full_reingest": true
+}

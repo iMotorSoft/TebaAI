@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "title": "Un Día en la Vida de un Jasid de Breslov",
+  "sha256": "d98e4d4c96a36c701aa055e1a9b8ce230dec24f3b45f35455828f6fe30f69c13",
+  "document_id": "07ba7c8d-6e43-547e-a6e7-d5f390233cfa",
+  "job_id": "d2725b1b-1350-461b-97b2-6b5a953cc012",
+  "attempt": 1,
+  "scope": "breslov_primary",
+  "pages": 196,
+  "chunks": 296,
+  "vectors": 296,
+  "missing": 0,
+  "orphans": 0,
+  "duplicates": 0,
+  "publication": "ready",
+  "chunk_lengths": {
+    "min": 43,
+    "max": 1682
+  },
+  "timestamps": {
+    "created": "2026-10-11 15:29:54.680330+00:00",
+    "updated": "2026-10-11 15:31:08.200969+00:00"
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "path": "SrvRestAstroLS_v1/backend/modules/library/page_first_evidence.py",
+    "historical_commit": "b8d5a261f106b4501bbbf1a2e0a6195334f320f0",
+    "symbol": "_resolve_printed_page",
+    "AST_unchanged": true,
+    "historical_AST_sha256": "14922aec7f8fde410c839d82dfe252d8e8e5d821dbee807a25dc86205dd46c8e",
+    "current_AST_sha256": "14922aec7f8fde410c839d82dfe252d8e8e5d821dbee807a25dc86205dd46c8e"
+  },
+  {
+    "path": "SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py",
+    "historical_commit": "b8d5a261f106b4501bbbf1a2e0a6195334f320f0",
+    "symbol": "_canonical_printed_page",
+    "AST_unchanged": true,
+    "historical_AST_sha256": "ebdecaddb6bd3e994961409514e45a7e68f2875dccb92cd4eacbbd642b8994af",
+    "current_AST_sha256": "ebdecaddb6bd3e994961409514e45a7e68f2875dccb92cd4eacbbd642b8994af"
+  },
+  {
+    "path": "SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py",
+    "historical_commit": "9431d0ee8852855213229b57b25a257eec28cc30",
+    "symbol": "_embedded_footnote_number",
+    "AST_unchanged": true,
+    "historical_AST_sha256": "710a138e31db5674bdad21a79bd28178af306cd98c46af17bd392084d37eeb9a",
+    "current_AST_sha256": "710a138e31db5674bdad21a79bd28178af306cd98c46af17bd392084d37eeb9a"
+  },
+  {
+    "path": "SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py",
+    "historical_commit": "9431d0ee8852855213229b57b25a257eec28cc30",
+    "symbol": "_embedded_footnote_body",
+    "AST_unchanged": true,
+    "historical_AST_sha256": "ea8afd2135aa017af2c672e6dd588ab0548766de73977411b6fc65506b521d4a",
+    "current_AST_sha256": "ea8afd2135aa017af2c672e6dd588ab0548766de73977411b6fc65506b521d4a"
+  },
+  {
+    "path": "SrvRestAstroLS_v1/backend/scripts/ingest_likutey_halajot_page_first_v2.py",
+    "historical_commit": "e31520dc24ee387a0b24fb8b0547d03f152eb719",
+    "symbol": "get_page_text",
+    "AST_unchanged": true,
+    "historical_AST_sha256": "bb3eafbe8235296ce364aa0634b0407152491e2d699d322848af630c490a6983",
+    "current_AST_sha256": "bb3eafbe8235296ce364aa0634b0407152491e2d699d322848af630c490a6983"
+  },
+  {
+    "path": "SrvRestAstroLS_v1/backend/scripts/likutey_layout_parser.py",
+    "historical_commit": "8f5fe0b635fdd7608026894efb098de8a8634a62",
+    "symbol": "parse_page",
+    "AST_unchanged": true,
+    "historical_AST_sha256": "41e4d0438c740cec771f8fb828cdf1470e0b778e9a97057caf2c20df49dd0703",
+    "current_AST_sha256": "41e4d0438c740cec771f8fb828cdf1470e0b778e9a97057caf2c20df49dd0703"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "scope": "Offline consumer only; NOT real worker",
+  "controlled_cases": 5,
+  "controlled_accepted_region_loss": 0,
+  "controlled_bad_chunks": 0,
+  "real_pages": [
+    55,
+    167,
+    168
+  ],
+  "real_accepted_region_loss": 0,
+  "real_quarantined_region_chunks": 0,
+  "real_page_statuses": {
+    "55": "PARTIAL",
+    "167": "PARTIAL",
+    "168": "PARTIAL"
+  },
+  "good_neighbor_definition": "Existing ACCEPTED + CERTIFIED units only; not all visually valid source regions",
+  "worker_integration": "NOT_IMPLEMENTED"
+}

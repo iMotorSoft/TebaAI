@@ -1,0 +1,506 @@
+FFFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+______ test_hybrid_never_emits_unauthorized_or_misattributed_vector[None] ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb819765970>
+canonical = None
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("canonical", [None, {}, {"document_id": "different-document", "content": "OLD_ONLY_MARKER"}])
+    async def test_hybrid_never_emits_unauthorized_or_misattributed_vector(monkeypatch, canonical):
+        async def no_fts(*args, **kwargs):
+            return []
+    
+        async def hydrate(*args, **kwargs):
+            return canonical
+    
+        monkeypatch.setattr(hybrid_search, "search_chunks_text", no_fts)
+        monkeypatch.setattr(hybrid_search, "_enrich_chunk", hydrate)
+        monkeypatch.setattr("infrastructure.milvus.client.create_connection", lambda: None)
+        monkeypatch.setattr(hybrid_search, "embed_text", lambda query: [0.0])
+        monkeypatch.setattr(hybrid_search, "ensure_collection", lambda *args, **kwargs: None)
+        monkeypatch.setattr(hybrid_search, "search_vectors", lambda **kwargs: [{
+            "chunk_id": "candidate-chunk", "document_id": "candidate-document",
+            "title": "NEW_ONLY_MARKER", "content_preview": "NEW_ONLY_MARKER", "distance": 1.0,
+        }])
+>       result = await hybrid_search.search_chunks_hybrid(object(), "synthetic_scope", "marker")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_parallel_generation_safety_prerequisites.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+conn = <object object at 0x7fb83351aed0>
+knowledge_scope_code = 'synthetic_scope', query = 'marker', top_k = 10
+language = 'es', fts_limit = 30, vector_limit = 30
+milvus_collection = 'tebaai_breslov_chunks_v1', weights = None
+
+    async def search_chunks_hybrid(
+        conn: AsyncConnection,
+        knowledge_scope_code: str,
+        query: str,
+        top_k: int = 10,
+        language: str = "es",
+        fts_limit: int = FTS_LIMIT,
+        vector_limit: int = VECTOR_LIMIT,
+        milvus_collection: str = "tebaai_breslov_chunks_v1",
+        weights: dict[str, float] | None = None,
+    ) -> list[dict[str, Any]]:
+        """Hybrid search scoped by knowledge_scope_code.
+        Uses knowledge_scopes for PG FTS filter and Milvus collection_code filter."""
+        w = weights or HYBRID_WEIGHTS
+    
+        # 1. FTS search via knowledge_scopes
+        fts_results = await search_chunks_text(
+            conn,
+            knowledge_scope_code=knowledge_scope_code,
+            query=query,
+            top_k=fts_limit,
+            mode="auto",
+            language=language,
+        )
+        fts_by_chunk: dict[str, dict] = {}
+        for r in fts_results:
+            cid = str(r["chunk_id"])
+            r["_source"] = "fts"
+            r["_fts_rank"] = r.get("rank", 0.0) or 0.0
+            r["_vector_score"] = None
+            fts_by_chunk[cid] = r
+    
+        # 2. Vector search
+        try:
+            from infrastructure.milvus.client import create_connection
+            create_connection()
+            query_vec = embed_text(query)
+            ensure_collection(milvus_collection, dimension=len(query_vec))
+            milvus_collection_code = resolve_milvus_collection_code_for_scope(knowledge_scope_code)
+            milvus_expr = (
+                f'collection_code == "{milvus_collection_code}"'
+                if milvus_collection_code
+                else None
+            )
+            milvus_hits = search_vectors(
+                collection_name=milvus_collection,
+                query_embedding=query_vec,
+                top_k=vector_limit,
+                expr=milvus_expr,
+                output_fields=["chunk_id", "document_id", "title", "content_preview", "chunk_index", "content_sha256",
+                               "page_start", "page_end"],
+            )
+        except Exception:
+            milvus_hits = []
+    
+        # Enrich Milvus results from PostgreSQL
+        vec_by_chunk: dict[str, dict] = {}
+        for hit in milvus_hits:
+            cid = hit.get("chunk_id", "")
+            if not cid:
+                continue
+            vec_score = hit.get("distance", 0.0) or 0.0
+            pg_data = await _enrich_chunk(conn, cid, knowledge_scope_code)
+            entry: dict[str, Any] = {
+                "chunk_id": cid,
+>               "document_id": pg_data.get("document_id") or hit.get("document_id", ""),
+                               ^^^^^^^^^^^
+                "document_title": pg_data.get("document_title") or hit.get("title", ""),
+                "author": pg_data.get("author"),
+                "knowledge_scope_code": knowledge_scope_code,
+                "chunk_index": pg_data.get("chunk_index") or hit.get("chunk_index", 0),
+                "language": pg_data.get("language", language),
+                "page_start": pg_data.get("page_start"),
+                "page_end": pg_data.get("page_end"),
+                "chapter": pg_data.get("chapter"),
+                "section": pg_data.get("section"),
+                "reference_label": pg_data.get("reference_label"),
+                "content_length": pg_data.get("content_length", 0),
+                "content": pg_data.get("content", ""),
+                "_source": "vector",
+                "_fts_rank": None,
+                "_vector_score": vec_score,
+            }
+E           AttributeError: 'NoneType' object has no attribute 'get'
+
+modules/library/hybrid_search.py:111: AttributeError
+___ test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical1] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb8193b3fb0>
+canonical = {}
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("canonical", [None, {}, {"document_id": "different-document", "content": "OLD_ONLY_MARKER"}])
+    async def test_hybrid_never_emits_unauthorized_or_misattributed_vector(monkeypatch, canonical):
+        async def no_fts(*args, **kwargs):
+            return []
+    
+        async def hydrate(*args, **kwargs):
+            return canonical
+    
+        monkeypatch.setattr(hybrid_search, "search_chunks_text", no_fts)
+        monkeypatch.setattr(hybrid_search, "_enrich_chunk", hydrate)
+        monkeypatch.setattr("infrastructure.milvus.client.create_connection", lambda: None)
+        monkeypatch.setattr(hybrid_search, "embed_text", lambda query: [0.0])
+        monkeypatch.setattr(hybrid_search, "ensure_collection", lambda *args, **kwargs: None)
+        monkeypatch.setattr(hybrid_search, "search_vectors", lambda **kwargs: [{
+            "chunk_id": "candidate-chunk", "document_id": "candidate-document",
+            "title": "NEW_ONLY_MARKER", "content_preview": "NEW_ONLY_MARKER", "distance": 1.0,
+        }])
+        result = await hybrid_search.search_chunks_hybrid(object(), "synthetic_scope", "marker")
+>       assert result == [], "Unrehydrated/misattributed Milvus hit must fail closed"
+E       AssertionError: Unrehydrated/misattributed Milvus hit must fail closed
+E       assert [{'document_i..._scope', ...}] == []
+E         
+E         Left contains one more item: {'document_id': 'candidate-document', 'document_title': 'NEW_ONLY_MARKER', 'author': None, 'knowledge_scope_code': 'synthetic_scope', ...}
+E         Use -v to get more diff
+
+tests/test_parallel_generation_safety_prerequisites.py:36: AssertionError
+___ test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical2] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb81943b1a0>
+canonical = {'document_id': 'different-document', 'content': 'OLD_ONLY_MARKER'}
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("canonical", [None, {}, {"document_id": "different-document", "content": "OLD_ONLY_MARKER"}])
+    async def test_hybrid_never_emits_unauthorized_or_misattributed_vector(monkeypatch, canonical):
+        async def no_fts(*args, **kwargs):
+            return []
+    
+        async def hydrate(*args, **kwargs):
+            return canonical
+    
+        monkeypatch.setattr(hybrid_search, "search_chunks_text", no_fts)
+        monkeypatch.setattr(hybrid_search, "_enrich_chunk", hydrate)
+        monkeypatch.setattr("infrastructure.milvus.client.create_connection", lambda: None)
+        monkeypatch.setattr(hybrid_search, "embed_text", lambda query: [0.0])
+        monkeypatch.setattr(hybrid_search, "ensure_collection", lambda *args, **kwargs: None)
+        monkeypatch.setattr(hybrid_search, "search_vectors", lambda **kwargs: [{
+            "chunk_id": "candidate-chunk", "document_id": "candidate-document",
+            "title": "NEW_ONLY_MARKER", "content_preview": "NEW_ONLY_MARKER", "distance": 1.0,
+        }])
+        result = await hybrid_search.search_chunks_hybrid(object(), "synthetic_scope", "marker")
+>       assert result == [], "Unrehydrated/misattributed Milvus hit must fail closed"
+E       AssertionError: Unrehydrated/misattributed Milvus hit must fail closed
+E       assert [{'document_i..._scope', ...}] == []
+E         
+E         Left contains one more item: {'document_id': 'different-document', 'document_title': 'NEW_ONLY_MARKER', 'author': None, 'knowledge_scope_code': 'synthetic_scope', ...}
+E         Use -v to get more diff
+
+tests/test_parallel_generation_safety_prerequisites.py:36: AssertionError
+___________ test_hybrid_uses_only_canonical_identity_and_chunk_index ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb81943bd70>
+
+    @pytest.mark.asyncio
+    async def test_hybrid_uses_only_canonical_identity_and_chunk_index(monkeypatch):
+        async def no_fts(*args, **kwargs):
+            return []
+    
+        async def hydrate(*args, **kwargs):
+            return {"document_id": "doc", "document_title": "canonical", "chunk_index": 0,
+                    "content": "OLD_ONLY_MARKER", "content_length": 15}
+    
+        monkeypatch.setattr(hybrid_search, "search_chunks_text", no_fts)
+        monkeypatch.setattr(hybrid_search, "_enrich_chunk", hydrate)
+        monkeypatch.setattr("infrastructure.milvus.client.create_connection", lambda: None)
+        monkeypatch.setattr(hybrid_search, "embed_text", lambda query: [0.0])
+        monkeypatch.setattr(hybrid_search, "ensure_collection", lambda *args, **kwargs: None)
+        monkeypatch.setattr(hybrid_search, "search_vectors", lambda **kwargs: [{
+            "chunk_id": "chunk", "document_id": "doc", "title": "not canonical",
+            "chunk_index": 999, "distance": 1.0,
+        }])
+        result = await hybrid_search.search_chunks_hybrid(object(), "synthetic_scope", "marker")
+        assert len(result) == 1
+        assert result[0]["document_title"] == "canonical"
+>       assert result[0]["chunk_index"] == 0
+E       assert 999 == 0
+
+tests/test_parallel_generation_safety_prerequisites.py:60: AssertionError
+_ test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[ready] _
+
+args = ('tebaai_content_manager_e2e_v1',)
+
+    def forbidden_index(*args):
+        calls.append("index_created")
+>       raise AssertionError("Must refuse before index construction")
+E       AssertionError: Must refuse before index construction
+
+tests/test_parallel_generation_safety_prerequisites.py:79: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+status = 'ready'
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("status", ["ready", "archived", None, "unrecognized"])
+    async def test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect(status):
+        calls = []
+    
+        class Service(ManifestCleanupService):
+            async def _load(self, *args):
+                return {"manifest_id": uuid4(), "document_id": uuid4(), "document_status": status,
+                        "scope_code": CONTENT_MANAGER_E2E_SCOPE,
+                        "collection_code": CONTENT_MANAGER_E2E_COLLECTION}
+    
+            async def _set_status(self, *args):
+                calls.append("status_write")
+    
+        def forbidden_index(*args):
+            calls.append("index_created")
+            raise AssertionError("Must refuse before index construction")
+    
+        service = Service(None, index_factory=forbidden_index)
+        with pytest.raises(E2EIsolationError):
+>           await service.cleanup(uuid4(), 1)
+
+tests/test_parallel_generation_safety_prerequisites.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+modules/library/content_manager_cleanup.py:83: in cleanup
+    await self._finish(manifest["manifest_id"], items, "failed")
+modules/library/content_manager_cleanup.py:199: in _finish
+    async with transaction(self.pool) as conn:
+               ^^^^^^^^^^^^^^^^^^^^^^
+/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pool = None
+
+    @asynccontextmanager
+    async def transaction(pool: AsyncConnectionPool) -> AsyncIterator[AsyncConnection]:
+>       async with pool.connection() as conn:
+                   ^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'connection'
+
+infrastructure/postgres/transaction.py:64: AttributeError
+_ test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[archived] _
+
+args = ('tebaai_content_manager_e2e_v1',)
+
+    def forbidden_index(*args):
+        calls.append("index_created")
+>       raise AssertionError("Must refuse before index construction")
+E       AssertionError: Must refuse before index construction
+
+tests/test_parallel_generation_safety_prerequisites.py:79: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+status = 'archived'
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("status", ["ready", "archived", None, "unrecognized"])
+    async def test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect(status):
+        calls = []
+    
+        class Service(ManifestCleanupService):
+            async def _load(self, *args):
+                return {"manifest_id": uuid4(), "document_id": uuid4(), "document_status": status,
+                        "scope_code": CONTENT_MANAGER_E2E_SCOPE,
+                        "collection_code": CONTENT_MANAGER_E2E_COLLECTION}
+    
+            async def _set_status(self, *args):
+                calls.append("status_write")
+    
+        def forbidden_index(*args):
+            calls.append("index_created")
+            raise AssertionError("Must refuse before index construction")
+    
+        service = Service(None, index_factory=forbidden_index)
+        with pytest.raises(E2EIsolationError):
+>           await service.cleanup(uuid4(), 1)
+
+tests/test_parallel_generation_safety_prerequisites.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+modules/library/content_manager_cleanup.py:83: in cleanup
+    await self._finish(manifest["manifest_id"], items, "failed")
+modules/library/content_manager_cleanup.py:199: in _finish
+    async with transaction(self.pool) as conn:
+               ^^^^^^^^^^^^^^^^^^^^^^
+/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pool = None
+
+    @asynccontextmanager
+    async def transaction(pool: AsyncConnectionPool) -> AsyncIterator[AsyncConnection]:
+>       async with pool.connection() as conn:
+                   ^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'connection'
+
+infrastructure/postgres/transaction.py:64: AttributeError
+_ test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[None] _
+
+args = ('tebaai_content_manager_e2e_v1',)
+
+    def forbidden_index(*args):
+        calls.append("index_created")
+>       raise AssertionError("Must refuse before index construction")
+E       AssertionError: Must refuse before index construction
+
+tests/test_parallel_generation_safety_prerequisites.py:79: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+status = None
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("status", ["ready", "archived", None, "unrecognized"])
+    async def test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect(status):
+        calls = []
+    
+        class Service(ManifestCleanupService):
+            async def _load(self, *args):
+                return {"manifest_id": uuid4(), "document_id": uuid4(), "document_status": status,
+                        "scope_code": CONTENT_MANAGER_E2E_SCOPE,
+                        "collection_code": CONTENT_MANAGER_E2E_COLLECTION}
+    
+            async def _set_status(self, *args):
+                calls.append("status_write")
+    
+        def forbidden_index(*args):
+            calls.append("index_created")
+            raise AssertionError("Must refuse before index construction")
+    
+        service = Service(None, index_factory=forbidden_index)
+        with pytest.raises(E2EIsolationError):
+>           await service.cleanup(uuid4(), 1)
+
+tests/test_parallel_generation_safety_prerequisites.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+modules/library/content_manager_cleanup.py:83: in cleanup
+    await self._finish(manifest["manifest_id"], items, "failed")
+modules/library/content_manager_cleanup.py:199: in _finish
+    async with transaction(self.pool) as conn:
+               ^^^^^^^^^^^^^^^^^^^^^^
+/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pool = None
+
+    @asynccontextmanager
+    async def transaction(pool: AsyncConnectionPool) -> AsyncIterator[AsyncConnection]:
+>       async with pool.connection() as conn:
+                   ^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'connection'
+
+infrastructure/postgres/transaction.py:64: AttributeError
+_ test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[unrecognized] _
+
+args = ('tebaai_content_manager_e2e_v1',)
+
+    def forbidden_index(*args):
+        calls.append("index_created")
+>       raise AssertionError("Must refuse before index construction")
+E       AssertionError: Must refuse before index construction
+
+tests/test_parallel_generation_safety_prerequisites.py:79: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+status = 'unrecognized'
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("status", ["ready", "archived", None, "unrecognized"])
+    async def test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect(status):
+        calls = []
+    
+        class Service(ManifestCleanupService):
+            async def _load(self, *args):
+                return {"manifest_id": uuid4(), "document_id": uuid4(), "document_status": status,
+                        "scope_code": CONTENT_MANAGER_E2E_SCOPE,
+                        "collection_code": CONTENT_MANAGER_E2E_COLLECTION}
+    
+            async def _set_status(self, *args):
+                calls.append("status_write")
+    
+        def forbidden_index(*args):
+            calls.append("index_created")
+            raise AssertionError("Must refuse before index construction")
+    
+        service = Service(None, index_factory=forbidden_index)
+        with pytest.raises(E2EIsolationError):
+>           await service.cleanup(uuid4(), 1)
+
+tests/test_parallel_generation_safety_prerequisites.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+modules/library/content_manager_cleanup.py:83: in cleanup
+    await self._finish(manifest["manifest_id"], items, "failed")
+modules/library/content_manager_cleanup.py:199: in _finish
+    async with transaction(self.pool) as conn:
+               ^^^^^^^^^^^^^^^^^^^^^^
+/home/issajar/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pool = None
+
+    @asynccontextmanager
+    async def transaction(pool: AsyncConnectionPool) -> AsyncIterator[AsyncConnection]:
+>       async with pool.connection() as conn:
+                   ^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'connection'
+
+infrastructure/postgres/transaction.py:64: AttributeError
+______ test_gateway_identity_collision_is_rejected_before_ownership_claim ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb81943a7b0>
+tmp_path = PosixPath('/tmp/pytest-of-issajar/pytest-50/test_gateway_identity_collisio0')
+
+    @pytest.mark.asyncio
+    async def test_gateway_identity_collision_is_rejected_before_ownership_claim(monkeypatch, tmp_path):
+        statements = []
+    
+        class Cursor:
+            async def __aenter__(self):
+                return self
+    
+            async def __aexit__(self, *args):
+                pass
+    
+            async def execute(self, sql, params=None):
+                statements.append(sql)
+    
+            async def fetchone(self):
+                # Collection exists; document INSERT collided with an existing UUID.
+                return {"id": uuid4()} if len(statements) == 1 else None
+    
+        class Connection:
+            def cursor(self, **kwargs):
+                return Cursor()
+    
+        @asynccontextmanager
+        async def fake_transaction(pool):
+            yield Connection()
+    
+        monkeypatch.setattr(page_first_gateway, "transaction", fake_transaction)
+        monkeypatch.setattr(page_first_gateway, "validate_publication", lambda *args: None)
+        original = tmp_path / "synthetic.txt"
+        original.write_text("not a PDF; no extraction occurs")
+        tenant = SimpleNamespace(knowledge_scope_id=uuid4(), organization_id=uuid4(),
+                                 workspace_id=uuid4(), project_id=uuid4())
+        request = SimpleNamespace(tenant=tenant, source_sha256="a" * 64, pipeline_version="synthetic_v1",
+            attempt_key="synthetic:1", attempt_number=1, job_id=uuid4(), upload_id=uuid4(),
+            knowledge_scope_code="synthetic", source_path=original, title="synthetic",
+            work_family=None, actor_user_id=uuid4())
+        extracted = SimpleNamespace(pages=(), language="es", content_sha256="b" * 64,
+                                    content_markdown="synthetic")
+>       with pytest.raises(E2EIsolationError, match="already exists"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE E2EIsolationError
+
+tests/test_parallel_generation_safety_prerequisites.py:125: Failed
+=========================== short test summary info ============================
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_hybrid_never_emits_unauthorized_or_misattributed_vector[None]
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical1]
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical2]
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_hybrid_uses_only_canonical_identity_and_chunk_index
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[ready]
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[archived]
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[None]
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[unrecognized]
+FAILED tests/test_parallel_generation_safety_prerequisites.py::test_gateway_identity_collision_is_rejected_before_ownership_claim
+9 failed in 1.84s

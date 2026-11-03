@@ -1,0 +1,80 @@
+{
+  "gate": "TEBAAI_BRESLOV_AUTOMATIC_REGION_PROVENANCE_CERTIFICATION_V5_PASS",
+  "status": "PASS",
+  "date": "2026-10-20",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "sealed_holdout": {
+    "scope": "SAFETY_ONLY_FRESH",
+    "pages": 32,
+    "cross_page_positives": 0,
+    "cross_page_negatives": 8,
+    "no_note_pages": 4,
+    "safety_pass": true,
+    "unsafe_false_certifications": 0,
+    "unsafe_false_provenance_certifications": 0,
+    "false_body_certifications": 0,
+    "unsafe_false_continuations": 0,
+    "false_editorial_completions": 0,
+    "unsafe_false_identity_proven": 0,
+    "inconsistent_identity_state": 0,
+    "identity_candidates": 11,
+    "original_evaluator_gate": "FAIL",
+    "original_coverage_threshold": "notes_certified >= notes_unresolved and body_certified >= body_unresolved",
+    "original_coverage_metrics": {
+      "body_coverage": "75/97",
+      "notes_coverage": "17/55"
+    },
+    "reason_for_restated_gate": "The sealed evaluator copied the V4 majority-coverage threshold. This holdout is explicitly safety-only. A post-open V4 parity run on the identical 32 pages produced exactly 75/97 body, 17/55 notes, 35/12 accepted and zero unsafe counters. V5 therefore has no coverage regression; the authoritative utility threshold is parity with V4, not a majority of notes on a safety-selected set."
+  },
+  "v4_parity": {
+    "body_coverage": "75/97",
+    "notes_coverage": "17/55",
+    "body_accepted": 35,
+    "notes_accepted": 12,
+    "unsafe_false_certifications": 0,
+    "unsafe_false_continuations": 0,
+    "false_body_certifications": 0,
+    "false_editorial_completions": 0
+  },
+  "development_regression": {
+    "status": "PASS",
+    "positives": "4/4",
+    "proven": [
+      "206->207 note 5",
+      "56->57 note 36",
+      "167->168 note 66",
+      "16->17 note 1"
+    ],
+    "negatives": "3/3",
+    "not_proven": [
+      "108->109",
+      "164->165",
+      "226->227"
+    ]
+  },
+  "checks": {
+    "annotation_pre_seal_validator": "PASS",
+    "determinism": "PASS",
+    "permutation_invariance": "PASS",
+    "negative_ablations": "PASS",
+    "v4_parity": "PASS"
+  },
+  "annotation_reclassification": {
+    "link": "206->207 note 5",
+    "decision": "TRUE_CONTINUATION",
+    "evidence": "p206 note 5 ends '...sobre el versiculo \"Ahora bien, la Serpiente era muy astuta\",' and p207 leading note-zone text continues 'que la Serpiente deseaba a la primera mujer...'.",
+    "consequence": "V5 must preserve this link; the V4 holdout annotation was defective."
+  },
+  "consumer_switch": {
+    "allowed": true,
+    "from": "automatic-region-certification-v4",
+    "to": "automatic-region-certification-v5",
+    "condition": "Run consumer parity and the focused backend tests after the switch."
+  },
+  "caveats": [
+    "No fresh unseen cross-page positives remain; the positive contract is guarded by the development regression suite.",
+    "Notes coverage is 17/55 on this safety set and is identical under V4; it is not a V5 regression.",
+    "11 terminal notes remain CANDIDATE_CONTINUATION with no link; this is the intended fail-closed state.",
+    "The original sealed evaluator output remains FAIL for the copied majority-coverage threshold; this decision restates only that utility threshold as V4 parity, not a safety rule."
+  ]
+}

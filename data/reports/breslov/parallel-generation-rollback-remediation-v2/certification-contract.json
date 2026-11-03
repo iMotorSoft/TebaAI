@@ -1,0 +1,32 @@
+{
+  "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_ROLLBACK_REMEDIATION_V2",
+  "CUTOVER_CANDIDATE_TO_ACTIVE": "ALLOW",
+  "ROLLBACK_RETAINED_IMMEDIATE_PREVIOUS_ACTIVE": "ALLOW",
+  "ARBITRARY_INACTIVE": "REJECT",
+  "NEVER_ACTIVE_INACTIVE": "REJECT",
+  "NON_IMMEDIATE_HISTORICAL_ACTIVE": "REJECT",
+  "BUILDING": "REJECT",
+  "FAILED": "REJECT",
+  "CROSS_DOCUMENT": "REJECT",
+  "STALE_CAS": "REJECT",
+  "STALE_ROLLBACK": "REJECT",
+  "CROSS_OPERATION_MISUSE": "REJECT",
+  "RETAINED_OLD_GENERIC_CLEANUP": "REJECT",
+  "ACTIVE_GENERIC_CLEANUP": "REJECT",
+  "IDEMPOTENCY": "IDEMPOTENT without state or audit mutation; ROLLBACK always validates CAS; existing CUTOVER retry semantics preserved",
+  "ATOMICITY": "one ACTIVE and matching pointer in independent committed-state observations before and after switches; unique ACTIVE database constraint",
+  "RECONSTRUCTION_CALLS": 0,
+  "CURRENT_C_WRITES": 0,
+  "FOCUSED_TESTS": "all pass",
+  "FOUNDATION_REGRESSIONS": "all relevant tests pass; not Foundation publication certification",
+  "FULL_BACKEND": "no new failing or error node IDs against actual pre-freeze baseline",
+  "SYNTHETIC_CLEANUP": "exact synthetic IDs only; audit retained; zero synthetic logical documents, generations, documents",
+  "POST_FREEZE_MUTATIONS": 0,
+  "SECRETS": "scan all textual V2 artifacts for credential assignments, credential-bearing URLs, private keys and known token formats; suppress matched values",
+  "RUNS": {
+    "lifecycle": "uv run python ../../data/reports/breslov/parallel-generation-rollback-remediation-v2/lifecycle_harness.py certification",
+    "focused": "uv run pytest tests/test_generation_rollback_remediation.py -q --junitxml=../../data/reports/breslov/parallel-generation-rollback-remediation-v2/focused.xml",
+    "foundation": "uv run pytest tests/test_generation_foundation.py tests/test_parallel_generation_safety_prerequisites.py tests/test_content_manager_cleanup.py -q --junitxml=../../data/reports/breslov/parallel-generation-rollback-remediation-v2/foundation-regression.xml",
+    "full": "uv run pytest --junitxml=../../data/reports/breslov/parallel-generation-rollback-remediation-v2/final-backend.xml"
+  }
+}

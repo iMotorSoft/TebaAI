@@ -1,0 +1,29 @@
+{
+  "scope":"17 real-source cases: 8 corpus-attested lexemes with candidate modern query spellings, 3 exact/niqqud controls, 6 dangerous distinct real tokens. Query spellings are candidates, not claimed second corpus attestations. No lemma/semantic identity declared.",
+  "review":"LH cases transcribed from visible PDF pages 55/143/167; LM I case from historical literal golden, NOT silently corrected corpus. Limited assistant review; linguistic/editorial holdout pending.",
+  "sources":{
+    "LH55":{"file":"LIKUTEY HALAJOT (Interior Final).pdf","page":55,"sha256":"440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a","reference":"../regional-ocr-hebrew-search-v1/page-55.png"},
+    "LH143":{"file":"LIKUTEY HALAJOT (Interior Final).pdf","page":143,"sha256":"440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a","reference":"../regional-ocr-hebrew-search-v1/page-143.png"},
+    "LH167":{"file":"LIKUTEY HALAJOT (Interior Final).pdf","page":167,"sha256":"440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a","reference":"crops/R167_B-400.png"},
+    "LMI96":{"file":"LIKUTEY MOHARÁN I int (imprenta).pdf","page":96,"reference":"../2026-07-16-research-workspace-v1/hebrew_literal_batch.json","evidence_id":"lmi-dc3eecd6-64b1-4f09-ac9b-d47e4fd70df1"}
+  },
+  "cases":[
+    {"id":"P01","query":"פירוש","canonical_source":"פֵּרוּשׁ","source":"LH55","context":"וזה פרוש הפסוק","lexeme_guard":"confirmed_context","expected_positive":true,"expected_match":"orthographic_variant","note":"pointed source distinguishes interpretation; not universal equivalence with separate/abstinent פרוש"},
+    {"id":"P02","query":"עיקר","canonical_source":"עקר","source":"LH167","context":"כי עקר הוא בחינת ימין","lexeme_guard":"confirmed_context","expected_positive":true,"expected_match":"orthographic_variant","transcription":"base only"},
+    {"id":"P03","query":"תחילה","canonical_source":"תחלה","source":"LH167","context":"של ימין תחלה","lexeme_guard":"confirmed_context","expected_positive":true,"expected_match":"orthographic_variant","transcription":"base only"},
+    {"id":"P04","query":"תפילין","canonical_source":"תפלין","source":"LH167","context":"כמו תפלין שקושר של יד","lexeme_guard":"confirmed_context","expected_positive":true,"expected_match":"orthographic_variant","transcription":"base only"},
+    {"id":"P05","query":"בבוקר","canonical_source":"בבקר","source":"LH143","context":"וזה צריכין בבקר כי בכל יום ויום בבקר","lexeme_guard":"confirmed_context","expected_positive":true,"expected_match":"orthographic_variant","transcription":"base only; explicit prefixed lexeme, not automatic prefix expansion"},
+    {"id":"P06","query":"תפילה","canonical_source":"תְּפִלָּה","source":"LMI96","context":"והנשמות עם התפלה","lexeme_guard":"confirmed_context","expected_positive":true,"expected_match":"orthographic_variant","note":"source token inside prefixed התפלה; token window used, not fabricated second attestation"},
+    {"id":"P07","query":"חידושין","canonical_source":"חִדּוּשִׁין","source":"LMI96","context":"בבחינת חדושין","lexeme_guard":"confirmed_context","expected_positive":true,"expected_match":"orthographic_variant"},
+    {"id":"P08","query":"עיבור","canonical_source":"עִבּוּר","source":"LMI96","context":"בבחינת עבור","lexeme_guard":"confirmed_context","expected_positive":true,"expected_match":"orthographic_variant"},
+    {"id":"E01","query":"פֵּרוּשׁ","canonical_source":"פֵּרוּשׁ","source":"LH55","context":"וזה פרוש הפסוק","expected_positive":true,"expected_match":"exact"},
+    {"id":"E02","query":"פרוש","canonical_source":"פֵּרוּשׁ","source":"LH55","context":"וזה פרוש הפסוק","expected_positive":true,"expected_match":"niqqud_insensitive"},
+    {"id":"E03","query":"אור הפנים","canonical_source":"אוֹר הַפָּנִים","source":"LH167","context":"שהם אור הפנים","expected_positive":true,"expected_match":"niqqud_insensitive"},
+    {"id":"N01","query":"לנגדי","canonical_source":"לנגד","source":"LH55","context":"לנגד עיני","expected_positive":false,"expected_match":null,"reason":"possessive suffix is not mater-lectionis deletion"},
+    {"id":"N02","query":"בעצמו","canonical_source":"בעצמי","source":"LH55","context":"בעצמי נקדה טובה","expected_positive":false,"expected_match":null,"reason":"first person versus third person"},
+    {"id":"N03","query":"מימיני","canonical_source":"ממנו","source":"LH55","context":"ממנו יתברך","expected_positive":false,"expected_match":null,"reason":"my right versus from him"},
+    {"id":"N04","query":"שהיא","canonical_source":"שהוא","source":"LH167","context":"ימין שהוא חסד","expected_positive":false,"expected_match":null,"reason":"gender is not orthography"},
+    {"id":"N05","query":"אותו","canonical_source":"את","source":"LH167","context":"שומרין את הרגלין","expected_positive":false,"expected_match":null,"reason":"pronoun versus object marker"},
+    {"id":"N06","query":"יכול","canonical_source":"כל","source":"LH167","context":"ועין כל זה באריכות","expected_positive":false,"expected_match":null,"reason":"ability verb versus quantifier; both attested in previous goldens"}
+  ]
+}

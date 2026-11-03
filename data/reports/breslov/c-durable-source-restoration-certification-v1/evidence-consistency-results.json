@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-10-23T12:58:51.003791+00:00",
+  "consistency_keys": [
+    "approved_source_sha_match",
+    "durable_source_present",
+    "durable_source_sha_match",
+    "authenticated_status",
+    "unauthenticated_status",
+    "fresh_process_pass",
+    "zero_postgres_writes",
+    "zero_milvus_writes",
+    "current_c_preserved",
+    "ready_for_foundation_publication_v1r2"
+  ],
+  "report_block_found": true,
+  "gate_status": "TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_CERTIFICATION_V1_PASS",
+  "final_validation_status": "TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_CERTIFICATION_V1_PASS",
+  "report_status_line": true,
+  "key_values": {
+    "approved_source_sha_match": {
+      "gate": true,
+      "final_validation": true,
+      "report": true
+    },
+    "durable_source_present": {
+      "gate": true,
+      "final_validation": true,
+      "report": true
+    },
+    "durable_source_sha_match": {
+      "gate": true,
+      "final_validation": true,
+      "report": true
+    },
+    "authenticated_status": {
+      "gate": 200,
+      "final_validation": 200,
+      "report": 200
+    },
+    "unauthenticated_status": {
+      "gate": 401,
+      "final_validation": 401,
+      "report": 401
+    },
+    "fresh_process_pass": {
+      "gate": "PASS",
+      "final_validation": "PASS",
+      "report": "PASS"
+    },
+    "zero_postgres_writes": {
+      "gate": true,
+      "final_validation": true,
+      "report": true
+    },
+    "zero_milvus_writes": {
+      "gate": true,
+      "final_validation": true,
+      "report": true
+    },
+    "current_c_preserved": {
+      "gate": true,
+      "final_validation": true,
+      "report": true
+    },
+    "ready_for_foundation_publication_v1r2": {
+      "gate": "YES",
+      "final_validation": "YES",
+      "report": "YES"
+    }
+  },
+  "contradictions": [],
+  "contradiction_count": 0,
+  "closing_failures": [],
+  "json_valid": true,
+  "secret_scan": "PASS",
+  "frozen_harness_unchanged": true,
+  "REPORT_CONTRADICTIONS": 0,
+  "REPORT_CONSISTENCY": "PASS"
+}

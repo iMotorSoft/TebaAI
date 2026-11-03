@@ -1,0 +1,218 @@
+{
+  "tests_read": [
+    {
+      "artifact": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v5.py",
+      "locator": null,
+      "sha256": "a0cc29a4a52335ec86345d820efdb6df9d45ddab2ec99852e78ca04d0bc513c2",
+      "timestamp": "2026-10-20T13:18:07.369764+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "SrvRestAstroLS_v1/backend/tests/test_consumer_region_certificates_v5.py",
+      "locator": null,
+      "sha256": "ecd442dc0a10f45d6882b444a37981aec4cf5005637c78c3b8094538467708cb",
+      "timestamp": "2026-10-20T13:20:47.842199+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v4.py",
+      "locator": null,
+      "sha256": "9be69378cf0d252de76cdfc487f6547dc9fd830272a39e3e3b57ba7d37171bec",
+      "timestamp": "2026-10-19T16:28:50.602063+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+      "locator": null,
+      "sha256": "cdf243ec9740f5e95fdd7ebd4a4d12f1a7fb29abff625c7b87c0f5aaf396234e",
+      "timestamp": "2026-10-16T12:38:44.984339+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    }
+  ],
+  "supporting_number_hits": [
+    {
+      "pair": "42->43",
+      "hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 134,
+              "text": "    random.Random(42).shuffle(notes)"
+            },
+            {
+              "line": 136,
+              "text": "        random.Random(42).shuffle(b.textlines)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pair": "60->61",
+      "hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/fixtures/region_markdown_provenance_v1.json",
+          "hits": [
+            {
+              "line": 3791,
+              "text": "                  \"text\": \"60 Ver \","
+            },
+            {
+              "line": 3885,
+              "text": "                  \"text\": \"61 Ver §1 más arriba.\","
+            }
+          ]
+        },
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 230,
+              "text": "    assert all(str(n) in quality.canonical_markdown for n in range(60, 67))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pair": "64->65",
+      "hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/fixtures/region_markdown_provenance_v1.json",
+          "hits": [
+            {
+              "line": 3693,
+              "text": "                  \"text\": \"[64]\","
+            },
+            {
+              "line": 4602,
+              "text": "                  \"text\": \"64 Ver §1 y §4 más arriba.\","
+            },
+            {
+              "line": 4651,
+              "text": "                  \"text\": \"65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim \","
+            }
+          ]
+        },
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 79,
+              "text": "    # Real labels put right continuation and 66 ahead of left-column 64/65."
+            },
+            {
+              "line": 80,
+              "text": "    assert broken.index(\"66 Comentando\") < broken.index(\"64 Ver\")"
+            },
+            {
+              "line": 82,
+              "text": "    assert correct.index(\"64 Ver\") < correct.index(\"65 Estudia\") < correct.index(\"se refrena\") < correct.index(\"66 Comentando\")"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pair": "70->71",
+      "hits": []
+    },
+    {
+      "pair": "73->74",
+      "hits": []
+    },
+    {
+      "pair": "104->105",
+      "hits": []
+    },
+    {
+      "pair": "122->123",
+      "hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v4.py",
+          "hits": [
+            {
+              "line": 51,
+              "text": "    parsed, page, native = supported(note='123 Long note', following='124 Next note')"
+            },
+            {
+              "line": 54,
+              "text": "    assert [c.note_number for c in notes] == [123, 124]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pair": "123->124",
+      "hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v4.py",
+          "hits": [
+            {
+              "line": 51,
+              "text": "    parsed, page, native = supported(note='123 Long note', following='124 Next note')"
+            },
+            {
+              "line": 54,
+              "text": "    assert [c.note_number for c in notes] == [123, 124]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pair": "130->131",
+      "hits": []
+    },
+    {
+      "pair": "139->140",
+      "hits": []
+    },
+    {
+      "pair": "149->150",
+      "hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 186,
+              "text": "                             box(\"footnote\", synthetic_line(1, 0, 150, 200, \"1 right\")))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pair": "150->151",
+      "hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 186,
+              "text": "                             box(\"footnote\", synthetic_line(1, 0, 150, 200, \"1 right\")))"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collision_adjudications": [
+    "42 in provenance tests is a permutation random seed, not physical page 42.",
+    "60/61/64/65 in provenance fixture refer to note markers on physical page 167, not these candidate pages.",
+    "123/124 in V4 supported() test are synthetic note numbers, not physical candidate pages.",
+    "150 in synthetic geometry is a coordinate, not physical page 150."
+  ],
+  "development_regression_script": {
+    "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/run_development_regression.py",
+    "locator": "POSITIVES/NEGATIVES",
+    "sha256": "7d854693e32d0061f7d8cafb466fac0d96736e1fd446476c6bd086491b707328",
+    "timestamp": "2026-10-20T13:42:14.183886+00:00",
+    "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+  },
+  "V5_test_input": "Synthetic document() imported from V4 tests; no candidate source fixture. Consumer tests generate generic 1/2-page PDFs.",
+  "tests_executed_during_gate": false,
+  "reason": "No functional changes; running V5 tests would violate read/trace-only prohibition."
+}

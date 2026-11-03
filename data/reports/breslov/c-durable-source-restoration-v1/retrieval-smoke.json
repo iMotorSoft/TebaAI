@@ -1,0 +1,120 @@
+{
+  "method": "read-only SELECT; chunk sample, lexical probe, page 187 metadata, active generation, corpus digest",
+  "before": {
+    "measured_at": "2026-10-23T12:12:23.323597+00:00",
+    "first_chunks": [
+      {
+        "chunk_index": 0,
+        "content_sha256": "88bcb2c9147558834ba52d5cdb7161a10bc7728d2f971aeec6f37dc1758fa43d",
+        "page_start": 1,
+        "page_end": 1,
+        "normalized_digest": "55eb42d6de41b5226e48ef580ac2410e"
+      },
+      {
+        "chunk_index": 1,
+        "content_sha256": "a1c1931f8a0e6fc94b69d759f7587ece4da8294e68d70c44b11c67b4228eabb1",
+        "page_start": 2,
+        "page_end": 2,
+        "normalized_digest": "c84ab129a57cc7e770c28a4185d8752e"
+      },
+      {
+        "chunk_index": 2,
+        "content_sha256": "56c95b84d37cd5f9b9fd99ba82ae54f19c1a25bd655b39466b16ec0e91cca32b",
+        "page_start": 3,
+        "page_end": 3,
+        "normalized_digest": "46b58e8a32607ffae5cbd97ae1d64162"
+      },
+      {
+        "chunk_index": 3,
+        "content_sha256": "b9851f4c5424330f5f97a5c169c461c9bf2d306aeee8e965bf90d1c87291a192",
+        "page_start": 4,
+        "page_end": 4,
+        "normalized_digest": "e27c7a748b441ac33c9b0c20ee2ea770"
+      },
+      {
+        "chunk_index": 4,
+        "content_sha256": "308c6970d15e1cff06c1b31d795c846790ecaefddd4625be13df4e4a85124c33",
+        "page_start": 5,
+        "page_end": 5,
+        "normalized_digest": "7b2dde47295af6ab188fc905ce565fcb"
+      }
+    ],
+    "lexical_probe": {
+      "digest": "c483430406ade6a2080e35de3ac4e21b",
+      "hits": 1
+    },
+    "page_187": {
+      "page_digest": "25f9eb52405a4263f640c68e1d800f97",
+      "page_number": 187
+    },
+    "active_generation": {
+      "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "status": "ACTIVE",
+      "pointer_generation": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b"
+    },
+    "corpus_digest": "a52ca54b53c95ec04953e93896072609",
+    "corpus_chunks": 942
+  },
+  "after": {
+    "measured_at": "2026-10-23T12:13:56.530803+00:00",
+    "first_chunks": [
+      {
+        "chunk_index": 0,
+        "content_sha256": "88bcb2c9147558834ba52d5cdb7161a10bc7728d2f971aeec6f37dc1758fa43d",
+        "page_start": 1,
+        "page_end": 1,
+        "normalized_digest": "55eb42d6de41b5226e48ef580ac2410e"
+      },
+      {
+        "chunk_index": 1,
+        "content_sha256": "a1c1931f8a0e6fc94b69d759f7587ece4da8294e68d70c44b11c67b4228eabb1",
+        "page_start": 2,
+        "page_end": 2,
+        "normalized_digest": "c84ab129a57cc7e770c28a4185d8752e"
+      },
+      {
+        "chunk_index": 2,
+        "content_sha256": "56c95b84d37cd5f9b9fd99ba82ae54f19c1a25bd655b39466b16ec0e91cca32b",
+        "page_start": 3,
+        "page_end": 3,
+        "normalized_digest": "46b58e8a32607ffae5cbd97ae1d64162"
+      },
+      {
+        "chunk_index": 3,
+        "content_sha256": "b9851f4c5424330f5f97a5c169c461c9bf2d306aeee8e965bf90d1c87291a192",
+        "page_start": 4,
+        "page_end": 4,
+        "normalized_digest": "e27c7a748b441ac33c9b0c20ee2ea770"
+      },
+      {
+        "chunk_index": 4,
+        "content_sha256": "308c6970d15e1cff06c1b31d795c846790ecaefddd4625be13df4e4a85124c33",
+        "page_start": 5,
+        "page_end": 5,
+        "normalized_digest": "7b2dde47295af6ab188fc905ce565fcb"
+      }
+    ],
+    "lexical_probe": {
+      "digest": "c483430406ade6a2080e35de3ac4e21b",
+      "hits": 1
+    },
+    "page_187": {
+      "page_digest": "25f9eb52405a4263f640c68e1d800f97",
+      "page_number": 187
+    },
+    "active_generation": {
+      "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "status": "ACTIVE",
+      "pointer_generation": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b"
+    },
+    "corpus_digest": "a52ca54b53c95ec04953e93896072609",
+    "corpus_chunks": 942
+  },
+  "differences": {},
+  "same_active_generation": true,
+  "same_content_evidence": true,
+  "retrieval_change_due_to_source_restoration": false,
+  "filesystem_reads": 0,
+  "milvus_reads": 0,
+  "note": "source restoration changes no text, chunk or page metadata consumed by retrieval"
+}

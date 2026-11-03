@@ -1,0 +1,11 @@
+{
+  "cases": 15,
+  "passed": 15,
+  "failed": 0,
+  "false_negatives": 0,
+  "false_positives": 0,
+  "import_guard": "V5 imports forbidden",
+  "corpus_guard": "holdout contracts/sets/inventory and PDFs forbidden",
+  "V5_imported": false,
+  "V5_executed": false
+}

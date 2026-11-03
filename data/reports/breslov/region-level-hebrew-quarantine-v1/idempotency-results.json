@@ -1,0 +1,9 @@
+{
+  "consumer_determinism": "PASS",
+  "actual_ingestion_replay": "NOT_RUN",
+  "duplicate_canonical_regions": null,
+  "duplicate_chunks": null,
+  "duplicate_vectors": null,
+  "cleanup": "NOT_REQUIRED_NO_CONTROLLED_RECORDS_CREATED",
+  "store_snapshots_equal": true
+}

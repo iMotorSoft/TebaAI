@@ -1,0 +1,40 @@
+{
+  "prepared_at": "2026-10-23T12:12:53.971610+00:00",
+  "target_document": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "mutation_scope": "library_documents.source_path for C only",
+  "database_before": {
+    "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "status": "ready",
+    "source_path": null,
+    "source_uri": null,
+    "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "source_size_bytes": 4550267,
+    "source_mime_type": "application/pdf",
+    "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+    "updated_at": "2026-10-11 15:57:59.977447+00:00"
+  },
+  "counts_before": {
+    "documents": 3,
+    "generations_for_c": 1,
+    "ingestion_runs_for_c": 1,
+    "chunks_for_c": 942
+  },
+  "durable_file_before": {
+    "path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "exists": false,
+    "sha256": null
+  },
+  "actions_before_mutation": [
+    "external source identity verified (sha256/size/pages)",
+    "canonical durable target confirmed empty or already matching",
+    "read-only before snapshot captured in current-c-before.json",
+    "forbidden-operation monitor installed in the restoring process"
+  ],
+  "rollback_steps": [
+    "UPDATE library_documents SET source_path=NULL WHERE id=<C> (only if this gate wrote it)",
+    "remove <durable_root>/sources/<C>/original.pdf only if created by this gate",
+    "remove the now-empty <durable_root>/sources/<C>/ directory only if created by this gate"
+  ],
+  "rollback_condition": "only if the restoration gate fails after mutating state; a later unrelated test failure must not roll back a successful restoration"
+}

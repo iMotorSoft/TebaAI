@@ -1,0 +1,216 @@
+{
+  "events": [
+    {
+      "event": "V1-V4 report/code publication; no V5 path in reachable history",
+      "timestamp": "2026-10-20T11:42:03+00:00",
+      "timestamp_basis": "git commit 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "artifact": "git-history-evidence.json",
+      "certainty": "GIT_ANCHORED"
+    },
+    {
+      "event": "First V5 module filesystem creation",
+      "timestamp": "2026-10-20 09:30:50.917872765 -0300",
+      "artifact": "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py",
+      "certainty": "CORROBORATIVE_ONLY",
+      "limitation": "birth time records inode creation, not original bytes or proof design"
+    },
+    {
+      "event": "Declared development probes/source-review inventory",
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+      "locator": "/pages",
+      "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+      "timestamp": "2026-10-20T12:52:28.223617+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Previous V5 safety holdout seal",
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-seal.json",
+      "locator": null,
+      "sha256": "c1743449e9be0eb5babf38a179ba65aefb77310226c58f86afad646d0f27831c",
+      "timestamp": "2026-10-20T12:56:07.555481+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Previous V5 holdout first execution",
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-first-open.json",
+      "locator": "/start_unix",
+      "sha256": "2257acfb7b23adab96805416f5ee15ec63a4f08cba26db28bffb2130bfa954e9",
+      "timestamp": "2026-10-20T12:59:45.612713+00:00",
+      "timestamp_basis": "embedded artifact timestamp",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "EMBEDDED_UNIX"
+    },
+    {
+      "event": "Earlier determinism output",
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/determinism-results.json",
+      "locator": null,
+      "sha256": "002436d9bfa91969221d39b10425329e2367b5547f3722a653b09a2f7efc3e56",
+      "timestamp": "2026-10-20T13:07:58.407071+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "V5 tests currently present",
+      "artifact": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v5.py",
+      "locator": null,
+      "sha256": "a0cc29a4a52335ec86345d820efdb6df9d45ddab2ec99852e78ca04d0bc513c2",
+      "timestamp": "2026-10-20T13:18:07.369764+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Last module write metadata (exact diff unavailable)",
+      "artifact": "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py",
+      "locator": null,
+      "sha256": "afdc4a994c9a299aecc5c208bbdeedd657f9e4e74f483ba58ab171affbd7257a",
+      "timestamp": "2026-10-20T13:36:45.141831+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Positive/negative development regression output",
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-regression-results.json",
+      "locator": null,
+      "sha256": "64f05a0fa2856b8c32147980b9f9bbf4a3ab033b84d902a2d1892037825ff5a9",
+      "timestamp": "2026-10-20T13:43:28.592264+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Consumer V5 wiring parity output",
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/consumer-results.json",
+      "locator": null,
+      "sha256": "eec4c502253452a94895f857bc1fb90672a89773b3c6e0d43714511150863a37",
+      "timestamp": "2026-10-20T13:43:58.708822+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Original V5 close; reports removal of two unused imports after prior open",
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/REPORT.md",
+      "locator": "Risks and next step",
+      "sha256": "42f1abd66a6529e4a53b8d5aa9101507f7ff5ea369f6b671752902149e70a778",
+      "timestamp": "2026-10-20T13:44:38.624563+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Earliest explicit current-ruleset hash record / cutoff",
+      "artifact": "data/reports/breslov/v5-frozen-revalidation-v1/frozen-candidate-hashes.txt",
+      "locator": null,
+      "sha256": "34ccb2913120b0eb73dab6d5c20dd0d16b67826100652fd8b44473fa7200572d",
+      "timestamp": "2026-10-20T16:58:35.211535+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Later all-pages source-only discovery; no V5 imports in producer",
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+      "locator": null,
+      "sha256": "2691c71c473ad47b91fa5ae4c2354b27d1aab4f470b0f54de2859bdf8a79595c",
+      "timestamp": "2026-10-20T17:08:38.610578+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "12-candidate positive contract and influence inventory",
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/candidate-positive-lineage.json",
+      "locator": null,
+      "sha256": "bf5dac405de41bfdc81c8f0a6379a711f733e28bf87442bce517f3e8690e40f0",
+      "timestamp": "2026-10-20T17:12:34.917641+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Source-only contract builder claims never-used but derives inventory from hard-coded sets",
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+      "locator": "lines 45-60 and 225-232",
+      "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+      "timestamp": "2026-10-20T17:12:34.691643+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Hybrid resume freeze snapshot",
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-frozen-at.json",
+      "locator": null,
+      "sha256": "20674539886055cccf465f5ba3930c75de042899669160050f62c36bb4e1189a",
+      "timestamp": "2026-10-21T11:58:08.514321+00:00",
+      "timestamp_basis": "embedded artifact timestamp",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "EMBEDDED_TIMESTAMP_PLUS_HASH_MANIFEST"
+    },
+    {
+      "event": "Hybrid attempt audit explicitly INCOMPLETE",
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+      "locator": "/final_lineage_audit",
+      "sha256": "c24d1fcb6c173d972b5f23e347855dc5df73c87af7aa0cc07ffad11e0a598d3f",
+      "timestamp": "2026-10-21T11:59:31.988184+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Evaluator-only correction; 85/12 not executed",
+      "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+      "locator": null,
+      "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+      "timestamp": "2026-10-21T12:12:49.810790+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Resume V2 freeze",
+      "artifact": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/frozen-at.json",
+      "locator": null,
+      "sha256": "b459d43ad507db897e7a74926dfc7b59982e3a6e3b1c3f3ec30b1e483bcfd84a",
+      "timestamp": "2026-10-21T12:20:12.527662+00:00",
+      "timestamp_basis": "embedded artifact timestamp",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    },
+    {
+      "event": "Resume V2 source lineage decision; 12 UNKNOWN_INFLUENCE",
+      "artifact": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+      "locator": null,
+      "sha256": "f812ba0a0316819ce903ef953427b6e2b9cbbcf582dcb87cb7af949debdc9519",
+      "timestamp": "2026-10-21T12:22:03.456500+00:00",
+      "timestamp_basis": "embedded artifact timestamp",
+      "git_state": "V5 artifact untracked at current HEAD; older V1-V4 tracked in 704ae24597e916b56ddec8a71fd0a30d34793aab",
+      "certainty": "CORROBORATED_METADATA"
+    }
+  ],
+  "unresolved_events": [
+    {
+      "event": "Initial proof-contract write",
+      "timestamp": null,
+      "reason": "No timestamped intermediate V5 module versions or attributable edit/debug record located in searched repository evidence; do not reconstruct code diffs from mtimes."
+    },
+    {
+      "event": "Major cross-page rule additions including _source_candidates",
+      "timestamp": null,
+      "reason": "No timestamped intermediate V5 module versions or attributable edit/debug record located in searched repository evidence; do not reconstruct code diffs from mtimes."
+    },
+    {
+      "event": "Proof/geometry-tolerance changes before current-state cutoff",
+      "timestamp": null,
+      "reason": "No timestamped intermediate V5 module versions or attributable edit/debug record located in searched repository evidence; do not reconstruct code diffs from mtimes."
+    }
+  ],
+  "scope_note": "This is an evidence-bounded timeline, not a fabricated complete uncommitted history. Historical V5 runs and current V5_EVALUATED=NO for the pending 85/12 confirmation are separate scopes."
+}

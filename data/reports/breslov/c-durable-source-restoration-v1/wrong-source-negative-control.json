@@ -1,0 +1,16 @@
+{
+  "measured_at": "2026-10-23T12:12:24.774499+00:00",
+  "method": "isolated temporary durable root; synthetic PDF; approved-sha required",
+  "synthetic_file": "/tmp/opencode/c-source-negative-d4mk51_k/synthetic-approved.pdf",
+  "synthetic_sha256": "429694dc906bc0ad11ffb5536a37ef8f305e7c8442bd388312a0e0b8fd83a9ef",
+  "required_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "sha_differs": true,
+  "helper": "modules.library.durable_source.preserve_source",
+  "rejected": true,
+  "error_message": "Source changed before durable preservation",
+  "target_created": false,
+  "temporary_leftovers": [],
+  "mismatched_source_accepted": false,
+  "real_c_source_touched": false,
+  "cleanup": "temporary scratch tree left outside the repository; contains no C bytes"
+}

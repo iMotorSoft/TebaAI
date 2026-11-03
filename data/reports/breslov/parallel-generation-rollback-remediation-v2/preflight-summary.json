@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "certifying": false,
+  "completed_at": "2026-10-22T20:35:01.904059+00:00",
+  "product_changes": 0,
+  "harness_changes_before_freeze": [
+    "probe: explicit ::text to resolve PostgreSQL untyped text parameter before ::uuid",
+    "ACTIVE cleanup: expect distinct ACTIVE rejection message, not retained-INACTIVE message",
+    "add unique ACTIVE index assertion and real rollback Python-call profiling"
+  ],
+  "discarded_fixture_evidence": "all preflight results excluded from certification; audit retained by design",
+  "final_preflight_output": "preflight-harness-output-final.txt"
+}

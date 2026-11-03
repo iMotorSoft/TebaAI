@@ -1,0 +1,129 @@
+{
+  "source": "page-first-gateway-generation-order-remediation-v1/backend-results.json (full backend, historical)",
+  "file": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+  "fixture": "synthetic -> _create_synthetic -> page insert (jsonb_build_object)",
+  "query": "INSERT INTO library_pages_v2(\n    page_id, run_id, document_id, page_number, text, char_count,\n    extraction_method, confidence, layout_notes)\nVALUES (%s, %s, %s, 1, %s, %s, 'synthetic', 1.0,\n        jsonb_build_object('region_publication',\n            jsonb_build_object('page_status', 'FULL', 'marker', %s)))",
+  "exception_class": "psycopg.errors.IndeterminateDatatype",
+  "exception_message": "could not determine data type of parameter $6",
+  "jsonb_build_object_occurrences_in_tests": 1,
+  "TARGET_ERROR_COUNT": 13,
+  "nodes": [
+    {
+      "node_id": "tests/test_generation_foundation.py::test_activation_is_idempotent",
+      "test": "test_activation_is_idempotent",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_active_and_retained_generations_are_cleanup_protected",
+      "test": "test_active_and_retained_generations_are_cleanup_protected",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_atomic_cutover_and_rollback",
+      "test": "test_atomic_cutover_and_rollback",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_candidate_cleanup_does_not_touch_the_active_generation",
+      "test": "test_candidate_cleanup_does_not_touch_the_active_generation",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_candidate_generation_is_invisible_to_normal_readers",
+      "test": "test_candidate_generation_is_invisible_to_normal_readers",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_completed_candidate_does_not_steal_the_page_publication",
+      "test": "test_completed_candidate_does_not_steal_the_page_publication",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_cross_document_pointer_is_rejected_by_the_database",
+      "test": "test_cross_document_pointer_is_rejected_by_the_database",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_explicit_generation_inspection_reaches_the_candidate",
+      "test": "test_explicit_generation_inspection_reaches_the_candidate",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_only_candidate_generations_can_be_activated",
+      "test": "test_only_candidate_generations_can_be_activated",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_reader_fails_closed_when_the_pointer_is_broken",
+      "test": "test_reader_fails_closed_when_the_pointer_is_broken",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_second_active_generation_is_rejected_by_the_database",
+      "test": "test_second_active_generation_is_rejected_by_the_database",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_stale_expected_active_generation_is_rejected",
+      "test": "test_stale_expected_active_generation_is_rejected",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    },
+    {
+      "node_id": "tests/test_generation_foundation.py::test_switch_is_audited",
+      "test": "test_switch_is_audited",
+      "fixture_or_helper": "_create_synthetic",
+      "query_involved": "INSERT INTO library_pages_v2 ... layout_notes",
+      "exception_class": "psycopg.errors.IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $6",
+      "jsonb_build_object_occurrence": "jsonb_build_object('page_status','FULL','marker', %s)"
+    }
+  ]
+}

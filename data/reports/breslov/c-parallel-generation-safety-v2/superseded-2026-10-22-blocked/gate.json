@@ -1,0 +1,13 @@
+{
+  "gate": "TEBAAI_BRESLOV_C_PARALLEL_GENERATION_SAFETY_V2",
+  "result": "TEBAAI_BRESLOV_C_PARALLEL_GENERATION_SAFETY_V2_BLOCKED",
+  "reason": "PUBLISHED_FOUNDATION_V2_ABSENT_FROM_AUTHORITATIVE_HEAD",
+  "details": "Authoritative local/tracking/remote HEAD is 9882b569e55513dc179eccdc1c465bf31b25cb6a. generation.py, migration 043 and Foundation V2 report are untracked; reader changes are unstaged. Cannot validate the stipulated published/frozen Foundation V2 baseline.",
+  "READY_FOR_C_REINGEST_EXECUTION": "NO",
+  "C_REINGEST_EXECUTED": "NO",
+  "COMMIT": "NO",
+  "PUSH": "NO",
+  "production_code_changed_by_this_gate": false,
+  "dev_store_writes": 0,
+  "e2e_executed": false
+}

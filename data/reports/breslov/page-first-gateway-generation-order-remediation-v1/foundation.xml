@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="13" failures="0" skipped="0" tests="54" time="2.672" timestamp="2026-10-22T18:16:10.318715-03:00" hostname="ubuntu24"><testcase classname="tests.test_generation_foundation" name="test_foundation_objects_exist" time="0.059" /><testcase classname="tests.test_generation_foundation" name="test_current_c_is_backfilled_as_the_active_generation" time="0.021" /><testcase classname="tests.test_generation_foundation" name="test_second_active_generation_is_rejected_by_the_database" time="0.025"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65d9c7a10&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('f4bb9b4a-afd4-4112-ac41-d6662d208d17'), UUID('e5f2b908-ded9-43f4-b664-c15c746f0151'), UUID('97d32676-1a23-4c51-ae3d-f6fdda2bd65c'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_cross_document_pointer_is_rejected_by_the_database" time="0.030"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65d93f110&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('2376ecdb-a324-4be9-80d7-ddd3b29c620b'), UUID('5390f521-ea2f-419e-a414-eab77d51f996'), UUID('bd1c48d7-1c64-42d6-b120-3466b13add5a'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_candidate_generation_is_invisible_to_normal_readers" time="0.027"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65d93fb90&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('a973ee5b-5105-4539-bddf-aba0c984e15d'), UUID('698e87f4-ceb1-40e5-acfa-21f9e4a199fa'), UUID('3cdcd604-0c6a-4c0c-8ba3-bada3e50e1f8'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_completed_candidate_does_not_steal_the_page_publication" time="0.026"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65c838650&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('833a04f8-2405-44a5-bb7d-2fafc15cb8c4'), UUID('f1f38271-fa1f-499e-932e-ac990898f84a'), UUID('82088821-8efa-4f90-b1f3-75deef4cfbce'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_explicit_generation_inspection_reaches_the_candidate" time="0.030"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65d93f050&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('48735629-b828-46c4-b737-af16f04323b6'), UUID('62b616eb-d208-44b1-a7f7-ba157cee93a2'), UUID('080bb4ce-da07-4f04-b7ee-8fcac9b16bf0'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_reader_fails_closed_when_the_pointer_is_broken" time="0.025"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65d93fd10&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('7df91e93-f279-4e79-b863-13989e20891b'), UUID('09ec970b-2846-4b21-b8f8-2c3edfadc044'), UUID('981e5acb-c15e-430e-91dc-661b3bb18a75'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_atomic_cutover_and_rollback" time="0.024"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65c838950&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('e25c18fb-9b11-42cb-a279-8789f436ae3c'), UUID('e15d20cf-0c01-4831-81c4-37e398dc09b3'), UUID('42fca3c0-fe90-4bb0-8041-1812ba4179cb'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_stale_expected_active_generation_is_rejected" time="0.025"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65c838b90&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('b2d376cf-d628-4d5c-a5a2-287fabab07f1'), UUID('372fc580-15f0-4091-b6ae-4ea089a0c9bf'), UUID('ead53c10-b61e-43f1-8501-43c36243605b'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_only_candidate_generations_can_be_activated" time="0.029"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65c838d10&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('420bd9e3-ca3c-49d8-b788-7ada2a0736b8'), UUID('2a83013f-81ab-4560-880a-aa218e8a7b86'), UUID('4a09904d-accd-4a92-b2c3-4c8e6bdf1dc8'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_activation_is_idempotent" time="0.027"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65c8399d0&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('74b79168-f676-4951-b9ce-bc076f3edb31'), UUID('0766080e-203f-4be0-aa92-29eddd2bc7de'), UUID('d200d800-f09d-4f83-9d65-a66a8516b5d0'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_switch_is_audited" time="0.027"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65d8f0110&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('d302d659-ed49-427f-9ef9-ed1a1100c9e2'), UUID('c740d319-02c0-41de-b571-6b351b40c52f'), UUID('d842850f-d2e5-4240-b900-f00c56c1a9b7'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_active_and_retained_generations_are_cleanup_protected" time="0.026"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65d93fad0&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('56e2fbc8-1293-4c3c-9c59-3a75dae3e3d0'), UUID('73f68041-8f7d-410c-b19f-5297a0d5f875'), UUID('7f971598-07a0-48ca-9db3-e4ff26d6e0e6'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_foundation" name="test_candidate_cleanup_does_not_touch_the_active_generation" time="0.042"><error message="failed on setup with &quot;psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6&quot;">@pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+&gt;               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x78d65d93f050&gt;
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('78d47f0c-da7d-47ad-855e-ef3af6d932ec'), UUID('ffd53e52-f1aa-48bc-a436-ffa4cfd57c75'), UUID('b4b2afc3-2b02-43c1-9ecd-155e44c971c0'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype</error></testcase><testcase classname="tests.test_generation_rollback_remediation" name="test_cutover_rollback_audit_and_cleanup" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_invalid_status[BUILDING-CUTOVER]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_invalid_status[BUILDING-ROLLBACK]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_invalid_status[FAILED-CUTOVER]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_invalid_status[FAILED-ROLLBACK]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_cross_document[CUTOVER]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_cross_document[ROLLBACK]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[arbitrary]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[never_active]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[unretained]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[historical]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[no_edge]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[rejected_history]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[wrong_source]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_inactive_is_not_cutover_candidate" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_candidate_is_not_rollback_target" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_stale_cutover_and_stale_rollback" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_idempotency_safe" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_no_policy_bypass[UNKNOWN]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_no_policy_bypass[BACKFILL]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_no_policy_bypass[REGISTER]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_postgres_rollback_contract" time="0.092" /><testcase classname="tests.test_content_manager_cleanup" name="test_manifest_cleanup_is_ordered_and_complete" time="0.002" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_repeated_treats_absent_vector_as_success" time="0.002" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_deletes_manifest_vector_when_attempt_query_is_empty" time="0.002" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_stops_before_postgres_when_milvus_fails" time="0.002" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_can_preserve_validated_temporary_for_retry" time="0.002" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_rejects_unknown_scope_collection_mapping" time="0.001" /><testcase classname="tests.test_content_manager_cleanup" name="test_primary_cleanup_uses_manifest_vector_ids_exactly" time="0.002" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_hybrid_never_emits_unauthorized_or_misattributed_vector[None]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical1]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical2]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_hybrid_uses_only_canonical_identity_and_chunk_index" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[ready]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[archived]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[None]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[unrecognized]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_gateway_identity_collision_is_rejected_before_ownership_claim" time="0.004" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_search_http_cannot_serialize_unrehydrated_vector" time="0.522" /></testsuite></testsuites>

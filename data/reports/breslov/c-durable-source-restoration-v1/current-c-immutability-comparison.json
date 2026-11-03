@@ -1,0 +1,49 @@
+{
+  "measured_at": "2026-10-23T12:14:17.622916+00:00",
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "chunks_before": 942,
+  "chunks_after": 942,
+  "vectors_before": 942,
+  "vectors_after": 942,
+  "chunk_digest_before": "589789b3bf591d2ae6006b845ad03b35",
+  "chunk_digest_after": "589789b3bf591d2ae6006b845ad03b35",
+  "chunk_content_digest_before": "44b6f860b32110304a64b195a794fdbb",
+  "chunk_content_digest_after": "44b6f860b32110304a64b195a794fdbb",
+  "active_generation_before": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+  "active_generation_after": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+  "active_pointer_changed": false,
+  "generation_statuses_before": [
+    "ACTIVE"
+  ],
+  "generation_statuses_after": [
+    "ACTIVE"
+  ],
+  "generation_statuses_changed": false,
+  "document_content_digest_before": "e778d3048da26226699d7b5e919f69dd",
+  "document_content_digest_after": "e778d3048da26226699d7b5e919f69dd",
+  "content_digest_changed": false,
+  "document_full_digest_before": "3d3d220aee7a9f8c3ea5156a59dde938",
+  "document_full_digest_after": "b6b7c3d003937bdb26557a815d87cf1d",
+  "full_digest_changed_by_source_metadata_only": true,
+  "difference_fields": [],
+  "differences": {},
+  "allowed_document_differences": {
+    "source_path": {
+      "before": null,
+      "after": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf"
+    },
+    "updated_at": {
+      "before": "2026-10-11T15:57:59.977447+00:00",
+      "after": "2026-10-23T12:12:54.684605+00:00"
+    }
+  },
+  "unexpected_document_differences": {},
+  "reingest": "NO",
+  "extraction": "NO",
+  "embedding_generation": "NO",
+  "vector_rebuild": "NO",
+  "new_generation": "NO",
+  "new_run": "NO",
+  "c_content_and_lifecycle_preserved": true
+}

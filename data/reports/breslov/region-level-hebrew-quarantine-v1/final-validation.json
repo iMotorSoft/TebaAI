@@ -1,0 +1,32 @@
+{
+  "gate_status": "BLOCKED",
+  "implementation_complete": false,
+  "worker_e2e_executed": false,
+  "candidate_consumer_tests_pass": true,
+  "focused_tests_passed": 267,
+  "full_backend_new_failures": 0,
+  "current_baseline_failures": 20,
+  "new_code_whitespace_checks": [
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/region_publication.py",
+      "exit_code": 1,
+      "output": ""
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_region_publication.py",
+      "exit_code": 1,
+      "output": ""
+    }
+  ],
+  "secret_scan": "PASS_PATTERN_SCAN",
+  "existing_tracked_changed_paths_unchanged": true,
+  "staging_unchanged": true,
+  "HEAD": "704ae24597e916b56ddec8a71fd0a30d34793aab",
+  "remote_live_HEAD": "704ae24597e916b56ddec8a71fd0a30d34793aab",
+  "commit": false,
+  "push": false,
+  "store_snapshots_equal": true,
+  "REGION_LEVEL_QUARANTINE_READY": "NO",
+  "FULL_C_REINGEST_READY": "NO",
+  "next_step": "Complete worker/gateway region handoff and durable PDF preservation, then actual isolated worker E2E; do not run full C reingest."
+}

@@ -1,0 +1,42 @@
+{
+  "initial": {
+    "statuses": {
+      "783640f9-f97d-4ed6-b55f-5911719746bd": "ACTIVE",
+      "d27bc5c5-b5e5-425d-be96-710c55d1c3ab": "CANDIDATE",
+      "e5510bac-a1b5-4cf9-a273-bd041a9c287c": "CANDIDATE",
+      "28379735-cd9d-4a2b-8155-9e054b84acd1": "INACTIVE"
+    },
+    "pointer": "783640f9-f97d-4ed6-b55f-5911719746bd",
+    "pointer_expected": "783640f9-f97d-4ed6-b55f-5911719746bd",
+    "visible_documents": [
+      "38f26a82-23d2-409e-8b36-d778452dae66"
+    ]
+  },
+  "cutover": {
+    "result": "APPLIED",
+    "logical_document_id": "1f537d84-ec86-4369-be38-2c172cdd58e4",
+    "from_generation_id": "783640f9-f97d-4ed6-b55f-5911719746bd",
+    "to_generation_id": "d27bc5c5-b5e5-425d-be96-710c55d1c3ab",
+    "expected_generation_id": "783640f9-f97d-4ed6-b55f-5911719746bd",
+    "operation": "CUTOVER",
+    "after": {
+      "statuses": {
+        "e5510bac-a1b5-4cf9-a273-bd041a9c287c": "CANDIDATE",
+        "28379735-cd9d-4a2b-8155-9e054b84acd1": "INACTIVE",
+        "783640f9-f97d-4ed6-b55f-5911719746bd": "INACTIVE",
+        "d27bc5c5-b5e5-425d-be96-710c55d1c3ab": "ACTIVE"
+      },
+      "pointer": "d27bc5c5-b5e5-425d-be96-710c55d1c3ab",
+      "pointer_expected": "783640f9-f97d-4ed6-b55f-5911719746bd",
+      "visible_documents": [
+        "cfd65afd-65b5-4406-b49f-2a9144659481"
+      ]
+    },
+    "ok": true
+  },
+  "OLD_initial": "ACTIVE",
+  "NEW_initial": "CANDIDATE",
+  "OLD_after": "INACTIVE",
+  "NEW_after": "ACTIVE",
+  "result": "PASS"
+}

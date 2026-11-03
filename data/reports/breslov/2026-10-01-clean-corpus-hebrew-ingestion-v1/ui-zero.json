@@ -1,0 +1,13 @@
+{
+  "phase": "zero",
+  "base": "http://127.0.0.1:3008",
+  "mocked_responses": 0,
+  "scope_overrides": 0,
+  "console_errors": [],
+  "http_5xx": [],
+  "started_at": "2026-10-11T15:40:39.341Z",
+  "gate": "TEBAAI_DEV_DOCUMENT_CORPUS_ZERO_PASS",
+  "auth_works": true,
+  "status": "PASS",
+  "finished_at": "2026-10-11T15:40:40.547Z"
+}

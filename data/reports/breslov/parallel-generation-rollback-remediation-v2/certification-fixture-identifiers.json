@@ -1,0 +1,32 @@
+{
+  "tag": "CERT-V2-4779777a-9a2c-48d8-9939-d5b992dd8f24",
+  "mode": "certification",
+  "collection_id": "de68a32e-2460-497d-b956-d267ef5e07cd",
+  "logical_document_id": "a8d3b706-815f-4f7a-b344-1834df012b3e",
+  "cross_logical_document_id": "68ecf45e-0849-4630-bc7b-a5aacf9eb292",
+  "generations": {
+    "OLD": "a020f7fc-6036-49f0-9aa8-4b723cd31ea0",
+    "NEW": "3ba131ea-c307-449f-9f09-ee34054f44ee",
+    "ARBITRARY": "869edd48-65e9-4621-8398-f76d178db29a",
+    "NEVER": "8dd78535-be19-4d05-bca9-5ed0688ead7e",
+    "BUILDING": "540e56e2-ca0c-414e-81ac-50cf25ec1701",
+    "FAILED": "3ad7b6ef-8d3f-4c66-8f7a-0ff2870656f8",
+    "G1": "ebe53330-4b18-4ffe-8e2f-b704791b9aa8",
+    "G2": "ef32c6dd-58e0-4f14-a55b-032cdd34e84e",
+    "B": "7a0c9d55-d0da-4ce4-ab1c-cdd0ef5c40e7",
+    "CROSS": "e464b3e2-a1cd-424b-9370-c955194fced6"
+  },
+  "documents": {
+    "OLD": "0f239a6f-43f1-438c-ae21-61715752b053",
+    "NEW": "1ce45f96-ab94-409a-a179-31a800bd1bd4",
+    "ARBITRARY": "8e7e0ba4-c499-49a7-b8c9-562edfe93c76",
+    "NEVER": "27ba9e3a-0ca4-4450-b92c-d81af1b93f98",
+    "BUILDING": "cbe3209e-becb-4ddc-94ec-922188fb0837",
+    "FAILED": "84b3daef-e59b-4968-abf3-b84ae00156f0",
+    "G1": "39492005-5110-4073-b0f1-d8415c31563d",
+    "G2": "705eb4fc-3aa5-4282-bcf0-ce5476c90981",
+    "B": "e406f8ba-f97a-4495-8c6e-389a9cb87e65",
+    "CROSS": "a444c734-48b4-4cbc-a570-27e11163b6be"
+  },
+  "created_at": "2026-10-22T20:35:07.207425+00:00"
+}

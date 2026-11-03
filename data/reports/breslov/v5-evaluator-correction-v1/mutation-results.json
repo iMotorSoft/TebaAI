@@ -1,0 +1,42 @@
+{
+  "total": 6,
+  "all_detected": true,
+  "results": [
+    {
+      "name": "forward_continuation",
+      "metric": "missing_reciprocal_links",
+      "actual": 1,
+      "detected": true
+    },
+    {
+      "name": "wrong_target",
+      "metric": "false_cross_page_links",
+      "actual": 2,
+      "detected": true
+    },
+    {
+      "name": "explicit_no_link",
+      "metric": "false_cross_page_links",
+      "actual": 1,
+      "detected": true
+    },
+    {
+      "name": "false_local_complete",
+      "metric": "false_editorial_completions",
+      "actual": 1,
+      "detected": true
+    },
+    {
+      "name": "unresolved_proven_link",
+      "metric": "unsafe_false_identity_proven",
+      "actual": 2,
+      "detected": true
+    },
+    {
+      "name": "conflicting_editorial_ids",
+      "metric": "false_cross_page_links",
+      "actual": 1,
+      "detected": true
+    }
+  ]
+}

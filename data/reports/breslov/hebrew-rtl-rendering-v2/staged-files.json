@@ -1,0 +1,272 @@
+{
+  "gate": "TEBAAI_BRESLOV_HEBREW_RTL_RENDERING_V2",
+  "base_commit": "0d3064d7a1181ff40bfae150af1c81546d9920cb",
+  "staged_count": 51,
+  "fix_files": [
+    "SrvRestAstroLS_v1/astro/src/components/library/DirectionalSourceText.svelte",
+    "SrvRestAstroLS_v1/astro/src/components/library/RelationQAPanel.svelte",
+    "SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.test.ts",
+    "SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.ts",
+    "SrvRestAstroLS_v1/astro/src/components/research/SourcePanel.svelte",
+    "SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.test.ts",
+    "SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.ts",
+    "SrvRestAstroLS_v1/backend/modules/library/pdf_hebrew_fidelity.py",
+    "SrvRestAstroLS_v1/backend/tests/test_pdf_hebrew_fidelity.py"
+  ],
+  "evidence_files": [
+    "data/reports/breslov/hebrew-rtl-rendering-v2/REPORT.md",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/a-p187-desktop.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/a-p187-mobile.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/a-query-api.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/answer-markdown-a.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/answer-markdown-b.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/b-p416-desktop.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/b-p416-mobile.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/b-query-api.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/backend-tests.txt",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/browser-qa.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/browser-qa.mjs",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/candidate-paths.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/final-frozen-hash-check.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/final-validation.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/frontend-tests.txt",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/frozen-at.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/frozen-hashes.txt",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/gate.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/git-diff-check.txt",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/hebrew-rtl-stage-allowlist.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/ltr-regression.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/pnpm-check.txt",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/presentation-forms.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/presentation-query-api.json",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-answer-markdown.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-desktop-hebrew.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-desktop.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-first-line-zoom.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-mobile-hebrew.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-mobile.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-desktop-equations-zoom.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-desktop-equations.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-desktop.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-mobile-equations.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-mobile.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/ltr-regression-admin.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/ltr-regression-evidence.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/presentation-answer.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/presentation-forms-desktop.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/presentation-forms-hebrew.png",
+    "data/reports/breslov/hebrew-rtl-rendering-v2/worktree-before.json"
+  ],
+  "entries": [
+    {
+      "status": "A",
+      "path": "SrvRestAstroLS_v1/astro/src/components/library/DirectionalSourceText.svelte"
+    },
+    {
+      "status": "M",
+      "path": "SrvRestAstroLS_v1/astro/src/components/library/RelationQAPanel.svelte"
+    },
+    {
+      "status": "M",
+      "path": "SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.test.ts"
+    },
+    {
+      "status": "M",
+      "path": "SrvRestAstroLS_v1/astro/src/components/library/sourceTextRuns.ts"
+    },
+    {
+      "status": "M",
+      "path": "SrvRestAstroLS_v1/astro/src/components/research/SourcePanel.svelte"
+    },
+    {
+      "status": "M",
+      "path": "SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.test.ts"
+    },
+    {
+      "status": "M",
+      "path": "SrvRestAstroLS_v1/astro/src/components/research/markdownRenderer.ts"
+    },
+    {
+      "status": "M",
+      "path": "SrvRestAstroLS_v1/backend/modules/library/pdf_hebrew_fidelity.py"
+    },
+    {
+      "status": "M",
+      "path": "SrvRestAstroLS_v1/backend/tests/test_pdf_hebrew_fidelity.py"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/REPORT.md"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/a-p187-desktop.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/a-p187-mobile.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/a-query-api.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/answer-markdown-a.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/answer-markdown-b.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/b-p416-desktop.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/b-p416-mobile.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/b-query-api.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/backend-tests.txt"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/browser-qa.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/browser-qa.mjs"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/candidate-paths.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/final-frozen-hash-check.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/final-validation.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/frontend-tests.txt"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/frozen-at.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/frozen-hashes.txt"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/gate.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/git-diff-check.txt"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/hebrew-rtl-stage-allowlist.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/ltr-regression.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/pnpm-check.txt"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/presentation-forms.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/presentation-query-api.json"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-answer-markdown.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-desktop-hebrew.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-desktop.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-first-line-zoom.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-mobile-hebrew.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/a-p187-mobile.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-desktop-equations-zoom.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-desktop-equations.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-desktop.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-mobile-equations.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/b-p416-mobile.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/ltr-regression-admin.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/ltr-regression-evidence.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/presentation-answer.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/presentation-forms-desktop.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/screenshots/presentation-forms-hebrew.png"
+    },
+    {
+      "status": "A",
+      "path": "data/reports/breslov/hebrew-rtl-rendering-v2/worktree-before.json"
+    }
+  ],
+  "excluded_dirty_preexisting": [
+    "SrvRestAstroLS_v1/backend/modules/library/extractors.py",
+    "SrvRestAstroLS_v1/docs/status_actual.md"
+  ],
+  "cached_diff_check": "clean",
+  "staged_via": "git add -- <explicit allowlist>"
+}

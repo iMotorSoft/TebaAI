@@ -1,0 +1,9 @@
+{
+  "full_backend": "NOT_RUN",
+  "focused": {
+    "command": "uv run pytest tests/test_content_manager_cleanup.py -q",
+    "passed": 7,
+    "failed": 0
+  },
+  "reason": "ROLLBACK_REJECTS_PREVIOUSLY_ACTIVE_GENERATION"
+}

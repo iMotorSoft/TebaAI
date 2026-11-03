@@ -1,0 +1,7 @@
+$ git diff --check
+exit_code=0
+
+$ git diff --no-index --check /dev/null SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py
+
+exit_code=1 (1 = untracked file differs from /dev/null, expected)
+whitespace_errors=0

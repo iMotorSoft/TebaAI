@@ -1,0 +1,85 @@
+{
+  "gate": "TEBAAI_BRESLOV_REGIONAL_OCR_FALLBACK_EVALUATION_V1",
+  "status": "BLOCKED",
+  "verdict": "MORE_EVIDENCE_REQUIRED",
+  "engine_runs": [],
+  "full_page_runs": [],
+  "metrics": {
+    "HEBREW_BASE_LETTER_ACCURACY": null,
+    "WORD_ORDER_ACCURACY": null,
+    "WORD_BOUNDARY_ACCURACY": null,
+    "NUMBER_ACCURACY": null,
+    "PUNCTUATION_ACCURACY": null,
+    "NIQQUD_FIDELITY": null,
+    "UNEXPECTED_CHARACTER_RATE": null,
+    "U+FFFD_COUNT": null
+  },
+  "selected_regions": [
+    {
+      "pdf_page": 167,
+      "region": "A_header",
+      "bbox": [
+        50,
+        43,
+        447,
+        58
+      ],
+      "block_ids": [
+        0,
+        2,
+        7,
+        9
+      ],
+      "reason": "broken embedded Unicode",
+      "source_method": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "status": "NOT_EVALUATED_ENGINE_UNAVAILABLE"
+    },
+    {
+      "pdf_page": 167,
+      "region": "B_hebrew_main",
+      "bbox": [
+        50,
+        65,
+        447,
+        230
+      ],
+      "block_ids": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "reason": "broken embedded Unicode",
+      "source_method": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "status": "NOT_EVALUATED_ENGINE_UNAVAILABLE"
+    }
+  ],
+  "additional_page_plan": [
+    {
+      "pdf_page": 41,
+      "ocr_run": false,
+      "reason": "broken Hebrew/CID regions only; engine unavailable"
+    },
+    {
+      "pdf_page": 55,
+      "ocr_run": false,
+      "reason": "broken Hebrew/CID regions only; engine unavailable"
+    },
+    {
+      "pdf_page": 56,
+      "ocr_run": false,
+      "reason": "broken Hebrew/CID regions only; engine unavailable"
+    },
+    {
+      "pdf_page": 143,
+      "ocr_run": false,
+      "reason": "broken Hebrew/CID regions only; engine unavailable"
+    }
+  ],
+  "page56_rule": "never OCR to cover the known Markdown notes regression"
+}

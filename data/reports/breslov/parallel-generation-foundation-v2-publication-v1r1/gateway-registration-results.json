@@ -1,0 +1,67 @@
+{
+  "phase": "PREFLIGHT_BEFORE_FREEZE",
+  "technical_defect_reproduced": true,
+  "cases": [
+    {
+      "case": "production_order",
+      "seed_run": false,
+      "document_logical_id_prebound": false,
+      "expected_product_registration": "SUCCESS",
+      "committed": false,
+      "actual": "DATABASE_REJECTED",
+      "error_type": "ForeignKeyViolation",
+      "sqlstate": "23503",
+      "constraint": "library_document_generations_run_id_fkey"
+    },
+    {
+      "case": "run_exists_but_document_not_bound",
+      "seed_run": true,
+      "document_logical_id_prebound": false,
+      "expected_product_registration": "SUCCESS",
+      "committed": false,
+      "actual": "DATABASE_REJECTED",
+      "error_type": "ForeignKeyViolation",
+      "sqlstate": "23503",
+      "constraint": "library_document_generations_document_logical_fkey"
+    },
+    {
+      "case": "control_both_prerequisites_exist",
+      "seed_run": true,
+      "document_logical_id_prebound": true,
+      "expected_product_registration": "SUCCESS",
+      "committed": false,
+      "actual": "SUCCESS"
+    }
+  ],
+  "schema_constraints": [
+    {
+      "conname": "library_document_generations_document_logical_fkey",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (document_id, logical_document_id) REFERENCES library_documents(id, logical_document_id)"
+    },
+    {
+      "conname": "library_document_generations_job_id_fkey",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (job_id) REFERENCES content_manager_jobs(id)"
+    },
+    {
+      "conname": "library_document_generations_logical_document_id_fkey",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (logical_document_id) REFERENCES library_logical_documents(id) ON DELETE CASCADE"
+    },
+    {
+      "conname": "library_document_generations_run_id_fkey",
+      "condeferrable": false,
+      "condeferred": false,
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    }
+  ],
+  "synthetic_leftover_documents": 0,
+  "all_synthetic_transactions_rolled_back": true,
+  "current_c_snapshot_unchanged": true,
+  "root_cause": "persist_document_and_pages calls _register_generation before creating run_id; _register_generation inserts a composite document/logical FK before binding the document logical_document_id.",
+  "control_note": "Harness-only prerequisites in rolled-back transactions; product files unmodified."
+}

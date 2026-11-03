@@ -1,0 +1,202 @@
+{
+  "result": "PASS",
+  "method": "independent READ COMMITTED observer before/after every switch commit; unique ACTIVE schema constraint",
+  "observations": [
+    {
+      "label": "after commit CUTOVER OLD",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "before commit CUTOVER NEW",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "after commit CUTOVER NEW",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected ARBITRARY ROLLBACK",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected NEVER ROLLBACK",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected BUILDING CUTOVER",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected BUILDING ROLLBACK",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected FAILED CUTOVER",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected FAILED ROLLBACK",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected CROSS CUTOVER",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected CROSS ROLLBACK",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected B ROLLBACK",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected OLD CUTOVER",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "rejected B CUTOVER",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "before commit ROLLBACK OLD",
+      "active_ids": [
+        "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+      ],
+      "pointer": "04d2481a-e8c0-45cb-825f-70a780df8bb1"
+    },
+    {
+      "label": "after commit ROLLBACK OLD",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "rejected OLD ROLLBACK",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "before commit ROLLBACK OLD",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "after commit ROLLBACK OLD",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "before commit CUTOVER OLD",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "after commit CUTOVER OLD",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "before commit CUTOVER G1",
+      "active_ids": [
+        "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+      ],
+      "pointer": "1ff8d5a2-d228-46b6-b7ee-55415db2f182"
+    },
+    {
+      "label": "after commit CUTOVER G1",
+      "active_ids": [
+        "655db80a-1a5e-45f0-a1f4-e480814b21da"
+      ],
+      "pointer": "655db80a-1a5e-45f0-a1f4-e480814b21da"
+    },
+    {
+      "label": "before commit CUTOVER G2",
+      "active_ids": [
+        "655db80a-1a5e-45f0-a1f4-e480814b21da"
+      ],
+      "pointer": "655db80a-1a5e-45f0-a1f4-e480814b21da"
+    },
+    {
+      "label": "after commit CUTOVER G2",
+      "active_ids": [
+        "c64aec87-db7f-49fc-8833-f29dbdbf4edf"
+      ],
+      "pointer": "c64aec87-db7f-49fc-8833-f29dbdbf4edf"
+    },
+    {
+      "label": "rejected OLD ROLLBACK",
+      "active_ids": [
+        "c64aec87-db7f-49fc-8833-f29dbdbf4edf"
+      ],
+      "pointer": "c64aec87-db7f-49fc-8833-f29dbdbf4edf"
+    },
+    {
+      "label": "before commit ROLLBACK G1",
+      "active_ids": [
+        "c64aec87-db7f-49fc-8833-f29dbdbf4edf"
+      ],
+      "pointer": "c64aec87-db7f-49fc-8833-f29dbdbf4edf"
+    },
+    {
+      "label": "after commit ROLLBACK G1",
+      "active_ids": [
+        "655db80a-1a5e-45f0-a1f4-e480814b21da"
+      ],
+      "pointer": "655db80a-1a5e-45f0-a1f4-e480814b21da"
+    }
+  ]
+}

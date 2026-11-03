@@ -1,0 +1,173 @@
+{
+  "validated_at": "2026-10-23T12:18:53.537725+00:00",
+  "count": 33,
+  "files": [
+    {
+      "file": "approved-source-verification.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "authenticated-source-response.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "baseline-git-state.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "c-content-immutability-contract.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "current-c-after.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "current-c-before.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "current-c-immutability-comparison.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "database-write-accounting.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "durability-fresh-process.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "durable-file-before-metadata.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "durable-storage-contract.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "filesystem-write-accounting.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "final-frozen-hash-check.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "final-validation.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "forbidden-operation-monitor.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "frozen-at.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "frozen-manifest.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "gate.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "idempotency-monitor.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "idempotency-results.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "json-validation.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "path-safety.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "permissions.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "restoration-rollback-plan.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "restoration-run.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "retrieval-smoke.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "secret-scan.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "served-source-hash.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "source-metadata-ownership.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "unauthenticated-source-response.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "viewer-source-results.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "worktree-before.json",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "wrong-source-negative-control.json",
+      "valid": true,
+      "error": null
+    }
+  ],
+  "invalid": [],
+  "all_valid": true
+}

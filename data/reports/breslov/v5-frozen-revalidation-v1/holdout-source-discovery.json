@@ -1,0 +1,146 @@
+{
+  "gate": "TEBAAI_BRESLOV_V5_FROZEN_REVALIDATION_V1",
+  "method": "Extraccion source-only con PyMuPDF: lineas por pagina, zona de notas por tamano 7.5/9.0 y y>300, marcador numeral inicial y revision manual de los pares consecutivos no abiertos.",
+  "source_pdf_pages": 284,
+  "opened_pages_count": 198,
+  "unseen_pages_count": 86,
+  "unseen_ranges": [
+    "1",
+    "3-12",
+    "19",
+    "29",
+    "31",
+    "33",
+    "35-39",
+    "44",
+    "53",
+    "72",
+    "79",
+    "99",
+    "101-103",
+    "115-119",
+    "134",
+    "141",
+    "144-147",
+    "152",
+    "156-159",
+    "182",
+    "188",
+    "191",
+    "193",
+    "196",
+    "201-204",
+    "209-210",
+    "213",
+    "248",
+    "256-284"
+  ],
+  "unseen_pages_with_notes": [
+    44,
+    53,
+    72,
+    79,
+    134,
+    141,
+    152,
+    156,
+    157,
+    158,
+    182,
+    188,
+    191,
+    193,
+    196,
+    209,
+    210,
+    213,
+    248
+  ],
+  "both_unseen_consecutive_note_pairs": [
+    {
+      "from": 156,
+      "to": 157,
+      "last_note_line": "34 En §5 de la lección del Rebe.",
+      "first_note_line": "35 La revelación de MaLJut ... es la revelación de la gloria",
+      "leading_marker_present": true,
+      "true_continuation": false,
+      "reason": "La nota 34 cierra y la nota 35 comienza marcada en la pagina destino."
+    },
+    {
+      "from": 157,
+      "to": 158,
+      "last_note_line": "con la boca para estudiar y enseñar Torá (ver Maharsha, loc. cit.).",
+      "first_note_line": "38 El Rebe trata esto en profundidad en el LM I, 22:5, donde",
+      "leading_marker_present": true,
+      "true_continuation": false,
+      "reason": "La nota 37 cierra y la nota 38 comienza marcada en la pagina destino."
+    },
+    {
+      "from": 209,
+      "to": 210,
+      "last_note_line": "versículos.",
+      "first_note_line": "23 Ver §9 de la lección del Rebe (también §11 más adelante)",
+      "leading_marker_present": true,
+      "true_continuation": false,
+      "reason": "La nota 22 cierra y la nota 23 comienza marcada en la pagina destino."
+    }
+  ],
+  "both_unseen_true_continuations": [],
+  "unavailable_true_continuation_examples": [
+    {
+      "from": 44,
+      "to": 45,
+      "opened_page": 45,
+      "evidence": "44 termina la nota 12 en 'El'; 45 comienza 'tormento del alma...' sin marcador."
+    },
+    {
+      "from": 78,
+      "to": 79,
+      "opened_page": 78,
+      "evidence": "78 termina la nota 86 en 'Korbán'; 79 comienza 'Pesaj...' sin marcador."
+    },
+    {
+      "from": 133,
+      "to": 134,
+      "opened_page": 133,
+      "evidence": "133 termina '...fuerzas destructoras'; 134 comienza 'que gobiernan...' sin marcador."
+    },
+    {
+      "from": 140,
+      "to": 141,
+      "opened_page": 140,
+      "evidence": "140 termina 'La expansión'; 141 comienza 'de los jasadim...' sin marcador."
+    },
+    {
+      "from": 210,
+      "to": 211,
+      "opened_page": 211,
+      "evidence": "210 termina 'cuya guía'; 211 comienza 'moral instila...' sin marcador."
+    },
+    {
+      "from": 16,
+      "to": 17,
+      "opened_page": "both",
+      "evidence": "Positivo de desarrollo; ambas paginas ya abiertas."
+    },
+    {
+      "from": 56,
+      "to": 57,
+      "opened_page": "both",
+      "evidence": "Positivo de desarrollo; ambas paginas ya abiertas."
+    },
+    {
+      "from": 167,
+      "to": 168,
+      "opened_page": "both",
+      "evidence": "Positivo de desarrollo; ambas paginas ya abiertas."
+    },
+    {
+      "from": 206,
+      "to": 207,
+      "opened_page": "both",
+      "evidence": "Positivo de desarrollo; link históricamente verdadero."
+    }
+  ],
+  "conclusion": "No hay casos positivos independientes disponibles en paginas no abiertas. No se puede construir un holdout disjunto con >=2 continuaciones verdaderas sin reutilizar paginas abiertas o relajar la regla de independencia."
+}

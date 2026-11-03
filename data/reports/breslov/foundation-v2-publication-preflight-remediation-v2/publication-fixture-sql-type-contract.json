@@ -1,0 +1,79 @@
+{
+  "scope": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py::_create_synthetic and the publication harness",
+  "binds": [
+    {
+      "parameter": "$1 (library_pages_v2.page_id)",
+      "semantic": "page identity",
+      "python_type": "uuid.UUID",
+      "postgresql_expected_type": "uuid",
+      "explicit_cast_needed": false,
+      "actual_cast": "column inference"
+    },
+    {
+      "parameter": "$2 (library_pages_v2.run_id)",
+      "semantic": "ingestion run",
+      "python_type": "uuid.UUID",
+      "postgresql_expected_type": "uuid",
+      "explicit_cast_needed": false,
+      "actual_cast": "column inference"
+    },
+    {
+      "parameter": "$3 (library_pages_v2.document_id)",
+      "semantic": "physical document",
+      "python_type": "uuid.UUID",
+      "postgresql_expected_type": "uuid",
+      "explicit_cast_needed": false,
+      "actual_cast": "column inference"
+    },
+    {
+      "parameter": "$4 (library_pages_v2.text)",
+      "semantic": "page text",
+      "python_type": "str",
+      "postgresql_expected_type": "text",
+      "explicit_cast_needed": false,
+      "actual_cast": "column inference"
+    },
+    {
+      "parameter": "$5 (library_pages_v2.char_count)",
+      "semantic": "text length",
+      "python_type": "int",
+      "postgresql_expected_type": "integer",
+      "explicit_cast_needed": false,
+      "actual_cast": "column inference"
+    },
+    {
+      "parameter": "$6 (jsonb_build_object marker)",
+      "semantic": "region publication marker",
+      "python_type": "str",
+      "postgresql_expected_type": "text",
+      "explicit_cast_needed": true,
+      "actual_cast": "::text"
+    },
+    {
+      "parameter": "library_documents binds",
+      "semantic": "document metadata",
+      "python_type": "UUID/str/int",
+      "postgresql_expected_type": "column types",
+      "explicit_cast_needed": false,
+      "actual_cast": "column inference"
+    },
+    {
+      "parameter": "library_document_chunks binds",
+      "semantic": "chunk content and tsvectors",
+      "python_type": "UUID/str",
+      "postgresql_expected_type": "column types + to_tsvector(regconfig, text)",
+      "explicit_cast_needed": false,
+      "actual_cast": "column/function inference"
+    },
+    {
+      "parameter": "generation registration binds",
+      "semantic": "logical/document/run/status/sha",
+      "python_type": "UUID/str",
+      "postgresql_expected_type": "column types",
+      "explicit_cast_needed": false,
+      "actual_cast": "column inference; metadata uses explicit ::jsonb helper"
+    }
+  ],
+  "generic_cast_everything_to_text": "REJECTED: uuid, integer and jsonb binds keep their real types",
+  "AMBIGUOUS_BIND_TYPES": 0
+}

@@ -1,0 +1,71 @@
+{
+  "method": "isolated SELECT probes inside rolled-back transactions against the DEV database",
+  "which_sql_expression_fails": "jsonb_build_object('region_publication', jsonb_build_object('page_status','FULL','marker', $1))",
+  "which_bind_parameter_has_unknown_type": "$6 in the fixture INSERT (page marker); $1 in the isolated SELECT",
+  "why_postgresql_cannot_infer_it": "jsonb_build_object is variadic \"any\". A bare string parameter arrives as an unknown-typed literal and PostgreSQL 18 refuses to prepare the expression because no context forces a type. A plain SELECT $1 lets the client/parser resolve the unknown literal to text.",
+  "which_jsonb_build_object_argument_triggers_it": "'marker' value argument",
+  "is_null_none": false,
+  "is_uuid": false,
+  "is_enum_or_status": false,
+  "is_json": false,
+  "is_untyped_text": true,
+  "expected_postgresql_type": "text",
+  "probes": [
+    {
+      "label": "buggy_untyped_marker",
+      "sql": "SELECT jsonb_build_object('region_publication', jsonb_build_object('page_status', 'FULL', 'marker', %s))",
+      "params": [
+        "'OLDGENERATIONEVIDENCE'"
+      ],
+      "outcome": "IndeterminateDatatype",
+      "exception_class": "IndeterminateDatatype",
+      "exception_message": "could not determine data type of parameter $1"
+    },
+    {
+      "label": "typed_marker_text",
+      "sql": "SELECT jsonb_build_object('region_publication', jsonb_build_object('page_status', 'FULL', 'marker', %s::text))",
+      "params": [
+        "'OLDGENERATIONEVIDENCE'"
+      ],
+      "result": [
+        {
+          "region_publication": {
+            "marker": "OLDGENERATIONEVIDENCE",
+            "page_status": "FULL"
+          }
+        }
+      ],
+      "outcome": "OK"
+    },
+    {
+      "label": "typed_marker_int",
+      "sql": "SELECT jsonb_build_object('region_publication', jsonb_build_object('page_status', 'FULL', 'marker', %s::int))",
+      "params": [
+        "'12'"
+      ],
+      "result": [
+        {
+          "region_publication": {
+            "marker": 12,
+            "page_status": "FULL"
+          }
+        }
+      ],
+      "outcome": "OK"
+    },
+    {
+      "label": "control_plain_select",
+      "sql": "SELECT %s",
+      "params": [
+        "'OLDGENERATIONEVIDENCE'"
+      ],
+      "result": [
+        "OLDGENERATIONEVIDENCE"
+      ],
+      "outcome": "OK"
+    }
+  ],
+  "reproduced_before_fix": true,
+  "fixed_by_explicit_text_cast": true,
+  "control_plain_select_ok": true
+}

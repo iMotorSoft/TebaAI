@@ -1,0 +1,20 @@
+{
+  "gate": "TEBAAI_BRESLOV_V5_HYBRID_CONFIRMATION_RESUME_V2_BLOCKED",
+  "status": "BLOCKED",
+  "reason": "INSUFFICIENT_V5_UNEXPOSED_POSITIVES",
+  "detail": "0 independently verified eligible positives after fail-closed UNKNOWN_INFLUENCE classification; minimum 3",
+  "positive_candidates": 12,
+  "eligible_positive_pairs": 0,
+  "excluded": 12,
+  "V5_EVALUATED": false,
+  "seal_created": false,
+  "part_a": "NOT_RUN_BLOCKED_BEFORE_EVALUATION",
+  "part_b": "NOT_RUN_BLOCKED_BEFORE_EVALUATION",
+  "part_c": "NOT_RUN_BLOCKED_BEFORE_EVALUATION",
+  "CERTIFICATES_READY_FOR_WORKER_INTEGRATION": "NO",
+  "READY_FOR_C_REINGEST": "NO",
+  "COMMIT": "NO",
+  "PUSH": "NO",
+  "worker_executed": false,
+  "external_service_writes": false
+}

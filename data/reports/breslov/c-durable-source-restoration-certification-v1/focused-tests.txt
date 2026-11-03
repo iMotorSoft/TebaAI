@@ -1,0 +1,23 @@
+$ /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python -m pytest tests/test_region_source_access.py tests/test_scope_authorization.py tests/test_auth_dependencies.py tests/test_region_worker_enforcement.py::test_durable_source_survives_upload_cleanup_and_is_hash_checked tests/test_region_worker_enforcement.py::test_failed_source_copy_keeps_upload tests/test_canonical_work_edition_source_metadata.py -q --tb=short -p no:cacheprovider
+
+........................................                                 [100%]
+=============================== warnings summary ===============================
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+tests/test_region_source_access.py::test_source_route_refuses_arbitrary_filesystem_path
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/source', handler='library_original_source'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'page' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_scope_authorization.py::test_legacy_alias_resolves_from_collection_metadata
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:78: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+40 passed, 5 warnings in 1.88s

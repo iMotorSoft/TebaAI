@@ -1,0 +1,20 @@
+{
+  "scope_code": "safety_v2_gate",
+  "collection_code": "safety_v2_gate",
+  "logical_document_id": "a0162ad8-af12-4bff-a007-c41e6e0ae3c7",
+  "old_document_id": "54e50a44-4536-4bbf-86da-99989242739d",
+  "new_document_id": "c9b01dde-3134-4146-bcab-bd2b29ff3706",
+  "old_generation_id": "10c552da-af10-47d9-964d-485f24a22faf",
+  "new_generation_id": "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162",
+  "old_run_id": "d13de10c-c054-42fd-9e6b-85d57aa18bdb",
+  "new_run_id": "53928488-090f-43e5-98c7-5a2ca86d1c79",
+  "old_marker": "SAFETY_V2_OLD_ONLY",
+  "new_marker": "SAFETY_V2_NEW_ONLY",
+  "old_status": "ACTIVE",
+  "new_status": "CANDIDATE",
+  "new_run_status": "completed",
+  "new_run_finished_at": "2026-11-01T18:36:14.546997+00:00",
+  "new_is_newer_than_old": true,
+  "active_pointer_is_old": true,
+  "milvus_collection": "tebaai_safety_v2_79847608"
+}

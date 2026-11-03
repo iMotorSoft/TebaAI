@@ -1,0 +1,15 @@
+{
+  "technical_result": "PASS",
+  "evidence": [
+    "focused-tests.txt",
+    "focused.xml"
+  ],
+  "test_nodes": [
+    "tests/test_generation_rollback_remediation.py::test_invalid_status[BUILDING-CUTOVER]",
+    "tests/test_generation_rollback_remediation.py::test_invalid_status[BUILDING-ROLLBACK]",
+    "tests/test_generation_rollback_remediation.py::test_postgres_rollback_contract"
+  ],
+  "gate_result": "INVALID",
+  "attempted_operation_result": "REJECTED",
+  "pointer_mutated": false
+}

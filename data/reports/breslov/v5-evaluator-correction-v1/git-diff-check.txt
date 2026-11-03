@@ -1,0 +1,3 @@
+PASS: git diff --check (entire tracked worktree), exit 0.
+PASS: git diff --no-index --check /dev/null <each authored file>, no whitespace diagnostics.
+Exit 1 for new files denotes content difference, not whitespace failure.

@@ -1,0 +1,20 @@
+{
+  "gate": "TEBAAI_BRESLOV_HEBREW_RTL_RENDERING_V2",
+  "branch": "feature/console-backend-core",
+  "commit": "05ab67ebfb652a460155eab1d3560ae55bd88bb0",
+  "parent": "0d3064d7a1181ff40bfae150af1c81546d9920cb",
+  "message_subject": "fix(breslov): correct Hebrew bidi and niqqud rendering",
+  "files_changed": 51,
+  "fix_files": 9,
+  "evidence_files": 42,
+  "show_check": "clean",
+  "push": "NO",
+  "remote_ref": "0d3064d7a1181ff40bfae150af1c81546d9920cb",
+  "remote_unchanged": true,
+  "unstaged_preexisting_untouched": [
+    "SrvRestAstroLS_v1/backend/modules/library/extractors.py",
+    "SrvRestAstroLS_v1/docs/status_actual.md"
+  ],
+  "status_actual_updated": false,
+  "ready_to_update_status_actual": true
+}

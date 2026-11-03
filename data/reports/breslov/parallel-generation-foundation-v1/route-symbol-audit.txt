@@ -1,0 +1,223 @@
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:17:async def create_chunks(conn: AsyncConnection, chunks: list[dict]) -> int:
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:26:                (id, document_id, document_text_id, collection_id, chunk_index, chunk_uid,
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:35:                (%(id)s, %(document_id)s, %(document_text_id)s, %(collection_id)s, %(chunk_index)s, %(chunk_uid)s,
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:84:async def get_chunks_by_document(conn: AsyncConnection, document_id: UUID) -> list[dict]:
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:87:        "SELECT * FROM library_document_chunks WHERE document_id = %(document_id)s ORDER BY chunk_index",
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:93:async def get_unindexed_chunks(
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:131:async def count_chunks(conn: AsyncConnection, knowledge_scope_id: UUID | None = None) -> int:
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:146:async def create_embedding_run(
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:179:async def update_embedding_run(
+SrvRestAstroLS_v1/backend/modules/library/vector_repository.py:213:async def create_chunk_embedding(
+SrvRestAstroLS_v1/backend/modules/library/citation_policy.py:22:def format_claim_citation(claim_id: str, page: int) -> str:
+SrvRestAstroLS_v1/backend/modules/library/citation_policy.py:26:def format_relation_citation(relation_id: str, page: int) -> str:
+SrvRestAstroLS_v1/backend/modules/library/citation_policy.py:30:def extract_citations(text: str) -> list[dict[str, Any]]:
+SrvRestAstroLS_v1/backend/modules/library/citation_policy.py:43:def validate_citation(citation: dict[str, Any],
+SrvRestAstroLS_v1/backend/modules/library/citation_policy.py:67:def validate_citations_in_text(
+SrvRestAstroLS_v1/backend/modules/library/citation_policy.py:77:def build_citation_block(claims: list[dict[str, Any]],
+SrvRestAstroLS_v1/backend/modules/library/citation_policy.py:94:def ai_synthesis_prompt_suffix() -> str:
+SrvRestAstroLS_v1/backend/modules/library/routes.py:29:    get_latest_book_qa_run,
+SrvRestAstroLS_v1/backend/modules/library/routes.py:92:async def _run_research_pipeline(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:130:@post("/library/investigative-qa/v1", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:131:async def investigative_qa_v1(request: Request, data: QaRequest) -> dict:
+SrvRestAstroLS_v1/backend/modules/library/routes.py:250:@post("/library/relation-qa", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:251:async def relation_qa(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:275:@post("/library/book-qa", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:276:async def book_qa(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:307:@get("/library/book-qa/runs", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:308:async def book_qa_runs(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:336:@get("/library/book-qa/runs/latest", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:337:async def book_qa_runs_latest(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:343:    """Get latest usable Book QA V2 run."""
+SrvRestAstroLS_v1/backend/modules/library/routes.py:352:            run = await get_latest_book_qa_run(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:362:        raise HTTPException(status_code=500, detail="Book QA latest run failed") from exc
+SrvRestAstroLS_v1/backend/modules/library/routes.py:365:@post("/library/search", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:366:async def library_search(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:431:@get("/library/documents/{document_id:uuid}/source", guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:432:async def library_original_source(request: Request, document_id: UUID) -> File:
+SrvRestAstroLS_v1/backend/modules/library/routes.py:448:@get("/library/documents/{document_id:uuid}/pages/{page:int}/publication", guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:449:async def library_page_publication(request: Request, document_id: UUID, page: int) -> dict:
+SrvRestAstroLS_v1/backend/modules/library/routes.py:466:def _content_scope_kwargs(scope: object) -> dict[str, str]:
+SrvRestAstroLS_v1/backend/modules/library/routes.py:474:def _content_collection(scope_code: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/routes.py:480:@post("/admin/content/uploads", status_code=201, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:481:async def content_manager_upload(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:522:@post("/admin/content/jobs", status_code=201, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:523:async def content_manager_create_job(request: Request, data: CreateJobRequest) -> JobResponse:
+SrvRestAstroLS_v1/backend/modules/library/routes.py:552:@get("/admin/content/jobs", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:553:async def content_manager_list_jobs(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:577:@get("/admin/content/jobs/{job_id:str}", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:578:async def content_manager_get_job(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:607:@post("/admin/content/jobs/{job_id:str}/retry", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:608:async def content_manager_retry_job(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:639:@post("/admin/content/jobs/{job_id:str}/cancel", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:640:async def content_manager_cancel_job(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:671:@get("/admin/content/jobs/{job_id:str}/diagnostic", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:672:async def content_manager_diagnostic(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:701:@post("/admin/content/jobs/{job_id:str}/publish", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:702:async def content_manager_publish_job(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:743:@get("/admin/content/summary", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:744:async def content_manager_summary(
+SrvRestAstroLS_v1/backend/modules/library/routes.py:774:@get("/admin/content/documents", status_code=200, guards=[require_auth])
+SrvRestAstroLS_v1/backend/modules/library/routes.py:775:async def content_manager_documents(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:12:async def resolve_ready_documents(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:17:    include_test_candidates: bool = False,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:35:        {"scope": knowledge_scope_code, "include_test": include_test_candidates},
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:64:async def search_structural_heading_candidates(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:74:    include_test_candidates: bool = False,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:174:            "include_test": include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:180:async def search_printed_reference_candidates(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:187:    include_test_candidates: bool = False,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:277:        ORDER BY ch.id, ref.query, ch.document_id, ch.page_start, ch.chunk_index
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:285:            "include_test": include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:290:async def search_literal_candidates(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:300:    include_test_candidates: bool = False,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:427:            "include_test": include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:431:    if not hebrew_compact or not include_test_candidates:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:502:async def search_source_lesson_candidates(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:558:async def fetch_canonical_chunks(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:563:    include_test_candidates: bool = False,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:627:            "include_test": include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:630:    if not include_test_candidates:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py:697:async def fetch_preceding_section_title(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:39:def _statuses(include_test_candidates: bool) -> list[str]:
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:40:    return ["ready", "test_candidate"] if include_test_candidates else ["ready"]
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:43:def _like_patterns(variants: Sequence[str]) -> list[str]:
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:58:async def search_fts_chunks(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:64:    include_test_candidates: bool,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:69:    statuses = _statuses(include_test_candidates)
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:111:async def search_ilike_chunks(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:116:    include_test_candidates: bool,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:135:            "statuses": _statuses(include_test_candidates),
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:146:async def search_relation_pattern_chunks(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:151:    include_test_candidates: bool,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:170:            "statuses": _statuses(include_test_candidates),
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:181:async def search_cooccurrence_chunks(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:187:    include_test_candidates: bool,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:208:            "statuses": _statuses(include_test_candidates),
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:220:async def get_chunks_by_ids(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:225:    include_test_candidates: bool,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py:240:            "statuses": _statuses(include_test_candidates),
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:140:def classify_editorial_block(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:230:def detect_printed_references(content: str) -> list[PrintedReference]:
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:253:def detect_footnote_number(content: str) -> int | None:
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:261:def detect_footnote_marker(content: str) -> list[tuple[int, int]]:
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:276:def build_section_timeline(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:316:def resolve_containing_section_for_chunk(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:350:def resolve_footnote_body(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:387:def find_footnote_marker(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:445:def associate_heading_with_body(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:491:def make_editorial_evidence_id(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:506:def build_editorial_v2(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:620:def enrich_evidence_with_v2(
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:632:def build_full_evidence_v2(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:55:def _detect_language(question: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:64:def _resolve_concepts(data: RelationQARequest) -> tuple[str, str]:
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:69:def _vector_search_sync(queries: list[str], top_k: int) -> list[dict[str, Any]]:
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:96:async def retrieve_relation_evidence(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:116:        include_test_candidates=data.include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:126:        include_test_candidates=data.include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:136:        include_test_candidates=data.include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:147:        include_test_candidates=data.include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:173:                    include_test_candidates=data.include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:201:def _contains_variant(text: str, variants: list[str]) -> bool:
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:206:def _add_cross_chunk_relations(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:232:def _evidence_summary(sources: list[RelationQASource]) -> EvidenceSummary:
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:242:def _deterministic_answer(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:322:def _editorial_warnings(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:327:    include_test_candidates: bool,
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:342:    if include_test_candidates and any(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:351:async def run_relation_qa(
+SrvRestAstroLS_v1/backend/modules/library/relation_qa_service.py:433:            include_test_candidates=data.include_test_candidates,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:120:def normalize_structural_heading_for_search(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:153:def is_structural_heading_candidate_shape(value: str) -> bool:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:164:def has_editorial_heading_form(value: str) -> bool:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:174:def _heading_display_text(value: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:185:def _structural_heading_lines(candidate: dict[str, Any]) -> list[str]:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:198:def _structural_heading_content_lines(candidate: dict[str, Any]) -> list[str]:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:231:def classify_structural_heading_candidates(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:324:def normalize_english_for_search(value: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:343:def detect_short_english_name_query(value: str) -> EnglishNameQuery | None:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:379:def detect_research_query_language(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:390:def _english_name_orthographic_variants(query: EnglishNameQuery) -> list[str]:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:410:def _hebrew_catalog_cross_language_variants(original_query: str) -> list[str]:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:467:def _latin_catalog_cross_language_variants(original_query: str) -> list[str]:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:513:def _fold(value: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:521:def build_query_variants(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:586:def build_explicit_filters(data: Any) -> dict[str, Any]:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:597:        "include_test_candidates": RESEARCH_INCLUDE_TEST_CANDIDATES_READONLY,
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:601:def _milvus_expression(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:615:        clauses.append(f"document_id in [{quoted}]")
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:619:def _semantic_search(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:664:def _semantic_search_variants(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:712:def _literal_evidence_strength(match_type: str) -> int:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:733:def _normalize_literal_whitespace(value: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:738:def _embedded_footnote_number(content: str, query: str) -> int | None:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:772:def _embedded_footnote_body(content: str, number: int | None) -> str | None:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:785:def classify_editorial_literal_matches(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:813:def merge_results(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:978:def _source_layer(chunk: dict[str, Any]) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1000:def _content_has_exact_reference_surface(content: str, query: str) -> bool:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1028:def _explicit_likutey_halajot_scope(query: str) -> bool:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1037:def _work_code(chunk: dict[str, Any]) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1052:def select_context(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1082:def _legacy_chunk_evidence_id(chunk_id: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1087:def _entity_key(chunk: dict[str, Any]) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1123:def _evidence_id(chunk: dict[str, Any]) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1170:def _attach_structural_heading_contexts(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1200:def _canonical_printed_page(chunk: dict[str, Any]) -> int | None:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1240:def _is_primary_eligible(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1260:def _match_local_pdf_page(chunk: dict[str, Any]) -> int | None:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1288:def _context_pack(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1339:def validate_grounded_answer(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1389:async def render_grounded_answer(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1480:def _fallback_answer(chunks: list[dict[str, Any]]) -> tuple[str, list[dict[str, Any]]]:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1508:def _format_bibliographic_answer(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1555:def _frontend_hit(chunk: dict[str, Any], primary_ids: set[str]) -> dict[str, Any]:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1723:async def run_simple_rag(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1775:        include_test_candidates=filters["include_test_candidates"],
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1791:    document_ids = [str(item["document_id"]) for item in documents]
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1830:                include_test_candidates=filters["include_test_candidates"],
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1869:                include_test_candidates=filters["include_test_candidates"],
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1938:            include_test_candidates=filters["include_test_candidates"],
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1952:                include_test_candidates=filters["include_test_candidates"],
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:2035:        include_test_candidates=filters["include_test_candidates"],
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:2504:        "primary_document_id=%s primary_chunk_id=%s pdf_page=%s printed_page=%s "
+SrvRestAstroLS_v1/backend/modules/library/research_service.py:94:            documents_found=len({s.document_id for s in source_map}),
+SrvRestAstroLS_v1/backend/modules/library/repository.py:27:async def get_scope_by_code(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:48:async def get_scope_by_id(conn: AsyncConnection, scope_id: UUID) -> KnowledgeScope | None:
+SrvRestAstroLS_v1/backend/modules/library/repository.py:58:async def get_authorized_scope_by_code(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:110:async def resolve_scope_context(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:151:async def get_or_create_collection(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:195:async def get_collection_by_code(conn: AsyncConnection, code: str):
+SrvRestAstroLS_v1/backend/modules/library/repository.py:209:async def get_document_by_sha256(conn: AsyncConnection, sha256: str, knowledge_scope_id: UUID | None = None) -> LibraryDocument | None:
+SrvRestAstroLS_v1/backend/modules/library/repository.py:226:async def get_document_by_id(conn: AsyncConnection, document_id: UUID) -> LibraryDocument | None:
+SrvRestAstroLS_v1/backend/modules/library/repository.py:235:async def create_document(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:305:async def list_documents(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:314:            "SELECT * FROM library_documents WHERE knowledge_scope_id = %(scope_id)s ORDER BY created_at DESC LIMIT %(limit)s OFFSET %(offset)s",
+SrvRestAstroLS_v1/backend/modules/library/repository.py:325:            "SELECT * FROM library_documents ORDER BY created_at DESC LIMIT %(limit)s OFFSET %(offset)s",
+SrvRestAstroLS_v1/backend/modules/library/repository.py:337:async def create_document_text(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:366:async def get_document_text_by_document_id(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:371:        "SELECT * FROM library_document_texts WHERE document_id = %(document_id)s ORDER BY created_at DESC LIMIT 1",
+SrvRestAstroLS_v1/backend/modules/library/repository.py:380:async def create_document_reference(
+SrvRestAstroLS_v1/backend/modules/library/repository.py:410:def _row_to_scope(row: dict) -> KnowledgeScope:
+SrvRestAstroLS_v1/backend/modules/library/repository.py:428:def _row_to_collection(row: dict):
+SrvRestAstroLS_v1/backend/modules/library/repository.py:444:def _row_to_document(row: dict) -> LibraryDocument:
+SrvRestAstroLS_v1/backend/modules/library/repository.py:484:def _row_to_document_text(row: dict) -> LibraryDocumentText:
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:22:def classify(question: str) -> tuple[str, str | None, str | None]:
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:84:def _v(row, idx=0):
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:119:def _missing_run_id() -> BookQAResponse:
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:126:def _run_not_found(rid_or_doc: str) -> BookQAResponse:
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:136:async def list_book_qa_runs(
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:155:        SELECT r.run_id::text, r.document_id::text, r.scope_code, r.pipeline_version,
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:165:        ORDER BY r.finished_at DESC NULLS LAST, r.created_at DESC
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:192:async def get_latest_book_qa_run(
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:210:        ORDER BY r.finished_at DESC NULLS LAST, r.created_at DESC LIMIT 1
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:226:async def resolve_run(
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:232:    """Resolve run_id from explicit id or latest by document_id."""
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:240:                "SELECT document_id::text, status FROM library_ingestion_runs_v2 WHERE run_id = %s",
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:250:        latest = await get_latest_book_qa_run(conn, scope_code=scope_code, document_id=document_id)
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:251:        if not latest:
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:253:        resolved_run_id = latest.run_id
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:254:        resolved_doc_id = latest.document_id
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:265:async def run_book_qa(
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:300:            "SELECT document_id::text, status FROM library_ingestion_runs_v2 WHERE run_id = %s",
+SrvRestAstroLS_v1/backend/modules/library/book_qa_service.py:619:    run_resolution = "explicit_run_id" if run_id else "latest_by_document_id" if document_id else ""

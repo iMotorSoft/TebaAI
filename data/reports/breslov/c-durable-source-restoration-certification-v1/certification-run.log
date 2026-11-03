@@ -1,0 +1,87 @@
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python capture_state.py pre_tests current-c-pre-tests.json ===
+{"written": "current-c-pre-tests.json", "label": "pre_tests", "chunks": 942, "pages": 284, "vectors": 942, "active_generation": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b", "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf", "backend_pid": 146588}
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python run_tests.py ===
+{"focused": {"exit": 0, "pass": 40, "fail": 0, "error": 0}, "full": {"percent": "1998 passed / 20 failed / 0 errors", "new_fail": 0, "new_error": 0}}
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python capture_state.py before current-c-before.json ===
+{"written": "current-c-before.json", "label": "before", "chunks": 942, "pages": 284, "vectors": 942, "active_generation": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b", "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf", "backend_pid": 146588}
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python capture_fs.py before filesystem-before.json ===
+before: external_sha=440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a durable_sha=440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a durable_size=4550267
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python verify_approved_source.py ===
+external exists=True sha_match=True size_match=True pages=284 -> PASS
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python verify_durable_file.py ===
+durable exists=True managed=True sha_match=True pages=284 -> True
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python verify_source_metadata.py ===
+source_path=/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf managed=True downloads=False -> PASS
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python verify_endpoint.py initial ===
+/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 10 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+  return self._jws.encode(
+initial: auth=200 sha_match=True pages=284 unauth=401
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python viewer_source_smoke.py ===
+/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 10 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+  return self._jws.encode(
+viewer generation=1a8af56b-fc17-d9f9-ffc2-9efde54aa95b pages_all_200=False textual_unchanged=True -> PASS
+--- exit=0 ---
+=== fresh process restart ===
+[backend-dev] Loading local overrides from .env.backend-dev.local
+[backend-dev] Stopping backend PID 146588: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python3 /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/uvicorn ls_iMotorSoft_Srv01:app --host 127.0.0.1 --port 7008
+[backend-dev] Backend stopped.
+[backend-dev] Started TebaAI backend.
+[backend-dev] PID file: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/.dev-pids/tebaai-backend-7008.pid
+[backend-dev] Log file: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/.dev-logs/backend-7008.log
+[backend-dev] URL: http://127.0.0.1:7008
+--- restart exit=0 ---
+--- health=200 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python verify_endpoint.py fresh ===
+/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 10 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+  return self._jws.encode(
+fresh: pid 146588 -> 149151 auth=200 sha_match=True pages=284 -> PASS
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python capture_state.py after current-c-after.json ===
+{"written": "current-c-after.json", "label": "after", "chunks": 942, "pages": 284, "vectors": 942, "active_generation": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b", "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf", "backend_pid": 149151}
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python capture_fs.py after filesystem-after.json ===
+after: external_sha=440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a durable_sha=440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a durable_size=4550267
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python compare_state.py ===
+changed_keys=[] chunks=942->942 vectors=942->942 fs_writes=0
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python frozen_hash_check.py ===
+entries=27 mismatches=0 -> PASS
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python json_validate.py ===
+valid=27 invalid=0 -> PASS
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python secret_scan.py ===
+files=31 findings=0 -> PASS
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python git_diff_check.py ===
+exit=0 -> PASS
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python aggregate.py ===
+{"status": "TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_CERTIFICATION_V1_PASS", "decision": "PASS", "failed": [], "blocked": [], "invalid": []}
+--- exit=0 ---
+=== /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python final_checks.py ===
+{"json_valid": true, "secret_scan": "PASS", "frozen_unchanged": true, "contradictions": 0, "closing_failures": [], "status": "TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_CERTIFICATION_V1_PASS"}
+--- exit=0 ---
+=== certification run finished ===
+TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_CERTIFICATION_V1_PASS
+{
+  "approved_source_sha_match": true,
+  "durable_source_present": true,
+  "durable_source_sha_match": true,
+  "authenticated_status": 200,
+  "unauthenticated_status": 401,
+  "fresh_process_pass": "PASS",
+  "zero_postgres_writes": true,
+  "zero_milvus_writes": true,
+  "current_c_preserved": true,
+  "ready_for_foundation_publication_v1r2": "YES"
+}

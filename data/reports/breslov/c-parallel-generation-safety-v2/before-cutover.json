@@ -1,0 +1,203 @@
+{
+  "state": {
+    "statuses": {
+      "10c552da-af10-47d9-964d-485f24a22faf": "ACTIVE",
+      "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162": "CANDIDATE"
+    },
+    "retention_hold": {
+      "10c552da-af10-47d9-964d-485f24a22faf": false,
+      "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162": false
+    },
+    "active_count": 1,
+    "active": [
+      "10c552da-af10-47d9-964d-485f24a22faf"
+    ],
+    "pointer": "10c552da-af10-47d9-964d-485f24a22faf",
+    "pointer_expected": "10c552da-af10-47d9-964d-485f24a22faf",
+    "pointer_operation": "BACKFILL"
+  },
+  "readers": {
+    "text": {
+      "old": {
+        "marker": "SAFETY_V2_OLD_ONLY",
+        "documents": [
+          "54e50a44-4536-4bbf-86da-99989242739d"
+        ],
+        "count": 1
+      },
+      "new": {
+        "marker": "SAFETY_V2_NEW_ONLY",
+        "documents": [],
+        "count": 0
+      }
+    },
+    "hybrid": {
+      "old": {
+        "marker_query": {
+          "documents": [
+            "54e50a44-4536-4bbf-86da-99989242739d"
+          ],
+          "chunk_ids": [
+            "ac79a308-4223-42f9-ad2b-523a0e32566c"
+          ],
+          "source_signals": [
+            [
+              "fts",
+              "vector"
+            ]
+          ]
+        },
+        "vector_only_query": {
+          "query": "safetyv2vectornomatch",
+          "documents": [
+            "54e50a44-4536-4bbf-86da-99989242739d"
+          ],
+          "chunk_ids": [
+            "ac79a308-4223-42f9-ad2b-523a0e32566c"
+          ],
+          "source_signals": [
+            [
+              "vector"
+            ]
+          ]
+        },
+        "milvus_raw": {
+          "both_documents": [
+            "54e50a44-4536-4bbf-86da-99989242739d",
+            "c9b01dde-3134-4146-bcab-bd2b29ff3706"
+          ],
+          "old_filter_documents": [
+            "54e50a44-4536-4bbf-86da-99989242739d"
+          ],
+          "new_filter_documents": [
+            "c9b01dde-3134-4146-bcab-bd2b29ff3706"
+          ]
+        }
+      },
+      "new": {
+        "marker_query": {
+          "documents": [
+            "54e50a44-4536-4bbf-86da-99989242739d"
+          ],
+          "chunk_ids": [
+            "ac79a308-4223-42f9-ad2b-523a0e32566c"
+          ],
+          "source_signals": [
+            [
+              "vector"
+            ]
+          ]
+        },
+        "vector_only_query": {
+          "query": "safetyv2vectornomatch",
+          "documents": [
+            "54e50a44-4536-4bbf-86da-99989242739d"
+          ],
+          "chunk_ids": [
+            "ac79a308-4223-42f9-ad2b-523a0e32566c"
+          ],
+          "source_signals": [
+            [
+              "vector"
+            ]
+          ]
+        },
+        "milvus_raw": {
+          "both_documents": [
+            "54e50a44-4536-4bbf-86da-99989242739d",
+            "c9b01dde-3134-4146-bcab-bd2b29ff3706"
+          ],
+          "old_filter_documents": [
+            "54e50a44-4536-4bbf-86da-99989242739d"
+          ],
+          "new_filter_documents": [
+            "c9b01dde-3134-4146-bcab-bd2b29ff3706"
+          ]
+        }
+      }
+    },
+    "research_old": {
+      "ready_document_ids": [
+        "54e50a44-4536-4bbf-86da-99989242739d"
+      ],
+      "flag_alone_document_ids": [
+        "54e50a44-4536-4bbf-86da-99989242739d"
+      ],
+      "flag_alone_chunk_ids": [
+        "ac79a308-4223-42f9-ad2b-523a0e32566c"
+      ]
+    },
+    "research_new": {
+      "ready_document_ids": [
+        "54e50a44-4536-4bbf-86da-99989242739d"
+      ],
+      "flag_alone_document_ids": [
+        "54e50a44-4536-4bbf-86da-99989242739d"
+      ],
+      "flag_alone_chunk_ids": [
+        "ac79a308-4223-42f9-ad2b-523a0e32566c"
+      ]
+    },
+    "relation": {
+      "old": {
+        "documents": [
+          "54e50a44-4536-4bbf-86da-99989242739d"
+        ],
+        "count": 1
+      },
+      "new": {
+        "documents": [],
+        "count": 0
+      }
+    },
+    "viewer": {
+      "old_document_publication": {
+        "marker": "SAFETY_V2_OLD_ONLY",
+        "page_status": "FULL"
+      },
+      "new_document_publication": null,
+      "resolved_document": "54e50a44-4536-4bbf-86da-99989242739d",
+      "resolved_marker": "SAFETY_V2_OLD_ONLY"
+    },
+    "source": {
+      "old": {
+        "allowed": true,
+        "document_id": "54e50a44-4536-4bbf-86da-99989242739d",
+        "source_path": null,
+        "source_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      },
+      "new": {
+        "allowed": false,
+        "document_id": null,
+        "source_path": null,
+        "source_sha256": null
+      }
+    },
+    "citation": {
+      "old_citation_documents": [
+        "54e50a44-4536-4bbf-86da-99989242739d"
+      ],
+      "new_citation_documents": [],
+      "old_citation_visible": true,
+      "new_citation_visible": false
+    }
+  },
+  "explicit_candidate_inspection": {
+    "generation_id": "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162",
+    "explicit_document_ids": [
+      "c9b01dde-3134-4146-bcab-bd2b29ff3706"
+    ],
+    "explicit_chunk_ids": [
+      "f3ea5d10-1561-40ec-8cc5-4d30847a3fd0"
+    ],
+    "generation_evidence_chunks": 1,
+    "generation_evidence_pages": 1,
+    "normal_candidate_visibility": [],
+    "EXPLICIT_CANDIDATE_INSPECTION": true,
+    "NORMAL_CANDIDATE_VISIBILITY": true
+  },
+  "OLD_VISIBLE": true,
+  "NEW_INVISIBLE": true,
+  "CANDIDATE_PRE_CUTOVER_LEAKAGE": 0,
+  "PASS": true
+}

@@ -1,0 +1,754 @@
+{
+  "status": "FAIL",
+  "evidence_class": "KNOWN_REGRESSION_ONLY",
+  "cases": [
+    {
+      "from": 206,
+      "to": 207,
+      "note": 5,
+      "expected": "LINK",
+      "kind": "positive",
+      "ok": true,
+      "observed_sources": [
+        {
+          "pdf_page": 206,
+          "region_id": "region-5217650b8bbdf4a813b705d4",
+          "zone_type": "note",
+          "note_number": 5,
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "continuation_state": "CONTINUES_NEXT_PAGE",
+          "continuation_status": "CROSS_PAGE_COMPLETE",
+          "identity_state": "IDENTITY_PROVEN",
+          "linked_region_ids": [
+            "region-9454bd9ab68eb0ae5c16daca"
+          ],
+          "editorial_unit_id": "editorial-53357541304b555a4e4b58c3",
+          "source_line_ids": [
+            [
+              14,
+              9
+            ],
+            [
+              14,
+              10
+            ],
+            [
+              14,
+              11
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              14,
+              13
+            ],
+            [
+              14,
+              14
+            ],
+            [
+              14,
+              15
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              14,
+              17
+            ]
+          ],
+          "unit_text": "5 Ver §2 de la lección del Rebe (y la nota 62 allí), donde cita a\neste respecto la enseñanza de Jazal de que la persona no peca\na no ser que sea abrumada por un espíritu de locura (Sotá 3a).\nCuando la persona cae del daat sagrado hacia la insensatez, el\nresultado son los deseos inmorales. Jazal enseñan también que\nHaShem había puesto a la Serpiente como gobernante sobre\ntodos los animales de la creación pero la Serpiente deseaba\naquello que no le pertenecía (ibid. 9b). Así, comenta Rashi\nsobre el versículo “Ahora bien, la Serpiente era muy astuta”,",
+          "unit_end_reason": "PAGE_BOUNDARY",
+          "identity_proof": [
+            {
+              "name": "ADJACENT_SAME_DOCUMENT",
+              "passed": true,
+              "evidence": [
+                "SAME_SOURCE_SHA256",
+                "PHYSICALLY_ADJACENT_PAGES"
+              ]
+            },
+            {
+              "name": "TERMINAL_PAGE_BOUNDARY",
+              "passed": true,
+              "evidence": [
+                "PAGE_BOUNDARY_END_REASON"
+              ]
+            },
+            {
+              "name": "TERMINAL_IS_LAST_NOTE",
+              "passed": true,
+              "evidence": [
+                "LAST_NOTE_IN_CANONICAL_READING_ORDER"
+              ]
+            },
+            {
+              "name": "LEADING_IS_FIRST_NOTE",
+              "passed": true,
+              "evidence": [
+                "FIRST_NOTE_IN_CANONICAL_READING_ORDER"
+              ]
+            },
+            {
+              "name": "LEADING_IS_UNMARKED",
+              "passed": true,
+              "evidence": [
+                "UNMARKED_LEADING_SEGMENT"
+              ]
+            },
+            {
+              "name": "SAME_NOTE_NUMBER",
+              "passed": true,
+              "evidence": [
+                "CONTINUATION_OWNER_NOTE_NUMBER"
+              ]
+            },
+            {
+              "name": "NEXT_MARKER_CONSECUTIVE",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE"
+              ]
+            },
+            {
+              "name": "LEADING_ENDS_AT_NEXT_MARKER",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_BOTH",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "DIRECTION_BOTH",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "STYLE_COMPATIBLE",
+              "passed": true,
+              "evidence": [
+                "IDENTICAL_FONT_SIZE_FAMILY"
+              ]
+            },
+            {
+              "name": "CANONICAL_ORDER_BOTH",
+              "passed": true,
+              "evidence": [
+                "CANONICAL_SOURCE_ID_GEOMETRY_ORDER"
+              ]
+            },
+            {
+              "name": "NOTES_SEPARATOR_BOTH",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_NOTES_SEPARATOR_EACH_PAGE"
+              ]
+            },
+            {
+              "name": "COLUMN_LINEAGE",
+              "passed": true,
+              "evidence": [
+                "TERMINAL_IN_LAST_NOTE_COLUMN",
+                "LEADING_IN_FIRST_NOTE_COLUMN"
+              ]
+            },
+            {
+              "name": "NOTE_ZONE_FRAME",
+              "passed": true,
+              "evidence": [
+                "TERMINAL_REACHES_NOTE_ZONE_BOTTOM",
+                "LEADING_STARTS_AT_NOTE_ZONE_TOP"
+              ]
+            }
+          ],
+          "identity_evidence": [
+            "SAME_SOURCE_SHA256",
+            "PHYSICALLY_ADJACENT_PAGES",
+            "PAGE_BOUNDARY_END_REASON",
+            "LAST_NOTE_IN_CANONICAL_READING_ORDER",
+            "FIRST_NOTE_IN_CANONICAL_READING_ORDER",
+            "UNMARKED_LEADING_SEGMENT",
+            "CONTINUATION_OWNER_NOTE_NUMBER",
+            "NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE",
+            "NEXT_NOTE_IN_COLUMN_FLOW",
+            "UNIQUE_DISJOINT_SOURCE_IDENTITIES",
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER",
+            "IDENTICAL_FONT_SIZE_FAMILY",
+            "CANONICAL_SOURCE_ID_GEOMETRY_ORDER",
+            "UNIQUE_NOTES_SEPARATOR_EACH_PAGE",
+            "TERMINAL_IN_LAST_NOTE_COLUMN",
+            "LEADING_IN_FIRST_NOTE_COLUMN",
+            "TERMINAL_REACHES_NOTE_ZONE_BOTTOM",
+            "LEADING_STARTS_AT_NOTE_ZONE_TOP",
+            "SECONDARY_NON_TERMINAL_PUNCTUATION"
+          ]
+        }
+      ]
+    },
+    {
+      "from": 56,
+      "to": 57,
+      "note": 36,
+      "expected": "LINK",
+      "kind": "positive",
+      "ok": true,
+      "observed_sources": [
+        {
+          "pdf_page": 56,
+          "region_id": "region-8f49f5c02f0a3874fc4164ed",
+          "zone_type": "note",
+          "note_number": 36,
+          "provenance_status": "CERTIFIED",
+          "quality_status": "UNRESOLVED",
+          "continuation_state": "CONTINUES_NEXT_PAGE",
+          "continuation_status": "CROSS_PAGE_COMPLETE",
+          "identity_state": "IDENTITY_PROVEN",
+          "linked_region_ids": [
+            "region-919d60928a11a6b2425df019"
+          ],
+          "editorial_unit_id": "editorial-64c417b364d004b4c068875a",
+          "source_line_ids": [
+            [
+              6,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              6,
+              4
+            ]
+          ],
+          "unit_text": "36 Birur (pl. birurim; lit. “tamizar”) hace referencia a la\nextracción y refi namiento de las chispas de la Luz del Infi nito\naprisionadas entre las klipot, las fuerzas malignas del Otro",
+          "unit_end_reason": "PAGE_BOUNDARY",
+          "identity_proof": [
+            {
+              "name": "ADJACENT_SAME_DOCUMENT",
+              "passed": true,
+              "evidence": [
+                "SAME_SOURCE_SHA256",
+                "PHYSICALLY_ADJACENT_PAGES"
+              ]
+            },
+            {
+              "name": "TERMINAL_PAGE_BOUNDARY",
+              "passed": true,
+              "evidence": [
+                "PAGE_BOUNDARY_END_REASON"
+              ]
+            },
+            {
+              "name": "TERMINAL_IS_LAST_NOTE",
+              "passed": true,
+              "evidence": [
+                "LAST_NOTE_IN_CANONICAL_READING_ORDER"
+              ]
+            },
+            {
+              "name": "LEADING_IS_FIRST_NOTE",
+              "passed": true,
+              "evidence": [
+                "FIRST_NOTE_IN_CANONICAL_READING_ORDER"
+              ]
+            },
+            {
+              "name": "LEADING_IS_UNMARKED",
+              "passed": true,
+              "evidence": [
+                "UNMARKED_LEADING_SEGMENT"
+              ]
+            },
+            {
+              "name": "SAME_NOTE_NUMBER",
+              "passed": true,
+              "evidence": [
+                "CONTINUATION_OWNER_NOTE_NUMBER"
+              ]
+            },
+            {
+              "name": "NEXT_MARKER_CONSECUTIVE",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE"
+              ]
+            },
+            {
+              "name": "LEADING_ENDS_AT_NEXT_MARKER",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_BOTH",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "DIRECTION_BOTH",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "STYLE_COMPATIBLE",
+              "passed": true,
+              "evidence": [
+                "IDENTICAL_FONT_SIZE_FAMILY"
+              ]
+            },
+            {
+              "name": "CANONICAL_ORDER_BOTH",
+              "passed": true,
+              "evidence": [
+                "CANONICAL_SOURCE_ID_GEOMETRY_ORDER"
+              ]
+            },
+            {
+              "name": "NOTES_SEPARATOR_BOTH",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_NOTES_SEPARATOR_EACH_PAGE"
+              ]
+            },
+            {
+              "name": "COLUMN_LINEAGE",
+              "passed": true,
+              "evidence": [
+                "TERMINAL_IN_LAST_NOTE_COLUMN",
+                "LEADING_IN_FIRST_NOTE_COLUMN"
+              ]
+            },
+            {
+              "name": "NOTE_ZONE_FRAME",
+              "passed": true,
+              "evidence": [
+                "TERMINAL_REACHES_NOTE_ZONE_BOTTOM",
+                "LEADING_STARTS_AT_NOTE_ZONE_TOP"
+              ]
+            }
+          ],
+          "identity_evidence": [
+            "SAME_SOURCE_SHA256",
+            "PHYSICALLY_ADJACENT_PAGES",
+            "PAGE_BOUNDARY_END_REASON",
+            "LAST_NOTE_IN_CANONICAL_READING_ORDER",
+            "FIRST_NOTE_IN_CANONICAL_READING_ORDER",
+            "UNMARKED_LEADING_SEGMENT",
+            "CONTINUATION_OWNER_NOTE_NUMBER",
+            "NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE",
+            "NEXT_NOTE_IN_COLUMN_FLOW",
+            "UNIQUE_DISJOINT_SOURCE_IDENTITIES",
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER",
+            "IDENTICAL_FONT_SIZE_FAMILY",
+            "CANONICAL_SOURCE_ID_GEOMETRY_ORDER",
+            "UNIQUE_NOTES_SEPARATOR_EACH_PAGE",
+            "TERMINAL_IN_LAST_NOTE_COLUMN",
+            "LEADING_IN_FIRST_NOTE_COLUMN",
+            "TERMINAL_REACHES_NOTE_ZONE_BOTTOM",
+            "LEADING_STARTS_AT_NOTE_ZONE_TOP",
+            "SECONDARY_NON_TERMINAL_PUNCTUATION"
+          ]
+        }
+      ]
+    },
+    {
+      "from": 167,
+      "to": 168,
+      "note": 66,
+      "expected": "LINK",
+      "kind": "positive",
+      "ok": true,
+      "observed_sources": [
+        {
+          "pdf_page": 167,
+          "region_id": "region-5584e245b77d8acfa4a406c5",
+          "zone_type": "note",
+          "note_number": 66,
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "continuation_state": "CONTINUES_NEXT_PAGE",
+          "continuation_status": "CROSS_PAGE_COMPLETE",
+          "identity_state": "IDENTITY_PROVEN",
+          "linked_region_ids": [
+            "region-68c6b0422138ff8b680e099d"
+          ],
+          "editorial_unit_id": "editorial-d6fb34a6b0a90fc3bbd0dd30",
+          "source_line_ids": [
+            [
+              19,
+              5
+            ],
+            [
+              19,
+              6
+            ],
+            [
+              19,
+              7
+            ]
+          ],
+          "unit_text": "66 Comentando sobre el versículo (Proverbios 27:5) “La\namonestación franca es mejor que el amor oculto”, el Ari zal\nenseña que la “amonestación franca” hace referencia a las",
+          "unit_end_reason": "PAGE_BOUNDARY",
+          "identity_proof": [
+            {
+              "name": "ADJACENT_SAME_DOCUMENT",
+              "passed": true,
+              "evidence": [
+                "SAME_SOURCE_SHA256",
+                "PHYSICALLY_ADJACENT_PAGES"
+              ]
+            },
+            {
+              "name": "TERMINAL_PAGE_BOUNDARY",
+              "passed": true,
+              "evidence": [
+                "PAGE_BOUNDARY_END_REASON"
+              ]
+            },
+            {
+              "name": "TERMINAL_IS_LAST_NOTE",
+              "passed": true,
+              "evidence": [
+                "LAST_NOTE_IN_CANONICAL_READING_ORDER"
+              ]
+            },
+            {
+              "name": "LEADING_IS_FIRST_NOTE",
+              "passed": true,
+              "evidence": [
+                "FIRST_NOTE_IN_CANONICAL_READING_ORDER"
+              ]
+            },
+            {
+              "name": "LEADING_IS_UNMARKED",
+              "passed": true,
+              "evidence": [
+                "UNMARKED_LEADING_SEGMENT"
+              ]
+            },
+            {
+              "name": "SAME_NOTE_NUMBER",
+              "passed": true,
+              "evidence": [
+                "CONTINUATION_OWNER_NOTE_NUMBER"
+              ]
+            },
+            {
+              "name": "NEXT_MARKER_CONSECUTIVE",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE"
+              ]
+            },
+            {
+              "name": "LEADING_ENDS_AT_NEXT_MARKER",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_BOTH",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "DIRECTION_BOTH",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "STYLE_COMPATIBLE",
+              "passed": true,
+              "evidence": [
+                "IDENTICAL_FONT_SIZE_FAMILY"
+              ]
+            },
+            {
+              "name": "CANONICAL_ORDER_BOTH",
+              "passed": true,
+              "evidence": [
+                "CANONICAL_SOURCE_ID_GEOMETRY_ORDER"
+              ]
+            },
+            {
+              "name": "NOTES_SEPARATOR_BOTH",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_NOTES_SEPARATOR_EACH_PAGE"
+              ]
+            },
+            {
+              "name": "COLUMN_LINEAGE",
+              "passed": true,
+              "evidence": [
+                "TERMINAL_IN_LAST_NOTE_COLUMN",
+                "LEADING_IN_FIRST_NOTE_COLUMN"
+              ]
+            },
+            {
+              "name": "NOTE_ZONE_FRAME",
+              "passed": true,
+              "evidence": [
+                "TERMINAL_REACHES_NOTE_ZONE_BOTTOM",
+                "LEADING_STARTS_AT_NOTE_ZONE_TOP"
+              ]
+            }
+          ],
+          "identity_evidence": [
+            "SAME_SOURCE_SHA256",
+            "PHYSICALLY_ADJACENT_PAGES",
+            "PAGE_BOUNDARY_END_REASON",
+            "LAST_NOTE_IN_CANONICAL_READING_ORDER",
+            "FIRST_NOTE_IN_CANONICAL_READING_ORDER",
+            "UNMARKED_LEADING_SEGMENT",
+            "CONTINUATION_OWNER_NOTE_NUMBER",
+            "NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE",
+            "NEXT_NOTE_IN_COLUMN_FLOW",
+            "UNIQUE_DISJOINT_SOURCE_IDENTITIES",
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER",
+            "IDENTICAL_FONT_SIZE_FAMILY",
+            "CANONICAL_SOURCE_ID_GEOMETRY_ORDER",
+            "UNIQUE_NOTES_SEPARATOR_EACH_PAGE",
+            "TERMINAL_IN_LAST_NOTE_COLUMN",
+            "LEADING_IN_FIRST_NOTE_COLUMN",
+            "TERMINAL_REACHES_NOTE_ZONE_BOTTOM",
+            "LEADING_STARTS_AT_NOTE_ZONE_TOP",
+            "SECONDARY_NON_TERMINAL_PUNCTUATION"
+          ]
+        }
+      ]
+    },
+    {
+      "from": 16,
+      "to": 17,
+      "note": 1,
+      "expected": "LINK",
+      "kind": "positive",
+      "ok": true,
+      "observed_sources": [
+        {
+          "pdf_page": 16,
+          "region_id": "region-7ac50d372d6e9a763fc92abd",
+          "zone_type": "note",
+          "note_number": 1,
+          "provenance_status": "CERTIFIED",
+          "quality_status": "ACCEPTED",
+          "continuation_state": "CONTINUES_NEXT_PAGE",
+          "continuation_status": "CROSS_PAGE_COMPLETE",
+          "identity_state": "IDENTITY_PROVEN",
+          "linked_region_ids": [
+            "region-487d1918b9474132389d828c"
+          ],
+          "editorial_unit_id": "editorial-dfebe40b61c73ae2a45e4f3e",
+          "source_line_ids": [
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ]
+          ],
+          "unit_text": "1 Se ha omitido de la traducción, casi por completo, el uso repetido que hace el Rabí Natán de la expresión\njas ve-shalom ( ,חס ושלוםDios no lo permita), que ocasionalmente aparece dos y hasta tres veces dentro de\nuna sola frase. Puede argüirse legítimamente que esta expresión emocional está designada para otorgarle un",
+          "unit_end_reason": "PAGE_BOUNDARY",
+          "identity_proof": [
+            {
+              "name": "ADJACENT_SAME_DOCUMENT",
+              "passed": true,
+              "evidence": [
+                "SAME_SOURCE_SHA256",
+                "PHYSICALLY_ADJACENT_PAGES"
+              ]
+            },
+            {
+              "name": "TERMINAL_PAGE_BOUNDARY",
+              "passed": true,
+              "evidence": [
+                "PAGE_BOUNDARY_END_REASON"
+              ]
+            },
+            {
+              "name": "TERMINAL_IS_LAST_NOTE",
+              "passed": true,
+              "evidence": [
+                "LAST_NOTE_IN_CANONICAL_READING_ORDER"
+              ]
+            },
+            {
+              "name": "LEADING_IS_FIRST_NOTE",
+              "passed": true,
+              "evidence": [
+                "FIRST_NOTE_IN_CANONICAL_READING_ORDER"
+              ]
+            },
+            {
+              "name": "LEADING_IS_UNMARKED",
+              "passed": true,
+              "evidence": [
+                "UNMARKED_LEADING_SEGMENT"
+              ]
+            },
+            {
+              "name": "SAME_NOTE_NUMBER",
+              "passed": true,
+              "evidence": [
+                "CONTINUATION_OWNER_NOTE_NUMBER"
+              ]
+            },
+            {
+              "name": "NEXT_MARKER_CONSECUTIVE",
+              "passed": true,
+              "evidence": [
+                "NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE"
+              ]
+            },
+            {
+              "name": "LEADING_ENDS_AT_NEXT_MARKER",
+              "passed": true,
+              "evidence": [
+                "NEXT_NOTE_IN_COLUMN_FLOW"
+              ]
+            },
+            {
+              "name": "OWNERSHIP_BOTH",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_DISJOINT_SOURCE_IDENTITIES"
+              ]
+            },
+            {
+              "name": "DIRECTION_BOTH",
+              "passed": true,
+              "evidence": [
+                "LTR_STRONG_SCRIPT",
+                "VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER"
+              ]
+            },
+            {
+              "name": "STYLE_COMPATIBLE",
+              "passed": true,
+              "evidence": [
+                "IDENTICAL_FONT_SIZE_FAMILY"
+              ]
+            },
+            {
+              "name": "CANONICAL_ORDER_BOTH",
+              "passed": true,
+              "evidence": [
+                "CANONICAL_SOURCE_ID_GEOMETRY_ORDER"
+              ]
+            },
+            {
+              "name": "NOTES_SEPARATOR_BOTH",
+              "passed": true,
+              "evidence": [
+                "UNIQUE_NOTES_SEPARATOR_EACH_PAGE"
+              ]
+            },
+            {
+              "name": "COLUMN_LINEAGE",
+              "passed": true,
+              "evidence": [
+                "TERMINAL_IN_LAST_NOTE_COLUMN",
+                "LEADING_IN_FIRST_NOTE_COLUMN"
+              ]
+            },
+            {
+              "name": "NOTE_ZONE_FRAME",
+              "passed": true,
+              "evidence": [
+                "TERMINAL_REACHES_NOTE_ZONE_BOTTOM",
+                "LEADING_STARTS_AT_NOTE_ZONE_TOP"
+              ]
+            }
+          ],
+          "identity_evidence": [
+            "SAME_SOURCE_SHA256",
+            "PHYSICALLY_ADJACENT_PAGES",
+            "PAGE_BOUNDARY_END_REASON",
+            "LAST_NOTE_IN_CANONICAL_READING_ORDER",
+            "FIRST_NOTE_IN_CANONICAL_READING_ORDER",
+            "UNMARKED_LEADING_SEGMENT",
+            "CONTINUATION_OWNER_NOTE_NUMBER",
+            "NEXT_EXPLICIT_MARKER_IS_N_PLUS_ONE",
+            "NEXT_NOTE_IN_COLUMN_FLOW",
+            "UNIQUE_DISJOINT_SOURCE_IDENTITIES",
+            "LTR_STRONG_SCRIPT",
+            "VISIBLE_HORIZONTAL_NATIVE_CANONICAL_TOKEN_ORDER",
+            "IDENTICAL_FONT_SIZE_FAMILY",
+            "CANONICAL_SOURCE_ID_GEOMETRY_ORDER",
+            "UNIQUE_NOTES_SEPARATOR_EACH_PAGE",
+            "TERMINAL_IN_LAST_NOTE_COLUMN",
+            "LEADING_IN_FIRST_NOTE_COLUMN",
+            "TERMINAL_REACHES_NOTE_ZONE_BOTTOM",
+            "LEADING_STARTS_AT_NOTE_ZONE_TOP",
+            "SECONDARY_NON_TERMINAL_PUNCTUATION",
+            "SINGLE_COLUMN_LINEAGE"
+          ]
+        }
+      ]
+    },
+    {
+      "from": 108,
+      "to": 109,
+      "note": 8,
+      "expected": "NO_LINK",
+      "kind": "negative",
+      "ok": false,
+      "observed_sources": []
+    },
+    {
+      "from": 164,
+      "to": 165,
+      "note": 63,
+      "expected": "NO_LINK",
+      "kind": "negative",
+      "ok": false,
+      "observed_sources": []
+    },
+    {
+      "from": 226,
+      "to": 227,
+      "note": 78,
+      "expected": "NO_LINK",
+      "kind": "negative",
+      "ok": false,
+      "observed_sources": []
+    }
+  ]
+}

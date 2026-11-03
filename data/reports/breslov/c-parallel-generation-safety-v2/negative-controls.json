@@ -1,0 +1,39 @@
+{
+  "arbitrary_inactive_cutover": {
+    "accepted": false,
+    "error_type": "GenerationPreconditionError",
+    "error": "CUTOVER requires a CANDIDATE generation; got INACTIVE"
+  },
+  "building_cutover": {
+    "accepted": false,
+    "error_type": "GenerationPreconditionError",
+    "error": "CUTOVER requires a CANDIDATE generation; got BUILDING"
+  },
+  "failed_cutover": {
+    "accepted": false,
+    "error_type": "GenerationPreconditionError",
+    "error": "CUTOVER requires a CANDIDATE generation; got FAILED"
+  },
+  "cross_document_cutover": {
+    "accepted": false,
+    "error_type": "GenerationPreconditionError",
+    "error": "The target generation does not belong to this logical document"
+  },
+  "stale_cutover_pre_lifecycle": {
+    "accepted": false,
+    "error_type": "GenerationConflictError",
+    "error": "Stale expected active generation: the active generation changed"
+  },
+  "stale_rollback_pre_lifecycle": {
+    "accepted": false,
+    "error_type": "GenerationConflictError",
+    "error": "Stale expected active generation: the active generation changed"
+  },
+  "never_active_rollback": {
+    "accepted": false,
+    "error_type": "GenerationPreconditionError",
+    "error": "Rollback requires successful prior activation and switch history"
+  },
+  "NEGATIVE_CONTROLS_ACCEPTED": 0,
+  "PASS": true
+}

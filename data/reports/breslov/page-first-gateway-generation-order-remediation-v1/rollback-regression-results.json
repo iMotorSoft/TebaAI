@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "passed": 22,
+  "failed": 0,
+  "errors": 0,
+  "evidence": "focused.xml",
+  "real_postgres_test": "tests/test_generation_rollback_remediation.py::test_postgres_rollback_contract",
+  "cutover_candidate_to_active": "PASS",
+  "rollback_retained_immediate_previous_inactive_to_active": "PASS",
+  "arbitrary_inactive": "REJECTED",
+  "stale_cas": "REJECTED",
+  "cleanup_retention_protection": "PASS",
+  "rollback_remediation_v2_changed": false
+}

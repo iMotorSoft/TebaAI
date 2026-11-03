@@ -1,0 +1,19 @@
+{
+  "frozen": {
+    "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v4.py": "1c7e284516361f375ddbba7fd010aa49d658910381f000634a7231760e548965",
+    "SrvRestAstroLS_v1/backend/modules/library/region_markdown_provenance.py": "4b0291fab84ce623098c89b12e24e2fc9174ade1922f275310c77e07d0b9eb7b",
+    "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v4.py": "9be69378cf0d252de76cdfc487f6547dc9fd830272a39e3e3b57ba7d37171bec"
+  },
+  "changed": {
+    "SrvRestAstroLS_v1/backend/modules/library/extractors.py": {
+      "before": "6520e0e9772db9862ffbe12e64ad9751290c3e94fae2ddb7492d65226bfa2bb1",
+      "after": "0a296dbbfd273d2c13db2963ba59ae65feccfed2634a89f58106900e91520bfb",
+      "change": "consumer import switched from V1 to V4; output serialization unchanged"
+    }
+  },
+  "added": {
+    "SrvRestAstroLS_v1/backend/tests/test_consumer_region_certificates_v4.py": "f340996c8d535388399124eaf2084f0a07dbb0d19e49fd5e85e690949ec15575"
+  },
+  "frozen_unchanged": true,
+  "seal_sha256": "df571af2b9e6cfc445f8df036388b1c5a99cb1a259736dce7638b03613714118"
+}

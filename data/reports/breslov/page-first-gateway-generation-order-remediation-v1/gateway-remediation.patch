@@ -1,0 +1,51 @@
+--- worktree-before/SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py
++++ worktree-after/SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py
+@@ -247,17 +247,19 @@
+                 # resuming an existing generation requires a separate contract.
+                 if not await cur.fetchone():
+                     raise E2EIsolationError("Document generation already exists; refusing resource ownership collision")
++                # The generation's immediate run FK requires its parent first.
++                # Keep registration and all parents in this same transaction.
++                await cur.execute(
++                    """INSERT INTO library_ingestion_runs_v2(run_id,document_id,pipeline_version,scope_code,status)
++                       VALUES(%s,%s,%s,%s,'started') ON CONFLICT(run_id) DO NOTHING""",
++                    (run_id, document_id, request.pipeline_version, request.knowledge_scope_code),
++                )
+                 await self._register_generation(
+                     cur,
+                     request=request,
+                     document_id=document_id,
+                     run_id=run_id,
+                     collection_id=legacy["id"],
+-                )
+-                await cur.execute(
+-                    """INSERT INTO library_ingestion_runs_v2(run_id,document_id,pipeline_version,scope_code,status)
+-                       VALUES(%s,%s,%s,%s,'started') ON CONFLICT(run_id) DO NOTHING""",
+-                    (run_id, document_id, request.pipeline_version, request.knowledge_scope_code),
+                 )
+                 await cur.execute(
+                     """
+@@ -337,6 +339,12 @@
+         if not logical:
+             raise RuntimeError("Logical document could not be resolved for the generation")
+         logical_id = str(logical["id"])
++        # The composite FK requires this exact (document, logical) pair to
++        # exist before registration; a later UPDATE cannot satisfy it.
++        await cur.execute(
++            "UPDATE library_documents SET logical_document_id=%s WHERE id=%s",
++            (logical_id, str(document_id)),
++        )
+         await cur.execute(
+             """
+             INSERT INTO library_document_generations(
+@@ -350,10 +358,6 @@
+                 request.attempt_number, request.pipeline_version, request.source_sha256,
+                 _json({"registered_by": "page_first_gateway"}),
+             ),
+-        )
+-        await cur.execute(
+-            "UPDATE library_documents SET logical_document_id=%s WHERE id=%s",
+-            (logical_id, str(document_id)),
+         )
+ 
+     async def persist_chunks(self, request, persisted, extracted) -> tuple[PersistedChunk, ...]:

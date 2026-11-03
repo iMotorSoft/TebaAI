@@ -1,0 +1,227 @@
+{
+  "label": "after",
+  "captured_at": "2026-10-23T12:58:49.609844+00:00",
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "document": {
+    "row": {
+      "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+      "title": "Likutey Halajot \u2014 Interior Final",
+      "author": null,
+      "editor": null,
+      "status": "ready",
+      "edition": null,
+      "language": "es",
+      "metadata": {
+        "attempt": 1,
+        "published_at": "2026-10-11T15:57:59.977447+00:00",
+        "published_by": "965d0a0e-923c-47aa-8743-7a9ee261555a",
+        "publication_source": "content_manager",
+        "content_manager_job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed"
+      },
+      "subtitle": null,
+      "publisher": null,
+      "created_at": "2026-10-11T15:56:28.408406+00:00",
+      "created_by": "965d0a0e-923c-47aa-8743-7a9ee261555a",
+      "project_id": "2a95333c-fe1c-4f3d-83b8-5f2411ab0160",
+      "source_uri": null,
+      "translator": null,
+      "updated_at": "2026-10-23T12:12:54.684605+00:00",
+      "archived_at": null,
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+      "source_type": "pdf",
+      "workspace_id": "b4a32c1c-dcdc-486e-86e7-51714f9a45f4",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "document_code": null,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "version_label": null,
+      "content_sha256": "fe2f7846c4a77cf4218365ef9b275a54747b5b9c0ba748aab26fcaef6e732c45",
+      "organization_id": "9b6406e1-66c1-49ae-80e0-0e4a6ccb324f",
+      "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+      "publication_year": null,
+      "source_mime_type": "application/pdf",
+      "bibliographic_ref": null,
+      "chunk_set_version": 1,
+      "source_size_bytes": 4550267,
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "canonical_text_role": "candidate",
+      "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+      "bibliographic_metadata": {
+        "e2e_fixture": false,
+        "work_family": "Likutey Halajot",
+        "content_manager_ingestion": true
+      }
+    },
+    "full_digest": "b6b7c3d003937bdb26557a815d87cf1d",
+    "content_digest": "e778d3048da26226699d7b5e919f69dd"
+  },
+  "logical_document": {
+    "row": {
+      "id": "db200a31-b547-5668-d968-06d0ec36ad95",
+      "title": "Likutey Halajot \u2014 Interior Final",
+      "metadata": {
+        "backfilled": true,
+        "backfill_source": "migration-043"
+      },
+      "created_at": "2026-10-11T15:56:28.408406+00:00",
+      "project_id": "2a95333c-fe1c-4f3d-83b8-5f2411ab0160",
+      "updated_at": "2026-10-11T15:57:59.977447+00:00",
+      "workspace_id": "b4a32c1c-dcdc-486e-86e7-51714f9a45f4",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "organization_id": "9b6406e1-66c1-49ae-80e0-0e4a6ccb324f",
+      "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+      "source_size_bytes": 4550267,
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25"
+    },
+    "digest": "5e79e9d0c9466fd4c8fc3eabb65c806d"
+  },
+  "generations": {
+    "digest": "71020f288fa6bd661441000d4b95fbd3",
+    "generations": 1
+  },
+  "generation_rows": [
+    {
+      "id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "status": "ACTIVE",
+      "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+      "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+      "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+      "attempt_number": null,
+      "pipeline_version": "content_page_first_v1",
+      "created_at": "2026-10-11T15:56:28.408406+00:00",
+      "activated_at": "2026-10-11T15:57:59.977447+00:00",
+      "deactivated_at": null
+    }
+  ],
+  "active_pointer": {
+    "row": {
+      "metadata": {
+        "backfill_source": "migration-043"
+      },
+      "operation": "BACKFILL",
+      "activated_at": "2026-10-22T13:07:58.275718+00:00",
+      "activated_by": null,
+      "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+      "expected_generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b"
+    },
+    "digest": "a910a385adadfa0e3f8b5ef6bf48a654"
+  },
+  "audit": {
+    "digest": "0fa297e5fba85d7bcf6f8b5267872831",
+    "audit_rows": 1
+  },
+  "texts": {
+    "digest": "458ac26c1a4e6cef2f15ec0829ae6e36",
+    "texts": 1
+  },
+  "pages": {
+    "digest": "1a7564a797e8dd5e357f2a5a0e1dcdd6",
+    "pages": 284
+  },
+  "representative_pages": [
+    {
+      "page_id": "f457e085-1cb0-5efd-a1b5-7660777e9b1e",
+      "page_number": 1,
+      "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+      "layout_digest": "4077127be79f0c9a61b0f75825d08492"
+    },
+    {
+      "page_id": "31151962-853d-5df6-a041-5ea51e7e03ef",
+      "page_number": 187,
+      "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+      "layout_digest": "5f3f4d95fdec303eaabb75a9f17c3d9b"
+    },
+    {
+      "page_id": "40993629-7a77-53b3-ace9-4c5f6b83a971",
+      "page_number": 284,
+      "run_id": "6c1a19b8-b60b-52de-b709-5496f4c6e937",
+      "layout_digest": "d9e8325351d80fb36a9a326207f64567"
+    }
+  ],
+  "chunks": {
+    "chunks": 942,
+    "content_digest": "44b6f860b32110304a64b195a794fdbb",
+    "row_digest": "589789b3bf591d2ae6006b845ad03b35",
+    "max_updated_at": "2026-10-11T15:56:28.982046+00:00"
+  },
+  "ingestion_runs": {
+    "runs": 1,
+    "digest": "2ea5ae04e706a0e7bc2e0d7b5360d35d"
+  },
+  "embedding_runs": {
+    "runs": 0,
+    "digest": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "visible_document": {
+    "row": {
+      "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+      "title": "Likutey Halajot \u2014 Interior Final",
+      "author": null,
+      "editor": null,
+      "status": "ready",
+      "edition": null,
+      "language": "es",
+      "metadata": {
+        "attempt": 1,
+        "published_at": "2026-10-11T15:57:59.977447+00:00",
+        "published_by": "965d0a0e-923c-47aa-8743-7a9ee261555a",
+        "publication_source": "content_manager",
+        "content_manager_job_id": "cf9b886c-bd8d-4514-97d4-0fee3e0fb8ed"
+      },
+      "subtitle": null,
+      "publisher": null,
+      "created_at": "2026-10-11T15:56:28.408406+00:00",
+      "created_by": "965d0a0e-923c-47aa-8743-7a9ee261555a",
+      "project_id": "2a95333c-fe1c-4f3d-83b8-5f2411ab0160",
+      "source_uri": null,
+      "translator": null,
+      "updated_at": "2026-10-23T12:12:54.684605+00:00",
+      "archived_at": null,
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+      "source_type": "pdf",
+      "workspace_id": "b4a32c1c-dcdc-486e-86e7-51714f9a45f4",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "document_code": null,
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "version_label": null,
+      "content_sha256": "fe2f7846c4a77cf4218365ef9b275a54747b5b9c0ba748aab26fcaef6e732c45",
+      "organization_id": "9b6406e1-66c1-49ae-80e0-0e4a6ccb324f",
+      "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+      "publication_year": null,
+      "source_mime_type": "application/pdf",
+      "bibliographic_ref": null,
+      "chunk_set_version": 1,
+      "source_size_bytes": 4550267,
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "canonical_text_role": "candidate",
+      "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+      "bibliographic_metadata": {
+        "e2e_fixture": false,
+        "work_family": "Likutey Halajot",
+        "content_manager_ingestion": true
+      }
+    },
+    "digest": "b6b7c3d003937bdb26557a815d87cf1d"
+  },
+  "auth_sessions": {
+    "sessions": 3805,
+    "digest": "607424694d564523a7565241dc61b543",
+    "max_created_at": "2026-10-23T12:18:52.217796+00:00"
+  },
+  "milvus": {
+    "status": "OK",
+    "collection": "tebaai_breslov_chunks_v1",
+    "entities_for_c": 942,
+    "chunk_id_digest": "3dfe6cd2de1e3d2488313bc18fbc5f5e",
+    "content_sha_digest": "fe84917b644dd7226ae8f9d8b2057994",
+    "chunk_identity_digest": "52106cca5cc4ae93b614a56e83d10724",
+    "collection_num_entities": 2146
+  },
+  "backend": {
+    "pid": 149151,
+    "cmdline": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/python3 /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/bin/uvicorn ls_iMotorSoft_Srv01:app --host 127.0.0.1 --port 7008"
+  },
+  "read_only_session": true
+}

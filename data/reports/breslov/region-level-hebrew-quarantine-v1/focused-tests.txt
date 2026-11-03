@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend
+configfile: pyproject.toml
+plugins: anyio-4.14.0, asyncio-1.4.0, Faker-40.23.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 267 items
+
+tests/test_region_publication.py .....................                   [  7%]
+tests/test_region_quality.py .................................           [ 20%]
+tests/test_region_markdown_provenance.py ..............................  [ 31%]
+tests/test_automatic_region_certification.py ........................... [ 41%]
+.                                                                        [ 41%]
+tests/test_automatic_region_certification_v2.py ........................ [ 50%]
+...                                                                      [ 52%]
+tests/test_automatic_region_certification_v3.py ........................ [ 61%]
+....                                                                     [ 62%]
+tests/test_automatic_region_certification_v4.py ...........              [ 66%]
+tests/test_automatic_region_certification_v5.py .....                    [ 68%]
+tests/test_consumer_region_certificates_v5.py ........                   [ 71%]
+tests/test_page_first_pipeline.py .............                          [ 76%]
+tests/test_content_manager_e2e_isolation.py .......                      [ 79%]
+tests/test_content_manager_orchestration.py ............................ [ 89%]
+.............                                                            [ 94%]
+tests/test_content_manager_cleanup.py .......                            [ 97%]
+tests/test_milvus_vector_backend.py .                                    [ 97%]
+tests/test_library_search_hybrid_milvus_alias.py .....                   [ 99%]
+tests/test_content_manager_publication.py ..                             [100%]
+
+============================= 267 passed in 8.76s ==============================

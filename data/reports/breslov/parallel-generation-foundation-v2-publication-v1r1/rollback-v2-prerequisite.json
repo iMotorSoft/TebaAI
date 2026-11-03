@@ -1,0 +1,26 @@
+{
+  "historical_gate": {
+    "gate": "TEBAAI_BRESLOV_PARALLEL_GENERATION_ROLLBACK_REMEDIATION_V2_PASS",
+    "result": "PASS",
+    "ROLLBACK_FIX_CERTIFIED": true,
+    "READY_FOR_FOUNDATION_V2_PUBLICATION_REVALIDATION": true,
+    "READY_FOR_C_PARALLEL_GENERATION_SAFETY_V2": false,
+    "READY_FOR_C_REINGEST_EXECUTION": false,
+    "C_REINGEST_EXECUTED": false,
+    "FOUNDATION_V2_PUBLISHED": false,
+    "COMMIT": false,
+    "PUSH": false
+  },
+  "historical_hash_check": {
+    "unchanged": true,
+    "changed_paths": [],
+    "files_verified": 494,
+    "historical_changed_paths": [],
+    "preexisting_unrelated_changed_paths": [],
+    "post_freeze_mutations": 0
+  },
+  "current_certified_hashes_verified": 494,
+  "current_changed_paths": [],
+  "ROLLBACK_FIX_CERTIFIED": true,
+  "note": "Prerequisite integrity only; not a new Foundation certification."
+}

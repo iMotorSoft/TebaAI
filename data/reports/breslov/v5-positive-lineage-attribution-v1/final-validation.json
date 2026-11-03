@@ -1,0 +1,111 @@
+{
+  "at": "2026-10-21T12:52:44.939047+00:00",
+  "validation_status": "PASS",
+  "forensic_gate_status": "BLOCKED",
+  "distinction": "Preservation/report-validation PASS does not resolve blocked historical attribution.",
+  "checks": {
+    "minimum_files_present": true,
+    "exact_12_unique_pairs": true,
+    "expected_pairs_match": true,
+    "counts_sum_12": true,
+    "eligible_exactly_proven_not_used": true,
+    "second_pass_agrees": true,
+    "source_labels_preserved": true,
+    "exposure_basis_explicit": true,
+    "existing_file_hashes_identical": true,
+    "protected_code_hashes_identical": true,
+    "no_new_files_outside_report_directory": true,
+    "git_diff_check_pass": true,
+    "local_remote_expected": true,
+    "all_report_json_parses": true,
+    "authored_report_whitespace_clean": true
+  },
+  "protected_code_hashes": {
+    "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py": {
+      "before": "afdc4a994c9a299aecc5c208bbdeedd657f9e4e74f483ba58ab171affbd7257a",
+      "after": "afdc4a994c9a299aecc5c208bbdeedd657f9e4e74f483ba58ab171affbd7257a",
+      "identical": true
+    },
+    "SrvRestAstroLS_v1/backend/modules/library/extractors.py": {
+      "before": "92498521ff30c9cc639a1e6667aac6aa6469b52b9269cd7cecd2a6cdbbf00454",
+      "after": "92498521ff30c9cc639a1e6667aac6aa6469b52b9269cd7cecd2a6cdbbf00454",
+      "identical": true
+    },
+    "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_inventory.py": {
+      "before": "bec249556d3b5132877970fe2b053883a61c80993e1e24a6ddf006f244c0f179",
+      "after": "bec249556d3b5132877970fe2b053883a61c80993e1e24a6ddf006f244c0f179",
+      "identical": true
+    },
+    "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py": {
+      "before": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+      "after": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+      "identical": true
+    },
+    "data/reports/breslov/v5-hybrid-independent-confirmation-v1/evaluator.py": {
+      "before": "2cbf8db787f48f98ec3492c632ed8bcfde485267d959fb9da1167150f16480f9",
+      "after": "2cbf8db787f48f98ec3492c632ed8bcfde485267d959fb9da1167150f16480f9",
+      "identical": true
+    },
+    "data/reports/breslov/v5-hybrid-independent-confirmation-v1/run_gate.py": {
+      "before": "7ac802832ab1c2a2fc171dc5e3f0cc8b19ca5d906d01c7147cdba17f329cf47b",
+      "after": "7ac802832ab1c2a2fc171dc5e3f0cc8b19ca5d906d01c7147cdba17f329cf47b",
+      "identical": true
+    },
+    "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidate.py": {
+      "before": "46c236b106365e775cbdb1406804be387c2182583cc4a24bdc5f23889b01d4fa",
+      "after": "46c236b106365e775cbdb1406804be387c2182583cc4a24bdc5f23889b01d4fa",
+      "identical": true
+    }
+  },
+  "preexisting_files_hashed": 2629,
+  "changed_preexisting_files": [],
+  "new_status_entries_outside_report": [],
+  "git_diff_check": {
+    "status": "PASS",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "focused_validation": "Report schema/count/eligibility/second-pass/source-label/preservation checks only. No functional test execution.",
+  "report_whitespace_errors": [],
+  "search_files": 2743,
+  "head": "704ae24597e916b56ddec8a71fd0a30d34793aab",
+  "remote_tracking_head": "704ae24597e916b56ddec8a71fd0a30d34793aab",
+  "remote_head_check": {
+    "command": [
+      "git",
+      "ls-remote",
+      "--heads",
+      "origin",
+      "feature/console-backend-core"
+    ],
+    "returncode": 0,
+    "stdout": "704ae24597e916b56ddec8a71fd0a30d34793aab\trefs/heads/feature/console-backend-core\n",
+    "stderr": ""
+  },
+  "V5_executed_during_gate": "NO",
+  "85_page_set_executed": "NO",
+  "12_candidate_set_executed": "NO",
+  "tests_executed": "NO",
+  "services_accessed": "NO",
+  "postgres_writes": "NO",
+  "milvus_writes": "NO",
+  "COMMIT": "NO",
+  "PUSH": "NO",
+  "report_file_sha256": {
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/README.md": "aeccbdc2b505f27e741989a526a5e2fdab4f571aa7ac91549732685d436e17a9",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/REPORT.md": "98106c07340904129a696d26fd9bc9d96ceb5f1f4e8167ec573232ff903234c0",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/candidate-classification-final.json": "d86cb96075c62d400867d35eeadca1732be16e5f457dfe1a8cace8f354428ce2",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/candidate-lineage-evidence.json": "1be306b94106be95aa888682858cbd0e7a914a9e0dd7e746497e77071a0bf45f",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/candidate-lineage-second-pass.json": "1fd8c0ed4ad39d2c9777a7da039fac3a47cf5513228a75d7c8abcd4b26ba617f",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/gate.json": "11c22582397e07eb5f5e40a9b5344db15c560cfdab586a8667675d71e59ef831",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/git-history-evidence.json": "5a8e22821194c39a79161a7dd801b6212b45c0eb1abfeca8f0bf978bbfb4353a",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/historical-search-inventory.json": "08be49cc910462849c823cfa02c312ff887474457489fe5656b0d1c08b885b75",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/recommendation.md": "8aad4f3a37441c8450e1af6edcd816b493a26bf02b3af630e15cc42a137ed622",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/report-evidence.json": "f397c063a66a1aa2a6a2aaba8f4de152cd0c6318376b2df5112f8ab5c3c5c719",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/test-fixture-evidence.json": "feb7900b9432c13327dbb3ce798f4d3b25a8c943afb08324b691619c8c494987",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/v5-development-timeline.json": "8f16dbcde4eca16ae577d1fe7a3d044b17757adffb69adbcbdcfc9b156dadf89",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/v5-ruleset-cutoff.json": "1c1326486432b3ac6e18df5e50d3c42e0d6e69ce3e558ee12e03792fa6c35004",
+    "data/reports/breslov/v5-positive-lineage-attribution-v1/worktree-before.json": "801241c544441e128cf183881d3c225a41f122ffee6674a1f2f24ca7ac297b3d"
+  }
+}

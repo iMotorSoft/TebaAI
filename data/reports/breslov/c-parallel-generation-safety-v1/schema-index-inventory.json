@@ -1,0 +1,96 @@
+{
+  "query": "SELECT schemaname,tablename,indexname,indexdef FROM pg_indexes WHERE schemaname='public' AND tablename='library_documents' ORDER BY indexname",
+  "read_only": true,
+  "indexes": [
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_bibliographic_metadata",
+      "indexdef": "CREATE INDEX ix_library_documents_bibliographic_metadata ON public.library_documents USING gin (bibliographic_metadata)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_collection_id",
+      "indexdef": "CREATE INDEX ix_library_documents_collection_id ON public.library_documents USING btree (collection_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_doc_code",
+      "indexdef": "CREATE INDEX ix_library_documents_doc_code ON public.library_documents USING btree (knowledge_scope_id, document_code) WHERE (document_code IS NOT NULL)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_language",
+      "indexdef": "CREATE INDEX ix_library_documents_language ON public.library_documents USING btree (language)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_metadata",
+      "indexdef": "CREATE INDEX ix_library_documents_metadata ON public.library_documents USING gin (metadata)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_org",
+      "indexdef": "CREATE INDEX ix_library_documents_org ON public.library_documents USING btree (organization_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_project",
+      "indexdef": "CREATE INDEX ix_library_documents_project ON public.library_documents USING btree (project_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_scope",
+      "indexdef": "CREATE INDEX ix_library_documents_scope ON public.library_documents USING btree (knowledge_scope_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_source_sha256",
+      "indexdef": "CREATE INDEX ix_library_documents_source_sha256 ON public.library_documents USING btree (source_sha256)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_status",
+      "indexdef": "CREATE INDEX ix_library_documents_status ON public.library_documents USING btree (status)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_title_lower",
+      "indexdef": "CREATE INDEX ix_library_documents_title_lower ON public.library_documents USING btree (lower(title))"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "ix_library_documents_ws",
+      "indexdef": "CREATE INDEX ix_library_documents_ws ON public.library_documents USING btree (workspace_id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "library_documents_pkey",
+      "indexdef": "CREATE UNIQUE INDEX library_documents_pkey ON public.library_documents USING btree (id)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "uq_library_documents_scope_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_scope_collection_sha256 ON public.library_documents USING btree (knowledge_scope_id, collection_id, source_sha256) WHERE (knowledge_scope_id IS NOT NULL)"
+    },
+    {
+      "schemaname": "public",
+      "tablename": "library_documents",
+      "indexname": "uq_library_documents_unscoped_collection_sha256",
+      "indexdef": "CREATE UNIQUE INDEX uq_library_documents_unscoped_collection_sha256 ON public.library_documents USING btree (collection_id, source_sha256) WHERE (knowledge_scope_id IS NULL)"
+    }
+  ]
+}

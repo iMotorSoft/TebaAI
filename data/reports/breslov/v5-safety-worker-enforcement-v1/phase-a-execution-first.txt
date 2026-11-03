@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "pages": 85,
+  "regions": 710,
+  "metrics": {
+    "unsafe_false_certifications": 0,
+    "unsafe_false_provenance_certifications": 0,
+    "false_body_certifications": 0,
+    "false_cross_page_links": 0,
+    "false_editorial_completions": 0,
+    "false_identity_proven": 0,
+    "inconsistent_identity_state": 0,
+    "unsafe_false_identity_proven": 0,
+    "missed_true_links": 0,
+    "missing_reciprocal_links": 0,
+    "valid_cross_page_relations": 0
+  }
+}
+Development regressions: 4 /7

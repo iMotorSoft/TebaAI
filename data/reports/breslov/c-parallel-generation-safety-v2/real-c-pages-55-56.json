@@ -1,0 +1,917 @@
+{
+  "frozen_pages": [
+    55,
+    56
+  ],
+  "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "pages": {
+    "55": {
+      "page": 55,
+      "page_status": "PARTIAL",
+      "region_count": 11,
+      "accepted_count": 1,
+      "quarantined_count": 10,
+      "canonical_chars": 632,
+      "canonical_u_fffd": 0,
+      "metadata_u_fffd": 0,
+      "accepted_regions": [
+        {
+          "region_id": "region-0b6b3380e440ba2cd860a557",
+          "bbox": [
+            56.692901611328125,
+            576.5595703125,
+            444.1000061035156,
+            646.3857421875
+          ],
+          "quality_status": "ACCEPTED",
+          "provenance_status": "CERTIFIED",
+          "publishable": true,
+          "reason_codes": [
+            "CANONICAL_NATIVE_ORDER_PROVEN"
+          ],
+          "fragment_sha256": "4c53dea579080a7b56ce00a00b514edede5058ec46cb32e8a96614fbbf8ecd36",
+          "fragment_length": 632,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": true,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-0b6b3380e440ba2cd860a557",
+            "bbox": [
+              56.692901611328125,
+              576.5595703125,
+              444.1000061035156,
+              646.3857421875
+            ]
+          }
+        }
+      ],
+      "quarantined_regions": [
+        {
+          "region_id": "region-9912cc750fbf8d9fff7d0f06",
+          "bbox": [
+            375.5740051269531,
+            46.17702102661133,
+            444.3479919433594,
+            55.95378112792969
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "DIRECTION_UNRESOLVED",
+            "INVALID_UNICODE_REPLACEMENT",
+            "LAYOUT_UNSUPPORTED"
+          ],
+          "fragment_sha256": "c5ddd42863414c7c900e1795748677d2571421cdc4c2a9704706475a1df3a222",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-9912cc750fbf8d9fff7d0f06",
+            "bbox": [
+              375.5740051269531,
+              46.17702102661133,
+              444.3479919433594,
+              55.95378112792969
+            ]
+          }
+        },
+        {
+          "region_id": "region-a95531a3d3492704d063a786",
+          "bbox": [
+            24.1653995513916,
+            46.27225875854492,
+            159.3419952392578,
+            55.764259338378906
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "INVALID_UNICODE_REPLACEMENT",
+            "LAYOUT_UNSUPPORTED"
+          ],
+          "fragment_sha256": "5d7eae2dfca58e09a7571f5419fe2eca653308cb43542fdd6a8335673d744ebb",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-a95531a3d3492704d063a786",
+            "bbox": [
+              24.1653995513916,
+              46.27225875854492,
+              159.3419952392578,
+              55.764259338378906
+            ]
+          }
+        },
+        {
+          "region_id": "region-392c82e06584d64038524ffb",
+          "bbox": [
+            54.270198822021484,
+            69.71348571777344,
+            442.0448913574219,
+            160.8320770263672
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "ZONE_UNRESOLVED",
+            "DIRECTION_UNRESOLVED",
+            "INVALID_UNICODE_REPLACEMENT",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING"
+          ],
+          "fragment_sha256": "5b83d5c6f7f3edd8963d5325db5ea443893b6463eccfeacfd4897a91b4c830ed",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-392c82e06584d64038524ffb",
+            "bbox": [
+              54.270198822021484,
+              69.71348571777344,
+              442.0448913574219,
+              160.8320770263672
+            ]
+          }
+        },
+        {
+          "region_id": "region-1b7713285621e331f6fd202a",
+          "bbox": [
+            209.875,
+            177.6909637451172,
+            289.0232238769531,
+            185.74798583984375
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "ZONE_UNRESOLVED",
+            "INVALID_UNICODE_REPLACEMENT",
+            "BODY_ZONE_PROOF_MISSING"
+          ],
+          "fragment_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-1b7713285621e331f6fd202a",
+            "bbox": [
+              209.875,
+              177.6909637451172,
+              289.0232238769531,
+              185.74798583984375
+            ]
+          }
+        },
+        {
+          "region_id": "region-7b7caabdf37e1c2c9eb128b6",
+          "bbox": [
+            85.09249877929688,
+            199.7482147216797,
+            414.18853759765625,
+            269.7882080078125
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publishable": false,
+          "reason_codes": [
+            "CENTERED_EDITORIAL_CAPTION",
+            "MAIN_CONTENT_BAND",
+            "EXPLICIT_NOTES_BOUNDARY",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "fragment_sha256": "c053891b74c5e8919bd1b107397d708b2f657a9fe41a404261556c8ec223ed01",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-7b7caabdf37e1c2c9eb128b6",
+            "bbox": [
+              85.09249877929688,
+              199.7482147216797,
+              414.18853759765625,
+              269.7882080078125
+            ]
+          }
+        },
+        {
+          "region_id": "region-143195b441f442a2e0b1454c",
+          "bbox": [
+            56.691986083984375,
+            275.45697021484375,
+            445.1639404296875,
+            383.39697265625
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publishable": false,
+          "reason_codes": [
+            "CENTERED_EDITORIAL_CAPTION",
+            "MAIN_CONTENT_BAND",
+            "EXPLICIT_NOTES_BOUNDARY",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "fragment_sha256": "2cd38398c01085e989e64603d58771a00233f18aac83e5efc894dd066331ca02",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-143195b441f442a2e0b1454c",
+            "bbox": [
+              56.691986083984375,
+              275.45697021484375,
+              445.1639404296875,
+              383.39697265625
+            ]
+          }
+        },
+        {
+          "region_id": "region-31fff5545d6dbe159ffa0497",
+          "bbox": [
+            85.09290313720703,
+            391.0859680175781,
+            414.18280029296875,
+            413.8559875488281
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publishable": false,
+          "reason_codes": [
+            "CENTERED_EDITORIAL_CAPTION",
+            "MAIN_CONTENT_BAND",
+            "EXPLICIT_NOTES_BOUNDARY",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "fragment_sha256": "e59bd3a855a209ef358f3c1e4e855ced7df0114f22ff90a8d8f8e55a43baff1e",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-31fff5545d6dbe159ffa0497",
+            "bbox": [
+              85.09290313720703,
+              391.0859680175781,
+              414.18280029296875,
+              413.8559875488281
+            ]
+          }
+        },
+        {
+          "region_id": "region-305c5f7fce876bca7d9585ef",
+          "bbox": [
+            56.69285583496094,
+            422.0849914550781,
+            445.1599426269531,
+            539.93505859375
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "ZONE_UNRESOLVED",
+            "QUALITY_EVIDENCE_INSUFFICIENT",
+            "OWNERSHIP_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "fragment_sha256": "ddd861658e6da5e29b383dbccb5a140d3b9dbe490fa90a0d07644b86893a6a23",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-305c5f7fce876bca7d9585ef",
+            "bbox": [
+              56.69285583496094,
+              422.0849914550781,
+              445.1599426269531,
+              539.93505859375
+            ]
+          }
+        },
+        {
+          "region_id": "region-b5a3422442cfb35c5802b67a",
+          "bbox": [
+            226.4149932861328,
+            555.2809448242188,
+            274.38604736328125,
+            562.3800048828125
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "INVALID_UNICODE_REPLACEMENT",
+            "NATIVE_TO_LAYOUT_REPLACEMENT",
+            "BODY_ZONE_PROOF_MISSING"
+          ],
+          "fragment_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-b5a3422442cfb35c5802b67a",
+            "bbox": [
+              226.4149932861328,
+              555.2809448242188,
+              274.38604736328125,
+              562.3800048828125
+            ]
+          }
+        },
+        {
+          "region_id": "region-b3198d8c99db768b36849279",
+          "bbox": [
+            255.4488983154297,
+            603.5595703125,
+            444.1214599609375,
+            644.86962890625
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "CROSS_PAGE_CONTINUATION_UNRESOLVED",
+            "PROVENANCE_UNRESOLVED_QUALITY_UNRESOLVED"
+          ],
+          "fragment_sha256": "0d8dc9c195d233dcbb18a707821ee89d289fedcc5f5a7a74c8e115be848e2512",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 55,
+            "region_id": "region-b3198d8c99db768b36849279",
+            "bbox": [
+              255.4488983154297,
+              603.5595703125,
+              444.1214599609375,
+              644.86962890625
+            ]
+          }
+        }
+      ],
+      "ACCEPTED_LOSS": 0,
+      "QUARANTINED_LEAKAGE": 0,
+      "CORRUPT_REGIONS_QUARANTINED": true,
+      "ACCEPTED_NOTE_PRESENT": true,
+      "QUARANTINE_NOTICE_PRESENT": true,
+      "VISUAL_REFERENCE_COMPLETE": true,
+      "PASS": true
+    },
+    "56": {
+      "page": 56,
+      "page_status": "PARTIAL",
+      "region_count": 14,
+      "accepted_count": 1,
+      "quarantined_count": 13,
+      "canonical_chars": 417,
+      "canonical_u_fffd": 0,
+      "metadata_u_fffd": 0,
+      "accepted_regions": [
+        {
+          "region_id": "region-019856217e36825f686180c6",
+          "bbox": [
+            53.858299255371094,
+            602.2568969726562,
+            441.2676696777344,
+            645.0867309570312
+          ],
+          "quality_status": "ACCEPTED",
+          "provenance_status": "CERTIFIED",
+          "publishable": true,
+          "reason_codes": [
+            "CANONICAL_NATIVE_ORDER_PROVEN"
+          ],
+          "fragment_sha256": "e19eeb2613566867a3ccd28b503ca10b5d679fe2b92ac946db40e0f6dc3792cf",
+          "fragment_length": 417,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": true,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-019856217e36825f686180c6",
+            "bbox": [
+              53.858299255371094,
+              602.2568969726562,
+              441.2676696777344,
+              645.0867309570312
+            ]
+          }
+        }
+      ],
+      "quarantined_regions": [
+        {
+          "region_id": "region-e96b0cdfb2cb79fe08c11a38",
+          "bbox": [
+            193.85589599609375,
+            45.43232727050781,
+            439.26385498046875,
+            53.840328216552734
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT",
+            "LAYOUT_UNSUPPORTED"
+          ],
+          "fragment_sha256": "52f47405a289c436b8f12afc1c6bcfc4d1ec303e91c073f9bbab3307cfa1d3ed",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-e96b0cdfb2cb79fe08c11a38",
+            "bbox": [
+              193.85589599609375,
+              45.43232727050781,
+              439.26385498046875,
+              53.840328216552734
+            ]
+          }
+        },
+        {
+          "region_id": "region-bbbf93eb3146e0e2155936a2",
+          "bbox": [
+            53.858299255371094,
+            47.827545166015625,
+            132.79428100585938,
+            54.539546966552734
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT",
+            "LAYOUT_UNSUPPORTED"
+          ],
+          "fragment_sha256": "8650a81f351d1ac8ca113bf137a88f745d5a93c7bf20c3aae9a75197f59e16ee",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-bbbf93eb3146e0e2155936a2",
+            "bbox": [
+              53.858299255371094,
+              47.827545166015625,
+              132.79428100585938,
+              54.539546966552734
+            ]
+          }
+        },
+        {
+          "region_id": "region-a26c4ecb19d392686bbe8ab2",
+          "bbox": [
+            51.4312744140625,
+            69.15605163574219,
+            439.15802001953125,
+            95.5026626586914
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "ZONE_UNRESOLVED",
+            "DIRECTION_UNRESOLVED",
+            "INVALID_UNICODE_REPLACEMENT",
+            "BODY_ZONE_PROOF_MISSING",
+            "ORDER_PROOF_MISSING"
+          ],
+          "fragment_sha256": "6e1c4a0b1b07644ec80b0779d84560916dbeba283617757e2de90cafc96c7d8d",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-a26c4ecb19d392686bbe8ab2",
+            "bbox": [
+              51.4312744140625,
+              69.15605163574219,
+              439.15802001953125,
+              95.5026626586914
+            ]
+          }
+        },
+        {
+          "region_id": "region-63ddcbf1bdaa5180ed78073f",
+          "bbox": [
+            51.4189453125,
+            97.07707214355469,
+            439.1677551269531,
+            215.4178009033203
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "ZONE_UNRESOLVED",
+            "DIRECTION_UNRESOLVED",
+            "INVALID_UNICODE_REPLACEMENT",
+            "BODY_ZONE_PROOF_MISSING",
+            "OWNERSHIP_PROOF_MISSING",
+            "ORDER_PROOF_MISSING",
+            "BOUNDARY_PROOF_MISSING"
+          ],
+          "fragment_sha256": "55df9ec2be5d830bce36978e8d9a18716d90af8911dee3cc6587e32f13219b7f",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-63ddcbf1bdaa5180ed78073f",
+            "bbox": [
+              51.4189453125,
+              97.07707214355469,
+              439.1677551269531,
+              215.4178009033203
+            ]
+          }
+        },
+        {
+          "region_id": "region-3909aaf513984fb61f964bf5",
+          "bbox": [
+            207.04100036621094,
+            232.1039581298828,
+            286.1892395019531,
+            240.1619873046875
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "ZONE_UNRESOLVED",
+            "INVALID_UNICODE_REPLACEMENT",
+            "BODY_ZONE_PROOF_MISSING"
+          ],
+          "fragment_sha256": "0da4d09d1b6d7698f1c5dae6cd7310c1a083aa581b11cc7147f5026bacefc9cb",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-3909aaf513984fb61f964bf5",
+            "bbox": [
+              207.04100036621094,
+              232.1039581298828,
+              286.1892395019531,
+              240.1619873046875
+            ]
+          }
+        },
+        {
+          "region_id": "region-b92a9b8b173ca5a0c0244ab0",
+          "bbox": [
+            359.05499267578125,
+            252.96299743652344,
+            437.7509765625,
+            336.81903076171875
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "ZONE_UNRESOLVED",
+            "QUALITY_EVIDENCE_INSUFFICIENT",
+            "BODY_ZONE_PROOF_MISSING"
+          ],
+          "fragment_sha256": "6a7ad484d12bcf0ae0d224dcd5eaca9b39090f5fff78dea69d901d58f0fcfc3e",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-b92a9b8b173ca5a0c0244ab0",
+            "bbox": [
+              359.05499267578125,
+              252.96299743652344,
+              437.7509765625,
+              336.81903076171875
+            ]
+          }
+        },
+        {
+          "region_id": "region-4ad64a2542f46b0a173f239f",
+          "bbox": [
+            54.310821533203125,
+            255.99655151367188,
+            353.5118103027344,
+            338.1929626464844
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publishable": false,
+          "reason_codes": [
+            "CENTERED_EDITORIAL_CAPTION",
+            "MAIN_CONTENT_BAND",
+            "EXPLICIT_NOTES_BOUNDARY",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "fragment_sha256": "007691a505d22331339659d6be7893720036f5bd3df2815c3757e3171b1c81b2",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-4ad64a2542f46b0a173f239f",
+            "bbox": [
+              54.310821533203125,
+              255.99655151367188,
+              353.5118103027344,
+              338.1929626464844
+            ]
+          }
+        },
+        {
+          "region_id": "region-7027e6671da32cf6eaea75d1",
+          "bbox": [
+            54.31080627441406,
+            342.887939453125,
+            442.7868347167969,
+            413.0279541015625
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publishable": false,
+          "reason_codes": [
+            "CENTERED_EDITORIAL_CAPTION",
+            "MAIN_CONTENT_BAND",
+            "EXPLICIT_NOTES_BOUNDARY",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "fragment_sha256": "9cb9646a6910ea1803aa7213f70af62500f6edf5b2ff1439623f47b44d4e6e48",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-7027e6671da32cf6eaea75d1",
+            "bbox": [
+              54.31080627441406,
+              342.887939453125,
+              442.7868347167969,
+              413.0279541015625
+            ]
+          }
+        },
+        {
+          "region_id": "region-bd2f375e5273b0aa96fa50a3",
+          "bbox": [
+            54.31080627441406,
+            426.2979736328125,
+            196.86061096191406,
+            435.84796142578125
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "QUALITY_EVIDENCE_INSUFFICIENT",
+            "LAYOUT_UNSUPPORTED"
+          ],
+          "fragment_sha256": "5f25c67f774b9eaf6667f6dc67a707698f6bcae270b40a5491a9a08e534590b0",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-bd2f375e5273b0aa96fa50a3",
+            "bbox": [
+              54.31080627441406,
+              426.2979736328125,
+              196.86061096191406,
+              435.84796142578125
+            ]
+          }
+        },
+        {
+          "region_id": "region-875b8e831f8174e7c658812f",
+          "bbox": [
+            82.71060180664062,
+            445.9169616699219,
+            411.8084716796875,
+            504.6369934082031
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publishable": false,
+          "reason_codes": [
+            "CENTERED_EDITORIAL_CAPTION",
+            "MAIN_CONTENT_BAND",
+            "EXPLICIT_NOTES_BOUNDARY",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "fragment_sha256": "d842b1b197782a9492235eebb0c51dc7a729626bf780a692244072fe4094cee4",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-875b8e831f8174e7c658812f",
+            "bbox": [
+              82.71060180664062,
+              445.9169616699219,
+              411.8084716796875,
+              504.6369934082031
+            ]
+          }
+        },
+        {
+          "region_id": "region-c8a008f9885ca4081f13f2a1",
+          "bbox": [
+            54.31060028076172,
+            512.916015625,
+            442.7830505371094,
+            570.7659912109375
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publishable": false,
+          "reason_codes": [
+            "CENTERED_EDITORIAL_CAPTION",
+            "MAIN_CONTENT_BAND",
+            "EXPLICIT_NOTES_BOUNDARY",
+            "ALL_BODY_PROOFS_PRESENT",
+            "QUALITY_EVIDENCE_INSUFFICIENT",
+            "OWNERSHIP_CERTIFICATE_MISMATCH"
+          ],
+          "fragment_sha256": "e3bcb6f91985837ad563c6f40a0561c459fa874c3913251eb0b1afd12efe8be8",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-c8a008f9885ca4081f13f2a1",
+            "bbox": [
+              54.31060028076172,
+              512.916015625,
+              442.7830505371094,
+              570.7659912109375
+            ]
+          }
+        },
+        {
+          "region_id": "region-d045f0561431b4a592b9fe0c",
+          "bbox": [
+            222.85299682617188,
+            582.9089965820312,
+            270.82403564453125,
+            590.0069580078125
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "UNRESOLVED",
+          "publishable": false,
+          "reason_codes": [
+            "INVALID_UNICODE_REPLACEMENT",
+            "NATIVE_TO_LAYOUT_REPLACEMENT",
+            "BODY_ZONE_PROOF_MISSING"
+          ],
+          "fragment_sha256": "f390fc1326cc45507ee7cca0494a7339222816dc007855eeea35697f001cbd18",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-d045f0561431b4a592b9fe0c",
+            "bbox": [
+              222.85299682617188,
+              582.9089965820312,
+              270.82403564453125,
+              590.0069580078125
+            ]
+          }
+        },
+        {
+          "region_id": "region-8f49f5c02f0a3874fc4164ed",
+          "bbox": [
+            252.6143035888672,
+            620.2605590820312,
+            441.2749938964844,
+            645.0867309570312
+          ],
+          "quality_status": "UNRESOLVED",
+          "provenance_status": "CERTIFIED",
+          "publishable": false,
+          "reason_codes": [
+            "CROSS_PAGE_IDENTITY_PROVEN",
+            "QUALITY_EVIDENCE_INSUFFICIENT"
+          ],
+          "fragment_sha256": "21b21690d0d5ac06f2260bf3432a39ed62514618ddc78cfde988c326825e3e0b",
+          "fragment_length": 0,
+          "fragment_u_fffd": 0,
+          "fragment_hebrew_chars": 0,
+          "fragment_in_canonical": false,
+          "visual_reference": {
+            "source_reference": "sha256:440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+            "pdf_page": 56,
+            "region_id": "region-8f49f5c02f0a3874fc4164ed",
+            "bbox": [
+              252.6143035888672,
+              620.2605590820312,
+              441.2749938964844,
+              645.0867309570312
+            ]
+          }
+        }
+      ],
+      "ACCEPTED_LOSS": 0,
+      "QUARANTINED_LEAKAGE": 0,
+      "CORRUPT_REGIONS_QUARANTINED": true,
+      "ACCEPTED_NOTE_PRESENT": true,
+      "QUARANTINE_NOTICE_PRESENT": true,
+      "VISUAL_REFERENCE_COMPLETE": true,
+      "PASS": true
+    }
+  },
+  "PASS": true
+}

@@ -1,0 +1,13 @@
+{
+  "baseline": "1841 passed, 18 failed, 94 warnings",
+  "current": "1849 passed, 18 failed, 94 warnings",
+  "delta_passed": 8,
+  "delta_passed_source": "new consumer boundary tests",
+  "failing_node_ids_baseline": 18,
+  "failing_node_ids_current": 18,
+  "node_ids_identical": true,
+  "new_regressions": 0,
+  "baseline_failures_left_untouched": true,
+  "baseline_artifact": "data/reports/breslov/automatic-region-provenance-certification-v4/tests-backend-full.txt",
+  "current_artifact": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/backend-results.txt"
+}

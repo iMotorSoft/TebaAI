@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "operations_distinguishable": true,
+  "rows": [
+    {
+      "id": "457c6e37-356d-4f25-a399-4983314f221c",
+      "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+      "from_generation_id": null,
+      "to_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+      "expected_generation_id": null,
+      "operation": "CUTOVER",
+      "result": "APPLIED",
+      "reason": "compare-and-swap activation",
+      "actor_id": null,
+      "created_at": "2026-10-22 20:33:44.533830+00:00"
+    },
+    {
+      "id": "9b7a63ec-9df3-48c5-b91c-d1d42782ca01",
+      "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+      "from_generation_id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+      "to_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+      "expected_generation_id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+      "operation": "ROLLBACK",
+      "result": "APPLIED",
+      "reason": "compare-and-swap activation",
+      "actor_id": null,
+      "created_at": "2026-10-22 20:33:45.543183+00:00"
+    },
+    {
+      "id": "ad950ba6-d13d-4cc5-b255-c1df2e6bbddb",
+      "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+      "from_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+      "to_generation_id": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+      "expected_generation_id": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+      "operation": "CUTOVER",
+      "result": "APPLIED",
+      "reason": "compare-and-swap activation",
+      "actor_id": null,
+      "created_at": "2026-10-22 20:33:44.546497+00:00"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "title": "La Potencia de la Plegaria",
+  "sha256": "8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46",
+  "document_id": "4517192b-e570-5d79-a65b-dfa865000db5",
+  "job_id": "daf1f8eb-c9f1-4fb6-a99e-7f264d4ed93e",
+  "attempt": 1,
+  "scope": "breslov_primary",
+  "pages": 416,
+  "chunks": 908,
+  "vectors": 908,
+  "missing": 0,
+  "orphans": 0,
+  "duplicates": 0,
+  "publication": "ready",
+  "chunk_lengths": {
+    "min": 15,
+    "max": 2345
+  },
+  "timestamps": {
+    "created": "2026-10-11 15:46:33.013480+00:00",
+    "updated": "2026-10-11 15:49:07.733311+00:00"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "result": "FAIL_EARLY_PREFLIGHT",
+  "product_defect_reproduced": true,
+  "focused": {
+    "PASS": 24,
+    "FAIL": 0,
+    "ERROR": 13,
+    "SKIP": 0
+  },
+  "full_backend": "NOT_RUN",
+  "all_downstream_publication_gates": "NOT_RUN",
+  "freeze": "NOT_RUN",
+  "staging": "NOT_RUN",
+  "commit": false,
+  "push": false,
+  "fresh_tree": "NOT_RUN",
+  "historical_evidence_preserved": true,
+  "preexisting_worktree_preserved": true,
+  "product_test_fixture_edits": 0,
+  "git_diff_check_exit": 0,
+  "pattern_secret_scan": "PASS",
+  "current_c_chunks": 942,
+  "current_c_vectors": 942,
+  "current_c_unchanged": true,
+  "durable_source_approved_sha": false,
+  "HEAD_unchanged": true,
+  "index_unchanged": true,
+  "minimum_complete_publication_artifacts": "NOT_APPLICABLE_EARLY_FAILURE; absent downstream artifacts not fabricated"
+}

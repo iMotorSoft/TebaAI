@@ -1,0 +1,125 @@
+{
+  "certifier_imported": false,
+  "certifier_executed": false,
+  "method": "AST extracts unmodified evaluator helpers only; synthetic rows, not corpus/V5 output",
+  "synthetic_rows": [
+    {
+      "pdf_page": 10,
+      "region_id": "terminal",
+      "zone_type": "note",
+      "note_number": 7,
+      "source_line_ids": [],
+      "provenance_status": "CERTIFIED",
+      "quality_status": "ACCEPTED",
+      "linked_region_ids": [
+        "leading"
+      ],
+      "editorial_unit_id": "same",
+      "identity_state": "IDENTITY_PROVEN",
+      "continuation_state": "CONTINUES_NEXT_PAGE",
+      "continuation_status": "CROSS_PAGE_COMPLETE"
+    },
+    {
+      "pdf_page": 11,
+      "region_id": "leading",
+      "zone_type": "note",
+      "note_number": 7,
+      "source_line_ids": [],
+      "provenance_status": "CERTIFIED",
+      "quality_status": "ACCEPTED",
+      "linked_region_ids": [
+        "terminal"
+      ],
+      "editorial_unit_id": "same",
+      "identity_state": "IDENTITY_PROVEN",
+      "continuation_state": "CONTINUED_FROM_PREVIOUS",
+      "continuation_status": "CROSS_PAGE_COMPLETE"
+    }
+  ],
+  "synthetic_canonical": {
+    "10": [
+      {
+        "note_number": 7,
+        "end_reason": "PAGE_BOUNDARY"
+      }
+    ],
+    "11": [
+      {
+        "note_number": 7,
+        "end_reason": "NEXT_NOTE_IN_COLUMN_FLOW",
+        "continuation_of_page": 10,
+        "parts": [
+          {
+            "text": "continued text"
+          }
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "unsafe_false_certifications": 0,
+    "unsafe_false_provenance_certifications": 0,
+    "false_body_certifications": 0,
+    "false_cross_page_links": 1,
+    "false_editorial_completions": 1,
+    "false_identity_proven": 0,
+    "inconsistent_identity_state": 0
+  },
+  "violations": [
+    {
+      "kind": "false_completion",
+      "row": {
+        "pdf_page": 10,
+        "region_id": "terminal",
+        "zone_type": "note",
+        "note_number": 7,
+        "source_line_ids": [],
+        "provenance_status": "CERTIFIED",
+        "quality_status": "ACCEPTED",
+        "linked_region_ids": [
+          "leading"
+        ],
+        "editorial_unit_id": "same",
+        "identity_state": "IDENTITY_PROVEN",
+        "continuation_state": "CONTINUES_NEXT_PAGE",
+        "continuation_status": "CROSS_PAGE_COMPLETE"
+      }
+    },
+    {
+      "kind": "false_link",
+      "row": {
+        "pdf_page": 11,
+        "region_id": "leading",
+        "zone_type": "note",
+        "note_number": 7,
+        "source_line_ids": [],
+        "provenance_status": "CERTIFIED",
+        "quality_status": "ACCEPTED",
+        "linked_region_ids": [
+          "terminal"
+        ],
+        "editorial_unit_id": "same",
+        "identity_state": "IDENTITY_PROVEN",
+        "continuation_state": "CONTINUED_FROM_PREVIOUS",
+        "continuation_status": "CROSS_PAGE_COMPLETE"
+      }
+    }
+  ],
+  "links": [
+    {
+      "from": 10,
+      "to": 11,
+      "note": 7,
+      "target_region": "leading",
+      "source_ok": true
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "note": 7,
+      "target_region": "terminal",
+      "source_ok": false
+    }
+  ],
+  "conclusion": "INVALID_EVALUATOR: valid bidirectional continuation is counted as false link and false completion"
+}

@@ -1,0 +1,4 @@
+8f5fe0b chore(library): add ingestion and retrieval operation scripts
+c917c4e feat(library): add layout-aware extraction and Hebrew normalization
+851dcce fix(config): normalize LiteLLM master key via globalVar
+e76c9d2 feat(library): add Hebrew PDF/Sefaria tooling and tests

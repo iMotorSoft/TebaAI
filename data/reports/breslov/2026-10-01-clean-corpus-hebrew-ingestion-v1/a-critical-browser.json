@@ -1,0 +1,40 @@
+{
+  "case": "a",
+  "actor": "viewer",
+  "mocked_responses": 0,
+  "scope_overrides": 0,
+  "console_errors": [],
+  "http_5xx": [],
+  "source": {
+    "source_id": "src_f741e87218505bb78d73a7e121f4084d",
+    "document_id": "07ba7c8d-6e43-547e-a6e7-d5f390233cfa",
+    "document_title": "Un Día en la Vida de un Jasid de Breslov",
+    "document_status": "ready",
+    "page_number": 187,
+    "section": "",
+    "chapter": "",
+    "subtitle": "",
+    "node_path": "",
+    "block_type": "page_first_v1",
+    "language": "es",
+    "chunk_id": "f741e872-1850-5bb7-8d73-a7e121f4084d",
+    "evidence_type": "cooccurrence_same_chunk",
+    "evidence_types": [
+      "cooccurrence_same_chunk",
+      "cooccurrence_same_page"
+    ],
+    "editorial_role": "page_text",
+    "retrieval_method": "cooccurrence_same_chunk+ilike_fallback+vector",
+    "score": 0.85,
+    "citable": true,
+    "is_final_citation": true,
+    "snippet": "יְהִי רָצוֹן מִלְּפָנֶיךָ יְיָ אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ, הַבּוֹחֵר בְּדָוִד ﬠַבְדּוֹ וּבְזַרְעוֹ אַחֲרָיו וְהַבּוֹחֵר בְּשִׁירוֹת וְתִשְׁבָּחוֹת, שֶׁתֵּפֶן בְּרַחֲמִים אֶל קְרִיאַת מִזְמוֹרֵי תְּהִלִּים שֶׁאֶקְרָא כְּאִלּוּ אֲמָרָם דָּוִד הַמֶּלֶךְ, ﬠָלָיו הַשָּׁלוֹם, בְּﬠַצְמוֹ זְכוּתוֹ יָגֵן ﬠָלֵינוּ, וְיַﬠֲמָד לָנוּ זְכוּת פְּסוּקֵי…",
+    "source_refs": [],
+    "internal_cross_refs": []
+  },
+  "cells": [
+    "יְהִי רָצוֹן מִלְּפָנֶיךָ יְיָ אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ, הַבּוֹחֵר בְּדָוִד ﬠַבְדּוֹ וּבְזַרְעוֹ אַחֲרָיו וְהַבּוֹחֵר בְּשִׁירוֹת וְתִשְׁבָּחוֹת, שֶׁתֵּפֶן בְּרַחֲמִים אֶל קְרִיאַת מִזְמוֹרֵי תְּהִלִּים שֶׁאֶקְרָא כְּאִלּוּ אֲמָרָם דָּוִד הַמֶּלֶךְ, ﬠָלָיו הַשָּׁלוֹם, בְּﬠַצְמוֹ זְכוּתוֹ יָגֵן ﬠָלֵינוּ, וְיַﬠֲמָד לָנוּ זְכוּת פְּסוּקֵי…"
+  ],
+  "api_equals_pg_and_dom": true,
+  "status": "PASS"
+}

@@ -1,0 +1,13 @@
+{
+  "UUID_TEXT_BINDING_PREFLIGHT": "PASS",
+  "probe": {
+    "uuid_bind": "uuid",
+    "text_bind": "text",
+    "cast_bind": "uuid",
+    "equal": false
+  },
+  "fixture_parameter_types": "str UUIDs for production API; separate text collection code binding",
+  "casts": "explicit ::text then ::uuid in binding probe; production uses column type inference",
+  "expected_active_generation_id": "str UUID -> expected_generation_id uuid column",
+  "v1_fix": "collection id and code are separate named parameters; no repeated UUID/text binding"
+}

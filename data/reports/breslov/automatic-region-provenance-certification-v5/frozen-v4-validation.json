@@ -1,0 +1,285 @@
+{
+  "status": "FAIL",
+  "pages_checked": 35,
+  "canonical_note_units": 114,
+  "annotated_note_units": 116,
+  "canonical_cross_page_units": 4,
+  "declared_cross_page_units": 3,
+  "errors": [
+    {
+      "code": "UNMARKED_NOTE_UNIT_WITHOUT_CONTINUATION",
+      "page": 13,
+      "unit": 0
+    },
+    {
+      "code": "MISSING_ANNOTATED_NOTE_UNIT",
+      "page": 13,
+      "note_number": 1,
+      "continuation": null
+    },
+    {
+      "code": "MISSING_ANNOTATED_NOTE_UNIT",
+      "page": 13,
+      "note_number": 2,
+      "continuation": null
+    },
+    {
+      "code": "MISSING_ANNOTATED_NOTE_UNIT",
+      "page": 13,
+      "note_number": 3,
+      "continuation": null
+    },
+    {
+      "code": "SPURIOUS_ANNOTATED_NOTE_UNIT",
+      "page": 13,
+      "note_number": null
+    },
+    {
+      "code": "INCOMPLETE_NOTE_UNIT",
+      "page": 13,
+      "note_number": 1,
+      "canonical_note_number": 1
+    },
+    {
+      "code": "INCOMPLETE_NOTE_UNIT",
+      "page": 13,
+      "note_number": 2,
+      "canonical_note_number": 2
+    },
+    {
+      "code": "INCOMPLETE_NOTE_UNIT",
+      "page": 13,
+      "note_number": 3,
+      "canonical_note_number": 3
+    },
+    {
+      "code": "UNMARKED_NOTE_UNIT_WITHOUT_CONTINUATION",
+      "page": 15,
+      "unit": 0
+    },
+    {
+      "code": "MISSING_ANNOTATED_NOTE_UNIT",
+      "page": 15,
+      "note_number": 7,
+      "continuation": null
+    },
+    {
+      "code": "MISSING_ANNOTATED_NOTE_UNIT",
+      "page": 15,
+      "note_number": 8,
+      "continuation": null
+    },
+    {
+      "code": "MISSING_ANNOTATED_NOTE_UNIT",
+      "page": 15,
+      "note_number": 9,
+      "continuation": null
+    },
+    {
+      "code": "SPURIOUS_ANNOTATED_NOTE_UNIT",
+      "page": 15,
+      "note_number": null
+    },
+    {
+      "code": "INCOMPLETE_NOTE_UNIT",
+      "page": 15,
+      "note_number": 7,
+      "canonical_note_number": 7
+    },
+    {
+      "code": "INCOMPLETE_NOTE_UNIT",
+      "page": 15,
+      "note_number": 8,
+      "canonical_note_number": 8
+    },
+    {
+      "code": "INCOMPLETE_NOTE_UNIT",
+      "page": 15,
+      "note_number": 9,
+      "canonical_note_number": 9
+    },
+    {
+      "code": "MISSING_ANNOTATED_NOTE_UNIT",
+      "page": 69,
+      "note_number": 70,
+      "continuation": null
+    },
+    {
+      "code": "MISSING_ANNOTATED_NOTE_UNIT",
+      "page": 69,
+      "note_number": 71,
+      "continuation": null
+    },
+    {
+      "code": "MERGED_NOTE_UNITS",
+      "page": 69,
+      "note_number": 70
+    },
+    {
+      "code": "INCOMPLETE_NOTE_UNIT",
+      "page": 69,
+      "note_number": 71,
+      "canonical_note_number": 71
+    },
+    {
+      "code": "UNMARKED_NOTE_UNIT_WITHOUT_CONTINUATION",
+      "page": 71,
+      "unit": 0
+    },
+    {
+      "code": "UNMARKED_NOTE_UNIT_WITHOUT_CONTINUATION",
+      "page": 108,
+      "unit": 0
+    },
+    {
+      "code": "UNMARKED_NOTE_UNIT_WITHOUT_CONTINUATION",
+      "page": 207,
+      "unit": 0
+    },
+    {
+      "code": "NOTE_NUMBER_MISMATCH",
+      "page": 207,
+      "expected": 5,
+      "found": null
+    },
+    {
+      "code": "UNANNOTATED_LEADING_CONTINUATION",
+      "page": 207,
+      "note_number": 5
+    },
+    {
+      "code": "WRONG_CONTINUATION_SOURCE_PAGE",
+      "page": 207,
+      "expected": 206,
+      "found": null
+    },
+    {
+      "code": "CANONICAL_CONTINUATION_NOT_DECLARED",
+      "page": 109,
+      "note_number": 31
+    },
+    {
+      "code": "CANONICAL_CONTINUATION_NOT_DECLARED",
+      "page": 165,
+      "note_number": 57
+    },
+    {
+      "code": "CANONICAL_CONTINUATION_NOT_DECLARED",
+      "page": 207,
+      "note_number": 5
+    },
+    {
+      "code": "CANONICAL_CONTINUATION_NOT_DECLARED",
+      "page": 227,
+      "note_number": 77
+    }
+  ],
+  "warnings": [
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 20,
+      "unit": 0
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 54,
+      "unit": 1
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 71,
+      "unit": 1
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 84,
+      "unit": 0
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 92,
+      "unit": 0
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 94,
+      "unit": 0
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 95,
+      "unit": 1
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 96,
+      "unit": 1
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 113,
+      "unit": 2
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 125,
+      "unit": 1
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 126,
+      "unit": 2
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 127,
+      "unit": 2
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 136,
+      "unit": 2
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 137,
+      "unit": 0
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 164,
+      "unit": 1
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 206,
+      "unit": 2
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 207,
+      "unit": 3
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 226,
+      "unit": 0
+    },
+    {
+      "code": "NON_VERTICAL_UNIT_ORDER",
+      "page": 227,
+      "unit": 1
+    }
+  ],
+  "error_codes": {
+    "UNMARKED_NOTE_UNIT_WITHOUT_CONTINUATION": 5,
+    "MISSING_ANNOTATED_NOTE_UNIT": 8,
+    "SPURIOUS_ANNOTATED_NOTE_UNIT": 2,
+    "INCOMPLETE_NOTE_UNIT": 7,
+    "MERGED_NOTE_UNITS": 1,
+    "NOTE_NUMBER_MISMATCH": 1,
+    "UNANNOTATED_LEADING_CONTINUATION": 1,
+    "WRONG_CONTINUATION_SOURCE_PAGE": 1,
+    "CANONICAL_CONTINUATION_NOT_DECLARED": 4
+  }
+}

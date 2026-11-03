@@ -1,0 +1,91 @@
+{
+  "frozen_at": "2026-10-23T12:16:34.943332+00:00",
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "durable_file": {
+    "path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "size_bytes": 4550267,
+    "pages": 284,
+    "mtime_ns": 1792757574412651976,
+    "inode": 38142447
+  },
+  "source_metadata": {
+    "document": {
+      "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+      "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+      "status": "ready",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+      "source_uri": null,
+      "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "source_size_bytes": 4550267,
+      "source_mime_type": "application/pdf",
+      "updated_at": "2026-10-23 12:12:54.684605+00:00"
+    },
+    "active_pointer": {
+      "generation_id": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "operation": "BACKFILL"
+    }
+  },
+  "harness_scripts": [
+    "report/assemble_evidence.py",
+    "report/build_immutability_contract.py",
+    "report/capture_git_state.py",
+    "report/capture_state.py",
+    "report/certify_frozen.py",
+    "report/discover_contract.py",
+    "report/final_validation.py",
+    "report/forbidden_monitor.py",
+    "report/freeze.py",
+    "report/json_validate.py",
+    "report/negative_control.py",
+    "report/path_permissions.py",
+    "report/restore_source.py",
+    "report/retrieval_smoke.py",
+    "report/secret_scan.py",
+    "report/verify_approved_source.py",
+    "report/verify_endpoint.py",
+    "report/write_docs.py"
+  ],
+  "frozen_artifacts": [
+    "report/approved-source-verification.json",
+    "report/baseline-git-state.json",
+    "report/durable-storage-contract.json",
+    "report/source-metadata-ownership.json",
+    "report/current-c-before.json",
+    "report/c-content-immutability-contract.json",
+    "report/forbidden-operation-monitor.json",
+    "report/restoration-rollback-plan.json",
+    "report/durable-file-before-metadata.json",
+    "report/database-write-accounting.json",
+    "report/filesystem-write-accounting.json",
+    "report/path-safety.json",
+    "report/permissions.json",
+    "report/idempotency-results.json",
+    "report/wrong-source-negative-control.json",
+    "report/current-c-after.json",
+    "report/current-c-immutability-comparison.json",
+    "report/retrieval-smoke.json",
+    "report/viewer-source-results.json",
+    "report/restoration-run.json"
+  ],
+  "expected_outcomes": {
+    "external_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "durable_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "served_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "size_bytes": 4550267,
+    "pages": 284,
+    "chunks": 942,
+    "vectors": 942,
+    "active_generation": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+    "authenticated_status": 200,
+    "unauthenticated_status_in": [
+      401,
+      403
+    ],
+    "source_path_equals_canonical_durable": true,
+    "product_code_changes_by_gate": 0
+  },
+  "post_freeze_rule": "no durable-file replacement, no metadata edits, no expected-result changes, no verification-harness changes; otherwise the gate is INVALID"
+}

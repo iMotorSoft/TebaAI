@@ -1,0 +1,12 @@
+{
+  "measured_at": "2026-10-23T12:16:47.389579+00:00",
+  "procedure": "backend DEV service stopped via launcher and started again in a new process; the source endpoint was then exercised from a separate client process",
+  "service_restarted": true,
+  "source_survives_fresh_process": true,
+  "resolved_from_managed_storage": true,
+  "resolved_served_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+  "served_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "served_pages": 284,
+  "external_downloads_dependency": false,
+  "open_temp_handle_dependency": false
+}

@@ -1,0 +1,24 @@
+{
+  "method": "current source and migration inspection; historical reproduction corroboration",
+  "classification": "FAIL_PRODUCT_DEFECT_DISCOVERED",
+  "schema_live_reverified": false,
+  "defects": [
+    {
+      "constraint": "library_document_generations_run_id_fkey",
+      "product_operation": "persist_document_and_pages calls _register_generation at line 250 before inserting library_ingestion_runs_v2 at line 258",
+      "fixture_only": false
+    },
+    {
+      "constraint": "library_document_generations_document_logical_fkey",
+      "product_operation": "_register_generation inserts generation at line 342 before linking library_documents.logical_document_id at line 355",
+      "fixture_only": false
+    }
+  ],
+  "source_hashes": {
+    "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py": "88866250fc7bd938d6ce5209e6b00c9167ac86ab5ffcc8da2de4ab98bf0eac42",
+    "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql": "9df48a72c59cde6fcde2e71269b03ac8afc67882943ca7a1bd86dd9671d6e369",
+    "data/reports/breslov/parallel-generation-foundation-v2-publication-v1r1/REPORT.md": "16eb3635f49dae31c3014173fd0ce55b077ba17f4907e7c84a7e24096f96af09",
+    "data/reports/breslov/parallel-generation-foundation-v2-publication-v1r1/gateway-registration-results.json": "75ecca5dedf06d531bcb1ec751e2665250660e5555cd5ed12bb6a8635e42c1ab"
+  },
+  "historical_results_changed": false
+}

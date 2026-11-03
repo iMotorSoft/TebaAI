@@ -1,0 +1,18 @@
+{
+  "gate": "TEBAAI_BRESLOV_V5_FROZEN_REVALIDATION_V1",
+  "result": "BLOCKED",
+  "base_head": "704ae24597e916b56ddec8a71fd0a30d34793aab",
+  "code_modified_by_attempt": false,
+  "holdout_created": false,
+  "holdout_sealed": false,
+  "v5_evaluated": false,
+  "git_diff_check": "NOT_RUN_BLOCKED",
+  "focused_tests": "NOT_RUN_BLOCKED",
+  "full_backend_suite": "NOT_RUN_BLOCKED",
+  "secret_scan": "NOT_RUN_BLOCKED",
+  "commit": false,
+  "push": false,
+  "remote_head_changed": false,
+  "remote_head_expected": "704ae24597e916b56ddec8a71fd0a30d34793aab",
+  "next_action": "Obtener autorizacion para reutilizar paginas abiertas como positivos, o adquirir material fuente nuevo, o aceptar explicitamente un gate safety-only con 0 positivos nuevos."
+}

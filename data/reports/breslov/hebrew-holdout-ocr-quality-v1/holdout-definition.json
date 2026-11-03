@@ -1,0 +1,588 @@
+{
+  "status": "ANNOTATED_BEFORE_EXECUTION",
+  "source": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY MOHARAN II Interior.pdf",
+  "source_sha256": "ce7304e31c37cadd5bc938732d93c8e5385afc026c0af0de612635d8b76cab61",
+  "annotation": "Assistant visual review of saved original PDF raster crops; no human Hebrew editorial signoff. Short pointed transcriptions are benchmark labels, not publishable citations.",
+  "independence": "New source document/pages/lexemes; zero normalized old query or source terms. Same agent knows frozen design: not blinded independent human annotation.",
+  "limitations": [
+    "Query-side full/defective spellings are editorial probes; not a corpus of independently attested paired editions.",
+    "One source document, correlated lexemes/pages; 40 cases cannot support a population safety guarantee.",
+    "No new manual lexeme_guard supplied. Ground truth is evaluator-only."
+  ],
+  "cases": [
+    {
+      "id": "H01",
+      "page": 22,
+      "query": "זרע",
+      "canonical_source": "זרע",
+      "expected_match": true,
+      "allowed_match_types": [
+        "EXACT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "base-only"
+    },
+    {
+      "id": "H02",
+      "page": 24,
+      "query": "אמת",
+      "canonical_source": "אמת",
+      "expected_match": true,
+      "allowed_match_types": [
+        "EXACT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "base-only"
+    },
+    {
+      "id": "H03",
+      "page": 26,
+      "query": "נחש",
+      "canonical_source": "נחש",
+      "expected_match": true,
+      "allowed_match_types": [
+        "EXACT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "base-only"
+    },
+    {
+      "id": "H04",
+      "page": 34,
+      "query": "מאה",
+      "canonical_source": "מאה",
+      "expected_match": true,
+      "allowed_match_types": [
+        "EXACT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "base-only"
+    },
+    {
+      "id": "H05",
+      "page": 22,
+      "query": "עצה",
+      "canonical_source": "עֵצָה",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H06",
+      "page": 22,
+      "query": "צדיק",
+      "canonical_source": "צַדִּיק",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H07",
+      "page": 24,
+      "query": "אדם",
+      "canonical_source": "אָדָם",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H08",
+      "page": 24,
+      "query": "שמירה",
+      "canonical_source": "שְׁמִירָה",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H09",
+      "page": 26,
+      "query": "עינים",
+      "canonical_source": "עֵינַיִם",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H10",
+      "page": 30,
+      "query": "אמונה",
+      "canonical_source": "אֱמוּנָה",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H11",
+      "page": 32,
+      "query": "דעה",
+      "canonical_source": "דֵּעָה",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H12",
+      "page": 34,
+      "query": "פעמים",
+      "canonical_source": "פְּעָמִים",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H13",
+      "page": 22,
+      "query": "נישואין",
+      "canonical_source": "נִשּׂוּאִין",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H14",
+      "page": 22,
+      "query": "זיווג",
+      "canonical_source": "זִוּוּג",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H15",
+      "page": 22,
+      "query": "תושייה",
+      "canonical_source": "תּוּשִׁיָּה",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H16",
+      "page": 24,
+      "query": "המוח",
+      "canonical_source": "הַמֹּחַ",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H17",
+      "page": 24,
+      "query": "טיפי",
+      "canonical_source": "טִפֵּי",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H18",
+      "page": 24,
+      "query": "כולו",
+      "canonical_source": "כֻּלּוֹ",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H19",
+      "page": 26,
+      "query": "הניאוף",
+      "canonical_source": "הַנִּאוּף",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H20",
+      "page": 30,
+      "query": "הגלות",
+      "canonical_source": "הַגָּלוּת",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H21",
+      "page": 30,
+      "query": "הגאולה",
+      "canonical_source": "הַגְּאֻלָּה",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H22",
+      "page": 32,
+      "query": "לומדים",
+      "canonical_source": "לוֹמְדִים",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H23",
+      "page": 32,
+      "query": "תלמוד",
+      "canonical_source": "תַּלְמוּד",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H24",
+      "page": 32,
+      "query": "כשולחן",
+      "canonical_source": "כְּשֻׁלְחָן",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H25",
+      "page": 32,
+      "query": "החכמות",
+      "canonical_source": "הַחָכְמוֹת",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H26",
+      "page": 34,
+      "query": "השיכחה",
+      "canonical_source": "הַשִּׁכְחָה",
+      "expected_match": true,
+      "allowed_match_types": [
+        "ORTHOGRAPHIC_VARIANT"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; editorial full/defective spelling probe",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H27",
+      "page": 24,
+      "query": "מצות",
+      "canonical_source": "מִצְוַת",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H28",
+      "page": 34,
+      "query": "אחד",
+      "canonical_source": "אֶחָד",
+      "expected_match": true,
+      "allowed_match_types": [
+        "NIQQUD_INSENSITIVE"
+      ],
+      "must_not_match": [],
+      "reason": "Same lexical reading in visual source; exact/base-letter control",
+      "transcription": "pointed short visual fragment"
+    },
+    {
+      "id": "H29",
+      "page": 22,
+      "query": "זר",
+      "canonical_source": "זרע",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "זרע"
+      ],
+      "reason": "different noun; seed is not stranger",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H30",
+      "page": 22,
+      "query": "אדום",
+      "canonical_source": "אָדָם",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "אָדָם"
+      ],
+      "reason": "ו insertion changes man to red/Edom",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H31",
+      "page": 22,
+      "query": "רעש",
+      "canonical_source": "רָשָׁע",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "רָשָׁע"
+      ],
+      "reason": "metathesis changes wicked to noise",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H32",
+      "page": 22,
+      "query": "צדק",
+      "canonical_source": "צַדִּיק",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "צַדִּיק"
+      ],
+      "reason": "justice is not the righteous person",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H33",
+      "page": 24,
+      "query": "שכלו",
+      "canonical_source": "הַשֵּׂכֶל",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "הַשֵּׂכֶל"
+      ],
+      "reason": "possessive morphology is not spelling equivalence",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H34",
+      "page": 24,
+      "query": "שומר",
+      "canonical_source": "שְׁמִירָה",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "שְׁמִירָה"
+      ],
+      "reason": "same semantic field, different noun/participle",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H35",
+      "page": 24,
+      "query": "ציץ",
+      "canonical_source": "צִיצִית",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "צִיצִית"
+      ],
+      "reason": "different object, not orthographic deletion",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H36",
+      "page": 26,
+      "query": "נחוש",
+      "canonical_source": "נָחָשׁ",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "נָחָשׁ"
+      ],
+      "reason": "ו and vowel change creates a different lexeme",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H37",
+      "page": 22,
+      "query": "זוגה",
+      "canonical_source": "זִוּוּג",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "זִוּוּג"
+      ],
+      "reason": "not an allowed spelling of union",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H38",
+      "page": 26,
+      "query": "עין",
+      "canonical_source": "עֵינַיִם",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "עֵינַיִם"
+      ],
+      "reason": "singular/plural must not be lexical equivalence",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H39",
+      "page": 30,
+      "query": "אומן",
+      "canonical_source": "אֱמוּנָה",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "אֱמוּנָה"
+      ],
+      "reason": "similar skeleton, craftsman is not faith",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H40",
+      "page": 32,
+      "query": "שולח",
+      "canonical_source": "שֻׁלְחָן",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "שֻׁלְחָן"
+      ],
+      "reason": "sender is not table; final-letter loss is material",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H41",
+      "page": 34,
+      "query": "אחר",
+      "canonical_source": "אֶחָד",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "אֶחָד"
+      ],
+      "reason": "ר/ד near visual shape, different word",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    },
+    {
+      "id": "H42",
+      "page": 34,
+      "query": "מעט",
+      "canonical_source": "מֵאָה",
+      "expected_match": false,
+      "allowed_match_types": [
+        "NO_MATCH"
+      ],
+      "must_not_match": [
+        "מֵאָה"
+      ],
+      "reason": "quantity context does not establish identity",
+      "transcription": "short visual fragment; query is an adversarial probe"
+    }
+  ]
+}

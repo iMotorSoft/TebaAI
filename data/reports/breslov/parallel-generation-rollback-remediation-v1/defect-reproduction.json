@@ -1,0 +1,26 @@
+{
+  "method": "OFFLINE_REAL_FUNCTION_WITH_IN_MEMORY_PERSISTENCE",
+  "services_accessed": false,
+  "cutover": {
+    "result": "APPLIED",
+    "logical_document_id": "LOGICAL",
+    "from_generation_id": "OLD",
+    "to_generation_id": "NEW",
+    "expected_generation_id": "OLD",
+    "operation": "CUTOVER"
+  },
+  "after_cutover": {
+    "pointer": "NEW",
+    "statuses": {
+      "OLD": "INACTIVE",
+      "NEW": "ACTIVE"
+    }
+  },
+  "rollback": {
+    "result": "REJECTED",
+    "exception": "GenerationPreconditionError",
+    "message": "Only a CANDIDATE generation can be activated; got INACTIVE"
+  },
+  "rollback_writes": 0,
+  "rollback_contract": "FAIL"
+}

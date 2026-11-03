@@ -1,0 +1,23 @@
+Working directory for pytest/probes: SrvRestAstroLS_v1/backend
+
+.venv/bin/python ../../data/reports/breslov/parallel-generation-foundation-v1/inventory_readonly.py before
+
+uv run --no-sync pytest ../../data/reports/breslov/parallel-generation-foundation-v1/test_foundation_blockers.py tests/test_parallel_generation_safety_prerequisites.py tests/test_content_manager_cleanup.py tests/test_content_manager_e2e_isolation.py tests/test_content_manager_publication.py tests/test_content_manager_document_views.py tests/test_content_manager_orchestration.py tests/test_content_manager_upload_security.py tests/test_page_first_pipeline.py tests/test_page_first_utf8_preview.py tests/test_library_search_hybrid_milvus_alias.py tests/test_region_publication.py tests/test_region_source_access.py tests/test_simple_research_rag.py tests/test_relation_qa.py tests/test_relation_qa_http.py ../../data/reports/breslov/c-parallel-generation-safety-v1/test_inventory_guard.py -q
+
+uv run --no-sync pytest tests/test_scope_source_uniqueness_migration.py -q
+
+.venv/bin/python ../../data/reports/breslov/parallel-generation-foundation-v1/inventory_readonly.py after
+
+Supplemental schema probe: PYTHONPATH=. .venv/bin/python with importlib loads predecessor indexes_readonly.py, sets module.OUT to this report's schema-index-inventory.json, then asyncio.run(module.main()). Guarded local DEV server-read-only query, no previous evidence overwritten. Executed SQL is recorded in schema-index-inventory.json.
+
+Repository root:
+python3 data/reports/breslov/parallel-generation-foundation-v1/summarize_inventory.py
+rg symbol/decorator/latest/run/candidate patterns over routes, research/relation/Book QA/repository/citation modules > route-symbol-audit.txt
+
+git diff --check
+cmp -s /tmp/tebaai-foundation-initial.diff <(git diff)
+git rev-parse HEAD
+git rev-parse @{u}
+git ls-remote --heads origin feature/console-backend-core
+
+No foundation migration, generation admission, concurrency test, real Milvus search/mutation, ingestion, source preservation/repair, worker, cleanup, cutover, rollback, commit or push was executed. Existing migration test uses only temporary synthetic rows and rollback.

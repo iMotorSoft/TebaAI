@@ -1,0 +1,19 @@
+{
+  "golden_id": "LIKUTEY_HALAJOT_COMPLEX_PAGE_GOLDEN_V1",
+  "pdf_page": 167,
+  "printed_page": 149,
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "review_method": "assistant visual inspection of original PDF raster, not OCR or reconstructed text; limited fragments only; editorial human signoff pending",
+  "fragments": [
+    {"id": "heading", "region": "A_header", "text": "ליקוטי הלכות", "fidelity": "unpointed visible heading"},
+    {"id": "line1", "region": "B_hebrew_main", "text": "רגלים כנ\"ל, ומשם נמשכין בחינת מנעלים שהם שומרין את הרגלין מהחיצונים.", "fidelity": "base-letter transcription; marks not transcribed", "bbox": [105, 67, 444, 83]},
+    {"id": "line2", "region": "B_hebrew_main", "text": "ועל־כן צריכין לנעל של ימין תחלה, כי עקר הוא בחינת ימין שהוא חסד, שעל־ידי־זה קוצרין", "fidelity": "base-letter transcription; marks not transcribed", "bbox": [54, 133, 444, 148]},
+    {"id": "line3", "region": "B_hebrew_main", "text": "אותה מהם ובונין אותה כנ\"ל.", "fidelity": "base-letter transcription; marks not transcribed", "bbox": [288, 147, 444, 163]},
+    {"id": "pointed", "region": "B_hebrew_main", "text": "אוֹר הַפָּנִים", "fidelity": "visible pointed fragment; NFC/NFD comparison allowed; no whole-page niqqud certificate", "bbox": [263, 86, 314, 101]},
+    {"id": "folio", "region": "A_header", "text": "149", "fidelity": "visible number"},
+    {"id": "parenthetical", "region": "B_hebrew_main", "text": "(פרי עץ חיים שער התפלין פרק ג)", "fidelity": "visible base-letter parenthetical reference", "bbox": [177, 86, 283, 101]},
+    {"id": "mixed_reference", "region": "E_notes_right", "text": "(ver LM I, 22:1)", "fidelity": "visible LTR reference spanning two lines; region-boundary test"},
+    {"id": "spanish_control", "region": "D_spanish_body", "text": "protección extra para elevarlos de las fuerzas externas adyacentes a ellos.", "fidelity": "visible native-good negative control"}
+  ],
+  "not_certified": ["entire page", "all niqqud", "all line ordering", "same-line Hebrew plus Latin not found on this page; use page 143 notes for additional mixed-script evidence"]
+}

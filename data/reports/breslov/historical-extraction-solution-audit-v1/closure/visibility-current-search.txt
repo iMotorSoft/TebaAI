@@ -1,0 +1,205 @@
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:4:opaque rectangle covering a trace is a *candidate*. Suppression additionally
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:16:    result = {'status': 'unproven', 'overlays': []}
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:19:    seqno = run.get('seqno')
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:20:    if not isinstance(seqno, int) or seqno < 0:
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:23:    if seqno < len(bboxlog) and bboxlog[seqno][0] in ('fill-text', 'stroke-text'):
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:24:        ink = pymupdf.Rect(bboxlog[seqno][1])
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:28:        # extended=True exposes clip/group nesting; missing metadata is not
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:29:        # proof of an unclipped, non-transparent paint operation.
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:32:            or drawing.get('fill_opacity') != 1.0
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:35:            or not isinstance(drawing.get('seqno'), int)
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:36:            or drawing['seqno'] <= seqno):
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:41:        # Use the actual rectangle path, never a general path's envelope.
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:42:        rectangle = pymupdf.Rect(items[0][1])
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:43:        if rectangle.is_empty or rectangle.is_infinite:
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:45:        intersection = bounds & rectangle
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:49:        full = rectangle.contains(bounds)
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:50:        ink_full = ink is not None and rectangle.contains(ink)
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:51:        result['overlays'].append({
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:52:            'seqno': drawing['seqno'], 'bbox': list(rectangle),
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:53:            'fill': drawing['fill'], 'opacity': drawing['fill_opacity'],
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:67:    """Fail closed for masks/non-Normal blending anywhere in this candidate.
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:69:    Drawing opacity alone cannot prove coverage: white with Multiply blending
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:74:        for key, allowed in (('BM', {'null', '/Normal'}), ('SMask', {'null', '/None'})):
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:81:    """Filter only proven occlusions; preserve retained run objects verbatim.
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:84:    whitespace, combining-mark or ordering transformations are performed.
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_visibility.py:95:        evidence.append(dict(verdict, run_index=index, seqno=run['seqno'], bbox=list(run['bbox'])))
+SrvRestAstroLS_v1/backend/modules/library/hebrew_tex_decoder.py:286:    Preserves digits, whitespace, and basic Latin punctuation.
+SrvRestAstroLS_v1/backend/modules/library/hebrew_tex_decoder.py:313:    # Whitespace, control chars, ASCII digits: keep
+SrvRestAstroLS_v1/backend/modules/library/hebrew_tex_decoder.py:367:    """Scan decoded text for characters that are not Hebrew, ASCII, or whitespace.
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_reconstruction.py:24:    Same line/run: same paint seqno and baseline. Hebrew bases follow decreasing
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_reconstruction.py:73:    One seqno can have several spans and baselines; one span can contain many
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_reconstruction.py:79:            group = next((g for g in groups if g['seqno'] == run['seqno']
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_reconstruction.py:82:                group = dict(seqno=run['seqno'], baseline=char[2][1], size=run['size'], chars=[])
+SrvRestAstroLS_v1/backend/modules/library/pdf_text_reconstruction.py:91:    return sorted(groups, key=lambda g: (g['seqno'], g['baseline']))
+SrvRestAstroLS_v1/backend/modules/library/hebrew_lexical_normalizer.py:176:    punctuation tolerant, case-folded for mixed Latin text, and whitespace
+SrvRestAstroLS_v1/backend/modules/library/editorial_evidence_v2.py:216:    r"\s+"  # book name followed by whitespace
+SrvRestAstroLS_v1/backend/modules/library/pdf_hebrew_fidelity.py:4:glyph metadata and an exact (whitespace-tolerant) source match in Markdown.
+SrvRestAstroLS_v1/backend/modules/library/pdf_hebrew_fidelity.py:96:            # Whitespace may be folded by the Markdown converter. Permit extra
+SrvRestAstroLS_v1/backend/modules/library/pdf_hebrew_fidelity.py:97:            # whitespace only at source cell gutters; retain all other chars.
+SrvRestAstroLS_v1/backend/modules/library/investigative_qa_v1.py:921:    """Presentation-only clipping; ``quote`` keeps the canonical retrieved text."""
+SrvRestAstroLS_v1/backend/modules/library/investigative_qa_v1.py:923:    clipped_start = bool(value and value[0].islower())
+SrvRestAstroLS_v1/backend/modules/library/investigative_qa_v1.py:929:    if clipped_start:
+SrvRestAstroLS_v1/backend/modules/library/investigative_qa_v1.py:2483:        "claim_id": f"discovered_relation_{index + 1}",
+SrvRestAstroLS_v1/backend/modules/library/page_first_evidence.py:349:    # phrase continues to the whitespace-aware span matcher below.
+SrvRestAstroLS_v1/backend/modules/library/page_first_evidence.py:374:    # quote while accepting whitespace-normalized literal evidence.
+docs/adr/ADR-018-breslov-corpus-scope-integrity-v1.md:94:- no document was deleted, hidden or demoted;
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:733:def _normalize_literal_whitespace(value: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:734:    """Normalize only presentation whitespace for deterministic literal checks."""
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:754:        _normalize_literal_whitespace(elide_parenthetical_glosses(variant))
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:763:        normalized_body = _normalize_literal_whitespace(
+SrvRestAstroLS_v1/backend/modules/library/simple_research_rag.py:1497:        "claim_id": "sources_recovered",
+SrvRestAstroLS_v1/backend/modules/library/pdf_ligature_normalization.py:9:  compatibility normalization (NFKC), controlled whitespace collapse and,
+SrvRestAstroLS_v1/backend/modules/library/pdf_ligature_normalization.py:55:# Category classes that represent presentation whitespace in a search form.
+SrvRestAstroLS_v1/backend/modules/library/pdf_ligature_normalization.py:56:_WHITESPACE_CATEGORIES = frozenset({"Cf", "Cc", "Zl", "Zp", "Zs"})
+SrvRestAstroLS_v1/backend/modules/library/pdf_ligature_normalization.py:98:def _collapse_whitespace(text: str) -> str:
+SrvRestAstroLS_v1/backend/modules/library/pdf_ligature_normalization.py:99:    """Replace every run of presentation whitespace with a single space.
+SrvRestAstroLS_v1/backend/modules/library/pdf_ligature_normalization.py:110:    presentation whitespace and trims.  Original text is never modified.
+SrvRestAstroLS_v1/backend/modules/library/pdf_ligature_normalization.py:123:    return _collapse_whitespace(expanded)
+docs/adr/ADR-020-pdf-ligature-literal-normalization-v1.md:39:  controlado de whitespace y variantes controladas de fragmentación.
+docs/adr/ADR-020-pdf-ligature-literal-normalization-v1.md:45:3. colapso de whitespace de presentación;
+docs/adr/ADR-015-exact-editorial-evidence-ranking-v1.md:138:   or more terms locate their literal span, allowing whitespace-normalized
+docs/adr/ADR-016-canonical-editorial-evidence-selection-v1.md:96:printed folio is recovered from the opening running header of the page
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:6:RUN = {'bbox': (10, 10, 80, 20), 'seqno': 1}
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:10:def overlay(seqno=2, rect=(0, 0, 100, 30)):
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:11:    return dict(type='f', fill=(1., 1., 1.), fill_opacity=1., level=0,
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:12:                seqno=seqno, items=[('re', pymupdf.Rect(rect), 1)])
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:16:    assert classify_text_run(RUN, [overlay(seqno=0)], LOG)['status'] == 'unproven'
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:19:@pytest.mark.parametrize('seqno', [None, 'unknown', -1])
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:20:def test_uncertain_text_paint_order_kept(seqno):
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:21:    assert classify_text_run(dict(RUN, seqno=seqno), [overlay()], LOG)['status'] == 'unproven'
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:24:def test_unknown_overlay_order_kept():
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:25:    assert classify_text_run(RUN, [overlay(seqno=None)], LOG)['status'] == 'unproven'
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:28:def test_multiple_partial_overlays_not_unioned_to_force_suppression():
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:29:    result = classify_text_run(RUN, [overlay(rect=(0,0,50,30)), overlay(3, (50,0,100,30))], LOG)
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:33:def test_multiple_overlays_one_independently_proven_full():
+SrvRestAstroLS_v1/backend/tests/test_pdf_visibility_conservative_regression.py:34:    result = classify_text_run(RUN, [overlay(rect=(0,0,50,30)), overlay(3)], LOG)
+SrvRestAstroLS_v1/backend/scripts/audit_likutey_halajot_promotion_readiness_v2.py:13:reported, not masked.
+SrvRestAstroLS_v1/backend/scripts/audit_likutey_halajot_promotion_readiness_v1.py:59:            "nonwhite_ratio": round(sum(value < 245 for value in samples) / len(samples), 6),
+SrvRestAstroLS_v1/backend/scripts/batch_ingest_embed_breslov.py:5:Documents covered:
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_reconstruction.py:57:    runs = [{'seqno': 1, 'size': 10, 'chars': [char('a', 0), char('b', 0, y=40)]},
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_reconstruction.py:58:            {'seqno': 2, 'size': 10, 'chars': [char('c', 100)]}]
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_reconstruction.py:61:    assert [l['seqno'] for l in lines] == [1, 1, 2]
+SrvRestAstroLS_v1/backend/scripts/breslov_editorial_qa_acid_batch.py:223:    # Also add any extra variants not covered by expansion
+SrvRestAstroLS_v1/backend/scripts/likutey_halajot_nominal_reference_detector.py:68:    covered: set[tuple[int, int]] = set()
+SrvRestAstroLS_v1/backend/scripts/likutey_halajot_nominal_reference_detector.py:70:        covered.add((match.start(), match.end()))
+SrvRestAstroLS_v1/backend/scripts/likutey_halajot_nominal_reference_detector.py:75:        if not any(candidate.char_start < end and candidate.char_end > start for start, end in covered):
+SrvRestAstroLS_v1/backend/tests/test_synthesis_qa_level4_relations.py:66:    covered_categories = set()
+SrvRestAstroLS_v1/backend/tests/test_synthesis_qa_level4_relations.py:69:            covered_categories.add(c["category"])
+SrvRestAstroLS_v1/backend/tests/test_synthesis_qa_level4_relations.py:70:    uncovered = categories - covered_categories
+SrvRestAstroLS_v1/backend/tests/test_synthesis_qa_level4_relations.py:71:    assert not uncovered, f"Categories without relations: {uncovered}"
+SrvRestAstroLS_v1/backend/scripts/diagnose_page_mapping_failures.py:82:    """Normalize accents, punctuation, markdown marks and whitespace."""
+SrvRestAstroLS_v1/backend/scripts/breslov_colloquial_relational_gate.py:176:            "http_authenticated": "covered_by_playwright_real_backend",
+SrvRestAstroLS_v1/backend/scripts/breslov_colloquial_relational_gate.py:177:            "ui_real": "covered_by_playwright_real_backend",
+data/reports/breslov/2026-07-09-relation-qa-editorial-acid-batch/recommendations.md:86:**Problema**: `editorial_answer_markdown` se muestra con `whitespace-pre-line` en vez de parseado.
+SrvRestAstroLS_v1/backend/scripts/library_lm_xv_kdp_fine_zone_detector_qa.py:12: checks={'zones_present':zones>0,'all_3208_blocks_covered':zones==3208,'quotes_in_page':badquote==0,'quotes_nonempty':nullq==0,'search_v3_present':view>=zones,'no_ocr':True,'no_ai':True,'no_embeddings':True,'no_milvus':True,'no_relations':True};out={'status':'PASS' if all(checks.values()) else 'FAIL','checks':checks,'metrics':{'zones':zones,'bad_quotes':badquote,'empty_quotes':nullq,'view_rows':view}}
+SrvRestAstroLS_v1/backend/tests/test_config.py:300:# ── Test: Secrets hidden in repr ────────────────────────────────────
+SrvRestAstroLS_v1/backend/tests/test_config.py:302:class TestSecretsHidden:
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:9:def rectangle(*, seqno=2, bbox=(0, 0, 100, 30), **kwargs):
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:10:    return dict(type='f', fill=(1.0, 1.0, 1.0), fill_opacity=1.0,
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:11:                level=0, layer='', seqno=seqno,
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:15:RUN = {'bbox': (10, 10, 80, 20), 'seqno': 1}
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:19:def test_fully_covered_by_later_opaque_white_rectangle():
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:20:    assert classify_text_run(RUN, [rectangle()], LOG)['status'] == 'occluded'
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:24:    {'seqno': 0}, {'seqno': 1}, {'fill_opacity': 0.5},
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:25:    {'fill_opacity': 0.0}, {'fill': (0.9, 0.9, 0.9)},
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:30:    drawing = rectangle()
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:36:    assert classify_text_run(RUN, [rectangle(bbox=(90, 0, 100, 30))], LOG)['status'] == 'unproven'
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:40:    result = classify_text_run(RUN, [rectangle(bbox=(50, 0, 100, 30))], LOG)
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:42:    assert result['overlays'][0]['area_ratio'] == pytest.approx(30 / 70)
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:47:    assert classify_text_run(RUN, [rectangle()], log)['status'] == 'candidate'
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:51:    assert classify_text_run(dict(RUN, bbox=(10, 10, 10, 20)), [rectangle()], LOG)['status'] == 'unproven'
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:54:@pytest.mark.parametrize('overlay_first, opacity, partial, expected_hidden', [
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:58:def test_real_pdf_paint_order_and_visible_replacement(overlay_first, opacity, partial, expected_hidden):
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:62:        def overlay():
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:63:            page.draw_rect(cover, color=None, fill=(1, 1, 1), fill_opacity=opacity)
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:64:        if overlay_first:
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:65:            overlay()
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:67:        if not overlay_first:
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:68:            overlay()
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:75:            assert sum(v['status'] == 'occluded' for v in evidence) == expected_hidden
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:97:    ('BM', '/Normal', True), ('SMask', '/None', True),
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:98:    ('BM', '/Multiply', False), ('SMask', '7 0 R', False),
+SrvRestAstroLS_v1/backend/tests/test_pdf_text_visibility.py:111:            return [rectangle()]
+data/reports/breslov/2026-07-09-relation-qa-editorial-acid-batch/rendered/03-miedo.md:166:  > …mientos de los _maskilim_ .[7] Estos discurren sobre todo ello y publican y difunden sus malsanos libros. Esto corresponde a lo que se dijo más arriba, que a veces se nutren de la compasión, lo que lleva a la inmoralidad sexual y a dañar la plegaria, la que se vuelve un reclamo. La rectifi cación pa…
+SrvRestAstroLS_v1/backend/scripts/enrich_chunk_page_metadata.py:88:    # Collapse whitespace
+data/reports/breslov/2026-07-09-relation-qa-editorial-acid-batch/findings.md:71:**Evidencia**: `editorial_answer_markdown` se renderiza con `whitespace-pre-line` en lugar de un parser markdown real. Los títulos y negritas no se renderizan.
+SrvRestAstroLS_v1/backend/tests/test_simple_research_rag.py:805:async def test_invalid_ai_json_returns_recovered_sources(
+data/reports/breslov/2026-08-02-guest-research-access-e2e-recovery-dev/README.md:114:- `src/components/research/investigativeQaClient.ts`: el whitelist de
+SrvRestAstroLS_v1/backend/tests/test_sijot_page_mapping_enrichment.py:57:    def test_whitespace_collapse(self):
+SrvRestAstroLS_v1/backend/tests/test_sijot_page_mapping_enrichment.py:66:    def test_whitespace(self):
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:17:          'corpus_modified': False, 'font_changes_in_memory': [], 'fully_covered_runs': [],
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:22:        rectangles = [d for d in page.get_drawings()
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:24:                      and d['fill_opacity'] == 1.0 and len(d['items']) == 1
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:29:            covering = [d for d in rectangles if d['seqno'] > span['seqno'] and d['rect'].contains(bounds)]
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:30:            run = {'pdf_page': page.number + 1, 'text_seqno': span['seqno'], 'font': span['font'],
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:33:                run['covering_rectangles'] = [{'seqno': d['seqno'], 'bbox': list(d['rect']),
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:34:                                              'fill': d['fill'], 'opacity': d['fill_opacity']} for d in covering]
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:35:                result['fully_covered_runs'].append(run)
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/probe-c-fonts.py:41:print(json.dumps({'covered_runs': len(result['fully_covered_runs']),
+data/reports/breslov/2026-07-15-lm-xv-kdp-page-first-column-aware-v1/column_rules_report.md:3:514 pages covered; 52 column-aware; no unresolved pages; OCR/layout assist not used.
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:19:Hallazgo adicional: un seqno puede corresponder a varios traces. Sus bbox
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:24:El emparejamiento histórico usa página + seqno + font + glyph IDs, no igualdad
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:30:- solo path rectangular simple relleno blanco RGB exacto, opacity=1;
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:31:- seqno del rectángulo estrictamente posterior al texto;
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:32:- extended drawings level=0 y sin capa opcional; clips/grupos no se infieren
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:37:- guard adicional de compositing: masks o blending no Normal en el documento
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:38:  impiden exclusión. En C se observaron 11 objetos con BM=Normal, SMask=None;
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:39:- 530 clip paths, cero transparency groups reportados por extended drawings.
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:63:NO afirmar remaining hidden=0 ni false positives=0. Los 387 overlaps parciales
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:80:`audit.json` incluye bbox, texto, glyph IDs, seqno, fill, opacity, overlap,
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:105:Characters reversed / words broken / synthetic spaces / hidden text visible:
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-visibility-candidate/README.md:123:orden de pintura, overlap, opacity, compositing, texto posterior preservado y
+data/reports/breslov/2026-07-16-breslov-research-home/security_secret_check.md:5:- The authenticated captures are clipped to secret-free UI regions.
+data/reports/breslov/2026-07-16-breslov-research-home/authentication_results.md:13:Safe browser evidence is in `screenshots/auth/`: the unfilled login form, a clipped session-status message, and a clipped protected-route heading. No credential value, token, or user email is present in those captures.
+SrvRestAstroLS_v1/backend/scripts/likutey_moharan_xv_kdp_column_rules.py:8:O.mkdir(parents=True,exist_ok=True);(O/'column_rules_report.json').write_text(json.dumps({'run_id':'likutey_moharan_xv_kdp_column_rules_v1_20260715','pages':rules,'layout_assist_used':False},indent=2));(O/'column_rules_report.md').write_text(f"# Column rules\n\n514 pages covered; {sum(x['reading_order_method']=='column_aware_order' for x in rules)} column-aware; no unresolved pages; OCR/layout assist not used.\n")
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-visible-extraction.py:24:known = json.loads((REPORT / 'c-font-visibility-probe.json').read_text())['fully_covered_runs']
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-visible-extraction.py:27:known_keys = {(r['pdf_page'], r['text_seqno'], r['font'], tuple(r['glyph_ids'])) for r in known}
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-visible-extraction.py:43:                           soft_mask=doc.xref_get_key(xref, 'SMask'))
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-visible-extraction.py:46:                      or doc.xref_get_key(xref, 'SMask')[0] != 'null']
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-visible-extraction.py:51:        counts['clip_paths'] += sum(d['type'] == 'clip' for d in drawings)
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-visible-extraction.py:55:            if (page.number + 1, run['seqno'], run['font'], tuple(c[1] for c in run['chars'])) in known_keys:
+data/reports/breslov/2026-07-16-breslov-research-home/accessibility_results.md:3:- Semantic `header`, `main`, `section`, `nav`, `aside`, `footer`, heading hierarchy, descriptive landscape alt, and decorative `aria-hidden` marks.
+data/reports/breslov/2026-07-16-breslov-research-home/accessibility_results.md:7:- Navy/ivory primary text and CTA treatments use high-contrast combinations. The smallest capability copy was kept at a readable mobile scale rather than hidden.
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:27:known = json.loads((REPORT / 'c-font-visibility-probe.json').read_text())['fully_covered_runs']
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:28:keys = {(r['pdf_page'], r['text_seqno'], r['font'], tuple(r['glyph_ids'])) for r in known}
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:32:    if (r['page'], r['seqno'], r['font'], tuple(r['glyph_ids'])) not in keys or r['status'] == 'occluded':
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:35:    assert any(o['overlap'] == 'full' for o in r['overlays'])
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:36:    assert all(not o['paint_ink_contained'] for o in r['overlays'])
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:37:    family = 'full_trace_shared_ink_single_overlay' if len(r['overlays']) == 1 else 'full_trace_shared_ink_plus_partial_overlays'
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:74:        (out / f'page-{pg}-viewer.html').write_text('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Offline text candidate</title><style>body{max-width:55rem;margin:2rem auto;padding:0 1rem}p{white-space:pre-wrap;overflow-wrap:anywhere;font:20px/1.8 serif}</style><h1>Uncertified candidate — PDF '+str(pg)+'</h1>' + ''.join('<p><bdi dir="auto">'+html.escape(l['text'])+'</bdi></p>' for l in lines), encoding='utf-8')
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:107:        clip = bounds & doc[pg-1].rect
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/audit-c-text-reconstruction.py:109:        doc[pg-1].get_pixmap(matrix=pymupdf.Matrix(3, 3), clip=clip).save(out / image)
+data/reports/breslov/2026-08-03-likutey-halajot-promotion-readiness-v1-dev/README.md:59:label; critical labels are recovered from visible page headers. This is a
+data/reports/breslov/2026-08-05-content-manager-v1-dev/premium-ux-inventory.md:48:| Cards móviles | Patrón `md:hidden` cards existente | `.cm-mobile-cards` | Misma estrategia responsive del producto |
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:20:| Full trace, tinta de operación compartida no contenida, un overlay | 197 | 0 | 197 | 197 |
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:21:| Mismo límite, un overlay full + overlays parciales adicionales | 89 | 0 | 89 | 89 |
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:24:Los 89 incluyen 84 con 4 overlays, 3 con 5 y 2 con 3. Los 286 tienen un
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:26:la tinta completa de la operación. No sumar overlays para forzar una decisión.
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:28:No se atribuyen table backgrounds, clipping, máscaras ni draw-order incierto a
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:33:runs suprimidos cuyo Unicode contiene números, con crop + candidato + overlays.
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:50:Ejemplo PDF 55: seqno 0 devuelve `תוכלה` con x creciente 375.57→394.81;
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:52:varios spans del mismo seqno. El seqno 13 incluye varias baselines: no invertir
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:55:Fix experimental: agrupar por seqno + baseline (tolerancia 0.04 em contra una
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:62:La agrupación por seqno evita juntar operaciones distintas por proximidad
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:64:PDF 55 revela una primera mala etapa adicional de estructura: seqno de pintura
+data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-text-reconstruction-candidate/README.md:99:| 55 | Hidden / niqqud / Salmos 16:1 / orden | Referencia PASS; fragmento niqqud equivalente PASS | 4 líneas unresolved; párrafos/celdas erróneos | BLOCKED |
+data/reports/breslov/2026-07-05-likutey-layout/probe/probe_common.py:14:# Discovered by scanning headers
+data/reports/breslov/2026-10-01-hebrew-extraction-fidelity-v1/recover-b-attempt.py:19:  (OUT/'b-compensation-recovered.json').write_text(json.dumps(data,indent=2))
+data/reports/breslov/2026-10-01-hebrew-extraction-fidelity-v1/README.md:105:- B intento 2 falló por timeout de embeddings; Milvus cayó y la compensación no pudo conectar. El usuario reinició Milvus. Se repitió `ManifestCleanupService` manteniendo upload para retry: `b-compensation-recovered.json`, 1327 recursos, completed. Intento 3 completo; no filas/vectores fabricados manualmente.
+data/reports/breslov/2026-07-19-login-session-recovery/root_cause.md:9:- User must re-enter credentials despite session being recovered
+data/reports/breslov/2026-08-04-pdf-ligature-literal-normalization-v1-dev/README.md:59:  - `normalize_pdf_search_text` — canonical search form (NFKC + whitespace
+data/reports/breslov/2026-07-20-work-identity-section-resolution/root_cause.md:46:matches from other works were hidden from the answer_markdown.
+data/reports/breslov/historical-extraction-solution-audit-v1/README.md:38:  `git log --follow` y búsqueda histórica `-G` de ToUnicode/texttrace/overpaint/
+data/reports/breslov/historical-extraction-solution-audit-v1/README.md:39:  white rectangle/fontmap/glyph mapping en Python.
+data/reports/breslov/historical-extraction-solution-audit-v1/README.md:92:| Reading/block order | Sí | OLD_SOLUTION_NEEDS_ADAPTATION | blocks sort=True, proyección top-to-bottom, LH bbox roles | layout tests + validadores | ADAPT fronteras; seqno no es orden lector |
+data/reports/breslov/historical-extraction-solution-audit-v1/README.md:94:| Hidden white overlays | No antecedente suficiente encontrado | TRULY_NEW | candidato actual paint-order + ink containment | test_pdf_text_visibility + conservative regression | conservar aislado, certificar antes de integrar |
+data/reports/breslov/historical-extraction-solution-audit-v1/README.md:231:nearest-mark y reversa de strings; seqno como reading order.
+data/reports/breslov/historical-extraction-solution-audit-v1/README.md:257:  texttrace/seqno+baseline, owner único, Counter conservation, mixed-direction
+data/reports/breslov/historical-extraction-solution-audit-v1/README.md:286:| test_pdf_text_visibility.py (26) | conservative paint occlusion | synthetic/offline |
+data/reports/breslov/historical-extraction-solution-audit-v1/README.md:371:| ¿White overlays realmente nuevo? | NO DETERMINADO exhaustivamente; TRULY_NEW en alcance buscado |
+data/reports/breslov/2026-07-16-research-workspace-v1/hebrew_normalization_contract.md:15:7. collapse whitespace.
+data/reports/breslov/2026-07-29-simple-rag-hebrew-literal-dev-gate/README.md:58:The real Hebrew batch covered pointed/unpointed/fragmented forms, partial
+data/reports/breslov/2026-07-29-simple-rag-hebrew-literal-dev-gate/README.md:61:The spelling variant `תהילתי` is recovered as `hebrew_bigram`, contextual
+data/reports/breslov/2026-07-20-lmi-literal-phrase-gate/README.md:22:- Collapse whitespace in quote (`" ".join(quote.split())`) before checking term presence
+data/reports/breslov/2026-07-20-lmi-literal-phrase-gate/README.md:24:- Normalize newlines/whitespace in Latin terms before matching

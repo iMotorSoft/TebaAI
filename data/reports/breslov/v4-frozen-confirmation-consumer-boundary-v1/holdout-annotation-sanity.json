@@ -1,0 +1,7 @@
+{
+  "annotation_inline_digit_oversplit": 0,
+  "annotation_unexpected_unit_start": 0,
+  "inline_numeric_reference_lines": 62,
+  "status": "PASS",
+  "rule": "Note units split only on line-start editorial markers; inline numeric references never create a unit boundary."
+}

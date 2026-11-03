@@ -1,0 +1,7 @@
+{
+  "frozen_at": "2026-10-23T12:57:46.625416+00:00",
+  "rule": "After this freeze: no harness change, no SQL/query change, no expected-result change, no aggregation/report change, no endpoint-check change. Any change makes the gate INVALID; no re-freeze or supersession is allowed inside this gate.",
+  "frozen_entries": 27,
+  "harness_entries": 20,
+  "artifact_entries": 3
+}

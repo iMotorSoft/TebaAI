@@ -1,0 +1,21 @@
+{
+  "reviewed_pages": [
+    41,
+    55,
+    56,
+    143,
+    167
+  ],
+  "errors": [],
+  "scope": "no obvious visible source defect observed in these renders; not exhaustive editorial QA",
+  "if_error_found": {
+    "classification": "SOURCE_PDF_ERROR",
+    "record": [
+      "page",
+      "bbox",
+      "description",
+      "visual_evidence"
+    ],
+    "action": "record and continue; never repair source silently"
+  }
+}

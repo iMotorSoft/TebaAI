@@ -1,0 +1,46 @@
+{
+  "measured_at": "2026-10-23T12:16:47.389579+00:00",
+  "label": "fresh",
+  "endpoint": "http://127.0.0.1:7008/library/documents/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/source",
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "authenticated_session": {
+    "status": 201,
+    "token_present": true
+  },
+  "authenticated": {
+    "status": 200,
+    "content_type": "application/pdf",
+    "content_disposition": "inline; filename=\"original.pdf\"",
+    "cache_control": "private, no-store",
+    "content_length_header": "4550267",
+    "served_bytes": 4550267,
+    "served_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a"
+  },
+  "database": {
+    "id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "status": "ready",
+    "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+    "source_size_bytes": 4550267,
+    "source_mime_type": "application/pdf",
+    "source_filename": "LIKUTEY HALAJOT Interior Final.pdf",
+    "visible": 1
+  },
+  "canonical_durable_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+  "canonical_durable_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "approved_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "external_source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf",
+  "db_source_path_equals_canonical": true,
+  "served_path_is_not_external_downloads": true,
+  "served_pdf_valid": true,
+  "served_pages": 284,
+  "authenticated_status_200": true,
+  "served_sha_matches_durable": true,
+  "served_sha_matches_approved": true,
+  "served_size_matches_approved": true,
+  "served_pages_match_approved": true,
+  "unauthenticated_status": 401,
+  "unauthenticated_blocked": true,
+  "public_source_leak": false,
+  "redirected_to_external": false
+}

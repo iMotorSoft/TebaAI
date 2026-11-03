@@ -1,0 +1,2219 @@
+{
+  "collections": [
+    {
+      "id": "f68f6a41-c6e2-4dab-b868-74361f01ee7a",
+      "code": "general",
+      "name": "general",
+      "description": null,
+      "default_language": null,
+      "metadata": {},
+      "is_active": true,
+      "created_at": "2026-06-28 16:51:02.696714+00:00",
+      "updated_at": "2026-06-28 16:51:02.696714+00:00"
+    },
+    {
+      "id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "code": "breslov",
+      "name": "breslov",
+      "description": null,
+      "default_language": null,
+      "metadata": {
+        "project_code": "breslov_library",
+        "workspace_code": "breslov",
+        "organization_code": "tebaai",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      "is_active": true,
+      "created_at": "2026-06-28 16:50:40.420129+00:00",
+      "updated_at": "2026-06-28 16:50:40.420129+00:00"
+    },
+    {
+      "id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "code": "breslov_test",
+      "name": "Breslov Test Corpus",
+      "description": null,
+      "default_language": "es",
+      "metadata": {
+        "status": "test",
+        "project_code": "breslov_library",
+        "workspace_code": "breslov",
+        "organization_code": "tebaai",
+        "knowledge_scope_code": "breslov_primary"
+      },
+      "is_active": true,
+      "created_at": "2026-06-29 16:31:39.455558+00:00",
+      "updated_at": "2026-06-29 16:37:33.489619+00:00"
+    }
+  ],
+  "scopes": [
+    {
+      "id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "knowledge_scope_code": "breslov_primary"
+    },
+    {
+      "id": "3a806e35-1d81-4ccf-8190-d83efe4319e9",
+      "knowledge_scope_code": "breslov_e2e"
+    }
+  ],
+  "documents": [
+    {
+      "id": "0bad063c-f7a8-429c-a0ac-c01af224d5cb",
+      "title": "Cruzando el Puente Angosto — Guía práctica para las enseñanzas del Rebe Najmán",
+      "status": "ready",
+      "collection_id": "00000000-0000-0000-0000-000000000001",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/JudaismoenVivo/Docs/Libros/CRUZANDO EL PUENTE/CRUZANDO EL PUENTE (digital).pdf",
+      "source_filename": "CRUZANDO EL PUENTE (digital).pdf",
+      "source_sha256": "6dae1488cd2f87f84c024a9091336515c9225e1dee02501e725729304bdb5cd7"
+    },
+    {
+      "id": "693d990b-5d7b-5216-b0e2-2cffd0b709eb",
+      "title": "Cuaderno de la Aurora Índigo — DEV UI 2026-09-09",
+      "status": "ready",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": null,
+      "source_filename": "cuaderno-aurora-indigo-ui-dev.pdf",
+      "source_sha256": "4fa55bdbe710ceb8cbb1634727ee477e166aee8127c1ceb81086cd12709aa5e5"
+    },
+    {
+      "id": "5116cacb-fe17-4a37-967e-5cc4a389a9a2",
+      "title": "Documento de prueba CLI",
+      "status": "archived",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/tmp/tebaai-ingest-sample.md",
+      "source_filename": "tebaai-ingest-sample.md",
+      "source_sha256": "3c409fb0d2bb60636fc234459a14362f5fbb5139ee82dd2a71f80a766de73df0"
+    },
+    {
+      "id": "d0a07e39-a850-44b0-99b7-5e34d3f9609e",
+      "title": "Documento TXT de prueba",
+      "status": "archived",
+      "collection_id": "f68f6a41-c6e2-4dab-b868-74361f01ee7a",
+      "knowledge_scope_id": null,
+      "source_path": "/tmp/tebaai-ingest-sample.txt",
+      "source_filename": "tebaai-ingest-sample.txt",
+      "source_sha256": "253cb2055665c7ec8703f006cc56d3ecdf65ecc3763e34f648568e51fdabe716"
+    },
+    {
+      "id": "987bd9d3-bee7-4c1a-91d6-dd11aee8e856",
+      "title": "El Alma del Rebe Najmán",
+      "status": "ready",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/EL ALMA DEL REBE - KINDLE.pdf",
+      "source_filename": "EL ALMA DEL REBE - KINDLE.pdf",
+      "source_sha256": "b4af5c690bd7bb217b525ab208fb5aa18bd951802a14a106313f17bc5302896f"
+    },
+    {
+      "id": "76f2adbc-b79a-4432-9ea5-521a337a5502",
+      "title": "El Jardín de las Almas",
+      "status": "ready",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/El Jardin de las Almas (Spanish - Rebe Najman de Breslov.pdf",
+      "source_filename": "El Jardin de las Almas (Spanish - Rebe Najman de Breslov.pdf",
+      "source_sha256": "e8a4c3b6ae049ad7075ad393ac0bfed27980b6f25202606c8a0df4993c196118"
+    },
+    {
+      "id": "ca7d6c5c-8023-5a52-96f8-761b214d7cb4",
+      "title": "Golden Primary User Query 2026-08-30",
+      "status": "ready",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": null,
+      "source_filename": "golden.pdf",
+      "source_sha256": "d7678313f6e054bc3305fc69336acfde616e38dc266bcb7d022cd107cab020b9"
+    },
+    {
+      "id": "093e7975-1bb2-4d8f-8394-63ca82879500",
+      "title": "HebrewBooks 34314 (subset 1-15)",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/hebrewbooks_34314_subset.md",
+      "source_filename": "hebrewbooks_34314_subset.md",
+      "source_sha256": "4fd7b5b24c75a8f6f5b60fa43711c306d8420b8a8f902e1f04e71e4231f251e9"
+    },
+    {
+      "id": "27f175ea-bc8b-40e4-bf2d-4ba3ab321dda",
+      "title": "KITZUR",
+      "status": "ready",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/KITZUR ultimo(createspace).pdf",
+      "source_filename": "KITZUR ultimo(createspace).pdf",
+      "source_sha256": "6c10f0527351ed85adabeeca3a2a90724d15ecd632b2737a85437a93495d42c8"
+    },
+    {
+      "id": "c7c10741-c324-4916-93a7-61070863e3f9",
+      "title": "Kokhavey Ohr",
+      "status": "ready",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/Kokhavey Ohr layout BH_PRINT-4.pdf",
+      "source_filename": "Kokhavey Ohr layout BH_PRINT-4.pdf",
+      "source_sha256": "c38d41f92f73431e0c4905ce5a60f34de5933e224ea6e7fa6eb0594bb9c15761"
+    },
+    {
+      "id": "cfd5a9f9-e47d-4fc1-bc95-91734a59bdde",
+      "title": "Koren Talmud Bavli Yevamot Part 2 Hebrew-English — PDF modern test, pages 1-55",
+      "status": "archived",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": null,
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/koren_yevamot_p1-55.md",
+      "source_filename": "koren_yevamot_p1-55.md",
+      "source_sha256": "701ff17bdbf02cb2a4fecb22747595723413e8b455dbfa7c3a4268b064e4572d"
+    },
+    {
+      "id": "6f876e95-04c3-4bd5-b7d8-a4de27d6becc",
+      "title": "Koren Talmud Bavli — Yevamot Part One",
+      "status": "archived",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": null,
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Koren/Yevamot Part One, Standard Color (Adin Even-Israel Steinsaltz) (z-lib.org).pdf",
+      "source_filename": "Yevamot Part One, Standard Color (Adin Even-Israel Steinsaltz) (z-lib.org).pdf",
+      "source_sha256": "ac1e42fc5c018e706d5e7cb3908cdb7d4f78352431f0d5815de466112ff6e2ab"
+    },
+    {
+      "id": "91e5829e-0fb3-4319-afe1-25413851ff7f",
+      "title": "Koren Talmud Bavli — Yevamot Part Two",
+      "status": "archived",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": null,
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Koren/Koren Talmud Bavli, Noé Edition, Vol 15 Yevamot Part 2, HebrewEnglish, Large, Color (Hebrew and English Edition) ( etc.) (z-lib.org).pdf",
+      "source_filename": "Koren Talmud Bavli, Noé Edition, Vol 15 Yevamot Part 2, HebrewEnglish, Large, Color (Hebrew and English Edition) ( etc.) (z-lib.org).pdf",
+      "source_sha256": "7d97439ad1918bfdc2e219dc8ad12d2cc736d9ab9bacd940b8abcc9a259695c0"
+    },
+    {
+      "id": "47205536-f4d3-5e84-9a1b-75aaac73ca41",
+      "title": "La Potencia de la Plegaria",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "3a806e35-1d81-4ccf-8190-d83efe4319e9",
+      "source_path": null,
+      "source_filename": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+      "source_sha256": "8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46"
+    },
+    {
+      "id": "43ba4f4b-d3ee-49b6-8d09-dfa152379893",
+      "title": "La Potencia de la Plegaria",
+      "status": "ready",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+      "source_filename": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+      "source_sha256": "8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46"
+    },
+    {
+      "id": "cbfd6458-aad2-43df-986a-4b3350e6f8a7",
+      "title": "La Potencia de la Plegaria — Interior Print",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+      "source_filename": "LA POTENCIA DE LA PLEGARIA Interior Print.pdf",
+      "source_sha256": "8e5c2ca6c153f47e7ae31e0ba2f2b8fefaedb9916dd8d0d79d484e2c96990c46"
+    },
+    {
+      "id": "132a791a-d12b-45bc-9b34-dd143605de12",
+      "title": "Likutey Halajot — Interior Final",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT (Interior Final).pdf",
+      "source_filename": "LIKUTEY HALAJOT (Interior Final).pdf",
+      "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a"
+    },
+    {
+      "id": "56ddcc3b-8296-4832-ac95-2bfe032cd4c6",
+      "title": "Likutey Halajot LM II 8",
+      "status": "ready",
+      "collection_id": "9b9ee20e-64e3-4ed2-9421-540578249eac",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY HALAJOT LM II 8.pdf",
+      "source_filename": "LIKUTEY HALAJOT LM II 8.pdf",
+      "source_sha256": "c04601782711751c14539224e8f679a740090b9d7f5f09d8877db9c3b6a5ff74"
+    },
+    {
+      "id": "6673da69-eb38-40bf-9f5c-447ff3ba6725",
+      "title": "Likutey Moharán I — edición española BRI",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY MOHARÁN I int (imprenta).pdf",
+      "source_filename": "LIKUTEY MOHARÁN I int (imprenta).pdf",
+      "source_sha256": "71fb3c763c34d13465441c57b2bf3a65629fcdc37a7588f21e4fbf21f984b8d7"
+    },
+    {
+      "id": "3715c6e0-db56-49a1-82df-62d0a4d0b5cd",
+      "title": "Likutey Moharán II — edición española BRI",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY MOHARAN II Interior.pdf",
+      "source_filename": "LIKUTEY MOHARAN II Interior.pdf",
+      "source_sha256": "ce7304e31c37cadd5bc938732d93c8e5385afc026c0af0de612635d8b76cab61"
+    },
+    {
+      "id": "0d534d6c-6809-421b-9a5e-336d0bb8ecdb",
+      "title": "Likutey Moharán XV KDP",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY MOHARÁN XV KDP.pdf",
+      "source_filename": "LIKUTEY MOHARÁN XV KDP.pdf",
+      "source_sha256": "f4d7eb195cadf94d6566c5cd6d636113b62f4c6748f987b250fc4bd0fcd61303"
+    },
+    {
+      "id": "b62619cb-0068-4c97-a857-1b5a9250ef29",
+      "title": "Masoretic Text (Hebrew test)",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/tnk_massoretic_text_decoded.md",
+      "source_filename": "tnk_massoretic_text_decoded.md",
+      "source_sha256": "c7bfcf5f2ef8bd95d9b5ef1365108be622c74402d884b9c180600a808807ff9c"
+    },
+    {
+      "id": "d48fa596-7f78-4d2a-8b23-6a3f9002e903",
+      "title": "Tanakh Torah (Bereshit+Shemot) — Masoretic Text PDF pages 1-200 (Hebrew test)",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/tnk_massoretic_text_decoded.md",
+      "source_filename": "tnk_massoretic_text_decoded.md",
+      "source_sha256": "f2ec0fc76d9d2057386ee3e57b6551f7b5c5f6a13c4374052c777d80b491fa69"
+    },
+    {
+      "id": "a852721d-ae41-4226-8cbb-b4419c0cabe9",
+      "title": "Un Día en la Vida de un Jasid de Breslov",
+      "status": "ready",
+      "collection_id": "00000000-0000-0000-0000-000000000001",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/UN DÍA EN LA VIDA (KDP).pdf",
+      "source_filename": "UN DÍA EN LA VIDA (KDP).pdf",
+      "source_sha256": "d98e4d4c96a36c701aa055e1a9b8ce230dec24f3b45f35455828f6fe30f69c13"
+    },
+    {
+      "id": "10b21f2d-fbe7-51f0-a60a-4a9bd6f274f4",
+      "title": "Un Día en la Vida de un Jasid de Breslov",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "3a806e35-1d81-4ccf-8190-d83efe4319e9",
+      "source_path": null,
+      "source_filename": "UN DÍA EN LA VIDA KDP.pdf",
+      "source_sha256": "d98e4d4c96a36c701aa055e1a9b8ce230dec24f3b45f35455828f6fe30f69c13"
+    },
+    {
+      "id": "0985d874-d223-4cac-9920-0352050bf8ff",
+      "title": "ליקוטי הלכות — אורח חיים — Sefaria test subset",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/likutey_halakhot_subset.md",
+      "source_filename": "likutey_halakhot_subset.md",
+      "source_sha256": "1e6f00c3a098310f4bd763e3592a1e7c905bc9a276e47e0b35a364a8ddf5aa4b"
+    },
+    {
+      "id": "252c9436-6338-4cbd-b2a7-365c495009fc",
+      "title": "ליקוטי הלכות — אורח חיים — הלכות ברכות התורה (Sefaria test)",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/lh_oc_laws_of_torah_blessings.md",
+      "source_filename": "lh_oc_laws_of_torah_blessings.md",
+      "source_sha256": "7f66f9548b0a35901ecbd1f9fe0a4451b0fa1b0b2b32bcc3c5e00f8e7be10bcc"
+    },
+    {
+      "id": "ab48603a-cf31-469a-a37c-cbaed28c7acb",
+      "title": "ליקוטי הלכות — אורח חיים — הלכות השכמת הבוקר (Sefaria test)",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/lh_oc_laws_of_morning_conduct.md",
+      "source_filename": "lh_oc_laws_of_morning_conduct.md",
+      "source_sha256": "9613ec1bf7f477f9a1008edfb358c08d34569c9d83f02f690a5aca30e49af896"
+    },
+    {
+      "id": "40dbe222-e1a9-4e72-9bb0-386d75d89548",
+      "title": "ליקוטי הלכות — אורח חיים — הלכות נטילת ידים שחרית (Sefaria test)",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/lh_oc_laws_of_morning_hand_washing.md",
+      "source_filename": "lh_oc_laws_of_morning_hand_washing.md",
+      "source_sha256": "2ed494fb7100b636865f12ca50d068f1528b8b8a6c081da41de9b08d62be7fe4"
+    },
+    {
+      "id": "7dbe7097-2ad3-4633-ba34-2daf8275f9db",
+      "title": "ליקוטי הלכות — אורח חיים — הלכות קדיש (Sefaria test)",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/lh_oc_laws_of_kaddish.md",
+      "source_filename": "lh_oc_laws_of_kaddish.md",
+      "source_sha256": "63fbdd6f7bd3ae9b793ad0232ce95e236b1cdb32f518a86f2d57f467437e41a3"
+    },
+    {
+      "id": "00259e13-b718-4f3d-bd8a-935f97612508",
+      "title": "ליקוטי הלכות — אורח חיים — הלכות תפלה (Sefaria test)",
+      "status": "test_candidate",
+      "collection_id": "e53f40ac-98ab-4ef0-9a2a-cc74ecceef9a",
+      "knowledge_scope_id": "16343055-5240-48e1-a61c-c0830a90cc25",
+      "source_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/data/processed/lh_oc_laws_of_prayer.md",
+      "source_filename": "lh_oc_laws_of_prayer.md",
+      "source_sha256": "1bf7549ab687cb03215275ac87f3430741a814b076a5b0142173f5fd1f3160ac"
+    }
+  ],
+  "columns": [
+    {
+      "table_name": "content_manager_cleanup_events",
+      "column_name": "id",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "content_manager_cleanup_events",
+      "column_name": "manifest_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_cleanup_events",
+      "column_name": "resource_type",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_cleanup_events",
+      "column_name": "resource_id",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_cleanup_events",
+      "column_name": "action",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_cleanup_events",
+      "column_name": "result",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_cleanup_events",
+      "column_name": "error_detail",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_cleanup_events",
+      "column_name": "occurred_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "job_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "attempt_number",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "ingestion_run_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "temporary_file_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "started_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "finished_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "cleanup_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_ingestion_manifests",
+      "column_name": "reconciliation",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "job_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "attempt_number",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "previous_attempt_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "worker_id",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "started_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "finished_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "cleanup_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "recovery_action",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "failure_stage",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "error_code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_attempts",
+      "column_name": "error_detail",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "id",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "job_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "attempt_number",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "from_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "to_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "stage",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "actor_id",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "reason",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_job_transitions",
+      "column_name": "occurred_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "upload_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "actor_user_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "title",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "language",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "work_family",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "administrative_notes",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "ingestion_profile",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "requested_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "current_stage",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "progress_percent",
+      "data_type": "real"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "stage_states",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "error_code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "error_message",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "warning_codes",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "attempt_number",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "diagnostic",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "stage_timings",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "technical_details",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "started_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "finished_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "expires_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "pipeline_version",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "document_schema_version",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "embedding_model",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "collection_code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "idempotency_key",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "claimed_by",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "claimed_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "lease_expires_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "heartbeat_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "recovery_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_jobs",
+      "column_name": "cleanup_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_manifest_resources",
+      "column_name": "manifest_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_manifest_resources",
+      "column_name": "resource_type",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_manifest_resources",
+      "column_name": "resource_id",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_manifest_resources",
+      "column_name": "was_preexisting",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "content_manager_manifest_resources",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_manifest_resources",
+      "column_name": "cleaned_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_manifest_resources",
+      "column_name": "cleanup_error",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "actor_user_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "filename",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "original_filename",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "size_bytes",
+      "data_type": "bigint"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "sha256",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "mime_type",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "page_count",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "validation_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "validation_errors",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "duplicate_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "existing_document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "temp_path",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "warnings",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "limits",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "expires_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "cleanup_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "content_manager_uploads",
+      "column_name": "cleaned_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "chunk_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "embedding_run_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "embedding_provider",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "embedding_model",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "embedding_dimension",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "milvus_collection",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "milvus_primary_key",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "content_sha256",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "embedding_model_alias",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "embedding_version",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "chunk_set_version",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_chunk_embeddings",
+      "column_name": "vector_status",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "name",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "description",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "default_language",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "is_active",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_collections_legacy",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "document_text_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "collection_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "chunk_index",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "chunk_uid",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "language",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "content",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "content_sha256",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "content_length",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "token_count_estimate",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "char_start",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "char_end",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "page_start",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "page_end",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "chapter",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "section",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "search_text_normalized",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "search_vector_es",
+      "data_type": "tsvector"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "search_vector_simple",
+      "data_type": "tsvector"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "reference_label",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "paragraph_index",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "bibliographic_metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "chunk_set_version",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "page_mapping_status",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "section_title",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "node_path",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "chunking_strategy",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "chunking_version",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "token_estimate",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "is_empty",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "block_type",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "block_subtype",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "evidence_role",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "citable",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "layout_confidence",
+      "data_type": "real"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "ingestion_profile",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_document_chunks",
+      "column_name": "printed_page_label",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "collection_code",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "milvus_collection",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "embedding_provider",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "embedding_model",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "embedding_dimension",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "chunks_total",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "chunks_embedded",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "chunks_indexed",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "error_message",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "started_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "finished_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "target",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "run_type",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "chunk_set_version",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_embedding_runs",
+      "column_name": "document_ids",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "page_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "run_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "page_number",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "text",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "char_count",
+      "data_type": "integer"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "extraction_method",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "confidence",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "layout_notes",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_pages_v2",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "workspace_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "project_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "document_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "from_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "to_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "decision",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "decided_by",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "decided_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "reason",
+      "data_type": "text"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "library_promotion_events",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "organization_members",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "organization_members",
+      "column_name": "organization_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "organization_members",
+      "column_name": "user_id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "organization_members",
+      "column_name": "role",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "table_name": "organization_members",
+      "column_name": "status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "organization_members",
+      "column_name": "metadata",
+      "data_type": "jsonb"
+    },
+    {
+      "table_name": "organization_members",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "organization_members",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "users",
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "table_name": "users",
+      "column_name": "email",
+      "data_type": "text"
+    },
+    {
+      "table_name": "users",
+      "column_name": "username",
+      "data_type": "text"
+    },
+    {
+      "table_name": "users",
+      "column_name": "password_hash",
+      "data_type": "text"
+    },
+    {
+      "table_name": "users",
+      "column_name": "role",
+      "data_type": "text"
+    },
+    {
+      "table_name": "users",
+      "column_name": "is_active",
+      "data_type": "boolean"
+    },
+    {
+      "table_name": "users",
+      "column_name": "last_login_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "users",
+      "column_name": "password_changed_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "users",
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "users",
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "table_name": "users",
+      "column_name": "email_normalized",
+      "data_type": "text"
+    },
+    {
+      "table_name": "users",
+      "column_name": "user_status",
+      "data_type": "text"
+    },
+    {
+      "table_name": "users",
+      "column_name": "display_name",
+      "data_type": "text"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "child": "auth_identities",
+      "parent": "users",
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id)"
+    },
+    {
+      "child": "auth_sessions",
+      "parent": "auth_sessions",
+      "definition": "FOREIGN KEY (replaced_by_session_id) REFERENCES auth_sessions(id)"
+    },
+    {
+      "child": "auth_sessions",
+      "parent": "users",
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id)"
+    },
+    {
+      "child": "content_manager_cleanup_events",
+      "parent": "content_manager_ingestion_manifests",
+      "definition": "FOREIGN KEY (manifest_id) REFERENCES content_manager_ingestion_manifests(id) ON DELETE CASCADE"
+    },
+    {
+      "child": "content_manager_ingestion_manifests",
+      "parent": "content_manager_jobs",
+      "definition": "FOREIGN KEY (job_id) REFERENCES content_manager_jobs(id)"
+    },
+    {
+      "child": "content_manager_ingestion_manifests",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id) ON DELETE SET NULL"
+    },
+    {
+      "child": "content_manager_job_attempts",
+      "parent": "content_manager_job_attempts",
+      "definition": "FOREIGN KEY (previous_attempt_id) REFERENCES content_manager_job_attempts(id)"
+    },
+    {
+      "child": "content_manager_job_attempts",
+      "parent": "content_manager_jobs",
+      "definition": "FOREIGN KEY (job_id) REFERENCES content_manager_jobs(id)"
+    },
+    {
+      "child": "content_manager_jobs",
+      "parent": "content_manager_uploads",
+      "definition": "FOREIGN KEY (upload_id) REFERENCES content_manager_uploads(id)"
+    },
+    {
+      "child": "content_manager_jobs",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id) NOT VALID"
+    },
+    {
+      "child": "content_manager_job_transitions",
+      "parent": "content_manager_jobs",
+      "definition": "FOREIGN KEY (job_id) REFERENCES content_manager_jobs(id)"
+    },
+    {
+      "child": "content_manager_manifest_resources",
+      "parent": "content_manager_ingestion_manifests",
+      "definition": "FOREIGN KEY (manifest_id) REFERENCES content_manager_ingestion_manifests(id) ON DELETE CASCADE"
+    },
+    {
+      "child": "content_manager_uploads",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id) NOT VALID"
+    },
+    {
+      "child": "content_manager_uploads",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id) NOT VALID"
+    },
+    {
+      "child": "content_manager_uploads",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id) NOT VALID"
+    },
+    {
+      "child": "content_manager_uploads",
+      "parent": "users",
+      "definition": "FOREIGN KEY (actor_user_id) REFERENCES users(id) NOT VALID"
+    },
+    {
+      "child": "content_manager_uploads",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id) NOT VALID"
+    },
+    {
+      "child": "knowledge_scopes",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "knowledge_scopes",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)"
+    },
+    {
+      "child": "knowledge_scopes",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "library_ai_zone_candidates_v2",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_ai_zone_candidates_v2",
+      "parent": "library_page_anchors_v2",
+      "definition": "FOREIGN KEY (page_anchor_id) REFERENCES library_page_anchors_v2(page_anchor_id)"
+    },
+    {
+      "child": "library_chunk_embeddings",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)"
+    },
+    {
+      "child": "library_chunk_embeddings",
+      "parent": "library_document_chunks",
+      "definition": "FOREIGN KEY (chunk_id) REFERENCES library_document_chunks(id) ON DELETE CASCADE"
+    },
+    {
+      "child": "library_chunk_embeddings",
+      "parent": "library_embedding_runs",
+      "definition": "FOREIGN KEY (embedding_run_id) REFERENCES library_embedding_runs(id)"
+    },
+    {
+      "child": "library_chunk_embeddings",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "library_chunk_embeddings",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)"
+    },
+    {
+      "child": "library_chunk_embeddings",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "library_concept_mentions_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_concept_mentions_v2",
+      "parent": "library_sections_v2",
+      "definition": "FOREIGN KEY (section_id) REFERENCES library_sections_v2(section_id)"
+    },
+    {
+      "child": "library_content_nodes_v2",
+      "parent": "library_content_units_v2",
+      "definition": "FOREIGN KEY (content_unit_id) REFERENCES library_content_units_v2(content_unit_id)"
+    },
+    {
+      "child": "library_content_nodes_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (source_run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_content_nodes_v2",
+      "parent": "library_page_anchors_v2",
+      "definition": "FOREIGN KEY (page_anchor_id) REFERENCES library_page_anchors_v2(page_anchor_id)"
+    },
+    {
+      "child": "library_content_relations_v2",
+      "parent": "library_content_nodes_v2",
+      "definition": "FOREIGN KEY (target_content_node_id) REFERENCES library_content_nodes_v2(content_node_id)"
+    },
+    {
+      "child": "library_content_relations_v2",
+      "parent": "library_content_nodes_v2",
+      "definition": "FOREIGN KEY (source_content_node_id) REFERENCES library_content_nodes_v2(content_node_id)"
+    },
+    {
+      "child": "library_content_relations_v2",
+      "parent": "library_content_units_v2",
+      "definition": "FOREIGN KEY (target_content_unit_id) REFERENCES library_content_units_v2(content_unit_id)"
+    },
+    {
+      "child": "library_content_relations_v2",
+      "parent": "library_content_units_v2",
+      "definition": "FOREIGN KEY (source_content_unit_id) REFERENCES library_content_units_v2(content_unit_id)"
+    },
+    {
+      "child": "library_content_units_v2",
+      "parent": "library_content_units_v2",
+      "definition": "FOREIGN KEY (parent_content_unit_id) REFERENCES library_content_units_v2(content_unit_id)"
+    },
+    {
+      "child": "library_content_units_v2",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_content_units_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (source_run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_document_chunks",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)"
+    },
+    {
+      "child": "library_document_chunks",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id) ON DELETE CASCADE"
+    },
+    {
+      "child": "library_document_chunks",
+      "parent": "library_document_texts",
+      "definition": "FOREIGN KEY (document_text_id) REFERENCES library_document_texts(id) ON DELETE CASCADE"
+    },
+    {
+      "child": "library_document_chunks",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "library_document_chunks",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)"
+    },
+    {
+      "child": "library_document_chunks",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "library_document_references",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id) ON DELETE CASCADE"
+    },
+    {
+      "child": "library_documents",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)"
+    },
+    {
+      "child": "library_documents",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "library_documents",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)"
+    },
+    {
+      "child": "library_documents",
+      "parent": "users",
+      "definition": "FOREIGN KEY (created_by) REFERENCES users(id)"
+    },
+    {
+      "child": "library_documents",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "library_document_texts",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)"
+    },
+    {
+      "child": "library_document_texts",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id) ON DELETE CASCADE"
+    },
+    {
+      "child": "library_document_wiki_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_embedding_runs",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)"
+    },
+    {
+      "child": "library_embedding_runs",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "library_embedding_runs",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)"
+    },
+    {
+      "child": "library_embedding_runs",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "library_internal_relations_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_la_potencia_plegaria_page_blocks_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_la_potencia_plegaria_pages_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_likutey_halajot_fine_zones_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_likutey_halajot_fine_zones_v1",
+      "parent": "library_page_anchors_v2",
+      "definition": "FOREIGN KEY (page_anchor_id) REFERENCES library_page_anchors_v2(page_anchor_id)"
+    },
+    {
+      "child": "library_likutey_halajot_nominal_reference_resolution_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_likutey_halajot_nominal_reference_resolution_v1",
+      "parent": "library_likutey_halajot_nominal_references_v1",
+      "definition": "FOREIGN KEY (nominal_reference_id) REFERENCES library_likutey_halajot_nominal_references_v1(id)"
+    },
+    {
+      "child": "library_likutey_halajot_nominal_references_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_likutey_halajot_nominal_references_v1",
+      "parent": "library_likutey_halajot_fine_zones_v1",
+      "definition": "FOREIGN KEY (parent_fine_zone_id) REFERENCES library_likutey_halajot_fine_zones_v1(id)"
+    },
+    {
+      "child": "library_likutey_halajot_nominal_references_v1",
+      "parent": "library_likutey_halajot_note_source_units_v1",
+      "definition": "FOREIGN KEY (parent_note_source_unit_id) REFERENCES library_likutey_halajot_note_source_units_v1(id)"
+    },
+    {
+      "child": "library_likutey_halajot_nominal_references_v1",
+      "parent": "library_page_anchors_v2",
+      "definition": "FOREIGN KEY (page_anchor_id) REFERENCES library_page_anchors_v2(page_anchor_id)"
+    },
+    {
+      "child": "library_likutey_halajot_note_source_units_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_likutey_halajot_note_source_units_v1",
+      "parent": "library_likutey_halajot_fine_zones_v1",
+      "definition": "FOREIGN KEY (parent_fine_zone_id) REFERENCES library_likutey_halajot_fine_zones_v1(id)"
+    },
+    {
+      "child": "library_likutey_halajot_note_source_units_v1",
+      "parent": "library_page_anchors_v2",
+      "definition": "FOREIGN KEY (page_anchor_id) REFERENCES library_page_anchors_v2(page_anchor_id)"
+    },
+    {
+      "child": "library_literal_spans_v2",
+      "parent": "library_content_nodes_v2",
+      "definition": "FOREIGN KEY (content_node_id) REFERENCES library_content_nodes_v2(content_node_id) ON DELETE CASCADE"
+    },
+    {
+      "child": "library_lm_xv_kdp_block_roles_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_lm_xv_kdp_block_roles_v1",
+      "parent": "library_lm_xv_kdp_page_blocks_v1",
+      "definition": "FOREIGN KEY (block_id) REFERENCES library_lm_xv_kdp_page_blocks_v1(id)"
+    },
+    {
+      "child": "library_lm_xv_kdp_fine_zones_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_lm_xv_kdp_fine_zones_v1",
+      "parent": "library_lm_xv_kdp_page_blocks_v1",
+      "definition": "FOREIGN KEY (parent_block_id) REFERENCES library_lm_xv_kdp_page_blocks_v1(id)"
+    },
+    {
+      "child": "library_lm_xv_kdp_page_blocks_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_lm_xv_kdp_pages_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_lm_xv_kdp_structural_classifications_v1",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_page_anchors_v2",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (source_file_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_page_anchors_v2",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_page_anchors_v2",
+      "parent": "library_pages_v2",
+      "definition": "FOREIGN KEY (legacy_page_id) REFERENCES library_pages_v2(page_id)"
+    },
+    {
+      "child": "library_page_structural_classifications_v2",
+      "parent": "library_content_nodes_v2",
+      "definition": "FOREIGN KEY (content_node_id) REFERENCES library_content_nodes_v2(content_node_id)"
+    },
+    {
+      "child": "library_page_structural_classifications_v2",
+      "parent": "library_page_anchors_v2",
+      "definition": "FOREIGN KEY (page_anchor_id) REFERENCES library_page_anchors_v2(page_anchor_id)"
+    },
+    {
+      "child": "library_pages_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_promotion_events",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)"
+    },
+    {
+      "child": "library_promotion_events",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_promotion_events",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "library_promotion_events",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)"
+    },
+    {
+      "child": "library_promotion_events",
+      "parent": "users",
+      "definition": "FOREIGN KEY (decided_by) REFERENCES users(id)"
+    },
+    {
+      "child": "library_promotion_events",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "library_sections_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_sections_v2",
+      "parent": "library_sections_v2",
+      "definition": "FOREIGN KEY (parent_section_id) REFERENCES library_sections_v2(section_id)"
+    },
+    {
+      "child": "library_semantic_units_v2",
+      "parent": "library_content_nodes_v2",
+      "definition": "FOREIGN KEY (content_node_id) REFERENCES library_content_nodes_v2(content_node_id) ON DELETE CASCADE"
+    },
+    {
+      "child": "library_semantic_units_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (source_run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_semantic_units_v2",
+      "parent": "library_literal_spans_v2",
+      "definition": "FOREIGN KEY (literal_span_id) REFERENCES library_literal_spans_v2(literal_span_id)"
+    },
+    {
+      "child": "library_source_references_v2",
+      "parent": "library_ingestion_runs_v2",
+      "definition": "FOREIGN KEY (run_id) REFERENCES library_ingestion_runs_v2(run_id)"
+    },
+    {
+      "child": "library_source_references_v2",
+      "parent": "library_sections_v2",
+      "definition": "FOREIGN KEY (section_id) REFERENCES library_sections_v2(section_id)"
+    },
+    {
+      "child": "library_validation_runs",
+      "parent": "knowledge_scopes",
+      "definition": "FOREIGN KEY (knowledge_scope_id) REFERENCES knowledge_scopes(id)"
+    },
+    {
+      "child": "library_validation_runs",
+      "parent": "library_documents",
+      "definition": "FOREIGN KEY (document_id) REFERENCES library_documents(id)"
+    },
+    {
+      "child": "library_validation_runs",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "library_validation_runs",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)"
+    },
+    {
+      "child": "library_validation_runs",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "organization_members",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "organization_members",
+      "parent": "users",
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id)"
+    },
+    {
+      "child": "project_members",
+      "parent": "projects",
+      "definition": "FOREIGN KEY (project_id) REFERENCES projects(id)"
+    },
+    {
+      "child": "project_members",
+      "parent": "users",
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id)"
+    },
+    {
+      "child": "projects",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    },
+    {
+      "child": "projects",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "workspace_members",
+      "parent": "users",
+      "definition": "FOREIGN KEY (user_id) REFERENCES users(id)"
+    },
+    {
+      "child": "workspace_members",
+      "parent": "workspaces",
+      "definition": "FOREIGN KEY (workspace_id) REFERENCES workspaces(id)"
+    },
+    {
+      "child": "workspaces",
+      "parent": "organizations",
+      "definition": "FOREIGN KEY (organization_id) REFERENCES organizations(id)"
+    }
+  ],
+  "counts": [
+    {
+      "pages": 1864,
+      "chunks": 7168,
+      "jobs": 86,
+      "attempts": 50,
+      "users": 79,
+      "migrations": 42
+    }
+  ]
+}

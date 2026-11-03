@@ -1,0 +1,80 @@
+{
+  "scope": "PROVISIONAL_DIAGNOSTIC_SNAPSHOT_NOT_APPROVED_CANDIDATE",
+  "files": [
+    {
+      "path": "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql",
+      "sha256": "9df48a72c59cde6fcde2e71269b03ac8afc67882943ca7a1bd86dd9671d6e369",
+      "size_bytes": 12975
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/generation.py",
+      "sha256": "734712ac254e5dc03f8f4d0306436042dd20c6629da9b2ef9942d685d7725b50",
+      "size_bytes": 26677
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager.py",
+      "sha256": "713ef1ea5a548bd9609e0abb6221eb0754739618b0bf48df0102649a4f5fb806",
+      "size_bytes": 49610
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/content_manager_cleanup.py",
+      "sha256": "3b865eb56f9c8bfd306d1efa5ad94538f2d9b312021dcc5c268689cf2e80a88d",
+      "size_bytes": 12679
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/hybrid_search.py",
+      "sha256": "97ec6aadb655936a833b55fcc1920a05b9ae1545177cd223cc8d6ec381668a13",
+      "size_bytes": 11849
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py",
+      "sha256": "88866250fc7bd938d6ce5209e6b00c9167ac86ab5ffcc8da2de4ab98bf0eac42",
+      "size_bytes": 35940
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py",
+      "sha256": "e178137ac386b5c3a0c1af59d660db24180a7e86166d61dc77f1d1c9a58f0a6c",
+      "size_bytes": 7507
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py",
+      "sha256": "bd6ae5ea41c180e9d9716d6993e099c4c62a66756339784ee95e6a818d3f4409",
+      "size_bytes": 27173
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/source_repository.py",
+      "sha256": "8a07469875e11e0c246020c0728b6623039cbf3e8cb3ba4b41e5ee3ac9134ea0",
+      "size_bytes": 3148
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/modules/library/text_search.py",
+      "sha256": "eaa54906397af3b4e942c3f7d9b93343130fb7a599306bab1e739d568cda95c8",
+      "size_bytes": 11366
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+      "sha256": "aac7ee1a1f60e8d81f6486cdbe60be1c8049c5a02b9157589be685aa044a008c",
+      "size_bytes": 27649
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_content_manager_cleanup.py",
+      "sha256": "0031024e7cf809ffe06b5fb3ceedc4926b40f44f2d4733a2f2b31f47e2fba780",
+      "size_bytes": 5498
+    },
+    {
+      "path": "SrvRestAstroLS_v1/backend/tests/test_library_search_hybrid_milvus_alias.py",
+      "sha256": "ff0a03eca21cb218caf2cc63b1d2f0b8a06caf658c1037db409b33539e7ed6b4",
+      "size_bytes": 3662
+    },
+    {
+      "path": "data/reports/breslov/parallel-generation-foundation-v2/REPORT.md",
+      "sha256": "0cc04fe996bba91b001275eaf9a88476ea88dc3c677553e5857d3d39d51a1d6b",
+      "size_bytes": 5478
+    },
+    {
+      "path": "data/reports/breslov/parallel-generation-foundation-v2/gate.json",
+      "sha256": "54448032692adb8a422842b28d467c3590b0805704514f0b366e1460fed5b79c",
+      "size_bytes": 1191
+    }
+  ]
+}

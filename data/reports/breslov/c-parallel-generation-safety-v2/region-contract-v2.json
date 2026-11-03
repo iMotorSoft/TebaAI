@@ -1,0 +1,243 @@
+{
+  "cases": {
+    "accepted_certified_publishes": {
+      "rejected_at_boundary": false,
+      "status": "FULL",
+      "evidence_units": [
+        "region-0"
+      ],
+      "quarantined": [],
+      "reason_codes": {
+        "region-0": []
+      },
+      "canonical_has_bad": false
+    },
+    "status_QUARANTINED_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "UNUSABLE",
+      "evidence_units": [],
+      "quarantined": [
+        "region-0"
+      ],
+      "reason_codes": {
+        "region-0": [
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ]
+      },
+      "canonical_has_bad": false
+    },
+    "status_UNRESOLVED_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "UNUSABLE",
+      "evidence_units": [],
+      "quarantined": [
+        "region-0"
+      ],
+      "reason_codes": {
+        "region-0": [
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ]
+      },
+      "canonical_has_bad": false
+    },
+    "status_SOURCE_PDF_ERROR_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "UNUSABLE",
+      "evidence_units": [],
+      "quarantined": [
+        "region-0"
+      ],
+      "reason_codes": {
+        "region-0": [
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ]
+      },
+      "canonical_has_bad": false
+    },
+    "status_PLATFORM_EXTRACTION_ERROR_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "UNUSABLE",
+      "evidence_units": [],
+      "quarantined": [
+        "region-0"
+      ],
+      "reason_codes": {
+        "region-0": [
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ]
+      },
+      "canonical_has_bad": false
+    },
+    "status_UNKNOWN_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "UNUSABLE",
+      "evidence_units": [],
+      "quarantined": [
+        "region-0"
+      ],
+      "reason_codes": {
+        "region-0": [
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ]
+      },
+      "canonical_has_bad": false
+    },
+    "status_accepted_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "UNUSABLE",
+      "evidence_units": [],
+      "quarantined": [
+        "region-0"
+      ],
+      "reason_codes": {
+        "region-0": [
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ]
+      },
+      "canonical_has_bad": false
+    },
+    "declared_mixed_is_partial": {
+      "rejected_at_boundary": false,
+      "status": "PARTIAL",
+      "evidence_units": [
+        "region-0",
+        "region-2"
+      ],
+      "quarantined": [
+        "region-1"
+      ],
+      "reason_codes": {
+        "region-0": [],
+        "region-1": [
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "region-2": []
+      },
+      "canonical_has_bad": false
+    },
+    "provenance_not_certified_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "PARTIAL",
+      "evidence_units": [
+        "region-0",
+        "region-2"
+      ],
+      "quarantined": [
+        "region-1"
+      ],
+      "reason_codes": {
+        "region-0": [],
+        "region-1": [
+          "QUALITY_OR_PROVENANCE_NOT_ACCEPTED"
+        ],
+        "region-2": []
+      },
+      "canonical_has_bad": false
+    },
+    "document_sha_mismatch_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "PARTIAL",
+      "evidence_units": [
+        "region-0",
+        "region-2"
+      ],
+      "quarantined": [
+        "region-1"
+      ],
+      "reason_codes": {
+        "region-0": [],
+        "region-1": [
+          "OWNERSHIP_CERTIFICATE_MISMATCH"
+        ],
+        "region-2": []
+      },
+      "canonical_has_bad": false
+    },
+    "page_mismatch_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "PARTIAL",
+      "evidence_units": [
+        "region-0",
+        "region-2"
+      ],
+      "quarantined": [
+        "region-1"
+      ],
+      "reason_codes": {
+        "region-0": [],
+        "region-1": [
+          "OWNERSHIP_CERTIFICATE_MISMATCH"
+        ],
+        "region-2": []
+      },
+      "canonical_has_bad": false
+    },
+    "missing_certificate_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "PARTIAL",
+      "evidence_units": [
+        "region-0",
+        "region-2"
+      ],
+      "quarantined": [
+        "region-1"
+      ],
+      "reason_codes": {
+        "region-0": [],
+        "region-1": [
+          "MISSING_OR_DUPLICATE_CERTIFICATE",
+          "OWNERSHIP_CERTIFICATE_MISMATCH"
+        ],
+        "region-2": []
+      },
+      "canonical_has_bad": false
+    },
+    "overlap_quarantines": {
+      "rejected_at_boundary": false,
+      "status": "UNUSABLE",
+      "evidence_units": [],
+      "quarantined": [
+        "region-0",
+        "region-1"
+      ],
+      "reason_codes": {
+        "region-0": [
+          "OVERLAPPING_MARKDOWN_OWNERSHIP"
+        ],
+        "region-1": [
+          "QUALITY_EVIDENCE_INSUFFICIENT",
+          "OWNERSHIP_CERTIFICATE_MISMATCH",
+          "OVERLAPPING_MARKDOWN_OWNERSHIP"
+        ]
+      },
+      "canonical_has_bad": false
+    }
+  },
+  "checks": {
+    "accepted_certified_publishes": true,
+    "status_QUARANTINED_quarantines": true,
+    "status_UNRESOLVED_quarantines": true,
+    "status_SOURCE_PDF_ERROR_quarantines": true,
+    "status_PLATFORM_EXTRACTION_ERROR_quarantines": true,
+    "status_UNKNOWN_quarantines": true,
+    "status_accepted_quarantines": true,
+    "declared_mixed_is_partial": true,
+    "provenance_not_certified_quarantines": true,
+    "document_sha_mismatch_quarantines": true,
+    "page_mismatch_quarantines": true,
+    "missing_certificate_quarantines": true,
+    "overlap_quarantines": true,
+    "overlap_reason_code": true
+  },
+  "PASS": true,
+  "rules": [
+    "The certifier output is authoritative; no consumer may upgrade a region.",
+    "A region is textually publishable only when quality_status == ACCEPTED and provenance_status == CERTIFIED and its ownership is bound and non-overlapping.",
+    "Every other region is quarantined: QUARANTINED, UNRESOLVED, SOURCE_PDF_ERROR, PLATFORM_EXTRACTION_ERROR, UNKNOWN, missing certificate or mismatched ownership.",
+    "Page status is derived: no publishable region -> UNUSABLE; all publishable -> FULL; otherwise -> PARTIAL.",
+    "Quarantined text never enters canonical Markdown, searchable metadata, chunks, embeddings or citations; it remains reachable only through the visual source reference.",
+    "A fixture label such as GOOD_A is a declared input, never evidence of live quality."
+  ],
+  "decision_source": "modules.library.automatic_region_certification_v5",
+  "FIXTURE_GOOD_ACCEPTANCE_NOT_REQUIRED": true
+}

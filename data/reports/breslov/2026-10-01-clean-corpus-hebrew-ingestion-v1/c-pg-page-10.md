@@ -1,0 +1,15 @@
+PREFACIO 
+
+**X** LIKUTEY HALAJOT 
+
+Institute, llevamos adelante nuestro esfuerzo de 30 años para traducir y anotar el _Likutey Moharán_ , siempre pensamos sobre muchas formas y maneras para traducir también el _magnum opus_ del Rabí Natán. Se imprimieron pequeños volúmenes tomando de discursos específi cos, pero el proyecto mayor se mantuvo siempre muy lejos de nuestro alcance. Finalmente, al acercarnos a nuestro cuadragésimo año, logramos una solución factible y el primer volumen de los discursos originales del Rabí Natán, cubriendo los cinco primeros tópicos de _Oraj Jaim - Hashkamat HaBoker_ (Levantándose por la Mañana) - está ahora en sus manos. 
+
+A nuestros muchos donantes que han hecho grandes sacrifi cios para ayudarnos a comenzar este proyecto y que continuaron apoyándonos a través de nuestras difi cultades y afanes, no podemos expresar sufi ciente gratitud. ¡Que todos ellos sean bendecidos por HaShem con todo lo bueno, en este mundo y en el próximo! 
+
+Agradecemos a Moshé Mykoff por su incomparable devoción al proyecto del _Likutey Halajot_ . Tal como veremos en el texto, el Rabí Natán elige un tema y una lección y comienza a entretejerlos en un tapiz exquisito. Continúa escribiendo, agregando y sumando ideas que a primera vista no tienen conexión alguna con lo que comenzó su discurso. La complejidad de estos discursos -cada uno completamente diferente al otrohace que la traducción sea un desafío. Tal resultado fenomenal sólo puede provenir de un ardiente deseo de hacerle justicia al Rabí Natán. Que él (Moshé) sea bendecido por siempre jamás. 
+
+Dov Grant, quien en su momento recopiló los escritos del Rabí Natán y compuso un comentario sobre la Biblia, es un recién llegado al BRI pero no al Rabí Natán. Al sumarse a nuestro grupo en el _Likutey Halajot_ fue un perfecto complemento para Moshé Mykoff al desarrollar la estructura y presentación del texto. Le extendemos nuestra más profunda gratitud por su contribución para llevar este volumen a la imprenta. 
+
+Que todos ustedes sean bendecidos con gran _najat_ y alegría, y merezcan ver la Reconstrucción del Templo, la Reunión de los Exilados, con la llegada del Mashíaj, rápidamente y en nuestros días. Amén. 
+
+**Jaim Kramer** Kislev 5780/diciembre 2019

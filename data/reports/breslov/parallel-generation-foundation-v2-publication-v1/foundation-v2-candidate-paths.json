@@ -1,0 +1,25 @@
+{
+  "status": "PROVISIONAL_NOT_APPROVED_FOR_STAGING",
+  "paths": [
+    "SrvRestAstroLS_v1/backend/db/migrations/043_generation_foundation.sql",
+    "SrvRestAstroLS_v1/backend/modules/library/generation.py",
+    "SrvRestAstroLS_v1/backend/modules/library/content_manager.py",
+    "SrvRestAstroLS_v1/backend/modules/library/content_manager_cleanup.py",
+    "SrvRestAstroLS_v1/backend/modules/library/hybrid_search.py",
+    "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py",
+    "SrvRestAstroLS_v1/backend/modules/library/relation_qa_repository.py",
+    "SrvRestAstroLS_v1/backend/modules/library/simple_research_repository.py",
+    "SrvRestAstroLS_v1/backend/modules/library/source_repository.py",
+    "SrvRestAstroLS_v1/backend/modules/library/text_search.py",
+    "SrvRestAstroLS_v1/backend/tests/test_generation_foundation.py",
+    "SrvRestAstroLS_v1/backend/tests/test_content_manager_cleanup.py",
+    "SrvRestAstroLS_v1/backend/tests/test_library_search_hybrid_milvus_alias.py",
+    "data/reports/breslov/parallel-generation-foundation-v2/REPORT.md",
+    "data/reports/breslov/parallel-generation-foundation-v2/gate.json"
+  ],
+  "count": 15,
+  "unrelated_excluded_count": 886,
+  "ambiguous_classification_count": 0,
+  "closure_complete": false,
+  "note": "No claim of complete publication allowlist; stopped on technical defect. Existing mixed cleanup/gateway changes require hunk-level provenance review before future publication."
+}

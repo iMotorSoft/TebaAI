@@ -1,0 +1,449 @@
+{
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "comparisons": [
+    {
+      "page": 167,
+      "region": "R167_A",
+      "bbox": [
+        360,
+        43,
+        447,
+        59
+      ],
+      "baseline": {
+        "native": "����� ������149\n",
+        "historical": "  149\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ד ח",
+        "reconstruction": "ליקוטי הלכות\n149"
+      },
+      "baseline_metrics": {
+        "native": {
+          "base_letter_accuracy": 0,
+          "base_letter_reference_count": 11,
+          "base_letter_edit_distance": 11,
+          "word_order_accuracy": 0.333333,
+          "word_boundary_accuracy": 0.0,
+          "number_accuracy": 1.0,
+          "punctuation_accuracy": null,
+          "niqqud_accuracy": null,
+          "niqqud_reference_count": null,
+          "unexpected_character_count": 11,
+          "replacement_character_count": 11
+        },
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": false,
+        "historical": false,
+        "reconstruction": false
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_B",
+      "bbox": [
+        50,
+        65,
+        447,
+        214
+      ],
+      "baseline": {
+        "native": "�����������������������������������������������������������������������������\n��������������������\n���\n������������������������������������������������������������������������������������������������������������\n��������������������������������������������������������������������������������������������������������\n.��������������������\n����������������������������������������������������������������������������������������������������������������\n���������������������������������\n�������\n���������������������������\n����������������������������������������������\n������������������������\n���������������������������������������������������������������������������������������������������������\n����\n����\n������������������������������������������������\n",
+        "historical": ".ĕֶה üĜŖĢĕ üē ÿĐ ַהý ĕֵה ָהü ָדø ÿĤ ĀĐ Ħ ָבþ ĕֵה üĤ ĺŖַהø ֶה ýĐ þĺ ĕֶה ָהü ַגĀ øĜ ַהü Ħ ÿĜĕ üē ַמø ĕֵה üė Āĺ ַהø üĜ ֶה ָרĈĀ Ņַהü ,עָה ÿō ÿŊ ĕֶה ָהü ָדĀ øĤ\nֶה ָרĈĀ ַהü ĕ üŊ ,ĕֶהע ָהü ַגĀ øĜ ַהü Ŝ עŊĀ ,(ָד ģĤĠ ĐĦĠָהĕֵה ĥַגĤ ēĕĕֶה ַגġ ĕĤĠ) ďŅַגÿ ַנĀ ÿŊ ,ĕֶה üĜ ĀŐ ÿĐ ָבŖĤ ֶה ýĐ þĺ ,ĕֵהע ĕָהü üĠ øĦ עŊü :ŅĐ þĒ øđ\nĐĜėָהָהĦ ēָהĕĢĐ ĦđėהָĐč ĦđėĕĤבָč ĐĒ ėָה đַגĕֵה) ĕֵה ָהü ָדø ÿĤ ָהĀ Đ ĀĤĕ ַהü øĺ Ħ ÿĜĕ üē ַמø ֶה ýĐ þĺ ,ĕֶה ָהü ַגĀ øĜ üŌ ÿĐ Ħ ÿĜĕ üē ַמø Ŝ ÿĺ ַהø üĜ\n.(ďא ĐָהėĐ ָדĔĕֵה ĦđėהָĐč\nĕֵה üĤ øĢŖģ Đ ĕֵאĒþ ָהֵאĕøďý ַגÿ þĺ ,ď þĝ þē ĐŅָב þĺ ĕֵה ַהü Āĕ Ħ ÿĜĕ üē ַמø ĐŅָב Ĥ ĀŒ ַגü ĕ üŊ ,Đ Āŋ üē øŕ ĕֵה ַהü Āĕ ָה þĺ ַגāָה øĜ ָהü ĕֵה üėĕ üĤ øĢ ֵה ָהֵאŊý ַגÿ øđ\n.עָה ÿō ÿŊ ń ָבŖĦĀ ĕֵה üĜŖčŅ ֶה þĐ ַהý ń ָבŖĦĀ\nď ָהֵאĕĀ ָרĈþ ÿĐ Ħ ÿĤĕ üĺ øģ ĕ üŊ ,Đ Āŋ üē øŕ ַהāָבָה øĻ ַמü ď Āĕ ָה þĺ Ĥ ýĺŖŒ þĺ ĕֵה üŋ üĠ øŕ ַהŖ øŊ ,Đ Āŋ üē øŕ ַהāָבָה øĻ - Đ ĀĤĕ üĺ øģ ַמü ֵה ָהֵאŊý ַגÿ øđ\nֵה ַנý ַגÿ ,ֶה Āĺ čŅĦ ĀŊ þĺ ַהŖ øŊ ,Đ Āē ýėŖŕ ĕ ָהֵאĕøďý ַגÿ ֶה ָבü ĕ üŊ ď þĝ þē ÿĐ ָה ַמý ÿģ ָהø Ĥ Āĺ øĠ ָבþ ĕ ָבü þĺ Ħ ַהÿ úē ַהý Đ þĒ ,Đ Āŋ üē øŕ ַהāָבָה øĻ ַמü\n.ַהāָבָה øĻ Ħ ÿĜĕ üē ַמø ,ĦŖĤŅč øł Ħ ÿĜĕ üē ַמø ĐŅָב Đ Āē ýėŖĦ øđ .ֶה Āĺ",
+        "reconstruction": "רְגָלִים כַּנַּ\"ל, וּמִשָּׁם נִמְשָׁכִין בְּחִינַת מִנְעָלִים שֶׁהֵם שׁוֹמְרִין אֶת הָרַגְלִין מֵהַחִיצוֹנִים.\nםָׁשִּמ יִכּ ,\"םיִלָעְנִמ ךְָכּ\" ,(ג קרפ ןילפתה רעש םייח ץע ירפ) ַעוּדָיַּכּ ,םיִנָפַּה רוֹא םֵהֶשׁ ,\"ןיִליִפְתִכּ\" :וּהֶזְו\nת\nללכנה הצילח תוכלהב תוכיראב הז לכ ןיעו) ןיִלְגַרָל הָריִמְשׁ תַניִחְבּ םֵהֶשׁ ,םיִלָעְנִמַּה תַניִחְבּ ךְַשְׁמִנ\n.('ד הכלה ןיטג תוכלהב\nוְעַל־כֵּן צְרִיכִין לִנְעֹל שֶׁל יָמִין תְּחִלָּה, כִּי עִקָּר הוּא בְּחִינַת יָמִין שֶׁהוּא חֶסֶד, שֶׁעַל־יְדֵי־זֶה קוֹצְרִין\nאוֹתָהּ מֵהֶם וּבוֹנִין אוֹתָהּ כַּנַּ\"ל.\nד\nוְעַל־כֵּן בִּקְשִׁירָה - שְׂמֹאל תְּחִלָּה, כְּמוֹ תְּפִלִּין שֶׁקּוֹשֵׁר שֶׁל יָד בִּשְׂמֹאל תְּחִלָּה, כִּי קְשִׁירַת הַשֶּׁל־יָ\nבִּשְׂמֹאל תְּחִלָּה, זֶה מֵחֲמַת שֶׁאִי אֶפְשָׁר לְקַבֵּל הַחֶסֶד כִּי אִם עַל־יְדֵי תּוֹכֵחָה, כְּמוֹ שֶׁכָּתוּב שָׁם, עַיֵּן\nשָׁם. וְתוֹכֵחָה הוּא בְּחִינַת גְּבוּרוֹת, בְּחִינַת שְׂמֹאל."
+      },
+      "baseline_metrics": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_B_line1",
+      "bbox": [
+        105,
+        67,
+        444,
+        83
+      ],
+      "baseline": {
+        "native": "�����������������������������������������������������������������������������\n��������������������\n",
+        "historical": ".ĕֶה üĜŖĢĕ üē ÿĐ ַהý ĕֵה ָהü ָדø ÿĤ ĀĐ Ħ ָבþ ĕֵה üĤ ĺŖַהø ֶה ýĐ þĺ ĕֶה ָהü ַגĀ øĜ ַהü Ħ ÿĜĕ üē ַמø ĕֵה üė Āĺ ַהø üĜ ֶה ָרĈĀ Ņַהü ,עָה ÿō ÿŊ ĕֶה ָהü ָדĀ øĤ",
+        "reconstruction": "רְגָלִים כַּנַּ\"ל, וּמִשָּׁם נִמְשָׁכִין בְּחִינַת מִנְעָלִים שֶׁהֵם שׁוֹמְרִין אֶת הָרַגְלִין מֵהַחִיצוֹנִים."
+      },
+      "baseline_metrics": {
+        "native": {
+          "base_letter_accuracy": 0,
+          "base_letter_reference_count": 55,
+          "base_letter_edit_distance": 55,
+          "word_order_accuracy": 0.0,
+          "word_boundary_accuracy": 0.0,
+          "number_accuracy": null,
+          "punctuation_accuracy": 0,
+          "niqqud_accuracy": null,
+          "niqqud_reference_count": null,
+          "unexpected_character_count": 97,
+          "replacement_character_count": 97
+        },
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": false,
+        "historical": false,
+        "reconstruction": true
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_B_line2",
+      "bbox": [
+        54,
+        133,
+        444,
+        148
+      ],
+      "baseline": {
+        "native": "����������������������������������������������������������������������������������������������������������������\n",
+        "historical": "ĕֵה üĤ øĢŖģ Đ ĕֵאĒþ ָהֵאĕøďý ַגÿ þĺ ,ď þĝ þē ĐŅָב þĺ ĕֵה ַהü Āĕ Ħ ÿĜĕ üē ַמø ĐŅָב Ĥ ĀŒ ַגü ĕ üŊ ,Đ Āŋ üē øŕ ĕֵה ַהü Āĕ ָה þĺ ַגāָה øĜ ָהü ĕֵה üėĕ üĤ øĢ ֵה ָהֵאŊý ַגÿ øđ\n.עָה ÿō ÿŊ ń ָבŖĦĀ ĕֵה üĜŖčŅ ֶה þĐ ַהý ń ָבŖĦĀ",
+        "reconstruction": "וְעַל־כֵּן צְרִיכִין לִנְעֹל שֶׁל יָמִין תְּחִלָּה, כִּי עִקָּר הוּא בְּחִינַת יָמִין שֶׁהוּא חֶסֶד, שֶׁעַל־יְדֵי־זֶה קוֹצְרִין"
+      },
+      "baseline_metrics": {
+        "native": {
+          "base_letter_accuracy": 0,
+          "base_letter_reference_count": 63,
+          "base_letter_edit_distance": 63,
+          "word_order_accuracy": 0.0,
+          "word_boundary_accuracy": 0.0,
+          "number_accuracy": null,
+          "punctuation_accuracy": 0,
+          "niqqud_accuracy": null,
+          "niqqud_reference_count": null,
+          "unexpected_character_count": 112,
+          "replacement_character_count": 112
+        },
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": false,
+        "historical": false,
+        "reconstruction": true
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_B_line3",
+      "bbox": [
+        288,
+        147,
+        444,
+        163
+      ],
+      "baseline": {
+        "native": "�\n�\n�\n�\n�\n�\n�\n���������������������������������\n",
+        "historical": "ĕֵה üĤ øĢŖģ Đ ĕֵאĒþ ָהֵאĕøďý ַגÿ þĺ ,ď þĝ þē ĐŅָב þĺ ĕֵה ַהü Āĕ Ħ ÿĜĕ üē ַמø ĐŅָב Ĥ ĀŒ ַגü ĕ üŊ ,Đ Āŋ üē øŕ ĕֵה ַהü Āĕ ָה þĺ ַגāָה øĜ ָהü ĕֵה üėĕ üĤ øĢ ֵה ָהֵאŊý ַגÿ øđ\n.עָה ÿō ÿŊ ń ָבŖĦĀ ĕֵה üĜŖčŅ ֶה þĐ ַהý ń ָבŖĦĀ",
+        "reconstruction": "אוֹתָהּ מֵהֶם וּבוֹנִין אוֹתָהּ כַּנַּ\"ל."
+      },
+      "baseline_metrics": {
+        "native": {
+          "base_letter_accuracy": 0,
+          "base_letter_reference_count": 20,
+          "base_letter_edit_distance": 20,
+          "word_order_accuracy": 0.0,
+          "word_boundary_accuracy": 0.0,
+          "number_accuracy": null,
+          "punctuation_accuracy": 0,
+          "niqqud_accuracy": null,
+          "niqqud_reference_count": null,
+          "unexpected_character_count": 40,
+          "replacement_character_count": 40
+        },
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": false,
+        "historical": false,
+        "reconstruction": true
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_C",
+      "bbox": [
+        150,
+        86,
+        444,
+        101
+      ],
+      "baseline": {
+        "native": "�����������������������������������������������������������������������������������\n",
+        "historical": "ֶה ָרĈĀ ַהü ĕ üŊ ,ĕֶהע ָהü ַגĀ øĜ ַהü Ŝ עŊĀ ,(ָד ģĤĠ ĐĦĠָהĕֵה ĥַגĤ ēĕĕֶה ַגġ ĕĤĠ) ďŅַגÿ ַנĀ ÿŊ ,ĕֶה üĜ ĀŐ ÿĐ ָבŖĤ ֶה ýĐ þĺ ,ĕֵהע ĕָהü üĠ øĦ עŊü :ŅĐ þĒ øđ\nĐĜėָהָהĦ ēָהĕĢĐ ĦđėהָĐč ĦđėĕĤבָč ĐĒ ėָה đַגĕֵה) ĕֵה ָהü ָדø ÿĤ ָהĀ Đ ĀĤĕ ַהü øĺ Ħ ÿĜĕ üē ַמø ֶה ýĐ þĺ ,ĕֶה ָהü ַגĀ øĜ üŌ ÿĐ Ħ ÿĜĕ üē ַמø Ŝ ÿĺ ַהø üĜ\n.(ďא ĐָהėĐ ָדĔĕֵה ĦđėהָĐč",
+        "reconstruction": "םָׁשִּמ יִכּ ,\"םיִלָעְנִמ ךְָכּ\" ,(ג קרפ ןילפתה רעש םייח ץע ירפ) ַעוּדָיַּכּ ,םיִנָפַּה רוֹא םֵהֶשׁ ,\"ןיִליִפְתִכּ\" :וּהֶזְו"
+      },
+      "baseline_metrics": {
+        "native": {
+          "base_letter_accuracy": 0,
+          "base_letter_reference_count": 48,
+          "base_letter_edit_distance": 48,
+          "word_order_accuracy": 0.0,
+          "word_boundary_accuracy": 0.0,
+          "number_accuracy": null,
+          "punctuation_accuracy": 0,
+          "niqqud_accuracy": null,
+          "niqqud_reference_count": null,
+          "unexpected_character_count": 83,
+          "replacement_character_count": 83
+        },
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": false,
+        "historical": false,
+        "reconstruction": false
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_C_niqqud",
+      "bbox": [
+        300,
+        86,
+        348,
+        101
+      ],
+      "baseline": {
+        "native": "��������������\n",
+        "historical": "ֶה ָרĈĀ ַהü ĕ üŊ ,ĕֶהע ָהü ַגĀ øĜ ַהü Ŝ עŊĀ ,(ָד ģĤĠ ĐĦĠָהĕֵה ĥַגĤ ēĕĕֶה ַגġ ĕĤĠ) ďŅַגÿ ַנĀ ÿŊ ,ĕֶה üĜ ĀŐ ÿĐ ָבŖĤ ֶה ýĐ þĺ ,ĕֵהע ĕָהü üĠ øĦ עŊü :ŅĐ þĒ øđ\nĐĜėָהָהĦ ēָהĕĢĐ ĦđėהָĐč ĦđėĕĤבָč ĐĒ ėָה đַגĕֵה) ĕֵה ָהü ָדø ÿĤ ָהĀ Đ ĀĤĕ ַהü øĺ Ħ ÿĜĕ üē ַמø ֶה ýĐ þĺ ,ĕֶה ָהü ַגĀ øĜ üŌ ÿĐ Ħ ÿĜĕ üē ַמø Ŝ ÿĺ ַהø üĜ\n.(ďא ĐָהėĐ ָדĔĕֵה ĦđėהָĐč",
+        "reconstruction": "םָׁשִּמ יִכּ ,\"םיִלָעְנִמ ךְָכּ\" ,(ג קרפ ןילפתה רעש םייח ץע ירפ) ַעוּדָיַּכּ ,םיִנָפַּה רוֹא םֵהֶשׁ ,\"ןיִליִפְתִכּ\" :וּהֶזְו"
+      },
+      "baseline_metrics": {
+        "native": {
+          "base_letter_accuracy": 0,
+          "base_letter_reference_count": 8,
+          "base_letter_edit_distance": 8,
+          "word_order_accuracy": 0.0,
+          "word_boundary_accuracy": 0.0,
+          "number_accuracy": null,
+          "punctuation_accuracy": 0,
+          "niqqud_accuracy": 0,
+          "niqqud_reference_count": 5,
+          "unexpected_character_count": 14,
+          "replacement_character_count": 14
+        },
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": false,
+        "historical": false,
+        "reconstruction": false
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_D",
+      "bbox": [
+        50,
+        265,
+        447,
+        546
+      ],
+      "baseline": {
+        "native": "protección extra para elevarlos de las fuerzas externas adyacentes a ellos.60 Pues \nlos pies están conceptualmente asociados con Maljut y la sabiduría inferior, el \npropósito de las mencionadas constricciones de la sabiduría Divina.61 Debemos \ncortar y separar los “pies” de la garra de los Cuatro Reinos y elevarlos al aspecto \ndel Or HaPanim que brilla durante los Shalosh Regalim. Y del Or HaPanim \ntraemos la protección, el concepto de los zapatos, que protegen a los pies de las \nfuerzas externas.\nÉste es el signifi cado de “Así como es con los tefilin” - que son una revelación \ndel Or HaPanim, como es sabido a partir de la Kabalá62 - “así es con los zapatos”. \nDel Or HaPanim asociado con los tefilin, que protege a Maljut/la sabiduría inferior, \nproviene el concepto de los zapatos como la protección de los pies.63\nPor lo tanto la persona debe colocarse el zapato derecho primero, dado \nque el lado derecho, que es jesed, es el principal. Con esto separamos a Maljut \nde los Cuatro Reinos y la construimos.64\nAsí, con respecto a los cordones, la izquierda tiene precedencia; similar \na los tefilin, donde se comienza ajustando la correa de los tefilin en el brazo \nizquierdo. El motivo por el cual el atar los tefilin en el brazo izquierdo precede \nel colocarse los tefilin de la cabeza es que la recepción del jesed sólo es posible a \ntravés de la amonestación del Tzadik. Mira la lección del Rebe, donde esto está \nexplicado.65 Y la amonestación corresponde a las guevurot, las severidades, que \nestán asociadas con la izquierda.66\nEsto se relaciona con la exposición de Jazal sobre iadja como enseñando \n",
+        "historical": "protección extra para elevarlos de las fuerzas externas adyacentes a ellos.60 Pues \nlos pies están conceptualmente asociados con Maljut y la sabiduría inferior, el \npropósito de las mencionadas constricciones de la sabiduría Divina.61 Debemos \ncortar y separar los “pies” de la garra de los Cuatro Reinos y elevarlos al aspecto \ndel Or HaPanim que brilla durante los Shalosh Regalim. Y del Or HaPanim \ntraemos la protección, el concepto de los zapatos, que protegen a los pies de las \nfuerzas externas.\nÉste es el signifi cado de “Así como es con los tefilin” - que son una revelación \ndel Or HaPanim, como es sabido a partir de la Kabalá62 - “así es con los zapatos”. \nDel Or HaPanim asociado con los tefilin, que protege a Maljut/la sabiduría inferior, \nproviene el concepto de los zapatos como la protección de los pies.63\nPor lo tanto la persona debe colocarse el zapato derecho primero, dado \nque el lado derecho, que es jesed, es el principal. Con esto separamos a Maljut \nde los Cuatro Reinos y la construimos.64\nAsí, con respecto a los cordones, la izquierda tiene precedencia; similar \na los tefilin, donde se comienza ajustando la correa de los tefilin en el brazo \nizquierdo. El motivo por el cual el atar los tefilin en el brazo izquierdo precede \nel colocarse los tefilin de la cabeza es que la recepción del jesed sólo es posible a \ntravés de la amonestación del Tzadik. Mira la lección del Rebe, donde esto está \nexplicado.65 Y la amonestación corresponde a las guevurot, las severidades, que \nestán asociadas con la izquierda.66\nEsto se relaciona con la exposición de Jazal sobre iadja como enseñando",
+        "reconstruction": "60\nprotección extra para elevarlos de las fuerzas externas adyacentes a ellos. Pues \nlos pies están conceptualmente asociados con Maljut y la sabiduría inferior, el \n61\npropósito de las mencionadas constricciones de la sabiduría Divina. Debemos \ncortar y separar los “pies” de la garra de los Cuatro Reinos y elevarlos al aspecto \ndel Or HaPanim que brilla durante los Shalosh Regalim. Y del Or HaPanim \ntraemos la protección, el concepto de los zapatos, que protegen a los pies de las \nfuerzas externas.\nÉste es el signifi cado de “Así como es con los tefilin” - que son una revelación \n62\ndel Or HaPanim, como es sabido a partir de la Kabalá - “así es con los zapatos”. \nDel Or HaPanim asociado con los tefilin, que protege a Maljut/la sabiduría inferior, \n63\nproviene el concepto de los zapatos como la protección de los pies.\nPor lo tanto la persona debe colocarse el zapato derecho primero, dado \nque el lado derecho, que es jesed, es el principal. Con esto separamos a Maljut \n64\nde los Cuatro Reinos y la construimos.\nAsí, con respecto a los cordones, la izquierda tiene precedencia; similar \na los tefilin, donde se comienza ajustando la correa de los tefilin en el brazo \nizquierdo. El motivo por el cual el atar los tefilin en el brazo izquierdo precede \nel colocarse los tefilin de la cabeza es que la recepción del jesed sólo es posible a \ntravés de la amonestación del Tzadik. Mira la lección del Rebe, donde esto está \n65\nexplicado. Y la amonestación corresponde a las guevurot, las severidades, que \n66\nestán asociadas con la izquierda.\nEsto se relaciona con la exposición de Jazal sobre iadja como enseñando "
+      },
+      "baseline_metrics": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_E_left",
+      "bbox": [
+        50,
+        573,
+        249,
+        651
+      ],
+      "baseline": {
+        "native": "60 Ver Pri Etz Jaim, Shaar HaTefi lá 3.\n61 Ver §1 más arriba.\n62 Pri Etz Jaim, op. cit.\n63 Una cita entre paréntesis aquí dice: Estudia más esto en las \nleyes pertenecientes a la jalitza que aparecen en el LH, Guitin \n4.10.\n64 Ver §1 y §4 más arriba.\n65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim \n",
+        "historical": "60 רעׁש ירף זתֵא מיאּט, ראאהש עּתאּהﬁ בל 3.\n61 רעׁש §1 סבמ אביררא.\n62 ירף זתֵא מיאּט, פן. תיצ.\n63 אנֹו אתיצ ערתנע סיסעתנéראפ מץקא עציד: אידץתסֵא סבמ ןתסע נע סאל \nסעיעל סעתנעיצענעתרעפ א אל אזתילאט עץק נעצעראפא נע לע ּהּל, ניתיץּג \n4.10.\n64 רעׁש §1 י §4 סבמ אביררא.\n65 אידץתסֵא §7 עד אל נóיצצעל לעד עבעּר. עץקנץA סןל מיכידאזּת",
+        "reconstruction": "60 Ver Pri Etz Jaim, Shaar HaTeﬁ lá 3.se refrena en general de amonestar al pueblo judío (ver LM \n61 Ver §1 más arriba.I, 22:1), el Rebe Najmán enseña que el sufrimiento que le \n62 Pri Etz Jaim, op. cit.produce el judío al Tzadik al pecar ocasionalmente lo lleva a \n63 Una cita entre paréntesis aquí dice: Estudia más esto en las expresar una amonestación que humilla a su audiencia. El Rabí \nleyes pertenecientes a la jalitza que aparecen en el LH, Guitin Natán hará referencia esto a continuación.\n4.10.66 Comentando sobre el versículo (Proverbios 27:5) “La \n64 Ver §1 y §4 más arriba.amonestación franca es mejor que el amor oculto”, el Ari zal \n65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim enseña que la “amonestación franca” hace referencia a las "
+      },
+      "baseline_metrics": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_E_right",
+      "bbox": [
+        252,
+        573,
+        447,
+        651
+      ],
+      "baseline": {
+        "native": "se refrena en general de amonestar al pueblo judío (ver LM \nI, 22:1), el Rebe Najmán enseña que el sufrimiento que le \nproduce el judío al Tzadik al pecar ocasionalmente lo lleva a \nexpresar una amonestación que humilla a su audiencia. El Rabí \nNatán hará referencia esto a continuación.\n66 Comentando sobre el versículo (Proverbios 27:5) “La \namonestación franca es mejor que el amor oculto”, el Ari zal \nenseña que la “amonestación franca” hace referencia a las \n",
+        "historical": "se refrena en general de amonestar al pueblo judío (ver LM \nI, 22:1), el Rebe Najmán enseña que el sufrimiento que le \nproduce el judío al Tzadik al pecar ocasionalmente lo lleva a \nexpresar una amonestación que humilla a su audiencia. El Rabí \nNatán hará referencia esto a continuación.\n66 Comentando sobre el versículo (Proverbios 27:5) “La \namonestación franca es mejor que el amor oculto”, el Ari zal \nenseña que la “amonestación franca” hace referencia a las",
+        "reconstruction": "60 Ver Pri Etz Jaim, Shaar HaTeﬁ lá 3.se refrena en general de amonestar al pueblo judío (ver LM \n61 Ver §1 más arriba.I, 22:1), el Rebe Najmán enseña que el sufrimiento que le \n62 Pri Etz Jaim, op. cit.produce el judío al Tzadik al pecar ocasionalmente lo lleva a \n63 Una cita entre paréntesis aquí dice: Estudia más esto en las expresar una amonestación que humilla a su audiencia. El Rabí \nleyes pertenecientes a la jalitza que aparecen en el LH, Guitin Natán hará referencia esto a continuación.\n4.10.66 Comentando sobre el versículo (Proverbios 27:5) “La \n64 Ver §1 y §4 más arriba.amonestación franca es mejor que el amor oculto”, el Ari zal \n65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim enseña que la “amonestación franca” hace referencia a las "
+      },
+      "baseline_metrics": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 167,
+      "region": "R167_E_combined",
+      "bbox": [
+        50,
+        573,
+        447,
+        651
+      ],
+      "baseline": {
+        "native": "60 Ver Pri Etz Jaim, Shaar HaTefi lá 3.\n61 Ver §1 más arriba.\n62 Pri Etz Jaim, op. cit.\n63 Una cita entre paréntesis aquí dice: Estudia más esto en las \nleyes pertenecientes a la jalitza que aparecen en el LH, Guitin \n4.10.\n64 Ver §1 y §4 más arriba.\n65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim \nse refrena en general de amonestar al pueblo judío (ver LM \nI, 22:1), el Rebe Najmán enseña que el sufrimiento que le \nproduce el judío al Tzadik al pecar ocasionalmente lo lleva a \nexpresar una amonestación que humilla a su audiencia. El Rabí \nNatán hará referencia esto a continuación.\n66 Comentando sobre el versículo (Proverbios 27:5) “La \namonestación franca es mejor que el amor oculto”, el Ari zal \nenseña que la “amonestación franca” hace referencia a las \n",
+        "historical": "se refrena en general de amonestar al pueblo judío (ver LM \nI, 22:1), el Rebe Najmán enseña que el sufrimiento que le \nproduce el judío al Tzadik al pecar ocasionalmente lo lleva a \nexpresar una amonestación que humilla a su audiencia. El Rabí \nNatán hará referencia esto a continuación.\n66 Comentando sobre el versículo (Proverbios 27:5) “La \namonestación franca es mejor que el amor oculto”, el Ari zal \nenseña que la “amonestación franca” hace referencia a las\n60 רעׁש ירף זתֵא מיאּט, ראאהש עּתאּהﬁ בל 3.\n61 רעׁש §1 סבמ אביררא.\n62 ירף זתֵא מיאּט, פן. תיצ.\n63 אנֹו אתיצ ערתנע סיסעתנéראפ מץקא עציד: אידץתסֵא סבמ ןתסע נע סאל \nסעיעל סעתנעיצענעתרעפ א אל אזתילאט עץק נעצעראפא נע לע ּהּל, ניתיץּג \n4.10.\n64 רעׁש §1 י §4 סבמ אביררא.\n65 אידץתסֵא §7 עד אל נóיצצעל לעד עבעּר. עץקנץA סןל מיכידאזּת",
+        "reconstruction": "60 Ver Pri Etz Jaim, Shaar HaTeﬁ lá 3.se refrena en general de amonestar al pueblo judío (ver LM \n61 Ver §1 más arriba.I, 22:1), el Rebe Najmán enseña que el sufrimiento que le \n62 Pri Etz Jaim, op. cit.produce el judío al Tzadik al pecar ocasionalmente lo lleva a \n63 Una cita entre paréntesis aquí dice: Estudia más esto en las expresar una amonestación que humilla a su audiencia. El Rabí \nleyes pertenecientes a la jalitza que aparecen en el LH, Guitin Natán hará referencia esto a continuación.\n4.10.66 Comentando sobre el versículo (Proverbios 27:5) “La \n64 Ver §1 y §4 más arriba.amonestación franca es mejor que el amor oculto”, el Ari zal \n65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim enseña que la “amonestación franca” hace referencia a las "
+      },
+      "baseline_metrics": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": null,
+        "historical": null,
+        "reconstruction": null
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 55,
+      "region": "R55_A",
+      "bbox": [
+        360,
+        43,
+        447,
+        59
+      ],
+      "baseline": {
+        "native": "����� ������37\n",
+        "historical": "  37\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ה",
+        "reconstruction": "ליקוטי הלכות\n37"
+      },
+      "baseline_metrics": {
+        "native": {
+          "base_letter_accuracy": 0,
+          "base_letter_reference_count": 11,
+          "base_letter_edit_distance": 11,
+          "word_order_accuracy": 0.333333,
+          "word_boundary_accuracy": 0.0,
+          "number_accuracy": 1.0,
+          "punctuation_accuracy": null,
+          "niqqud_accuracy": null,
+          "niqqud_reference_count": null,
+          "unexpected_character_count": 11,
+          "replacement_character_count": 11
+        },
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": false,
+        "historical": false,
+        "reconstruction": false
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    },
+    {
+      "page": 143,
+      "region": "R143_line",
+      "bbox": [
+        190,
+        67,
+        444,
+        83
+      ],
+      "baseline": {
+        "native": "�����������������������������������������������������������������\n",
+        "historical": ".ֶה Āĺ ֵה ַנý ַגÿ ,ֶה Āĺ Ĥ čāָבĀ ַהø ÿŊ ,ָבĺŖֵה üĤ ĀĐ ָבŖĦ ĀĐ ָה ָבþ ֶה ַגÿ ÿŐ ָה Āė ַמø ĕֵה üĤ øĒŖē þĺ\n Ħ ÿĜĕ üē øč ַמü ,ĺ Āď Āē ַהý Đא Ħ ÿďŖč ַגú ַמÿ ģāĝ ַגú ָהÿ ĕָה üē øĦ ÿĐ ָהø ĕֵה üėĕ üĤ øĢ Ĥ ַמāģþ ַמÿ ĕŖֶה Āđ ĕŖֶה ָה Āė ַמø ĕ üŊ ,Ĥ ַמāģþ ַמÿ ĕֵה üėĕ üĤ øĢ Đ þĒ øđ\n Ĥ þĺ עָבú :עָה ÿĒ ŅĜĕ ַמŖĦý ÿĤ ŅĤ ַהø ָבĀ þĺ ַהŖ øėŅ .ָה ָהĀ øŊ ֶה ַגŖָהĀ ַהý ֵה üĕ ÿď ַגú ĕָה üē øĦ üĐ Şָב Ņŋ ָבü øŊ ,ע ėŅא øđ ĕֶה üĤ Āģ ַמø ָהÿ ĕֶה üĺ Āď עēú\n ָה ַגÿ Ņĺ øĤ ĀŃ ֵה ýė øđ .(ֶה Āĺ ĕĤĠĝ) ĕֶהע üĺ Āď úē ÿŊ ŝĕ þĜĕ ַגý ַמø Ņĕ øĐ üĕ ĕŖֶה Āđ ĕŖֶה ָה Āė עַמø ְ (đ ,đ ďčĤĕֶה) ַנŖֶהע ÿĐ ŝøŅ ÿĢ ַהø ĕ üėāĜ ָבĀ\n Đ ŃŖַהþ Đ þĕ øĐ üĕ ĕŖֶה ָה Āė ַמø þĺ ,ע ėŅא øđ ֶה ַגĀ ָהø ĀĦĕ ýĕ øĐ üĜ Đ þņ ÿĐ ַנŖֶה ÿĐ ָה ָבý ĀĤ øĻ üĕ ַג ַהÿ øĺŅ Ħ ýŊ øĝ עĐÿ :(Ĕ ,Ēė ďčĤĕֶה) ģŅĝ ĀŐ\n.(ֶה Āĺ ĕעĥĤ) Ħĕ üĤ øč ַמü ŖŌ ַגü ָבĦĀ ַמĀ ַנŖֶה ÿĐ Ņŋ ָבü øŊ ŝĕ þĜĕ ַגý ַמø\n Ħ ÿĜĕ üē ַמø ĐŅָב þĺ ,Ĥ ַמāģþ ַמÿ Đ Āŋ üĠ øŕ ÿĐ ֶה þďāģ ėāָה ָבù ָהþ ĤŅĝ ָבĀ ֵה ָהֵאŊý ַגÿ ,ĺ Āď Āē ַהý ĕָה üē øĦ ÿĐ ָהø ĕֵה üėĕ üĤ øĢ ĕŖֶה ָה Āė ַמø þĺ ,ָב ĀĢ ַהø üĜ\n Ĥ ַמāģþ ָה Āė ַמø ĕָה üē øĦ ÿĐ ָהø ĕֵה üėŖĒ Đ ĕֵאĒþ ָהֵאĕøďý ַגÿ øđ ,Đ ָהĀ Āē øĦ ÿĐ ÿĐ ÿēāŊ ָה þĺ ָבŖĤ ĀĐ ĕֵה üėĕ üĺ ַהø ַהÿ Đ ĕֵאĒþ ָהֵאĕøďý ַגÿ þĺ ,ĕĦע üĜ ַגú עŕÿ\n.עָה ÿō ÿŊ ,ĺ Āď Āē ַהý",
+        "reconstruction": "שֶׁחוֹזְרִין בְּכָל פַּעַם אֶל הָאוֹת הָרִאשׁוֹן, כַּמְבֹאָר שָׁם, עַיֵּן שָׁם."
+      },
+      "baseline_metrics": {
+        "native": {
+          "base_letter_accuracy": 0,
+          "base_letter_reference_count": 37,
+          "base_letter_edit_distance": 37,
+          "word_order_accuracy": 0.0,
+          "word_boundary_accuracy": 0.0,
+          "number_accuracy": null,
+          "punctuation_accuracy": 0,
+          "niqqud_accuracy": null,
+          "niqqud_reference_count": null,
+          "unexpected_character_count": 65,
+          "replacement_character_count": 65
+        },
+        "historical": null,
+        "reconstruction": null
+      },
+      "ordered_fragment_present": {
+        "native": false,
+        "historical": false,
+        "reconstruction": true
+      },
+      "baseline_scope": "native clipped to bbox; historical/reconstruction overlapping blocks (context overhang); only ordered-fragment presence assessed for those two, not misleading whole-block accuracy"
+    }
+  ],
+  "metric_definitions": {
+    "base_letter_accuracy": "max(0,1-Levenshtein(base letters)/gold letters); insertion penalized",
+    "word_order_accuracy": "SequenceMatcher ordered exact-token matched count / gold token count; conservative proxy jointly affected by letter errors; inspect output for true order",
+    "word_boundary_accuracy": "F1 of spaces projected to gold via base-character alignment; unmatched boundary false positive",
+    "niqqud_accuracy": "mark-sequence edit accuracy on fully pointed fragment ONLY, not marks attachment accuracy; attachment needs separate editorial review",
+    "numbers_punctuation": "sequence edit accuracy; null if golden contains none",
+    "unscored": "context/layout controls without a complete transcription; no fabricated metrics"
+  },
+  "full_page_ocr": "NOT RUN / NOT RECOMMENDED",
+  "baseline_source": "../regional-ocr-hebrew-search-v1/native-historical-reconstruction.json"
+}

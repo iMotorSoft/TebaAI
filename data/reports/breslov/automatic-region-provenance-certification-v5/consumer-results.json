@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "consumer_equals_direct_v5": true,
+  "versions": [
+    "automatic-region-certification-v5"
+  ],
+  "positive_206_207_preserved": true,
+  "negative_108_109_not_linked": true,
+  "pages": [
+    108,
+    109,
+    206,
+    207
+  ]
+}

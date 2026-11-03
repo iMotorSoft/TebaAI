@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "contract": "Existing committed document is rejected safely before ownership claim; failed same attempt can retry after transactional rollback. No resume contract introduced.",
+  "cases": [
+    {
+      "same_attempt": "REJECTED_SAFELY_EXISTING_CONTRACT",
+      "duplicate_logicals": 0,
+      "duplicate_generations": 0,
+      "duplicate_runs": 0,
+      "invalid_pointers": 0
+    },
+    {
+      "same_attempt": "REJECTED_SAFELY_EXISTING_CONTRACT",
+      "duplicate_logicals": 0,
+      "duplicate_generations": 0,
+      "duplicate_runs": 0,
+      "invalid_pointers": 0
+    },
+    {
+      "same_attempt": "REJECTED_SAFELY_EXISTING_CONTRACT",
+      "duplicate_logicals": 0,
+      "duplicate_generations": 0,
+      "duplicate_runs": 0,
+      "invalid_pointers": 0
+    }
+  ],
+  "next_generation": {
+    "same_logical": true,
+    "distinct_generation": true,
+    "active_visibility_theft": false
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "method": "unconditional outer PostgreSQL transaction rollback; independent post-rollback reads",
+  "cases": [
+    {
+      "docs": 0,
+      "logicals": 0,
+      "generations": 0,
+      "runs": 0,
+      "pointers": 0
+    },
+    {
+      "docs": 0,
+      "logicals": 0,
+      "generations": 0,
+      "runs": 0,
+      "pointers": 0
+    },
+    {
+      "docs": 0,
+      "logicals": 0,
+      "generations": 0,
+      "runs": 0,
+      "pointers": 0
+    }
+  ],
+  "synthetic_generations_remaining": 0,
+  "synthetic_docs_remaining": 0,
+  "synthetic_active_pointers_remaining": 0
+}

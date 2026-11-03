@@ -1,0 +1,17 @@
+{
+  "product_modified": [
+    "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py"
+  ],
+  "test_added": [
+    "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_order.py",
+    "SrvRestAstroLS_v1/backend/tests/test_page_first_gateway_generation_postgres.py"
+  ],
+  "change": "Move run insert before _register_generation; move linkage UPDATE before generation insert. No changed SQL/bindings/status/pointer/retry rules. Comments added.",
+  "other_product_layers_changed": false,
+  "reader_visibility_changed": false,
+  "generation_policy_changed": false,
+  "rollback_policy_changed": false,
+  "raw_fk_or_status_bypass": false,
+  "foundation_published": false,
+  "current_c_writes": 0
+}

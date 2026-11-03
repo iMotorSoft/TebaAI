@@ -1,0 +1,37 @@
+{
+  "certifying": false,
+  "cutover": "operational",
+  "rollback": "operational",
+  "fixture": {
+    "tag": "PREFLIGHT-V2-5854bee0-fd4e-4e93-aa59-a5670e6d8923",
+    "mode": "preflight",
+    "collection_id": "ea3fbf3a-da80-4d2e-9e63-f5d69bb138d8",
+    "logical_document_id": "5d6bdc70-6066-4ec7-b45d-d871f7056d1a",
+    "cross_logical_document_id": "bc60a770-d163-4f59-8bb3-c3d40535fd9d",
+    "generations": {
+      "OLD": "1ff8d5a2-d228-46b6-b7ee-55415db2f182",
+      "NEW": "04d2481a-e8c0-45cb-825f-70a780df8bb1",
+      "ARBITRARY": "9291a87d-87d9-4d8b-8d08-0b533b100257",
+      "NEVER": "f0a7c3c3-28e1-434f-bdaf-33db1e9979d0",
+      "BUILDING": "17142882-c628-4416-9ddb-9723f12b7a23",
+      "FAILED": "e4807c3d-a576-475b-bdda-5f6bba2f6056",
+      "G1": "655db80a-1a5e-45f0-a1f4-e480814b21da",
+      "G2": "c64aec87-db7f-49fc-8833-f29dbdbf4edf",
+      "B": "fc60b98c-4d44-4317-9379-19a62a94aa74",
+      "CROSS": "8805e4ce-4b73-4fb2-be59-47bb1b819ee1"
+    },
+    "documents": {
+      "OLD": "ce1cc1a3-b1b8-4fb4-9457-35a21745a8d6",
+      "NEW": "241c90f5-6328-4cfe-a55c-26e6ded02633",
+      "ARBITRARY": "4e973ce1-393c-4054-93da-7c409daee2f3",
+      "NEVER": "a187bba1-a6c3-42f3-8d67-7aebce63fc91",
+      "BUILDING": "e1191d36-22d3-4d38-87bb-b805eea4a19c",
+      "FAILED": "eeff0df0-827e-4130-ae19-188f90cde6c1",
+      "G1": "165cbd9f-159d-4603-943d-faa2d88880c8",
+      "G2": "3cda7218-158c-4f33-b486-c52883c484c2",
+      "B": "9336bc3a-e6f7-4b50-af91-bf8e66ad4f81",
+      "CROSS": "46bd174f-a778-4419-9ee3-4e9f581c165a"
+    },
+    "created_at": "2026-10-22T20:33:44.430976+00:00"
+  }
+}

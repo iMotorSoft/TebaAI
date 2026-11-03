@@ -1,0 +1,42 @@
+{
+  "scope": "offline exact-key matching; NOT live retrieval",
+  "existing_helper": "modules/library/hebrew_lexical_normalizer.py:normalize_hebrew_search",
+  "canonical_evidence": {
+    "evidence_id": "offline-search-contract-1",
+    "canonical_text": "וְזֶה פֵּרוּשׁ הַפָּסוּק"
+  },
+  "derived_search_text_he": "וזה פרוש הפסוק",
+  "results": [
+    {
+      "query": "וְזֶה פֵּרוּשׁ הַפָּסוּק",
+      "search_key": "וזה פרוש הפסוק",
+      "evidence_id": "offline-search-contract-1"
+    },
+    {
+      "query": "וזה פרוש הפסוק",
+      "search_key": "וזה פרוש הפסוק",
+      "evidence_id": "offline-search-contract-1"
+    },
+    {
+      "query": "וזה פירוש הפסוק",
+      "search_key": "וזה פירוש הפסוק",
+      "evidence_id": null
+    },
+    {
+      "query": "וזה פרוש הפסוק 149",
+      "search_key": "וזה פרוש הפסוק 149",
+      "evidence_id": null
+    },
+    {
+      "query": "וזה פרוש הפסוק אחר",
+      "search_key": "וזה פרוש הפסוק אחר",
+      "evidence_id": null
+    }
+  ],
+  "existing_helper_punctuation_collision": {
+    "a": "שלום, עולם",
+    "b": "שלום עולם",
+    "same_key": true
+  },
+  "runtime_gate": "BLOCKED: no live retrieval; broad punctuation normalization is not identity proof"
+}

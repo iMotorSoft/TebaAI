@@ -1,0 +1,515 @@
+{
+  "at": "2026-10-21T12:22:03.456500+00:00",
+  "candidates": 12,
+  "eligible": 0,
+  "excluded": 12,
+  "decision": "FINAL_FOR_THIS_ATTEMPT_FAIL_CLOSED",
+  "scope": "available repository evidence; no assertion of historical influence or absence beyond that evidence",
+  "expected_labels_changed": false,
+  "pairs": [
+    {
+      "from": 42,
+      "to": 43,
+      "note": 7,
+      "expected": "LINK",
+      "first_known_observation": "V2 certifier holdout",
+      "source_proof": {
+        "terminal_tail": "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra ",
+        "leading_head": "y eleva sus puntos buenos, los cuales son llevados hacia él y ",
+        "next_explicit_marker": 8,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "42": "b703c71856ea9ecd86343db816a28e0bb748ff55edd8579b03e4e015ba4e5077",
+          "43": "7a666a7cdb54068f29aa09f774785c3a583c3af46d69501079ce15b1cd5c8e7e"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 7,
+        "leading_note": 7,
+        "next_explicit_marker": 8
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 60,
+      "to": 61,
+      "note": 49,
+      "expected": "LINK",
+      "first_known_observation": "V4/V2 certifier holdouts",
+      "source_proof": {
+        "terminal_tail": "su capacidad de hablar, utiliza entonces esta capacidad para ",
+        "leading_head": "decir palabras de santidad y elevar a toda la materialidad en la ",
+        "next_explicit_marker": 50,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "60": "d4ad6f6a0359f0094448c6323c96102c4a965289506a2188d48ba4f961f84cc5",
+          "61": "7dcf363a9594d0c026fef0adc2bcfade19c75bc9fd529d6b1ab64ce5462bd812"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 49,
+        "leading_note": 49,
+        "next_explicit_marker": 50
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 64,
+      "to": 65,
+      "note": 58,
+      "expected": "LINK",
+      "first_known_observation": "V3 certifier holdout",
+      "source_proof": {
+        "terminal_tail": "Torá de la misma expresión al describir la “reacción” de Dios ",
+        "leading_head": "al ver la “recién nacida” luz de la Creación: “Dios vio que la ",
+        "next_explicit_marker": 59,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "64": "507b12c63655559742693a0ba675394d18f727d0bac3ba470764b6bfa3b95c6c",
+          "65": "5869b2d723d35b8a3acf7f1557139c47c2e852304b1bd72de7ea4f0906399b38"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 58,
+        "leading_note": 58,
+        "next_explicit_marker": 59
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 70,
+      "to": 71,
+      "note": 74,
+      "expected": "LINK",
+      "first_known_observation": "V1/V4 certifier holdouts",
+      "source_proof": {
+        "terminal_tail": "el Kriat Shemá). Típicamente, este ascenso de energía evoca ",
+        "leading_head": "un despertar recíproco desde arriba (itaruta deleila), de modo ",
+        "next_explicit_marker": 75,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "70": "9370ab432079dc181188edb4c1928fd1e66d201439f7baafeb28382fec7a20f0",
+          "71": "56b1b782e6d88ca3addb6f9cf757dafe4220d3d942b100a7e6ccfa153ee771bb"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 74,
+        "leading_note": 74,
+        "next_explicit_marker": 75
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 73,
+      "to": 74,
+      "note": 86,
+      "expected": "LINK",
+      "first_known_observation": "V3 certifier holdout",
+      "source_proof": {
+        "terminal_tail": "86 Ver §4 más arriba, donde el Rabí Natán conecta peer ",
+        "leading_head": "con el esplendor y los colores superiores. La conexión que ",
+        "next_explicit_marker": 87,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "73": "3b00d9533c14a6c977324dd29b057e849d92101e05c4fb00f4791fb968c0f972",
+          "74": "f1407e2bff3ba0323ee58359df530901462cffc103ee5b959a5c692abd6f1014"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 86,
+        "leading_note": 86,
+        "next_explicit_marker": 87
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 104,
+      "to": 105,
+      "note": 7,
+      "expected": "LINK",
+      "first_known_observation": "V4 certifier holdout",
+      "source_proof": {
+        "terminal_tail": "mucho más sutil y difundida del taavat mamón es la persona ",
+        "leading_head": "que se preocupa y se angustia por no tener sufi ciente dinero. Su ",
+        "next_explicit_marker": 8,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "104": "6d57220552fb5cb207acdd6af600a480d1e55a91d997b43dee04bae8b9652711",
+          "105": "91ce0607955583efcc75cd97bfc86cc2335e214a24a10988bdc208a923be2b70"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 7,
+        "leading_note": 7,
+        "next_explicit_marker": 8
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 122,
+      "to": 123,
+      "note": 12,
+      "expected": "LINK",
+      "first_known_observation": "V4 certifier holdout",
+      "source_proof": {
+        "terminal_tail": "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente, ",
+        "leading_head": "de modo que en virtud de esa unión se revela en la creación una ",
+        "next_explicit_marker": 13,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "122": "f59b6ca1c01b6267ef0b4769c951b463df446575397fc12de6bc24c1bd603410",
+          "123": "93e5787bce8e7b8d89cecc32554e2e0360c53f23383528b16f43d6fa0226d2fd"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 12,
+        "leading_note": 12,
+        "next_explicit_marker": 13
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 123,
+      "to": 124,
+      "note": 20,
+      "expected": "LINK",
+      "first_known_observation": "V4 certifier holdout",
+      "source_proof": {
+        "terminal_tail": "20 Ver la nota 67 en la lección del Rebe Najmán, que explica ",
+        "leading_head": "por qué considera a la gula y no a la inmoralidad ni a la avaricia ",
+        "next_explicit_marker": 21,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "123": "93e5787bce8e7b8d89cecc32554e2e0360c53f23383528b16f43d6fa0226d2fd",
+          "124": "be8b380de4e225e315379775ad69f710ead8f49cf1c44475a24285f811f01909"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 20,
+        "leading_note": 20,
+        "next_explicit_marker": 21
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 130,
+      "to": 131,
+      "note": 44,
+      "expected": "LINK",
+      "first_known_observation": "V1/V4 certifier holdouts",
+      "source_proof": {
+        "terminal_tail": "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que ",
+        "leading_head": "HaShem estableció dos grandes luminarias en el cielo para ",
+        "next_explicit_marker": 45,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "130": "63cb5f0815069bcdfd9ab0a8379622eea84fc947ddaca75ad86600990005d22f",
+          "131": "8de914d18ea2be18fb6c473b284c4006c1f534bab9b5384d89580c14a203698f"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 44,
+        "leading_note": 44,
+        "next_explicit_marker": 45
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 139,
+      "to": 140,
+      "note": 71,
+      "expected": "LINK",
+      "first_known_observation": "V4 frozen confirmation / V1 holdout",
+      "source_proof": {
+        "terminal_tail": "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá ",
+        "leading_head": "correspondiente que se fortalece cuando falta la santidad. ",
+        "next_explicit_marker": 72,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "139": "799eeef8196116def9d3515a37e41650b97e3a0092b76e8bc9f7adc0b8314930",
+          "140": "e4ed64d1f693ad17e31e20c26dd845227b222d177a7506e878b4e1b589b75490"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 71,
+        "leading_note": 71,
+        "next_explicit_marker": 72
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 149,
+      "to": 150,
+      "note": 8,
+      "expected": "LINK",
+      "first_known_observation": "V4 certifier holdout",
+      "source_proof": {
+        "terminal_tail": "8 El Zohar (II, 70-78) enseña que es posible detectar con ",
+        "leading_head": "precisión el carácter de una persona y sus rasgos de personalidad ",
+        "next_explicit_marker": 9,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "149": "1f270cf6e1b39bb7732aa1dc6f8e5b73a135425393e717f0fb5dd1de3987eaee",
+          "150": "802c947d59a84653700583f696200169c4cbabb40f2d60817a8f002df3e4cb34"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 8,
+        "leading_note": 8,
+        "next_explicit_marker": 9
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    },
+    {
+      "from": 150,
+      "to": 151,
+      "note": 16,
+      "expected": "LINK",
+      "first_known_observation": "V4 certifier holdout",
+      "source_proof": {
+        "terminal_tail": "pueblo judío estuvo subyugado (Babilonia, Media/Persia, ",
+        "leading_head": "Grecia y Roma). También sabemos que siempre que los judíos ",
+        "next_explicit_marker": 17,
+        "basis": "Preserved source-only native/layout inventory and prevalidation; not V5/evaluator output. Truth remains LINK.",
+        "source_inventory_page_sha256": {
+          "150": "802c947d59a84653700583f696200169c4cbabb40f2d60817a8f002df3e4cb34",
+          "151": "8627b9a8748c086596e1d53ae323f91b98b198e66525a8043b275a72b5ab6e70"
+        }
+      },
+      "editorial_unit": {
+        "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+        "terminal_note": 16,
+        "leading_note": 16,
+        "next_explicit_marker": 17
+      },
+      "used_in_V5_design": "UNKNOWN: none detected in preserved inventory; no complete design lineage",
+      "used_in_V5_debugging": "NONE_DETECTED_IN_PRESERVED_INVENTORY (not an exhaustive historical attestation)",
+      "used_in_V5_tests": "NO_REFERENCE_FOUND_IN_CURRENT_V5_AND_CONSUMER_TESTS",
+      "used_in_previous_V5_holdout": "NO: disjoint from preserved V5 holdout selection",
+      "used_to_define_V5_proof": "UNKNOWN: previous resume explicitly NOT_INDEPENDENTLY_VERIFIED",
+      "used_to_define_V5_thresholds": "UNKNOWN: no preserved threshold derivation record tying 2.0/30.0 geometry tolerances to development cases",
+      "used_as_development_regression": "NO: absent from preserved 7-case regression contract",
+      "classification": "UNKNOWN_INFLUENCE",
+      "eligible": false,
+      "reason": "Proof/threshold-design influence cannot be independently resolved from preserved evidence; NONE_DETECTED is not proof of no influence. Fail-closed, not a claim that influence occurred.",
+      "lineage_evidence": [
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/v5-influence-inventory.json",
+        "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+        "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+        "SrvRestAstroLS_v1/backend/modules/library/automatic_region_certification_v5.py:177-276"
+      ]
+    }
+  ]
+}

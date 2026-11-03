@@ -1,0 +1,210 @@
+{
+  "types": [
+    {
+      "table_name": "library_document_generations",
+      "column_name": "id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "logical_document_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "document_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "run_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_document_generations",
+      "column_name": "job_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "collection_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "organization_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "workspace_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "project_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_documents",
+      "column_name": "logical_document_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "logical_document_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "from_generation_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "to_generation_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "expected_generation_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_generation_activation_audit",
+      "column_name": "actor_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "column_name": "run_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_ingestion_runs_v2",
+      "column_name": "document_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "logical_document_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "generation_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_logical_document_active_generations",
+      "column_name": "expected_generation_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "collection_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "NO"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "knowledge_scope_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "organization_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "workspace_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    },
+    {
+      "table_name": "library_logical_documents",
+      "column_name": "project_id",
+      "data_type": "uuid",
+      "udt_name": "uuid",
+      "is_nullable": "YES"
+    }
+  ],
+  "all_ids_uuid": true,
+  "binding_contract": "UUID objects for document/run parents; str UUID values in generation/link binding; PostgreSQL target columns resolve uuid types. JSON serialized separately with explicit ::jsonb casts. No jsonb_build_object in gateway registration.",
+  "jsonb_fixture_issue_separate": true
+}

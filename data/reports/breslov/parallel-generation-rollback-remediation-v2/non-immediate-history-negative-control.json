@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "historical": {
+    "result": "REJECTED",
+    "exception": "GenerationPreconditionError",
+    "operation": "ROLLBACK",
+    "target": "a020f7fc-6036-49f0-9aa8-4b723cd31ea0"
+  },
+  "immediate": {
+    "result": "APPLIED",
+    "logical_document_id": "a8d3b706-815f-4f7a-b344-1834df012b3e",
+    "from_generation_id": "ef32c6dd-58e0-4f14-a55b-032cdd34e84e",
+    "to_generation_id": "ebe53330-4b18-4ffe-8e2f-b704791b9aa8",
+    "expected_generation_id": "ef32c6dd-58e0-4f14-a55b-032cdd34e84e",
+    "operation": "ROLLBACK"
+  }
+}

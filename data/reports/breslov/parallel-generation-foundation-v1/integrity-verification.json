@@ -1,0 +1,20 @@
+{
+  "comparisons": {
+    "document_metadata_sha256": true,
+    "fingerprints": true,
+    "vectors_sha256": true,
+    "historical_live_runs": true,
+    "generation_document_count_by_scope_and_source": true,
+    "active_chunk_count_observed": true,
+    "active_vector_count_observed": true
+  },
+  "source_before_after_equal": true,
+  "current_c_content_unchanged": true,
+  "c_reingest_executed": false,
+  "source_durability_resolved": false,
+  "source_metadata_repair_executed": false,
+  "current_c_pg_content_writes": 0,
+  "current_c_milvus_content_writes": 0,
+  "production_touched": false,
+  "limitations": "Read-only observations, not a global writer fence or restorable vector backup."
+}

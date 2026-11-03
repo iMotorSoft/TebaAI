@@ -1,0 +1,9 @@
+{
+  "rollback": "FAIL_OFFLINE_REPRODUCTION",
+  "cutover": "APPLIED_OFFLINE_ONLY",
+  "live_foundation_revalidation": "NOT_RUN",
+  "focused_cleanup_unit_tests": {
+    "passed": 7,
+    "failed": 0
+  }
+}

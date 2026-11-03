@@ -1,0 +1,17 @@
+{
+  "result": "REPRODUCED_BEFORE_PRODUCT_EDIT",
+  "test": "tests/test_page_first_gateway_generation_order.py::test_generation_requires_resolved_logical_link_and_run",
+  "exit_code": 1,
+  "events_before_generation": [
+    "document",
+    "logical_resolved"
+  ],
+  "missing_parents": [
+    "document_logical_link",
+    "run"
+  ],
+  "generation_before_run": true,
+  "generation_before_document_logical_link": true,
+  "evidence": "pre-fix-reproduction.txt",
+  "historical_gate_statuses_unchanged": true
+}

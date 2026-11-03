@@ -1,0 +1,1082 @@
+........................................................................ [  3%]
+........................................................................ [  7%]
+........................................................................ [ 10%]
+........................................................................ [ 14%]
+........................................................................ [ 17%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 28%]
+................................................................EEEEEEEE [ 32%]
+EEEEE................................................................... [ 35%]
+........................................................................ [ 39%]
+........................................................................ [ 42%]
+........................................................................ [ 46%]
+.......FFF.F.......................FF................................... [ 49%]
+............FFF.FFFFFFF................................................. [ 53%]
+........................................................................ [ 57%]
+........................................................................ [ 60%]
+.............................FF......................................... [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 71%]
+........................................................................ [ 74%]
+........................................................................ [ 78%]
+........................................................................ [ 82%]
+........................................................................ [ 85%]
+........................................................................ [ 89%]
+........................................................................ [ 92%]
+........................................................................ [ 96%]
+......................................F.F............................... [ 99%]
+..                                                                       [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_second_active_generation_is_rejected_by_the_database __
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318c681fd10>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('d33fde70-e94f-475c-ac5d-b1eb1c2c5f4a'), UUID('14fcac02-8087-4895-8774-c7f4569d4d3f'), UUID('ce0f9f20-752d-4023-b99e-4cff59f0b7ae'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+__ ERROR at setup of test_cross_document_pointer_is_rejected_by_the_database ___
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63c890>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('7af557d8-9674-423a-81a9-082d0c0c0249'), UUID('4e84bb55-ec89-4be7-a92d-937667742815'), UUID('bb523e8e-d126-4d66-8e78-ff8406b44e9e'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+__ ERROR at setup of test_candidate_generation_is_invisible_to_normal_readers __
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63c7d0>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('8cb96a26-7dc8-4481-8961-ef5efd6ac69c'), UUID('54f711f2-ddbe-4fcd-b7c0-4d58b248c88f'), UUID('99627d51-e7f0-4e96-bc7a-f31f0f430e87'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+_ ERROR at setup of test_completed_candidate_does_not_steal_the_page_publication _
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63cf50>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('9495cfb3-f93a-4cc1-b978-42bc9758c5d3'), UUID('1afe8732-5a21-45c0-9a9c-3d03867fa235'), UUID('a6e6bf94-3654-4b44-bd68-93c616d7b33e'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+_ ERROR at setup of test_explicit_generation_inspection_reaches_the_candidate __
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac701550>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('6d2da8cc-1a36-4891-ad9d-581e77ba184e'), UUID('427b336e-298a-4fd0-b196-e2335e6de0ad'), UUID('9a279a3d-fc23-4d4f-9835-6db3d4201194'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+____ ERROR at setup of test_reader_fails_closed_when_the_pointer_is_broken _____
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63cdd0>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('b5e27f53-c3bb-44f3-a184-0066b306daf1'), UUID('24e14663-f22a-4e93-a5c9-ac01d01690b7'), UUID('d4265442-d688-4937-9c90-6dc0775f65aa'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+______________ ERROR at setup of test_atomic_cutover_and_rollback ______________
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63c950>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('d5715e1c-4c58-4a50-b625-85300fcedf3f'), UUID('4e5c7cb2-bd02-448f-9cf9-777858aa726a'), UUID('032937b7-e9bf-42a1-aaa7-08837ac4753e'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+_____ ERROR at setup of test_stale_expected_active_generation_is_rejected ______
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63e2d0>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('7895d27d-1c1e-488e-a12b-76bdffe341bb'), UUID('c8bc9f75-94e0-404f-a6ab-a848439ac8d2'), UUID('cf9a8642-297c-4df3-9241-8922f5ed67c6'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+______ ERROR at setup of test_only_candidate_generations_can_be_activated ______
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63e990>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('60691c98-a39b-44eb-afeb-0756bf155c29'), UUID('dc41ee00-510a-4c0e-97b0-6989691c60fa'), UUID('444b02f4-f4ed-4e0f-b7ca-60f0a5d6cdca'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+_______________ ERROR at setup of test_activation_is_idempotent ________________
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63ed50>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('63904465-ee6d-4886-827a-780d9a9b0d52'), UUID('8b328959-6215-42c8-909e-fb2e6356db03'), UUID('288d9368-9822-478a-be69-c1155dcbfe28'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+___________________ ERROR at setup of test_switch_is_audited ___________________
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63ea50>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('bbfb2253-b7bd-48ae-882e-45ff011d594c'), UUID('d1824d96-f1ed-4775-8a13-88ea2aa14ab5'), UUID('13f1b4e8-ef2a-4d1b-b3cf-709a54ebe306'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+_ ERROR at setup of test_active_and_retained_generations_are_cleanup_protected _
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63df10>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('2a88bf00-786b-44dd-a2ea-9c1c854e2312'), UUID('fc6780bf-f8a1-41b2-b0be-3bef08d6495f'), UUID('cf930075-1a99-4f39-a647-8b12e2d52374'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+_ ERROR at setup of test_candidate_cleanup_does_not_touch_the_active_generation _
+
+    @pytest.fixture
+    async def synthetic():
+        async with _connection() as conn:
+            async with conn.transaction():
+>               fixture = await _create_synthetic(conn)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_foundation.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_foundation.py:220: in _create_synthetic
+    await _run(
+tests/test_generation_foundation.py:94: in _run
+    await cur.execute(sql, params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <psycopg.AsyncCursor [closed] [BAD] at 0x7318ac63c890>
+query = "\n            INSERT INTO library_pages_v2(\n                page_id, run_id, document_id, page_number, text, char_co...'region_publication',\n                        jsonb_build_object('page_status', 'FULL', 'marker', %s)))\n            "
+params = (UUID('d5f24759-519d-4fea-b307-6eac1756c9d5'), UUID('263cbd01-f6a7-4458-b6dd-d97dbdd1f9ea'), UUID('a375960d-1109-46b6-8006-c6882efe92dc'), 'OLDGENERATIONEVIDENCE', 21, 'OLDGENERATIONEVIDENCE')
+prepare = None, binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -> Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+>           raise ex.with_traceback(None)
+E           psycopg.errors.IndeterminateDatatype: could not determine data type of parameter $6
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: IndeterminateDatatype
+=================================== FAILURES ===================================
+__________ test_real_psalm_19_requires_the_requested_book_and_chapter __________
+
+    def test_real_psalm_19_requires_the_requested_book_and_chapter() -> None:
+        response = run_real(QaRequest(
+            question="salmo 19",
+            works=["potencia_plegaria"],
+            ai={"enabled": False},
+        ))
+        assert response["intent"] == "biblical_reference_lookup"
+>       assert response["primary_evidence_ids"]
+E       assert []
+
+tests/test_investigative_qa_v1.py:77: AssertionError
+___________ test_real_blood_speech_uses_a_controlled_mediated_chain ____________
+
+    def test_real_blood_speech_uses_a_controlled_mediated_chain() -> None:
+        response = run_real(QaRequest(
+            question="dame la relación entre sangre y el habla",
+            works=["potencia_plegaria"],
+            ai={"enabled": False},
+        ))
+>       claim = response["claims"][0]
+                ^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests/test_investigative_qa_v1.py:92: IndexError
+________ test_real_scorpion_discovers_only_textually_grounded_neighbors ________
+
+    def test_real_scorpion_discovers_only_textually_grounded_neighbors() -> None:
+        response = run_real(QaRequest(
+            question="el término escorpión con qué está relacionado",
+            works=["lmii"],
+            ai={"enabled": False},
+        ))
+        assert response["intent"] == "discover_relations"
+>       assert response["relations"]
+E       assert []
+
+tests/test_investigative_qa_v1.py:111: AssertionError
+_________ test_real_azamra_uses_controlled_multilingual_named_teaching _________
+
+    def test_real_azamra_uses_controlled_multilingual_named_teaching() -> None:
+        response = run_real(QaRequest(
+            question="azamra",
+            works=["potencia_plegaria", "lmi", "lmii"],
+            ai={"enabled": False},
+        ))
+        assert response["intent"] == "named_teaching_lookup"
+        assert response["named_topic"]["canonical_id"] == "teaching.azamra"
+        assert {"Azamra", "Azamrá", "אזמרה", "אֲזַמְּרָה", "I will sing", "cantaré"}.issubset(
+            set(response["named_topic"]["variants_searched"])
+        )
+>       assert response["primary_evidence_ids"]
+E       assert []
+
+tests/test_investigative_qa_v1.py:153: AssertionError
+_________ test_real_postgres_single_concept_retrieval_remains_grounded _________
+
+    def test_real_postgres_single_concept_retrieval_remains_grounded() -> None:
+        response = run_real(QaRequest(question="¿Dónde aparece plegaria?", works=["potencia_plegaria", "lh"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:333: AssertionError
+_________ test_real_blood_speech_traceability_and_final_per_work_limit _________
+
+    def test_real_blood_speech_traceability_and_final_per_work_limit() -> None:
+        response = run_real(QaRequest(question="la relacion entre sangre y el habla", ai={"enabled": False}, max_hits_per_work=5))
+        hit_ids = [hit["hit_id"] for hit in response["hits"]]
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:342: AssertionError
+_________ test_real_hebrew_literal_variants_resolve_same_physical_page _________
+
+    def test_real_hebrew_literal_variants_resolve_same_physical_page() -> None:
+        variants = [
+            "dónde aparece תְּהִלָּתִי אֶחְטָם לָךְ",
+            "dónde aparece תהלתי אחטם לך",
+            "אחטם לך",
+            "איפה מופיע תהלתי אחטם לך",
+        ]
+        responses = [run_real(QaRequest(question=value, works=["lmi"], ai={"enabled": False})) for value in variants]
+>       primaries = [next(hit for hit in response["hits"] if hit["hit_id"] == response["primary_evidence_ids"][0]) for response in responses]
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/test_investigative_qa_v1.py:657: StopIteration
+____ test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order _____
+
+    def test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order() -> None:
+        response = run_real(QaRequest(question="תהלתי אחטם לך", works=["lmi"], ai={"enabled": False}))
+>       primary = next(hit for hit in response["hits"] if hit["hit_id"] == response["primary_evidence_ids"][0])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/test_investigative_qa_v1.py:673: StopIteration
+____ test_real_source_layer_followup_answers_the_current_question_directly _____
+
+    def test_real_source_layer_followup_answers_the_current_question_directly() -> None:
+        response = run_real(QaRequest(
+            question="¿Es parte de la lección del Rebe, una cita o una nota?",
+            conversation={"history": [{"question": "איפה מופיע הפסוק והיו עיני ולבי שם"}]},
+            ai={"enabled": False},
+        ))
+>       primary = next(hit for hit in response["hits"] if hit["hit_id"] in response["primary_evidence_ids"])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/test_investigative_qa_v1.py:685: StopIteration
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05b0\u05bc\u05d4\u05b4\u05dc\u05b8\u05bc\u05ea\u05b4\u05d9 \u05d0\u05b6\u05d7\u05b0\u05d8\u05b8\u05dd \u05dc\u05b8\u05da\u05b0] _
+
+question = 'תְּהִלָּתִי אֶחְטָם לָךְ'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05d4\u05dc\u05ea\u05d9 \u05d0\u05d7\u05d8\u05dd \u05dc\u05da] _
+
+question = 'תהלתי אחטם לך'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da] _
+
+question = 'ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da donde esta] _
+
+question = 'ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך donde esta'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[donde esta \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da] _
+
+question = 'donde esta ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_ test_real_pdf_copypaste_variants_resolve_required_anchor[\u05d0\u05d9\u05e4\u05d4 \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da] _
+
+question = 'איפה ת ְּ הִ לָּ ת ִ י אֶ חְ ט ָ ם לָ ך'
+
+    @pytest.mark.parametrize("question", [
+        "תְּהִלָּתִי אֶחְטָם לָךְ",
+        "תהלתי אחטם לך",
+        PDF_SPACED_LITERAL,
+        f"{PDF_SPACED_LITERAL} donde esta",
+        f"donde esta {PDF_SPACED_LITERAL}",
+        f"איפה {PDF_SPACED_LITERAL}",
+    ])
+    def test_real_pdf_copypaste_variants_resolve_required_anchor(question: str) -> None:
+        response = run_real(QaRequest(question=question, works=["lmi"], ai={"enabled": False}))
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_investigative_qa_v1.py:722: AssertionError
+_________ test_exact_pdf_copypaste_audit_excludes_spanish_instruction __________
+
+    def test_exact_pdf_copypaste_audit_excludes_spanish_instruction() -> None:
+        response = run_real(QaRequest(
+            question=f"{PDF_SPACED_LITERAL} donde esta",
+            works=["lmi"],
+            ai={"enabled": False},
+        ))
+        interpretation = response["interpretation"]
+        assert interpretation["literal_raw"] == PDF_SPACED_LITERAL
+        assert interpretation["instruction"] == "donde esta"
+        assert interpretation["instruction_language"] == "es"
+>       assert interpretation["literal_reconstructed"] == "תְּהִלָּתִי אֶחְטָם לָך"
+E       AssertionError: assert 'תְּהִלָּתִיאֶחְטָםלָך' == 'תְּהִלָּתִי אֶחְטָם לָך'
+E         
+E         - תְּהִלָּתִי אֶחְטָם לָך
+E         ?            -       -
+E         + תְּהִלָּתִיאֶחְטָםלָך
+
+tests/test_investigative_qa_v1.py:745: AssertionError
+_ test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[tisha beav] _
+
+query = 'tisha beav'
+
+    @pytest.mark.parametrize("query", ["tisha beav", "Tisha B'Av"])
+    def test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence(query: str) -> None:
+        response = _run_real(query)
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_named_topics.py:131: AssertionError
+_ test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[Tisha B'Av] _
+
+query = "Tisha B'Av"
+
+    @pytest.mark.parametrize("query", ["tisha beav", "Tisha B'Av"])
+    def test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence(query: str) -> None:
+        response = _run_real(query)
+>       assert response["status"] == "ok"
+E       AssertionError: assert 'no_evidence' == 'ok'
+E         
+E         - ok
+E         + no_evidence
+
+tests/test_named_topics.py:131: AssertionError
+________ test_runner_import_is_certifier_free_and_uses_corrected_audit _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7318ac473a40>
+
+    def test_runner_import_is_certifier_free_and_uses_corrected_audit(monkeypatch):
+        import runpy
+        monkeypatch.syspath_prepend(str(support.RUNNER.parent))
+        namespace = runpy.run_path(str(support.RUNNER), run_name='evaluator_import_test')
+        c = case('reciprocal_relation')
+        assert support.evaluate(namespace['source_audit'],c)['passed']
+>       assert not any('automatic_region_certification_v5' in name for name in sys.modules)
+E       assert not True
+E        +  where True = any(<generator object test_runner_import_is_certifier_free_and_uses_corrected_audit.<locals>.<genexpr> at 0x731874478fb0>)
+
+tests/test_v5_evaluator_semantics.py:125: AssertionError
+______ test_runner_uses_standalone_evaluator_without_top_level_v5_import _______
+
+    def test_runner_uses_standalone_evaluator_without_top_level_v5_import():
+        tree = ast.parse(support.RUNNER.read_text())
+        assert any(isinstance(n,ast.ImportFrom) and n.module == 'evaluator'
+                   and any(a.name=='source_audit' for a in n.names) for n in tree.body)
+        assert not any(isinstance(n,ast.ImportFrom) and 'certification_v5' in (n.module or '') for n in tree.body)
+>       assert not any('automatic_region_certification_v5' in name for name in sys.modules)
+E       assert not True
+E        +  where True = any(<generator object test_runner_uses_standalone_evaluator_without_top_level_v5_import.<locals>.<genexpr> at 0x7318746c5560>)
+
+tests/test_v5_evaluator_semantics.py:142: AssertionError
+=============================== warnings summary ===============================
+tests/test_apply_markdown_structural_chunks.py: 10 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/scripts/chunk_documents.py:220: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "created_at": datetime.datetime.utcnow(),
+
+tests/test_apply_markdown_structural_chunks.py: 10 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/scripts/chunk_documents.py:221: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "updated_at": datetime.datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:38: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    password_changed_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:39: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    created_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestLogin::test_success
+tests/test_auth_service.py::TestLogin::test_wrong_password
+tests/test_auth_service.py::TestLogin::test_inactive_user
+tests/test_auth_service.py::TestRefresh::test_success
+tests/test_auth_service.py::TestRefresh::test_user_inactive
+tests/test_auth_service.py::TestCreateUser::test_duplicate_email
+tests/test_auth_service.py::TestGetCurrentUser::test_returns_user
+tests/test_auth_service.py::TestGetCurrentUser::test_inactive
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/tests/test_auth_service.py:40: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    updated_at=datetime.utcnow(),
+
+tests/test_auth_service.py::TestCreateUser::test_creates_user
+tests/test_research_guest_provisioning.py::test_creates_active_viewer_with_canonical_hasher
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/auth/domain.py:36: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+tests/test_auth_tokens.py::TestAccessToken::test_create_and_decode
+tests/test_auth_tokens.py::TestAccessToken::test_requires_access_type
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_issuer
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_audience
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 15 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_auth_tokens.py::TestAccessToken::test_create_and_decode
+tests/test_auth_tokens.py::TestAccessToken::test_requires_access_type
+tests/test_auth_tokens.py::TestAccessToken::test_invalid_signature
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_issuer
+tests/test_auth_tokens.py::TestAccessToken::test_wrong_audience
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:368: InsecureKeyLengthWarning: The HMAC key is 15 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    decoded = self.decode_complete(
+
+tests/test_auth_tokens.py::TestAccessToken::test_invalid_signature
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/jwt/api_jwt.py:147: InsecureKeyLengthWarning: The HMAC key is 11 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'scope_code' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'limit' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'status' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_runs_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_runs_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs', handler='book_qa_runs'] query parameter 'document_id' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'pipeline_version' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'scope_code' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_book_qa_v2_discovery_http.py::test_latest_requires_auth
+tests/test_book_qa_v2_discovery_http.py::test_latest_with_auth
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/book-qa/runs/latest', handler='book_qa_runs_latest'] query parameter 'document_id' declared using deprecated inferred style. Use 'FromQuery[<type>]' or 'Annotated[<type>, QueryParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_ingest_test_candidate.py: 6 warnings
+tests/test_library.py: 4 warnings
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:177: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+tests/test_ingest_test_candidate.py::test_metadata_json_parses_and_is_persisted
+tests/test_ingest_test_candidate.py::test_dry_run_does_not_write
+tests/test_ingest_test_candidate.py::test_existing_ready_document_is_not_changed
+tests/test_ingest_test_candidate.py::test_apply_uses_existing_scope_without_creating_legacy_collection
+tests/test_library.py::TestDomain::test_library_document_text_create
+tests/test_library.py::TestService::test_ingest_document_dry_run
+tests/test_library.py::TestService::test_ingest_duplicate_raises
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:255: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    created_at=datetime.utcnow(),
+
+tests/test_ingest_test_candidate.py::test_repository_serializes_bibliographic_metadata
+tests/test_ingest_test_candidate.py::test_missing_legacy_scope_mapping_fails_closed
+tests/test_ingest_test_candidate.py::test_existing_ready_document_is_not_changed
+tests/test_library.py::TestDomain::test_library_collection_create
+tests/test_library.py::TestDomain::test_library_collection_create_lowercases_code
+tests/test_library.py::TestRepository::test_get_or_create_collection_new
+tests/test_scope_authorization.py::test_legacy_alias_resolves_from_collection_metadata
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/modules/library/domain.py:78: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = datetime.utcnow()
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+tests/test_region_source_access.py::test_source_route_refuses_arbitrary_filesystem_path
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/source', handler='library_original_source'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'document_id' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+tests/test_region_source_access.py::test_source_route_no_public_exposure_or_cross_scope_read
+  /media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/.venv/lib/python3.12/site-packages/litestar/handlers/base.py:577: LitestarDeprecationWarning: [paths='/library/documents/{document_id:uuid}/pages/{page:int}/publication', handler='library_page_publication'] path parameter 'page' declared using deprecated inferred style. Use 'FromPath[<type>]' or 'Annotated[<type>, PathParameter(...)]' instead
+    return KwargsModel.create_for_signature_model(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_investigative_qa_v1.py::test_real_psalm_19_requires_the_requested_book_and_chapter
+FAILED tests/test_investigative_qa_v1.py::test_real_blood_speech_uses_a_controlled_mediated_chain
+FAILED tests/test_investigative_qa_v1.py::test_real_scorpion_discovers_only_textually_grounded_neighbors
+FAILED tests/test_investigative_qa_v1.py::test_real_azamra_uses_controlled_multilingual_named_teaching
+FAILED tests/test_investigative_qa_v1.py::test_real_postgres_single_concept_retrieval_remains_grounded
+FAILED tests/test_investigative_qa_v1.py::test_real_blood_speech_traceability_and_final_per_work_limit
+FAILED tests/test_investigative_qa_v1.py::test_real_hebrew_literal_variants_resolve_same_physical_page
+FAILED tests/test_investigative_qa_v1.py::test_real_hebrew_literal_preserves_canonical_niqqud_and_logical_order
+FAILED tests/test_investigative_qa_v1.py::test_real_source_layer_followup_answers_the_current_question_directly
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05b0\u05bc\u05d4\u05b4\u05dc\u05b8\u05bc\u05ea\u05b4\u05d9 \u05d0\u05b6\u05d7\u05b0\u05d8\u05b8\u05dd \u05dc\u05b8\u05da\u05b0]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea\u05d4\u05dc\u05ea\u05d9 \u05d0\u05d7\u05d8\u05dd \u05dc\u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da donde esta]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[donde esta \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_real_pdf_copypaste_variants_resolve_required_anchor[\u05d0\u05d9\u05e4\u05d4 \u05ea \u05b0\u05bc \u05d4\u05b4 \u05dc\u05b8\u05bc \u05ea \u05b4 \u05d9 \u05d0\u05b6 \u05d7\u05b0 \u05d8 \u05b8 \u05dd \u05dc\u05b8 \u05da]
+FAILED tests/test_investigative_qa_v1.py::test_exact_pdf_copypaste_audit_excludes_spanish_instruction
+FAILED tests/test_named_topics.py::test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[tisha beav]
+FAILED tests/test_named_topics.py::test_real_tisha_named_topic_keeps_full_subject_and_strong_lm_xv_evidence[Tisha B'Av]
+FAILED tests/test_v5_evaluator_semantics.py::test_runner_import_is_certifier_free_and_uses_corrected_audit
+FAILED tests/test_v5_evaluator_semantics.py::test_runner_uses_standalone_evaluator_without_top_level_v5_import
+ERROR tests/test_generation_foundation.py::test_second_active_generation_is_rejected_by_the_database
+ERROR tests/test_generation_foundation.py::test_cross_document_pointer_is_rejected_by_the_database
+ERROR tests/test_generation_foundation.py::test_candidate_generation_is_invisible_to_normal_readers
+ERROR tests/test_generation_foundation.py::test_completed_candidate_does_not_steal_the_page_publication
+ERROR tests/test_generation_foundation.py::test_explicit_generation_inspection_reaches_the_candidate
+ERROR tests/test_generation_foundation.py::test_reader_fails_closed_when_the_pointer_is_broken
+ERROR tests/test_generation_foundation.py::test_atomic_cutover_and_rollback
+ERROR tests/test_generation_foundation.py::test_stale_expected_active_generation_is_rejected
+ERROR tests/test_generation_foundation.py::test_only_candidate_generations_can_be_activated
+ERROR tests/test_generation_foundation.py::test_activation_is_idempotent - ps...
+ERROR tests/test_generation_foundation.py::test_switch_is_audited - psycopg.e...
+ERROR tests/test_generation_foundation.py::test_active_and_retained_generations_are_cleanup_protected
+ERROR tests/test_generation_foundation.py::test_candidate_cleanup_does_not_touch_the_active_generation
+20 failed, 1985 passed, 98 warnings, 13 errors in 37.33s

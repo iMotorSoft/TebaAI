@@ -1,7 +1,5 @@
 import { test, expect } from "@playwright/test";
 import path from "node:path";
-import os from "node:os";
-import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import {
   ADMIN_EMAIL,
@@ -12,27 +10,31 @@ import {
   apiCreateJob,
   apiCancelJob,
   runCleanup,
-  generateFixture,
-  sha256OfFile,
   authorizeFixtureSha,
 } from "./content-manager-helpers";
 
 /**
- * Content Manager premium UX — real admin browser flow.
+ * Content Manager premium UX — real admin browser flow with the real Breslov PDF.
+ *
+ * Uses the real PDF at /media/issajar/DEVELOP/Download/Tora/Breslov/
+ * LIKUTEY MOHARAN II Interior.pdf as the E2E test document.
  *
  * No mocks: real backend, isolated worker (breslov_e2e), authorized fixtures.
- * Each test uses a unique fixture sha (fresh idempotency key), authorized in
- * the local DEV env with a backend+worker restart. Never touches production.
+ * Never touches production. Never touches CURRENT C (ddb9cba6-...).
  */
 
 const BACKEND = "http://127.0.0.1:7008";
 const E2E_SCOPE = "breslov_e2e";
+const REAL_PDF_PATH = "/media/issajar/DEVELOP/Download/Tora/Breslov/LIKUTEY MOHARAN II Interior.pdf";
+const REAL_PDF_SHA = "ce7304e31c37cadd5bc938732d93c8e5385afc026c0af0de612635d8b76cab61";
+const REAL_PDF_PAGES = 412;
+const REAL_PDF_FILENAME = "LIKUTEY MOHARAN II Interior.pdf";
 
-async function prepareFixture(): Promise<string> {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cm-e2e-"));
-  const fixturePath = generateFixture("unique", dir);
-  const sha = sha256OfFile(fixturePath);
-  authorizeFixtureSha(sha);
+async function prepareRealPdf(): Promise<string> {
+  // Authorize the real PDF SHA so the backend worker accepts it.
+  authorizeFixtureSha(REAL_PDF_SHA);
+
+  // Restart backend + worker so the isolated worker picks up the authorized SHA.
   execFileSync(path.resolve(process.cwd(), "../backend-dev.sh"), ["restart"], {
     cwd: path.resolve(process.cwd(), ".."),
     encoding: "utf-8",
@@ -43,10 +45,12 @@ async function prepareFixture(): Promise<string> {
     encoding: "utf-8",
     timeout: 90_000,
   });
+
+  // Wait for backend health.
   for (let i = 0; i < 30; i++) {
     try {
       const res = await fetch(`${BACKEND}/health`);
-      if (res.ok) return fixturePath;
+      if (res.ok) return REAL_PDF_PATH;
     } catch {
       /* not ready yet */
     }
@@ -70,12 +74,12 @@ async function waitTerminal(jobId: string, token: string, timeoutMs = 120_000): 
   throw new Error("job did not reach terminal state");
 }
 
-test.describe("Content Manager premium UX (real backend)", () => {
+test.describe("Content Manager premium UX (real backend, real PDF)", () => {
   test.setTimeout(180_000);
   test.skip(!ADMIN_EMAIL || !ADMIN_PASSWORD, "TEBAAI_E2E_ADMIN_EMAIL/PASSWORD not set");
 
   test("five-stage wizard completes with real counts and diagnostic", async ({ page }) => {
-    const fixturePath = await prepareFixture();
+    const pdfPath = await prepareRealPdf();
 
     await loginAsAdmin(page);
     await page.goto("/admin/content");
@@ -91,11 +95,11 @@ test.describe("Content Manager premium UX (real backend)", () => {
     await expect(page.getByText("Seleccioná una fuente documental")).toBeVisible();
     await expect(page.getByText(/PDF de hasta/)).toBeVisible();
 
-    await page.locator("#cm-file-input").setInputFiles(fixturePath);
+    await page.locator("#cm-file-input").setInputFiles(pdfPath);
 
-    await expect(page.locator(".cm-file-name")).toContainText("tebaai-cm-e2e-unique.pdf");
+    await expect(page.locator(".cm-file-name")).toContainText(REAL_PDF_FILENAME);
     await expect(page.getByText("Archivo válido")).toBeVisible();
-    await expect(page.getByText("3 páginas")).toBeVisible();
+    await expect(page.getByText(`${REAL_PDF_PAGES} páginas`)).toBeVisible();
 
     const technical = page.locator("details.cm-details");
     await expect(technical.locator("summary")).toHaveText(/Detalles técnicos/);
@@ -104,7 +108,7 @@ test.describe("Content Manager premium UX (real backend)", () => {
     // ── Step 2 · Información ────────────────────────────────────────────
     await page.getByRole("button", { name: "Continuar" }).click();
     await expect(page.getByLabel("Título de la obra")).toBeVisible();
-    await page.getByLabel("Título de la obra").fill("Fuente Premium UX Playwright");
+    await page.getByLabel("Título de la obra").fill("Likutey Moharan II — Interior (E2E real)");
     await page.getByLabel("Idioma principal").selectOption("mixed");
     await page.getByLabel("Familia documental (opcional)").fill("Likutey Moharan");
     await page.getByRole("button", { name: "Continuar a confirmación" }).click();
@@ -113,7 +117,7 @@ test.describe("Content Manager premium UX (real backend)", () => {
     await expect(page.getByRole("heading", { name: "Confirmación" })).toBeVisible();
     await expect(page.getByText("El documento será procesado y quedará como candidato para revisión.")).toBeVisible();
     await expect(page.getByText("Esta operación no publica ni aprueba el documento.")).toBeVisible();
-    await expect(page.getByText("Fuente Premium UX Playwright")).toBeVisible();
+    await expect(page.getByText("Likutey Moharan II — Interior (E2E real)")).toBeVisible();
 
     // ── Step 4 · Procesamiento (real) ───────────────────────────────────
     const createResponse = page.waitForResponse(
@@ -160,11 +164,11 @@ test.describe("Content Manager premium UX (real backend)", () => {
     await expect(page.getByRole("heading", { name: "Biblioteca" })).toBeVisible();
     // The E2E document is hidden by default; enable test data to see it.
     await page.getByLabel("Mostrar datos de prueba").check();
-    await expect(page.getByText("Fuente Premium UX Playwright").first()).toBeVisible();
+    await expect(page.getByText("Likutey Moharan II — Interior (E2E real)").first()).toBeVisible();
 
-    // ── Exact duplicate (same fixture again) ────────────────────────────
+    // ── Exact duplicate (same real PDF again) ───────────────────────────
     await page.getByRole("button", { name: "＋ Nueva carga" }).click();
-    await page.locator("#cm-file-input").setInputFiles(fixturePath);
+    await page.locator("#cm-file-input").setInputFiles(pdfPath);
     await expect(page.getByText("Este mismo archivo ya fue cargado.")).toBeVisible({ timeout: 15_000 });
     await expect(page.getByText(/Documento existente:/)).toBeVisible();
     await expect(page.getByRole("button", { name: "Continuar" })).toHaveCount(0);
@@ -182,12 +186,12 @@ test.describe("Content Manager premium UX (real backend)", () => {
   });
 
   test("cancelled job retries with a new attempt and completes", async ({ page }) => {
-    const fixturePath = await prepareFixture();
+    const pdfPath = await prepareRealPdf();
     const token = await apiLogin();
 
     // Create and cancel in a burst before the ~1s worker poll
-    const upload = await apiUpload(token, fixturePath);
-    const job = await apiCreateJob(token, String(upload.upload_id), "Fuente Retry Playwright");
+    const upload = await apiUpload(token, pdfPath, REAL_PDF_FILENAME);
+    const job = await apiCreateJob(token, String(upload.upload_id), "Likutey Moharan II Retry");
     const jobId = String(job.job_id);
     const cancelled = await apiCancelJob(token, jobId);
     expect(cancelled.status).toBe("cancelled");
@@ -197,7 +201,7 @@ test.describe("Content Manager premium UX (real backend)", () => {
     // The cancelled E2E job is hidden by default; enable test data.
     await page.getByLabel("Mostrar datos de prueba").check();
 
-    const row = page.locator(".cm-table tbody tr", { hasText: "Fuente Retry Playwright" }).filter({ hasText: "Cancelado" }).first();
+    const row = page.locator(".cm-table tbody tr", { hasText: "Likutey Moharan II Retry" }).filter({ hasText: "Cancelado" }).first();
     await expect(row).toBeVisible();
     await row.getByRole("button", { name: "Abrir" }).click();
     await expect(page.getByText("El procesamiento fue cancelado antes de iniciar las escrituras.")).toBeVisible();
@@ -211,8 +215,7 @@ test.describe("Content Manager premium UX (real backend)", () => {
     });
     await expect(page.locator(".cm-detail-head .cm-sub")).toContainText("intento 2");
 
-    // Cleanup of the retried attempt (manifest-bounded). The retry created a
-    // NEW job id; the cancelled original has no manifest to compensate.
+    // Cleanup of the retried attempt (manifest-bounded).
     const jobsRes = await fetch(`${BACKEND}/admin/content/jobs?knowledge_scope_code=${E2E_SCOPE}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -220,7 +223,7 @@ test.describe("Content Manager premium UX (real backend)", () => {
       jobs: Array<{ job_id: string; title: string; attempt_number: number; status: string }>;
     };
     const attempt2 = jobsBody.jobs.find(
-      (j) => j.title === "Fuente Retry Playwright" && j.attempt_number === 2,
+      (j) => j.title === "Likutey Moharan II Retry" && j.attempt_number === 2,
     );
     expect(attempt2).toBeTruthy();
     expect(["completed", "completed_with_warnings"]).toContain(attempt2!.status);

@@ -1,0 +1,32 @@
+{
+  "phase": "a",
+  "base": "http://127.0.0.1:3008",
+  "mocked_responses": 0,
+  "scope_overrides": 0,
+  "console_errors": [],
+  "http_5xx": [],
+  "started_at": "2026-10-11T15:40:41.102Z",
+  "source": {
+    "label": "A",
+    "title": "Un Día en la Vida de un Jasid de Breslov",
+    "source_path": "/media/issajar/DEVELOP/Download/Tora/Breslov/UN DÍA EN LA VIDA (KDP).pdf",
+    "exists": true,
+    "sha256": "d98e4d4c96a36c701aa055e1a9b8ce230dec24f3b45f35455828f6fe30f69c13",
+    "pages": 196,
+    "size_bytes": 540089
+  },
+  "job_id": "7a1662c8-5b3e-4478-a3e6-3a5834c425d5",
+  "publication": {
+    "document_id": "07ba7c8d-6e43-547e-a6e7-d5f390233cfa",
+    "job_id": "7a1662c8-5b3e-4478-a3e6-3a5834c425d5",
+    "status": "ready",
+    "published_at": "2026-10-11T15:41:49.611170Z",
+    "chunks": 296,
+    "embeddings": 296,
+    "vectors": 296,
+    "idempotency_key": null
+  },
+  "ingestion": "UI_ONLY",
+  "status": "PASS",
+  "finished_at": "2026-10-11T15:41:49.803Z"
+}

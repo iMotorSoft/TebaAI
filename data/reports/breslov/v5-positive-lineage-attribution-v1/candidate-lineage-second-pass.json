@@ -1,0 +1,1818 @@
+{
+  "independence": "Separate algorithmic pass by the same agent, not a separate human/agent review.",
+  "pairs": [
+    {
+      "pair": "42->43",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-07-05-likutey-layout/probe/page_041_printed_024_text.txt",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra"
+          ],
+          "mtime_utc": "2026-07-08T23:31:03.122877+00:00"
+        },
+        {
+          "path": "data/reports/breslov/2026-07-30-structural-heading-literal-dev/milvus-probe.json",
+          "matched_snippets": [
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-07-30T13:05:43.925225+00:00"
+        },
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-18T15:53:30.480315+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-review.txt",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-18T15:53:30.483315+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra"
+          ],
+          "mtime_utc": "2026-10-18T16:00:22.306182+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 134,
+              "text": "    random.Random(42).shuffle(notes)"
+            },
+            {
+              "line": 136,
+              "text": "        random.Random(42).shuffle(b.textlines)"
+            }
+          ]
+        }
+      ],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra",
+            "y eleva sus puntos buenos, los cuales son llevados hacia él y"
+          ],
+          "mtime_utc": "2026-10-18T15:53:30.480315+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-v2-definition.json",
+          "matched_snippets": [
+            "resultado del hecho de que su sheliaj tzibur (o jazán) encuentra"
+          ],
+          "mtime_utc": "2026-10-18T16:00:22.306182+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "60->61",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+          "matched_snippets": [
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-18T15:53:30.480315+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-review.txt",
+          "matched_snippets": [
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-18T15:53:30.483315+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-review.txt",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.997393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para",
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/fixtures/region_markdown_provenance_v1.json",
+          "hits": [
+            {
+              "line": 3791,
+              "text": "                  \"text\": \"60 Ver \","
+            },
+            {
+              "line": 3885,
+              "text": "                  \"text\": \"61 Ver §1 más arriba.\","
+            }
+          ]
+        },
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 230,
+              "text": "    assert all(str(n) in quality.canonical_markdown for n in range(60, 67))"
+            }
+          ]
+        }
+      ],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/holdout-source-inventory.json",
+          "matched_snippets": [
+            "decir palabras de santidad y elevar a toda la materialidad en la"
+          ],
+          "mtime_utc": "2026-10-18T15:53:30.480315+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "su capacidad de hablar, utiliza entonces esta capacidad para"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "64->65",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-07-30-structural-heading-literal-dev/milvus-probe.json",
+          "matched_snippets": [
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-07-30T13:05:43.925225+00:00"
+        },
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-cross-page-source-review.txt",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-18T16:37:32.297484+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-18T16:37:32.064481+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-review.txt",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-18T16:37:32.066481+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-19T00:39:21.680440+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-results.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-19T00:39:46.579287+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/fixtures/region_markdown_provenance_v1.json",
+          "hits": [
+            {
+              "line": 3693,
+              "text": "                  \"text\": \"[64]\","
+            },
+            {
+              "line": 4602,
+              "text": "                  \"text\": \"64 Ver §1 y §4 más arriba.\","
+            },
+            {
+              "line": 4651,
+              "text": "                  \"text\": \"65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim \","
+            }
+          ]
+        },
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 79,
+              "text": "    # Real labels put right continuation and 66 ahead of left-column 64/65."
+            },
+            {
+              "line": 80,
+              "text": "    assert broken.index(\"66 Comentando\") < broken.index(\"64 Ver\")"
+            },
+            {
+              "line": 82,
+              "text": "    assert correct.index(\"64 Ver\") < correct.index(\"65 Estudia\") < correct.index(\"se refrena\") < correct.index(\"66 Comentando\")"
+            }
+          ]
+        }
+      ],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-18T16:37:32.064481+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-19T00:39:21.680440+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-results.json",
+          "matched_snippets": [
+            "Torá de la misma expresión al describir la “reacción” de Dios",
+            "al ver la “recién nacida” luz de la Creación: “Dios vio que la"
+          ],
+          "mtime_utc": "2026-10-19T00:39:46.579287+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "70->71",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-definition.json",
+          "matched_snippets": [
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-20T12:04:50.317657+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-source-inventory.json",
+          "matched_snippets": [
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-20T12:04:49.992658+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-source-review.txt",
+          "matched_snippets": [
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-20T12:04:49.996659+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "el Kriat Shemá). Típicamente, este ascenso de energía evoca",
+            "un despertar recíproco desde arriba (itaruta deleila), de modo"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": []
+    },
+    {
+      "pair": "73->74",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-07-05-likutey-layout/probe/page_072_printed_055_text.txt",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer"
+          ],
+          "mtime_utc": "2026-07-08T23:31:03.357875+00:00"
+        },
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-cross-page-source-review.txt",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-18T16:37:32.297484+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-18T16:37:32.064481+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-review.txt",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-18T16:37:32.066481+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-19T00:39:21.680440+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-results.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-19T00:39:46.579287+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-source-inventory.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-18T16:37:32.064481+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-definition.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-19T00:39:21.680440+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/holdout-v3-results.json",
+          "matched_snippets": [
+            "86 Ver §4 más arriba, donde el Rabí Natán conecta peer",
+            "con el esplendor y los colores superiores. La conexión que"
+          ],
+          "mtime_utc": "2026-10-19T00:39:46.579287+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "104->105",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-review.txt",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.997393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "mucho más sutil y difundida del taavat mamón es la persona",
+            "que se preocupa y se angustia por no tener sufi ciente dinero. Su"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "122->123",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-review.txt",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.997393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v4.py",
+          "hits": [
+            {
+              "line": 51,
+              "text": "    parsed, page, native = supported(note='123 Long note', following='124 Next note')"
+            },
+            {
+              "line": 54,
+              "text": "    assert [c.note_number for c in notes] == [123, 124]"
+            }
+          ]
+        }
+      ],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "Divinidad, HaKadosh Baruj Hu y Su Shejiná, respectivamente,",
+            "de modo que en virtud de esa unión se revela en la creación una"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "123->124",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-review.txt",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.997393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_automatic_region_certification_v4.py",
+          "hits": [
+            {
+              "line": 51,
+              "text": "    parsed, page, native = supported(note='123 Long note', following='124 Next note')"
+            },
+            {
+              "line": 54,
+              "text": "    assert [c.note_number for c in notes] == [123, 124]"
+            }
+          ]
+        }
+      ],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "20 Ver la nota 67 en la lección del Rebe Najmán, que explica",
+            "por qué considera a la gula y no a la inmoralidad ni a la avaricia"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "130->131",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-review.txt",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.997393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "44 Ver Zohar I, 20b y Matok Midvash allí. La Torá relata que",
+            "HaShem estableció dos grandes luminarias en el cielo para"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "139->140",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/fixtures/automatic_region_v2_development.json",
+          "matched_snippets": [
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-18T15:57:24.525206+00:00"
+        },
+        {
+          "path": "data/reports/breslov/2026-07-16-research-workspace-v1/blood_speech_case_after.json",
+          "matched_snippets": [
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-07-16T23:47:38.371182+00:00"
+        },
+        {
+          "path": "data/reports/breslov/2026-07-16-research-workspace-v1/traceability_golden_batch.json",
+          "matched_snippets": [
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-07-16T23:47:38.396182+00:00"
+        },
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+          "matched_snippets": [
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-18T15:59:55.913821+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+          "matched_snippets": [
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-18T16:36:11.930344+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-definition.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá"
+          ],
+          "mtime_utc": "2026-10-20T12:04:50.317657+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-source-inventory.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá"
+          ],
+          "mtime_utc": "2026-10-20T12:04:49.992658+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v4-frozen-confirmation-consumer-boundary-v1/holdout-source-review.txt",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá"
+          ],
+          "mtime_utc": "2026-10-20T12:04:49.996659+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "71 El Ari zal enseña que cada parte del cuerpo tiene una klipá",
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": "139/140 in original V5 negatives are note numbers on physical 198/199, not candidate pages",
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v2/development-pages.json",
+          "matched_snippets": [
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-18T15:59:55.913821+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v3/development-pages.json",
+          "matched_snippets": [
+            "correspondiente que se fortalece cuando falta la santidad."
+          ],
+          "mtime_utc": "2026-10-18T16:36:11.930344+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "149->150",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-review.txt",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.997393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 186,
+              "text": "                             box(\"footnote\", synthetic_line(1, 0, 150, 200, \"1 right\")))"
+            }
+          ]
+        }
+      ],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "8 El Zohar (II, 70-78) enseña que es posible detectar con",
+            "precisión el carácter de una persona y sus rasgos de personalidad"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        }
+      ]
+    },
+    {
+      "pair": "150->151",
+      "method": "Independent normalized terminal/leading text search over entire original text inventory, plus second page-number scan of V5 and supporting tests; git pair history is in git-history-evidence.json. No certifier/canonicalizer/evaluator imported.",
+      "snippet_hits": [
+        {
+          "path": "data/reports/breslov/2026-10-01-clean-corpus-hebrew-ingestion-v1/c-chunks.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-11T15:58:01.990552+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-review.txt",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.997393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/positive-lineage-final.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.455494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/prevalidation-results.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-21T12:22:03.456494+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/all-pages-source-inventory.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-20T17:08:38.610578+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/eligible-positive-set.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/positive-confirmation-contract.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-20T17:12:34.917641+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/prevalidation-results.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-20T17:14:38.806865+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-eligible-positive-set.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.989184+00:00"
+        },
+        {
+          "path": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-21T11:59:31.988184+00:00"
+        }
+      ],
+      "test_number_hits": [
+        {
+          "path": "SrvRestAstroLS_v1/backend/tests/test_region_markdown_provenance.py",
+          "hits": [
+            {
+              "line": 186,
+              "text": "                             box(\"footnote\", synthetic_line(1, 0, 150, 200, \"1 right\")))"
+            }
+          ]
+        }
+      ],
+      "first_pass_classification": "UNKNOWN",
+      "final_classification": "UNKNOWN",
+      "contradiction_downgrades": [],
+      "exposure_collision": null,
+      "decoded_json_text_hits": [
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-source-inventory.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-19T16:34:48.993393+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition-first-open-invalid.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-19T16:36:33.691262+00:00"
+        },
+        {
+          "path": "data/reports/breslov/automatic-region-provenance-certification-v4/holdout-v4-definition.json",
+          "matched_snippets": [
+            "pueblo judío estuvo subyugado (Babilonia, Media/Persia,",
+            "Grecia y Roma). También sabemos que siempre que los judíos"
+          ],
+          "mtime_utc": "2026-10-19T16:41:30.426027+00:00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "changed_preexisting_paths": [
+    "SrvRestAstroLS_v1/backend/modules/library/page_first_gateway.py"
+  ],
+  "all_other_preexisting_bytes_unchanged": true,
+  "historical_reports_unchanged": true,
+  "incremental_diff": "gateway-remediation.patch",
+  "before_reconstruction_verified_against_inventory_sha256": true
+}

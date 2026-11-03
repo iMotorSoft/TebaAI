@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-10-23T12:09:27.295470+00:00",
+  "canonical_durable_storage_found": true,
+  "mechanism": "modules.library.durable_source.preserve_source",
+  "configuration": {
+    "setting": "TEBAAI_CONTENT_MANAGER_STORAGE_DIR",
+    "setting_value": "",
+    "setting_is_empty": true,
+    "resolution_rule": "Path(CONTENT_MANAGER_STORAGE_DIR).resolve(); process cwd when unset",
+    "resolved_durable_root": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend",
+    "service_cwd": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend",
+    "root_exists": true
+  },
+  "naming_policy": {
+    "pattern": "sources/<document_id>/original.pdf",
+    "document_scoped": true,
+    "deterministic": true,
+    "extension": ".pdf",
+    "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+    "target_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "target_parent_exists": false,
+    "target_exists": false
+  },
+  "atomic_write": {
+    "temporary_sibling": true,
+    "temporary_prefix": ".source-",
+    "fsync_file": true,
+    "verify_sha_before_rename": true,
+    "atomic_rename": true,
+    "fsync_directory": true,
+    "existing_target_requires_matching_sha": true
+  },
+  "source_path_semantics": "absolute path of a worker-owned durable copy; the source endpoint serves only a path exactly equal to durable_source.source_path(document_id)",
+  "source_uri_semantics": "optional logical reference, unused by the source endpoint",
+  "service_helper": "modules.library.durable_source.preserve_source",
+  "removal_helper": "modules.library.durable_source.remove_source",
+  "endpoint": {
+    "route": "/library/documents/{document_id:uuid}/source",
+    "module": "modules.library.routes.library_original_source",
+    "guard": "require_auth",
+    "serves_only_canonical_path": true,
+    "media_type": "application/pdf",
+    "filename": "original.pdf",
+    "cache_control": "private, no-store"
+  },
+  "permissions_policy": {
+    "directory_mode": "0o700 on creation",
+    "file_mode": "inherited from mkstemp (0o600)",
+    "service_user": "issajar"
+  },
+  "database_identity": {
+    "db_user": "administrator",
+    "db_name": "tebaai"
+  },
+  "prior_gate_evidence": {
+    "report": "data/reports/breslov/foundation-v2-publication-preflight-remediation-v2/durable-source-verification.json",
+    "durable_expected_path": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+    "matches_prior_expectation": true
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "measured_at": "2026-10-23T12:57:41.044494+00:00",
+  "gate": "TEBAAI_BRESLOV_C_DURABLE_SOURCE_RESTORATION_CERTIFICATION_V1",
+  "scope": "every Python and shell file in the certification harness except this scanner itself",
+  "files_scanned": [
+    {
+      "file": "aggregate.py",
+      "sha256": "b9fa32d92f8a086d950fae3a5d508dc2e0198f0e14b6305e875e46541f1dfced",
+      "bytes": 23032
+    },
+    {
+      "file": "capture_fs.py",
+      "sha256": "c91cdfc3df9fe32470a3c2d20bcc03a4f334f3b9eb8dca341c149cffbbf7f97b",
+      "bytes": 1092
+    },
+    {
+      "file": "capture_state.py",
+      "sha256": "a1eb02c658091f9f33e135bd4b96dae8ee43f2dc7885388643b1ecab73d5a9fe",
+      "bytes": 9763
+    },
+    {
+      "file": "certlib.py",
+      "sha256": "adc607d3e389a52c3ff149118173d3b0c9103232e743fdc25b0643390300b96b",
+      "bytes": 14800
+    },
+    {
+      "file": "compare_state.py",
+      "sha256": "e7e1474bc362a3420fb9a2dc277cf9021ada27319ca8a9ba701d3c2300ac510f",
+      "bytes": 14995
+    },
+    {
+      "file": "final_checks.py",
+      "sha256": "20753b854c6e0ca80539c008b2a78ba7d0a68a80a1f265412eb98b7b8e664b22",
+      "bytes": 6651
+    },
+    {
+      "file": "freeze.py",
+      "sha256": "1fc70cb95472cdf1d864be8ab7b84b8eef4e506a672d4f3da6ab969b89226aae",
+      "bytes": 8194
+    },
+    {
+      "file": "frozen_hash_check.py",
+      "sha256": "d2b5aa5e648e155fdcc993c73966f1fa47cceb38b79a5db30618a3d184aa9054",
+      "bytes": 2574
+    },
+    {
+      "file": "git_diff_check.py",
+      "sha256": "fd99b154036264bba78acefff26f37fa84e587ccc5a17e2c5ee36e3b3ecb4b6b",
+      "bytes": 1036
+    },
+    {
+      "file": "git_state.py",
+      "sha256": "7596bc2a5781e174ffeb54709c0a2d6ec3b98fb612c54264d824a676460771b5",
+      "bytes": 2578
+    },
+    {
+      "file": "json_validate.py",
+      "sha256": "13375e9e895e8a541f5fec82372028f65ace59db53bb463bb66ba1bad8224abe",
+      "bytes": 551
+    },
+    {
+      "file": "run_certification.sh",
+      "sha256": "0514b45cd297551c6906c80ac4468c3e1d0dad59746ca932b420ccbb81811a65",
+      "bytes": 2011
+    },
+    {
+      "file": "run_tests.py",
+      "sha256": "3f373b3329ee59cbb73a7356f1ac0f46a863250e7f5031f745b50e85c78bf7c4",
+      "bytes": 5954
+    },
+    {
+      "file": "secret_scan.py",
+      "sha256": "82692e0f9a4961419c5c4910604b1783f0ad41551b267a6fdbb31e8a39c7b476",
+      "bytes": 572
+    },
+    {
+      "file": "verify_approved_source.py",
+      "sha256": "dac50718c2ec92f318ef32c7d46be3f00ffdc82a7150605b5d79b6e63cc9fefa",
+      "bytes": 1486
+    },
+    {
+      "file": "verify_durable_file.py",
+      "sha256": "038acd3784d913e5b3f4d82fece89a88c490f822ba982e58a7f5cff9c2a88d31",
+      "bytes": 2302
+    },
+    {
+      "file": "verify_endpoint.py",
+      "sha256": "64366ebcc1d5dee1bf0b068f27f4ddd63ac492ae04d7c1e4181624b376c48e00",
+      "bytes": 10029
+    },
+    {
+      "file": "verify_source_metadata.py",
+      "sha256": "3243c8245ad39bd92267417447fcd322519be9e959cc50c54319b46e00ef6aec",
+      "bytes": 3087
+    },
+    {
+      "file": "viewer_source_smoke.py",
+      "sha256": "8bab74d9b1003781c9f22ffaf2c2fa63160ab03d2145c28704a60e1dfe15aefb",
+      "bytes": 4331
+    }
+  ],
+  "sql_literals_observed": [
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "capture_state.py",
+      "first_word": "select"
+    },
+    {
+      "file": "certlib.py",
+      "first_word": "select"
+    },
+    {
+      "file": "verify_source_metadata.py",
+      "first_word": "select"
+    },
+    {
+      "file": "viewer_source_smoke.py",
+      "first_word": "select"
+    },
+    {
+      "file": "viewer_source_smoke.py",
+      "first_word": "select"
+    }
+  ],
+  "violations": [],
+  "violation_count": 0,
+  "database_sessions_read_only": true,
+  "read_only_enforcement": "psycopg connections open with options='-c default_transaction_read_only=on'; PostgreSQL rejects any write statement from the certification session",
+  "milvus_access": "query()/get_collection_stats() only",
+  "authentication": "normally signed access token minted from the configured issuer against an existing active admin user; /auth/login is never called",
+  "filesystem_writes": "JSON/text evidence under the report directory only, through certlib.write_json/write_text; no write to backend/sources, no copy, chmod, rename, fsync or touch",
+  "service_restart": "SrvRestAstroLS_v1/backend-dev.sh restart changes only the DEV process, its PID and log files; it does not write PostgreSQL, Milvus or durable source bytes",
+  "restoration_helpers_called": 0,
+  "CERTIFICATION_READONLY_CONTRACT": "PASS"
+}

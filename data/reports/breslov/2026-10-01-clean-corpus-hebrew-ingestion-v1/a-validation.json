@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "Book A / PDF physical page 187 critical sample",
+  "ingestion": "UI only, ready, attempt 1 after controlled full reset",
+  "integrity": "196 pages / 296 chunks / 296 vectors; missing=orphans=duplicates=0",
+  "critical_sample": "PDF/raw/canonical/PG/API/DOM traced; 18 source-backed niqqud attachments corrected; 294 synthetic spaces removed",
+  "browser": "Chromium desktop/mobile, source preview and Relation QA citation reviewed against original PDF",
+  "queries": "Viewer literal and semantic recover A; simple_rag reports partial, semantic lane ok; this is not a full-answer quality claim",
+  "frontend_fix": "Mixed inline Hebrew presentation forms isolated; surrounding LTR punctuation and spaces preserved; no CSS added",
+  "evidence": ["a-integrity.json", "a-browser.json", "a-critical-browser.json", "a-pdf-187.png", "a-critical-citation-desktop.png", "a-critical-citation-mobile.png"]
+}

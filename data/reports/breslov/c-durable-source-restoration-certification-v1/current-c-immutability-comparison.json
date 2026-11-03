@@ -1,0 +1,243 @@
+{
+  "measured_at": "2026-10-23T12:58:50.436198+00:00",
+  "before_snapshot": "2026-10-23T12:58:42.460992+00:00",
+  "after_snapshot": "2026-10-23T12:58:49.609844+00:00",
+  "document_id": "ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa",
+  "logical_document_id": "db200a31-b547-5668-d968-06d0ec36ad95",
+  "changes": {
+    "active_generation": {
+      "before": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "after": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+      "changed": false
+    },
+    "active_pointer_activated_at": {
+      "before": "2026-10-22T13:07:58.275718+00:00",
+      "after": "2026-10-22T13:07:58.275718+00:00",
+      "changed": false
+    },
+    "active_pointer_digest": {
+      "before": "a910a385adadfa0e3f8b5ef6bf48a654",
+      "after": "a910a385adadfa0e3f8b5ef6bf48a654",
+      "changed": false
+    },
+    "active_pointer_operation": {
+      "before": "BACKFILL",
+      "after": "BACKFILL",
+      "changed": false
+    },
+    "audit_digest": {
+      "before": "0fa297e5fba85d7bcf6f8b5267872831",
+      "after": "0fa297e5fba85d7bcf6f8b5267872831",
+      "changed": false
+    },
+    "audit_rows": {
+      "before": 1,
+      "after": 1,
+      "changed": false
+    },
+    "auth_sessions_count": {
+      "before": 3805,
+      "after": 3805,
+      "changed": false
+    },
+    "auth_sessions_digest": {
+      "before": "607424694d564523a7565241dc61b543",
+      "after": "607424694d564523a7565241dc61b543",
+      "changed": false
+    },
+    "chunks_content_digest": {
+      "before": "44b6f860b32110304a64b195a794fdbb",
+      "after": "44b6f860b32110304a64b195a794fdbb",
+      "changed": false
+    },
+    "chunks_count": {
+      "before": 942,
+      "after": 942,
+      "changed": false
+    },
+    "chunks_max_updated_at": {
+      "before": "2026-10-11T15:56:28.982046+00:00",
+      "after": "2026-10-11T15:56:28.982046+00:00",
+      "changed": false
+    },
+    "chunks_row_digest": {
+      "before": "589789b3bf591d2ae6006b845ad03b35",
+      "after": "589789b3bf591d2ae6006b845ad03b35",
+      "changed": false
+    },
+    "document_content_digest": {
+      "before": "e778d3048da26226699d7b5e919f69dd",
+      "after": "e778d3048da26226699d7b5e919f69dd",
+      "changed": false
+    },
+    "document_full_digest": {
+      "before": "b6b7c3d003937bdb26557a815d87cf1d",
+      "after": "b6b7c3d003937bdb26557a815d87cf1d",
+      "changed": false
+    },
+    "document_status": {
+      "before": "ready",
+      "after": "ready",
+      "changed": false
+    },
+    "embedding_runs_count": {
+      "before": 0,
+      "after": 0,
+      "changed": false
+    },
+    "embedding_runs_digest": {
+      "before": "d41d8cd98f00b204e9800998ecf8427e",
+      "after": "d41d8cd98f00b204e9800998ecf8427e",
+      "changed": false
+    },
+    "generation_statuses": {
+      "before": [
+        [
+          "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+          "ACTIVE"
+        ]
+      ],
+      "after": [
+        [
+          "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+          "ACTIVE"
+        ]
+      ],
+      "changed": false
+    },
+    "generations_count": {
+      "before": 1,
+      "after": 1,
+      "changed": false
+    },
+    "generations_digest": {
+      "before": "71020f288fa6bd661441000d4b95fbd3",
+      "after": "71020f288fa6bd661441000d4b95fbd3",
+      "changed": false
+    },
+    "logical_document_digest": {
+      "before": "5e79e9d0c9466fd4c8fc3eabb65c806d",
+      "after": "5e79e9d0c9466fd4c8fc3eabb65c806d",
+      "changed": false
+    },
+    "milvus_chunk_identity_digest": {
+      "before": "52106cca5cc4ae93b614a56e83d10724",
+      "after": "52106cca5cc4ae93b614a56e83d10724",
+      "changed": false
+    },
+    "milvus_content_sha_digest": {
+      "before": "fe84917b644dd7226ae8f9d8b2057994",
+      "after": "fe84917b644dd7226ae8f9d8b2057994",
+      "changed": false
+    },
+    "milvus_entities": {
+      "before": 942,
+      "after": 942,
+      "changed": false
+    },
+    "pages_count": {
+      "before": 284,
+      "after": 284,
+      "changed": false
+    },
+    "pages_digest": {
+      "before": "1a7564a797e8dd5e357f2a5a0e1dcdd6",
+      "after": "1a7564a797e8dd5e357f2a5a0e1dcdd6",
+      "changed": false
+    },
+    "runs_count": {
+      "before": 1,
+      "after": 1,
+      "changed": false
+    },
+    "runs_digest": {
+      "before": "2ea5ae04e706a0e7bc2e0d7b5360d35d",
+      "after": "2ea5ae04e706a0e7bc2e0d7b5360d35d",
+      "changed": false
+    },
+    "source_path": {
+      "before": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+      "after": "/media/issajar/DEVELOP/Projects/iMotorSoft/ai/dev/TebaAI/SrvRestAstroLS_v1/backend/sources/ddb9cba6-7701-5f64-9cc7-d24bcd63f6aa/original.pdf",
+      "changed": false
+    },
+    "source_sha256": {
+      "before": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "after": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+      "changed": false
+    },
+    "source_size_bytes": {
+      "before": 4550267,
+      "after": 4550267,
+      "changed": false
+    },
+    "texts_count": {
+      "before": 1,
+      "after": 1,
+      "changed": false
+    },
+    "texts_digest": {
+      "before": "458ac26c1a4e6cef2f15ec0829ae6e36",
+      "after": "458ac26c1a4e6cef2f15ec0829ae6e36",
+      "changed": false
+    },
+    "updated_at": {
+      "before": "2026-10-23T12:12:54.684605+00:00",
+      "after": "2026-10-23T12:12:54.684605+00:00",
+      "changed": false
+    },
+    "visible_document_digest": {
+      "before": "b6b7c3d003937bdb26557a815d87cf1d",
+      "after": "b6b7c3d003937bdb26557a815d87cf1d",
+      "changed": false
+    }
+  },
+  "changed_keys": [],
+  "core_keys": [
+    "document_full_digest",
+    "document_content_digest",
+    "source_path",
+    "source_sha256",
+    "updated_at",
+    "active_pointer_digest",
+    "active_generation",
+    "generations_digest",
+    "generation_statuses",
+    "audit_digest",
+    "chunks_count",
+    "chunks_content_digest",
+    "chunks_row_digest",
+    "texts_digest",
+    "pages_digest",
+    "runs_digest",
+    "embedding_runs_digest",
+    "visible_document_digest",
+    "auth_sessions_digest",
+    "milvus_entities",
+    "milvus_chunk_identity_digest",
+    "milvus_content_sha_digest"
+  ],
+  "core_changed_keys": [],
+  "active_generation_before": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+  "active_generation_after": "1a8af56b-fc17-d9f9-ffc2-9efde54aa95b",
+  "active_generation_unchanged": true,
+  "active_pointer_unchanged": true,
+  "generation_statuses_unchanged": true,
+  "chunks_before": 942,
+  "chunks_after": 942,
+  "vectors_before": 942,
+  "vectors_after": 942,
+  "content_digest_changed": false,
+  "source_path_changed_during_certification": false,
+  "updated_at_changed": false,
+  "new_generation": 0,
+  "new_run": 0,
+  "new_activation_audit_rows": 0,
+  "tests_window": {
+    "pre_tests_snapshot": "2026-10-23T12:57:53.688113+00:00",
+    "post_tests_snapshot": null,
+    "pre_tests_vs_before_c_unchanged": true,
+    "post_tests_vs_after_c_unchanged": null
+  },
+  "current_c_preserved": true,
+  "CURRENT_C_PRESERVED": "YES"
+}

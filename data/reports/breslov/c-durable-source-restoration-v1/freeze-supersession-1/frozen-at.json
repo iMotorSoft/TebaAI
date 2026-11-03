@@ -1,0 +1,5 @@
+{
+  "frozen_at": "2026-10-23T12:16:34.943332+00:00",
+  "rule": "no durable-file replacement, no metadata edits, no expected-result changes, no verification-harness changes; otherwise the gate is INVALID",
+  "frozen_entries": 40
+}

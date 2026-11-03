@@ -1,0 +1,1405 @@
+{
+  "golden_id": "LIKUTEY_HALAJOT_COMPLEX_PAGE_GOLDEN_V1",
+  "source_sha256": "440d4fd348604920179dd1b6acd88b9b50e98ae32c20663751bb01cea82c106a",
+  "page_bbox": [
+    0.0,
+    0.0,
+    496.06298828125,
+    694.4879760742188
+  ],
+  "regions": [
+    {
+      "region": "A_header",
+      "pdf_page": 167,
+      "printed_page": 149,
+      "bbox": [
+        50,
+        43,
+        447,
+        58
+      ],
+      "coordinate_system": "PDF points; top-left origin; unrotated page",
+      "block_ids": [
+        0,
+        2,
+        7,
+        9
+      ],
+      "dpi": 220,
+      "reason": "broken embedded Unicode",
+      "ocr_selected_for_benchmark": true,
+      "source_method_if_ocr_runs": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "native_blocks": [
+        {
+          "block_id": 0,
+          "bbox": [
+            25.070499420166016,
+            46.17702102661133,
+            443.469970703125,
+            55.95378112792969
+          ],
+          "native": "����� ������149\n<#���>���������������������",
+          "replacement_count": 35
+        },
+        {
+          "block_id": 2,
+          "bbox": [
+            50.35089874267578,
+            48.20499038696289,
+            62.150901794433594,
+            53.66499328613281
+          ],
+          "native": ">��",
+          "replacement_count": 2
+        },
+        {
+          "block_id": 7,
+          "bbox": [
+            66.18900299072266,
+            48.31951904296875,
+            71.30250549316406,
+            53.86175537109375
+          ],
+          "native": "ד",
+          "replacement_count": 0
+        },
+        {
+          "block_id": 9,
+          "bbox": [
+            55.21889877319336,
+            48.17877197265625,
+            61.16189956665039,
+            53.79278564453125
+          ],
+          "native": "ח",
+          "replacement_count": 0
+        }
+      ],
+      "historical_blocks": [
+        {
+          "bbox": [
+            22.50189971923828,
+            44.396484375,
+            443.469970703125,
+            56.65675735473633
+          ],
+          "text": "  149\n<#>\u001d~\u0003\u0003Q\u0003\u0003\n ■\n>\u001d~\u0003\n ד ח",
+          "role": "page_header",
+          "decoder_applied": false
+        }
+      ],
+      "reconstruction_lines": [
+        {
+          "text": "ליקוטי הלכות",
+          "source": "תוכלה יטוקיל",
+          "bbox": [
+            369.9049987792969,
+            45.48588943481445,
+            423.2890319824219,
+            55.785892486572266
+          ],
+          "seqno": 0,
+          "diagnostics": []
+        },
+        {
+          "text": "149",
+          "source": "149",
+          "bbox": [
+            429.093994140625,
+            46.941246032714844,
+            443.469970703125,
+            54.941246032714844
+          ],
+          "seqno": 1,
+          "diagnostics": []
+        },
+        {
+          "text": "<#���>:א הכלה ",
+          "source": "<#���>:א הכלה ",
+          "bbox": [
+            25.070499420166016,
+            45.59149169921875,
+            97.49939727783203,
+            55.59149169921875
+          ],
+          "seqno": 2,
+          "diagnostics": [
+            "unmapped_unicode",
+            "mirrored_punctuation_requires_inverse_bidi"
+          ]
+        },
+        {
+          "text": "�",
+          "source": "�",
+          "bbox": [
+            97.53970336914062,
+            49.641456604003906,
+            100.96420288085938,
+            54.141456604003906
+          ],
+          "seqno": 3,
+          "diagnostics": [
+            "unmapped_unicode"
+          ]
+        },
+        {
+          "text": "השכמת הבוקר ",
+          "source": " רקובה תמכשה",
+          "bbox": [
+            101.16500091552734,
+            45.59149169921875,
+            160.2469940185547,
+            55.59149169921875
+          ],
+          "seqno": 4,
+          "diagnostics": []
+        },
+        {
+          "text": ">:א ",
+          "source": ">:א ",
+          "bbox": [
+            50.35089874267578,
+            45.59149169921875,
+            65.0509033203125,
+            55.59149169921875
+          ],
+          "seqno": 7,
+          "diagnostics": [
+            "mirrored_punctuation_requires_inverse_bidi"
+          ]
+        },
+        {
+          "text": " ",
+          "source": " ",
+          "bbox": [
+            50.32469940185547,
+            43.996585845947266,
+            53.10540008544922,
+            53.29658508300781
+          ],
+          "seqno": 9,
+          "diagnostics": []
+        },
+        {
+          "text": "ד",
+          "source": "ד",
+          "bbox": [
+            66.18900299072266,
+            45.430992126464844,
+            71.30057525634766,
+            55.930992126464844
+          ],
+          "seqno": 12,
+          "diagnostics": []
+        },
+        {
+          "text": "ח",
+          "source": "ח",
+          "bbox": [
+            55.21889877319336,
+            45.331260681152344,
+            61.16103744506836,
+            55.831260681152344
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "region": "B_hebrew_main",
+      "pdf_page": 167,
+      "printed_page": 149,
+      "bbox": [
+        50,
+        65,
+        447,
+        230
+      ],
+      "coordinate_system": "PDF points; top-left origin; unrotated page",
+      "block_ids": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "dpi": 220,
+      "reason": "broken embedded Unicode",
+      "ocr_selected_for_benchmark": true,
+      "source_method_if_ocr_runs": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "native_blocks": [
+        {
+          "block_id": 14,
+          "bbox": [
+            108.4260025024414,
+            69.71330261230469,
+            441.9896545410156,
+            81.81651306152344
+          ],
+          "native": "�����������������������������������������������������������������������������\n��������������������",
+          "replacement_count": 97
+        },
+        {
+          "block_id": 15,
+          "bbox": [
+            56.4793701171875,
+            88.28459167480469,
+            442.0295104980469,
+            127.05249786376953
+          ],
+          "native": "���\n������������������������������������������������������������������������������������������������������������\n��������������������������������������������������������������������������������������������������������\n.��������������������",
+          "replacement_count": 235
+        },
+        {
+          "block_id": 16,
+          "bbox": [
+            56.48040008544922,
+            135.49388122558594,
+            442.0472106933594,
+            161.5083770751953
+          ],
+          "native": "����������������������������������������������������������������������������������������������������������������\n���������������������������������",
+          "replacement_count": 145
+        },
+        {
+          "block_id": 17,
+          "bbox": [
+            56.48040008544922,
+            168.38389587402344,
+            442.0029602050781,
+            209.1227264404297
+          ],
+          "native": "�������\n���������������������������\n����������������������������������������������\n������������������������\n���������������������������������������������������������������������������������������������������������\n����\n����\n������������������������������������������������",
+          "replacement_count": 265
+        },
+        {
+          "block_id": 18,
+          "bbox": [
+            71.619140625,
+            215.59498596191406,
+            441.98565673828125,
+            227.6981964111328
+          ],
+          "native": "����������������������������������������������������������������������������������������������������������������",
+          "replacement_count": 112
+        }
+      ],
+      "historical_blocks": [
+        {
+          "bbox": [
+            108.4260025024414,
+            68.60629272460938,
+            441.9896545410156,
+            81.55821228027344
+          ],
+          "text": ".ĕֶה üĜŖĢĕ üē ÿĐ ַהý ĕֵה ָהü ָדø ÿĤ ĀĐ Ħ ָבþ ĕֵה üĤ ĺŖַהø ֶה ýĐ þĺ ĕֶה ָהü ַגĀ øĜ ַהü Ħ ÿĜĕ üē ַמø ĕֵה üė Āĺ ַהø üĜ ֶה ָרĈĀ Ņַהü ,עָה ÿō ÿŊ ĕֶה ָהü ָדĀ øĤ",
+          "role": "source_hebrew",
+          "decoder_applied": true
+        },
+        {
+          "bbox": [
+            56.4793701171875,
+            87.36209106445312,
+            442.0295104980469,
+            128.15109252929688
+          ],
+          "text": "ֶה ָרĈĀ ַהü ĕ üŊ ,ĕֶהע ָהü ַגĀ øĜ ַהü Ŝ עŊĀ ,(ָד ģĤĠ ĐĦĠָהĕֵה ĥַגĤ ēĕĕֶה ַגġ ĕĤĠ) ďŅַגÿ ַנĀ ÿŊ ,ĕֶה üĜ ĀŐ ÿĐ ָבŖĤ ֶה ýĐ þĺ ,ĕֵהע ĕָהü üĠ øĦ עŊü :ŅĐ þĒ øđ\nĐĜėָהָהĦ ēָהĕĢĐ ĦđėהָĐč ĦđėĕĤבָč ĐĒ ėָה đַגĕֵה) ĕֵה ָהü ָדø ÿĤ ָהĀ Đ ĀĤĕ ַהü øĺ Ħ ÿĜĕ üē ַמø ֶה ýĐ þĺ ,ĕֶה ָהü ַגĀ øĜ üŌ ÿĐ Ħ ÿĜĕ üē ַמø Ŝ ÿĺ ַהø üĜ\n.(ďא ĐָהėĐ ָדĔĕֵה ĦđėהָĐč",
+          "role": "source_hebrew",
+          "decoder_applied": true
+        },
+        {
+          "bbox": [
+            56.48040008544922,
+            134.57138061523438,
+            442.0472106933594,
+            161.4714813232422
+          ],
+          "text": "ĕֵה üĤ øĢŖģ Đ ĕֵאĒþ ָהֵאĕøďý ַגÿ þĺ ,ď þĝ þē ĐŅָב þĺ ĕֵה ַהü Āĕ Ħ ÿĜĕ üē ַמø ĐŅָב Ĥ ĀŒ ַגü ĕ üŊ ,Đ Āŋ üē øŕ ĕֵה ַהü Āĕ ָה þĺ ַגāָה øĜ ָהü ĕֵה üėĕ üĤ øĢ ֵה ָהֵאŊý ַגÿ øđ\n.עָה ÿō ÿŊ ń ָבŖĦĀ ĕֵה üĜŖčŅ ֶה þĐ ַהý ń ָבŖĦĀ",
+          "role": "source_hebrew",
+          "decoder_applied": true
+        },
+        {
+          "bbox": [
+            56.48040008544922,
+            167.46139526367188,
+            442.0029602050781,
+            208.8644256591797
+          ],
+          "text": "ď ָהֵאĕĀ ָרĈþ ÿĐ Ħ ÿĤĕ üĺ øģ ĕ üŊ ,Đ Āŋ üē øŕ ַהāָבָה øĻ ַמü ď Āĕ ָה þĺ Ĥ ýĺŖŒ þĺ ĕֵה üŋ üĠ øŕ ַהŖ øŊ ,Đ Āŋ üē øŕ ַהāָבָה øĻ - Đ ĀĤĕ üĺ øģ ַמü ֵה ָהֵאŊý ַגÿ øđ\nֵה ַנý ַגÿ ,ֶה Āĺ čŅĦ ĀŊ þĺ ַהŖ øŊ ,Đ Āē ýėŖŕ ĕ ָהֵאĕøďý ַגÿ ֶה ָבü ĕ üŊ ď þĝ þē ÿĐ ָה ַמý ÿģ ָהø Ĥ Āĺ øĠ ָבþ ĕ ָבü þĺ Ħ ַהÿ úē ַהý Đ þĒ ,Đ Āŋ üē øŕ ַהāָבָה øĻ ַמü\n.ַהāָבָה øĻ Ħ ÿĜĕ üē ַמø ,ĦŖĤŅč øł Ħ ÿĜĕ üē ַמø ĐŅָב Đ Āē ýėŖĦ øđ .ֶה Āĺ",
+          "role": "source_hebrew",
+          "decoder_applied": true
+        },
+        {
+          "bbox": [
+            71.619140625,
+            214.67138671875,
+            441.98565673828125,
+            227.4398956298828
+          ],
+          "text": "ַהŖ øŊ ,đĕ ĀĜ ĀŐ Đ þĐ øė ÿŌ þĺ ĕŖֵה Āņ ַמü Ŝ þĤ þď ַמø ĕֶה ַהü ַגĀ øĠ ָהü ĕָב üĐ þĺ Đ Āē ýėŖŕ ÿĐ Ħ ÿĜĕ üē ַמø ,ֶה Āĺ ֵה ַנý ַגÿ ,Đ ĀĐ ýŊ ď Āĕ Ħ ÿĜĕ üē ַמø Đ þĒ øđ",
+          "role": "source_hebrew",
+          "decoder_applied": true
+        }
+      ],
+      "reconstruction_lines": [
+        {
+          "text": "רְגָלִים כַּנַּ\"ל, וּמִשָּׁם נִמְשָׁכִין בְּחִינַת מִנְעָלִים שֶׁהֵם שׁוֹמְרִין אֶת הָרַגְלִין מֵהַחִיצוֹנִים.",
+          "source": ".םיִנוֹציִחַהֵמ ןיִלְגַרָה תֶא ןיִרְמוֹשׁ םֵהֶשׁ םיִלָעְנִמ תַניִחְבּ ןיִכָשְׁמִנ םָׁשִּמוּ ,ל\"ַנַּכּ םיִלָגְר",
+          "bbox": [
+            108.4260025024414,
+            68.01589965820312,
+            441.9896545410156,
+            80.6849136352539
+          ],
+          "seqno": 15,
+          "diagnostics": []
+        },
+        {
+          "text": "םָׁשִּמ יִכּ ,\"םיִלָעְנִמ ךְָכּ\" ,(ג קרפ ןילפתה רעש םייח ץע ירפ) ַעוּדָיַּכּ ,םיִנָפַּה רוֹא םֵהֶשׁ ,\"ןיִליִפְתִכּ\" :וּהֶזְו",
+          "source": "םָׁשִּמ יִכּ ,\"םיִלָעְנִמ ךְָכּ\" ,(ג קרפ ןילפתה רעש םייח ץע ירפ) ַעוּדָיַּכּ ,םיִנָפַּה רוֹא םֵהֶשׁ ,\"ןיִליִפְתִכּ\" :וּהֶזְו",
+          "bbox": [
+            56.4793701171875,
+            86.77169799804688,
+            441.9991149902344,
+            99.2579116821289
+          ],
+          "seqno": 15,
+          "diagnostics": [
+            "mirrored_punctuation_requires_inverse_bidi"
+          ]
+        },
+        {
+          "text": "ת",
+          "source": "ת",
+          "bbox": [
+            56.48030090332031,
+            102.69109344482422,
+            62.48520278930664,
+            112.9910888671875
+          ],
+          "seqno": 16,
+          "diagnostics": []
+        },
+        {
+          "text": "ללכנה הצילח תוכלהב תוכיראב הז לכ ןיעו) ןיִלְגַרָל הָריִמְשׁ תַניִחְבּ םֵהֶשׁ ,םיִלָעְנִמַּה תַניִחְבּ ךְַשְׁמִנ",
+          "source": "ללכנה הצילח תוכלהב תוכיראב הז לכ ןיעו) ןיִלְגַרָל הָריִמְשׁ תַניִחְבּ םֵהֶשׁ ,םיִלָעְנִמַּה תַניִחְבּ ךְַשְׁמִנ",
+          "bbox": [
+            62.58300018310547,
+            101.09109497070312,
+            441.9904479980469,
+            113.57559967041016
+          ],
+          "seqno": 17,
+          "diagnostics": [
+            "mirrored_punctuation_requires_inverse_bidi"
+          ]
+        },
+        {
+          "text": ".('ד הכלה ןיטג תוכלהב",
+          "source": ".('ד הכלה ןיטג תוכלהב",
+          "bbox": [
+            359.7526550292969,
+            115.40829467773438,
+            442.0295104980469,
+            127.70829010009766
+          ],
+          "seqno": 17,
+          "diagnostics": [
+            "mirrored_punctuation_requires_inverse_bidi"
+          ]
+        },
+        {
+          "text": "וְעַל־כֵּן צְרִיכִין לִנְעֹל שֶׁל יָמִין תְּחִלָּה, כִּי עִקָּר הוּא בְּחִינַת יָמִין שֶׁהוּא חֶסֶד, שֶׁעַל־יְדֵי־זֶה קוֹצְרִין",
+          "source": "ןיִרְצוֹק הֶז־יֵדְי־לַעֶשׁ ,דֶסֶח אוּהֶשׁ ןיִמָי תַניִחְבּ אוּה רָקִּע יִכּ ,הָלִּחְתּ ןיִמָי לֶשׁ לֹעְנִל ןיִכיִרְצ ןֵכּ־לַעְו",
+          "bbox": [
+            56.48040008544922,
+            133.98098754882812,
+            442.0054016113281,
+            146.4654998779297
+          ],
+          "seqno": 17,
+          "diagnostics": []
+        },
+        {
+          "text": "אוֹתָהּ מֵהֶם וּבוֹנִין אוֹתָהּ כַּנַּ\"ל.",
+          "source": ".ל\"ַנַּכּ הָּתוֹא ןיִנוֹבוּ םֶהֵמ הָּתוֹא",
+          "bbox": [
+            319.6942138671875,
+            148.29818725585938,
+            442.0472106933594,
+            160.5981903076172
+          ],
+          "seqno": 17,
+          "diagnostics": []
+        },
+        {
+          "text": "ד",
+          "source": "ד",
+          "bbox": [
+            56.48040008544922,
+            166.87100219726562,
+            62.113800048828125,
+            179.17100524902344
+          ],
+          "seqno": 18,
+          "diagnostics": []
+        },
+        {
+          "text": "וְעַל־כֵּן בִּקְשִׁירָה - שְׂמֹאל תְּחִלָּה, כְּמוֹ תְּפִלִּין שֶׁקּוֹשֵׁר שֶׁל יָד בִּשְׂמֹאל תְּחִלָּה, כִּי קְשִׁירַת הַשֶּׁל־יָ",
+          "source": "ָי־לֶׁשַּה תַריִשְׁק יִכּ ,הָלִּחְתּ לאֹמְשִׂבּ דָי לֶשׁ רֵשׁוֹקֶּשׁ ןיִלִּפְתּ וֹמְכּ ,הָלִּחְתּ לאֹמְשׂ - הָריִשְׁקִבּ ןֵכּ־לַעְו",
+          "bbox": [
+            62.230648040771484,
+            166.87100219726562,
+            442.0029602050781,
+            179.3555145263672
+          ],
+          "seqno": 19,
+          "diagnostics": []
+        },
+        {
+          "text": "בִּשְׂמֹאל תְּחִלָּה, זֶה מֵחֲמַת שֶׁאִי אֶפְשָׁר לְקַבֵּל הַחֶסֶד כִּי אִם עַל־יְדֵי תּוֹכֵחָה, כְּמוֹ שֶׁכָּתוּב שָׁם, עַיֵּן",
+          "source": "ןֵיַּע ,םָשׁ בוּתָכֶּשׁ וֹמְכּ ,הָחֵכוֹתּ יֵדְי־לַע םִא יִכּ דֶסֶחַה לֵבַּקְל רָשְׁפֶא יִאֶשׁ תַמֲחֵמ הֶז ,הָלִּחְתּ לאֹמְשִׂבּ",
+          "bbox": [
+            56.49267578125,
+            181.18820190429688,
+            442.0028991699219,
+            193.67271423339844
+          ],
+          "seqno": 19,
+          "diagnostics": []
+        },
+        {
+          "text": "שָׁם. וְתוֹכֵחָה הוּא בְּחִינַת גְּבוּרוֹת, בְּחִינַת שְׂמֹאל.",
+          "source": ".לאֹמְשׂ תַניִחְבּ ,תוֹרוּבְגּ תַניִחְבּ אוּה הָחֵכוֹתְו .םָשׁ",
+          "bbox": [
+            243.46861267089844,
+            195.50662231445312,
+            441.99676513671875,
+            207.9911346435547
+          ],
+          "seqno": 19,
+          "diagnostics": []
+        },
+        {
+          "text": "וְזֶה בְּחִינַת יָד כֵּהָה, עַיֵּן שָׁם, בְּחִינַת הַתּוֹכֵחָה שֶׁהִיא לִפְעָמִים בְּדֶרֶךְ בִּזָּיוֹן שֶׁמַּכְהֶה פָּנָיו, כְּמוֹ ",
+          "source": " וֹמְכּ ,ויָנָפּ הֶהְכַמֶּשׁ ןוֹיָזִּבּ ךְֶרֶדְבּ םיִמָעְפִל איִהֶשׁ הָחֵכוֹתַּה תַניִחְבּ ,םָשׁ ןֵיַּע ,הָהֵכּ דָי תַניִחְבּ הֶזְו",
+          "bbox": [
+            71.619140625,
+            214.08099365234375,
+            441.98565673828125,
+            226.5666046142578
+          ],
+          "seqno": 19,
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "region": "C_transition",
+      "pdf_page": 167,
+      "printed_page": 149,
+      "bbox": [
+        50,
+        244,
+        447,
+        258
+      ],
+      "coordinate_system": "PDF points; top-left origin; unrotated page",
+      "block_ids": [
+        21,
+        23
+      ],
+      "dpi": 220,
+      "reason": "native good / structural control; OCR not selected",
+      "ocr_selected_for_benchmark": false,
+      "source_method_if_ocr_runs": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "native_blocks": [
+        {
+          "block_id": 21,
+          "bbox": [
+            209.875,
+            247.31297302246094,
+            289.0232238769531,
+            254.5369873046875
+          ],
+          "native": "���������������������������",
+          "replacement_count": 27
+        },
+        {
+          "block_id": 23,
+          "bbox": [
+            210.40499877929688,
+            248.14695739746094,
+            288.9379577636719,
+            255.3709716796875
+          ],
+          "native": "Likutey Halajot Explicado",
+          "replacement_count": 0
+        }
+      ],
+      "historical_blocks": [
+        {
+          "bbox": [
+            209.875,
+            247.31297302246094,
+            289.0232238769531,
+            255.42697143554688
+          ],
+          "text": "/LNXWH\\\u0003+DODNKRW\u0003(OXFLGDWHG\nLikutey Halajot Explicado",
+          "role": "section_marker",
+          "decoder_applied": false
+        }
+      ],
+      "reconstruction_lines": [
+        {
+          "text": "Likutey Halajot Explicado",
+          "source": "Likutey Halajot Explicado",
+          "bbox": [
+            210.40499877929688,
+            247.95095825195312,
+            288.9379577636719,
+            254.95095825195312
+          ],
+          "seqno": 24,
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "region": "D_spanish_body",
+      "pdf_page": 167,
+      "printed_page": 149,
+      "bbox": [
+        50,
+        265,
+        447,
+        546
+      ],
+      "coordinate_system": "PDF points; top-left origin; unrotated page",
+      "block_ids": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "dpi": 220,
+      "reason": "native good / structural control; OCR not selected",
+      "ocr_selected_for_benchmark": false,
+      "source_method_if_ocr_runs": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "native_blocks": [
+        {
+          "block_id": 10,
+          "bbox": [
+            56.692901611328125,
+            269.0009765625,
+            445.193115234375,
+            401.9759826660156
+          ],
+          "native": "protección extra para elevarlos de las fuerzas externas adyacentes a ellos.60 Pues \nlos pies están conceptualmente asociados con Maljut y la sabiduría inferior, el \npropósito de las mencionadas constricciones de la sabiduría Divina.61 Debemos \ncortar y separar los “pies” de la garra de los Cuatro Reinos y elevarlos al aspecto \ndel Or HaPanim que brilla durante los Shalosh Regalim. Y del Or HaPanim \ntraemos la protección, el concepto de los zapatos, que protegen a los pies de las \nfuerzas externas.\nÉste es el signifi cado de “Así como es con los tefilin” - que son una revelación \ndel Or HaPanim, como es sabido a partir de la Kabalá62 - “así es con los zapatos”. \nDel Or HaPanim asociado con los tefilin, que protege a Maljut/la sabiduría inferior, \nproviene el concepto de los zapatos como la protección de los pies.63",
+          "replacement_count": 0
+        },
+        {
+          "block_id": 11,
+          "bbox": [
+            56.692901611328125,
+            406.9599609375,
+            445.15301513671875,
+            440.8099670410156
+          ],
+          "native": "Por lo tanto la persona debe colocarse el zapato derecho primero, dado \nque el lado derecho, que es jesed, es el principal. Con esto separamos a Maljut \nde los Cuatro Reinos y la construimos.64",
+          "replacement_count": 0
+        },
+        {
+          "block_id": 12,
+          "bbox": [
+            56.69281005859375,
+            445.50494384765625,
+            445.1650085449219,
+            527.6550903320312
+          ],
+          "native": "Así, con respecto a los cordones, la izquierda tiene precedencia; similar \na los tefilin, donde se comienza ajustando la correa de los tefilin en el brazo \nizquierdo. El motivo por el cual el atar los tefilin en el brazo izquierdo precede \nel colocarse los tefilin de la cabeza es que la recepción del jesed sólo es posible a \ntravés de la amonestación del Tzadik. Mira la lección del Rebe, donde esto está \nexplicado.65 Y la amonestación corresponde a las guevurot, las severidades, que \nestán asociadas con la izquierda.66",
+          "replacement_count": 0
+        },
+        {
+          "block_id": 13,
+          "bbox": [
+            85.09300231933594,
+            532.2835693359375,
+            445.076904296875,
+            542.5581665039062
+          ],
+          "native": "Esto se relaciona con la exposición de Jazal sobre iadja como enseñando ",
+          "replacement_count": 0
+        }
+      ],
+      "historical_blocks": [
+        {
+          "bbox": [
+            56.692901611328125,
+            268.8809814453125,
+            445.193115234375,
+            401.9759826660156
+          ],
+          "text": "protección extra para elevarlos de las fuerzas externas adyacentes a ellos.60 Pues \nlos pies están conceptualmente asociados con Maljut y la sabiduría inferior, el \npropósito de las mencionadas constricciones de la sabiduría Divina.61 Debemos \ncortar y separar los “pies” de la garra de los Cuatro Reinos y elevarlos al aspecto \ndel Or HaPanim que brilla durante los Shalosh Regalim. Y del Or HaPanim \ntraemos la protección, el concepto de los zapatos, que protegen a los pies de las \nfuerzas externas.\nÉste es el signifi cado de “Así como es con los tefilin” - que son una revelación \ndel Or HaPanim, como es sabido a partir de la Kabalá62 - “así es con los zapatos”. \nDel Or HaPanim asociado con los tefilin, que protege a Maljut/la sabiduría inferior, \nproviene el concepto de los zapatos como la protección de los pies.63",
+          "role": "main_explanation_es",
+          "decoder_applied": false
+        },
+        {
+          "bbox": [
+            56.692901611328125,
+            406.5499572753906,
+            445.15301513671875,
+            440.8099670410156
+          ],
+          "text": "Por lo tanto la persona debe colocarse el zapato derecho primero, dado \nque el lado derecho, que es jesed, es el principal. Con esto separamos a Maljut \nde los Cuatro Reinos y la construimos.64",
+          "role": "main_explanation_es",
+          "decoder_applied": false
+        },
+        {
+          "bbox": [
+            56.69281005859375,
+            445.38494873046875,
+            445.1650085449219,
+            527.6450805664062
+          ],
+          "text": "Así, con respecto a los cordones, la izquierda tiene precedencia; similar \na los tefilin, donde se comienza ajustando la correa de los tefilin en el brazo \nizquierdo. El motivo por el cual el atar los tefilin en el brazo izquierdo precede \nel colocarse los tefilin de la cabeza es que la recepción del jesed sólo es posible a \ntravés de la amonestación del Tzadik. Mira la lección del Rebe, donde esto está \nexplicado.65 Y la amonestación corresponde a las guevurot, las severidades, que \nestán asociadas con la izquierda.66",
+          "role": "main_explanation_es",
+          "decoder_applied": false
+        },
+        {
+          "bbox": [
+            85.09300231933594,
+            529.989990234375,
+            445.076904296875,
+            542.6900024414062
+          ],
+          "text": "Esto se relaciona con la exposición de Jazal sobre iadja como enseñando",
+          "role": "main_explanation_es",
+          "decoder_applied": false
+        }
+      ],
+      "reconstruction_lines": [
+        {
+          "text": "60",
+          "source": "60",
+          "bbox": [
+            410.9360046386719,
+            268.64697265625,
+            417.6288146972656,
+            274.4769592285156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "protección extra para elevarlos de las fuerzas externas adyacentes a ellos. Pues ",
+          "source": "protección extra para elevarlos de las fuerzas externas adyacentes a ellos. Pues ",
+          "bbox": [
+            56.692901611328125,
+            268.6409912109375,
+            445.1650085449219,
+            278.6409912109375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "los pies están conceptualmente asociados con Maljut y la sabiduría inferior, el ",
+          "source": "los pies están conceptualmente asociados con Maljut y la sabiduría inferior, el ",
+          "bbox": [
+            56.6929931640625,
+            280.6409912109375,
+            445.1630554199219,
+            290.6409912109375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "61",
+          "source": "61",
+          "bbox": [
+            387.8550109863281,
+            292.64697265625,
+            394.5478210449219,
+            298.4769592285156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "propósito de las mencionadas constricciones de la sabiduría Divina. Debemos ",
+          "source": "propósito de las mencionadas constricciones de la sabiduría Divina. Debemos ",
+          "bbox": [
+            56.6929931640625,
+            292.6409912109375,
+            445.1650085449219,
+            302.6409912109375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "cortar y separar los “pies” de la garra de los Cuatro Reinos y elevarlos al aspecto ",
+          "source": "cortar y separar los “pies” de la garra de los Cuatro Reinos y elevarlos al aspecto ",
+          "bbox": [
+            56.693023681640625,
+            304.6409912109375,
+            445.193115234375,
+            314.6409912109375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "del Or HaPanim que brilla durante los Shalosh Regalim. Y del Or HaPanim ",
+          "source": "del Or HaPanim que brilla durante los Shalosh Regalim. Y del Or HaPanim ",
+          "bbox": [
+            56.69303894042969,
+            316.6409912109375,
+            444.3964538574219,
+            326.6409912109375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "traemos la protección, el concepto de los zapatos, que protegen a los pies de las ",
+          "source": "traemos la protección, el concepto de los zapatos, que protegen a los pies de las ",
+          "bbox": [
+            56.693023681640625,
+            328.6409912109375,
+            445.1619567871094,
+            338.6409912109375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "fuerzas externas.",
+          "source": "fuerzas externas.",
+          "bbox": [
+            56.693016052246094,
+            340.6409912109375,
+            138.84002685546875,
+            350.6409912109375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "Éste es el signifi cado de “Así como es con los tefilin” - que son una revelación ",
+          "source": "Éste es el signifi cado de “Así como es con los tefilin” - que son una revelación ",
+          "bbox": [
+            85.093017578125,
+            355.4759826660156,
+            445.072998046875,
+            365.4759826660156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "62",
+          "source": "62",
+          "bbox": [
+            310.73199462890625,
+            367.4819641113281,
+            317.4248046875,
+            373.31195068359375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "del Or HaPanim, como es sabido a partir de la Kabalá - “así es con los zapatos”. ",
+          "source": "del Or HaPanim, como es sabido a partir de la Kabalá - “así es con los zapatos”. ",
+          "bbox": [
+            56.692962646484375,
+            367.4759826660156,
+            445.16595458984375,
+            377.4759826660156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "Del Or HaPanim asociado con los tefilin, que protege a Maljut/la sabiduría inferior, ",
+          "source": "Del Or HaPanim asociado con los tefilin, que protege a Maljut/la sabiduría inferior, ",
+          "bbox": [
+            56.693023681640625,
+            379.4759826660156,
+            445.1650085449219,
+            389.4759826660156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "63",
+          "source": "63",
+          "bbox": [
+            385.25799560546875,
+            391.4819641113281,
+            391.9508056640625,
+            397.31195068359375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "proviene el concepto de los zapatos como la protección de los pies.",
+          "source": "proviene el concepto de los zapatos como la protección de los pies.",
+          "bbox": [
+            56.693023681640625,
+            391.4759826660156,
+            385.2590026855469,
+            401.4759826660156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "Por lo tanto la persona debe colocarse el zapato derecho primero, dado ",
+          "source": "Por lo tanto la persona debe colocarse el zapato derecho primero, dado ",
+          "bbox": [
+            85.09290313720703,
+            406.3099670410156,
+            445.15301513671875,
+            416.3099670410156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "que el lado derecho, que es jesed, es el principal. Con esto separamos a Maljut ",
+          "source": "que el lado derecho, que es jesed, es el principal. Con esto separamos a Maljut ",
+          "bbox": [
+            56.692901611328125,
+            418.3099670410156,
+            444.41131591796875,
+            428.3099670410156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "64",
+          "source": "64",
+          "bbox": [
+            241.02000427246094,
+            430.31597900390625,
+            247.7128448486328,
+            436.1459655761719
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "de los Cuatro Reinos y la construimos.",
+          "source": "de los Cuatro Reinos y la construimos.",
+          "bbox": [
+            56.692901611328125,
+            430.3099670410156,
+            241.01992797851562,
+            440.3099670410156
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "Así, con respecto a los cordones, la izquierda tiene precedencia; similar ",
+          "source": "Así, con respecto a los cordones, la izquierda tiene precedencia; similar ",
+          "bbox": [
+            85.09290313720703,
+            445.14495849609375,
+            445.1629638671875,
+            455.14495849609375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "a los tefilin, donde se comienza ajustando la correa de los tefilin en el brazo ",
+          "source": "a los tefilin, donde se comienza ajustando la correa de los tefilin en el brazo ",
+          "bbox": [
+            56.69287109375,
+            457.14495849609375,
+            445.1638488769531,
+            467.14495849609375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "izquierdo. El motivo por el cual el atar los tefilin en el brazo izquierdo precede ",
+          "source": "izquierdo. El motivo por el cual el atar los tefilin en el brazo izquierdo precede ",
+          "bbox": [
+            56.69281005859375,
+            469.14495849609375,
+            445.1609191894531,
+            479.14495849609375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "el colocarse los tefilin de la cabeza es que la recepción del jesed sólo es posible a ",
+          "source": "el colocarse los tefilin de la cabeza es que la recepción del jesed sólo es posible a ",
+          "bbox": [
+            56.692840576171875,
+            481.14495849609375,
+            445.16278076171875,
+            491.14495849609375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "través de la amonestación del Tzadik. Mira la lección del Rebe, donde esto está ",
+          "source": "través de la amonestación del Tzadik. Mira la lección del Rebe, donde esto está ",
+          "bbox": [
+            56.692840576171875,
+            493.14495849609375,
+            445.1648254394531,
+            503.14495849609375
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "65",
+          "source": "65",
+          "bbox": [
+            107.75199890136719,
+            505.1509704589844,
+            114.44483947753906,
+            510.98095703125
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "explicado. Y la amonestación corresponde a las guevurot, las severidades, que ",
+          "source": "explicado. Y la amonestación corresponde a las guevurot, las severidades, que ",
+          "bbox": [
+            56.692840576171875,
+            505.14495849609375,
+            445.1650085449219,
+            515.1450805664062
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "66",
+          "source": "66",
+          "bbox": [
+            216.8509979248047,
+            517.1509399414062,
+            223.54383850097656,
+            522.98095703125
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "están asociadas con la izquierda.",
+          "source": "están asociadas con la izquierda.",
+          "bbox": [
+            56.693023681640625,
+            517.1450805664062,
+            216.85101318359375,
+            527.1450805664062
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        },
+        {
+          "text": "Esto se relaciona con la exposición de Jazal sobre iadja como enseñando ",
+          "source": "Esto se relaciona con la exposición de Jazal sobre iadja como enseñando ",
+          "bbox": [
+            85.09300231933594,
+            531.97998046875,
+            445.076904296875,
+            541.97998046875
+          ],
+          "seqno": 14,
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "region": "E_notes_heading",
+      "pdf_page": 167,
+      "printed_page": 149,
+      "bbox": [
+        50,
+        553,
+        447,
+        567
+      ],
+      "coordinate_system": "PDF points; top-left origin; unrotated page",
+      "block_ids": [
+        26,
+        28
+      ],
+      "dpi": 220,
+      "reason": "native good / structural control; OCR not selected",
+      "ocr_selected_for_benchmark": false,
+      "source_method_if_ocr_runs": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "native_blocks": [
+        {
+          "block_id": 26,
+          "bbox": [
+            226.23599243164062,
+            556.3569946289062,
+            272.59912109375,
+            561.4249877929688
+          ],
+          "native": "���������������",
+          "replacement_count": 15
+        },
+        {
+          "block_id": 28,
+          "bbox": [
+            226.1719970703125,
+            556.7849731445312,
+            274.1430358886719,
+            563.4559936523438
+          ],
+          "native": "Notas y Fuentes",
+          "replacement_count": 0
+        }
+      ],
+      "historical_blocks": [
+        {
+          "bbox": [
+            226.1719970703125,
+            555.9089965820312,
+            274.1430358886719,
+            563.511962890625
+          ],
+          "text": "1RWHV\u0003\t\u00036RXUFHV\nNotas y Fuentes",
+          "role": "footnote",
+          "decoder_applied": false
+        }
+      ],
+      "reconstruction_lines": [
+        {
+          "text": "Notas y Fuentes",
+          "source": "Notas y Fuentes",
+          "bbox": [
+            226.1719970703125,
+            556.0360107421875,
+            274.1430358886719,
+            563.0360107421875
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "region": "E_notes_left",
+      "pdf_page": 167,
+      "printed_page": 149,
+      "bbox": [
+        50,
+        573,
+        249,
+        651
+      ],
+      "coordinate_system": "PDF points; top-left origin; unrotated page",
+      "block_ids": [
+        29
+      ],
+      "dpi": 220,
+      "reason": "native good / structural control; OCR not selected",
+      "ocr_selected_for_benchmark": false,
+      "source_method_if_ocr_runs": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "native_blocks": [
+        {
+          "block_id": 29,
+          "bbox": [
+            56.692901611328125,
+            575.8474731445312,
+            245.35171508789062,
+            647.1339721679688
+          ],
+          "native": "60 Ver Pri Etz Jaim, Shaar HaTefi lá 3.\n61 Ver §1 más arriba.\n62 Pri Etz Jaim, op. cit.\n63 Una cita entre paréntesis aquí dice: Estudia más esto en las \nleyes pertenecientes a la jalitza que aparecen en el LH, Guitin \n4.10.\n64 Ver §1 y §4 más arriba.\n65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim ",
+          "replacement_count": 0
+        }
+      ],
+      "historical_blocks": [
+        {
+          "bbox": [
+            56.692901611328125,
+            575.8474731445312,
+            245.35171508789062,
+            647.1499633789062
+          ],
+          "text": "60 רעׁש ירף זתֵא מיאּט, ראאהש עּתאּהﬁ בל 3.\n61 רעׁש §1 סבמ אביררא.\n62 ירף זתֵא מיאּט, פן. תיצ.\n63 אנֹו אתיצ ערתנע סיסעתנéראפ מץקא עציד: אידץתסֵא סבמ ןתסע נע סאל \nסעיעל סעתנעיצענעתרעפ א אל אזתילאט עץק נעצעראפא נע לע ּהּל, ניתיץּג \n4.10.\n64 רעׁש §1 י §4 סבמ אביררא.\n65 אידץתסֵא §7 עד אל נóיצצעל לעד עבעּר. עץקנץA סןל מיכידאזּת",
+          "role": "footnote",
+          "decoder_applied": true
+        }
+      ],
+      "reconstruction_lines": [
+        {
+          "text": "60 Ver Pri Etz Jaim, Shaar HaTeﬁ lá 3.se refrena en general de amonestar al pueblo judío (ver LM ",
+          "source": "60 Ver Pri Etz Jaim, Shaar HaTeﬁ lá 3.se refrena en general de amonestar al pueblo judío (ver LM ",
+          "bbox": [
+            56.692901611328125,
+            576.523193359375,
+            444.0968017578125,
+            584.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "61 Ver §1 más arriba.I, 22:1), el Rebe Najmán enseña que el sufrimiento que le ",
+          "source": "61 Ver §1 más arriba.I, 22:1), el Rebe Najmán enseña que el sufrimiento que le ",
+          "bbox": [
+            56.69365692138672,
+            585.523193359375,
+            444.10430908203125,
+            593.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "62 Pri Etz Jaim, op. cit.produce el judío al Tzadik al pecar ocasionalmente lo lleva a ",
+          "source": "62 Pri Etz Jaim, op. cit.produce el judío al Tzadik al pecar ocasionalmente lo lleva a ",
+          "bbox": [
+            56.69365692138672,
+            594.523193359375,
+            444.1117858886719,
+            602.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "63 Una cita entre paréntesis aquí dice: Estudia más esto en las expresar una amonestación que humilla a su audiencia. El Rabí ",
+          "source": "63 Una cita entre paréntesis aquí dice: Estudia más esto en las expresar una amonestación que humilla a su audiencia. El Rabí ",
+          "bbox": [
+            56.693660736083984,
+            603.523193359375,
+            444.1109924316406,
+            611.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "leyes pertenecientes a la jalitza que aparecen en el LH, Guitin Natán hará referencia esto a continuación.",
+          "source": "leyes pertenecientes a la jalitza que aparecen en el LH, Guitin Natán hará referencia esto a continuación.",
+          "bbox": [
+            56.693660736083984,
+            612.523193359375,
+            381.65191650390625,
+            620.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "4.10.66 Comentando sobre el versículo (Proverbios 27:5) “La ",
+          "source": "4.10.66 Comentando sobre el versículo (Proverbios 27:5) “La ",
+          "bbox": [
+            56.69364929199219,
+            621.523193359375,
+            444.0918273925781,
+            629.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "64 Ver §1 y §4 más arriba.amonestación franca es mejor que el amor oculto”, el Ari zal ",
+          "source": "64 Ver §1 y §4 más arriba.amonestación franca es mejor que el amor oculto”, el Ari zal ",
+          "bbox": [
+            56.69364929199219,
+            630.523193359375,
+            444.07989501953125,
+            638.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim enseña que la “amonestación franca” hace referencia a las ",
+          "source": "65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim enseña que la “amonestación franca” hace referencia a las ",
+          "bbox": [
+            56.69364929199219,
+            639.523193359375,
+            444.1102600097656,
+            647.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "region": "E_notes_right",
+      "pdf_page": 167,
+      "printed_page": 149,
+      "bbox": [
+        252,
+        573,
+        447,
+        651
+      ],
+      "coordinate_system": "PDF points; top-left origin; unrotated page",
+      "block_ids": [
+        30
+      ],
+      "dpi": 220,
+      "reason": "native good / structural control; OCR not selected",
+      "ocr_selected_for_benchmark": false,
+      "source_method_if_ocr_runs": "visual_ocr_fallback",
+      "engine": null,
+      "confidence": null,
+      "native_blocks": [
+        {
+          "block_id": 30,
+          "bbox": [
+            255.44964599609375,
+            577.31201171875,
+            444.1117858886719,
+            647.127197265625
+          ],
+          "native": "se refrena en general de amonestar al pueblo judío (ver LM \nI, 22:1), el Rebe Najmán enseña que el sufrimiento que le \nproduce el judío al Tzadik al pecar ocasionalmente lo lleva a \nexpresar una amonestación que humilla a su audiencia. El Rabí \nNatán hará referencia esto a continuación.\n66 Comentando sobre el versículo (Proverbios 27:5) “La \namonestación franca es mejor que el amor oculto”, el Ari zal \nenseña que la “amonestación franca” hace referencia a las ",
+          "replacement_count": 0
+        }
+      ],
+      "historical_blocks": [
+        {
+          "bbox": [
+            255.44964599609375,
+            575.8406982421875,
+            444.1117858886719,
+            647.1431884765625
+          ],
+          "text": "se refrena en general de amonestar al pueblo judío (ver LM \nI, 22:1), el Rebe Najmán enseña que el sufrimiento que le \nproduce el judío al Tzadik al pecar ocasionalmente lo lleva a \nexpresar una amonestación que humilla a su audiencia. El Rabí \nNatán hará referencia esto a continuación.\n66 Comentando sobre el versículo (Proverbios 27:5) “La \namonestación franca es mejor que el amor oculto”, el Ari zal \nenseña que la “amonestación franca” hace referencia a las",
+          "role": "footnote",
+          "decoder_applied": false
+        }
+      ],
+      "reconstruction_lines": [
+        {
+          "text": "60 Ver Pri Etz Jaim, Shaar HaTeﬁ lá 3.se refrena en general de amonestar al pueblo judío (ver LM ",
+          "source": "60 Ver Pri Etz Jaim, Shaar HaTeﬁ lá 3.se refrena en general de amonestar al pueblo judío (ver LM ",
+          "bbox": [
+            56.692901611328125,
+            576.523193359375,
+            444.0968017578125,
+            584.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "61 Ver §1 más arriba.I, 22:1), el Rebe Najmán enseña que el sufrimiento que le ",
+          "source": "61 Ver §1 más arriba.I, 22:1), el Rebe Najmán enseña que el sufrimiento que le ",
+          "bbox": [
+            56.69365692138672,
+            585.523193359375,
+            444.10430908203125,
+            593.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "62 Pri Etz Jaim, op. cit.produce el judío al Tzadik al pecar ocasionalmente lo lleva a ",
+          "source": "62 Pri Etz Jaim, op. cit.produce el judío al Tzadik al pecar ocasionalmente lo lleva a ",
+          "bbox": [
+            56.69365692138672,
+            594.523193359375,
+            444.1117858886719,
+            602.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "63 Una cita entre paréntesis aquí dice: Estudia más esto en las expresar una amonestación que humilla a su audiencia. El Rabí ",
+          "source": "63 Una cita entre paréntesis aquí dice: Estudia más esto en las expresar una amonestación que humilla a su audiencia. El Rabí ",
+          "bbox": [
+            56.693660736083984,
+            603.523193359375,
+            444.1109924316406,
+            611.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "leyes pertenecientes a la jalitza que aparecen en el LH, Guitin Natán hará referencia esto a continuación.",
+          "source": "leyes pertenecientes a la jalitza que aparecen en el LH, Guitin Natán hará referencia esto a continuación.",
+          "bbox": [
+            56.693660736083984,
+            612.523193359375,
+            381.65191650390625,
+            620.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "4.10.66 Comentando sobre el versículo (Proverbios 27:5) “La ",
+          "source": "4.10.66 Comentando sobre el versículo (Proverbios 27:5) “La ",
+          "bbox": [
+            56.69364929199219,
+            621.523193359375,
+            444.0918273925781,
+            629.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "64 Ver §1 y §4 más arriba.amonestación franca es mejor que el amor oculto”, el Ari zal ",
+          "source": "64 Ver §1 y §4 más arriba.amonestación franca es mejor que el amor oculto”, el Ari zal ",
+          "bbox": [
+            56.69364929199219,
+            630.523193359375,
+            444.07989501953125,
+            638.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        },
+        {
+          "text": "65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim enseña que la “amonestación franca” hace referencia a las ",
+          "source": "65 Estudia §7 de la lección del Rebe. Aunque los Tzadikim enseña que la “amonestación franca” hace referencia a las ",
+          "bbox": [
+            56.69364929199219,
+            639.523193359375,
+            444.1102600097656,
+            647.0299682617188
+          ],
+          "seqno": 29,
+          "diagnostics": []
+        }
+      ]
+    }
+  ]
+}

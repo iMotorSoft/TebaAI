@@ -1,0 +1,128 @@
+{
+  "references": [
+    {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/REPORT.md",
+      "locator": null,
+      "sha256": "42f1abd66a6529e4a53b8d5aa9101507f7ff5ea369f6b671752902149e70a778",
+      "timestamp": "2026-10-20T13:44:38.624563+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+      "locator": null,
+      "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+      "timestamp": "2026-10-20T12:52:28.223617+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-selection.json",
+      "locator": null,
+      "sha256": "ece98e42e87682a893e1dfdd4f10e8ee23cf522df2db33de85e4f9f592deba4d",
+      "timestamp": "2026-10-20T12:52:50.385996+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-regression-results.json",
+      "locator": null,
+      "sha256": "64f05a0fa2856b8c32147980b9f9bbf4a3ab033b84d902a2d1892037825ff5a9",
+      "timestamp": "2026-10-20T13:43:28.592264+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/consumer-results.json",
+      "locator": null,
+      "sha256": "eec4c502253452a94895f857bc1fb90672a89773b3c6e0d43714511150863a37",
+      "timestamp": "2026-10-20T13:43:58.708822+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/determinism-results.json",
+      "locator": null,
+      "sha256": "002436d9bfa91969221d39b10425329e2367b5547f3722a653b09a2f7efc3e56",
+      "timestamp": "2026-10-20T13:07:58.407071+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_inventory.py",
+      "locator": null,
+      "sha256": "bec249556d3b5132877970fe2b053883a61c80993e1e24a6ddf006f244c0f179",
+      "timestamp": "2026-10-20T17:07:27.226318+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+      "locator": null,
+      "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+      "timestamp": "2026-10-20T17:12:34.691643+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/resume-lineage-decision.json",
+      "locator": null,
+      "sha256": "c24d1fcb6c173d972b5f23e347855dc5df73c87af7aa0cc07ffad11e0a598d3f",
+      "timestamp": "2026-10-21T11:59:31.988184+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/v5-evaluator-correction-v1/REPORT.md",
+      "locator": null,
+      "sha256": "5d30f37d8529d7260becbc8becc97c7fea75325d648ef0b1cc08e9d31cce7ec7",
+      "timestamp": "2026-10-21T12:12:49.810790+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    {
+      "artifact": "data/reports/breslov/v5-hybrid-confirmation-resume-v2/final-validation.json",
+      "locator": null,
+      "sha256": "6b0ef747776dccf162deeff8b271b23fddd9f275938bd94b723a32df1664ebde",
+      "timestamp": "2026-10-21T12:23:15.937552+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    }
+  ],
+  "inventory_completeness_counterexample": {
+    "original": {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/development-opened-pages.json",
+      "locator": null,
+      "sha256": "ff4aa263161b918b818e995c8bacc1a2f26c2ba89cbac6ca369fd82cd5664d54",
+      "timestamp": "2026-10-20T12:52:28.223617+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    "later": {
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+      "locator": "lines 225-232; v5_manual includes 54-59,106-111,165-170,205-208",
+      "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+      "timestamp": "2026-10-20T17:12:34.691643+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    "meaning": "Original page inventory alone does not enumerate every later-declared V5 manual-review page. No candidate is thereby PROVEN_USED."
+  },
+  "false_collision": {
+    "query": "139,140",
+    "artifact": {
+      "artifact": "data/reports/breslov/automatic-region-provenance-certification-v5/holdout-seal.json",
+      "locator": "/cross_page_negatives/2",
+      "sha256": "c1743449e9be0eb5babf38a179ba65aefb77310226c58f86afad646d0f27831c",
+      "timestamp": "2026-10-20T12:56:07.555481+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    "physical_pair": [
+      198,
+      199
+    ],
+    "note_numbers": [
+      139,
+      140
+    ],
+    "candidate_exposure": false
+  },
+  "prior_hybrid_claim": {
+    "artifact": {
+      "artifact": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/build_contracts.py",
+      "locator": "lines 45-60",
+      "sha256": "13f6268d01b956c76c64898c4c418d913878d142a764dc5a73989f0b4c2e6454",
+      "timestamp": "2026-10-20T17:12:34.691643+00:00",
+      "timestamp_basis": "filesystem mtime; corroboration only unless embedded/git anchor supplied"
+    },
+    "claim": "never used to design/debug/test/select proofs",
+    "audit_resolution": "not independently corroborated: later resume-lineage-decision explicitly AUDIT_INCOMPLETE and NOT_INDEPENDENTLY_VERIFIED. A generated assertion is not an independent development record."
+  }
+}

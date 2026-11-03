@@ -1,0 +1,1010 @@
+{
+  "status": "PASS_LOCAL_FIXTURE_EMBEDDINGS",
+  "scope": "isolated in-memory exact cosine ranking of fixture snippets; not live corpus recall/Milvus ANN",
+  "alias": "openai_text_embedding_3_small",
+  "dimension": 1536,
+  "gateway_configured": true,
+  "fallback_status": "VERIFIED: configured expected upstream; matching model ID; attempted fallbacks=0",
+  "rows": [
+    {
+      "id": "H01",
+      "target_rank": 1,
+      "target_cosine": 1.0,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "זרע",
+          "cosine": 1.0
+        },
+        {
+          "canonical": "רָשָׁע",
+          "cosine": 0.4432253784552055
+        },
+        {
+          "canonical": "דֵּעָה",
+          "cosine": 0.351681435285882
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H02",
+      "target_rank": 1,
+      "target_cosine": 1.0,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "אמת",
+          "cosine": 1.0
+        },
+        {
+          "canonical": "אֱמוּנָה",
+          "cosine": 0.4581513027972732
+        },
+        {
+          "canonical": "מֵאָה",
+          "cosine": 0.4541623377612163
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H03",
+      "target_rank": 1,
+      "target_cosine": 1.0,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "נחש",
+          "cosine": 1.0
+        },
+        {
+          "canonical": "נָחָשׁ",
+          "cosine": 0.5570184147430225
+        },
+        {
+          "canonical": "הַשִּׁכְחָה",
+          "cosine": 0.358835418388394
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H04",
+      "target_rank": 1,
+      "target_cosine": 1.0,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "מאה",
+          "cosine": 1.0
+        },
+        {
+          "canonical": "מֵאָה",
+          "cosine": 0.5797075812627633
+        },
+        {
+          "canonical": "אמת",
+          "cosine": 0.43581852679803457
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H05",
+      "target_rank": 1,
+      "target_cosine": 0.7040536061532974,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "עֵצָה",
+          "cosine": 0.7040536061532974
+        },
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.5153763867618926
+        },
+        {
+          "canonical": "מִצְוַת",
+          "cosine": 0.4460610486476718
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H06",
+      "target_rank": 1,
+      "target_cosine": 0.5381818181794628,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "צַדִּיק",
+          "cosine": 0.5381818181794628
+        },
+        {
+          "canonical": "מִצְוַת",
+          "cosine": 0.4199151547553783
+        },
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.4132908245519991
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H07",
+      "target_rank": 1,
+      "target_cosine": 0.6603901465725923,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "אָדָם",
+          "cosine": 0.6603901465725923
+        },
+        {
+          "canonical": "אֶחָד",
+          "cosine": 0.46016561741238615
+        },
+        {
+          "canonical": "אמת",
+          "cosine": 0.4129663620088221
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H08",
+      "target_rank": 1,
+      "target_cosine": 0.6055279962181923,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "שְׁמִירָה",
+          "cosine": 0.6055279962181923
+        },
+        {
+          "canonical": "אמת",
+          "cosine": 0.3994796370347151
+        },
+        {
+          "canonical": "הַמֹּחַ",
+          "cosine": 0.39523843806974984
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H09",
+      "target_rank": 1,
+      "target_cosine": 0.5428920967468187,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "עֵינַיִם",
+          "cosine": 0.5428920967468187
+        },
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.4141467322650821
+        },
+        {
+          "canonical": "נִשּׂוּאִין",
+          "cosine": 0.36054668945132307
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H10",
+      "target_rank": 2,
+      "target_cosine": 0.5729991110163457,
+      "found_at_1": false,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "אמת",
+          "cosine": 0.6134285954951685
+        },
+        {
+          "canonical": "אֱמוּנָה",
+          "cosine": 0.5729991110163457
+        },
+        {
+          "canonical": "מאה",
+          "cosine": 0.470995562060667
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H11",
+      "target_rank": 1,
+      "target_cosine": 0.5497267116886637,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "דֵּעָה",
+          "cosine": 0.5497267116886637
+        },
+        {
+          "canonical": "לוֹמְדִים",
+          "cosine": 0.3817131893528743
+        },
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.3440097801910237
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H12",
+      "target_rank": 1,
+      "target_cosine": 0.4589485983795304,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "פְּעָמִים",
+          "cosine": 0.4589485983795304
+        },
+        {
+          "canonical": "טִפֵּי",
+          "cosine": 0.3701703656224414
+        },
+        {
+          "canonical": "אמת",
+          "cosine": 0.36280013569889535
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H13",
+      "target_rank": 2,
+      "target_cosine": 0.42124469109241097,
+      "found_at_1": false,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "עֵינַיִם",
+          "cosine": 0.4288890567775427
+        },
+        {
+          "canonical": "נִשּׂוּאִין",
+          "cosine": 0.42124469109241097
+        },
+        {
+          "canonical": "נחש",
+          "cosine": 0.37195064235516834
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H14",
+      "target_rank": 1,
+      "target_cosine": 0.6486363276224869,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "זִוּוּג",
+          "cosine": 0.6486363276224869
+        },
+        {
+          "canonical": "תּוּשִׁיָּה",
+          "cosine": 0.39901576942400585
+        },
+        {
+          "canonical": "זרע",
+          "cosine": 0.36677091398270123
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H15",
+      "target_rank": 1,
+      "target_cosine": 0.48128671388545224,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "תּוּשִׁיָּה",
+          "cosine": 0.48128671388545224
+        },
+        {
+          "canonical": "דֵּעָה",
+          "cosine": 0.37950581244383264
+        },
+        {
+          "canonical": "לוֹמְדִים",
+          "cosine": 0.36380239888534915
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H16",
+      "target_rank": 1,
+      "target_cosine": 0.44924280117868504,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "הַמֹּחַ",
+          "cosine": 0.44924280117868504
+        },
+        {
+          "canonical": "מאה",
+          "cosine": 0.398130680085658
+        },
+        {
+          "canonical": "מֵאָה",
+          "cosine": 0.37840546083561954
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H17",
+      "target_rank": 1,
+      "target_cosine": 0.5565384875998923,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "טִפֵּי",
+          "cosine": 0.5565384875998923
+        },
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.4031749548139266
+        },
+        {
+          "canonical": "עֵצָה",
+          "cosine": 0.3887324841015353
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H18",
+      "target_rank": 1,
+      "target_cosine": 0.6140873127840275,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "כֻּלּוֹ",
+          "cosine": 0.6140873127840275
+        },
+        {
+          "canonical": "אמת",
+          "cosine": 0.344066236087205
+        },
+        {
+          "canonical": "מֵאָה",
+          "cosine": 0.32435094559431454
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H19",
+      "target_rank": 1,
+      "target_cosine": 0.4700386412490995,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "הַנִּאוּף",
+          "cosine": 0.4700386412490995
+        },
+        {
+          "canonical": "נָחָשׁ",
+          "cosine": 0.3965743136775031
+        },
+        {
+          "canonical": "הַשִּׁכְחָה",
+          "cosine": 0.3685570506115439
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H20",
+      "target_rank": 1,
+      "target_cosine": 0.5616287106760173,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "הַגָּלוּת",
+          "cosine": 0.5616287106760173
+        },
+        {
+          "canonical": "הַגְּאֻלָּה",
+          "cosine": 0.43235647386428405
+        },
+        {
+          "canonical": "הַשִּׁכְחָה",
+          "cosine": 0.4063535603925725
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H21",
+      "target_rank": 1,
+      "target_cosine": 0.4944027440779542,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "הַגְּאֻלָּה",
+          "cosine": 0.4944027440779542
+        },
+        {
+          "canonical": "הַגָּלוּת",
+          "cosine": 0.4665856666852735
+        },
+        {
+          "canonical": "מֵאָה",
+          "cosine": 0.35410137699448707
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H22",
+      "target_rank": 1,
+      "target_cosine": 0.5137916680474246,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "לוֹמְדִים",
+          "cosine": 0.5137916680474246
+        },
+        {
+          "canonical": "צַדִּיק",
+          "cosine": 0.31459516890025746
+        },
+        {
+          "canonical": "מִצְוַת",
+          "cosine": 0.2938830365810299
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H23",
+      "target_rank": 1,
+      "target_cosine": 0.41332244589621603,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "תַּלְמוּד",
+          "cosine": 0.41332244589621603
+        },
+        {
+          "canonical": "לוֹמְדִים",
+          "cosine": 0.40084305715924673
+        },
+        {
+          "canonical": "מִצְוַת",
+          "cosine": 0.35769921830367435
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H24",
+      "target_rank": 1,
+      "target_cosine": 0.4981893923965678,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "כְּשֻׁלְחָן",
+          "cosine": 0.4981893923965678
+        },
+        {
+          "canonical": "שֻׁלְחָן",
+          "cosine": 0.4295513666042433
+        },
+        {
+          "canonical": "נָחָשׁ",
+          "cosine": 0.3587503470653478
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H25",
+      "target_rank": 1,
+      "target_cosine": 0.5888200538879942,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "הַחָכְמוֹת",
+          "cosine": 0.5888200538879942
+        },
+        {
+          "canonical": "הַשִּׁכְחָה",
+          "cosine": 0.39792502220788434
+        },
+        {
+          "canonical": "הַגָּלוּת",
+          "cosine": 0.37247813422254783
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H26",
+      "target_rank": 1,
+      "target_cosine": 0.6732790237084815,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "הַשִּׁכְחָה",
+          "cosine": 0.6732790237084815
+        },
+        {
+          "canonical": "הַשֵּׂכֶל",
+          "cosine": 0.49348850775918063
+        },
+        {
+          "canonical": "הַחָכְמוֹת",
+          "cosine": 0.4738901063664837
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H27",
+      "target_rank": 1,
+      "target_cosine": 0.4772193475194077,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "מִצְוַת",
+          "cosine": 0.4772193475194077
+        },
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.40311487891053654
+        },
+        {
+          "canonical": "צַדִּיק",
+          "cosine": 0.3962777588389515
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H28",
+      "target_rank": 1,
+      "target_cosine": 0.5098407524462779,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "אֶחָד",
+          "cosine": 0.5098407524462779
+        },
+        {
+          "canonical": "אָדָם",
+          "cosine": 0.36048282327843933
+        },
+        {
+          "canonical": "מֵאָה",
+          "cosine": 0.34541815927786634
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": true
+    },
+    {
+      "id": "H29",
+      "target_rank": 1,
+      "target_cosine": 0.7801434120399191,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "זרע",
+          "cosine": 0.7801434120399191
+        },
+        {
+          "canonical": "זִוּוּג",
+          "cosine": 0.41154589491211185
+        },
+        {
+          "canonical": "רָשָׁע",
+          "cosine": 0.3651897043352374
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H30",
+      "target_rank": 1,
+      "target_cosine": 0.5405166998389921,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "אָדָם",
+          "cosine": 0.5405166998389921
+        },
+        {
+          "canonical": "אמת",
+          "cosine": 0.3600785199571448
+        },
+        {
+          "canonical": "לוֹמְדִים",
+          "cosine": 0.34791780901266384
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H31",
+      "target_rank": 1,
+      "target_cosine": 0.6009130611146705,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "רָשָׁע",
+          "cosine": 0.6009130611146705
+        },
+        {
+          "canonical": "זרע",
+          "cosine": 0.49763846109294774
+        },
+        {
+          "canonical": "נָחָשׁ",
+          "cosine": 0.49132977903635255
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H32",
+      "target_rank": 1,
+      "target_cosine": 0.5248239832812533,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "צַדִּיק",
+          "cosine": 0.5248239832812533
+        },
+        {
+          "canonical": "מִצְוַת",
+          "cosine": 0.4166908818392572
+        },
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.41464776531210845
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H33",
+      "target_rank": 2,
+      "target_cosine": 0.4247061867725645,
+      "found_at_1": false,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "כֻּלּוֹ",
+          "cosine": 0.5845472078896641
+        },
+        {
+          "canonical": "הַשֵּׂכֶל",
+          "cosine": 0.4247061867725645
+        },
+        {
+          "canonical": "הַשִּׁכְחָה",
+          "cosine": 0.41387214509313275
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H34",
+      "target_rank": 7,
+      "target_cosine": 0.3098792746721322,
+      "found_at_1": false,
+      "found_at_3": false,
+      "top3": [
+        {
+          "canonical": "אמת",
+          "cosine": 0.36597936387530616
+        },
+        {
+          "canonical": "נָחָשׁ",
+          "cosine": 0.3536194461407091
+        },
+        {
+          "canonical": "הַמֹּחַ",
+          "cosine": 0.3431750583362619
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H35",
+      "target_rank": 1,
+      "target_cosine": 0.5593437686764723,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.5593437686764723
+        },
+        {
+          "canonical": "צַדִּיק",
+          "cosine": 0.5196957156976998
+        },
+        {
+          "canonical": "מִצְוַת",
+          "cosine": 0.4931163227439385
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H36",
+      "target_rank": 2,
+      "target_cosine": 0.4865539123972062,
+      "found_at_1": false,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "נחש",
+          "cosine": 0.5398815403352256
+        },
+        {
+          "canonical": "נָחָשׁ",
+          "cosine": 0.4865539123972062
+        },
+        {
+          "canonical": "הַמֹּחַ",
+          "cosine": 0.28978789990221154
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H37",
+      "target_rank": 2,
+      "target_cosine": 0.42407390439404496,
+      "found_at_1": false,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "זרע",
+          "cosine": 0.4366195398687282
+        },
+        {
+          "canonical": "זִוּוּג",
+          "cosine": 0.42407390439404496
+        },
+        {
+          "canonical": "דֵּעָה",
+          "cosine": 0.33329478133582463
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H38",
+      "target_rank": 1,
+      "target_cosine": 0.5755364690916309,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "עֵינַיִם",
+          "cosine": 0.5755364690916309
+        },
+        {
+          "canonical": "עֵצָה",
+          "cosine": 0.43889234787872683
+        },
+        {
+          "canonical": "צִיצִית",
+          "cosine": 0.41530629926485824
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H39",
+      "target_rank": 3,
+      "target_cosine": 0.36551797378155676,
+      "found_at_1": false,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "מאה",
+          "cosine": 0.42737004391087513
+        },
+        {
+          "canonical": "הַמֹּחַ",
+          "cosine": 0.3939385513649905
+        },
+        {
+          "canonical": "אֱמוּנָה",
+          "cosine": 0.36551797378155676
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H40",
+      "target_rank": 1,
+      "target_cosine": 0.5103213634334245,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "שֻׁלְחָן",
+          "cosine": 0.5103213634334245
+        },
+        {
+          "canonical": "כְּשֻׁלְחָן",
+          "cosine": 0.45531990799905153
+        },
+        {
+          "canonical": "נָחָשׁ",
+          "cosine": 0.4468830353846403
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H41",
+      "target_rank": 1,
+      "target_cosine": 0.37378868908691587,
+      "found_at_1": true,
+      "found_at_3": true,
+      "top3": [
+        {
+          "canonical": "אֶחָד",
+          "cosine": 0.37378868908691587
+        },
+        {
+          "canonical": "אמת",
+          "cosine": 0.3458014171125268
+        },
+        {
+          "canonical": "מֵאָה",
+          "cosine": 0.34493400735720114
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    },
+    {
+      "id": "H42",
+      "target_rank": 5,
+      "target_cosine": 0.4097443716442406,
+      "found_at_1": false,
+      "found_at_3": false,
+      "top3": [
+        {
+          "canonical": "מִצְוַת",
+          "cosine": 0.48455240993175813
+        },
+        {
+          "canonical": "עֵצָה",
+          "cosine": 0.456756674388277
+        },
+        {
+          "canonical": "דֵּעָה",
+          "cosine": 0.421199433533483
+        }
+      ],
+      "match_type": "semantic",
+      "expected_positive": false
+    }
+  ],
+  "configured_upstream": [
+    "openai/text-embedding-3-small"
+  ],
+  "configured_model_ids": [
+    "dcd1d69b94a0d921c1fd9d2af975700c18ef8063b97e8bf847279dbd2c56b636"
+  ],
+  "probe_http": 200,
+  "batch_http": 200,
+  "returned_model": "openai_text_embedding_3_small",
+  "response_headers": {
+    "x-litellm-model-id": "dcd1d69b94a0d921c1fd9d2af975700c18ef8063b97e8bf847279dbd2c56b636",
+    "x-litellm-attempted-retries": "0",
+    "x-litellm-attempted-fallbacks": "0"
+  },
+  "input_count": 72,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 567,
+    "total_tokens": 567,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "vectors_persisted": false,
+  "existing_corpus_embeddings_baseline": "NOT_MEASURED: no existing corpus vector snapshot used; no Milvus/PG connection. Same configured model, new transient fixture embeddings only.",
+  "not_equivalence": "SEMANTIC candidates are never counted as lexical/orthographic true positives.",
+  "metrics": {
+    "positive_top1": 26,
+    "positive_top3": 28,
+    "dangerous_target_top1": 8,
+    "dangerous_target_top3": 12,
+    "negative_count": 14,
+    "positive_count": 28,
+    "threshold": "NONE; ranks are candidates, not acceptance"
+  }
+}

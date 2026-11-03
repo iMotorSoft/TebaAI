@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="39" time="2.003" timestamp="2026-10-22T17:20:48.418393-03:00" hostname="ubuntu24"><testcase classname="tests.test_generation_rollback_remediation" name="test_cutover_rollback_audit_and_cleanup" time="0.037" /><testcase classname="tests.test_generation_rollback_remediation" name="test_invalid_status[BUILDING-CUTOVER]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_invalid_status[BUILDING-ROLLBACK]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_invalid_status[FAILED-CUTOVER]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_invalid_status[FAILED-ROLLBACK]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_cross_document[CUTOVER]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_cross_document[ROLLBACK]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[arbitrary]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[never_active]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[unretained]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[historical]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[no_edge]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[rejected_history]" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_rollback_eligibility_fail_closed[wrong_source]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_inactive_is_not_cutover_candidate" time="0.002" /><testcase classname="tests.test_generation_rollback_remediation" name="test_candidate_is_not_rollback_target" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_stale_cutover_and_stale_rollback" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_idempotency_safe" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_no_policy_bypass[UNKNOWN]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_no_policy_bypass[BACKFILL]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_no_policy_bypass[REGISTER]" time="0.001" /><testcase classname="tests.test_generation_rollback_remediation" name="test_postgres_rollback_contract" time="0.143"><failure message="infrastructure.postgres.errors.DatabaseExecutionError: inconsistent types deduced for parameter $1&#10;LINE 3:                 VALUES ($1, $1, 'Rollback remediation synthe...&#10;                                    ^&#10;DETAIL:  uuid versus text">conn = &lt;psycopg.AsyncConnection [BAD] at 0x7d6289afe4b0&gt;
+sql = "\n                INSERT INTO library_collections_legacy(id, code, name, default_language, is_active)\n                VALUES (%(id)s, %(id)s, 'Rollback remediation synthetic', 'es', true)\n            "
+params = {'id': '9914d680-e066-445b-a068-f60195932f97'}
+
+    async def execute(
+        conn: AsyncConnection,
+        sql: str,
+        params: Mapping[str, Any] | None = None,
+    ) -&gt; int | None:
+        try:
+            async with conn.cursor() as cur:
+&gt;               await cur.execute(sql, params)
+
+infrastructure/postgres/transaction.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;psycopg.AsyncCursor [closed] [BAD] at 0x7d628923c1d0&gt;
+query = "\n                INSERT INTO library_collections_legacy(id, code, name, default_language, is_active)\n                VALUES (%(id)s, %(id)s, 'Rollback remediation synthetic', 'es', true)\n            "
+params = {'id': '9914d680-e066-445b-a068-f60195932f97'}, prepare = None
+binary = None
+
+    async def execute(
+        self,
+        query: Query,
+        params: Params | None = None,
+        *,
+        prepare: bool | None = None,
+        binary: bool | None = None,
+    ) -&gt; Self:
+        """
+        Execute a query or command to the database.
+        """
+        try:
+            async with self._conn.lock:
+                await self._conn.wait(
+                    self._execute_gen(query, params, prepare=prepare, binary=binary)
+                )
+        except e._NO_TRACEBACK as ex:
+&gt;           raise ex.with_traceback(None)
+E           psycopg.errors.AmbiguousParameter: inconsistent types deduced for parameter $1
+E           LINE 3:                 VALUES ($1, $1, 'Rollback remediation synthe...
+E                                               ^
+E           DETAIL:  uuid versus text
+
+.venv/lib/python3.12/site-packages/psycopg/cursor_async.py:117: AmbiguousParameter
+
+The above exception was the direct cause of the following exception:
+
+    @pytest.mark.asyncio
+    async def test_postgres_rollback_contract():
+        """Real SQL/audit with a unique synthetic logical document; entire tx rolled back.
+    
+        No pages/chunks/vectors are needed by the existing activation primitive.
+        CANDIDATE is its existing completeness admission contract; not redefined here.
+        """
+        from test_generation_foundation import _connection
+    
+        async with _connection() as conn:
+            async with conn.transaction(force_rollback=True):
+                assert (await g.fetch_one(conn, "SELECT current_database() AS db", {}))["db"] == "tebaai"
+                logical, collection = str(uuid4()), str(uuid4())
+&gt;               await g.execute(conn, """
+                    INSERT INTO library_collections_legacy(id, code, name, default_language, is_active)
+                    VALUES (%(id)s, %(id)s, 'Rollback remediation synthetic', 'es', true)
+                """, {"id": collection})
+
+tests/test_generation_rollback_remediation.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+conn = &lt;psycopg.AsyncConnection [BAD] at 0x7d6289afe4b0&gt;
+sql = "\n                INSERT INTO library_collections_legacy(id, code, name, default_language, is_active)\n                VALUES (%(id)s, %(id)s, 'Rollback remediation synthetic', 'es', true)\n            "
+params = {'id': '9914d680-e066-445b-a068-f60195932f97'}
+
+    async def execute(
+        conn: AsyncConnection,
+        sql: str,
+        params: Mapping[str, Any] | None = None,
+    ) -&gt; int | None:
+        try:
+            async with conn.cursor() as cur:
+                await cur.execute(sql, params)
+                return cur.rowcount
+        except Exception as exc:
+&gt;           raise DatabaseExecutionError(str(exc)) from exc
+E           infrastructure.postgres.errors.DatabaseExecutionError: inconsistent types deduced for parameter $1
+E           LINE 3:                 VALUES ($1, $1, 'Rollback remediation synthe...
+E                                               ^
+E           DETAIL:  uuid versus text
+
+infrastructure/postgres/transaction.py:59: DatabaseExecutionError</failure></testcase><testcase classname="tests.test_content_manager_cleanup" name="test_manifest_cleanup_is_ordered_and_complete" time="0.002" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_repeated_treats_absent_vector_as_success" time="0.002" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_deletes_manifest_vector_when_attempt_query_is_empty" time="0.003" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_stops_before_postgres_when_milvus_fails" time="0.003" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_can_preserve_validated_temporary_for_retry" time="0.002" /><testcase classname="tests.test_content_manager_cleanup" name="test_cleanup_rejects_unknown_scope_collection_mapping" time="0.001" /><testcase classname="tests.test_content_manager_cleanup" name="test_primary_cleanup_uses_manifest_vector_ids_exactly" time="0.002" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_hybrid_never_emits_unauthorized_or_misattributed_vector[None]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical1]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_hybrid_never_emits_unauthorized_or_misattributed_vector[canonical2]" time="0.002" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_hybrid_uses_only_canonical_identity_and_chunk_index" time="0.002" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[ready]" time="0.002" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[archived]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[None]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_cleanup_rejects_protected_or_unknown_status_before_any_side_effect[unrecognized]" time="0.001" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_gateway_identity_collision_is_rejected_before_ownership_claim" time="0.004" /><testcase classname="tests.test_parallel_generation_safety_prerequisites" name="test_search_http_cannot_serialize_unrehydrated_vector" time="0.499" /></testsuite></testsuites>

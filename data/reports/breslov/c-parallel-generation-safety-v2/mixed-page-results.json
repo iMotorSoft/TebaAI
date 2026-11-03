@@ -1,0 +1,164 @@
+{
+  "fixture_kind": "declared",
+  "FIXTURE_DECLARATIONS_ARE_QUALITY_CLAIMS": false,
+  "declared_inputs": [
+    {
+      "label": "GOOD_A",
+      "region_id": "region-0",
+      "declared_quality_status": "ACCEPTED"
+    },
+    {
+      "label": "BAD_HEBREW",
+      "region_id": "region-1",
+      "declared_quality_status": "PLATFORM_EXTRACTION_ERROR"
+    },
+    {
+      "label": "GOOD_B",
+      "region_id": "region-2",
+      "declared_quality_status": "ACCEPTED"
+    }
+  ],
+  "publication_status": "PARTIAL",
+  "publishable_regions": [
+    "region-0",
+    "region-2"
+  ],
+  "quarantined_regions": [
+    "region-1"
+  ],
+  "evidence_units": [
+    {
+      "region_id": "region-0",
+      "text": "GOOD_A vecino aceptado alfa"
+    },
+    {
+      "region_id": "region-2",
+      "text": "GOOD_B nota aceptada omega"
+    }
+  ],
+  "canonical_markdown": "GOOD_A vecino aceptado alfa\n\n\n\nGOOD_B nota aceptada omega\n\n",
+  "metadata": {
+    "publication_version": "region-publication-v1",
+    "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "pdf_page": 1,
+    "source_reference": "declared-mixed.pdf",
+    "page_status": "PARTIAL",
+    "contains_quarantined_regions": true,
+    "notice": "Esta página contiene regiones cuya extracción textual no es suficientemente confiable para búsqueda o citas. Pueden consultarse visualmente en la fuente original. El resto del contenido aceptado sí puede utilizarse.",
+    "regions": [
+      {
+        "region_id": "region-0",
+        "bbox": [
+          20,
+          20,
+          300,
+          40
+        ],
+        "quality_status": "ACCEPTED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "ACCEPTED",
+        "reason_codes": [],
+        "candidate_sha256": "d00e2b0487174388a4afb10637500f7f55d6de11198bdb80a165bb31d494c413",
+        "textually_citable": true,
+        "visual_reference": {
+          "source_reference": "declared-mixed.pdf",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "pdf_page": 1,
+          "region_id": "region-0",
+          "bbox": [
+            20,
+            20,
+            300,
+            40
+          ]
+        }
+      },
+      {
+        "region_id": "region-1",
+        "bbox": [
+          20,
+          60,
+          300,
+          80
+        ],
+        "quality_status": "PLATFORM_EXTRACTION_ERROR",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "QUARANTINED",
+        "reason_codes": [
+          "QUALITY_EVIDENCE_INSUFFICIENT"
+        ],
+        "candidate_sha256": "4af2a35fd2b77d8caa289a4cd07bb54c1b6e9751fab970370b3b67a81253311f",
+        "textually_citable": false,
+        "visual_reference": {
+          "source_reference": "declared-mixed.pdf",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "pdf_page": 1,
+          "region_id": "region-1",
+          "bbox": [
+            20,
+            60,
+            300,
+            80
+          ]
+        }
+      },
+      {
+        "region_id": "region-2",
+        "bbox": [
+          20,
+          100,
+          300,
+          120
+        ],
+        "quality_status": "ACCEPTED",
+        "provenance_status": "CERTIFIED",
+        "publication_status": "ACCEPTED",
+        "reason_codes": [],
+        "candidate_sha256": "568a6035c1be720c7eeea56f638f4dee3014efb07dec96e0a64eb37c33341157",
+        "textually_citable": true,
+        "visual_reference": {
+          "source_reference": "declared-mixed.pdf",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "pdf_page": 1,
+          "region_id": "region-2",
+          "bbox": [
+            20,
+            100,
+            300,
+            120
+          ]
+        }
+      }
+    ]
+  },
+  "chunk_inputs": [
+    {
+      "region_id": "region-0",
+      "content": "GOOD_A vecino aceptado alfa"
+    },
+    {
+      "region_id": "region-2",
+      "content": "GOOD_B nota aceptada omega"
+    }
+  ],
+  "CHUNK_REGIONS": [
+    "region-0",
+    "region-2"
+  ],
+  "BAD_ABSENT_FROM_CANONICAL": true,
+  "BAD_ABSENT_FROM_METADATA": true,
+  "BAD_ABSENT_FROM_CHUNKS": true,
+  "CROSS_REGION_QUOTE_ABSENT": true,
+  "ACCEPTED_REGIONS_PRESENT": true,
+  "QUARANTINED_REGIONS_HAVE_NO_CHUNKS": true,
+  "RETRIEVAL_PROBE": {
+    "query": "quarantineunique",
+    "chunks_returned": 0,
+    "citation_sources": [
+      "region-0",
+      "region-2"
+    ]
+  },
+  "PARTIAL_DERIVED_FROM_CERTIFIER_OUTPUT": true,
+  "PASS": true
+}

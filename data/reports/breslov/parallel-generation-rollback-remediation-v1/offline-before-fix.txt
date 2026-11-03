@@ -1,0 +1,377 @@
+F..............FFFFFF                                                    [100%]
+=================================== FAILURES ===================================
+___________________ test_cutover_rollback_audit_and_cleanup ____________________
+
+store = <test_generation_rollback_remediation.MemoryStore object at 0x7aa56877ed20>
+
+    @pytest.mark.asyncio
+    async def test_cutover_rollback_audit_and_cleanup(store):
+        assert (await store.switch())["result"] == "APPLIED"
+        assert store.pointer["generation_id"] == "NEW"
+        assert store.rows["OLD"]["status"] == "INACTIVE"
+        assert store.rows["NEW"]["status"] == "ACTIVE"
+        assert await g.cleanup_protected_generations(None, "OLD")
+        assert store.rows["OLD"]["retention_hold"]
+>       assert (await store.switch("OLD", "NEW", "ROLLBACK"))["result"] == "APPLIED"
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generation_rollback_remediation.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_rollback_remediation.py:60: in switch
+    return await g.activate_generation(None, logical_document_id="L",
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+conn = None, logical_document_id = 'L', expected_active_generation_id = 'NEW'
+new_generation_id = 'OLD', operation = 'ROLLBACK', actor_id = None
+
+    async def activate_generation(
+        conn: AsyncConnection,
+        *,
+        logical_document_id: UUID | str,
+        expected_active_generation_id: UUID | str | None,
+        new_generation_id: UUID | str,
+        operation: str = OPERATION_CUTOVER,
+        actor_id: UUID | str | None = None,
+    ) -> dict[str, Any]:
+        """Compare-and-swap the active generation inside the caller's transaction.
+    
+        Preconditions (all of them, otherwise nothing is written):
+    
+        * the logical document exists;
+        * the new generation belongs to that logical document;
+        * the new generation is switchable (``CANDIDATE``);
+        * the new generation is not the current active generation;
+        * the current active generation equals ``expected_active_generation_id``.
+    
+        The caller owns the transaction so a switch can be committed together with
+        the rest of the operation (for example the document publication).
+        """
+        logical = str(logical_document_id)
+        new_id = str(new_generation_id)
+        expected = _uuid(expected_active_generation_id)
+    
+        locked = await fetch_one(
+            conn,
+            "SELECT id FROM library_logical_documents WHERE id=%(logical)s FOR UPDATE",
+            {"logical": logical},
+        )
+        if not locked:
+            raise GenerationPreconditionError("Logical document does not exist")
+    
+        pointer = await fetch_one(
+            conn,
+            """
+            SELECT generation_id FROM library_logical_document_active_generations
+            WHERE logical_document_id=%(logical)s FOR UPDATE
+            """,
+            {"logical": logical},
+        )
+        current = str(pointer["generation_id"]) if pointer else None
+    
+        if current == new_id:
+            return {
+                "result": RESULT_IDEMPOTENT,
+                "logical_document_id": logical,
+                "from_generation_id": current,
+                "to_generation_id": new_id,
+                "expected_generation_id": expected,
+                "operation": operation,
+            }
+    
+        if expected is not None and current != expected:
+            raise GenerationConflictError(
+                "Stale expected active generation: the active generation changed"
+            )
+        if expected is None and current is not None:
+            raise GenerationPreconditionError(
+                "An expected active generation is required while a generation is active"
+            )
+    
+        target = await fetch_one(
+            conn,
+            """
+            SELECT * FROM library_document_generations
+            WHERE id=%(id)s AND logical_document_id=%(logical)s
+            """,
+            {"id": new_id, "logical": logical},
+        )
+        if not target:
+            raise GenerationPreconditionError(
+                "The target generation does not belong to this logical document"
+            )
+        if str(target["status"]) != SWITCHABLE_STATUS:
+>           raise GenerationPreconditionError(
+                f"Only a {SWITCHABLE_STATUS} generation can be activated; "
+                f"got {target['status']}"
+            )
+E           modules.library.generation.GenerationPreconditionError: Only a CANDIDATE generation can be activated; got INACTIVE
+
+modules/library/generation.py:540: GenerationPreconditionError
+____________________ test_candidate_is_not_rollback_target _____________________
+
+store = <test_generation_rollback_remediation.MemoryStore object at 0x7aa5683a4440>
+
+    @pytest.mark.asyncio
+    async def test_candidate_is_not_rollback_target(store):
+>       with pytest.raises(g.GenerationPreconditionError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE GenerationPreconditionError
+
+tests/test_generation_rollback_remediation.py:154: Failed
+____________________ test_stale_cutover_and_stale_rollback _____________________
+
+store = <test_generation_rollback_remediation.MemoryStore object at 0x7aa5683a5fd0>
+
+    @pytest.mark.asyncio
+    async def test_stale_cutover_and_stale_rollback(store):
+        await store.switch()
+        before = store.snapshot()
+        with pytest.raises(g.GenerationConflictError):
+            await store.switch("B", "OLD")
+        assert store.snapshot() == before
+>       await store.switch("OLD", "NEW", "ROLLBACK")
+
+tests/test_generation_rollback_remediation.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_rollback_remediation.py:60: in switch
+    return await g.activate_generation(None, logical_document_id="L",
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+conn = None, logical_document_id = 'L', expected_active_generation_id = 'NEW'
+new_generation_id = 'OLD', operation = 'ROLLBACK', actor_id = None
+
+    async def activate_generation(
+        conn: AsyncConnection,
+        *,
+        logical_document_id: UUID | str,
+        expected_active_generation_id: UUID | str | None,
+        new_generation_id: UUID | str,
+        operation: str = OPERATION_CUTOVER,
+        actor_id: UUID | str | None = None,
+    ) -> dict[str, Any]:
+        """Compare-and-swap the active generation inside the caller's transaction.
+    
+        Preconditions (all of them, otherwise nothing is written):
+    
+        * the logical document exists;
+        * the new generation belongs to that logical document;
+        * the new generation is switchable (``CANDIDATE``);
+        * the new generation is not the current active generation;
+        * the current active generation equals ``expected_active_generation_id``.
+    
+        The caller owns the transaction so a switch can be committed together with
+        the rest of the operation (for example the document publication).
+        """
+        logical = str(logical_document_id)
+        new_id = str(new_generation_id)
+        expected = _uuid(expected_active_generation_id)
+    
+        locked = await fetch_one(
+            conn,
+            "SELECT id FROM library_logical_documents WHERE id=%(logical)s FOR UPDATE",
+            {"logical": logical},
+        )
+        if not locked:
+            raise GenerationPreconditionError("Logical document does not exist")
+    
+        pointer = await fetch_one(
+            conn,
+            """
+            SELECT generation_id FROM library_logical_document_active_generations
+            WHERE logical_document_id=%(logical)s FOR UPDATE
+            """,
+            {"logical": logical},
+        )
+        current = str(pointer["generation_id"]) if pointer else None
+    
+        if current == new_id:
+            return {
+                "result": RESULT_IDEMPOTENT,
+                "logical_document_id": logical,
+                "from_generation_id": current,
+                "to_generation_id": new_id,
+                "expected_generation_id": expected,
+                "operation": operation,
+            }
+    
+        if expected is not None and current != expected:
+            raise GenerationConflictError(
+                "Stale expected active generation: the active generation changed"
+            )
+        if expected is None and current is not None:
+            raise GenerationPreconditionError(
+                "An expected active generation is required while a generation is active"
+            )
+    
+        target = await fetch_one(
+            conn,
+            """
+            SELECT * FROM library_document_generations
+            WHERE id=%(id)s AND logical_document_id=%(logical)s
+            """,
+            {"id": new_id, "logical": logical},
+        )
+        if not target:
+            raise GenerationPreconditionError(
+                "The target generation does not belong to this logical document"
+            )
+        if str(target["status"]) != SWITCHABLE_STATUS:
+>           raise GenerationPreconditionError(
+                f"Only a {SWITCHABLE_STATUS} generation can be activated; "
+                f"got {target['status']}"
+            )
+E           modules.library.generation.GenerationPreconditionError: Only a CANDIDATE generation can be activated; got INACTIVE
+
+modules/library/generation.py:540: GenerationPreconditionError
+____________________________ test_idempotency_safe _____________________________
+
+store = <test_generation_rollback_remediation.MemoryStore object at 0x7aa5683a6390>
+
+    @pytest.mark.asyncio
+    async def test_idempotency_safe(store):
+        await store.switch()
+        before = store.snapshot()
+        assert (await store.switch())["result"] == "IDEMPOTENT"  # existing cutover retry contract
+        assert store.snapshot() == before
+>       await store.switch("OLD", "NEW", "ROLLBACK")
+
+tests/test_generation_rollback_remediation.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generation_rollback_remediation.py:60: in switch
+    return await g.activate_generation(None, logical_document_id="L",
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+conn = None, logical_document_id = 'L', expected_active_generation_id = 'NEW'
+new_generation_id = 'OLD', operation = 'ROLLBACK', actor_id = None
+
+    async def activate_generation(
+        conn: AsyncConnection,
+        *,
+        logical_document_id: UUID | str,
+        expected_active_generation_id: UUID | str | None,
+        new_generation_id: UUID | str,
+        operation: str = OPERATION_CUTOVER,
+        actor_id: UUID | str | None = None,
+    ) -> dict[str, Any]:
+        """Compare-and-swap the active generation inside the caller's transaction.
+    
+        Preconditions (all of them, otherwise nothing is written):
+    
+        * the logical document exists;
+        * the new generation belongs to that logical document;
+        * the new generation is switchable (``CANDIDATE``);
+        * the new generation is not the current active generation;
+        * the current active generation equals ``expected_active_generation_id``.
+    
+        The caller owns the transaction so a switch can be committed together with
+        the rest of the operation (for example the document publication).
+        """
+        logical = str(logical_document_id)
+        new_id = str(new_generation_id)
+        expected = _uuid(expected_active_generation_id)
+    
+        locked = await fetch_one(
+            conn,
+            "SELECT id FROM library_logical_documents WHERE id=%(logical)s FOR UPDATE",
+            {"logical": logical},
+        )
+        if not locked:
+            raise GenerationPreconditionError("Logical document does not exist")
+    
+        pointer = await fetch_one(
+            conn,
+            """
+            SELECT generation_id FROM library_logical_document_active_generations
+            WHERE logical_document_id=%(logical)s FOR UPDATE
+            """,
+            {"logical": logical},
+        )
+        current = str(pointer["generation_id"]) if pointer else None
+    
+        if current == new_id:
+            return {
+                "result": RESULT_IDEMPOTENT,
+                "logical_document_id": logical,
+                "from_generation_id": current,
+                "to_generation_id": new_id,
+                "expected_generation_id": expected,
+                "operation": operation,
+            }
+    
+        if expected is not None and current != expected:
+            raise GenerationConflictError(
+                "Stale expected active generation: the active generation changed"
+            )
+        if expected is None and current is not None:
+            raise GenerationPreconditionError(
+                "An expected active generation is required while a generation is active"
+            )
+    
+        target = await fetch_one(
+            conn,
+            """
+            SELECT * FROM library_document_generations
+            WHERE id=%(id)s AND logical_document_id=%(logical)s
+            """,
+            {"id": new_id, "logical": logical},
+        )
+        if not target:
+            raise GenerationPreconditionError(
+                "The target generation does not belong to this logical document"
+            )
+        if str(target["status"]) != SWITCHABLE_STATUS:
+>           raise GenerationPreconditionError(
+                f"Only a {SWITCHABLE_STATUS} generation can be activated; "
+                f"got {target['status']}"
+            )
+E           modules.library.generation.GenerationPreconditionError: Only a CANDIDATE generation can be activated; got INACTIVE
+
+modules/library/generation.py:540: GenerationPreconditionError
+________________________ test_no_policy_bypass[UNKNOWN] ________________________
+
+store = <test_generation_rollback_remediation.MemoryStore object at 0x7aa5683a6e70>
+operation = 'UNKNOWN'
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("operation", ["UNKNOWN", "BACKFILL", "REGISTER"])
+    async def test_no_policy_bypass(store, operation):
+>       with pytest.raises(g.GenerationPreconditionError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE GenerationPreconditionError
+
+tests/test_generation_rollback_remediation.py:188: Failed
+_______________________ test_no_policy_bypass[BACKFILL] ________________________
+
+store = <test_generation_rollback_remediation.MemoryStore object at 0x7aa56877ffb0>
+operation = 'BACKFILL'
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("operation", ["UNKNOWN", "BACKFILL", "REGISTER"])
+    async def test_no_policy_bypass(store, operation):
+>       with pytest.raises(g.GenerationPreconditionError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE GenerationPreconditionError
+
+tests/test_generation_rollback_remediation.py:188: Failed
+_______________________ test_no_policy_bypass[REGISTER] ________________________
+
+store = <test_generation_rollback_remediation.MemoryStore object at 0x7aa5683a6690>
+operation = 'REGISTER'
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("operation", ["UNKNOWN", "BACKFILL", "REGISTER"])
+    async def test_no_policy_bypass(store, operation):
+>       with pytest.raises(g.GenerationPreconditionError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE GenerationPreconditionError
+
+tests/test_generation_rollback_remediation.py:188: Failed
+=========================== short test summary info ============================
+FAILED tests/test_generation_rollback_remediation.py::test_cutover_rollback_audit_and_cleanup
+FAILED tests/test_generation_rollback_remediation.py::test_candidate_is_not_rollback_target
+FAILED tests/test_generation_rollback_remediation.py::test_stale_cutover_and_stale_rollback
+FAILED tests/test_generation_rollback_remediation.py::test_idempotency_safe
+FAILED tests/test_generation_rollback_remediation.py::test_no_policy_bypass[UNKNOWN]
+FAILED tests/test_generation_rollback_remediation.py::test_no_policy_bypass[BACKFILL]
+FAILED tests/test_generation_rollback_remediation.py::test_no_policy_bypass[REGISTER]
+7 failed, 14 passed in 0.52s

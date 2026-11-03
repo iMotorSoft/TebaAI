@@ -1,0 +1,29 @@
+{
+  "operation": "ROLLBACK",
+  "expected_active": "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162",
+  "target": "10c552da-af10-47d9-964d-485f24a22faf",
+  "result": "APPLIED",
+  "from": "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162",
+  "to": "10c552da-af10-47d9-964d-485f24a22faf",
+  "state_after": {
+    "statuses": {
+      "10c552da-af10-47d9-964d-485f24a22faf": "ACTIVE",
+      "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162": "INACTIVE"
+    },
+    "retention_hold": {
+      "10c552da-af10-47d9-964d-485f24a22faf": true,
+      "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162": true
+    },
+    "active_count": 1,
+    "active": [
+      "10c552da-af10-47d9-964d-485f24a22faf"
+    ],
+    "pointer": "10c552da-af10-47d9-964d-485f24a22faf",
+    "pointer_expected": "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162",
+    "pointer_operation": "ROLLBACK"
+  },
+  "NEW_INACTIVE": true,
+  "OLD_ACTIVE": true,
+  "POINTER_IS_OLD": true,
+  "PASS": true
+}

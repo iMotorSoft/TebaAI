@@ -1,0 +1,73 @@
+{
+  "gate": "TEBAAI_BRESLOV_V5_EVALUATOR_CORRECTION_V1",
+  "result": "TEBAAI_BRESLOV_V5_EVALUATOR_CORRECTION_V1_PASS",
+  "EVALUATOR_READY_FOR_REVALIDATION": "YES",
+  "V5_EVALUATED": "NO",
+  "V5_DEFECT_DEMONSTRATED": "NO",
+  "V5_CHANGED": "NO",
+  "CONSUMER_CHANGED": "NO",
+  "PREOBSERVED_V5_UNEXPOSED": {
+    "pages": 85,
+    "positive_pairs": 12
+  },
+  "CERTIFICATES_READY_FOR_WORKER_INTEGRATION": "NO",
+  "READY_FOR_C_REINGEST": "NO",
+  "COMMIT": "NO",
+  "PUSH": "NO",
+  "synthetic_cases": 15,
+  "synthetic_passed": 15,
+  "synthetic_failed": 0,
+  "evaluator_false_negatives": 0,
+  "evaluator_false_positives": 0,
+  "mutation_controls": 6,
+  "mutation_controls_detected": 6,
+  "focused_tests_passed": 31,
+  "related_backend_tests_passed": 95,
+  "full_backend": "NOT_RUN: production-independent evaluator; avoid V5 collection",
+  "next_gate": "TEBAAI_BRESLOV_V5_HYBRID_CONFIRMATION_RESUME_V2",
+  "next_gate_executed": false,
+  "branch": "feature/console-backend-core",
+  "head": "704ae24597e916b56ddec8a71fd0a30d34793aab",
+  "checks": {
+    "both_defects_reproduced_before_fix": true,
+    "contract_written_before_fix": true,
+    "synthetic_matrix_pass": true,
+    "mutation_controls_pass": true,
+    "legacy_stored_synthetic_regression_pass": true,
+    "safety_counter_controls_preserved": true,
+    "focused_tests_pass": true,
+    "related_tests_pass": true,
+    "protected_hashes_identical": true,
+    "preexisting_unrelated_hashes_identical": true,
+    "git_diff_check_pass": true,
+    "authored_untracked_whitespace_check_pass": true,
+    "diff_reviewed": true,
+    "V5_import_blocker_pass": true,
+    "synthetic_corpus_read_blocker_pass": true
+  },
+  "scope": {
+    "V5_code_changed": false,
+    "consumer_changed": false,
+    "real_V5_holdout_executed": false,
+    "85_page_set_executed": false,
+    "12_positive_set_executed": false,
+    "corpus_expected_labels_modified": false,
+    "V5_imported": false,
+    "datasets_parsed": false,
+    "only_preexisting_file_modified": "data/reports/breslov/v5-hybrid-independent-confirmation-v1/run_gate.py",
+    "authored_code_files": [
+      "data/reports/breslov/v5-hybrid-independent-confirmation-v1/run_gate.py",
+      "data/reports/breslov/v5-hybrid-independent-confirmation-v1/evaluator.py",
+      "SrvRestAstroLS_v1/backend/tests/test_v5_evaluator_semantics.py"
+    ],
+    "authored_evidence_directory": "data/reports/breslov/v5-evaluator-correction-v1"
+  },
+  "validation_decision": "Full backend optional: standalone report evaluator has no production importers; focused+related backend 126 tests pass. No V5 certifier/consumer tests collected.",
+  "freeze": "evaluator-freeze.json",
+  "risks": [
+    "Not a V5 readiness verdict",
+    "Parts A/B/C not executed by mandate",
+    "Fresh next-gate freeze must include evaluator.py",
+    "Missing output endpoints remain existing positive-pair missed_links responsibility"
+  ]
+}

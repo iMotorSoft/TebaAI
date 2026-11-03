@@ -1,0 +1,89 @@
+{
+  "environment": "offline file viewer; Chromium",
+  "cases": 10,
+  "production_modified": false,
+  "desktop_fidelity": "BLOCKED",
+  "mobile_fidelity": "BLOCKED",
+  "evidence": [
+    {
+      "page": 2,
+      "viewport": "desktop",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 41,
+      "viewport": "desktop",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 55,
+      "viewport": "desktop",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 56,
+      "viewport": "desktop",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 143,
+      "viewport": "desktop",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 2,
+      "viewport": "mobile",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 41,
+      "viewport": "mobile",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 55,
+      "viewport": "mobile",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 56,
+      "viewport": "mobile",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    },
+    {
+      "page": 143,
+      "viewport": "mobile",
+      "dom_codepoint_identity": true,
+      "horizontal_overflow": false,
+      "errors": [],
+      "semantic_readability": "BLOCKED: unresolved canonical text and paragraph order"
+    }
+  ]
+}

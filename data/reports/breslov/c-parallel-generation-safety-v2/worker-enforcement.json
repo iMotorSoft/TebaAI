@@ -1,0 +1,35 @@
+{
+  "pipeline": "ConcretePageFirstPipeline",
+  "declared_input_statuses": [
+    "ACCEPTED",
+    "PLATFORM_EXTRACTION_ERROR",
+    "ACCEPTED"
+  ],
+  "calls": [
+    "load",
+    "pages",
+    "embed",
+    "finalize"
+  ],
+  "page_status": "PARTIAL",
+  "publication_partial_source": true,
+  "publication_contains_quarantined": true,
+  "publication_notice_present": true,
+  "chunk_count": 2,
+  "embedding_count": 2,
+  "vector_count": 2,
+  "embedded_texts": [
+    "GOOD_A vecino aceptado alfa",
+    "GOOD_B nota aceptada omega"
+  ],
+  "embedded_bad": false,
+  "embedded_cross_region": false,
+  "chunk_regions": [
+    "region-0",
+    "region-2"
+  ],
+  "canonical_has_bad": false,
+  "metadata_has_bad": false,
+  "finalized": true,
+  "PASS": true
+}

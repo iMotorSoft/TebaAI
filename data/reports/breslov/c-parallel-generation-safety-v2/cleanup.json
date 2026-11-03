@@ -1,0 +1,34 @@
+{
+  "after_rollback": {
+    "old": [
+      {
+        "id": "10c552da-af10-47d9-964d-485f24a22faf",
+        "status": "ACTIVE",
+        "retention_hold": true
+      }
+    ],
+    "new": [
+      {
+        "id": "8ab0a582-77ee-45d2-a6d4-ed7d0ee0c162",
+        "status": "INACTIVE",
+        "retention_hold": true
+      }
+    ]
+  },
+  "active_old_protected": true,
+  "rollback_target_new_protected": true,
+  "delete_active_generation_rejected": true,
+  "PASS": true,
+  "synthetic_leftovers": {
+    "logical_documents": 0,
+    "documents": 0,
+    "generations": 0,
+    "active_pointers": 0,
+    "chunks": 0,
+    "vectors": 0,
+    "scope_rows": 0,
+    "collection_rows": 0,
+    "milvus_collection_present": false,
+    "PASS": true
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "ocr_gate": "TEBAAI_BRESLOV_HEBREW_REGIONAL_OCR_REAL_V1",
+  "ocr_status": "PASS_NOT_USEFUL",
+  "ocr_gate_scope": "real benchmark completed; tested engine/model/config NOT approved as automated fallback for complete primary Hebrew region. Limited exact-base fragments remain useful experimental evidence.",
+  "search_gate": "TEBAAI_BRESLOV_HEBREW_ORTHOGRAPHIC_SEARCH_VARIANTS_V1",
+  "search_status": "BLOCKED",
+  "ocr_three_line_summaries": [
+    {
+      "dpi": 300,
+      "psm": 6,
+      "scope": "three manually transcribed Hebrew lines ONLY, not entire main region",
+      "base_letter_count": 138,
+      "base_letter_edits": 4,
+      "base_letter_accuracy": 0.9710144927536232,
+      "boundary_f1_by_line": [
+        0.909091,
+        0.9375,
+        0.888889
+      ],
+      "ordered_token_accuracy_by_line": [
+        0.916667,
+        0.777778,
+        0.666667
+      ],
+      "punctuation_accuracy_by_line": [
+        1.0,
+        0.4,
+        1.0
+      ],
+      "unexpected_character_count": 0
+    },
+    {
+      "dpi": 300,
+      "psm": 7,
+      "scope": "three manually transcribed Hebrew lines ONLY, not entire main region",
+      "base_letter_count": 138,
+      "base_letter_edits": 6,
+      "base_letter_accuracy": 0.9565217391304348,
+      "boundary_f1_by_line": [
+        0.909091,
+        0.9375,
+        0.666667
+      ],
+      "ordered_token_accuracy_by_line": [
+        0.916667,
+        0.777778,
+        0.666667
+      ],
+      "punctuation_accuracy_by_line": [
+        1.0,
+        0.4,
+        1.0
+      ],
+      "unexpected_character_count": 0
+    },
+    {
+      "dpi": 400,
+      "psm": 6,
+      "scope": "three manually transcribed Hebrew lines ONLY, not entire main region",
+      "base_letter_count": 138,
+      "base_letter_edits": 4,
+      "base_letter_accuracy": 0.9710144927536232,
+      "boundary_f1_by_line": [
+        1.0,
+        0.9375,
+        0.888889
+      ],
+      "ordered_token_accuracy_by_line": [
+        0.916667,
+        0.777778,
+        0.5
+      ],
+      "punctuation_accuracy_by_line": [
+        1.0,
+        0.4,
+        1.0
+      ],
+      "unexpected_character_count": 0
+    },
+    {
+      "dpi": 400,
+      "psm": 7,
+      "scope": "three manually transcribed Hebrew lines ONLY, not entire main region",
+      "base_letter_count": 138,
+      "base_letter_edits": 2,
+      "base_letter_accuracy": 0.9855072463768116,
+      "boundary_f1_by_line": [
+        1.0,
+        0.9375,
+        0.888889
+      ],
+      "ordered_token_accuracy_by_line": [
+        0.916667,
+        0.777778,
+        0.666667
+      ],
+      "punctuation_accuracy_by_line": [
+        1.0,
+        0.4,
+        1.0
+      ],
+      "unexpected_character_count": 1
+    }
+  ],
+  "search_metrics": {
+    "positive_count": 11,
+    "negative_count": 6,
+    "exact_recall": 0.09090909090909091,
+    "no_niqqud_recall": 0.2727272727272727,
+    "controlled_cascade_recall": 1.0,
+    "false_positive_count": 0,
+    "variant_false_positive_count": 0
+  },
+  "semantic_summary": {
+    "status": "PASS_LOCAL_FIXTURE_EMBEDDINGS",
+    "positive_top1": 10,
+    "positive_top3": 11,
+    "positive_count": 11,
+    "negative_target_top1": 5,
+    "negative_target_top3": 6,
+    "negative_count": 6,
+    "live_corpus_retrieval": "NOT TESTED; in-memory exact cosine fixture benchmark only"
+  },
+  "criteria": {
+    "search": "For these short fixtures: >=99% base letters, >=99% boundaries, logical order preserved, no materially corrupted or fused target tokens. All required parts of a proposed region must qualify; average alone cannot pass.",
+    "display": "Search criteria plus sufficiently faithful pointed/punctuated source, numbers, no material loss/invention; assistant inspection is not editorial signoff.",
+    "threshold_note": "Conservative explicit experiment acceptance rule, not a calibrated production quality detector."
+  },
+  "regional_recommendations": [
+    {
+      "page": 167,
+      "region": "R167_A",
+      "classification": "HYBRID_BEST",
+      "ocr_search_usable": "title only",
+      "ocr_display_usable": false,
+      "reason": "title base exact; OCR 149->9; prefer safe reconstruction title + native number"
+    },
+    {
+      "page": 167,
+      "region": "R167_B",
+      "classification": "UNRESOLVED",
+      "ocr_search_usable": false,
+      "ocr_display_usable": false,
+      "reason": "main body has consonant corruption and materially fused words; short reconstruction goldens pass but full body remains uncertified"
+    },
+    {
+      "page": 167,
+      "region": "R167_C",
+      "classification": "UNRESOLVED",
+      "ocr_search_usable": false,
+      "ocr_display_usable": false,
+      "reason": "reference line 2 base edits/48; no full-line acceptance"
+    },
+    {
+      "page": 167,
+      "region": "R167_C_niqqud",
+      "classification": "OCR_BEST_FOR_SEARCH",
+      "ocr_search_usable": true,
+      "ocr_display_usable": false,
+      "reason": "8/8 base letters and logical order/boundaries; missing holam: 4/5 marks; no reverse"
+    },
+    {
+      "page": 167,
+      "region": "R167_D",
+      "classification": "NATIVE_BEST",
+      "ocr_search_usable": "not needed",
+      "ocr_display_usable": false,
+      "reason": "good native Spanish; OCR damages superscript note numbers"
+    },
+    {
+      "page": 167,
+      "region": "R167_E_left/right",
+      "classification": "NATIVE_BEST",
+      "ocr_search_usable": "not needed",
+      "ocr_display_usable": false,
+      "reason": "native geometry keeps columns; combined OCR visibly fuses them"
+    },
+    {
+      "page": 55,
+      "region": "R55_A",
+      "classification": "RECONSTRUCTION_BEST",
+      "ocr_search_usable": "title only",
+      "ocr_display_usable": false,
+      "reason": "OCR 11/11 title base better than native/historical; 37->7, reconstruction already retains title and folio"
+    },
+    {
+      "page": 143,
+      "region": "R143_line",
+      "classification": "RECONSTRUCTION_BEST",
+      "ocr_search_usable": true,
+      "ocr_display_usable": false,
+      "reason": "400dpi OCR 37/37 base, boundaries/order exact; no full-niqqud golden; reconstruction also preserves the whole sampled line"
+    }
+  ],
+  "logical_order": "PASS for reviewed Hebrew lines after removing Cf controls ONLY; no global reordering; token accuracy separately records recognition errors",
+  "ocr_layout": "FAIL for combined two-column control; not for isolated upper Hebrew fragment",
+  "regional_ocr_recommended_now": false,
+  "full_page_ocr_recommended": false,
+  "ready_for_c_reingest": false,
+  "pipeline_modified": false,
+  "pg_writes": false,
+  "milvus_writes": false,
+  "production_modified": false
+}

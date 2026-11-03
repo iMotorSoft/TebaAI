@@ -1,0 +1,20 @@
+{
+  "measured_at": "2026-10-23T12:58:50.436884+00:00",
+  "mechanism": "row-level JSONB digests for every C row family, captured in two independent read-only PostgreSQL sessions; every session ran with default_transaction_read_only=on",
+  "source_metadata_changed": false,
+  "updated_at_changed": false,
+  "active_pointer_changed": false,
+  "generation_rows_changed": false,
+  "run_rows_changed": false,
+  "embedding_run_rows_changed": false,
+  "chunk_rows_changed": false,
+  "text_rows_changed": false,
+  "page_rows_changed": false,
+  "audit_rows_changed": false,
+  "auth_session_rows_changed": false,
+  "postgresql_rows_modified": 0,
+  "unexpected_postgresql_rows_modified": 0,
+  "allowed_postgresql_mutations": "none",
+  "backend_test_suite_note": "the focused/full pytest suites run before this observation window; their live-DB fixtures use isolated synthetic scopes or force_rollback transactions and never address document C",
+  "POSTGRESQL_ZERO_WRITE": "PASS"
+}

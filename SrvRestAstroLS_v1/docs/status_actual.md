@@ -2,7 +2,7 @@
 
 Objetivo: `desarrollo`
 
-Ultima actualizacion: 2026-11-01 (Foundation V2 + RTL publicados; C textual unsafe)
+Ultima actualizacion: 2026-11-03 (sincronizacion Git; C textual unsafe)
 
 ## Estado vigente — 2026-11-01 (DEV)
 
@@ -10,18 +10,19 @@ Resumen operativo. Lo que sigue responde: qué funciona, qué está certificado,
 qué sigue inseguro, cuál es el estado Git autoritativo y cuál es el próximo
 bloqueo real.
 
-### Git autoritativo
+### Git — verificación del 2026-11-03
 
 | Campo | Valor |
 | --- | --- |
 | Branch | `feature/console-backend-core` |
-| Authoritative HEAD | `05ab67ebfb652a460155eab1d3560ae55bd88bb0` |
-| Local = tracking = remoto | `YES` (verificado 2026-11-01) |
+| HEAD verificado antes de esta actualización documental | `a03a84188e1f9587874e63247aadcfb037f49923` |
+| Local = tracking = remoto en la verificación | `YES` |
 
-Publicado en `origin` en el mismo HEAD:
+Publicado en `origin`:
 
 - `TEBAAI_BRESLOV_PARALLEL_GENERATION_FOUNDATION_V2_PUBLICATION_V1R2_PASS`
 - `TEBAAI_BRESLOV_HEBREW_RTL_RENDERING_V2_PASS` (commit `05ab67e`)
+- Trabajo local de ingesta, pruebas y evidencia (commit `a03a841`); su publicación no implica certificación de C.
 
 ```text
 FOUNDATION_V2_PUBLISHED = YES
